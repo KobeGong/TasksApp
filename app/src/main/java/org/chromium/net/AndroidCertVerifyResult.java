@@ -1,0 +1,50 @@
+package org.chromium.net;
+
+import java.security.cert.CertificateEncodingException;
+import java.security.cert.X509Certificate;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import org.chromium.base.annotations.CalledByNative;
+
+/* compiled from: PG */
+public class AndroidCertVerifyResult {
+    private final int a;
+    private final boolean b;
+    private final List c;
+
+    public AndroidCertVerifyResult(boolean z, List list) {
+        this.a = 0;
+        this.b = z;
+        this.c = new ArrayList(list);
+    }
+
+    public AndroidCertVerifyResult(int i) {
+        this.a = i;
+        this.b = false;
+        this.c = Collections.emptyList();
+    }
+
+    @CalledByNative
+    public int getStatus() {
+        return this.a;
+    }
+
+    @CalledByNative
+    public boolean isIssuedByKnownRoot() {
+        return this.b;
+    }
+
+    @CalledByNative
+    public byte[][] getCertificateChainEncoded() {
+        byte[][] bArr = new byte[this.c.size()][];
+        for (int i = 0; i < this.c.size(); i++) {
+            try {
+                bArr[i] = ((X509Certificate) this.c.get(i)).getEncoded();
+            } catch (CertificateEncodingException e) {
+                return new byte[0][];
+            }
+        }
+        return bArr;
+    }
+}

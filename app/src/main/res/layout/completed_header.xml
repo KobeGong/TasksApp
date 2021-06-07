@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:background="@color/taskBackground" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <View android:id="@+id/border_top_margin" android:background="@color/tasksListBackground" android:layout_width="match_parent" android:layout_height="@dimen/task_default_margin" app:layout_constraintTop_toTopOf="0"/>
+    <View android:id="@+id/border_top" android:background="@color/taskBorder" android:layout_width="match_parent" android:layout_height="@dimen/default_separator_height" app:layout_constraintTop_toBottomOf="@+id/border_top_margin"/>
+    <RelativeLayout android:gravity="center_vertical" android:id="@+id/completed_header" android:background="?android:attr/selectableItemBackground" android:paddingTop="@dimen/task_item_top_to_title_spacing" android:paddingBottom="@dimen/task_item_bottom_to_field_spacing" android:layout_width="match_parent" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toBottomOf="@+id/border_top">
+        <ImageView android:id="@+id/expand" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true"/>
+        <TextView android:id="@+id/completed_count" android:paddingLeft="@dimen/task_item_start_to_check" android:paddingRight="8dp" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_centerVertical="true" style="@style/CompletedTaskHeader"/>
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

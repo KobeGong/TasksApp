@@ -1,0 +1,106 @@
+package defpackage;
+
+/* renamed from: bli  reason: default package */
+/* compiled from: PG */
+public final class bli extends bkw implements Cloneable {
+    private static volatile bli[] c;
+    private String d = "";
+    private String e = "";
+
+    public static bli[] e() {
+        if (c == null) {
+            synchronized (bla.a) {
+                if (c == null) {
+                    c = new bli[0];
+                }
+            }
+        }
+        return c;
+    }
+
+    public bli() {
+        this.a = null;
+        this.b = -1;
+    }
+
+    /* access modifiers changed from: private */
+    /* renamed from: f */
+    public final bli clone() {
+        try {
+            return (bli) super.clone();
+        } catch (CloneNotSupportedException e2) {
+            throw new AssertionError(e2);
+        }
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (!(obj instanceof bli)) {
+            return false;
+        }
+        bli bli = (bli) obj;
+        if (this.d == null) {
+            if (bli.d != null) {
+                return false;
+            }
+        } else if (!this.d.equals(bli.d)) {
+            return false;
+        }
+        if (this.e == null) {
+            if (bli.e != null) {
+                return false;
+            }
+        } else if (!this.e.equals(bli.e)) {
+            return false;
+        }
+        if (this.a == null || this.a.a()) {
+            return bli.a == null || bli.a.a();
+        }
+        return this.a.equals(bli.a);
+    }
+
+    public final int hashCode() {
+        int i = 0;
+        int hashCode = ((this.e == null ? 0 : this.e.hashCode()) + (((this.d == null ? 0 : this.d.hashCode()) + ((getClass().getName().hashCode() + 527) * 31)) * 31)) * 31;
+        if (this.a != null && !this.a.a()) {
+            i = this.a.hashCode();
+        }
+        return hashCode + i;
+    }
+
+    @Override // defpackage.blb, defpackage.bkw
+    public final void a(bku bku) {
+        if (this.d != null && !this.d.equals("")) {
+            bku.a(1, this.d);
+        }
+        if (this.e != null && !this.e.equals("")) {
+            bku.a(2, this.e);
+        }
+        super.a(bku);
+    }
+
+    /* access modifiers changed from: protected */
+    @Override // defpackage.blb, defpackage.bkw
+    public final int a() {
+        int a = super.a();
+        if (this.d != null && !this.d.equals("")) {
+            a += bku.b(1, this.d);
+        }
+        if (this.e == null || this.e.equals("")) {
+            return a;
+        }
+        return a + bku.b(2, this.e);
+    }
+
+    @Override // defpackage.bkw
+    public final /* synthetic */ bkw b() {
+        return (bli) clone();
+    }
+
+    @Override // defpackage.blb, defpackage.bkw
+    public final /* synthetic */ blb c() {
+        return (bli) clone();
+    }
+}

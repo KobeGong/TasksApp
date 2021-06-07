@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:background="@color/taskBackground" android:layout_width="match_parent" android:layout_height="match_parent">
+    <TextView android:textSize="20sp" android:id="@+id/search_results_message" android:padding="10dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/search_results"/>
+    <View android:id="@+id/search_results_title_separator" android:background="@color/drawerSeparatorColor" android:layout_width="match_parent" android:layout_height="@dimen/default_separator_height" app:layout_constraintBottom_toBottomOf="@+id/search_results_message"/>
+    <FrameLayout android:layout_width="0dp" android:layout_height="0dp" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toBottomOf="@+id/search_results_title_separator">
+        <android.support.v4.widget.SwipeRefreshLayout android:id="@+id/search_results_refresh" android:layout_width="match_parent" android:layout_height="match_parent">
+            <android.support.v7.widget.RecyclerView android:id="@+id/search_results_list" android:layout_width="match_parent" android:layout_height="match_parent"/>
+        </android.support.v4.widget.SwipeRefreshLayout>
+    </FrameLayout>
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:background="@color/tasksListBackground" android:layout_width="match_parent" android:layout_height="match_parent">
+    <android.support.v4.widget.SwipeRefreshLayout android:id="@+id/tasks_refresh" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent" android:alpha="0">
+        <android.support.v7.widget.RecyclerView android:id="@+id/tasks_list" android:paddingBottom="@dimen/tasks_list_bottom_spacing" android:clipToPadding="false" android:layout_width="match_parent" android:layout_height="match_parent"/>
+    </android.support.v4.widget.SwipeRefreshLayout>
+    <android.support.v4.widget.SwipeRefreshLayout android:id="@+id/tasks_refresh_empty" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent" android:alpha="0">
+        <android.support.v4.widget.NestedScrollView android:id="@+id/tasks_refresh_empty_scrollable" android:background="@android:color/white" android:paddingBottom="@dimen/tasks_list_bottom_spacing" android:clipToPadding="false" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+            <include layout="@layout/tasks_fragment_empty"/>
+        </android.support.v4.widget.NestedScrollView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+</FrameLayout>

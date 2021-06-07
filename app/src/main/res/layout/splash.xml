@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/splash_view" android:background="@android:color/white" android:layout_width="match_parent" android:layout_height="match_parent">
+    <ImageView android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/splash_logo_vertical_offcenter" android:src="@drawable/product_logo_tasks_color_144"/>
+    <ImageView android:layout_gravity="bottom|center_vertical|center_horizontal|center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/splash_google_bottom_spacing" android:src="@drawable/googlelogo_dark_color_120x44" android:alpha="0.3"/>
+</FrameLayout>

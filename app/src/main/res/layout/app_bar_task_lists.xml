@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/app_bar_coordinator" android:background="@color/colorPrimary" android:layout_width="match_parent" android:layout_height="match_parent">
+    <com.google.android.apps.tasks.ui.TasksAppBarLayout android:theme="@style/AppTheme.AppBarOverlay" android:id="@+id/app_bar" android:layout_width="match_parent" android:layout_height="@dimen/app_bar_expanded_height" app:layout_behavior="com.google.android.apps.tasks.ui.LockableAppBarLayoutBehavior">
+        <android.support.design.widget.CollapsingToolbarLayout android:id="@+id/collapsing_toolbar" android:layout_width="match_parent" android:layout_height="match_parent" android:minHeight="@dimen/app_bar_collapsed_height" app:layout_scrollFlags="1d" app:expandedTitleMarginStart="@dimen/expanded_toolbar_title_margin_start" app:expandedTitleMarginTop="@dimen/expanded_toolbar_title_margin_top" app:expandedTitleMarginEnd="@dimen/expanded_toolbar_title_margin_end" app:expandedTitleMarginBottom="@dimen/expanded_toolbar_title_margin_bottom" app:collapsedTitleGravity="1" app:expandedTitleGravity="800003">
+            <android.support.v7.widget.Toolbar android:id="@+id/toolbar" android:background="?attr/colorPrimary" android:paddingLeft="@dimen/toolbar_start_spacing" android:paddingRight="@dimen/toolbar_end_spacing" android:layout_width="match_parent" android:layout_height="?attr/actionBarSize" app:popupTheme="@style/AppTheme.PopupOverlay" app:layout_scrollFlags="1" app:layout_collapseMode="1" app:paddingStart="@dimen/toolbar_start_spacing" app:paddingEnd="@dimen/toolbar_end_spacing"/>
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </com.google.android.apps.tasks.ui.TasksAppBarLayout>
+    <include layout="@layout/content_task_lists"/>
+    <android.support.design.bottomappbar.BottomAppBar android:layout_gravity="bottom" android:id="@+id/bottom_app_bar" android:layout_width="match_parent" android:layout_height="wrap_content" style="@style/BottomAppBar"/>
+    <View android:layout_gravity="top" android:id="@+id/bottom_app_bar_shadow" android:background="@drawable/bottom_app_bar_shadow" android:layout_width="match_parent" android:layout_height="@dimen/bottom_shadow_height" app:layout_anchor="@+id/bottom_app_bar" app:layout_anchorGravity="30"/>
+    <include layout="@layout/fab"/>
+    <include layout="@layout/splash"/>
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <android.support.design.chip.Chip android:textAppearance="@style/TextAppearance.GoogleMaterial.Chip.Suggestive" android:id="@+id/my_account" android:layout_width="wrap_content" android:layout_height="@dimen/selected_account_action_chip_height" android:layout_marginLeft="@dimen/account_menu_list_item_text_margin_from_start" app:chipText="@string/og_my_account_desc"/>
+    <View android:id="@+id/divider" android:layout_marginTop="24dp" style="@style/LeftMarginDividerStyle"/>
+    <android.support.v7.widget.RecyclerView android:id="@+id/accounts_list" android:paddingTop="@dimen/account_menu_padding_between_recycler_view_and_dividers" android:paddingBottom="@dimen/account_menu_padding_between_recycler_view_and_dividers" android:clipToPadding="false" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+</LinearLayout>
