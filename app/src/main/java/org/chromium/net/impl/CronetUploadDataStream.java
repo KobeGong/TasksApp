@@ -3,6 +3,8 @@ package org.chromium.net.impl;
 import java.nio.ByteBuffer;
 import org.chromium.base.annotations.CalledByNative;
 
+import defpackage.ehw;
+
 /* compiled from: PG */
 public final class CronetUploadDataStream extends ehw {
     private final native long nativeAttachUploadDataToRequest(long j, long j2);

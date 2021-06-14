@@ -10,7 +10,7 @@ import java.util.List;
 
 /* renamed from: ceo  reason: default package */
 /* compiled from: PG */
-public final class ceo extends aet {
+public final class ceo extends Adapter {
     public final cdl a;
     public final cer b;
     public int c;
@@ -49,22 +49,22 @@ public final class ceo extends aet {
     }
 
     @Override // defpackage.aet
-    public final int b(int i2) {
+    public final int getItemViewType(int i2) {
         int d = d();
         return i2 < d ? R.id.view_type_account : this.j.keyAt(i2 - d);
     }
 
     @Override // defpackage.aet
-    public final afv a(ViewGroup viewGroup, int i2) {
+    public final ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i2) {
         ces ces = (ces) this.j.get(i2);
         if (ces != null) {
-            return new afv(this.g, viewGroup, ces);
+            return new ViewHolder(this.g, viewGroup, ces);
         }
         return new cew(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.account_list_item, viewGroup, false), this.i, this.h);
     }
 
     @Override // defpackage.aet
-    public final void a(afv afv, int i2) {
+    public final void onBindViewHolder(ViewHolder afv, int i2) {
         Object obj;
         if (i2 < d()) {
             cew cew = (cew) afv;
@@ -80,7 +80,7 @@ public final class ceo extends aet {
     }
 
     @Override // defpackage.aet
-    public final int a() {
+    public final int getCount() {
         return d() + this.j.size();
     }
 

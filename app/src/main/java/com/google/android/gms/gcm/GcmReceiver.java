@@ -9,6 +9,8 @@ import android.os.Build;
 import android.util.Base64;
 import android.util.Log;
 
+import defpackage.ok;
+
 /* compiled from: PG */
 public class GcmReceiver extends ok {
     private static bid a;

@@ -13,7 +13,7 @@ import java.util.Calendar;
 
 /* renamed from: atx  reason: default package */
 /* compiled from: PG */
-final class atx extends afv {
+final class atx extends ViewHolder {
     private static Drawable D;
     public boolean A;
     public float B;
@@ -36,7 +36,8 @@ final class atx extends afv {
 
     /* JADX WARNING: Illegal instructions before constructor call */
     /* Code decompiled incorrectly, please refer to instructions dump. */
-    public atx(com.google.android.apps.tasks.ui.taskslist.TaskItemFrameLayout r5, android.view.View r6, android.widget.TextView r7) {
+    public atx(TaskItemFrameLayout r5, android.view.View r6, android.widget.TextView r7) {
+        super(r5);
         /*
         // Method dump skipped, instructions count: 214
         */
@@ -93,7 +94,7 @@ final class atx extends afv {
             if (this.r.getParent() != null) {
                 ((ViewGroup) this.r.getParent()).removeView(this.r);
             }
-            this.r.setText(this.r.getContext().getResources().getQuantityString(R.plurals.task_num_dragged_subtasks, i, Integer.valueOf(i)));
+            this.r.setText(this.r.getContext().getResources().getQuantityString(R.plurals.task_num_dragged_subtasks, i, i));
             this.p.addView(this.r, new FrameLayout.LayoutParams(-2, -2, 8388661));
             this.r.setVisibility(0);
             this.r.setAlpha(0.0f);
@@ -107,17 +108,17 @@ final class atx extends afv {
             long j = -a;
             if (j < 7) {
                 int i = (int) j;
-                return this.s.getResources().getQuantityString(R.plurals.task_overdue_days, i, Integer.valueOf(i));
+                return this.s.getResources().getQuantityString(R.plurals.task_overdue_days, i, i);
             }
             int i2 = (int) (j / 7);
-            return this.s.getResources().getQuantityString(R.plurals.task_overdue_weeks, i2, Integer.valueOf(i2));
+            return this.s.getResources().getQuantityString(R.plurals.task_overdue_weeks, i2, i2);
         } else if (a == 0) {
             return this.s.getResources().getString(R.string.task_due_today);
         } else {
             if (a == 1) {
                 return this.s.getContext().getString(R.string.task_due_tomorrow);
             }
-            return this.s.getContext().getString(R.string.task_due_date, Long.valueOf(calendar.getTimeInMillis()));
+            return this.s.getContext().getString(R.string.task_due_date, calendar.getTimeInMillis());
         }
     }
 

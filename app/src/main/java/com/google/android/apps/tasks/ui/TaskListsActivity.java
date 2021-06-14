@@ -33,6 +33,56 @@ import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.Executor;
 
+import defpackage.ain;
+import defpackage.ajd;
+import defpackage.alh;
+import defpackage.alu;
+import defpackage.any;
+import defpackage.aoe;
+import defpackage.aoh;
+import defpackage.aou;
+import defpackage.aov;
+import defpackage.aow;
+import defpackage.aph;
+import defpackage.apm;
+import defpackage.apn;
+import defpackage.apo;
+import defpackage.aps;
+import defpackage.apt;
+import defpackage.apu;
+import defpackage.apw;
+import defpackage.aqa;
+import defpackage.aql;
+import defpackage.arv;
+import defpackage.asi;
+import defpackage.atf;
+import defpackage.auj;
+import defpackage.ayp;
+import defpackage.ayq;
+import defpackage.azb;
+import defpackage.baw;
+import defpackage.bg;
+import defpackage.cdc;
+import defpackage.cde;
+import defpackage.cdj;
+import defpackage.cdl;
+import defpackage.cdm;
+import defpackage.cdu;
+import defpackage.cub;
+import defpackage.dby;
+import defpackage.dca;
+import defpackage.dcb;
+import defpackage.dcd;
+import defpackage.dih;
+import defpackage.dii;
+import defpackage.ez;
+import defpackage.fr;
+import defpackage.ft;
+import defpackage.ha;
+import defpackage.lc;
+import defpackage.sn;
+import defpackage.wl;
+
 /* compiled from: PG */
 public class TaskListsActivity extends aql implements alh, DatePickerDialog.OnDateSetListener, aop, aqi, ash, atf, aux, ays {
     private wl A;
@@ -278,8 +328,8 @@ public class TaskListsActivity extends aql implements alh, DatePickerDialog.OnDa
                 dby = (dby) dih3;
             }
             dby a = auj.N().a(auj.X, dby, 0, (String) null);
-            boolean z3 = auj.W.a() == 0;
-            atg atg = auj.W;
+            boolean z3 = auj.taskAdapter.getCount() == 0;
+            atg atg = auj.taskAdapter;
             if (!ajd.a(a)) {
                 z2 = true;
             }
@@ -289,7 +339,7 @@ public class TaskListsActivity extends aql implements alh, DatePickerDialog.OnDa
             if (z3) {
                 auj.c(true);
             }
-            auj.b.c(auj.W.a(a));
+            auj.tasksListView.c(auj.taskAdapter.a(a));
         }
     }
 
@@ -1001,7 +1051,7 @@ public class TaskListsActivity extends aql implements alh, DatePickerDialog.OnDa
                 if (z2) {
                     auj auj2 = this.i;
                     if (auj2.O()) {
-                        auj2.W.b(str5);
+                        auj2.taskAdapter.b(str5);
                         auj2.c(true);
                     }
                 }

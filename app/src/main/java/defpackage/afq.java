@@ -11,7 +11,7 @@ public final class afq extends rl {
 
     afq(Parcel parcel, ClassLoader classLoader) {
         super(parcel, classLoader);
-        this.a = parcel.readParcelable(classLoader == null ? afd.class.getClassLoader() : classLoader);
+        this.a = parcel.readParcelable(classLoader == null ? LayoutManager.class.getClassLoader() : classLoader);
     }
 
     public afq(Parcelable parcelable) {

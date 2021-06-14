@@ -5,9 +5,9 @@ import android.view.View;
 /* access modifiers changed from: package-private */
 /* renamed from: ath  reason: default package */
 public final /* synthetic */ class ath implements View.OnClickListener {
-    private final atg a;
+    private final SortableAdapter a;
 
-    ath(atg atg) {
+    ath(SortableAdapter atg) {
         this.a = atg;
     }
 

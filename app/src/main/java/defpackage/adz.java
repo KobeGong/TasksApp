@@ -34,7 +34,7 @@ final class adz {
                 view2 = view4;
                 break;
             }
-            view2 = ((afv) this.j.get(i4)).a;
+            view2 = ((ViewHolder) this.j.get(i4)).a;
             afh afh = (afh) view2.getLayoutParams();
             if (view2 != view && !afh.a.m() && (i2 = (afh.a.c() - this.d) * this.e) >= 0 && i2 < i3) {
                 if (i2 == 0) {

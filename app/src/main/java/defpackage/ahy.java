@@ -16,11 +16,11 @@ public abstract class ahy {
     private static final Interpolator c = new aia();
     private int d = -1;
 
-    public abstract int a(afv afv);
+    public abstract int a(ViewHolder afv);
 
-    public abstract void a(afv afv, int i);
+    public abstract void a(ViewHolder afv, int i);
 
-    public abstract boolean a(afv afv, afv afv2);
+    public abstract boolean a(ViewHolder afv, ViewHolder afv2);
 
     public static int a(int i, int i2) {
         int i3 = i & 789516;
@@ -51,7 +51,7 @@ public abstract class ahy {
     }
 
     /* access modifiers changed from: package-private */
-    public final int a(RecyclerView recyclerView, afv afv) {
+    public final int a(RecyclerView recyclerView, ViewHolder afv) {
         return c(a(afv), sn.a.j(recyclerView));
     }
 
@@ -87,13 +87,13 @@ public abstract class ahy {
         return f;
     }
 
-    public static afv a(afv afv, List list, int i, int i2) {
-        afv afv2;
+    public static ViewHolder a(ViewHolder afv, List list, int i, int i2) {
+        ViewHolder afv2;
         int i3;
         int i4;
         int i5;
         int i6;
-        afv afv3;
+        ViewHolder afv3;
         int bottom;
         int abs;
         int top;
@@ -102,14 +102,14 @@ public abstract class ahy {
         int abs2;
         int width = i + afv.a.getWidth();
         int height = i2 + afv.a.getHeight();
-        afv afv4 = null;
+        ViewHolder afv4 = null;
         int i7 = -1;
         int left2 = i - afv.a.getLeft();
         int top2 = i2 - afv.a.getTop();
         int size = list.size();
         int i8 = 0;
         while (i8 < size) {
-            afv afv5 = (afv) list.get(i8);
+            ViewHolder afv5 = (ViewHolder) list.get(i8);
             if (left2 <= 0 || (right = afv5.a.getRight() - width) >= 0 || afv5.a.getRight() <= afv.a.getRight() || (abs2 = Math.abs(right)) <= i7) {
                 afv2 = afv4;
                 i3 = i7;
@@ -141,14 +141,14 @@ public abstract class ahy {
         return afv4;
     }
 
-    public void b(afv afv, int i) {
+    public void b(ViewHolder afv, int i) {
         if (afv != null) {
             View view = afv.a;
         }
     }
 
-    public static void a(RecyclerView recyclerView, afv afv, afv afv2, int i) {
-        afd afd = recyclerView.l;
+    public static void a(RecyclerView recyclerView, ViewHolder afv, ViewHolder afv2, int i) {
+        LayoutManager afd = recyclerView.layoutManager;
         if (afd instanceof aif) {
             ((aif) afd).a(afv.a, afv2.a);
             return;
@@ -171,15 +171,15 @@ public abstract class ahy {
         }
     }
 
-    public void b(RecyclerView recyclerView, afv afv) {
+    public void b(RecyclerView recyclerView, ViewHolder afv) {
         a.a(afv.a);
     }
 
-    public void a(Canvas canvas, RecyclerView recyclerView, afv afv, float f, float f2, int i, boolean z) {
+    public void a(Canvas canvas, RecyclerView recyclerView, ViewHolder afv, float f, float f2, int i, boolean z) {
         a.a(canvas, recyclerView, afv.a, f, f2, i, z);
     }
 
-    public static void b(afv afv) {
+    public static void b(ViewHolder afv) {
         View view = afv.a;
     }
 

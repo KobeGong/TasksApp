@@ -77,7 +77,7 @@ public abstract class cff extends LinearLayout {
         RecyclerView recyclerView = accountMenuBodyView.a;
         cky.a((Object) recyclerView);
         recyclerView.getContext();
-        recyclerView.a(new adw());
+        recyclerView.setLayoutManager(new LinearLayoutManager());
         Context context = recyclerView.getContext();
         Context context2 = recyclerView.getContext();
         cdh c2 = cdj.c();
@@ -100,7 +100,7 @@ public abstract class cff extends LinearLayout {
             arrayList.add(ces);
         }
         ceo ceo = new ceo(context, cei2, cdj, arrayList, cer);
-        recyclerView.a(ceo);
+        recyclerView.setAdapter(ceo);
         if (sn.a.s(recyclerView)) {
             cdm.a(recyclerView, ceo);
         }

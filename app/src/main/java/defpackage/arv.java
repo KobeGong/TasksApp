@@ -15,8 +15,8 @@ public final class arv extends arb {
 
     @Override // defpackage.lc
     public final View a(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        View inflate = layoutInflater.inflate(R.layout.edit_list_fragment, (ViewGroup) null);
-        this.a = (EditText) inflate.findViewById(R.id.edit_list_title);
+        View inflate = layoutInflater.inflate(com.google.android.apps.tasks.R.layout.edit_list_fragment, (ViewGroup) null);
+        this.a = (EditText) inflate.findViewById(com.google.android.apps.tasks.R.id.edit_list_title);
         a(new arw(this));
         return inflate;
     }

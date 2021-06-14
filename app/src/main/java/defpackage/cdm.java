@@ -78,7 +78,7 @@ public class cdm {
         if (!Boolean.TRUE.equals(recyclerView.getTag(R.id.tag_recycler_view_model_observer_registered))) {
             ceo.a.a(ceo.f);
             ceo.b();
-            ceo.d.b();
+            ceo.mObservable.b();
             recyclerView.setTag(R.id.tag_recycler_view_model_observer_registered, true);
         }
     }

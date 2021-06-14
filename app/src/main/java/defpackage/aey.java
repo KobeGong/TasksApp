@@ -17,21 +17,21 @@ public abstract class aey {
 
     public abstract void a();
 
-    public abstract boolean a(afv afv, afb afb, afb afb2);
+    public abstract boolean a(ViewHolder afv, afb afb, afb afb2);
 
-    public abstract boolean a(afv afv, afv afv2, afb afb, afb afb2);
+    public abstract boolean a(ViewHolder afv, ViewHolder afv2, afb afb, afb afb2);
 
     public abstract boolean b();
 
-    public abstract boolean b(afv afv, afb afb, afb afb2);
+    public abstract boolean b(ViewHolder afv, afb afb, afb afb2);
 
-    public abstract void c(afv afv);
+    public abstract void c(ViewHolder afv);
 
-    public abstract boolean c(afv afv, afb afb, afb afb2);
+    public abstract boolean c(ViewHolder afv, afb afb, afb afb2);
 
     public abstract void d();
 
-    public static int d(afv afv) {
+    public static int d(ViewHolder afv) {
         int i2 = afv.j & 14;
         if (afv.j()) {
             return 4;
@@ -47,7 +47,7 @@ public abstract class aey {
         return i2 | 2048;
     }
 
-    public final void e(afv afv) {
+    public final void e(ViewHolder afv) {
         boolean z;
         boolean z2 = true;
         if (this.h != null) {
@@ -75,7 +75,7 @@ public abstract class aey {
                     z = false;
                 }
                 if (z) {
-                    afv c = RecyclerView.c(view);
+                    ViewHolder c = RecyclerView.c(view);
                     recyclerView.e.b(c);
                     recyclerView.e.a(c);
                 }
@@ -90,11 +90,11 @@ public abstract class aey {
         }
     }
 
-    public boolean f(afv afv) {
+    public boolean f(ViewHolder afv) {
         return true;
     }
 
-    public boolean a(afv afv, List list) {
+    public boolean a(ViewHolder afv, List list) {
         return f(afv);
     }
 

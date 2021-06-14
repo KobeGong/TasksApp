@@ -24,9 +24,9 @@ final class acu implements Runnable {
             int i2 = i + 1;
             adb adb = (adb) arrayList.get(i);
             acs acs = this.b;
-            afv afv = adb.a;
+            ViewHolder afv = adb.a;
             View view2 = afv == null ? null : afv.a;
-            afv afv2 = adb.b;
+            ViewHolder afv2 = adb.b;
             if (afv2 != null) {
                 view = afv2.a;
             } else {

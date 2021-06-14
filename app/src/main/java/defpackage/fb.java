@@ -45,7 +45,7 @@ public final class fb implements zt {
         if (this.e != null) {
             fd fdVar = this.e;
             fdVar.b();
-            fdVar.d.b();
+            fdVar.mObservable.b();
         }
     }
 

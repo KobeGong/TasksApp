@@ -38,6 +38,7 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /* renamed from: lp */
+//FragmentManagerImpl
 public final class lp extends ln implements LayoutInflater.Factory2 {
     private static final Interpolator C = new DecelerateInterpolator(2.5f);
     private static final Interpolator D = new DecelerateInterpolator(1.5f);

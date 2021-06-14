@@ -38,11 +38,11 @@ public final class afg {
         if (this.c != null) {
             Arrays.fill(this.c, -1);
         }
-        afd afd = recyclerView.l;
-        if (recyclerView.k != null && afd != null && afd.g) {
+        LayoutManager afd = recyclerView.layoutManager;
+        if (recyclerView.adapter != null && afd != null && afd.g) {
             if (z) {
                 if (!recyclerView.f.d()) {
-                    afd.a(recyclerView.k.a(), this);
+                    afd.a(recyclerView.adapter.getCount(), this);
                 }
             } else if (!recyclerView.n()) {
                 afd.a(this.a, this.b, recyclerView.D, this);

@@ -23,7 +23,7 @@ final class act implements Runnable {
             int i2 = i + 1;
             adc adc = (adc) arrayList.get(i);
             acs acs = this.b;
-            afv afv = adc.a;
+            ViewHolder afv = adc.a;
             int i3 = adc.b;
             int i4 = adc.c;
             int i5 = adc.d;

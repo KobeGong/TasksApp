@@ -9,9 +9,9 @@ import com.google.android.apps.tasks.R;
 /* renamed from: ati  reason: default package */
 /* compiled from: PG */
 public final class ati extends View.AccessibilityDelegate {
-    private final /* synthetic */ atg a;
+    private final /* synthetic */ SortableAdapter a;
 
-    ati(atg atg) {
+    ati(SortableAdapter atg) {
         this.a = atg;
     }
 

@@ -11,6 +11,6 @@ final /* synthetic */ class ato implements Comparator {
 
     @Override // java.util.Comparator
     public final int compare(Object obj, Object obj2) {
-        return atn.a((dby) obj, (dby) obj2);
+        return DateSortAdapter.a((dby) obj, (dby) obj2);
     }
 }

@@ -5,6 +5,11 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import com.google.android.apps.tasks.R;
 
+import defpackage.cpq;
+import defpackage.cpu;
+import defpackage.cpw;
+import defpackage.wm;
+
 /* compiled from: PG */
 public final class LicenseMenuActivity extends wm implements cpw {
     /* access modifiers changed from: protected */

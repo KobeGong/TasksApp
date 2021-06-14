@@ -3,7 +3,7 @@ package defpackage;
 /* renamed from: aug  reason: default package */
 /* compiled from: PG */
 public final class aug {
-    public final /* synthetic */ atg a;
+    public final /* synthetic */ SortableAdapter a;
 
     public final void a(int i, int i2, boolean z) {
         dby g;
@@ -35,7 +35,7 @@ public final class aug {
         }
     }
 
-    aug(atg atg) {
+    aug(SortableAdapter atg) {
         this.a = atg;
     }
 }

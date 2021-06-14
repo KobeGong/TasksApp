@@ -22,7 +22,7 @@ final class acv implements Runnable {
         while (i < size) {
             Object obj = arrayList.get(i);
             i++;
-            afv afv = (afv) obj;
+            ViewHolder afv = (ViewHolder) obj;
             acs acs = this.b;
             View view = afv.a;
             ViewPropertyAnimator animate = view.animate();

@@ -39,7 +39,7 @@ public class acs extends agp {
             while (i < size) {
                 Object obj = arrayList.get(i);
                 i++;
-                afv afv = (afv) obj;
+                ViewHolder afv = (ViewHolder) obj;
                 View view = afv.a;
                 ViewPropertyAnimator animate = view.animate();
                 this.f.add(afv);
@@ -92,7 +92,7 @@ public class acs extends agp {
                     } else {
                         j3 = 0;
                     }
-                    sn.a(((afv) arrayList4.get(0)).a, acv, j + Math.max(j2, j3));
+                    sn.a(((ViewHolder) arrayList4.get(0)).a, acv, j + Math.max(j2, j3));
                     return;
                 }
                 acv.run();
@@ -101,14 +101,14 @@ public class acs extends agp {
     }
 
     @Override // defpackage.agp
-    public final boolean a(afv afv) {
+    public final boolean a(ViewHolder afv) {
         g(afv);
         this.n.add(afv);
         return true;
     }
 
     @Override // defpackage.agp
-    public final boolean b(afv afv) {
+    public final boolean b(ViewHolder afv) {
         g(afv);
         afv.a.setAlpha(0.0f);
         this.o.add(afv);
@@ -116,7 +116,7 @@ public class acs extends agp {
     }
 
     @Override // defpackage.agp
-    public final boolean a(afv afv, int i, int i2, int i3, int i4) {
+    public final boolean a(ViewHolder afv, int i, int i2, int i3, int i4) {
         View view = afv.a;
         int translationX = i + ((int) afv.a.getTranslationX());
         int translationY = i2 + ((int) afv.a.getTranslationY());
@@ -138,7 +138,7 @@ public class acs extends agp {
     }
 
     @Override // defpackage.agp
-    public final boolean a(afv afv, afv afv2, int i, int i2, int i3, int i4) {
+    public final boolean a(ViewHolder afv, ViewHolder afv2, int i, int i2, int i3, int i4) {
         if (afv == afv2) {
             return a(afv, i, i2, i3, i4);
         }
@@ -161,7 +161,7 @@ public class acs extends agp {
         return true;
     }
 
-    private final void a(List list, afv afv) {
+    private final void a(List list, ViewHolder afv) {
         for (int size = list.size() - 1; size >= 0; size--) {
             adb adb = (adb) list.get(size);
             if (a(adb, afv) && adb.a == null && adb.b == null) {
@@ -179,7 +179,7 @@ public class acs extends agp {
         }
     }
 
-    private final boolean a(adb adb, afv afv) {
+    private final boolean a(adb adb, ViewHolder afv) {
         if (adb.b == afv) {
             adb.b = null;
         } else if (adb.a != afv) {
@@ -195,7 +195,7 @@ public class acs extends agp {
     }
 
     @Override // defpackage.aey
-    public final void c(afv afv) {
+    public final void c(ViewHolder afv) {
         View view = afv.a;
         view.animate().cancel();
         for (int size = this.p.size() - 1; size >= 0; size--) {
@@ -258,7 +258,7 @@ public class acs extends agp {
         c();
     }
 
-    private final void g(afv afv) {
+    private final void g(ViewHolder afv) {
         if (m == null) {
             m = new ValueAnimator().getInterpolator();
         }
@@ -289,11 +289,11 @@ public class acs extends agp {
             this.p.remove(size);
         }
         for (int size2 = this.n.size() - 1; size2 >= 0; size2--) {
-            e((afv) this.n.get(size2));
+            e((ViewHolder) this.n.get(size2));
             this.n.remove(size2);
         }
         for (int size3 = this.o.size() - 1; size3 >= 0; size3--) {
-            afv afv = (afv) this.o.get(size3);
+            ViewHolder afv = (ViewHolder) this.o.get(size3);
             afv.a.setAlpha(1.0f);
             e(afv);
             this.o.remove(size3);
@@ -320,7 +320,7 @@ public class acs extends agp {
             for (int size7 = this.a.size() - 1; size7 >= 0; size7--) {
                 ArrayList arrayList2 = (ArrayList) this.a.get(size7);
                 for (int size8 = arrayList2.size() - 1; size8 >= 0; size8--) {
-                    afv afv2 = (afv) arrayList2.get(size8);
+                    ViewHolder afv2 = (ViewHolder) arrayList2.get(size8);
                     afv2.a.setAlpha(1.0f);
                     e(afv2);
                     arrayList2.remove(size8);
@@ -348,12 +348,12 @@ public class acs extends agp {
 
     private static void a(List list) {
         for (int size = list.size() - 1; size >= 0; size--) {
-            ((afv) list.get(size)).a.animate().cancel();
+            ((ViewHolder) list.get(size)).a.animate().cancel();
         }
     }
 
     @Override // defpackage.aey
-    public final boolean a(afv afv, List list) {
+    public final boolean a(ViewHolder afv, List list) {
         return !list.isEmpty() || super.a(afv, list);
     }
 }

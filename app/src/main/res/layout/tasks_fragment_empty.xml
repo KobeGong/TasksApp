@@ -1,17 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
 <merge xmlns:android="http://schemas.android.com/apk/res/android">
-    <FrameLayout android:paddingBottom="@dimen/app_bar_expanded_height" android:layout_width="match_parent" android:layout_height="wrap_content">
-        <LinearLayout android:gravity="center_horizontal" android:layout_gravity="center" android:orientation="vertical" android:id="@+id/empty_view" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/empty_task_list_spacing_start" android:layout_marginRight="@dimen/empty_task_list_spacing_end">
-            <ImageView android:layout_width="@dimen/empty_task_list_max_image_size" android:layout_height="wrap_content" android:layout_marginTop="@dimen/empty_task_list_spacing_top" android:layout_marginBottom="@dimen/empty_task_list_spacing_image_bottom" android:src="@mipmap/zerostate_mobile" android:scaleType="fitXY" android:adjustViewBounds="true"/>
-            <TextView android:textAppearance="@style/GenericTitleTextAppearance" android:gravity="center" android:layout_gravity="center" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/empty_task_list_spacing_in_between" android:text="@string/zero_state_header"/>
-            <TextView android:textAppearance="@style/GenericDescriptionTextAppearance" android:gravity="center" android:layout_gravity="center" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/empty_task_list_spacing_bottom" android:text="@string/zero_state_body"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/app_bar_expanded_height">
+
+        <LinearLayout
+            android:id="@+id/empty_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/empty_task_list_spacing_start"
+            android:layout_marginRight="@dimen/empty_task_list_spacing_end"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/empty_task_list_max_image_size"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/empty_task_list_spacing_top"
+                android:layout_marginBottom="@dimen/empty_task_list_spacing_image_bottom"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@mipmap/zerostate_mobile" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/empty_task_list_spacing_in_between"
+                android:gravity="center"
+                android:text="@string/zero_state_header"
+                android:textAppearance="@style/GenericTitleTextAppearance" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/empty_task_list_spacing_bottom"
+                android:gravity="center"
+                android:text="@string/zero_state_body"
+                android:textAppearance="@style/GenericDescriptionTextAppearance" />
         </LinearLayout>
-        <ImageView android:layout_gravity="center" android:id="@+id/tasks_not_synced" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@mipmap/offline_mobile" android:adjustViewBounds="true" android:contentDescription="@string/tasks_not_synced"/>
-        <LinearLayout android:gravity="center_horizontal" android:layout_gravity="center" android:orientation="vertical" android:id="@+id/too_many_subtask_levels" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/flatten_spacing_start" android:layout_marginRight="@dimen/flatten_spacing_end">
-            <ImageView android:layout_width="@dimen/flatten_max_image_size" android:layout_height="wrap_content" android:layout_marginTop="@dimen/flatten_spacing_top" android:layout_marginBottom="@dimen/flatten_spacing_image_bottom" android:src="@mipmap/flattening_image" android:scaleType="fitXY" android:adjustViewBounds="true"/>
-            <TextView android:textAppearance="@style/GenericTitleTextAppearance" android:gravity="center" android:layout_gravity="center" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/flatten_spacing_in_between" android:text="@string/tasks_flatten_list_title"/>
-            <TextView android:textAppearance="@style/GenericDescriptionTextAppearance" android:gravity="center" android:layout_gravity="center" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/flatten_spacing_in_between" android:text="@string/tasks_flatten_list_description"/>
-            <android.support.design.button.MaterialButton android:layout_gravity="center" android:id="@+id/flatten_subtasks" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/flatten_spacing_bottom" android:text="@string/tasks_flatten_list_action" style="@style/TextButton"/>
+
+        <ImageView
+            android:id="@+id/tasks_not_synced"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/tasks_not_synced"
+            android:src="@mipmap/offline_mobile" />
+
+        <LinearLayout
+            android:id="@+id/too_many_subtask_levels"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/flatten_spacing_start"
+            android:layout_marginRight="@dimen/flatten_spacing_end"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/flatten_max_image_size"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/flatten_spacing_top"
+                android:layout_marginBottom="@dimen/flatten_spacing_image_bottom"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@mipmap/flattening_image" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/flatten_spacing_in_between"
+                android:gravity="center"
+                android:text="@string/tasks_flatten_list_title"
+                android:textAppearance="@style/GenericTitleTextAppearance" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/flatten_spacing_in_between"
+                android:gravity="center"
+                android:text="@string/tasks_flatten_list_description"
+                android:textAppearance="@style/GenericDescriptionTextAppearance" />
+
+            <android.support.design.button.MaterialButton
+                android:id="@+id/flatten_subtasks"
+                style="@style/TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/flatten_spacing_bottom"
+                android:text="@string/tasks_flatten_list_action" />
         </LinearLayout>
     </FrameLayout>
 </merge>

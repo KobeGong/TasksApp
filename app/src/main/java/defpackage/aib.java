@@ -21,7 +21,7 @@ public final class aib extends GestureDetector.SimpleOnGestureListener {
 
     public final void onLongPress(MotionEvent motionEvent) {
         View a2;
-        afv a3;
+        ViewHolder a3;
         if (this.a && (a2 = this.b.a(motionEvent)) != null && (a3 = this.b.o.a(a2)) != null) {
             if (((this.b.j.a(this.b.o, a3) & 16711680) != 0) && motionEvent.getPointerId(0) == this.b.i) {
                 int findPointerIndex = motionEvent.findPointerIndex(this.b.i);

@@ -1,13 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:background="@color/taskBackground" android:layout_width="match_parent" android:layout_height="wrap_content">
-    <LinearLayout android:orientation="vertical" android:id="@+id/task_data" android:paddingTop="@dimen/task_default_margin" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/task_field_left_margin" android:layout_marginRight="@dimen/task_field_right_margin" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0">
-        <TextView android:ellipsize="end" android:id="@+id/task_task_list" android:layout_width="match_parent" android:layout_height="wrap_content" android:maxLines="1" style="@style/TaskDueDate"/>
-        <TextView android:id="@+id/task_name" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="@dimen/task_item_title_min_height"/>
-        <TextView android:id="@+id/task_link" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/task_link" style="@style/TaskLink"/>
-        <TextView android:ellipsize="end" android:id="@+id/task_details" android:layout_width="match_parent" android:layout_height="wrap_content" android:maxLines="1" style="@style/TaskDueDate"/>
-        <TextView android:id="@+id/task_due_date" android:layout_width="match_parent" android:layout_height="wrap_content" style="@style/TaskDueDate"/>
-        <View android:id="@+id/task_bottom_border" android:layout_width="match_parent" android:layout_height="@dimen/task_default_margin"/>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/taskBackground">
+
+    <LinearLayout
+        android:id="@+id/task_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/task_field_left_margin"
+        android:layout_marginRight="@dimen/task_field_right_margin"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/task_default_margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/task_task_list"
+            style="@style/TaskDueDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1" />
+
+        <TextView
+            android:id="@+id/task_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/task_item_title_min_height" />
+
+        <TextView
+            android:id="@+id/task_link"
+            style="@style/TaskLink"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/task_link" />
+
+        <TextView
+            android:id="@+id/task_details"
+            style="@style/TaskDueDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1" />
+
+        <TextView
+            android:id="@+id/task_due_date"
+            style="@style/TaskDueDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:id="@+id/task_bottom_border"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/task_default_margin" />
     </LinearLayout>
-    <com.google.android.apps.tasks.ui.components.FancyCheckboxView android:id="@+id/task_completed" android:paddingLeft="@dimen/task_padding_start" android:paddingTop="1dp" android:paddingRight="@dimen/task_padding_start" android:paddingBottom="1dp" android:layout_width="@dimen/task_field_left_margin" android:layout_height="26dp" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0"/>
-    <View android:background="@color/drawerSeparatorColor" android:layout_width="match_parent" android:layout_height="@dimen/default_separator_height" app:layout_constraintBottom_toBottomOf="0"/>
+
+    <com.google.android.apps.tasks.ui.components.FancyCheckboxView
+        android:id="@+id/task_completed"
+        android:layout_width="@dimen/task_field_left_margin"
+        android:layout_height="26dp"
+        android:paddingLeft="@dimen/task_padding_start"
+        android:paddingTop="1dp"
+        android:paddingRight="@dimen/task_padding_start"
+        android:paddingBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/default_separator_height"
+        android:background="@color/drawerSeparatorColor"
+        app:layout_constraintBottom_toBottomOf="parent" />
 </android.support.constraint.ConstraintLayout>

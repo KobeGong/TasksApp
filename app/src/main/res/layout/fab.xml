@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merge xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <android.support.design.button.MaterialButton android:id="@+id/fab" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/fab_text" android:contentDescription="@string/a11y_fab" app:layout_anchor="@+id/bottom_app_bar" app:layout_anchorGravity="31" style="@style/Fab"/>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.design.button.MaterialButton
+        android:id="@+id/fab"
+        style="@style/Fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/a11y_fab"
+        android:text="@string/fab_text"
+        android:visibility="invisible"
+        app:layout_anchor="@+id/bottom_app_bar"
+        app:layout_anchorGravity="top|center_horizontal" />
 </merge>

@@ -18,7 +18,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.google.android.apps.tasks.R;
+
 import com.google.android.apps.tasks.common.TaskApplication;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -32,13 +32,13 @@ public final class auj extends lc implements DatePickerDialog.OnDateSetListener 
     private static Boolean ac;
     public View U;
     public Button V;
-    public atg W;
+    public SortableAdapter taskAdapter;
     public String X;
     public ajr Y = aa;
     public String Z;
-    public View a;
-    private SwipeRefreshLayout ad;
-    private SwipeRefreshLayout ae;
+    public View rootView;
+    private SwipeRefreshLayout tasksRefresh;
+    private SwipeRefreshLayout tasksRefreshEmpty;
     private NestedScrollView af;
     private View ag;
     private View ah;
@@ -47,29 +47,29 @@ public final class auj extends lc implements DatePickerDialog.OnDateSetListener 
     private boolean ak = false;
     private alu al;
     private att am;
-    public RecyclerView b;
+    public RecyclerView tasksListView;
 
     @Override // defpackage.lc
     public final View a(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         Boolean bool;
-        this.a = layoutInflater.inflate(R.layout.tasks_fragment, (ViewGroup) null);
-        this.ad = (SwipeRefreshLayout) this.a.findViewById(R.id.tasks_refresh);
-        this.ae = (SwipeRefreshLayout) this.a.findViewById(R.id.tasks_refresh_empty);
-        this.b = (RecyclerView) this.a.findViewById(R.id.tasks_list);
-        if (this.W != null) {
-            bool = Boolean.valueOf(this.W.c);
+        this.rootView = layoutInflater.inflate(com.google.android.apps.tasks.R.layout.tasks_fragment, (ViewGroup) null);
+        this.tasksRefresh = (SwipeRefreshLayout) this.rootView.findViewById(com.google.android.apps.tasks.R.id.tasks_refresh);
+        this.tasksRefreshEmpty = (SwipeRefreshLayout) this.rootView.findViewById(com.google.android.apps.tasks.R.id.tasks_refresh_empty);
+        this.tasksListView = (RecyclerView) this.rootView.findViewById(com.google.android.apps.tasks.R.id.tasks_list);
+        if (this.taskAdapter != null) {
+            bool = this.taskAdapter.c;
         } else {
             bool = null;
         }
-        this.W = null;
-        this.ag = this.a.findViewById(R.id.empty_view);
-        this.U = this.a.findViewById(R.id.tasks_not_synced);
-        this.ah = this.a.findViewById(R.id.too_many_subtask_levels);
-        this.V = (Button) this.a.findViewById(R.id.flatten_subtasks);
-        this.ad.a = new auk(this);
-        this.ae.a = new aul(this);
-        this.b.a(new adw());
-        RecyclerView recyclerView = this.b;
+        this.taskAdapter = null;
+        this.ag = this.rootView.findViewById(com.google.android.apps.tasks.R.id.empty_view);
+        this.U = this.rootView.findViewById(com.google.android.apps.tasks.R.id.tasks_not_synced);
+        this.ah = this.rootView.findViewById(com.google.android.apps.tasks.R.id.too_many_subtask_levels);
+        this.V = (Button) this.rootView.findViewById(com.google.android.apps.tasks.R.id.flatten_subtasks);
+        this.tasksRefresh.a = new auk(this);
+        this.tasksRefreshEmpty.a = new aul(this);
+        this.tasksListView.setLayoutManager(new LinearLayoutManager());
+        RecyclerView recyclerView = this.tasksListView;
         auu auu = new auu(this);
         if (recyclerView.z != null) {
             recyclerView.z.d();
@@ -84,28 +84,28 @@ public final class auj extends lc implements DatePickerDialog.OnDateSetListener 
             ac = Boolean.valueOf(Settings.System.getInt(i().getContentResolver(), "haptic_feedback_enabled", 1) != 0);
             ab = (Vibrator) i().getSystemService("vibrator");
         }
-        this.am = new att(ob.c(i(), R.color.task_complete_swipe_background), ob.c(i(), R.color.task_snooze_swipe_background), this.b.z.j);
-        this.b.a(this.am);
-        this.b.a(new ats(i()));
-        this.af = (NestedScrollView) this.a.findViewById(R.id.tasks_refresh_empty_scrollable);
+        this.am = new att(ob.c(i(), com.google.android.apps.tasks.R.color.task_complete_swipe_background), ob.c(i(), com.google.android.apps.tasks.R.color.task_snooze_swipe_background), this.tasksListView.z.j);
+        this.tasksListView.a(this.am);
+        this.tasksListView.a(new ats(i()));
+        this.af = (NestedScrollView) this.rootView.findViewById(com.google.android.apps.tasks.R.id.tasks_refresh_empty_scrollable);
         this.al = new auv(this);
         a(this.X, this.Y, false);
-        this.b.a(new auy(this.b));
-        if (!(bool == null || this.W == null)) {
-            this.W.a(bool.booleanValue());
+        this.tasksListView.a(new auy(this.tasksListView));
+        if (!(bool == null || this.taskAdapter == null)) {
+            this.taskAdapter.a(bool.booleanValue());
         }
         if (bundle != null) {
             Parcelable parcelable = bundle.getParcelable("taskListsLayout");
             if (parcelable != null) {
-                this.b.l.a(parcelable);
+                this.tasksListView.layoutManager.a(parcelable);
             }
-            if (this.W != null) {
-                this.W.a(bundle.getBoolean("completedExpanded", this.W.c));
+            if (this.taskAdapter != null) {
+                this.taskAdapter.a(bundle.getBoolean("completedExpanded", this.taskAdapter.c));
             }
         }
-        this.b.a(new auw(this));
+        this.tasksListView.a(new auw(this));
         this.af.a = new bdk(this);
-        return this.a;
+        return this.rootView;
     }
 
     public final void b(View view) {
@@ -145,43 +145,43 @@ public final class auj extends lc implements DatePickerDialog.OnDateSetListener 
         this.X = str;
         this.Y = ajr;
         if (O()) {
-            if (z4 || this.W == null) {
-                if (this.W != null) {
-                    this.W.f = null;
+            if (z4 || this.taskAdapter == null) {
+                if (this.taskAdapter != null) {
+                    this.taskAdapter.f = null;
                 }
                 if (this.Y == ajr.BY_DUE_DATE) {
-                    this.W = new atn();
+                    this.taskAdapter = new DateSortAdapter();
                 } else {
-                    this.W = new atv();
+                    this.taskAdapter = new MySortAdapter();
                 }
-                atg atg = this.W;
-                RecyclerView recyclerView = this.b;
-                LayoutInflater from = LayoutInflater.from(this.a.getContext());
+                SortableAdapter atg = this.taskAdapter;
+                RecyclerView recyclerView = this.tasksListView;
+                LayoutInflater from = LayoutInflater.from(this.rootView.getContext());
                 if (atg.h == null) {
-                    atg.h = from.inflate(R.layout.completed_header, (ViewGroup) recyclerView, false);
-                    atg.j = (TextView) atg.h.findViewById(R.id.completed_count);
-                    atg.k = (ImageView) atg.h.findViewById(R.id.expand);
-                    atg.k.setImageResource(R.drawable.quantum_ic_stat_minus_1_grey600_24);
-                    atg.i = atg.h.findViewById(R.id.completed_header);
+                    atg.h = from.inflate(com.google.android.apps.tasks.R.layout.completed_header, (ViewGroup) recyclerView, false);
+                    atg.j = (TextView) atg.h.findViewById(com.google.android.apps.tasks.R.id.completed_count);
+                    atg.k = (ImageView) atg.h.findViewById(com.google.android.apps.tasks.R.id.expand);
+                    atg.k.setImageResource(com.google.android.apps.tasks.R.drawable.quantum_ic_stat_minus_1_grey600_24);
+                    atg.i = atg.h.findViewById(com.google.android.apps.tasks.R.id.completed_header);
                     atg.i.setOnClickListener(new ath(atg));
                     if (atg.g == null) {
                         atg.g = new atj(atg);
                     }
                     atg.f();
-                    atg.l = (TextView) from.inflate(R.layout.task_drag_num_subtasks, (ViewGroup) recyclerView, false);
+                    atg.l = (TextView) from.inflate(com.google.android.apps.tasks.R.layout.task_drag_num_subtasks, (ViewGroup) recyclerView, false);
                 }
                 if (this.ai != null) {
-                    RecyclerView recyclerView2 = new RecyclerView(this.a.getContext());
-                    this.a.getContext();
-                    recyclerView2.a(new adw());
+                    RecyclerView recyclerView2 = new RecyclerView(this.rootView.getContext());
+                    this.rootView.getContext();
+                    recyclerView2.setLayoutManager(new LinearLayoutManager());
                     this.ai.a(recyclerView2);
                 }
-                this.b.a(this.W);
-                auh auh = new auh(this.W, ac.booleanValue() ? ab : null, this.a.getResources().getDimension(R.dimen.task_item_subtask_start_spacing), this.am);
+                this.tasksListView.setAdapter(this.taskAdapter);
+                auh auh = new auh(this.taskAdapter, ac ? ab : null, this.rootView.getResources().getDimension(com.google.android.apps.tasks.R.dimen.task_item_subtask_start_spacing), this.am);
                 this.ai = new aht(auh);
-                this.ai.a(this.b);
-                this.b.setOnTouchListener(auh);
-                this.W.f = new atl(this);
+                this.ai.a(this.tasksListView);
+                this.tasksListView.setOnTouchListener(auh);
+                this.taskAdapter.f = new atl(this);
             }
             if (TextUtils.isEmpty(this.X)) {
                 d = ajq.d();
@@ -205,7 +205,7 @@ public final class auj extends lc implements DatePickerDialog.OnDateSetListener 
                 }
             }
             this.ak = z2;
-            atg atg2 = this.W;
+            SortableAdapter atg2 = this.taskAdapter;
             atg2.b.clear();
             LinkedHashMap linkedHashMap = new LinkedHashMap();
             for (dby dby : d.a()) {
@@ -222,7 +222,7 @@ public final class auj extends lc implements DatePickerDialog.OnDateSetListener 
             }
             atg2.f();
             atg2.a(d);
-            atg2.d.b();
+            atg2.mObservable.b();
             atg2.g();
             this.aj = d.c();
             if (z3 && !TextUtils.isEmpty(this.X) && this.aj == 0) {
@@ -257,17 +257,17 @@ public final class auj extends lc implements DatePickerDialog.OnDateSetListener 
     @Override // defpackage.lc
     public final void d(Bundle bundle) {
         super.d(bundle);
-        bundle.putParcelable("taskListsLayout", this.b.l.c());
-        if (this.W != null) {
-            bundle.putBoolean("completedExpanded", this.W.c);
+        bundle.putParcelable("taskListsLayout", this.tasksListView.layoutManager.c());
+        if (this.taskAdapter != null) {
+            bundle.putBoolean("completedExpanded", this.taskAdapter.c);
         }
     }
 
     /* access modifiers changed from: package-private */
     public final void a(boolean z) {
         if (O()) {
-            this.ad.a(z);
-            this.ae.a(z);
+            this.tasksRefresh.a(z);
+            this.tasksRefreshEmpty.a(z);
         }
     }
 
@@ -294,7 +294,7 @@ public final class auj extends lc implements DatePickerDialog.OnDateSetListener 
             dby a2 = any.a().c().a(this.X, this.Z);
             if (a2 != null) {
                 any.a().c().a(this.X, this.Z, dmk);
-                atg atg = this.W;
+                SortableAdapter atg = this.taskAdapter;
                 dii dii = (dii) a2.a(bg.ao);
                 dii.a((dih) a2);
                 dii dii2 = dii;
@@ -348,7 +348,7 @@ public final class auj extends lc implements DatePickerDialog.OnDateSetListener 
         int i2 = 8;
         int i3 = 0;
         boolean isEmpty = TextUtils.isEmpty(this.X);
-        boolean z5 = this.W.a() == 0;
+        boolean z5 = this.taskAdapter.getCount() == 0;
         if (this.aj == 0) {
             z2 = true;
         } else {
@@ -359,14 +359,14 @@ public final class auj extends lc implements DatePickerDialog.OnDateSetListener 
         } else {
             z3 = false;
         }
-        SwipeRefreshLayout swipeRefreshLayout = this.ad;
+        SwipeRefreshLayout swipeRefreshLayout = this.tasksRefresh;
         if (!z3) {
             z4 = true;
         } else {
             z4 = false;
         }
         a(swipeRefreshLayout, z4, z);
-        a(this.ae, z3, z);
+        a(this.tasksRefreshEmpty, z3, z);
         if (z3) {
             if (isEmpty) {
                 i3 = 8;
@@ -388,7 +388,7 @@ public final class auj extends lc implements DatePickerDialog.OnDateSetListener 
             b((View) this.af);
             return;
         }
-        b((View) this.b);
+        b((View) this.tasksListView);
     }
 
     private static void a(View view, boolean z, boolean z2) {
@@ -421,7 +421,7 @@ public final class auj extends lc implements DatePickerDialog.OnDateSetListener 
     }
 
     public final boolean O() {
-        return this.a != null;
+        return this.rootView != null;
     }
 
     /* access modifiers changed from: package-private */

@@ -6,9 +6,9 @@ import android.view.View;
 /* renamed from: afe  reason: default package */
 /* compiled from: PG */
 public final class afe implements ahn {
-    private final /* synthetic */ afd a;
+    private final /* synthetic */ LayoutManager a;
 
-    afe(afd afd) {
+    afe(LayoutManager afd) {
         this.a = afd;
     }
 
@@ -29,11 +29,11 @@ public final class afe implements ahn {
 
     @Override // defpackage.ahn
     public final int a(View view) {
-        return afd.b(view) - ((afh) view.getLayoutParams()).leftMargin;
+        return LayoutManager.b(view) - ((afh) view.getLayoutParams()).leftMargin;
     }
 
     @Override // defpackage.ahn
     public final int b(View view) {
-        return ((afh) view.getLayoutParams()).rightMargin + afd.d(view);
+        return ((afh) view.getLayoutParams()).rightMargin + LayoutManager.d(view);
     }
 }

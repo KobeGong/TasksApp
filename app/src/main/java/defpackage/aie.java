@@ -7,7 +7,7 @@ public abstract class aie extends ahy {
     private int b = 3;
 
     @Override // defpackage.ahy
-    public int a(afv afv) {
+    public int a(ViewHolder afv) {
         return b(this.b, this.a);
     }
 }

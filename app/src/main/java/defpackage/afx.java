@@ -20,9 +20,9 @@ public final class afx extends rn {
         int i;
         to toVar;
         super.a(view, tlVar);
-        if (!this.b.b.n() && this.b.b.l != null) {
-            afd afd = this.b.b.l;
-            afv c = RecyclerView.c(view);
+        if (!this.b.b.n() && this.b.b.layoutManager != null) {
+            LayoutManager afd = this.b.b.layoutManager;
+            ViewHolder c = RecyclerView.c(view);
             if (c != null && !c.m() && !afd.a.d(c.a)) {
                 afn afn = afd.b.e;
                 aft aft = afd.b.D;
@@ -51,10 +51,10 @@ public final class afx extends rn {
         if (super.a(view, i, bundle)) {
             return true;
         }
-        if (this.b.b.n() || this.b.b.l == null) {
+        if (this.b.b.n() || this.b.b.layoutManager == null) {
             return false;
         }
-        afd afd = this.b.b.l;
+        LayoutManager afd = this.b.b.layoutManager;
         afn afn = afd.b.e;
         aft aft = afd.b.D;
         return false;

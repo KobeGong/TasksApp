@@ -20,7 +20,7 @@ public final class aht extends afc implements afi {
     private aib C;
     private final afj D = new ahv(this);
     public final List a = new ArrayList();
-    public afv b = null;
+    public ViewHolder b = null;
     public float c;
     public float d;
     public float e;
@@ -117,7 +117,7 @@ public final class aht extends afc implements afi {
         if (this.b != null) {
             a(this.y);
         }
-        afv afv = this.b;
+        ViewHolder afv = this.b;
         List list = this.m;
         int size = list.size();
         for (int i2 = 0; i2 < size; i2++) {
@@ -164,7 +164,7 @@ public final class aht extends afc implements afi {
             f3 = 0.0f;
         }
         ahy ahy = this.j;
-        afv afv = this.b;
+        ViewHolder afv = this.b;
         List list = this.m;
         int i2 = this.k;
         int size = list.size();
@@ -201,7 +201,7 @@ public final class aht extends afc implements afi {
     /* JADX WARNING: Removed duplicated region for block: B:65:0x0174  */
     /* JADX WARNING: Removed duplicated region for block: B:66:0x0186  */
     /* Code decompiled incorrectly, please refer to instructions dump. */
-    public final void a(defpackage.afv r13, int r14) {
+    public final void a(ViewHolder r13, int r14) {
         /*
         // Method dump skipped, instructions count: 442
         */
@@ -215,7 +215,7 @@ public final class aht extends afc implements afi {
     @Override // defpackage.afi
     public final void a(View view) {
         b(view);
-        afv a2 = this.o.a(view);
+        ViewHolder a2 = this.o.a(view);
         if (a2 != null) {
             if (this.b == null || a2 != this.b) {
                 a(a2, false);
@@ -225,12 +225,12 @@ public final class aht extends afc implements afi {
                 }
                 return;
             }
-            a((afv) null, 0);
+            a((ViewHolder) null, 0);
         }
     }
 
     /* access modifiers changed from: package-private */
-    public final void a(afv afv, boolean z2) {
+    public final void a(ViewHolder afv, boolean z2) {
         for (int size = this.m.size() - 1; size >= 0; size--) {
             aic aic = (aic) this.m.get(size);
             if (aic.e == afv) {

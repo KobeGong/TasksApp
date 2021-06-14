@@ -7,21 +7,21 @@ import android.view.View;
 public abstract class agp extends aey {
     private boolean a = true;
 
-    public abstract boolean a(afv afv);
+    public abstract boolean a(ViewHolder afv);
 
-    public abstract boolean a(afv afv, int i, int i2, int i3, int i4);
+    public abstract boolean a(ViewHolder afv, int i, int i2, int i3, int i4);
 
-    public abstract boolean a(afv afv, afv afv2, int i, int i2, int i3, int i4);
+    public abstract boolean a(ViewHolder afv, ViewHolder afv2, int i, int i2, int i3, int i4);
 
-    public abstract boolean b(afv afv);
+    public abstract boolean b(ViewHolder afv);
 
     @Override // defpackage.aey
-    public final boolean f(afv afv) {
+    public final boolean f(ViewHolder afv) {
         return !this.a || afv.j();
     }
 
     @Override // defpackage.aey
-    public final boolean a(afv afv, afb afb, afb afb2) {
+    public final boolean a(ViewHolder afv, afb afb, afb afb2) {
         int i = afb.a;
         int i2 = afb.b;
         View view = afv.a;
@@ -35,7 +35,7 @@ public abstract class agp extends aey {
     }
 
     @Override // defpackage.aey
-    public boolean b(afv afv, afb afb, afb afb2) {
+    public boolean b(ViewHolder afv, afb afb, afb afb2) {
         if (afb == null || (afb.a == afb2.a && afb.b == afb2.b)) {
             return b(afv);
         }
@@ -43,7 +43,7 @@ public abstract class agp extends aey {
     }
 
     @Override // defpackage.aey
-    public final boolean c(afv afv, afb afb, afb afb2) {
+    public final boolean c(ViewHolder afv, afb afb, afb afb2) {
         if (afb.a != afb2.a || afb.b != afb2.b) {
             return a(afv, afb.a, afb.b, afb2.a, afb2.b);
         }
@@ -52,7 +52,7 @@ public abstract class agp extends aey {
     }
 
     @Override // defpackage.aey
-    public final boolean a(afv afv, afv afv2, afb afb, afb afb2) {
+    public final boolean a(ViewHolder afv, ViewHolder afv2, afb afb, afb afb2) {
         int i;
         int i2;
         int i3 = afb.a;

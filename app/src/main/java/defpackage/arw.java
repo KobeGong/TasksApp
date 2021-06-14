@@ -14,7 +14,7 @@ final /* synthetic */ class arw implements Runnable {
     }
 
     public final void run() {
-        dcd dcd;
+        dcd dcdInst;
         arv arv = this.a;
         if (arv.i != null) {
             String string = arv.i.getString("list_id");
@@ -34,11 +34,11 @@ final /* synthetic */ class arw implements Runnable {
         EditText editText = arv.a;
         dcb dcb = arv.b;
         if (dcb.c == null) {
-            dcd = dcd.c;
+            dcdInst = dcd.c;
         } else {
-            dcd = dcb.c;
+            dcdInst = dcb.c;
         }
-        editText.setText(dcd.a);
+        editText.setText(dcdInst.a);
         Editable text = arv.a.getText();
         if (text != null) {
             arv.a.setSelection(text.length());

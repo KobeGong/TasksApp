@@ -4,19 +4,19 @@ package defpackage;
 /* renamed from: adb  reason: default package */
 /* compiled from: PG */
 public final class adb {
-    public afv a;
-    public afv b;
+    public ViewHolder a;
+    public ViewHolder b;
     public int c;
     public int d;
     public int e;
     public int f;
 
-    private adb(afv afv, afv afv2) {
+    private adb(ViewHolder afv, ViewHolder afv2) {
         this.a = afv;
         this.b = afv2;
     }
 
-    adb(afv afv, afv afv2, int i, int i2, int i3, int i4) {
+    adb(ViewHolder afv, ViewHolder afv2, int i, int i2, int i3, int i4) {
         this(afv, afv2);
         this.c = i;
         this.d = i2;

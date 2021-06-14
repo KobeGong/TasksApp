@@ -14,10 +14,10 @@ public final /* synthetic */ class auo implements Callable {
     @Override // java.util.concurrent.Callable
     public final Object call() {
         auj auj = this.a;
-        if (auj.a == null) {
+        if (auj.rootView == null) {
             return null;
         }
-        auj.a.post(new aut(auj));
+        auj.rootView.post(new aut(auj));
         return null;
     }
 }

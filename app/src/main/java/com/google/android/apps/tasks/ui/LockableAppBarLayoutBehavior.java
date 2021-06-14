@@ -7,6 +7,8 @@ import android.support.design.widget.CoordinatorLayout;
 import android.util.AttributeSet;
 import android.view.View;
 
+import defpackage.cw;
+
 /* compiled from: PG */
 public class LockableAppBarLayoutBehavior extends AppBarLayout.Behavior {
     public boolean d;

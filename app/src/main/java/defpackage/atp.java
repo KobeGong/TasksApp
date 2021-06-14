@@ -5,7 +5,7 @@ import android.widget.TextView;
 
 /* renamed from: atp  reason: default package */
 /* compiled from: PG */
-final class atp extends afv {
+final class atp extends ViewHolder {
     public final TextView p;
 
     public atp(View view) {

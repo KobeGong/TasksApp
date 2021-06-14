@@ -18,6 +18,6 @@ final /* synthetic */ class alf implements Runnable {
         ala.V.a(false);
         akt akt = ala.U;
         akt.a = cky.a((Iterable) ((List) cyd.c(cyi)));
-        akt.d.b();
+        akt.mObservable.b();
     }
 }

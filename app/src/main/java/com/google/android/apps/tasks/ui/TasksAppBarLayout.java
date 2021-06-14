@@ -6,6 +6,9 @@ import android.support.design.widget.AppBarLayout;
 import android.util.AttributeSet;
 import android.view.View;
 
+import defpackage.dk;
+import defpackage.sn;
+
 /* compiled from: PG */
 public class TasksAppBarLayout extends AppBarLayout {
     public boolean f = false;

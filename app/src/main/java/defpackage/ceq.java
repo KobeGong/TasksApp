@@ -40,7 +40,7 @@ public final class ceq extends cdm {
         }
         int min = Math.min(size, size2);
         if (min > 0) {
-            this.a.d.a(0, min);
+            this.a.mObservable.a(0, min);
         }
         if (size2 > size) {
             this.a.a(min, size2 - size);

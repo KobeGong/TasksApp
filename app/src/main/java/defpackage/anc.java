@@ -56,9 +56,9 @@ public final class anc {
     public final synchronized cyi a(String str) {
         String valueOf;
         String valueOf2;
-        valueOf = String.valueOf("sync_list_tasks:");
+        valueOf = "sync_list_tasks:";
         valueOf2 = String.valueOf(str);
-        return a(valueOf2.length() != 0 ? valueOf.concat(valueOf2) : new String(valueOf), new ane(this, str));
+        return a(valueOf2.length() != 0 ? valueOf.concat(valueOf2) : valueOf, new ane(this, str));
     }
 
     /* access modifiers changed from: package-private */
@@ -104,14 +104,14 @@ public final class anc {
                     azb.a("Task %s has no properties!", dby.d);
                 } else {
                     if (dby.e == null) {
-                        dca = dca.g;
+                        dca = defpackage.dca.g;
                     } else {
                         dca = dby.e;
                     }
                     if (!dca.a) {
                         if (dca.d != null) {
                             if (dca.d == null) {
-                                dmk = dmk.d;
+                                dmk = defpackage.dmk.d;
                             } else {
                                 dmk = dca.d;
                             }
@@ -224,7 +224,7 @@ public final class anc {
             dih = e2.a;
         }
         dih dih3 = dih;
-        if (!dih.a(dih3, Boolean.TRUE.booleanValue())) {
+        if (!defpackage.dih.a(dih3, Boolean.TRUE.booleanValue())) {
             throw new dkw();
         }
         dby2 = (dby) dih3;
@@ -256,7 +256,7 @@ public final class anc {
         if (!TextUtils.isEmpty(str)) {
             String substring = str.substring(0, str.indexOf(58));
             String b2 = amg.b();
-            a2 = new StringBuilder(String.valueOf(substring).length() + 3 + String.valueOf(b2).length()).append(substring).append(":").append(b2).append(":0").toString();
+            a2 = new StringBuilder(substring.length() + 3 + b2.length()).append(substring).append(":").append(b2).append(":0").toString();
         } else {
             a2 = amg.a();
         }
@@ -275,7 +275,7 @@ public final class anc {
             dih = dii2.a;
         }
         dih dih3 = dih;
-        if (!dih.a(dih3, Boolean.TRUE.booleanValue())) {
+        if (!defpackage.dih.a(dih3, Boolean.TRUE.booleanValue())) {
             throw new dkw();
         }
         dcb2 = (dcb) dih3;
@@ -353,12 +353,12 @@ public final class anc {
         List a2 = anu.b.a();
         synchronized (anu.a) {
             if (!anu.a.b().isEmpty()) {
-                anw = anw.LOCAL_CHANGES;
+                anw = defpackage.anw.LOCAL_CHANGES;
             } else if (a2.isEmpty() || a2.equals(anu.a.a())) {
-                anw = anw.NO_CHANGES;
+                anw = defpackage.anw.NO_CHANGES;
             } else {
                 anu.a.a(a2);
-                anw = anw.SERVER_CHANGES;
+                anw = defpackage.anw.SERVER_CHANGES;
             }
         }
         return anw;
@@ -369,14 +369,14 @@ public final class anc {
         ajq a2 = anu.b.a(str);
         synchronized (anu.a) {
             if (!anu.a.b().isEmpty()) {
-                anw = anw.LOCAL_CHANGES;
+                anw = defpackage.anw.LOCAL_CHANGES;
             } else {
                 ajq b2 = anu.a.b(str);
                 if (b2 == null || !csv.a(b2.a()).equals(csv.a(a2.a())) || !b2.b().equals(a2.b())) {
                     anu.a.a(str, a2);
-                    anw = anw.SERVER_CHANGES;
+                    anw = defpackage.anw.SERVER_CHANGES;
                 } else {
-                    anw = anw.NO_CHANGES;
+                    anw = defpackage.anw.NO_CHANGES;
                 }
             }
         }
@@ -489,7 +489,7 @@ public final class anc {
                 dih = dii.a;
             }
             dih dih3 = dih;
-            if (!dih.a(dih3, Boolean.TRUE.booleanValue())) {
+            if (!defpackage.dih.a(dih3, Boolean.TRUE.booleanValue())) {
                 throw new dkw();
             }
             b2.getClass();

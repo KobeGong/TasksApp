@@ -25,10 +25,10 @@ public class afw extends rn {
         if (super.a(view, i, bundle)) {
             return true;
         }
-        if (this.b.n() || this.b.l == null) {
+        if (this.b.n() || this.b.layoutManager == null) {
             return false;
         }
-        afd afd = this.b.l;
+        LayoutManager afd = this.b.layoutManager;
         afn afn = afd.b.e;
         aft aft = afd.b.D;
         if (afd.b == null) {
@@ -82,8 +82,8 @@ public class afw extends rn {
         int i2 = 1;
         super.a(view, tlVar);
         tlVar.a(RecyclerView.class.getName());
-        if (!this.b.n() && this.b.l != null) {
-            afd afd = this.b.l;
+        if (!this.b.n() && this.b.layoutManager != null) {
+            LayoutManager afd = this.b.layoutManager;
             afn afn = afd.b.e;
             aft aft = afd.b.D;
             if (afd.b.canScrollVertically(-1) || afd.b.canScrollHorizontally(-1)) {
@@ -94,13 +94,13 @@ public class afw extends rn {
                 tlVar.a(4096);
                 tlVar.a();
             }
-            if (afd.b == null || afd.b.k == null) {
+            if (afd.b == null || afd.b.adapter == null) {
                 i = 1;
             } else {
-                i = afd.e() ? afd.b.k.a() : 1;
+                i = afd.e() ? afd.b.adapter.getCount() : 1;
             }
-            if (!(afd.b == null || afd.b.k == null || !afd.d())) {
-                i2 = afd.b.k.a();
+            if (!(afd.b == null || afd.b.adapter == null || !afd.d())) {
+                i2 = afd.b.adapter.getCount();
             }
             if (Build.VERSION.SDK_INT >= 21) {
                 tnVar = new tn(AccessibilityNodeInfo.CollectionInfo.obtain(i, i2, false, 0));
@@ -121,8 +121,8 @@ public class afw extends rn {
         accessibilityEvent.setClassName(RecyclerView.class.getName());
         if ((view instanceof RecyclerView) && !this.b.n()) {
             RecyclerView recyclerView = (RecyclerView) view;
-            if (recyclerView.l != null) {
-                recyclerView.l.a(accessibilityEvent);
+            if (recyclerView.layoutManager != null) {
+                recyclerView.layoutManager.a(accessibilityEvent);
             }
         }
     }

@@ -9,7 +9,7 @@ import java.util.Calendar;
 
 /* renamed from: akv  reason: default package */
 /* compiled from: PG */
-final class akv extends afv {
+final class akv extends ViewHolder {
     public aky p;
     public final TextView q;
     public final TextView r;

@@ -17,18 +17,18 @@ import java.util.Set;
 /* renamed from: auh  reason: default package */
 /* compiled from: PG */
 public final class auh extends aie implements View.OnTouchListener {
-    public final atg a;
+    public final SortableAdapter a;
     private final Vibrator b;
     private final float c;
     private final att d;
     private int e = 0;
     private float f;
-    private afv g;
-    private afv h;
+    private ViewHolder g;
+    private ViewHolder h;
     private boolean i;
     private Set j;
 
-    public auh(atg atg, Vibrator vibrator, float f2, att att) {
+    public auh(SortableAdapter atg, Vibrator vibrator, float f2, att att) {
         this.a = atg;
         this.b = vibrator;
         this.c = f2;
@@ -36,17 +36,17 @@ public final class auh extends aie implements View.OnTouchListener {
     }
 
     @Override // defpackage.ahy, defpackage.aie
-    public final int a(afv afv) {
+    public final int a(ViewHolder afv) {
         int i2;
         boolean z = true;
         int i3 = 0;
-        atg atg = this.a;
+        SortableAdapter atg = this.a;
         if (afv.d() < atg.d() && atg.b()) {
             i2 = 3;
         } else {
             i2 = 0;
         }
-        atg atg2 = this.a;
+        SortableAdapter atg2 = this.a;
         int d2 = afv.d();
         if (d2 >= atg2.d() || !atg2.h(d2)) {
             z = false;
@@ -71,7 +71,7 @@ public final class auh extends aie implements View.OnTouchListener {
     }
 
     @Override // defpackage.ahy
-    public final void a(afv afv, int i2) {
+    public final void a(ViewHolder afv, int i2) {
         dca dca;
         dmk a2;
         dmk dmk;
@@ -81,7 +81,7 @@ public final class auh extends aie implements View.OnTouchListener {
         boolean z = false;
         int d2 = afv.d();
         if (i2 == 16) {
-            atg atg = this.a;
+            SortableAdapter atg = this.a;
             cld.a(d2 < atg.d());
             dby g2 = atg.g(d2);
             if (g2 == null) {
@@ -179,7 +179,7 @@ public final class auh extends aie implements View.OnTouchListener {
             atu.b = auz.a();
             att.a.add(atu);
         }
-        atg atg2 = this.a;
+        SortableAdapter atg2 = this.a;
         if (d2 < atg2.d()) {
             z = true;
         }
@@ -188,20 +188,20 @@ public final class auh extends aie implements View.OnTouchListener {
     }
 
     @Override // defpackage.ahy
-    public final void b(afv afv, int i2) {
+    public final void b(ViewHolder afv, int i2) {
         int i3 = 0;
-        if (this.e == 2 && i2 != 2 && (this.a instanceof atv)) {
+        if (this.e == 2 && i2 != 2 && (this.a instanceof MySortAdapter)) {
             this.g.a.post(new aui(this, this.g.d()));
         }
         if (i2 == 0) {
             this.g = null;
             this.i = false;
             this.h = null;
-        } else if (i2 == 2 && (this.a instanceof atv)) {
+        } else if (i2 == 2 && (this.a instanceof MySortAdapter)) {
             this.f = Float.MIN_VALUE;
             this.g = afv;
-            this.i = ((atv) this.a).k(afv.d());
-            atv atv = (atv) this.a;
+            this.i = ((MySortAdapter) this.a).k(afv.d());
+            MySortAdapter atv = (MySortAdapter) this.a;
             int d2 = afv.d();
             dby g2 = atv.g(d2);
             if (g2 != null) {
@@ -218,11 +218,11 @@ public final class auh extends aie implements View.OnTouchListener {
     }
 
     @Override // defpackage.ahy
-    public final boolean a(afv afv, afv afv2) {
-        if (!(this.a instanceof atv)) {
+    public final boolean a(ViewHolder afv, ViewHolder afv2) {
+        if (!(this.a instanceof MySortAdapter)) {
             return false;
         }
-        boolean a2 = ((atv) this.a).a(afv.d(), afv2.d(), this.i, (atx) this.g);
+        boolean a2 = ((MySortAdapter) this.a).a(afv.d(), afv2.d(), this.i, (atx) this.g);
         if (!a2) {
             return a2;
         }
@@ -231,11 +231,11 @@ public final class auh extends aie implements View.OnTouchListener {
     }
 
     @Override // defpackage.ahy
-    public final void b(RecyclerView recyclerView, afv afv) {
+    public final void b(RecyclerView recyclerView, ViewHolder afv) {
         super.b(recyclerView, afv);
         atx atx = (atx) afv;
         int d2 = atx.d();
-        boolean z = (this.a instanceof atv) && d2 >= 0 && ((atv) this.a).k(d2);
+        boolean z = (this.a instanceof MySortAdapter) && d2 >= 0 && ((MySortAdapter) this.a).k(d2);
         sn.b(atx.a, 0.0f);
         atx.s.animate().cancel();
         atx.s.setTranslationX(0.0f);
@@ -245,7 +245,7 @@ public final class auh extends aie implements View.OnTouchListener {
         int childCount = recyclerView.getChildCount();
         int d3 = this.h == null ? -1 : this.h.d();
         for (int i2 = 0; i2 < childCount; i2++) {
-            afv a2 = recyclerView.a(recyclerView.getChildAt(i2));
+            ViewHolder a2 = recyclerView.a(recyclerView.getChildAt(i2));
             if ((a2 instanceof atx) && (this.h == null || !(this.j == null || this.j.contains(Integer.valueOf(a2.d())) || a2.d() == d3))) {
                 ((atx) a2).v();
             }
@@ -253,7 +253,7 @@ public final class auh extends aie implements View.OnTouchListener {
     }
 
     @Override // defpackage.ahy
-    public final void a(Canvas canvas, RecyclerView recyclerView, afv afv, float f2, float f3, int i2, boolean z) {
+    public final void a(Canvas canvas, RecyclerView recyclerView, ViewHolder afv, float f2, float f3, int i2, boolean z) {
         if (i2 == 1) {
             atx atx = (atx) afv;
             sn.a(atx.a, 0.0f);
@@ -274,7 +274,7 @@ public final class auh extends aie implements View.OnTouchListener {
     public final boolean onTouch(View view, MotionEvent motionEvent) {
         boolean z;
         float f2;
-        if (this.e == 2 && (this.a instanceof atv)) {
+        if (this.e == 2 && (this.a instanceof MySortAdapter)) {
             boolean z2 = qq.a(Locale.getDefault()) == 1;
             if (this.f == Float.MIN_VALUE) {
                 this.f = motionEvent.getX();
@@ -294,12 +294,12 @@ public final class auh extends aie implements View.OnTouchListener {
                 }
                 if (!this.i && z) {
                     this.i = true;
-                    if (((atv) this.a).a(this.g.d(), this.g.d(), this.i, (atx) this.g)) {
+                    if (((MySortAdapter) this.a).a(this.g.d(), this.g.d(), this.i, (atx) this.g)) {
                         a(1);
                     }
                 } else if (this.i && !z) {
                     this.i = false;
-                    if (((atv) this.a).a(this.g.d(), this.g.d(), this.i, (atx) this.g)) {
+                    if (((MySortAdapter) this.a).a(this.g.d(), this.g.d(), this.i, (atx) this.g)) {
                         a(1);
                     }
                 }
@@ -313,7 +313,7 @@ public final class auh extends aie implements View.OnTouchListener {
             int childCount = recyclerView.getChildCount();
             for (int i2 = 0; i2 < childCount; i2++) {
                 View childAt = recyclerView.getChildAt(i2);
-                afv a2 = recyclerView.a(childAt);
+                ViewHolder a2 = recyclerView.a(childAt);
                 if (set.contains(Integer.valueOf(a2.d()))) {
                     ((atx) a2).a(f3);
                     childAt.setTranslationX(f2);

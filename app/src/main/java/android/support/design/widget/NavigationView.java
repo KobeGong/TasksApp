@@ -2,6 +2,7 @@ package android.support.design.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import defpackage.fr;
 
 @Deprecated
 /* compiled from: PG */

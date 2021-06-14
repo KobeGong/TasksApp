@@ -6,6 +6,8 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import com.google.android.apps.tasks.R;
 
+import defpackage.wm;
+
 /* compiled from: PG */
 public final class LicenseActivity extends wm {
     @Override // defpackage.nv, defpackage.wm, defpackage.lg

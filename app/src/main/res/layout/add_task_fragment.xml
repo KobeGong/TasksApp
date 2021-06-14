@@ -1,14 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:paddingTop="@dimen/add_task_panel_spacing" android:paddingBottom="@dimen/add_task_panel_bottom_spacing" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
-    <LinearLayout android:orientation="vertical" android:fitsSystemWindows="true" android:layout_width="match_parent" android:layout_height="wrap_content">
-        <EditText android:textSize="@dimen/default_font_size" android:textColor="@color/titleTextColor" android:id="@+id/add_task_title" android:background="@android:color/transparent" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/add_task_panel_spacing" android:layout_marginRight="@dimen/add_task_panel_spacing" android:hint="@string/quick_add_task_hint" android:maxLines="3" android:maxLength="@integer/max_task_title_size" android:inputType="none|text|textCapSentences|textAutoComplete|textMultiLine" android:fontFamily="@font/google_sans_medium"/>
-        <EditText android:textSize="@dimen/chip_font_size" android:textColor="@color/detailsTextColor" android:id="@+id/add_task_details" android:background="@android:color/transparent" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/add_task_panel_spacing" android:layout_marginTop="@dimen/add_task_details_top_spacing" android:layout_marginRight="@dimen/add_task_panel_spacing" android:hint="@string/tasks_add_details_hint" android:maxLines="10" android:maxLength="@integer/max_task_details_size"/>
-        <android.support.design.chip.Chip android:id="@+id/add_task_due_date_chip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/add_task_panel_spacing" android:layout_marginTop="@dimen/add_task_date_chip_top_spacing" android:layout_marginRight="@dimen/add_task_panel_spacing" android:checkable="false" app:closeIconEnabled="true" style="@style/Chip.Date"/>
-        <RelativeLayout android:id="@+id/add_task_bottom_bar" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/add_task_toolbar_start_spacing" android:layout_marginTop="@dimen/add_task_data_to_toolbar_spacing" android:layout_marginRight="@dimen/add_task_toolbar_end_spacing">
-            <ImageButton android:id="@+id/add_task_more" android:background="@drawable/add_task_more_button_background" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/quantum_ic_add_circle_grey600_24" android:tint="@color/blueText" android:layout_centerVertical="true" android:contentDescription="@string/a11y_add_task_show_more_options" style="@style/ImageButton"/>
-            <android.support.design.button.MaterialButton android:id="@+id/add_task_change_details" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/add_task_more_button_to_more_spacing" android:layout_centerVertical="true" android:contentDescription="@string/a11y_add_task_add_details" app:icon="@drawable/quantum_ic_notes_googblue_24" style="@style/ImageButton"/>
-            <android.support.design.button.MaterialButton android:id="@+id/add_task_pick_due_date" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/add_task_more_button_to_more_spacing" android:layout_centerVertical="true" android:contentDescription="@string/a11y_add_task_set_date" app:icon="@drawable/quantum_ic_event_available_googblue_24" style="@style/ImageButton"/>
-            <android.support.design.button.MaterialButton android:textSize="@dimen/default_font_size" android:id="@+id/add_task_done" android:paddingLeft="@dimen/add_task_done_button_padding" android:paddingTop="@dimen/add_task_done_button_padding" android:paddingRight="@dimen/add_task_done_button_padding" android:paddingBottom="@dimen/add_task_done_button_padding" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="0dp" android:text="@string/add_task_save" style="@style/TextButton"/>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:paddingTop="@dimen/add_task_panel_spacing"
+    android:paddingBottom="@dimen/add_task_panel_bottom_spacing">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/add_task_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/add_task_panel_spacing"
+            android:layout_marginRight="@dimen/add_task_panel_spacing"
+            android:background="@android:color/transparent"
+            android:hint="@string/quick_add_task_hint"
+            android:inputType="none|text|textCapSentences|textAutoComplete|textMultiLine"
+            android:maxLength="@integer/max_task_title_size"
+            android:maxLines="3"
+            android:textColor="@color/titleTextColor"
+            android:textSize="@dimen/default_font_size" />
+
+        <EditText
+            android:id="@+id/add_task_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/add_task_panel_spacing"
+            android:layout_marginTop="@dimen/add_task_details_top_spacing"
+            android:layout_marginRight="@dimen/add_task_panel_spacing"
+            android:background="@android:color/transparent"
+            android:hint="@string/tasks_add_details_hint"
+            android:maxLength="@integer/max_task_details_size"
+            android:maxLines="10"
+            android:textColor="@color/detailsTextColor"
+            android:textSize="@dimen/chip_font_size"
+            android:visibility="gone" />
+
+        <android.support.design.chip.Chip
+            android:id="@+id/add_task_due_date_chip"
+            style="@style/Chip.Date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/add_task_panel_spacing"
+            android:layout_marginTop="@dimen/add_task_date_chip_top_spacing"
+            android:layout_marginRight="@dimen/add_task_panel_spacing"
+            android:checkable="false"
+            android:visibility="gone"
+            app:closeIconEnabled="true" />
+
+        <RelativeLayout
+            android:id="@+id/add_task_bottom_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/add_task_toolbar_start_spacing"
+            android:layout_marginTop="@dimen/add_task_data_to_toolbar_spacing"
+            android:layout_marginRight="@dimen/add_task_toolbar_end_spacing">
+
+            <ImageButton
+                android:id="@+id/add_task_more"
+                style="@style/ImageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@drawable/add_task_more_button_background"
+                android:contentDescription="@string/a11y_add_task_show_more_options"
+                android:src="@drawable/quantum_ic_add_circle_grey600_24"
+                android:tint="@color/blueText" />
+
+            <android.support.design.button.MaterialButton
+                android:id="@+id/add_task_change_details"
+                style="@style/ImageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/add_task_more_button_to_more_spacing"
+                android:contentDescription="@string/a11y_add_task_add_details"
+                android:visibility="invisible"
+                app:icon="@drawable/quantum_ic_notes_googblue_24" />
+
+            <android.support.design.button.MaterialButton
+                android:id="@+id/add_task_pick_due_date"
+                style="@style/ImageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/add_task_more_button_to_more_spacing"
+                android:contentDescription="@string/a11y_add_task_set_date"
+                android:visibility="invisible"
+                app:icon="@drawable/quantum_ic_event_available_googblue_24" />
+
+            <android.support.design.button.MaterialButton
+                android:id="@+id/add_task_done"
+                style="@style/TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="0dp"
+                android:paddingLeft="@dimen/add_task_done_button_padding"
+                android:paddingTop="@dimen/add_task_done_button_padding"
+                android:paddingRight="@dimen/add_task_done_button_padding"
+                android:paddingBottom="@dimen/add_task_done_button_padding"
+                android:text="@string/add_task_save"
+                android:textSize="@dimen/default_font_size" />
         </RelativeLayout>
     </LinearLayout>
 </android.support.v4.widget.NestedScrollView>

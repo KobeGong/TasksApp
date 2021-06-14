@@ -8,14 +8,14 @@ import android.view.ViewPropertyAnimator;
 /* renamed from: acy  reason: default package */
 /* compiled from: PG */
 final class acy extends AnimatorListenerAdapter {
-    private final /* synthetic */ afv a;
+    private final /* synthetic */ ViewHolder a;
     private final /* synthetic */ int b;
     private final /* synthetic */ View c;
     private final /* synthetic */ int d;
     private final /* synthetic */ ViewPropertyAnimator e;
     private final /* synthetic */ acs f;
 
-    acy(acs acs, afv afv, int i, View view, int i2, ViewPropertyAnimator viewPropertyAnimator) {
+    acy(acs acs, ViewHolder afv, int i, View view, int i2, ViewPropertyAnimator viewPropertyAnimator) {
         this.f = acs;
         this.a = afv;
         this.b = i;

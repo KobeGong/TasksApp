@@ -19,7 +19,7 @@ public final class ahv implements afj {
     @Override // defpackage.afj
     public final boolean a(MotionEvent motionEvent) {
         int findPointerIndex;
-        afv a2;
+        ViewHolder a2;
         int a3;
         aic aic;
         this.a.v.a(motionEvent);
@@ -80,13 +80,13 @@ public final class ahv implements afj {
             }
         } else if (actionMasked == 3 || actionMasked == 1) {
             this.a.i = -1;
-            this.a.a((afv) null, 0);
+            this.a.a((ViewHolder) null, 0);
         } else if (this.a.i != -1 && (findPointerIndex = motionEvent.findPointerIndex(this.a.i)) >= 0) {
             aht aht4 = this.a;
             if (aht4.b == null && actionMasked == 2 && aht4.k != 2) {
                 aht4.j.c();
                 if (aht4.o.A != 1) {
-                    afd afd = aht4.o.l;
+                    LayoutManager afd = aht4.o.layoutManager;
                     if (aht4.i == -1) {
                         a2 = null;
                     } else {
@@ -134,7 +134,7 @@ public final class ahv implements afj {
     /* JADX INFO: Can't fix incorrect switch cases order, some code will duplicate */
     @Override // defpackage.afj
     public final void b(MotionEvent motionEvent) {
-        afv a2;
+        ViewHolder a2;
         int a3;
         this.a.v.a(motionEvent);
         if (this.a.q != null) {
@@ -148,7 +148,7 @@ public final class ahv implements afj {
                 if (aht.b == null && actionMasked == 2 && aht.k != 2) {
                     aht.j.c();
                     if (aht.o.A != 1) {
-                        afd afd = aht.o.l;
+                        LayoutManager afd = aht.o.layoutManager;
                         if (aht.i == -1) {
                             a2 = null;
                         } else {
@@ -187,7 +187,7 @@ public final class ahv implements afj {
                     }
                 }
             }
-            afv afv = this.a.b;
+            ViewHolder afv = this.a.b;
             if (afv != null) {
                 switch (actionMasked) {
                     case 1:
@@ -232,12 +232,12 @@ public final class ahv implements afj {
                                     int height = round2 + afv.a.getHeight();
                                     int i4 = (round + width) / 2;
                                     int i5 = (round2 + height) / 2;
-                                    afd afd2 = aht3.o.l;
+                                    LayoutManager afd2 = aht3.o.layoutManager;
                                     int k = afd2.k();
                                     for (int i6 = 0; i6 < k; i6++) {
                                         View e = afd2.e(i6);
                                         if (e != afv.a && e.getBottom() >= round2 && e.getTop() <= height && e.getRight() >= round && e.getLeft() <= width) {
-                                            afv a5 = aht3.o.a(e);
+                                            ViewHolder a5 = aht3.o.a(e);
                                             ahy.a();
                                             int abs5 = Math.abs(i4 - ((e.getLeft() + e.getRight()) / 2));
                                             int abs6 = Math.abs(i5 - ((e.getBottom() + e.getTop()) / 2));
@@ -255,7 +255,7 @@ public final class ahv implements afj {
                                     }
                                     List list = aht3.r;
                                     if (list.size() != 0) {
-                                        afv a6 = ahy.a(afv, list, i2, i3);
+                                        ViewHolder a6 = ahy.a(afv, list, i2, i3);
                                         if (a6 == null) {
                                             aht3.r.clear();
                                             aht3.s.clear();
@@ -312,7 +312,7 @@ public final class ahv implements afj {
                         }
                         return;
                 }
-                this.a.a((afv) null, 0);
+                this.a.a((ViewHolder) null, 0);
                 this.a.i = -1;
             }
         }
@@ -321,7 +321,7 @@ public final class ahv implements afj {
     @Override // defpackage.afj
     public final void a(boolean z) {
         if (z) {
-            this.a.a((afv) null, 0);
+            this.a.a((ViewHolder) null, 0);
         }
     }
 }

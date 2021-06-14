@@ -11,7 +11,7 @@ public class aic implements Animator.AnimatorListener {
     public final float b;
     public final float c;
     public final float d;
-    public final afv e;
+    public final ViewHolder e;
     public final int f;
     public final ValueAnimator g;
     public boolean h;
@@ -21,7 +21,7 @@ public class aic implements Animator.AnimatorListener {
     public boolean l = false;
     public float m;
 
-    aic(afv afv, int i2, float f2, float f3, float f4, float f5) {
+    aic(ViewHolder afv, int i2, float f2, float f3, float f4, float f5) {
         this.f = i2;
         this.e = afv;
         this.a = f2;

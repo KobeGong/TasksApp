@@ -4,7 +4,7 @@ import android.view.View;
 
 /* renamed from: cew  reason: default package */
 /* compiled from: PG */
-public final class cew extends afv {
+public final class cew extends ViewHolder {
     public final cdf p;
     public final cfb q;
 

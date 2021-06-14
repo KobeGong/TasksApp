@@ -8,12 +8,12 @@ import android.view.ViewPropertyAnimator;
 /* renamed from: acw  reason: default package */
 /* compiled from: PG */
 final class acw extends AnimatorListenerAdapter {
-    private final /* synthetic */ afv a;
+    private final /* synthetic */ ViewHolder a;
     private final /* synthetic */ ViewPropertyAnimator b;
     private final /* synthetic */ View c;
     private final /* synthetic */ acs d;
 
-    acw(acs acs, afv afv, ViewPropertyAnimator viewPropertyAnimator, View view) {
+    acw(acs acs, ViewHolder afv, ViewPropertyAnimator viewPropertyAnimator, View view) {
         this.d = acs;
         this.a = afv;
         this.b = viewPropertyAnimator;

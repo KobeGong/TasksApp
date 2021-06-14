@@ -3,6 +3,11 @@ package org.chromium.net.impl;
 import android.content.Context;
 import org.chromium.base.annotations.UsedByReflection;
 
+import defpackage.ehu;
+import defpackage.ehx;
+import defpackage.ehz;
+import defpackage.ekn;
+
 /* compiled from: PG */
 public class NativeCronetProvider extends ehx {
     @UsedByReflection

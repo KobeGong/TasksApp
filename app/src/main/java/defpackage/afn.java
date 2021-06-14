@@ -30,28 +30,28 @@ public final class afn {
     }
 
     public final void b() {
-        this.g = (this.e.l != null ? this.e.l.h : 0) + this.f;
+        this.g = (this.e.layoutManager != null ? this.e.layoutManager.h : 0) + this.f;
         for (int size = this.c.size() - 1; size >= 0 && this.c.size() > this.g; size--) {
             a(size);
         }
     }
 
     /* access modifiers changed from: package-private */
-    public final afv a(int i, long j) {
+    public final ViewHolder a(int i, long j) {
         boolean z;
         boolean z2;
         afh afh;
         RecyclerView f2;
         View view;
         boolean z3;
-        afv afv;
+        ViewHolder afv;
         int size;
         int a2;
         if (i < 0 || i >= this.e.D.a()) {
             throw new IndexOutOfBoundsException("Invalid item position " + i + "(" + i + "). Item count:" + this.e.D.a() + this.e.a());
         }
         boolean z4 = false;
-        afv afv2 = null;
+        ViewHolder afv2 = null;
         if (this.e.D.g) {
             if (this.b == null || (size = this.b.size()) == 0) {
                 afv2 = null;
@@ -59,7 +59,7 @@ public final class afn {
                 int i2 = 0;
                 while (true) {
                     if (i2 < size) {
-                        afv afv3 = (afv) this.b.get(i2);
+                        ViewHolder afv3 = (ViewHolder) this.b.get(i2);
                         if (!afv3.g() && afv3.c() == i) {
                             afv3.b(32);
                             afv2 = afv3;
@@ -67,14 +67,14 @@ public final class afn {
                         }
                         i2++;
                     } else {
-                        if (this.e.k.e && (a2 = this.e.f.a(i, 0)) > 0 && a2 < this.e.k.a()) {
-                            long a3 = this.e.k.a(a2);
+                        if (this.e.adapter.mHasStableIds && (a2 = this.e.f.a(i, 0)) > 0 && a2 < this.e.adapter.getCount()) {
+                            long a3 = this.e.adapter.getItemId(a2);
                             int i3 = 0;
                             while (true) {
                                 if (i3 >= size) {
                                     break;
                                 }
-                                afv afv4 = (afv) this.b.get(i3);
+                                ViewHolder afv4 = (ViewHolder) this.b.get(i3);
                                 if (!afv4.g() && afv4.e == a3) {
                                     afv4.b(32);
                                     afv2 = afv4;
@@ -103,7 +103,7 @@ public final class afn {
                             break;
                         }
                         View view2 = (View) acm.c.get(i5);
-                        afv c2 = RecyclerView.c(view2);
+                        ViewHolder c2 = RecyclerView.c(view2);
                         if (c2.c() == i && !c2.j() && !c2.m()) {
                             view = view2;
                             break;
@@ -118,7 +118,7 @@ public final class afn {
                                 afv2 = null;
                                 break;
                             }
-                            afv afv5 = (afv) this.c.get(i6);
+                            ViewHolder afv5 = (ViewHolder) this.c.get(i6);
                             if (!afv5.j() && afv5.c() == i) {
                                 this.c.remove(i6);
                                 afv2 = afv5;
@@ -127,7 +127,7 @@ public final class afn {
                             i6++;
                         }
                     } else {
-                        afv c3 = RecyclerView.c(view);
+                        ViewHolder c3 = RecyclerView.c(view);
                         acm acm2 = this.e.g;
                         int a4 = acm2.a.a(view);
                         if (a4 < 0) {
@@ -148,7 +148,7 @@ public final class afn {
                         }
                     }
                 } else {
-                    afv = (afv) this.a.get(i4);
+                    afv = (ViewHolder) this.a.get(i4);
                     if (afv.g() || afv.c() != i || afv.j() || (!this.e.D.g && afv.m())) {
                         i4++;
                     }
@@ -159,11 +159,11 @@ public final class afn {
             if (afv2 != null) {
                 if (afv2.m()) {
                     z3 = this.e.D.g;
-                } else if (afv2.c < 0 || afv2.c >= this.e.k.a()) {
+                } else if (afv2.c < 0 || afv2.c >= this.e.adapter.getCount()) {
                     throw new IndexOutOfBoundsException("Inconsistency detected. Invalid view holder adapter position" + afv2 + this.e.a());
-                } else if (!this.e.D.g && this.e.k.b(afv2.c) != afv2.f) {
+                } else if (!this.e.D.g && this.e.adapter.getItemViewType(afv2.c) != afv2.f) {
                     z3 = false;
-                } else if (!this.e.k.e || afv2.e == this.e.k.a(afv2.c)) {
+                } else if (!this.e.adapter.mHasStableIds || afv2.e == this.e.adapter.getItemId(afv2.c)) {
                     z3 = true;
                 } else {
                     z3 = false;
@@ -185,16 +185,16 @@ public final class afn {
         }
         if (afv2 == null) {
             int a5 = this.e.f.a(i, 0);
-            if (a5 < 0 || a5 >= this.e.k.a()) {
+            if (a5 < 0 || a5 >= this.e.adapter.getCount()) {
                 throw new IndexOutOfBoundsException("Inconsistency detected. Invalid item position " + i + "(offset:" + a5 + ").state:" + this.e.D.a() + this.e.a());
             }
-            int b2 = this.e.k.b(a5);
-            if (this.e.k.e) {
-                long a6 = this.e.k.a(a5);
+            int b2 = this.e.adapter.getItemViewType(a5);
+            if (this.e.adapter.mHasStableIds) {
+                long a6 = this.e.adapter.getItemId(a5);
                 int size5 = this.a.size() - 1;
                 while (true) {
                     if (size5 >= 0) {
-                        afv afv6 = (afv) this.a.get(size5);
+                        ViewHolder afv6 = (ViewHolder) this.a.get(size5);
                         if (afv6.e == a6 && !afv6.g()) {
                             if (b2 == afv6.f) {
                                 afv6.b(32);
@@ -215,7 +215,7 @@ public final class afn {
                             if (size6 < 0) {
                                 break;
                             }
-                            afv afv7 = (afv) this.c.get(size6);
+                            ViewHolder afv7 = (ViewHolder) this.c.get(size6);
                             if (afv7.e != a6) {
                                 size6--;
                             } else if (b2 == afv7.f) {
@@ -239,7 +239,7 @@ public final class afn {
                     afv2 = null;
                 } else {
                     ArrayList arrayList = afm.a;
-                    afv2 = (afv) arrayList.remove(arrayList.size() - 1);
+                    afv2 = (ViewHolder) arrayList.remove(arrayList.size() - 1);
                 }
                 if (afv2 != null) {
                     afv2.q();
@@ -256,7 +256,7 @@ public final class afn {
                         return null;
                     }
                 }
-                afv2 = this.e.k.b(this.e, b2);
+                afv2 = this.e.adapter.createViewHolder(this.e, b2);
                 if (RecyclerView.d && (f2 = RecyclerView.f(afv2.a)) != null) {
                     afv2.b = new WeakReference(f2);
                 }
@@ -296,15 +296,15 @@ public final class afn {
                     z2 = z;
                 }
             }
-            aet aet = this.e.k;
+            Adapter aet = this.e.adapter;
             afv2.c = a8;
-            if (aet.e) {
-                afv2.e = aet.a(a8);
+            if (aet.mHasStableIds) {
+                afv2.e = aet.getItemId(a8);
             }
             afv2.a(1, 519);
             jd.c("RV OnBindView");
             afv2.p();
-            aet.a(afv2, a8);
+            aet.onBindViewHolder(afv2, a8);
             afv2.o();
             ViewGroup.LayoutParams layoutParams = afv2.a.getLayoutParams();
             if (layoutParams instanceof afh) {
@@ -367,7 +367,7 @@ public final class afn {
     }
 
     public final void a(View view) {
-        afv c2 = RecyclerView.c(view);
+        ViewHolder c2 = RecyclerView.c(view);
         if (c2.n()) {
             this.e.removeDetachedView(view, false);
         }
@@ -390,7 +390,7 @@ public final class afn {
     }
 
     public final void a(int i) {
-        a((afv) this.c.get(i), true);
+        a((ViewHolder) this.c.get(i), true);
         this.c.remove(i);
     }
 
@@ -398,7 +398,7 @@ public final class afn {
     /* JADX WARNING: Removed duplicated region for block: B:29:0x00b1  */
     /* JADX WARNING: Removed duplicated region for block: B:58:0x0120  */
     /* Code decompiled incorrectly, please refer to instructions dump. */
-    public final void a(defpackage.afv r7) {
+    public final void a(ViewHolder r7) {
         /*
         // Method dump skipped, instructions count: 290
         */
@@ -406,7 +406,7 @@ public final class afn {
     }
 
     /* access modifiers changed from: package-private */
-    public final void a(afv afv, boolean z) {
+    public final void a(ViewHolder afv, boolean z) {
         RecyclerView.b(afv);
         if (afv.a(16384)) {
             afv.a(0, 16384);
@@ -414,8 +414,8 @@ public final class afn {
         }
         if (z) {
             afo afo = this.e.m;
-            if (this.e.k != null) {
-                this.e.k.a(afv);
+            if (this.e.adapter != null) {
+                this.e.adapter.a(afv);
             }
             if (this.e.D != null) {
                 this.e.h.d(afv);
@@ -433,7 +433,7 @@ public final class afn {
 
     /* access modifiers changed from: package-private */
     public final void b(View view) {
-        afv c2 = RecyclerView.c(view);
+        ViewHolder c2 = RecyclerView.c(view);
         c2.k = null;
         c2.l = false;
         c2.h();
@@ -442,7 +442,7 @@ public final class afn {
 
     /* access modifiers changed from: package-private */
     public final void c(View view) {
-        afv c2 = RecyclerView.c(view);
+        ViewHolder c2 = RecyclerView.c(view);
         if (!c2.a(12) && c2.s()) {
             RecyclerView recyclerView = this.e;
             if (!(recyclerView.z == null || recyclerView.z.a(c2, c2.p()))) {
@@ -454,7 +454,7 @@ public final class afn {
                 return;
             }
         }
-        if (!c2.j() || c2.m() || this.e.k.e) {
+        if (!c2.j() || c2.m() || this.e.adapter.mHasStableIds) {
             c2.a(this, false);
             this.a.add(c2);
             return;
@@ -462,7 +462,7 @@ public final class afn {
         throw new IllegalArgumentException("Called scrap view with an invalid view. Invalid views cannot be reused from scrap, they should rebound from recycler pool." + this.e.a());
     }
 
-    public final void b(afv afv) {
+    public final void b(ViewHolder afv) {
         if (afv.l) {
             this.b.remove(afv);
         } else {

@@ -1,14 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent">
-    <ImageView android:id="@+id/welcome_image" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/welcome_image_top_spacing" android:layout_marginBottom="@dimen/welcome_image_to_title_spacing" android:src="@mipmap/warm_welcome" android:scaleType="centerCrop" app:layout_constraintBottom_toTopOf="@+id/welcome_below_image" app:layout_constraintTop_toTopOf="0" app:layout_constraintVertical_chainStyle="1"/>
-    <LinearLayout android:orientation="vertical" android:id="@+id/welcome_below_image" android:paddingLeft="@dimen/welcome_bottom_section_horizontal_spacing" android:paddingRight="@dimen/welcome_bottom_section_horizontal_spacing" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/welcome_bottom_section_bottom_spacing" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintTop_toBottomOf="@+id/welcome_image">
-        <TextView android:textAppearance="@style/WelcomeTitleTextAppearance" android:gravity="center" android:layout_gravity="center" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/welcome_title_message_spacing" android:text="@string/welcome_header"/>
-        <TextView android:textAppearance="@style/GenericDescriptionTextAppearance" android:gravity="center" android:layout_gravity="center" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/welcome_message_bottom_spacing" android:text="@string/welcome_body"/>
-        <FrameLayout android:id="@+id/welcome_button_bar" android:layout_width="match_parent" android:layout_height="wrap_content" android:measureAllChildren="true">
-            <android.support.design.button.MaterialButton android:layout_gravity="center" android:id="@+id/welcome_retry_button" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/cannot_initialize_message_button" android:alpha="0" style="@style/Button"/>
-            <android.support.design.button.MaterialButton android:layout_gravity="center" android:id="@+id/welcome_sign_in" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/sign_in" android:alpha="0" style="@style/Button"/>
-            <android.support.design.button.MaterialButton android:layout_gravity="center" android:id="@+id/welcome_get_started" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/welcome_button" android:alpha="0" style="@style/Button"/>
-            <android.support.design.button.MaterialButton android:layout_gravity="center" android:id="@+id/welcome_update_gps" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/update_gmscore" android:alpha="0" style="@style/Button"/>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/welcome_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/welcome_image_top_spacing"
+        android:layout_marginBottom="@dimen/welcome_image_to_title_spacing"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/warm_welcome"
+        app:layout_constraintBottom_toTopOf="@+id/welcome_below_image"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread_inside" />
+
+    <LinearLayout
+        android:id="@+id/welcome_below_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/welcome_bottom_section_bottom_spacing"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/welcome_bottom_section_horizontal_spacing"
+        android:paddingRight="@dimen/welcome_bottom_section_horizontal_spacing"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcome_image">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/welcome_title_message_spacing"
+            android:gravity="center"
+            android:text="@string/welcome_header"
+            android:textAppearance="@style/WelcomeTitleTextAppearance" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/welcome_message_bottom_spacing"
+            android:gravity="center"
+            android:text="@string/welcome_body"
+            android:textAppearance="@style/GenericDescriptionTextAppearance" />
+
+        <FrameLayout
+            android:id="@+id/welcome_button_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:measureAllChildren="true">
+
+            <android.support.design.button.MaterialButton
+                android:id="@+id/welcome_retry_button"
+                style="@style/Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:alpha="0"
+                android:text="@string/cannot_initialize_message_button"
+                android:visibility="gone" />
+
+            <android.support.design.button.MaterialButton
+                android:id="@+id/welcome_sign_in"
+                style="@style/Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:alpha="0"
+                android:text="@string/sign_in"
+                android:visibility="gone" />
+
+            <android.support.design.button.MaterialButton
+                android:id="@+id/welcome_get_started"
+                style="@style/Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:alpha="0"
+                android:text="@string/welcome_button"
+                android:visibility="gone" />
+
+            <android.support.design.button.MaterialButton
+                android:id="@+id/welcome_update_gps"
+                style="@style/Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:alpha="0"
+                android:text="@string/update_gmscore"
+                android:visibility="gone" />
         </FrameLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

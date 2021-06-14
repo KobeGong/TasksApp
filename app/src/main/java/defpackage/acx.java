@@ -8,12 +8,12 @@ import android.view.ViewPropertyAnimator;
 /* renamed from: acx  reason: default package */
 /* compiled from: PG */
 final class acx extends AnimatorListenerAdapter {
-    private final /* synthetic */ afv a;
+    private final /* synthetic */ ViewHolder a;
     private final /* synthetic */ View b;
     private final /* synthetic */ ViewPropertyAnimator c;
     private final /* synthetic */ acs d;
 
-    acx(acs acs, afv afv, View view, ViewPropertyAnimator viewPropertyAnimator) {
+    acx(acs acs, ViewHolder afv, View view, ViewPropertyAnimator viewPropertyAnimator) {
         this.d = acs;
         this.a = afv;
         this.b = view;

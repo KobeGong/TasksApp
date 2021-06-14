@@ -62,8 +62,8 @@ public final class dby extends dih implements djq {
             dih = dii.a;
         }
         dih dih3 = dih;
-        boolean booleanValue = Boolean.TRUE.booleanValue();
-        byte byteValue = ((Byte) dih3.a(bg.ak)).byteValue();
+        boolean booleanValue = true;
+        byte byteValue = (Byte) dih3.a(bg.ak);
         if (byteValue == 1) {
             d2 = true;
         } else if (byteValue == 0) {

@@ -12,9 +12,9 @@
         android:layout_height="@dimen/account_menu_account_list_item_avatar_size"
         android:layout_marginLeft="@dimen/account_menu_account_list_item_avatar_margin_start"
         android:contentDescription="@null"
-        app:layout_constraintBottom_toBottomOf="0"
-        app:layout_constraintStart_toStartOf="0"
-        app:layout_constraintTop_toTopOf="0" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/account_display_name"
@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/account_menu_account_list_item_avatar_margin_end"
         app:layout_constraintBottom_toTopOf="@+id/account_name"
-        app:layout_constraintEnd_toEndOf="0"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/account_avatar"
         app:layout_constraintTop_toTopOf="@+id/account_avatar" />
 
@@ -34,6 +34,6 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/account_menu_account_list_item_avatar_margin_end"
         app:layout_constraintBottom_toBottomOf="@+id/account_avatar"
-        app:layout_constraintEnd_toEndOf="0"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/account_avatar" />
 </android.support.constraint.ConstraintLayout>

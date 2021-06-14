@@ -7,11 +7,11 @@ import android.view.View;
 /* renamed from: aep  reason: default package */
 /* compiled from: PG */
 public class aep {
-    public final afd a;
+    public final LayoutManager a;
     public int b;
     public final Rect c;
 
-    private aep(afd afd) {
+    private aep(LayoutManager afd) {
         this.b = Integer.MIN_VALUE;
         this.c = new Rect();
         this.a = afd;
@@ -25,11 +25,11 @@ public class aep {
     }
 
     public int a(View view) {
-        return afd.c(view) - ((afh) view.getLayoutParams()).topMargin;
+        return LayoutManager.c(view) - ((afh) view.getLayoutParams()).topMargin;
     }
 
     public int b(View view) {
-        return ((afh) view.getLayoutParams()).bottomMargin + afd.e(view);
+        return ((afh) view.getLayoutParams()).bottomMargin + LayoutManager.e(view);
     }
 
     public int c(View view) {
@@ -69,7 +69,7 @@ public class aep {
     }
 
     public void a(int i) {
-        afd afd = this.a;
+        LayoutManager afd = this.a;
         if (afd.b != null) {
             RecyclerView recyclerView = afd.b;
             int a2 = recyclerView.g.a();
@@ -91,7 +91,7 @@ public class aep {
         return this.a.k;
     }
 
-    aep(afd afd, char c2) {
+    aep(LayoutManager afd, char c2) {
         this(afd);
     }
 }

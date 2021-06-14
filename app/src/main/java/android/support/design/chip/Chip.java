@@ -15,6 +15,9 @@ import android.view.PointerIcon;
 import android.view.View;
 import com.google.android.apps.tasks.R;
 
+import defpackage.abi;
+import defpackage.eq;
+
 /* compiled from: PG */
 public class Chip extends abi implements eq {
     public static final Rect a = new Rect();

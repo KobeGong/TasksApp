@@ -11,7 +11,7 @@ public final class aho {
         this.b.c();
     }
 
-    public final void a(afv afv, afb afb) {
+    public final void a(ViewHolder afv, afb afb) {
         ahp ahp = (ahp) this.a.get(afv);
         if (ahp == null) {
             ahp = ahp.a();
@@ -21,12 +21,12 @@ public final class aho {
         ahp.a |= 4;
     }
 
-    public final boolean a(afv afv) {
+    public final boolean a(ViewHolder afv) {
         ahp ahp = (ahp) this.a.get(afv);
         return (ahp == null || (ahp.a & 1) == 0) ? false : true;
     }
 
-    public final afb a(afv afv, int i) {
+    public final afb a(ViewHolder afv, int i) {
         ahp ahp;
         afb afb = null;
         int a2 = this.a.a(afv);
@@ -47,11 +47,11 @@ public final class aho {
         return afb;
     }
 
-    public final void a(long j, afv afv) {
+    public final void a(long j, ViewHolder afv) {
         this.b.a(j, afv);
     }
 
-    public final void b(afv afv, afb afb) {
+    public final void b(ViewHolder afv, afb afb) {
         ahp ahp = (ahp) this.a.get(afv);
         if (ahp == null) {
             ahp = ahp.a();
@@ -62,7 +62,7 @@ public final class aho {
     }
 
     /* access modifiers changed from: package-private */
-    public final void b(afv afv) {
+    public final void b(ViewHolder afv) {
         ahp ahp = (ahp) this.a.get(afv);
         if (ahp == null) {
             ahp = ahp.a();
@@ -72,7 +72,7 @@ public final class aho {
     }
 
     /* access modifiers changed from: package-private */
-    public final void c(afv afv) {
+    public final void c(ViewHolder afv) {
         ahp ahp = (ahp) this.a.get(afv);
         if (ahp != null) {
             ahp.a &= -2;
@@ -80,7 +80,7 @@ public final class aho {
     }
 
     /* access modifiers changed from: package-private */
-    public final void d(afv afv) {
+    public final void d(ViewHolder afv) {
         int b2 = this.b.b() - 1;
         while (true) {
             if (b2 < 0) {

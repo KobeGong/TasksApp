@@ -90,7 +90,7 @@ public class fr extends fn {
                 fbVar.e = new fd(fbVar);
             }
             fbVar.b = (LinearLayout) fbVar.f.inflate(R.layout.design_navigation_item_header, (ViewGroup) fbVar.a, false);
-            fbVar.a.a(fbVar.e);
+            fbVar.a.setAdapter(fbVar.e);
         }
         addView(fbVar.a);
         if (a.f(fw.m)) {

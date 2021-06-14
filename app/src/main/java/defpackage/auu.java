@@ -12,12 +12,12 @@ final class auu extends acs {
     }
 
     @Override // defpackage.aey, defpackage.agp
-    public final boolean b(afv afv, afb afb, afb afb2) {
-        dby g = this.m.W.g(afv.d());
-        if (g == null || !g.d.equals(this.m.W.a)) {
+    public final boolean b(ViewHolder afv, afb afb, afb afb2) {
+        dby g = this.m.taskAdapter.g(afv.d());
+        if (g == null || !g.d.equals(this.m.taskAdapter.a)) {
             return super.b(afv, afb, afb2);
         }
-        this.m.W.a = null;
+        this.m.taskAdapter.a = null;
         View view = afv.a;
         return a(afv, -view.getWidth(), view.getTop(), 0, view.getTop());
     }

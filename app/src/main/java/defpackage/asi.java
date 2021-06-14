@@ -75,17 +75,17 @@ public final class asi extends arb implements DatePickerDialog.OnDateSetListener
 
     @Override // defpackage.lc
     public final View a(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        View inflate = layoutInflater.inflate(R.layout.edit_task_fragment, (ViewGroup) null);
-        this.X = (EditText) inflate.findViewById(R.id.edit_title);
-        this.ab = inflate.findViewById(R.id.edit_due_date_container);
-        this.Y = (TextView) inflate.findViewById(R.id.edit_due_date_empty);
-        this.ac = (EditText) inflate.findViewById(R.id.edit_details);
-        this.Y = (TextView) inflate.findViewById(R.id.edit_due_date_empty);
-        this.Z = (Chip) inflate.findViewById(R.id.edit_due_date_chip);
-        this.ad = (TextView) inflate.findViewById(R.id.edit_list);
-        this.a = (Button) inflate.findViewById(R.id.edit_subtasks_add);
-        this.ae = inflate.findViewById(R.id.edit_subtasks_container);
-        this.b = (LinearLayout) inflate.findViewById(R.id.edit_subtasks_list);
+        View inflate = layoutInflater.inflate(com.google.android.apps.tasks.R.layout.edit_task_fragment, (ViewGroup) null);
+        this.X = (EditText) inflate.findViewById(com.google.android.apps.tasks.R.id.edit_title);
+        this.ab = inflate.findViewById(com.google.android.apps.tasks.R.id.edit_due_date_container);
+        this.Y = (TextView) inflate.findViewById(com.google.android.apps.tasks.R.id.edit_due_date_empty);
+        this.ac = (EditText) inflate.findViewById(com.google.android.apps.tasks.R.id.edit_details);
+        this.Y = (TextView) inflate.findViewById(com.google.android.apps.tasks.R.id.edit_due_date_empty);
+        this.Z = (Chip) inflate.findViewById(com.google.android.apps.tasks.R.id.edit_due_date_chip);
+        this.ad = (TextView) inflate.findViewById(com.google.android.apps.tasks.R.id.edit_list);
+        this.a = (Button) inflate.findViewById(com.google.android.apps.tasks.R.id.edit_subtasks_add);
+        this.ae = inflate.findViewById(com.google.android.apps.tasks.R.id.edit_subtasks_container);
+        this.b = (LinearLayout) inflate.findViewById(com.google.android.apps.tasks.R.id.edit_subtasks_list);
         this.X.setOnFocusChangeListener(new asj(this));
         this.ac.setOnFocusChangeListener(new ask(this));
         this.ab.setOnClickListener(new asn(this));
@@ -228,9 +228,9 @@ public final class asi extends arb implements DatePickerDialog.OnDateSetListener
         ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) this.a.getLayoutParams();
         Resources k = k();
         if (z) {
-            i = R.dimen.edit_task_add_subtask_button_start_spacing;
+            i = com.google.android.apps.tasks.R.dimen.edit_task_add_subtask_button_start_spacing;
         } else {
-            i = R.dimen.edit_task_add_subtask_button_start_spacing_when_no_subtasks;
+            i = com.google.android.apps.tasks.R.dimen.edit_task_add_subtask_button_start_spacing_when_no_subtasks;
         }
         int dimensionPixelOffset = k.getDimensionPixelOffset(i);
         if (Build.VERSION.SDK_INT >= 17) {
@@ -259,12 +259,12 @@ public final class asi extends arb implements DatePickerDialog.OnDateSetListener
         atb atb = new atb(this.b.getContext());
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-1, -2);
         if (this.b.getChildCount() == 0) {
-            dimensionPixelOffset = k().getDimensionPixelOffset(R.dimen.edit_task_subtask_top_spacing_first);
+            dimensionPixelOffset = k().getDimensionPixelOffset(com.google.android.apps.tasks.R.dimen.edit_task_subtask_top_spacing_first);
         } else {
-            dimensionPixelOffset = k().getDimensionPixelOffset(R.dimen.edit_task_subtask_top_spacing);
+            dimensionPixelOffset = k().getDimensionPixelOffset(com.google.android.apps.tasks.R.dimen.edit_task_subtask_top_spacing);
         }
         layoutParams.topMargin = dimensionPixelOffset;
-        layoutParams.bottomMargin = k().getDimensionPixelOffset(R.dimen.edit_task_subtask_bottom_spacing);
+        layoutParams.bottomMargin = k().getDimensionPixelOffset(com.google.android.apps.tasks.R.dimen.edit_task_subtask_bottom_spacing);
         atb.setLayoutParams(layoutParams);
         atb.a(dby);
         this.b.addView(atb);

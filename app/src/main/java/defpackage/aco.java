@@ -26,7 +26,7 @@ public final class aco {
     }
 
     public final void b(View view) {
-        afv c = RecyclerView.c(view);
+        ViewHolder c = RecyclerView.c(view);
         if (c != null) {
             this.a.a(c, c.m);
             c.m = 0;

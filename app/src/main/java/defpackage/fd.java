@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /* renamed from: fd  reason: default package */
 /* compiled from: PG */
-public final class fd extends aet {
+public final class fd extends Adapter {
     public final ArrayList a = new ArrayList();
     public zi b;
     public boolean c;
@@ -21,17 +21,17 @@ public final class fd extends aet {
     }
 
     @Override // defpackage.aet
-    public final long a(int i) {
+    public final long getItemId(int i) {
         return (long) i;
     }
 
     @Override // defpackage.aet
-    public final int a() {
+    public final int getCount() {
         return this.a.size();
     }
 
     @Override // defpackage.aet
-    public final int b(int i) {
+    public final int getItemViewType(int i) {
         ff ffVar = (ff) this.a.get(i);
         if (ffVar instanceof fg) {
             return 2;
@@ -149,8 +149,8 @@ public final class fd extends aet {
     }
 
     @Override // defpackage.aet
-    public final /* synthetic */ void a(afv afv) {
-        afv afv2 = afv;
+    public final /* synthetic */ void a(ViewHolder afv) {
+        ViewHolder afv2 = afv;
         if (afv2 instanceof fi) {
             NavigationMenuItemView navigationMenuItemView = (NavigationMenuItemView) afv2.a;
             if (navigationMenuItemView.d != null) {
@@ -161,9 +161,9 @@ public final class fd extends aet {
     }
 
     @Override // defpackage.aet
-    public final /* synthetic */ void a(afv afv, int i) {
-        afv afv2 = afv;
-        switch (b(i)) {
+    public final /* synthetic */ void onBindViewHolder(ViewHolder afv, int i) {
+        ViewHolder afv2 = afv;
+        switch (getItemViewType(i)) {
             case 0:
                 NavigationMenuItemView navigationMenuItemView = (NavigationMenuItemView) afv2.a;
                 navigationMenuItemView.f = this.f.j;
@@ -198,16 +198,16 @@ public final class fd extends aet {
     }
 
     @Override // defpackage.aet
-    public final /* synthetic */ afv a(ViewGroup viewGroup, int i) {
+    public final /* synthetic */ ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         switch (i) {
             case 0:
                 return new fi(this.f.f, viewGroup, this.f.p);
             case 1:
-                return new afv(this.f.f, viewGroup, (byte) 0);
+                return new ViewHolder(this.f.f, viewGroup, (byte) 0);
             case 2:
-                return new afv(this.f.f, viewGroup);
+                return new ViewHolder(this.f.f, viewGroup);
             case 3:
-                return new afv((View) this.f.b, (char) 0);
+                return new ViewHolder((View) this.f.b, (char) 0);
             default:
                 return null;
         }

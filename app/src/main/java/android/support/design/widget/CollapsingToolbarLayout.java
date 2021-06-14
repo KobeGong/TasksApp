@@ -5,6 +5,9 @@ import android.util.AttributeSet;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
+import defpackage.db;
+import defpackage.dd;
+
 @Deprecated
 /* compiled from: PG */
 public class CollapsingToolbarLayout extends db {

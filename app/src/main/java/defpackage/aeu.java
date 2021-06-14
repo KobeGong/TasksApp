@@ -8,7 +8,7 @@ public final class aeu extends Observable {
     aeu() {
     }
 
-    public final boolean a() {
+    public final boolean hasObserbers() {
         return !this.mObservers.isEmpty();
     }
 

@@ -20,7 +20,7 @@ import java.io.PrintWriter;
 import java.lang.reflect.InvocationTargetException;
 
 /* renamed from: lc  reason: default package */
-/* compiled from: PG */
+/* compiled from: Fragment */
 public class lc implements ak, ComponentCallbacks, View.OnCreateContextMenuListener, y {
     private static final ri a = new ri();
     public static final Object c = new Object();
@@ -223,6 +223,7 @@ public class lc implements ak, ComponentCallbacks, View.OnCreateContextMenuListe
     public static void n() {
     }
 
+    //getLayoutInflater
     public LayoutInflater b(Bundle bundle) {
         if (this.u == null) {
             throw new IllegalStateException("onGetLayoutInflater() cannot be executed until the Fragment is attached to the FragmentManager.");

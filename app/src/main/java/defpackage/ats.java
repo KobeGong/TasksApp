@@ -27,7 +27,7 @@ public final class ats extends afc {
 
     @Override // defpackage.afc
     public final void a(Rect rect, View view, RecyclerView recyclerView) {
-        afv b2 = recyclerView.b(view);
+        ViewHolder b2 = recyclerView.b(view);
         if (a(b2)) {
             if (a(recyclerView, b2.d())) {
                 rect.bottom = this.b;
@@ -39,30 +39,30 @@ public final class ats extends afc {
 
     private static boolean a(RecyclerView recyclerView, int i) {
         boolean z;
-        if (i == recyclerView.k.a() - 1) {
+        if (i == recyclerView.adapter.getCount() - 1) {
             z = true;
         } else {
             z = false;
         }
-        return z || recyclerView.k.b(i + 1) == 0;
+        return z || recyclerView.adapter.getItemViewType(i + 1) == 0;
     }
 
     @Override // defpackage.afc
     public final void b(Canvas canvas, RecyclerView recyclerView) {
         int i;
-        atg atg = (atg) recyclerView.k;
+        SortableAdapter atg = (SortableAdapter) recyclerView.adapter;
         boolean z = sn.a.j(recyclerView) == 1;
         int width = recyclerView.getWidth();
         int childCount = recyclerView.getChildCount();
         for (int i2 = 0; i2 < childCount; i2++) {
             View childAt = recyclerView.getChildAt(i2);
-            afv b2 = recyclerView.b(childAt);
+            ViewHolder b2 = recyclerView.b(childAt);
             if (!(b2 instanceof atp) && !(b2 instanceof atk)) {
                 if (!a(b2)) {
                     int bottom = childAt.getBottom() + ((int) childAt.getTranslationY());
                     int i3 = bottom + this.b;
                     int i4 = 0;
-                    if (!((atg instanceof atv) && ((atv) atg).l(RecyclerView.d(childAt)))) {
+                    if (!((atg instanceof MySortAdapter) && ((MySortAdapter) atg).l(RecyclerView.d(childAt)))) {
                         i = width;
                     } else if (z) {
                         i = width - this.c;
@@ -86,7 +86,7 @@ public final class ats extends afc {
         this.a.draw(canvas);
     }
 
-    private static boolean a(afv afv) {
+    private static boolean a(ViewHolder afv) {
         boolean z;
         if (afv instanceof atx) {
             atx atx = (atx) afv;

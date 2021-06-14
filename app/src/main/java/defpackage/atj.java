@@ -7,7 +7,7 @@ import com.google.android.apps.tasks.R;
 /* renamed from: atj  reason: default package */
 /* compiled from: PG */
 public final class atj {
-    public final /* synthetic */ atg a;
+    public final /* synthetic */ SortableAdapter a;
 
     public final void a(boolean z) {
         int i;
@@ -18,11 +18,11 @@ public final class atj {
             i = R.drawable.quantum_ic_stat_minus_1_grey600_24;
         }
         imageView.setImageResource(i);
-        atg atg = this.a;
+        SortableAdapter atg = this.a;
         atg.j.setAccessibilityDelegate(new ati(atg));
     }
 
-    atj(atg atg) {
+    atj(SortableAdapter atg) {
         this.a = atg;
     }
 }

@@ -1,21 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
-    <TextView android:textColor="@color/edit_task_list_selector" android:id="@+id/edit_list" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/google_sans_medium" app:backgroundTint="@color/edit_task_list_selector" style="@style/Widget.AppCompat.Spinner"/>
-    <EditText android:textSize="@dimen/edit_title_font_size" android:id="@+id/edit_title" android:background="@android:color/transparent" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/edit_task_title_top_spacing" android:layout_marginBottom="@dimen/edit_task_title_bottom_spacing" android:hint="@string/tasks_add_title_hint" android:maxLength="@integer/max_task_title_size" android:inputType="none|text|textCapSentences|textAutoComplete|textMultiLine" android:fontFamily="@font/google_sans_medium"/>
-    <RelativeLayout android:gravity="center_vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/edit_task_vertical_spacing" android:layout_marginBottom="@dimen/edit_task_vertical_spacing">
-        <ImageView android:id="@+id/edit_details_img" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/quantum_ic_notes_grey600_24"/>
-        <EditText android:textAppearance="?android:attr/textAppearanceSmall" android:id="@+id/edit_details" android:background="@android:color/transparent" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/tasks_add_details_hint" android:maxLength="@integer/max_task_details_size" android:layout_centerVertical="true" android:inputType="none|text|textCapSentences|textAutoComplete|textMultiLine"/>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/edit_list"
+        style="@style/Widget.AppCompat.Spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/edit_task_list_selector"
+        app:backgroundTint="@color/edit_task_list_selector" />
+
+    <EditText
+        android:id="@+id/edit_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/edit_task_title_top_spacing"
+        android:layout_marginBottom="@dimen/edit_task_title_bottom_spacing"
+        android:background="@android:color/transparent"
+        android:hint="@string/tasks_add_title_hint"
+        android:inputType="none|text|textCapSentences|textAutoComplete|textMultiLine"
+        android:maxLength="@integer/max_task_title_size"
+        android:textSize="@dimen/edit_title_font_size" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/edit_task_vertical_spacing"
+        android:layout_marginBottom="@dimen/edit_task_vertical_spacing"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/edit_details_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/quantum_ic_notes_grey600_24" />
+
+        <EditText
+            android:id="@+id/edit_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:hint="@string/tasks_add_details_hint"
+            android:inputType="none|text|textCapSentences|textAutoComplete|textMultiLine"
+            android:maxLength="@integer/max_task_details_size"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
     </RelativeLayout>
-    <RelativeLayout android:gravity="center_vertical" android:id="@+id/edit_due_date_container" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/edit_task_vertical_spacing" android:layout_marginBottom="@dimen/edit_task_vertical_spacing" android:contentDescription="@string/a11y_edit_date">
-        <ImageView android:id="@+id/edit_due_date_pick" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/quantum_ic_event_available_grey600_24" android:layout_centerInParent="true"/>
-        <FrameLayout android:gravity="center_vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_centerVertical="true">
-            <TextView android:layout_gravity="center_vertical" android:id="@+id/edit_due_date_empty" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/tasks_add_due_date_hint"/>
-            <android.support.design.chip.Chip android:id="@+id/edit_due_date_chip" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checkable="false" app:closeIconEnabled="true" style="@style/Chip.Date"/>
+
+    <RelativeLayout
+        android:id="@+id/edit_due_date_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/edit_task_vertical_spacing"
+        android:layout_marginBottom="@dimen/edit_task_vertical_spacing"
+        android:contentDescription="@string/a11y_edit_date"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/edit_due_date_pick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/quantum_ic_event_available_grey600_24" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/edit_due_date_empty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:hint="@string/tasks_add_due_date_hint" />
+
+            <android.support.design.chip.Chip
+                android:id="@+id/edit_due_date_chip"
+                style="@style/Chip.Date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkable="false"
+                android:visibility="invisible"
+                app:closeIconEnabled="true" />
         </FrameLayout>
     </RelativeLayout>
-    <RelativeLayout android:gravity="center_vertical" android:id="@+id/edit_subtasks_container" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/edit_task_subtasks_vertical_spacing" android:layout_marginBottom="@dimen/edit_task_vertical_spacing" android:animateLayoutChanges="true">
-        <ImageView android:id="@+id/edit_subtasks_img" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/edit_task_subtasks_image_top_spacing" android:src="@drawable/quantum_ic_subdirectory_arrow_right_grey600_24"/>
-        <LinearLayout android:orientation="vertical" android:id="@+id/edit_subtasks_list" android:layout_width="match_parent" android:layout_height="wrap_content" android:animateLayoutChanges="true"/>
-        <android.support.design.button.MaterialButton android:textSize="@dimen/default_font_size" android:textColor="@color/google_grey700" android:id="@+id/edit_subtasks_add" android:paddingLeft="@dimen/edit_task_add_subtask_button_padding_horizontal" android:paddingTop="@dimen/edit_task_add_subtask_button_padding_vertical" android:paddingRight="@dimen/edit_task_add_subtask_button_padding_horizontal" android:paddingBottom="@dimen/edit_task_add_subtask_button_padding_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/edit_task_add_subtask_button_start_spacing" android:minWidth="0dp" android:text="@string/add_subtask" android:layout_below="@+id/edit_subtasks_list" style="@style/TextButton"/>
+
+    <RelativeLayout
+        android:id="@+id/edit_subtasks_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/edit_task_subtasks_vertical_spacing"
+        android:layout_marginBottom="@dimen/edit_task_vertical_spacing"
+        android:animateLayoutChanges="true"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/edit_subtasks_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/edit_task_subtasks_image_top_spacing"
+            android:src="@drawable/quantum_ic_subdirectory_arrow_right_grey600_24" />
+
+        <LinearLayout
+            android:id="@+id/edit_subtasks_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical" />
+
+        <android.support.design.button.MaterialButton
+            android:id="@+id/edit_subtasks_add"
+            style="@style/TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_subtasks_list"
+            android:layout_marginLeft="@dimen/edit_task_add_subtask_button_start_spacing"
+            android:minWidth="0dp"
+            android:paddingLeft="@dimen/edit_task_add_subtask_button_padding_horizontal"
+            android:paddingTop="@dimen/edit_task_add_subtask_button_padding_vertical"
+            android:paddingRight="@dimen/edit_task_add_subtask_button_padding_horizontal"
+            android:paddingBottom="@dimen/edit_task_add_subtask_button_padding_vertical"
+            android:text="@string/add_subtask"
+            android:textColor="@color/google_grey700"
+            android:textSize="@dimen/default_font_size" />
     </RelativeLayout>
 </LinearLayout>

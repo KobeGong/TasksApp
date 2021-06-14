@@ -7,11 +7,11 @@ import android.animation.Animator;
 /* compiled from: PG */
 public final class ahw extends aic {
     private final /* synthetic */ int n;
-    private final /* synthetic */ afv o;
+    private final /* synthetic */ ViewHolder o;
     private final /* synthetic */ aht p;
 
     /* JADX INFO: super call moved to the top of the method (can break code semantics) */
-    ahw(aht aht, afv afv, int i, float f, float f2, float f3, float f4, int i2, afv afv2) {
+    ahw(aht aht, ViewHolder afv, int i, float f, float f2, float f3, float f4, int i2, ViewHolder afv2) {
         super(afv, i, f, f2, f3, f4);
         this.p = aht;
         this.n = i2;

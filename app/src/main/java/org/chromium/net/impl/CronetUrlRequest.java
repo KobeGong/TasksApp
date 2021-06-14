@@ -3,6 +3,15 @@ package org.chromium.net.impl;
 import java.nio.ByteBuffer;
 import org.chromium.base.annotations.CalledByNative;
 
+import defpackage.bkv;
+import defpackage.dpt;
+import defpackage.eka;
+import defpackage.ekb;
+import defpackage.ekc;
+import defpackage.ekd;
+import defpackage.ekp;
+import defpackage.ekq;
+
 /* compiled from: PG */
 public final class CronetUrlRequest extends dpt {
     private ekd a;

@@ -8,7 +8,7 @@ import android.view.View;
 public final class ahq {
     public final /* synthetic */ RecyclerView a;
 
-    public final void a(afv afv, afb afb, afb afb2) {
+    public final void a(ViewHolder afv, afb afb, afb afb2) {
         this.a.e.b(afv);
         RecyclerView recyclerView = this.a;
         recyclerView.a(afv);
@@ -18,7 +18,7 @@ public final class ahq {
         }
     }
 
-    public final void b(afv afv, afb afb, afb afb2) {
+    public final void b(ViewHolder afv, afb afb, afb afb2) {
         RecyclerView recyclerView = this.a;
         afv.a(false);
         if (recyclerView.z.b(afv, afb, afb2)) {
@@ -26,8 +26,8 @@ public final class ahq {
         }
     }
 
-    public final void a(afv afv) {
-        afd afd = this.a.l;
+    public final void a(ViewHolder afv) {
+        LayoutManager afd = this.a.layoutManager;
         View view = afv.a;
         afn afn = this.a.e;
         acm acm = afd.a;

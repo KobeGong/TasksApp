@@ -3,6 +3,8 @@ package com.google.android.apps.tasks.features.chime;
 import android.os.Bundle;
 import android.util.Base64;
 
+import defpackage.bhg;
+
 /* compiled from: PG */
 public class GcmListenerService extends bhg {
     @Override // defpackage.bhg

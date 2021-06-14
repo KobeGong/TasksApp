@@ -26,7 +26,7 @@ public final class adr implements Runnable {
         afg.b = i2;
     }
 
-    private static afv a(RecyclerView recyclerView, int i, long j) {
+    private static ViewHolder a(RecyclerView recyclerView, int i, long j) {
         boolean z;
         int b2 = recyclerView.g.b();
         int i2 = 0;
@@ -35,7 +35,7 @@ public final class adr implements Runnable {
                 z = false;
                 break;
             }
-            afv c2 = RecyclerView.c(recyclerView.g.c(i2));
+            ViewHolder c2 = RecyclerView.c(recyclerView.g.c(i2));
             if (c2.c == i && !c2.j()) {
                 z = true;
                 break;
@@ -48,7 +48,7 @@ public final class adr implements Runnable {
         afn afn = recyclerView.e;
         try {
             recyclerView.i();
-            afv a2 = afn.a(i, j);
+            ViewHolder a2 = afn.a(i, j);
             if (a2 != null) {
                 if (!a2.l() || a2.j()) {
                     afn.a(a2, false);
@@ -142,7 +142,7 @@ public final class adr implements Runnable {
                     if (adt3.d == null) {
                         break;
                     }
-                    afv a2 = a(adt3.d, adt3.e, adt3.a ? Long.MAX_VALUE : nanos);
+                    ViewHolder a2 = a(adt3.d, adt3.e, adt3.a ? Long.MAX_VALUE : nanos);
                     if (!(a2 == null || a2.b == null || !a2.l() || a2.j() || (recyclerView = (RecyclerView) a2.b.get()) == null)) {
                         if (recyclerView.u && recyclerView.g.b() != 0) {
                             recyclerView.b();
@@ -153,9 +153,9 @@ public final class adr implements Runnable {
                             try {
                                 jd.c("RV Nested Prefetch");
                                 aft aft = recyclerView.D;
-                                aet aet = recyclerView.k;
+                                Adapter aet = recyclerView.adapter;
                                 aft.d = 1;
-                                aft.e = aet.a();
+                                aft.e = aet.getCount();
                                 aft.g = false;
                                 aft.h = false;
                                 aft.i = false;

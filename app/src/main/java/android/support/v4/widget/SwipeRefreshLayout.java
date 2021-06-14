@@ -15,6 +15,10 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.AbsListView;
 import android.widget.ListView;
 
+import defpackage.ua;
+import defpackage.uc;
+import defpackage.vn;
+
 /* compiled from: PG */
 public class SwipeRefreshLayout extends ViewGroup implements sf, si {
     private static final int[] B = {16842766};

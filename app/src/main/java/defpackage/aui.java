@@ -19,7 +19,7 @@ final /* synthetic */ class aui implements Runnable {
         String str = null;
         auh auh = this.a;
         int i3 = this.b;
-        atv atv = (atv) auh.a;
+        MySortAdapter atv = (MySortAdapter) auh.a;
         cld.a(i3 < atv.m.size());
         atv.p = null;
         if (atv.f != null && i3 >= 0) {
@@ -64,7 +64,7 @@ final /* synthetic */ class aui implements Runnable {
                 auj.N().a(atv.f.a.X, dby.d, i, str);
             }
             if (bdk.b(TaskApplication.b().getApplicationContext())) {
-                atv.d.b();
+                atv.mObservable.b();
             }
         }
     }

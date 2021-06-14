@@ -20,7 +20,7 @@ public final class acm {
     public final void a(View view) {
         this.c.add(view);
         aco aco = this.a;
-        afv c2 = RecyclerView.c(view);
+        ViewHolder c2 = RecyclerView.c(view);
         if (c2 != null) {
             RecyclerView recyclerView = aco.a;
             if (c2.n != -1) {
@@ -99,7 +99,7 @@ public final class acm {
             a(view);
         }
         aco aco = this.a;
-        afv c2 = RecyclerView.c(view);
+        ViewHolder c2 = RecyclerView.c(view);
         if (c2 != null) {
             if (c2.n() || c2.b()) {
                 c2.i();
@@ -124,7 +124,7 @@ public final class acm {
 
     /* access modifiers changed from: package-private */
     public final void d(int i) {
-        afv c2;
+        ViewHolder c2;
         int a2 = a(i);
         this.b.d(a2);
         aco aco = this.a;

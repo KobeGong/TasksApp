@@ -25,11 +25,34 @@ import android.view.accessibility.AccessibilityManager;
 import android.view.animation.Interpolator;
 import android.widget.EdgeEffect;
 import android.widget.OverScroller;
-import com.google.android.apps.tasks.R;
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
+
+import defpackage.acm;
+import defpackage.adr;
+import defpackage.Adapter;
+import defpackage.aeo;
+import defpackage.aew;
+import defpackage.aey;
+import defpackage.afa;
+import defpackage.afc;
+import defpackage.LayoutManager;
+import defpackage.afg;
+import defpackage.afj;
+import defpackage.afk;
+import defpackage.afn;
+import defpackage.afo;
+import defpackage.afp;
+import defpackage.afq;
+import defpackage.aft;
+import defpackage.afu;
+import defpackage.ViewHolder;
+import defpackage.afw;
+import defpackage.aho;
+import defpackage.ahq;
 
 /* compiled from: PG */
 public class RecyclerView extends ViewGroup implements sg {
@@ -94,8 +117,8 @@ public class RecyclerView extends ViewGroup implements sg {
     public final aho h;
     public final Rect i;
     public final RectF j;
-    public aet k;
-    public afd l;
+    public Adapter adapter;
+    public LayoutManager layoutManager;
     public afo m;
     public final ArrayList n;
     public boolean o;
@@ -221,7 +244,7 @@ public class RecyclerView extends ViewGroup implements sg {
                         } else {
                             classLoader = context.getClassLoader();
                         }
-                        Class<? extends U> asSubclass = classLoader.loadClass(str).asSubclass(afd.class);
+                        Class<? extends U> asSubclass = classLoader.loadClass(str).asSubclass(LayoutManager.class);
                         try {
                             Constructor<? extends U> constructor2 = asSubclass.getConstructor(P);
                             objArr = new Object[]{context, attributeSet, Integer.valueOf(i2), 0};
@@ -236,7 +259,7 @@ public class RecyclerView extends ViewGroup implements sg {
                             }
                         }
                         constructor.setAccessible(true);
-                        a((afd) constructor.newInstance(objArr));
+                        setLayoutManager((LayoutManager) constructor.newInstance(objArr));
                     } catch (ClassNotFoundException e4) {
                         throw new IllegalStateException(attributeSet.getPositionDescription() + ": Unable to find LayoutManager " + str, e4);
                     } catch (InvocationTargetException e5) {
@@ -264,7 +287,7 @@ public class RecyclerView extends ViewGroup implements sg {
     }
 
     public final String a() {
-        return " " + super.toString() + ", adapter:" + this.k + ", layout:" + this.l + ", context:" + getContext();
+        return " " + super.toString() + ", adapter:" + this.adapter + ", layout:" + this.layoutManager + ", context:" + getContext();
     }
 
     public final void a(afw afw) {
@@ -287,22 +310,22 @@ public class RecyclerView extends ViewGroup implements sg {
         return this.S;
     }
 
-    public final void a(aet aet) {
-        if (this.k != null) {
-            this.k.d.unregisterObserver(this.Q);
+    public final void setAdapter(Adapter aet) {
+        if (this.adapter != null) {
+            this.adapter.mObservable.unregisterObserver(this.Q);
         }
         b();
         this.f.a();
-        aet aet2 = this.k;
-        this.k = aet;
+        Adapter aet2 = this.adapter;
+        this.adapter = aet;
         if (aet != null) {
-            aet.d.registerObserver(this.Q);
+            aet.mObservable.registerObserver(this.Q);
         }
-        if (this.l != null) {
-            this.l.q();
+        if (this.layoutManager != null) {
+            this.layoutManager.q();
         }
         afn afn = this.e;
-        aet aet3 = this.k;
+        Adapter aet3 = this.adapter;
         afn.a();
         afl d2 = afn.d();
         if (aet2 != null) {
@@ -325,35 +348,35 @@ public class RecyclerView extends ViewGroup implements sg {
         if (this.z != null) {
             this.z.d();
         }
-        if (this.l != null) {
-            this.l.b(this.e);
-            this.l.a(this.e);
+        if (this.layoutManager != null) {
+            this.layoutManager.b(this.e);
+            this.layoutManager.a(this.e);
         }
         this.e.a();
     }
 
     public int getBaseline() {
-        if (this.l != null) {
+        if (this.layoutManager != null) {
             return -1;
         }
         return super.getBaseline();
     }
 
-    public final void a(afd afd) {
-        if (afd != this.l) {
+    public final void setLayoutManager(LayoutManager afd) {
+        if (afd != this.layoutManager) {
             q();
-            if (this.l != null) {
+            if (this.layoutManager != null) {
                 if (this.z != null) {
                     this.z.d();
                 }
-                this.l.b(this.e);
-                this.l.a(this.e);
+                this.layoutManager.b(this.e);
+                this.layoutManager.a(this.e);
                 this.e.a();
                 if (this.o) {
-                    this.l.j();
+                    this.layoutManager.j();
                 }
-                this.l.a((RecyclerView) null);
-                this.l = null;
+                this.layoutManager.a((RecyclerView) null);
+                this.layoutManager = null;
             } else {
                 this.e.a();
             }
@@ -378,14 +401,14 @@ public class RecyclerView extends ViewGroup implements sg {
                 b2.clearAnimation();
             }
             aco.a.removeAllViews();
-            this.l = afd;
+            this.layoutManager = afd;
             if (afd != null) {
                 if (afd.b != null) {
                     throw new IllegalArgumentException("LayoutManager " + afd + " is already attached to a RecyclerView:" + afd.b.a());
                 }
-                this.l.a(this);
+                this.layoutManager.a(this);
                 if (this.o) {
-                    this.l.i();
+                    this.layoutManager.i();
                 }
             }
             this.e.b();
@@ -398,8 +421,8 @@ public class RecyclerView extends ViewGroup implements sg {
         afq afq = new afq(super.onSaveInstanceState());
         if (this.R != null) {
             afq.a = this.R.a;
-        } else if (this.l != null) {
-            afq.a = this.l.c();
+        } else if (this.layoutManager != null) {
+            afq.a = this.layoutManager.c();
         } else {
             afq.a = null;
         }
@@ -414,8 +437,8 @@ public class RecyclerView extends ViewGroup implements sg {
         }
         this.R = (afq) parcelable;
         super.onRestoreInstanceState(this.R.e);
-        if (this.l != null && this.R.a != null) {
-            this.l.a(this.R.a);
+        if (this.layoutManager != null && this.R.a != null) {
+            this.layoutManager.a(this.R.a);
         }
     }
 
@@ -431,7 +454,7 @@ public class RecyclerView extends ViewGroup implements sg {
         dispatchThawSelfOnly(sparseArray);
     }
 
-    public final void a(afv afv) {
+    public final void a(ViewHolder afv) {
         View view = afv.a;
         boolean z2 = view.getParent() == this;
         this.e.b(a(view));
@@ -465,8 +488,8 @@ public class RecyclerView extends ViewGroup implements sg {
     }
 
     public final void a(afc afc) {
-        if (this.l != null) {
-            this.l.a("Cannot add item decoration during a scroll  or layout");
+        if (this.layoutManager != null) {
+            this.layoutManager.a("Cannot add item decoration during a scroll  or layout");
         }
         if (this.n.isEmpty()) {
             setWillNotDraw(false);
@@ -477,8 +500,8 @@ public class RecyclerView extends ViewGroup implements sg {
     }
 
     public final void b(afc afc) {
-        if (this.l != null) {
-            this.l.a("Cannot remove item decoration during a scroll  or layout");
+        if (this.layoutManager != null) {
+            this.layoutManager.a("Cannot remove item decoration during a scroll  or layout");
         }
         this.n.remove(afc);
         if (this.n.isEmpty()) {
@@ -504,11 +527,11 @@ public class RecyclerView extends ViewGroup implements sg {
 
     public final void c(int i2) {
         q();
-        if (this.l == null) {
+        if (this.layoutManager == null) {
             Log.e("RecyclerView", "Cannot scroll to position a LayoutManager set. Call setLayoutManager with a non-null argument.");
             return;
         }
-        this.l.b(i2);
+        this.layoutManager.b(i2);
         awakenScrollBars();
     }
 
@@ -517,12 +540,12 @@ public class RecyclerView extends ViewGroup implements sg {
     }
 
     public void scrollBy(int i2, int i3) {
-        if (this.l == null) {
+        if (this.layoutManager == null) {
             Log.e("RecyclerView", "Cannot scroll without a LayoutManager set. Call setLayoutManager with a non-null argument.");
             return;
         }
-        boolean d2 = this.l.d();
-        boolean e2 = this.l.e();
+        boolean d2 = this.layoutManager.d();
+        boolean e2 = this.layoutManager.e();
         if (d2 || e2) {
             if (!d2) {
                 i2 = 0;
@@ -539,13 +562,13 @@ public class RecyclerView extends ViewGroup implements sg {
         i();
         jd.c("RV Scroll");
         z();
-        int a2 = i2 != 0 ? this.l.a(i2, this.e, this.D) : 0;
-        int b2 = i3 != 0 ? this.l.b(i3, this.e, this.D) : 0;
+        int a2 = i2 != 0 ? this.layoutManager.a(i2, this.e, this.D) : 0;
+        int b2 = i3 != 0 ? this.layoutManager.b(i3, this.e, this.D) : 0;
         jd.b();
         int a3 = this.g.a();
         for (int i4 = 0; i4 < a3; i4++) {
             View b3 = this.g.b(i4);
-            afv a4 = a(b3);
+            ViewHolder a4 = a(b3);
             if (!(a4 == null || a4.i == null)) {
                 View view = a4.i.a;
                 int left = b3.getLeft();
@@ -581,7 +604,7 @@ public class RecyclerView extends ViewGroup implements sg {
                     int i2 = 0;
                     while (true) {
                         if (i2 < a2) {
-                            afv c2 = c(this.g.b(i2));
+                            ViewHolder c2 = c(this.g.b(i2));
                             if (c2 != null && !c2.b() && c2.s()) {
                                 z2 = true;
                                 break;
@@ -614,7 +637,7 @@ public class RecyclerView extends ViewGroup implements sg {
         int i6 = 0;
         int i7 = 0;
         c();
-        if (this.k != null) {
+        if (this.adapter != null) {
             a(i2, i3, this.L);
             i6 = this.L[0];
             i7 = this.L[1];
@@ -680,43 +703,43 @@ public class RecyclerView extends ViewGroup implements sg {
     }
 
     public int computeHorizontalScrollOffset() {
-        if (this.l != null && this.l.d()) {
-            return this.l.b(this.D);
+        if (this.layoutManager != null && this.layoutManager.d()) {
+            return this.layoutManager.b(this.D);
         }
         return 0;
     }
 
     public int computeHorizontalScrollExtent() {
-        if (this.l != null && this.l.d()) {
-            return this.l.d(this.D);
+        if (this.layoutManager != null && this.layoutManager.d()) {
+            return this.layoutManager.d(this.D);
         }
         return 0;
     }
 
     public int computeHorizontalScrollRange() {
-        if (this.l != null && this.l.d()) {
-            return this.l.f(this.D);
+        if (this.layoutManager != null && this.layoutManager.d()) {
+            return this.layoutManager.f(this.D);
         }
         return 0;
     }
 
     public int computeVerticalScrollOffset() {
-        if (this.l != null && this.l.e()) {
-            return this.l.c(this.D);
+        if (this.layoutManager != null && this.layoutManager.e()) {
+            return this.layoutManager.c(this.D);
         }
         return 0;
     }
 
     public int computeVerticalScrollExtent() {
-        if (this.l != null && this.l.e()) {
-            return this.l.e(this.D);
+        if (this.layoutManager != null && this.layoutManager.e()) {
+            return this.layoutManager.e(this.D);
         }
         return 0;
     }
 
     public int computeVerticalScrollRange() {
-        if (this.l != null && this.l.e()) {
-            return this.l.g(this.D);
+        if (this.layoutManager != null && this.layoutManager.e()) {
+            return this.layoutManager.g(this.D);
         }
         return 0;
     }
@@ -736,7 +759,7 @@ public class RecyclerView extends ViewGroup implements sg {
             this.ab = false;
         }
         if (this.aa == 1) {
-            if (z2 && this.ab && this.l != null && this.k != null) {
+            if (z2 && this.ab && this.layoutManager != null && this.adapter != null) {
                 x();
             }
             this.ab = false;
@@ -749,16 +772,16 @@ public class RecyclerView extends ViewGroup implements sg {
         int i5;
         int i6;
         int i7;
-        if (this.l == null) {
+        if (this.layoutManager == null) {
             Log.e("RecyclerView", "Cannot smooth scroll without a LayoutManager set. Call setLayoutManager with a non-null argument.");
             return;
         }
-        if (!this.l.d()) {
+        if (!this.layoutManager.d()) {
             i4 = 0;
         } else {
             i4 = i2;
         }
-        if (!this.l.e()) {
+        if (!this.layoutManager.e()) {
             i5 = 0;
         } else {
             i5 = i3;
@@ -887,7 +910,7 @@ public class RecyclerView extends ViewGroup implements sg {
         boolean z4;
         char c2 = 65535;
         boolean z5 = false;
-        boolean z6 = (this.k == null || this.l == null || u()) ? false : true;
+        boolean z6 = (this.adapter == null || this.layoutManager == null || u()) ? false : true;
         FocusFinder instance = FocusFinder.getInstance();
         if (!z6 || !(i2 == 2 || i2 == 1)) {
             findNextFocus = instance.findNextFocus(this, view, i2);
@@ -897,11 +920,11 @@ public class RecyclerView extends ViewGroup implements sg {
                     return null;
                 }
                 d();
-                findNextFocus = this.l.c(i2, this.e, this.D);
+                findNextFocus = this.layoutManager.c(i2, this.e, this.D);
                 a(false);
             }
         } else {
-            if (this.l.e()) {
+            if (this.layoutManager.e()) {
                 if (instance.findNextFocus(this, view, i2 == 2 ? 130 : 33) == null) {
                     z2 = true;
                 } else {
@@ -910,8 +933,8 @@ public class RecyclerView extends ViewGroup implements sg {
             } else {
                 z2 = false;
             }
-            if (!z2 && this.l.d()) {
-                if (sn.a.j(this.l.b) == 1) {
+            if (!z2 && this.layoutManager.d()) {
+                if (sn.a.j(this.layoutManager.b) == 1) {
                     z3 = true;
                 } else {
                     z3 = false;
@@ -933,7 +956,7 @@ public class RecyclerView extends ViewGroup implements sg {
                     return null;
                 }
                 d();
-                this.l.c(i2, this.e, this.D);
+                this.layoutManager.c(i2, this.e, this.D);
                 a(false);
             }
             findNextFocus = instance.findNextFocus(this, view, i2);
@@ -949,7 +972,7 @@ public class RecyclerView extends ViewGroup implements sg {
                     this.T.set(0, 0, findNextFocus.getWidth(), findNextFocus.getHeight());
                     offsetDescendantRectToMyCoords(view, this.i);
                     offsetDescendantRectToMyCoords(findNextFocus, this.T);
-                    int i4 = sn.a.j(this.l.b) == 1 ? -1 : 1;
+                    int i4 = sn.a.j(this.layoutManager.b) == 1 ? -1 : 1;
                     if ((this.i.left < this.T.left || this.i.right <= this.T.left) && this.i.right < this.T.right) {
                         i3 = 1;
                     } else if ((this.i.right > this.T.right || this.i.left >= this.T.right) && this.i.left > this.T.left) {
@@ -1038,7 +1061,7 @@ public class RecyclerView extends ViewGroup implements sg {
             offsetDescendantRectToMyCoords(view2, this.i);
             offsetRectIntoDescendantCoords(view, this.i);
         }
-        afd afd = this.l;
+        LayoutManager afd = this.layoutManager;
         Rect rect3 = this.i;
         boolean z3 = !this.q;
         if (view2 != null) {
@@ -1048,7 +1071,7 @@ public class RecyclerView extends ViewGroup implements sg {
     }
 
     public boolean requestChildRectangleOnScreen(View view, Rect rect, boolean z2) {
-        return this.l.a(this, view, rect, z2, false);
+        return this.layoutManager.a(this, view, rect, z2, false);
     }
 
     /* access modifiers changed from: protected */
@@ -1079,8 +1102,8 @@ public class RecyclerView extends ViewGroup implements sg {
         }
         q();
         this.o = false;
-        if (this.l != null) {
-            this.l.j();
+        if (this.layoutManager != null) {
+            this.layoutManager.j();
         }
         this.az.clear();
         removeCallbacks(this.aA);
@@ -1144,11 +1167,11 @@ public class RecyclerView extends ViewGroup implements sg {
         if (z2) {
             t();
             return true;
-        } else if (this.l == null) {
+        } else if (this.layoutManager == null) {
             return false;
         } else {
-            boolean d2 = this.l.d();
-            boolean e2 = this.l.e();
+            boolean d2 = this.layoutManager.d();
+            boolean e2 = this.layoutManager.e();
             if (this.ai == null) {
                 this.ai = VelocityTracker.obtain();
             }
@@ -1304,14 +1327,14 @@ public class RecyclerView extends ViewGroup implements sg {
         float f2;
         float f3;
         float f4;
-        if (this.l != null && motionEvent.getAction() == 8) {
+        if (this.layoutManager != null && motionEvent.getAction() == 8) {
             if ((motionEvent.getSource() & 2) != 0) {
-                if (this.l.e()) {
+                if (this.layoutManager.e()) {
                     f4 = -motionEvent.getAxisValue(9);
                 } else {
                     f4 = 0.0f;
                 }
-                if (this.l.d()) {
+                if (this.layoutManager.d()) {
                     f3 = f4;
                     f2 = motionEvent.getAxisValue(10);
                 } else {
@@ -1320,10 +1343,10 @@ public class RecyclerView extends ViewGroup implements sg {
                 }
             } else if ((motionEvent.getSource() & 4194304) != 0) {
                 f2 = motionEvent.getAxisValue(26);
-                if (this.l.e()) {
+                if (this.layoutManager.e()) {
                     f3 = -f2;
                     f2 = 0.0f;
-                } else if (this.l.d()) {
+                } else if (this.layoutManager.d()) {
                     f3 = 0.0f;
                 } else {
                     f2 = 0.0f;
@@ -1343,28 +1366,28 @@ public class RecyclerView extends ViewGroup implements sg {
     /* access modifiers changed from: protected */
     public void onMeasure(int i2, int i3) {
         boolean z2 = false;
-        if (this.l == null) {
+        if (this.layoutManager == null) {
             c(i2, i3);
-        } else if (this.l.a()) {
+        } else if (this.layoutManager.a()) {
             int mode = View.MeasureSpec.getMode(i2);
             int mode2 = View.MeasureSpec.getMode(i3);
-            this.l.c(i2, i3);
+            this.layoutManager.c(i2, i3);
             if (mode == 1073741824 && mode2 == 1073741824) {
                 z2 = true;
             }
-            if (!z2 && this.k != null) {
+            if (!z2 && this.adapter != null) {
                 if (this.D.d == 1) {
                     A();
                 }
-                this.l.a(i2, i3);
+                this.layoutManager.a(i2, i3);
                 this.D.i = true;
                 B();
-                this.l.b(i2, i3);
-                if (this.l.f()) {
-                    this.l.a(View.MeasureSpec.makeMeasureSpec(getMeasuredWidth(), 1073741824), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), 1073741824));
+                this.layoutManager.b(i2, i3);
+                if (this.layoutManager.f()) {
+                    this.layoutManager.a(View.MeasureSpec.makeMeasureSpec(getMeasuredWidth(), 1073741824), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), 1073741824));
                     this.D.i = true;
                     B();
-                    this.l.b(i2, i3);
+                    this.layoutManager.b(i2, i3);
                 }
             }
         } else {
@@ -1385,20 +1408,20 @@ public class RecyclerView extends ViewGroup implements sg {
                 setMeasuredDimension(getMeasuredWidth(), getMeasuredHeight());
                 return;
             }
-            if (this.k != null) {
-                this.D.e = this.k.a();
+            if (this.adapter != null) {
+                this.D.e = this.adapter.getCount();
             } else {
                 this.D.e = 0;
             }
             d();
-            this.l.c(i2, i3);
+            this.layoutManager.c(i2, i3);
             a(false);
             this.D.g = false;
         }
     }
 
     public final void c(int i2, int i3) {
-        setMeasuredDimension(afd.a(i2, getPaddingLeft() + getPaddingRight(), sn.a.e(this)), afd.a(i3, getPaddingTop() + getPaddingBottom(), sn.a.f(this)));
+        setMeasuredDimension(LayoutManager.a(i2, getPaddingLeft() + getPaddingRight(), sn.a.e(this)), LayoutManager.a(i3, getPaddingTop() + getPaddingBottom(), sn.a.f(this)));
     }
 
     /* access modifiers changed from: protected */
@@ -1430,7 +1453,7 @@ public class RecyclerView extends ViewGroup implements sg {
                     sendAccessibilityEventUnchecked(obtain);
                 }
                 for (int size = this.az.size() - 1; size >= 0; size--) {
-                    afv afv = (afv) this.az.get(size);
+                    ViewHolder afv = (ViewHolder) this.az.get(size);
                     if (afv.a.getParent() == this && !afv.b() && (i2 = afv.n) != -1) {
                         sn.a(afv.a, i2);
                         afv.n = -1;
@@ -1479,7 +1502,7 @@ public class RecyclerView extends ViewGroup implements sg {
     }
 
     private final boolean v() {
-        return this.z != null && this.l.g();
+        return this.z != null && this.layoutManager.g();
     }
 
     private final void w() {
@@ -1500,7 +1523,7 @@ public class RecyclerView extends ViewGroup implements sg {
             z2 = false;
         }
         aft aft = this.D;
-        if (!this.q || this.z == null || ((!this.u && !z2 && !this.l.e) || (this.u && !this.k.e))) {
+        if (!this.q || this.z == null || ((!this.u && !z2 && !this.layoutManager.e) || (this.u && !this.adapter.mHasStableIds))) {
             z3 = false;
         } else {
             z3 = true;
@@ -1554,13 +1577,13 @@ public class RecyclerView extends ViewGroup implements sg {
         this.h.a();
         i();
         w();
-        View focusedChild = (!this.as || !hasFocus() || this.k == null) ? null : getFocusedChild();
-        afv b2 = focusedChild == null ? null : b(focusedChild);
+        View focusedChild = (!this.as || !hasFocus() || this.adapter == null) ? null : getFocusedChild();
+        ViewHolder b2 = focusedChild == null ? null : b(focusedChild);
         if (b2 == null) {
             y();
         } else {
             aft aft = this.D;
-            if (this.k.e) {
+            if (this.adapter.mHasStableIds) {
                 j2 = b2.e;
             } else {
                 j2 = -1;
@@ -1596,13 +1619,13 @@ public class RecyclerView extends ViewGroup implements sg {
         this.G = false;
         this.F = false;
         this.D.g = this.D.k;
-        this.D.e = this.k.a();
+        this.D.e = this.adapter.getCount();
         a(this.av);
         if (this.D.j) {
             int a2 = this.g.a();
             for (int i3 = 0; i3 < a2; i3++) {
-                afv c2 = c(this.g.b(i3));
-                if (!c2.b() && (!c2.j() || this.k.e)) {
+                ViewHolder c2 = c(this.g.b(i3));
+                if (!c2.b() && (!c2.j() || this.adapter.mHasStableIds)) {
                     aey.d(c2);
                     c2.p();
                     afb afb = new afb();
@@ -1621,17 +1644,17 @@ public class RecyclerView extends ViewGroup implements sg {
         if (this.D.k) {
             int b3 = this.g.b();
             for (int i4 = 0; i4 < b3; i4++) {
-                afv c3 = c(this.g.c(i4));
+                ViewHolder c3 = c(this.g.c(i4));
                 if (!c3.b() && c3.d == -1) {
                     c3.d = c3.c;
                 }
             }
             boolean z2 = this.D.f;
             this.D.f = false;
-            this.l.a(this.e, this.D);
+            this.layoutManager.a(this.e, this.D);
             this.D.f = z2;
             for (int i5 = 0; i5 < this.g.a(); i5++) {
-                afv c4 = c(this.g.b(i5));
+                ViewHolder c4 = c(this.g.b(i5));
                 if (!c4.b()) {
                     ahp ahp = (ahp) this.h.a.get(c4);
                     if (!((ahp == null || (ahp.a & 4) == 0) ? false : true)) {
@@ -1673,10 +1696,10 @@ public class RecyclerView extends ViewGroup implements sg {
         i();
         this.D.a(6);
         this.f.e();
-        this.D.e = this.k.a();
+        this.D.e = this.adapter.getCount();
         this.D.c = 0;
         this.D.g = false;
-        this.l.a(this.e, this.D);
+        this.layoutManager.a(this.e, this.D);
         this.D.f = false;
         this.R = null;
         this.D.j = this.D.j && this.z != null;
@@ -1685,7 +1708,7 @@ public class RecyclerView extends ViewGroup implements sg {
         a(false);
     }
 
-    public final void a(afv afv, afb afb) {
+    public final void a(ViewHolder afv, afb afb) {
         afv.a(0, 8192);
         if (this.D.h && afv.s() && !afv.m() && !afv.b()) {
             this.h.a(d(afv), afv);
@@ -1705,7 +1728,7 @@ public class RecyclerView extends ViewGroup implements sg {
         int i4 = Integer.MIN_VALUE;
         int i5 = 0;
         while (i5 < a2) {
-            afv c2 = c(this.g.b(i5));
+            ViewHolder c2 = c(this.g.b(i5));
             if (!c2.b()) {
                 i2 = c2.c();
                 if (i2 < i3) {
@@ -1727,7 +1750,7 @@ public class RecyclerView extends ViewGroup implements sg {
     }
 
     public void removeDetachedView(View view, boolean z2) {
-        afv c2 = c(view);
+        ViewHolder c2 = c(view);
         if (c2 != null) {
             if (c2.n()) {
                 c2.i();
@@ -1740,8 +1763,8 @@ public class RecyclerView extends ViewGroup implements sg {
         super.removeDetachedView(view, z2);
     }
 
-    private final long d(afv afv) {
-        if (this.k.e) {
+    private final long d(ViewHolder afv) {
+        if (this.adapter.mHasStableIds) {
             return afv.e;
         }
         return (long) afv.c;
@@ -1771,7 +1794,7 @@ public class RecyclerView extends ViewGroup implements sg {
         afn afn = this.e;
         int size = afn.c.size();
         for (int i3 = 0; i3 < size; i3++) {
-            afh afh = (afh) ((afv) afn.c.get(i3)).a.getLayoutParams();
+            afh afh = (afh) ((ViewHolder) afn.c.get(i3)).a.getLayoutParams();
             if (afh != null) {
                 afh.c = true;
             }
@@ -1845,27 +1868,27 @@ public class RecyclerView extends ViewGroup implements sg {
     }
 
     public boolean checkLayoutParams(ViewGroup.LayoutParams layoutParams) {
-        return (layoutParams instanceof afh) && this.l.a((afh) layoutParams);
+        return (layoutParams instanceof afh) && this.layoutManager.a((afh) layoutParams);
     }
 
     public ViewGroup.LayoutParams generateDefaultLayoutParams() {
-        if (this.l != null) {
-            return this.l.b();
+        if (this.layoutManager != null) {
+            return this.layoutManager.b();
         }
         throw new IllegalStateException("RecyclerView has no LayoutManager" + a());
     }
 
     @Override // android.view.ViewGroup
     public ViewGroup.LayoutParams generateLayoutParams(AttributeSet attributeSet) {
-        if (this.l != null) {
-            return this.l.a(getContext(), attributeSet);
+        if (this.layoutManager != null) {
+            return this.layoutManager.a(getContext(), attributeSet);
         }
         throw new IllegalStateException("RecyclerView has no LayoutManager" + a());
     }
 
     @Override // android.view.ViewGroup
     public ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams layoutParams) {
-        if (this.l == null) {
+        if (this.layoutManager == null) {
             throw new IllegalStateException("RecyclerView has no LayoutManager" + a());
         } else if (layoutParams instanceof afh) {
             return new afh((afh) layoutParams);
@@ -1880,7 +1903,7 @@ public class RecyclerView extends ViewGroup implements sg {
     private final void C() {
         int b2 = this.g.b();
         for (int i2 = 0; i2 < b2; i2++) {
-            afv c2 = c(this.g.c(i2));
+            ViewHolder c2 = c(this.g.c(i2));
             if (!c2.b()) {
                 c2.a();
             }
@@ -1888,16 +1911,16 @@ public class RecyclerView extends ViewGroup implements sg {
         afn afn = this.e;
         int size = afn.c.size();
         for (int i3 = 0; i3 < size; i3++) {
-            ((afv) afn.c.get(i3)).a();
+            ((ViewHolder) afn.c.get(i3)).a();
         }
         int size2 = afn.a.size();
         for (int i4 = 0; i4 < size2; i4++) {
-            ((afv) afn.a.get(i4)).a();
+            ((ViewHolder) afn.a.get(i4)).a();
         }
         if (afn.b != null) {
             int size3 = afn.b.size();
             for (int i5 = 0; i5 < size3; i5++) {
-                ((afv) afn.b.get(i5)).a();
+                ((ViewHolder) afn.b.get(i5)).a();
             }
         }
     }
@@ -1906,7 +1929,7 @@ public class RecyclerView extends ViewGroup implements sg {
         int i4 = i2 + i3;
         int b2 = this.g.b();
         for (int i5 = 0; i5 < b2; i5++) {
-            afv c2 = c(this.g.c(i5));
+            ViewHolder c2 = c(this.g.c(i5));
             if (c2 != null && !c2.b()) {
                 if (c2.c >= i4) {
                     c2.a(-i3, z2);
@@ -1922,7 +1945,7 @@ public class RecyclerView extends ViewGroup implements sg {
         afn afn = this.e;
         int i6 = i2 + i3;
         for (int size = afn.c.size() - 1; size >= 0; size--) {
-            afv afv = (afv) afn.c.get(size);
+            ViewHolder afv = (ViewHolder) afn.c.get(size);
             if (afv != null) {
                 if (afv.c >= i6) {
                     afv.a(-i3, z2);
@@ -1940,7 +1963,7 @@ public class RecyclerView extends ViewGroup implements sg {
         this.u = true;
         int b2 = this.g.b();
         for (int i2 = 0; i2 < b2; i2++) {
-            afv c2 = c(this.g.c(i2));
+            ViewHolder c2 = c(this.g.c(i2));
             if (c2 != null && !c2.b()) {
                 c2.b(6);
             }
@@ -1949,7 +1972,7 @@ public class RecyclerView extends ViewGroup implements sg {
         afn afn = this.e;
         int size = afn.c.size();
         for (int i3 = 0; i3 < size; i3++) {
-            afv afv = (afv) afn.c.get(i3);
+            ViewHolder afv = (ViewHolder) afn.c.get(i3);
             if (afv != null) {
                 afv.b(6);
                 afv.a((Object) null);
@@ -1960,7 +1983,7 @@ public class RecyclerView extends ViewGroup implements sg {
         }
     }
 
-    public final afv a(View view) {
+    public final ViewHolder a(View view) {
         ViewParent parent = view.getParent();
         if (parent == null || parent == this) {
             return c(view);
@@ -1982,7 +2005,7 @@ public class RecyclerView extends ViewGroup implements sg {
         return null;
     }
 
-    public final afv b(View view) {
+    public final ViewHolder b(View view) {
         View h2 = h(view);
         if (h2 == null) {
             return null;
@@ -1990,7 +2013,7 @@ public class RecyclerView extends ViewGroup implements sg {
         return a(h2);
     }
 
-    public static afv c(View view) {
+    public static ViewHolder c(View view) {
         if (view == null) {
             return null;
         }
@@ -1998,22 +2021,22 @@ public class RecyclerView extends ViewGroup implements sg {
     }
 
     public static int d(View view) {
-        afv c2 = c(view);
+        ViewHolder c2 = c(view);
         if (c2 != null) {
             return c2.d();
         }
         return -1;
     }
 
-    private final afv d(int i2) {
+    private final ViewHolder d(int i2) {
         if (this.u) {
             return null;
         }
         int b2 = this.g.b();
         int i3 = 0;
-        afv afv = null;
+        ViewHolder afv = null;
         while (i3 < b2) {
-            afv c2 = c(this.g.c(i3));
+            ViewHolder c2 = c(this.g.c(i3));
             if (c2 == null || c2.m() || c(c2) != i2) {
                 c2 = afv;
             } else if (!this.g.d(c2.a)) {
@@ -2097,7 +2120,7 @@ public class RecyclerView extends ViewGroup implements sg {
         return null;
     }
 
-    public static void b(afv afv) {
+    public static void b(ViewHolder afv) {
         if (afv.b != null) {
             View view = (View) afv.b.get();
             while (view != null) {
@@ -2120,9 +2143,9 @@ public class RecyclerView extends ViewGroup implements sg {
     }
 
     public final void g(View view) {
-        afv c2 = c(view);
-        if (!(this.k == null || c2 == null)) {
-            this.k.b(c2);
+        ViewHolder c2 = c(view);
+        if (!(this.adapter == null || c2 == null)) {
+            this.adapter.b(c2);
         }
         if (this.t != null) {
             for (int size = this.t.size() - 1; size >= 0; size--) {
@@ -2131,7 +2154,7 @@ public class RecyclerView extends ViewGroup implements sg {
         }
     }
 
-    public final boolean a(afv afv, int i2) {
+    public final boolean a(ViewHolder afv, int i2) {
         if (u()) {
             afv.n = i2;
             this.az.add(afv);
@@ -2141,7 +2164,7 @@ public class RecyclerView extends ViewGroup implements sg {
         return true;
     }
 
-    public final int c(afv afv) {
+    public final int c(ViewHolder afv) {
         if (afv.a(524) || !afv.l()) {
             return -1;
         }

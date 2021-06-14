@@ -23,6 +23,10 @@ import android.widget.FrameLayout;
 import android.widget.OverScroller;
 import java.util.ArrayList;
 
+import defpackage.sh;
+import defpackage.ux;
+import defpackage.uy;
+
 /* compiled from: PG */
 public class NestedScrollView extends FrameLayout implements sg, si {
     private static final ux x = new ux();

@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 /* renamed from: afh  reason: default package */
 /* compiled from: PG */
 public final class afh extends ViewGroup.MarginLayoutParams {
-    public afv a;
+    public ViewHolder a;
     public final Rect b = new Rect();
     public boolean c = true;
     public boolean d = false;

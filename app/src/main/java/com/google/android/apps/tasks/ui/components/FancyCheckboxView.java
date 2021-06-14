@@ -13,6 +13,8 @@ import android.util.AttributeSet;
 import android.view.View;
 import com.google.android.apps.tasks.R;
 
+import defpackage.cld;
+
 /* compiled from: PG */
 public class FancyCheckboxView extends View {
     private static final Path b = new Path();

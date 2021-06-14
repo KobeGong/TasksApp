@@ -33,12 +33,12 @@ public final class aqa extends lc {
 
     @Override // defpackage.lc
     public final View a(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.a = layoutInflater.inflate(R.layout.welcome_fragment, viewGroup, false);
-        this.Z = this.a.findViewById(R.id.welcome_retry_button);
-        this.Y = this.a.findViewById(R.id.welcome_sign_in);
-        this.X = this.a.findViewById(R.id.welcome_get_started);
-        this.aa = this.a.findViewById(R.id.welcome_update_gps);
-        this.b = (FrameLayout) this.a.findViewById(R.id.welcome_button_bar);
+        this.a = layoutInflater.inflate(com.google.android.apps.tasks.R.layout.welcome_fragment, viewGroup, false);
+        this.Z = this.a.findViewById(com.google.android.apps.tasks.R.id.welcome_retry_button);
+        this.Y = this.a.findViewById(com.google.android.apps.tasks.R.id.welcome_sign_in);
+        this.X = this.a.findViewById(com.google.android.apps.tasks.R.id.welcome_get_started);
+        this.aa = this.a.findViewById(com.google.android.apps.tasks.R.id.welcome_update_gps);
+        this.b = (FrameLayout) this.a.findViewById(com.google.android.apps.tasks.R.id.welcome_button_bar);
         this.Z.setOnClickListener(new aqb(this));
         this.Y.setOnClickListener(new aqc(this));
         this.aa.setOnClickListener(new aqd(this));

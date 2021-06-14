@@ -14,8 +14,8 @@ public final /* synthetic */ class aup implements Runnable {
     public final void run() {
         auj auj = this.a;
         cyi cyi = this.b;
-        if (auj.a != null) {
-            auj.a.post(new aus(auj));
+        if (auj.rootView != null) {
+            auj.rootView.post(new aus(auj));
             if (!ajd.a(cyi)) {
                 auj.U.animate().alpha(1.0f);
             }

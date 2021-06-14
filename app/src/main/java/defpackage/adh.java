@@ -71,8 +71,8 @@ public final class adh extends afc implements afj {
             this.j = recyclerView;
             if (this.j != null) {
                 RecyclerView recyclerView3 = this.j;
-                if (recyclerView3.l != null) {
-                    recyclerView3.l.a("Cannot add item decoration during a scroll  or layout");
+                if (recyclerView3.layoutManager != null) {
+                    recyclerView3.layoutManager.a("Cannot add item decoration during a scroll  or layout");
                 }
                 if (recyclerView3.n.isEmpty()) {
                     recyclerView3.setWillNotDraw(false);

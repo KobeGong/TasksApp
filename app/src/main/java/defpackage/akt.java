@@ -13,7 +13,7 @@ import java.util.List;
 
 /* renamed from: akt  reason: default package */
 /* compiled from: PG */
-public final class akt extends aet {
+public final class akt extends Adapter {
     public List a;
     public aku b;
 
@@ -22,20 +22,20 @@ public final class akt extends aet {
     }
 
     @Override // defpackage.aet
-    public final long a(int i) {
+    public final long getItemId(int i) {
         akz akz = (akz) this.a.get(i);
         return (long) Arrays.hashCode(new Object[]{akz.a().b, akz.b().d});
     }
 
     @Override // defpackage.aet
-    public final afv a(ViewGroup viewGroup, int i) {
+    public final ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         akv akv = new akv(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.search_result, viewGroup, false));
         akv.p = new aky(this);
         return akv;
     }
 
     @Override // defpackage.aet
-    public final void a(afv afv, int i) {
+    public final void onBindViewHolder(ViewHolder afv, int i) {
         dca dca;
         dca dca2;
         dca dca3;
@@ -143,7 +143,7 @@ public final class akt extends aet {
     }
 
     @Override // defpackage.aet
-    public final int a() {
+    public final int getCount() {
         if (this.a == null) {
             return 0;
         }

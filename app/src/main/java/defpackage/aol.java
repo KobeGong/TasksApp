@@ -26,9 +26,9 @@ public final class aol extends gu {
         boolean z;
         boolean z2;
         boolean z3 = true;
-        View inflate = layoutInflater.inflate(R.layout.bottom_sheet_menu, viewGroup, false);
-        this.W = (CheckOptionItem) inflate.findViewById(R.id.my_order_option);
-        this.X = (CheckOptionItem) inflate.findViewById(R.id.order_by_due_date_option);
+        View inflate = layoutInflater.inflate(com.google.android.apps.tasks.R.layout.bottom_sheet_menu, viewGroup, false);
+        this.W = (CheckOptionItem) inflate.findViewById(com.google.android.apps.tasks.R.id.my_order_option);
+        this.X = (CheckOptionItem) inflate.findViewById(com.google.android.apps.tasks.R.id.order_by_due_date_option);
         aom aom = new aom(this);
         this.W.setOnClickListener(aom);
         this.X.setOnClickListener(aom);
@@ -63,22 +63,22 @@ public final class aol extends gu {
             z2 = false;
         }
         checkOptionItem2.a(z2);
-        a(inflate, (int) R.id.rename_list_option, dck.d, aom);
-        View a = a(inflate, (int) R.id.delete_list_option, dck.c, aom);
+        a(inflate, (int) com.google.android.apps.tasks.R.id.rename_list_option, dck.d, aom);
+        View a = a(inflate, (int) com.google.android.apps.tasks.R.id.delete_list_option, dck.c, aom);
         String string2 = this.i.getString("selectedTaskList");
         if (TextUtils.isEmpty(string2) || ajd.a(string2)) {
             z3 = false;
         }
         a.setEnabled(z3);
-        this.Y = a(inflate, (int) R.id.delete_all_completed_tasks_option, dck.b, aom);
+        this.Y = a(inflate, (int) com.google.android.apps.tasks.R.id.delete_all_completed_tasks_option, dck.b, aom);
         this.Y.setEnabled(this.i.getBoolean("hasCompletedTasks", false));
-        View a2 = a(inflate, (int) R.id.search_option, (cpg) null, aom);
+        View a2 = a(inflate, (int) com.google.android.apps.tasks.R.id.search_option, (cpg) null, aom);
         if (!crk.a.a()) {
             a2.setVisibility(8);
         }
-        TextView textView = (TextView) inflate.findViewById(R.id.debug_info_option);
+        TextView textView = (TextView) inflate.findViewById(com.google.android.apps.tasks.R.id.debug_info_option);
         textView.setOnClickListener(aom);
-        TextView textView2 = (TextView) inflate.findViewById(R.id.trigger_notifications_option);
+        TextView textView2 = (TextView) inflate.findViewById(com.google.android.apps.tasks.R.id.trigger_notifications_option);
         textView2.setOnClickListener(aom);
         TaskApplication.b();
         textView.setVisibility(8);
