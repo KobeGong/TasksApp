@@ -12,7 +12,7 @@ public final class xv implements zu {
     }
 
     @Override // defpackage.zu
-    public final boolean a(ze zeVar) {
+    public final boolean a(MenuBuilder zeVar) {
         Window.Callback callback = this.a.c.getCallback();
         if (callback == null) {
             return true;
@@ -22,7 +22,7 @@ public final class xv implements zu {
     }
 
     @Override // defpackage.zu
-    public final void a(ze zeVar, boolean z) {
+    public final void a(MenuBuilder zeVar, boolean z) {
         this.a.b(zeVar);
     }
 }

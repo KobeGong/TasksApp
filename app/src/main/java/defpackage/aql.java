@@ -44,7 +44,7 @@ public abstract class aql extends wm {
     public void onStop() {
         super.onStop();
         aiq.a().a((ajc) null);
-        any.a().d.a((aoc) null);
+        any.get().d.a((aoc) null);
     }
 
     public final boolean q() {
@@ -53,7 +53,7 @@ public abstract class aql extends wm {
             return false;
         }
         aiq.a().a(new ajc(this));
-        any.a().d.a(new aoc(this));
+        any.get().d.a(new aoc(this));
         return true;
     }
 
@@ -62,7 +62,7 @@ public abstract class aql extends wm {
         Throwable th2 = th;
         while (!(th2 instanceof axx)) {
             if (th2 instanceof avf) {
-                if (any.a().c().a()) {
+                if (any.get().c().a()) {
                     this.s = (Snackbar) Snackbar.a(m(), (int) R.string.invalid_credentials, -2).a(R.string.sign_in, new aqm(this, th2)).a(new aqz());
                     this.s.a();
                 } else {
@@ -132,7 +132,7 @@ public abstract class aql extends wm {
         if (czq != null) {
             a(czq);
         } else if (this.h == null) {
-            cyi a = any.a().c().a(i);
+            cyi a = any.get().c().a(i);
             this.h = a;
             a.a(new aqp(this, a), TaskApplication.b().a);
         }
@@ -141,12 +141,12 @@ public abstract class aql extends wm {
             if (ain.a.getBoolean("setup-called", false)) {
                 z = false;
             }
-            if (any.a().c().a() || z) {
+            if (any.get().c().a() || z) {
                 runOnUiThread(new aqu(this));
             }
             if (z) {
                 try {
-                    any.a().c().e(locale.getCountry(), locale.getLanguage()).get();
+                    any.get().c().e(locale.getCountry(), locale.getLanguage()).get();
                     SharedPreferences.Editor edit = ain.a.edit();
                     edit.putBoolean("setup-called", true);
                     edit.apply();
@@ -154,13 +154,13 @@ public abstract class aql extends wm {
                     cyu.a(ajh.c());
                 }
             }
-            if (!any.a().c().a()) {
+            if (!any.get().c().a()) {
                 cyu.a(ajh.a(false));
             } else {
                 try {
-                    any.a().c().c().get();
+                    any.get().c().c().get();
                     try {
-                        any.a().c().a("~default").get();
+                        any.get().c().a("~default").get();
                     } catch (InterruptedException | ExecutionException e2) {
                     }
                     cyu.a(ajh.a(true));

@@ -11,7 +11,7 @@ public final class aav implements zu {
     }
 
     @Override // defpackage.zu
-    public final boolean a(ze zeVar) {
+    public final boolean a(MenuBuilder zeVar) {
         if (zeVar == null) {
             return false;
         }
@@ -24,7 +24,7 @@ public final class aav implements zu {
     }
 
     @Override // defpackage.zu
-    public final void a(ze zeVar, boolean z) {
+    public final void a(MenuBuilder zeVar, boolean z) {
         if (zeVar instanceof aad) {
             zeVar.l().b(false);
         }

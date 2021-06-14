@@ -13,7 +13,7 @@ import android.widget.PopupWindow;
 
 /* renamed from: zq  reason: default package */
 /* compiled from: PG */
-abstract class zq implements AdapterView.OnItemClickListener, zt, zz {
+abstract class zq implements AdapterView.OnItemClickListener, MenuPresenter, zz {
     public Rect g;
 
     zq() {
@@ -25,7 +25,7 @@ abstract class zq implements AdapterView.OnItemClickListener, zt, zz {
 
     public abstract void a(PopupWindow.OnDismissListener onDismissListener);
 
-    public abstract void a(ze zeVar);
+    public abstract void a(MenuBuilder zeVar);
 
     public abstract void b(int i);
 
@@ -36,16 +36,16 @@ abstract class zq implements AdapterView.OnItemClickListener, zt, zz {
     public abstract void c(boolean z);
 
     @Override // defpackage.zt
-    public final void a(Context context, ze zeVar) {
+    public final void a(Context context, MenuBuilder zeVar) {
     }
 
     @Override // defpackage.zt
-    public final boolean a(zi ziVar) {
+    public final boolean a(MenuItemImpl ziVar) {
         return false;
     }
 
     @Override // defpackage.zt
-    public final boolean b(zi ziVar) {
+    public final boolean b(MenuItemImpl ziVar) {
         return false;
     }
 
@@ -104,7 +104,7 @@ abstract class zq implements AdapterView.OnItemClickListener, zt, zz {
         return (zd) listAdapter;
     }
 
-    protected static boolean b(ze zeVar) {
+    protected static boolean b(MenuBuilder zeVar) {
         int size = zeVar.size();
         for (int i = 0; i < size; i++) {
             MenuItem item = zeVar.getItem(i);

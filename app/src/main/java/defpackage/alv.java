@@ -24,7 +24,7 @@ import java.util.concurrent.TimeUnit;
 /* compiled from: PG */
 public final class alv {
     public final String a;
-    public List b = null;
+    public List<dcb> b = null;
     private final Context c;
     private Map d = new HashMap();
     private List e = new ArrayList();

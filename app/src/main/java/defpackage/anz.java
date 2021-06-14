@@ -19,6 +19,6 @@ public final /* synthetic */ class anz implements Callable {
     @Override // java.util.concurrent.Callable
     public final Object call() {
         any any = this.a;
-        return new anc(this.b, any.e, this.c, any.b, any.c, any.d);
+        return new anc(this.b, any.appContext, this.c, any.b, any.executor, any.d);
     }
 }

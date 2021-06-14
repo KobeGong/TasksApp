@@ -10,9 +10,9 @@ import com.google.android.apps.tasks.R;
 
 /* renamed from: agz  reason: default package */
 /* compiled from: PG */
-public final class agz implements zt {
-    public zi a;
-    private ze b;
+public final class agz implements MenuPresenter {
+    public MenuItemImpl a;
+    private MenuBuilder b;
     private final /* synthetic */ Toolbar c;
 
     public agz(Toolbar toolbar) {
@@ -20,7 +20,7 @@ public final class agz implements zt {
     }
 
     @Override // defpackage.zt
-    public final void a(Context context, ze zeVar) {
+    public final void a(Context context, MenuBuilder zeVar) {
         if (!(this.b == null || this.a == null)) {
             this.b.b(this.a);
         }
@@ -61,7 +61,7 @@ public final class agz implements zt {
     }
 
     @Override // defpackage.zt
-    public final void a(ze zeVar, boolean z) {
+    public final void a(MenuBuilder zeVar, boolean z) {
     }
 
     @Override // defpackage.zt
@@ -70,10 +70,10 @@ public final class agz implements zt {
     }
 
     @Override // defpackage.zt
-    public final boolean a(zi ziVar) {
+    public final boolean a(MenuItemImpl ziVar) {
         Toolbar toolbar = this.c;
         if (toolbar.l == null) {
-            toolbar.l = new abr(toolbar.getContext(), null, R.attr.toolbarNavigationButtonStyle);
+            toolbar.l = new AppCompatImageButton(toolbar.getContext(), null, R.attr.toolbarNavigationButtonStyle);
             toolbar.l.setImageDrawable(toolbar.j);
             toolbar.l.setContentDescription(toolbar.k);
             aha aha = new aha();
@@ -119,7 +119,7 @@ public final class agz implements zt {
     }
 
     @Override // defpackage.zt
-    public final boolean b(zi ziVar) {
+    public final boolean b(MenuItemImpl ziVar) {
         if (this.c.m instanceof ye) {
             ((ye) this.c.m).b();
         }

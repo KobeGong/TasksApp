@@ -93,8 +93,8 @@ public final class yl {
             menuItem.setOnMenuItemClickListener(new yk(yjVar.d, this.z));
         }
         if (this.r >= 2) {
-            if (menuItem instanceof zi) {
-                ((zi) menuItem).a(true);
+            if (menuItem instanceof MenuItemImpl) {
+                ((MenuItemImpl) menuItem).a(true);
             } else if (menuItem instanceof zj) {
                 zj zjVar = (zj) menuItem;
                 try {

@@ -15,7 +15,7 @@ public final /* synthetic */ class apm implements View.OnClickListener {
     public final void onClick(View view) {
         String str;
         TaskListsActivity taskListsActivity = this.a;
-        anc c = any.a().c();
+        anc c = any.get().c();
         if (c != null) {
             List d = c.d();
             if (taskListsActivity.h == null) {

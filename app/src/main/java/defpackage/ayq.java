@@ -96,8 +96,8 @@ public final class ayq {
         }
         if (this.b >= 0) {
             baw baw = this.a;
-            if (baw.a instanceof lg) {
-                a2 = bbo.a((lg) baw.a);
+            if (baw.a instanceof FragmentActivity) {
+                a2 = bbo.a((FragmentActivity) baw.a);
             } else if (baw.a instanceof Activity) {
                 a2 = bay.a((Activity) baw.a);
             } else {

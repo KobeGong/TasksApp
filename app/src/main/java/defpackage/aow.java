@@ -13,6 +13,6 @@ public final /* synthetic */ class aow implements ahb {
 
     @Override // defpackage.ahb
     public final boolean a(MenuItem menuItem) {
-        return this.a.a(menuItem);
+        return this.a.onToolbarMenuItemClicked(menuItem);
     }
 }

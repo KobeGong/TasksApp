@@ -108,7 +108,7 @@ public class lb extends lc implements DialogInterface.OnCancelListener, DialogIn
     }
 
     public Dialog c() {
-        return new Dialog(j(), this.a);
+        return new Dialog(getActivity(), this.a);
     }
 
     public void onCancel(DialogInterface dialogInterface) {
@@ -132,7 +132,7 @@ public class lb extends lc implements DialogInterface.OnCancelListener, DialogIn
                 }
                 this.X.setContentView(view);
             }
-            lg j = j();
+            FragmentActivity j = getActivity();
             if (j != null) {
                 this.X.setOwnerActivity(j);
             }

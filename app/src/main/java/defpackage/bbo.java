@@ -21,7 +21,7 @@ public final class bbo extends lc implements bax {
     private Bundle V;
     private Map b = new qr();
 
-    public static bbo a(lg lgVar) {
+    public static bbo a(FragmentActivity lgVar) {
         bbo bbo;
         WeakReference weakReference = (WeakReference) a.get(lgVar);
         if (weakReference == null || (bbo = (bbo) weakReference.get()) == null) {
@@ -134,6 +134,6 @@ public final class bbo extends lc implements bax {
 
     @Override // defpackage.bax
     public final /* synthetic */ Activity g_() {
-        return j();
+        return getActivity();
     }
 }

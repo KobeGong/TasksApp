@@ -10,10 +10,10 @@ import java.io.PrintWriter;
 /* renamed from: li  reason: default package */
 /* compiled from: PG */
 public final class li extends lm {
-    private final /* synthetic */ lg e;
+    private final /* synthetic */ FragmentActivity e;
 
     /* JADX INFO: super call moved to the top of the method (can break code semantics) */
-    public li(lg lgVar) {
+    public li(FragmentActivity lgVar) {
         super(lgVar);
         this.e = lgVar;
     }
@@ -35,7 +35,7 @@ public final class li extends lm {
 
     @Override // defpackage.lm
     public final void a(lc lcVar, Intent intent, int i) {
-        lg lgVar = this.e;
+        FragmentActivity lgVar = this.e;
         lgVar.a = true;
         if (i == -1) {
             try {
@@ -44,7 +44,7 @@ public final class li extends lm {
                 lgVar.a = false;
             }
         } else {
-            lg.a(i);
+            FragmentActivity.a(i);
             if (lgVar.f.b() >= 65534) {
                 throw new IllegalStateException("Too many pending Fragment activity results.");
             }

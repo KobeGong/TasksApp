@@ -21,7 +21,7 @@ public final class cfd extends cdm {
     public final void a(Object obj, Object obj2, Object obj3) {
         cfc cfc = this.a;
         cfe cfe = new cfe(this);
-        lg j = cfc.j();
+        FragmentActivity j = cfc.getActivity();
         if (j != null) {
             j.runOnUiThread(cfe);
         }

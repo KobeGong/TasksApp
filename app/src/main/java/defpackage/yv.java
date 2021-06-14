@@ -25,7 +25,7 @@ import java.util.List;
 /* access modifiers changed from: package-private */
 /* renamed from: yv  reason: default package */
 /* compiled from: PG */
-public final class yv extends zq implements View.OnKeyListener, PopupWindow.OnDismissListener, zt {
+public final class yv extends zq implements View.OnKeyListener, PopupWindow.OnDismissListener, MenuPresenter {
     private PopupWindow.OnDismissListener A;
     public final Handler a;
     public final List b = new ArrayList();
@@ -74,7 +74,7 @@ public final class yv extends zq implements View.OnKeyListener, PopupWindow.OnDi
     @Override // defpackage.zz
     public final void d() {
         if (!f()) {
-            for (ze zeVar : this.m) {
+            for (MenuBuilder zeVar : this.m) {
                 c(zeVar);
             }
             this.m.clear();
@@ -120,7 +120,7 @@ public final class yv extends zq implements View.OnKeyListener, PopupWindow.OnDi
     }
 
     @Override // defpackage.zq
-    public final void a(ze zeVar) {
+    public final void a(MenuBuilder zeVar) {
         zeVar.a(this, this.h);
         if (f()) {
             c(zeVar);
@@ -129,14 +129,14 @@ public final class yv extends zq implements View.OnKeyListener, PopupWindow.OnDi
         }
     }
 
-    private final void c(ze zeVar) {
+    private final void c(MenuBuilder zeVar) {
         View view;
         za zaVar;
         int i2;
         int i3;
         int i4;
         int i5;
-        zi ziVar;
+        MenuItemImpl ziVar;
         int i6;
         zd zdVar;
         int i7;
@@ -162,7 +162,7 @@ public final class yv extends zq implements View.OnKeyListener, PopupWindow.OnDi
         ael.j = this.q;
         if (this.b.size() > 0) {
             za zaVar2 = (za) this.b.get(this.b.size() - 1);
-            ze zeVar2 = zaVar2.b;
+            MenuBuilder zeVar2 = zaVar2.b;
             int size = zeVar2.size();
             int i8 = 0;
             while (true) {
@@ -196,7 +196,7 @@ public final class yv extends zq implements View.OnKeyListener, PopupWindow.OnDi
                     if (i9 >= count) {
                         i7 = -1;
                         break;
-                    } else if (ziVar == ((zi) zdVar.getItem(i9))) {
+                    } else if (ziVar == ((MenuItemImpl) zdVar.getItem(i9))) {
                         i7 = i9;
                         break;
                     } else {
@@ -352,7 +352,7 @@ public final class yv extends zq implements View.OnKeyListener, PopupWindow.OnDi
         if (!aad.hasVisibleItems()) {
             return false;
         }
-        a((ze) aad);
+        a((MenuBuilder) aad);
         if (this.z != null) {
             this.z.a(aad);
         }
@@ -360,7 +360,7 @@ public final class yv extends zq implements View.OnKeyListener, PopupWindow.OnDi
     }
 
     @Override // defpackage.zt
-    public final void a(ze zeVar, boolean z2) {
+    public final void a(MenuBuilder zeVar, boolean z2) {
         int size = this.b.size();
         int i2 = 0;
         while (true) {

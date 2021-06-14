@@ -86,7 +86,7 @@ public final class aor extends aoq {
                 dca.f = dan;
                 g.g(dii2);
             }
-            anc c2 = any.a().c();
+            anc c2 = any.get().c();
             if (g.b) {
                 dih2 = g.a;
             } else {

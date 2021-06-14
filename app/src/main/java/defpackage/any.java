@@ -10,30 +10,30 @@ import java.util.concurrent.ScheduledExecutorService;
 /* renamed from: any  reason: default package */
 /* compiled from: PG */
 public final class any implements akd {
-    public static any a;
+    public static any inst;
     public final cyl b;
-    public final ScheduledExecutorService c;
+    public final ScheduledExecutorService executor;
     public final aoa d;
-    public final Context e;
+    public final Context appContext;
     private final Map f = new HashMap();
     private cyi g;
     private Account h;
     private final cyl i;
 
-    public static synchronized any a() {
+    public static synchronized any get() {
         any any;
         synchronized (any.class) {
-            cld.b(a != null);
-            any = a;
+            cld.b(inst != null);
+            any = inst;
         }
         return any;
     }
 
     public any(Context context, cyl cyl, cyl cyl2, ScheduledExecutorService scheduledExecutorService, aoa aoa) {
-        this.e = context.getApplicationContext();
+        this.appContext = context.getApplicationContext();
         this.i = cyl;
         this.b = cyl2;
-        this.c = scheduledExecutorService;
+        this.executor = scheduledExecutorService;
         this.d = aoa;
     }
 
@@ -81,7 +81,7 @@ public final class any implements akd {
             azb.b("Cannot perform incremental sync for account other than current", new Object[0]);
             return;
         }
-        String a2 = ain.b(this.e, account.name).a();
+        String a2 = ain.b(this.appContext, account.name).a();
         if (TextUtils.isEmpty(a2)) {
             new Object[1][0] = azb.a(account.name);
         } else {

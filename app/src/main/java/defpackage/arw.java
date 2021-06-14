@@ -19,7 +19,7 @@ final /* synthetic */ class arw implements Runnable {
         if (arv.i != null) {
             String string = arv.i.getString("list_id");
             if (!TextUtils.isEmpty(string)) {
-                arv.b = any.a().c().c(string);
+                arv.b = any.get().c().c(string);
             } else {
                 arv.b = dcb.g;
             }
@@ -28,7 +28,7 @@ final /* synthetic */ class arw implements Runnable {
         }
         if (arv.b == null) {
             Toast.makeText(arv.i().getApplicationContext(), "Task list not found", 0).show();
-            arv.j().onBackPressed();
+            arv.getActivity().onBackPressed();
             return;
         }
         EditText editText = arv.a;

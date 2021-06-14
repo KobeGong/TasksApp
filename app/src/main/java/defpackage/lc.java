@@ -180,11 +180,11 @@ public class lc implements ak, ComponentCallbacks, View.OnCreateContextMenuListe
         return this.u.b;
     }
 
-    public final lg j() {
+    public final FragmentActivity getActivity() {
         if (this.u == null) {
             return null;
         }
-        return (lg) this.u.a;
+        return (FragmentActivity) this.u.a;
     }
 
     public final Resources k() {
@@ -374,7 +374,7 @@ public class lc implements ak, ComponentCallbacks, View.OnCreateContextMenuListe
     }
 
     public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {
-        j().onCreateContextMenu(contextMenu, view, contextMenuInfo);
+        getActivity().onCreateContextMenu(contextMenu, view, contextMenuInfo);
     }
 
     public final void a_(Object obj) {

@@ -4,8 +4,8 @@ import android.content.Context;
 
 /* renamed from: fj  reason: default package */
 /* compiled from: PG */
-public final class fj extends aad {
-    public fj(Context context, ez ezVar, zi ziVar) {
+public final class NavigationSubMenu extends aad {
+    public NavigationSubMenu(Context context, NavigationMenu ezVar, MenuItemImpl ziVar) {
         super(context, ezVar, ziVar);
     }
 

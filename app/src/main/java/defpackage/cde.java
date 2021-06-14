@@ -6,14 +6,14 @@ import android.view.View;
 /* compiled from: PG */
 public class cde implements q {
     public static final String a = String.valueOf(cde.class.getName()).concat(".navigationDrawerAccountMenuDialogFragment");
-    public final lg b;
+    public final FragmentActivity b;
     public final View c;
     public cft d;
     private final cdj e;
 
-    public cde(lg lgVar, cdj cdj, View view) {
+    public cde(FragmentActivity lgVar, cdj cdj, View view) {
         this.e = (cdj) cky.a(cdj);
-        this.b = (lg) cky.a((Object) lgVar);
+        this.b = (FragmentActivity) cky.a((Object) lgVar);
         this.c = (View) cky.a((Object) view);
         lgVar.g.a(this);
     }

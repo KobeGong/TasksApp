@@ -7,10 +7,10 @@ import android.view.MenuItem;
 final class yz implements Runnable {
     private final /* synthetic */ za a;
     private final /* synthetic */ MenuItem b;
-    private final /* synthetic */ ze c;
+    private final /* synthetic */ MenuBuilder c;
     private final /* synthetic */ yy d;
 
-    yz(yy yyVar, za zaVar, MenuItem menuItem, ze zeVar) {
+    yz(yy yyVar, za zaVar, MenuItem menuItem, MenuBuilder zeVar) {
         this.d = yyVar;
         this.a = zaVar;
         this.b = menuItem;
@@ -24,7 +24,7 @@ final class yz implements Runnable {
             this.d.a.f = false;
         }
         if (this.b.isEnabled() && this.b.hasSubMenu()) {
-            this.c.a(this.b, (zt) null, 4);
+            this.c.a(this.b, (MenuPresenter) null, 4);
         }
     }
 }

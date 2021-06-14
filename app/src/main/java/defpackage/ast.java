@@ -18,6 +18,6 @@ public final /* synthetic */ class ast implements View.OnClickListener {
         atb atb = this.b;
         asi.b(atb);
         asi.a(atb);
-        any.a().c().a(asi.U, atb.d.d, (Object) null);
+        any.get().c().a(asi.U, atb.d.d, (Object) null);
     }
 }

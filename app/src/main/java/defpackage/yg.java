@@ -16,13 +16,13 @@ public final class yg extends yc implements zf {
     private yd e;
     private WeakReference f;
     private boolean g;
-    private ze h;
+    private MenuBuilder h;
 
     public yg(Context context, ActionBarContextView actionBarContextView, yd ydVar) {
         this.c = context;
         this.d = actionBarContextView;
         this.e = ydVar;
-        ze zeVar = new ze(actionBarContextView.getContext());
+        MenuBuilder zeVar = new MenuBuilder(actionBarContextView.getContext());
         zeVar.e = 1;
         this.h = zeVar;
         this.h.a(this);
@@ -108,12 +108,12 @@ public final class yg extends yc implements zf {
     }
 
     @Override // defpackage.zf
-    public final boolean a(ze zeVar, MenuItem menuItem) {
+    public final boolean a(MenuBuilder zeVar, MenuItem menuItem) {
         return this.e.a(this, menuItem);
     }
 
     @Override // defpackage.zf
-    public final void a(ze zeVar) {
+    public final void a(MenuBuilder zeVar) {
         d();
         this.d.a();
     }

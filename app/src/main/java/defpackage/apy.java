@@ -14,6 +14,6 @@ public final class apy extends AnimatorListenerAdapter {
     }
 
     public final void onAnimationEnd(Animator animator) {
-        this.a.k.setVisibility(8);
+        this.a.fab.setVisibility(8);
     }
 }

@@ -14,9 +14,9 @@ import com.google.android.apps.tasks.R;
 
 /* renamed from: zb  reason: default package */
 /* compiled from: PG */
-public final class zb implements AdapterView.OnItemClickListener, zt {
+public final class zb implements AdapterView.OnItemClickListener, MenuPresenter {
     public LayoutInflater a;
-    public ze b;
+    public MenuBuilder b;
     public ExpandedMenuView c;
     public int d;
     public zu e;
@@ -34,7 +34,7 @@ public final class zb implements AdapterView.OnItemClickListener, zt {
     }
 
     @Override // defpackage.zt
-    public final void a(Context context, ze zeVar) {
+    public final void a(Context context, MenuBuilder zeVar) {
         if (this.g != null) {
             this.g = context;
             if (this.a == null) {
@@ -72,7 +72,7 @@ public final class zb implements AdapterView.OnItemClickListener, zt {
             return false;
         }
         zh zhVar = new zh(aad);
-        ze zeVar = zhVar.a;
+        MenuBuilder zeVar = zhVar.a;
         xk xkVar = new xk(zeVar.a);
         zhVar.c = new zb(xkVar.a.a);
         zhVar.c.e = zhVar;
@@ -100,7 +100,7 @@ public final class zb implements AdapterView.OnItemClickListener, zt {
     }
 
     @Override // defpackage.zt
-    public final void a(ze zeVar, boolean z) {
+    public final void a(MenuBuilder zeVar, boolean z) {
         if (this.e != null) {
             this.e.a(zeVar, z);
         }
@@ -108,7 +108,7 @@ public final class zb implements AdapterView.OnItemClickListener, zt {
 
     @Override // android.widget.AdapterView.OnItemClickListener
     public final void onItemClick(AdapterView adapterView, View view, int i, long j) {
-        this.b.a((zi) this.f.getItem(i), this, 0);
+        this.b.a((MenuItemImpl) this.f.getItem(i), this, 0);
     }
 
     @Override // defpackage.zt
@@ -117,12 +117,12 @@ public final class zb implements AdapterView.OnItemClickListener, zt {
     }
 
     @Override // defpackage.zt
-    public final boolean a(zi ziVar) {
+    public final boolean a(MenuItemImpl ziVar) {
         return false;
     }
 
     @Override // defpackage.zt
-    public final boolean b(zi ziVar) {
+    public final boolean b(MenuItemImpl ziVar) {
         return false;
     }
 

@@ -61,8 +61,8 @@ public class NotificationManagerImpl extends BroadcastReceiver implements akm {
         switch (c) {
             case 0:
                 List a2 = ajd.a(context);
-                a(akl.DUE, a(akl.DUE, a2, any.a()));
-                a(akl.OVERDUE, a(akl.OVERDUE, a2, any.a()));
+                a(akl.DUE, a(akl.DUE, a2, any.get()));
+                a(akl.OVERDUE, a(akl.OVERDUE, a2, any.get()));
                 return;
             case 1:
                 String stringExtra = intent.getStringExtra("task_id");
@@ -109,7 +109,7 @@ public class NotificationManagerImpl extends BroadcastReceiver implements akm {
         b(str);
         for (Map.Entry entry : a.entrySet()) {
             akl akl = (akl) entry.getKey();
-            Map a2 = a(akl, ajd.a(this.b), any.a());
+            Map a2 = a(akl, ajd.a(this.b), any.get());
             Iterator it = a2.keySet().iterator();
             boolean z = false;
             while (it.hasNext()) {
@@ -148,7 +148,7 @@ public class NotificationManagerImpl extends BroadcastReceiver implements akm {
                 set.remove(Integer.valueOf(hashCode));
             }
             if (set.size() > 1) {
-                Map a2 = a(akl, ajd.a(this.b), any.a());
+                Map a2 = a(akl, ajd.a(this.b), any.get());
                 if (a2 != null && !a2.isEmpty()) {
                     int i = akl.e;
                     ni a3 = a(akl, a2, b(i));

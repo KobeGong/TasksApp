@@ -35,7 +35,7 @@ import java.util.concurrent.Executor;
 
 import defpackage.ain;
 import defpackage.ajd;
-import defpackage.alh;
+import defpackage.ajr;
 import defpackage.alu;
 import defpackage.any;
 import defpackage.aoe;
@@ -44,6 +44,7 @@ import defpackage.aou;
 import defpackage.aov;
 import defpackage.aow;
 import defpackage.aph;
+import defpackage.apj;
 import defpackage.apm;
 import defpackage.apn;
 import defpackage.apo;
@@ -51,6 +52,8 @@ import defpackage.aps;
 import defpackage.apt;
 import defpackage.apu;
 import defpackage.apw;
+import defpackage.apy;
+import defpackage.apz;
 import defpackage.aqa;
 import defpackage.aql;
 import defpackage.arv;
@@ -75,8 +78,7 @@ import defpackage.dcb;
 import defpackage.dcd;
 import defpackage.dih;
 import defpackage.dii;
-import defpackage.ez;
-import defpackage.fr;
+import defpackage.NavigationMenu;
 import defpackage.ft;
 import defpackage.ha;
 import defpackage.lc;
@@ -84,11 +86,11 @@ import defpackage.sn;
 import defpackage.wl;
 
 /* compiled from: PG */
-public class TaskListsActivity extends aql implements alh, DatePickerDialog.OnDateSetListener, aop, aqi, ash, atf, aux, ays {
+public class TaskListsActivity extends aql implements defpackage.alh, DatePickerDialog.OnDateSetListener, defpackage.aop, defpackage.aqi, defpackage.ash, defpackage.atf, defpackage.aux, defpackage.ays {
     private wl A;
-    private TasksAppBarLayout B;
+    private TasksAppBarLayout appBarLayout;
     private boolean C;
-    private View D;
+    private View splashView;
     private Executor E;
     private FrameLayout F;
     private NavigationView G;
@@ -96,8 +98,8 @@ public class TaskListsActivity extends aql implements alh, DatePickerDialog.OnDa
     private cdm I;
     public dcb h;
     public auj i;
-    public CollapsingToolbarLayout j;
-    public View k;
+    public CollapsingToolbarLayout collapsingToolbarLayout;
+    public View fab;
     public boolean l;
     public ayp m;
     public lc n;
@@ -105,11 +107,11 @@ public class TaskListsActivity extends aql implements alh, DatePickerDialog.OnDa
     public aou p;
     public cdl q;
     private alu t;
-    private CoordinatorLayout u;
-    private NestedScrollView v;
-    private Toolbar w;
-    private BottomAppBar x;
-    private View y;
+    private CoordinatorLayout appbarCoordinator;
+    private NestedScrollView nestedScrollView;
+    private Toolbar toolbar;
+    private BottomAppBar bottomAppBar;
+    private View appbarShadowView;
     private boolean z;
 
     /* access modifiers changed from: protected */
@@ -121,27 +123,25 @@ public class TaskListsActivity extends aql implements alh, DatePickerDialog.OnDa
             StrictMode.setThreadPolicy(((all) crk.b()).a());
         }
         setContentView(R.layout.app_bar_task_lists);
-        this.u = (CoordinatorLayout) findViewById(R.id.app_bar_coordinator);
-        this.w = (Toolbar) findViewById(R.id.toolbar);
+        this.appbarCoordinator = (CoordinatorLayout) findViewById(R.id.app_bar_coordinator);
+        this.toolbar = (Toolbar) findViewById(R.id.toolbar);
         e(false);
-        this.j = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
-        this.j.a("");
-        CollapsingToolbarLayout collapsingToolbarLayout = this.j;
-        collapsingToolbarLayout.b = (int) getResources().getDimension(R.dimen.app_bar_expanded_bottom_margin);
-        collapsingToolbarLayout.requestLayout();
-        CollapsingToolbarLayout collapsingToolbarLayout2 = this.j;
-        collapsingToolbarLayout2.a = (int) getResources().getDimension(R.dimen.app_bar_expanded_top_margin);
-        collapsingToolbarLayout2.requestLayout();
+        this.collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
+        this.collapsingToolbarLayout.a("");
+        this.collapsingToolbarLayout.b = (int) getResources().getDimension(R.dimen.app_bar_expanded_bottom_margin);
+        this.collapsingToolbarLayout.requestLayout();
+        this.collapsingToolbarLayout.a = (int) getResources().getDimension(R.dimen.app_bar_expanded_top_margin);
+        this.collapsingToolbarLayout.requestLayout();
         TaskApplication.b().a.a(new apo(this));
-        this.w.a(new aov(this));
-        this.w.A = new aow(this);
-        ayq ayq = new ayq(this);
+        this.toolbar.a(new aov(this));
+        this.toolbar.A = new aow(this);
+        ayq ayqInst = new ayq(this);
         baw baw = new baw(this);
         azb.b(true, (Object) "clientId must be non-negative");
-        ayq.b = 0;
-        ayq.c = this;
-        ayq.a = baw;
-        ayq a = ayq.a(bgh.b);
+        ayqInst.b = 0;
+        ayqInst.c = this;
+        ayqInst.a = baw;
+        ayq a = ayqInst.a(bgh.b);
         this.F = new FrameLayout(this);
         this.F.setLayoutParams(new FrameLayout.LayoutParams(-1, -2));
         cdj cdj = TaskApplication.b().d;
@@ -155,34 +155,33 @@ public class TaskListsActivity extends aql implements alh, DatePickerDialog.OnDa
         if (this.i == null) {
             this.i = new auj();
         }
-        this.v = (NestedScrollView) findViewById(R.id.scrollable_content);
+        this.nestedScrollView = (NestedScrollView) findViewById(R.id.scrollable_content);
         this.t = new aps(this);
-        this.k = findViewById(R.id.fab);
-        this.k.setOnClickListener(new aph(this));
-        this.D = findViewById(R.id.splash_view);
+        this.fab = findViewById(R.id.fab);
+        this.fab.setOnClickListener(new aph(this));
+        this.splashView = findViewById(R.id.splash_view);
         if (TaskApplication.b().c) {
             o();
         } else {
             TaskApplication.b().c = true;
         }
-        this.B = (TasksAppBarLayout) findViewById(R.id.app_bar);
-        this.x = (BottomAppBar) findViewById(R.id.bottom_app_bar);
-        this.y = findViewById(R.id.bottom_app_bar_shadow);
-        this.x.c(R.drawable.quantum_ic_menu_grey600_24);
-        this.x.c(getString(R.string.a11y_hamburger));
-        this.x.a(new apm(this));
-        BottomAppBar bottomAppBar = this.x;
-        bottomAppBar.k().clear();
-        bottomAppBar.d(R.menu.bottom_bar_menu);
-        this.x.A = new apn(this);
+        this.appBarLayout = (TasksAppBarLayout) findViewById(R.id.app_bar);
+        this.bottomAppBar = (BottomAppBar) findViewById(R.id.bottom_app_bar);
+        this.appbarShadowView = findViewById(R.id.bottom_app_bar_shadow);
+        this.bottomAppBar.c(R.drawable.quantum_ic_menu_grey600_24);
+        this.bottomAppBar.c(getString(R.string.a11y_hamburger));
+        this.bottomAppBar.a(new apm(this));
+        this.bottomAppBar.k().clear();
+        this.bottomAppBar.d(R.menu.bottom_bar_menu);
+        this.bottomAppBar.A = new apn(this);
         g(false);
         f(true);
         this.E = cub.a((Executor) TaskApplication.b().a);
-        this.v.a = new apt(this);
+        this.nestedScrollView.a = new apt(this);
     }
 
     public final void b(boolean z2) {
-        TasksAppBarLayout tasksAppBarLayout = this.B;
+        TasksAppBarLayout tasksAppBarLayout = this.appBarLayout;
         if (tasksAppBarLayout.f != z2) {
             tasksAppBarLayout.f = z2;
             sn.a(tasksAppBarLayout, (float) (tasksAppBarLayout.f ? tasksAppBarLayout.getResources().getDimensionPixelOffset(R.dimen.app_bar_elevation) : 0));
@@ -202,7 +201,7 @@ public class TaskListsActivity extends aql implements alh, DatePickerDialog.OnDa
         a((cdu) this.q.c());
     }
 
-    public final void a(List list, String str) {
+    public final void a(List taskEntities, String str) {
         dcd dcd;
         Integer num;
         Integer num2 = null;
@@ -212,11 +211,11 @@ public class TaskListsActivity extends aql implements alh, DatePickerDialog.OnDa
         this.p = new aou();
         navigationView.e = new ft(this, navigationView);
         aou aou = this.p;
-        ez ezVar = ((fr) navigationView).c;
+        NavigationMenu ezVar = navigationView.menu;
         boolean z3 = this.C;
         aou.a.clear();
-        if (list != null) {
-            aou.a.addAll(list);
+        if (taskEntities != null) {
+            aou.a.addAll(taskEntities);
         }
         ezVar.clear();
         int i2 = 0;
@@ -350,11 +349,11 @@ public class TaskListsActivity extends aql implements alh, DatePickerDialog.OnDa
 
     private final void e(boolean z2) {
         if (z2) {
-            this.w.c(R.drawable.quantum_ic_arrow_back_grey600_24);
-            this.w.b(R.string.a11y_back_to_list);
+            this.toolbar.c(R.drawable.quantum_ic_arrow_back_grey600_24);
+            this.toolbar.b(R.string.a11y_back_to_list);
             return;
         }
-        this.w.b((Drawable) null);
+        this.toolbar.b((Drawable) null);
     }
 
     /* access modifiers changed from: protected */
@@ -429,7 +428,7 @@ public class TaskListsActivity extends aql implements alh, DatePickerDialog.OnDa
             return;
         }
         lc a = c().a(R.id.fragment_container);
-        if (any.a().c() == null || !cdu.b().equals(any.a().c().b())) {
+        if (any.get().c() == null || !cdu.b().equals(any.get().c().b())) {
             z3 = false;
         } else {
             z3 = true;
@@ -438,7 +437,7 @@ public class TaskListsActivity extends aql implements alh, DatePickerDialog.OnDa
             if (!z3) {
                 this.i.a((String) null, (ajr) null, true);
                 this.h = null;
-                this.j.a("");
+                this.collapsingToolbarLayout.a("");
                 a((List) null, (String) null);
                 h(false);
                 this.C = true;
@@ -450,7 +449,7 @@ public class TaskListsActivity extends aql implements alh, DatePickerDialog.OnDa
             this.q.a(this.H);
             String b = cdu.b();
             cyu cyu = new cyu();
-            any.a().d.b(b);
+            any.get().d.b(b);
             Account a2 = ajd.a(this, b);
             if (a2 == null) {
                 cyu.a(ajh.c());
@@ -461,9 +460,9 @@ public class TaskListsActivity extends aql implements alh, DatePickerDialog.OnDa
                 aiq.a().a(a2.name);
                 alm.a();
                 alq.a().c = a2.name;
-                any.a().c(a2);
+                any.get().c(a2);
                 ((ajy) ajt.a().b()).a(a2.name);
-                cyi b2 = any.a().b();
+                cyi b2 = any.get().b();
                 cyi a3 = ain.a(this, a2.name);
                 cyl cyl = TaskApplication.b().a;
                 Locale locale = getResources().getConfiguration().locale;
@@ -491,7 +490,7 @@ public class TaskListsActivity extends aql implements alh, DatePickerDialog.OnDa
     /* access modifiers changed from: protected */
     @Override // defpackage.aql
     public final void j() {
-        anc c = any.a().c();
+        anc c = any.get().c();
         if (c != null && !c.a()) {
             c.a.a.c();
             a((cdu) this.q.c());
@@ -532,7 +531,7 @@ public class TaskListsActivity extends aql implements alh, DatePickerDialog.OnDa
     /* access modifiers changed from: protected */
     @Override // defpackage.aql
     public final View m() {
-        return this.u;
+        return this.appbarCoordinator;
     }
 
     public final void a(lc lcVar) {
@@ -556,15 +555,15 @@ public class TaskListsActivity extends aql implements alh, DatePickerDialog.OnDa
         boolean z4 = true;
         this.n = lcVar;
         b(false);
-        this.w.k().clear();
+        this.toolbar.k().clear();
         if (lcVar instanceof asi) {
-            this.w.d(R.menu.task_lists_edit_task);
+            this.toolbar.d(R.menu.task_lists_edit_task);
         } else if (lcVar instanceof arv) {
-            this.w.d(R.menu.task_list_edit);
+            this.toolbar.d(R.menu.task_list_edit);
         }
-        this.w.b((Drawable) null);
-        this.w.a("");
-        ha haVar = (ha) this.B.getLayoutParams();
+        this.toolbar.b((Drawable) null);
+        this.toolbar.a("");
+        ha haVar = (ha) this.appBarLayout.getLayoutParams();
         LockableAppBarLayoutBehavior lockableAppBarLayoutBehavior = (LockableAppBarLayoutBehavior) haVar.a;
         lockableAppBarLayoutBehavior.d = false;
         if (lcVar == null || (lcVar instanceof auj)) {
@@ -584,46 +583,46 @@ public class TaskListsActivity extends aql implements alh, DatePickerDialog.OnDa
             h(z3);
             e(false);
             haVar.height = (int) getResources().getDimension(R.dimen.app_bar_expanded_height);
-            da daVar = (da) this.j.getLayoutParams();
+            da daVar = (da) this.collapsingToolbarLayout.getLayoutParams();
             if (daVar.a != 29) {
                 daVar.a = 29;
-                lockableAppBarLayoutBehavior.a_((this.j.getMinimumHeight() + 1) - haVar.height);
-                this.v.c(1);
+                lockableAppBarLayoutBehavior.a_((this.collapsingToolbarLayout.getMinimumHeight() + 1) - haVar.height);
+                this.nestedScrollView.c(1);
             }
         } else if (lcVar instanceof aqa) {
             f(true);
-            this.B.getLayoutParams().height = 0;
+            this.appBarLayout.getLayoutParams().height = 0;
             if (((aqa) lcVar).V != bg.P) {
                 z4 = false;
             }
             g(z4);
-            this.j.a("");
+            this.collapsingToolbarLayout.a("");
             h(false);
             e(false);
             a((List) null, (String) null);
         } else {
             f(false);
             g(false);
-            this.j.a("");
+            this.collapsingToolbarLayout.a("");
             if (lcVar instanceof arv) {
-                Toolbar toolbar = this.w;
+                Toolbar toolbar = this.toolbar;
                 Bundle bundle = ((arv) lcVar).i;
                 toolbar.a(toolbar.getContext().getText(bundle == null || TextUtils.isEmpty(bundle.getString("list_id")) ? R.string.list_add_title : R.string.list_edit_title));
-                ((da) this.j.getLayoutParams()).a = 19;
-                this.B.getLayoutParams().height = this.j.getMinimumHeight() + 1;
+                ((da) this.collapsingToolbarLayout.getLayoutParams()).a = 19;
+                this.appBarLayout.getLayoutParams().height = this.collapsingToolbarLayout.getMinimumHeight() + 1;
                 lockableAppBarLayoutBehavior.d = true;
-                this.B.a(false, false, true);
+                this.appBarLayout.a(false, false, true);
             } else {
-                ((da) this.j.getLayoutParams()).a = 19;
-                this.B.getLayoutParams().height = this.j.getMinimumHeight() + 1;
-                this.B.a(true, false, true);
+                ((da) this.collapsingToolbarLayout.getLayoutParams()).a = 19;
+                this.appBarLayout.getLayoutParams().height = this.collapsingToolbarLayout.getMinimumHeight() + 1;
+                this.appBarLayout.a(true, false, true);
             }
             h(false);
             e(true);
             if (lcVar instanceof arv) {
-                this.w.c(R.drawable.quantum_ic_clear_grey600_24);
+                this.toolbar.c(R.drawable.quantum_ic_clear_grey600_24);
             } else if (lcVar instanceof asi) {
-                this.w.c(R.drawable.quantum_ic_arrow_back_grey600_24);
+                this.toolbar.c(R.drawable.quantum_ic_arrow_back_grey600_24);
             }
         }
     }
@@ -631,8 +630,8 @@ public class TaskListsActivity extends aql implements alh, DatePickerDialog.OnDa
     private final void c(dcb dcb) {
         dcd dcd;
         if (dcb == null) {
-            this.j.a("");
-            this.j.setContentDescription(null);
+            this.collapsingToolbarLayout.a("");
+            this.collapsingToolbarLayout.setContentDescription(null);
             return;
         }
         dcb dcb2 = this.h;
@@ -642,14 +641,14 @@ public class TaskListsActivity extends aql implements alh, DatePickerDialog.OnDa
             dcd = dcb2.c;
         }
         String str = dcd.a;
-        this.j.a(str);
-        this.j.setContentDescription(str);
+        this.collapsingToolbarLayout.a(str);
+        this.collapsingToolbarLayout.setContentDescription(str);
     }
 
     private final void f(boolean z2) {
         boolean z3 = false;
         this.C = z2;
-        MenuItem item = this.x.k().getItem(0);
+        MenuItem item = this.bottomAppBar.k().getItem(0);
         if (!z2) {
             z3 = true;
         }
@@ -658,23 +657,23 @@ public class TaskListsActivity extends aql implements alh, DatePickerDialog.OnDa
 
     private final void g(boolean z2) {
         if (z2) {
-            this.x.setVisibility(0);
-            this.y.setVisibility(0);
+            this.bottomAppBar.setVisibility(0);
+            this.appbarShadowView.setVisibility(0);
             return;
         }
-        this.x.setVisibility(8);
-        this.y.setVisibility(8);
+        this.bottomAppBar.setVisibility(8);
+        this.appbarShadowView.setVisibility(8);
     }
 
     public final void a(String str) {
         dcb dcb;
-        List<dcb> d = any.a().c().d();
+        List<dcb> d = any.get().c().d();
         String str2 = ((dcb) d.get(0)).b;
         if (TextUtils.isEmpty(str)) {
             str = this.i.X;
         }
         if (TextUtils.isEmpty(str)) {
-            str = ain.b(this, any.a().c().b()).a();
+            str = ain.b(this, any.get().c().b()).a();
         }
         if (TextUtils.isEmpty(str)) {
             str = str2;
@@ -701,16 +700,16 @@ public class TaskListsActivity extends aql implements alh, DatePickerDialog.OnDa
         boolean z2 = this.h == null || !this.h.b.equals(dcb.b);
         this.h = dcb;
         if (z2) {
-            any.a().c().a(dcb.b);
-            this.i.a(dcb.b, ain.b(this, any.a().c().b()).b(dcb.b), true);
+            any.get().c().a(dcb.b);
+            this.i.a(dcb.b, ain.b(this, any.get().c().b()).b(dcb.b), true);
         }
         lc a = c().a(R.id.fragment_container);
         if (a == null || (a instanceof auj)) {
             c(this.h);
         }
-        ain.b(this, any.a().c().b()).a(dcb.b);
+        ain.b(this, any.get().c().b()).a(dcb.b);
         if (z2) {
-            this.B.a(true, true, true);
+            this.appBarLayout.a(true, true, true);
         }
         if (this.G != null) {
             aou aou = this.p;
@@ -736,7 +735,7 @@ public class TaskListsActivity extends aql implements alh, DatePickerDialog.OnDa
     /* access modifiers changed from: protected */
     @Override // defpackage.aql
     public final void a(ajn ajn) {
-        dcb c = any.a().c().c(ajn.a());
+        dcb c = any.get().c().c(ajn.a());
         if (c != null) {
             b(c);
         }
@@ -868,9 +867,9 @@ public class TaskListsActivity extends aql implements alh, DatePickerDialog.OnDa
                 case 3:
                     String str2 = this.i.X;
                     if (!TextUtils.isEmpty(str2)) {
-                        int size = any.a().c().d(str2).a().size();
+                        int size = any.get().c().d(str2).a().size();
                         if (size == 0) {
-                            any.a().c().a(str2, size, ajn.a(str2));
+                            any.get().c().a(str2, size, ajn.a(str2));
                             a((String) null);
                             return;
                         }
@@ -891,7 +890,7 @@ public class TaskListsActivity extends aql implements alh, DatePickerDialog.OnDa
                     auj auj = (auj) a;
                     String str3 = auj.X;
                     int i4 = 0;
-                    for (dby dby : any.a().c().d(this.h.b).a()) {
+                    for (dby dby : any.get().c().d(this.h.b).a()) {
                         if (ajd.a(dby)) {
                             i3 = i4 + 1;
                         } else {
@@ -936,7 +935,7 @@ public class TaskListsActivity extends aql implements alh, DatePickerDialog.OnDa
     private final void a(ajr ajr) {
         if (!r()) {
             this.i.a(this.h.b, ajr, true);
-            ain b = ain.b(this, any.a().c().b());
+            ain b = ain.b(this, any.get().c().b());
             String str = this.h.b;
             SharedPreferences.Editor edit = b.a.edit();
             String valueOf = String.valueOf("task-list-order:");
@@ -947,33 +946,33 @@ public class TaskListsActivity extends aql implements alh, DatePickerDialog.OnDa
     }
 
     public final void o() {
-        if (this.D != null) {
-            this.D.setVisibility(8);
-            ((ViewGroup) this.D.getParent()).removeView(this.D);
-            this.D = null;
+        if (this.splashView != null) {
+            this.splashView.setVisibility(8);
+            ((ViewGroup) this.splashView.getParent()).removeView(this.splashView);
+            this.splashView = null;
         }
     }
 
     public final void p() {
-        if (this.D != null && this.D.getVisibility() == 0) {
-            this.D.animate().alpha(0.0f).setStartDelay(250).withEndAction(new apj(this)).start();
+        if (this.splashView != null && this.splashView.getVisibility() == 0) {
+            this.splashView.animate().alpha(0.0f).setStartDelay(250).withEndAction(new apj(this)).start();
         }
     }
 
     private final void h(boolean z2) {
         if (this.z != z2) {
             if (this.z) {
-                this.k.setClickable(false);
-                this.k.animate().alpha(0.0f).setListener(new apy(this));
+                this.fab.setClickable(false);
+                this.fab.animate().alpha(0.0f).setListener(new apy(this));
             } else {
-                this.k.setClickable(true);
-                this.k.animate().alpha(1.0f).setListener(new apz(this));
+                this.fab.setClickable(true);
+                this.fab.animate().alpha(1.0f).setListener(new apz(this));
             }
             this.z = z2;
         }
     }
 
-    public final /* synthetic */ boolean a(MenuItem menuItem) {
+    public final /* synthetic */ boolean onToolbarMenuItemClicked(MenuItem menuItem) {
         int i2;
         dcd dcd;
         String str;
@@ -1028,7 +1027,7 @@ public class TaskListsActivity extends aql implements alh, DatePickerDialog.OnDa
             String str4 = asi.U;
             String str5 = asi.W;
             if (!cru.d(str3, str4)) {
-                Iterator it = any.a().c().d(str4).b().a.iterator();
+                Iterator it = any.get().c().d(str4).b().a.iterator();
                 while (true) {
                     if (!it.hasNext()) {
                         i2 = 0;
@@ -1040,9 +1039,9 @@ public class TaskListsActivity extends aql implements alh, DatePickerDialog.OnDa
                         break;
                     }
                 }
-                ajl = new ajl(any.a().c().c(str4), i2 + 1);
+                ajl = new ajl(any.get().c().c(str4), i2 + 1);
             }
-            any.a().c().a(str4, str5, ajl);
+            any.get().c().a(str4, str5, ajl);
             if (this.i != null) {
                 auj auj = this.i;
                 if (auj.l() && !auj.C && auj.J != null && auj.J.getWindowToken() != null && auj.J.getVisibility() == 0) {

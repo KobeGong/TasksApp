@@ -19,9 +19,9 @@ public final /* synthetic */ class asu implements View.OnClickListener {
         asi.b(atb);
         asi.a(atb);
         if (ajd.b(atb.d)) {
-            any.a().c().a(asi.U, atb.d.d, (Object) null);
+            any.get().c().a(asi.U, atb.d.d, (Object) null);
         } else {
-            any.a().c().a(asi.U, atb.d.d, true);
+            any.get().c().a(asi.U, atb.d.d, true);
         }
     }
 }

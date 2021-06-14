@@ -8,11 +8,11 @@ import android.view.View;
 
 /* renamed from: aad  reason: default package */
 /* compiled from: PG */
-public class aad extends ze implements SubMenu {
-    public ze l;
-    private zi m;
+public class aad extends MenuBuilder implements SubMenu {
+    public MenuBuilder l;
+    private MenuItemImpl m;
 
-    public aad(Context context, ze zeVar, zi ziVar) {
+    public aad(Context context, MenuBuilder zeVar, MenuItemImpl ziVar) {
         super(context);
         this.l = zeVar;
         this.m = ziVar;
@@ -43,13 +43,13 @@ public class aad extends ze implements SubMenu {
     }
 
     @Override // defpackage.ze
-    public final ze l() {
+    public final MenuBuilder l() {
         return this.l.l();
     }
 
     /* access modifiers changed from: package-private */
     @Override // defpackage.ze
-    public final boolean a(ze zeVar, MenuItem menuItem) {
+    public final boolean a(MenuBuilder zeVar, MenuItem menuItem) {
         return super.a(zeVar, menuItem) || this.l.a(zeVar, menuItem);
     }
 
@@ -95,12 +95,12 @@ public class aad extends ze implements SubMenu {
     }
 
     @Override // defpackage.ze
-    public final boolean a(zi ziVar) {
+    public final boolean a(MenuItemImpl ziVar) {
         return this.l.a(ziVar);
     }
 
     @Override // defpackage.ze
-    public final boolean b(zi ziVar) {
+    public final boolean b(MenuItemImpl ziVar) {
         return this.l.b(ziVar);
     }
 

@@ -15,7 +15,7 @@ final /* synthetic */ class aum implements View.OnClickListener {
         auj auj = this.a;
         auj.V.setEnabled(false);
         auj.a(true);
-        any.a().c().f(auj.X);
-        any.a().c().a(auj.X).a(new auq(auj), TaskApplication.b().a);
+        any.get().c().f(auj.X);
+        any.get().c().a(auj.X).a(new auq(auj), TaskApplication.b().a);
     }
 }

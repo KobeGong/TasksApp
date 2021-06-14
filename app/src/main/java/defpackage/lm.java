@@ -16,7 +16,7 @@ public class lm extends lk {
     public final Handler c;
     public final lp d;
 
-    lm(lg lgVar) {
+    lm(FragmentActivity lgVar) {
         this(lgVar, lgVar, lgVar.b);
     }
 

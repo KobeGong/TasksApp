@@ -12,7 +12,7 @@ public final class aug {
         if (this.a.f != null && (g = this.a.g(i)) != null) {
             atl atl = this.a.f;
             String str = g.d;
-            lg j = atl.a.j();
+            FragmentActivity j = atl.a.getActivity();
             if (z) {
                 dby a2 = auj.N().a(atl.a.X, str);
                 if (a2 != null) {

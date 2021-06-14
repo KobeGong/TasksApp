@@ -14,6 +14,6 @@ public final class apz extends AnimatorListenerAdapter {
     }
 
     public final void onAnimationStart(Animator animator) {
-        this.a.k.setVisibility(0);
+        this.a.fab.setVisibility(0);
     }
 }

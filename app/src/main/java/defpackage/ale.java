@@ -24,14 +24,14 @@ final /* synthetic */ class ale implements Callable {
         ArrayList arrayList = new ArrayList();
         for (ajo ajo : list) {
             dby dby = null;
-            dcb c = any.a().c().c(ajo.b());
+            dcb c = any.get().c().c(ajo.b());
             if (c != null) {
-                dby = any.a().c().a(ajo.b(), ajo.c());
+                dby = any.get().c().a(ajo.b(), ajo.c());
             }
             if (dby != null) {
                 arrayList.add(akz.a(c, dby));
             } else {
-                azb.b("Result not found in local database: %s, %s, %s", any.a().c().b(), ajo.b(), ajo.c());
+                azb.b("Result not found in local database: %s, %s, %s", any.get().c().b(), ajo.b(), ajo.c());
             }
         }
         return arrayList;

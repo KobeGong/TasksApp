@@ -4,10 +4,10 @@ package defpackage;
 /* renamed from: fh  reason: default package */
 /* compiled from: PG */
 public final class fh implements ff {
-    public final zi a;
+    public final MenuItemImpl a;
     public boolean b;
 
-    fh(zi ziVar) {
+    fh(MenuItemImpl ziVar) {
         this.a = ziVar;
     }
 }

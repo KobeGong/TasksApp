@@ -18,7 +18,7 @@ public final /* synthetic */ class apb implements DialogInterface.OnClickListene
     public final void onClick(DialogInterface dialogInterface, int i) {
         TaskListsActivity taskListsActivity = this.a;
         String str = this.b;
-        any.a().c().a(str, this.c, ajn.a(str));
+        any.get().c().a(str, this.c, ajn.a(str));
         taskListsActivity.a((String) null);
     }
 }

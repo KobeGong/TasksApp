@@ -14,10 +14,10 @@ import com.google.android.apps.tasks.R;
 
 /* renamed from: fb  reason: default package */
 /* compiled from: PG */
-public final class fb implements zt {
+public final class NavigationMenuPresenter implements MenuPresenter {
     public NavigationMenuView a;
     public LinearLayout b;
-    public ze c;
+    public MenuBuilder c;
     public int d;
     public fd e;
     public LayoutInflater f;
@@ -34,7 +34,7 @@ public final class fb implements zt {
     private zu q;
 
     @Override // defpackage.zt
-    public final void a(Context context, ze zeVar) {
+    public final void a(Context context, MenuBuilder zeVar) {
         this.f = LayoutInflater.from(context);
         this.c = zeVar;
         this.o = context.getResources().getDimensionPixelOffset(R.dimen.design_navigation_separator_vertical_padding);
@@ -60,7 +60,7 @@ public final class fb implements zt {
     }
 
     @Override // defpackage.zt
-    public final void a(ze zeVar, boolean z) {
+    public final void a(MenuBuilder zeVar, boolean z) {
         if (this.q != null) {
             this.q.a(zeVar, z);
         }
@@ -72,12 +72,12 @@ public final class fb implements zt {
     }
 
     @Override // defpackage.zt
-    public final boolean a(zi ziVar) {
+    public final boolean a(MenuItemImpl ziVar) {
         return false;
     }
 
     @Override // defpackage.zt
-    public final boolean b(zi ziVar) {
+    public final boolean b(MenuItemImpl ziVar) {
         return false;
     }
 
@@ -105,7 +105,7 @@ public final class fb implements zt {
             for (int i2 = 0; i2 < size; i2++) {
                 ff ffVar = (ff) fdVar.a.get(i2);
                 if (ffVar instanceof fh) {
-                    zi ziVar = ((fh) ffVar).a;
+                    MenuItemImpl ziVar = ((fh) ffVar).a;
                     View actionView = ziVar != null ? ziVar.getActionView() : null;
                     if (actionView != null) {
                         fk fkVar = new fk();
@@ -127,10 +127,10 @@ public final class fb implements zt {
 
     @Override // defpackage.zt
     public final void a(Parcelable parcelable) {
-        zi ziVar;
+        MenuItemImpl ziVar;
         View actionView;
         fk fkVar;
-        zi ziVar2;
+        MenuItemImpl ziVar2;
         if (parcelable instanceof Bundle) {
             Bundle bundle = (Bundle) parcelable;
             SparseArray sparseParcelableArray = bundle.getSparseParcelableArray("android:menu:list");

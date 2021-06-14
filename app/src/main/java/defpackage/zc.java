@@ -32,17 +32,17 @@ public final class zc extends BaseAdapter {
         } else {
             view2 = view;
         }
-        ((zw) view2).a((zi) getItem(i));
+        ((zw) view2).a((MenuItemImpl) getItem(i));
         return view2;
     }
 
     private final void a() {
-        zi ziVar = this.b.b.j;
+        MenuItemImpl ziVar = this.b.b.j;
         if (ziVar != null) {
             ArrayList k = this.b.b.k();
             int size = k.size();
             for (int i = 0; i < size; i++) {
-                if (((zi) k.get(i)) == ziVar) {
+                if (((MenuItemImpl) k.get(i)) == ziVar) {
                     this.a = i;
                     return;
                 }
@@ -61,6 +61,6 @@ public final class zc extends BaseAdapter {
         if (this.a >= 0 && i >= this.a) {
             i++;
         }
-        return (zi) k.get(i);
+        return (MenuItemImpl) k.get(i);
     }
 }

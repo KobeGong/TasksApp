@@ -17,12 +17,12 @@ final /* synthetic */ class apl implements Runnable {
         TaskListsActivity taskListsActivity = this.a;
         Typeface typeface = this.b;
         if (!taskListsActivity.r()) {
-            ew ewVar = taskListsActivity.j.c;
+            ew ewVar = taskListsActivity.collapsingToolbarLayout.c;
             if (ewVar.l != typeface) {
                 ewVar.l = typeface;
                 ewVar.c();
             }
-            ew ewVar2 = taskListsActivity.j.c;
+            ew ewVar2 = taskListsActivity.collapsingToolbarLayout.c;
             if (ewVar2.k != typeface) {
                 ewVar2.k = typeface;
                 ewVar2.c();

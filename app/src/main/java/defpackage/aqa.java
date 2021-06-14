@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ProgressBar;
-import com.google.android.apps.tasks.R;
 
 /* renamed from: aqa  reason: default package */
 /* compiled from: PG */
@@ -143,7 +142,7 @@ public final class aqa extends lc {
 
     /* access modifiers changed from: package-private */
     public final void c() {
-        lg j = j();
+        FragmentActivity j = getActivity();
         if (j instanceof aqi) {
             ((aqi) j).i();
         }

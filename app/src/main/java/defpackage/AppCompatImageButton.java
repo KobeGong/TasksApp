@@ -12,19 +12,19 @@ import com.google.android.apps.tasks.R;
 
 /* renamed from: abr  reason: default package */
 /* compiled from: PG */
-public class abr extends ImageButton implements sm, vu {
+public class AppCompatImageButton extends ImageButton implements sm, vu {
     private final abg a;
     private final abs b;
 
-    public abr(Context context) {
+    public AppCompatImageButton(Context context) {
         this(context, null);
     }
 
-    public abr(Context context, AttributeSet attributeSet) {
+    public AppCompatImageButton(Context context, AttributeSet attributeSet) {
         this(context, attributeSet, R.attr.imageButtonStyle);
     }
 
-    public abr(Context context, AttributeSet attributeSet, int i) {
+    public AppCompatImageButton(Context context, AttributeSet attributeSet, int i) {
         super(agt.a(context), attributeSet, i);
         this.a = new abg(this);
         this.a.a(attributeSet, i);

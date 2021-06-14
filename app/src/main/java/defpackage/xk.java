@@ -16,12 +16,12 @@ public final class xk implements zu {
     private final int c;
 
     @Override // defpackage.zu
-    public final boolean a(ze zeVar) {
+    public final boolean a(MenuBuilder zeVar) {
         return false;
     }
 
     @Override // defpackage.zu
-    public final void a(ze zeVar, boolean z) {
+    public final void a(MenuBuilder zeVar, boolean z) {
         if (!this.b) {
             this.b = true;
             acr acr = null;

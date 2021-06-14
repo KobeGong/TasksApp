@@ -19,7 +19,7 @@ public final class anb extends AbstractThreadedSyncAdapter {
         cyi a;
         String a2 = azb.a(account.name);
         new Object[1][0] = a2;
-        anc b = any.a().b(account);
+        anc b = any.get().b(account);
         synchronized (b) {
             a = b.a("sync", new ano(b));
         }

@@ -17,7 +17,7 @@ public final class zx {
     public ViewGroup e;
     public View f;
     public View g;
-    public ze h;
+    public MenuBuilder h;
     public zb i;
     public Context j;
     public boolean k;
@@ -40,7 +40,7 @@ public final class zx {
         this.a = i2;
     }
 
-    public final void a(ze zeVar) {
+    public final void a(MenuBuilder zeVar) {
         if (zeVar != this.h) {
             if (this.h != null) {
                 this.h.b(this.i);

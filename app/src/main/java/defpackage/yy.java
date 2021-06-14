@@ -13,12 +13,12 @@ final class yy implements aek {
     }
 
     @Override // defpackage.aek
-    public final void a(ze zeVar, MenuItem menuItem) {
+    public final void a(MenuBuilder zeVar, MenuItem menuItem) {
         this.a.a.removeCallbacksAndMessages(zeVar);
     }
 
     @Override // defpackage.aek
-    public final void b(ze zeVar, MenuItem menuItem) {
+    public final void b(MenuBuilder zeVar, MenuItem menuItem) {
         int i;
         za zaVar;
         this.a.a.removeCallbacksAndMessages(null);

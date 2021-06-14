@@ -10,11 +10,11 @@ import com.google.android.gms.auth.api.signin.SignInAccount;
 import com.google.android.gms.common.annotation.KeepName;
 import com.google.android.gms.common.api.Status;
 
-import defpackage.lg;
+import defpackage.FragmentActivity;
 
 @KeepName
 /* compiled from: PG */
-public class SignInHubActivity extends lg {
+public class SignInHubActivity extends FragmentActivity {
     private static boolean j = false;
     public int h;
     public Intent i;

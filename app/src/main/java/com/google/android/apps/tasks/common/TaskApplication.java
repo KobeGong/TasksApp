@@ -127,14 +127,14 @@ public class TaskApplication extends dmo implements ajg {
         if (a4.a()) {
             ((ajy) a4.b()).a(this, this.a);
         }
-        if (!(any.a != null)) {
-            if (any.a == null) {
+        if (!(any.inst != null)) {
+            if (any.inst == null) {
                 z = true;
             } else {
                 z = false;
             }
             cld.b(z);
-            any.a = new any(getApplicationContext(), c(), cub.a(Executors.newFixedThreadPool(5, ajd.c("slow-pool-%d"))), d(), new aoa(getApplicationContext(), d()));
+            any.inst = new any(getApplicationContext(), c(), cub.a(Executors.newFixedThreadPool(5, ajd.c("slow-pool-%d"))), d(), new aoa(getApplicationContext(), d()));
         } else {
             azb.b("SyncEngineProvider already initialized. This should only be possible in tests.", new Object[0]);
         }
@@ -142,7 +142,7 @@ public class TaskApplication extends dmo implements ajg {
         alj.a().b();
         cyl cyl = this.a;
         cym cym = this.i;
-        any a5 = any.a();
+        any a5 = any.get();
         bxy bxy = new bxy();
         if (this == null) {
             throw new NullPointerException("Null context");

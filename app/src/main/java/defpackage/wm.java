@@ -15,7 +15,7 @@ import android.view.Window;
 
 /* renamed from: wm  reason: default package */
 /* compiled from: PG */
-public class wm extends lg implements nx, wn {
+public class wm extends FragmentActivity implements nx, wn {
     private wo h;
     private int i = 0;
 

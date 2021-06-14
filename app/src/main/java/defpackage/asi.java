@@ -17,7 +17,6 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import com.google.android.apps.tasks.R;
 
 /* renamed from: asi  reason: default package */
 /* compiled from: PG */
@@ -63,9 +62,9 @@ public final class asi extends arb implements DatePickerDialog.OnDateSetListener
                 if (dcb != null) {
                     String str = dcb.b;
                     if (!this.U.equals(str)) {
-                        this.W = any.a().c().a(this.U, this.W, str, z);
+                        this.W = any.get().c().a(this.U, this.W, str, z);
                         this.U = str;
-                        this.ag = any.a().c().a(this.U, this.W);
+                        this.ag = any.get().c().a(this.U, this.W);
                     }
                 }
             }
@@ -109,14 +108,14 @@ public final class asi extends arb implements DatePickerDialog.OnDateSetListener
     @Override // defpackage.lc
     public final void a(Context context) {
         super.a(context);
-        cky.a((Activity) j(), dck.a);
+        cky.a((Activity) getActivity(), dck.a);
     }
 
     @Override // defpackage.lc
     public final void s() {
         super.s();
-        if (j() != null) {
-            cos.a(j()).b.a(j().findViewById(16908290));
+        if (getActivity() != null) {
+            cos.a(getActivity()).b.a(getActivity().findViewById(16908290));
         }
     }
 
@@ -242,7 +241,7 @@ public final class asi extends arb implements DatePickerDialog.OnDateSetListener
 
     private final String V() {
         dcd dcd;
-        int size = any.a().c().d().size();
+        int size = any.get().c().d().size();
         dcb dcb = this.ah;
         if (dcb.c == null) {
             dcd = dcd.c;
@@ -401,7 +400,7 @@ public final class asi extends arb implements DatePickerDialog.OnDateSetListener
                 }
                 this.ag = (dby) dih6;
             }
-            any.a().c().a(this.U, this.W, this.aa);
+            any.get().c().a(this.U, this.W, this.aa);
             aju.a().a(this.W);
         }
     }
@@ -463,7 +462,7 @@ public final class asi extends arb implements DatePickerDialog.OnDateSetListener
             throw new dkw();
         }
         dby dby2 = (dby) dih3;
-        any.a().c().a(this.U, dby.d, trim2);
+        any.get().c().a(this.U, dby.d, trim2);
         aju.a().a(dby.d);
         return dby2;
     }
@@ -515,7 +514,7 @@ public final class asi extends arb implements DatePickerDialog.OnDateSetListener
                     throw new dkw();
                 }
                 this.ag = (dby) dih3;
-                any.a().c().b(this.U, this.W, trim2);
+                any.get().c().b(this.U, this.W, trim2);
                 aju.a().a(this.W);
             }
         }

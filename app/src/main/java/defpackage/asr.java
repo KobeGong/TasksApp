@@ -12,7 +12,7 @@ final /* synthetic */ class asr implements View.OnClickListener {
 
     public final void onClick(View view) {
         asi asi = this.a;
-        asi.a(any.a().c().a(asi.U, dby.g, asi.b.getChildCount(), asi.W)).a();
+        asi.a(any.get().c().a(asi.U, dby.g, asi.b.getChildCount(), asi.W)).a();
         asi.a.post(new asm(asi));
         asi.N();
     }

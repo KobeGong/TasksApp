@@ -109,7 +109,7 @@ public final class auj extends lc implements DatePickerDialog.OnDateSetListener 
     }
 
     public final void b(View view) {
-        lg j = j();
+        FragmentActivity j = getActivity();
         if (j instanceof aux) {
             ((aux) j).c(view.canScrollVertically(-1));
         }
@@ -118,14 +118,14 @@ public final class auj extends lc implements DatePickerDialog.OnDateSetListener 
     @Override // defpackage.lc
     public final void a(Context context) {
         super.a(context);
-        cky.a((Activity) j(), dck.e);
+        cky.a((Activity) getActivity(), dck.e);
     }
 
     @Override // defpackage.lc
     public final void s() {
         super.s();
-        if (j() != null) {
-            cos.a(j()).b.a(j().findViewById(16908290));
+        if (getActivity() != null) {
+            cos.a(getActivity()).b.a(getActivity().findViewById(16908290));
         }
     }
 
@@ -186,7 +186,7 @@ public final class auj extends lc implements DatePickerDialog.OnDateSetListener 
             if (TextUtils.isEmpty(this.X)) {
                 d = ajq.d();
             } else {
-                d = any.a().c().d(this.X);
+                d = any.get().c().d(this.X);
             }
             Iterator it = d.b().a.iterator();
             loop0:
@@ -229,11 +229,11 @@ public final class auj extends lc implements DatePickerDialog.OnDateSetListener 
                 this.U.animate().cancel();
                 this.U.setAlpha(0.0f);
                 a(true);
-                cyi a2 = any.a().c().a(this.X);
+                cyi a2 = any.get().c().a(this.X);
                 a2.a(new aup(this, a2), TaskApplication.b().a);
             }
             c(z);
-            lg j = j();
+            FragmentActivity j = getActivity();
             if (j instanceof aux) {
                 ((aux) j).d(c());
             }
@@ -291,9 +291,9 @@ public final class auj extends lc implements DatePickerDialog.OnDateSetListener 
                 throw new dkw();
             }
             dmk dmk = (dmk) dih4;
-            dby a2 = any.a().c().a(this.X, this.Z);
+            dby a2 = any.get().c().a(this.X, this.Z);
             if (a2 != null) {
-                any.a().c().a(this.X, this.Z, dmk);
+                any.get().c().a(this.X, this.Z, dmk);
                 SortableAdapter atg = this.taskAdapter;
                 dii dii = (dii) a2.a(bg.ao);
                 dii.a((dih) a2);
@@ -417,7 +417,7 @@ public final class auj extends lc implements DatePickerDialog.OnDateSetListener 
     }
 
     public static anc N() {
-        return any.a().c();
+        return any.get().c();
     }
 
     public final boolean O() {
@@ -427,9 +427,9 @@ public final class auj extends lc implements DatePickerDialog.OnDateSetListener 
     /* access modifiers changed from: package-private */
     public final /* synthetic */ void P() {
         ArrayList arrayList = new ArrayList();
-        arrayList.add(any.a().c().c());
+        arrayList.add(any.get().c().c());
         if (!TextUtils.isEmpty(this.X)) {
-            arrayList.add(any.a().c().a(this.X));
+            arrayList.add(any.get().c().a(this.X));
         }
         new cye(csp.a((Iterable) arrayList)).a(new auo(this), TaskApplication.b().a);
     }

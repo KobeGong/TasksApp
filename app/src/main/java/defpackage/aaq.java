@@ -13,7 +13,7 @@ public final class aaq extends zr {
     public aaq(aap aap, Context context, aad aad, View view) {
         super(context, aad, view, false);
         this.d = aap;
-        if (!((zi) aad.getItem()).f()) {
+        if (!((MenuItemImpl) aad.getItem()).f()) {
             this.a = aap.g == null ? (View) aap.e : aap.g;
         }
         a(aap.m);

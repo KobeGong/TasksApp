@@ -3,9 +3,9 @@ package defpackage;
 /* renamed from: rt  reason: default package */
 /* compiled from: PG */
 public final class rt {
-    public final /* synthetic */ zi a;
+    public final /* synthetic */ MenuItemImpl a;
 
-    public rt(zi ziVar) {
+    public rt(MenuItemImpl ziVar) {
         this.a = ziVar;
     }
 }

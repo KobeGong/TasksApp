@@ -7,10 +7,10 @@ import android.os.Bundle;
 /* access modifiers changed from: package-private */
 /* renamed from: la  reason: default package */
 /* compiled from: PG */
-public abstract class la extends kz {
+public abstract class ComponentActivity extends kz {
     public boolean a;
 
-    la() {
+    ComponentActivity() {
     }
 
     public void startActivityForResult(Intent intent, int i, Bundle bundle) {

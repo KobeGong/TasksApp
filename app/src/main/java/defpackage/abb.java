@@ -13,7 +13,7 @@ public final class abb implements zf {
     }
 
     @Override // defpackage.zf
-    public final boolean a(ze zeVar, MenuItem menuItem) {
+    public final boolean a(MenuBuilder zeVar, MenuItem menuItem) {
         boolean z;
         if (this.a.f == null) {
             return false;
@@ -31,6 +31,6 @@ public final class abb implements zf {
     }
 
     @Override // defpackage.zf
-    public final void a(ze zeVar) {
+    public final void a(MenuBuilder zeVar) {
     }
 }

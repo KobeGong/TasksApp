@@ -15,6 +15,8 @@ public final /* synthetic */ class apn implements ahb {
     @Override // defpackage.ahb
     /* Code decompiled incorrectly, please refer to instructions dump. */
     public final boolean a(android.view.MenuItem r10) {
+        a.i.Y;
+        if (a.h)
         /*
         // Method dump skipped, instructions count: 131
         */

@@ -10,7 +10,7 @@ public final class aau extends zr {
     private final /* synthetic */ aap d;
 
     /* JADX INFO: super call moved to the top of the method (can break code semantics) */
-    public aau(aap aap, Context context, ze zeVar, View view) {
+    public aau(aap aap, Context context, MenuBuilder zeVar, View view) {
         super(context, zeVar, view, true);
         this.d = aap;
         this.b = 8388613;

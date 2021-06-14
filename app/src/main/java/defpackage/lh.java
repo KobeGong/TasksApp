@@ -7,9 +7,9 @@ import android.os.Message;
 /* renamed from: lh  reason: default package */
 /* compiled from: PG */
 public final class lh extends Handler {
-    private final /* synthetic */ lg a;
+    private final /* synthetic */ FragmentActivity a;
 
-    lh(lg lgVar) {
+    lh(FragmentActivity lgVar) {
         this.a = lgVar;
     }
 

@@ -19,7 +19,7 @@ final /* synthetic */ class aqd implements View.OnClickListener {
         if (a2 == 0) {
             aqa.c();
         } else if (axv.a(a2)) {
-            axt.a((Activity) aqa.j(), a2).show();
+            axt.a((Activity) aqa.getActivity(), a2).show();
         } else {
             Snackbar.a(aqa.J, axv.b(a2), 0).a();
         }

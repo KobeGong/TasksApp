@@ -16,7 +16,7 @@ final /* synthetic */ class aqe implements View.OnClickListener {
         SharedPreferences.Editor edit = aiw.b(aqa.i()).a.edit();
         edit.putBoolean("onboarding_dismissed", true);
         edit.apply();
-        lg j = aqa.j();
+        FragmentActivity j = aqa.getActivity();
         if (j != null) {
             j.onBackPressed();
         }

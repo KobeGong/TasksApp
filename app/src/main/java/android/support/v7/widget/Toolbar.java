@@ -19,6 +19,15 @@ import com.google.android.apps.tasks.R;
 import java.util.ArrayList;
 import java.util.List;
 
+import defpackage.AppCompatImageButton;
+import defpackage.aap;
+import defpackage.abc;
+import defpackage.acr;
+import defpackage.agz;
+import defpackage.aha;
+import defpackage.ahb;
+import defpackage.xw;
+
 /* compiled from: PG */
 public class Toolbar extends ViewGroup {
     public ahb A;
@@ -34,7 +43,7 @@ public class Toolbar extends ViewGroup {
     private final abc K;
     private acr L;
     private final Runnable M;
-    private ImageButton a;
+    private ImageButton navButtonView;
     private ImageView b;
     private int c;
     private int d;
@@ -326,8 +335,8 @@ public class Toolbar extends ViewGroup {
     }
 
     public final CharSequence i() {
-        if (this.a != null) {
-            return this.a.getContentDescription();
+        if (this.navButtonView != null) {
+            return this.navButtonView.getContentDescription();
         }
         return null;
     }
@@ -338,10 +347,10 @@ public class Toolbar extends ViewGroup {
 
     public final void c(CharSequence charSequence) {
         if (!TextUtils.isEmpty(charSequence)) {
-            o();
+            ensureNavButtonView();
         }
-        if (this.a != null) {
-            this.a.setContentDescription(charSequence);
+        if (this.navButtonView != null) {
+            this.navButtonView.setContentDescription(charSequence);
         }
     }
 
@@ -351,29 +360,29 @@ public class Toolbar extends ViewGroup {
 
     public final void b(Drawable drawable) {
         if (drawable != null) {
-            o();
-            if (!d(this.a)) {
-                a((View) this.a, true);
+            ensureNavButtonView();
+            if (!d(this.navButtonView)) {
+                a((View) this.navButtonView, true);
             }
-        } else if (this.a != null && d(this.a)) {
-            removeView(this.a);
-            this.z.remove(this.a);
+        } else if (this.navButtonView != null && d(this.navButtonView)) {
+            removeView(this.navButtonView);
+            this.z.remove(this.navButtonView);
         }
-        if (this.a != null) {
-            this.a.setImageDrawable(drawable);
+        if (this.navButtonView != null) {
+            this.navButtonView.setImageDrawable(drawable);
         }
     }
 
     public final Drawable j() {
-        if (this.a != null) {
-            return this.a.getDrawable();
+        if (this.navButtonView != null) {
+            return this.navButtonView.getDrawable();
         }
         return null;
     }
 
     public final void a(View.OnClickListener onClickListener) {
-        o();
-        this.a.setOnClickListener(onClickListener);
+        ensureNavButtonView();
+        this.navButtonView.setOnClickListener(onClickListener);
     }
 
     public final Menu k() {
@@ -446,12 +455,12 @@ public class Toolbar extends ViewGroup {
         return c();
     }
 
-    private final void o() {
-        if (this.a == null) {
-            this.a = new abr(getContext(), null, R.attr.toolbarNavigationButtonStyle);
+    private final void ensureNavButtonView() {
+        if (this.navButtonView == null) {
+            this.navButtonView = new AppCompatImageButton(getContext(), null, R.attr.toolbarNavigationButtonStyle);
             aha aha = new aha();
             aha.a = 8388611 | (this.r & 112);
-            this.a.setLayoutParams(aha);
+            this.navButtonView.setLayoutParams(aha);
         }
     }
 
@@ -588,11 +597,11 @@ public class Toolbar extends ViewGroup {
             c3 = 0;
         }
         int i8 = 0;
-        if (a(this.a)) {
-            a(this.a, i2, 0, i3, this.c);
-            i8 = this.a.getMeasuredWidth() + b(this.a);
-            int max = Math.max(0, this.a.getMeasuredHeight() + c(this.a));
-            i4 = View.combineMeasuredStates(0, this.a.getMeasuredState());
+        if (a(this.navButtonView)) {
+            a(this.navButtonView, i2, 0, i3, this.c);
+            i8 = this.navButtonView.getMeasuredWidth() + b(this.navButtonView);
+            int max = Math.max(0, this.navButtonView.getMeasuredHeight() + c(this.navButtonView));
+            i4 = View.combineMeasuredStates(0, this.navButtonView.getMeasuredState());
             i5 = max;
         } else {
             i4 = 0;
@@ -693,14 +702,14 @@ public class Toolbar extends ViewGroup {
         iArr[0] = 0;
         int f2 = sn.a.f(this);
         int min = f2 >= 0 ? Math.min(f2, i5 - i3) : 0;
-        if (!a(this.a)) {
+        if (!a(this.navButtonView)) {
             i6 = i19;
             i7 = paddingLeft;
         } else if (z3) {
-            i6 = b(this.a, i19, iArr, min);
+            i6 = b(this.navButtonView, i19, iArr, min);
             i7 = paddingLeft;
         } else {
-            i7 = a(this.a, paddingLeft, iArr, min);
+            i7 = a(this.navButtonView, paddingLeft, iArr, min);
             i6 = i19;
         }
         if (a(this.l)) {

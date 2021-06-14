@@ -5,7 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import com.google.android.apps.tasks.R;
+
 import com.google.android.apps.tasks.ui.components.CheckOptionItem;
 
 /* renamed from: atd  reason: default package */
@@ -24,7 +24,7 @@ public final class atd extends gu {
     public final void c(Bundle bundle) {
         dcd dcd;
         super.c(bundle);
-        anc c = any.a().c();
+        anc c = any.get().c();
         if (c == null) {
             a(true);
             azb.a("SyncEngine not yet initialized", new Object[0]);

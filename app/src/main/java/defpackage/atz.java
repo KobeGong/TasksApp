@@ -23,7 +23,7 @@ public final /* synthetic */ class atz implements View.OnClickListener {
         String str;
         atx atx = this.a;
         if (atx.y == daq.GMAIL_THREAD) {
-            String b = any.a().c().b();
+            String b = any.get().c().b();
             Activity activity = (Activity) atx.s.getContext();
             String str2 = atx.x;
             if (Build.VERSION.SDK_INT >= 21) {

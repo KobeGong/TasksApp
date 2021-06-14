@@ -33,13 +33,13 @@ public final class aqj extends lb implements DatePickerDialog.OnDateSetListener 
             i2 = bundle.getInt("initial month", i2 + 1) - 1;
             i3 = bundle.getInt("initial day", i3);
         }
-        DatePickerDialog datePickerDialog = new DatePickerDialog(j(), this, i, i2, i3);
+        DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(), this, i, i2, i3);
         datePickerDialog.setOnShowListener(new aqk(this, datePickerDialog));
         return datePickerDialog;
     }
 
     public final void onDateSet(DatePicker datePicker, int i, int i2, int i3) {
-        lg j = j();
+        FragmentActivity j = getActivity();
         if (j instanceof DatePickerDialog.OnDateSetListener) {
             ((DatePickerDialog.OnDateSetListener) j).onDateSet(datePicker, i, i2, i3);
         }

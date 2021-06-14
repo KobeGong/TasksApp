@@ -11,11 +11,11 @@ import java.util.ArrayList;
 /* compiled from: PG */
 public final class fd extends Adapter {
     public final ArrayList a = new ArrayList();
-    public zi b;
+    public MenuItemImpl b;
     public boolean c;
-    private final /* synthetic */ fb f;
+    private final /* synthetic */ NavigationMenuPresenter f;
 
-    public fd(fb fbVar) {
+    public fd(NavigationMenuPresenter fbVar) {
         this.f = fbVar;
         b();
     }
@@ -63,7 +63,7 @@ public final class fd extends Adapter {
             int size = this.f.c.i().size();
             int i5 = 0;
             while (i5 < size) {
-                zi ziVar = (zi) this.f.c.i().get(i5);
+                MenuItemImpl ziVar = (MenuItemImpl) this.f.c.i().get(i5);
                 if (ziVar.isChecked()) {
                     a(ziVar);
                 }
@@ -81,7 +81,7 @@ public final class fd extends Adapter {
                         int size2 = this.a.size();
                         int size3 = subMenu.size();
                         for (int i6 = 0; i6 < size3; i6++) {
-                            zi ziVar2 = (zi) subMenu.getItem(i6);
+                            MenuItemImpl ziVar2 = (MenuItemImpl) subMenu.getItem(i6);
                             if (ziVar2.isVisible()) {
                                 if (!z3 && ziVar2.getIcon() != null) {
                                     z3 = true;
@@ -138,7 +138,7 @@ public final class fd extends Adapter {
         }
     }
 
-    public final void a(zi ziVar) {
+    public final void a(MenuItemImpl ziVar) {
         if (this.b != ziVar && ziVar.isCheckable()) {
             if (this.b != null) {
                 this.b.setChecked(false);

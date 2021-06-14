@@ -13,11 +13,11 @@ import java.util.Locale;
 /* compiled from: PG */
 public final class aaz implements zu {
     @Override // defpackage.zu
-    public final void a(ze zeVar, boolean z) {
+    public final void a(MenuBuilder zeVar, boolean z) {
     }
 
     @Override // defpackage.zu
-    public final boolean a(ze zeVar) {
+    public final boolean a(MenuBuilder zeVar) {
         return false;
     }
 

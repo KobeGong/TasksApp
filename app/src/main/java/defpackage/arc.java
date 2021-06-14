@@ -18,7 +18,7 @@ public final class arc implements ViewTreeObserver.OnWindowFocusChangeListener {
 
     @TargetApi(18)
     public final void onWindowFocusChanged(boolean z) {
-        lg j = this.b.j();
+        FragmentActivity j = this.b.getActivity();
         if (j != null && j.hasWindowFocus() && !this.b.n) {
             this.a.requestFocus();
             bdk.a(this.a, true);

@@ -21,14 +21,14 @@ import android.widget.LinearLayout;
 
 /* renamed from: zi  reason: default package */
 /* compiled from: PG */
-public final class zi implements pp {
+public final class MenuItemImpl implements pp {
     private View A;
     private MenuItem.OnActionExpandListener B;
     private boolean C = false;
     public final int a;
     public int b = 4096;
     public int c = 4096;
-    public ze d;
+    public MenuBuilder d;
     public int e = 0;
     public rs f;
     private final int g;
@@ -52,7 +52,7 @@ public final class zi implements pp {
     private boolean y = false;
     private int z = 16;
 
-    zi(ze zeVar, int i2, int i3, int i4, int i5, CharSequence charSequence, int i6) {
+    MenuItemImpl(MenuBuilder zeVar, int i2, int i3, int i4, int i5, CharSequence charSequence, int i6) {
         this.d = zeVar;
         this.g = i3;
         this.h = i2;
@@ -209,7 +209,7 @@ public final class zi implements pp {
         return this.q != null;
     }
 
-    public final void a(aad aad) {
+    public final void setSubMenu(aad aad) {
         this.q = aad;
         aad.setHeaderTitle(getTitle());
     }
@@ -362,12 +362,12 @@ public final class zi implements pp {
 
     public final MenuItem setChecked(boolean z2) {
         if ((this.z & 4) != 0) {
-            ze zeVar = this.d;
+            MenuBuilder zeVar = this.d;
             int groupId = getGroupId();
             int size = zeVar.c.size();
             zeVar.e();
             for (int i2 = 0; i2 < size; i2++) {
-                zi ziVar = (zi) zeVar.c.get(i2);
+                MenuItemImpl ziVar = (MenuItemImpl) zeVar.c.get(i2);
                 if (ziVar.getGroupId() == groupId && ziVar.e() && ziVar.isCheckable()) {
                     ziVar.e(ziVar == this);
                 }

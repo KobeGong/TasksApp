@@ -24,14 +24,14 @@ public final class ael extends aec implements aek {
     }
 
     @Override // defpackage.aek
-    public final void b(ze zeVar, MenuItem menuItem) {
+    public final void b(MenuBuilder zeVar, MenuItem menuItem) {
         if (this.b != null) {
             this.b.b(zeVar, menuItem);
         }
     }
 
     @Override // defpackage.aek
-    public final void a(ze zeVar, MenuItem menuItem) {
+    public final void a(MenuBuilder zeVar, MenuItem menuItem) {
         if (this.b != null) {
             this.b.a(zeVar, menuItem);
         }

@@ -19,13 +19,13 @@ import com.google.android.apps.tasks.R;
 /* access modifiers changed from: package-private */
 /* renamed from: aaa  reason: default package */
 /* compiled from: PG */
-public final class aaa extends zq implements View.OnKeyListener, AdapterView.OnItemClickListener, PopupWindow.OnDismissListener, zt {
+public final class aaa extends zq implements View.OnKeyListener, AdapterView.OnItemClickListener, PopupWindow.OnDismissListener, MenuPresenter {
     public final ael a;
     public final ViewTreeObserver.OnGlobalLayoutListener b = new aab(this);
     public View c;
     public ViewTreeObserver d;
     private final Context e;
-    private final ze f;
+    private final MenuBuilder f;
     private final zd h;
     private final boolean i;
     private final int j;
@@ -41,7 +41,7 @@ public final class aaa extends zq implements View.OnKeyListener, AdapterView.OnI
     private int t = 0;
     private boolean u;
 
-    public aaa(Context context, ze zeVar, View view, int i2, int i3, boolean z) {
+    public aaa(Context context, MenuBuilder zeVar, View view, int i2, int i3, boolean z) {
         this.e = context;
         this.f = zeVar;
         this.i = z;
@@ -121,7 +121,7 @@ public final class aaa extends zq implements View.OnKeyListener, AdapterView.OnI
     }
 
     @Override // defpackage.zq
-    public final void a(ze zeVar) {
+    public final void a(MenuBuilder zeVar) {
     }
 
     @Override // defpackage.zz
@@ -192,7 +192,7 @@ public final class aaa extends zq implements View.OnKeyListener, AdapterView.OnI
     }
 
     @Override // defpackage.zt
-    public final void a(ze zeVar, boolean z) {
+    public final void a(MenuBuilder zeVar, boolean z) {
         if (zeVar == this.f) {
             e();
             if (this.p != null) {

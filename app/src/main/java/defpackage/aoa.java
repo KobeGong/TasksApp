@@ -11,13 +11,13 @@ public final class aoa {
     private String a;
     private aoc b;
     private aod c;
-    private final ScheduledExecutorService d;
+    private final ScheduledExecutorService executor;
     private ScheduledFuture e;
-    private final Context f;
+    private final Context appContext;
 
     public aoa(Context context, ScheduledExecutorService scheduledExecutorService) {
-        this.d = scheduledExecutorService;
-        this.f = context.getApplicationContext();
+        this.executor = scheduledExecutorService;
+        this.appContext = context.getApplicationContext();
     }
 
     public final synchronized void a(String str) {
@@ -35,9 +35,9 @@ public final class aoa {
             this.c = aod;
             if (this.b != null) {
                 aoc aoc = this.b;
-                aoc.a.runOnUiThread(new aqv(aoc, this.c.a.a(this.f)));
+                aoc.a.runOnUiThread(new aqv(aoc, this.c.a.a(this.appContext)));
             }
-            this.e = this.d.schedule(new aob(this), bdk.b(this.f) ? 10000 : 3500, TimeUnit.MILLISECONDS);
+            this.e = this.executor.schedule(new aob(this), bdk.b(this.appContext) ? 10000 : 3500, TimeUnit.MILLISECONDS);
         } else {
             aod.a();
         }

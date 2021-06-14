@@ -13,8 +13,8 @@ public final class afs implements zu {
     }
 
     @Override // defpackage.zu
-    public final void a(ze zeVar, boolean z) {
-        ze l = zeVar.l();
+    public final void a(MenuBuilder zeVar, boolean z) {
+        MenuBuilder l = zeVar.l();
         boolean z2 = l != zeVar;
         wz wzVar = this.a;
         if (z2) {
@@ -33,7 +33,7 @@ public final class afs implements zu {
     }
 
     @Override // defpackage.zu
-    public final boolean a(ze zeVar) {
+    public final boolean a(MenuBuilder zeVar) {
         Window.Callback callback;
         if (zeVar != null || !this.a.g || (callback = this.a.c.getCallback()) == null || this.a.m) {
             return true;

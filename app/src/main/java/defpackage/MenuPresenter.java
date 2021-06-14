@@ -5,12 +5,12 @@ import android.os.Parcelable;
 
 /* renamed from: zt  reason: default package */
 /* compiled from: PG */
-public interface zt {
-    void a(Context context, ze zeVar);
+public interface MenuPresenter {
+    void a(Context context, MenuBuilder zeVar);
 
     void a(Parcelable parcelable);
 
-    void a(ze zeVar, boolean z);
+    void a(MenuBuilder zeVar, boolean z);
 
     void a(zu zuVar);
 
@@ -20,11 +20,11 @@ public interface zt {
 
     boolean a(aad aad);
 
-    boolean a(zi ziVar);
+    boolean a(MenuItemImpl ziVar);
 
     int b();
 
-    boolean b(zi ziVar);
+    boolean b(MenuItemImpl ziVar);
 
     Parcelable c();
 }

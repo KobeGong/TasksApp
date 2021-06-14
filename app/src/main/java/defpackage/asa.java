@@ -15,7 +15,7 @@ final /* synthetic */ class asa implements View.OnClickListener {
         dih dih;
         arx arx = this.a;
         if (!arx.n) {
-            lg j = arx.j();
+            FragmentActivity j = arx.getActivity();
             if (j instanceof ash) {
                 dii dii = (dii) dca.g.a(bg.ao);
                 dii.f(arx.U.getText().toString().trim());

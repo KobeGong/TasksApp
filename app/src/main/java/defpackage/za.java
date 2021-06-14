@@ -5,10 +5,10 @@ package defpackage;
 /* compiled from: PG */
 public final class za {
     public final ael a;
-    public final ze b;
+    public final MenuBuilder b;
     public final int c;
 
-    public za(ael ael, ze zeVar, int i) {
+    public za(ael ael, MenuBuilder zeVar, int i) {
         this.a = ael;
         this.b = zeVar;
         this.c = i;

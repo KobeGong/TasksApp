@@ -9,10 +9,10 @@ import java.util.ArrayList;
 
 /* renamed from: ys  reason: default package */
 /* compiled from: PG */
-public abstract class ys implements zt {
+public abstract class ys implements MenuPresenter {
     public Context a;
     public Context b;
-    public ze c;
+    public MenuBuilder c;
     public zu d;
     public zv e;
     public int f;
@@ -25,10 +25,10 @@ public abstract class ys implements zt {
         this.g = LayoutInflater.from(context);
     }
 
-    public abstract void a(zi ziVar, zw zwVar);
+    public abstract void a(MenuItemImpl ziVar, zw zwVar);
 
     @Override // defpackage.zt
-    public void a(Context context, ze zeVar) {
+    public void a(Context context, MenuBuilder zeVar) {
         this.b = context;
         LayoutInflater.from(this.b);
         this.c = zeVar;
@@ -56,10 +56,10 @@ public abstract class ys implements zt {
                 int i5 = 0;
                 i2 = 0;
                 while (i5 < size) {
-                    zi ziVar = (zi) i4.get(i5);
+                    MenuItemImpl ziVar = (MenuItemImpl) i4.get(i5);
                     if (c(ziVar)) {
                         View childAt = viewGroup.getChildAt(i2);
-                        zi a2 = childAt instanceof zw ? ((zw) childAt).a() : null;
+                        MenuItemImpl a2 = childAt instanceof zw ? ((zw) childAt).a() : null;
                         View a3 = a(ziVar, childAt, viewGroup);
                         if (ziVar != a2) {
                             a3.setPressed(false);
@@ -100,7 +100,7 @@ public abstract class ys implements zt {
         this.d = zuVar;
     }
 
-    public View a(zi ziVar, View view, ViewGroup viewGroup) {
+    public View a(MenuItemImpl ziVar, View view, ViewGroup viewGroup) {
         zw zwVar;
         if (view instanceof zw) {
             zwVar = (zw) view;
@@ -111,12 +111,12 @@ public abstract class ys implements zt {
         return (View) zwVar;
     }
 
-    public boolean c(zi ziVar) {
+    public boolean c(MenuItemImpl ziVar) {
         return true;
     }
 
     @Override // defpackage.zt
-    public void a(ze zeVar, boolean z) {
+    public void a(MenuBuilder zeVar, boolean z) {
         if (this.d != null) {
             this.d.a(zeVar, z);
         }
@@ -136,12 +136,12 @@ public abstract class ys implements zt {
     }
 
     @Override // defpackage.zt
-    public final boolean a(zi ziVar) {
+    public final boolean a(MenuItemImpl ziVar) {
         return false;
     }
 
     @Override // defpackage.zt
-    public final boolean b(zi ziVar) {
+    public final boolean b(MenuItemImpl ziVar) {
         return false;
     }
 

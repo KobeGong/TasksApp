@@ -7,15 +7,15 @@ import android.view.View;
 /* renamed from: fc  reason: default package */
 /* compiled from: PG */
 public final class fc implements View.OnClickListener {
-    private final /* synthetic */ fb a;
+    private final /* synthetic */ NavigationMenuPresenter a;
 
-    fc(fb fbVar) {
+    fc(NavigationMenuPresenter fbVar) {
         this.a = fbVar;
     }
 
     public final void onClick(View view) {
         this.a.b(true);
-        zi ziVar = ((NavigationMenuItemView) view).e;
+        MenuItemImpl ziVar = ((NavigationMenuItemView) view).e;
         boolean a2 = this.a.c.a(ziVar, this.a, 0);
         if (ziVar != null && ziVar.isCheckable() && a2) {
             this.a.e.a(ziVar);

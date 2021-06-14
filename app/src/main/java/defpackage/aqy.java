@@ -10,6 +10,6 @@ final /* synthetic */ class aqy implements View.OnClickListener {
     }
 
     public final void onClick(View view) {
-        any.a().d.a();
+        any.get().d.a();
     }
 }

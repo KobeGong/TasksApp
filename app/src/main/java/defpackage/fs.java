@@ -21,7 +21,7 @@ public final class fs implements zf {
     }
 
     @Override // defpackage.zf
-    public final boolean a(ze zeVar, MenuItem menuItem) {
+    public final boolean a(MenuBuilder zeVar, MenuItem menuItem) {
         boolean z;
         dcb dcb;
         String str;
@@ -79,6 +79,6 @@ public final class fs implements zf {
     }
 
     @Override // defpackage.zf
-    public final void a(ze zeVar) {
+    public final void a(MenuBuilder zeVar) {
     }
 }

@@ -24,7 +24,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 /* renamed from: ze  reason: default package */
 /* compiled from: PG */
-public class ze implements po {
+public class MenuBuilder implements po {
     private static final int[] l = {1, 4, 5, 3, 2, 0};
     public final Context a;
     public zf b;
@@ -35,7 +35,7 @@ public class ze implements po {
     public Drawable g;
     public View h;
     public CopyOnWriteArrayList i = new CopyOnWriteArrayList();
-    public zi j;
+    public MenuItemImpl j;
     public boolean k;
     private final Resources m;
     private boolean n;
@@ -51,7 +51,7 @@ public class ze implements po {
     private ArrayList x = new ArrayList();
     private boolean y = false;
 
-    public ze(Context context) {
+    public MenuBuilder(Context context) {
         boolean z = true;
         this.a = context;
         this.m = context.getResources();
@@ -64,21 +64,21 @@ public class ze implements po {
         this.o = (this.m.getConfiguration().keyboard == 1 || !this.m.getBoolean(R.bool.abc_config_showMenuShortcutsWhenKeyboardPresent)) ? false : z;
     }
 
-    public final void a(zt ztVar) {
+    public final void a(MenuPresenter ztVar) {
         a(ztVar, this.a);
     }
 
-    public final void a(zt ztVar, Context context) {
+    public final void a(MenuPresenter ztVar, Context context) {
         this.i.add(new WeakReference(ztVar));
         ztVar.a(context, this);
         this.s = true;
     }
 
-    public final void b(zt ztVar) {
+    public final void b(MenuPresenter ztVar) {
         Iterator it = this.i.iterator();
         while (it.hasNext()) {
             WeakReference weakReference = (WeakReference) it.next();
-            zt ztVar2 = (zt) weakReference.get();
+            MenuPresenter ztVar2 = (MenuPresenter) weakReference.get();
             if (ztVar2 == null || ztVar2 == ztVar) {
                 this.i.remove(weakReference);
             }
@@ -143,14 +143,14 @@ public class ze implements po {
         this.b = zfVar;
     }
 
-    public final MenuItem a(int i2, int i3, int i4, CharSequence charSequence) {
+    public final MenuItem addInternal(int i2, int i3, int i4, CharSequence charSequence) {
         int i5;
         int i6 = i4 >> 16;
         if (i6 < 0 || i6 >= l.length) {
             throw new IllegalArgumentException("order does not contain a valid category.");
         }
         int i7 = (l[i6] << 16) | (65535 & i4);
-        zi ziVar = new zi(this, i2, i3, i4, i7, charSequence, this.e);
+        MenuItemImpl ziVar = new MenuItemImpl(this, i2, i3, i4, i7, charSequence, this.e);
         ArrayList arrayList = this.c;
         ArrayList arrayList2 = this.c;
         int size = arrayList2.size() - 1;
@@ -158,7 +158,7 @@ public class ze implements po {
             if (size < 0) {
                 i5 = 0;
                 break;
-            } else if (((zi) arrayList2.get(size)).a <= i7) {
+            } else if (((MenuItemImpl) arrayList2.get(size)).a <= i7) {
                 i5 = size + 1;
                 break;
             } else {
@@ -172,22 +172,22 @@ public class ze implements po {
 
     @Override // android.view.Menu
     public MenuItem add(CharSequence charSequence) {
-        return a(0, 0, 0, charSequence);
+        return addInternal(0, 0, 0, charSequence);
     }
 
     @Override // android.view.Menu
     public MenuItem add(int i2) {
-        return a(0, 0, 0, this.m.getString(i2));
+        return addInternal(0, 0, 0, this.m.getString(i2));
     }
 
     @Override // android.view.Menu
     public MenuItem add(int i2, int i3, int i4, CharSequence charSequence) {
-        return a(i2, i3, i4, charSequence);
+        return addInternal(i2, i3, i4, charSequence);
     }
 
     @Override // android.view.Menu
     public MenuItem add(int i2, int i3, int i4, int i5) {
-        return a(i2, i3, i4, this.m.getString(i5));
+        return addInternal(i2, i3, i4, this.m.getString(i5));
     }
 
     @Override // android.view.Menu
@@ -202,9 +202,9 @@ public class ze implements po {
 
     @Override // android.view.Menu
     public SubMenu addSubMenu(int i2, int i3, int i4, CharSequence charSequence) {
-        zi ziVar = (zi) a(i2, i3, i4, charSequence);
+        MenuItemImpl ziVar = (MenuItemImpl) addInternal(i2, i3, i4, charSequence);
         aad aad = new aad(this.a, this, ziVar);
-        ziVar.a(aad);
+        ziVar.setSubMenu(aad);
         return aad;
     }
 
@@ -248,7 +248,7 @@ public class ze implements po {
             if (i4 >= size) {
                 i3 = -1;
                 break;
-            } else if (((zi) this.c.get(i4)).getItemId() == i2) {
+            } else if (((MenuItemImpl) this.c.get(i4)).getItemId() == i2) {
                 i3 = i4;
                 break;
             } else {
@@ -266,7 +266,7 @@ public class ze implements po {
             if (i4 >= size) {
                 i3 = -1;
                 break;
-            } else if (((zi) this.c.get(i4)).getGroupId() == i2) {
+            } else if (((MenuItemImpl) this.c.get(i4)).getGroupId() == i2) {
                 i3 = i4;
                 break;
             } else {
@@ -278,7 +278,7 @@ public class ze implements po {
             int i5 = 0;
             while (true) {
                 int i6 = i5 + 1;
-                if (i5 >= size2 || ((zi) this.c.get(i3)).getGroupId() != i2) {
+                if (i5 >= size2 || ((MenuItemImpl) this.c.get(i3)).getGroupId() != i2) {
                     a(true);
                 } else {
                     a(i3, false);
@@ -309,7 +309,7 @@ public class ze implements po {
     public void setGroupCheckable(int i2, boolean z, boolean z2) {
         int size = this.c.size();
         for (int i3 = 0; i3 < size; i3++) {
-            zi ziVar = (zi) this.c.get(i3);
+            MenuItemImpl ziVar = (MenuItemImpl) this.c.get(i3);
             if (ziVar.getGroupId() == i2) {
                 ziVar.a(z2);
                 ziVar.setCheckable(z);
@@ -323,7 +323,7 @@ public class ze implements po {
         int i3 = 0;
         boolean z3 = false;
         while (i3 < size) {
-            zi ziVar = (zi) this.c.get(i3);
+            MenuItemImpl ziVar = (MenuItemImpl) this.c.get(i3);
             if (ziVar.getGroupId() != i2 || !ziVar.b(z)) {
                 z2 = z3;
             } else {
@@ -340,7 +340,7 @@ public class ze implements po {
     public void setGroupEnabled(int i2, boolean z) {
         int size = this.c.size();
         for (int i3 = 0; i3 < size; i3++) {
-            zi ziVar = (zi) this.c.get(i3);
+            MenuItemImpl ziVar = (MenuItemImpl) this.c.get(i3);
             if (ziVar.getGroupId() == i2) {
                 ziVar.setEnabled(z);
             }
@@ -353,7 +353,7 @@ public class ze implements po {
         }
         int size = size();
         for (int i2 = 0; i2 < size; i2++) {
-            if (((zi) this.c.get(i2)).isVisible()) {
+            if (((MenuItemImpl) this.c.get(i2)).isVisible()) {
                 return true;
             }
         }
@@ -364,7 +364,7 @@ public class ze implements po {
         MenuItem findItem;
         int size = size();
         for (int i3 = 0; i3 < size; i3++) {
-            zi ziVar = (zi) this.c.get(i3);
+            MenuItemImpl ziVar = (MenuItemImpl) this.c.get(i3);
             if (ziVar.getItemId() == i2) {
                 return ziVar;
             }
@@ -401,15 +401,15 @@ public class ze implements po {
     }
 
     /* access modifiers changed from: package-private */
-    public boolean a(ze zeVar, MenuItem menuItem) {
+    public boolean a(MenuBuilder zeVar, MenuItem menuItem) {
         return this.b != null && this.b.a(zeVar, menuItem);
     }
 
     public boolean performShortcut(int i2, KeyEvent keyEvent, int i3) {
-        zi a2 = a(i2, keyEvent);
+        MenuItemImpl a2 = a(i2, keyEvent);
         boolean z = false;
         if (a2 != null) {
-            z = a(a2, (zt) null, i3);
+            z = a(a2, (MenuPresenter) null, i3);
         }
         if ((i3 & 2) != 0) {
             b(true);
@@ -424,9 +424,9 @@ public class ze implements po {
         if (keyEvent.getKeyData(keyData) || i2 == 67) {
             int size = this.c.size();
             for (int i3 = 0; i3 < size; i3++) {
-                zi ziVar = (zi) this.c.get(i3);
+                MenuItemImpl ziVar = (MenuItemImpl) this.c.get(i3);
                 if (ziVar.hasSubMenu()) {
-                    ((ze) ziVar.getSubMenu()).a(list, i2, keyEvent);
+                    ((MenuBuilder) ziVar.getSubMenu()).a(list, i2, keyEvent);
                 }
                 char alphabeticShortcut = c2 ? ziVar.getAlphabeticShortcut() : ziVar.getNumericShortcut();
                 if ((modifiers & 69647) == ((c2 ? ziVar.getAlphabeticModifiers() : ziVar.getNumericModifiers()) & 69647) && alphabeticShortcut != 0 && ((alphabeticShortcut == keyData.meta[0] || alphabeticShortcut == keyData.meta[2] || (c2 && alphabeticShortcut == '\b' && i2 == 67)) && ziVar.isEnabled())) {
@@ -436,7 +436,7 @@ public class ze implements po {
         }
     }
 
-    private final zi a(int i2, KeyEvent keyEvent) {
+    private final MenuItemImpl a(int i2, KeyEvent keyEvent) {
         char numericShortcut;
         ArrayList arrayList = this.x;
         arrayList.clear();
@@ -449,11 +449,11 @@ public class ze implements po {
         keyEvent.getKeyData(keyData);
         int size = arrayList.size();
         if (size == 1) {
-            return (zi) arrayList.get(0);
+            return (MenuItemImpl) arrayList.get(0);
         }
         boolean c2 = c();
         for (int i3 = 0; i3 < size; i3++) {
-            zi ziVar = (zi) arrayList.get(i3);
+            MenuItemImpl ziVar = (MenuItemImpl) arrayList.get(i3);
             if (c2) {
                 numericShortcut = ziVar.getAlphabeticShortcut();
             } else {
@@ -473,14 +473,14 @@ public class ze implements po {
     }
 
     public boolean performIdentifierAction(int i2, int i3) {
-        return a(findItem(i2), (zt) null, i3);
+        return a(findItem(i2), (MenuPresenter) null, i3);
     }
 
-    public final boolean a(MenuItem menuItem, zt ztVar, int i2) {
+    public final boolean a(MenuItem menuItem, MenuPresenter ztVar, int i2) {
         boolean z;
         boolean z2;
         boolean z3 = false;
-        zi ziVar = (zi) menuItem;
+        MenuItemImpl ziVar = (MenuItemImpl) menuItem;
         if (ziVar == null || !ziVar.isEnabled()) {
             return false;
         }
@@ -503,7 +503,7 @@ public class ze implements po {
                 b(false);
             }
             if (!ziVar.hasSubMenu()) {
-                ziVar.a(new aad(this.a, this, ziVar));
+                ziVar.setSubMenu(new aad(this.a, this, ziVar));
             }
             aad aad = (aad) ziVar.getSubMenu();
             if (z) {
@@ -517,7 +517,7 @@ public class ze implements po {
                 boolean z4 = z3;
                 while (it.hasNext()) {
                     WeakReference weakReference = (WeakReference) it.next();
-                    zt ztVar2 = (zt) weakReference.get();
+                    MenuPresenter ztVar2 = (MenuPresenter) weakReference.get();
                     if (ztVar2 == null) {
                         this.i.remove(weakReference);
                     } else {
@@ -551,7 +551,7 @@ public class ze implements po {
             Iterator it = this.i.iterator();
             while (it.hasNext()) {
                 WeakReference weakReference = (WeakReference) it.next();
-                zt ztVar = (zt) weakReference.get();
+                MenuPresenter ztVar = (MenuPresenter) weakReference.get();
                 if (ztVar == null) {
                     this.i.remove(weakReference);
                 } else {
@@ -577,7 +577,7 @@ public class ze implements po {
                 Iterator it = this.i.iterator();
                 while (it.hasNext()) {
                     WeakReference weakReference = (WeakReference) it.next();
-                    zt ztVar = (zt) weakReference.get();
+                    MenuPresenter ztVar = (MenuPresenter) weakReference.get();
                     if (ztVar == null) {
                         this.i.remove(weakReference);
                     } else {
@@ -629,7 +629,7 @@ public class ze implements po {
         this.p.clear();
         int size = this.c.size();
         for (int i2 = 0; i2 < size; i2++) {
-            zi ziVar = (zi) this.c.get(i2);
+            MenuItemImpl ziVar = (MenuItemImpl) this.c.get(i2);
             if (ziVar.isVisible()) {
                 this.p.add(ziVar);
             }
@@ -646,7 +646,7 @@ public class ze implements po {
             boolean z = false;
             while (it.hasNext()) {
                 WeakReference weakReference = (WeakReference) it.next();
-                zt ztVar = (zt) weakReference.get();
+                MenuPresenter ztVar = (MenuPresenter) weakReference.get();
                 if (ztVar == null) {
                     this.i.remove(weakReference);
                 } else {
@@ -658,7 +658,7 @@ public class ze implements po {
                 this.r.clear();
                 int size = i2.size();
                 for (int i3 = 0; i3 < size; i3++) {
-                    zi ziVar = (zi) i2.get(i3);
+                    MenuItemImpl ziVar = (MenuItemImpl) i2.get(i3);
                     if (ziVar.f()) {
                         this.d.add(ziVar);
                     } else {
@@ -709,11 +709,11 @@ public class ze implements po {
         a(false);
     }
 
-    public ze l() {
+    public MenuBuilder l() {
         return this;
     }
 
-    public boolean a(zi ziVar) {
+    public boolean a(MenuItemImpl ziVar) {
         boolean z = false;
         if (!this.i.isEmpty()) {
             e();
@@ -725,7 +725,7 @@ public class ze implements po {
                     break;
                 }
                 WeakReference weakReference = (WeakReference) it.next();
-                zt ztVar = (zt) weakReference.get();
+                MenuPresenter ztVar = (MenuPresenter) weakReference.get();
                 if (ztVar == null) {
                     this.i.remove(weakReference);
                 } else {
@@ -744,7 +744,7 @@ public class ze implements po {
         return z;
     }
 
-    public boolean b(zi ziVar) {
+    public boolean b(MenuItemImpl ziVar) {
         boolean z = false;
         if (!this.i.isEmpty() && this.j == ziVar) {
             e();
@@ -756,7 +756,7 @@ public class ze implements po {
                     break;
                 }
                 WeakReference weakReference = (WeakReference) it.next();
-                zt ztVar = (zt) weakReference.get();
+                MenuPresenter ztVar = (MenuPresenter) weakReference.get();
                 if (ztVar == null) {
                     this.i.remove(weakReference);
                 } else {

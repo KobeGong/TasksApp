@@ -21,7 +21,7 @@ public final /* synthetic */ class akx implements View.OnClickListener {
                 aku aku = aky.a.b;
                 String str = akz.a().b;
                 String str2 = akz.b().d;
-                lg j = aku.a.j();
+                FragmentActivity j = aku.a.getActivity();
                 if (j instanceof alh) {
                     ((alh) j).a(str, str2);
                 }

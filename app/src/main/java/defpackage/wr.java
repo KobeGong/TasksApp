@@ -29,7 +29,7 @@ public class wr extends yo {
 
     @Override // defpackage.yo
     public boolean onCreatePanelMenu(int i, Menu menu) {
-        if (i != 0 || (menu instanceof ze)) {
+        if (i != 0 || (menu instanceof MenuBuilder)) {
             return super.onCreatePanelMenu(i, menu);
         }
         return false;
@@ -41,7 +41,7 @@ public class wr extends yo {
 
     @Override // defpackage.yo
     public boolean onPreparePanel(int i, View view, Menu menu) {
-        ze zeVar = menu instanceof ze ? (ze) menu : null;
+        MenuBuilder zeVar = menu instanceof MenuBuilder ? (MenuBuilder) menu : null;
         if (i == 0 && zeVar == null) {
             return false;
         }

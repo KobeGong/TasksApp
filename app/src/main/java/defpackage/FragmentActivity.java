@@ -18,7 +18,7 @@ import java.io.PrintWriter;
 
 /* renamed from: lg  reason: default package */
 /* compiled from: PG */
-public class lg extends la implements ak, ks, ku {
+public class FragmentActivity extends ComponentActivity implements ak, ks, ku {
     public final Handler b = new lh(this);
     public final ll c = new ll(new li(this));
     public boolean d = true;

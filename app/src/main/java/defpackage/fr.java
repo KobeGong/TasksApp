@@ -23,8 +23,8 @@ import java.util.Iterator;
 public class fr extends fn {
     private static final int[] f = {16842912};
     private static final int[] g = {-16842910};
-    public final ez c;
-    public final fb d;
+    public final NavigationMenu menu;
+    public final NavigationMenuPresenter d;
     public ft e;
     private final int h;
     private MenuInflater i;
@@ -42,8 +42,8 @@ public class fr extends fn {
         ColorStateList b;
         int i3;
         boolean z;
-        this.d = new fb();
-        this.c = new ez(context);
+        this.d = new NavigationMenuPresenter();
+        this.menu = new NavigationMenu(context);
         agw a = fp.a(context, attributeSet, fw.a, i2);
         sn.a(this, a.a(fw.b));
         if (a.f(fw.e)) {
@@ -72,9 +72,9 @@ public class fr extends fn {
             this.d.b(a.e(fw.h, 0));
         }
         int e2 = a.e(fw.i, 0);
-        this.c.a(new fs(this));
+        this.menu.a(new fs(this));
         this.d.d = 1;
-        this.d.a(context, this.c);
+        this.d.a(context, this.menu);
         this.d.a(b);
         if (z) {
             this.d.a(i3);
@@ -82,8 +82,8 @@ public class fr extends fn {
         this.d.b(colorStateList);
         this.d.a(a2);
         this.d.c(e2);
-        this.c.a(this.d);
-        fb fbVar = this.d;
+        this.menu.a(this.d);
+        NavigationMenuPresenter fbVar = this.d;
         if (fbVar.a == null) {
             fbVar.a = (NavigationMenuView) fbVar.f.inflate(R.layout.design_navigation_menu, (ViewGroup) this, false);
             if (fbVar.e == null) {
@@ -99,13 +99,13 @@ public class fr extends fn {
             if (this.i == null) {
                 this.i = new yj(getContext());
             }
-            this.i.inflate(g2, this.c);
+            this.i.inflate(g2, this.menu);
             this.d.b(false);
             this.d.a(false);
         }
         if (a.f(fw.f)) {
             int g3 = a.g(fw.f, 0);
-            fb fbVar2 = this.d;
+            NavigationMenuPresenter fbVar2 = this.d;
             fbVar2.a(fbVar2.f.inflate(g3, (ViewGroup) fbVar2.b, false));
         }
         a.b.recycle();
@@ -116,14 +116,14 @@ public class fr extends fn {
         Parcelable c2;
         fu fuVar = new fu(super.onSaveInstanceState());
         fuVar.a = new Bundle();
-        ez ezVar = this.c;
+        NavigationMenu ezVar = this.menu;
         Bundle bundle = fuVar.a;
         if (!ezVar.i.isEmpty()) {
             SparseArray<? extends Parcelable> sparseArray = new SparseArray<>();
             Iterator it = ezVar.i.iterator();
             while (it.hasNext()) {
                 WeakReference weakReference = (WeakReference) it.next();
-                zt ztVar = (zt) weakReference.get();
+                MenuPresenter ztVar = (MenuPresenter) weakReference.get();
                 if (ztVar == null) {
                     ezVar.i.remove(weakReference);
                 } else {
@@ -147,13 +147,13 @@ public class fr extends fn {
         }
         fu fuVar = (fu) parcelable;
         super.onRestoreInstanceState(fuVar.e);
-        ez ezVar = this.c;
+        NavigationMenu ezVar = this.menu;
         SparseArray sparseParcelableArray = fuVar.a.getSparseParcelableArray("android:menu:presenters");
         if (sparseParcelableArray != null && !ezVar.i.isEmpty()) {
             Iterator it = ezVar.i.iterator();
             while (it.hasNext()) {
                 WeakReference weakReference = (WeakReference) it.next();
-                zt ztVar = (zt) weakReference.get();
+                MenuPresenter ztVar = (MenuPresenter) weakReference.get();
                 if (ztVar == null) {
                     ezVar.i.remove(weakReference);
                 } else {
@@ -182,7 +182,7 @@ public class fr extends fn {
     /* access modifiers changed from: protected */
     @Override // defpackage.fn
     public final void a(tk tkVar) {
-        fb fbVar = this.d;
+        NavigationMenuPresenter fbVar = this.d;
         int b = tkVar.b();
         if (fbVar.n != b) {
             fbVar.n = b;
@@ -194,9 +194,9 @@ public class fr extends fn {
     }
 
     public final void a(int i2) {
-        MenuItem findItem = this.c.findItem(i2);
+        MenuItem findItem = this.menu.findItem(i2);
         if (findItem != null) {
-            this.d.e.a((zi) findItem);
+            this.d.e.a((MenuItemImpl) findItem);
         }
     }
 

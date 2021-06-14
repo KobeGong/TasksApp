@@ -15,7 +15,7 @@ final /* synthetic */ class ate implements View.OnClickListener {
     public final void onClick(View view) {
         atd atd = this.a;
         dcb dcb = this.b;
-        lg j = atd.j();
+        FragmentActivity j = atd.getActivity();
         if (j instanceof atf) {
             ((atf) j).a(dcb);
         }

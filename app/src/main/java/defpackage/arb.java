@@ -20,11 +20,11 @@ public class arb extends lc {
     }
 
     public static anc P() {
-        return any.a().c();
+        return any.get().c();
     }
 
     public final void b(View view) {
-        lg j = j();
+        FragmentActivity j = getActivity();
         if (j != null && j.hasWindowFocus()) {
             view.requestFocus();
             bdk.a(view, true);

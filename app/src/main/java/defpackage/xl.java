@@ -15,12 +15,12 @@ public final class xl implements zf {
     public final /* synthetic */ wu e;
 
     @Override // defpackage.zf
-    public final boolean a(ze zeVar, MenuItem menuItem) {
+    public final boolean a(MenuBuilder zeVar, MenuItem menuItem) {
         return false;
     }
 
     @Override // defpackage.zf
-    public final void a(ze zeVar) {
+    public final void a(MenuBuilder zeVar) {
     }
 
     xl(wu wuVar, xn xnVar) {

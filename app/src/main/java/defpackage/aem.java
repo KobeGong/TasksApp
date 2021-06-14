@@ -51,7 +51,7 @@ public final class aem extends ade {
     public final boolean onHoverEvent(MotionEvent motionEvent) {
         int i;
         zd zdVar;
-        zi ziVar;
+        MenuItemImpl ziVar;
         int pointToPosition;
         int i2;
         if (this.c != null) {
@@ -70,11 +70,11 @@ public final class aem extends ade {
             if (motionEvent.getAction() == 10 || (pointToPosition = pointToPosition((int) motionEvent.getX(), (int) motionEvent.getY())) == -1 || (i2 = pointToPosition - i) < 0 || i2 >= zdVar.getCount()) {
                 ziVar = null;
             } else {
-                ziVar = (zi) zdVar.getItem(i2);
+                ziVar = (MenuItemImpl) zdVar.getItem(i2);
             }
             MenuItem menuItem = this.f;
             if (menuItem != ziVar) {
-                ze zeVar = zdVar.a;
+                MenuBuilder zeVar = zdVar.a;
                 if (menuItem != null) {
                     this.c.a(zeVar, menuItem);
                 }

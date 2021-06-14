@@ -17,7 +17,7 @@ public class zr {
     public int b;
     public PopupWindow.OnDismissListener c;
     private final Context d;
-    private final ze e;
+    private final MenuBuilder e;
     private final boolean f;
     private final int g;
     private final int h;
@@ -26,11 +26,11 @@ public class zr {
     private zq k;
     private final PopupWindow.OnDismissListener l;
 
-    public zr(Context context, ze zeVar, View view, boolean z) {
+    public zr(Context context, MenuBuilder zeVar, View view, boolean z) {
         this(context, zeVar, view, z, R.attr.actionOverflowMenuStyle, 0);
     }
 
-    public zr(Context context, ze zeVar, View view, boolean z, int i2, int i3) {
+    public zr(Context context, MenuBuilder zeVar, View view, boolean z, int i2, int i3) {
         this.b = 8388611;
         this.l = new zs(this);
         this.d = context;

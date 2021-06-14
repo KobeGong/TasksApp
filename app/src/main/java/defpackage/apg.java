@@ -16,7 +16,7 @@ public final /* synthetic */ class apg implements DialogInterface.OnClickListene
     public final void onClick(DialogInterface dialogInterface, int i) {
         String str = this.a;
         auj auj = this.b;
-        any.a().c().e(str);
+        any.get().c().e(str);
         auj.a(str, auj.Y, true);
     }
 }

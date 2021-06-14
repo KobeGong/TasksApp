@@ -427,7 +427,7 @@ public class wz extends wp implements LayoutInflater.Factory2, zf {
     }
 
     @Override // defpackage.zf
-    public final boolean a(ze zeVar, MenuItem menuItem) {
+    public final boolean a(MenuBuilder zeVar, MenuItem menuItem) {
         zx a;
         Window.Callback callback = this.c.getCallback();
         if (callback == null || this.m || (a = a((Menu) zeVar.l())) == null) {
@@ -437,7 +437,7 @@ public class wz extends wp implements LayoutInflater.Factory2, zf {
     }
 
     @Override // defpackage.zf
-    public final void a(ze zeVar) {
+    public final void a(MenuBuilder zeVar) {
         if (this.n == null || !this.n.c() || (ViewConfiguration.get(this.b).hasPermanentMenuKey() && !this.n.e())) {
             zx g = g(0);
             g.o = true;
@@ -793,7 +793,7 @@ public class wz extends wp implements LayoutInflater.Factory2, zf {
         throw new UnsupportedOperationException("Method not decompiled: defpackage.wz.b(zx, android.view.KeyEvent):boolean");
     }
 
-    public final void b(ze zeVar) {
+    public final void b(MenuBuilder zeVar) {
         if (!this.E) {
             this.E = true;
             this.n.i();

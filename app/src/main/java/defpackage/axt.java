@@ -97,8 +97,8 @@ public final class axt extends axv {
     }
 
     public static void a(Activity activity, Dialog dialog, String str, DialogInterface.OnCancelListener onCancelListener) {
-        if (activity instanceof lg) {
-            ln c2 = ((lg) activity).c();
+        if (activity instanceof FragmentActivity) {
+            ln c2 = ((FragmentActivity) activity).c();
             ayb ayb = new ayb();
             Dialog dialog2 = (Dialog) azb.b(dialog, "Cannot display null dialog");
             dialog2.setOnCancelListener(null);

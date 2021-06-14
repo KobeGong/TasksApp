@@ -37,7 +37,7 @@ public final class aap extends ys {
     }
 
     @Override // defpackage.ys, defpackage.zt
-    public final void a(Context context, ze zeVar) {
+    public final void a(Context context, MenuBuilder zeVar) {
         boolean z = true;
         super.a(context, zeVar);
         Resources resources = context.getResources();
@@ -82,7 +82,7 @@ public final class aap extends ys {
     }
 
     @Override // defpackage.ys
-    public final View a(zi ziVar, View view, ViewGroup viewGroup) {
+    public final View a(MenuItemImpl ziVar, View view, ViewGroup viewGroup) {
         View actionView = ziVar.getActionView();
         if (actionView == null || ziVar.i()) {
             actionView = super.a(ziVar, view, viewGroup);
@@ -96,7 +96,7 @@ public final class aap extends ys {
     }
 
     @Override // defpackage.ys
-    public final void a(zi ziVar, zw zwVar) {
+    public final void a(MenuItemImpl ziVar, zw zwVar) {
         zwVar.a(ziVar);
         ActionMenuItemView actionMenuItemView = (ActionMenuItemView) zwVar;
         actionMenuItemView.c = (ActionMenuView) this.e;
@@ -107,7 +107,7 @@ public final class aap extends ys {
     }
 
     @Override // defpackage.ys
-    public final boolean c(zi ziVar) {
+    public final boolean c(MenuItemImpl ziVar) {
         return ziVar.f();
     }
 
@@ -117,7 +117,7 @@ public final class aap extends ys {
         super.a(z);
         ((View) this.e).requestLayout();
         if (this.c != null) {
-            ze zeVar = this.c;
+            MenuBuilder zeVar = this.c;
             zeVar.j();
             ArrayList arrayList = zeVar.d;
             int size = arrayList.size();
@@ -129,7 +129,7 @@ public final class aap extends ys {
         if (this.o && k2 != null) {
             int size2 = k2.size();
             if (size2 == 1) {
-                z2 = !((zi) k2.get(0)).isActionViewExpanded();
+                z2 = !((MenuItemImpl) k2.get(0)).isActionViewExpanded();
             } else if (size2 > 0) {
                 z2 = true;
             }
@@ -242,7 +242,7 @@ public final class aap extends ys {
         boolean z2 = false;
         int i15 = 0;
         while (i15 < i2) {
-            zi ziVar = (zi) arrayList.get(i15);
+            MenuItemImpl ziVar = (MenuItemImpl) arrayList.get(i15);
             if (ziVar.h()) {
                 i13++;
             } else if (ziVar.g()) {
@@ -269,7 +269,7 @@ public final class aap extends ys {
         int i19 = i16;
         int i20 = 0;
         while (i17 < i2) {
-            zi ziVar2 = (zi) arrayList.get(i17);
+            MenuItemImpl ziVar2 = (MenuItemImpl) arrayList.get(i17);
             if (ziVar2.h()) {
                 View a = a(ziVar2, this.t, viewGroup);
                 if (this.t == null) {
@@ -320,7 +320,7 @@ public final class aap extends ys {
                     sparseBooleanArray.put(groupId2, false);
                     int i23 = i19;
                     for (int i24 = 0; i24 < i17; i24++) {
-                        zi ziVar3 = (zi) arrayList.get(i24);
+                        MenuItemImpl ziVar3 = (MenuItemImpl) arrayList.get(i24);
                         if (ziVar3.getGroupId() == groupId2) {
                             if (ziVar3.f()) {
                                 i23++;
@@ -354,7 +354,7 @@ public final class aap extends ys {
     }
 
     @Override // defpackage.ys, defpackage.zt
-    public final void a(ze zeVar, boolean z) {
+    public final void a(MenuBuilder zeVar, boolean z) {
         g();
         super.a(zeVar, z);
     }

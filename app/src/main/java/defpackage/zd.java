@@ -13,13 +13,13 @@ import java.util.ArrayList;
 /* compiled from: PG */
 public final class zd extends BaseAdapter {
     private static final int c = R.layout.abc_popup_menu_item_layout;
-    public ze a;
+    public MenuBuilder a;
     public boolean b;
     private int d = -1;
     private final boolean e;
     private final LayoutInflater f;
 
-    public zd(ze zeVar, LayoutInflater layoutInflater, boolean z) {
+    public zd(MenuBuilder zeVar, LayoutInflater layoutInflater, boolean z) {
         this.e = z;
         this.f = layoutInflater;
         this.a = zeVar;
@@ -47,8 +47,8 @@ public final class zd extends BaseAdapter {
         } else {
             view2 = view;
         }
-        int groupId = ((zi) getItem(i)).getGroupId();
-        int groupId2 = i + -1 >= 0 ? ((zi) getItem(i - 1)).getGroupId() : groupId;
+        int groupId = ((MenuItemImpl) getItem(i)).getGroupId();
+        int groupId2 = i + -1 >= 0 ? ((MenuItemImpl) getItem(i - 1)).getGroupId() : groupId;
         ListMenuItemView listMenuItemView = (ListMenuItemView) view2;
         if (!this.a.b() || groupId == groupId2) {
             z = false;
@@ -68,17 +68,17 @@ public final class zd extends BaseAdapter {
             listMenuItemView2.e = true;
             listMenuItemView2.c = true;
         }
-        zwVar.a((zi) getItem(i));
+        zwVar.a((MenuItemImpl) getItem(i));
         return view2;
     }
 
     private final void a() {
-        zi ziVar = this.a.j;
+        MenuItemImpl ziVar = this.a.j;
         if (ziVar != null) {
             ArrayList k = this.a.k();
             int size = k.size();
             for (int i = 0; i < size; i++) {
-                if (((zi) k.get(i)) == ziVar) {
+                if (((MenuItemImpl) k.get(i)) == ziVar) {
                     this.d = i;
                     return;
                 }
@@ -97,6 +97,6 @@ public final class zd extends BaseAdapter {
         if (this.d >= 0 && i >= this.d) {
             i++;
         }
-        return (zi) k.get(i);
+        return (MenuItemImpl) k.get(i);
     }
 }

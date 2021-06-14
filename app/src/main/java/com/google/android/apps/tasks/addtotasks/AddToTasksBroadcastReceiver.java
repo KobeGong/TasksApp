@@ -25,7 +25,6 @@ import defpackage.bhr;
 import defpackage.dan;
 import defpackage.dby;
 import defpackage.dca;
-import defpackage.dcb;
 import defpackage.dih;
 import defpackage.dii;
 import defpackage.djz;
@@ -44,7 +43,7 @@ public class AddToTasksBroadcastReceiver extends BroadcastReceiver {
             Messenger messenger = (Messenger) extras.getParcelable("messenger");
             bhq b = bhr.b(context, intent);
             if (b == null) {
-                anc = any.a().c();
+                anc = any.get().c();
                 if (anc == null) {
                     azb.b("No default SyncEngine", new Object[0]);
                     a(context);
@@ -61,7 +60,7 @@ public class AddToTasksBroadcastReceiver extends BroadcastReceiver {
                 a(context);
                 anc2 = anc;
             } else if (anc == null) {
-                anc2 = any.a().b(a);
+                anc2 = any.get().b(a);
             } else {
                 anc2 = anc;
             }

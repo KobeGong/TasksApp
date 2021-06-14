@@ -8,11 +8,11 @@ import android.view.Window;
 /* renamed from: zh  reason: default package */
 /* compiled from: PG */
 final class zh implements DialogInterface.OnClickListener, DialogInterface.OnDismissListener, DialogInterface.OnKeyListener, zu {
-    public ze a;
+    public MenuBuilder a;
     public wl b;
     public zb c;
 
-    public zh(ze zeVar) {
+    public zh(MenuBuilder zeVar) {
         this.a = zeVar;
     }
 
@@ -43,18 +43,18 @@ final class zh implements DialogInterface.OnClickListener, DialogInterface.OnDis
     }
 
     @Override // defpackage.zu
-    public final void a(ze zeVar, boolean z) {
+    public final void a(MenuBuilder zeVar, boolean z) {
         if ((z || zeVar == this.a) && this.b != null) {
             this.b.dismiss();
         }
     }
 
     @Override // defpackage.zu
-    public final boolean a(ze zeVar) {
+    public final boolean a(MenuBuilder zeVar) {
         return false;
     }
 
     public final void onClick(DialogInterface dialogInterface, int i) {
-        this.a.a((zi) this.c.d().getItem(i), (zt) null, 0);
+        this.a.a((MenuItemImpl) this.c.d().getItem(i), (MenuPresenter) null, 0);
     }
 }

@@ -12,7 +12,7 @@ import java.lang.ref.WeakReference;
 /* compiled from: PG */
 public final class xs extends yc implements zf {
     private final Context c;
-    private final ze d;
+    private final MenuBuilder d;
     private yd e;
     private WeakReference f;
     private final /* synthetic */ xp g;
@@ -21,7 +21,7 @@ public final class xs extends yc implements zf {
         this.g = xpVar;
         this.c = context;
         this.e = ydVar;
-        ze zeVar = new ze(context);
+        MenuBuilder zeVar = new MenuBuilder(context);
         zeVar.e = 1;
         this.d = zeVar;
         this.d.a(this);
@@ -135,7 +135,7 @@ public final class xs extends yc implements zf {
     }
 
     @Override // defpackage.zf
-    public final boolean a(ze zeVar, MenuItem menuItem) {
+    public final boolean a(MenuBuilder zeVar, MenuItem menuItem) {
         if (this.e != null) {
             return this.e.a(this, menuItem);
         }
@@ -143,7 +143,7 @@ public final class xs extends yc implements zf {
     }
 
     @Override // defpackage.zf
-    public final void a(ze zeVar) {
+    public final void a(MenuBuilder zeVar) {
         if (this.e != null) {
             d();
             this.g.e.a();

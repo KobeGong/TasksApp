@@ -41,10 +41,10 @@ final /* synthetic */ class apk implements Runnable {
                 String b2 = cdu.b();
                 boolean z2 = !aiw.b(taskListsActivity.getBaseContext()).a();
                 taskListsActivity.p();
-                if (!any.a().c().a()) {
+                if (!any.get().c().a()) {
                     taskListsActivity.a((String) null);
                 }
-                any.a().c().c();
+                any.get().c().c();
                 lc lcVar = taskListsActivity.n;
                 if ((!(lcVar instanceof aqa) || !z2) && Build.VERSION.SDK_INT >= 21) {
                     fade = new Fade();
@@ -61,7 +61,7 @@ final /* synthetic */ class apk implements Runnable {
                     taskListsActivity.c().a().a(R.id.fragment_container, taskListsActivity.i, "tasksfragment").c();
                     taskListsActivity.b(taskListsActivity.i);
                 }
-                List<dcb> d3 = any.a().c().d();
+                List<dcb> d3 = any.get().c().d();
                 HashSet hashSet = new HashSet();
                 for (dcb dcb : d3) {
                     hashSet.add(dcb.b);
