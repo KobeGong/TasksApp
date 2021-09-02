@@ -1,10 +1,9 @@
 package defpackage;
 
-/* renamed from: bbq  reason: default package */
+/* renamed from: bbq reason: default package */
 /* compiled from: PG */
-public final class bbq extends azb implements ayx {
-    @Override // defpackage.ayx
-    public final void a(ayw ayw) {
-        throw new NoSuchMethodError();
+public final class bbq extends defpackage.azb implements defpackage.ayx {
+    public final void a(defpackage.ayw ayw) {
+        throw new java.lang.NoSuchMethodError();
     }
 }

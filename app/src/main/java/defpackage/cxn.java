@@ -1,53 +1,50 @@
 package defpackage;
 
-import java.util.Set;
-import java.util.logging.Logger;
-
-/* access modifiers changed from: package-private */
-/* renamed from: cxn  reason: default package */
+/* renamed from: cxn reason: default package */
 /* compiled from: PG */
-public class cxn extends cxi {
-    public static final Logger e = Logger.getLogger(cxn.class.getName());
-    public cxo f;
+class cxn extends defpackage.cxi {
+    public static final java.util.logging.Logger e = java.util.logging.Logger.getLogger(defpackage.cxn.class.getName());
+    public defpackage.cxo f;
 
     cxn() {
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.cwz
     public final void c() {
         boolean isCancelled;
         super.c();
-        cxo cxo = this.f;
+        defpackage.cxo cxo = this.f;
         if (cxo != null) {
             this.f = null;
-            csn csn = cxo.a;
+            defpackage.csn csn = cxo.a;
             boolean b = b();
             if (b) {
                 cxo.d();
             }
             if ((csn != null) && isCancelled()) {
-                cth cth = (cth) csn.iterator();
+                defpackage.cth cth = (defpackage.cth) csn.iterator();
                 while (cth.hasNext()) {
-                    ((cyi) cth.next()).cancel(b);
+                    ((defpackage.cyi) cth.next()).cancel(b);
                 }
             }
         }
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.cwz
-    public final String d() {
-        csn csn;
-        cxo cxo = this.f;
-        if (cxo == null || (csn = cxo.a) == null) {
+    public final java.lang.String d() {
+        defpackage.cxo cxo = this.f;
+        if (cxo == null) {
             return null;
         }
-        String valueOf = String.valueOf(csn);
-        return new StringBuilder(String.valueOf(valueOf).length() + 10).append("futures=[").append(valueOf).append("]").toString();
+        defpackage.csn csn = cxo.a;
+        if (csn == null) {
+            return null;
+        }
+        java.lang.String valueOf = java.lang.String.valueOf(csn);
+        return new java.lang.StringBuilder(java.lang.String.valueOf(valueOf).length() + 10).append("futures=[").append(valueOf).append("]").toString();
     }
 
-    static boolean a(Set set, Throwable th) {
+    static boolean a(java.util.Set set, java.lang.Throwable th) {
         while (th != null) {
             if (!set.add(th)) {
                 return false;

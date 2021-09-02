@@ -1,79 +1,64 @@
 package defpackage;
 
-import android.content.Context;
-import android.content.res.Resources;
-import android.graphics.Typeface;
-import android.net.Uri;
-import android.os.CancellationSignal;
-import android.util.Log;
-import java.lang.reflect.Array;
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.nio.ByteBuffer;
-import java.util.List;
-
-/* renamed from: oy  reason: default package */
+/* renamed from: oy reason: default package */
 /* compiled from: PG */
-final class oy extends pb {
-    public static final Method a;
-    private static final Class b;
-    private static final Constructor c;
-    private static final Method d;
+final class oy extends defpackage.pb {
+    public static final java.lang.reflect.Method a;
+    private static final java.lang.Class b;
+    private static final java.lang.reflect.Constructor c;
+    private static final java.lang.reflect.Method d;
 
     oy() {
     }
 
-    private static Object a() {
+    private static java.lang.Object a() {
         try {
-            return c.newInstance(new Object[0]);
-        } catch (IllegalAccessException | InstantiationException | InvocationTargetException e) {
-            throw new RuntimeException(e);
+            return c.newInstance(new java.lang.Object[0]);
+        } catch (java.lang.IllegalAccessException | java.lang.InstantiationException | java.lang.reflect.InvocationTargetException e) {
+            throw new java.lang.RuntimeException(e);
         }
     }
 
-    private static boolean a(Object obj, ByteBuffer byteBuffer, int i, int i2, boolean z) {
+    private static boolean a(java.lang.Object obj, java.nio.ByteBuffer byteBuffer, int i, int i2, boolean z) {
         try {
-            return ((Boolean) a.invoke(obj, byteBuffer, Integer.valueOf(i), null, Integer.valueOf(i2), Boolean.valueOf(z))).booleanValue();
-        } catch (IllegalAccessException | InvocationTargetException e) {
-            throw new RuntimeException(e);
+            return ((java.lang.Boolean) a.invoke(obj, new java.lang.Object[]{byteBuffer, java.lang.Integer.valueOf(i), null, java.lang.Integer.valueOf(i2), java.lang.Boolean.valueOf(z)})).booleanValue();
+        } catch (java.lang.IllegalAccessException | java.lang.reflect.InvocationTargetException e) {
+            throw new java.lang.RuntimeException(e);
         }
     }
 
-    private static Typeface a(Object obj) {
+    private static android.graphics.Typeface a(java.lang.Object obj) {
         try {
-            Object newInstance = Array.newInstance(b, 1);
-            Array.set(newInstance, 0, obj);
-            return (Typeface) d.invoke(null, newInstance);
-        } catch (IllegalAccessException | InvocationTargetException e) {
-            throw new RuntimeException(e);
+            java.lang.Object newInstance = java.lang.reflect.Array.newInstance(b, 1);
+            java.lang.reflect.Array.set(newInstance, 0, obj);
+            return (android.graphics.Typeface) d.invoke(null, new java.lang.Object[]{newInstance});
+        } catch (java.lang.IllegalAccessException | java.lang.reflect.InvocationTargetException e) {
+            throw new java.lang.RuntimeException(e);
         }
     }
 
-    @Override // defpackage.pb, defpackage.ow
-    public final Typeface a(Context context, pz[] pzVarArr, int i) {
-        Object a2 = a();
-        ri riVar = new ri();
-        for (pz pzVar : pzVarArr) {
-            Uri uri = pzVar.a;
-            ByteBuffer byteBuffer = (ByteBuffer) riVar.get(uri);
+    public final android.graphics.Typeface a(android.content.Context context, defpackage.pz[] pzVarArr, int i) {
+        java.lang.Object a2 = a();
+        defpackage.ri riVar = new defpackage.ri();
+        for (defpackage.pz pzVar : pzVarArr) {
+            android.net.Uri uri = pzVar.a;
+            java.nio.ByteBuffer byteBuffer = (java.nio.ByteBuffer) riVar.get(uri);
             if (byteBuffer == null) {
-                byteBuffer = jd.a(context, (CancellationSignal) null, uri);
+                byteBuffer = defpackage.jd.a(context, (android.os.CancellationSignal) null, uri);
                 riVar.put(uri, byteBuffer);
             }
             if (!a(a2, byteBuffer, pzVar.b, pzVar.c, pzVar.d)) {
                 return null;
             }
         }
-        return Typeface.create(a(a2), i);
+        return android.graphics.Typeface.create(a(a2), i);
     }
 
-    @Override // defpackage.pb, defpackage.ow
-    public final Typeface a(Context context, om omVar, Resources resources, int i) {
-        Object a2 = a();
-        on[] onVarArr = omVar.a;
-        for (on onVar : onVarArr) {
-            ByteBuffer a3 = jd.a(context, resources, onVar.f);
+    public final android.graphics.Typeface a(android.content.Context context, defpackage.om omVar, android.content.res.Resources resources, int i) {
+        defpackage.on[] onVarArr;
+        java.lang.Object a2 = a();
+        for (defpackage.on onVar : omVar.a) {
+            java.nio.ByteBuffer a3 = defpackage.jd.a(context, resources, onVar.f);
             if (a3 == null || !a(a2, a3, onVar.e, onVar.b, onVar.c)) {
                 return null;
             }
@@ -82,20 +67,20 @@ final class oy extends pb {
     }
 
     static {
-        Method method;
-        Constructor<?> constructor;
-        Class<?> cls;
-        Method method2 = null;
+        java.lang.reflect.Method method;
+        java.lang.reflect.Constructor constructor;
+        java.lang.Class cls;
+        java.lang.reflect.Method method2 = null;
         try {
-            Class<?> cls2 = Class.forName("android.graphics.FontFamily");
-            Constructor<?> constructor2 = cls2.getConstructor(new Class[0]);
-            Method method3 = cls2.getMethod("addFontWeightStyle", ByteBuffer.class, Integer.TYPE, List.class, Integer.TYPE, Boolean.TYPE);
-            method = Typeface.class.getMethod("createFromFamiliesWithDefault", Array.newInstance(cls2, 1).getClass());
+            java.lang.Class cls2 = java.lang.Class.forName("android.graphics.FontFamily");
+            java.lang.reflect.Constructor constructor2 = cls2.getConstructor(new java.lang.Class[0]);
+            java.lang.reflect.Method method3 = cls2.getMethod("addFontWeightStyle", new java.lang.Class[]{java.nio.ByteBuffer.class, java.lang.Integer.TYPE, java.util.List.class, java.lang.Integer.TYPE, java.lang.Boolean.TYPE});
+            method = android.graphics.Typeface.class.getMethod("createFromFamiliesWithDefault", new java.lang.Class[]{java.lang.reflect.Array.newInstance(cls2, 1).getClass()});
             method2 = method3;
             constructor = constructor2;
             cls = cls2;
-        } catch (ClassNotFoundException | NoSuchMethodException e) {
-            Log.e("TypefaceCompatApi24Impl", e.getClass().getName(), e);
+        } catch (java.lang.ClassNotFoundException | java.lang.NoSuchMethodException e) {
+            android.util.Log.e("TypefaceCompatApi24Impl", e.getClass().getName(), e);
             method = null;
             constructor = null;
             cls = null;

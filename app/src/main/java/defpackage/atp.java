@@ -1,20 +1,17 @@
 package defpackage;
 
-import android.view.View;
-import android.widget.TextView;
-
-/* renamed from: atp  reason: default package */
+/* renamed from: atp reason: default package */
 /* compiled from: PG */
-final class atp extends ViewHolder {
-    public final TextView p;
+final class atp extends defpackage.afv {
+    public final android.widget.TextView p;
 
-    public atp(View view) {
+    public atp(android.view.View view) {
         super(view);
-        this.p = (TextView) view;
+        this.p = (android.widget.TextView) view;
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public final int c(int i) {
-        return jd.b(this.p.getResources(), i);
+        return defpackage.jd.b(this.p.getResources(), i);
     }
 }

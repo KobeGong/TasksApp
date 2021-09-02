@@ -1,14 +1,13 @@
 package defpackage;
 
-/* renamed from: eas  reason: default package */
+/* renamed from: eas reason: default package */
 /* compiled from: PG */
-public final class eas extends eaw {
+public final class eas extends defpackage.eaw {
     public eas() {
-        new eau();
+        new defpackage.eau();
     }
 
-    @Override // defpackage.eaw
-    public final eax a() {
-        return eat.a;
+    public final defpackage.eax a() {
+        return defpackage.eat.a;
     }
 }

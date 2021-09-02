@@ -1,11 +1,9 @@
 package defpackage;
 
-import android.content.Intent;
-
-/* renamed from: ave  reason: default package */
+/* renamed from: ave reason: default package */
 /* compiled from: PG */
-public final class ave extends avf {
-    ave(int i, String str, Intent intent) {
+public final class ave extends defpackage.avf {
+    ave(int i, java.lang.String str, android.content.Intent intent) {
         super(str, intent);
     }
 }

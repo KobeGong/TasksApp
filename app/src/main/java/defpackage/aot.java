@@ -1,25 +1,20 @@
 package defpackage;
 
-import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
-
-/* renamed from: aot  reason: default package */
+/* renamed from: aot reason: default package */
 /* compiled from: PG */
-public final class aot extends aoq {
-    private final String b;
+public final class aot extends defpackage.aoq {
+    private final java.lang.String b;
 
-    public aot(Intent intent) {
+    public aot(android.content.Intent intent) {
         this.b = intent.getStringExtra("query");
     }
 
-    @Override // defpackage.aoq, defpackage.aoe
-    public final aof a(Context context, String str) {
-        String str2 = this.b;
-        ala ala = new ala();
-        Bundle bundle = new Bundle();
+    public final defpackage.aof a(android.content.Context context, java.lang.String str) {
+        java.lang.String str2 = this.b;
+        defpackage.ala ala = new defpackage.ala();
+        android.os.Bundle bundle = new android.os.Bundle();
         bundle.putString("query", str2);
         ala.e(bundle);
-        return aof.a(null, ala);
+        return defpackage.aof.a(null, ala);
     }
 }

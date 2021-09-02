@@ -1,12 +1,11 @@
 package defpackage;
 
-/* renamed from: bxi  reason: default package */
+/* renamed from: bxi reason: default package */
 /* compiled from: PG */
-public final class bxi implements ecz {
-    public static final bxi a = new bxi();
+public final class bxi implements defpackage.ecz {
+    public static final defpackage.bxi a = new defpackage.bxi();
 
-    @Override // defpackage.ecz
-    public final /* synthetic */ Object a() {
-        return new bxc();
+    public final /* synthetic */ java.lang.Object a() {
+        return new defpackage.bxc();
     }
 }

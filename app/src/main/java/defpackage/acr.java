@@ -1,53 +1,43 @@
 package defpackage;
 
-import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.support.v7.widget.Toolbar;
-import android.text.TextUtils;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
-import com.google.android.apps.tasks.R;
-
-/* renamed from: acr  reason: default package */
+/* renamed from: acr reason: default package */
 /* compiled from: PG */
 public final class acr {
-    public Toolbar a;
+    public android.support.v7.widget.Toolbar a;
     public int b;
-    public View c;
-    public CharSequence d;
-    public Window.Callback e;
+    public android.view.View c;
+    public java.lang.CharSequence d;
+    public android.view.Window.Callback e;
     public boolean f;
-    public aap g;
-    private View h;
-    private Drawable i;
-    private Drawable j;
-    private Drawable k;
+    public defpackage.aap g;
+    private android.view.View h;
+    private android.graphics.drawable.Drawable i;
+    private android.graphics.drawable.Drawable j;
+    private android.graphics.drawable.Drawable k;
     private boolean l;
-    private CharSequence m;
-    private CharSequence n;
+    private java.lang.CharSequence m;
+    private java.lang.CharSequence n;
     private int o;
-    private Drawable p;
+    private android.graphics.drawable.Drawable p;
 
-    public final void a(CharSequence charSequence) {
+    public final void a(java.lang.CharSequence charSequence) {
         if (!this.l) {
             c(charSequence);
         }
     }
 
-    public final void b(CharSequence charSequence) {
+    public final void b(java.lang.CharSequence charSequence) {
         this.l = true;
         c(charSequence);
     }
 
-    public final void a(Drawable drawable) {
+    public final void a(android.graphics.drawable.Drawable drawable) {
         this.j = drawable;
         b();
     }
 
     public final void a() {
-        Toolbar toolbar = this.a;
+        android.support.v7.widget.Toolbar toolbar = this.a;
         if (toolbar.g != null) {
             toolbar.g.c();
         }
@@ -71,8 +61,8 @@ public final class acr {
                     this.a.a(this.d);
                     this.a.b(this.m);
                 } else {
-                    this.a.a((CharSequence) null);
-                    this.a.b((CharSequence) null);
+                    this.a.a((java.lang.CharSequence) null);
+                    this.a.b((java.lang.CharSequence) null);
                 }
             }
             if ((i3 & 16) != 0 && this.h != null) {
@@ -85,44 +75,44 @@ public final class acr {
         }
     }
 
-    public final te a(int i2, long j2) {
-        return sn.b(this.a).a(i2 == 0 ? 1.0f : 0.0f).a(j2).a(new ahf(this, i2));
+    public final defpackage.te a(int i2, long j2) {
+        return defpackage.sn.b(this.a).a(i2 == 0 ? 1.0f : 0.0f).a(j2).a((defpackage.th) new defpackage.ahf(this, i2));
     }
 
     public final void b(int i2) {
         this.a.setVisibility(i2);
     }
 
-    public acr(Toolbar toolbar) {
-        this(toolbar, (byte) 0);
+    public acr(android.support.v7.widget.Toolbar toolbar) {
+        this(toolbar, 0);
     }
 
-    private acr(Toolbar toolbar, byte b2) {
-        String string;
+    private acr(android.support.v7.widget.Toolbar toolbar, byte b2) {
+        java.lang.String string;
         this.o = 0;
         this.a = toolbar;
         this.d = toolbar.x;
         this.m = toolbar.y;
         this.l = this.d != null;
         this.k = toolbar.j();
-        agw a2 = agw.a(toolbar.getContext(), null, xu.a, R.attr.actionBarStyle, 0);
-        this.p = a2.a(xu.n);
-        CharSequence c2 = a2.c(xu.t);
-        if (!TextUtils.isEmpty(c2)) {
+        defpackage.agw a2 = defpackage.agw.a(toolbar.getContext(), null, defpackage.xu.a, 2130772145, 0);
+        this.p = a2.a(defpackage.xu.n);
+        java.lang.CharSequence c2 = a2.c(defpackage.xu.t);
+        if (!android.text.TextUtils.isEmpty(c2)) {
             b(c2);
         }
-        CharSequence c3 = a2.c(xu.r);
-        if (!TextUtils.isEmpty(c3)) {
+        java.lang.CharSequence c3 = a2.c(defpackage.xu.r);
+        if (!android.text.TextUtils.isEmpty(c3)) {
             this.m = c3;
             if ((this.b & 8) != 0) {
                 this.a.b(c3);
             }
         }
-        Drawable a3 = a2.a(xu.p);
+        android.graphics.drawable.Drawable a3 = a2.a(defpackage.xu.p);
         if (a3 != null) {
             a(a3);
         }
-        Drawable a4 = a2.a(xu.o);
+        android.graphics.drawable.Drawable a4 = a2.a(defpackage.xu.o);
         if (a4 != null) {
             this.i = a4;
             b();
@@ -131,10 +121,10 @@ public final class acr {
             this.k = this.p;
             c();
         }
-        a(a2.a(xu.j, 0));
-        int g2 = a2.g(xu.i, 0);
+        a(a2.a(defpackage.xu.j, 0));
+        int g2 = a2.g(defpackage.xu.i, 0);
         if (g2 != 0) {
-            View inflate = LayoutInflater.from(this.a.getContext()).inflate(g2, (ViewGroup) this.a, false);
+            android.view.View inflate = android.view.LayoutInflater.from(this.a.getContext()).inflate(g2, this.a, false);
             if (!(this.h == null || (this.b & 16) == 0)) {
                 this.a.removeView(this.h);
             }
@@ -144,47 +134,47 @@ public final class acr {
             }
             a(this.b | 16);
         }
-        int f2 = a2.f(xu.l, 0);
+        int f2 = a2.f(defpackage.xu.l, 0);
         if (f2 > 0) {
-            ViewGroup.LayoutParams layoutParams = this.a.getLayoutParams();
+            android.view.ViewGroup.LayoutParams layoutParams = this.a.getLayoutParams();
             layoutParams.height = f2;
             this.a.setLayoutParams(layoutParams);
         }
-        int d2 = a2.d(xu.h, -1);
-        int d3 = a2.d(xu.g, -1);
+        int d2 = a2.d(defpackage.xu.h, -1);
+        int d3 = a2.d(defpackage.xu.g, -1);
         if (d2 >= 0 || d3 >= 0) {
-            Toolbar toolbar2 = this.a;
-            int max = Math.max(d2, 0);
-            int max2 = Math.max(d3, 0);
+            android.support.v7.widget.Toolbar toolbar2 = this.a;
+            int max = java.lang.Math.max(d2, 0);
+            int max2 = java.lang.Math.max(d3, 0);
             toolbar2.n();
             toolbar2.w.a(max, max2);
         }
-        int g3 = a2.g(xu.u, 0);
+        int g3 = a2.g(defpackage.xu.u, 0);
         if (g3 != 0) {
-            Toolbar toolbar3 = this.a;
-            Context context = this.a.getContext();
+            android.support.v7.widget.Toolbar toolbar3 = this.a;
+            android.content.Context context = this.a.getContext();
             toolbar3.p = g3;
             if (toolbar3.h != null) {
                 toolbar3.h.setTextAppearance(context, g3);
             }
         }
-        int g4 = a2.g(xu.s, 0);
+        int g4 = a2.g(defpackage.xu.s, 0);
         if (g4 != 0) {
-            Toolbar toolbar4 = this.a;
-            Context context2 = this.a.getContext();
+            android.support.v7.widget.Toolbar toolbar4 = this.a;
+            android.content.Context context2 = this.a.getContext();
             toolbar4.q = g4;
             if (toolbar4.i != null) {
                 toolbar4.i.setTextAppearance(context2, g4);
             }
         }
-        int g5 = a2.g(xu.q, 0);
+        int g5 = a2.g(defpackage.xu.q, 0);
         if (g5 != 0) {
             this.a.a(g5);
         }
         a2.b.recycle();
-        if (R.string.abc_action_bar_up_description != this.o) {
-            this.o = R.string.abc_action_bar_up_description;
-            if (TextUtils.isEmpty(this.a.i())) {
+        if (2131951642 != this.o) {
+            this.o = 2131951642;
+            if (android.text.TextUtils.isEmpty(this.a.i())) {
                 int i2 = this.o;
                 if (i2 == 0) {
                     string = null;
@@ -196,10 +186,10 @@ public final class acr {
             }
         }
         this.n = this.a.i();
-        this.a.a(new ahe(this));
+        this.a.setNavigationOnClickListener((android.view.View.OnClickListener) new defpackage.ahe(this));
     }
 
-    private final void c(CharSequence charSequence) {
+    private final void c(java.lang.CharSequence charSequence) {
         this.d = charSequence;
         if ((this.b & 8) != 0) {
             this.a.a(charSequence);
@@ -207,13 +197,9 @@ public final class acr {
     }
 
     private final void b() {
-        Drawable drawable = null;
+        android.graphics.drawable.Drawable drawable = null;
         if ((this.b & 2) != 0) {
-            if ((this.b & 1) != 0) {
-                drawable = this.j != null ? this.j : this.i;
-            } else {
-                drawable = this.i;
-            }
+            drawable = (this.b & 1) != 0 ? this.j != null ? this.j : this.i : this.i;
         }
         this.a.a(drawable);
     }
@@ -222,7 +208,7 @@ public final class acr {
         if ((this.b & 4) != 0) {
             this.a.b(this.k != null ? this.k : this.p);
         } else {
-            this.a.b((Drawable) null);
+            this.a.b((android.graphics.drawable.Drawable) null);
         }
     }
 
@@ -230,7 +216,7 @@ public final class acr {
         if ((this.b & 4) == 0) {
             return;
         }
-        if (TextUtils.isEmpty(this.n)) {
+        if (android.text.TextUtils.isEmpty(this.n)) {
             this.a.b(this.o);
         } else {
             this.a.c(this.n);

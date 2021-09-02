@@ -1,36 +1,35 @@
 package defpackage;
 
-/* renamed from: bro  reason: default package */
+/* renamed from: bro reason: default package */
 /* compiled from: PG */
-public class bro implements brc {
-    private final ayw a;
-    private brp b;
+public class bro implements defpackage.brc {
+    private final defpackage.ayw a;
+    private defpackage.brp b;
 
-    public bro(ayw ayw) {
+    public bro(defpackage.ayw ayw) {
         this.a = ayw;
     }
 
-    @Override // defpackage.brc
-    public final bre a() {
+    public final defpackage.bre a() {
         if (this.b == null) {
-            this.b = new brp(this.a.b());
+            this.b = new defpackage.brp(this.a.b());
         }
         return this.b;
     }
 
-    public bro(ayw ayw, byte b2) {
+    public bro(defpackage.ayw ayw, byte b2) {
         this(ayw);
     }
 
-    public bro(ayw ayw, char c) {
+    public bro(defpackage.ayw ayw, char c) {
         this(ayw);
     }
 
-    public bro(blo blo) {
-        this((ayw) blo);
+    public bro(defpackage.blo blo) {
+        this((defpackage.ayw) blo);
     }
 
-    public bro(blr blr) {
-        this((ayw) blr);
+    public bro(defpackage.blr blr) {
+        this((defpackage.ayw) blr);
     }
 }

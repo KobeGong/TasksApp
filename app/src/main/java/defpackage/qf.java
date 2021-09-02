@@ -1,22 +1,15 @@
 package defpackage;
 
-import java.util.concurrent.Callable;
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.atomic.AtomicReference;
-import java.util.concurrent.locks.Condition;
-import java.util.concurrent.locks.ReentrantLock;
-
-/* access modifiers changed from: package-private */
-/* renamed from: qf  reason: default package */
+/* renamed from: qf reason: default package */
 /* compiled from: PG */
-public final class qf implements Runnable {
-    private final /* synthetic */ AtomicReference a;
-    private final /* synthetic */ Callable b;
-    private final /* synthetic */ ReentrantLock c;
-    private final /* synthetic */ AtomicBoolean d;
-    private final /* synthetic */ Condition e;
+final class qf implements java.lang.Runnable {
+    private final /* synthetic */ java.util.concurrent.atomic.AtomicReference a;
+    private final /* synthetic */ java.util.concurrent.Callable b;
+    private final /* synthetic */ java.util.concurrent.locks.ReentrantLock c;
+    private final /* synthetic */ java.util.concurrent.atomic.AtomicBoolean d;
+    private final /* synthetic */ java.util.concurrent.locks.Condition e;
 
-    qf(AtomicReference atomicReference, Callable callable, ReentrantLock reentrantLock, AtomicBoolean atomicBoolean, Condition condition) {
+    qf(java.util.concurrent.atomic.AtomicReference atomicReference, java.util.concurrent.Callable callable, java.util.concurrent.locks.ReentrantLock reentrantLock, java.util.concurrent.atomic.AtomicBoolean atomicBoolean, java.util.concurrent.locks.Condition condition) {
         this.a = atomicReference;
         this.b = callable;
         this.c = reentrantLock;
@@ -27,7 +20,7 @@ public final class qf implements Runnable {
     public final void run() {
         try {
             this.a.set(this.b.call());
-        } catch (Exception e2) {
+        } catch (java.lang.Exception e2) {
         }
         this.c.lock();
         try {

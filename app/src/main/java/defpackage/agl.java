@@ -1,30 +1,26 @@
 package defpackage;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-/* renamed from: agl  reason: default package */
+/* renamed from: agl reason: default package */
 /* compiled from: PG */
-public final class agl extends rl {
-    public static final Parcelable.Creator CREATOR = new agm();
+public final class agl extends defpackage.rl {
+    public static final android.os.Parcelable.Creator CREATOR = new defpackage.agm();
     public boolean a;
 
-    public agl(Parcelable parcelable) {
+    public agl(android.os.Parcelable parcelable) {
         super(parcelable);
     }
 
-    public agl(Parcel parcel, ClassLoader classLoader) {
+    public agl(android.os.Parcel parcel, java.lang.ClassLoader classLoader) {
         super(parcel, classLoader);
-        this.a = ((Boolean) parcel.readValue(null)).booleanValue();
+        this.a = ((java.lang.Boolean) parcel.readValue(null)).booleanValue();
     }
 
-    @Override // defpackage.rl
-    public final void writeToParcel(Parcel parcel, int i) {
+    public final void writeToParcel(android.os.Parcel parcel, int i) {
         super.writeToParcel(parcel, i);
-        parcel.writeValue(Boolean.valueOf(this.a));
+        parcel.writeValue(java.lang.Boolean.valueOf(this.a));
     }
 
-    public final String toString() {
-        return "SearchView.SavedState{" + Integer.toHexString(System.identityHashCode(this)) + " isIconified=" + this.a + "}";
+    public final java.lang.String toString() {
+        return "SearchView.SavedState{" + java.lang.Integer.toHexString(java.lang.System.identityHashCode(this)) + " isIconified=" + this.a + "}";
     }
 }

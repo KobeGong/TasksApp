@@ -1,40 +1,35 @@
 package defpackage;
 
-import com.google.android.gms.common.api.Status;
-
-/* renamed from: brp  reason: default package */
+/* renamed from: brp reason: default package */
 /* compiled from: PG */
-public final class brp implements bre {
-    private final Status a;
+public final class brp implements defpackage.bre {
+    private final com.google.android.gms.common.api.Status a;
 
-    public brp(Status status) {
+    public brp(com.google.android.gms.common.api.Status status) {
         this.a = status;
     }
 
-    @Override // defpackage.brc
-    public final bre a() {
+    public final defpackage.bre a() {
         return this;
     }
 
-    @Override // defpackage.bre
     public final boolean b() {
         return this.a.a();
     }
 
-    @Override // defpackage.bre
-    public final String c() {
+    public final java.lang.String c() {
         return this.a.g;
     }
 
-    public final String toString() {
+    public final java.lang.String toString() {
         return this.a.toString();
     }
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof brp)) {
+    public final boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof defpackage.brp)) {
             return false;
         }
-        return this.a.equals(((brp) obj).a);
+        return this.a.equals(((defpackage.brp) obj).a);
     }
 
     public final int hashCode() {
@@ -42,6 +37,6 @@ public final class brp implements bre {
     }
 
     static {
-        new brq();
+        new defpackage.brq();
     }
 }

@@ -1,9 +1,8 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: fg  reason: default package */
+/* renamed from: fg reason: default package */
 /* compiled from: PG */
-public final class fg implements ff {
+final class fg implements defpackage.ff {
     public final int a;
     public final int b;
 

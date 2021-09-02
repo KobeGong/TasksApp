@@ -1,22 +1,16 @@
 package defpackage;
 
-import android.content.ComponentName;
-import android.content.Context;
-import android.content.Intent;
-import android.content.ServiceConnection;
-import android.util.Log;
-
-/* renamed from: bew  reason: default package */
+/* renamed from: bew reason: default package */
 /* compiled from: PG */
 public final class bew {
-    private static final Object a = new Object();
-    private static volatile bew b;
+    private static final java.lang.Object a = new java.lang.Object();
+    private static volatile defpackage.bew b;
 
-    public static bew a() {
+    public static defpackage.bew a() {
         if (b == null) {
             synchronized (a) {
                 if (b == null) {
-                    b = new bew();
+                    b = new defpackage.bew();
                 }
             }
         }
@@ -26,18 +20,18 @@ public final class bew {
     private bew() {
     }
 
-    public static boolean a(Context context, Intent intent, ServiceConnection serviceConnection, int i) {
+    public static boolean a(android.content.Context context, android.content.Intent intent, android.content.ServiceConnection serviceConnection, int i) {
         boolean a2;
-        ComponentName component = intent.getComponent();
+        android.content.ComponentName component = intent.getComponent();
         if (component == null) {
             a2 = false;
         } else {
-            a2 = azb.a(context, component.getPackageName());
+            a2 = defpackage.azb.a(context, component.getPackageName());
         }
         if (!a2) {
             return context.bindService(intent, serviceConnection, i);
         }
-        Log.w("ConnectionTracker", "Attempted to bind to a service in a STOPPED package.");
+        android.util.Log.w("ConnectionTracker", "Attempted to bind to a service in a STOPPED package.");
         return false;
     }
 }

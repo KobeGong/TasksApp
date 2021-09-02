@@ -1,11 +1,10 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: aob  reason: default package */
-public final /* synthetic */ class aob implements Runnable {
-    private final aoa a;
+/* renamed from: aob reason: default package */
+final /* synthetic */ class aob implements java.lang.Runnable {
+    private final defpackage.aoa a;
 
-    aob(aoa aoa) {
+    aob(defpackage.aoa aoa) {
         this.a = aoa;
     }
 

@@ -1,27 +1,22 @@
 package defpackage;
 
-import android.os.Bundle;
-import android.os.IBinder;
-
-/* access modifiers changed from: package-private */
-/* renamed from: awr  reason: default package */
+/* renamed from: awr reason: default package */
 /* compiled from: PG */
-public final class awr implements avd {
-    private /* synthetic */ String a;
-    private /* synthetic */ Bundle b;
+final class awr implements defpackage.avd {
+    private /* synthetic */ java.lang.String a;
+    private /* synthetic */ android.os.Bundle b;
 
-    awr(String str, Bundle bundle) {
+    awr(java.lang.String str, android.os.Bundle bundle) {
         this.a = str;
         this.b = bundle;
     }
 
-    @Override // defpackage.avd
-    public final /* synthetic */ Object a(IBinder iBinder) {
-        Bundle bundle = (Bundle) avc.a(bkq.a(iBinder).a(this.a, this.b));
-        String string = bundle.getString("Error");
+    public final /* synthetic */ java.lang.Object a(android.os.IBinder iBinder) {
+        android.os.Bundle bundle = (android.os.Bundle) defpackage.avc.a((java.lang.Object) defpackage.bkq.a(iBinder).a(this.a, this.b));
+        java.lang.String string = bundle.getString("Error");
         if (bundle.getBoolean("booleanResult")) {
             return null;
         }
-        throw new ava(string);
+        throw new defpackage.ava(string);
     }
 }

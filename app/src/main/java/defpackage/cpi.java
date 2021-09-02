@@ -1,49 +1,30 @@
 package defpackage;
 
-import android.content.Context;
-import android.util.Log;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.util.ArrayList;
-
-/* renamed from: cpi  reason: default package */
+/* renamed from: cpi reason: default package */
 /* compiled from: PG */
 public final class cpi {
-    private final Context a;
-    private final String b;
+    private final android.content.Context a;
+    private final java.lang.String b;
     private final long c;
     private final long d;
     private final float e;
     private final float f;
-    private final cpl g;
-    private File h;
-    private String i;
+    private final defpackage.cpl g;
+    private java.io.File h;
+    private java.lang.String i;
     private long j;
 
-    /* JADX WARNING: Illegal instructions before constructor call */
-    /* Code decompiled incorrectly, please refer to instructions dump. */
-    public cpi(android.content.Context r3, java.lang.String r4) {
-        /*
-            r2 = this;
-            int r0 = android.os.Build.VERSION.SDK_INT
-            r1 = 18
-            if (r0 >= r1) goto L_0x000f
-            cpm r0 = new cpm
-            r0.<init>()
-        L_0x000b:
-            r2.<init>(r3, r4, r0)
-            return
-        L_0x000f:
-            cpk r0 = new cpk
-            r0.<init>()
-            goto L_0x000b
-        */
-        throw new UnsupportedOperationException("Method not decompiled: defpackage.cpi.<init>(android.content.Context, java.lang.String):void");
+    public cpi(android.content.Context context, java.lang.String str) {
+        defpackage.cpl cpk;
+        if (android.os.Build.VERSION.SDK_INT < 18) {
+            cpk = new defpackage.cpm();
+        } else {
+            cpk = new defpackage.cpk();
+        }
+        this(context, str, cpk);
     }
 
-    private cpi(Context context, String str, cpl cpl) {
+    private cpi(android.content.Context context, java.lang.String str, defpackage.cpl cpl) {
         this.a = context;
         this.b = str;
         this.c = 0;
@@ -53,71 +34,77 @@ public final class cpi {
         this.g = cpl;
     }
 
-    public final File a() {
+    public final java.io.File a() {
         if (this.h == null) {
-            this.h = new File(this.a.getCacheDir(), this.b);
+            this.h = new java.io.File(this.a.getCacheDir(), this.b);
         }
         return this.h;
     }
 
-    private final String c() {
+    private final java.lang.String c() {
         if (this.i == null) {
             this.i = a().getPath();
         }
         return this.i;
     }
 
-    public final void a(String str, byte[] bArr) {
-        String str2;
-        ByteBuffer wrap = ByteBuffer.wrap(bArr);
-        String a2 = a(str);
+    public final void a(java.lang.String str, byte[] bArr) {
+        java.lang.String str2;
+        java.nio.ByteBuffer wrap = java.nio.ByteBuffer.wrap(bArr);
+        java.lang.String a2 = a(str);
         try {
-            cky.a(wrap, a2);
-        } catch (FileNotFoundException e2) {
-            File parentFile = new File(a2).getParentFile();
+            defpackage.cky.a(wrap, a2);
+        } catch (java.io.FileNotFoundException e2) {
+            java.io.File parentFile = new java.io.File(a2).getParentFile();
             if (!parentFile.exists()) {
                 try {
                     parentFile.mkdirs();
-                } catch (Exception e3) {
-                    String valueOf = String.valueOf(parentFile);
-                    Log.e("FileCache", new StringBuilder(String.valueOf(valueOf).length() + 31).append("Cannot create cache directory: ").append(valueOf).toString(), e3);
-                    throw new RuntimeException("Cannot create cache directory", e3);
+                } catch (java.lang.Exception e3) {
+                    java.lang.String valueOf = java.lang.String.valueOf(parentFile);
+                    android.util.Log.e("FileCache", new java.lang.StringBuilder(java.lang.String.valueOf(valueOf).length() + 31).append("Cannot create cache directory: ").append(valueOf).toString(), e3);
+                    throw new java.lang.RuntimeException("Cannot create cache directory", e3);
                 }
             } else {
-                String valueOf2 = String.valueOf(a2);
-                Log.e("FileCache", valueOf2.length() != 0 ? "Cannot write file to cache: ".concat(valueOf2) : new String("Cannot write file to cache: "), e2);
+                java.lang.String str3 = "FileCache";
+                java.lang.String str4 = "Cannot write file to cache: ";
+                java.lang.String valueOf2 = java.lang.String.valueOf(a2);
+                android.util.Log.e(str3, valueOf2.length() != 0 ? str4.concat(valueOf2) : new java.lang.String(str4), e2);
             }
             try {
-                cky.a(wrap, a2);
-            } catch (IOException e4) {
-                String valueOf3 = String.valueOf(a2);
+                defpackage.cky.a(wrap, a2);
+            } catch (java.io.IOException e4) {
+                java.lang.String str5 = "FileCache";
+                java.lang.String str6 = "Cannot write file to cache: ";
+                java.lang.String valueOf3 = java.lang.String.valueOf(a2);
                 if (valueOf3.length() != 0) {
-                    str2 = "Cannot write file to cache: ".concat(valueOf3);
+                    str2 = str6.concat(valueOf3);
                 } else {
-                    str2 = new String("Cannot write file to cache: ");
+                    str2 = new java.lang.String(str6);
                 }
-                Log.e("FileCache", str2, e2);
+                android.util.Log.e(str5, str2, e2);
             }
-        } catch (IOException e5) {
-            String valueOf4 = String.valueOf(a2);
-            Log.e("FileCache", valueOf4.length() != 0 ? "Cannot write file to cache: ".concat(valueOf4) : new String("Cannot write file to cache: "), e5);
+        } catch (java.io.IOException e5) {
+            java.lang.String str7 = "FileCache";
+            java.lang.String str8 = "Cannot write file to cache: ";
+            java.lang.String valueOf4 = java.lang.String.valueOf(a2);
+            android.util.Log.e(str7, valueOf4.length() != 0 ? str8.concat(valueOf4) : new java.lang.String(str8), e5);
         }
     }
 
-    public final String a(String str) {
-        StringBuilder sb = new StringBuilder(c().length() + str.length() + 3);
+    public final java.lang.String a(java.lang.String str) {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder(c().length() + str.length() + 3);
         sb.append(c());
-        sb.append(File.separatorChar);
+        sb.append(java.io.File.separatorChar);
         sb.append(str.charAt(0));
-        sb.append(File.separatorChar);
+        sb.append(java.io.File.separatorChar);
         sb.append(str);
         return sb.toString();
     }
 
-    public final void a(File file, ArrayList arrayList) {
-        File[] listFiles = file.listFiles();
+    public final void a(java.io.File file, java.util.ArrayList arrayList) {
+        java.io.File[] listFiles = file.listFiles();
         if (listFiles != null) {
-            for (File file2 : listFiles) {
+            for (java.io.File file2 : listFiles) {
                 if (file2.isDirectory()) {
                     a(file2, arrayList);
                 } else {
@@ -152,11 +139,12 @@ public final class cpi {
         return this.j;
     }
 
-    private final long a(File file) {
+    private final long a(java.io.File file) {
         long j2 = 0;
-        File[] listFiles = file.listFiles();
+        java.io.File[] listFiles = file.listFiles();
         if (listFiles != null) {
-            for (File file2 : listFiles) {
+            for (int i2 = 0; i2 < listFiles.length; i2++) {
+                java.io.File file2 = listFiles[i2];
                 j2 += file2.isDirectory() ? a(file2) : file2.length();
             }
         }

@@ -1,29 +1,23 @@
 package defpackage;
 
-import android.content.Context;
-import android.content.ContextWrapper;
-import android.content.res.AssetManager;
-import android.content.res.Resources;
-import android.view.LayoutInflater;
-
-/* renamed from: yf  reason: default package */
+/* renamed from: yf reason: default package */
 /* compiled from: PG */
-public final class yf extends ContextWrapper {
+public final class yf extends android.content.ContextWrapper {
     public int a;
-    private Resources.Theme b;
-    private LayoutInflater c;
-    private Resources d;
+    private android.content.res.Resources.Theme b;
+    private android.view.LayoutInflater c;
+    private android.content.res.Resources d;
 
     public yf() {
         super(null);
     }
 
-    public yf(Context context, int i) {
+    public yf(android.content.Context context, int i) {
         super(context);
         this.a = i;
     }
 
-    public final Resources getResources() {
+    public final android.content.res.Resources getResources() {
         if (this.d == null) {
             this.d = super.getResources();
         }
@@ -37,7 +31,7 @@ public final class yf extends ContextWrapper {
         }
     }
 
-    public final Resources.Theme getTheme() {
+    public final android.content.res.Resources.Theme getTheme() {
         if (this.b != null) {
             return this.b;
         }
@@ -48,13 +42,12 @@ public final class yf extends ContextWrapper {
         return this.b;
     }
 
-    @Override // android.content.Context, android.content.ContextWrapper
-    public final Object getSystemService(String str) {
+    public final java.lang.Object getSystemService(java.lang.String str) {
         if (!"layout_inflater".equals(str)) {
             return getBaseContext().getSystemService(str);
         }
         if (this.c == null) {
-            this.c = LayoutInflater.from(getBaseContext()).cloneInContext(this);
+            this.c = android.view.LayoutInflater.from(getBaseContext()).cloneInContext(this);
         }
         return this.c;
     }
@@ -62,7 +55,7 @@ public final class yf extends ContextWrapper {
     private final void a() {
         if (this.b == null) {
             this.b = getResources().newTheme();
-            Resources.Theme theme = getBaseContext().getTheme();
+            android.content.res.Resources.Theme theme = getBaseContext().getTheme();
             if (theme != null) {
                 this.b.setTo(theme);
             }
@@ -70,7 +63,7 @@ public final class yf extends ContextWrapper {
         this.b.applyStyle(this.a, true);
     }
 
-    public final AssetManager getAssets() {
+    public final android.content.res.AssetManager getAssets() {
         return getResources().getAssets();
     }
 }

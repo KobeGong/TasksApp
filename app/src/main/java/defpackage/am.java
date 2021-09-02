@@ -1,18 +1,15 @@
 package defpackage;
 
-import java.security.PrivilegedAction;
-
-/* renamed from: am  reason: default package */
+/* renamed from: am reason: default package */
 /* compiled from: PG */
-final class am implements PrivilegedAction {
-    private final /* synthetic */ String a;
+final class am implements java.security.PrivilegedAction {
+    private final /* synthetic */ java.lang.String a;
 
-    am(String str) {
+    am(java.lang.String str) {
         this.a = str;
     }
 
-    @Override // java.security.PrivilegedAction
-    public final /* synthetic */ Object run() {
-        return System.getProperty(this.a);
+    public final /* synthetic */ java.lang.Object run() {
+        return java.lang.System.getProperty(this.a);
     }
 }

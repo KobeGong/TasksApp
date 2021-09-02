@@ -1,43 +1,40 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: aog  reason: default package */
+/* renamed from: aog reason: default package */
 /* compiled from: PG */
-public final class aog extends aof {
-    private final String a;
-    private final lc b;
+final class aog extends defpackage.aof {
+    private final java.lang.String a;
+    private final Fragment b;
 
-    aog(String str, lc lcVar) {
+    aog(java.lang.String str, Fragment lcVar) {
         this.a = str;
         this.b = lcVar;
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.aof
-    public final String a() {
+    /* access modifiers changed from: 0000 */
+    public final java.lang.String a() {
         return this.a;
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.aof
-    public final lc b() {
+    /* access modifiers changed from: 0000 */
+    public final Fragment b() {
         return this.b;
     }
 
-    public final String toString() {
-        String str = this.a;
-        String valueOf = String.valueOf(this.b);
-        return new StringBuilder(String.valueOf(str).length() + 42 + String.valueOf(valueOf).length()).append("ActivityConfig{selectedListId=").append(str).append(", fragment=").append(valueOf).append("}").toString();
+    public final java.lang.String toString() {
+        java.lang.String str = this.a;
+        java.lang.String valueOf = java.lang.String.valueOf(this.b);
+        return new java.lang.StringBuilder(java.lang.String.valueOf(str).length() + 42 + java.lang.String.valueOf(valueOf).length()).append("ActivityConfig{selectedListId=").append(str).append(", fragment=").append(valueOf).append("}").toString();
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof aof)) {
+        if (!(obj instanceof defpackage.aof)) {
             return false;
         }
-        aof aof = (aof) obj;
+        defpackage.aof aof = (defpackage.aof) obj;
         if (this.a != null ? this.a.equals(aof.a()) : aof.a() == null) {
             if (this.b == null) {
                 if (aof.b() == null) {

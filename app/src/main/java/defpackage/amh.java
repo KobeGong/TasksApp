@@ -1,8 +1,8 @@
 package defpackage;
 
-/* renamed from: amh  reason: default package */
+/* renamed from: amh reason: default package */
 /* compiled from: PG */
-public final class amh extends IllegalStateException {
+public final class amh extends java.lang.IllegalStateException {
     public amh() {
         super("Cannot undo before operation is applied locally");
     }

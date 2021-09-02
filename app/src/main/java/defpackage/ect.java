@@ -1,19 +1,13 @@
 package defpackage;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-
-/* access modifiers changed from: package-private */
-/* renamed from: ect  reason: default package */
+/* renamed from: ect reason: default package */
 /* compiled from: PG */
-public final class ect extends ecs {
+final class ect extends defpackage.ecs {
     ect() {
-        new HashSet();
+        new java.util.HashSet();
     }
 
     static {
-        new ecq(Collections.unmodifiableMap(new HashMap((Map) cld.a(Collections.emptyMap(), "numbersOfLatencySampledSpans"))), Collections.unmodifiableMap(new HashMap((Map) cld.a(Collections.emptyMap(), "numbersOfErrorSampledSpans"))));
+        new defpackage.ecq(java.util.Collections.unmodifiableMap(new java.util.HashMap((java.util.Map) defpackage.cld.a((java.lang.Object) java.util.Collections.emptyMap(), (java.lang.Object) "numbersOfLatencySampledSpans"))), java.util.Collections.unmodifiableMap(new java.util.HashMap((java.util.Map) defpackage.cld.a((java.lang.Object) java.util.Collections.emptyMap(), (java.lang.Object) "numbersOfErrorSampledSpans"))));
     }
 }

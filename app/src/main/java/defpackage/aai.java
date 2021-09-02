@@ -1,16 +1,13 @@
 package defpackage;
 
-import android.graphics.Outline;
-import android.support.v7.widget.ActionBarContainer;
-
-/* renamed from: aai  reason: default package */
+/* renamed from: aai reason: default package */
 /* compiled from: PG */
-public final class aai extends aah {
-    public aai(ActionBarContainer actionBarContainer) {
+public final class aai extends defpackage.aah {
+    public aai(android.support.v7.widget.ActionBarContainer actionBarContainer) {
         super(actionBarContainer);
     }
 
-    public final void getOutline(Outline outline) {
+    public final void getOutline(android.graphics.Outline outline) {
         if (this.a.e) {
             if (this.a.d != null) {
                 this.a.d.getOutline(outline);

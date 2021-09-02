@@ -1,22 +1,21 @@
 package defpackage;
 
-/* renamed from: dvo  reason: default package */
+/* renamed from: dvo reason: default package */
 /* compiled from: PG */
-final class dvo implements dpa {
+final class dvo implements defpackage.dpa {
     dvo() {
     }
 
-    @Override // defpackage.dpa
-    public final /* synthetic */ Object a(byte[] bArr) {
+    public final /* synthetic */ java.lang.Object a(byte[] bArr) {
         if (bArr.length >= 3) {
-            return Integer.valueOf(((bArr[0] - 48) * 100) + ((bArr[1] - 48) * 10) + (bArr[2] - 48));
+            return java.lang.Integer.valueOf(((bArr[0] - 48) * 100) + ((bArr[1] - 48) * 10) + (bArr[2] - 48));
         }
-        String valueOf = String.valueOf(new String(bArr, doh.a));
-        throw new NumberFormatException(valueOf.length() != 0 ? "Malformed status code ".concat(valueOf) : new String("Malformed status code "));
+        java.lang.String str = "Malformed status code ";
+        java.lang.String valueOf = java.lang.String.valueOf(new java.lang.String(bArr, defpackage.doh.a));
+        throw new java.lang.NumberFormatException(valueOf.length() != 0 ? str.concat(valueOf) : new java.lang.String(str));
     }
 
-    @Override // defpackage.dpa
-    public final /* synthetic */ byte[] a(Object obj) {
-        throw new UnsupportedOperationException();
+    public final /* synthetic */ byte[] a(java.lang.Object obj) {
+        throw new java.lang.UnsupportedOperationException();
     }
 }

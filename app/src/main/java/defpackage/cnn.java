@@ -1,35 +1,33 @@
 package defpackage;
 
-import java.lang.ref.ReferenceQueue;
-
-/* renamed from: cnn  reason: default package */
+/* renamed from: cnn reason: default package */
 /* compiled from: PG */
 public final class cnn {
-    public cno a;
-    public cnm b;
+    public defpackage.cno a;
+    public defpackage.cnm b;
     private boolean c;
 
     public cnn() {
-        this(new cnq());
+        this(new defpackage.cnq());
     }
 
-    private cnn(cnq cnq) {
+    private cnn(defpackage.cnq cnq) {
         this.c = false;
-        cky.a(cnq);
+        defpackage.cky.a((java.lang.Object) cnq);
     }
 
-    public final synchronized void a(Object obj, String str) {
+    public final synchronized void a(java.lang.Object obj, java.lang.String str) {
         if (this.c) {
             if (this.a == null) {
-                this.a = new cno(new ReferenceQueue(), new cnp(), this.b);
+                this.a = new defpackage.cno(new java.lang.ref.ReferenceQueue(), new defpackage.cnp(), this.b);
                 this.a.start();
-                cdm.a(3, "LeakWatcher", "Starting leak watcher thread.", new Object[0]);
+                defpackage.cdm.a(3, "LeakWatcher", "Starting leak watcher thread.", new java.lang.Object[0]);
             }
-            cno cno = this.a;
-            cky.a((Object) str);
-            cky.a(obj);
-            cdm.a(3, "LeakWatcherThread", "Watching %s", str);
-            cnl a2 = cnp.a(obj, str, cno.a);
+            defpackage.cno cno = this.a;
+            defpackage.cky.a((java.lang.Object) str);
+            defpackage.cky.a(obj);
+            defpackage.cdm.a(3, "LeakWatcherThread", "Watching %s", str);
+            defpackage.cnl a2 = defpackage.cnp.a(obj, str, cno.a);
             synchronized (cno.c) {
                 a2.a(cno.c);
             }
@@ -47,7 +45,7 @@ public final class cnn {
                 this.a.interrupt();
                 this.a = null;
             }
-            cdm.a(3, "LeakWatcher", "Stopping leak watcher thread.", new Object[0]);
+            defpackage.cdm.a(3, "LeakWatcher", "Stopping leak watcher thread.", new java.lang.Object[0]);
         }
     }
 }

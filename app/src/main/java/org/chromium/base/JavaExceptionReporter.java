@@ -1,24 +1,21 @@
 package org.chromium.base;
 
-import java.lang.Thread;
-import org.chromium.base.annotations.CalledByNative;
-
 /* compiled from: PG */
-public class JavaExceptionReporter implements Thread.UncaughtExceptionHandler {
-    private final Thread.UncaughtExceptionHandler a;
+public class JavaExceptionReporter implements java.lang.Thread.UncaughtExceptionHandler {
+    private final java.lang.Thread.UncaughtExceptionHandler a;
     private final boolean b;
     private boolean c;
 
-    private JavaExceptionReporter(Thread.UncaughtExceptionHandler uncaughtExceptionHandler, boolean z) {
+    private JavaExceptionReporter(java.lang.Thread.UncaughtExceptionHandler uncaughtExceptionHandler, boolean z) {
         this.a = uncaughtExceptionHandler;
         this.b = z;
     }
 
-    private static native void nativeReportJavaException(boolean z, Throwable th);
+    private static native void nativeReportJavaException(boolean z, java.lang.Throwable th);
 
-    private static native void nativeReportJavaStackTrace(String str);
+    private static native void nativeReportJavaStackTrace(java.lang.String str);
 
-    public void uncaughtException(Thread thread, Throwable th) {
+    public void uncaughtException(java.lang.Thread thread, java.lang.Throwable th) {
         if (!this.c) {
             this.c = true;
             nativeReportJavaException(this.b, th);
@@ -28,8 +25,8 @@ public class JavaExceptionReporter implements Thread.UncaughtExceptionHandler {
         }
     }
 
-    @CalledByNative
+    @org.chromium.base.annotations.CalledByNative
     private static void installHandler(boolean z) {
-        Thread.setDefaultUncaughtExceptionHandler(new JavaExceptionReporter(Thread.getDefaultUncaughtExceptionHandler(), z));
+        java.lang.Thread.setDefaultUncaughtExceptionHandler(new org.chromium.base.JavaExceptionReporter(java.lang.Thread.getDefaultUncaughtExceptionHandler(), z));
     }
 }

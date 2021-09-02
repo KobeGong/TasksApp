@@ -1,13 +1,12 @@
 package defpackage;
 
-/* renamed from: ddx  reason: default package */
+/* renamed from: ddx reason: default package */
 /* compiled from: PG */
-final class ddx implements dio {
+final class ddx implements defpackage.dio {
     ddx() {
     }
 
-    @Override // defpackage.dio
-    public final /* synthetic */ din a(int i) {
-        return ddw.a(i);
+    public final /* synthetic */ defpackage.din a(int i) {
+        return defpackage.ddw.a(i);
     }
 }

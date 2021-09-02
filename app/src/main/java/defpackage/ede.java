@@ -1,34 +1,52 @@
 package defpackage;
 
-/* renamed from: ede  reason: default package */
+/* renamed from: ede reason: default package */
 /* compiled from: PG */
-public final class ede extends dlz {
-    public Integer a = null;
-    public Integer b = null;
-    public Integer c = null;
-    public Integer d = null;
-    public Integer e = null;
-    public Integer f = null;
-    public Integer g = null;
-    public Integer h = null;
-    public Integer i = null;
-    public Integer l = null;
-    public Integer m = null;
-    public Integer n = null;
-    public Integer o = null;
-    public Integer p = null;
-    public Integer q = null;
-    public Integer r = null;
-    public Integer s = null;
-    public Integer t = null;
-    public Integer u = null;
+public final class ede extends defpackage.dlz {
+    public java.lang.Integer a;
+    public java.lang.Integer b;
+    public java.lang.Integer c;
+    public java.lang.Integer d;
+    public java.lang.Integer e;
+    public java.lang.Integer f;
+    public java.lang.Integer g;
+    public java.lang.Integer h;
+    public java.lang.Integer i;
+    public java.lang.Integer l;
+    public java.lang.Integer m;
+    public java.lang.Integer n;
+    public java.lang.Integer o;
+    public java.lang.Integer p;
+    public java.lang.Integer q;
+    public java.lang.Integer r;
+    public java.lang.Integer s;
+    public java.lang.Integer t;
+    public java.lang.Integer u;
 
     public ede() {
+        this.a = null;
+        this.b = null;
+        this.c = null;
+        this.d = null;
+        this.e = null;
+        this.f = null;
+        this.g = null;
+        this.h = null;
+        this.i = null;
+        this.l = null;
+        this.m = null;
+        this.n = null;
+        this.o = null;
+        this.p = null;
+        this.q = null;
+        this.r = null;
+        this.s = null;
+        this.t = null;
+        this.u = null;
         this.k = -1;
     }
 
-    @Override // defpackage.dlz, defpackage.dmf
-    public final void a(dlx dlx) {
+    public final void a(defpackage.dlx dlx) {
         if (this.a != null) {
             dlx.a(1, this.a.intValue());
         }
@@ -90,138 +108,136 @@ public final class ede extends dlz {
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.dlz, defpackage.dmf
     public final int a() {
         int a2 = super.a();
         if (this.a != null) {
-            a2 += dlx.c(1, this.a.intValue());
+            a2 += defpackage.dlx.c(1, this.a.intValue());
         }
         if (this.b != null) {
-            a2 += dlx.c(2, this.b.intValue());
+            a2 += defpackage.dlx.c(2, this.b.intValue());
         }
         if (this.c != null) {
-            a2 += dlx.c(3, this.c.intValue());
+            a2 += defpackage.dlx.c(3, this.c.intValue());
         }
         if (this.d != null) {
-            a2 += dlx.c(4, this.d.intValue());
+            a2 += defpackage.dlx.c(4, this.d.intValue());
         }
         if (this.e != null) {
-            a2 += dlx.c(5, this.e.intValue());
+            a2 += defpackage.dlx.c(5, this.e.intValue());
         }
         if (this.f != null) {
-            a2 += dlx.c(6, this.f.intValue());
+            a2 += defpackage.dlx.c(6, this.f.intValue());
         }
         if (this.h != null) {
-            a2 += dlx.c(7, this.h.intValue());
+            a2 += defpackage.dlx.c(7, this.h.intValue());
         }
         if (this.i != null) {
-            a2 += dlx.c(8, this.i.intValue());
+            a2 += defpackage.dlx.c(8, this.i.intValue());
         }
         if (this.l != null) {
-            a2 += dlx.c(9, this.l.intValue());
+            a2 += defpackage.dlx.c(9, this.l.intValue());
         }
         if (this.m != null) {
-            a2 += dlx.c(10, this.m.intValue());
+            a2 += defpackage.dlx.c(10, this.m.intValue());
         }
         if (this.n != null) {
-            a2 += dlx.c(11, this.n.intValue());
+            a2 += defpackage.dlx.c(11, this.n.intValue());
         }
         if (this.o != null) {
-            a2 += dlx.c(12, this.o.intValue());
+            a2 += defpackage.dlx.c(12, this.o.intValue());
         }
         if (this.p != null) {
-            a2 += dlx.c(13, this.p.intValue());
+            a2 += defpackage.dlx.c(13, this.p.intValue());
         }
         if (this.q != null) {
-            a2 += dlx.c(14, this.q.intValue());
+            a2 += defpackage.dlx.c(14, this.q.intValue());
         }
         if (this.r != null) {
-            a2 += dlx.c(15, this.r.intValue());
+            a2 += defpackage.dlx.c(15, this.r.intValue());
         }
         if (this.s != null) {
-            a2 += dlx.c(16, this.s.intValue());
+            a2 += defpackage.dlx.c(16, this.s.intValue());
         }
         if (this.t != null) {
-            a2 += dlx.c(17, this.t.intValue());
+            a2 += defpackage.dlx.c(17, this.t.intValue());
         }
         if (this.u != null) {
-            a2 += dlx.c(18, this.u.intValue());
+            a2 += defpackage.dlx.c(18, this.u.intValue());
         }
         if (this.g != null) {
-            return a2 + dlx.c(19, this.g.intValue());
+            return a2 + defpackage.dlx.c(19, this.g.intValue());
         }
         return a2;
     }
 
-    @Override // defpackage.dmf
-    public final /* synthetic */ dmf a(dlw dlw) {
+    public final /* synthetic */ defpackage.dmf a(defpackage.dlw dlw) {
         while (true) {
             int a2 = dlw.a();
             switch (a2) {
                 case 0:
                     break;
                 case 8:
-                    this.a = Integer.valueOf(dlw.e());
-                    break;
+                    this.a = java.lang.Integer.valueOf(dlw.e());
+                    continue;
                 case 16:
-                    this.b = Integer.valueOf(dlw.e());
-                    break;
+                    this.b = java.lang.Integer.valueOf(dlw.e());
+                    continue;
                 case 24:
-                    this.c = Integer.valueOf(dlw.e());
-                    break;
+                    this.c = java.lang.Integer.valueOf(dlw.e());
+                    continue;
                 case 32:
-                    this.d = Integer.valueOf(dlw.e());
-                    break;
+                    this.d = java.lang.Integer.valueOf(dlw.e());
+                    continue;
                 case 40:
-                    this.e = Integer.valueOf(dlw.e());
-                    break;
+                    this.e = java.lang.Integer.valueOf(dlw.e());
+                    continue;
                 case 48:
-                    this.f = Integer.valueOf(dlw.e());
-                    break;
-                case by.ba:
-                    this.h = Integer.valueOf(dlw.e());
-                    break;
+                    this.f = java.lang.Integer.valueOf(dlw.e());
+                    continue;
+                case 56:
+                    this.h = java.lang.Integer.valueOf(dlw.e());
+                    continue;
                 case 64:
-                    this.i = Integer.valueOf(dlw.e());
-                    break;
+                    this.i = java.lang.Integer.valueOf(dlw.e());
+                    continue;
                 case 72:
-                    this.l = Integer.valueOf(dlw.e());
-                    break;
+                    this.l = java.lang.Integer.valueOf(dlw.e());
+                    continue;
                 case 80:
-                    this.m = Integer.valueOf(dlw.e());
-                    break;
+                    this.m = java.lang.Integer.valueOf(dlw.e());
+                    continue;
                 case 88:
-                    this.n = Integer.valueOf(dlw.e());
-                    break;
+                    this.n = java.lang.Integer.valueOf(dlw.e());
+                    continue;
                 case 96:
-                    this.o = Integer.valueOf(dlw.e());
-                    break;
+                    this.o = java.lang.Integer.valueOf(dlw.e());
+                    continue;
                 case 104:
-                    this.p = Integer.valueOf(dlw.e());
-                    break;
+                    this.p = java.lang.Integer.valueOf(dlw.e());
+                    continue;
                 case 112:
-                    this.q = Integer.valueOf(dlw.e());
-                    break;
-                case xu.an /*{ENCODED_INT: 120}*/:
-                    this.r = Integer.valueOf(dlw.e());
-                    break;
+                    this.q = java.lang.Integer.valueOf(dlw.e());
+                    continue;
+                case 120:
+                    this.r = java.lang.Integer.valueOf(dlw.e());
+                    continue;
                 case 128:
-                    this.s = Integer.valueOf(dlw.e());
-                    break;
+                    this.s = java.lang.Integer.valueOf(dlw.e());
+                    continue;
                 case 136:
-                    this.t = Integer.valueOf(dlw.e());
-                    break;
+                    this.t = java.lang.Integer.valueOf(dlw.e());
+                    continue;
                 case 144:
-                    this.u = Integer.valueOf(dlw.e());
-                    break;
+                    this.u = java.lang.Integer.valueOf(dlw.e());
+                    continue;
                 case 152:
-                    this.g = Integer.valueOf(dlw.e());
-                    break;
+                    this.g = java.lang.Integer.valueOf(dlw.e());
+                    continue;
                 default:
-                    if (super.a(dlw, a2)) {
+                    if (!super.a(dlw, a2)) {
                         break;
                     } else {
-                        break;
+                        continue;
                     }
             }
         }

@@ -1,29 +1,26 @@
 package defpackage;
 
-import java.util.ArrayList;
-
-/* access modifiers changed from: package-private */
-/* renamed from: dti  reason: default package */
+/* renamed from: dti reason: default package */
 /* compiled from: PG */
-public final class dti {
-    private ArrayList a = new ArrayList();
-    private volatile dnq b = dnq.IDLE;
+final class dti {
+    private java.util.ArrayList a = new java.util.ArrayList();
+    private volatile defpackage.dnq b = defpackage.dnq.IDLE;
 
     dti() {
     }
 
-    /* access modifiers changed from: package-private */
-    public final void a(dnq dnq) {
-        cld.a(dnq, "newState");
-        if (this.b != dnq && this.b != dnq.SHUTDOWN) {
+    /* access modifiers changed from: 0000 */
+    public final void a(defpackage.dnq dnq) {
+        defpackage.cld.a((java.lang.Object) dnq, (java.lang.Object) "newState");
+        if (this.b != dnq && this.b != defpackage.dnq.SHUTDOWN) {
             this.b = dnq;
             if (!this.a.isEmpty()) {
-                ArrayList arrayList = this.a;
-                this.a = new ArrayList();
-                ArrayList arrayList2 = arrayList;
+                java.util.ArrayList arrayList = this.a;
+                this.a = new java.util.ArrayList();
+                java.util.ArrayList arrayList2 = arrayList;
                 if (arrayList2.size() > 0) {
                     arrayList2.get(0);
-                    throw new NoSuchMethodError();
+                    throw new java.lang.NoSuchMethodError();
                 }
             }
         }

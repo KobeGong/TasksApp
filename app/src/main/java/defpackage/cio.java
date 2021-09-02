@@ -1,15 +1,15 @@
 package defpackage;
 
-/* renamed from: cio  reason: default package */
+/* renamed from: cio reason: default package */
 /* compiled from: PG */
-final class cio implements Runnable {
-    private final /* synthetic */ String a;
+final class cio implements java.lang.Runnable {
+    private final /* synthetic */ java.lang.String a;
     private final /* synthetic */ boolean b;
-    private final /* synthetic */ efx c;
-    private final /* synthetic */ eeo d;
-    private final /* synthetic */ cin e;
+    private final /* synthetic */ defpackage.efx c;
+    private final /* synthetic */ defpackage.eeo d;
+    private final /* synthetic */ defpackage.cin e;
 
-    cio(cin cin, String str, boolean z, efx efx, eeo eeo) {
+    cio(defpackage.cin cin, java.lang.String str, boolean z, defpackage.efx efx, defpackage.eeo eeo) {
         this.e = cin;
         this.a = str;
         this.b = z;

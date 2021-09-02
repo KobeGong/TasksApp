@@ -1,12 +1,12 @@
 package defpackage;
 
-/* renamed from: ein  reason: default package */
+/* renamed from: ein reason: default package */
 /* compiled from: PG */
-final class ein implements Runnable {
+final class ein implements java.lang.Runnable {
     private final /* synthetic */ int a;
-    private final /* synthetic */ eii b;
+    private final /* synthetic */ defpackage.eii b;
 
-    ein(eii eii, int i) {
+    ein(defpackage.eii eii, int i) {
         this.b = eii;
         this.a = i;
     }

@@ -1,10 +1,10 @@
 package defpackage;
 
-/* renamed from: aon  reason: default package */
-final /* synthetic */ class aon implements Runnable {
-    private final aol a;
+/* renamed from: aon reason: default package */
+final /* synthetic */ class aon implements java.lang.Runnable {
+    private final BottomSheetMenuDialogFragment a;
 
-    aon(aol aol) {
+    aon(BottomSheetMenuDialogFragment aol) {
         this.a = aol;
     }
 

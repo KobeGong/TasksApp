@@ -1,44 +1,38 @@
 package defpackage;
 
-/* renamed from: dof  reason: default package */
+/* renamed from: dof reason: default package */
 /* compiled from: PG */
-public class dof extends dpm {
-    public final dnd a;
+public class dof extends defpackage.dpm {
+    public final defpackage.dnd a;
 
     public dof() {
     }
 
-    @Override // defpackage.dpm
-    public final dnd b() {
+    public final defpackage.dnd b() {
         return this.a;
     }
 
-    @Override // defpackage.dnd
-    public void a(dne dne, dor dor) {
+    public void a(defpackage.dne dne, defpackage.dor dor) {
         b().a(dne, dor);
     }
 
-    @Override // defpackage.dnd
-    public final void a(Object obj) {
+    public final void a(java.lang.Object obj) {
         b().a(obj);
     }
 
-    @Override // defpackage.dpm, defpackage.dnd
     public final /* bridge */ /* synthetic */ void a() {
         super.a();
     }
 
-    @Override // defpackage.dpm, defpackage.dnd
-    public final /* bridge */ /* synthetic */ void a(String str, Throwable th) {
+    public final /* bridge */ /* synthetic */ void a(java.lang.String str, java.lang.Throwable th) {
         super.a(str, th);
     }
 
-    @Override // defpackage.dpm, defpackage.dnd
     public final /* bridge */ /* synthetic */ void a(int i) {
         super.a(i);
     }
 
-    public dof(dnd dnd) {
+    public dof(defpackage.dnd dnd) {
         this();
         this.a = dnd;
     }

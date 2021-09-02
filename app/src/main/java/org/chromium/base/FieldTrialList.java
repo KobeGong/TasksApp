@@ -5,9 +5,9 @@ public class FieldTrialList {
     private FieldTrialList() {
     }
 
-    private static native String nativeFindFullName(String str);
+    private static native java.lang.String nativeFindFullName(java.lang.String str);
 
-    private static native String nativeGetVariationParameter(String str, String str2);
+    private static native java.lang.String nativeGetVariationParameter(java.lang.String str, java.lang.String str2);
 
-    private static native boolean nativeTrialExists(String str);
+    private static native boolean nativeTrialExists(java.lang.String str);
 }

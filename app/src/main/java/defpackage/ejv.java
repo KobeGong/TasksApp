@@ -1,18 +1,13 @@
 package defpackage;
 
-import android.content.Context;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.regex.Pattern;
-
-/* renamed from: ejv  reason: default package */
+/* renamed from: ejv reason: default package */
 /* compiled from: PG */
-public abstract class ejv extends eie {
-    public final Context a;
-    public final List b = new LinkedList();
-    public final List c = new LinkedList();
+public abstract class ejv extends defpackage.eie {
+    public final android.content.Context a;
+    public final java.util.List b = new java.util.LinkedList();
+    public final java.util.List c = new java.util.LinkedList();
     public boolean d;
-    public String e;
+    public java.lang.String e;
     public boolean f;
     public boolean g;
     public boolean h;
@@ -22,7 +17,7 @@ public abstract class ejv extends eie {
     public boolean l;
     private int m = 20;
 
-    public ejv(Context context) {
+    public ejv(android.content.Context context) {
         this.a = context.getApplicationContext();
         this.f = false;
         this.g = true;
@@ -34,7 +29,7 @@ public abstract class ejv extends eie {
         this.d = true;
     }
 
-    public ehw b() {
+    public defpackage.ehw b() {
         return null;
     }
 
@@ -43,6 +38,6 @@ public abstract class ejv extends eie {
     }
 
     static {
-        Pattern.compile("^[0-9\\.]*$");
+        java.util.regex.Pattern.compile("^[0-9\\.]*$");
     }
 }

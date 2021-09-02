@@ -1,15 +1,15 @@
 package defpackage;
 
-/* renamed from: aof  reason: default package */
+/* renamed from: aof reason: default package */
 /* compiled from: PG */
 public abstract class aof {
-    /* access modifiers changed from: package-private */
-    public abstract String a();
+    /* access modifiers changed from: 0000 */
+    public abstract java.lang.String a();
 
-    /* access modifiers changed from: package-private */
-    public abstract lc b();
+    /* access modifiers changed from: 0000 */
+    public abstract Fragment b();
 
-    static aof a(String str, lc lcVar) {
-        return new aog(str, lcVar);
+    static defpackage.aof a(java.lang.String str, Fragment lcVar) {
+        return new defpackage.aog(str, lcVar);
     }
 }

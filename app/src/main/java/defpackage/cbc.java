@@ -1,18 +1,17 @@
 package defpackage;
 
-/* renamed from: cbc  reason: default package */
+/* renamed from: cbc reason: default package */
 /* compiled from: PG */
-public final class cbc implements ecz {
-    private final ecz a;
-    private final ecz b;
+public final class cbc implements defpackage.ecz {
+    private final defpackage.ecz a;
+    private final defpackage.ecz b;
 
-    public cbc(ecz ecz, ecz ecz2) {
+    public cbc(defpackage.ecz ecz, defpackage.ecz ecz2) {
         this.a = ecz;
         this.b = ecz2;
     }
 
-    @Override // defpackage.ecz
-    public final /* synthetic */ Object a() {
-        return new cbb((cac) this.a.a(), (bzd) this.b.a());
+    public final /* synthetic */ java.lang.Object a() {
+        return new defpackage.cbb((defpackage.cac) this.a.a(), (defpackage.bzd) this.b.a());
     }
 }

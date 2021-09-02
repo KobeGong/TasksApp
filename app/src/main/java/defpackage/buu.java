@@ -1,7 +1,7 @@
 package defpackage;
 
-/* compiled from: PG */
 /* renamed from: buu reason: default package */
+/* compiled from: PG */
 public final class buu {
     public android.content.Context a;
     public defpackage.bup b;
@@ -30,6 +30,7 @@ public final class buu {
     }
 
     /* JADX WARNING: Incorrect type for immutable var: ssa=java.util.List, code=java.util.List<bus>, for r10v0, types: [java.util.List, java.util.List<bus>] */
+    /* Code decompiled incorrectly, please refer to instructions dump. */
     public final synchronized boolean a(java.lang.String r9, java.util.List<defpackage.bus> r10) {
         /*
             r8 = this;
@@ -76,6 +77,7 @@ public final class buu {
     }
 
     /* JADX WARNING: Removed duplicated region for block: B:19:0x0089  */
+    /* Code decompiled incorrectly, please refer to instructions dump. */
     private final java.util.List a(java.lang.String r12, java.lang.String r13, java.lang.String... r14) {
         /*
             r11 = this;
@@ -97,7 +99,7 @@ public final class buu {
             boolean r0 = r1.moveToNext()     // Catch:{ RuntimeException -> 0x0061, buo -> 0x0095 }
             if (r0 == 0) goto L_0x007f
             but r0 = new but     // Catch:{ RuntimeException -> 0x0061, buo -> 0x0095 }
-            r0.m1598init()     // Catch:{ RuntimeException -> 0x0061, buo -> 0x0095 }
+            r0.<init>()     // Catch:{ RuntimeException -> 0x0061, buo -> 0x0095 }
             java.lang.String r2 = "_id"
             int r2 = r1.getColumnIndex(r2)     // Catch:{ RuntimeException -> 0x0061, buo -> 0x0095 }
             long r2 = r1.getLong(r2)     // Catch:{ RuntimeException -> 0x0061, buo -> 0x0095 }

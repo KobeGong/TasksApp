@@ -1,22 +1,20 @@
 package defpackage;
 
-import java.util.concurrent.Executor;
-
-/* renamed from: ejc  reason: default package */
+/* renamed from: ejc reason: default package */
 /* compiled from: PG */
 public abstract class ejc {
-    private final Executor a;
+    private final java.util.concurrent.Executor a;
 
-    public ejc(Executor executor) {
+    public ejc(java.util.concurrent.Executor executor) {
         if (executor == null) {
-            throw new IllegalStateException("Executor must not be null");
+            throw new java.lang.IllegalStateException("Executor must not be null");
         }
         this.a = executor;
     }
 
-    public abstract void a(ejb ejb);
+    public abstract void a(defpackage.ejb ejb);
 
-    public Executor a() {
+    public java.util.concurrent.Executor a() {
         return this.a;
     }
 }

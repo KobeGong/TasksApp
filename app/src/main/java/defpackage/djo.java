@@ -1,23 +1,21 @@
 package defpackage;
 
-import java.io.OutputStream;
-
-/* renamed from: djo  reason: default package */
+/* renamed from: djo reason: default package */
 /* compiled from: PG */
-public interface djo extends djq {
-    dha a();
+public interface djo extends defpackage.djq {
+    defpackage.dha a();
 
-    void a(dhn dhn);
+    void a(defpackage.dhn dhn);
 
-    void a(OutputStream outputStream);
+    void a(java.io.OutputStream outputStream);
 
     byte[] b();
 
-    djx d();
+    defpackage.djx d();
 
     int f();
 
-    djp g();
+    defpackage.djp g();
 
-    djp h();
+    defpackage.djp h();
 }

@@ -1,36 +1,31 @@
 package defpackage;
 
-import android.os.health.TimerStat;
-
-/* renamed from: cmj  reason: default package */
+/* renamed from: cmj reason: default package */
 /* compiled from: PG */
-public final class cmj extends cmh {
-    public static final cmj a = new cmj();
+public final class cmj extends defpackage.cmh {
+    public static final defpackage.cmj a = new defpackage.cmj();
 
     private cmj() {
-        super(egb.class);
+        super(defpackage.egb.class);
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.cmh
-    public final /* synthetic */ String a(dmf dmf) {
-        egb egb = (egb) dmf;
-        String str = egb.c.b;
+    /* access modifiers changed from: 0000 */
+    public final /* synthetic */ java.lang.String a(defpackage.dmf dmf) {
+        defpackage.egb egb = (defpackage.egb) dmf;
+        java.lang.String str = egb.c.b;
         if (str != null) {
             return str;
         }
-        return Long.toHexString(egb.c.a.longValue());
+        return java.lang.Long.toHexString(egb.c.a.longValue());
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.cmh
-    public final /* synthetic */ dmf a(dmf dmf, dmf dmf2) {
-        return cky.a((egb) dmf, (egb) dmf2);
+    /* access modifiers changed from: 0000 */
+    public final /* synthetic */ defpackage.dmf a(defpackage.dmf dmf, defpackage.dmf dmf2) {
+        return defpackage.cky.a((defpackage.egb) dmf, (defpackage.egb) dmf2);
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.cmh
-    public final /* synthetic */ dmf a(String str, Object obj) {
-        return cky.a(str, (TimerStat) obj);
+    /* access modifiers changed from: 0000 */
+    public final /* synthetic */ defpackage.dmf a(java.lang.String str, java.lang.Object obj) {
+        return defpackage.cky.a(str, (android.os.health.TimerStat) obj);
     }
 }

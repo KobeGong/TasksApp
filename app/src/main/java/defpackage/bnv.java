@@ -1,11 +1,9 @@
 package defpackage;
 
-import android.os.Parcelable;
-
-/* renamed from: bnv  reason: default package */
+/* renamed from: bnv reason: default package */
 /* compiled from: PG */
-public interface bnv extends Parcelable, bcs {
-    String b();
+public interface bnv extends android.os.Parcelable, defpackage.bcs {
+    java.lang.String b();
 
-    Integer c();
+    java.lang.Integer c();
 }

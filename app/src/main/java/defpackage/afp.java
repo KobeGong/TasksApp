@@ -1,19 +1,16 @@
 package defpackage;
 
-import android.support.v7.widget.RecyclerView;
-
-/* renamed from: afp  reason: default package */
+/* renamed from: afp reason: default package */
 /* compiled from: PG */
-public final class afp extends aev {
-    private final /* synthetic */ RecyclerView a;
+public final class afp extends defpackage.aev {
+    private final /* synthetic */ android.support.v7.widget.RecyclerView a;
 
-    public afp(RecyclerView recyclerView) {
+    public afp(android.support.v7.widget.RecyclerView recyclerView) {
         this.a = recyclerView;
     }
 
-    @Override // defpackage.aev
     public final void a() {
-        this.a.a((String) null);
+        this.a.a((java.lang.String) null);
         this.a.D.f = true;
         this.a.c(true);
         if (!this.a.f.d()) {
@@ -24,7 +21,6 @@ public final class afp extends aev {
     /* JADX WARNING: Code restructure failed: missing block: B:3:0x0023, code lost:
         if (r1.a.size() == 1) goto L_0x0025;
      */
-    @Override // defpackage.aev
     /* Code decompiled incorrectly, please refer to instructions dump. */
     public final void a(int r6, int r7) {
         /*
@@ -61,7 +57,6 @@ public final class afp extends aev {
     /* JADX WARNING: Code restructure failed: missing block: B:3:0x0022, code lost:
         if (r1.a.size() == 1) goto L_0x0024;
      */
-    @Override // defpackage.aev
     /* Code decompiled incorrectly, please refer to instructions dump. */
     public final void b(int r5, int r6) {
         /*
@@ -97,7 +92,6 @@ public final class afp extends aev {
     /* JADX WARNING: Code restructure failed: missing block: B:3:0x0023, code lost:
         if (r1.a.size() == 1) goto L_0x0025;
      */
-    @Override // defpackage.aev
     /* Code decompiled incorrectly, please refer to instructions dump. */
     public final void c(int r6, int r7) {
         /*
@@ -134,7 +128,6 @@ public final class afp extends aev {
     /* JADX WARNING: Code restructure failed: missing block: B:3:0x0024, code lost:
         if (r1.a.size() == 1) goto L_0x0026;
      */
-    @Override // defpackage.aev
     /* Code decompiled incorrectly, please refer to instructions dump. */
     public final void d(int r6, int r7) {
         /*
@@ -169,7 +162,7 @@ public final class afp extends aev {
     }
 
     private final void b() {
-        if (RecyclerView.c) {
+        if (android.support.v7.widget.RecyclerView.c) {
             boolean z = this.a.p;
         }
         this.a.s = true;

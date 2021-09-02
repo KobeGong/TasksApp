@@ -1,16 +1,14 @@
 package defpackage;
 
-import android.view.MenuItem;
-
-/* renamed from: yz  reason: default package */
+/* renamed from: yz reason: default package */
 /* compiled from: PG */
-final class yz implements Runnable {
-    private final /* synthetic */ za a;
-    private final /* synthetic */ MenuItem b;
-    private final /* synthetic */ MenuBuilder c;
-    private final /* synthetic */ yy d;
+final class yz implements java.lang.Runnable {
+    private final /* synthetic */ defpackage.za a;
+    private final /* synthetic */ android.view.MenuItem b;
+    private final /* synthetic */ defpackage.ze c;
+    private final /* synthetic */ defpackage.yy d;
 
-    yz(yy yyVar, za zaVar, MenuItem menuItem, MenuBuilder zeVar) {
+    yz(defpackage.yy yyVar, defpackage.za zaVar, android.view.MenuItem menuItem, defpackage.ze zeVar) {
         this.d = yyVar;
         this.a = zaVar;
         this.b = menuItem;
@@ -24,7 +22,7 @@ final class yz implements Runnable {
             this.d.a.f = false;
         }
         if (this.b.isEnabled() && this.b.hasSubMenu()) {
-            this.c.a(this.b, (MenuPresenter) null, 4);
+            this.c.a(this.b, (defpackage.zt) null, 4);
         }
     }
 }

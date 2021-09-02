@@ -1,20 +1,15 @@
 package defpackage;
 
-import android.app.job.JobParameters;
-import android.app.job.JobService;
-import android.os.Bundle;
-import android.os.PersistableBundle;
-
-/* renamed from: bwi  reason: default package */
-public final /* synthetic */ class bwi implements Runnable {
-    private final bwg a;
-    private final PersistableBundle b;
+/* renamed from: bwi reason: default package */
+public final /* synthetic */ class bwi implements java.lang.Runnable {
+    private final defpackage.bwg a;
+    private final android.os.PersistableBundle b;
     private final int c;
-    private final String d;
-    private final JobService e;
-    private final JobParameters f;
+    private final java.lang.String d;
+    private final android.app.job.JobService e;
+    private final android.app.job.JobParameters f;
 
-    public bwi(bwh bwh, bwg bwg, PersistableBundle persistableBundle, int i, String str, JobService jobService, JobParameters jobParameters) {
+    public bwi(defpackage.bwh bwh, defpackage.bwg bwg, android.os.PersistableBundle persistableBundle, int i, java.lang.String str, android.app.job.JobService jobService, android.app.job.JobParameters jobParameters) {
         this.a = bwg;
         this.b = persistableBundle;
         this.c = i;
@@ -26,24 +21,24 @@ public final /* synthetic */ class bwi implements Runnable {
     public final void run() {
         boolean z = true;
         boolean z2 = false;
-        bwg bwg = this.a;
-        PersistableBundle persistableBundle = this.b;
+        defpackage.bwg bwg = this.a;
+        android.os.PersistableBundle persistableBundle = this.b;
         int i = this.c;
-        String str = this.d;
-        JobService jobService = this.e;
-        JobParameters jobParameters = this.f;
+        java.lang.String str = this.d;
+        android.app.job.JobService jobService = this.e;
+        android.app.job.JobParameters jobParameters = this.f;
         try {
-            btl a2 = bwg.a(new Bundle(persistableBundle));
+            defpackage.btl a2 = bwg.a(new android.os.Bundle(persistableBundle));
             switch (a2.a().ordinal()) {
                 case 1:
-                    bty.b("ScheduledTaskServiceHandler", a2.b(), "Job finished with TRANSIENT_FAILURE. Job ID: '%d', key: '%s'", Integer.valueOf(i), str);
+                    defpackage.bty.b("ScheduledTaskServiceHandler", a2.b(), "Job finished with TRANSIENT_FAILURE. Job ID: '%d', key: '%s'", java.lang.Integer.valueOf(i), str);
                     break;
                 case 2:
-                    bty.b("ScheduledTaskServiceHandler", a2.b(), "Job finished with PERMANENT_FAILURE. Job ID: '%d', key: '%s'", Integer.valueOf(i), str);
+                    defpackage.bty.b("ScheduledTaskServiceHandler", a2.b(), "Job finished with PERMANENT_FAILURE. Job ID: '%d', key: '%s'", java.lang.Integer.valueOf(i), str);
                     z = z2;
                     break;
                 default:
-                    bty.a("ScheduledTaskServiceHandler", "Job finished with SUCCESS code. Job ID: '%d', key: '%s'", Integer.valueOf(i), str);
+                    defpackage.bty.a("ScheduledTaskServiceHandler", "Job finished with SUCCESS code. Job ID: '%d', key: '%s'", java.lang.Integer.valueOf(i), str);
                     z = z2;
                     break;
             }

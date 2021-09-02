@@ -1,36 +1,27 @@
 package defpackage;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
-
-/* access modifiers changed from: package-private */
-/* renamed from: azq  reason: default package */
+/* renamed from: azq reason: default package */
 /* compiled from: PG */
-public final class azq extends azu {
-    private final ArrayList a;
-    private /* synthetic */ azk b;
+final class azq extends defpackage.azu {
+    private final java.util.ArrayList a;
+    private /* synthetic */ defpackage.azk b;
 
-    /* JADX INFO: super call moved to the top of the method (can break code semantics) */
-    public azq(azk azk, ArrayList arrayList) {
-        super(azk);
+    public azq(defpackage.azk azk, java.util.ArrayList arrayList) {
         this.b = azk;
+        super(azk);
         this.a = arrayList;
     }
 
-    @Override // defpackage.azu
     public final void a() {
-        Set set;
-        azx azx = this.b.a.m;
-        azk azk = this.b;
+        java.util.Set set;
+        defpackage.azx azx = this.b.a.m;
+        defpackage.azk azk = this.b;
         if (azk.j == null) {
-            set = Collections.emptySet();
+            set = java.util.Collections.emptySet();
         } else {
-            HashSet hashSet = new HashSet(azk.j.b);
-            Map map = azk.j.d;
-            for (ayd ayd : map.keySet()) {
+            java.util.Set hashSet = new java.util.HashSet(azk.j.b);
+            java.util.Map map = azk.j.d;
+            for (defpackage.ayd ayd : map.keySet()) {
                 if (!azk.a.g.containsKey(ayd.b())) {
                     map.get(ayd);
                     hashSet.addAll(null);
@@ -39,13 +30,13 @@ public final class azq extends azu {
             set = hashSet;
         }
         azx.e = set;
-        ArrayList arrayList = this.a;
+        java.util.ArrayList arrayList = this.a;
         int size = arrayList.size();
         int i = 0;
         while (i < size) {
-            Object obj = arrayList.get(i);
+            java.lang.Object obj = arrayList.get(i);
             i++;
-            ((ayj) obj).a(this.b.g, this.b.a.m.e);
+            ((defpackage.ayj) obj).a(this.b.g, this.b.a.m.e);
         }
     }
 }

@@ -1,40 +1,35 @@
 package defpackage;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import com.google.android.gms.people.model.AvatarReference;
-import java.util.Arrays;
-
-/* renamed from: bmn  reason: default package */
+/* renamed from: bmn reason: default package */
 /* compiled from: PG */
-public final class bmn extends biq {
-    public static final Parcelable.Creator CREATOR = new bna();
-    private AvatarReference a;
+public final class bmn extends defpackage.biq {
+    public static final android.os.Parcelable.Creator CREATOR = new defpackage.bna();
+    private com.google.android.gms.people.model.AvatarReference a;
 
     public bmn() {
     }
 
-    public bmn(AvatarReference avatarReference) {
+    public bmn(com.google.android.gms.people.model.AvatarReference avatarReference) {
         this.a = avatarReference;
     }
 
-    public final void writeToParcel(Parcel parcel, int i) {
-        int q = bjr.q(parcel, 20293);
-        bjr.a(parcel, 3, this.a, i);
-        bjr.r(parcel, q);
+    public final void writeToParcel(android.os.Parcel parcel, int i) {
+        int q = defpackage.bjr.q(parcel, 20293);
+        defpackage.bjr.a(parcel, 3, (android.os.Parcelable) this.a, i);
+        defpackage.bjr.r(parcel, q);
     }
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof bmn)) {
+    public final boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof defpackage.bmn)) {
             return false;
         }
         if (this == obj) {
             return true;
         }
-        return this.a.equals(((bmn) obj).a);
+        return this.a.equals(((defpackage.bmn) obj).a);
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a});
+        return java.util.Arrays.hashCode(new java.lang.Object[]{this.a});
     }
 }

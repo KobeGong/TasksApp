@@ -1,19 +1,18 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: brj  reason: default package */
+/* renamed from: brj reason: default package */
 /* compiled from: PG */
-public final class brj implements bqt {
-    private final axq a;
+final class brj implements defpackage.bqt {
+    private final defpackage.axq a;
 
-    public brj(axq axq) {
+    public brj(defpackage.axq axq) {
         if (axq == null) {
-            throw new IllegalArgumentException("null connectionResult");
+            throw new java.lang.IllegalArgumentException("null connectionResult");
         }
         this.a = axq;
     }
 
-    public final String toString() {
+    public final java.lang.String toString() {
         return this.a.toString();
     }
 }

@@ -1,16 +1,12 @@
 package defpackage;
 
-import android.content.res.ColorStateList;
-import android.content.res.Configuration;
-
-/* access modifiers changed from: package-private */
-/* renamed from: xx  reason: default package */
+/* renamed from: xx reason: default package */
 /* compiled from: PG */
-public final class xx {
-    public final ColorStateList a;
-    public final Configuration b;
+final class xx {
+    public final android.content.res.ColorStateList a;
+    public final android.content.res.Configuration b;
 
-    xx(ColorStateList colorStateList, Configuration configuration) {
+    xx(android.content.res.ColorStateList colorStateList, android.content.res.Configuration configuration) {
         this.a = colorStateList;
         this.b = configuration;
     }

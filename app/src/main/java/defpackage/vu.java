@@ -1,16 +1,13 @@
 package defpackage;
 
-import android.content.res.ColorStateList;
-import android.graphics.PorterDuff;
-
-/* renamed from: vu  reason: default package */
+/* renamed from: vu reason: default package */
 /* compiled from: PG */
 public interface vu {
-    void b(ColorStateList colorStateList);
+    void b(android.content.res.ColorStateList colorStateList);
 
-    void b(PorterDuff.Mode mode);
+    void b(android.graphics.PorterDuff.Mode mode);
 
-    ColorStateList c();
+    android.content.res.ColorStateList c();
 
-    PorterDuff.Mode d();
+    android.graphics.PorterDuff.Mode d();
 }

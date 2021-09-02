@@ -1,51 +1,21 @@
 package com.google.android.apps.tasks.addtotasks;
 
-import android.accounts.Account;
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.os.BadParcelableException;
-import android.os.Bundle;
-import android.os.Message;
-import android.os.Messenger;
-import android.os.RemoteException;
-import android.text.TextUtils;
-import android.widget.Toast;
-import com.google.android.apps.tasks.R;
-import com.google.android.apps.tasks.common.TaskApplication;
-
-import defpackage.aim;
-import defpackage.ain;
-import defpackage.ajd;
-import defpackage.anc;
-import defpackage.any;
-import defpackage.azb;
-import defpackage.bhq;
-import defpackage.bhr;
-import defpackage.dan;
-import defpackage.dby;
-import defpackage.dca;
-import defpackage.dih;
-import defpackage.dii;
-import defpackage.djz;
-import defpackage.dkw;
-
 /* compiled from: PG */
-public class AddToTasksBroadcastReceiver extends BroadcastReceiver {
-    public void onReceive(Context context, Intent intent) {
-        String str;
-        anc anc;
-        anc anc2;
-        String str2;
-        String str3 = null;
+public class AddToTasksBroadcastReceiver extends android.content.BroadcastReceiver {
+    public void onReceive(android.content.Context context, android.content.Intent intent) {
+        java.lang.String str;
+        defpackage.anc anc;
+        defpackage.anc anc2;
+        java.lang.String str2;
+        java.lang.String str3 = null;
         try {
-            Bundle extras = intent.getExtras();
-            Messenger messenger = (Messenger) extras.getParcelable("messenger");
-            bhq b = bhr.b(context, intent);
+            android.os.Bundle extras = intent.getExtras();
+            android.os.Messenger messenger = (android.os.Messenger) extras.getParcelable("messenger");
+            defpackage.bhq b = defpackage.bhr.b(context, intent);
             if (b == null) {
-                anc = any.get().c();
+                anc = defpackage.any.a().c();
                 if (anc == null) {
-                    azb.b("No default SyncEngine", new Object[0]);
+                    defpackage.azb.b("No default SyncEngine", new java.lang.Object[0]);
                     a(context);
                     return;
                 }
@@ -54,13 +24,13 @@ public class AddToTasksBroadcastReceiver extends BroadcastReceiver {
                 str = b.a;
                 anc = null;
             }
-            Account a = ajd.a(context, str);
+            android.accounts.Account a = defpackage.ajd.a(context, str);
             if (a == null) {
-                azb.a("Specified account was not found: %s", azb.a(str));
+                defpackage.azb.a("Specified account was not found: %s", defpackage.azb.a(str));
                 a(context);
                 anc2 = anc;
             } else if (anc == null) {
-                anc2 = any.get().b(a);
+                anc2 = defpackage.any.a().b(a);
             } else {
                 anc2 = anc;
             }
@@ -68,123 +38,128 @@ public class AddToTasksBroadcastReceiver extends BroadcastReceiver {
                 if (anc2 != null) {
                     str3 = a(context, anc2, a);
                 }
-                if (!TextUtils.isEmpty(str3) || anc2 == null) {
+                if (!android.text.TextUtils.isEmpty(str3) || anc2 == null) {
                     str2 = str3;
                     str3 = a(context, anc2, str3, extras);
                 } else {
-                    azb.a("Failed to find task list", new Object[0]);
-                    anc2.c().a(new aim(this, context, anc2, a, extras, messenger), TaskApplication.b().a);
+                    defpackage.azb.a("Failed to find task list", new java.lang.Object[0]);
+                    anc2.c().a(new defpackage.aim(this, context, anc2, a, extras, messenger), com.google.android.apps.tasks.common.TaskApplication.getApplication().a);
                     return;
                 }
             } else {
                 str2 = null;
             }
             a(messenger, str2, str3);
-        } catch (BadParcelableException e) {
-            azb.a("Failed to unparcel", new Object[0]);
+        } catch (android.os.BadParcelableException e) {
+            defpackage.azb.a("Failed to unparcel", new java.lang.Object[0]);
         }
     }
 
-    private static void a(Context context) {
-        Toast.makeText(context, context.getString(R.string.error_creating_task), 0).show();
+    private static void a(android.content.Context context) {
+        android.widget.Toast.makeText(context, context.getString(2131951732), 0).show();
     }
 
-    public static void a(Messenger messenger, String str, String str2) {
+    public static void a(android.os.Messenger messenger, java.lang.String str, java.lang.String str2) {
         if (messenger != null) {
             try {
-                Message obtain = Message.obtain();
-                Bundle bundle = new Bundle(1);
+                android.os.Message obtain = android.os.Message.obtain();
+                android.os.Bundle bundle = new android.os.Bundle(1);
                 bundle.putString("taskListId", str);
                 bundle.putString("taskId", str2);
                 obtain.setData(bundle);
                 messenger.send(obtain);
-            } catch (RemoteException e) {
-                azb.a("Failed to send add to tasks result", (Throwable) e, new String[0]);
+            } catch (android.os.RemoteException e) {
+                defpackage.azb.a("Failed to send add to tasks result", (java.lang.Throwable) e, new java.lang.String[0]);
             }
         }
     }
 
-    public static String a(Context context, anc anc, Account account) {
-        String a = ain.b(context, account.name).a();
+    public static java.lang.String a(android.content.Context context, defpackage.anc anc, android.accounts.Account account) {
+        java.lang.String a = defpackage.ain.b(context, account.name).a();
         if (a != null) {
             return a;
         }
-        for (defpackage.dcb dcb : anc.d()) {
-            a = dcb.b;
-            if (!ajd.a(a)) {
-                a = a;
+        java.util.Iterator it = anc.d().iterator();
+        while (true) {
+            java.lang.String str = a;
+            if (!it.hasNext()) {
+                return str;
+            }
+            a = ((defpackage.dcb) it.next()).b;
+            if (!defpackage.ajd.a(a)) {
+                a = str;
             }
         }
-        return a;
     }
 
-    public static String a(Context context, anc anc, String str, Bundle bundle) {
-        String str2;
-        dih dih;
-        String string = bundle.getString("title");
-        if (TextUtils.isEmpty(string)) {
-            str2 = context.getString(R.string.task_no_title);
+    public static java.lang.String a(android.content.Context context, defpackage.anc anc, java.lang.String str, android.os.Bundle bundle) {
+        java.lang.String str2;
+        defpackage.dih dih;
+        java.lang.String string = bundle.getString("title");
+        if (android.text.TextUtils.isEmpty(string)) {
+            str2 = context.getString(2131951826);
         } else {
             str2 = string;
         }
-        dii f = ((dii) dca.g.a(bg.ao)).f(str2);
-        String string2 = bundle.getString("link");
-        String string3 = bundle.getString("permalink");
-        if (!TextUtils.isEmpty(string2)) {
-            if (ajd.b(string2)) {
-                f.h(((dii) dan.f.a(bg.ao)).a(((dii) dao.c.a(bg.ao)).b(str2).a(string2)));
+        defpackage.dii f = ((defpackage.dii) defpackage.dca.g.a(defpackage.bg.ao)).setTitle(str2);
+        java.lang.String string2 = bundle.getString("link");
+        java.lang.String string3 = bundle.getString("permalink");
+        if (!android.text.TextUtils.isEmpty(string2)) {
+            if (defpackage.ajd.b(string2)) {
+                f.h(((defpackage.dii) defpackage.dan.f.a(defpackage.bg.ao)).a(((defpackage.dii) defpackage.dao.c.a(defpackage.bg.ao)).b(str2).a(string2)));
             } else {
-                new Object[1][0] = string2;
+                new java.lang.Object[1][0] = string2;
             }
-        } else if (!TextUtils.isEmpty(string3)) {
-            dii dii = (dii) dan.f.a(bg.ao);
-            daq daq = daq.GMAIL_PERMALINK;
+        } else if (!android.text.TextUtils.isEmpty(string3)) {
+            defpackage.dii dii = (defpackage.dii) defpackage.dan.f.a(defpackage.bg.ao);
+            defpackage.daq daq = defpackage.daq.GMAIL_PERMALINK;
             dii.b();
-            dan dan = (dan) dii.a;
+            defpackage.dan dan = (defpackage.dan) dii.a;
             if (daq == null) {
-                throw new NullPointerException();
+                throw new java.lang.NullPointerException();
             }
             dan.e = daq.a();
             dii.b();
-            dan dan2 = (dan) dii.a;
+            defpackage.dan dan2 = (defpackage.dan) dii.a;
             if (string3 == null) {
-                throw new NullPointerException();
+                throw new java.lang.NullPointerException();
             }
             dan2.c = string3;
             f.h(dii);
         }
         long j = bundle.getLong("dueDate", 0);
         if (j != 0) {
-            f.a(ajd.a(j));
+            f.a(defpackage.ajd.a(j));
         }
         if (anc.d().isEmpty()) {
             return null;
         }
-        dii g = ((dii) dby.g.a(bg.ao)).g(f);
+        defpackage.dii g = ((defpackage.dii) defpackage.dby.g.a(defpackage.bg.ao)).g(f);
         if (g.b) {
             dih = g.a;
         } else {
-            dih dih2 = g.a;
-            djz.a.a(dih2).c(dih2);
+            defpackage.dih dih2 = g.a;
+            defpackage.djz.a.a((java.lang.Object) dih2).c(dih2);
             g.b = true;
             dih = g.a;
         }
-        dih dih3 = dih;
-        if (!dih.a(dih3, Boolean.TRUE.booleanValue())) {
-            throw new dkw();
+        defpackage.dih dih3 = dih;
+        if (!defpackage.dih.a(dih3, java.lang.Boolean.TRUE.booleanValue())) {
+            throw new defpackage.dkw();
         }
-        dby a = anc.a(str, (dby) dih3, 0, (String) null);
-        String valueOf = String.valueOf(a.d);
+        defpackage.dby a = anc.a(str, (defpackage.dby) dih3, 0, (java.lang.String) null);
+        java.lang.String str3 = "Created task ID: ";
+        java.lang.String valueOf = java.lang.String.valueOf(a.d);
         if (valueOf.length() != 0) {
-            "Created task ID: ".concat(valueOf);
+            str3.concat(valueOf);
         } else {
-            new String("Created task ID: ");
+            new java.lang.String(str3);
         }
-        String str3 = a.d;
-        if (TextUtils.isEmpty(str3)) {
-            return str3;
+        java.lang.String str4 = a.d;
+        if (android.text.TextUtils.isEmpty(str4)) {
+            return str4;
         }
-        alq.a().a(anc.b(), str);
-        return str3;
+        defpackage.alq.a().a(anc.b(), str);
+        return str4;
     }
 }

@@ -1,32 +1,26 @@
 package defpackage;
 
-import android.os.IInterface;
-import android.os.Parcel;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.common.api.Status;
-
-/* renamed from: awc  reason: default package */
+/* renamed from: awc reason: default package */
 /* compiled from: PG */
-public class awc extends bkn implements IInterface {
+public class awc extends defpackage.bkn implements android.os.IInterface {
     public awc() {
         attachInterface(this, "com.google.android.gms.auth.api.signin.internal.ISignInCallbacks");
     }
 
-    @Override // android.os.Binder
-    public boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) {
+    public boolean onTransact(int i, android.os.Parcel parcel, android.os.Parcel parcel2, int i2) {
         if (a(i, parcel, parcel2, i2)) {
             return true;
         }
         switch (i) {
             case 101:
-                bko.a(parcel, GoogleSignInAccount.CREATOR);
-                bko.a(parcel, Status.CREATOR);
-                throw new UnsupportedOperationException();
+                defpackage.bko.a(parcel, com.google.android.gms.auth.api.signin.GoogleSignInAccount.CREATOR);
+                defpackage.bko.a(parcel, com.google.android.gms.common.api.Status.CREATOR);
+                throw new java.lang.UnsupportedOperationException();
             case 102:
-                bko.a(parcel, Status.CREATOR);
-                throw new UnsupportedOperationException();
+                defpackage.bko.a(parcel, com.google.android.gms.common.api.Status.CREATOR);
+                throw new java.lang.UnsupportedOperationException();
             case 103:
-                a((Status) bko.a(parcel, Status.CREATOR));
+                a((com.google.android.gms.common.api.Status) defpackage.bko.a(parcel, com.google.android.gms.common.api.Status.CREATOR));
                 parcel2.writeNoException();
                 return true;
             default:
@@ -38,7 +32,7 @@ public class awc extends bkn implements IInterface {
         this();
     }
 
-    public void a(Status status) {
-        throw new UnsupportedOperationException();
+    public void a(com.google.android.gms.common.api.Status status) {
+        throw new java.lang.UnsupportedOperationException();
     }
 }

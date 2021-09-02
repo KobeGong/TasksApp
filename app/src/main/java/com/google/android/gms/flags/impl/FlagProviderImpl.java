@@ -1,49 +1,40 @@
 package com.google.android.gms.flags.impl;
 
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
-import android.util.Log;
-import com.google.android.gms.common.util.DynamiteApi;
-
-@DynamiteApi
+@com.google.android.gms.common.util.DynamiteApi
 /* compiled from: PG */
-public class FlagProviderImpl extends bjl {
+public class FlagProviderImpl extends defpackage.bjl {
     private boolean a = false;
-    private SharedPreferences b;
+    private android.content.SharedPreferences b;
 
-    @Override // defpackage.bjk
-    public void init(bfl bfl) {
-        Context context = (Context) bfo.a(bfl);
+    public void init(defpackage.bfl bfl) {
+        android.content.Context context = (android.content.Context) defpackage.bfo.a(bfl);
         if (!this.a) {
             try {
-                this.b = bha.a(context.createPackageContext("com.google.android.gms", 0));
+                this.b = defpackage.bha.a(context.createPackageContext("com.google.android.gms", 0));
                 this.a = true;
-            } catch (PackageManager.NameNotFoundException e) {
-            } catch (Exception e2) {
-                String valueOf = String.valueOf(e2.getMessage());
-                Log.w("FlagProviderImpl", valueOf.length() != 0 ? "Could not retrieve sdk flags, continuing with defaults: ".concat(valueOf) : new String("Could not retrieve sdk flags, continuing with defaults: "));
+            } catch (android.content.pm.PackageManager.NameNotFoundException e) {
+            } catch (java.lang.Exception e2) {
+                java.lang.String str = "FlagProviderImpl";
+                java.lang.String str2 = "Could not retrieve sdk flags, continuing with defaults: ";
+                java.lang.String valueOf = java.lang.String.valueOf(e2.getMessage());
+                android.util.Log.w(str, valueOf.length() != 0 ? str2.concat(valueOf) : new java.lang.String(str2));
             }
         }
     }
 
-    @Override // defpackage.bjk
-    public boolean getBooleanFlagValue(String str, boolean z, int i) {
-        return !this.a ? z : bgv.a(this.b, str, Boolean.valueOf(z)).booleanValue();
+    public boolean getBooleanFlagValue(java.lang.String str, boolean z, int i) {
+        return !this.a ? z : defpackage.bgv.a(this.b, str, java.lang.Boolean.valueOf(z)).booleanValue();
     }
 
-    @Override // defpackage.bjk
-    public int getIntFlagValue(String str, int i, int i2) {
-        return !this.a ? i : bgv.a(this.b, str, Integer.valueOf(i)).intValue();
+    public int getIntFlagValue(java.lang.String str, int i, int i2) {
+        return !this.a ? i : defpackage.bgv.a(this.b, str, java.lang.Integer.valueOf(i)).intValue();
     }
 
-    @Override // defpackage.bjk
-    public long getLongFlagValue(String str, long j, int i) {
-        return !this.a ? j : bgv.a(this.b, str, Long.valueOf(j)).longValue();
+    public long getLongFlagValue(java.lang.String str, long j, int i) {
+        return !this.a ? j : defpackage.bgv.a(this.b, str, java.lang.Long.valueOf(j)).longValue();
     }
 
-    @Override // defpackage.bjk
-    public String getStringFlagValue(String str, String str2, int i) {
-        return !this.a ? str2 : bgv.a(this.b, str, str2);
+    public java.lang.String getStringFlagValue(java.lang.String str, java.lang.String str2, int i) {
+        return !this.a ? str2 : defpackage.bgv.a(this.b, str, str2);
     }
 }

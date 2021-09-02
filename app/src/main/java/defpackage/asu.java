@@ -1,27 +1,24 @@
 package defpackage;
 
-import android.view.View;
+/* renamed from: asu reason: default package */
+final /* synthetic */ class asu implements android.view.View.OnClickListener {
+    private final EditTaskFragment a;
+    private final SubTaskView b;
 
-/* access modifiers changed from: package-private */
-/* renamed from: asu  reason: default package */
-public final /* synthetic */ class asu implements View.OnClickListener {
-    private final asi a;
-    private final atb b;
-
-    asu(asi asi, atb atb) {
+    asu(EditTaskFragment asi, SubTaskView atb) {
         this.a = asi;
         this.b = atb;
     }
 
-    public final void onClick(View view) {
-        asi asi = this.a;
-        atb atb = this.b;
+    public final void onClick(android.view.View view) {
+        EditTaskFragment asi = this.a;
+        SubTaskView atb = this.b;
         asi.b(atb);
         asi.a(atb);
-        if (ajd.b(atb.d)) {
-            any.get().c().a(asi.U, atb.d.d, (Object) null);
+        if (defpackage.ajd.b(atb.d)) {
+            defpackage.any.a().c().a(asi.U, atb.d.d, (java.lang.Object) null);
         } else {
-            any.get().c().a(asi.U, atb.d.d, true);
+            defpackage.any.a().c().a(asi.U, atb.d.d, true);
         }
     }
 }

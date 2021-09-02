@@ -1,11 +1,9 @@
 package defpackage;
 
-import java.io.PrintWriter;
-
-/* renamed from: rk  reason: default package */
+/* renamed from: rk reason: default package */
 /* compiled from: PG */
 public final class rk {
-    private static final Object a = new Object();
+    private static final java.lang.Object a = new java.lang.Object();
     private static char[] b = new char[24];
 
     private static int a(char[] cArr, int i, char c, int i2, boolean z) {
@@ -35,78 +33,166 @@ public final class rk {
         return i7 + 1;
     }
 
-    private static void a(long j, PrintWriter printWriter) {
-        char c;
-        int i;
-        int i2;
-        int i3;
-        int i4;
-        boolean z;
-        boolean z2 = true;
-        int i5 = 1;
-        synchronized (a) {
-            if (b.length < 0) {
-                b = new char[0];
-            }
-            char[] cArr = b;
-            if (j == 0) {
-                cArr[0] = '0';
-            } else {
-                if (j > 0) {
-                    c = '+';
-                } else {
-                    j = -j;
-                    c = '-';
-                }
-                int i6 = (int) (j % 1000);
-                int floor = (int) Math.floor((double) (j / 1000));
-                if (floor > 86400) {
-                    int i7 = floor / 86400;
-                    floor -= 86400 * i7;
-                    i = i7;
-                } else {
-                    i = 0;
-                }
-                if (floor > 3600) {
-                    int i8 = floor / 3600;
-                    floor -= i8 * 3600;
-                    i2 = i8;
-                } else {
-                    i2 = 0;
-                }
-                if (floor > 60) {
-                    int i9 = floor / 60;
-                    i3 = floor - (i9 * 60);
-                    i4 = i9;
-                } else {
-                    i3 = floor;
-                    i4 = 0;
-                }
-                cArr[0] = c;
-                int a2 = a(cArr, i, 'd', 1, false);
-                int a3 = a(cArr, i2, 'h', a2, a2 != 1);
-                if (a3 != 1) {
-                    z = true;
-                } else {
-                    z = false;
-                }
-                int a4 = a(cArr, i4, 'm', a3, z);
-                if (a4 == 1) {
-                    z2 = false;
-                }
-                int a5 = a(cArr, i6, 'm', a(cArr, i3, 's', a4, z2), true);
-                cArr[a5] = 's';
-                i5 = a5 + 1;
-            }
-            printWriter.print(new String(b, 0, i5));
-        }
+    /* JADX WARNING: type inference failed for: r0v0 */
+    /* JADX WARNING: type inference failed for: r0v2 */
+    /* JADX WARNING: type inference failed for: r0v3, types: [boolean] */
+    /* JADX WARNING: type inference failed for: r0v6, types: [int] */
+    /* JADX WARNING: type inference failed for: r0v7, types: [int] */
+    /* JADX WARNING: type inference failed for: r0v8 */
+    /* JADX WARNING: Multi-variable type inference failed. Error: jadx.core.utils.exceptions.JadxRuntimeException: No candidate types for var: r0v0
+      assigns: [?[boolean, int, float, short, byte, char], ?[int, float, boolean, short, byte, char, OBJECT, ARRAY], int]
+      uses: [boolean, int]
+      mth insns count: 72
+    	at jadx.core.dex.visitors.typeinference.TypeSearch.fillTypeCandidates(TypeSearch.java:237)
+    	at java.util.ArrayList.forEach(ArrayList.java:1257)
+    	at jadx.core.dex.visitors.typeinference.TypeSearch.run(TypeSearch.java:53)
+    	at jadx.core.dex.visitors.typeinference.TypeInferenceVisitor.runMultiVariableSearch(TypeInferenceVisitor.java:99)
+    	at jadx.core.dex.visitors.typeinference.TypeInferenceVisitor.visit(TypeInferenceVisitor.java:92)
+    	at jadx.core.dex.visitors.DepthTraversal.visit(DepthTraversal.java:27)
+    	at jadx.core.dex.visitors.DepthTraversal.lambda$visit$1(DepthTraversal.java:14)
+    	at java.util.ArrayList.forEach(ArrayList.java:1257)
+    	at jadx.core.dex.visitors.DepthTraversal.visit(DepthTraversal.java:14)
+    	at jadx.core.ProcessClass.process(ProcessClass.java:30)
+    	at jadx.core.ProcessClass.lambda$processDependencies$0(ProcessClass.java:49)
+    	at java.util.ArrayList.forEach(ArrayList.java:1257)
+    	at jadx.core.ProcessClass.processDependencies(ProcessClass.java:49)
+    	at jadx.core.ProcessClass.process(ProcessClass.java:35)
+    	at jadx.api.JadxDecompiler.processClass(JadxDecompiler.java:311)
+    	at jadx.api.JavaClass.decompile(JavaClass.java:62)
+    	at jadx.api.JadxDecompiler.lambda$appendSourcesSave$0(JadxDecompiler.java:217)
+     */
+    /* JADX WARNING: Unknown variable types count: 2 */
+    /* Code decompiled incorrectly, please refer to instructions dump. */
+    private static void a(long r12, java.io.PrintWriter r14) {
+        /*
+            r4 = 86400(0x15180, float:1.21072E-40)
+            r0 = 1
+            r1 = 0
+            java.lang.Object r8 = a
+            monitor-enter(r8)
+            char[] r2 = b     // Catch:{ all -> 0x00a1 }
+            int r2 = r2.length     // Catch:{ all -> 0x00a1 }
+            if (r2 >= 0) goto L_0x0012
+            r2 = 0
+            char[] r2 = new char[r2]     // Catch:{ all -> 0x00a1 }
+            b = r2     // Catch:{ all -> 0x00a1 }
+        L_0x0012:
+            char[] r9 = b     // Catch:{ all -> 0x00a1 }
+            r2 = 0
+            int r2 = (r12 > r2 ? 1 : (r12 == r2 ? 0 : -1))
+            if (r2 != 0) goto L_0x002c
+            r1 = 0
+            r2 = 48
+            r9[r1] = r2     // Catch:{ all -> 0x00a1 }
+        L_0x001f:
+            java.lang.String r1 = new java.lang.String     // Catch:{ all -> 0x00a1 }
+            char[] r2 = b     // Catch:{ all -> 0x00a1 }
+            r3 = 0
+            r1.<init>(r2, r3, r0)     // Catch:{ all -> 0x00a1 }
+            r14.print(r1)     // Catch:{ all -> 0x00a1 }
+            monitor-exit(r8)     // Catch:{ all -> 0x00a1 }
+            return
+        L_0x002c:
+            r2 = 0
+            int r2 = (r12 > r2 ? 1 : (r12 == r2 ? 0 : -1))
+            if (r2 <= 0) goto L_0x0096
+            r2 = 43
+            r7 = r2
+        L_0x0035:
+            r2 = 1000(0x3e8, double:4.94E-321)
+            long r2 = r12 % r2
+            int r10 = (int) r2     // Catch:{ all -> 0x00a1 }
+            r2 = 1000(0x3e8, double:4.94E-321)
+            long r2 = r12 / r2
+            double r2 = (double) r2     // Catch:{ all -> 0x00a1 }
+            double r2 = java.lang.Math.floor(r2)     // Catch:{ all -> 0x00a1 }
+            int r3 = (int) r2     // Catch:{ all -> 0x00a1 }
+            if (r3 <= r4) goto L_0x00a9
+            r2 = 86400(0x15180, float:1.21072E-40)
+            int r2 = r3 / r2
+            int r4 = r4 * r2
+            int r3 = r3 - r4
+            r6 = r2
+        L_0x004e:
+            r2 = 3600(0xe10, float:5.045E-42)
+            if (r3 <= r2) goto L_0x00a7
+            int r2 = r3 / 3600
+            int r4 = r2 * 3600
+            int r3 = r3 - r4
+            r5 = r2
+        L_0x0058:
+            r2 = 60
+            if (r3 <= r2) goto L_0x00a4
+            int r2 = r3 / 60
+            int r4 = r2 * 60
+            int r3 = r3 - r4
+            r4 = r3
+            r3 = r2
+        L_0x0063:
+            r2 = 0
+            r9[r2] = r7     // Catch:{ all -> 0x00a1 }
+            r2 = 100
+            r7 = 1
+            r11 = 0
+            int r6 = a(r9, r6, r2, r7, r11)     // Catch:{ all -> 0x00a1 }
+            r7 = 104(0x68, float:1.46E-43)
+            if (r6 == r0) goto L_0x009b
+            r2 = r0
+        L_0x0073:
+            int r5 = a(r9, r5, r7, r6, r2)     // Catch:{ all -> 0x00a1 }
+            r6 = 109(0x6d, float:1.53E-43)
+            if (r5 == r0) goto L_0x009d
+            r2 = r0
+        L_0x007c:
+            int r2 = a(r9, r3, r6, r5, r2)     // Catch:{ all -> 0x00a1 }
+            r3 = 115(0x73, float:1.61E-43)
+            if (r2 == r0) goto L_0x009f
+        L_0x0084:
+            int r0 = a(r9, r4, r3, r2, r0)     // Catch:{ all -> 0x00a1 }
+            r1 = 109(0x6d, float:1.53E-43)
+            r2 = 1
+            int r0 = a(r9, r10, r1, r0, r2)     // Catch:{ all -> 0x00a1 }
+            r1 = 115(0x73, float:1.61E-43)
+            r9[r0] = r1     // Catch:{ all -> 0x00a1 }
+            int r0 = r0 + 1
+            goto L_0x001f
+        L_0x0096:
+            r2 = 45
+            long r12 = -r12
+            r7 = r2
+            goto L_0x0035
+        L_0x009b:
+            r2 = r1
+            goto L_0x0073
+        L_0x009d:
+            r2 = r1
+            goto L_0x007c
+        L_0x009f:
+            r0 = r1
+            goto L_0x0084
+        L_0x00a1:
+            r0 = move-exception
+            monitor-exit(r8)     // Catch:{ all -> 0x00a1 }
+            throw r0
+        L_0x00a4:
+            r4 = r3
+            r3 = r1
+            goto L_0x0063
+        L_0x00a7:
+            r5 = r1
+            goto L_0x0058
+        L_0x00a9:
+            r6 = r1
+            goto L_0x004e
+        */
+        throw new UnsupportedOperationException("Method not decompiled: defpackage.rk.a(long, java.io.PrintWriter):void");
     }
 
-    public static void a(PrintWriter printWriter) {
+    public static void a(java.io.PrintWriter printWriter) {
         a(0, printWriter);
     }
 
-    public static void a(long j, long j2, PrintWriter printWriter) {
+    public static void a(long j, long j2, java.io.PrintWriter printWriter) {
         if (j == 0) {
             printWriter.print("--");
         } else {

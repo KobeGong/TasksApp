@@ -1,18 +1,20 @@
 package defpackage;
 
-/* renamed from: edx  reason: default package */
+/* renamed from: edx reason: default package */
 /* compiled from: PG */
-public final class edx extends dlz {
-    private Boolean a = null;
-    private String b = null;
-    private String c = null;
+public final class edx extends defpackage.dlz {
+    private java.lang.Boolean a;
+    private java.lang.String b;
+    private java.lang.String c;
 
     public edx() {
+        this.a = null;
+        this.b = null;
+        this.c = null;
         this.k = -1;
     }
 
-    @Override // defpackage.dlz, defpackage.dmf
-    public final void a(dlx dlx) {
+    public final void a(defpackage.dlx dlx) {
         if (this.a != null) {
             dlx.a(1, this.a.booleanValue());
         }
@@ -26,43 +28,41 @@ public final class edx extends dlz {
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.dlz, defpackage.dmf
     public final int a() {
         int a2 = super.a();
         if (this.a != null) {
             this.a.booleanValue();
-            a2 += dlx.c(8) + 1;
+            a2 += defpackage.dlx.c(8) + 1;
         }
         if (this.b != null) {
-            a2 += dlx.b(2, this.b);
+            a2 += defpackage.dlx.b(2, this.b);
         }
         if (this.c != null) {
-            return a2 + dlx.b(3, this.c);
+            return a2 + defpackage.dlx.b(3, this.c);
         }
         return a2;
     }
 
-    @Override // defpackage.dmf
-    public final /* synthetic */ dmf a(dlw dlw) {
+    public final /* synthetic */ defpackage.dmf a(defpackage.dlw dlw) {
         while (true) {
             int a2 = dlw.a();
             switch (a2) {
                 case 0:
                     break;
                 case 8:
-                    this.a = Boolean.valueOf(dlw.c());
-                    break;
+                    this.a = java.lang.Boolean.valueOf(dlw.c());
+                    continue;
                 case 18:
                     this.b = dlw.d();
-                    break;
+                    continue;
                 case 26:
                     this.c = dlw.d();
-                    break;
+                    continue;
                 default:
-                    if (super.a(dlw, a2)) {
+                    if (!super.a(dlw, a2)) {
                         break;
                     } else {
-                        break;
+                        continue;
                     }
             }
         }

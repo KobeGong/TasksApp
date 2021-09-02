@@ -1,11 +1,11 @@
 package defpackage;
 
-/* renamed from: crt  reason: default package */
+/* renamed from: crt reason: default package */
 /* compiled from: PG */
 public final class crt {
-    public String a;
-    public Object b;
-    public crt c;
+    public java.lang.String a;
+    public java.lang.Object b;
+    public defpackage.crt c;
 
     crt() {
     }

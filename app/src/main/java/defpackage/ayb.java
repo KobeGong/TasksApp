@@ -1,24 +1,19 @@
 package defpackage;
 
-import android.app.Dialog;
-import android.content.DialogInterface;
-
-/* renamed from: ayb  reason: default package */
+/* renamed from: ayb reason: default package */
 /* compiled from: PG */
-public final class ayb extends lb {
-    public Dialog U = null;
-    public DialogInterface.OnCancelListener V = null;
+public final class ayb extends defpackage.lb {
+    public android.app.Dialog U = null;
+    public android.content.DialogInterface.OnCancelListener V = null;
 
-    @Override // defpackage.lb
-    public final Dialog c() {
+    public final android.app.Dialog c() {
         if (this.U == null) {
-            ((lb) this).b = false;
+            this.b = false;
         }
         return this.U;
     }
 
-    @Override // defpackage.lb
-    public final void onCancel(DialogInterface dialogInterface) {
+    public final void onCancel(android.content.DialogInterface dialogInterface) {
         if (this.V != null) {
             this.V.onCancel(dialogInterface);
         }

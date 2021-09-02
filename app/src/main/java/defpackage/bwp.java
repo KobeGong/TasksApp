@@ -1,18 +1,17 @@
 package defpackage;
 
-/* renamed from: bwp  reason: default package */
+/* renamed from: bwp reason: default package */
 /* compiled from: PG */
-public final class bwp implements ecz {
-    private final ecz a;
+public final class bwp implements defpackage.ecz {
+    private final defpackage.ecz a;
 
-    public bwp(ecz ecz) {
+    public bwp(defpackage.ecz ecz) {
         this.a = ecz;
     }
 
-    @Override // defpackage.ecz
-    public final /* synthetic */ Object a() {
-        bwo bwo = new bwo();
-        bwo.a = (cbw) this.a.a();
+    public final /* synthetic */ java.lang.Object a() {
+        defpackage.bwo bwo = new defpackage.bwo();
+        bwo.a = (defpackage.cbw) this.a.a();
         return bwo;
     }
 }

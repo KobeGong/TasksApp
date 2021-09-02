@@ -1,17 +1,16 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: dyy  reason: default package */
+/* renamed from: dyy reason: default package */
 /* compiled from: PG */
-public final class dyy implements Runnable {
-    public final /* synthetic */ dyw a;
+final class dyy implements java.lang.Runnable {
+    public final /* synthetic */ defpackage.dyw a;
 
-    dyy(dyw dyw) {
+    dyy(defpackage.dyw dyw) {
         this.a = dyw;
     }
 
     public final void run() {
         this.a.b.o = null;
-        this.a.b.d.execute(new dyz(this));
+        this.a.b.d.execute(new defpackage.dyz(this));
     }
 }

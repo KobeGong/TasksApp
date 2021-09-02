@@ -1,17 +1,13 @@
 package android.support.design.widget;
 
-import android.content.Context;
-import android.util.AttributeSet;
-import android.view.View;
-
 /* compiled from: PG */
-public final class Snackbar$SnackbarLayout extends go {
-    public Snackbar$SnackbarLayout(Context context) {
-        super(context, (byte) 0);
+public final class Snackbar$SnackbarLayout extends defpackage.go {
+    public Snackbar$SnackbarLayout(android.content.Context context) {
+        super(context, 0);
     }
 
-    public Snackbar$SnackbarLayout(Context context, AttributeSet attributeSet) {
-        super(context, attributeSet, (byte) 0);
+    public Snackbar$SnackbarLayout(android.content.Context context, android.util.AttributeSet attributeSet) {
+        super(context, attributeSet, 0);
     }
 
     /* access modifiers changed from: protected */
@@ -20,9 +16,9 @@ public final class Snackbar$SnackbarLayout extends go {
         int childCount = getChildCount();
         int measuredWidth = (getMeasuredWidth() - getPaddingLeft()) - getPaddingRight();
         for (int i3 = 0; i3 < childCount; i3++) {
-            View childAt = getChildAt(i3);
+            android.view.View childAt = getChildAt(i3);
             if (childAt.getLayoutParams().width == -1) {
-                childAt.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, 1073741824), View.MeasureSpec.makeMeasureSpec(childAt.getMeasuredHeight(), 1073741824));
+                childAt.measure(android.view.View.MeasureSpec.makeMeasureSpec(measuredWidth, 1073741824), android.view.View.MeasureSpec.makeMeasureSpec(childAt.getMeasuredHeight(), 1073741824));
             }
         }
     }

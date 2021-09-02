@@ -1,25 +1,21 @@
 package defpackage;
 
-import android.content.Context;
-import android.content.SharedPreferences;
-import com.google.android.apps.tasks.common.TaskApplication;
-
-/* renamed from: aiw  reason: default package */
+/* renamed from: aiw reason: default package */
 /* compiled from: PG */
 public final class aiw {
-    private static cyi b;
-    public final SharedPreferences a;
+    private static defpackage.cyi b;
+    public final android.content.SharedPreferences a;
 
-    aiw(SharedPreferences sharedPreferences) {
+    aiw(android.content.SharedPreferences sharedPreferences) {
         this.a = sharedPreferences;
     }
 
-    public static synchronized cyi a(Context context) {
-        cyi cyi;
-        synchronized (aiw.class) {
+    public static synchronized defpackage.cyi a(android.content.Context context) {
+        defpackage.cyi cyi;
+        synchronized (defpackage.aiw.class) {
             if (b == null) {
-                cyu cyu = new cyu();
-                TaskApplication.b().a.execute(new aix(cyu, context));
+                defpackage.cyu cyu = new defpackage.cyu();
+                com.google.android.apps.tasks.common.TaskApplication.getApplication().a.execute(new defpackage.aix(cyu, context));
                 b = cyu;
             }
             cyi = b;
@@ -27,10 +23,10 @@ public final class aiw {
         return cyi;
     }
 
-    public static synchronized aiw b(Context context) {
-        aiw aiw;
-        synchronized (aiw.class) {
-            aiw = (aiw) cyd.c(a(context));
+    public static synchronized defpackage.aiw b(android.content.Context context) {
+        defpackage.aiw aiw;
+        synchronized (defpackage.aiw.class) {
+            aiw = (defpackage.aiw) defpackage.cyd.c(a(context));
         }
         return aiw;
     }

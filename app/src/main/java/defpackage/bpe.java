@@ -1,16 +1,14 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: bpe  reason: default package */
-public final /* synthetic */ class bpe implements bpb {
-    private final boz a;
+/* renamed from: bpe reason: default package */
+final /* synthetic */ class bpe implements defpackage.bpb {
+    private final defpackage.boz a;
 
-    bpe(boz boz) {
+    bpe(defpackage.boz boz) {
         this.a = boz;
     }
 
-    @Override // defpackage.bpb
-    public final Object a() {
-        return bks.a(boz.b.getContentResolver(), this.a.f);
+    public final java.lang.Object a() {
+        return defpackage.bks.a(defpackage.boz.b.getContentResolver(), this.a.f);
     }
 }

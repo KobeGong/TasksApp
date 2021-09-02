@@ -1,24 +1,19 @@
 package defpackage;
 
-import android.os.Bundle;
-
-/* access modifiers changed from: package-private */
-/* renamed from: azy  reason: default package */
+/* renamed from: azy reason: default package */
 /* compiled from: PG */
-public final class azy implements ben {
-    private /* synthetic */ azx a;
+final class azy implements defpackage.ben {
+    private /* synthetic */ defpackage.azx a;
 
-    azy(azx azx) {
+    azy(defpackage.azx azx) {
         this.a = azx;
     }
 
-    @Override // defpackage.ben
     public final boolean f() {
         return this.a.j();
     }
 
-    @Override // defpackage.ben
-    public final Bundle a() {
+    public final android.os.Bundle a() {
         return null;
     }
 }

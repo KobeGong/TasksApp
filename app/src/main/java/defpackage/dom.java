@@ -1,13 +1,13 @@
 package defpackage;
 
-/* renamed from: dom  reason: default package */
+/* renamed from: dom reason: default package */
 /* compiled from: PG */
 public abstract class dom {
-    public abstract dop a(doe doe, dmv dmv);
+    public abstract defpackage.dop a(defpackage.doe doe, defpackage.dmv dmv);
 
-    public abstract void a(dnq dnq, doq doq);
+    public abstract void a(defpackage.dnq dnq, defpackage.doq doq);
 
-    public void a(dop dop, doe doe) {
-        throw new UnsupportedOperationException();
+    public void a(defpackage.dop dop, defpackage.doe doe) {
+        throw new java.lang.UnsupportedOperationException();
     }
 }

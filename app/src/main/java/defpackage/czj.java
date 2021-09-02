@@ -1,6 +1,6 @@
 package defpackage;
 
-/* renamed from: czj  reason: default package */
+/* renamed from: czj reason: default package */
 /* compiled from: PG */
 public enum czj {
     BEGIN_ARRAY,

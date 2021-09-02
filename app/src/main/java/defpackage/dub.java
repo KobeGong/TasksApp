@@ -1,14 +1,12 @@
 package defpackage;
 
-import java.io.InputStream;
-
-/* renamed from: dub  reason: default package */
+/* renamed from: dub reason: default package */
 /* compiled from: PG */
-final class dub implements Runnable {
-    private final /* synthetic */ InputStream a;
-    private final /* synthetic */ dtt b;
+final class dub implements java.lang.Runnable {
+    private final /* synthetic */ java.io.InputStream a;
+    private final /* synthetic */ defpackage.dtt b;
 
-    dub(dtt dtt, InputStream inputStream) {
+    dub(defpackage.dtt dtt, java.io.InputStream inputStream) {
         this.b = dtt;
         this.a = inputStream;
     }

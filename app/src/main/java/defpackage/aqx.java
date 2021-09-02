@@ -1,46 +1,42 @@
 package defpackage;
 
-import android.content.res.Resources;
-import com.google.android.apps.tasks.R;
-import com.google.android.apps.tasks.ui.components.snackbar.Snackbar;
+/* renamed from: aqx reason: default package */
+public final /* synthetic */ class aqx implements java.lang.Runnable {
+    private final defpackage.aoc a;
+    private final java.lang.Object b;
 
-/* renamed from: aqx  reason: default package */
-public final /* synthetic */ class aqx implements Runnable {
-    private final aoc a;
-    private final Object b;
-
-    public aqx(aoc aoc, Object obj) {
+    public aqx(defpackage.aoc aoc, java.lang.Object obj) {
         this.a = aoc;
         this.b = obj;
     }
 
     public final void run() {
-        dcd dcd;
-        aoc aoc = this.a;
-        Object obj = this.b;
+        defpackage.dcd dcd;
+        defpackage.aoc aoc = this.a;
+        java.lang.Object obj = this.b;
         if (!aoc.a.r()) {
             if (aoc.a.s != null) {
                 aoc.a.s.a(3);
             }
-            if (obj instanceof ajp) {
-                ajp ajp = (ajp) obj;
-                Resources resources = aoc.a.getResources();
+            if (obj instanceof defpackage.ajp) {
+                defpackage.ajp ajp = (defpackage.ajp) obj;
+                android.content.res.Resources resources = aoc.a.getResources();
                 int b2 = ajp.b();
-                Object[] objArr = new Object[2];
-                objArr[0] = Integer.valueOf(ajp.b());
-                dcb a2 = ajp.a();
+                java.lang.Object[] objArr = new java.lang.Object[2];
+                objArr[0] = java.lang.Integer.valueOf(ajp.b());
+                defpackage.dcb a2 = ajp.a();
                 if (a2.c == null) {
-                    dcd = dcd.c;
+                    dcd = defpackage.dcd.c;
                 } else {
                     dcd = a2.c;
                 }
                 objArr[1] = dcd.a;
-                String quantityString = resources.getQuantityString(R.plurals.deleted_and_moved_task_restored, b2, objArr);
-                aoc.a.s = Snackbar.a(aoc.a.m(), quantityString, 0);
+                java.lang.String quantityString = resources.getQuantityString(2131886081, b2, objArr);
+                aoc.a.s = com.google.android.apps.tasks.ui.components.snackbar.Snackbar.a(aoc.a.m(), (java.lang.CharSequence) quantityString, 0);
                 aoc.a.s.d.setContentDescription(quantityString);
                 aoc.a.s.a();
-            } else if (obj instanceof ajn) {
-                aoc.a.a((ajn) obj);
+            } else if (obj instanceof defpackage.ajn) {
+                aoc.a.a((defpackage.ajn) obj);
             }
         }
     }

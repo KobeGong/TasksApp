@@ -1,38 +1,33 @@
 package defpackage;
 
-import android.view.InflateException;
-import android.view.MenuItem;
-import java.lang.reflect.Method;
-
-/* access modifiers changed from: package-private */
-/* renamed from: yk  reason: default package */
+/* renamed from: yk reason: default package */
 /* compiled from: PG */
-public final class yk implements MenuItem.OnMenuItemClickListener {
-    private static final Class[] a = {MenuItem.class};
-    private Object b;
-    private Method c;
+final class yk implements android.view.MenuItem.OnMenuItemClickListener {
+    private static final java.lang.Class[] a = {android.view.MenuItem.class};
+    private java.lang.Object b;
+    private java.lang.reflect.Method c;
 
-    public yk(Object obj, String str) {
+    public yk(java.lang.Object obj, java.lang.String str) {
         this.b = obj;
-        Class<?> cls = obj.getClass();
+        java.lang.Class cls = obj.getClass();
         try {
             this.c = cls.getMethod(str, a);
-        } catch (Exception e) {
-            InflateException inflateException = new InflateException("Couldn't resolve menu item onClick handler " + str + " in class " + cls.getName());
+        } catch (java.lang.Exception e) {
+            android.view.InflateException inflateException = new android.view.InflateException("Couldn't resolve menu item onClick handler " + str + " in class " + cls.getName());
             inflateException.initCause(e);
             throw inflateException;
         }
     }
 
-    public final boolean onMenuItemClick(MenuItem menuItem) {
+    public final boolean onMenuItemClick(android.view.MenuItem menuItem) {
         try {
-            if (this.c.getReturnType() == Boolean.TYPE) {
-                return ((Boolean) this.c.invoke(this.b, menuItem)).booleanValue();
+            if (this.c.getReturnType() == java.lang.Boolean.TYPE) {
+                return ((java.lang.Boolean) this.c.invoke(this.b, new java.lang.Object[]{menuItem})).booleanValue();
             }
-            this.c.invoke(this.b, menuItem);
+            this.c.invoke(this.b, new java.lang.Object[]{menuItem});
             return true;
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+        } catch (java.lang.Exception e) {
+            throw new java.lang.RuntimeException(e);
         }
     }
 }

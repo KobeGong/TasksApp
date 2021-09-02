@@ -1,28 +1,26 @@
 package defpackage;
 
-import android.net.Uri;
-
-/* renamed from: cpx  reason: default package */
+/* renamed from: cpx reason: default package */
 /* compiled from: PG */
 public final class cpx {
-    private static cpz a = new cpz();
+    private static defpackage.cpz a = new defpackage.cpz();
 
     static int a() {
         return 0;
     }
 
-    public static String a(String str, int i, int i2, int i3) {
-        String a2 = a.a(str, i, i2, i3, cpy.a);
+    public static java.lang.String a(java.lang.String str, int i, int i2, int i3) {
+        java.lang.String a2 = a.a(str, i, i2, i3, defpackage.cpy.a);
         if (a2 != null) {
             return a2;
         }
         if (i2 == 0 && i3 == 0) {
             return str;
         }
-        return cqa.a(i2, i3, str);
+        return defpackage.cqa.a(i2, i3, str);
     }
 
-    public static boolean a(String str) {
+    public static boolean a(java.lang.String str) {
         if (str == null) {
             return false;
         }
@@ -30,6 +28,6 @@ public final class cpx {
     }
 
     static {
-        Uri.parse("https://lh3.googleusercontent.com");
+        android.net.Uri.parse("https://lh3.googleusercontent.com");
     }
 }

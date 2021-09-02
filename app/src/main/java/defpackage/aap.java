@@ -1,49 +1,35 @@
 package defpackage;
 
-import android.content.Context;
-import android.content.res.Resources;
-import android.os.Build;
-import android.os.Parcelable;
-import android.support.v7.view.menu.ActionMenuItemView;
-import android.support.v7.widget.ActionMenuView;
-import android.util.SparseBooleanArray;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewConfiguration;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-
-/* renamed from: aap  reason: default package */
+/* renamed from: aap reason: default package */
 /* compiled from: PG */
-public final class aap extends ys {
-    public aas g;
+public final class aap extends defpackage.ys {
+    public defpackage.aas g;
     public int h;
     public boolean i;
-    public aau j;
-    public aaq k;
-    public aar l;
-    public final aav m = new aav(this);
+    public defpackage.aau j;
+    public defpackage.aaq k;
+    public defpackage.aar l;
+    public final defpackage.aav m = new defpackage.aav(this);
     public int n;
     private boolean o;
     private boolean p;
     private int q;
     private int r;
-    private final SparseBooleanArray s = new SparseBooleanArray();
-    private View t;
-    private yr u;
+    private final android.util.SparseBooleanArray s = new android.util.SparseBooleanArray();
+    private android.view.View t;
+    private defpackage.yr u;
 
-    public aap(Context context) {
+    public aap(android.content.Context context) {
         super(context);
     }
 
-    @Override // defpackage.ys, defpackage.zt
-    public final void a(Context context, MenuBuilder zeVar) {
+    public final void a(android.content.Context context, defpackage.ze zeVar) {
         boolean z = true;
         super.a(context, zeVar);
-        Resources resources = context.getResources();
-        yb a = yb.a(context);
+        android.content.res.Resources resources = context.getResources();
+        defpackage.yb a = defpackage.yb.a(context);
         if (!this.p) {
-            if (Build.VERSION.SDK_INT < 19 && ViewConfiguration.get(a.a).hasPermanentMenuKey()) {
+            if (android.os.Build.VERSION.SDK_INT < 19 && android.view.ViewConfiguration.get(a.a).hasPermanentMenuKey()) {
                 z = false;
             }
             this.o = z;
@@ -53,8 +39,8 @@ public final class aap extends ys {
         int i2 = this.q;
         if (this.o) {
             if (this.g == null) {
-                this.g = new aas(this, this.a);
-                int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, 0);
+                this.g = new defpackage.aas(this, this.a);
+                int makeMeasureSpec = android.view.View.MeasureSpec.makeMeasureSpec(0, 0);
                 this.g.measure(makeMeasureSpec, makeMeasureSpec);
             }
             i2 -= this.g.getMeasuredWidth();
@@ -71,91 +57,93 @@ public final class aap extends ys {
         this.p = true;
     }
 
-    @Override // defpackage.ys
-    public final zv a(ViewGroup viewGroup) {
-        zv zvVar = this.e;
-        zv a = super.a(viewGroup);
+    public final defpackage.zv a(android.view.ViewGroup viewGroup) {
+        defpackage.zv zvVar = this.e;
+        defpackage.zv a = super.a(viewGroup);
         if (zvVar != a) {
-            ((ActionMenuView) a).a(this);
+            ((android.support.v7.widget.ActionMenuView) a).a(this);
         }
         return a;
     }
 
-    @Override // defpackage.ys
-    public final View a(MenuItemImpl ziVar, View view, ViewGroup viewGroup) {
-        View actionView = ziVar.getActionView();
+    public final android.view.View a(defpackage.zi ziVar, android.view.View view, android.view.ViewGroup viewGroup) {
+        android.view.View actionView = ziVar.getActionView();
         if (actionView == null || ziVar.i()) {
             actionView = super.a(ziVar, view, viewGroup);
         }
         actionView.setVisibility(ziVar.isActionViewExpanded() ? 8 : 0);
-        ViewGroup.LayoutParams layoutParams = actionView.getLayoutParams();
-        if (!((ActionMenuView) viewGroup).checkLayoutParams(layoutParams)) {
-            actionView.setLayoutParams(ActionMenuView.a(layoutParams));
+        android.support.v7.widget.ActionMenuView actionMenuView = (android.support.v7.widget.ActionMenuView) viewGroup;
+        android.view.ViewGroup.LayoutParams layoutParams = actionView.getLayoutParams();
+        if (!actionMenuView.checkLayoutParams(layoutParams)) {
+            actionView.setLayoutParams(android.support.v7.widget.ActionMenuView.a(layoutParams));
         }
         return actionView;
     }
 
-    @Override // defpackage.ys
-    public final void a(MenuItemImpl ziVar, zw zwVar) {
+    public final void a(defpackage.zi ziVar, defpackage.zw zwVar) {
         zwVar.a(ziVar);
-        ActionMenuItemView actionMenuItemView = (ActionMenuItemView) zwVar;
-        actionMenuItemView.c = (ActionMenuView) this.e;
+        android.support.v7.view.menu.ActionMenuItemView actionMenuItemView = (android.support.v7.view.menu.ActionMenuItemView) zwVar;
+        actionMenuItemView.c = (android.support.v7.widget.ActionMenuView) this.e;
         if (this.u == null) {
-            this.u = new yr(this);
+            this.u = new defpackage.yr(this);
         }
         actionMenuItemView.d = this.u;
     }
 
-    @Override // defpackage.ys
-    public final boolean c(MenuItemImpl ziVar) {
+    public final boolean c(defpackage.zi ziVar) {
         return ziVar.f();
     }
 
-    @Override // defpackage.ys, defpackage.zt
     public final void a(boolean z) {
-        boolean z2 = false;
+        boolean z2;
+        boolean z3 = false;
         super.a(z);
-        ((View) this.e).requestLayout();
+        ((android.view.View) this.e).requestLayout();
         if (this.c != null) {
-            MenuBuilder zeVar = this.c;
+            defpackage.ze zeVar = this.c;
             zeVar.j();
-            ArrayList arrayList = zeVar.d;
+            java.util.ArrayList arrayList = zeVar.d;
             int size = arrayList.size();
             for (int i2 = 0; i2 < size; i2++) {
                 arrayList.get(i2);
             }
         }
-        ArrayList k2 = this.c != null ? this.c.k() : null;
-        if (this.o && k2 != null) {
-            int size2 = k2.size();
+        java.util.ArrayList arrayList2 = this.c != null ? this.c.k() : null;
+        if (this.o && arrayList2 != null) {
+            int size2 = arrayList2.size();
             if (size2 == 1) {
-                z2 = !((MenuItemImpl) k2.get(0)).isActionViewExpanded();
+                if (!((defpackage.zi) arrayList2.get(0)).isActionViewExpanded()) {
+                    z2 = true;
+                } else {
+                    z2 = false;
+                }
+                z3 = z2;
             } else if (size2 > 0) {
-                z2 = true;
+                z3 = true;
             }
         }
-        if (z2) {
+        if (z3) {
             if (this.g == null) {
-                this.g = new aas(this, this.a);
+                this.g = new defpackage.aas(this, this.a);
             }
-            ViewGroup viewGroup = (ViewGroup) this.g.getParent();
+            android.view.ViewGroup viewGroup = (android.view.ViewGroup) this.g.getParent();
             if (viewGroup != this.e) {
                 if (viewGroup != null) {
                     viewGroup.removeView(this.g);
                 }
-                aas aas = this.g;
-                aba a = ActionMenuView.a();
+                android.support.v7.widget.ActionMenuView actionMenuView = (android.support.v7.widget.ActionMenuView) this.e;
+                defpackage.aas aas = this.g;
+                defpackage.aba a = android.support.v7.widget.ActionMenuView.a();
                 a.a = true;
-                ((ActionMenuView) this.e).addView(aas, a);
+                actionMenuView.addView(aas, a);
             }
         } else if (this.g != null && this.g.getParent() == this.e) {
-            ((ViewGroup) this.e).removeView(this.g);
+            ((android.view.ViewGroup) this.e).removeView(this.g);
         }
-        ((ActionMenuView) this.e).b = this.o;
+        ((android.support.v7.widget.ActionMenuView) this.e).b = this.o;
     }
 
-    @Override // defpackage.ys
-    public final boolean a(ViewGroup viewGroup, int i2) {
+    public final boolean a(android.view.ViewGroup viewGroup, int i2) {
         if (viewGroup.getChildAt(i2) == this.g) {
             return false;
         }
@@ -164,11 +152,87 @@ public final class aap extends ys {
 
     /* JADX WARNING: Removed duplicated region for block: B:15:0x0039  */
     /* JADX WARNING: Removed duplicated region for block: B:41:? A[RETURN, SYNTHETIC] */
-    @Override // defpackage.ys, defpackage.zt
     /* Code decompiled incorrectly, please refer to instructions dump. */
     public final boolean a(defpackage.aad r9) {
         /*
-        // Method dump skipped, instructions count: 137
+            r8 = this;
+            r3 = 1
+            r4 = 0
+            boolean r0 = r9.hasVisibleItems()
+            if (r0 != 0) goto L_0x0009
+        L_0x0008:
+            return r4
+        L_0x0009:
+            r0 = r9
+        L_0x000a:
+            ze r1 = r0.l
+            ze r2 = r8.c
+            if (r1 == r2) goto L_0x0015
+            ze r0 = r0.l
+            aad r0 = (defpackage.aad) r0
+            goto L_0x000a
+        L_0x0015:
+            android.view.MenuItem r6 = r0.getItem()
+            zv r0 = r8.e
+            android.view.ViewGroup r0 = (android.view.ViewGroup) r0
+            if (r0 == 0) goto L_0x007d
+            int r7 = r0.getChildCount()
+            r5 = r4
+        L_0x0024:
+            if (r5 >= r7) goto L_0x007d
+            android.view.View r2 = r0.getChildAt(r5)
+            boolean r1 = r2 instanceof defpackage.zw
+            if (r1 == 0) goto L_0x0079
+            r1 = r2
+            zw r1 = (defpackage.zw) r1
+            zi r1 = r1.a()
+            if (r1 != r6) goto L_0x0079
+        L_0x0037:
+            if (r2 == 0) goto L_0x0008
+            android.view.MenuItem r0 = r9.getItem()
+            int r0 = r0.getItemId()
+            r8.n = r0
+            int r1 = r9.size()
+            r0 = r4
+        L_0x0048:
+            if (r0 >= r1) goto L_0x0087
+            android.view.MenuItem r5 = r9.getItem(r0)
+            boolean r6 = r5.isVisible()
+            if (r6 == 0) goto L_0x007f
+            android.graphics.drawable.Drawable r5 = r5.getIcon()
+            if (r5 == 0) goto L_0x007f
+            r0 = r3
+        L_0x005b:
+            aaq r1 = new aaq
+            android.content.Context r4 = r8.b
+            r1.<init>(r8, r4, r9, r2)
+            r8.k = r1
+            aaq r1 = r8.k
+            r1.a(r0)
+            aaq r0 = r8.k
+            boolean r0 = r0.b()
+            if (r0 != 0) goto L_0x0082
+            java.lang.IllegalStateException r0 = new java.lang.IllegalStateException
+            java.lang.String r1 = "MenuPopupHelper cannot be used without an anchor"
+            r0.<init>(r1)
+            throw r0
+        L_0x0079:
+            int r1 = r5 + 1
+            r5 = r1
+            goto L_0x0024
+        L_0x007d:
+            r2 = 0
+            goto L_0x0037
+        L_0x007f:
+            int r0 = r0 + 1
+            goto L_0x0048
+        L_0x0082:
+            super.a(r9)
+            r4 = r3
+            goto L_0x0008
+        L_0x0087:
+            r0 = r4
+            goto L_0x005b
         */
         throw new UnsupportedOperationException("Method not decompiled: defpackage.aap.a(aad):boolean");
     }
@@ -177,22 +241,22 @@ public final class aap extends ys {
         if (!this.o || i() || this.c == null || this.e == null || this.l != null || this.c.k().isEmpty()) {
             return false;
         }
-        this.l = new aar(this, new aau(this, this.b, this.c, this.g));
-        ((View) this.e).post(this.l);
-        super.a((aad) null);
+        this.l = new defpackage.aar(this, new defpackage.aau(this, this.b, this.c, this.g));
+        ((android.view.View) this.e).post(this.l);
+        super.a((defpackage.aad) null);
         return true;
     }
 
     public final boolean f() {
         if (this.l == null || this.e == null) {
-            aau aau = this.j;
+            defpackage.aau aau = this.j;
             if (aau == null) {
                 return false;
             }
             aau.c();
             return true;
         }
-        ((View) this.e).removeCallbacks(this.l);
+        ((android.view.View) this.e).removeCallbacks(this.l);
         this.l = null;
         return true;
     }
@@ -213,10 +277,9 @@ public final class aap extends ys {
         return this.j != null && this.j.e();
     }
 
-    @Override // defpackage.ys, defpackage.zt
     public final boolean a() {
         int i2;
-        ArrayList arrayList;
+        java.util.ArrayList arrayList;
         int i3;
         int i4;
         int i5;
@@ -226,7 +289,7 @@ public final class aap extends ys {
         int i8;
         int i9;
         if (this.c != null) {
-            ArrayList i10 = this.c.i();
+            java.util.ArrayList i10 = this.c.i();
             i2 = i10.size();
             arrayList = i10;
         } else {
@@ -235,14 +298,14 @@ public final class aap extends ys {
         }
         int i11 = this.h;
         int i12 = this.r;
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, 0);
-        ViewGroup viewGroup = (ViewGroup) this.e;
+        int makeMeasureSpec = android.view.View.MeasureSpec.makeMeasureSpec(0, 0);
+        android.view.ViewGroup viewGroup = (android.view.ViewGroup) this.e;
         int i13 = 0;
         int i14 = 0;
         boolean z2 = false;
         int i15 = 0;
         while (i15 < i2) {
-            MenuItemImpl ziVar = (MenuItemImpl) arrayList.get(i15);
+            defpackage.zi ziVar = (defpackage.zi) arrayList.get(i15);
             if (ziVar.h()) {
                 i13++;
             } else if (ziVar.g()) {
@@ -262,16 +325,16 @@ public final class aap extends ys {
             i11--;
         }
         int i16 = i11 - i13;
-        SparseBooleanArray sparseBooleanArray = this.s;
+        android.util.SparseBooleanArray sparseBooleanArray = this.s;
         sparseBooleanArray.clear();
         int i17 = 0;
         int i18 = i12;
         int i19 = i16;
         int i20 = 0;
         while (i17 < i2) {
-            MenuItemImpl ziVar2 = (MenuItemImpl) arrayList.get(i17);
+            defpackage.zi ziVar2 = (defpackage.zi) arrayList.get(i17);
             if (ziVar2.h()) {
-                View a = a(ziVar2, this.t, viewGroup);
+                android.view.View a = a(ziVar2, this.t, viewGroup);
                 if (this.t == null) {
                     this.t = a;
                 }
@@ -293,7 +356,7 @@ public final class aap extends ys {
                 boolean z3 = sparseBooleanArray.get(groupId2);
                 boolean z4 = (i19 > 0 || z3) && i18 > 0;
                 if (z4) {
-                    View a2 = a(ziVar2, this.t, viewGroup);
+                    android.view.View a2 = a(ziVar2, this.t, viewGroup);
                     if (this.t == null) {
                         this.t = a2;
                     }
@@ -320,7 +383,7 @@ public final class aap extends ys {
                     sparseBooleanArray.put(groupId2, false);
                     int i23 = i19;
                     for (int i24 = 0; i24 < i17; i24++) {
-                        MenuItemImpl ziVar3 = (MenuItemImpl) arrayList.get(i24);
+                        defpackage.zi ziVar3 = (defpackage.zi) arrayList.get(i24);
                         if (ziVar3.getGroupId() == groupId2) {
                             if (ziVar3.f()) {
                                 i23++;
@@ -353,31 +416,30 @@ public final class aap extends ys {
         return true;
     }
 
-    @Override // defpackage.ys, defpackage.zt
-    public final void a(MenuBuilder zeVar, boolean z) {
+    public final void a(defpackage.ze zeVar, boolean z) {
         g();
         super.a(zeVar, z);
     }
 
-    @Override // defpackage.zt
-    public final Parcelable c() {
-        aaw aaw = new aaw();
+    public final android.os.Parcelable c() {
+        defpackage.aaw aaw = new defpackage.aaw();
         aaw.a = this.n;
         return aaw;
     }
 
-    @Override // defpackage.zt
-    public final void a(Parcelable parcelable) {
-        MenuItem findItem;
-        if (parcelable instanceof aaw) {
-            aaw aaw = (aaw) parcelable;
-            if (aaw.a > 0 && (findItem = this.c.findItem(aaw.a)) != null) {
-                a((aad) findItem.getSubMenu());
+    public final void a(android.os.Parcelable parcelable) {
+        if (parcelable instanceof defpackage.aaw) {
+            defpackage.aaw aaw = (defpackage.aaw) parcelable;
+            if (aaw.a > 0) {
+                android.view.MenuItem findItem = this.c.findItem(aaw.a);
+                if (findItem != null) {
+                    a((defpackage.aad) findItem.getSubMenu());
+                }
             }
         }
     }
 
-    public final void a(ActionMenuView actionMenuView) {
+    public final void a(android.support.v7.widget.ActionMenuView actionMenuView) {
         this.e = actionMenuView;
         actionMenuView.a = this.c;
     }

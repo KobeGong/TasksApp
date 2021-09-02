@@ -1,27 +1,22 @@
 package defpackage;
 
-import java.util.Collections;
-
-/* renamed from: dqx  reason: default package */
+/* renamed from: dqx reason: default package */
 /* compiled from: PG */
-final class dqx extends dpf {
-    private final /* synthetic */ dqw a;
+final class dqx extends defpackage.dpf {
+    private final /* synthetic */ defpackage.dqw a;
 
-    dqx(dqw dqw) {
+    dqx(defpackage.dqw dqw) {
         this.a = dqw;
     }
 
-    @Override // defpackage.dpf
-    public final String a() {
+    public final java.lang.String a() {
         return this.a.c;
     }
 
-    @Override // defpackage.dpf
-    public final void a(dph dph) {
-        dph.a(Collections.singletonList(new doe(this.a.b)), dmv.b);
+    public final void a(defpackage.dph dph) {
+        dph.a(java.util.Collections.singletonList(new defpackage.doe(this.a.b)), defpackage.dmv.b);
     }
 
-    @Override // defpackage.dpf
     public final void b() {
     }
 }

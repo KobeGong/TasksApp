@@ -1,47 +1,42 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: ctv  reason: default package */
+/* renamed from: ctv reason: default package */
 /* compiled from: PG */
-public final class ctv extends ctt {
-    private final String b;
-    private final String c;
+final class ctv extends defpackage.ctt {
+    private final java.lang.String b;
+    private final java.lang.String c;
     private final int d;
-    private final String e;
+    private final java.lang.String e;
     private int f = 0;
 
-    ctv(String str, String str2, int i, String str3) {
-        this.b = (String) cub.a(str, "class name");
-        this.c = (String) cub.a(str2, "method name");
+    ctv(java.lang.String str, java.lang.String str2, int i, java.lang.String str3) {
+        this.b = (java.lang.String) defpackage.cub.a((java.lang.Object) str, "class name");
+        this.c = (java.lang.String) defpackage.cub.a((java.lang.Object) str2, "method name");
         this.d = 105;
         this.e = str3;
     }
 
-    @Override // defpackage.ctt
-    public final String a() {
+    public final java.lang.String a() {
         return this.b.replace('/', '.');
     }
 
-    @Override // defpackage.ctt
-    public final String b() {
+    public final java.lang.String b() {
         return this.c;
     }
 
-    @Override // defpackage.ctt
     public final int c() {
         return this.d & 65535;
     }
 
-    @Override // defpackage.ctt
-    public final String d() {
+    public final java.lang.String d() {
         return this.e;
     }
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof ctv)) {
+    public final boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof defpackage.ctv)) {
             return false;
         }
-        ctv ctv = (ctv) obj;
+        defpackage.ctv ctv = (defpackage.ctv) obj;
         if (!this.b.equals(ctv.b) || !this.c.equals(ctv.c) || this.d != ctv.d) {
             return false;
         }

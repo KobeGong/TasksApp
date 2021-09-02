@@ -1,25 +1,16 @@
 package defpackage;
 
-import android.content.Context;
-import android.content.res.Resources;
-import android.graphics.drawable.Drawable;
-import android.util.AttributeSet;
-import android.util.Log;
-import org.xmlpull.v1.XmlPullParser;
-
-/* access modifiers changed from: package-private */
-/* renamed from: abp  reason: default package */
+/* renamed from: abp reason: default package */
 /* compiled from: PG */
-public final class abp implements abo {
+final class abp implements defpackage.abo {
     abp() {
     }
 
-    @Override // defpackage.abo
-    public final Drawable a(Context context, XmlPullParser xmlPullParser, AttributeSet attributeSet, Resources.Theme theme) {
+    public final android.graphics.drawable.Drawable a(android.content.Context context, org.xmlpull.v1.XmlPullParser xmlPullParser, android.util.AttributeSet attributeSet, android.content.res.Resources.Theme theme) {
         try {
-            return hp.a(context.getResources(), xmlPullParser, attributeSet, theme);
-        } catch (Exception e) {
-            Log.e("VdcInflateDelegate", "Exception while inflating <vector>", e);
+            return defpackage.hp.a(context.getResources(), xmlPullParser, attributeSet, theme);
+        } catch (java.lang.Exception e) {
+            android.util.Log.e("VdcInflateDelegate", "Exception while inflating <vector>", e);
             return null;
         }
     }

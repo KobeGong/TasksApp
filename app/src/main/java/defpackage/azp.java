@@ -1,18 +1,16 @@
 package defpackage;
 
-/* renamed from: azp  reason: default package */
+/* renamed from: azp reason: default package */
 /* compiled from: PG */
-final class azp extends bag {
-    private /* synthetic */ bda b;
+final class azp extends defpackage.bag {
+    private /* synthetic */ defpackage.bda b;
 
-    /* JADX INFO: super call moved to the top of the method (can break code semantics) */
-    azp(bae bae, bda bda) {
-        super(bae);
+    azp(defpackage.bae bae, defpackage.bda bda) {
         this.b = bda;
+        super(bae);
     }
 
-    @Override // defpackage.bag
     public final void a() {
-        this.b.a(new axq(16, null));
+        this.b.a(new defpackage.axq(16, null));
     }
 }

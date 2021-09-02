@@ -1,40 +1,31 @@
 package defpackage;
 
-import android.content.Context;
-import android.content.res.TypedArray;
-import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import android.util.AttributeSet;
-import android.widget.FrameLayout;
-
-/* renamed from: fn  reason: default package */
+/* renamed from: fn reason: default package */
 /* compiled from: PG */
-/* compiled from: ScrimInsetsFrameLayout */
-public class fn extends FrameLayout {
-    public Drawable a;
-    public Rect b;
-    private Rect c;
+public class fn extends android.widget.FrameLayout {
+    public android.graphics.drawable.Drawable a;
+    public android.graphics.Rect b;
+    private android.graphics.Rect c;
 
-    public fn(Context context) {
+    public fn(android.content.Context context) {
         this(context, null);
     }
 
-    public fn(Context context, AttributeSet attributeSet) {
+    public fn(android.content.Context context, android.util.AttributeSet attributeSet) {
         this(context, attributeSet, 0);
     }
 
-    public fn(Context context, AttributeSet attributeSet, int i) {
+    public fn(android.content.Context context, android.util.AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.c = new Rect();
-        TypedArray a2 = fp.a(context, attributeSet, fm.e, i, 2132017720);
-        this.a = a2.getDrawable(fm.f);
+        this.c = new android.graphics.Rect();
+        android.content.res.TypedArray a2 = defpackage.fp.a(context, attributeSet, defpackage.fm.e, i, 2132017720);
+        this.a = a2.getDrawable(defpackage.fm.f);
         a2.recycle();
         setWillNotDraw(true);
-        sn.a(this, new fo(this));
+        defpackage.sn.a((android.view.View) this, (defpackage.sl) new defpackage.fo(this));
     }
 
-    public void draw(Canvas canvas) {
+    public void draw(android.graphics.Canvas canvas) {
         super.draw(canvas);
         int width = getWidth();
         int height = getHeight();
@@ -73,6 +64,6 @@ public class fn extends FrameLayout {
         }
     }
 
-    public void a(tk tkVar) {
+    public void a(defpackage.tk tkVar) {
     }
 }

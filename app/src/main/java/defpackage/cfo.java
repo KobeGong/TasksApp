@@ -1,32 +1,26 @@
 package defpackage;
 
-import android.content.Context;
-import android.os.Handler;
-import java.util.List;
-
-/* renamed from: cfo  reason: default package */
+/* renamed from: cfo reason: default package */
 /* compiled from: PG */
-final class cfo extends cdm {
-    public final /* synthetic */ cfm a;
+final class cfo extends defpackage.cdm {
+    public final /* synthetic */ defpackage.cfm a;
 
-    cfo(cfm cfm) {
+    cfo(defpackage.cfm cfm) {
         this.a = cfm;
     }
 
-    @Override // defpackage.cdm
-    public final void a(List list, List list2) {
-        a(new cfp(this));
+    public final void a(java.util.List list, java.util.List list2) {
+        a(new defpackage.cfp(this));
     }
 
-    @Override // defpackage.cdm
-    public final void a(Object obj, Object obj2, Object obj3) {
-        a(new cfq(this));
+    public final void a(java.lang.Object obj, java.lang.Object obj2, java.lang.Object obj3) {
+        a(new defpackage.cfq(this));
     }
 
-    private final void a(Runnable runnable) {
-        Context context = this.a.getContext();
+    private final void a(java.lang.Runnable runnable) {
+        android.content.Context context = this.a.getContext();
         if (context != null) {
-            new Handler(context.getMainLooper()).post(runnable);
+            new android.os.Handler(context.getMainLooper()).post(runnable);
         }
     }
 }

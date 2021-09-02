@@ -1,25 +1,21 @@
 package defpackage;
 
-import com.google.android.gms.common.api.Status;
-
-/* renamed from: bmc  reason: default package */
+/* renamed from: bmc reason: default package */
 /* compiled from: PG */
-public abstract class bmc extends bca {
-    public bmc(ayp ayp) {
-        super(blz.b, ayp);
+public abstract class bmc extends defpackage.bca {
+    public bmc(defpackage.ayp ayp) {
+        super(defpackage.blz.b, ayp);
     }
 
-    @Override // defpackage.bcb, defpackage.bca
-    public final /* bridge */ /* synthetic */ void a(Object obj) {
-        super.a((ayw) obj);
+    public final /* bridge */ /* synthetic */ void a(java.lang.Object obj) {
+        super.a((defpackage.ayw) obj);
     }
 
-    public bmc(ayp ayp, byte b) {
+    public bmc(defpackage.ayp ayp, byte b) {
         this(ayp);
     }
 
-    @Override // com.google.android.gms.common.api.internal.BasePendingResult
-    public ayw a(Status status) {
+    public defpackage.ayw a(com.google.android.gms.common.api.Status status) {
         return status;
     }
 }

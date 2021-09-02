@@ -1,17 +1,15 @@
 package defpackage;
 
-import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
-
-/* renamed from: cxf  reason: default package */
+/* renamed from: cxf reason: default package */
 /* compiled from: PG */
-final class cxf extends cxa {
-    public final AtomicReferenceFieldUpdater a;
-    public final AtomicReferenceFieldUpdater b;
-    public final AtomicReferenceFieldUpdater c;
-    public final AtomicReferenceFieldUpdater d;
-    public final AtomicReferenceFieldUpdater e;
+final class cxf extends defpackage.cxa {
+    public final java.util.concurrent.atomic.AtomicReferenceFieldUpdater a;
+    public final java.util.concurrent.atomic.AtomicReferenceFieldUpdater b;
+    public final java.util.concurrent.atomic.AtomicReferenceFieldUpdater c;
+    public final java.util.concurrent.atomic.AtomicReferenceFieldUpdater d;
+    public final java.util.concurrent.atomic.AtomicReferenceFieldUpdater e;
 
-    cxf(AtomicReferenceFieldUpdater atomicReferenceFieldUpdater, AtomicReferenceFieldUpdater atomicReferenceFieldUpdater2, AtomicReferenceFieldUpdater atomicReferenceFieldUpdater3, AtomicReferenceFieldUpdater atomicReferenceFieldUpdater4, AtomicReferenceFieldUpdater atomicReferenceFieldUpdater5) {
+    cxf(java.util.concurrent.atomic.AtomicReferenceFieldUpdater atomicReferenceFieldUpdater, java.util.concurrent.atomic.AtomicReferenceFieldUpdater atomicReferenceFieldUpdater2, java.util.concurrent.atomic.AtomicReferenceFieldUpdater atomicReferenceFieldUpdater3, java.util.concurrent.atomic.AtomicReferenceFieldUpdater atomicReferenceFieldUpdater4, java.util.concurrent.atomic.AtomicReferenceFieldUpdater atomicReferenceFieldUpdater5) {
         this.a = atomicReferenceFieldUpdater;
         this.b = atomicReferenceFieldUpdater2;
         this.c = atomicReferenceFieldUpdater3;
@@ -19,33 +17,28 @@ final class cxf extends cxa {
         this.e = atomicReferenceFieldUpdater5;
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.cxa
-    public final void a(cxl cxl, Thread thread) {
+    /* access modifiers changed from: 0000 */
+    public final void a(defpackage.cxl cxl, java.lang.Thread thread) {
         this.a.lazySet(cxl, thread);
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.cxa
-    public final void a(cxl cxl, cxl cxl2) {
+    /* access modifiers changed from: 0000 */
+    public final void a(defpackage.cxl cxl, defpackage.cxl cxl2) {
         this.b.lazySet(cxl, cxl2);
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.cxa
-    public final boolean a(cwz cwz, cxl cxl, cxl cxl2) {
+    /* access modifiers changed from: 0000 */
+    public final boolean a(defpackage.cwz cwz, defpackage.cxl cxl, defpackage.cxl cxl2) {
         return this.c.compareAndSet(cwz, cxl, cxl2);
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.cxa
-    public final boolean a(cwz cwz, cxe cxe, cxe cxe2) {
+    /* access modifiers changed from: 0000 */
+    public final boolean a(defpackage.cwz cwz, defpackage.cxe cxe, defpackage.cxe cxe2) {
         return this.d.compareAndSet(cwz, cxe, cxe2);
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.cxa
-    public final boolean a(cwz cwz, Object obj, Object obj2) {
+    /* access modifiers changed from: 0000 */
+    public final boolean a(defpackage.cwz cwz, java.lang.Object obj, java.lang.Object obj2) {
         return this.e.compareAndSet(cwz, obj, obj2);
     }
 }

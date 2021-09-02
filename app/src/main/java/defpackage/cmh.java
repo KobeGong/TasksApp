@@ -1,35 +1,31 @@
 package defpackage;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Map;
-
-/* renamed from: cmh  reason: default package */
+/* renamed from: cmh reason: default package */
 /* compiled from: PG */
 public abstract class cmh {
-    private final dmf[] a;
+    private final defpackage.dmf[] a;
 
-    cmh(Class cls) {
-        this.a = (dmf[]) Array.newInstance(cls, 0);
+    cmh(java.lang.Class cls) {
+        this.a = (defpackage.dmf[]) java.lang.reflect.Array.newInstance(cls, 0);
     }
 
-    /* access modifiers changed from: package-private */
-    public abstract dmf a(dmf dmf, dmf dmf2);
+    /* access modifiers changed from: 0000 */
+    public abstract defpackage.dmf a(defpackage.dmf dmf, defpackage.dmf dmf2);
 
-    /* access modifiers changed from: package-private */
-    public abstract dmf a(String str, Object obj);
+    /* access modifiers changed from: 0000 */
+    public abstract defpackage.dmf a(java.lang.String str, java.lang.Object obj);
 
-    /* access modifiers changed from: package-private */
-    public abstract String a(dmf dmf);
+    /* access modifiers changed from: 0000 */
+    public abstract java.lang.String a(defpackage.dmf dmf);
 
-    public final dmf[] a(dmf[] dmfArr, dmf[] dmfArr2) {
-        dmf dmf;
+    public final defpackage.dmf[] a(defpackage.dmf[] dmfArr, defpackage.dmf[] dmfArr2) {
+        defpackage.dmf dmf;
         if (dmfArr == null || dmfArr2 == null) {
             return dmfArr;
         }
-        ArrayList arrayList = new ArrayList();
-        for (dmf dmf2 : dmfArr) {
-            String a2 = a(dmf2);
+        java.util.ArrayList arrayList = new java.util.ArrayList();
+        for (defpackage.dmf dmf2 : dmfArr) {
+            java.lang.String a2 = a(dmf2);
             int length = dmfArr2.length;
             int i = 0;
             while (true) {
@@ -43,31 +39,33 @@ public abstract class cmh {
                 }
                 i++;
             }
-            dmf a3 = a(dmf2, dmf);
+            defpackage.dmf a3 = a(dmf2, dmf);
             if (a3 != null) {
                 arrayList.add(a3);
             }
         }
         if (!arrayList.isEmpty()) {
-            return (dmf[]) arrayList.toArray(this.a);
+            return (defpackage.dmf[]) arrayList.toArray(this.a);
         }
         return null;
     }
 
-    public final dmf[] a(Map map) {
-        dmf a2;
+    public final defpackage.dmf[] a(java.util.Map map) {
         if (map == null) {
             return null;
         }
-        ArrayList arrayList = new ArrayList();
-        for (Map.Entry entry : map.entrySet()) {
-            if (!(entry.getValue() == null || (a2 = a((String) entry.getKey(), entry.getValue())) == null)) {
-                arrayList.add(a2);
+        java.util.ArrayList arrayList = new java.util.ArrayList();
+        for (java.util.Map.Entry entry : map.entrySet()) {
+            if (entry.getValue() != null) {
+                defpackage.dmf a2 = a((java.lang.String) entry.getKey(), entry.getValue());
+                if (a2 != null) {
+                    arrayList.add(a2);
+                }
             }
         }
         if (arrayList.isEmpty()) {
             return null;
         }
-        return (dmf[]) arrayList.toArray(this.a);
+        return (defpackage.dmf[]) arrayList.toArray(this.a);
     }
 }

@@ -1,39 +1,31 @@
 package defpackage;
 
-import android.content.Context;
-import android.os.IBinder;
-import android.os.IInterface;
-import android.os.Looper;
-
-/* renamed from: bik  reason: default package */
+/* renamed from: bik reason: default package */
 /* compiled from: PG */
-public final class bik extends bel {
-    public bik(Context context, Looper looper, bdj bdj, ayr ayr, ays ays) {
+public final class bik extends defpackage.bel {
+    public bik(android.content.Context context, android.os.Looper looper, defpackage.bdj bdj, defpackage.ayr ayr, defpackage.ays ays) {
         super(context, looper, 74, bdj, ayr, ays);
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.bcx
-    public final String f_() {
+    public final java.lang.String f_() {
         return "com.google.android.gms.auth.api.accountactivationstate.START";
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.bcx
-    public final String b() {
+    public final java.lang.String b() {
         return "com.google.android.gms.auth.api.accountactivationstate.internal.IAccountActivationStateService";
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.bcx
-    public final /* synthetic */ IInterface a(IBinder iBinder) {
+    public final /* synthetic */ android.os.IInterface a(android.os.IBinder iBinder) {
         if (iBinder == null) {
             return null;
         }
-        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.auth.api.accountactivationstate.internal.IAccountActivationStateService");
-        if (queryLocalInterface instanceof bil) {
-            return (bil) queryLocalInterface;
+        android.os.IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.auth.api.accountactivationstate.internal.IAccountActivationStateService");
+        if (queryLocalInterface instanceof defpackage.bil) {
+            return (defpackage.bil) queryLocalInterface;
         }
-        return new bim(iBinder);
+        return new defpackage.bim(iBinder);
     }
 }

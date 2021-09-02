@@ -1,17 +1,17 @@
 package defpackage;
 
-/* renamed from: bbk  reason: default package */
+/* renamed from: bbk reason: default package */
 /* compiled from: PG */
-final class bbk implements Runnable {
-    private /* synthetic */ bkk a;
-    private /* synthetic */ bbi b;
+final class bbk implements java.lang.Runnable {
+    private /* synthetic */ defpackage.bkk a;
+    private /* synthetic */ defpackage.bbi b;
 
-    bbk(bbi bbi, bkk bkk) {
+    bbk(defpackage.bbi bbi, defpackage.bkk bkk) {
         this.b = bbi;
         this.a = bkk;
     }
 
     public final void run() {
-        bbi.a(this.b, this.a);
+        defpackage.bbi.a(this.b, this.a);
     }
 }

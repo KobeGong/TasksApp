@@ -1,24 +1,23 @@
 package defpackage;
 
-/* renamed from: ceg  reason: default package */
+/* renamed from: ceg reason: default package */
 /* compiled from: PG */
-public final class ceg implements ecz {
-    private final cdz a;
-    private final ecz b;
-    private final ecz c;
+public final class ceg implements defpackage.ecz {
+    private final defpackage.cdz a;
+    private final defpackage.ecz b;
+    private final defpackage.ecz c;
 
-    public ceg(cdz cdz, ecz ecz, ecz ecz2) {
+    public ceg(defpackage.cdz cdz, defpackage.ecz ecz, defpackage.ecz ecz2) {
         this.a = cdz;
         this.b = ecz;
         this.c = ecz2;
     }
 
-    @Override // defpackage.ecz
-    public final /* synthetic */ Object a() {
-        cdz cdz = this.a;
-        bqx bqx = (bqx) this.b.a();
+    public final /* synthetic */ java.lang.Object a() {
+        defpackage.cdz cdz = this.a;
+        defpackage.bqx bqx = (defpackage.bqx) this.b.a();
         this.c.a();
-        bqx.a.a(bqx.b.a(new btb()), bqx.b.a(new bri(cdz.a)));
-        return (bqw) dgv.a(bqx.a(), "Cannot return null from a non-@Nullable @Provides method");
+        bqx.a.a(bqx.b.a((defpackage.bqu) new defpackage.btb()), bqx.b.a((defpackage.bqv) new defpackage.bri(cdz.a)));
+        return (defpackage.bqw) defpackage.dgv.a((java.lang.Object) bqx.a(), "Cannot return null from a non-@Nullable @Provides method");
     }
 }

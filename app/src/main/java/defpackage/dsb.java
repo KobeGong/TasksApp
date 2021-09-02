@@ -1,61 +1,56 @@
 package defpackage;
 
-import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
-import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
-import java.util.logging.Level;
-
-/* renamed from: dsb  reason: default package */
+/* renamed from: dsb reason: default package */
 /* compiled from: PG */
-final class dsb extends dnm {
-    public static final AtomicIntegerFieldUpdater a;
-    private static final AtomicReferenceFieldUpdater h;
-    public final drz b;
-    public final csb c;
-    public volatile dsc d;
+final class dsb extends defpackage.dnm {
+    public static final java.util.concurrent.atomic.AtomicIntegerFieldUpdater a;
+    private static final java.util.concurrent.atomic.AtomicReferenceFieldUpdater h;
+    public final defpackage.drz b;
+    public final defpackage.csb c;
+    public volatile defpackage.dsc d;
     public volatile int e;
-    public final ebi f;
+    public final defpackage.ebi f;
     public final boolean g;
-    private final ebi i;
+    private final defpackage.ebi i;
 
-    dsb(drz drz, ebi ebi, String str, boolean z, boolean z2) {
+    dsb(defpackage.drz drz, defpackage.ebi ebi, java.lang.String str, boolean z, boolean z2) {
         this.b = drz;
-        cld.a(str, "fullMethodName");
-        this.i = (ebi) cld.a(ebi);
-        this.f = drz.d.a(ebi).a(eak.b, ebl.a(str)).a();
-        this.c = ((csb) drz.f.b()).a();
+        defpackage.cld.a((java.lang.Object) str, (java.lang.Object) "fullMethodName");
+        this.i = (defpackage.ebi) defpackage.cld.a((java.lang.Object) ebi);
+        this.f = drz.d.a(ebi).a(defpackage.eak.b, defpackage.ebl.a(str)).a();
+        this.c = ((defpackage.csb) drz.f.b()).a();
         this.g = z2;
         if (z) {
             drz.e.a().a().a(this.f);
         }
     }
 
-    @Override // defpackage.dnm
-    public final dqc a(dor dor) {
-        dsc dsc = new dsc();
+    public final defpackage.dqc a(defpackage.dor dor) {
+        defpackage.dsc dsc = new defpackage.dsc();
         if (h != null) {
-            cld.b(h.compareAndSet(this, null, dsc), "Are you creating multiple streams per call? This class doesn't yet support this case");
+            defpackage.cld.b(h.compareAndSet(this, null, dsc), (java.lang.Object) "Are you creating multiple streams per call? This class doesn't yet support this case");
         } else {
-            cld.b(this.d == null, "Are you creating multiple streams per call? This class doesn't yet support this case");
+            defpackage.cld.b(this.d == null, (java.lang.Object) "Are you creating multiple streams per call? This class doesn't yet support this case");
             this.d = dsc;
         }
         if (this.b.h) {
             dor.b(this.b.g);
             if (!this.b.d.a().equals(this.i)) {
-                dor.a(this.b.g, this.i);
+                dor.a(this.b.g, (java.lang.Object) this.i);
             }
         }
         return dsc;
     }
 
     static {
-        AtomicIntegerFieldUpdater atomicIntegerFieldUpdater;
-        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = null;
+        java.util.concurrent.atomic.AtomicIntegerFieldUpdater atomicIntegerFieldUpdater;
+        java.util.concurrent.atomic.AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = null;
         try {
-            AtomicReferenceFieldUpdater newUpdater = AtomicReferenceFieldUpdater.newUpdater(dsb.class, dsc.class, "d");
-            atomicIntegerFieldUpdater = AtomicIntegerFieldUpdater.newUpdater(dsb.class, "e");
+            java.util.concurrent.atomic.AtomicReferenceFieldUpdater newUpdater = java.util.concurrent.atomic.AtomicReferenceFieldUpdater.newUpdater(defpackage.dsb.class, defpackage.dsc.class, "d");
+            atomicIntegerFieldUpdater = java.util.concurrent.atomic.AtomicIntegerFieldUpdater.newUpdater(defpackage.dsb.class, "e");
             atomicReferenceFieldUpdater = newUpdater;
         } catch (Throwable th) {
-            drz.a.logp(Level.SEVERE, "io.grpc.internal.CensusStatsModule$ClientCallTracer", "<clinit>", "Creating atomic field updaters failed", th);
+            defpackage.drz.a.logp(java.util.logging.Level.SEVERE, "io.grpc.internal.CensusStatsModule$ClientCallTracer", "<clinit>", "Creating atomic field updaters failed", th);
             atomicIntegerFieldUpdater = null;
         }
         h = atomicReferenceFieldUpdater;

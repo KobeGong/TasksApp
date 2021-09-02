@@ -1,21 +1,20 @@
 package defpackage;
 
-/* renamed from: dsd  reason: default package */
+/* renamed from: dsd reason: default package */
 /* compiled from: PG */
-public final class dsd implements dnf {
+public final class dsd implements defpackage.dnf {
     private final boolean a;
     private final boolean b;
-    private final /* synthetic */ drz c;
+    private final /* synthetic */ defpackage.drz c;
 
-    public dsd(drz drz, boolean z, boolean z2) {
+    public dsd(defpackage.drz drz, boolean z, boolean z2) {
         this.c = drz;
         this.a = z;
         this.b = z2;
     }
 
-    @Override // defpackage.dnf
-    public final dnd a(dpb dpb, dna dna, dnc dnc) {
-        dsb dsb = new dsb(this.c, this.c.d.b(), dpb.b, this.a, this.b);
-        return new dse(dnc.a(dpb, dna.a(dsb)), dsb);
+    public final defpackage.dnd a(defpackage.dpb dpb, defpackage.dna dna, defpackage.dnc dnc) {
+        defpackage.dsb dsb = new defpackage.dsb(this.c, this.c.d.b(), dpb.b, this.a, this.b);
+        return new defpackage.dse(dnc.a(dpb, dna.a((defpackage.dnm) dsb)), dsb);
     }
 }

@@ -1,42 +1,41 @@
 package defpackage;
 
-import java.util.Map;
-
-/* renamed from: bxg  reason: default package */
+/* renamed from: bxg reason: default package */
 /* compiled from: PG */
 public final class bxg {
-    public String a;
+    public java.lang.String a;
     public byte[] b;
-    public Throwable c;
-    private Integer d;
-    private Map e;
+    public java.lang.Throwable c;
+    private java.lang.Integer d;
+    private java.util.Map e;
 
-    public final bxg a(int i) {
-        this.d = Integer.valueOf(i);
+    public final defpackage.bxg a(int i) {
+        this.d = java.lang.Integer.valueOf(i);
         return this;
     }
 
-    public final bxg a(Map map) {
+    public final defpackage.bxg a(java.util.Map map) {
         if (map == null) {
-            throw new NullPointerException("Null responseHeaders");
+            throw new java.lang.NullPointerException("Null responseHeaders");
         }
         this.e = map;
         return this;
     }
 
-    public final bxf a() {
-        String str = "";
+    public final defpackage.bxf a() {
+        java.lang.String str = "";
         if (this.d == null) {
-            str = String.valueOf(str).concat(" statusCode");
+            str = java.lang.String.valueOf(str).concat(" statusCode");
         }
         if (this.e == null) {
-            str = String.valueOf(str).concat(" responseHeaders");
+            str = java.lang.String.valueOf(str).concat(" responseHeaders");
         }
         if (str.isEmpty()) {
-            return new bxb(this.d.intValue(), this.a, this.b, this.e, this.c);
+            return new defpackage.bxb(this.d.intValue(), this.a, this.b, this.e, this.c);
         }
-        String valueOf = String.valueOf(str);
-        throw new IllegalStateException(valueOf.length() != 0 ? "Missing required properties:".concat(valueOf) : new String("Missing required properties:"));
+        java.lang.String str2 = "Missing required properties:";
+        java.lang.String valueOf = java.lang.String.valueOf(str);
+        throw new java.lang.IllegalStateException(valueOf.length() != 0 ? str2.concat(valueOf) : new java.lang.String(str2));
     }
 
     bxg() {

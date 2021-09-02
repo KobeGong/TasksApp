@@ -1,20 +1,17 @@
 package defpackage;
 
-import com.google.android.apps.tasks.features.notificationmanager.NotificationManagerImpl;
-
-/* renamed from: akj  reason: default package */
+/* renamed from: akj reason: default package */
 /* compiled from: PG */
-public final class akj implements csd {
-    public static crv a() {
-        return crv.b(new NotificationManagerImpl());
+public final class akj implements defpackage.csd {
+    public static defpackage.crv a() {
+        return defpackage.crv.b(new com.google.android.apps.tasks.features.notificationmanager.NotificationManagerImpl());
     }
 
-    @Override // defpackage.csd
-    public final /* synthetic */ Object b() {
+    public final /* synthetic */ java.lang.Object b() {
         return a();
     }
 
     static {
-        new akj();
+        new defpackage.akj();
     }
 }

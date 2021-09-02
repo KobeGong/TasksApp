@@ -1,9 +1,9 @@
 package defpackage;
 
-/* renamed from: dzl  reason: default package */
+/* renamed from: dzl reason: default package */
 /* compiled from: PG */
 public interface dzl {
-    Object a();
+    java.lang.Object a();
 
-    void a(Object obj);
+    void a(java.lang.Object obj);
 }

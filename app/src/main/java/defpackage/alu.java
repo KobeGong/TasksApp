@@ -1,6 +1,6 @@
 package defpackage;
 
-/* renamed from: alu  reason: default package */
+/* renamed from: alu reason: default package */
 /* compiled from: PG */
 public class alu {
     public void a() {
@@ -9,6 +9,6 @@ public class alu {
     public void b() {
     }
 
-    public void a(String str) {
+    public void a(java.lang.String str) {
     }
 }

@@ -1,16 +1,13 @@
 package defpackage;
 
-import java.util.Comparator;
-
-/* renamed from: ato  reason: default package */
-final /* synthetic */ class ato implements Comparator {
-    public static final Comparator a = new ato();
+/* renamed from: ato reason: default package */
+final /* synthetic */ class ato implements java.util.Comparator {
+    public static final java.util.Comparator a = new defpackage.ato();
 
     private ato() {
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        return DateSortAdapter.a((dby) obj, (dby) obj2);
+    public final int compare(java.lang.Object obj, java.lang.Object obj2) {
+        return defpackage.atn.a((defpackage.dby) obj, (defpackage.dby) obj2);
     }
 }

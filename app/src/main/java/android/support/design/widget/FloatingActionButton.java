@@ -1,21 +1,17 @@
 package android.support.design.widget;
 
-import android.content.Context;
-import android.support.design.floatingactionbutton.FloatingActionButton;
-import android.util.AttributeSet;
-
-@gy(a = Behavior.class)
-@Deprecated
+@defpackage.gy(a = android.support.design.widget.FloatingActionButton.Behavior.class)
+@java.lang.Deprecated
 /* compiled from: PG */
 public final class FloatingActionButton extends android.support.design.floatingactionbutton.FloatingActionButton {
 
-    @Deprecated
+    @java.lang.Deprecated
     /* compiled from: PG */
-    public class Behavior extends FloatingActionButton.BaseBehavior {
+    public class Behavior extends android.support.design.floatingactionbutton.FloatingActionButton.BaseBehavior {
         public Behavior() {
         }
 
-        public Behavior(Context context, AttributeSet attributeSet) {
+        public Behavior(android.content.Context context, android.util.AttributeSet attributeSet) {
             super(context, attributeSet);
         }
     }

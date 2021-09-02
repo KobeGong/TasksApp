@@ -1,20 +1,24 @@
 package defpackage;
 
-/* renamed from: edh  reason: default package */
+/* renamed from: edh reason: default package */
 /* compiled from: PG */
-public final class edh extends dlz {
-    public String a = null;
-    public String b = null;
-    public int c = Integer.MIN_VALUE;
-    public Long d = null;
-    public String e = null;
+public final class edh extends defpackage.dlz {
+    public java.lang.String a;
+    public java.lang.String b;
+    public int c;
+    public java.lang.Long d;
+    public java.lang.String e;
 
     public edh() {
+        this.a = null;
+        this.b = null;
+        this.c = Integer.MIN_VALUE;
+        this.d = null;
+        this.e = null;
         this.k = -1;
     }
 
-    @Override // defpackage.dlz, defpackage.dmf
-    public final void a(dlx dlx) {
+    public final void a(defpackage.dlx dlx) {
         if (this.a != null) {
             dlx.a(1, this.a);
         }
@@ -34,37 +38,68 @@ public final class edh extends dlz {
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.dlz, defpackage.dmf
     public final int a() {
         int a2 = super.a();
         if (this.a != null) {
-            a2 += dlx.b(1, this.a);
+            a2 += defpackage.dlx.b(1, this.a);
         }
         if (this.b != null) {
-            a2 += dlx.b(2, this.b);
+            a2 += defpackage.dlx.b(2, this.b);
         }
         if (this.c != Integer.MIN_VALUE) {
-            a2 += dlx.c(3, this.c);
+            a2 += defpackage.dlx.c(3, this.c);
         }
         if (this.d != null) {
-            a2 += dlx.c(4, this.d.longValue());
+            a2 += defpackage.dlx.c(4, this.d.longValue());
         }
         if (this.e != null) {
-            return a2 + dlx.b(5, this.e);
+            return a2 + defpackage.dlx.b(5, this.e);
         }
         return a2;
     }
 
     /* access modifiers changed from: private */
-    /* JADX WARNING: Code restructure failed: missing block: B:4:0x000d, code lost:
-        return r6;
-     */
     /* renamed from: b */
-    /* Code decompiled incorrectly, please refer to instructions dump. */
-    public final defpackage.edh a(defpackage.dlw r7) {
-        /*
-        // Method dump skipped, instructions count: 124
-        */
-        throw new UnsupportedOperationException("Method not decompiled: defpackage.edh.a(dlw):edh");
+    public final defpackage.edh a(defpackage.dlw dlw) {
+        while (true) {
+            int a2 = dlw.a();
+            switch (a2) {
+                case 0:
+                    break;
+                case 10:
+                    this.a = dlw.d();
+                    continue;
+                case 18:
+                    this.b = dlw.d();
+                    continue;
+                case 24:
+                    int i = dlw.i();
+                    try {
+                        int e2 = dlw.e();
+                        if (e2 < 0 || e2 > 3) {
+                            throw new java.lang.IllegalArgumentException(e2 + " is not a valid enum HardwareVariant");
+                        }
+                        this.c = e2;
+                        continue;
+                    } catch (java.lang.IllegalArgumentException e3) {
+                        dlw.e(i);
+                        a(dlw, a2);
+                        break;
+                    }
+                case 32:
+                    this.d = java.lang.Long.valueOf(dlw.b());
+                    continue;
+                case 42:
+                    this.e = dlw.d();
+                    continue;
+                default:
+                    if (!super.a(dlw, a2)) {
+                        break;
+                    } else {
+                        continue;
+                    }
+            }
+        }
+        return this;
     }
 }

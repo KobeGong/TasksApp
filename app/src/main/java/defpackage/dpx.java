@@ -1,6 +1,6 @@
 package defpackage;
 
-/* renamed from: dpx  reason: default package */
+/* renamed from: dpx reason: default package */
 /* compiled from: PG */
 public enum dpx {
     OK(0),
@@ -24,12 +24,16 @@ public enum dpx {
     public final int r;
     public final byte[] s;
 
-    private dpx(int i) {
-        this.r = i;
-        this.s = Integer.toString(i).getBytes(crp.a);
+    public static defpackage.dpx a(java.lang.String str) {
+        return (defpackage.dpx) java.lang.Enum.valueOf(defpackage.dpx.class, str);
     }
 
-    public final dpw a() {
-        return (dpw) dpw.a.get(this.r);
+    private dpx(int i) {
+        this.r = i;
+        this.s = java.lang.Integer.toString(i).getBytes(defpackage.crp.a);
+    }
+
+    public final defpackage.dpw a() {
+        return (defpackage.dpw) defpackage.dpw.a.get(this.r);
     }
 }

@@ -1,8 +1,8 @@
 package defpackage;
 
-/* renamed from: ddr  reason: default package */
+/* renamed from: ddr reason: default package */
 /* compiled from: PG */
-public enum ddr implements din {
+public enum ddr implements defpackage.din {
     INTERACTION_TYPE_UNSPECIFIED(0),
     ACTION_CLICK(1),
     CLICKED(2),
@@ -19,15 +19,14 @@ public enum ddr implements din {
     DELIVERED_SYNC_INSTRUCTION(12),
     DELIVERED_FULL_SYNC_INSTRUCTION(13);
     
-    public static final dio e = new dds();
+    public static final defpackage.dio e = null;
     public final int f;
 
-    @Override // defpackage.din
     public final int a() {
         return this.f;
     }
 
-    public static ddr a(int i) {
+    public static defpackage.ddr a(int i) {
         switch (i) {
             case 0:
                 return INTERACTION_TYPE_UNSPECIFIED;
@@ -66,5 +65,9 @@ public enum ddr implements din {
 
     private ddr(int i) {
         this.f = i;
+    }
+
+    static {
+        e = new defpackage.dds();
     }
 }

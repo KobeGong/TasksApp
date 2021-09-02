@@ -1,39 +1,41 @@
 package defpackage;
 
-import android.content.Context;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.os.Build;
-import android.os.Handler;
-import android.os.Looper;
-import android.text.TextUtils;
-import android.util.Log;
-import java.io.File;
-import java.io.FileDescriptor;
-import java.io.PrintWriter;
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
-import java.util.Locale;
-import java.util.Map;
-import java.util.Queue;
-import java.util.concurrent.locks.Condition;
-import java.util.concurrent.locks.Lock;
-
-/* renamed from: azb  reason: default package */
+/* renamed from: azb reason: default package */
 /* compiled from: PG */
-public class azb implements bau {
-    public static Boolean e;
-    private static Boolean g;
-    private static Boolean h;
+public class azb implements defpackage.bau {
+    public static java.lang.Boolean e;
+    private static java.lang.Boolean g;
+    private static java.lang.Boolean h;
     public boolean a;
-    public Map b;
-    public Map c;
-    public axq d;
-    private azd f;
+    public java.util.Map b;
+    public java.util.Map c;
+    public defpackage.axq d;
+    private defpackage.azd f;
 
-    /* JADX WARN: Type inference failed for: r1v0, types: [java.util.Map, java.util.Queue, azx] */
+    /* JADX WARNING: type inference failed for: r1v0, types: [java.util.Map, java.util.Queue, azx] */
+    /* JADX WARNING: Multi-variable type inference failed. Error: jadx.core.utils.exceptions.JadxRuntimeException: No candidate types for var: r1v0, types: [java.util.Map, java.util.Queue, azx]
+      assigns: [?[int, float, boolean, short, byte, char, OBJECT, ARRAY]]
+      uses: [azx, java.util.Map, java.util.Queue]
+      mth insns count: 12
+    	at jadx.core.dex.visitors.typeinference.TypeSearch.fillTypeCandidates(TypeSearch.java:237)
+    	at java.util.ArrayList.forEach(ArrayList.java:1257)
+    	at jadx.core.dex.visitors.typeinference.TypeSearch.run(TypeSearch.java:53)
+    	at jadx.core.dex.visitors.typeinference.TypeInferenceVisitor.runMultiVariableSearch(TypeInferenceVisitor.java:99)
+    	at jadx.core.dex.visitors.typeinference.TypeInferenceVisitor.visit(TypeInferenceVisitor.java:92)
+    	at jadx.core.dex.visitors.DepthTraversal.visit(DepthTraversal.java:27)
+    	at jadx.core.dex.visitors.DepthTraversal.lambda$visit$1(DepthTraversal.java:14)
+    	at java.util.ArrayList.forEach(ArrayList.java:1257)
+    	at jadx.core.dex.visitors.DepthTraversal.visit(DepthTraversal.java:14)
+    	at jadx.core.ProcessClass.process(ProcessClass.java:30)
+    	at jadx.core.ProcessClass.lambda$processDependencies$0(ProcessClass.java:49)
+    	at java.util.ArrayList.forEach(ArrayList.java:1257)
+    	at jadx.core.ProcessClass.processDependencies(ProcessClass.java:49)
+    	at jadx.core.ProcessClass.process(ProcessClass.java:35)
+    	at jadx.api.JadxDecompiler.processClass(JadxDecompiler.java:311)
+    	at jadx.api.JavaClass.decompile(JavaClass.java:62)
+    	at jadx.api.JavaClass.getCode(JavaClass.java:48)
+     */
     /* JADX WARNING: Unknown variable types count: 1 */
-    @Override // defpackage.bau
     /* Code decompiled incorrectly, please refer to instructions dump. */
     public final defpackage.bca a(defpackage.bca r3) {
         /*
@@ -57,9 +59,30 @@ public class azb implements bau {
         throw new UnsupportedOperationException("Method not decompiled: defpackage.azb.a(bca):bca");
     }
 
-    /* JADX WARN: Type inference failed for: r2v0, types: [java.util.Map, azx] */
+    /* JADX WARNING: type inference failed for: r2v0, types: [java.util.Map, azx] */
+    /* JADX WARNING: Multi-variable type inference failed. Error: jadx.core.utils.exceptions.JadxRuntimeException: No candidate types for var: r2v0, types: [java.util.Map, azx]
+      assigns: [?[int, float, boolean, short, byte, char, OBJECT, ARRAY]]
+      uses: [azx, java.util.Map]
+      mth insns count: 8
+    	at jadx.core.dex.visitors.typeinference.TypeSearch.fillTypeCandidates(TypeSearch.java:237)
+    	at java.util.ArrayList.forEach(ArrayList.java:1257)
+    	at jadx.core.dex.visitors.typeinference.TypeSearch.run(TypeSearch.java:53)
+    	at jadx.core.dex.visitors.typeinference.TypeInferenceVisitor.runMultiVariableSearch(TypeInferenceVisitor.java:99)
+    	at jadx.core.dex.visitors.typeinference.TypeInferenceVisitor.visit(TypeInferenceVisitor.java:92)
+    	at jadx.core.dex.visitors.DepthTraversal.visit(DepthTraversal.java:27)
+    	at jadx.core.dex.visitors.DepthTraversal.lambda$visit$1(DepthTraversal.java:14)
+    	at java.util.ArrayList.forEach(ArrayList.java:1257)
+    	at jadx.core.dex.visitors.DepthTraversal.visit(DepthTraversal.java:14)
+    	at jadx.core.ProcessClass.process(ProcessClass.java:30)
+    	at jadx.core.ProcessClass.lambda$processDependencies$0(ProcessClass.java:49)
+    	at java.util.ArrayList.forEach(ArrayList.java:1257)
+    	at jadx.core.ProcessClass.processDependencies(ProcessClass.java:49)
+    	at jadx.core.ProcessClass.process(ProcessClass.java:35)
+    	at jadx.api.JadxDecompiler.processClass(JadxDecompiler.java:311)
+    	at jadx.api.JavaClass.decompile(JavaClass.java:62)
+    	at jadx.api.JavaClass.getCode(JavaClass.java:48)
+     */
     /* JADX WARNING: Unknown variable types count: 1 */
-    @Override // defpackage.bau
     /* Code decompiled incorrectly, please refer to instructions dump. */
     public final defpackage.bca b(defpackage.bca r4) {
         /*
@@ -77,9 +100,8 @@ public class azb implements bau {
         throw new UnsupportedOperationException("Method not decompiled: defpackage.azb.b(bca):bca");
     }
 
-    @Override // defpackage.bau
     public final void a() {
-        Lock lock = null;
+        java.util.concurrent.locks.Lock lock = null;
         lock.lock();
         try {
             if (!this.a) {
@@ -88,11 +110,11 @@ public class azb implements bau {
                 this.c = null;
                 this.f = null;
                 this.d = null;
-                baj baj = null;
+                defpackage.baj baj = null;
                 baj.a();
-                baj baj2 = null;
-                Map map = null;
-                baj2.a(map.values()).a(new bjc(null), new azc(this));
+                defpackage.baj baj2 = null;
+                java.util.Map map = null;
+                baj2.a((java.lang.Iterable) map.values()).a(new defpackage.bjc(null), new defpackage.azc(this));
                 lock.unlock();
             }
         } finally {
@@ -100,30 +122,28 @@ public class azb implements bau {
         }
     }
 
-    @Override // defpackage.bau
-    public final axq b() {
+    public final defpackage.axq b() {
         a();
         while (e()) {
-            Condition condition = null;
+            java.util.concurrent.locks.Condition condition = null;
             try {
                 condition.await();
-            } catch (InterruptedException e2) {
-                Thread.currentThread().interrupt();
-                return new axq(15, null);
+            } catch (java.lang.InterruptedException e2) {
+                java.lang.Thread.currentThread().interrupt();
+                return new defpackage.axq(15, null);
             }
         }
         if (d()) {
-            return axq.a;
+            return defpackage.axq.a;
         }
         if (this.d != null) {
             return this.d;
         }
-        return new axq(13, null);
+        return new defpackage.axq(13, null);
     }
 
-    @Override // defpackage.bau
     public final void c() {
-        Lock lock = null;
+        java.util.concurrent.locks.Lock lock = null;
         lock.lock();
         try {
             this.a = false;
@@ -135,14 +155,14 @@ public class azb implements bau {
             }
             this.d = null;
             while (true) {
-                Queue queue = null;
+                java.util.Queue queue = null;
                 if (!queue.isEmpty()) {
-                    Queue queue2 = null;
-                    bca bca = (bca) queue2.remove();
-                    bca.a((bbs) null);
+                    java.util.Queue queue2 = null;
+                    defpackage.bca bca = (defpackage.bca) queue2.remove();
+                    bca.a((defpackage.bbs) null);
                     bca.a();
                 } else {
-                    Condition condition = null;
+                    java.util.concurrent.locks.Condition condition = null;
                     condition.signalAll();
                     return;
                 }
@@ -152,9 +172,8 @@ public class azb implements bau {
         }
     }
 
-    @Override // defpackage.bau
     public final boolean d() {
-        Lock lock = null;
+        java.util.concurrent.locks.Lock lock = null;
         lock.lock();
         try {
             return this.b != null && this.d == null;
@@ -163,9 +182,8 @@ public class azb implements bau {
         }
     }
 
-    @Override // defpackage.bau
     public final boolean e() {
-        Lock lock = null;
+        java.util.concurrent.locks.Lock lock = null;
         lock.lock();
         try {
             return this.b == null && this.a;
@@ -175,22 +193,21 @@ public class azb implements bau {
     }
 
     /* JADX INFO: finally extract failed */
-    @Override // defpackage.bau
-    public final boolean a(bbh bbh) {
-        Lock lock = null;
+    public final boolean a(defpackage.bbh bbh) {
+        java.util.concurrent.locks.Lock lock = null;
         lock.lock();
         try {
             if (this.a) {
-                Lock lock2 = null;
+                java.util.concurrent.locks.Lock lock2 = null;
                 lock2.lock();
-                Lock lock3 = null;
+                java.util.concurrent.locks.Lock lock3 = null;
                 lock3.unlock();
-                baj baj = null;
+                defpackage.baj baj = null;
                 baj.a();
-                this.f = new azd(this, bbh);
-                baj baj2 = null;
-                Map map = null;
-                baj2.a(map.values()).a(new bjc(null), this.f);
+                this.f = new defpackage.azd(this, bbh);
+                defpackage.baj baj2 = null;
+                java.util.Map map = null;
+                baj2.a((java.lang.Iterable) map.values()).a(new defpackage.bjc(null), this.f);
                 lock.unlock();
                 return true;
             }
@@ -202,27 +219,23 @@ public class azb implements bau {
         }
     }
 
-    @Override // defpackage.bau
     public final void f() {
-        Lock lock = null;
+        java.util.concurrent.locks.Lock lock = null;
         lock.lock();
-        baj baj = null;
         try {
-            baj.f.incrementAndGet();
-            baj baj2 = null;
-            baj baj3 = null;
-            baj2.g.sendMessage(baj3.g.obtainMessage(10));
+            null.f.incrementAndGet();
+            null.g.sendMessage(null.g.obtainMessage(10));
             if (this.f != null) {
                 this.f.a();
                 this.f = null;
             }
             if (this.c == null) {
-                Map map = null;
-                this.c = new qr(map.size());
+                java.util.Map map = null;
+                this.c = new defpackage.qr(map.size());
             }
-            axq axq = new axq(4);
-            Map map2 = null;
-            for (bcn bcn : map2.values()) {
+            defpackage.axq axq = new defpackage.axq(4);
+            java.util.Map map2 = null;
+            for (defpackage.bcn bcn : map2.values()) {
                 this.c.put(bcn.c, axq);
             }
             if (this.b != null) {
@@ -233,36 +246,121 @@ public class azb implements bau {
         }
     }
 
-    @Override // defpackage.bau
-    public final void a(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {
+    public final void a(java.lang.String str, java.io.FileDescriptor fileDescriptor, java.io.PrintWriter printWriter, java.lang.String[] strArr) {
     }
 
-    static /* synthetic */ axq a(azb azb) {
-        axq axq;
-        char c2;
-        Map map = null;
-        char c3 = 0;
-        axq axq2 = null;
-        for (bcn bcn : map.values()) {
-            ayd ayd = bcn.b;
-            axq axq3 = (axq) azb.b.get(bcn.c);
-            if (!axq3.b() && (!((Boolean) map.get(ayd)).booleanValue() || axq3.a() || axv.a(axq3.b))) {
-                int i = axq3.b;
-                if (axq2 == null || c3 > 65535) {
-                    axq = axq3;
-                    c2 = 65535;
-                } else {
-                    c2 = c3;
-                    axq = axq2;
-                }
-                c3 = c2;
-                axq2 = axq;
-            }
-        }
-        return axq2;
+    /* JADX WARNING: type inference failed for: r5v0, types: [java.util.Map] */
+    /* JADX WARNING: type inference failed for: r4v0 */
+    /* JADX WARNING: type inference failed for: r4v1, types: [axq] */
+    /* JADX WARNING: type inference failed for: r0v6, types: [axq] */
+    /* JADX WARNING: type inference failed for: r4v2 */
+    /* JADX WARNING: type inference failed for: r1v5 */
+    /* JADX WARNING: type inference failed for: r4v3 */
+    /* JADX WARNING: type inference failed for: r1v6 */
+    /* JADX WARNING: type inference failed for: r1v7 */
+    /* JADX WARNING: type inference failed for: r4v4 */
+    /* JADX WARNING: type inference failed for: r4v5 */
+    /* JADX WARNING: type inference failed for: r4v6 */
+    /* JADX WARNING: Code restructure failed: missing block: B:21:0x000e, code lost:
+        r4 = r4;
+     */
+    /* JADX WARNING: Multi-variable type inference failed. Error: jadx.core.utils.exceptions.JadxRuntimeException: No candidate types for var: r4v2
+      assigns: []
+      uses: []
+      mth insns count: 38
+    	at jadx.core.dex.visitors.typeinference.TypeSearch.fillTypeCandidates(TypeSearch.java:237)
+    	at java.util.ArrayList.forEach(ArrayList.java:1257)
+    	at jadx.core.dex.visitors.typeinference.TypeSearch.run(TypeSearch.java:53)
+    	at jadx.core.dex.visitors.typeinference.TypeInferenceVisitor.runMultiVariableSearch(TypeInferenceVisitor.java:99)
+    	at jadx.core.dex.visitors.typeinference.TypeInferenceVisitor.visit(TypeInferenceVisitor.java:92)
+    	at jadx.core.dex.visitors.DepthTraversal.visit(DepthTraversal.java:27)
+    	at jadx.core.dex.visitors.DepthTraversal.lambda$visit$1(DepthTraversal.java:14)
+    	at java.util.ArrayList.forEach(ArrayList.java:1257)
+    	at jadx.core.dex.visitors.DepthTraversal.visit(DepthTraversal.java:14)
+    	at jadx.core.ProcessClass.process(ProcessClass.java:30)
+    	at jadx.core.ProcessClass.lambda$processDependencies$0(ProcessClass.java:49)
+    	at java.util.ArrayList.forEach(ArrayList.java:1257)
+    	at jadx.core.ProcessClass.processDependencies(ProcessClass.java:49)
+    	at jadx.core.ProcessClass.process(ProcessClass.java:35)
+    	at jadx.api.JadxDecompiler.processClass(JadxDecompiler.java:311)
+    	at jadx.api.JavaClass.decompile(JavaClass.java:62)
+    	at jadx.api.JavaClass.getCode(JavaClass.java:48)
+     */
+    /* JADX WARNING: Unknown variable types count: 5 */
+    /* Code decompiled incorrectly, please refer to instructions dump. */
+    static /* synthetic */ defpackage.axq a(defpackage.azb r8) {
+        /*
+            r3 = 2147483647(0x7fffffff, float:NaN)
+            r5 = 0
+            r2 = 0
+            java.util.Collection r0 = r5.values()
+            java.util.Iterator r6 = r0.iterator()
+            r4 = r5
+        L_0x000e:
+            boolean r0 = r6.hasNext()
+            if (r0 == 0) goto L_0x0051
+            java.lang.Object r0 = r6.next()
+            bcn r0 = (defpackage.bcn) r0
+            ayd r1 = r0.b
+            bbu r0 = r0.c
+            java.util.Map r7 = r8.b
+            java.lang.Object r0 = r7.get(r0)
+            axq r0 = (defpackage.axq) r0
+            boolean r7 = r0.b()
+            if (r7 != 0) goto L_0x000e
+            java.lang.Object r1 = r5.get(r1)
+            java.lang.Boolean r1 = (java.lang.Boolean) r1
+            boolean r1 = r1.booleanValue()
+            if (r1 == 0) goto L_0x0046
+            boolean r1 = r0.a()
+            if (r1 != 0) goto L_0x0046
+            int r1 = r0.b
+            boolean r1 = defpackage.axv.a(r1)
+            if (r1 == 0) goto L_0x000e
+        L_0x0046:
+            int r1 = r0.b
+            if (r4 == 0) goto L_0x004c
+            if (r2 <= r3) goto L_0x0052
+        L_0x004c:
+            r1 = r0
+            r0 = r3
+        L_0x004e:
+            r2 = r0
+            r4 = r1
+            goto L_0x000e
+        L_0x0051:
+            return r4
+        L_0x0052:
+            r0 = r2
+            r1 = r4
+            goto L_0x004e
+        */
+        throw new UnsupportedOperationException("Method not decompiled: defpackage.azb.a(azb):axq");
     }
 
-    /* JADX WARN: Type inference failed for: r1v0, types: [java.util.Queue, azx] */
+    /* JADX WARNING: type inference failed for: r1v0, types: [android.os.Bundle, java.util.Queue, azx] */
+    /* JADX WARNING: Multi-variable type inference failed. Error: jadx.core.utils.exceptions.JadxRuntimeException: No candidate types for var: r1v0, types: [android.os.Bundle, java.util.Queue, azx]
+      assigns: [?[int, float, boolean, short, byte, char, OBJECT, ARRAY]]
+      uses: [java.util.Queue, azx, android.os.Bundle]
+      mth insns count: 8
+    	at jadx.core.dex.visitors.typeinference.TypeSearch.fillTypeCandidates(TypeSearch.java:237)
+    	at java.util.ArrayList.forEach(ArrayList.java:1257)
+    	at jadx.core.dex.visitors.typeinference.TypeSearch.run(TypeSearch.java:53)
+    	at jadx.core.dex.visitors.typeinference.TypeInferenceVisitor.runMultiVariableSearch(TypeInferenceVisitor.java:99)
+    	at jadx.core.dex.visitors.typeinference.TypeInferenceVisitor.visit(TypeInferenceVisitor.java:92)
+    	at jadx.core.dex.visitors.DepthTraversal.visit(DepthTraversal.java:27)
+    	at jadx.core.dex.visitors.DepthTraversal.lambda$visit$1(DepthTraversal.java:14)
+    	at java.util.ArrayList.forEach(ArrayList.java:1257)
+    	at jadx.core.dex.visitors.DepthTraversal.visit(DepthTraversal.java:14)
+    	at jadx.core.ProcessClass.process(ProcessClass.java:30)
+    	at jadx.core.ProcessClass.lambda$processDependencies$0(ProcessClass.java:49)
+    	at java.util.ArrayList.forEach(ArrayList.java:1257)
+    	at jadx.core.ProcessClass.processDependencies(ProcessClass.java:49)
+    	at jadx.core.ProcessClass.process(ProcessClass.java:35)
+    	at jadx.api.JadxDecompiler.processClass(JadxDecompiler.java:311)
+    	at jadx.api.JavaClass.decompile(JavaClass.java:62)
+    	at jadx.api.JavaClass.getCode(JavaClass.java:48)
+     */
     /* JADX WARNING: Unknown variable types count: 1 */
     /* Code decompiled incorrectly, please refer to instructions dump. */
     static /* synthetic */ void b(defpackage.azb r2) {
@@ -282,62 +380,63 @@ public class azb implements bau {
         throw new UnsupportedOperationException("Method not decompiled: defpackage.azb.b(azb):void");
     }
 
-    public static void a(String str, Throwable th, String... strArr) {
-        Log.e("Tasks", c(str, strArr), th);
+    public static void a(java.lang.String str, java.lang.Throwable th, java.lang.String... strArr) {
+        android.util.Log.e("Tasks", c(str, strArr), th);
     }
 
-    public static void a(String str, Object... objArr) {
-        Log.e("Tasks", c(str, objArr));
+    public static void a(java.lang.String str, java.lang.Object... objArr) {
+        android.util.Log.e("Tasks", c(str, objArr));
     }
 
-    public static void a(String str, Throwable th, Object... objArr) {
-        if (Log.isLoggable("Tasks", 5)) {
-            Log.w("Tasks", c(str, objArr), th);
+    public static void a(java.lang.String str, java.lang.Throwable th, java.lang.Object... objArr) {
+        if (android.util.Log.isLoggable("Tasks", 5)) {
+            android.util.Log.w("Tasks", c(str, objArr), th);
         }
     }
 
-    public static void b(String str, Object... objArr) {
-        if (Log.isLoggable("Tasks", 5)) {
-            Log.w("Tasks", c(str, objArr));
+    public static void b(java.lang.String str, java.lang.Object... objArr) {
+        if (android.util.Log.isLoggable("Tasks", 5)) {
+            android.util.Log.w("Tasks", c(str, objArr));
         }
     }
 
-    private static String c(String str, Object[] objArr) {
+    private static java.lang.String c(java.lang.String str, java.lang.Object[] objArr) {
         if (objArr.length > 0) {
-            return String.format(Locale.ENGLISH, str, objArr);
+            return java.lang.String.format(java.util.Locale.ENGLISH, str, objArr);
         }
         return str;
     }
 
-    public static String a(String str) {
-        if (TextUtils.isEmpty(str)) {
+    public static java.lang.String a(java.lang.String str) {
+        if (android.text.TextUtils.isEmpty(str)) {
             return "";
         }
-        return String.valueOf(str.hashCode());
+        return java.lang.String.valueOf(str.hashCode());
     }
 
     public static long a(byte[] bArr) {
         int length = bArr.length;
         if (length < 0 || length > bArr.length) {
-            throw new IndexOutOfBoundsException(new StringBuilder(67).append("Out of bound index with offput: 0 and length: ").append(length).toString());
+            throw new java.lang.IndexOutOfBoundsException("Out of bound index with offput: 0 and length: " + length);
         } else if (length <= 32) {
             if (length > 16) {
                 long j = -7286425919675154353L + ((long) (length << 1));
                 long b2 = -5435081209227447693L * b(bArr, 0);
                 long b3 = b(bArr, 8);
                 long b4 = b(bArr, length - 8) * j;
-                return a((b(bArr, length - 16) * -7286425919675154353L) + Long.rotateRight(b2 + b3, 43) + Long.rotateRight(b4, 30), b2 + Long.rotateRight(b3 - 7286425919675154353L, 18) + b4, j);
+                return a((b(bArr, length - 16) * -7286425919675154353L) + java.lang.Long.rotateRight(b2 + b3, 43) + java.lang.Long.rotateRight(b4, 30), b2 + java.lang.Long.rotateRight(b3 - 7286425919675154353L, 18) + b4, j);
             } else if (length >= 8) {
                 long j2 = -7286425919675154353L + ((long) (length << 1));
                 long b5 = -7286425919675154353L + b(bArr, 0);
                 long b6 = b(bArr, length - 8);
-                return a((Long.rotateRight(b6, 37) * j2) + b5, (Long.rotateRight(b5, 25) + b6) * j2, j2);
+                return a((java.lang.Long.rotateRight(b6, 37) * j2) + b5, (java.lang.Long.rotateRight(b5, 25) + b6) * j2, j2);
             } else if (length >= 4) {
                 return a(((((long) a(bArr, 0)) & 4294967295L) << 3) + ((long) length), ((long) a(bArr, length - 4)) & 4294967295L, -7286425919675154353L + ((long) (length << 1)));
             } else if (length <= 0) {
                 return -7286425919675154353L;
             } else {
-                long j3 = (((long) (((bArr[(length - 1) + 0] & 255) << 2) + length)) * -4348849565147123417L) ^ (((long) ((bArr[0] & 255) + ((bArr[(length >> 1) + 0] & 255) << 8))) * -7286425919675154353L);
+                int i = (bArr[0] & 255) + ((bArr[(length >> 1) + 0] & 255) << 8);
+                long j3 = (((long) (((bArr[(length - 1) + 0] & 255) << 2) + length)) * -4348849565147123417L) ^ (((long) i) * -7286425919675154353L);
                 return (j3 ^ (j3 >>> 47)) * -7286425919675154353L;
             }
         } else if (length <= 64) {
@@ -345,41 +444,46 @@ public class azb implements bau {
             long b7 = b(bArr, 0) * -7286425919675154353L;
             long b8 = b(bArr, 8);
             long b9 = b(bArr, length - 8) * j4;
-            long b10 = (b(bArr, length - 16) * -7286425919675154353L) + Long.rotateRight(b7 + b8, 43) + Long.rotateRight(b9, 30);
-            long a2 = a(b10, Long.rotateRight(b8 - 7286425919675154353L, 18) + b7 + b9, j4);
+            long b10 = (b(bArr, length - 16) * -7286425919675154353L) + java.lang.Long.rotateRight(b7 + b8, 43) + java.lang.Long.rotateRight(b9, 30);
+            long a2 = a(b10, java.lang.Long.rotateRight(b8 - 7286425919675154353L, 18) + b7 + b9, j4);
             long b11 = b(bArr, 16) * j4;
             long b12 = b(bArr, 24);
             long b13 = (b10 + b(bArr, length - 32)) * j4;
-            return a(((b(bArr, length - 24) + a2) * j4) + Long.rotateRight(b11 + b12, 43) + Long.rotateRight(b13, 30), Long.rotateRight(b12 + b7, 18) + b11 + b13, j4);
+            return a(((b(bArr, length - 24) + a2) * j4) + java.lang.Long.rotateRight(b11 + b12, 43) + java.lang.Long.rotateRight(b13, 30), java.lang.Long.rotateRight(b12 + b7, 18) + b11 + b13, j4);
         } else {
             long[] jArr = new long[2];
             long[] jArr2 = new long[2];
-            int i = (((length - 1) / 64) << 6) + 0;
-            int i2 = (((length - 1) & 63) + i) - 63;
+            int i2 = (((length - 1) / 64) << 6) + 0;
+            int i3 = (((length - 1) & 63) + i2) - 63;
             long b14 = 95310865018149119L + b(bArr, 0);
             long j5 = 2480279821605975764L;
             long j6 = 1390051526045402406L;
-            int i3 = 0;
+            int i4 = 0;
             while (true) {
-                long rotateRight = (Long.rotateRight(((b14 + j5) + jArr[0]) + b(bArr, i3 + 8), 37) * -5435081209227447693L) ^ jArr2[1];
-                long rotateRight2 = (Long.rotateRight(j5 + jArr[1] + b(bArr, i3 + 48), 42) * -5435081209227447693L) + jArr[0] + b(bArr, i3 + 40);
-                long rotateRight3 = Long.rotateRight(j6 + jArr2[0], 33) * -5435081209227447693L;
-                a(bArr, i3, jArr[1] * -5435081209227447693L, jArr2[0] + rotateRight, jArr);
-                a(bArr, i3 + 32, rotateRight3 + jArr2[1], rotateRight2 + b(bArr, i3 + 16), jArr2);
-                i3 += 64;
-                if (i3 == i) {
-                    long j7 = -5435081209227447693L + ((255 & rotateRight) << 1);
+                long rotateRight = java.lang.Long.rotateRight(b14 + j5 + jArr[0] + b(bArr, i4 + 8), 37) * -5435081209227447693L;
+                long j7 = rotateRight ^ jArr2[1];
+                long rotateRight2 = (java.lang.Long.rotateRight(j5 + jArr[1] + b(bArr, i4 + 48), 42) * -5435081209227447693L) + jArr[0] + b(bArr, i4 + 40);
+                long rotateRight3 = java.lang.Long.rotateRight(j6 + jArr2[0], 33) * -5435081209227447693L;
+                a(bArr, i4, jArr[1] * -5435081209227447693L, jArr2[0] + j7, jArr);
+                byte[] bArr2 = bArr;
+                a(bArr2, i4 + 32, rotateRight3 + jArr2[1], rotateRight2 + b(bArr, i4 + 16), jArr2);
+                i4 += 64;
+                if (i4 == i2) {
+                    long j8 = -5435081209227447693L + ((255 & j7) << 1);
                     jArr2[0] = jArr2[0] + ((long) ((length - 1) & 63));
                     jArr[0] = jArr[0] + jArr2[0];
                     jArr2[0] = jArr2[0] + jArr[0];
-                    long rotateRight4 = (Long.rotateRight(((rotateRight3 + rotateRight2) + jArr[0]) + b(bArr, i2 + 8), 37) * j7) ^ (jArr2[1] * 9);
-                    long rotateRight5 = (Long.rotateRight(jArr[1] + rotateRight2 + b(bArr, i2 + 48), 42) * j7) + (jArr[0] * 9) + b(bArr, i2 + 40);
-                    long rotateRight6 = Long.rotateRight(jArr2[0] + rotateRight, 33) * j7;
-                    a(bArr, i2, jArr[1] * j7, rotateRight4 + jArr2[0], jArr);
-                    a(bArr, i2 + 32, rotateRight6 + jArr2[1], rotateRight5 + b(bArr, i2 + 16), jArr2);
-                    return a(a(jArr[0], jArr2[0], j7) + (((rotateRight5 >>> 47) ^ rotateRight5) * -4348849565147123417L) + rotateRight4, a(jArr[1], jArr2[1], j7) + rotateRight6, j7);
+                    long rotateRight4 = java.lang.Long.rotateRight(rotateRight3 + rotateRight2 + jArr[0] + b(bArr, i3 + 8), 37) * j8;
+                    long rotateRight5 = java.lang.Long.rotateRight(jArr[1] + rotateRight2 + b(bArr, i3 + 48), 42) * j8;
+                    long j9 = rotateRight4 ^ (jArr2[1] * 9);
+                    long b15 = rotateRight5 + (jArr[0] * 9) + b(bArr, i3 + 40);
+                    long rotateRight6 = java.lang.Long.rotateRight(jArr2[0] + j7, 33) * j8;
+                    a(bArr, i3, jArr[1] * j8, j9 + jArr2[0], jArr);
+                    byte[] bArr3 = bArr;
+                    a(bArr3, i3 + 32, rotateRight6 + jArr2[1], b15 + b(bArr, i3 + 16), jArr2);
+                    return a(a(jArr[0], jArr2[0], j8) + (((b15 >>> 47) ^ b15) * -4348849565147123417L) + j9, a(jArr[1], jArr2[1], j8) + rotateRight6, j8);
                 }
-                j6 = rotateRight;
+                j6 = j7;
                 j5 = rotateRight2;
                 b14 = rotateRight3;
             }
@@ -398,10 +502,10 @@ public class azb implements bau {
         long b4 = b(bArr, i + 16);
         long b5 = b(bArr, i + 24);
         long j3 = b2 + j;
-        long rotateRight = Long.rotateRight(j2 + j3 + b5, 21);
         long j4 = b3 + j3 + b4;
+        long rotateRight = java.lang.Long.rotateRight(j4, 44) + java.lang.Long.rotateRight(j2 + j3 + b5, 21);
         jArr[0] = j4 + b5;
-        jArr[1] = j3 + Long.rotateRight(j4, 44) + rotateRight;
+        jArr[1] = j3 + rotateRight;
     }
 
     private static int a(byte[] bArr, int i) {
@@ -409,23 +513,17 @@ public class azb implements bau {
     }
 
     private static long b(byte[] bArr, int i) {
-        ByteBuffer wrap = ByteBuffer.wrap(bArr, i, 8);
-        wrap.order(ByteOrder.LITTLE_ENDIAN);
+        java.nio.ByteBuffer wrap = java.nio.ByteBuffer.wrap(bArr, i, 8);
+        wrap.order(java.nio.ByteOrder.LITTLE_ENDIAN);
         return wrap.getLong();
     }
 
-    public static String a(int i) {
+    public static java.lang.String a(int i) {
         switch (i) {
             case -1:
                 return "SUCCESS_CACHE";
             case 0:
                 return "SUCCESS";
-            case 1:
-            case 9:
-            case 11:
-            case 12:
-            default:
-                return new StringBuilder(32).append("unknown status code: ").append(i).toString();
             case 2:
                 return "SERVICE_VERSION_UPDATE_REQUIRED";
             case 3:
@@ -454,101 +552,103 @@ public class azb implements bau {
                 return "API_NOT_CONNECTED";
             case 18:
                 return "DEAD_CLIENT";
+            default:
+                return "unknown status code: " + i;
         }
     }
 
-    public static boolean a(Object obj, Object obj2) {
+    public static boolean a(java.lang.Object obj, java.lang.Object obj2) {
         return obj == obj2 || (obj != null && obj.equals(obj2));
     }
 
-    public static bea a(Object obj) {
-        return new bea(obj);
+    public static defpackage.bea a(java.lang.Object obj) {
+        return new defpackage.bea(obj);
     }
 
-    public static Object b(Object obj) {
+    public static java.lang.Object b(java.lang.Object obj) {
         if (obj != null) {
             return obj;
         }
-        throw new NullPointerException("null reference");
+        throw new java.lang.NullPointerException("null reference");
     }
 
-    public static String b(String str) {
-        if (!TextUtils.isEmpty(str)) {
+    public static java.lang.String b(java.lang.String str) {
+        if (!android.text.TextUtils.isEmpty(str)) {
             return str;
         }
-        throw new IllegalArgumentException("Given String is empty or null");
+        throw new java.lang.IllegalArgumentException("Given String is empty or null");
     }
 
-    public static String a(String str, Object obj) {
-        if (!TextUtils.isEmpty(str)) {
+    public static java.lang.String a(java.lang.String str, java.lang.Object obj) {
+        if (!android.text.TextUtils.isEmpty(str)) {
             return str;
         }
-        throw new IllegalArgumentException(String.valueOf(obj));
+        throw new java.lang.IllegalArgumentException(java.lang.String.valueOf(obj));
     }
 
-    public static Object b(Object obj, Object obj2) {
+    public static java.lang.Object b(java.lang.Object obj, java.lang.Object obj2) {
         if (obj != null) {
             return obj;
         }
-        throw new NullPointerException(String.valueOf(obj2));
+        throw new java.lang.NullPointerException(java.lang.String.valueOf(obj2));
     }
 
     public static void a(boolean z) {
         if (!z) {
-            throw new IllegalStateException();
+            throw new java.lang.IllegalStateException();
         }
     }
 
-    public static void a(boolean z, Object obj) {
+    public static void a(boolean z, java.lang.Object obj) {
         if (!z) {
-            throw new IllegalStateException(String.valueOf(obj));
+            throw new java.lang.IllegalStateException(java.lang.String.valueOf(obj));
         }
     }
 
-    public static void a(boolean z, String str, Object... objArr) {
+    public static void a(boolean z, java.lang.String str, java.lang.Object... objArr) {
         if (!z) {
-            throw new IllegalStateException(String.format(str, objArr));
+            throw new java.lang.IllegalStateException(java.lang.String.format(str, objArr));
         }
     }
 
-    public static void b(boolean z, Object obj) {
+    public static void b(boolean z, java.lang.Object obj) {
         if (!z) {
-            throw new IllegalArgumentException(String.valueOf(obj));
+            throw new java.lang.IllegalArgumentException(java.lang.String.valueOf(obj));
         }
     }
 
     public static void b(boolean z) {
         if (!z) {
-            throw new IllegalArgumentException();
+            throw new java.lang.IllegalArgumentException();
         }
     }
 
-    public static void c(String str) {
-        if (Looper.getMainLooper() == Looper.myLooper()) {
-            throw new IllegalStateException(str);
+    public static void c(java.lang.String str) {
+        if (android.os.Looper.getMainLooper() == android.os.Looper.myLooper()) {
+            throw new java.lang.IllegalStateException(str);
         }
     }
 
-    public static void a(Handler handler) {
-        if (Looper.myLooper() != handler.getLooper()) {
-            throw new IllegalStateException("Must be called on the handler thread");
+    public static void a(android.os.Handler handler) {
+        if (android.os.Looper.myLooper() != handler.getLooper()) {
+            throw new java.lang.IllegalStateException("Must be called on the handler thread");
         }
     }
 
-    public static boolean a(Context context, String str) {
+    public static boolean a(android.content.Context context, java.lang.String str) {
         "com.google.android.gms".equals(str);
         try {
-            if ((bjg.a.a(context).a(str, 0).flags & 2097152) != 0) {
+            if ((defpackage.bjg.a.a(context).a(str, 0).flags & 2097152) != 0) {
                 return true;
             }
             return false;
-        } catch (PackageManager.NameNotFoundException e2) {
+        } catch (android.content.pm.PackageManager.NameNotFoundException e2) {
             return false;
         }
     }
 
     /* JADX WARNING: Code restructure failed: missing block: B:11:0x002b, code lost:
-        if (defpackage.azb.h.booleanValue() != false) goto L_0x002d;
+        if (h.booleanValue() != false) goto L_0x002d;
      */
     @android.annotation.TargetApi(24)
     /* Code decompiled incorrectly, please refer to instructions dump. */
@@ -559,7 +659,7 @@ public class azb implements bau {
             int r0 = android.os.Build.VERSION.SDK_INT
             r3 = 24
             if (r0 < r3) goto L_0x002d
-            java.lang.Boolean r0 = defpackage.azb.h
+            java.lang.Boolean r0 = h
             if (r0 != 0) goto L_0x0025
             boolean r0 = h()
             if (r0 == 0) goto L_0x0053
@@ -570,13 +670,13 @@ public class azb implements bau {
             r0 = r1
         L_0x001f:
             java.lang.Boolean r0 = java.lang.Boolean.valueOf(r0)
-            defpackage.azb.h = r0
+            h = r0
         L_0x0025:
-            java.lang.Boolean r0 = defpackage.azb.h
+            java.lang.Boolean r0 = h
             boolean r0 = r0.booleanValue()
             if (r0 == 0) goto L_0x0057
         L_0x002d:
-            java.lang.Boolean r0 = defpackage.azb.g
+            java.lang.Boolean r0 = g
             if (r0 != 0) goto L_0x004a
             boolean r0 = g()
             if (r0 == 0) goto L_0x0055
@@ -587,9 +687,9 @@ public class azb implements bau {
             r0 = r1
         L_0x0044:
             java.lang.Boolean r0 = java.lang.Boolean.valueOf(r0)
-            defpackage.azb.g = r0
+            g = r0
         L_0x004a:
-            java.lang.Boolean r0 = defpackage.azb.g
+            java.lang.Boolean r0 = g
             boolean r0 = r0.booleanValue()
             if (r0 == 0) goto L_0x0057
         L_0x0052:
@@ -608,50 +708,52 @@ public class azb implements bau {
     }
 
     public static boolean g() {
-        return Build.VERSION.SDK_INT >= 20;
+        return android.os.Build.VERSION.SDK_INT >= 20;
     }
 
     public static boolean h() {
-        return Build.VERSION.SDK_INT >= 21;
+        return android.os.Build.VERSION.SDK_INT >= 21;
     }
 
     public static boolean i() {
-        return Build.VERSION.SDK_INT >= 26 || "O".equals(Build.VERSION.CODENAME) || Build.VERSION.CODENAME.startsWith("OMR") || Build.VERSION.CODENAME.startsWith("ODR");
+        return android.os.Build.VERSION.SDK_INT >= 26 || "O".equals(android.os.Build.VERSION.CODENAME) || android.os.Build.VERSION.CODENAME.startsWith("OMR") || android.os.Build.VERSION.CODENAME.startsWith("ODR");
     }
 
-    public static synchronized File a(File file) {
-        synchronized (azb.class) {
+    public static synchronized java.io.File a(java.io.File file) {
+        synchronized (defpackage.azb.class) {
             if (!file.exists() && !file.mkdirs() && !file.exists()) {
-                String valueOf = String.valueOf(file.getPath());
-                Log.w("SupportV4Utils", valueOf.length() != 0 ? "Unable to create no-backup dir ".concat(valueOf) : new String("Unable to create no-backup dir "));
+                java.lang.String str = "SupportV4Utils";
+                java.lang.String str2 = "Unable to create no-backup dir ";
+                java.lang.String valueOf = java.lang.String.valueOf(file.getPath());
+                android.util.Log.w(str, valueOf.length() != 0 ? str2.concat(valueOf) : new java.lang.String(str2));
                 file = null;
             }
         }
         return file;
     }
 
-    public static boolean a(Context context, int i) {
-        if (!bjg.a.a(context).a(i, "com.google.android.gms")) {
+    public static boolean a(android.content.Context context, int i) {
+        if (!defpackage.bjg.a.a(context).a(i, "com.google.android.gms")) {
             return false;
         }
         try {
-            PackageInfo packageInfo = context.getPackageManager().getPackageInfo("com.google.android.gms", 64);
-            aya a2 = aya.a(context);
+            android.content.pm.PackageInfo packageInfo = context.getPackageManager().getPackageInfo("com.google.android.gms", 64);
+            defpackage.aya a2 = defpackage.aya.a(context);
             if (packageInfo == null) {
                 return false;
             }
-            if (aya.a(packageInfo, false)) {
+            if (defpackage.aya.a(packageInfo, false)) {
                 return true;
             }
-            if (!aya.a(packageInfo, true)) {
+            if (!defpackage.aya.a(packageInfo, true)) {
                 return false;
             }
-            if (axz.d(a2.a)) {
+            if (defpackage.axz.d(a2.a)) {
                 return true;
             }
-            Log.w("GoogleSignatureVerifier", "Test-keys aren't accepted on this build.");
+            android.util.Log.w("GoogleSignatureVerifier", "Test-keys aren't accepted on this build.");
             return false;
-        } catch (PackageManager.NameNotFoundException e2) {
+        } catch (android.content.pm.PackageManager.NameNotFoundException e2) {
             return false;
         }
     }

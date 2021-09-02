@@ -1,14 +1,14 @@
 package defpackage;
 
-/* renamed from: dnc  reason: default package */
+/* renamed from: dnc reason: default package */
 /* compiled from: PG */
 public abstract class dnc {
     public dnc() {
     }
 
-    public abstract dnd a(dpb dpb, dna dna);
+    public abstract defpackage.dnd a(defpackage.dpb dpb, defpackage.dna dna);
 
-    public abstract String a();
+    public abstract java.lang.String a();
 
     public dnc(byte b) {
         this();

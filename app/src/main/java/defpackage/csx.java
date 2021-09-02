@@ -1,14 +1,12 @@
 package defpackage;
 
-import java.util.Iterator;
-
-/* renamed from: csx  reason: default package */
+/* renamed from: csx reason: default package */
 /* compiled from: PG */
-final class csx implements Iterator {
+final class csx implements java.util.Iterator {
     private boolean a = true;
-    private final /* synthetic */ Iterator b;
+    private final /* synthetic */ java.util.Iterator b;
 
-    csx(Iterator it) {
+    csx(java.util.Iterator it) {
         this.b = it;
     }
 
@@ -16,15 +14,14 @@ final class csx implements Iterator {
         return this.b.hasNext();
     }
 
-    @Override // java.util.Iterator
-    public final Object next() {
-        Object next = this.b.next();
+    public final java.lang.Object next() {
+        java.lang.Object next = this.b.next();
         this.a = false;
         return next;
     }
 
     public final void remove() {
-        cld.b(!this.a, "no calls to next() since the last call to remove()");
+        defpackage.cld.b(!this.a, (java.lang.Object) "no calls to next() since the last call to remove()");
         this.b.remove();
     }
 }

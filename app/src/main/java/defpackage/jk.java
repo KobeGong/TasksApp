@@ -1,28 +1,24 @@
 package defpackage;
 
-import android.view.ViewGroup;
-import java.lang.ref.WeakReference;
-import java.util.ArrayList;
-
-/* renamed from: jk  reason: default package */
+/* renamed from: jk reason: default package */
 /* compiled from: PG */
 public final class jk {
-    public static je a = new jo((byte) 0);
-    public static ArrayList b = new ArrayList();
-    private static ThreadLocal c = new ThreadLocal();
+    public static defpackage.je a = new defpackage.jo(0);
+    public static java.util.ArrayList b = new java.util.ArrayList();
+    private static java.lang.ThreadLocal c = new java.lang.ThreadLocal();
 
-    static qr a() {
-        WeakReference weakReference = (WeakReference) c.get();
+    static defpackage.qr a() {
+        java.lang.ref.WeakReference weakReference = (java.lang.ref.WeakReference) c.get();
         if (weakReference == null || weakReference.get() == null) {
-            weakReference = new WeakReference(new qr());
+            weakReference = new java.lang.ref.WeakReference(new defpackage.qr());
             c.set(weakReference);
         }
-        return (qr) weakReference.get();
+        return (defpackage.qr) weakReference.get();
     }
 
-    static void a(ViewGroup viewGroup, je jeVar) {
+    static void a(android.view.ViewGroup viewGroup, defpackage.je jeVar) {
         if (jeVar != null && viewGroup != null) {
-            jl jlVar = new jl(jeVar, viewGroup);
+            defpackage.jl jlVar = new defpackage.jl(jeVar, viewGroup);
             viewGroup.addOnAttachStateChangeListener(jlVar);
             viewGroup.getViewTreeObserver().addOnPreDrawListener(jlVar);
         }

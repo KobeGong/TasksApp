@@ -1,9 +1,7 @@
 package defpackage;
 
-import android.view.View;
-
-/* renamed from: cdg  reason: default package */
+/* renamed from: cdg reason: default package */
 /* compiled from: PG */
 public interface cdg {
-    void a(View view, Object obj);
+    void a(android.view.View view, java.lang.Object obj);
 }

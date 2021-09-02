@@ -1,12 +1,11 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: dwl  reason: default package */
+/* renamed from: dwl reason: default package */
 /* compiled from: PG */
-public final class dwl implements Runnable {
-    private final /* synthetic */ dsx a;
+final class dwl implements java.lang.Runnable {
+    private final /* synthetic */ defpackage.dsx a;
 
-    dwl(dsx dsx) {
+    dwl(defpackage.dsx dsx) {
         this.a = dsx;
     }
 

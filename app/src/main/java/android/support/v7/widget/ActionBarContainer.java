@@ -1,52 +1,42 @@
 package android.support.v7.widget;
 
-import android.content.Context;
-import android.content.res.TypedArray;
-import android.graphics.drawable.Drawable;
-import android.os.Build;
-import android.util.AttributeSet;
-import android.view.ActionMode;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.FrameLayout;
-import com.google.android.apps.tasks.R;
-
 /* compiled from: PG */
-public class ActionBarContainer extends FrameLayout {
-    public View a;
-    public Drawable b;
-    public Drawable c;
-    public Drawable d;
+public class ActionBarContainer extends android.widget.FrameLayout {
+    public android.view.View a;
+    public android.graphics.drawable.Drawable b;
+    public android.graphics.drawable.Drawable c;
+    public android.graphics.drawable.Drawable d;
     public boolean e;
     public boolean f;
     private boolean g;
-    private View h;
-    private View i;
+    private android.view.View h;
+    private android.view.View i;
     private int j;
 
-    public ActionBarContainer(Context context) {
+    public ActionBarContainer(android.content.Context context) {
         this(context, null);
     }
 
-    public ActionBarContainer(Context context, AttributeSet attributeSet) {
+    public ActionBarContainer(android.content.Context context, android.util.AttributeSet attributeSet) {
         super(context, attributeSet);
-        sn.a(this, Build.VERSION.SDK_INT >= 21 ? new aai(this) : new aah(this));
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, xu.a);
-        this.b = obtainStyledAttributes.getDrawable(xu.d);
-        this.c = obtainStyledAttributes.getDrawable(xu.f);
-        this.j = obtainStyledAttributes.getDimensionPixelSize(xu.l, -1);
-        if (getId() == R.id.split_action_bar) {
+        defpackage.sn.a((android.view.View) this, android.os.Build.VERSION.SDK_INT >= 21 ? new defpackage.aai(this) : new defpackage.aah(this));
+        android.content.res.TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, defpackage.xu.a);
+        this.b = obtainStyledAttributes.getDrawable(defpackage.xu.d);
+        this.c = obtainStyledAttributes.getDrawable(defpackage.xu.f);
+        this.j = obtainStyledAttributes.getDimensionPixelSize(defpackage.xu.l, -1);
+        if (getId() == 2131755032) {
             this.e = true;
-            this.d = obtainStyledAttributes.getDrawable(xu.e);
+            this.d = obtainStyledAttributes.getDrawable(defpackage.xu.e);
         }
         obtainStyledAttributes.recycle();
-        setWillNotDraw(this.e ? this.d == null : this.b == null && this.c == null);
+        boolean z = this.e ? this.d == null : this.b == null && this.c == null;
+        setWillNotDraw(z);
     }
 
     public void onFinishInflate() {
         super.onFinishInflate();
-        this.h = findViewById(R.id.action_bar);
-        this.i = findViewById(R.id.action_context_bar);
+        this.h = findViewById(2131755207);
+        this.i = findViewById(2131755208);
     }
 
     public void setVisibility(int i2) {
@@ -69,7 +59,7 @@ public class ActionBarContainer extends FrameLayout {
     }
 
     /* access modifiers changed from: protected */
-    public boolean verifyDrawable(Drawable drawable) {
+    public boolean verifyDrawable(android.graphics.drawable.Drawable drawable) {
         return (drawable == this.b && !this.e) || (drawable == this.c && this.f) || ((drawable == this.d && this.e) || super.verifyDrawable(drawable));
     }
 
@@ -105,25 +95,25 @@ public class ActionBarContainer extends FrameLayout {
         setDescendantFocusability(z ? 393216 : 262144);
     }
 
-    public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+    public boolean onInterceptTouchEvent(android.view.MotionEvent motionEvent) {
         return this.g || super.onInterceptTouchEvent(motionEvent);
     }
 
-    public boolean onTouchEvent(MotionEvent motionEvent) {
+    public boolean onTouchEvent(android.view.MotionEvent motionEvent) {
         super.onTouchEvent(motionEvent);
         return true;
     }
 
-    public boolean onHoverEvent(MotionEvent motionEvent) {
+    public boolean onHoverEvent(android.view.MotionEvent motionEvent) {
         super.onHoverEvent(motionEvent);
         return true;
     }
 
-    public ActionMode startActionModeForChild(View view, ActionMode.Callback callback) {
+    public android.view.ActionMode startActionModeForChild(android.view.View view, android.view.ActionMode.Callback callback) {
         return null;
     }
 
-    public ActionMode startActionModeForChild(View view, ActionMode.Callback callback, int i2) {
+    public android.view.ActionMode startActionModeForChild(android.view.View view, android.view.ActionMode.Callback callback, int i2) {
         if (i2 != 0) {
             return super.startActionModeForChild(view, callback, i2);
         }
@@ -131,12 +121,12 @@ public class ActionBarContainer extends FrameLayout {
     }
 
     public void onMeasure(int i2, int i3) {
-        if (this.h == null && View.MeasureSpec.getMode(i3) == Integer.MIN_VALUE && this.j >= 0) {
-            i3 = View.MeasureSpec.makeMeasureSpec(Math.min(this.j, View.MeasureSpec.getSize(i3)), Integer.MIN_VALUE);
+        if (this.h == null && android.view.View.MeasureSpec.getMode(i3) == Integer.MIN_VALUE && this.j >= 0) {
+            i3 = android.view.View.MeasureSpec.makeMeasureSpec(java.lang.Math.min(this.j, android.view.View.MeasureSpec.getSize(i3)), Integer.MIN_VALUE);
         }
         super.onMeasure(i2, i3);
         if (this.h != null) {
-            View.MeasureSpec.getMode(i3);
+            android.view.View.MeasureSpec.getMode(i3);
         }
     }
 

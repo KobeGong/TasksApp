@@ -1,8 +1,8 @@
 package defpackage;
 
-/* renamed from: dcl  reason: default package */
+/* renamed from: dcl reason: default package */
 /* compiled from: PG */
-public enum dcl implements din {
+public enum dcl implements defpackage.din {
     CHANNEL_UNKNOWN(0),
     EMAIL(1),
     APPLE_PUSH(2),
@@ -14,15 +14,14 @@ public enum dcl implements din {
     MATCHSTICK(8),
     HTTP_STREAMING(9);
     
-    public static final dio b = new dcm();
+    public static final defpackage.dio b = null;
     public final int c;
 
-    @Override // defpackage.din
     public final int a() {
         return this.c;
     }
 
-    public static dcl a(int i) {
+    public static defpackage.dcl a(int i) {
         switch (i) {
             case 0:
                 return CHANNEL_UNKNOWN;
@@ -51,5 +50,9 @@ public enum dcl implements din {
 
     private dcl(int i) {
         this.c = i;
+    }
+
+    static {
+        b = new defpackage.dcm();
     }
 }

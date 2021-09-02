@@ -1,25 +1,22 @@
 package defpackage;
 
-import java.io.InputStream;
-import java.io.OutputStream;
-
-/* renamed from: eaa  reason: default package */
+/* renamed from: eaa reason: default package */
 /* compiled from: PG */
 public final class eaa {
-    public static volatile dhw a = dhw.a();
-    public static final ThreadLocal b = new eab();
+    public static volatile defpackage.dhw a = defpackage.dhw.a();
+    public static final java.lang.ThreadLocal b = new defpackage.eab();
 
-    public static dpd a(djo djo) {
-        return new ebh(djo, djo.d());
+    public static defpackage.dpd a(defpackage.djo djo) {
+        return new defpackage.ebh(djo, djo.d());
     }
 
-    public static dox b(djo djo) {
-        return new eac(djo);
+    public static defpackage.dox b(defpackage.djo djo) {
+        return new defpackage.eac(djo);
     }
 
-    static long a(InputStream inputStream, OutputStream outputStream) {
-        cld.a(inputStream);
-        cld.a(outputStream);
+    static long a(java.io.InputStream inputStream, java.io.OutputStream outputStream) {
+        defpackage.cld.a((java.lang.Object) inputStream);
+        defpackage.cld.a((java.lang.Object) outputStream);
         byte[] bArr = new byte[8192];
         long j = 0;
         while (true) {

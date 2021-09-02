@@ -1,12 +1,11 @@
 package defpackage;
 
-/* renamed from: coh  reason: default package */
+/* renamed from: coh reason: default package */
 /* compiled from: PG */
-final class coh implements cog {
+final class coh implements defpackage.cog {
     coh() {
     }
 
-    @Override // defpackage.cog
     public final void a() {
     }
 }

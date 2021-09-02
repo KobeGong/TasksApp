@@ -1,20 +1,16 @@
 package defpackage;
 
-import android.view.View;
-import android.widget.AdapterView;
+/* renamed from: cpv reason: default package */
+final /* synthetic */ class cpv implements android.widget.AdapterView.OnItemClickListener {
+    private final defpackage.cpu a;
 
-/* renamed from: cpv  reason: default package */
-final /* synthetic */ class cpv implements AdapterView.OnItemClickListener {
-    private final cpu a;
-
-    cpv(cpu cpu) {
+    cpv(defpackage.cpu cpu) {
         this.a = cpu;
     }
 
-    @Override // android.widget.AdapterView.OnItemClickListener
-    public final void onItemClick(AdapterView adapterView, View view, int i, long j) {
-        cpu cpu = this.a;
-        cpq cpq = (cpq) adapterView.getItemAtPosition(i);
+    public final void onItemClick(android.widget.AdapterView adapterView, android.view.View view, int i, long j) {
+        defpackage.cpu cpu = this.a;
+        defpackage.cpq cpq = (defpackage.cpq) adapterView.getItemAtPosition(i);
         if (cpu.a != null) {
             cpu.a.a(cpq);
         }

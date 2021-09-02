@@ -1,28 +1,24 @@
 package defpackage;
 
-/* renamed from: ctu  reason: default package */
+/* renamed from: ctu reason: default package */
 /* compiled from: PG */
-final class ctu extends ctt {
+final class ctu extends defpackage.ctt {
     ctu() {
     }
 
-    @Override // defpackage.ctt
-    public final String a() {
+    public final java.lang.String a() {
         return "<unknown class>";
     }
 
-    @Override // defpackage.ctt
-    public final String b() {
+    public final java.lang.String b() {
         return "<unknown method>";
     }
 
-    @Override // defpackage.ctt
     public final int c() {
         return 0;
     }
 
-    @Override // defpackage.ctt
-    public final String d() {
+    public final java.lang.String d() {
         return null;
     }
 }

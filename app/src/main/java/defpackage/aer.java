@@ -1,13 +1,11 @@
 package defpackage;
 
-import android.support.v7.widget.RecyclerView;
-
-/* renamed from: aer  reason: default package */
+/* renamed from: aer reason: default package */
 /* compiled from: PG */
-public final class aer implements Runnable {
-    private final /* synthetic */ RecyclerView a;
+public final class aer implements java.lang.Runnable {
+    private final /* synthetic */ android.support.v7.widget.RecyclerView a;
 
-    public aer(RecyclerView recyclerView) {
+    public aer(android.support.v7.widget.RecyclerView recyclerView) {
         this.a = recyclerView;
     }
 

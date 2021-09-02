@@ -1,27 +1,20 @@
 package defpackage;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.security.AccessControlException;
-import java.security.AccessController;
-import java.util.MissingResourceException;
-import java.util.Properties;
-
-/* renamed from: al  reason: default package */
+/* renamed from: al reason: default package */
 /* compiled from: PG */
 public final class al {
-    private static final Properties a = new Properties();
+    private static final java.util.Properties a = new java.util.Properties();
 
-    public static String a(String str, String str2) {
-        String property;
-        if (System.getSecurityManager() != null) {
+    public static java.lang.String a(java.lang.String str, java.lang.String str2) {
+        java.lang.String property;
+        if (java.lang.System.getSecurityManager() != null) {
             try {
-                property = (String) AccessController.doPrivileged(new am(str));
-            } catch (AccessControlException e) {
+                property = (java.lang.String) java.security.AccessController.doPrivileged(new defpackage.am(str));
+            } catch (java.security.AccessControlException e) {
                 property = null;
             }
         } else {
-            property = System.getProperty(str);
+            property = java.lang.System.getProperty(str);
         }
         if (property == null) {
             return a.getProperty(str, str2);
@@ -30,17 +23,19 @@ public final class al {
     }
 
     static {
-        InputStream resourceAsStream;
+        java.io.InputStream resourceAsStream;
+        java.lang.String str = "/android/icumessageformat/ICUConfig.properties";
+        java.lang.Class<defpackage.an> cls = defpackage.an.class;
         try {
-            if (System.getSecurityManager() != null) {
-                resourceAsStream = (InputStream) AccessController.doPrivileged(new ao(an.class, "/android/icumessageformat/ICUConfig.properties"));
+            if (java.lang.System.getSecurityManager() != null) {
+                resourceAsStream = (java.io.InputStream) java.security.AccessController.doPrivileged(new defpackage.ao(cls, str));
             } else {
-                resourceAsStream = an.class.getResourceAsStream("/android/icumessageformat/ICUConfig.properties");
+                resourceAsStream = cls.getResourceAsStream(str);
             }
             if (resourceAsStream != null) {
                 a.load(resourceAsStream);
             }
-        } catch (IOException | MissingResourceException e) {
+        } catch (java.io.IOException | java.util.MissingResourceException e) {
         }
     }
 }

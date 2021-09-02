@@ -1,9 +1,7 @@
 package defpackage;
 
-import android.content.Context;
-
-/* renamed from: bfs  reason: default package */
+/* renamed from: bfs reason: default package */
 /* compiled from: PG */
 public interface bfs {
-    bgc a(Context context, String str, bgb bgb);
+    defpackage.bgc a(android.content.Context context, java.lang.String str, defpackage.bgb bgb);
 }

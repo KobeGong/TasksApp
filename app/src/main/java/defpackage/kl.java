@@ -1,79 +1,68 @@
 package defpackage;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.View;
-import android.view.ViewGroup;
-
-/* renamed from: kl  reason: default package */
+/* renamed from: kl reason: default package */
 /* compiled from: PG */
-final class kl extends AnimatorListenerAdapter implements id, ji {
-    private final View a;
+final class kl extends android.animation.AnimatorListenerAdapter implements defpackage.id, defpackage.ji {
+    private final android.view.View a;
     private final int b;
-    private final ViewGroup c;
+    private final android.view.ViewGroup c;
     private final boolean d;
     private boolean e;
     private boolean f = false;
 
-    kl(View view, int i) {
+    kl(android.view.View view, int i) {
         this.a = view;
         this.b = i;
-        this.c = (ViewGroup) view.getParent();
+        this.c = (android.view.ViewGroup) view.getParent();
         this.d = true;
         a(true);
     }
 
-    @Override // defpackage.id
-    public final void onAnimationPause(Animator animator) {
+    public final void onAnimationPause(android.animation.Animator animator) {
         if (!this.f) {
-            kb.a(this.a, this.b);
+            defpackage.kb.a(this.a, this.b);
         }
     }
 
-    @Override // defpackage.id
-    public final void onAnimationResume(Animator animator) {
+    public final void onAnimationResume(android.animation.Animator animator) {
         if (!this.f) {
-            kb.a(this.a, 0);
+            defpackage.kb.a(this.a, 0);
         }
     }
 
-    public final void onAnimationCancel(Animator animator) {
+    public final void onAnimationCancel(android.animation.Animator animator) {
         this.f = true;
     }
 
-    public final void onAnimationRepeat(Animator animator) {
+    public final void onAnimationRepeat(android.animation.Animator animator) {
     }
 
-    public final void onAnimationStart(Animator animator) {
+    public final void onAnimationStart(android.animation.Animator animator) {
     }
 
-    public final void onAnimationEnd(Animator animator) {
+    public final void onAnimationEnd(android.animation.Animator animator) {
         d();
     }
 
-    @Override // defpackage.ji
     public final void c() {
     }
 
-    @Override // defpackage.ji
-    public final void a(je jeVar) {
+    public final void a(defpackage.je jeVar) {
         d();
-        jeVar.b(this);
+        jeVar.b((defpackage.ji) this);
     }
 
-    @Override // defpackage.ji
     public final void a() {
         a(false);
     }
 
-    @Override // defpackage.ji
     public final void b() {
         a(true);
     }
 
     private final void d() {
         if (!this.f) {
-            kb.a(this.a, this.b);
+            defpackage.kb.a(this.a, this.b);
             if (this.c != null) {
                 this.c.invalidate();
             }
@@ -84,7 +73,7 @@ final class kl extends AnimatorListenerAdapter implements id, ji {
     private final void a(boolean z) {
         if (this.d && this.e != z && this.c != null) {
             this.e = z;
-            jv.a(this.c, z);
+            defpackage.jv.a(this.c, z);
         }
     }
 }

@@ -1,12 +1,11 @@
 package defpackage;
 
-/* renamed from: bkw  reason: default package */
+/* renamed from: bkw reason: default package */
 /* compiled from: PG */
-public class bkw extends blb {
-    public bky a;
+public class bkw extends defpackage.blb {
+    public defpackage.bky a;
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.blb
     public int a() {
         if (this.a == null) {
             return 0;
@@ -18,8 +17,7 @@ public class bkw extends blb {
         return i;
     }
 
-    @Override // defpackage.blb
-    public void a(bku bku) {
+    public void a(defpackage.bku bku) {
         if (this.a != null) {
             for (int i = 0; i < this.a.b; i++) {
                 this.a.a[i].a(bku);
@@ -28,14 +26,13 @@ public class bkw extends blb {
     }
 
     /* renamed from: b */
-    public bkw clone() {
-        bkw bkw = (bkw) super.clone();
-        bla.a(this, bkw);
+    public defpackage.bkw clone() {
+        defpackage.bkw bkw = (defpackage.bkw) super.clone();
+        defpackage.bla.a(this, bkw);
         return bkw;
     }
 
-    @Override // defpackage.blb
-    public /* synthetic */ blb c() {
-        return (bkw) clone();
+    public /* synthetic */ defpackage.blb c() {
+        return (defpackage.bkw) clone();
     }
 }

@@ -1,15 +1,13 @@
 package defpackage;
 
-import java.util.logging.Level;
-
-/* renamed from: ctj  reason: default package */
+/* renamed from: ctj reason: default package */
 /* compiled from: PG */
 public abstract class ctj {
-    public final cup a;
+    public final defpackage.cup a;
 
-    protected ctj(cup cup) {
-        this.a = (cup) cub.a(cup, "backend");
+    protected ctj(defpackage.cup cup) {
+        this.a = (defpackage.cup) defpackage.cub.a((java.lang.Object) cup, "backend");
     }
 
-    public abstract cua a(Level level);
+    public abstract defpackage.cua a(java.util.logging.Level level);
 }

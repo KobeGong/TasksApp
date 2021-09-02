@@ -1,21 +1,20 @@
 package defpackage;
 
-/* renamed from: dey  reason: default package */
+/* renamed from: dey reason: default package */
 /* compiled from: PG */
-public enum dey implements din {
+public enum dey implements defpackage.din {
     NOTIFY_PREFERENCE_UNKNOWN(0),
     NOTIFY(1),
     DROP(2);
     
-    public static final dio d = new dku();
+    public static final defpackage.dio d = null;
     public final int e;
 
-    @Override // defpackage.din
     public final int a() {
         return this.e;
     }
 
-    public static dey a(int i) {
+    public static defpackage.dey a(int i) {
         switch (i) {
             case 0:
                 return NOTIFY_PREFERENCE_UNKNOWN;
@@ -30,5 +29,9 @@ public enum dey implements din {
 
     private dey(int i) {
         this.e = i;
+    }
+
+    static {
+        d = new defpackage.dku();
     }
 }

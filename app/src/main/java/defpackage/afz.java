@@ -1,6 +1,6 @@
 package defpackage;
 
-/* renamed from: afz  reason: default package */
+/* renamed from: afz reason: default package */
 /* compiled from: PG */
 public final class afz {
     public int a = 0;

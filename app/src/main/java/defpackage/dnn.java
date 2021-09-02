@@ -1,25 +1,17 @@
 package defpackage;
 
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.util.zip.GZIPInputStream;
-import java.util.zip.GZIPOutputStream;
-
-/* renamed from: dnn  reason: default package */
+/* renamed from: dnn reason: default package */
 /* compiled from: PG */
-public final class dnn implements doa {
-    @Override // defpackage.doa
-    public final String a() {
+public final class dnn implements defpackage.doa {
+    public final java.lang.String a() {
         return "gzip";
     }
 
-    @Override // defpackage.doa
-    public final OutputStream a(OutputStream outputStream) {
-        return new GZIPOutputStream(outputStream);
+    public final java.io.OutputStream a(java.io.OutputStream outputStream) {
+        return new java.util.zip.GZIPOutputStream(outputStream);
     }
 
-    @Override // defpackage.doa
-    public final InputStream a(InputStream inputStream) {
-        return new GZIPInputStream(inputStream);
+    public final java.io.InputStream a(java.io.InputStream inputStream) {
+        return new java.util.zip.GZIPInputStream(inputStream);
     }
 }

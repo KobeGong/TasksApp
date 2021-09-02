@@ -1,24 +1,21 @@
 package defpackage;
 
 import android.accounts.Account;
-import java.util.concurrent.Callable;
 
-/* access modifiers changed from: package-private */
-/* renamed from: anz  reason: default package */
-public final /* synthetic */ class anz implements Callable {
-    private final any a;
+/* renamed from: anz reason: default package */
+final /* synthetic */ class anz implements java.util.concurrent.Callable {
+    private final defpackage.any a;
     private final Account b;
-    private final cyl c;
+    private final defpackage.cyl c;
 
-    anz(any any, Account account, cyl cyl) {
+    anz(defpackage.any any, Account account, defpackage.cyl cyl) {
         this.a = any;
         this.b = account;
         this.c = cyl;
     }
 
-    @Override // java.util.concurrent.Callable
-    public final Object call() {
-        any any = this.a;
-        return new anc(this.b, any.appContext, this.c, any.b, any.executor, any.d);
+    public final java.lang.Object call() {
+        defpackage.any any = this.a;
+        return new defpackage.anc(this.b, any.e, this.c, any.b, any.executor, any.d);
     }
 }

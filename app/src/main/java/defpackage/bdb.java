@@ -1,11 +1,11 @@
 package defpackage;
 
-/* renamed from: bdb  reason: default package */
+/* renamed from: bdb reason: default package */
 /* compiled from: PG */
 public final class bdb {
-    public final /* synthetic */ bak a;
+    public final /* synthetic */ defpackage.bak a;
 
-    public bdb(bak bak) {
+    public bdb(defpackage.bak bak) {
         this.a = bak;
     }
 }

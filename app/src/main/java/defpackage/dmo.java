@@ -1,17 +1,15 @@
 package defpackage;
 
-import android.app.Application;
-
-/* renamed from: dmo  reason: default package */
+/* renamed from: dmo reason: default package */
 /* compiled from: PG */
-public abstract class dmo extends Application {
+public abstract class dmo extends android.app.Application {
     public volatile boolean f;
 
     public dmo() {
         this.f = true;
     }
 
-    public abstract dmm a();
+    public abstract defpackage.dmm a();
 
     public void onCreate() {
         super.onCreate();
@@ -20,7 +18,7 @@ public abstract class dmo extends Application {
                 if (this.f) {
                     a().a(this);
                     if (this.f) {
-                        throw new IllegalStateException("The AndroidInjector returned from applicationInjector() did not inject the DaggerApplication");
+                        throw new java.lang.IllegalStateException("The AndroidInjector returned from applicationInjector() did not inject the DaggerApplication");
                     }
                 }
             }

@@ -1,17 +1,14 @@
 package defpackage;
 
-import java.net.SocketAddress;
-
-/* access modifiers changed from: package-private */
-/* renamed from: dxo  reason: default package */
+/* renamed from: dxo reason: default package */
 /* compiled from: PG */
-public final class dxo extends SocketAddress {
+final class dxo extends java.net.SocketAddress {
     public static final long serialVersionUID = -6854992294603212793L;
-    public final SocketAddress a;
-    public final dmv b;
+    public final java.net.SocketAddress a;
+    public final defpackage.dmv b;
 
-    dxo(SocketAddress socketAddress, dmv dmv) {
-        this.a = (SocketAddress) cld.a(socketAddress);
-        this.b = (dmv) cld.a(dmv);
+    dxo(java.net.SocketAddress socketAddress, defpackage.dmv dmv) {
+        this.a = (java.net.SocketAddress) defpackage.cld.a((java.lang.Object) socketAddress);
+        this.b = (defpackage.dmv) defpackage.cld.a((java.lang.Object) dmv);
     }
 }

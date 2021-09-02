@@ -1,13 +1,11 @@
 package defpackage;
 
-import org.chromium.net.NetworkChangeNotifierAutoDetect;
-
-/* renamed from: eig  reason: default package */
+/* renamed from: eig reason: default package */
 /* compiled from: PG */
-public final class eig implements Runnable {
-    private final /* synthetic */ NetworkChangeNotifierAutoDetect a;
+public final class eig implements java.lang.Runnable {
+    private final /* synthetic */ org.chromium.net.NetworkChangeNotifierAutoDetect a;
 
-    public eig(NetworkChangeNotifierAutoDetect networkChangeNotifierAutoDetect) {
+    public eig(org.chromium.net.NetworkChangeNotifierAutoDetect networkChangeNotifierAutoDetect) {
         this.a = networkChangeNotifierAutoDetect;
     }
 

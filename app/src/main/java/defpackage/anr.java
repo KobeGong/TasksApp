@@ -1,49 +1,48 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: anr  reason: default package */
-public final /* synthetic */ class anr implements anx {
+/* renamed from: anr reason: default package */
+final /* synthetic */ class anr implements defpackage.anx {
     private final int a;
 
     anr(int i) {
         this.a = i;
     }
 
-    @Override // defpackage.anx
-    public final Object a(anu anu) {
-        dih dih;
+    public final java.lang.Object a(defpackage.anu anu) {
+        defpackage.dih dih;
         int i = this.a;
         if (i == 0) {
-            return czq.NONE;
+            return defpackage.czq.NONE;
         }
-        amb amb = anu.b;
-        ead b = amb.b();
-        dii dii = (dii) czm.c.a(bg.ao);
-        czn czn = czn.ANDROID;
+        defpackage.amb amb = anu.b;
+        defpackage.ead b = amb.b();
+        defpackage.dii dii = (defpackage.dii) defpackage.czm.c.a(defpackage.bg.ao);
+        defpackage.czn czn = defpackage.czn.ANDROID;
         dii.b();
-        czm czm = (czm) dii.a;
+        defpackage.czm czm = (defpackage.czm) dii.a;
         if (czn == null) {
-            throw new NullPointerException();
+            throw new java.lang.NullPointerException();
         }
         czm.a = czn.a();
         dii.b();
-        ((czm) dii.a).b = i;
+        ((defpackage.czm) dii.a).b = i;
         if (dii.b) {
             dih = dii.a;
         } else {
-            dih dih2 = dii.a;
-            djz.a.a(dih2).c(dih2);
+            defpackage.dih dih2 = dii.a;
+            defpackage.djz.a.a((java.lang.Object) dih2).c(dih2);
             dii.b = true;
             dih = dii.a;
         }
-        dih dih3 = dih;
-        if (!dih.a(dih3, Boolean.TRUE.booleanValue())) {
-            throw new dkw();
+        defpackage.dih dih3 = dih;
+        if (!defpackage.dih.a(dih3, java.lang.Boolean.TRUE.booleanValue())) {
+            throw new defpackage.dkw();
         }
+        defpackage.czm czm2 = (defpackage.czm) dih3;
         b.getClass();
-        czq a2 = czq.a(((czp) amb.a((czm) dih3, new amd(b))).a);
+        defpackage.czq a2 = defpackage.czq.a(((defpackage.czp) amb.a(czm2, new defpackage.amd(b))).a);
         if (a2 == null) {
-            return czq.UNRECOGNIZED;
+            return defpackage.czq.UNRECOGNIZED;
         }
         return a2;
     }

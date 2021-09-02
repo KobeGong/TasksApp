@@ -1,26 +1,22 @@
 package defpackage;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.Arrays;
-
-/* renamed from: axa  reason: default package */
+/* renamed from: axa reason: default package */
 /* compiled from: PG */
-public final class axa extends biq {
-    public static final Parcelable.Creator CREATOR = new axp();
-    public axb a;
+public final class axa extends defpackage.biq {
+    public static final android.os.Parcelable.Creator CREATOR = new defpackage.axp();
+    public defpackage.axb a;
     public byte[] b;
-    public final blh c;
-    public final aww d;
-    public final aww e;
+    public final defpackage.blh c;
+    public final defpackage.aww d;
+    public final defpackage.aww e;
     private int[] f;
-    private String[] g;
+    private java.lang.String[] g;
     private int[] h;
     private byte[][] i;
-    private box[] j;
+    private defpackage.box[] j;
     private boolean k;
 
-    public axa(axb axb, blh blh, aww aww, int[] iArr, int[] iArr2, boolean z) {
+    public axa(defpackage.axb axb, defpackage.blh blh, defpackage.aww aww, int[] iArr, int[] iArr2, boolean z) {
         this.a = axb;
         this.c = blh;
         this.d = aww;
@@ -33,7 +29,7 @@ public final class axa extends biq {
         this.k = z;
     }
 
-    axa(axb axb, byte[] bArr, int[] iArr, String[] strArr, int[] iArr2, byte[][] bArr2, boolean z, box[] boxArr) {
+    axa(defpackage.axb axb, byte[] bArr, int[] iArr, java.lang.String[] strArr, int[] iArr2, byte[][] bArr2, boolean z, defpackage.box[] boxArr) {
         this.a = axb;
         this.b = bArr;
         this.f = iArr;
@@ -47,35 +43,38 @@ public final class axa extends biq {
         this.k = z;
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         if (this == obj) {
             return true;
         }
-        if (!(obj instanceof axa)) {
+        if (!(obj instanceof defpackage.axa)) {
             return false;
         }
-        axa axa = (axa) obj;
-        return azb.a(this.a, axa.a) && Arrays.equals(this.b, axa.b) && Arrays.equals(this.f, axa.f) && Arrays.equals(this.g, axa.g) && azb.a(this.c, axa.c) && azb.a(this.d, axa.d) && azb.a(null, null) && Arrays.equals(this.h, axa.h) && Arrays.deepEquals(this.i, axa.i) && Arrays.equals(this.j, axa.j) && this.k == axa.k;
+        defpackage.axa axa = (defpackage.axa) obj;
+        if (!defpackage.azb.a((java.lang.Object) this.a, (java.lang.Object) axa.a) || !java.util.Arrays.equals(this.b, axa.b) || !java.util.Arrays.equals(this.f, axa.f) || !java.util.Arrays.equals(this.g, axa.g) || !defpackage.azb.a((java.lang.Object) this.c, (java.lang.Object) axa.c) || !defpackage.azb.a((java.lang.Object) this.d, (java.lang.Object) axa.d) || !defpackage.azb.a((java.lang.Object) null, (java.lang.Object) null) || !java.util.Arrays.equals(this.h, axa.h) || !java.util.Arrays.deepEquals(this.i, axa.i) || !java.util.Arrays.equals(this.j, axa.j) || this.k != axa.k) {
+            return false;
+        }
+        return true;
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a, this.b, this.f, this.g, this.c, this.d, null, this.h, this.i, this.j, Boolean.valueOf(this.k)});
+        return java.util.Arrays.hashCode(new java.lang.Object[]{this.a, this.b, this.f, this.g, this.c, this.d, null, this.h, this.i, this.j, java.lang.Boolean.valueOf(this.k)});
     }
 
-    public final String toString() {
-        return "LogEventParcelable[" + this.a + ", LogEventBytes: " + (this.b == null ? null : new String(this.b)) + ", TestCodes: " + Arrays.toString(this.f) + ", MendelPackages: " + Arrays.toString(this.g) + ", LogEvent: " + this.c + ", ExtensionProducer: " + this.d + ", VeProducer: " + ((Object) null) + ", ExperimentIDs: " + Arrays.toString(this.h) + ", ExperimentTokens: " + Arrays.toString(this.i) + ", ExperimentTokensParcelables: " + Arrays.toString(this.j) + ", AddPhenotypeExperimentTokens: " + this.k + "]";
+    public final java.lang.String toString() {
+        return "LogEventParcelable[" + this.a + ", LogEventBytes: " + (this.b == null ? null : new java.lang.String(this.b)) + ", TestCodes: " + java.util.Arrays.toString(this.f) + ", MendelPackages: " + java.util.Arrays.toString(this.g) + ", LogEvent: " + this.c + ", ExtensionProducer: " + this.d + ", VeProducer: " + null + ", ExperimentIDs: " + java.util.Arrays.toString(this.h) + ", ExperimentTokens: " + java.util.Arrays.toString(this.i) + ", ExperimentTokensParcelables: " + java.util.Arrays.toString(this.j) + ", AddPhenotypeExperimentTokens: " + this.k + "]";
     }
 
-    public final void writeToParcel(Parcel parcel, int i2) {
-        int q = bjr.q(parcel, 20293);
-        bjr.a(parcel, 2, this.a, i2);
-        bjr.a(parcel, 3, this.b);
-        bjr.a(parcel, 4, this.f);
-        bjr.a(parcel, 5, this.g);
-        bjr.a(parcel, 6, this.h);
-        bjr.a(parcel, 7, this.i);
-        bjr.a(parcel, 8, this.k);
-        bjr.a(parcel, 9, this.j, i2);
-        bjr.r(parcel, q);
+    public final void writeToParcel(android.os.Parcel parcel, int i2) {
+        int q = defpackage.bjr.q(parcel, 20293);
+        defpackage.bjr.a(parcel, 2, (android.os.Parcelable) this.a, i2);
+        defpackage.bjr.a(parcel, 3, this.b);
+        defpackage.bjr.a(parcel, 4, this.f);
+        defpackage.bjr.a(parcel, 5, this.g);
+        defpackage.bjr.a(parcel, 6, this.h);
+        defpackage.bjr.a(parcel, 7, this.i);
+        defpackage.bjr.a(parcel, 8, this.k);
+        defpackage.bjr.a(parcel, 9, (android.os.Parcelable[]) this.j, i2);
+        defpackage.bjr.r(parcel, q);
     }
 }

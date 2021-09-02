@@ -1,20 +1,18 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: anm  reason: default package */
-public final /* synthetic */ class anm implements csd {
-    private final String a;
-    private final anx b;
-    private final anu c;
+/* renamed from: anm reason: default package */
+final /* synthetic */ class anm implements defpackage.csd {
+    private final java.lang.String a;
+    private final defpackage.anx b;
+    private final defpackage.anu c;
 
-    anm(String str, anx anx, anu anu) {
+    anm(java.lang.String str, defpackage.anx anx, defpackage.anu anu) {
         this.a = str;
         this.b = anx;
         this.c = anu;
     }
 
-    @Override // defpackage.csd
-    public final Object b() {
-        return anc.a(this.a, this.b, this.c);
+    public final java.lang.Object b() {
+        return defpackage.anc.a(this.a, this.b, this.c);
     }
 }

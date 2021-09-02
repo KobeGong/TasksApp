@@ -1,13 +1,9 @@
 package defpackage;
 
-import java.security.AccessController;
-import java.security.PrivilegedActionException;
-import sun.misc.Unsafe;
-
-/* renamed from: cxj  reason: default package */
+/* renamed from: cxj reason: default package */
 /* compiled from: PG */
-final class cxj extends cxa {
-    public static final Unsafe a;
+final class cxj extends defpackage.cxa {
+    public static final sun.misc.Unsafe a;
     public static final long b;
     public static final long c;
     public static final long d;
@@ -17,57 +13,53 @@ final class cxj extends cxa {
     cxj() {
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.cxa
-    public final void a(cxl cxl, Thread thread) {
+    /* access modifiers changed from: 0000 */
+    public final void a(defpackage.cxl cxl, java.lang.Thread thread) {
         a.putObject(cxl, e, thread);
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.cxa
-    public final void a(cxl cxl, cxl cxl2) {
+    /* access modifiers changed from: 0000 */
+    public final void a(defpackage.cxl cxl, defpackage.cxl cxl2) {
         a.putObject(cxl, f, cxl2);
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.cxa
-    public final boolean a(cwz cwz, cxl cxl, cxl cxl2) {
+    /* access modifiers changed from: 0000 */
+    public final boolean a(defpackage.cwz cwz, defpackage.cxl cxl, defpackage.cxl cxl2) {
         return a.compareAndSwapObject(cwz, c, cxl, cxl2);
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.cxa
-    public final boolean a(cwz cwz, cxe cxe, cxe cxe2) {
+    /* access modifiers changed from: 0000 */
+    public final boolean a(defpackage.cwz cwz, defpackage.cxe cxe, defpackage.cxe cxe2) {
         return a.compareAndSwapObject(cwz, b, cxe, cxe2);
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.cxa
-    public final boolean a(cwz cwz, Object obj, Object obj2) {
+    /* access modifiers changed from: 0000 */
+    public final boolean a(defpackage.cwz cwz, java.lang.Object obj, java.lang.Object obj2) {
         return a.compareAndSwapObject(cwz, d, obj, obj2);
     }
 
     static {
-        Unsafe unsafe;
+        sun.misc.Unsafe unsafe;
         try {
-            unsafe = Unsafe.getUnsafe();
-        } catch (SecurityException e2) {
+            unsafe = sun.misc.Unsafe.getUnsafe();
+        } catch (java.lang.SecurityException e2) {
             try {
-                unsafe = (Unsafe) AccessController.doPrivileged(new cxk());
-            } catch (PrivilegedActionException e3) {
-                throw new RuntimeException("Could not initialize intrinsics", e3.getCause());
+                unsafe = (sun.misc.Unsafe) java.security.AccessController.doPrivileged(new defpackage.cxk());
+            } catch (java.security.PrivilegedActionException e3) {
+                throw new java.lang.RuntimeException("Could not initialize intrinsics", e3.getCause());
             }
         }
+        java.lang.Class<defpackage.cwz> cls = defpackage.cwz.class;
         try {
-            c = unsafe.objectFieldOffset(cwz.class.getDeclaredField("waiters"));
-            b = unsafe.objectFieldOffset(cwz.class.getDeclaredField("listeners"));
-            d = unsafe.objectFieldOffset(cwz.class.getDeclaredField("value"));
-            e = unsafe.objectFieldOffset(cxl.class.getDeclaredField("thread"));
-            f = unsafe.objectFieldOffset(cxl.class.getDeclaredField("next"));
+            c = unsafe.objectFieldOffset(cls.getDeclaredField("waiters"));
+            b = unsafe.objectFieldOffset(cls.getDeclaredField("listeners"));
+            d = unsafe.objectFieldOffset(cls.getDeclaredField("value"));
+            e = unsafe.objectFieldOffset(defpackage.cxl.class.getDeclaredField("thread"));
+            f = unsafe.objectFieldOffset(defpackage.cxl.class.getDeclaredField("next"));
             a = unsafe;
-        } catch (Exception e4) {
-            cse.a(e4);
-            throw new RuntimeException(e4);
+        } catch (java.lang.Exception e4) {
+            defpackage.cse.a(e4);
+            throw new java.lang.RuntimeException(e4);
         }
     }
 }

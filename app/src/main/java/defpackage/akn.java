@@ -1,20 +1,14 @@
 package defpackage;
 
-import android.content.Context;
-import java.util.List;
-
-/* renamed from: akn  reason: default package */
+/* renamed from: akn reason: default package */
 /* compiled from: PG */
-public final class akn implements akm {
-    @Override // defpackage.akm
-    public final void a(Context context, List list) {
+public final class akn implements defpackage.akm {
+    public final void a(android.content.Context context, java.util.List list) {
     }
 
-    @Override // defpackage.akm
-    public final void b(String str) {
+    public final void b(java.lang.String str) {
     }
 
-    @Override // defpackage.akm
-    public final void a(String str) {
+    public final void a(java.lang.String str) {
     }
 }

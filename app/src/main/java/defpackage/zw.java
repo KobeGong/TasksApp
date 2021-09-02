@@ -1,11 +1,11 @@
 package defpackage;
 
-/* renamed from: zw  reason: default package */
+/* renamed from: zw reason: default package */
 /* compiled from: PG */
 public interface zw {
-    MenuItemImpl a();
+    defpackage.zi a();
 
-    void a(MenuItemImpl ziVar);
+    void a(defpackage.zi ziVar);
 
     boolean c_();
 }

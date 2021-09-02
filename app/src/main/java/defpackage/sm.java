@@ -1,16 +1,13 @@
 package defpackage;
 
-import android.content.res.ColorStateList;
-import android.graphics.PorterDuff;
-
-/* renamed from: sm  reason: default package */
+/* renamed from: sm reason: default package */
 /* compiled from: PG */
 public interface sm {
-    void a(ColorStateList colorStateList);
+    void a(android.content.res.ColorStateList colorStateList);
 
-    void a(PorterDuff.Mode mode);
+    void a(android.graphics.PorterDuff.Mode mode);
 
-    PorterDuff.Mode b();
+    android.graphics.PorterDuff.Mode b();
 
-    ColorStateList d_();
+    android.content.res.ColorStateList d_();
 }

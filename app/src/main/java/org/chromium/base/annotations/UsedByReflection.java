@@ -1,9 +1,6 @@
 package org.chromium.base.annotations;
 
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Target;
-
-@Target({ElementType.METHOD, ElementType.FIELD, ElementType.TYPE, ElementType.CONSTRUCTOR})
+@java.lang.annotation.Target({java.lang.annotation.ElementType.METHOD, java.lang.annotation.ElementType.FIELD, java.lang.annotation.ElementType.TYPE, java.lang.annotation.ElementType.CONSTRUCTOR})
 /* compiled from: PG */
 public @interface UsedByReflection {
 }

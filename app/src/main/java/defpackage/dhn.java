@@ -1,16 +1,11 @@
 package defpackage;
 
-import java.io.OutputStream;
-import java.nio.ByteBuffer;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-/* renamed from: dhn  reason: default package */
+/* renamed from: dhn reason: default package */
 /* compiled from: PG */
-public abstract class dhn extends dgz {
-    public static final boolean a = dlc.c;
-    private static final Logger c = Logger.getLogger(dhn.class.getName());
-    public dlt b;
+public abstract class dhn extends defpackage.dgz {
+    public static final boolean a = defpackage.dlc.c;
+    private static final java.util.logging.Logger c = java.util.logging.Logger.getLogger(defpackage.dhn.class.getName());
+    public defpackage.dlt b = this;
 
     public static int a(int i) {
         if (i > 4096) {
@@ -25,38 +20,38 @@ public abstract class dhn extends dgz {
 
     public abstract void a(int i, long j);
 
-    public abstract void a(int i, dha dha);
+    public abstract void a(int i, defpackage.dha dha);
 
-    public abstract void a(int i, djo djo);
+    public abstract void a(int i, defpackage.djo djo);
 
-    /* access modifiers changed from: package-private */
-    public abstract void a(int i, djo djo, dkh dkh);
+    /* access modifiers changed from: 0000 */
+    public abstract void a(int i, defpackage.djo djo, defpackage.dkh dkh);
 
-    public abstract void a(int i, String str);
+    public abstract void a(int i, java.lang.String str);
 
     public abstract void a(int i, boolean z);
 
     public abstract void a(long j);
 
-    public abstract void a(dha dha);
+    public abstract void a(defpackage.dha dha);
 
-    public abstract void a(djo djo);
+    public abstract void a(defpackage.djo djo);
 
-    /* access modifiers changed from: package-private */
-    public abstract void a(djo djo, dkh dkh);
+    /* access modifiers changed from: 0000 */
+    public abstract void a(defpackage.djo djo, defpackage.dkh dkh);
 
-    public abstract void a(String str);
+    public abstract void a(java.lang.String str);
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public abstract void a(byte[] bArr, int i);
 
     public abstract void b(int i);
 
     public abstract void b(int i, int i2);
 
-    public abstract void b(int i, dha dha);
+    public abstract void b(int i, defpackage.dha dha);
 
-    public abstract void b(int i, djo djo);
+    public abstract void b(int i, defpackage.djo djo);
 
     public abstract void c(int i);
 
@@ -76,28 +71,28 @@ public abstract class dhn extends dgz {
 
     public abstract int i();
 
-    public static dhn a(OutputStream outputStream, int i) {
-        return new dho(outputStream, i);
+    public static defpackage.dhn a(java.io.OutputStream outputStream, int i) {
+        return new defpackage.dho(outputStream, i);
     }
 
-    public static dhn a(byte[] bArr) {
+    public static defpackage.dhn a(byte[] bArr) {
         return b(bArr, 0, bArr.length);
     }
 
-    public static dhn b(byte[] bArr, int i, int i2) {
-        return new dhp(bArr, i, i2);
+    public static defpackage.dhn b(byte[] bArr, int i, int i2) {
+        return new defpackage.dhp(bArr, i, i2);
     }
 
-    public static dhn a(ByteBuffer byteBuffer) {
+    public static defpackage.dhn a(java.nio.ByteBuffer byteBuffer) {
         if (byteBuffer.hasArray()) {
-            return new dhq(byteBuffer);
+            return new defpackage.dhq(byteBuffer);
         }
         if (!byteBuffer.isDirect() || byteBuffer.isReadOnly()) {
-            throw new IllegalArgumentException("ByteBuffer is read-only");
-        } else if (dlc.b) {
-            return new dht(byteBuffer);
+            throw new java.lang.IllegalArgumentException("ByteBuffer is read-only");
+        } else if (defpackage.dlc.b) {
+            return new defpackage.dht(byteBuffer);
         } else {
-            return new dhs(byteBuffer);
+            return new defpackage.dhs(byteBuffer);
         }
     }
 
@@ -113,11 +108,11 @@ public abstract class dhn extends dgz {
     }
 
     public final void a(int i, float f) {
-        e(i, Float.floatToRawIntBits(f));
+        e(i, java.lang.Float.floatToRawIntBits(f));
     }
 
     public final void a(int i, double d) {
-        c(i, Double.doubleToRawLongBits(d));
+        c(i, java.lang.Double.doubleToRawLongBits(d));
     }
 
     public final void d(int i) {
@@ -129,11 +124,11 @@ public abstract class dhn extends dgz {
     }
 
     public final void a(float f) {
-        e(Float.floatToRawIntBits(f));
+        e(java.lang.Float.floatToRawIntBits(f));
     }
 
     public final void a(double d) {
-        c(Double.doubleToRawLongBits(d));
+        c(java.lang.Double.doubleToRawLongBits(d));
     }
 
     public final void a(boolean z) {
@@ -196,17 +191,17 @@ public abstract class dhn extends dgz {
         return o(i << 3) + n(i2);
     }
 
-    public static int b(int i, String str) {
+    public static int b(int i, java.lang.String str) {
         return o(i << 3) + b(str);
     }
 
-    public static int c(int i, dha dha) {
+    public static int c(int i, defpackage.dha dha) {
         int o = o(i << 3);
         int a2 = dha.a();
         return o + a2 + o(a2);
     }
 
-    public static int a(int i, dix dix) {
+    public static int a(int i, defpackage.dix dix) {
         int i2;
         int o = o(i << 3);
         if (dix.c != null) {
@@ -219,15 +214,15 @@ public abstract class dhn extends dgz {
         return i2 + o(i2) + o;
     }
 
-    public static int c(int i, djo djo) {
+    public static int c(int i, defpackage.djo djo) {
         return o(i << 3) + b(djo);
     }
 
-    static int b(int i, djo djo, dkh dkh) {
+    static int b(int i, defpackage.djo djo, defpackage.dkh dkh) {
         return o(i << 3) + b(djo, dkh);
     }
 
-    public static int d(int i, dha dha) {
+    public static int d(int i, defpackage.dha dha) {
         return (o(8) << 1) + g(2, i) + c(3, dha);
     }
 
@@ -327,17 +322,17 @@ public abstract class dhn extends dgz {
         return n(i);
     }
 
-    public static int b(String str) {
+    public static int b(java.lang.String str) {
         int length;
         try {
-            length = dli.a(str);
-        } catch (dll e) {
-            length = str.getBytes(dim.a).length;
+            length = defpackage.dli.a((java.lang.CharSequence) str);
+        } catch (defpackage.dll e) {
+            length = str.getBytes(defpackage.dim.a).length;
         }
         return length + o(length);
     }
 
-    public static int a(dix dix) {
+    public static int a(defpackage.dix dix) {
         int i;
         if (dix.c != null) {
             i = dix.c.a();
@@ -349,7 +344,7 @@ public abstract class dhn extends dgz {
         return i + o(i);
     }
 
-    public static int b(dha dha) {
+    public static int b(defpackage.dha dha) {
         int a2 = dha.a();
         return a2 + o(a2);
     }
@@ -359,13 +354,13 @@ public abstract class dhn extends dgz {
         return length + o(length);
     }
 
-    public static int b(djo djo) {
+    public static int b(defpackage.djo djo) {
         int f = djo.f();
         return f + o(f);
     }
 
-    static int b(djo djo, dkh dkh) {
-        dgo dgo = (dgo) djo;
+    static int b(defpackage.djo djo, defpackage.dkh dkh) {
+        defpackage.dgo dgo = (defpackage.dgo) djo;
         int c2 = dgo.c();
         if (c2 == -1) {
             c2 = dkh.b(dgo);
@@ -388,28 +383,28 @@ public abstract class dhn extends dgz {
 
     public final void j() {
         if (i() != 0) {
-            throw new IllegalStateException("Did not write as much data as expected.");
+            throw new java.lang.IllegalStateException("Did not write as much data as expected.");
         }
     }
 
-    /* access modifiers changed from: package-private */
-    public final void a(String str, dll dll) {
-        c.logp(Level.WARNING, "com.google.protobuf.CodedOutputStream", "inefficientWriteStringNoTag", "Converting ill-formed UTF-16. Your Protocol Buffer will not round trip correctly!", (Throwable) dll);
-        byte[] bytes = str.getBytes(dim.a);
+    /* access modifiers changed from: 0000 */
+    public final void a(java.lang.String str, defpackage.dll dll) {
+        c.logp(java.util.logging.Level.WARNING, "com.google.protobuf.CodedOutputStream", "inefficientWriteStringNoTag", "Converting ill-formed UTF-16. Your Protocol Buffer will not round trip correctly!", dll);
+        byte[] bytes = str.getBytes(defpackage.dim.a);
         try {
             c(bytes.length);
             a(bytes, 0, bytes.length);
-        } catch (IndexOutOfBoundsException e) {
-            throw new dhr(e);
-        } catch (dhr e2) {
+        } catch (java.lang.IndexOutOfBoundsException e) {
+            throw new defpackage.dhr((java.lang.Throwable) e);
+        } catch (defpackage.dhr e2) {
             throw e2;
         }
     }
 
-    @Deprecated
-    static int c(int i, djo djo, dkh dkh) {
+    @java.lang.Deprecated
+    static int c(int i, defpackage.djo djo, defpackage.dkh dkh) {
         int o = o(i << 3) << 1;
-        dgo dgo = (dgo) djo;
+        defpackage.dgo dgo = (defpackage.dgo) djo;
         int c2 = dgo.c();
         if (c2 == -1) {
             c2 = dkh.b(dgo);
@@ -418,8 +413,8 @@ public abstract class dhn extends dgz {
         return c2 + o;
     }
 
-    @Deprecated
-    public static int c(djo djo) {
+    @java.lang.Deprecated
+    public static int c(defpackage.djo djo) {
         return djo.f();
     }
 }

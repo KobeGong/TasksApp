@@ -1,37 +1,29 @@
 package defpackage;
 
-import android.content.Context;
-import android.view.ActionMode;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.View;
-
-/* renamed from: yh  reason: default package */
+/* renamed from: yh reason: default package */
 /* compiled from: PG */
-public final class yh extends ActionMode {
-    public final yc a;
-    private final Context b;
+public final class yh extends android.view.ActionMode {
+    public final defpackage.yc a;
+    private final android.content.Context b;
 
-    public yh(Context context, yc ycVar) {
+    public yh(android.content.Context context, defpackage.yc ycVar) {
         this.b = context;
         this.a = ycVar;
     }
 
-    public final Object getTag() {
+    public final java.lang.Object getTag() {
         return this.a.a;
     }
 
-    public final void setTag(Object obj) {
+    public final void setTag(java.lang.Object obj) {
         this.a.a = obj;
     }
 
-    @Override // android.view.ActionMode
-    public final void setTitle(CharSequence charSequence) {
+    public final void setTitle(java.lang.CharSequence charSequence) {
         this.a.b(charSequence);
     }
 
-    @Override // android.view.ActionMode
-    public final void setSubtitle(CharSequence charSequence) {
+    public final void setSubtitle(java.lang.CharSequence charSequence) {
         this.a.a(charSequence);
     }
 
@@ -43,37 +35,35 @@ public final class yh extends ActionMode {
         this.a.c();
     }
 
-    public final Menu getMenu() {
-        return zx.a(this.b, (po) this.a.b());
+    public final android.view.Menu getMenu() {
+        return defpackage.zx.a(this.b, (defpackage.po) this.a.b());
     }
 
-    public final CharSequence getTitle() {
+    public final java.lang.CharSequence getTitle() {
         return this.a.f();
     }
 
-    @Override // android.view.ActionMode
     public final void setTitle(int i) {
         this.a.a(i);
     }
 
-    public final CharSequence getSubtitle() {
+    public final java.lang.CharSequence getSubtitle() {
         return this.a.g();
     }
 
-    @Override // android.view.ActionMode
     public final void setSubtitle(int i) {
         this.a.b(i);
     }
 
-    public final View getCustomView() {
+    public final android.view.View getCustomView() {
         return this.a.i();
     }
 
-    public final void setCustomView(View view) {
+    public final void setCustomView(android.view.View view) {
         this.a.a(view);
     }
 
-    public final MenuInflater getMenuInflater() {
+    public final android.view.MenuInflater getMenuInflater() {
         return this.a.a();
     }
 

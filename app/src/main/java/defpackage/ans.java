@@ -1,12 +1,11 @@
 package defpackage;
 
-/* renamed from: ans  reason: default package */
-final /* synthetic */ class ans implements anx {
-    ans(anc anc) {
+/* renamed from: ans reason: default package */
+final /* synthetic */ class ans implements defpackage.anx {
+    ans(defpackage.anc anc) {
     }
 
-    @Override // defpackage.anx
-    public final Object a(anu anu) {
-        return anc.b(anu);
+    public final java.lang.Object a(defpackage.anu anu) {
+        return defpackage.anc.b(anu);
     }
 }

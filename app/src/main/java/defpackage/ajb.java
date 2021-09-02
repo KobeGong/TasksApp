@@ -1,85 +1,81 @@
 package defpackage;
 
-import android.content.Context;
-import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
-
-/* renamed from: ajb  reason: default package */
+/* renamed from: ajb reason: default package */
 /* compiled from: PG */
 public final class ajb {
-    private static final String a = "tasks-pa.googleapis.com";
-    private static ajb e;
-    private final Context b;
-    private eht c;
-    private dnc d;
+    private static final java.lang.String a = "tasks-pa.googleapis.com";
+    private static defpackage.ajb e;
+    private final android.content.Context b;
+    private defpackage.eht c;
+    private defpackage.dnc d;
 
-    private ajb(Context context) {
+    private ajb(android.content.Context context) {
         this.b = context;
     }
 
-    public static synchronized ajb a(Context context) {
-        ajb ajb;
-        synchronized (ajb.class) {
+    public static synchronized defpackage.ajb a(android.content.Context context) {
+        defpackage.ajb ajb;
+        synchronized (defpackage.ajb.class) {
             if (e == null) {
-                e = new ajb(context.getApplicationContext());
+                e = new defpackage.ajb(context.getApplicationContext());
             }
             ajb = e;
         }
         return ajb;
     }
 
-    public final synchronized dnc a() {
-        dnc dnc;
+    public final synchronized defpackage.dnc a() {
+        defpackage.dnc dnc;
         boolean z = true;
         synchronized (this) {
             if (this.d == null) {
-                dqh a2 = dqh.a(a, b());
-                TimeUnit timeUnit = TimeUnit.SECONDS;
+                defpackage.dqh a2 = defpackage.dqh.a(a, b());
+                java.util.concurrent.TimeUnit timeUnit = java.util.concurrent.TimeUnit.SECONDS;
                 if (60 <= 0) {
                     z = false;
                 }
-                cld.a(z, "idle timeout is %s, but must be positive", 60);
+                defpackage.cld.a(z, "idle timeout is %s, but must be positive", 60);
                 if (timeUnit.toDays(60) >= 30) {
                     a2.k = -1;
                 } else {
-                    a2.k = Math.max(timeUnit.toMillis(60), dqv.a);
+                    a2.k = java.lang.Math.max(timeUnit.toMillis(60), defpackage.dqv.a);
                 }
-                dqh dqh = a2;
-                dtc a3 = dqh.a();
-                dro dro = new dro();
-                dzn a4 = dzn.a(dvc.l);
-                csd csd = dvc.n;
-                ArrayList arrayList = new ArrayList(dqh.c);
+                defpackage.dqh dqh = a2;
+                defpackage.dtc a3 = dqh.a();
+                defpackage.dro dro = new defpackage.dro();
+                defpackage.dzn a4 = defpackage.dzn.a(defpackage.dvc.l);
+                defpackage.csd csd = defpackage.dvc.n;
+                java.util.ArrayList arrayList = new java.util.ArrayList(dqh.c);
                 if (dqh.t) {
                     dqh.p = true;
-                    arrayList.add(0, new dsd(new drz(dvc.n), dqh.u, dqh.v));
+                    arrayList.add(0, new defpackage.dsd(new defpackage.drz(defpackage.dvc.n), dqh.u, dqh.v));
                 }
                 if (dqh.w) {
                     dqh.p = true;
-                    ecn a5 = ecp.a.a();
-                    ecp.a.b();
-                    arrayList.add(0, new dsg(a5, ecx.a()).e);
+                    defpackage.ecn a5 = defpackage.ecp.a.a();
+                    defpackage.ecp.a.b();
+                    arrayList.add(0, new defpackage.dsg(a5, defpackage.ecx.a()).e);
                 }
                 if (dqh.s != null) {
-                    arrayList.add(0, drp.e);
+                    arrayList.add(0, defpackage.drp.e);
                 }
-                this.d = new dwz(new dwf(dqh, a3, dro, a4, csd, arrayList, drw.b));
+                this.d = new defpackage.dwz(new defpackage.dwf(dqh, a3, dro, a4, csd, arrayList, defpackage.drw.b));
             }
             dnc = this.d;
         }
         return dnc;
     }
 
-    private final synchronized eht b() {
+    private final synchronized defpackage.eht b() {
         if (this.c == null) {
-            this.c = new ehu(this.b).a();
-            cjz.a(this.c);
+            this.c = new defpackage.ehu(this.b).a();
+            defpackage.cjz.a(this.c);
         }
         return this.c;
     }
 
     static {
-        alj.a().b();
-        new Object[1][0] = "tasks-pa.googleapis.com";
+        defpackage.alj.a().b();
+        new java.lang.Object[1][0] = "tasks-pa.googleapis.com";
     }
 }

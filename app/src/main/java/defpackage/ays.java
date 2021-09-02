@@ -1,7 +1,7 @@
 package defpackage;
 
-/* renamed from: ays  reason: default package */
+/* renamed from: ays reason: default package */
 /* compiled from: PG */
 public interface ays {
-    void a(axq axq);
+    void a(defpackage.axq axq);
 }

@@ -1,22 +1,19 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: h  reason: default package */
+/* renamed from: h reason: default package */
 /* compiled from: PG */
-public final class h extends l {
-    h(j jVar, j jVar2) {
+final class h extends defpackage.l {
+    h(defpackage.j jVar, defpackage.j jVar2) {
         super(jVar, jVar2);
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.l
-    public final j a(j jVar) {
+    /* access modifiers changed from: 0000 */
+    public final defpackage.j a(defpackage.j jVar) {
         return jVar.c;
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.l
-    public final j b(j jVar) {
+    /* access modifiers changed from: 0000 */
+    public final defpackage.j b(defpackage.j jVar) {
         return jVar.d;
     }
 }

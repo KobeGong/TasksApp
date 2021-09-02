@@ -1,36 +1,31 @@
 package defpackage;
 
-import java.net.URI;
-import java.util.List;
-
-/* renamed from: dpl  reason: default package */
+/* renamed from: dpl reason: default package */
 /* compiled from: PG */
-final class dpl extends dpg {
-    private final List b;
+final class dpl extends defpackage.dpg {
+    private final java.util.List b;
 
-    public dpl(List list) {
+    public dpl(java.util.List list) {
         this.b = list;
     }
 
-    @Override // defpackage.dpg
-    public final dpf a(URI uri, dmv dmv) {
+    public final defpackage.dpf a(java.net.URI uri, defpackage.dmv dmv) {
         b();
-        for (dpi dpi : this.b) {
-            dpf a = dpi.a(uri, dmv);
-            if (a != null) {
-                return a;
+        for (defpackage.dpi a : this.b) {
+            defpackage.dpf a2 = a.a(uri, dmv);
+            if (a2 != null) {
+                return a2;
             }
         }
         return null;
     }
 
-    @Override // defpackage.dpg
-    public final String a() {
+    public final java.lang.String a() {
         b();
-        return ((dpi) this.b.get(0)).a();
+        return ((defpackage.dpi) this.b.get(0)).a();
     }
 
     private final void b() {
-        cld.b(!this.b.isEmpty(), "No NameResolverProviders found via ServiceLoader, including for DNS. This is probably due to a broken build. If using ProGuard, check your configuration");
+        defpackage.cld.b(!this.b.isEmpty(), (java.lang.Object) "No NameResolverProviders found via ServiceLoader, including for DNS. This is probably due to a broken build. If using ProGuard, check your configuration");
     }
 }

@@ -1,43 +1,42 @@
 package defpackage;
 
-/* renamed from: cqs  reason: default package */
+/* renamed from: cqs reason: default package */
 /* compiled from: PG */
-public final class cqs implements cqm {
-    private final cqv a;
+public final class cqs implements defpackage.cqm {
+    private final defpackage.cqv a;
 
-    public cqs(cqv cqv) {
+    public cqs(defpackage.cqv cqv) {
         this.a = cqv;
         if (!cqv.c) {
-            cyi a2 = cqv.a.a(new cqx(cqv));
-            a2.a(new cqw(cqv, a2), cyn.INSTANCE);
+            defpackage.cyi a2 = cqv.a.a((java.util.concurrent.Callable) new defpackage.cqx(cqv));
+            a2.a(new defpackage.cqw(cqv, a2), defpackage.cyn.a);
             cqv.c = true;
         }
     }
 
-    @Override // defpackage.cqm
-    public final CharSequence a(cqp cqp) {
-        String str;
+    public final java.lang.CharSequence a(defpackage.cqp cqp) {
+        java.lang.String[] strArr;
+        java.lang.String str;
         if (cqp == null || cqp.a == null) {
             return null;
         }
-        String[] strArr = cqp.a;
-        for (String str2 : strArr) {
+        for (java.lang.String str2 : cqp.a) {
             if (str2 == null || str2.isEmpty() || str2.equals(".")) {
                 str = null;
             } else if (str2.length() <= 2) {
                 str = str2;
             } else {
-                cqv cqv = this.a;
-                cld.b(cqv.c);
-                ri riVar = (ri) cqv.b.get();
+                defpackage.cqv cqv = this.a;
+                defpackage.cld.b(cqv.c);
+                defpackage.ri riVar = (defpackage.ri) cqv.b.get();
                 if (riVar == null) {
                     str = null;
                 } else {
                     int length = str2.length();
                     int i = 0;
-                    String str3 = null;
+                    java.lang.String str3 = null;
                     while (i < length && riVar != null) {
-                        cqy cqy = (cqy) riVar.get(Character.valueOf(str2.charAt(i)));
+                        defpackage.cqy cqy = (defpackage.cqy) riVar.get(java.lang.Character.valueOf(str2.charAt(i)));
                         if (cqy == null) {
                             break;
                         }

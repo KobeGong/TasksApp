@@ -1,40 +1,35 @@
 package defpackage;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-/* renamed from: bmq  reason: default package */
+/* renamed from: bmq reason: default package */
 /* compiled from: PG */
-public final class bmq implements Parcelable.Creator {
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object[] newArray(int i) {
-        return new bmp[i];
+public final class bmq implements android.os.Parcelable.Creator {
+    public final /* synthetic */ java.lang.Object[] newArray(int i) {
+        return new defpackage.bmp[i];
     }
 
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object createFromParcel(Parcel parcel) {
-        String str = null;
-        int a = bjr.a(parcel);
+    public final /* synthetic */ java.lang.Object createFromParcel(android.os.Parcel parcel) {
+        java.lang.String str = null;
+        int a = defpackage.bjr.a(parcel);
         long j = 0;
         byte[] bArr = null;
         while (parcel.dataPosition() < a) {
             int readInt = parcel.readInt();
             switch (65535 & readInt) {
                 case 2:
-                    bArr = bjr.k(parcel, readInt);
+                    bArr = defpackage.bjr.k(parcel, readInt);
                     break;
                 case 3:
-                    j = bjr.f(parcel, readInt);
+                    j = defpackage.bjr.f(parcel, readInt);
                     break;
                 case 4:
-                    str = bjr.h(parcel, readInt);
+                    str = defpackage.bjr.h(parcel, readInt);
                     break;
                 default:
-                    bjr.b(parcel, readInt);
+                    defpackage.bjr.b(parcel, readInt);
                     break;
             }
         }
-        bjr.p(parcel, a);
-        return new bmp(bArr, j, str);
+        defpackage.bjr.p(parcel, a);
+        return new defpackage.bmp(bArr, j, str);
     }
 }

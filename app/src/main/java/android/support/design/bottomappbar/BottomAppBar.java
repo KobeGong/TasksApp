@@ -1,130 +1,112 @@
 package android.support.design.bottomappbar;
 
-import android.animation.Animator;
-import android.content.Context;
-import android.content.res.ColorStateList;
-import android.content.res.TypedArray;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import android.os.Parcelable;
-import android.support.design.behavior.HideBottomViewOnScrollBehavior;
-import android.support.design.floatingactionbutton.FloatingActionButton;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.v7.widget.ActionMenuView;
-import android.support.v7.widget.Toolbar;
-import android.util.AttributeSet;
-import android.view.View;
-import com.google.android.apps.tasks.R;
-
-@gy(a = Behavior.class)
+@defpackage.gy(a = android.support.design.bottomappbar.BottomAppBar.Behavior.class)
 /* compiled from: PG */
-public class BottomAppBar extends Toolbar {
+public class BottomAppBar extends android.support.v7.widget.Toolbar {
     private final int E;
-    private final dw F;
-    public final gd a;
-    public Animator b;
-    public Animator c;
+    private final defpackage.dw F;
+    public final defpackage.gd a;
+    public android.animation.Animator b;
+    public android.animation.Animator c;
     public int d;
     public boolean e;
     public boolean f;
 
     /* compiled from: PG */
-    public class Behavior extends HideBottomViewOnScrollBehavior {
+    public class Behavior extends android.support.design.behavior.HideBottomViewOnScrollBehavior {
         public Behavior() {
         }
 
-        public Behavior(Context context, AttributeSet attributeSet) {
+        public Behavior(android.content.Context context, android.util.AttributeSet attributeSet) {
             super(context, attributeSet);
         }
 
         /* access modifiers changed from: protected */
-        @Override // android.support.design.behavior.HideBottomViewOnScrollBehavior
-        public final /* synthetic */ void c(View view) {
-            BottomAppBar bottomAppBar = (BottomAppBar) view;
+        public final /* synthetic */ void c(android.view.View view) {
+            android.support.design.bottomappbar.BottomAppBar bottomAppBar = (android.support.design.bottomappbar.BottomAppBar) view;
             super.c(bottomAppBar);
             if (bottomAppBar.a() != null) {
-                new Rect();
-                throw new NoSuchMethodError();
+                new android.graphics.Rect();
+                throw new java.lang.NoSuchMethodError();
             }
         }
 
         /* access modifiers changed from: protected */
-        @Override // android.support.design.behavior.HideBottomViewOnScrollBehavior
-        public final /* synthetic */ void b(View view) {
-            BottomAppBar bottomAppBar = (BottomAppBar) view;
+        public final /* synthetic */ void b(android.view.View view) {
+            android.support.design.bottomappbar.BottomAppBar bottomAppBar = (android.support.design.bottomappbar.BottomAppBar) view;
             super.b(bottomAppBar);
-            FloatingActionButton a = bottomAppBar.a();
+            android.support.design.floatingactionbutton.FloatingActionButton a = bottomAppBar.a();
             if (a != null) {
                 a.clearAnimation();
-                a.animate().translationY(bottomAppBar.c()).setInterpolator(cs.c).setDuration(225);
+                a.animate().translationY(bottomAppBar.c()).setInterpolator(defpackage.cs.c).setDuration(225);
             }
         }
 
-        @Override // defpackage.gx, android.support.design.behavior.HideBottomViewOnScrollBehavior
-        public final /* synthetic */ boolean a(CoordinatorLayout coordinatorLayout, View view, int i) {
-            BottomAppBar bottomAppBar = (BottomAppBar) view;
-            FloatingActionButton a = bottomAppBar.a();
+        public final /* synthetic */ boolean a(android.support.design.widget.CoordinatorLayout coordinatorLayout, android.view.View view, int i) {
+            android.support.design.bottomappbar.BottomAppBar bottomAppBar = (android.support.design.bottomappbar.BottomAppBar) view;
+            android.support.design.floatingactionbutton.FloatingActionButton a = bottomAppBar.a();
             if (a != null) {
-                ((ha) a.getLayoutParams()).d = 17;
-                throw new NoSuchMethodError();
+                ((defpackage.ha) a.getLayoutParams()).d = 17;
+                throw new java.lang.NoSuchMethodError();
             }
             if (!((bottomAppBar.b != null && bottomAppBar.b.isRunning()) || (bottomAppBar.c != null && bottomAppBar.c.isRunning()))) {
                 bottomAppBar.e();
             }
-            coordinatorLayout.a(bottomAppBar, i);
+            coordinatorLayout.a((android.view.View) bottomAppBar, i);
             return super.a(coordinatorLayout, bottomAppBar, i);
         }
 
-        @Override // defpackage.gx
-        public final /* synthetic */ boolean a(CoordinatorLayout coordinatorLayout, View view, View view2, View view3, int i, int i2) {
-            BottomAppBar bottomAppBar = (BottomAppBar) view;
-            return bottomAppBar.e && super.a(coordinatorLayout, bottomAppBar, view2, view3, i, i2);
+        public final /* synthetic */ boolean a(android.support.design.widget.CoordinatorLayout coordinatorLayout, android.view.View view, android.view.View view2, android.view.View view3, int i, int i2) {
+            android.support.design.bottomappbar.BottomAppBar bottomAppBar = (android.support.design.bottomappbar.BottomAppBar) view;
+            return bottomAppBar.e && super.a(coordinatorLayout, (android.view.View) bottomAppBar, view2, view3, i, i2);
         }
     }
 
-    public BottomAppBar(Context context) {
+    public BottomAppBar(android.content.Context context) {
         this(context, null, 0);
     }
 
-    public BottomAppBar(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, R.attr.bottomAppBarStyle);
+    public BottomAppBar(android.content.Context context, android.util.AttributeSet attributeSet) {
+        this(context, attributeSet, 2130771968);
     }
 
-    public BottomAppBar(Context context, AttributeSet attributeSet, int i) {
+    public BottomAppBar(android.content.Context context, android.util.AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        new dt(this);
-        TypedArray a2 = fp.a(context, attributeSet, dx.a, i, 2132017751);
-        ColorStateList a3 = gm.a(context, a2, dx.b);
-        this.f = a2.getBoolean(dx.d, true);
-        this.d = a2.getInt(dx.c, 0);
-        this.e = a2.getBoolean(dx.h, false);
+        new defpackage.dt(this);
+        android.content.res.TypedArray a2 = defpackage.fp.a(context, attributeSet, defpackage.dx.a, i, 2132017751);
+        android.content.res.ColorStateList a3 = defpackage.gm.a(context, a2, defpackage.dx.b);
+        float dimensionPixelOffset = (float) a2.getDimensionPixelOffset(defpackage.dx.e, 0);
+        float dimensionPixelOffset2 = (float) a2.getDimensionPixelOffset(defpackage.dx.f, 0);
+        float dimensionPixelOffset3 = (float) a2.getDimensionPixelOffset(defpackage.dx.g, 0);
+        this.f = a2.getBoolean(defpackage.dx.d, true);
+        this.d = a2.getInt(defpackage.dx.c, 0);
+        this.e = a2.getBoolean(defpackage.dx.h, false);
         a2.recycle();
-        this.E = getResources().getDimensionPixelOffset(R.dimen.mtrl_bottomappbar_fabOffsetEndMode);
-        this.F = new dw((float) a2.getDimensionPixelOffset(dx.e, 0), (float) a2.getDimensionPixelOffset(dx.f, 0), (float) a2.getDimensionPixelOffset(dx.g, 0));
-        gi giVar = new gi();
+        this.E = getResources().getDimensionPixelOffset(2131689767);
+        this.F = new defpackage.dw(dimensionPixelOffset, dimensionPixelOffset2, dimensionPixelOffset3);
+        defpackage.gi giVar = new defpackage.gi();
         giVar.e = this.F;
-        this.a = new gd(giVar);
-        gd gdVar = this.a;
+        this.a = new defpackage.gd(giVar);
+        defpackage.gd gdVar = this.a;
         gdVar.c = 1.0f;
         gdVar.invalidateSelf();
-        gd gdVar2 = this.a;
+        defpackage.gd gdVar2 = this.a;
         gdVar2.a = true;
         gdVar2.invalidateSelf();
-        gd gdVar3 = this.a;
-        gdVar3.d = Paint.Style.FILL;
+        defpackage.gd gdVar3 = this.a;
+        gdVar3.d = android.graphics.Paint.Style.FILL;
         gdVar3.invalidateSelf();
-        jd.a((Drawable) this.a, a3);
-        sn.a(this, this.a);
+        defpackage.jd.a((android.graphics.drawable.Drawable) this.a, a3);
+        defpackage.sn.a((android.view.View) this, (android.graphics.drawable.Drawable) this.a);
     }
 
-    public final FloatingActionButton a() {
-        if (!(getParent() instanceof CoordinatorLayout)) {
+    public final android.support.design.floatingactionbutton.FloatingActionButton a() {
+        if (!(getParent() instanceof android.support.design.widget.CoordinatorLayout)) {
             return null;
         }
-        for (View view : ((CoordinatorLayout) getParent()).b(this)) {
-            if (view instanceof FloatingActionButton) {
-                return (FloatingActionButton) view;
+        for (android.view.View view : ((android.support.design.widget.CoordinatorLayout) getParent()).b((android.view.View) this)) {
+            if (view instanceof android.support.design.floatingactionbutton.FloatingActionButton) {
+                return (android.support.design.floatingactionbutton.FloatingActionButton) view;
             }
         }
         return null;
@@ -134,15 +116,15 @@ public class BottomAppBar extends Toolbar {
         if (a() == null) {
             return false;
         }
-        throw new NoSuchMethodError();
+        throw new java.lang.NoSuchMethodError();
     }
 
     public final float c() {
         if (a() == null) {
             return 0.0f;
         }
-        new Rect();
-        throw new NoSuchMethodError();
+        new android.graphics.Rect();
+        throw new java.lang.NoSuchMethodError();
     }
 
     private final float o() {
@@ -150,7 +132,7 @@ public class BottomAppBar extends Toolbar {
         int i;
         int i2 = 1;
         int i3 = this.d;
-        if (sn.a.j(this) == 1) {
+        if (defpackage.sn.a.j(this) == 1) {
             z = true;
         } else {
             z = false;
@@ -167,30 +149,40 @@ public class BottomAppBar extends Toolbar {
         return (float) i;
     }
 
-    public final ActionMenuView d() {
-        for (int i = 0; i < getChildCount(); i++) {
-            View childAt = getChildAt(i);
-            if (childAt instanceof ActionMenuView) {
-                return (ActionMenuView) childAt;
+    public final android.support.v7.widget.ActionMenuView d() {
+        int i = 0;
+        while (true) {
+            int i2 = i;
+            if (i2 >= getChildCount()) {
+                return null;
             }
+            android.view.View childAt = getChildAt(i2);
+            if (childAt instanceof android.support.v7.widget.ActionMenuView) {
+                return (android.support.v7.widget.ActionMenuView) childAt;
+            }
+            i = i2 + 1;
         }
-        return null;
     }
 
-    public final void a(ActionMenuView actionMenuView, int i, boolean z) {
-        boolean z2 = sn.a.j(this) == 1;
+    public final void a(android.support.v7.widget.ActionMenuView actionMenuView, int i, boolean z) {
+        boolean z2;
+        boolean z3 = defpackage.sn.a.j(this) == 1;
         int i2 = 0;
         for (int i3 = 0; i3 < getChildCount(); i3++) {
-            View childAt = getChildAt(i3);
-            if ((childAt.getLayoutParams() instanceof aha) && (((aha) childAt.getLayoutParams()).a & 8388615) == 8388611) {
-                i2 = Math.max(i2, z2 ? childAt.getLeft() : childAt.getRight());
+            android.view.View childAt = getChildAt(i3);
+            if (!(childAt.getLayoutParams() instanceof defpackage.aha) || (((defpackage.aha) childAt.getLayoutParams()).a & 8388615) != 8388611) {
+                z2 = false;
+            } else {
+                z2 = true;
+            }
+            if (z2) {
+                i2 = java.lang.Math.max(i2, z3 ? childAt.getLeft() : childAt.getRight());
             }
         }
-        actionMenuView.setTranslationX((i != 1 || !z) ? 0.0f : (float) (i2 - (z2 ? actionMenuView.getRight() : actionMenuView.getLeft())));
+        actionMenuView.setTranslationX((i != 1 || !z) ? 0.0f : (float) (i2 - (z3 ? actionMenuView.getRight() : actionMenuView.getLeft())));
     }
 
     /* access modifiers changed from: protected */
-    @Override // android.support.v7.widget.Toolbar
     public void onLayout(boolean z, int i, int i2, int i3, int i4) {
         super.onLayout(z, i, i2, i3, i4);
         if (this.b != null) {
@@ -202,11 +194,11 @@ public class BottomAppBar extends Toolbar {
         e();
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public final void e() {
         this.F.a = o();
-        FloatingActionButton a2 = a();
-        gd gdVar = this.a;
+        android.support.design.floatingactionbutton.FloatingActionButton a2 = a();
+        defpackage.gd gdVar = this.a;
         if (this.f) {
             b();
         }
@@ -215,7 +207,7 @@ public class BottomAppBar extends Toolbar {
             a2.setTranslationY(c());
             a2.setTranslationX(o());
         }
-        ActionMenuView d2 = d();
+        android.support.v7.widget.ActionMenuView d2 = d();
         if (d2 != null) {
             d2.setAlpha(1.0f);
             b();
@@ -223,31 +215,27 @@ public class BottomAppBar extends Toolbar {
         }
     }
 
-    @Override // android.support.v7.widget.Toolbar
-    public final void a(CharSequence charSequence) {
+    public final void a(java.lang.CharSequence charSequence) {
     }
 
-    @Override // android.support.v7.widget.Toolbar
-    public final void b(CharSequence charSequence) {
+    public final void b(java.lang.CharSequence charSequence) {
     }
 
     /* access modifiers changed from: protected */
-    @Override // android.support.v7.widget.Toolbar
-    public Parcelable onSaveInstanceState() {
-        du duVar = new du(super.onSaveInstanceState());
+    public android.os.Parcelable onSaveInstanceState() {
+        defpackage.du duVar = new defpackage.du(super.onSaveInstanceState());
         duVar.a = this.d;
         duVar.b = this.f;
         return duVar;
     }
 
     /* access modifiers changed from: protected */
-    @Override // android.support.v7.widget.Toolbar
-    public void onRestoreInstanceState(Parcelable parcelable) {
-        if (!(parcelable instanceof du)) {
+    public void onRestoreInstanceState(android.os.Parcelable parcelable) {
+        if (!(parcelable instanceof defpackage.du)) {
             super.onRestoreInstanceState(parcelable);
             return;
         }
-        du duVar = (du) parcelable;
+        defpackage.du duVar = (defpackage.du) parcelable;
         super.onRestoreInstanceState(duVar.e);
         this.d = duVar.a;
         this.f = duVar.b;

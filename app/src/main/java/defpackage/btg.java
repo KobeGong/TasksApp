@@ -1,13 +1,12 @@
 package defpackage;
 
-/* renamed from: btg  reason: default package */
+/* renamed from: btg reason: default package */
 /* compiled from: PG */
-public final class btg implements ecz {
-    public btg(bwj bwj) {
+public final class btg implements defpackage.ecz {
+    public btg(defpackage.bwj bwj) {
     }
 
-    @Override // defpackage.ecz
-    public final /* synthetic */ Object a() {
-        return (bsh) dgv.a(new bsh(), "Cannot return null from a non-@Nullable @Provides method");
+    public final /* synthetic */ java.lang.Object a() {
+        return (defpackage.bsh) defpackage.dgv.a((java.lang.Object) new defpackage.bsh(), "Cannot return null from a non-@Nullable @Provides method");
     }
 }

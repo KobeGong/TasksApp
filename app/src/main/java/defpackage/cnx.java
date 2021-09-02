@@ -1,35 +1,33 @@
 package defpackage;
 
-import android.annotation.TargetApi;
-import android.app.ActivityManager;
-import android.content.Context;
-import android.os.Build;
-import android.os.PowerManager;
-import android.os.Process;
-import java.util.List;
-
-/* renamed from: cnx  reason: default package */
+/* renamed from: cnx reason: default package */
 /* compiled from: PG */
 public class cnx {
-    private static volatile ActivityManager a = null;
+    private static volatile android.app.ActivityManager a = null;
 
-    public static ActivityManager a(Context context) {
+    public static android.app.ActivityManager a(android.content.Context context) {
         if (a == null) {
-            synchronized (cnx.class) {
+            synchronized (defpackage.cnx.class) {
                 if (a == null) {
-                    a = (ActivityManager) context.getSystemService("activity");
+                    a = (android.app.ActivityManager) context.getSystemService("activity");
                 }
             }
         }
         return a;
     }
 
-    public static boolean b(Context context) {
-        List<ActivityManager.RunningAppProcessInfo> runningAppProcesses = ((ActivityManager) context.getSystemService("activity")).getRunningAppProcesses();
+    public static boolean b(android.content.Context context) {
+        boolean z;
+        java.util.List<android.app.ActivityManager.RunningAppProcessInfo> runningAppProcesses = ((android.app.ActivityManager) context.getSystemService("activity")).getRunningAppProcesses();
         if (runningAppProcesses != null) {
-            for (ActivityManager.RunningAppProcessInfo runningAppProcessInfo : runningAppProcesses) {
+            for (android.app.ActivityManager.RunningAppProcessInfo runningAppProcessInfo : runningAppProcesses) {
                 if (runningAppProcessInfo.importance == 100 && runningAppProcessInfo.processName.contains(context.getPackageName())) {
-                    if (Build.VERSION.SDK_INT < 23 ? c(context) : true) {
+                    if (android.os.Build.VERSION.SDK_INT < 23) {
+                        z = c(context);
+                    } else {
+                        z = true;
+                    }
+                    if (z) {
                         return true;
                     }
                 }
@@ -38,18 +36,18 @@ public class cnx {
         return false;
     }
 
-    @TargetApi(20)
-    public static boolean c(Context context) {
-        PowerManager powerManager = (PowerManager) context.getSystemService("power");
-        if (Build.VERSION.SDK_INT >= 20) {
+    @android.annotation.TargetApi(20)
+    public static boolean c(android.content.Context context) {
+        android.os.PowerManager powerManager = (android.os.PowerManager) context.getSystemService("power");
+        if (android.os.Build.VERSION.SDK_INT >= 20) {
             return powerManager.isInteractive();
         }
         return powerManager.isScreenOn();
     }
 
-    public static String d(Context context) {
-        String packageName = context.getPackageName();
-        String a2 = a(Process.myPid());
+    public static java.lang.String d(android.content.Context context) {
+        java.lang.String packageName = context.getPackageName();
+        java.lang.String a2 = a(android.os.Process.myPid());
         if (a2 == null || packageName == null || !a2.startsWith(packageName)) {
             return a2;
         }
@@ -60,8 +58,15 @@ public class cnx {
         return a2.substring(length + 1);
     }
 
-    /* JADX WARNING: Removed duplicated region for block: B:13:0x003b A[SYNTHETIC, Splitter:B:13:0x003b] */
+    /* JADX WARNING: type inference failed for: r1v0, types: [java.io.BufferedReader] */
+    /* JADX WARNING: type inference failed for: r1v3 */
+    /* JADX WARNING: type inference failed for: r1v4, types: [java.io.BufferedReader] */
+    /* JADX WARNING: type inference failed for: r1v7 */
+    /* JADX WARNING: type inference failed for: r1v10 */
+    /* JADX WARNING: type inference failed for: r1v11 */
+    /* JADX WARNING: Multi-variable type inference failed */
     /* JADX WARNING: Removed duplicated region for block: B:19:0x0047 A[SYNTHETIC, Splitter:B:19:0x0047] */
+    /* JADX WARNING: Unknown variable types count: 2 */
     /* Code decompiled incorrectly, please refer to instructions dump. */
     private static java.lang.String a(int r6) {
         /*

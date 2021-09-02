@@ -1,49 +1,34 @@
 package defpackage;
 
-import android.app.PendingIntent;
-import android.content.Context;
-import android.os.Bundle;
-import android.os.IBinder;
-import android.os.IInterface;
-import android.os.Looper;
-import android.os.ParcelFileDescriptor;
-import android.os.RemoteException;
-import android.util.Log;
-import com.google.android.gms.common.api.Status;
-import java.util.HashMap;
-
-/* renamed from: bnq  reason: default package */
+/* renamed from: bnq reason: default package */
 /* compiled from: PG */
-public final class bnq extends bel {
-    private static volatile Bundle j;
-    private static volatile Bundle k;
-    private String a;
-    private String h;
-    private final HashMap i = new HashMap();
+public final class bnq extends defpackage.bel {
+    private static volatile android.os.Bundle j;
+    private static volatile android.os.Bundle k;
+    private java.lang.String a;
+    private java.lang.String h;
+    private final java.util.HashMap i = new java.util.HashMap();
 
-    public bnq(Context context, Looper looper, ayr ayr, ays ays, String str, bdj bdj) {
+    public bnq(android.content.Context context, android.os.Looper looper, defpackage.ayr ayr, defpackage.ays ays, java.lang.String str, defpackage.bdj bdj) {
         super(context.getApplicationContext(), looper, 5, bdj, ayr, ays);
-        new HashMap();
+        new java.util.HashMap();
         this.a = str;
         this.h = bdj.e;
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.bcx
-    public final String f_() {
+    public final java.lang.String f_() {
         return "com.google.android.gms.people.service.START";
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.bcx
-    public final String b() {
+    public final java.lang.String b() {
         return "com.google.android.gms.people.internal.IPeopleService";
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.bcx
-    public final Bundle m() {
-        Bundle bundle = new Bundle();
+    public final android.os.Bundle m() {
+        android.os.Bundle bundle = new android.os.Bundle();
         bundle.putString("social_client_application_id", this.a);
         bundle.putString("real_client_package_name", this.h);
         bundle.putBoolean("support_new_image_callback", true);
@@ -51,26 +36,24 @@ public final class bnq extends bel {
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.bcx
-    public final void a(int i2, IBinder iBinder, Bundle bundle, int i3) {
+    public final void a(int i2, android.os.IBinder iBinder, android.os.Bundle bundle, int i3) {
         if (i2 == 0 && bundle != null) {
             a(bundle.getBundle("post_init_configuration"));
         }
         super.a(i2, iBinder, bundle == null ? null : bundle.getBundle("post_init_resolution"), i3);
     }
 
-    @Override // defpackage.ayj, defpackage.bcx
     public final void e() {
         synchronized (this.i) {
             if (f()) {
-                for (bnf bnf : this.i.values()) {
+                for (defpackage.bnf bnf : this.i.values()) {
                     bnf.a();
                     try {
-                        ((bnn) super.o()).a((bnl) bnf, false, (String) null, (String) null, 0);
-                    } catch (RemoteException e) {
-                        Log.w("PeopleClient", "Failed to unregister listener", e);
-                    } catch (IllegalStateException e2) {
-                        Log.w("PeopleClient", "PeopleService is in unexpected state", e2);
+                        ((defpackage.bnn) super.o()).a((defpackage.bnl) bnf, false, (java.lang.String) null, (java.lang.String) null, 0);
+                    } catch (android.os.RemoteException e) {
+                        android.util.Log.w("PeopleClient", "Failed to unregister listener", e);
+                    } catch (java.lang.IllegalStateException e2) {
+                        android.util.Log.w("PeopleClient", "PeopleService is in unexpected state", e2);
                     }
                 }
             }
@@ -79,43 +62,43 @@ public final class bnq extends bel {
         super.e();
     }
 
-    private final synchronized void a(Bundle bundle) {
+    private final synchronized void a(android.os.Bundle bundle) {
         if (bundle != null) {
-            bne.a = bundle.getBoolean("use_contactables_api", true);
-            bjw.a.a(bundle.getStringArray("config.url_uncompress.patterns"), bundle.getStringArray("config.url_uncompress.replacements"));
+            defpackage.bne.a = bundle.getBoolean("use_contactables_api", true);
+            defpackage.bjw.a.a(bundle.getStringArray("config.url_uncompress.patterns"), bundle.getStringArray("config.url_uncompress.replacements"));
             j = bundle.getBundle("config.email_type_map");
             k = bundle.getBundle("config.phone_type_map");
         }
     }
 
-    public final bnf a(ayp ayp, bly bly) {
-        bnf bnf;
+    public final defpackage.bnf a(defpackage.ayp ayp, defpackage.bly bly) {
+        defpackage.bnf bnf;
         synchronized (this.i) {
             if (this.i.containsKey(bly)) {
-                bnf = (bnf) this.i.get(bly);
+                bnf = (defpackage.bnf) this.i.get(bly);
             } else {
-                bnf = new bnf(ayp.a(bly));
+                bnf = new defpackage.bnf(ayp.a((java.lang.Object) bly));
                 this.i.put(bly, bnf);
             }
         }
         return bnf;
     }
 
-    public final void a(bnf bnf, String str, String str2, int i2) {
+    public final void a(defpackage.bnf bnf, java.lang.String str, java.lang.String str2, int i2) {
         super.n();
         synchronized (this.i) {
-            ((bnn) super.o()).a((bnl) bnf, true, str, str2, i2);
+            ((defpackage.bnn) super.o()).a((defpackage.bnl) bnf, true, str, str2, i2);
         }
     }
 
-    public final void a(bly bly) {
+    public final void a(defpackage.bly bly) {
         synchronized (this.i) {
             try {
                 super.n();
                 if (this.i.containsKey(bly)) {
-                    bnf bnf = (bnf) this.i.get(bly);
+                    defpackage.bnf bnf = (defpackage.bnf) this.i.get(bly);
                     bnf.a();
-                    ((bnn) super.o()).a((bnl) bnf, false, (String) null, (String) null, 0);
+                    ((defpackage.bnn) super.o()).a((defpackage.bnl) bnf, false, (java.lang.String) null, (java.lang.String) null, 0);
                     this.i.remove(bly);
                 }
             } finally {
@@ -124,46 +107,45 @@ public final class bnq extends bel {
         }
     }
 
-    public final void a(bcb bcb, boolean z, int i2) {
+    public final void a(defpackage.bcb bcb, boolean z, int i2) {
         super.n();
-        bng bng = new bng(bcb);
+        defpackage.bng bng = new defpackage.bng(bcb);
         try {
-            ((bnn) super.o()).a(bng, z, i2);
-        } catch (RemoteException e) {
+            ((defpackage.bnn) super.o()).a(bng, z, i2);
+        } catch (android.os.RemoteException e) {
             bng.a(8, null, null);
         }
     }
 
-    public final bet a(bcb bcb, String str, String str2, int i2, int i3) {
-        bnh bnh = new bnh(bcb);
+    public final defpackage.bet a(defpackage.bcb bcb, java.lang.String str, java.lang.String str2, int i2, int i3) {
+        defpackage.bnh bnh = new defpackage.bnh(bcb);
         try {
-            return ((bnn) super.o()).a(bnh, str, str2, i2, i3);
-        } catch (RemoteException e) {
-            bnh.a(8, (Bundle) null, (ParcelFileDescriptor) null, (Bundle) null);
+            return ((defpackage.bnn) super.o()).a((defpackage.bnl) bnh, str, str2, i2, i3);
+        } catch (android.os.RemoteException e) {
+            bnh.a(8, null, null, null);
             return null;
         }
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.bcx
-    public final /* synthetic */ IInterface a(IBinder iBinder) {
+    public final /* synthetic */ android.os.IInterface a(android.os.IBinder iBinder) {
         if (iBinder == null) {
             return null;
         }
-        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.people.internal.IPeopleService");
-        if (queryLocalInterface instanceof bnn) {
-            return (bnn) queryLocalInterface;
+        android.os.IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.people.internal.IPeopleService");
+        if (queryLocalInterface instanceof defpackage.bnn) {
+            return (defpackage.bnn) queryLocalInterface;
         }
-        return new bno(iBinder);
+        return new defpackage.bno(iBinder);
     }
 
-    static /* synthetic */ Status a(int i2, Bundle bundle) {
-        PendingIntent pendingIntent;
+    static /* synthetic */ com.google.android.gms.common.api.Status a(int i2, android.os.Bundle bundle) {
+        android.app.PendingIntent pendingIntent;
         if (bundle == null) {
             pendingIntent = null;
         } else {
-            pendingIntent = (PendingIntent) bundle.getParcelable("pendingIntent");
+            pendingIntent = (android.app.PendingIntent) bundle.getParcelable("pendingIntent");
         }
-        return new Status(i2, null, pendingIntent);
+        return new com.google.android.gms.common.api.Status(i2, null, pendingIntent);
     }
 }

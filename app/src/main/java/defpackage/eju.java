@@ -1,34 +1,31 @@
 package defpackage;
 
-import java.nio.ByteBuffer;
-import org.chromium.net.impl.CronetBidirectionalStream;
-
-/* renamed from: eju  reason: default package */
+/* renamed from: eju reason: default package */
 /* compiled from: PG */
-public final class eju implements Runnable {
-    private ByteBuffer a;
+public final class eju implements java.lang.Runnable {
+    private java.nio.ByteBuffer a;
     private final boolean b;
-    private final /* synthetic */ CronetBidirectionalStream c;
+    private final /* synthetic */ org.chromium.net.impl.CronetBidirectionalStream c;
 
-    public eju(CronetBidirectionalStream cronetBidirectionalStream, ByteBuffer byteBuffer, boolean z) {
+    public eju(org.chromium.net.impl.CronetBidirectionalStream cronetBidirectionalStream, java.nio.ByteBuffer byteBuffer, boolean z) {
         this.c = cronetBidirectionalStream;
         this.a = byteBuffer;
         this.b = z;
     }
 
-    /* JADX WARNING: Code restructure failed: missing block: B:14:0x0029, code lost:
+    /* JADX WARNING: Code restructure failed: missing block: B:15:?, code lost:
         r6.c.a.b(r6.c, r6.c.g, r1, r6.b);
      */
-    /* JADX WARNING: Code restructure failed: missing block: B:15:0x0038, code lost:
+    /* JADX WARNING: Code restructure failed: missing block: B:16:0x0038, code lost:
         if (r0 == false) goto L_?;
      */
-    /* JADX WARNING: Code restructure failed: missing block: B:16:0x003a, code lost:
+    /* JADX WARNING: Code restructure failed: missing block: B:17:0x003a, code lost:
         r6.c.e();
      */
-    /* JADX WARNING: Code restructure failed: missing block: B:23:?, code lost:
+    /* JADX WARNING: Code restructure failed: missing block: B:28:?, code lost:
         return;
      */
-    /* JADX WARNING: Code restructure failed: missing block: B:24:?, code lost:
+    /* JADX WARNING: Code restructure failed: missing block: B:30:?, code lost:
         return;
      */
     /* Code decompiled incorrectly, please refer to instructions dump. */
@@ -61,16 +58,16 @@ public final class eju implements Runnable {
             r0 = 1
         L_0x0028:
             monitor-exit(r2)     // Catch:{ all -> 0x0047 }
-            org.chromium.net.impl.CronetBidirectionalStream r2 = r6.c
-            eks r2 = r2.a
-            org.chromium.net.impl.CronetBidirectionalStream r3 = r6.c
-            org.chromium.net.impl.CronetBidirectionalStream r4 = r6.c
-            ekq r4 = r4.g
-            boolean r5 = r6.b
-            r2.b(r3, r4, r1, r5)
+            org.chromium.net.impl.CronetBidirectionalStream r2 = r6.c     // Catch:{ Exception -> 0x0040 }
+            eks r2 = r2.a     // Catch:{ Exception -> 0x0040 }
+            org.chromium.net.impl.CronetBidirectionalStream r3 = r6.c     // Catch:{ Exception -> 0x0040 }
+            org.chromium.net.impl.CronetBidirectionalStream r4 = r6.c     // Catch:{ Exception -> 0x0040 }
+            ekq r4 = r4.g     // Catch:{ Exception -> 0x0040 }
+            boolean r5 = r6.b     // Catch:{ Exception -> 0x0040 }
+            r2.b(r3, r4, r1, r5)     // Catch:{ Exception -> 0x0040 }
             if (r0 == 0) goto L_0x0014
-            org.chromium.net.impl.CronetBidirectionalStream r0 = r6.c
-            r0.e()
+            org.chromium.net.impl.CronetBidirectionalStream r0 = r6.c     // Catch:{ Exception -> 0x0040 }
+            r0.e()     // Catch:{ Exception -> 0x0040 }
             goto L_0x0014
         L_0x0040:
             r0 = move-exception
@@ -79,8 +76,8 @@ public final class eju implements Runnable {
             goto L_0x0014
         L_0x0047:
             r0 = move-exception
-            monitor-exit(r2)
-            throw r0
+            monitor-exit(r2)     // Catch:{ all -> 0x0047 }
+            throw r0     // Catch:{ Exception -> 0x0040 }
         */
         throw new UnsupportedOperationException("Method not decompiled: defpackage.eju.run():void");
     }

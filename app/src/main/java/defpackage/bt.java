@@ -1,12 +1,10 @@
 package defpackage;
 
-import com.google.android.apps.tasks.R;
-
-/* renamed from: bt  reason: default package */
+/* renamed from: bt reason: default package */
 /* compiled from: PG */
 public final class bt {
-    public static final int[] a = {R.attr.fontProviderAuthority, R.attr.fontProviderPackage, R.attr.fontProviderQuery, R.attr.fontProviderCerts, R.attr.fontProviderFetchStrategy, R.attr.fontProviderFetchTimeout};
-    public static final int[] b = {16844082, 16844083, 16844095, 16844143, 16844144, R.attr.fontStyle, R.attr.font, R.attr.fontWeight, R.attr.fontVariationSettings, R.attr.ttcIndex};
+    public static final int[] a = {2130772381, 2130772382, 2130772383, 2130772384, 2130772385, 2130772386};
+    public static final int[] b = {16844082, 16844083, 16844095, 16844143, 16844144, 2130772387, 2130772388, 2130772389, 2130772390, 2130772391};
     public static final int c = 0;
     public static final int d = 2;
     public static final int e = 4;

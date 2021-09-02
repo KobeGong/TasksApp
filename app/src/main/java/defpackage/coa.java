@@ -1,20 +1,17 @@
 package defpackage;
 
-import android.os.SystemClock;
-import java.util.Random;
-
-/* renamed from: coa  reason: default package */
+/* renamed from: coa reason: default package */
 /* compiled from: PG */
 public final class coa {
     public final float a;
-    public final Random b;
+    public final java.util.Random b;
 
     public coa(float f) {
-        this(f, new Random(SystemClock.elapsedRealtime()));
+        this(f, new java.util.Random(android.os.SystemClock.elapsedRealtime()));
     }
 
-    private coa(float f, Random random) {
-        cky.a(f > 0.0f && f <= 1.0f, "Sampling rate should be a floating number > 0 and <= 1.");
+    private coa(float f, java.util.Random random) {
+        defpackage.cky.a(f > 0.0f && f <= 1.0f, (java.lang.Object) "Sampling rate should be a floating number > 0 and <= 1.");
         this.a = f;
         this.b = random;
     }

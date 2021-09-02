@@ -1,23 +1,19 @@
 package defpackage;
 
-import android.content.Intent;
-import java.io.PrintWriter;
-import java.util.Set;
-
-/* renamed from: ayj  reason: default package */
+/* renamed from: ayj reason: default package */
 /* compiled from: PG */
-public interface ayj extends ayg {
-    void a(bda bda);
+public interface ayj extends defpackage.ayg {
+    void a(defpackage.bda bda);
 
-    void a(bdb bdb);
+    void a(defpackage.bdb bdb);
 
-    void a(bdp bdp, Set set);
+    void a(defpackage.bdp bdp, java.util.Set set);
 
-    void a(String str, PrintWriter printWriter);
+    void a(java.lang.String str, java.io.PrintWriter printWriter);
 
     boolean c();
 
-    Intent d();
+    android.content.Intent d();
 
     void e();
 
@@ -29,5 +25,5 @@ public interface ayj extends ayg {
 
     boolean i();
 
-    String j();
+    java.lang.String j();
 }

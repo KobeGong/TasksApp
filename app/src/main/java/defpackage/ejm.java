@@ -1,38 +1,32 @@
 package defpackage;
 
-import android.annotation.SuppressLint;
-import java.util.AbstractMap;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.concurrent.Executor;
-
-/* renamed from: ejm  reason: default package */
+/* renamed from: ejm reason: default package */
 /* compiled from: PG */
-public final class ejm extends ehq {
-    private final ehy a;
-    private final String b;
-    private final ehr c;
-    private final Executor d;
-    private final ArrayList e = new ArrayList();
-    private String f = "POST";
+public final class ejm extends defpackage.ehq {
+    private final defpackage.ehy a;
+    private final java.lang.String b;
+    private final defpackage.ehr c;
+    private final java.util.concurrent.Executor d;
+    private final java.util.ArrayList e = new java.util.ArrayList();
+    private java.lang.String f = "POST";
     private int g = 3;
     private boolean h;
-    private Collection i;
+    private java.util.Collection i;
     private boolean j;
     private int k;
     private boolean l;
     private int m;
 
-    public ejm(String str, ehr ehr, Executor executor, ehy ehy) {
-        super((byte) 0);
+    public ejm(java.lang.String str, defpackage.ehr ehr, java.util.concurrent.Executor executor, defpackage.ehy ehy) {
+        super(0);
         if (str == null) {
-            throw new NullPointerException("URL is required.");
+            throw new java.lang.NullPointerException("URL is required.");
         } else if (ehr == null) {
-            throw new NullPointerException("Callback is required.");
+            throw new java.lang.NullPointerException("Callback is required.");
         } else if (executor == null) {
-            throw new NullPointerException("Executor is required.");
+            throw new java.lang.NullPointerException("Executor is required.");
         } else if (ehy == null) {
-            throw new NullPointerException("CronetEngine is required.");
+            throw new java.lang.NullPointerException("CronetEngine is required.");
         } else {
             this.b = str;
             this.c = ehr;
@@ -41,67 +35,58 @@ public final class ejm extends ehq {
         }
     }
 
-    @Override // defpackage.ehq
-    public final ehq a(Object obj) {
+    public final defpackage.ehq a(java.lang.Object obj) {
         if (obj == null) {
-            throw new NullPointerException("Invalid metrics annotation.");
+            throw new java.lang.NullPointerException("Invalid metrics annotation.");
         }
         if (this.i == null) {
-            this.i = new ArrayList();
+            this.i = new java.util.ArrayList();
         }
         this.i.add(obj);
         return this;
     }
 
-    @Override // defpackage.ehq
-    @SuppressLint({"WrongConstant"})
-    public final ehp d() {
+    @android.annotation.SuppressLint({"WrongConstant"})
+    public final defpackage.ehp d() {
         return this.a.a(this.b, this.c, this.d, this.f, this.e, this.g, this.h, this.i, this.j, this.k, this.l, this.m);
     }
 
-    @Override // defpackage.ehq
-    public final /* synthetic */ ehq c() {
+    public final /* synthetic */ defpackage.ehq c() {
         this.h = true;
         return this;
     }
 
-    @Override // defpackage.ehq
-    public final /* synthetic */ ehq b(String str, String str2) {
-        return (ejm) a(str, str2);
+    public final /* synthetic */ defpackage.ehq b(java.lang.String str, java.lang.String str2) {
+        return (defpackage.ejm) a(str, str2);
     }
 
-    @Override // defpackage.ehq
-    public final /* synthetic */ ehq b(String str) {
-        return (ejm) a(str);
+    public final /* synthetic */ defpackage.ehq b(java.lang.String str) {
+        return (defpackage.ejm) a(str);
     }
 
-    @Override // defpackage.ehq
-    @SuppressLint({"WrongConstant"})
-    public final /* synthetic */ ehp b() {
+    @android.annotation.SuppressLint({"WrongConstant"})
+    public final /* synthetic */ defpackage.ehp b() {
         return b();
     }
 
-    @Override // defpackage.ehq
-    public final /* synthetic */ ehq a() {
-        return (ejm) a();
+    public final /* synthetic */ defpackage.ehq a() {
+        return (defpackage.ejm) a();
     }
 
-    @Override // defpackage.ehq
-    public final /* synthetic */ ehq a(String str, String str2) {
+    public final /* synthetic */ defpackage.ehq a(java.lang.String str, java.lang.String str2) {
         if (str == null) {
-            throw new NullPointerException("Invalid header name.");
+            throw new java.lang.NullPointerException("Invalid header name.");
         } else if (str2 == null) {
-            throw new NullPointerException("Invalid header value.");
+            throw new java.lang.NullPointerException("Invalid header value.");
         } else {
-            this.e.add(new AbstractMap.SimpleImmutableEntry(str, str2));
+            this.e.add(new java.util.AbstractMap.SimpleImmutableEntry(str, str2));
             return this;
         }
     }
 
-    @Override // defpackage.ehq
-    public final /* synthetic */ ehq a(String str) {
+    public final /* synthetic */ defpackage.ehq a(java.lang.String str) {
         if (str == null) {
-            throw new NullPointerException("Method is required.");
+            throw new java.lang.NullPointerException("Method is required.");
         }
         this.f = str;
         return this;

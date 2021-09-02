@@ -1,18 +1,15 @@
 package defpackage;
 
-import android.view.View;
-
-/* access modifiers changed from: package-private */
-/* renamed from: ahn  reason: default package */
+/* renamed from: ahn reason: default package */
 /* compiled from: PG */
-public interface ahn {
+interface ahn {
     int a();
 
-    int a(View view);
+    int a(android.view.View view);
 
-    View a(int i);
+    android.view.View a(int i);
 
     int b();
 
-    int b(View view);
+    int b(android.view.View view);
 }

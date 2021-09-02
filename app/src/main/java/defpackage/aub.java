@@ -1,19 +1,15 @@
 package defpackage;
 
-import android.view.MotionEvent;
-import android.view.View;
+/* renamed from: aub reason: default package */
+final /* synthetic */ class aub implements android.view.View.OnTouchListener {
+    private final defpackage.atx a;
 
-/* access modifiers changed from: package-private */
-/* renamed from: aub  reason: default package */
-public final /* synthetic */ class aub implements View.OnTouchListener {
-    private final atx a;
-
-    aub(atx atx) {
+    aub(defpackage.atx atx) {
         this.a = atx;
     }
 
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
-        atx atx = this.a;
+    public final boolean onTouch(android.view.View view, android.view.MotionEvent motionEvent) {
+        defpackage.atx atx = this.a;
         atx.B = motionEvent.getX();
         atx.C = motionEvent.getY();
         return false;

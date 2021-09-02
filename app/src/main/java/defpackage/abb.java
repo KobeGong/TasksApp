@@ -1,26 +1,22 @@
 package defpackage;
 
-import android.support.v7.widget.ActionMenuView;
-import android.view.MenuItem;
-
-/* renamed from: abb  reason: default package */
+/* renamed from: abb reason: default package */
 /* compiled from: PG */
-public final class abb implements zf {
-    private final /* synthetic */ ActionMenuView a;
+public final class abb implements defpackage.zf {
+    private final /* synthetic */ android.support.v7.widget.ActionMenuView a;
 
-    public abb(ActionMenuView actionMenuView) {
+    public abb(android.support.v7.widget.ActionMenuView actionMenuView) {
         this.a = actionMenuView;
     }
 
-    @Override // defpackage.zf
-    public final boolean a(MenuBuilder zeVar, MenuItem menuItem) {
+    public final boolean a(defpackage.ze zeVar, android.view.MenuItem menuItem) {
         boolean z;
         if (this.a.f == null) {
             return false;
         }
-        abc abc = this.a.f;
-        if (abc.a.A != null) {
-            z = abc.a.A.a(menuItem);
+        defpackage.abc abc = this.a.f;
+        if (abc.a.mOnMenuItemClickListener != null) {
+            z = abc.a.mOnMenuItemClickListener.onMenuItemClick(menuItem);
         } else {
             z = false;
         }
@@ -30,7 +26,6 @@ public final class abb implements zf {
         return false;
     }
 
-    @Override // defpackage.zf
-    public final void a(MenuBuilder zeVar) {
+    public final void a(defpackage.ze zeVar) {
     }
 }

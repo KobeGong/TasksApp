@@ -1,28 +1,28 @@
 package defpackage;
 
-/* renamed from: ctt  reason: default package */
+/* renamed from: ctt reason: default package */
 /* compiled from: PG */
 public abstract class ctt {
-    public static final ctt a = new ctu();
+    public static final defpackage.ctt a = new defpackage.ctu();
 
-    public abstract String a();
+    public abstract java.lang.String a();
 
-    public abstract String b();
+    public abstract java.lang.String b();
 
     public abstract int c();
 
-    public abstract String d();
+    public abstract java.lang.String d();
 
-    public final String toString() {
-        StringBuilder append = new StringBuilder("LogSite{ class=").append(a()).append(", method=").append(b()).append(", line=").append(c());
+    public final java.lang.String toString() {
+        java.lang.StringBuilder append = new java.lang.StringBuilder("LogSite{ class=").append(a()).append(", method=").append(b()).append(", line=").append(c());
         if (d() != null) {
             append.append(", file=").append(d());
         }
         return append.append(" }").toString();
     }
 
-    @Deprecated
-    public static ctt a(String str, String str2, String str3) {
-        return new ctv(str, str2, 105, str3);
+    @java.lang.Deprecated
+    public static defpackage.ctt a(java.lang.String str, java.lang.String str2, java.lang.String str3) {
+        return new defpackage.ctv(str, str2, 105, str3);
     }
 }

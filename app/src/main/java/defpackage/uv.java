@@ -1,27 +1,19 @@
 package defpackage;
 
-import android.content.res.ColorStateList;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
-import android.os.Build;
-import android.widget.ImageView;
-
-/* renamed from: uv  reason: default package */
+/* renamed from: uv reason: default package */
 /* compiled from: PG */
-final class uv extends uu {
+final class uv extends defpackage.uu {
     uv() {
     }
 
-    @Override // defpackage.uu
-    public final ColorStateList a(ImageView imageView) {
+    public final android.content.res.ColorStateList a(android.widget.ImageView imageView) {
         return imageView.getImageTintList();
     }
 
-    @Override // defpackage.uu
-    public final void a(ImageView imageView, ColorStateList colorStateList) {
+    public final void a(android.widget.ImageView imageView, android.content.res.ColorStateList colorStateList) {
         imageView.setImageTintList(colorStateList);
-        if (Build.VERSION.SDK_INT == 21) {
-            Drawable drawable = imageView.getDrawable();
+        if (android.os.Build.VERSION.SDK_INT == 21) {
+            android.graphics.drawable.Drawable drawable = imageView.getDrawable();
             boolean z = (imageView.getImageTintList() == null || imageView.getImageTintMode() == null) ? false : true;
             if (drawable != null && z) {
                 if (drawable.isStateful()) {
@@ -32,11 +24,10 @@ final class uv extends uu {
         }
     }
 
-    @Override // defpackage.uu
-    public final void a(ImageView imageView, PorterDuff.Mode mode) {
+    public final void a(android.widget.ImageView imageView, android.graphics.PorterDuff.Mode mode) {
         imageView.setImageTintMode(mode);
-        if (Build.VERSION.SDK_INT == 21) {
-            Drawable drawable = imageView.getDrawable();
+        if (android.os.Build.VERSION.SDK_INT == 21) {
+            android.graphics.drawable.Drawable drawable = imageView.getDrawable();
             boolean z = (imageView.getImageTintList() == null || imageView.getImageTintMode() == null) ? false : true;
             if (drawable != null && z) {
                 if (drawable.isStateful()) {
@@ -47,8 +38,7 @@ final class uv extends uu {
         }
     }
 
-    @Override // defpackage.uu
-    public final PorterDuff.Mode b(ImageView imageView) {
+    public final android.graphics.PorterDuff.Mode b(android.widget.ImageView imageView) {
         return imageView.getImageTintMode();
     }
 }

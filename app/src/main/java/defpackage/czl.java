@@ -1,13 +1,12 @@
 package defpackage;
 
-/* renamed from: czl  reason: default package */
+/* renamed from: czl reason: default package */
 /* compiled from: PG */
-final class czl implements dio {
+final class czl implements defpackage.dio {
     czl() {
     }
 
-    @Override // defpackage.dio
-    public final /* synthetic */ din a(int i) {
-        return czk.a(i);
+    public final /* synthetic */ defpackage.din a(int i) {
+        return defpackage.czk.a(i);
     }
 }

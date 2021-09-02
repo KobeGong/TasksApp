@@ -1,19 +1,18 @@
 package defpackage;
 
-/* renamed from: cvs  reason: default package */
+/* renamed from: cvs reason: default package */
 /* compiled from: PG */
-public final class cvs extends cvt {
-    private final cvr c;
+public final class cvs extends defpackage.cvt {
+    private final defpackage.cvr c;
 
-    public cvs(cuf cuf, int i, cvr cvr) {
+    public cvs(defpackage.cuf cuf, int i, defpackage.cvr cvr) {
         super(cuf, i);
         this.c = cvr;
-        cuf.a(new StringBuilder("%")).append(cuf.b() ? 'T' : 't').append(cvr.b);
+        cuf.a(new java.lang.StringBuilder("%")).append(cuf.b() ? 'T' : 't').append(cvr.b);
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.cvt
-    public final void a(cvu cvu, Object obj) {
+    public final void a(defpackage.cvu cvu, java.lang.Object obj) {
         cvu.a(obj, this.c, this.b);
     }
 }

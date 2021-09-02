@@ -1,26 +1,21 @@
 package defpackage;
 
-import android.os.Bundle;
-import android.view.View;
-
-/* renamed from: cfa  reason: default package */
+/* renamed from: cfa reason: default package */
 /* compiled from: PG */
-final class cfa extends rn {
-    private final /* synthetic */ cey b;
+final class cfa extends defpackage.rn {
+    private final /* synthetic */ defpackage.cey b;
 
-    cfa(cey cey) {
+    cfa(defpackage.cey cey) {
         this.b = cey;
     }
 
-    @Override // defpackage.rn
-    public final void a(View view, tl tlVar) {
+    public final void a(android.view.View view, defpackage.tl tlVar) {
         super.a(view, tlVar);
         tlVar.a(1048576);
         tlVar.d(true);
     }
 
-    @Override // defpackage.rn
-    public final boolean a(View view, int i, Bundle bundle) {
+    public final boolean a(android.view.View view, int i, android.os.Bundle bundle) {
         if (i != 1048576) {
             return super.a(view, i, bundle);
         }

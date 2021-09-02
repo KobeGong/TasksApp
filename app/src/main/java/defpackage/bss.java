@@ -1,13 +1,12 @@
 package defpackage;
 
-/* renamed from: bss  reason: default package */
+/* renamed from: bss reason: default package */
 /* compiled from: PG */
-final class bss implements brt {
+final class bss implements defpackage.brt {
     bss() {
     }
 
-    @Override // defpackage.brt
-    public final /* synthetic */ brc a(ayw ayw) {
-        return new bsw((blq) ayw);
+    public final /* synthetic */ defpackage.brc a(defpackage.ayw ayw) {
+        return new defpackage.bsw((defpackage.blq) ayw);
     }
 }

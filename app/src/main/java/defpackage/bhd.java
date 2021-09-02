@@ -1,20 +1,24 @@
 package defpackage;
 
-/* renamed from: bhd  reason: default package */
+/* renamed from: bhd reason: default package */
 /* compiled from: PG */
-public final class bhd extends dlz {
-    private String a = null;
-    private Integer b = null;
-    private Integer c = null;
-    private String d = null;
-    private int e = Integer.MIN_VALUE;
+public final class bhd extends defpackage.dlz {
+    private java.lang.String a;
+    private java.lang.Integer b;
+    private java.lang.Integer c;
+    private java.lang.String d;
+    private int e;
 
     public bhd() {
+        this.a = null;
+        this.b = null;
+        this.c = null;
+        this.d = null;
+        this.e = Integer.MIN_VALUE;
         this.k = -1;
     }
 
-    @Override // defpackage.dlz, defpackage.dmf
-    public final void a(dlx dlx) {
+    public final void a(defpackage.dlx dlx) {
         if (this.a != null) {
             dlx.a(1, this.a);
         }
@@ -34,37 +38,68 @@ public final class bhd extends dlz {
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.dlz, defpackage.dmf
     public final int a() {
         int a2 = super.a();
         if (this.a != null) {
-            a2 += dlx.b(1, this.a);
+            a2 += defpackage.dlx.b(1, this.a);
         }
         if (this.b != null) {
-            a2 += dlx.c(2, this.b.intValue());
+            a2 += defpackage.dlx.c(2, this.b.intValue());
         }
         if (this.c != null) {
-            a2 += dlx.c(3, this.c.intValue());
+            a2 += defpackage.dlx.c(3, this.c.intValue());
         }
         if (this.d != null) {
-            a2 += dlx.b(4, this.d);
+            a2 += defpackage.dlx.b(4, this.d);
         }
         if (this.e != Integer.MIN_VALUE) {
-            return a2 + dlx.c(5, this.e);
+            return a2 + defpackage.dlx.c(5, this.e);
         }
         return a2;
     }
 
     /* access modifiers changed from: private */
-    /* JADX WARNING: Code restructure failed: missing block: B:4:0x000d, code lost:
-        return r6;
-     */
     /* renamed from: b */
-    /* Code decompiled incorrectly, please refer to instructions dump. */
-    public final defpackage.bhd a(defpackage.dlw r7) {
-        /*
-        // Method dump skipped, instructions count: 128
-        */
-        throw new UnsupportedOperationException("Method not decompiled: defpackage.bhd.a(dlw):bhd");
+    public final defpackage.bhd a(defpackage.dlw dlw) {
+        while (true) {
+            int a2 = dlw.a();
+            switch (a2) {
+                case 0:
+                    break;
+                case 10:
+                    this.a = dlw.d();
+                    continue;
+                case 16:
+                    this.b = java.lang.Integer.valueOf(dlw.e());
+                    continue;
+                case 24:
+                    this.c = java.lang.Integer.valueOf(dlw.e());
+                    continue;
+                case 34:
+                    this.d = dlw.d();
+                    continue;
+                case 40:
+                    int i = dlw.i();
+                    try {
+                        int e2 = dlw.e();
+                        if (e2 < 0 || e2 > 3) {
+                            throw new java.lang.IllegalArgumentException(e2 + " is not a valid enum ClientType");
+                        }
+                        this.e = e2;
+                        continue;
+                    } catch (java.lang.IllegalArgumentException e3) {
+                        dlw.e(i);
+                        a(dlw, a2);
+                        break;
+                    }
+                default:
+                    if (!super.a(dlw, a2)) {
+                        break;
+                    } else {
+                        continue;
+                    }
+            }
+        }
+        return this;
     }
 }

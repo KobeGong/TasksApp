@@ -1,33 +1,26 @@
 package defpackage;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.util.AttributeSet;
-import android.view.View;
-import android.widget.RatingBar;
-import com.google.android.apps.tasks.R;
-
-/* renamed from: aby  reason: default package */
+/* renamed from: aby reason: default package */
 /* compiled from: PG */
-public final class aby extends RatingBar {
-    private final abw a;
+public final class aby extends android.widget.RatingBar {
+    private final defpackage.abw a;
 
-    public aby(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, (byte) 0);
+    public aby(android.content.Context context, android.util.AttributeSet attributeSet) {
+        this(context, attributeSet, 0);
     }
 
-    private aby(Context context, AttributeSet attributeSet, byte b) {
-        super(context, attributeSet, R.attr.ratingBarStyle);
-        this.a = new abw(this);
-        this.a.a(attributeSet, R.attr.ratingBarStyle);
+    private aby(android.content.Context context, android.util.AttributeSet attributeSet, byte b) {
+        super(context, attributeSet, 2130772237);
+        this.a = new defpackage.abw(this);
+        this.a.a(attributeSet, 2130772237);
     }
 
     /* access modifiers changed from: protected */
     public final synchronized void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
-        Bitmap bitmap = this.a.a;
+        android.graphics.Bitmap bitmap = this.a.a;
         if (bitmap != null) {
-            setMeasuredDimension(View.resolveSizeAndState(bitmap.getWidth() * getNumStars(), i, 0), getMeasuredHeight());
+            setMeasuredDimension(android.view.View.resolveSizeAndState(bitmap.getWidth() * getNumStars(), i, 0), getMeasuredHeight());
         }
     }
 }

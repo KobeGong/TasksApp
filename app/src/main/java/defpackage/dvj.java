@@ -1,62 +1,58 @@
 package defpackage;
 
-import java.util.concurrent.TimeUnit;
-
-/* renamed from: dvj  reason: default package */
+/* renamed from: dvj reason: default package */
 /* compiled from: PG */
-final class dvj implements dov {
+final class dvj implements defpackage.dov {
     dvj() {
     }
 
-    @Override // defpackage.dov
-    public final /* synthetic */ Object a(String str) {
+    public final /* synthetic */ java.lang.Object a(java.lang.String str) {
         boolean z;
-        cld.a(str.length() > 0, "empty timeout");
+        defpackage.cld.a(str.length() > 0, (java.lang.Object) "empty timeout");
         if (str.length() <= 9) {
             z = true;
         } else {
             z = false;
         }
-        cld.a(z, "bad timeout format");
-        long parseLong = Long.parseLong(str.substring(0, str.length() - 1));
+        defpackage.cld.a(z, (java.lang.Object) "bad timeout format");
+        long parseLong = java.lang.Long.parseLong(str.substring(0, str.length() - 1));
         char charAt = str.charAt(str.length() - 1);
         switch (charAt) {
             case 'H':
-                return Long.valueOf(TimeUnit.HOURS.toNanos(parseLong));
+                return java.lang.Long.valueOf(java.util.concurrent.TimeUnit.HOURS.toNanos(parseLong));
             case 'M':
-                return Long.valueOf(TimeUnit.MINUTES.toNanos(parseLong));
+                return java.lang.Long.valueOf(java.util.concurrent.TimeUnit.MINUTES.toNanos(parseLong));
             case 'S':
-                return Long.valueOf(TimeUnit.SECONDS.toNanos(parseLong));
+                return java.lang.Long.valueOf(java.util.concurrent.TimeUnit.SECONDS.toNanos(parseLong));
             case 'm':
-                return Long.valueOf(TimeUnit.MILLISECONDS.toNanos(parseLong));
+                return java.lang.Long.valueOf(java.util.concurrent.TimeUnit.MILLISECONDS.toNanos(parseLong));
             case 'n':
-                return Long.valueOf(parseLong);
+                return java.lang.Long.valueOf(parseLong);
             case 'u':
-                return Long.valueOf(TimeUnit.MICROSECONDS.toNanos(parseLong));
+                return java.lang.Long.valueOf(java.util.concurrent.TimeUnit.MICROSECONDS.toNanos(parseLong));
             default:
-                throw new IllegalArgumentException(String.format("Invalid timeout unit: %s", Character.valueOf(charAt)));
+                throw new java.lang.IllegalArgumentException(java.lang.String.format("Invalid timeout unit: %s", new java.lang.Object[]{java.lang.Character.valueOf(charAt)}));
         }
     }
 
-    @Override // defpackage.dov
-    public final /* synthetic */ String a(Object obj) {
-        Long l = (Long) obj;
-        TimeUnit timeUnit = TimeUnit.NANOSECONDS;
+    public final /* synthetic */ java.lang.String a(java.lang.Object obj) {
+        java.lang.Long l = (java.lang.Long) obj;
+        java.util.concurrent.TimeUnit timeUnit = java.util.concurrent.TimeUnit.NANOSECONDS;
         if (l.longValue() < 0) {
-            throw new IllegalArgumentException("Timeout too small");
+            throw new java.lang.IllegalArgumentException("Timeout too small");
         } else if (l.longValue() < 100000000) {
-            String valueOf = String.valueOf(l);
-            return new StringBuilder(String.valueOf(valueOf).length() + 1).append(valueOf).append("n").toString();
+            java.lang.String valueOf = java.lang.String.valueOf(l);
+            return new java.lang.StringBuilder(java.lang.String.valueOf(valueOf).length() + 1).append(valueOf).append("n").toString();
         } else if (l.longValue() < 100000000000L) {
-            return new StringBuilder(21).append(timeUnit.toMicros(l.longValue())).append("u").toString();
+            return timeUnit.toMicros(l.longValue()) + "u";
         } else if (l.longValue() < 100000000000000L) {
-            return new StringBuilder(21).append(timeUnit.toMillis(l.longValue())).append("m").toString();
+            return timeUnit.toMillis(l.longValue()) + "m";
         } else if (l.longValue() < 100000000000000000L) {
-            return new StringBuilder(21).append(timeUnit.toSeconds(l.longValue())).append("S").toString();
+            return timeUnit.toSeconds(l.longValue()) + "S";
         } else if (l.longValue() < 6000000000000000000L) {
-            return new StringBuilder(21).append(timeUnit.toMinutes(l.longValue())).append("M").toString();
+            return timeUnit.toMinutes(l.longValue()) + "M";
         } else {
-            return new StringBuilder(21).append(timeUnit.toHours(l.longValue())).append("H").toString();
+            return timeUnit.toHours(l.longValue()) + "H";
         }
     }
 }

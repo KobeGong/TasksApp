@@ -1,20 +1,16 @@
 package defpackage;
 
-import android.os.IBinder;
-import android.os.Parcel;
-
-/* renamed from: axj  reason: default package */
+/* renamed from: axj reason: default package */
 /* compiled from: PG */
-public final class axj extends bkm implements axi {
-    axj(IBinder iBinder) {
+public final class axj extends defpackage.bkm implements defpackage.axi {
+    axj(android.os.IBinder iBinder) {
         super(iBinder, "com.google.android.gms.clearcut.internal.IClearcutLoggerService");
     }
 
-    @Override // defpackage.axi
-    public final void a(axg axg, axa axa) {
-        Parcel c = c();
-        bko.a(c, axg);
-        bko.a(c, axa);
+    public final void a(defpackage.axg axg, defpackage.axa axa) {
+        android.os.Parcel c = c();
+        defpackage.bko.a(c, (android.os.IInterface) axg);
+        defpackage.bko.a(c, (android.os.Parcelable) axa);
         c(1, c);
     }
 }

@@ -1,20 +1,18 @@
 package defpackage;
 
-import android.os.Looper;
-
-/* renamed from: bco  reason: default package */
+/* renamed from: bco reason: default package */
 /* compiled from: PG */
 public final class bco {
-    public bbm a;
-    private Looper b;
+    public defpackage.bbm a;
+    private android.os.Looper b;
 
-    public final ayo a() {
+    public final defpackage.ayo a() {
         if (this.a == null) {
-            this.a = new bbm();
+            this.a = new defpackage.bbm();
         }
         if (this.b == null) {
-            this.b = Looper.getMainLooper();
+            this.b = android.os.Looper.getMainLooper();
         }
-        return new ayo(this.a, this.b);
+        return new defpackage.ayo(this.a, this.b);
     }
 }

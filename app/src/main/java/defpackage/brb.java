@@ -1,16 +1,16 @@
 package defpackage;
 
-/* renamed from: brb  reason: default package */
+/* renamed from: brb reason: default package */
 /* compiled from: PG */
 public final class brb {
-    private final ayt a;
-    private final brt b;
+    private final defpackage.ayt a;
+    private final defpackage.brt b;
 
-    public final void a(brd brd) {
-        this.a.a(new brn(brd, this.b));
+    public final void a(defpackage.brd brd) {
+        this.a.a((defpackage.ayx) new defpackage.brn(brd, this.b));
     }
 
-    public brb(ayt ayt, brt brt) {
+    public brb(defpackage.ayt ayt, defpackage.brt brt) {
         this.a = ayt;
         this.b = brt;
     }

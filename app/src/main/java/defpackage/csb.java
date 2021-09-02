@@ -1,59 +1,57 @@
 package defpackage;
 
-import java.util.concurrent.TimeUnit;
-
-/* renamed from: csb  reason: default package */
+/* renamed from: csb reason: default package */
 /* compiled from: PG */
 public final class csb {
-    public final csf a;
+    public final defpackage.csf a;
     public boolean b;
     public long c;
     public long d;
 
     public csb() {
-        this.a = csf.a;
+        this.a = defpackage.csf.a;
     }
 
-    public csb(csf csf) {
-        this.a = (csf) cld.a(csf, "ticker");
+    public csb(defpackage.csf csf) {
+        this.a = (defpackage.csf) defpackage.cld.a((java.lang.Object) csf, (java.lang.Object) "ticker");
     }
 
-    public final csb a() {
-        cld.b(!this.b, "This stopwatch is already running.");
+    public final defpackage.csb a() {
+        defpackage.cld.b(!this.b, (java.lang.Object) "This stopwatch is already running.");
         this.b = true;
-        this.d = csf.a();
+        this.d = defpackage.csf.a();
         return this;
     }
 
     private final long b() {
-        return this.b ? (csf.a() - this.d) + this.c : this.c;
+        return this.b ? (defpackage.csf.a() - this.d) + this.c : this.c;
     }
 
-    public final long a(TimeUnit timeUnit) {
-        return timeUnit.convert(b(), TimeUnit.NANOSECONDS);
+    public final long a(java.util.concurrent.TimeUnit timeUnit) {
+        return timeUnit.convert(b(), java.util.concurrent.TimeUnit.NANOSECONDS);
     }
 
-    public final String toString() {
-        TimeUnit timeUnit;
-        String str;
+    public final java.lang.String toString() {
+        java.util.concurrent.TimeUnit timeUnit;
+        java.lang.String str;
         long b2 = b();
-        if (TimeUnit.DAYS.convert(b2, TimeUnit.NANOSECONDS) > 0) {
-            timeUnit = TimeUnit.DAYS;
-        } else if (TimeUnit.HOURS.convert(b2, TimeUnit.NANOSECONDS) > 0) {
-            timeUnit = TimeUnit.HOURS;
-        } else if (TimeUnit.MINUTES.convert(b2, TimeUnit.NANOSECONDS) > 0) {
-            timeUnit = TimeUnit.MINUTES;
-        } else if (TimeUnit.SECONDS.convert(b2, TimeUnit.NANOSECONDS) > 0) {
-            timeUnit = TimeUnit.SECONDS;
-        } else if (TimeUnit.MILLISECONDS.convert(b2, TimeUnit.NANOSECONDS) > 0) {
-            timeUnit = TimeUnit.MILLISECONDS;
-        } else if (TimeUnit.MICROSECONDS.convert(b2, TimeUnit.NANOSECONDS) > 0) {
-            timeUnit = TimeUnit.MICROSECONDS;
+        if (java.util.concurrent.TimeUnit.DAYS.convert(b2, java.util.concurrent.TimeUnit.NANOSECONDS) > 0) {
+            timeUnit = java.util.concurrent.TimeUnit.DAYS;
+        } else if (java.util.concurrent.TimeUnit.HOURS.convert(b2, java.util.concurrent.TimeUnit.NANOSECONDS) > 0) {
+            timeUnit = java.util.concurrent.TimeUnit.HOURS;
+        } else if (java.util.concurrent.TimeUnit.MINUTES.convert(b2, java.util.concurrent.TimeUnit.NANOSECONDS) > 0) {
+            timeUnit = java.util.concurrent.TimeUnit.MINUTES;
+        } else if (java.util.concurrent.TimeUnit.SECONDS.convert(b2, java.util.concurrent.TimeUnit.NANOSECONDS) > 0) {
+            timeUnit = java.util.concurrent.TimeUnit.SECONDS;
+        } else if (java.util.concurrent.TimeUnit.MILLISECONDS.convert(b2, java.util.concurrent.TimeUnit.NANOSECONDS) > 0) {
+            timeUnit = java.util.concurrent.TimeUnit.MILLISECONDS;
+        } else if (java.util.concurrent.TimeUnit.MICROSECONDS.convert(b2, java.util.concurrent.TimeUnit.NANOSECONDS) > 0) {
+            timeUnit = java.util.concurrent.TimeUnit.MICROSECONDS;
         } else {
-            timeUnit = TimeUnit.NANOSECONDS;
+            timeUnit = java.util.concurrent.TimeUnit.NANOSECONDS;
         }
-        String a2 = crx.a(((double) b2) / ((double) TimeUnit.NANOSECONDS.convert(1, timeUnit)));
-        switch (csc.a[timeUnit.ordinal()]) {
+        java.lang.String a2 = defpackage.crx.a(((double) b2) / ((double) java.util.concurrent.TimeUnit.NANOSECONDS.convert(1, timeUnit)));
+        switch (defpackage.csc.a[timeUnit.ordinal()]) {
             case 1:
                 str = "ns";
                 break;
@@ -76,8 +74,8 @@ public final class csb {
                 str = "d";
                 break;
             default:
-                throw new AssertionError();
+                throw new java.lang.AssertionError();
         }
-        return new StringBuilder(String.valueOf(a2).length() + 1 + String.valueOf(str).length()).append(a2).append(" ").append(str).toString();
+        return new java.lang.StringBuilder(java.lang.String.valueOf(a2).length() + 1 + java.lang.String.valueOf(str).length()).append(a2).append(" ").append(str).toString();
     }
 }

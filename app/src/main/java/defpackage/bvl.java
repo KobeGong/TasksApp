@@ -1,18 +1,16 @@
 package defpackage;
 
-import android.content.Intent;
+/* renamed from: bvl reason: default package */
+final /* synthetic */ class bvl implements java.lang.Runnable {
+    private final defpackage.bvn a;
+    private final android.content.Intent b;
 
-/* renamed from: bvl  reason: default package */
-final /* synthetic */ class bvl implements Runnable {
-    private final bvn a;
-    private final Intent b;
-
-    bvl(bvn bvn, Intent intent) {
+    bvl(defpackage.bvn bvn, android.content.Intent intent) {
         this.a = bvn;
         this.b = intent;
     }
 
     public final void run() {
-        this.a.a(this.b, bvo.c());
+        this.a.a(this.b, defpackage.bvo.c());
     }
 }

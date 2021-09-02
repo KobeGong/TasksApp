@@ -1,12 +1,11 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: xa  reason: default package */
+/* renamed from: xa reason: default package */
 /* compiled from: PG */
-public final class xa implements Runnable {
-    private final /* synthetic */ wz a;
+final class xa implements java.lang.Runnable {
+    private final /* synthetic */ defpackage.wz a;
 
-    xa(wz wzVar) {
+    xa(defpackage.wz wzVar) {
         this.a = wzVar;
     }
 

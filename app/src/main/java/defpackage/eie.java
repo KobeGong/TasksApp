@@ -1,7 +1,7 @@
 package defpackage;
 
-/* renamed from: eie  reason: default package */
+/* renamed from: eie reason: default package */
 /* compiled from: PG */
 public abstract class eie {
-    public abstract ehy a();
+    public abstract defpackage.ehy a();
 }

@@ -1,93 +1,94 @@
 package defpackage;
 
-/* renamed from: bum  reason: default package */
+/* renamed from: bum reason: default package */
 /* compiled from: PG */
 public final class bum {
-    public Long a;
-    public String b;
-    private String c;
-    private Long d;
-    private Long e;
-    private btk f;
-    private Long g;
-    private Integer h;
+    public java.lang.Long a;
+    public java.lang.String b;
+    private java.lang.String c;
+    private java.lang.Long d;
+    private java.lang.Long e;
+    private defpackage.btk f;
+    private java.lang.Long g;
+    private java.lang.Integer h;
 
-    public final bum a(String str) {
+    public final defpackage.bum a(java.lang.String str) {
         if (str == null) {
-            throw new NullPointerException("Null accountName");
+            throw new java.lang.NullPointerException("Null accountName");
         }
         this.c = str;
         return this;
     }
 
-    public final bum a(Long l) {
+    public final defpackage.bum a(java.lang.Long l) {
         if (l == null) {
-            throw new NullPointerException("Null syncVersion");
+            throw new java.lang.NullPointerException("Null syncVersion");
         }
         this.d = l;
         return this;
     }
 
-    public final bum b(Long l) {
+    public final defpackage.bum b(java.lang.Long l) {
         if (l == null) {
-            throw new NullPointerException("Null pageVersion");
+            throw new java.lang.NullPointerException("Null pageVersion");
         }
         this.e = l;
         return this;
     }
 
-    public final bum a(btk btk) {
+    public final defpackage.bum a(defpackage.btk btk) {
         if (btk == null) {
-            throw new NullPointerException("Null registrationStatus");
+            throw new java.lang.NullPointerException("Null registrationStatus");
         }
         this.f = btk;
         return this;
     }
 
-    public final bum c(Long l) {
+    public final defpackage.bum c(java.lang.Long l) {
         if (l == null) {
-            throw new NullPointerException("Null lastRegistrationTimeMs");
+            throw new java.lang.NullPointerException("Null lastRegistrationTimeMs");
         }
         this.g = l;
         return this;
     }
 
-    public final bum a(int i) {
-        this.h = Integer.valueOf(i);
+    public final defpackage.bum a(int i) {
+        this.h = java.lang.Integer.valueOf(i);
         return this;
     }
 
-    public final bul a() {
-        String str = "";
+    public final defpackage.bul a() {
+        java.lang.String str = "";
         if (this.c == null) {
-            str = String.valueOf(str).concat(" accountName");
+            str = java.lang.String.valueOf(str).concat(" accountName");
         }
         if (this.d == null) {
-            str = String.valueOf(str).concat(" syncVersion");
+            str = java.lang.String.valueOf(str).concat(" syncVersion");
         }
         if (this.e == null) {
-            str = String.valueOf(str).concat(" pageVersion");
+            str = java.lang.String.valueOf(str).concat(" pageVersion");
         }
         if (this.f == null) {
-            str = String.valueOf(str).concat(" registrationStatus");
+            str = java.lang.String.valueOf(str).concat(" registrationStatus");
         }
         if (this.g == null) {
-            str = String.valueOf(str).concat(" lastRegistrationTimeMs");
+            str = java.lang.String.valueOf(str).concat(" lastRegistrationTimeMs");
         }
         if (this.h == null) {
-            str = String.valueOf(str).concat(" lastRegistrationRequestHash");
+            str = java.lang.String.valueOf(str).concat(" lastRegistrationRequestHash");
         }
         if (str.isEmpty()) {
-            return new buh(this.a, this.c, this.b, this.d, this.e, this.f, this.g, this.h.intValue());
+            return new defpackage.buh(this.a, this.c, this.b, this.d, this.e, this.f, this.g, this.h.intValue());
         }
-        String valueOf = String.valueOf(str);
-        throw new IllegalStateException(valueOf.length() != 0 ? "Missing required properties:".concat(valueOf) : new String("Missing required properties:"));
+        java.lang.String str2 = "Missing required properties:";
+        java.lang.String valueOf = java.lang.String.valueOf(str);
+        throw new java.lang.IllegalStateException(valueOf.length() != 0 ? str2.concat(valueOf) : new java.lang.String(str2));
     }
 
     bum() {
     }
 
-    bum(bul bul) {
+    bum(defpackage.bul bul) {
         this.a = bul.a();
         this.c = bul.b();
         this.b = bul.c();
@@ -95,6 +96,6 @@ public final class bum {
         this.e = bul.e();
         this.f = bul.f();
         this.g = bul.g();
-        this.h = Integer.valueOf(bul.h());
+        this.h = java.lang.Integer.valueOf(bul.h());
     }
 }

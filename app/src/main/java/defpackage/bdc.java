@@ -1,61 +1,53 @@
 package defpackage;
 
-import android.app.PendingIntent;
-import android.os.Bundle;
-import android.os.IInterface;
-
-/* access modifiers changed from: package-private */
-/* renamed from: bdc  reason: default package */
+/* renamed from: bdc reason: default package */
 /* compiled from: PG */
-public abstract class bdc extends bde {
+abstract class bdc extends defpackage.bde {
     private int c;
-    private Bundle d;
-    private /* synthetic */ bcx e;
+    private android.os.Bundle d;
+    private /* synthetic */ defpackage.bcx e;
 
-    /* JADX INFO: super call moved to the top of the method (can break code semantics) */
-    protected bdc(bcx bcx, int i, Bundle bundle) {
-        super(bcx, true);
+    protected bdc(defpackage.bcx bcx, int i, android.os.Bundle bundle) {
         this.e = bcx;
+        super(bcx, java.lang.Boolean.valueOf(true));
         this.c = i;
         this.d = bundle;
     }
 
     /* access modifiers changed from: protected */
-    public abstract void a(axq axq);
+    public abstract void a(defpackage.axq axq);
 
     /* access modifiers changed from: protected */
     public abstract boolean a();
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.bde
     public final void b() {
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.bde
-    public final /* synthetic */ void a(Object obj) {
-        PendingIntent pendingIntent = null;
-        if (((Boolean) obj) == null) {
-            this.e.a((bcx) 1, (int) ((IInterface) null));
+    public final /* synthetic */ void a(java.lang.Object obj) {
+        android.app.PendingIntent pendingIntent = null;
+        if (((java.lang.Boolean) obj) == null) {
+            this.e.a(1, (android.os.IInterface) null);
             return;
         }
         switch (this.c) {
             case 0:
                 if (!a()) {
-                    this.e.a((bcx) 1, (int) ((IInterface) null));
-                    a(new axq(8, null));
+                    this.e.a(1, (android.os.IInterface) null);
+                    a(new defpackage.axq(8, null));
                     return;
                 }
                 return;
             case 10:
-                this.e.a((bcx) 1, (int) ((IInterface) null));
-                throw new IllegalStateException("A fatal developer error has occurred. Check the logs for further information.");
+                this.e.a(1, (android.os.IInterface) null);
+                throw new java.lang.IllegalStateException("A fatal developer error has occurred. Check the logs for further information.");
             default:
-                this.e.a((bcx) 1, (int) ((IInterface) null));
+                this.e.a(1, (android.os.IInterface) null);
                 if (this.d != null) {
-                    pendingIntent = (PendingIntent) this.d.getParcelable("pendingIntent");
+                    pendingIntent = (android.app.PendingIntent) this.d.getParcelable("pendingIntent");
                 }
-                a(new axq(this.c, pendingIntent));
+                a(new defpackage.axq(this.c, pendingIntent));
                 return;
         }
     }

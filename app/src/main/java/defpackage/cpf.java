@@ -1,7 +1,7 @@
 package defpackage;
 
-/* renamed from: cpf  reason: default package */
+/* renamed from: cpf reason: default package */
 /* compiled from: PG */
 public interface cpf {
-    cpc a();
+    defpackage.cpc a();
 }

@@ -1,15 +1,13 @@
 package defpackage;
 
-import java.util.Iterator;
-
-/* renamed from: cth  reason: default package */
+/* renamed from: cth reason: default package */
 /* compiled from: PG */
-public abstract class cth implements Iterator {
+public abstract class cth implements java.util.Iterator {
     protected cth() {
     }
 
-    @Deprecated
+    @java.lang.Deprecated
     public final void remove() {
-        throw new UnsupportedOperationException();
+        throw new java.lang.UnsupportedOperationException();
     }
 }

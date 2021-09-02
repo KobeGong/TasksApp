@@ -1,21 +1,17 @@
 package defpackage;
 
-import android.support.v4.app.LoaderManagerImpl;
-import java.io.FileDescriptor;
-import java.io.PrintWriter;
-
-/* renamed from: na  reason: default package */
+/* renamed from: na reason: default package */
 /* compiled from: PG */
 public abstract class na {
-    public abstract oc a(int i, nb nbVar);
+    public abstract defpackage.oc a(int i, defpackage.nb nbVar);
 
     public abstract void a();
 
-    public abstract void a(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr);
+    public abstract void a(java.lang.String str, java.io.FileDescriptor fileDescriptor, java.io.PrintWriter printWriter, java.lang.String[] strArr);
 
     public abstract void b();
 
-    public static na a(y yVar) {
-        return new LoaderManagerImpl(yVar, ((ak) yVar).b());
+    public static defpackage.na a(LifecycleOwner yVar) {
+        return new android.support.v4.app.LoaderManagerImpl(yVar, ((ViewModelStoreOwner) yVar).getViewModelStore());
     }
 }

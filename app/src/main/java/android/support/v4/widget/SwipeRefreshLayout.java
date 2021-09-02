@@ -1,55 +1,36 @@
 package android.support.v4.widget;
 
-import android.content.Context;
-import android.content.res.TypedArray;
-import android.os.Build;
-import android.util.AttributeSet;
-import android.util.DisplayMetrics;
-import android.util.Log;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewConfiguration;
-import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.DecelerateInterpolator;
-import android.widget.AbsListView;
-import android.widget.ListView;
-
-import defpackage.ua;
-import defpackage.uc;
-import defpackage.vn;
-
 /* compiled from: PG */
-public class SwipeRefreshLayout extends ViewGroup implements sf, si {
+public class SwipeRefreshLayout extends android.view.ViewGroup implements defpackage.sf, defpackage.si {
     private static final int[] B = {16842766};
-    private static final String l = SwipeRefreshLayout.class.getSimpleName();
-    private final DecelerateInterpolator A;
+    private static final java.lang.String l = android.support.v4.widget.SwipeRefreshLayout.class.getSimpleName();
+    private final android.view.animation.DecelerateInterpolator A;
     private int C;
-    private Animation D;
-    private Animation E;
-    private Animation F;
-    private Animation G;
+    private android.view.animation.Animation D;
+    private android.view.animation.Animation E;
+    private android.view.animation.Animation F;
+    private android.view.animation.Animation G;
     private int H;
-    private Animation.AnimationListener I;
-    private final Animation J;
-    private final Animation K;
-    public vn a;
+    private android.view.animation.Animation.AnimationListener I;
+    private final android.view.animation.Animation J;
+    private final android.view.animation.Animation K;
+    public defpackage.vn a;
     public boolean b;
     public int c;
     public boolean d;
-    public ua e;
+    public defpackage.ua e;
     public int f;
     public int g;
     public int h;
-    public uc i;
+    public defpackage.uc i;
     public boolean j;
     public boolean k;
-    private View m;
+    private android.view.View m;
     private int n;
     private float o;
     private float p;
-    private final sk q;
-    private final sh r;
+    private final defpackage.sk q;
+    private final defpackage.sh r;
     private final int[] s;
     private final int[] t;
     private boolean u;
@@ -82,11 +63,11 @@ public class SwipeRefreshLayout extends ViewGroup implements sf, si {
         a();
     }
 
-    public SwipeRefreshLayout(Context context) {
+    public SwipeRefreshLayout(android.content.Context context) {
         this(context, null);
     }
 
-    public SwipeRefreshLayout(Context context, AttributeSet attributeSet) {
+    public SwipeRefreshLayout(android.content.Context context, android.util.AttributeSet attributeSet) {
         super(context, attributeSet);
         this.b = false;
         this.o = -1.0f;
@@ -94,25 +75,27 @@ public class SwipeRefreshLayout extends ViewGroup implements sf, si {
         this.t = new int[2];
         this.z = -1;
         this.C = -1;
-        this.I = new vg(this);
-        this.J = new vl(this);
-        this.K = new vm(this);
-        this.n = ViewConfiguration.get(context).getScaledTouchSlop();
+        this.I = new defpackage.vg(this);
+        this.J = new defpackage.vl(this);
+        this.K = new defpackage.vm(this);
+        this.n = android.view.ViewConfiguration.get(context).getScaledTouchSlop();
         this.v = getResources().getInteger(17694721);
         setWillNotDraw(false);
-        this.A = new DecelerateInterpolator(2.0f);
-        DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
+        this.A = new android.view.animation.DecelerateInterpolator(2.0f);
+        android.util.DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
         this.H = (int) (40.0f * displayMetrics.density);
-        this.e = new ua(getContext());
-        this.i = new uc(getContext());
-        uc ucVar = this.i;
-        uf ufVar = ucVar.b;
+        this.e = new defpackage.ua(getContext());
+        this.i = new defpackage.uc(getContext());
+        defpackage.uc ucVar = this.i;
+        defpackage.uf ufVar = ucVar.b;
         float f2 = ucVar.d.getDisplayMetrics().density;
         ufVar.a(2.5f * f2);
         ufVar.p = 7.5f * f2;
         ufVar.a(0);
-        ufVar.q = (int) (10.0f * f2);
-        ufVar.r = (int) (f2 * 5.0f);
+        float f3 = 10.0f * f2;
+        float f4 = f2 * 5.0f;
+        ufVar.q = (int) f3;
+        ufVar.r = (int) f4;
         ucVar.invalidateSelf();
         this.e.setImageDrawable(this.i);
         this.e.setVisibility(8);
@@ -120,14 +103,14 @@ public class SwipeRefreshLayout extends ViewGroup implements sf, si {
         setChildrenDrawingOrderEnabled(true);
         this.h = (int) (displayMetrics.density * 64.0f);
         this.o = (float) this.h;
-        this.q = new sk();
-        this.r = new sh(this);
+        this.q = new defpackage.sk();
+        this.r = new defpackage.sh(this);
         setNestedScrollingEnabled(true);
         int i2 = -this.H;
         this.c = i2;
         this.g = i2;
         b(1.0f);
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, B);
+        android.content.res.TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, B);
         setEnabled(obtainStyledAttributes.getBoolean(0, true));
         obtainStyledAttributes.recycle();
     }
@@ -154,10 +137,10 @@ public class SwipeRefreshLayout extends ViewGroup implements sf, si {
         this.b = z2;
         a((this.h + this.g) - this.c);
         this.j = false;
-        Animation.AnimationListener animationListener = this.I;
+        android.view.animation.Animation.AnimationListener animationListener = this.I;
         this.e.setVisibility(0);
         this.i.setAlpha(255);
-        this.D = new vh(this);
+        this.D = new defpackage.vh(this);
         this.D.setDuration((long) this.v);
         if (animationListener != null) {
             this.e.a = animationListener;
@@ -178,7 +161,7 @@ public class SwipeRefreshLayout extends ViewGroup implements sf, si {
             this.b = z2;
             if (this.b) {
                 int i2 = this.c;
-                Animation.AnimationListener animationListener = this.I;
+                android.view.animation.Animation.AnimationListener animationListener = this.I;
                 this.f = i2;
                 this.J.reset();
                 this.J.setDuration(200);
@@ -194,16 +177,16 @@ public class SwipeRefreshLayout extends ViewGroup implements sf, si {
         }
     }
 
-    public final void a(Animation.AnimationListener animationListener) {
-        this.E = new vi(this);
+    public final void a(android.view.animation.Animation.AnimationListener animationListener) {
+        this.E = new defpackage.vi(this);
         this.E.setDuration(150);
         this.e.a = animationListener;
         this.e.clearAnimation();
         this.e.startAnimation(this.E);
     }
 
-    private final Animation a(int i2, int i3) {
-        vj vjVar = new vj(this, i2, i3);
+    private final android.view.animation.Animation a(int i2, int i3) {
+        defpackage.vj vjVar = new defpackage.vj(this, i2, i3);
         vjVar.setDuration(300);
         this.e.a = null;
         this.e.clearAnimation();
@@ -214,7 +197,7 @@ public class SwipeRefreshLayout extends ViewGroup implements sf, si {
     private final void b() {
         if (this.m == null) {
             for (int i2 = 0; i2 < getChildCount(); i2++) {
-                View childAt = getChildAt(i2);
+                android.view.View childAt = getChildAt(i2);
                 if (!childAt.equals(this.e)) {
                     this.m = childAt;
                     return;
@@ -232,7 +215,7 @@ public class SwipeRefreshLayout extends ViewGroup implements sf, si {
                 b();
             }
             if (this.m != null) {
-                View view = this.m;
+                android.view.View view = this.m;
                 int paddingLeft = getPaddingLeft();
                 int paddingTop = getPaddingTop();
                 view.layout(paddingLeft, paddingTop, ((measuredWidth - getPaddingLeft()) - getPaddingRight()) + paddingLeft, ((measuredHeight - getPaddingTop()) - getPaddingBottom()) + paddingTop);
@@ -248,8 +231,8 @@ public class SwipeRefreshLayout extends ViewGroup implements sf, si {
             b();
         }
         if (this.m != null) {
-            this.m.measure(View.MeasureSpec.makeMeasureSpec((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight(), 1073741824), View.MeasureSpec.makeMeasureSpec((getMeasuredHeight() - getPaddingTop()) - getPaddingBottom(), 1073741824));
-            this.e.measure(View.MeasureSpec.makeMeasureSpec(this.H, 1073741824), View.MeasureSpec.makeMeasureSpec(this.H, 1073741824));
+            this.m.measure(android.view.View.MeasureSpec.makeMeasureSpec((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight(), 1073741824), android.view.View.MeasureSpec.makeMeasureSpec((getMeasuredHeight() - getPaddingTop()) - getPaddingBottom(), 1073741824));
+            this.e.measure(android.view.View.MeasureSpec.makeMeasureSpec(this.H, 1073741824), android.view.View.MeasureSpec.makeMeasureSpec(this.H, 1073741824));
             this.C = -1;
             for (int i4 = 0; i4 < getChildCount(); i4++) {
                 if (getChildAt(i4) == this.e) {
@@ -261,11 +244,11 @@ public class SwipeRefreshLayout extends ViewGroup implements sf, si {
     }
 
     private final boolean c() {
-        if (!(this.m instanceof ListView)) {
+        if (!(this.m instanceof android.widget.ListView)) {
             return this.m.canScrollVertically(-1);
         }
-        ListView listView = (ListView) this.m;
-        if (Build.VERSION.SDK_INT >= 19) {
+        android.widget.ListView listView = (android.widget.ListView) this.m;
+        if (android.os.Build.VERSION.SDK_INT >= 19) {
             return listView.canScrollList(-1);
         }
         if (listView.getChildCount() != 0) {
@@ -278,7 +261,7 @@ public class SwipeRefreshLayout extends ViewGroup implements sf, si {
         return false;
     }
 
-    public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+    public boolean onInterceptTouchEvent(android.view.MotionEvent motionEvent) {
         b();
         int actionMasked = motionEvent.getActionMasked();
         if (!isEnabled() || c() || this.b || this.u) {
@@ -303,7 +286,7 @@ public class SwipeRefreshLayout extends ViewGroup implements sf, si {
                 break;
             case 2:
                 if (this.z == -1) {
-                    Log.e(l, "Got ACTION_MOVE event but don't have an active pointer id.");
+                    android.util.Log.e(l, "Got ACTION_MOVE event but don't have an active pointer id.");
                     return false;
                 }
                 int findPointerIndex2 = motionEvent.findPointerIndex(this.z);
@@ -321,9 +304,9 @@ public class SwipeRefreshLayout extends ViewGroup implements sf, si {
     }
 
     public void requestDisallowInterceptTouchEvent(boolean z2) {
-        if (Build.VERSION.SDK_INT >= 21 || !(this.m instanceof AbsListView)) {
+        if (android.os.Build.VERSION.SDK_INT >= 21 || !(this.m instanceof android.widget.AbsListView)) {
             if (this.m != null) {
-                if (!sn.a.w(this.m)) {
+                if (!defpackage.sn.a.w(this.m)) {
                     return;
                 }
             }
@@ -331,21 +314,18 @@ public class SwipeRefreshLayout extends ViewGroup implements sf, si {
         }
     }
 
-    @Override // defpackage.si
-    public boolean onStartNestedScroll(View view, View view2, int i2) {
+    public boolean onStartNestedScroll(android.view.View view, android.view.View view2, int i2) {
         return isEnabled() && !this.b && (i2 & 2) != 0;
     }
 
-    @Override // defpackage.si
-    public void onNestedScrollAccepted(View view, View view2, int i2) {
+    public void onNestedScrollAccepted(android.view.View view, android.view.View view2, int i2) {
         this.q.a = i2;
         startNestedScroll(i2 & 2);
         this.p = 0.0f;
         this.u = true;
     }
 
-    @Override // defpackage.si
-    public void onNestedPreScroll(View view, int i2, int i3, int[] iArr) {
+    public void onNestedPreScroll(android.view.View view, int i2, int i3, int[] iArr) {
         if (i3 > 0 && this.p > 0.0f) {
             if (((float) i3) > this.p) {
                 iArr[1] = i3 - ((int) this.p);
@@ -367,8 +347,7 @@ public class SwipeRefreshLayout extends ViewGroup implements sf, si {
         return this.q.a;
     }
 
-    @Override // defpackage.si
-    public void onStopNestedScroll(View view) {
+    public void onStopNestedScroll(android.view.View view) {
         this.q.a = 0;
         this.u = false;
         if (this.p > 0.0f) {
@@ -378,12 +357,11 @@ public class SwipeRefreshLayout extends ViewGroup implements sf, si {
         stopNestedScroll();
     }
 
-    @Override // defpackage.si
-    public void onNestedScroll(View view, int i2, int i3, int i4, int i5) {
+    public void onNestedScroll(android.view.View view, int i2, int i3, int i4, int i5) {
         dispatchNestedScroll(i2, i3, i4, i5, this.t);
         int i6 = this.t[1] + i5;
         if (i6 < 0 && !c()) {
-            this.p = ((float) Math.abs(i6)) + this.p;
+            this.p = ((float) java.lang.Math.abs(i6)) + this.p;
             c(this.p);
         }
     }
@@ -392,7 +370,6 @@ public class SwipeRefreshLayout extends ViewGroup implements sf, si {
         this.r.a(z2);
     }
 
-    @Override // defpackage.sf
     public boolean isNestedScrollingEnabled() {
         return this.r.a;
     }
@@ -401,7 +378,6 @@ public class SwipeRefreshLayout extends ViewGroup implements sf, si {
         return this.r.a(i2, 0);
     }
 
-    @Override // defpackage.sf
     public void stopNestedScroll() {
         this.r.b(0);
     }
@@ -418,13 +394,11 @@ public class SwipeRefreshLayout extends ViewGroup implements sf, si {
         return this.r.a(i2, i3, iArr, iArr2);
     }
 
-    @Override // defpackage.si
-    public boolean onNestedPreFling(View view, float f2, float f3) {
+    public boolean onNestedPreFling(android.view.View view, float f2, float f3) {
         return dispatchNestedPreFling(f2, f3);
     }
 
-    @Override // defpackage.si
-    public boolean onNestedFling(View view, float f2, float f3, boolean z2) {
+    public boolean onNestedFling(android.view.View view, float f2, float f3, boolean z2) {
         return dispatchNestedFling(f2, f3, z2);
     }
 
@@ -436,18 +410,17 @@ public class SwipeRefreshLayout extends ViewGroup implements sf, si {
         return this.r.a(f2, f3);
     }
 
-    private static boolean a(Animation animation) {
+    private static boolean a(android.view.animation.Animation animation) {
         return animation != null && animation.hasStarted() && !animation.hasEnded();
     }
 
     private final void c(float f2) {
         this.i.a(true);
-        float min = Math.min(1.0f, Math.abs(f2 / this.o));
-        float max = (((float) Math.max(((double) min) - 0.4d, 0.0d)) * 5.0f) / 3.0f;
-        float abs = Math.abs(f2) - this.o;
+        float min = java.lang.Math.min(1.0f, java.lang.Math.abs(f2 / this.o));
+        float max = (((float) java.lang.Math.max(((double) min) - 0.4d, 0.0d)) * 5.0f) / 3.0f;
         float f3 = (float) this.h;
-        float max2 = Math.max(0.0f, Math.min(abs, f3 * 2.0f) / f3);
-        float pow = ((float) (((double) (max2 / 4.0f)) - Math.pow((double) (max2 / 4.0f), 2.0d))) * 2.0f;
+        float max2 = java.lang.Math.max(0.0f, java.lang.Math.min(java.lang.Math.abs(f2) - this.o, f3 * 2.0f) / f3);
+        float pow = ((float) (((double) (max2 / 4.0f)) - java.lang.Math.pow((double) (max2 / 4.0f), 2.0d))) * 2.0f;
         int i2 = ((int) ((min * f3) + (f3 * pow * 2.0f))) + this.g;
         if (this.e.getVisibility() != 0) {
             this.e.setVisibility(0);
@@ -461,10 +434,11 @@ public class SwipeRefreshLayout extends ViewGroup implements sf, si {
         } else if (this.i.getAlpha() < 255 && !a(this.G)) {
             this.G = a(this.i.getAlpha(), 255);
         }
-        this.i.b(Math.min(0.8f, max * 0.8f));
-        this.i.a(Math.min(1.0f, max));
-        uc ucVar = this.i;
-        ucVar.b.g = (((max * 0.4f) - 16.0f) + (pow * 2.0f)) * 0.5f;
+        this.i.b(java.lang.Math.min(0.8f, max * 0.8f));
+        this.i.a(java.lang.Math.min(1.0f, max));
+        float f4 = (((max * 0.4f) - 16.0f) + (pow * 2.0f)) * 0.5f;
+        defpackage.uc ucVar = this.i;
+        ucVar.b.g = f4;
         ucVar.invalidateSelf();
         a(i2 - this.c);
     }
@@ -476,7 +450,7 @@ public class SwipeRefreshLayout extends ViewGroup implements sf, si {
         }
         this.b = false;
         this.i.b(0.0f);
-        vk vkVar = new vk(this);
+        defpackage.vk vkVar = new defpackage.vk(this);
         this.f = this.c;
         this.K.reset();
         this.K.setDuration(200);
@@ -487,7 +461,7 @@ public class SwipeRefreshLayout extends ViewGroup implements sf, si {
         this.i.a(false);
     }
 
-    public boolean onTouchEvent(MotionEvent motionEvent) {
+    public boolean onTouchEvent(android.view.MotionEvent motionEvent) {
         int actionMasked = motionEvent.getActionMasked();
         if (!isEnabled() || c() || this.b || this.u) {
             return false;
@@ -500,25 +474,26 @@ public class SwipeRefreshLayout extends ViewGroup implements sf, si {
             case 1:
                 int findPointerIndex = motionEvent.findPointerIndex(this.z);
                 if (findPointerIndex < 0) {
-                    Log.e(l, "Got ACTION_UP event but don't have an active pointer id.");
+                    android.util.Log.e(l, "Got ACTION_UP event but don't have an active pointer id.");
                     return false;
                 }
                 if (this.y) {
+                    float y2 = (motionEvent.getY(findPointerIndex) - this.w) * 0.5f;
                     this.y = false;
-                    d((motionEvent.getY(findPointerIndex) - this.w) * 0.5f);
+                    d(y2);
                 }
                 this.z = -1;
                 return false;
             case 2:
                 int findPointerIndex2 = motionEvent.findPointerIndex(this.z);
                 if (findPointerIndex2 < 0) {
-                    Log.e(l, "Got ACTION_MOVE event but have an invalid active pointer id.");
+                    android.util.Log.e(l, "Got ACTION_MOVE event but have an invalid active pointer id.");
                     return false;
                 }
-                float y2 = motionEvent.getY(findPointerIndex2);
-                e(y2);
+                float y3 = motionEvent.getY(findPointerIndex2);
+                e(y3);
                 if (this.y) {
-                    float f2 = (y2 - this.w) * 0.5f;
+                    float f2 = (y3 - this.w) * 0.5f;
                     if (f2 > 0.0f) {
                         c(f2);
                         break;
@@ -535,7 +510,7 @@ public class SwipeRefreshLayout extends ViewGroup implements sf, si {
                     this.z = motionEvent.getPointerId(actionIndex);
                     break;
                 } else {
-                    Log.e(l, "Got ACTION_POINTER_DOWN event but have an invalid action index.");
+                    android.util.Log.e(l, "Got ACTION_POINTER_DOWN event but have an invalid action index.");
                     return false;
                 }
             case 6:
@@ -559,11 +534,11 @@ public class SwipeRefreshLayout extends ViewGroup implements sf, si {
 
     public final void a(int i2) {
         this.e.bringToFront();
-        sn.b((View) this.e, i2);
+        defpackage.sn.b((android.view.View) this.e, i2);
         this.c = this.e.getTop();
     }
 
-    private final void a(MotionEvent motionEvent) {
+    private final void a(android.view.MotionEvent motionEvent) {
         int actionIndex = motionEvent.getActionIndex();
         if (motionEvent.getPointerId(actionIndex) == this.z) {
             this.z = motionEvent.getPointerId(actionIndex == 0 ? 1 : 0);

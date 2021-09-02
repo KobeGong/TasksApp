@@ -1,24 +1,19 @@
 package defpackage;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.View;
-
-/* access modifiers changed from: package-private */
-/* renamed from: lz  reason: default package */
+/* renamed from: lz reason: default package */
 /* compiled from: PG */
-public final class lz extends AnimatorListenerAdapter {
-    private View a;
+final class lz extends android.animation.AnimatorListenerAdapter {
+    private android.view.View a;
 
-    lz(View view) {
+    lz(android.view.View view) {
         this.a = view;
     }
 
-    public final void onAnimationStart(Animator animator) {
+    public final void onAnimationStart(android.animation.Animator animator) {
         this.a.setLayerType(2, null);
     }
 
-    public final void onAnimationEnd(Animator animator) {
+    public final void onAnimationEnd(android.animation.Animator animator) {
         this.a.setLayerType(0, null);
         animator.removeListener(this);
     }

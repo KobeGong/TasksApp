@@ -1,11 +1,11 @@
 package defpackage;
 
-/* renamed from: ekg  reason: default package */
+/* renamed from: ekg reason: default package */
 /* compiled from: PG */
-public final class ekg implements Runnable {
-    private final /* synthetic */ eku a;
+public final class ekg implements java.lang.Runnable {
+    private final /* synthetic */ defpackage.eku a;
 
-    public ekg(eku eku) {
+    public ekg(defpackage.eku eku) {
         this.a = eku;
     }
 

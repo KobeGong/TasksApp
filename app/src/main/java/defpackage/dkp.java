@@ -1,11 +1,8 @@
 package defpackage;
 
-import java.util.Iterator;
-import java.util.NoSuchElementException;
-
-/* renamed from: dkp  reason: default package */
+/* renamed from: dkp reason: default package */
 /* compiled from: PG */
-final class dkp implements Iterator {
+final class dkp implements java.util.Iterator {
     dkp() {
     }
 
@@ -13,12 +10,11 @@ final class dkp implements Iterator {
         return false;
     }
 
-    @Override // java.util.Iterator
-    public final Object next() {
-        throw new NoSuchElementException();
+    public final java.lang.Object next() {
+        throw new java.util.NoSuchElementException();
     }
 
     public final void remove() {
-        throw new UnsupportedOperationException();
+        throw new java.lang.UnsupportedOperationException();
     }
 }

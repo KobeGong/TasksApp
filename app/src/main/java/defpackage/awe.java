@@ -1,21 +1,16 @@
 package defpackage;
 
-import android.os.IBinder;
-import android.os.Parcel;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-
-/* renamed from: awe  reason: default package */
+/* renamed from: awe reason: default package */
 /* compiled from: PG */
-public final class awe extends bkm implements awd {
-    awe(IBinder iBinder) {
+public final class awe extends defpackage.bkm implements defpackage.awd {
+    awe(android.os.IBinder iBinder) {
         super(iBinder, "com.google.android.gms.auth.api.signin.internal.ISignInService");
     }
 
-    @Override // defpackage.awd
-    public final void a(awb awb, GoogleSignInOptions googleSignInOptions) {
-        Parcel c = c();
-        bko.a(c, awb);
-        bko.a(c, googleSignInOptions);
+    public final void a(defpackage.awb awb, com.google.android.gms.auth.api.signin.GoogleSignInOptions googleSignInOptions) {
+        android.os.Parcel c = c();
+        defpackage.bko.a(c, (android.os.IInterface) awb);
+        defpackage.bko.a(c, (android.os.Parcelable) googleSignInOptions);
         b(103, c);
     }
 }

@@ -1,9 +1,9 @@
 package defpackage;
 
-/* renamed from: clm  reason: default package */
+/* renamed from: clm reason: default package */
 /* compiled from: PG */
 public final class clm {
-    public static final clm a;
+    public static final defpackage.clm a;
     public final boolean b = false;
     public final int c;
 
@@ -12,8 +12,8 @@ public final class clm {
     }
 
     static {
-        cnk cnk = new cnk();
+        defpackage.cnk cnk = new defpackage.cnk();
         cnk.a = 10;
-        a = new clm(false, cnk.a);
+        a = new defpackage.clm(false, cnk.a);
     }
 }

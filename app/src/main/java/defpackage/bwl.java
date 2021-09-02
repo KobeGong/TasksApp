@@ -1,23 +1,20 @@
 package defpackage;
 
-import android.content.Context;
-
-/* renamed from: bwl  reason: default package */
+/* renamed from: bwl reason: default package */
 /* compiled from: PG */
-public final class bwl implements ecz {
-    private final ecz a;
-    private final ecz b;
+public final class bwl implements defpackage.ecz {
+    private final defpackage.ecz a;
+    private final defpackage.ecz b;
 
-    public bwl(ecz ecz, ecz ecz2) {
+    public bwl(defpackage.ecz ecz, defpackage.ecz ecz2) {
         this.a = ecz;
         this.b = ecz2;
     }
 
-    @Override // defpackage.ecz
-    public final /* synthetic */ Object a() {
-        bwk bwk = new bwk();
-        bwk.a = (Context) this.a.a();
-        bwk.b = (crv) this.b.a();
+    public final /* synthetic */ java.lang.Object a() {
+        defpackage.bwk bwk = new defpackage.bwk();
+        bwk.a = (android.content.Context) this.a.a();
+        bwk.b = (defpackage.crv) this.b.a();
         return bwk;
     }
 }

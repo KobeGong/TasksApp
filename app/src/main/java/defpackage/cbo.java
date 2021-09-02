@@ -1,23 +1,20 @@
 package defpackage;
 
-import android.content.Context;
-
-/* renamed from: cbo  reason: default package */
+/* renamed from: cbo reason: default package */
 /* compiled from: PG */
-public final class cbo implements ecz {
-    private final ecz a;
-    private final ecz b;
+public final class cbo implements defpackage.ecz {
+    private final defpackage.ecz a;
+    private final defpackage.ecz b;
 
-    public cbo(ecz ecz, ecz ecz2) {
+    public cbo(defpackage.ecz ecz, defpackage.ecz ecz2) {
         this.a = ecz;
         this.b = ecz2;
     }
 
-    @Override // defpackage.ecz
-    public final /* synthetic */ Object a() {
-        cbj cbj = new cbj();
-        cbj.a = (Context) this.a.a();
-        cbj.b = (buc) this.b.a();
+    public final /* synthetic */ java.lang.Object a() {
+        defpackage.cbj cbj = new defpackage.cbj();
+        cbj.a = (android.content.Context) this.a.a();
+        cbj.b = (defpackage.buc) this.b.a();
         return cbj;
     }
 }

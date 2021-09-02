@@ -1,31 +1,26 @@
 package defpackage;
 
-import java.util.ArrayDeque;
-import java.util.Queue;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-/* renamed from: dso  reason: default package */
+/* renamed from: dso reason: default package */
 /* compiled from: PG */
 public class dso {
-    private static final Logger a = Logger.getLogger(dso.class.getName());
-    private final Object b = new Object();
-    private final Queue c = new ArrayDeque();
+    private static final java.util.logging.Logger a = java.util.logging.Logger.getLogger(defpackage.dso.class.getName());
+    private final java.lang.Object b = new java.lang.Object();
+    private final java.util.Queue c = new java.util.ArrayDeque();
     private boolean d;
 
     dso() {
     }
 
-    /* JADX WARNING: Code restructure failed: missing block: B:19:?, code lost:
+    /* JADX WARNING: Code restructure failed: missing block: B:20:?, code lost:
         r0.run();
      */
-    /* JADX WARNING: Code restructure failed: missing block: B:20:0x0027, code lost:
+    /* JADX WARNING: Code restructure failed: missing block: B:21:0x0027, code lost:
         r0 = r1;
      */
-    /* JADX WARNING: Code restructure failed: missing block: B:21:0x0029, code lost:
+    /* JADX WARNING: Code restructure failed: missing block: B:22:0x0029, code lost:
         r0 = move-exception;
      */
-    /* JADX WARNING: Code restructure failed: missing block: B:22:0x002a, code lost:
+    /* JADX WARNING: Code restructure failed: missing block: B:23:0x002a, code lost:
         a(r0);
         r0 = r1;
      */
@@ -62,7 +57,7 @@ public class dso {
             monitor-exit(r3)     // Catch:{ all -> 0x0020 }
             throw r0
         L_0x0023:
-            monitor-exit(r3)
+            monitor-exit(r3)     // Catch:{ all -> 0x0020 }
             r0.run()     // Catch:{ Throwable -> 0x0029 }
             r0 = r1
             goto L_0x0002
@@ -78,15 +73,15 @@ public class dso {
         throw new UnsupportedOperationException("Method not decompiled: defpackage.dso.a():void");
     }
 
-    public final dso a(Runnable runnable) {
+    public final defpackage.dso a(java.lang.Runnable runnable) {
         synchronized (this.b) {
-            this.c.add((Runnable) cld.a(runnable, "runnable is null"));
+            this.c.add((java.lang.Runnable) defpackage.cld.a((java.lang.Object) runnable, (java.lang.Object) "runnable is null"));
         }
         return this;
     }
 
-    /* access modifiers changed from: package-private */
-    public void a(Throwable th) {
-        a.logp(Level.WARNING, "io.grpc.internal.ChannelExecutor", "handleUncaughtThrowable", "Runnable threw exception in ChannelExecutor", th);
+    /* access modifiers changed from: 0000 */
+    public void a(java.lang.Throwable th) {
+        a.logp(java.util.logging.Level.WARNING, "io.grpc.internal.ChannelExecutor", "handleUncaughtThrowable", "Runnable threw exception in ChannelExecutor", th);
     }
 }

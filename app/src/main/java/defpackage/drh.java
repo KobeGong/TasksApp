@@ -1,25 +1,22 @@
 package defpackage;
 
-import java.io.InputStream;
-
-/* renamed from: drh  reason: default package */
+/* renamed from: drh reason: default package */
 /* compiled from: PG */
-final class drh implements dzr {
-    private final Runnable a;
+final class drh implements defpackage.dzr {
+    private final java.lang.Runnable a;
     private boolean b = false;
-    private final /* synthetic */ dqz c;
+    private final /* synthetic */ defpackage.dqz c;
 
-    drh(dqz dqz, Runnable runnable) {
+    drh(defpackage.dqz dqz, java.lang.Runnable runnable) {
         this.c = dqz;
         this.a = runnable;
     }
 
-    @Override // defpackage.dzr
-    public final InputStream a() {
+    public final java.io.InputStream a() {
         if (!this.b) {
             this.a.run();
             this.b = true;
         }
-        return (InputStream) this.c.c.poll();
+        return (java.io.InputStream) this.c.c.poll();
     }
 }

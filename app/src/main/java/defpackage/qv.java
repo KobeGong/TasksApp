@@ -1,10 +1,10 @@
 package defpackage;
 
-/* renamed from: qv  reason: default package */
+/* renamed from: qv reason: default package */
 /* compiled from: PG */
 public final class qv {
     public static final int[] a = new int[0];
-    public static final Object[] b = new Object[0];
+    public static final java.lang.Object[] b = new java.lang.Object[0];
 
     public static int a(int i) {
         return c(i << 2) / 4;
@@ -23,7 +23,7 @@ public final class qv {
         return i;
     }
 
-    public static boolean a(Object obj, Object obj2) {
+    public static boolean a(java.lang.Object obj, java.lang.Object obj2) {
         return obj == obj2 || (obj != null && obj.equals(obj2));
     }
 

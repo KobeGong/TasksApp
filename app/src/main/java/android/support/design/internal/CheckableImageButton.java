@@ -1,26 +1,21 @@
 package android.support.design.internal;
 
-import android.content.Context;
-import android.util.AttributeSet;
-import android.widget.Checkable;
-import com.google.android.apps.tasks.R;
-
 /* compiled from: PG */
-public class CheckableImageButton extends abr implements Checkable {
+public class CheckableImageButton extends defpackage.abr implements android.widget.Checkable {
     private static final int[] a = {16842912};
     private boolean b;
 
-    public CheckableImageButton(Context context) {
+    public CheckableImageButton(android.content.Context context) {
         this(context, null);
     }
 
-    public CheckableImageButton(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, R.attr.imageButtonStyle);
+    public CheckableImageButton(android.content.Context context, android.util.AttributeSet attributeSet) {
+        this(context, attributeSet, 2130772193);
     }
 
-    public CheckableImageButton(Context context, AttributeSet attributeSet, int i) {
+    public CheckableImageButton(android.content.Context context, android.util.AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        sn.a(this, new ev(this));
+        defpackage.sn.a((android.view.View) this, (defpackage.rn) new defpackage.ev(this));
     }
 
     public void setChecked(boolean z) {

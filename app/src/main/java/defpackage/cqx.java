@@ -1,18 +1,14 @@
 package defpackage;
 
-import java.util.concurrent.Callable;
+/* renamed from: cqx reason: default package */
+final /* synthetic */ class cqx implements java.util.concurrent.Callable {
+    private final defpackage.cqv a;
 
-/* access modifiers changed from: package-private */
-/* renamed from: cqx  reason: default package */
-public final /* synthetic */ class cqx implements Callable {
-    private final cqv a;
-
-    cqx(cqv cqv) {
+    cqx(defpackage.cqv cqv) {
         this.a = cqv;
     }
 
-    @Override // java.util.concurrent.Callable
-    public final Object call() {
+    public final java.lang.Object call() {
         return this.a.a();
     }
 }

@@ -1,19 +1,16 @@
 package defpackage;
 
-import java.util.concurrent.Callable;
-import java.util.concurrent.Executor;
-
-/* renamed from: cye  reason: default package */
+/* renamed from: cye reason: default package */
 /* compiled from: PG */
 public final class cye {
     private final boolean a = false;
-    private final csp b;
+    private final defpackage.csp b;
 
-    public cye(csp csp) {
+    public cye(defpackage.csp csp) {
         this.b = csp;
     }
 
-    public final cyi a(Callable callable, Executor executor) {
-        return new cxu(this.b, false, executor, callable);
+    public final defpackage.cyi a(java.util.concurrent.Callable callable, java.util.concurrent.Executor executor) {
+        return new defpackage.cxu(this.b, false, executor, callable);
     }
 }

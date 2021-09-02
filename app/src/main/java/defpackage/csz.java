@@ -1,14 +1,13 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: csz  reason: default package */
+/* renamed from: csz reason: default package */
 /* compiled from: PG */
-public final class csz extends csp {
-    public static final csp a = new csz(new Object[0], 0);
-    private final transient Object[] b;
+final class csz extends defpackage.csp {
+    public static final defpackage.csp a = new defpackage.csz(new java.lang.Object[0], 0);
+    private final transient java.lang.Object[] b;
     private final transient int c;
 
-    csz(Object[] objArr, int i) {
+    csz(java.lang.Object[] objArr, int i) {
         this.b = objArr;
         this.c = i;
     }
@@ -17,22 +16,19 @@ public final class csz extends csp {
         return this.c;
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.csn
+    /* access modifiers changed from: 0000 */
     public final boolean c() {
         return false;
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.csp, defpackage.csn
-    public final int a(Object[] objArr, int i) {
-        System.arraycopy(this.b, 0, objArr, i, this.c);
+    /* access modifiers changed from: 0000 */
+    public final int a(java.lang.Object[] objArr, int i) {
+        java.lang.System.arraycopy(this.b, 0, objArr, i, this.c);
         return this.c + i;
     }
 
-    @Override // java.util.List
-    public final Object get(int i) {
-        cld.a(i, this.c);
+    public final java.lang.Object get(int i) {
+        defpackage.cld.a(i, this.c);
         return this.b[i];
     }
 }

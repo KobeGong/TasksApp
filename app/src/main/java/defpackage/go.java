@@ -1,23 +1,18 @@
 package defpackage;
 
-import android.content.Context;
-import android.content.res.TypedArray;
-import android.util.AttributeSet;
-import android.widget.FrameLayout;
-
-@Deprecated
-/* renamed from: go  reason: default package */
+@java.lang.Deprecated
+/* renamed from: go reason: default package */
 /* compiled from: PG */
-public class go extends FrameLayout {
-    public go(Context context) {
-        this(context, (AttributeSet) null);
+public class go extends android.widget.FrameLayout {
+    public go(android.content.Context context) {
+        this(context, (android.util.AttributeSet) null);
     }
 
-    public go(Context context, AttributeSet attributeSet) {
+    public go(android.content.Context context, android.util.AttributeSet attributeSet) {
         super(context, attributeSet);
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, gp.a);
-        if (obtainStyledAttributes.hasValue(gp.c)) {
-            sn.a(this, (float) obtainStyledAttributes.getDimensionPixelSize(gp.c, 0));
+        android.content.res.TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, defpackage.gp.a);
+        if (obtainStyledAttributes.hasValue(defpackage.gp.c)) {
+            defpackage.sn.a((android.view.View) this, (float) obtainStyledAttributes.getDimensionPixelSize(defpackage.gp.c, 0));
         }
         obtainStyledAttributes.recycle();
         setClickable(true);
@@ -26,14 +21,14 @@ public class go extends FrameLayout {
     /* access modifiers changed from: protected */
     public void onAttachedToWindow() {
         super.onAttachedToWindow();
-        sn.a.g(this);
+        defpackage.sn.a.g(this);
     }
 
-    public go(Context context, byte b) {
+    public go(android.content.Context context, byte b) {
         this(context);
     }
 
-    public go(Context context, AttributeSet attributeSet, byte b) {
+    public go(android.content.Context context, android.util.AttributeSet attributeSet, byte b) {
         this(context, attributeSet);
     }
 }

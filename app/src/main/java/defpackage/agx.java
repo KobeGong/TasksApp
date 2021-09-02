@@ -1,13 +1,11 @@
 package defpackage;
 
-import android.support.v7.widget.Toolbar;
-
-/* renamed from: agx  reason: default package */
+/* renamed from: agx reason: default package */
 /* compiled from: PG */
-public final class agx implements Runnable {
-    private final /* synthetic */ Toolbar a;
+public final class agx implements java.lang.Runnable {
+    private final /* synthetic */ android.support.v7.widget.Toolbar a;
 
-    public agx(Toolbar toolbar) {
+    public agx(android.support.v7.widget.Toolbar toolbar) {
         this.a = toolbar;
     }
 

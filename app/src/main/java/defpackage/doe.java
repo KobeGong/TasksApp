@@ -1,56 +1,51 @@
 package defpackage;
 
-import java.net.SocketAddress;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
-/* renamed from: doe  reason: default package */
+/* renamed from: doe reason: default package */
 /* compiled from: PG */
 public final class doe {
-    public final List a;
-    public final dmv b;
+    public final java.util.List a;
+    public final defpackage.dmv b;
     private final int c;
 
-    public doe(List list) {
-        this(list, dmv.b);
+    public doe(java.util.List list) {
+        this(list, defpackage.dmv.b);
     }
 
-    public doe(List list, dmv dmv) {
-        cld.a(!list.isEmpty(), "addrs is empty");
-        this.a = Collections.unmodifiableList(new ArrayList(list));
-        this.b = (dmv) cld.a(dmv, "attrs");
+    public doe(java.util.List list, defpackage.dmv dmv) {
+        defpackage.cld.a(!list.isEmpty(), (java.lang.Object) "addrs is empty");
+        this.a = java.util.Collections.unmodifiableList(new java.util.ArrayList(list));
+        this.b = (defpackage.dmv) defpackage.cld.a((java.lang.Object) dmv, (java.lang.Object) "attrs");
         this.c = this.a.hashCode();
     }
 
-    public doe(SocketAddress socketAddress) {
-        this(socketAddress, dmv.b);
+    public doe(java.net.SocketAddress socketAddress) {
+        this(socketAddress, defpackage.dmv.b);
     }
 
-    private doe(SocketAddress socketAddress, dmv dmv) {
-        this(Collections.singletonList(socketAddress), dmv);
+    private doe(java.net.SocketAddress socketAddress, defpackage.dmv dmv) {
+        this(java.util.Collections.singletonList(socketAddress), dmv);
     }
 
-    public final String toString() {
-        String valueOf = String.valueOf(this.a);
-        String valueOf2 = String.valueOf(this.b);
-        return new StringBuilder(String.valueOf(valueOf).length() + 16 + String.valueOf(valueOf2).length()).append("[addrs=").append(valueOf).append(", attrs=").append(valueOf2).append("]").toString();
+    public final java.lang.String toString() {
+        java.lang.String valueOf = java.lang.String.valueOf(this.a);
+        java.lang.String valueOf2 = java.lang.String.valueOf(this.b);
+        return new java.lang.StringBuilder(java.lang.String.valueOf(valueOf).length() + 16 + java.lang.String.valueOf(valueOf2).length()).append("[addrs=").append(valueOf).append(", attrs=").append(valueOf2).append("]").toString();
     }
 
     public final int hashCode() {
         return this.c;
     }
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof doe)) {
+    public final boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof defpackage.doe)) {
             return false;
         }
-        doe doe = (doe) obj;
+        defpackage.doe doe = (defpackage.doe) obj;
         if (this.a.size() != doe.a.size()) {
             return false;
         }
         for (int i = 0; i < this.a.size(); i++) {
-            if (!((SocketAddress) this.a.get(i)).equals(doe.a.get(i))) {
+            if (!((java.net.SocketAddress) this.a.get(i)).equals(doe.a.get(i))) {
                 return false;
             }
         }

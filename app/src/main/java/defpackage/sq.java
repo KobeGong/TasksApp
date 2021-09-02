@@ -1,46 +1,36 @@
 package defpackage;
 
-import android.view.Display;
-import android.view.View;
-
-/* renamed from: sq  reason: default package */
+/* renamed from: sq reason: default package */
 /* compiled from: PG */
-class sq extends sp {
+class sq extends defpackage.sp {
     sq() {
     }
 
-    @Override // defpackage.sw
-    public final int j(View view) {
+    public final int j(android.view.View view) {
         return view.getLayoutDirection();
     }
 
-    @Override // defpackage.sw
-    public final int k(View view) {
+    public final int k(android.view.View view) {
         return view.getPaddingStart();
     }
 
-    @Override // defpackage.sw
-    public final int l(View view) {
+    public final int l(android.view.View view) {
         return view.getPaddingEnd();
     }
 
-    @Override // defpackage.sw
-    public final void a(View view, int i, int i2, int i3, int i4) {
+    public final void a(android.view.View view, int i, int i2, int i3, int i4) {
         view.setPaddingRelative(i, i2, i3, i4);
     }
 
-    @Override // defpackage.sw
-    public final int m(View view) {
+    public final int m(android.view.View view) {
         return view.getWindowSystemUiVisibility();
     }
 
-    @Override // defpackage.sw
-    public final boolean n(View view) {
+    public final boolean n(android.view.View view) {
         return view.isPaddingRelative();
     }
 
-    @Override // defpackage.sw
-    public final Display o(View view) {
+    public final android.view.Display o(android.view.View view) {
         return view.getDisplay();
     }
 }

@@ -1,8 +1,6 @@
 package defpackage;
 
-import java.util.Arrays;
-
-/* renamed from: cne  reason: default package */
+/* renamed from: cne reason: default package */
 /* compiled from: PG */
 public final class cne {
     public static final int[] a = {5, 11, 23, 47, 97, 197, 397, 797, 1597, 3203, 6421, 12853, 25717, 51437, 102877, 205759, 411527, 823117, 1646237, 3292489, 6584983, 13169977, 26339969, 52679969, 105359939, 210719881, 421439783, 842879579, 1685759167, 2147483629};
@@ -17,7 +15,7 @@ public final class cne {
     }
 
     public cne() {
-        this((byte) 0);
+        this(0);
     }
 
     private cne(byte b2) {
@@ -29,12 +27,12 @@ public final class cne {
         this.e = 0;
         this.c = new int[a[this.e]];
         this.d = new int[a[this.e]];
-        Arrays.fill(this.d, this.b);
+        java.util.Arrays.fill(this.d, this.b);
     }
 
     public final int a(int i, int i2) {
         boolean z = true;
-        cky.a(i2 != this.b, "Cannot add emptyValue to map");
+        defpackage.cky.a(i2 != this.b, (java.lang.Object) "Cannot add emptyValue to map");
         int d2 = d(i);
         if (this.d[d2] != this.b) {
             return this.d[d2];
@@ -49,7 +47,7 @@ public final class cne {
                 this.e++;
                 this.c = new int[a[this.e]];
                 this.d = new int[a[this.e]];
-                Arrays.fill(this.d, this.b);
+                java.util.Arrays.fill(this.d, this.b);
                 int i3 = this.f;
                 int length = iArr.length;
                 this.f = 0;
@@ -61,9 +59,9 @@ public final class cne {
                 if (i3 != this.f) {
                     z = false;
                 }
-                cky.b(z);
+                defpackage.cky.b(z);
             } else {
-                throw new IllegalStateException("Too many items, you'd better use array map instead.");
+                throw new java.lang.IllegalStateException("Too many items, you'd better use array map instead.");
             }
         }
         return this.b;

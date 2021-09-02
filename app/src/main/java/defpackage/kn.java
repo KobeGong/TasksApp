@@ -1,19 +1,16 @@
 package defpackage;
 
-import android.os.IBinder;
-
-/* access modifiers changed from: package-private */
-/* renamed from: kn  reason: default package */
+/* renamed from: kn reason: default package */
 /* compiled from: PG */
-public final class kn {
-    private final IBinder a;
+final class kn {
+    private final android.os.IBinder a;
 
-    kn(IBinder iBinder) {
+    kn(android.os.IBinder iBinder) {
         this.a = iBinder;
     }
 
-    public final boolean equals(Object obj) {
-        return (obj instanceof kn) && ((kn) obj).a.equals(this.a);
+    public final boolean equals(java.lang.Object obj) {
+        return (obj instanceof defpackage.kn) && ((defpackage.kn) obj).a.equals(this.a);
     }
 
     public final int hashCode() {

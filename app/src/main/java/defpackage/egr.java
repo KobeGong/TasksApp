@@ -1,14 +1,12 @@
 package defpackage;
 
-import org.chromium.base.JavaHandlerThread;
-
-/* renamed from: egr  reason: default package */
+/* renamed from: egr reason: default package */
 /* compiled from: PG */
-public final class egr implements Runnable {
+public final class egr implements java.lang.Runnable {
     private final /* synthetic */ long a;
-    private final /* synthetic */ JavaHandlerThread b;
+    private final /* synthetic */ org.chromium.base.JavaHandlerThread b;
 
-    public egr(JavaHandlerThread javaHandlerThread, long j) {
+    public egr(org.chromium.base.JavaHandlerThread javaHandlerThread, long j) {
         this.b = javaHandlerThread;
         this.a = j;
     }

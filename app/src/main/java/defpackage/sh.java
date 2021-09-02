@@ -1,24 +1,21 @@
 package defpackage;
 
-import android.view.View;
-import android.view.ViewParent;
-
-/* renamed from: sh  reason: default package */
+/* renamed from: sh reason: default package */
 /* compiled from: PG */
 public final class sh {
     public boolean a;
-    private ViewParent b;
-    private ViewParent c;
-    private final View d;
+    private android.view.ViewParent b;
+    private android.view.ViewParent c;
+    private final android.view.View d;
     private int[] e;
 
-    public sh(View view) {
+    public sh(android.view.View view) {
         this.d = view;
     }
 
     public final void a(boolean z) {
         if (this.a) {
-            sn.a.x(this.d);
+            defpackage.sn.a.x(this.d);
         }
         this.a = z;
     }
@@ -32,15 +29,15 @@ public final class sh {
             return true;
         }
         if (this.a) {
-            View view = this.d;
-            for (ViewParent parent = this.d.getParent(); parent != null; parent = parent.getParent()) {
-                if (tb.a(parent, view, this.d, i, i2)) {
+            android.view.View view = this.d;
+            for (android.view.ViewParent parent = this.d.getParent(); parent != null; parent = parent.getParent()) {
+                if (defpackage.tb.a(parent, view, this.d, i, i2)) {
                     a(i2, parent);
-                    tb.b(parent, view, this.d, i, i2);
+                    defpackage.tb.b(parent, view, this.d, i, i2);
                     return true;
                 }
-                if (parent instanceof View) {
-                    view = (View) parent;
+                if (parent instanceof android.view.View) {
+                    view = (android.view.View) parent;
                 }
             }
         }
@@ -48,10 +45,10 @@ public final class sh {
     }
 
     public final void b(int i) {
-        ViewParent c2 = c(i);
+        android.view.ViewParent c2 = c(i);
         if (c2 != null) {
-            tb.a(c2, this.d, i);
-            a(i, (ViewParent) null);
+            defpackage.tb.a(c2, this.d, i);
+            a(i, (android.view.ViewParent) null);
         }
     }
 
@@ -60,35 +57,36 @@ public final class sh {
     }
 
     public final boolean a(int i, int i2, int i3, int i4, int[] iArr, int i5) {
-        ViewParent c2;
         int i6;
         int i7;
-        if (!this.a || (c2 = c(i5)) == null) {
-            return false;
-        }
-        if (i == 0 && i2 == 0 && i3 == 0 && i4 == 0) {
-            if (iArr != null) {
+        if (this.a) {
+            android.view.ViewParent c2 = c(i5);
+            if (c2 == null) {
+                return false;
+            }
+            if (i != 0 || i2 != 0 || i3 != 0 || i4 != 0) {
+                if (iArr != null) {
+                    this.d.getLocationInWindow(iArr);
+                    int i8 = iArr[0];
+                    i6 = iArr[1];
+                    i7 = i8;
+                } else {
+                    i6 = 0;
+                    i7 = 0;
+                }
+                defpackage.tb.a(c2, this.d, i, i2, i3, i4, i5);
+                if (iArr != null) {
+                    this.d.getLocationInWindow(iArr);
+                    iArr[0] = iArr[0] - i7;
+                    iArr[1] = iArr[1] - i6;
+                }
+                return true;
+            } else if (iArr != null) {
                 iArr[0] = 0;
                 iArr[1] = 0;
             }
-            return false;
         }
-        if (iArr != null) {
-            this.d.getLocationInWindow(iArr);
-            int i8 = iArr[0];
-            i6 = iArr[1];
-            i7 = i8;
-        } else {
-            i6 = 0;
-            i7 = 0;
-        }
-        tb.a(c2, this.d, i, i2, i3, i4, i5);
-        if (iArr != null) {
-            this.d.getLocationInWindow(iArr);
-            iArr[0] = iArr[0] - i7;
-            iArr[1] = iArr[1] - i6;
-        }
-        return true;
+        return false;
     }
 
     public final boolean a(int i, int i2, int[] iArr, int[] iArr2) {
@@ -100,7 +98,7 @@ public final class sh {
         int i5;
         int[] iArr3;
         if (this.a) {
-            ViewParent c2 = c(i3);
+            android.view.ViewParent c2 = c(i3);
             if (c2 == null) {
                 return false;
             }
@@ -124,7 +122,7 @@ public final class sh {
                 }
                 iArr3[0] = 0;
                 iArr3[1] = 0;
-                tb.a(c2, this.d, i, i2, iArr3, i3);
+                defpackage.tb.a(c2, this.d, i, i2, iArr3, i3);
                 if (iArr2 != null) {
                     this.d.getLocationInWindow(iArr2);
                     iArr2[0] = iArr2[0] - i5;
@@ -140,22 +138,28 @@ public final class sh {
     }
 
     public final boolean a(float f, float f2, boolean z) {
-        ViewParent c2;
-        if (!this.a || (c2 = c(0)) == null) {
+        if (!this.a) {
             return false;
         }
-        return tb.a.a(c2, this.d, f, f2, z);
+        android.view.ViewParent c2 = c(0);
+        if (c2 == null) {
+            return false;
+        }
+        return defpackage.tb.a.a(c2, this.d, f, f2, z);
     }
 
     public final boolean a(float f, float f2) {
-        ViewParent c2;
-        if (!this.a || (c2 = c(0)) == null) {
+        if (!this.a) {
             return false;
         }
-        return tb.a.a(c2, this.d, f, f2);
+        android.view.ViewParent c2 = c(0);
+        if (c2 == null) {
+            return false;
+        }
+        return defpackage.tb.a.a(c2, this.d, f, f2);
     }
 
-    private final ViewParent c(int i) {
+    private final android.view.ViewParent c(int i) {
         switch (i) {
             case 0:
                 return this.b;
@@ -166,7 +170,7 @@ public final class sh {
         }
     }
 
-    private final void a(int i, ViewParent viewParent) {
+    private final void a(int i, android.view.ViewParent viewParent) {
         switch (i) {
             case 0:
                 this.b = viewParent;

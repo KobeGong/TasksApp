@@ -1,72 +1,58 @@
 package defpackage;
 
-import java.io.InputStream;
-
-/* renamed from: duw  reason: default package */
+/* renamed from: duw reason: default package */
 /* compiled from: PG */
-abstract class duw implements dta {
+abstract class duw implements defpackage.dta {
     duw() {
     }
 
     /* access modifiers changed from: protected */
-    public abstract dta a();
+    public abstract defpackage.dta a();
 
-    @Override // defpackage.dzp
     public final void c(int i) {
         a().c(i);
     }
 
-    @Override // defpackage.dzp
-    public final void a(InputStream inputStream) {
+    public final void a(java.io.InputStream inputStream) {
         a().a(inputStream);
     }
 
-    @Override // defpackage.dzp
     public final void f() {
         a().f();
     }
 
-    @Override // defpackage.dzp
-    public final void a(doa doa) {
+    public final void a(defpackage.doa doa) {
         a().a(doa);
     }
 
-    @Override // defpackage.dta
-    public final void b(dpw dpw) {
+    public final void b(defpackage.dpw dpw) {
         a().b(dpw);
     }
 
-    @Override // defpackage.dta
     public final void e() {
         a().e();
     }
 
-    @Override // defpackage.dta
-    public final void a(String str) {
+    public final void a(java.lang.String str) {
         a().a(str);
     }
 
-    @Override // defpackage.dta
     public final void a(boolean z) {
         a().a(z);
     }
 
-    @Override // defpackage.dta
-    public final void a(dob dob) {
+    public final void a(defpackage.dob dob) {
         a().a(dob);
     }
 
-    @Override // defpackage.dta
-    public void a(dzq dzq) {
+    public void a(defpackage.dzq dzq) {
         a().a(dzq);
     }
 
-    @Override // defpackage.dta
     public final void b(int i) {
         a().b(i);
     }
 
-    @Override // defpackage.dta
     public final void a(int i) {
         a().a(i);
     }

@@ -1,15 +1,14 @@
 package defpackage;
 
-/* renamed from: ajv  reason: default package */
-final /* synthetic */ class ajv implements ecz {
-    private final coz a;
+/* renamed from: ajv reason: default package */
+final /* synthetic */ class ajv implements defpackage.ecz {
+    private final defpackage.coz a;
 
-    ajv(aju aju, coz coz) {
+    ajv(defpackage.aju aju, defpackage.coz coz) {
         this.a = coz;
     }
 
-    @Override // defpackage.ecz
-    public final Object a() {
-        return new ajx(this.a);
+    public final java.lang.Object a() {
+        return new defpackage.ajx(this.a);
     }
 }

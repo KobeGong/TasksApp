@@ -1,16 +1,11 @@
 package defpackage;
 
-import android.os.SystemClock;
-import android.view.MotionEvent;
-import android.view.animation.AnimationUtils;
-
-/* access modifiers changed from: package-private */
-/* renamed from: ty  reason: default package */
+/* renamed from: ty reason: default package */
 /* compiled from: PG */
-public final class ty implements Runnable {
-    private final /* synthetic */ tw a;
+final class ty implements java.lang.Runnable {
+    private final /* synthetic */ defpackage.tw a;
 
-    ty(tw twVar) {
+    ty(defpackage.tw twVar) {
         this.a = twVar;
     }
 
@@ -19,15 +14,15 @@ public final class ty implements Runnable {
         if (this.a.e) {
             if (this.a.c) {
                 this.a.c = false;
-                tx txVar = this.a.a;
-                txVar.e = AnimationUtils.currentAnimationTimeMillis();
+                defpackage.tx txVar = this.a.a;
+                txVar.e = android.view.animation.AnimationUtils.currentAnimationTimeMillis();
                 txVar.h = -1;
                 txVar.f = txVar.e;
                 txVar.i = 0.5f;
                 txVar.g = 0;
             }
-            tx txVar2 = this.a.a;
-            if (txVar2.h <= 0 || AnimationUtils.currentAnimationTimeMillis() <= txVar2.h + ((long) txVar2.j)) {
+            defpackage.tx txVar2 = this.a.a;
+            if (txVar2.h <= 0 || android.view.animation.AnimationUtils.currentAnimationTimeMillis() <= txVar2.h + ((long) txVar2.j)) {
                 z = false;
             } else {
                 z = true;
@@ -38,21 +33,23 @@ public final class ty implements Runnable {
             }
             if (this.a.d) {
                 this.a.d = false;
-                tw twVar = this.a;
-                long uptimeMillis = SystemClock.uptimeMillis();
-                MotionEvent obtain = MotionEvent.obtain(uptimeMillis, uptimeMillis, 3, 0.0f, 0.0f, 0);
+                defpackage.tw twVar = this.a;
+                long uptimeMillis = android.os.SystemClock.uptimeMillis();
+                android.view.MotionEvent obtain = android.view.MotionEvent.obtain(uptimeMillis, uptimeMillis, 3, 0.0f, 0.0f, 0);
                 twVar.b.onTouchEvent(obtain);
                 obtain.recycle();
             }
             if (txVar2.f == 0) {
-                throw new RuntimeException("Cannot compute scroll delta before calling start()");
+                throw new java.lang.RuntimeException("Cannot compute scroll delta before calling start()");
             }
-            long currentAnimationTimeMillis = AnimationUtils.currentAnimationTimeMillis();
+            long currentAnimationTimeMillis = android.view.animation.AnimationUtils.currentAnimationTimeMillis();
             float a2 = txVar2.a(currentAnimationTimeMillis);
+            float f = (a2 * 4.0f) + (-4.0f * a2 * a2);
+            long j = currentAnimationTimeMillis - txVar2.f;
             txVar2.f = currentAnimationTimeMillis;
-            txVar2.g = (int) (((float) (currentAnimationTimeMillis - txVar2.f)) * ((a2 * 4.0f) + (-4.0f * a2 * a2)) * txVar2.d);
+            txVar2.g = (int) (((float) j) * f * txVar2.d);
             this.a.a(txVar2.g);
-            sn.a(this.a.b, this);
+            defpackage.sn.a(this.a.b, (java.lang.Runnable) this);
         }
     }
 }

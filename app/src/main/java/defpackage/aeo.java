@@ -1,22 +1,19 @@
 package defpackage;
 
-import java.util.ArrayList;
-import java.util.List;
-
-/* renamed from: aeo  reason: default package */
+/* renamed from: aeo reason: default package */
 /* compiled from: PG */
 public final class aeo {
-    public final ArrayList a;
-    public final ArrayList b;
+    public final java.util.ArrayList a;
+    public final java.util.ArrayList b;
     public int c;
-    private rg d;
-    private final abd e;
-    private final aen f;
+    private defpackage.rg d;
+    private final defpackage.abd e;
+    private final defpackage.aen f;
 
-    public final abe a(int i, int i2, int i3, Object obj) {
-        abe abe = (abe) this.d.a();
+    public final defpackage.abe a(int i, int i2, int i3, java.lang.Object obj) {
+        defpackage.abe abe = (defpackage.abe) this.d.a();
         if (abe == null) {
-            return new abe(i, i2, i3, obj);
+            return new defpackage.abe(i, i2, i3, obj);
         }
         abe.a = i;
         abe.b = i2;
@@ -25,27 +22,27 @@ public final class aeo {
         return abe;
     }
 
-    private final void a(abe abe) {
+    private final void a(defpackage.abe abe) {
         abe.c = null;
         this.d.a(abe);
     }
 
-    public aeo(abd abd) {
-        this(abd, (byte) 0);
+    public aeo(defpackage.abd abd) {
+        this(abd, 0);
     }
 
-    private aeo(abd abd, byte b2) {
-        this.d = new rg(30);
-        this.a = new ArrayList();
-        this.b = new ArrayList();
+    private aeo(defpackage.abd abd, byte b2) {
+        this.d = new defpackage.rg(30);
+        this.a = new java.util.ArrayList();
+        this.b = new java.util.ArrayList();
         this.c = 0;
         this.e = abd;
-        this.f = new aen(this);
+        this.f = new defpackage.aen(this);
     }
 
     public final void a() {
-        a(this.a);
-        a(this.b);
+        a((java.util.List) this.a);
+        a((java.util.List) this.b);
         this.c = 0;
     }
 
@@ -57,14 +54,14 @@ public final class aeo {
         int i4;
         boolean z2;
         boolean z3;
-        aen aen = this.f;
-        ArrayList arrayList = this.a;
+        defpackage.aen aen = this.f;
+        java.util.ArrayList arrayList = this.a;
         while (true) {
             boolean z4 = false;
             int size = arrayList.size() - 1;
             while (true) {
                 if (size >= 0) {
-                    if (((abe) arrayList.get(size)).a != 8) {
+                    if (((defpackage.abe) arrayList.get(size)).a != 8) {
                         z3 = true;
                     } else if (z4) {
                         i = size;
@@ -79,8 +76,8 @@ public final class aeo {
             }
             if (i != -1) {
                 int i5 = i + 1;
-                abe abe = (abe) arrayList.get(i);
-                abe abe2 = (abe) arrayList.get(i5);
+                defpackage.abe abe = (defpackage.abe) arrayList.get(i);
+                defpackage.abe abe2 = (defpackage.abe) arrayList.get(i5);
                 switch (abe2.a) {
                     case 1:
                         int i6 = 0;
@@ -101,7 +98,7 @@ public final class aeo {
                         arrayList.set(i5, abe);
                         break;
                     case 2:
-                        abe abe3 = null;
+                        defpackage.abe abe3 = null;
                         boolean z5 = false;
                         if (abe.b < abe.d) {
                             z2 = false;
@@ -119,11 +116,11 @@ public final class aeo {
                                 abe2.d--;
                                 abe.a = 2;
                                 abe.d = 1;
-                                if (abe2.d == 0) {
-                                    arrayList.remove(i5);
-                                    aen.a.a(abe2);
+                                if (abe2.d != 0) {
                                     break;
                                 } else {
+                                    arrayList.remove(i5);
+                                    aen.a.a(abe2);
                                     break;
                                 }
                             }
@@ -136,12 +133,7 @@ public final class aeo {
                             abe3 = aen.a.a(2, abe.b + 1, (abe2.b + abe2.d) - abe.b, null);
                             abe2.d = abe.b - abe2.b;
                         }
-                        if (z5) {
-                            arrayList.set(i, abe2);
-                            arrayList.remove(i5);
-                            aen.a.a(abe);
-                            break;
-                        } else {
+                        if (!z5) {
                             if (z2) {
                                 if (abe3 != null) {
                                     if (abe.b > abe3.b) {
@@ -179,16 +171,21 @@ public final class aeo {
                             } else {
                                 arrayList.remove(i5);
                             }
-                            if (abe3 != null) {
-                                arrayList.add(i, abe3);
+                            if (abe3 == null) {
                                 break;
                             } else {
+                                arrayList.add(i, abe3);
                                 break;
                             }
+                        } else {
+                            arrayList.set(i, abe2);
+                            arrayList.remove(i5);
+                            aen.a.a(abe);
+                            break;
                         }
                     case 4:
-                        abe abe4 = null;
-                        abe abe5 = null;
+                        defpackage.abe abe4 = null;
+                        defpackage.abe abe5 = null;
                         if (abe.d < abe2.b) {
                             abe2.b--;
                         } else if (abe.d < abe2.b + abe2.d) {
@@ -212,17 +209,17 @@ public final class aeo {
                         if (abe4 != null) {
                             arrayList.add(i, abe4);
                         }
-                        if (abe5 != null) {
-                            arrayList.add(i, abe5);
+                        if (abe5 == null) {
                             break;
                         } else {
+                            arrayList.add(i, abe5);
                             break;
                         }
                 }
             } else {
                 int size2 = this.a.size();
                 for (int i8 = 0; i8 < size2; i8++) {
-                    abe abe6 = (abe) this.a.get(i8);
+                    defpackage.abe abe6 = (defpackage.abe) this.a.get(i8);
                     switch (abe6.a) {
                         case 1:
                             c(abe6);
@@ -253,9 +250,10 @@ public final class aeo {
                                     i2 = i10 - i12;
                                     i3 = 1;
                                 } else {
+                                    int i13 = i11;
                                     i2 = i10;
                                     i3 = i12 + 1;
-                                    i4 = i11;
+                                    i4 = i13;
                                 }
                                 i12 = i3;
                                 i10 = i2;
@@ -265,52 +263,54 @@ public final class aeo {
                                 a(abe6);
                                 abe6 = a(2, i9, i12, null);
                             }
-                            if (c2 == 0) {
-                                b(abe6);
+                            if (c2 != 0) {
+                                c(abe6);
                                 break;
                             } else {
-                                c(abe6);
+                                b(abe6);
                                 break;
                             }
                             break;
                         case 4:
-                            int i13 = abe6.b;
-                            int i14 = abe6.b + abe6.d;
-                            int i15 = abe6.b;
-                            int i16 = 0;
-                            int i17 = i13;
+                            int i14 = abe6.b;
+                            int i15 = abe6.b + abe6.d;
+                            int i16 = abe6.b;
+                            int i17 = 0;
+                            int i18 = i14;
                             boolean z7 = true;
-                            while (i15 < i14) {
-                                if (this.e.a(i15) != null || b(i15)) {
+                            while (i16 < i15) {
+                                if (this.e.a(i16) != null || b(i16)) {
                                     if (!z7) {
-                                        b(a(4, i17, i16, abe6.c));
-                                        i16 = 0;
-                                        i17 = i15;
+                                        b(a(4, i18, i17, abe6.c));
+                                        i17 = 0;
+                                        i18 = i16;
                                     }
                                     z = true;
                                 } else {
                                     if (z7) {
-                                        c(a(4, i17, i16, abe6.c));
-                                        i16 = 0;
-                                        i17 = i15;
+                                        c(a(4, i18, i17, abe6.c));
+                                        i17 = 0;
+                                        i18 = i16;
                                     }
                                     z = false;
                                 }
-                                i15++;
+                                boolean z8 = z;
+                                int i19 = i18;
                                 i16++;
-                                i17 = i17;
-                                z7 = z;
+                                i17++;
+                                i18 = i19;
+                                z7 = z8;
                             }
-                            if (i16 != abe6.d) {
-                                Object obj = abe6.c;
+                            if (i17 != abe6.d) {
+                                java.lang.Object obj = abe6.c;
                                 a(abe6);
-                                abe6 = a(4, i17, i16, obj);
+                                abe6 = a(4, i18, i17, obj);
                             }
-                            if (!z7) {
-                                b(abe6);
+                            if (z7) {
+                                c(abe6);
                                 break;
                             } else {
-                                c(abe6);
+                                b(abe6);
                                 break;
                             }
                         case 8:
@@ -327,17 +327,17 @@ public final class aeo {
     public final void c() {
         int size = this.b.size();
         for (int i = 0; i < size; i++) {
-            this.e.a((abe) this.b.get(i));
+            this.e.a((defpackage.abe) this.b.get(i));
         }
-        a(this.b);
+        a((java.util.List) this.b);
         this.c = 0;
     }
 
-    private final void b(abe abe) {
+    private final void b(defpackage.abe abe) {
         int i;
         boolean z;
         if (abe.a == 1 || abe.a == 8) {
-            throw new IllegalArgumentException("should not dispatch add or move for pre layout");
+            throw new java.lang.IllegalArgumentException("should not dispatch add or move for pre layout");
         }
         int b2 = b(abe.b, abe.a);
         int i2 = abe.b;
@@ -345,12 +345,11 @@ public final class aeo {
             case 2:
                 i = 0;
                 break;
-            case 3:
-            default:
-                throw new IllegalArgumentException("op should be remove or update." + abe);
             case 4:
                 i = 1;
                 break;
+            default:
+                throw new java.lang.IllegalArgumentException("op should be remove or update." + abe);
         }
         int i3 = 1;
         int i4 = b2;
@@ -359,30 +358,29 @@ public final class aeo {
             int b3 = b(abe.b + (i * i6), abe.a);
             switch (abe.a) {
                 case 2:
-                    if (b3 == i4) {
-                        z = true;
-                        break;
-                    } else {
+                    if (b3 != i4) {
                         z = false;
                         break;
+                    } else {
+                        z = true;
+                        break;
                     }
-                case 3:
+                case 4:
+                    if (b3 != i4 + 1) {
+                        z = false;
+                        break;
+                    } else {
+                        z = true;
+                        break;
+                    }
                 default:
                     z = false;
                     break;
-                case 4:
-                    if (b3 == i4 + 1) {
-                        z = true;
-                        break;
-                    } else {
-                        z = false;
-                        break;
-                    }
             }
             if (z) {
                 i3++;
             } else {
-                abe a2 = a(abe.a, i4, i3, abe.c);
+                defpackage.abe a2 = a(abe.a, i4, i3, abe.c);
                 a(a2, i5);
                 a(a2);
                 if (abe.a == 4) {
@@ -392,27 +390,26 @@ public final class aeo {
                 i4 = b3;
             }
         }
-        Object obj = abe.c;
+        java.lang.Object obj = abe.c;
         a(abe);
         if (i3 > 0) {
-            abe a3 = a(abe.a, i4, i3, obj);
+            defpackage.abe a3 = a(abe.a, i4, i3, obj);
             a(a3, i5);
             a(a3);
         }
     }
 
-    private final void a(abe abe, int i) {
+    private final void a(defpackage.abe abe, int i) {
         this.e.a(abe);
         switch (abe.a) {
             case 2:
                 this.e.a(i, abe.d);
                 return;
-            case 3:
-            default:
-                throw new IllegalArgumentException("only remove and update ops can be dispatched in first pass");
             case 4:
                 this.e.a(i, abe.d, abe.c);
                 return;
+            default:
+                throw new java.lang.IllegalArgumentException("only remove and update ops can be dispatched in first pass");
         }
     }
 
@@ -423,7 +420,7 @@ public final class aeo {
         int size = this.b.size() - 1;
         int i6 = i;
         while (size >= 0) {
-            abe abe = (abe) this.b.get(size);
+            defpackage.abe abe = (defpackage.abe) this.b.get(size);
             if (abe.a == 8) {
                 if (abe.b < abe.d) {
                     i4 = abe.b;
@@ -478,7 +475,7 @@ public final class aeo {
             i6 = i3;
         }
         for (int size2 = this.b.size() - 1; size2 >= 0; size2--) {
-            abe abe2 = (abe) this.b.get(size2);
+            defpackage.abe abe2 = (defpackage.abe) this.b.get(size2);
             if (abe2.a == 8) {
                 if (abe2.d == abe2.b || abe2.d < 0) {
                     this.b.remove(size2);
@@ -495,7 +492,7 @@ public final class aeo {
     private final boolean b(int i) {
         int size = this.b.size();
         for (int i2 = 0; i2 < size; i2++) {
-            abe abe = (abe) this.b.get(i2);
+            defpackage.abe abe = (defpackage.abe) this.b.get(i2);
             if (abe.a == 8) {
                 if (a(abe.d, i2 + 1) == i) {
                     return true;
@@ -515,29 +512,25 @@ public final class aeo {
         return false;
     }
 
-    private final void c(abe abe) {
+    private final void c(defpackage.abe abe) {
         this.b.add(abe);
         switch (abe.a) {
             case 1:
                 this.e.b(abe.b, abe.d);
                 return;
             case 2:
-                abd abd = this.e;
+                defpackage.abd abd = this.e;
                 abd.a.a(abe.b, abe.d, false);
                 abd.a.F = true;
                 return;
-            case 3:
-            case 5:
-            case 6:
-            case 7:
-            default:
-                throw new IllegalArgumentException("Unknown update op type for " + abe);
             case 4:
                 this.e.a(abe.b, abe.d, abe.c);
                 return;
             case 8:
                 this.e.c(abe.b, abe.d);
                 return;
+            default:
+                throw new java.lang.IllegalArgumentException("Unknown update op type for " + abe);
         }
     }
 
@@ -549,12 +542,12 @@ public final class aeo {
         return (this.c & i) != 0;
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public final int a(int i, int i2) {
         int size = this.b.size();
         int i3 = i;
         while (i2 < size) {
-            abe abe = (abe) this.b.get(i2);
+            defpackage.abe abe = (defpackage.abe) this.b.get(i2);
             if (abe.a == 8) {
                 if (abe.b == i3) {
                     i3 = abe.d;
@@ -585,7 +578,7 @@ public final class aeo {
         c();
         int size = this.a.size();
         for (int i = 0; i < size; i++) {
-            abe abe = (abe) this.a.get(i);
+            defpackage.abe abe = (defpackage.abe) this.a.get(i);
             switch (abe.a) {
                 case 1:
                     this.e.a(abe);
@@ -605,14 +598,14 @@ public final class aeo {
                     break;
             }
         }
-        a(this.a);
+        a((java.util.List) this.a);
         this.c = 0;
     }
 
-    private final void a(List list) {
+    private final void a(java.util.List list) {
         int size = list.size();
         for (int i = 0; i < size; i++) {
-            a((abe) list.get(i));
+            a((defpackage.abe) list.get(i));
         }
         list.clear();
     }

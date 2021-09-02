@@ -1,21 +1,16 @@
 package defpackage;
 
-import android.app.SearchableInfo;
-import android.support.v7.widget.SearchView;
-import android.view.KeyEvent;
-import android.view.View;
-
-/* renamed from: agg  reason: default package */
+/* renamed from: agg reason: default package */
 /* compiled from: PG */
-public final class agg implements View.OnKeyListener {
-    private final /* synthetic */ SearchView a;
+public final class agg implements android.view.View.OnKeyListener {
+    private final /* synthetic */ android.support.v7.widget.SearchView a;
 
-    public agg(SearchView searchView) {
+    public agg(android.support.v7.widget.SearchView searchView) {
         this.a = searchView;
     }
 
-    public final boolean onKey(View view, int i, KeyEvent keyEvent) {
-        SearchableInfo searchableInfo = this.a.o;
+    public final boolean onKey(android.view.View view, int i, android.view.KeyEvent keyEvent) {
+        android.app.SearchableInfo searchableInfo = this.a.o;
         return false;
     }
 }

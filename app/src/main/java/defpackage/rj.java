@@ -1,12 +1,12 @@
 package defpackage;
 
-/* renamed from: rj  reason: default package */
+/* renamed from: rj reason: default package */
 /* compiled from: PG */
-public final class rj implements Cloneable {
-    public static final Object a = new Object();
+public final class rj implements java.lang.Cloneable {
+    public static final java.lang.Object a = new java.lang.Object();
     public boolean b;
     public int[] c;
-    public Object[] d;
+    public java.lang.Object[] d;
     public int e;
 
     public rj() {
@@ -16,35 +16,35 @@ public final class rj implements Cloneable {
     public rj(int i) {
         this.b = false;
         if (i == 0) {
-            this.c = qv.a;
-            this.d = qv.b;
+            this.c = defpackage.qv.a;
+            this.d = defpackage.qv.b;
         } else {
-            int a2 = qv.a(i);
+            int a2 = defpackage.qv.a(i);
             this.c = new int[a2];
-            this.d = new Object[a2];
+            this.d = new java.lang.Object[a2];
         }
         this.e = 0;
     }
 
     /* access modifiers changed from: private */
     /* renamed from: c */
-    public final rj clone() {
+    public final defpackage.rj clone() {
         try {
-            rj rjVar = (rj) super.clone();
+            defpackage.rj rjVar = (defpackage.rj) super.clone();
             try {
                 rjVar.c = (int[]) this.c.clone();
-                rjVar.d = (Object[]) this.d.clone();
+                rjVar.d = (java.lang.Object[]) this.d.clone();
                 return rjVar;
-            } catch (CloneNotSupportedException e2) {
+            } catch (java.lang.CloneNotSupportedException e2) {
                 return rjVar;
             }
-        } catch (CloneNotSupportedException e3) {
+        } catch (java.lang.CloneNotSupportedException e3) {
             return null;
         }
     }
 
-    public final Object a(int i) {
-        int a2 = qv.a(this.c, this.e, i);
+    public final java.lang.Object a(int i) {
+        int a2 = defpackage.qv.a(this.c, this.e, i);
         if (a2 < 0 || this.d[a2] == a) {
             return null;
         }
@@ -54,10 +54,10 @@ public final class rj implements Cloneable {
     public final void a() {
         int i = this.e;
         int[] iArr = this.c;
-        Object[] objArr = this.d;
+        java.lang.Object[] objArr = this.d;
         int i2 = 0;
         for (int i3 = 0; i3 < i; i3++) {
-            Object obj = objArr[i3];
+            java.lang.Object obj = objArr[i3];
             if (obj != a) {
                 if (i3 != i2) {
                     iArr[i2] = iArr[i3];
@@ -71,8 +71,8 @@ public final class rj implements Cloneable {
         this.e = i2;
     }
 
-    public final void a(int i, Object obj) {
-        int a2 = qv.a(this.c, this.e, i);
+    public final void a(int i, java.lang.Object obj) {
+        int a2 = defpackage.qv.a(this.c, this.e, i);
         if (a2 >= 0) {
             this.d[a2] = obj;
             return;
@@ -81,20 +81,20 @@ public final class rj implements Cloneable {
         if (i2 >= this.e || this.d[i2] != a) {
             if (this.b && this.e >= this.c.length) {
                 a();
-                i2 = qv.a(this.c, this.e, i) ^ -1;
+                i2 = defpackage.qv.a(this.c, this.e, i) ^ -1;
             }
             if (this.e >= this.c.length) {
-                int a3 = qv.a(this.e + 1);
+                int a3 = defpackage.qv.a(this.e + 1);
                 int[] iArr = new int[a3];
-                Object[] objArr = new Object[a3];
-                System.arraycopy(this.c, 0, iArr, 0, this.c.length);
-                System.arraycopy(this.d, 0, objArr, 0, this.d.length);
+                java.lang.Object[] objArr = new java.lang.Object[a3];
+                java.lang.System.arraycopy(this.c, 0, iArr, 0, this.c.length);
+                java.lang.System.arraycopy(this.d, 0, objArr, 0, this.d.length);
                 this.c = iArr;
                 this.d = objArr;
             }
             if (this.e - i2 != 0) {
-                System.arraycopy(this.c, i2, this.c, i2 + 1, this.e - i2);
-                System.arraycopy(this.d, i2, this.d, i2 + 1, this.e - i2);
+                java.lang.System.arraycopy(this.c, i2, this.c, i2 + 1, this.e - i2);
+                java.lang.System.arraycopy(this.d, i2, this.d, i2 + 1, this.e - i2);
             }
             this.c[i2] = i;
             this.d[i2] = obj;
@@ -119,25 +119,25 @@ public final class rj implements Cloneable {
         return this.c[i];
     }
 
-    public final Object c(int i) {
+    public final java.lang.Object c(int i) {
         if (this.b) {
             a();
         }
         return this.d[i];
     }
 
-    public final void b(int i, Object obj) {
+    public final void b(int i, java.lang.Object obj) {
         if (this.e == 0 || i > this.c[this.e - 1]) {
             if (this.b && this.e >= this.c.length) {
                 a();
             }
             int i2 = this.e;
             if (i2 >= this.c.length) {
-                int a2 = qv.a(i2 + 1);
+                int a2 = defpackage.qv.a(i2 + 1);
                 int[] iArr = new int[a2];
-                Object[] objArr = new Object[a2];
-                System.arraycopy(this.c, 0, iArr, 0, this.c.length);
-                System.arraycopy(this.d, 0, objArr, 0, this.d.length);
+                java.lang.Object[] objArr = new java.lang.Object[a2];
+                java.lang.System.arraycopy(this.c, 0, iArr, 0, this.c.length);
+                java.lang.System.arraycopy(this.d, 0, objArr, 0, this.d.length);
                 this.c = iArr;
                 this.d = objArr;
             }
@@ -149,11 +149,11 @@ public final class rj implements Cloneable {
         a(i, obj);
     }
 
-    public final String toString() {
+    public final java.lang.String toString() {
         if (b() <= 0) {
             return "{}";
         }
-        StringBuilder sb = new StringBuilder(this.e * 28);
+        java.lang.StringBuilder sb = new java.lang.StringBuilder(this.e * 28);
         sb.append('{');
         for (int i = 0; i < this.e; i++) {
             if (i > 0) {
@@ -161,7 +161,7 @@ public final class rj implements Cloneable {
             }
             sb.append(b(i));
             sb.append('=');
-            Object c2 = c(i);
+            java.lang.Object c2 = c(i);
             if (c2 != this) {
                 sb.append(c2);
             } else {

@@ -1,14 +1,10 @@
 package defpackage;
 
-import android.graphics.Matrix;
-import java.util.ArrayList;
-
-/* access modifiers changed from: package-private */
-/* renamed from: hs  reason: default package */
+/* renamed from: hs reason: default package */
 /* compiled from: PG */
-public final class hs {
-    public final Matrix a = new Matrix();
-    public final ArrayList b = new ArrayList();
+final class hs {
+    public final android.graphics.Matrix a = new android.graphics.Matrix();
+    public final java.util.ArrayList b = new java.util.ArrayList();
     public float c = 0.0f;
     public float d = 0.0f;
     public float e = 0.0f;
@@ -16,35 +12,67 @@ public final class hs {
     public float g = 1.0f;
     public float h = 0.0f;
     public float i = 0.0f;
-    public final Matrix j = new Matrix();
+    public final android.graphics.Matrix j = new android.graphics.Matrix();
     public int k;
     public int[] l;
-    public String m = null;
+    public java.lang.String m = null;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r7v0, types: [qr, ri] */
-    /* JADX WARN: Type inference failed for: r2v8, types: [hr] */
-    /* JADX WARNING: Unknown variable types count: 1 */
-    /* Code decompiled incorrectly, please refer to instructions dump. */
-    public hs(defpackage.hs r6, defpackage.qr r7) {
-        /*
-        // Method dump skipped, instructions count: 183
-        */
-        throw new UnsupportedOperationException("Method not decompiled: defpackage.hs.<init>(hs, qr):void");
+    public hs(defpackage.hs hsVar, defpackage.qr qrVar) {
+        defpackage.ht hqVar;
+        this.c = hsVar.c;
+        this.d = hsVar.d;
+        this.e = hsVar.e;
+        this.f = hsVar.f;
+        this.g = hsVar.g;
+        this.h = hsVar.h;
+        this.i = hsVar.i;
+        this.l = hsVar.l;
+        this.m = hsVar.m;
+        this.k = hsVar.k;
+        if (this.m != null) {
+            qrVar.put(this.m, this);
+        }
+        this.j.set(hsVar.j);
+        java.util.ArrayList arrayList = hsVar.b;
+        int i2 = 0;
+        while (true) {
+            int i3 = i2;
+            if (i3 < arrayList.size()) {
+                java.lang.Object obj = arrayList.get(i3);
+                if (obj instanceof defpackage.hs) {
+                    this.b.add(new defpackage.hs((defpackage.hs) obj, qrVar));
+                } else {
+                    if (obj instanceof defpackage.hr) {
+                        hqVar = new defpackage.hr((defpackage.hr) obj);
+                    } else if (obj instanceof defpackage.hq) {
+                        hqVar = new defpackage.hq((defpackage.hq) obj);
+                    } else {
+                        throw new java.lang.IllegalStateException("Unknown object in the tree!");
+                    }
+                    this.b.add(hqVar);
+                    if (hqVar.o != null) {
+                        qrVar.put(hqVar.o, hqVar);
+                    }
+                }
+                i2 = i3 + 1;
+            } else {
+                return;
+            }
+        }
     }
 
     public hs() {
     }
 
-    public final String getGroupName() {
+    public final java.lang.String getGroupName() {
         return this.m;
     }
 
-    public final Matrix getLocalMatrix() {
+    public final android.graphics.Matrix getLocalMatrix() {
         return this.j;
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public final void a() {
         this.j.reset();
         this.j.postTranslate(-this.d, -this.e);

@@ -1,24 +1,19 @@
 package defpackage;
 
-import android.content.Context;
-
-/* renamed from: aok  reason: default package */
+/* renamed from: aok reason: default package */
 /* compiled from: PG */
-final class aok implements aoe {
+final class aok implements defpackage.aoe {
     aok() {
     }
 
-    @Override // defpackage.aoe
-    public final String a(Context context) {
+    public final java.lang.String a(android.content.Context context) {
         return null;
     }
 
-    @Override // defpackage.aoe
-    public final void a(String str) {
+    public final void a(java.lang.String str) {
     }
 
-    @Override // defpackage.aoe
-    public final aof a(Context context, String str) {
-        return aoe.a;
+    public final defpackage.aof a(android.content.Context context, java.lang.String str) {
+        return defpackage.aoe.a;
     }
 }

@@ -1,15 +1,12 @@
 package defpackage;
 
-import java.util.Comparator;
-
-/* renamed from: px  reason: default package */
+/* renamed from: px reason: default package */
 /* compiled from: PG */
-final class px implements Comparator {
+final class px implements java.util.Comparator {
     px() {
     }
 
-    @Override // java.util.Comparator
-    public final /* synthetic */ int compare(Object obj, Object obj2) {
+    public final /* synthetic */ int compare(java.lang.Object obj, java.lang.Object obj2) {
         byte[] bArr = (byte[]) obj;
         byte[] bArr2 = (byte[]) obj2;
         if (bArr.length != bArr2.length) {

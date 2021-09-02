@@ -1,34 +1,24 @@
 package defpackage;
 
-import android.content.Context;
-import android.content.res.ColorStateList;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
-import android.util.AttributeSet;
-import android.view.accessibility.AccessibilityEvent;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.Button;
-import com.google.android.apps.tasks.R;
-
-/* renamed from: abh  reason: default package */
+/* renamed from: abh reason: default package */
 /* compiled from: PG */
-public class abh extends Button implements sm, tz {
-    private final abg a;
-    private final aci c;
+public class abh extends android.widget.Button implements defpackage.sm, defpackage.tz {
+    private final defpackage.abg a;
+    private final defpackage.aci c;
 
-    public abh(Context context) {
+    public abh(android.content.Context context) {
         this(context, null);
     }
 
-    public abh(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, R.attr.buttonStyle);
+    public abh(android.content.Context context, android.util.AttributeSet attributeSet) {
+        this(context, attributeSet, 2130772231);
     }
 
-    public abh(Context context, AttributeSet attributeSet, int i) {
-        super(agt.a(context), attributeSet, i);
-        this.a = new abg(this);
+    public abh(android.content.Context context, android.util.AttributeSet attributeSet, int i) {
+        super(defpackage.agt.a(context), attributeSet, i);
+        this.a = new defpackage.abg(this);
         this.a.a(attributeSet, i);
-        this.c = aci.a(this);
+        this.c = defpackage.aci.a((android.widget.TextView) this);
         this.c.a(attributeSet, i);
         this.c.a();
     }
@@ -40,37 +30,33 @@ public class abh extends Button implements sm, tz {
         }
     }
 
-    public void setBackgroundDrawable(Drawable drawable) {
+    public void setBackgroundDrawable(android.graphics.drawable.Drawable drawable) {
         super.setBackgroundDrawable(drawable);
         if (this.a != null) {
             this.a.a();
         }
     }
 
-    @Override // defpackage.sm
-    public void a(ColorStateList colorStateList) {
+    public void a(android.content.res.ColorStateList colorStateList) {
         if (this.a != null) {
             this.a.a(colorStateList);
         }
     }
 
-    @Override // defpackage.sm
-    public ColorStateList d_() {
+    public android.content.res.ColorStateList d_() {
         if (this.a != null) {
             return this.a.b();
         }
         return null;
     }
 
-    @Override // defpackage.sm
-    public void a(PorterDuff.Mode mode) {
+    public void a(android.graphics.PorterDuff.Mode mode) {
         if (this.a != null) {
             this.a.a(mode);
         }
     }
 
-    @Override // defpackage.sm
-    public PorterDuff.Mode b() {
+    public android.graphics.PorterDuff.Mode b() {
         if (this.a != null) {
             return this.a.c();
         }
@@ -88,21 +74,21 @@ public class abh extends Button implements sm, tz {
         }
     }
 
-    public void setTextAppearance(Context context, int i) {
+    public void setTextAppearance(android.content.Context context, int i) {
         super.setTextAppearance(context, i);
         if (this.c != null) {
             this.c.a(context, i);
         }
     }
 
-    public void onInitializeAccessibilityEvent(AccessibilityEvent accessibilityEvent) {
+    public void onInitializeAccessibilityEvent(android.view.accessibility.AccessibilityEvent accessibilityEvent) {
         super.onInitializeAccessibilityEvent(accessibilityEvent);
-        accessibilityEvent.setClassName(Button.class.getName());
+        accessibilityEvent.setClassName(android.widget.Button.class.getName());
     }
 
-    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+    public void onInitializeAccessibilityNodeInfo(android.view.accessibility.AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setClassName(Button.class.getName());
+        accessibilityNodeInfo.setClassName(android.widget.Button.class.getName());
     }
 
     public void onLayout(boolean z, int i, int i2, int i3, int i4) {
@@ -121,7 +107,7 @@ public class abh extends Button implements sm, tz {
     }
 
     /* access modifiers changed from: protected */
-    public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+    public void onTextChanged(java.lang.CharSequence charSequence, int i, int i2, int i3) {
         super.onTextChanged(charSequence, i, i2, i3);
         if (this.c != null && !b && this.c.b.d()) {
             this.c.b.c();
@@ -154,12 +140,15 @@ public class abh extends Button implements sm, tz {
 
     public int getAutoSizeTextType() {
         if (b) {
-            return super.getAutoSizeTextType() == 1 ? 1 : 0;
-        }
-        if (this.c != null) {
+            if (super.getAutoSizeTextType() == 1) {
+                return 1;
+            }
+            return 0;
+        } else if (this.c != null) {
             return this.c.b.a;
+        } else {
+            return 0;
         }
-        return 0;
     }
 
     public int getAutoSizeStepGranularity() {
@@ -167,7 +156,7 @@ public class abh extends Button implements sm, tz {
             return super.getAutoSizeStepGranularity();
         }
         if (this.c != null) {
-            return Math.round(this.c.b.c);
+            return java.lang.Math.round(this.c.b.c);
         }
         return -1;
     }
@@ -177,7 +166,7 @@ public class abh extends Button implements sm, tz {
             return super.getAutoSizeMinTextSize();
         }
         if (this.c != null) {
-            return Math.round(this.c.b.d);
+            return java.lang.Math.round(this.c.b.d);
         }
         return -1;
     }
@@ -187,7 +176,7 @@ public class abh extends Button implements sm, tz {
             return super.getAutoSizeMaxTextSize();
         }
         if (this.c != null) {
-            return Math.round(this.c.b.e);
+            return java.lang.Math.round(this.c.b.e);
         }
         return -1;
     }

@@ -1,13 +1,13 @@
 package defpackage;
 
-/* renamed from: ahx  reason: default package */
+/* renamed from: ahx reason: default package */
 /* compiled from: PG */
-final class ahx implements Runnable {
-    private final /* synthetic */ aic a;
+final class ahx implements java.lang.Runnable {
+    private final /* synthetic */ defpackage.aic a;
     private final /* synthetic */ int b;
-    private final /* synthetic */ aht c;
+    private final /* synthetic */ defpackage.aht c;
 
-    ahx(aht aht, aic aic, int i) {
+    ahx(defpackage.aht aht, defpackage.aic aic, int i) {
         this.c = aht;
         this.a = aic;
         this.b = i;
@@ -16,16 +16,16 @@ final class ahx implements Runnable {
     public final void run() {
         boolean z;
         if (this.c.o != null && this.c.o.isAttachedToWindow() && !this.a.k && this.a.e.d() != -1) {
-            aey aey = this.c.o.z;
+            defpackage.aey aey = this.c.o.z;
             if (aey == null || !aey.b()) {
-                aht aht = this.c;
+                defpackage.aht aht = this.c;
                 int size = aht.m.size();
                 int i = 0;
                 while (true) {
                     if (i >= size) {
                         z = false;
                         break;
-                    } else if (!((aic) aht.m.get(i)).l) {
+                    } else if (!((defpackage.aic) aht.m.get(i)).l) {
                         z = true;
                         break;
                     } else {

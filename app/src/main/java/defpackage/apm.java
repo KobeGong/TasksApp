@@ -1,34 +1,30 @@
 package defpackage;
 
-import android.view.View;
-import com.google.android.apps.tasks.ui.TaskListsActivity;
-import java.util.List;
+/* renamed from: apm reason: default package */
+public final /* synthetic */ class apm implements android.view.View.OnClickListener {
+    private final com.google.android.apps.tasks.ui.TaskListsActivity a;
 
-/* renamed from: apm  reason: default package */
-public final /* synthetic */ class apm implements View.OnClickListener {
-    private final TaskListsActivity a;
-
-    public apm(TaskListsActivity taskListsActivity) {
+    public apm(com.google.android.apps.tasks.ui.TaskListsActivity taskListsActivity) {
         this.a = taskListsActivity;
     }
 
-    public final void onClick(View view) {
-        String str;
-        TaskListsActivity taskListsActivity = this.a;
-        anc c = any.get().c();
+    public final void onClick(android.view.View view) {
+        java.lang.String str;
+        com.google.android.apps.tasks.ui.TaskListsActivity taskListsActivity = this.a;
+        defpackage.anc c = defpackage.any.a().c();
         if (c != null) {
-            List d = c.d();
+            java.util.List d = c.d();
             if (taskListsActivity.h == null) {
                 str = null;
             } else {
                 str = taskListsActivity.h.b;
             }
             taskListsActivity.a(d, str);
-            cde cde = taskListsActivity.o;
+            defpackage.cde cde = taskListsActivity.o;
             cde.g();
             cde.d.b(cde.c);
             if (!cde.d.l()) {
-                cde.d.a(cde.b.c(), cde.a);
+                cde.d.a(cde.b.getSupportFragmentManager(), defpackage.cde.a);
             }
         }
     }

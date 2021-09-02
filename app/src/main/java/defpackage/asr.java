@@ -1,19 +1,16 @@
 package defpackage;
 
-import android.view.View;
+/* renamed from: asr reason: default package */
+final /* synthetic */ class asr implements android.view.View.OnClickListener {
+    private final EditTaskFragment editTaskFragment;
 
-/* renamed from: asr  reason: default package */
-final /* synthetic */ class asr implements View.OnClickListener {
-    private final asi a;
-
-    asr(asi asi) {
-        this.a = asi;
+    asr(EditTaskFragment asi) {
+        this.editTaskFragment = asi;
     }
 
-    public final void onClick(View view) {
-        asi asi = this.a;
-        asi.a(any.get().c().a(asi.U, dby.g, asi.b.getChildCount(), asi.W)).a();
-        asi.a.post(new asm(asi));
-        asi.N();
+    public final void onClick(android.view.View view) {
+        editTaskFragment.a(defpackage.any.a().c().a(editTaskFragment.U, defpackage.dby.g, editTaskFragment.subTaskList.getChildCount(), editTaskFragment.W)).a();
+        editTaskFragment.addSubTask.post(new defpackage.asm(editTaskFragment));
+        editTaskFragment.N();
     }
 }

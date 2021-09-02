@@ -1,40 +1,33 @@
 package defpackage;
 
-import android.content.Context;
-import android.support.design.widget.CoordinatorLayout;
-import android.util.AttributeSet;
-import android.view.View;
-
-/* renamed from: di  reason: default package */
+/* renamed from: di reason: default package */
 /* compiled from: PG */
-public class di extends gx {
-    private dj a;
+public class di extends defpackage.gx {
+    private defpackage.dj a;
     private int b = 0;
 
     public di() {
     }
 
-    public di(Context context, AttributeSet attributeSet) {
+    public di(android.content.Context context, android.util.AttributeSet attributeSet) {
         super(context, attributeSet);
     }
 
-    @Override // defpackage.gx
-    public boolean a(CoordinatorLayout coordinatorLayout, View view, int i) {
+    public boolean a(android.support.design.widget.CoordinatorLayout coordinatorLayout, android.view.View view, int i) {
         b(coordinatorLayout, view, i);
         if (this.a == null) {
-            this.a = new dj(view);
+            this.a = new defpackage.dj(view);
         }
         this.a.a();
-        if (this.b == 0) {
-            return true;
+        if (this.b != 0) {
+            this.a.a(this.b);
+            this.b = 0;
         }
-        this.a.a(this.b);
-        this.b = 0;
         return true;
     }
 
     /* access modifiers changed from: protected */
-    public void b(CoordinatorLayout coordinatorLayout, View view, int i) {
+    public void b(android.support.design.widget.CoordinatorLayout coordinatorLayout, android.view.View view, int i) {
         coordinatorLayout.a(view, i);
     }
 

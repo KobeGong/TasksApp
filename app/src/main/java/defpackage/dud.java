@@ -1,13 +1,12 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: dud  reason: default package */
+/* renamed from: dud reason: default package */
 /* compiled from: PG */
-public final class dud implements Runnable {
-    private final /* synthetic */ dpw a;
-    private final /* synthetic */ dtt b;
+final class dud implements java.lang.Runnable {
+    private final /* synthetic */ defpackage.dpw a;
+    private final /* synthetic */ defpackage.dtt b;
 
-    dud(dtt dtt, dpw dpw) {
+    dud(defpackage.dtt dtt, defpackage.dpw dpw) {
         this.b = dtt;
         this.a = dpw;
     }

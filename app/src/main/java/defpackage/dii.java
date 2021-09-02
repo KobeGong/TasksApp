@@ -1,140 +1,128 @@
 package defpackage;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-
-/* renamed from: dii  reason: default package */
+/* renamed from: dii reason: default package */
 /* compiled from: PG */
-public final class dii extends dgp {
-    public dih a;
+public final class dii extends defpackage.dgp {
+    public defpackage.dih a;
     public boolean b;
-    private final dih c;
+    private final defpackage.dih c;
 
-    private dii(dih dih) {
+    private dii(defpackage.dih dih) {
         this.c = dih;
-        this.a = (dih) dih.a(bg.an);
+        this.a = (defpackage.dih) dih.a(defpackage.bg.an);
         this.b = false;
     }
 
     public final void b() {
         if (this.b) {
-            dih dih = (dih) this.a.a(bg.an);
+            defpackage.dih dih = (defpackage.dih) this.a.a(defpackage.bg.an);
             a(dih, this.a);
             this.a = dih;
             this.b = false;
         }
     }
 
-    @Override // defpackage.djq
     public final boolean e() {
-        return dih.a(this.a, false);
+        return defpackage.dih.a(this.a, false);
     }
 
-    public final dii a(dih dih) {
+    public final defpackage.dii a(defpackage.dih dih) {
         b();
         a(this.a, dih);
         return this;
     }
 
-    private static void a(dih dih, dih dih2) {
-        djz.a.a(dih).b(dih, dih2);
+    private static void a(defpackage.dih dih, defpackage.dih dih2) {
+        defpackage.djz.a.a((java.lang.Object) dih).b(dih, dih2);
     }
 
     /* access modifiers changed from: private */
     /* renamed from: b */
-    public final dii a(byte[] bArr, int i) {
+    public final defpackage.dii a(byte[] bArr, int i) {
         b();
         try {
-            djz.a.a(this.a).a(this.a, bArr, 0, i, new dgw());
+            defpackage.djz.a.a((java.lang.Object) this.a).a(this.a, bArr, 0, i, new defpackage.dgw());
             return this;
-        } catch (dir e) {
+        } catch (defpackage.dir e) {
             throw e;
-        } catch (IndexOutOfBoundsException e2) {
-            throw dir.a();
-        } catch (IOException e3) {
-            throw new RuntimeException("Reading from byte array should not throw IOException.", e3);
+        } catch (java.lang.IndexOutOfBoundsException e2) {
+            throw defpackage.dir.a();
+        } catch (java.io.IOException e3) {
+            throw new java.lang.RuntimeException("Reading from byte array should not throw IOException.", e3);
         }
     }
 
     /* access modifiers changed from: private */
     /* renamed from: b */
-    public final dii a(dhj dhj, dhw dhw) {
+    public final defpackage.dii a(defpackage.dhj dhj, defpackage.dhw dhw) {
         b();
         try {
-            djz.a.a(this.a).a(this.a, dhm.a(dhj), dhw);
+            defpackage.djz.a.a((java.lang.Object) this.a).a(this.a, defpackage.dhm.a(dhj), dhw);
             return this;
-        } catch (RuntimeException e) {
-            if (e.getCause() instanceof IOException) {
-                throw ((IOException) e.getCause());
+        } catch (java.lang.RuntimeException e) {
+            if (e.getCause() instanceof java.io.IOException) {
+                throw ((java.io.IOException) e.getCause());
             }
             throw e;
         }
     }
 
-    @Override // defpackage.dgp
-    public final /* synthetic */ dgp a() {
-        return (dii) clone();
+    public final /* synthetic */ defpackage.dgp a() {
+        return (defpackage.dii) clone();
     }
 
-    @Override // defpackage.djp
-    public final /* synthetic */ djo c() {
+    public final /* synthetic */ defpackage.djo c() {
         if (this.b) {
             return this.a;
         }
-        dih dih = this.a;
-        djz.a.a(dih).c(dih);
+        defpackage.dih dih = this.a;
+        defpackage.djz.a.a((java.lang.Object) dih).c(dih);
         this.b = true;
         return this.a;
     }
 
-    @Override // defpackage.djp
-    public final /* synthetic */ djo d() {
-        dih dih;
+    public final /* synthetic */ defpackage.djo d() {
+        defpackage.dih dih;
         boolean d;
         if (this.b) {
             dih = this.a;
         } else {
-            dih dih2 = this.a;
-            djz.a.a(dih2).c(dih2);
+            defpackage.dih dih2 = this.a;
+            defpackage.djz.a.a((java.lang.Object) dih2).c(dih2);
             this.b = true;
             dih = this.a;
         }
-        dih dih3 = dih;
-        boolean booleanValue = Boolean.TRUE.booleanValue();
-        byte byteValue = ((Byte) dih3.a(bg.ak)).byteValue();
+        defpackage.dih dih3 = dih;
+        boolean booleanValue = java.lang.Boolean.TRUE.booleanValue();
+        byte byteValue = ((java.lang.Byte) dih3.a(defpackage.bg.ak)).byteValue();
         if (byteValue == 1) {
             d = true;
         } else if (byteValue == 0) {
             d = false;
         } else {
-            d = djz.a.a(dih3).d(dih3);
+            d = defpackage.djz.a.a((java.lang.Object) dih3).d(dih3);
             if (booleanValue) {
-                dih3.a(bg.al);
+                dih3.a(defpackage.bg.al);
             }
         }
         if (d) {
             return dih3;
         }
-        throw new dkw();
+        throw new defpackage.dkw();
     }
 
-    @Override // defpackage.djq
-    public final /* synthetic */ djo i() {
+    public final /* synthetic */ defpackage.djo i() {
         return this.c;
     }
 
-    @Override // java.lang.Object, defpackage.dgp
-    public final /* synthetic */ Object clone() {
-        dih dih;
-        dii dii = (dii) this.c.a(bg.ao);
+    public final /* synthetic */ java.lang.Object clone() {
+        defpackage.dih dih;
+        defpackage.dii dii = (defpackage.dii) this.c.a(defpackage.bg.ao);
         if (this.b) {
             dih = this.a;
         } else {
-            dih dih2 = this.a;
-            djz.a.a(dih2).c(dih2);
+            defpackage.dih dih2 = this.a;
+            defpackage.djz.a.a((java.lang.Object) dih2).c(dih2);
             this.b = true;
             dih = this.a;
         }
@@ -143,472 +131,472 @@ public final class dii extends dgp {
     }
 
     public dii() {
-        this(cbr.b);
+        this((defpackage.dih) defpackage.cbr.b);
     }
 
     public dii(byte b2) {
-        this(crb.e);
+        this((defpackage.dih) defpackage.crb.e);
     }
 
     public dii(char c2) {
-        this(cwp.g);
+        this((defpackage.dih) defpackage.cwp.g);
     }
 
     public dii(short s) {
-        this(cwv.d);
+        this((defpackage.dih) defpackage.cwv.d);
     }
 
     public dii(int i) {
-        this(cww.c);
+        this((defpackage.dih) defpackage.cww.c);
     }
 
     public dii(boolean z) {
-        this(cwx.c);
+        this((defpackage.dih) defpackage.cwx.c);
     }
 
     public dii(float f) {
-        this(czm.c);
+        this((defpackage.dih) defpackage.czm.c);
     }
 
     public dii(byte[] bArr) {
-        this(czp.b);
+        this((defpackage.dih) defpackage.czp.b);
     }
 
     public dii(char[] cArr) {
-        this(czs.a);
+        this((defpackage.dih) defpackage.czs.a);
     }
 
     public dii(short[] sArr) {
-        this(czt.a);
+        this((defpackage.dih) defpackage.czt.a);
     }
 
     public dii(int[] iArr) {
-        this(czu.f);
+        this((defpackage.dih) defpackage.czu.f);
     }
 
     public dii(boolean[] zArr) {
-        this(czv.c);
+        this((defpackage.dih) defpackage.czv.c);
     }
 
     public dii(float[] fArr) {
-        this(czw.c);
+        this((defpackage.dih) defpackage.czw.c);
     }
 
     public dii(byte[][] bArr) {
-        this(czx.a);
+        this((defpackage.dih) defpackage.czx.a);
     }
 
     public dii(char[][] cArr) {
-        this(czy.f);
+        this((defpackage.dih) defpackage.czy.f);
     }
 
     public dii(short[][] sArr) {
-        this(dab.b);
+        this((defpackage.dih) defpackage.dab.b);
     }
 
     public dii(int[][] iArr) {
-        this(dac.b);
+        this((defpackage.dih) defpackage.dac.b);
     }
 
     public dii(boolean[][] zArr) {
-        this(dad.b);
+        this((defpackage.dih) defpackage.dad.b);
     }
 
     public dii(float[][] fArr) {
-        this(dae.c);
+        this((defpackage.dih) defpackage.dae.c);
     }
 
     public dii(byte[][][] bArr) {
-        this(daf.b);
+        this((defpackage.dih) defpackage.daf.b);
     }
 
     public dii(char[][][] cArr) {
-        this(dag.b);
+        this((defpackage.dih) defpackage.dag.b);
     }
 
     public dii(short[][][] sArr) {
-        this(dah.a);
+        this((defpackage.dih) defpackage.dah.a);
     }
 
     public dii(int[][][] iArr) {
-        this(dai.b);
+        this((defpackage.dih) defpackage.dai.b);
     }
 
     public dii(boolean[][][] zArr) {
-        this(daj.b);
+        this((defpackage.dih) defpackage.daj.b);
     }
 
     public dii(float[][][] fArr) {
-        this(dak.a);
+        this((defpackage.dih) defpackage.dak.a);
     }
 
     public dii(byte[][][][] bArr) {
-        this(dal.b);
+        this((defpackage.dih) defpackage.dal.b);
     }
 
     public dii(char[][][][] cArr) {
-        this(dam.a);
+        this((defpackage.dih) defpackage.dam.a);
     }
 
     public dii(short[][][][] sArr) {
-        this(dan.f);
+        this((defpackage.dih) defpackage.dan.f);
     }
 
-    public final dii a(dii dii) {
+    public final defpackage.dii a(defpackage.dii dii) {
         b();
-        dan.a((dan) this.a, dii);
+        defpackage.dan.a((defpackage.dan) this.a, dii);
         return this;
     }
 
     public dii(int[][][][] iArr) {
-        this(dao.c);
+        this((defpackage.dih) defpackage.dao.c);
     }
 
-    public final dii a(String str) {
+    public final defpackage.dii a(String str) {
         b();
-        dao dao = (dao) this.a;
+        defpackage.dao dao = (defpackage.dao) this.a;
         if (str == null) {
-            throw new NullPointerException();
+            throw new java.lang.NullPointerException();
         }
         dao.a = str;
         return this;
     }
 
-    public final dii b(String str) {
+    public final defpackage.dii b(String str) {
         b();
-        dao dao = (dao) this.a;
+        defpackage.dao dao = (defpackage.dao) this.a;
         if (str == null) {
-            throw new NullPointerException();
+            throw new java.lang.NullPointerException();
         }
         dao.b = str;
         return this;
     }
 
     public dii(boolean[][][][] zArr) {
-        this(dap.b);
+        this((defpackage.dih) defpackage.dap.b);
     }
 
     public dii(float[][][][] fArr) {
-        this(das.b);
+        this((defpackage.dih) defpackage.das.b);
     }
 
     public dii(byte[][][][][] bArr) {
-        this(dat.b);
+        this((defpackage.dih) defpackage.dat.b);
     }
 
     public dii(char[][][][][] cArr) {
-        this(dau.d);
+        this((defpackage.dih) defpackage.dau.d);
     }
 
     public dii(short[][][][][] sArr) {
-        this(dav.c);
+        this((defpackage.dih) defpackage.dav.c);
     }
 
     public dii(int[][][][][] iArr) {
-        this(daw.h);
+        this((defpackage.dih) defpackage.daw.h);
     }
 
-    public final dii c(String str) {
+    public final defpackage.dii c(String str) {
         b();
-        daw daw = (daw) this.a;
+        defpackage.daw daw = (defpackage.daw) this.a;
         if (str == null) {
-            throw new NullPointerException();
+            throw new java.lang.NullPointerException();
         }
         daw.b = str;
         return this;
     }
 
-    public final dii a(int i) {
+    public final defpackage.dii a(int i) {
         b();
-        ((daw) this.a).e = i;
+        ((defpackage.daw) this.a).e = i;
         return this;
     }
 
     public dii(boolean[][][][][] zArr) {
-        this(day.c);
+        this((defpackage.dih) defpackage.day.c);
     }
 
     public dii(float[][][][][] fArr) {
-        this(daz.b);
+        this((defpackage.dih) defpackage.daz.b);
     }
 
     public dii(byte[][][][][][] bArr) {
-        this(dba.d);
+        this((defpackage.dih) defpackage.dba.d);
     }
 
     public dii(char[][][][][][] cArr) {
-        this(dbb.e);
+        this((defpackage.dih) defpackage.dbb.e);
     }
 
-    public final dii a(crb crb) {
+    public final defpackage.dii a(defpackage.crb crb) {
         b();
-        dbb dbb = (dbb) this.a;
+        defpackage.dbb dbb = (defpackage.dbb) this.a;
         if (crb == null) {
-            throw new NullPointerException();
+            throw new java.lang.NullPointerException();
         }
         dbb.b = crb;
         return this;
     }
 
-    public final dii b(dii dii) {
+    public final defpackage.dii b(defpackage.dii dii) {
         b();
-        dbb.a((dbb) this.a, dii);
+        defpackage.dbb.a((defpackage.dbb) this.a, dii);
         return this;
     }
 
     public dii(short[][][][][][] sArr) {
-        this(dbd.e);
+        this((defpackage.dih) defpackage.dbd.e);
     }
 
-    public final dii b(crb crb) {
+    public final defpackage.dii b(defpackage.crb crb) {
         b();
-        dbd dbd = (dbd) this.a;
+        defpackage.dbd dbd = (defpackage.dbd) this.a;
         if (crb == null) {
-            throw new NullPointerException();
+            throw new java.lang.NullPointerException();
         }
         dbd.b = crb;
         return this;
     }
 
-    public final dii c(dii dii) {
+    public final defpackage.dii c(defpackage.dii dii) {
         b();
-        dbd.a((dbd) this.a, dii);
+        defpackage.dbd.a((defpackage.dbd) this.a, dii);
         return this;
     }
 
     public dii(int[][][][][][] iArr) {
-        this(dbf.b);
+        this((defpackage.dih) defpackage.dbf.b);
     }
 
     public dii(boolean[][][][][][] zArr) {
-        this(dbg.d);
+        this((defpackage.dih) defpackage.dbg.d);
     }
 
     public dii(float[][][][][][] fArr) {
-        this(dbh.b);
+        this((defpackage.dih) defpackage.dbh.b);
     }
 
     public dii(byte[][][][][][][] bArr) {
-        this(dbj.b);
+        this((defpackage.dih) defpackage.dbj.b);
     }
 
     public dii(char[][][][][][][] cArr) {
-        this(dbk.b);
+        this((defpackage.dih) defpackage.dbk.b);
     }
 
     public dii(short[][][][][][][] sArr) {
-        this(dbl.a);
+        this((defpackage.dih) defpackage.dbl.a);
     }
 
     public dii(int[][][][][][][] iArr) {
-        this(dbm.b);
+        this((defpackage.dih) defpackage.dbm.b);
     }
 
     public dii(boolean[][][][][][][] zArr) {
-        this(dbn.a);
+        this((defpackage.dih) defpackage.dbn.a);
     }
 
     public dii(float[][][][][][][] fArr) {
-        this(dbo.d);
+        this((defpackage.dih) defpackage.dbo.d);
     }
 
-    public final dii d(String str) {
+    public final defpackage.dii d(String str) {
         b();
-        dbo dbo = (dbo) this.a;
+        defpackage.dbo dbo = (defpackage.dbo) this.a;
         if (str == null) {
-            throw new NullPointerException();
+            throw new java.lang.NullPointerException();
         }
         dbo.c = str;
         return this;
     }
 
-    public final dii d(dii dii) {
+    public final defpackage.dii d(defpackage.dii dii) {
         b();
-        dbo.a((dbo) this.a, dii);
+        defpackage.dbo.a((defpackage.dbo) this.a, dii);
         return this;
     }
 
-    public final dii e(dii dii) {
+    public final defpackage.dii e(defpackage.dii dii) {
         b();
-        dbo.d((dbo) this.a, dii);
+        defpackage.dbo.d((defpackage.dbo) this.a, dii);
         return this;
     }
 
-    public final dii f(dii dii) {
+    public final defpackage.dii f(defpackage.dii dii) {
         b();
-        dbo.e((dbo) this.a, dii);
+        defpackage.dbo.e((defpackage.dbo) this.a, dii);
         return this;
     }
 
     public dii(byte[][][][][][][][] bArr) {
-        this(dbp.c);
+        this((defpackage.dih) defpackage.dbp.c);
     }
 
     public dii(char[][][][][][][][] cArr) {
-        this(dbq.b);
+        this((defpackage.dih) defpackage.dbq.b);
     }
 
     public dii(short[][][][][][][][] sArr) {
-        this(dbr.c);
+        this((defpackage.dih) defpackage.dbr.c);
     }
 
     public dii(int[][][][][][][][] iArr) {
-        this(dbs.b);
+        this((defpackage.dih) defpackage.dbs.b);
     }
 
     public dii(boolean[][][][][][][][] zArr) {
-        this(dbt.b);
+        this((defpackage.dih) defpackage.dbt.b);
     }
 
     public dii(float[][][][][][][][] fArr) {
-        this(dbu.c);
+        this((defpackage.dih) defpackage.dbu.c);
     }
 
     public dii(byte[][][][][][][][][] bArr) {
-        this(dbv.b);
+        this((defpackage.dih) defpackage.dbv.b);
     }
 
     public dii(char[][][][][][][][][] cArr) {
-        this(dbw.c);
+        this((defpackage.dih) defpackage.dbw.c);
     }
 
     public dii(short[][][][][][][][][] sArr) {
-        this(dbx.a);
+        this((defpackage.dih) defpackage.dbx.a);
     }
 
     public dii(int[][][][][][][][][] iArr) {
-        this(dby.g);
+        this((defpackage.dih) defpackage.dby.g);
     }
 
-    public final dii e(String str) {
+    public final defpackage.dii e(String str) {
         b();
-        dby dby = (dby) this.a;
+        defpackage.dby dby = (defpackage.dby) this.a;
         if (str == null) {
-            throw new NullPointerException();
+            throw new java.lang.NullPointerException();
         }
         dby.d = str;
         return this;
     }
 
-    public final dca f() {
-        dby dby = (dby) this.a;
+    public final defpackage.dca f() {
+        defpackage.dby dby = (defpackage.dby) this.a;
         if (dby.e == null) {
-            return dca.g;
+            return defpackage.dca.g;
         }
         return dby.e;
     }
 
-    public final dii g(dii dii) {
+    public final defpackage.dii g(defpackage.dii dii) {
         b();
-        dby.a((dby) this.a, dii);
+        defpackage.dby.a((defpackage.dby) this.a, dii);
         return this;
     }
 
     public dii(boolean[][][][][][][][][] zArr) {
-        this(dca.g);
+        this((defpackage.dih) defpackage.dca.g);
     }
 
-    public final dii a(boolean z) {
+    public final defpackage.dii a(boolean z) {
         b();
-        ((dca) this.a).a = z;
+        ((defpackage.dca) this.a).a = z;
         return this;
     }
 
-    public final dii f(String str) {
+    public final defpackage.dii setTitle(String str) {
         b();
-        dca dca = (dca) this.a;
+        defpackage.dca dca = (defpackage.dca) this.a;
         if (str == null) {
-            throw new NullPointerException();
+            throw new java.lang.NullPointerException();
         }
         dca.b = str;
         return this;
     }
 
-    public final dii g(String str) {
+    public final defpackage.dii setDetail(String str) {
         b();
-        dca dca = (dca) this.a;
+        defpackage.dca dca = (defpackage.dca) this.a;
         if (str == null) {
-            throw new NullPointerException();
+            throw new java.lang.NullPointerException();
         }
         dca.c = str;
         return this;
     }
 
-    public final dii a(dmk dmk) {
+    public final defpackage.dii a(defpackage.dmk dmk) {
         b();
-        dca dca = (dca) this.a;
+        defpackage.dca dca = (defpackage.dca) this.a;
         if (dmk == null) {
-            throw new NullPointerException();
+            throw new java.lang.NullPointerException();
         }
         dca.d = dmk;
         return this;
     }
 
-    public final dii g() {
+    public final defpackage.dii g() {
         b();
-        ((dca) this.a).d = null;
+        ((defpackage.dca) this.a).d = null;
         return this;
     }
 
-    public final dii h(dii dii) {
+    public final defpackage.dii h(defpackage.dii dii) {
         b();
-        dca.a((dca) this.a, dii);
+        defpackage.dca.a((defpackage.dca) this.a, dii);
         return this;
     }
 
     public dii(float[][][][][][][][][] fArr) {
-        this(dcb.g);
+        this((defpackage.dih) defpackage.dcb.g);
     }
 
-    public final dii i(dii dii) {
+    public final defpackage.dii i(defpackage.dii dii) {
         b();
-        dcb.a((dcb) this.a, dii);
+        defpackage.dcb.a((defpackage.dcb) this.a, dii);
         return this;
     }
 
     public dii(byte[][][][][][][][][][] bArr) {
-        this(dcd.c);
+        this((defpackage.dih) defpackage.dcd.c);
     }
 
-    public final dii h(String str) {
+    public final defpackage.dii h(String str) {
         b();
-        dcd dcd = (dcd) this.a;
+        defpackage.dcd dcd = (defpackage.dcd) this.a;
         if (str == null) {
-            throw new NullPointerException();
+            throw new java.lang.NullPointerException();
         }
         dcd.a = str;
         return this;
     }
 
     public dii(char[][][][][][][][][][] cArr) {
-        this(dce.b);
+        this((defpackage.dih) defpackage.dce.b);
     }
 
-    public final List h() {
-        return Collections.unmodifiableList(((dce) this.a).a);
+    public final java.util.List h() {
+        return java.util.Collections.unmodifiableList(((defpackage.dce) this.a).a);
     }
 
-    public final dcf b(int i) {
-        return (dcf) ((dce) this.a).a.get(i);
+    public final defpackage.dcf b(int i) {
+        return (defpackage.dcf) ((defpackage.dce) this.a).a.get(i);
     }
 
-    public final dii a(int i, dii dii) {
+    public final defpackage.dii a(int i, defpackage.dii dii) {
         b();
-        dce.a((dce) this.a, i, dii);
+        defpackage.dce.a((defpackage.dce) this.a, i, dii);
         return this;
     }
 
-    public final dii b(int i, dii dii) {
+    public final defpackage.dii b(int i, defpackage.dii dii) {
         b();
-        dce.b((dce) this.a, i, dii);
+        defpackage.dce.b((defpackage.dce) this.a, i, dii);
         return this;
     }
 
-    public final dii c(int i) {
+    public final defpackage.dii c(int i) {
         b();
-        dce dce = (dce) this.a;
+        defpackage.dce dce = (defpackage.dce) this.a;
         if (!dce.a.a()) {
-            diq diq = dce.a;
+            defpackage.diq diq = dce.a;
             int size = diq.size();
             dce.a = diq.a(size == 0 ? 10 : size << 1);
         }
@@ -617,24 +605,24 @@ public final class dii extends dgp {
     }
 
     public dii(short[][][][][][][][][][] sArr) {
-        this(dcf.d);
+        this((defpackage.dih) defpackage.dcf.d);
     }
 
-    public final dii i(String str) {
+    public final defpackage.dii i(String str) {
         b();
-        dcf dcf = (dcf) this.a;
+        defpackage.dcf dcf = (defpackage.dcf) this.a;
         if (str == null) {
-            throw new NullPointerException();
+            throw new java.lang.NullPointerException();
         }
         dcf.b = str;
         return this;
     }
 
-    public final dii d(int i) {
+    public final defpackage.dii d(int i) {
         b();
-        dcf dcf = (dcf) this.a;
+        defpackage.dcf dcf = (defpackage.dcf) this.a;
         if (!dcf.c.a()) {
-            diq diq = dcf.c;
+            defpackage.diq diq = dcf.c;
             int size = diq.size();
             dcf.c = diq.a(size == 0 ? 10 : size << 1);
         }
@@ -643,239 +631,239 @@ public final class dii extends dgp {
     }
 
     public dii(int[][][][][][][][][][] iArr) {
-        this(dch.b);
+        this((defpackage.dih) defpackage.dch.b);
     }
 
     public dii(boolean[][][][][][][][][][] zArr) {
-        this(dci.b);
+        this((defpackage.dih) defpackage.dci.b);
     }
 
     public dii(float[][][][][][][][][][] fArr) {
-        this(dcp.a);
+        this((defpackage.dih) defpackage.dcp.a);
     }
 
     public dii(byte[][][][][][][][][][][] bArr) {
-        this(dcq.a);
+        this((defpackage.dih) defpackage.dcq.a);
     }
 
     public dii(char[][][][][][][][][][][] cArr) {
-        this(dct.a);
+        this((defpackage.dih) defpackage.dct.a);
     }
 
     public dii(short[][][][][][][][][][][] sArr) {
-        this(dcu.g);
+        this((defpackage.dih) defpackage.dcu.g);
     }
 
     public dii(int[][][][][][][][][][][] iArr) {
-        this(dcv.d);
+        this((defpackage.dih) defpackage.dcv.d);
     }
 
     public dii(boolean[][][][][][][][][][][] zArr) {
-        this(dcw.e);
+        this((defpackage.dih) defpackage.dcw.e);
     }
 
     public dii(float[][][][][][][][][][][] fArr) {
-        this(dcx.d);
+        this((defpackage.dih) defpackage.dcx.d);
     }
 
     public dii(byte[][][][][][][][][][][][] bArr) {
-        this(dda.a);
+        this((defpackage.dih) defpackage.dda.a);
     }
 
     public dii(char[][][][][][][][][][][][] cArr) {
-        this(ddb.d);
+        this((defpackage.dih) defpackage.ddb.d);
     }
 
     public dii(short[][][][][][][][][][][][] sArr) {
-        this(ddc.a);
+        this((defpackage.dih) defpackage.ddc.a);
     }
 
     public dii(int[][][][][][][][][][][][] iArr) {
-        this(ddd.f);
+        this((defpackage.dih) defpackage.ddd.f);
     }
 
     public dii(boolean[][][][][][][][][][][][] zArr) {
-        this(dde.a);
+        this((defpackage.dih) defpackage.dde.a);
     }
 
     public dii(float[][][][][][][][][][][][] fArr) {
-        this(ddf.a);
+        this((defpackage.dih) defpackage.ddf.a);
     }
 
     public dii(byte[][][][][][][][][][][][][] bArr) {
-        this(ddg.a);
+        this((defpackage.dih) defpackage.ddg.a);
     }
 
     public dii(char[][][][][][][][][][][][][] cArr) {
-        this(ddh.c);
+        this((defpackage.dih) defpackage.ddh.c);
     }
 
     public dii(short[][][][][][][][][][][][][] sArr) {
-        this(ddk.f);
+        this((defpackage.dih) defpackage.ddk.f);
     }
 
     public dii(int[][][][][][][][][][][][][] iArr) {
-        this(ddl.l);
+        this((defpackage.dih) defpackage.ddl.l);
     }
 
     public dii(boolean[][][][][][][][][][][][][] zArr) {
-        this(ddm.c);
+        this((defpackage.dih) defpackage.ddm.c);
     }
 
     public dii(float[][][][][][][][][][][][][] fArr) {
-        this(ddn.a);
+        this((defpackage.dih) defpackage.ddn.a);
     }
 
     public dii(byte[][][][][][][][][][][][][][] bArr) {
-        this(ddo.d);
+        this((defpackage.dih) defpackage.ddo.d);
     }
 
     public dii(char[][][][][][][][][][][][][][] cArr) {
-        this(ddp.f);
+        this((defpackage.dih) defpackage.ddp.f);
     }
 
     public dii(short[][][][][][][][][][][][][][] sArr) {
-        this(ddq.c);
+        this((defpackage.dih) defpackage.ddq.c);
     }
 
     public dii(int[][][][][][][][][][][][][][] iArr) {
-        this(ddt.a);
+        this((defpackage.dih) defpackage.ddt.a);
     }
 
     public dii(boolean[][][][][][][][][][][][][][] zArr) {
-        this(ddu.d);
+        this((defpackage.dih) defpackage.ddu.d);
     }
 
     public dii(float[][][][][][][][][][][][][][] fArr) {
-        this(ddv.a);
+        this((defpackage.dih) defpackage.ddv.a);
     }
 
     public dii(byte[][][][][][][][][][][][][][][] bArr) {
-        this(ddy.a);
+        this((defpackage.dih) defpackage.ddy.a);
     }
 
     public dii(char[][][][][][][][][][][][][][][] cArr) {
-        this(ddz.d);
+        this((defpackage.dih) defpackage.ddz.d);
     }
 
     public dii(short[][][][][][][][][][][][][][][] sArr) {
-        this(deb.d);
+        this((defpackage.dih) defpackage.deb.d);
     }
 
     public dii(int[][][][][][][][][][][][][][][] iArr) {
-        this(dec.f);
+        this((defpackage.dih) defpackage.dec.f);
     }
 
     public dii(boolean[][][][][][][][][][][][][][][] zArr) {
-        this(ded.a);
+        this((defpackage.dih) defpackage.ded.a);
     }
 
     public dii(float[][][][][][][][][][][][][][][] fArr) {
-        this(dee.a);
+        this((defpackage.dih) defpackage.dee.a);
     }
 
     public dii(byte[][][][][][][][][][][][][][][][] bArr) {
-        this(def.e);
+        this((defpackage.dih) defpackage.def.e);
     }
 
     public dii(char[][][][][][][][][][][][][][][][] cArr) {
-        this(deg.a);
+        this((defpackage.dih) defpackage.deg.a);
     }
 
     public dii(short[][][][][][][][][][][][][][][][] sArr) {
-        this(deh.e);
+        this((defpackage.dih) defpackage.deh.e);
     }
 
     public dii(int[][][][][][][][][][][][][][][][] iArr) {
-        this(dei.a);
+        this((defpackage.dih) defpackage.dei.a);
     }
 
     public dii(boolean[][][][][][][][][][][][][][][][] zArr) {
-        this(dej.f);
+        this((defpackage.dih) defpackage.dej.f);
     }
 
     public dii(float[][][][][][][][][][][][][][][][] fArr) {
-        this(dek.e);
+        this((defpackage.dih) defpackage.dek.e);
     }
 
     public dii(byte[][][][][][][][][][][][][][][][][] bArr) {
-        this(del.h);
+        this((defpackage.dih) defpackage.del.h);
     }
 
     public dii(char[][][][][][][][][][][][][][][][][] cArr) {
-        this(den.d);
+        this((defpackage.dih) defpackage.den.d);
     }
 
     public dii(short[][][][][][][][][][][][][][][][][] sArr) {
-        this(deo.e);
+        this((defpackage.dih) defpackage.deo.e);
     }
 
     public dii(int[][][][][][][][][][][][][][][][][] iArr) {
-        this(dep.a);
+        this((defpackage.dih) defpackage.dep.a);
     }
 
     public dii(boolean[][][][][][][][][][][][][][][][][] zArr) {
-        this(deq.e);
+        this((defpackage.dih) defpackage.deq.e);
     }
 
     public dii(float[][][][][][][][][][][][][][][][][] fArr) {
-        this(der.a);
+        this((defpackage.dih) defpackage.der.a);
     }
 
     public dii(byte[][][][][][][][][][][][][][][][][][] bArr) {
-        this(des.g);
+        this((defpackage.dih) defpackage.des.g);
     }
 
     public dii(char[][][][][][][][][][][][][][][][][][] cArr) {
-        this(det.a);
+        this((defpackage.dih) defpackage.det.a);
     }
 
     public dii(short[][][][][][][][][][][][][][][][][][] sArr) {
-        this(deu.d);
+        this((defpackage.dih) defpackage.deu.d);
     }
 
     public dii(int[][][][][][][][][][][][][][][][][][] iArr) {
-        this(dev.a);
+        this((defpackage.dih) defpackage.dev.a);
     }
 
     public dii(boolean[][][][][][][][][][][][][][][][][][] zArr) {
-        this(dew.f);
+        this((defpackage.dih) defpackage.dew.f);
     }
 
-    public final dii j(dii dii) {
+    public final defpackage.dii j(defpackage.dii dii) {
         b();
-        dew.a((dew) this.a, dii);
+        defpackage.dew.a((defpackage.dew) this.a, dii);
         return this;
     }
 
     public dii(float[][][][][][][][][][][][][][][][][][] fArr) {
-        this(dex.a);
+        this((defpackage.dih) defpackage.dex.a);
     }
 
     public dii(byte[][][][][][][][][][][][][][][][][][][] bArr) {
-        this(dez.d);
+        this((defpackage.dih) defpackage.dez.d);
     }
 
     public dii(char[][][][][][][][][][][][][][][][][][][] cArr) {
-        this(dfa.d);
+        this((defpackage.dih) defpackage.dfa.d);
     }
 
-    public final dii a(dfb dfb) {
+    public final defpackage.dii a(defpackage.dfb dfb) {
         b();
-        dfa dfa = (dfa) this.a;
+        defpackage.dfa dfa = (defpackage.dfa) this.a;
         if (dfb == null) {
-            throw new NullPointerException();
+            throw new java.lang.NullPointerException();
         }
         dfa.b = dfb;
         dfa.a |= 1;
         return this;
     }
 
-    public final dii a(dfc dfc) {
+    public final defpackage.dii a(defpackage.dfc dfc) {
         b();
-        dfa dfa = (dfa) this.a;
+        defpackage.dfa dfa = (defpackage.dfa) this.a;
         if (dfc == null) {
-            throw new NullPointerException();
+            throw new java.lang.NullPointerException();
         }
         dfa.c = dfc;
         dfa.a |= 2;
@@ -883,22 +871,22 @@ public final class dii extends dgp {
     }
 
     public dii(short[][][][][][][][][][][][][][][][][][][] sArr) {
-        this(dfb.d);
+        this((defpackage.dih) defpackage.dfb.d);
     }
 
-    public final dii a(long j) {
+    public final defpackage.dii a(long j) {
         b();
-        dfb dfb = (dfb) this.a;
+        defpackage.dfb dfb = (defpackage.dfb) this.a;
         dfb.a |= 1;
         dfb.b = j;
         return this;
     }
 
-    public final dii j(String str) {
+    public final defpackage.dii j(String str) {
         b();
-        dfb dfb = (dfb) this.a;
+        defpackage.dfb dfb = (defpackage.dfb) this.a;
         if (str == null) {
-            throw new NullPointerException();
+            throw new java.lang.NullPointerException();
         }
         dfb.a |= 2;
         dfb.c = str;
@@ -906,184 +894,184 @@ public final class dii extends dgp {
     }
 
     public dii(int[][][][][][][][][][][][][][][][][][][] iArr) {
-        this(dfc.b);
+        this((defpackage.dih) defpackage.dfc.b);
     }
 
-    public final dii a(Iterable iterable) {
+    public final defpackage.dii a(java.lang.Iterable iterable) {
         b();
-        dfc dfc = (dfc) this.a;
+        defpackage.dfc dfc = (defpackage.dfc) this.a;
         if (!dfc.a.a()) {
-            diq diq = dfc.a;
+            defpackage.diq diq = dfc.a;
             int size = diq.size();
             dfc.a = diq.a(size == 0 ? 10 : size << 1);
         }
-        diq diq2 = dfc.a;
-        dim.a(iterable);
-        if (iterable instanceof diz) {
-            List d = ((diz) iterable).d();
-            diz diz = (diz) diq2;
+        defpackage.diq diq2 = dfc.a;
+        defpackage.dim.a((java.lang.Object) iterable);
+        if (iterable instanceof defpackage.diz) {
+            java.util.List d = ((defpackage.diz) iterable).d();
+            defpackage.diz diz = (defpackage.diz) diq2;
             int size2 = diq2.size();
-            for (Object obj : d) {
-                if (obj == null) {
-                    String sb = new StringBuilder(37).append("Element at index ").append(diz.size() - size2).append(" is null.").toString();
+            for (java.lang.Object next : d) {
+                if (next == null) {
+                    String str = "Element at index " + (diz.size() - size2) + " is null.";
                     for (int size3 = diz.size() - 1; size3 >= size2; size3--) {
                         diz.remove(size3);
                     }
-                    throw new NullPointerException(sb);
-                } else if (obj instanceof dha) {
-                    diz.a((dha) obj);
+                    throw new java.lang.NullPointerException(str);
+                } else if (next instanceof defpackage.dha) {
+                    diz.a((defpackage.dha) next);
                 } else {
-                    diz.add((String) obj);
+                    diz.add((String) next);
                 }
             }
-        } else if (iterable instanceof djy) {
-            diq2.addAll((Collection) iterable);
+        } else if (iterable instanceof defpackage.djy) {
+            diq2.addAll((java.util.Collection) iterable);
         } else {
-            if ((diq2 instanceof ArrayList) && (iterable instanceof Collection)) {
-                ((ArrayList) diq2).ensureCapacity(((Collection) iterable).size() + diq2.size());
+            if ((diq2 instanceof java.util.ArrayList) && (iterable instanceof java.util.Collection)) {
+                ((java.util.ArrayList) diq2).ensureCapacity(((java.util.Collection) iterable).size() + diq2.size());
             }
             int size4 = diq2.size();
-            for (Object obj2 : iterable) {
-                if (obj2 == null) {
-                    String sb2 = new StringBuilder(37).append("Element at index ").append(diq2.size() - size4).append(" is null.").toString();
+            for (java.lang.Object next2 : iterable) {
+                if (next2 == null) {
+                    String str2 = "Element at index " + (diq2.size() - size4) + " is null.";
                     for (int size5 = diq2.size() - 1; size5 >= size4; size5--) {
                         diq2.remove(size5);
                     }
-                    throw new NullPointerException(sb2);
+                    throw new java.lang.NullPointerException(str2);
                 }
-                diq2.add(obj2);
+                diq2.add(next2);
             }
         }
         return this;
     }
 
     public dii(boolean[][][][][][][][][][][][][][][][][][][] zArr) {
-        this(dfd.f);
+        this((defpackage.dih) defpackage.dfd.f);
     }
 
     public dii(float[][][][][][][][][][][][][][][][][][][] fArr) {
-        this(dfe.m);
+        this((defpackage.dih) defpackage.dfe.m);
     }
 
     public dii(byte[][][][][][][][][][][][][][][][][][][][] bArr) {
-        this(dff.c);
+        this((defpackage.dih) defpackage.dff.c);
     }
 
     public dii(char[][][][][][][][][][][][][][][][][][][][] cArr) {
-        this(dfh.d);
+        this((defpackage.dih) defpackage.dfh.d);
     }
 
     public dii(short[][][][][][][][][][][][][][][][][][][][] sArr) {
-        this(dfi.f);
+        this((defpackage.dih) defpackage.dfi.f);
     }
 
     public dii(int[][][][][][][][][][][][][][][][][][][][] iArr) {
-        this(dfj.d);
+        this((defpackage.dih) defpackage.dfj.d);
     }
 
     public dii(boolean[][][][][][][][][][][][][][][][][][][][] zArr) {
-        this(dfk.a);
+        this((defpackage.dih) defpackage.dfk.a);
     }
 
     public dii(float[][][][][][][][][][][][][][][][][][][][] fArr) {
-        this(dfl.g);
+        this((defpackage.dih) defpackage.dfl.g);
     }
 
     public dii(byte[][][][][][][][][][][][][][][][][][][][][] bArr) {
-        this(dfm.e);
+        this((defpackage.dih) defpackage.dfm.e);
     }
 
     public dii(char[][][][][][][][][][][][][][][][][][][][][] cArr) {
-        this(dfn.q);
+        this((defpackage.dih) defpackage.dfn.q);
     }
 
     public dii(short[][][][][][][][][][][][][][][][][][][][][] sArr) {
-        this(dfq.c);
+        this((defpackage.dih) defpackage.dfq.c);
     }
 
     public dii(int[][][][][][][][][][][][][][][][][][][][][] iArr) {
-        this(dfr.f);
+        this((defpackage.dih) defpackage.dfr.f);
     }
 
     public dii(boolean[][][][][][][][][][][][][][][][][][][][][] zArr) {
-        this(dfs.d);
+        this((defpackage.dih) defpackage.dfs.d);
     }
 
     public dii(float[][][][][][][][][][][][][][][][][][][][][] fArr) {
-        this(dft.e);
+        this((defpackage.dih) defpackage.dft.e);
     }
 
     public dii(byte[][][][][][][][][][][][][][][][][][][][][][] bArr) {
-        this(dfy.m);
+        this((defpackage.dih) defpackage.dfy.m);
     }
 
     public dii(char[][][][][][][][][][][][][][][][][][][][][][] cArr) {
-        this(dfz.a);
+        this((defpackage.dih) defpackage.dfz.a);
     }
 
     public dii(short[][][][][][][][][][][][][][][][][][][][][][] sArr) {
-        this(dga.d);
+        this((defpackage.dih) defpackage.dga.d);
     }
 
     public dii(int[][][][][][][][][][][][][][][][][][][][][][] iArr) {
-        this(dgb.a);
+        this((defpackage.dih) defpackage.dgb.a);
     }
 
     public dii(boolean[][][][][][][][][][][][][][][][][][][][][][] zArr) {
-        this(dgc.a);
+        this((defpackage.dih) defpackage.dgc.a);
     }
 
     public dii(float[][][][][][][][][][][][][][][][][][][][][][] fArr) {
-        this(dgd.a);
+        this((defpackage.dih) defpackage.dgd.a);
     }
 
     public dii(byte[][][][][][][][][][][][][][][][][][][][][][][] bArr) {
-        this(dgg.d);
+        this((defpackage.dih) defpackage.dgg.d);
     }
 
     public dii(char[][][][][][][][][][][][][][][][][][][][][][][] cArr) {
-        this(dgl.f);
+        this((defpackage.dih) defpackage.dgl.f);
     }
 
     public dii(short[][][][][][][][][][][][][][][][][][][][][][][] sArr) {
-        this(dgm.f);
+        this((defpackage.dih) defpackage.dgm.f);
     }
 
     public dii(int[][][][][][][][][][][][][][][][][][][][][][][] iArr) {
-        this(dgn.a);
+        this((defpackage.dih) defpackage.dgn.a);
     }
 
     dii(boolean[][][][][][][][][][][][][][][][][][][][][][][] zArr) {
-        this(dgu.b);
+        this((defpackage.dih) defpackage.dgu.b);
     }
 
     public dii(float[][][][][][][][][][][][][][][][][][][][][][][] fArr) {
-        this(dmi.b);
+        this((defpackage.dih) defpackage.dmi.b);
     }
 
     public dii(byte[][][][][][][][][][][][][][][][][][][][][][][][] bArr) {
-        this(dmk.d);
+        this((defpackage.dih) defpackage.dmk.d);
     }
 
-    public final dii e(int i) {
+    public final defpackage.dii e(int i) {
         b();
-        ((dmk) this.a).a = i;
+        ((defpackage.dmk) this.a).a = i;
         return this;
     }
 
-    public final dii f(int i) {
+    public final defpackage.dii f(int i) {
         b();
-        ((dmk) this.a).b = i;
+        ((defpackage.dmk) this.a).b = i;
         return this;
     }
 
-    public final dii g(int i) {
+    public final defpackage.dii g(int i) {
         b();
-        ((dmk) this.a).c = i;
+        ((defpackage.dmk) this.a).c = i;
         return this;
     }
 
     public dii(char[][][][][][][][][][][][][][][][][][][][][][][][] cArr) {
-        this(eda.a);
+        this((defpackage.dih) defpackage.eda.a);
     }
 }

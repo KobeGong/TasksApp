@@ -1,83 +1,68 @@
 package defpackage;
 
-import android.content.Context;
-import android.content.res.TypedArray;
-import android.database.DataSetObserver;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import android.os.Handler;
-import android.util.AttributeSet;
-import android.util.Log;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ListAdapter;
-import android.widget.ListView;
-import android.widget.PopupWindow;
-import java.lang.reflect.Method;
-
-/* renamed from: aec  reason: default package */
+/* renamed from: aec reason: default package */
 /* compiled from: PG */
-public class aec implements zz {
-    private static Method a;
-    private static Method b;
-    private static Method c;
-    private final aef A;
-    private final Rect B;
-    private Context d;
-    public ade e;
+public class aec implements defpackage.zz {
+    private static java.lang.reflect.Method a;
+    private static java.lang.reflect.Method b;
+    private static java.lang.reflect.Method c;
+    private final defpackage.aef A;
+    private final android.graphics.Rect B;
+    private android.content.Context d;
+    public defpackage.ade e;
     public int f;
     public int g;
     public boolean h;
     public boolean i;
     public int j;
     public int k;
-    public View l;
-    public AdapterView.OnItemClickListener m;
-    public final aej n;
-    public final Handler o;
-    public Rect p;
+    public android.view.View l;
+    public android.widget.AdapterView.OnItemClickListener m;
+    public final defpackage.aej n;
+    public final android.os.Handler o;
+    public android.graphics.Rect p;
     public boolean q;
-    public PopupWindow r;
-    private ListAdapter s;
+    public android.widget.PopupWindow r;
+    private android.widget.ListAdapter s;
     private int t;
     private int u;
     private int v;
     private boolean w;
-    private DataSetObserver x;
-    private final aei y;
-    private final aeh z;
+    private android.database.DataSetObserver x;
+    private final defpackage.aei y;
+    private final defpackage.aeh z;
 
-    public aec(Context context, AttributeSet attributeSet, int i2) {
+    public aec(android.content.Context context, android.util.AttributeSet attributeSet, int i2) {
         this(context, attributeSet, i2, 0);
     }
 
-    public aec(Context context, AttributeSet attributeSet, int i2, int i3) {
+    public aec(android.content.Context context, android.util.AttributeSet attributeSet, int i2, int i3) {
         this.t = -2;
         this.f = -2;
         this.v = 1002;
         this.j = 0;
         this.k = Integer.MAX_VALUE;
-        this.n = new aej(this);
-        this.y = new aei(this);
-        this.z = new aeh(this);
-        this.A = new aef(this);
-        this.B = new Rect();
+        this.n = new defpackage.aej(this);
+        this.y = new defpackage.aei(this);
+        this.z = new defpackage.aeh(this);
+        this.A = new defpackage.aef(this);
+        this.B = new android.graphics.Rect();
         this.d = context;
-        this.o = new Handler(context.getMainLooper());
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, xu.aV, i2, i3);
-        this.g = obtainStyledAttributes.getDimensionPixelOffset(xu.aW, 0);
-        this.u = obtainStyledAttributes.getDimensionPixelOffset(xu.aX, 0);
+        this.o = new android.os.Handler(context.getMainLooper());
+        android.content.res.TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, defpackage.xu.aV, i2, i3);
+        this.g = obtainStyledAttributes.getDimensionPixelOffset(defpackage.xu.aW, 0);
+        this.u = obtainStyledAttributes.getDimensionPixelOffset(defpackage.xu.aX, 0);
         if (this.u != 0) {
             this.w = true;
         }
         obtainStyledAttributes.recycle();
-        this.r = new abv(context, attributeSet, i2, i3);
+        this.r = new defpackage.abv(context, attributeSet, i2, i3);
         this.r.setInputMethodMode(1);
     }
 
-    public void a(ListAdapter listAdapter) {
+    public void a(android.widget.ListAdapter listAdapter) {
         if (this.x == null) {
-            this.x = new aeg(this);
+            this.x = new defpackage.aeg(this);
         } else if (this.s != null) {
             this.s.unregisterDataSetObserver(this.x);
         }
@@ -95,7 +80,7 @@ public class aec implements zz {
         this.r.setFocusable(true);
     }
 
-    public final void a(Drawable drawable) {
+    public final void a(android.graphics.drawable.Drawable drawable) {
         this.r.setBackgroundDrawable(drawable);
     }
 
@@ -112,7 +97,7 @@ public class aec implements zz {
     }
 
     public final void b(int i2) {
-        Drawable background = this.r.getBackground();
+        android.graphics.drawable.Drawable background = this.r.getBackground();
         if (background != null) {
             background.getPadding(this.B);
             this.f = this.B.left + this.B.right + i2;
@@ -121,7 +106,6 @@ public class aec implements zz {
         this.f = i2;
     }
 
-    @Override // defpackage.zz
     public void d() {
         int i2;
         boolean z2;
@@ -135,20 +119,20 @@ public class aec implements zz {
         int i9;
         int i10 = 0;
         if (this.e == null) {
-            Context context = this.d;
-            new aed(this);
+            android.content.Context context = this.d;
+            new defpackage.aed(this);
             this.e = a(context, !this.q);
             this.e.setAdapter(this.s);
             this.e.setOnItemClickListener(this.m);
             this.e.setFocusable(true);
             this.e.setFocusableInTouchMode(true);
-            this.e.setOnItemSelectedListener(new aee(this));
+            this.e.setOnItemSelectedListener(new defpackage.aee(this));
             this.e.setOnScrollListener(this.z);
             this.r.setContentView(this.e);
         } else {
             this.r.getContentView();
         }
-        Drawable background = this.r.getBackground();
+        android.graphics.drawable.Drawable background = this.r.getBackground();
         if (background != null) {
             background.getPadding(this.B);
             int i11 = this.B.top + this.B.bottom;
@@ -173,13 +157,13 @@ public class aec implements zz {
         } else {
             switch (this.f) {
                 case -2:
-                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(this.d.getResources().getDisplayMetrics().widthPixels - (this.B.left + this.B.right), Integer.MIN_VALUE);
+                    makeMeasureSpec = android.view.View.MeasureSpec.makeMeasureSpec(this.d.getResources().getDisplayMetrics().widthPixels - (this.B.left + this.B.right), Integer.MIN_VALUE);
                     break;
                 case -1:
-                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(this.d.getResources().getDisplayMetrics().widthPixels - (this.B.left + this.B.right), 1073741824);
+                    makeMeasureSpec = android.view.View.MeasureSpec.makeMeasureSpec(this.d.getResources().getDisplayMetrics().widthPixels - (this.B.left + this.B.right), 1073741824);
                     break;
                 default:
-                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(this.f, 1073741824);
+                    makeMeasureSpec = android.view.View.MeasureSpec.makeMeasureSpec(this.f, 1073741824);
                     break;
             }
             int a3 = this.e.a(makeMeasureSpec, 0, -1, a2, -1);
@@ -191,9 +175,9 @@ public class aec implements zz {
             i4 = i3 + a3;
         }
         boolean j2 = j();
-        vb.a(this.r, this.v);
+        defpackage.vb.a(this.r, this.v);
         if (this.r.isShowing()) {
-            if (sn.a.s(this.l)) {
+            if (defpackage.sn.a.s(this.l)) {
                 if (this.f == -1) {
                     i6 = -1;
                 } else if (this.f == -2) {
@@ -208,7 +192,7 @@ public class aec implements zz {
                         i8 = -1;
                     }
                     if (j2) {
-                        PopupWindow popupWindow = this.r;
+                        android.widget.PopupWindow popupWindow = this.r;
                         if (this.f == -1) {
                             i9 = -1;
                         } else {
@@ -218,7 +202,7 @@ public class aec implements zz {
                         this.r.setHeight(0);
                         i7 = i8;
                     } else {
-                        PopupWindow popupWindow2 = this.r;
+                        android.widget.PopupWindow popupWindow2 = this.r;
                         if (this.f == -1) {
                             i10 = -1;
                         }
@@ -232,8 +216,8 @@ public class aec implements zz {
                     i7 = this.t;
                 }
                 this.r.setOutsideTouchable(true);
-                PopupWindow popupWindow3 = this.r;
-                View view = this.l;
+                android.widget.PopupWindow popupWindow3 = this.r;
+                android.view.View view = this.l;
                 int i12 = this.g;
                 int i13 = this.u;
                 if (i6 < 0) {
@@ -263,23 +247,23 @@ public class aec implements zz {
         this.r.setHeight(i4);
         if (a != null) {
             try {
-                a.invoke(this.r, true);
-            } catch (Exception e2) {
+                a.invoke(this.r, new java.lang.Object[]{java.lang.Boolean.valueOf(true)});
+            } catch (java.lang.Exception e2) {
             }
         }
         this.r.setOutsideTouchable(true);
         this.r.setTouchInterceptor(this.y);
         if (this.i) {
-            vb.a(this.r, this.h);
+            defpackage.vb.a(this.r, this.h);
         }
         if (c != null) {
             try {
-                c.invoke(this.r, this.p);
-            } catch (Exception e3) {
-                Log.e("ListPopupWindow", "Could not invoke setEpicenterBounds on PopupWindow", e3);
+                c.invoke(this.r, new java.lang.Object[]{this.p});
+            } catch (java.lang.Exception e3) {
+                android.util.Log.e("ListPopupWindow", "Could not invoke setEpicenterBounds on PopupWindow", e3);
             }
         }
-        vb.a.a(this.r, this.l, this.g, this.u, this.j);
+        defpackage.vb.a.a(this.r, this.l, this.g, this.u, this.j);
         this.e.setSelection(-1);
         if (!this.q || this.e.isInTouchMode()) {
             i();
@@ -289,7 +273,6 @@ public class aec implements zz {
         }
     }
 
-    @Override // defpackage.zz
     public final void e() {
         this.r.dismiss();
         this.r.setContentView(null);
@@ -297,7 +280,7 @@ public class aec implements zz {
         this.o.removeCallbacks(this.n);
     }
 
-    public final void a(PopupWindow.OnDismissListener onDismissListener) {
+    public final void a(android.widget.PopupWindow.OnDismissListener onDismissListener) {
         this.r.setOnDismissListener(onDismissListener);
     }
 
@@ -306,14 +289,13 @@ public class aec implements zz {
     }
 
     public final void i() {
-        ade ade = this.e;
+        defpackage.ade ade = this.e;
         if (ade != null) {
             ade.a = true;
             ade.requestLayout();
         }
     }
 
-    @Override // defpackage.zz
     public final boolean f() {
         return this.r.isShowing();
     }
@@ -322,21 +304,20 @@ public class aec implements zz {
         return this.r.getInputMethodMode() == 2;
     }
 
-    @Override // defpackage.zz
-    public final ListView g() {
+    public final android.widget.ListView g() {
         return this.e;
     }
 
-    /* access modifiers changed from: package-private */
-    public ade a(Context context, boolean z2) {
-        return new ade(context, z2);
+    /* access modifiers changed from: 0000 */
+    public defpackage.ade a(android.content.Context context, boolean z2) {
+        return new defpackage.ade(context, z2);
     }
 
-    private final int a(View view, int i2, boolean z2) {
+    private final int a(android.view.View view, int i2, boolean z2) {
         if (b != null) {
             try {
-                return ((Integer) b.invoke(this.r, view, Integer.valueOf(i2), Boolean.valueOf(z2))).intValue();
-            } catch (Exception e2) {
+                return ((java.lang.Integer) b.invoke(this.r, new java.lang.Object[]{view, java.lang.Integer.valueOf(i2), java.lang.Boolean.valueOf(z2)})).intValue();
+            } catch (java.lang.Exception e2) {
             }
         }
         return this.r.getMaxAvailableHeight(view, i2);
@@ -344,16 +325,16 @@ public class aec implements zz {
 
     static {
         try {
-            a = PopupWindow.class.getDeclaredMethod("setClipToScreenEnabled", Boolean.TYPE);
-        } catch (NoSuchMethodException e2) {
+            a = android.widget.PopupWindow.class.getDeclaredMethod("setClipToScreenEnabled", new java.lang.Class[]{java.lang.Boolean.TYPE});
+        } catch (java.lang.NoSuchMethodException e2) {
         }
         try {
-            b = PopupWindow.class.getDeclaredMethod("getMaxAvailableHeight", View.class, Integer.TYPE, Boolean.TYPE);
-        } catch (NoSuchMethodException e3) {
+            b = android.widget.PopupWindow.class.getDeclaredMethod("getMaxAvailableHeight", new java.lang.Class[]{android.view.View.class, java.lang.Integer.TYPE, java.lang.Boolean.TYPE});
+        } catch (java.lang.NoSuchMethodException e3) {
         }
         try {
-            c = PopupWindow.class.getDeclaredMethod("setEpicenterBounds", Rect.class);
-        } catch (NoSuchMethodException e4) {
+            c = android.widget.PopupWindow.class.getDeclaredMethod("setEpicenterBounds", new java.lang.Class[]{android.graphics.Rect.class});
+        } catch (java.lang.NoSuchMethodException e4) {
         }
     }
 }

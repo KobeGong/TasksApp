@@ -1,11 +1,9 @@
 package defpackage;
 
-import android.view.View;
-
-/* renamed from: ju  reason: default package */
+/* renamed from: ju reason: default package */
 /* compiled from: PG */
 interface ju {
-    void a(View view);
+    void a(android.view.View view);
 
-    void b(View view);
+    void b(android.view.View view);
 }

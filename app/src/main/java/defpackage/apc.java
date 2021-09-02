@@ -1,16 +1,14 @@
 package defpackage;
 
-import android.content.DialogInterface;
+/* renamed from: apc reason: default package */
+public final /* synthetic */ class apc implements android.content.DialogInterface.OnDismissListener {
+    private final java.lang.Runnable a;
 
-/* renamed from: apc  reason: default package */
-public final /* synthetic */ class apc implements DialogInterface.OnDismissListener {
-    private final Runnable a;
-
-    public apc(Runnable runnable) {
+    public apc(java.lang.Runnable runnable) {
         this.a = runnable;
     }
 
-    public final void onDismiss(DialogInterface dialogInterface) {
+    public final void onDismiss(android.content.DialogInterface dialogInterface) {
         this.a.run();
     }
 }

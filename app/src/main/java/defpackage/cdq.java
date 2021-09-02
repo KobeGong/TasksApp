@@ -1,9 +1,7 @@
 package defpackage;
 
-import android.graphics.Bitmap;
-
-/* renamed from: cdq  reason: default package */
+/* renamed from: cdq reason: default package */
 /* compiled from: PG */
 public interface cdq {
-    void a(Bitmap bitmap);
+    void a(android.graphics.Bitmap bitmap);
 }

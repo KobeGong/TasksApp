@@ -1,17 +1,13 @@
 package defpackage;
 
-import android.content.BroadcastReceiver;
-import java.util.concurrent.Callable;
-import java.util.concurrent.Future;
-
-/* renamed from: bwq  reason: default package */
+/* renamed from: bwq reason: default package */
 /* compiled from: PG */
 public interface bwq {
-    Future a(Callable callable);
+    java.util.concurrent.Future a(java.util.concurrent.Callable callable);
 
-    void a(BroadcastReceiver.PendingResult pendingResult, Runnable runnable);
+    void a(android.content.BroadcastReceiver.PendingResult pendingResult, java.lang.Runnable runnable);
 
-    void a(Runnable runnable);
+    void a(java.lang.Runnable runnable);
 
-    void b(Runnable runnable);
+    void b(java.lang.Runnable runnable);
 }

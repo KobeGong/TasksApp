@@ -1,19 +1,15 @@
 package defpackage;
 
-import android.content.Context;
-
-/* access modifiers changed from: package-private */
-/* renamed from: ciq  reason: default package */
+/* renamed from: ciq reason: default package */
 /* compiled from: PG */
-public final class ciq implements clt {
-    private final /* synthetic */ Context a;
+final class ciq implements defpackage.clt {
+    private final /* synthetic */ android.content.Context a;
 
-    ciq(Context context) {
+    ciq(android.content.Context context) {
         this.a = context;
     }
 
-    @Override // defpackage.clt
-    public final /* synthetic */ Object a() {
-        return cip.a(this.a);
+    public final /* synthetic */ java.lang.Object a() {
+        return defpackage.cip.a(this.a);
     }
 }

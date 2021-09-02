@@ -1,12 +1,12 @@
 package defpackage;
 
-/* renamed from: dtu  reason: default package */
+/* renamed from: dtu reason: default package */
 /* compiled from: PG */
-final class dtu implements Runnable {
+final class dtu implements java.lang.Runnable {
     private final /* synthetic */ int a;
-    private final /* synthetic */ dtt b;
+    private final /* synthetic */ defpackage.dtt b;
 
-    dtu(dtt dtt, int i) {
+    dtu(defpackage.dtt dtt, int i) {
         this.b = dtt;
         this.a = i;
     }

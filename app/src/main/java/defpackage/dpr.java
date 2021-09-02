@@ -1,16 +1,15 @@
 package defpackage;
 
-/* renamed from: dpr  reason: default package */
+/* renamed from: dpr reason: default package */
 /* compiled from: PG */
-final class dpr extends doq {
-    private final don a;
+final class dpr extends defpackage.doq {
+    private final defpackage.don a;
 
-    dpr(don don) {
-        this.a = (don) cld.a(don, "result");
+    dpr(defpackage.don don) {
+        this.a = (defpackage.don) defpackage.cld.a((java.lang.Object) don, (java.lang.Object) "result");
     }
 
-    @Override // defpackage.doq
-    public final don a() {
+    public final defpackage.don a() {
         return this.a;
     }
 }

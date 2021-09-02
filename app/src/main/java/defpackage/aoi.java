@@ -1,15 +1,15 @@
 package defpackage;
 
-/* renamed from: aoi  reason: default package */
-final /* synthetic */ class aoi implements Runnable {
-    private final aoh a;
+/* renamed from: aoi reason: default package */
+final /* synthetic */ class aoi implements java.lang.Runnable {
+    private final defpackage.aoh a;
 
-    aoi(aoh aoh) {
+    aoi(defpackage.aoh aoh) {
         this.a = aoh;
     }
 
     public final void run() {
-        aoh aoh = this.a;
+        defpackage.aoh aoh = this.a;
         aoh.b.a(aoh);
     }
 }

@@ -1,20 +1,16 @@
 package defpackage;
 
-import com.google.android.gms.common.api.Status;
-
-/* renamed from: avu  reason: default package */
+/* renamed from: avu reason: default package */
 /* compiled from: PG */
-final class avu extends awc {
-    private /* synthetic */ avv a;
+final class avu extends defpackage.awc {
+    private /* synthetic */ defpackage.avv a;
 
-    /* JADX INFO: super call moved to the top of the method (can break code semantics) */
-    avu(avv avv) {
-        super((byte) 0);
+    avu(defpackage.avv avv) {
         this.a = avv;
+        super(0);
     }
 
-    @Override // defpackage.awc
-    public final void a(Status status) {
-        this.a.a((ayw) status);
+    public final void a(com.google.android.gms.common.api.Status status) {
+        this.a.a((defpackage.ayw) status);
     }
 }

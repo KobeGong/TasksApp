@@ -1,14 +1,11 @@
 package defpackage;
 
-import android.content.Context;
-import android.view.KeyEvent;
-
-/* renamed from: wa  reason: default package */
+/* renamed from: wa reason: default package */
 /* compiled from: PG */
 public abstract class wa {
     public abstract void a();
 
-    public abstract void a(CharSequence charSequence);
+    public abstract void a(java.lang.CharSequence charSequence);
 
     public abstract void a(boolean z);
 
@@ -16,17 +13,17 @@ public abstract class wa {
 
     public abstract int c();
 
-    public Context d() {
+    public android.content.Context d() {
         return null;
     }
 
     public void e() {
-        throw new UnsupportedOperationException("Hide on content scroll is not supported in this action bar configuration.");
+        throw new java.lang.UnsupportedOperationException("Hide on content scroll is not supported in this action bar configuration.");
     }
 
     public void a(float f) {
         if (f != 0.0f) {
-            throw new UnsupportedOperationException("Setting a non-zero elevation is not supported in this action bar configuration.");
+            throw new java.lang.UnsupportedOperationException("Setting a non-zero elevation is not supported in this action bar configuration.");
         }
     }
 
@@ -42,7 +39,7 @@ public abstract class wa {
     public void d(boolean z) {
     }
 
-    public yc a(yd ydVar) {
+    public defpackage.yc a(defpackage.yd ydVar) {
         return null;
     }
 
@@ -62,7 +59,7 @@ public abstract class wa {
         return false;
     }
 
-    public boolean a(int i, KeyEvent keyEvent) {
+    public boolean a(int i, android.view.KeyEvent keyEvent) {
         return false;
     }
 
@@ -70,10 +67,10 @@ public abstract class wa {
         return false;
     }
 
-    public void b(CharSequence charSequence) {
+    public void b(java.lang.CharSequence charSequence) {
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public void l() {
     }
 }

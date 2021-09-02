@@ -1,13 +1,12 @@
 package defpackage;
 
-/* renamed from: cjc  reason: default package */
+/* renamed from: cjc reason: default package */
 /* compiled from: PG */
-final class cjc implements cjf {
+final class cjc implements defpackage.cjf {
     cjc() {
     }
 
-    @Override // defpackage.cjf
-    public final void a(chk chk) {
+    public final void a(defpackage.chk chk) {
         chk.d();
     }
 }

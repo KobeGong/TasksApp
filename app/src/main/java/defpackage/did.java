@@ -1,6 +1,6 @@
 package defpackage;
 
-/* renamed from: did  reason: default package */
+/* renamed from: did reason: default package */
 /* compiled from: PG */
 enum did {
     SCALAR,

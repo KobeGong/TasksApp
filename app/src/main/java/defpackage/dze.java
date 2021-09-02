@@ -1,13 +1,12 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: dze  reason: default package */
+/* renamed from: dze reason: default package */
 /* compiled from: PG */
-public abstract class dze {
+abstract class dze {
     dze() {
     }
 
-    public abstract boolean a(dzd dzd);
+    public abstract boolean a(defpackage.dzd dzd);
 
-    public abstract void b(dzd dzd);
+    public abstract void b(defpackage.dzd dzd);
 }

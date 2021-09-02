@@ -1,17 +1,16 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: ajf  reason: default package */
-public final /* synthetic */ class ajf implements Runnable {
+/* renamed from: ajf reason: default package */
+final /* synthetic */ class ajf implements java.lang.Runnable {
     private final int a;
-    private final Runnable b;
+    private final java.lang.Runnable b;
 
-    ajf(int i, Runnable runnable) {
+    ajf(int i, java.lang.Runnable runnable) {
         this.a = i;
         this.b = runnable;
     }
 
     public final void run() {
-        ajd.a(this.a, this.b);
+        defpackage.ajd.a(this.a, this.b);
     }
 }

@@ -1,18 +1,13 @@
 package defpackage;
 
-import android.content.res.TypedArray;
-import android.util.Log;
-import android.util.SparseIntArray;
-import java.util.HashMap;
-
-/* renamed from: bv  reason: default package */
+/* renamed from: bv reason: default package */
 /* compiled from: PG */
 public final class bv {
     private static final int[] b = {0, 4, 8};
-    private static SparseIntArray c;
-    public HashMap a = new HashMap();
+    private static android.util.SparseIntArray c;
+    public java.util.HashMap a = new java.util.HashMap();
 
-    private static int a(TypedArray typedArray, int i, int i2) {
+    private static int a(android.content.res.TypedArray typedArray, int i, int i2) {
         int resourceId = typedArray.getResourceId(i, i2);
         if (resourceId == -1) {
             return typedArray.getInt(i, -1);
@@ -20,7 +15,7 @@ public final class bv {
         return resourceId;
     }
 
-    public static void a(bw bwVar, TypedArray typedArray) {
+    public static void a(defpackage.bw bwVar, android.content.res.TypedArray typedArray) {
         int indexCount = typedArray.getIndexCount();
         for (int i = 0; i < indexCount; i++) {
             int index = typedArray.getIndex(i);
@@ -171,103 +166,97 @@ public final class bv {
                 case 48:
                     bwVar.X = typedArray.getFloat(index, bwVar.X);
                     break;
-                case by.aT /*{ENCODED_INT: 49}*/:
+                case 49:
                     bwVar.Y = typedArray.getFloat(index, bwVar.Y);
                     break;
-                case by.aU /*{ENCODED_INT: 50}*/:
+                case 50:
                     bwVar.Z = typedArray.getFloat(index, bwVar.Z);
                     break;
-                case by.aV /*{ENCODED_INT: 51}*/:
+                case 51:
                     bwVar.aa = typedArray.getFloat(index, bwVar.aa);
                     break;
-                case by.aW /*{ENCODED_INT: 52}*/:
+                case 52:
                     bwVar.ab = typedArray.getFloat(index, bwVar.ab);
                     break;
-                case by.aX /*{ENCODED_INT: 53}*/:
+                case 53:
                     bwVar.ac = typedArray.getFloat(index, bwVar.ac);
                     break;
-                case by.aY /*{ENCODED_INT: 54}*/:
-                case by.aZ /*{ENCODED_INT: 55}*/:
-                case by.ba /*{ENCODED_INT: 56}*/:
-                case by.bb /*{ENCODED_INT: 57}*/:
-                case by.bc /*{ENCODED_INT: 58}*/:
-                case by.bd /*{ENCODED_INT: 59}*/:
-                default:
-                    Log.w("ConstraintSet", "Unknown attribute 0x" + Integer.toHexString(index) + "   " + c.get(index));
+                case 60:
+                    android.util.Log.w("ConstraintSet", "unused attribute 0x" + java.lang.Integer.toHexString(index) + "   " + c.get(index));
                     break;
-                case by.be /*{ENCODED_INT: 60}*/:
-                    Log.w("ConstraintSet", "unused attribute 0x" + Integer.toHexString(index) + "   " + c.get(index));
+                default:
+                    android.util.Log.w("ConstraintSet", "Unknown attribute 0x" + java.lang.Integer.toHexString(index) + "   " + c.get(index));
                     break;
             }
         }
     }
 
     static {
-        SparseIntArray sparseIntArray = new SparseIntArray();
+        android.util.SparseIntArray sparseIntArray = new android.util.SparseIntArray();
         c = sparseIntArray;
-        sparseIntArray.append(by.aK, 25);
-        c.append(by.aL, 26);
-        c.append(by.aN, 29);
-        c.append(by.aO, 30);
-        c.append(by.aT, 36);
-        c.append(by.aS, 35);
-        c.append(by.aw, 4);
-        c.append(by.av, 3);
-        c.append(by.at, 1);
-        c.append(by.ba, 6);
-        c.append(by.bb, 7);
-        c.append(by.aA, 17);
-        c.append(by.aB, 18);
-        c.append(by.aC, 19);
-        c.append(by.ah, 27);
-        c.append(by.aP, 32);
-        c.append(by.aQ, 33);
-        c.append(by.az, 10);
-        c.append(by.ay, 9);
-        c.append(by.be, 13);
-        c.append(by.bh, 16);
-        c.append(by.bf, 14);
-        c.append(by.bc, 11);
-        c.append(by.bg, 15);
-        c.append(by.bd, 12);
-        c.append(by.aW, 40);
-        c.append(by.aI, 39);
-        c.append(by.aH, 41);
-        c.append(by.aV, 42);
-        c.append(by.aG, 20);
-        c.append(by.aU, 37);
-        c.append(by.ax, 5);
-        c.append(by.aJ, 60);
-        c.append(by.aR, 60);
-        c.append(by.aM, 60);
-        c.append(by.au, 60);
-        c.append(by.as, 60);
-        c.append(by.ac, 24);
-        c.append(by.ad, 28);
-        c.append(by.ae, 31);
-        c.append(by.ab, 8);
-        c.append(by.af, 34);
-        c.append(by.aa, 2);
-        c.append(by.ag, 23);
-        c.append(by.Z, 21);
-        c.append(by.ar, 22);
-        c.append(by.W, 43);
-        c.append(by.X, 44);
-        c.append(by.ai, 45);
-        c.append(by.aj, 46);
-        c.append(by.ak, 47);
-        c.append(by.al, 48);
-        c.append(by.am, 49);
-        c.append(by.an, 50);
-        c.append(by.ao, 51);
-        c.append(by.ap, 52);
-        c.append(by.aq, 53);
-        c.append(by.aX, 54);
-        c.append(by.aD, 55);
-        c.append(by.aY, 56);
-        c.append(by.aE, 57);
-        c.append(by.aZ, 58);
-        c.append(by.aF, 59);
-        c.append(by.Y, 38);
+        sparseIntArray.append(defpackage.by.aK, 25);
+        c.append(defpackage.by.aL, 26);
+        c.append(defpackage.by.aN, 29);
+        c.append(defpackage.by.aO, 30);
+        c.append(defpackage.by.aT, 36);
+        c.append(defpackage.by.aS, 35);
+        c.append(defpackage.by.aw, 4);
+        c.append(defpackage.by.av, 3);
+        c.append(defpackage.by.at, 1);
+        c.append(defpackage.by.ba, 6);
+        c.append(defpackage.by.bb, 7);
+        c.append(defpackage.by.aA, 17);
+        c.append(defpackage.by.aB, 18);
+        c.append(defpackage.by.aC, 19);
+        c.append(defpackage.by.ah, 27);
+        c.append(defpackage.by.aP, 32);
+        c.append(defpackage.by.aQ, 33);
+        c.append(defpackage.by.az, 10);
+        c.append(defpackage.by.ay, 9);
+        c.append(defpackage.by.be, 13);
+        c.append(defpackage.by.bh, 16);
+        c.append(defpackage.by.bf, 14);
+        c.append(defpackage.by.bc, 11);
+        c.append(defpackage.by.bg, 15);
+        c.append(defpackage.by.bd, 12);
+        c.append(defpackage.by.aW, 40);
+        c.append(defpackage.by.aI, 39);
+        c.append(defpackage.by.aH, 41);
+        c.append(defpackage.by.aV, 42);
+        c.append(defpackage.by.aG, 20);
+        c.append(defpackage.by.aU, 37);
+        c.append(defpackage.by.ax, 5);
+        c.append(defpackage.by.aJ, 60);
+        c.append(defpackage.by.aR, 60);
+        c.append(defpackage.by.aM, 60);
+        c.append(defpackage.by.au, 60);
+        c.append(defpackage.by.as, 60);
+        c.append(defpackage.by.ac, 24);
+        c.append(defpackage.by.ad, 28);
+        c.append(defpackage.by.ae, 31);
+        c.append(defpackage.by.ab, 8);
+        c.append(defpackage.by.af, 34);
+        c.append(defpackage.by.aa, 2);
+        c.append(defpackage.by.ag, 23);
+        c.append(defpackage.by.Z, 21);
+        c.append(defpackage.by.ar, 22);
+        c.append(defpackage.by.W, 43);
+        c.append(defpackage.by.X, 44);
+        c.append(defpackage.by.ai, 45);
+        c.append(defpackage.by.aj, 46);
+        c.append(defpackage.by.ak, 47);
+        c.append(defpackage.by.al, 48);
+        c.append(defpackage.by.am, 49);
+        c.append(defpackage.by.an, 50);
+        c.append(defpackage.by.ao, 51);
+        c.append(defpackage.by.ap, 52);
+        c.append(defpackage.by.aq, 53);
+        c.append(defpackage.by.aX, 54);
+        c.append(defpackage.by.aD, 55);
+        c.append(defpackage.by.aY, 56);
+        c.append(defpackage.by.aE, 57);
+        c.append(defpackage.by.aZ, 58);
+        c.append(defpackage.by.aF, 59);
+        c.append(defpackage.by.Y, 38);
     }
 }

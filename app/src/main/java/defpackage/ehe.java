@@ -1,9 +1,9 @@
 package defpackage;
 
-/* renamed from: ehe  reason: default package */
+/* renamed from: ehe reason: default package */
 /* compiled from: PG */
-public final class ehe implements Runnable {
+public final class ehe implements java.lang.Runnable {
     public final void run() {
-        throw new RuntimeException("Intentional exception not caught by JNI");
+        throw new java.lang.RuntimeException("Intentional exception not caught by JNI");
     }
 }

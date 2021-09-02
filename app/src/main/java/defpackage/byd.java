@@ -1,66 +1,61 @@
 package defpackage;
 
-import android.accounts.Account;
-import android.accounts.AccountManager;
-import android.annotation.TargetApi;
-import android.content.ContentProviderClient;
-import android.content.Context;
-import android.os.Parcelable;
-import android.util.Log;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
-
-/* renamed from: byd  reason: default package */
+/* renamed from: byd reason: default package */
 /* compiled from: PG */
 public final class byd {
-    public Context a;
+    public android.content.Context a;
 
     public final boolean a() {
-        return bwj.a(this.a, "android.permission.GET_ACCOUNTS") || bwj.f();
+        return defpackage.bwj.a(this.a, "android.permission.GET_ACCOUNTS") || defpackage.bwj.f();
     }
 
-    public final Set b() {
-        if (bwj.a(this.a, "android.permission.GET_ACCOUNTS")) {
+    public final java.util.Set b() {
+        if (defpackage.bwj.a(this.a, "android.permission.GET_ACCOUNTS")) {
             return c();
         }
-        if (bwj.f()) {
+        if (defpackage.bwj.f()) {
             return d();
         }
-        return Collections.emptySet();
+        return java.util.Collections.emptySet();
     }
 
-    private final Set c() {
-        HashSet hashSet = new HashSet();
-        for (Account account : AccountManager.get(this.a).getAccountsByType("com.google")) {
+    private final java.util.Set c() {
+        java.util.HashSet hashSet = new java.util.HashSet();
+        for (android.accounts.Account account : android.accounts.AccountManager.get(this.a).getAccountsByType("com.google")) {
             hashSet.add(account.name);
         }
         return hashSet;
     }
 
-    @TargetApi(17)
-    private final Set d() {
-        bty.a("DeviceAccountsUtilImpl", "Try to retrieve accounts list from Accounts ContentProvider.", new Object[0]);
-        ContentProviderClient acquireContentProviderClient = this.a.getContentResolver().acquireContentProviderClient("com.google.android.gms.auth.accounts");
+    @android.annotation.TargetApi(17)
+    private final java.util.Set d() {
+        defpackage.bty.a("DeviceAccountsUtilImpl", "Try to retrieve accounts list from Accounts ContentProvider.", new java.lang.Object[0]);
+        android.content.ContentProviderClient acquireContentProviderClient = this.a.getContentResolver().acquireContentProviderClient("com.google.android.gms.auth.accounts");
         if (acquireContentProviderClient == null) {
-            Object[] objArr = new Object[0];
-            if (bty.a(5)) {
-                Log.w("Notifications", bty.f("DeviceAccountsUtilImpl", "Accounts ContentProvider is missing. Trying AccountManager", objArr));
+            java.lang.String str = "DeviceAccountsUtilImpl";
+            java.lang.String str2 = "Accounts ContentProvider is missing. Trying AccountManager";
+            java.lang.Object[] objArr = new java.lang.Object[0];
+            if (defpackage.bty.a(5)) {
+                android.util.Log.w("Notifications", defpackage.bty.f(str, str2, objArr));
             }
             return c();
         }
         try {
-            Parcelable[] parcelableArray = acquireContentProviderClient.call("get_accounts", "com.google", null).getParcelableArray("accounts");
-            HashSet hashSet = new HashSet();
-            for (Parcelable parcelable : parcelableArray) {
-                hashSet.add(((Account) parcelable).name);
+            android.os.Parcelable[] parcelableArray = acquireContentProviderClient.call("get_accounts", "com.google", null).getParcelableArray("accounts");
+            java.util.HashSet hashSet = new java.util.HashSet();
+            for (android.os.Parcelable parcelable : parcelableArray) {
+                hashSet.add(((android.accounts.Account) parcelable).name);
             }
-            return hashSet;
-        } catch (Exception e) {
-            bty.b("DeviceAccountsUtilImpl", e, "Accounts ContentProvider failed.", new Object[0]);
-            return Collections.emptySet();
-        } finally {
             acquireContentProviderClient.release();
+            return hashSet;
+        } catch (java.lang.Exception e) {
+            defpackage.bty.b("DeviceAccountsUtilImpl", e, "Accounts ContentProvider failed.", new java.lang.Object[0]);
+            java.util.Set emptySet = java.util.Collections.emptySet();
+            acquireContentProviderClient.release();
+            return emptySet;
+        } catch (Throwable th) {
+            acquireContentProviderClient.release();
+            throw th;
         }
     }
 }

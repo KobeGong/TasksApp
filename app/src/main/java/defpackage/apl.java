@@ -1,28 +1,25 @@
 package defpackage;
 
-import android.graphics.Typeface;
-import com.google.android.apps.tasks.ui.TaskListsActivity;
+/* renamed from: apl reason: default package */
+final /* synthetic */ class apl implements java.lang.Runnable {
+    private final com.google.android.apps.tasks.ui.TaskListsActivity a;
+    private final android.graphics.Typeface b;
 
-/* renamed from: apl  reason: default package */
-final /* synthetic */ class apl implements Runnable {
-    private final TaskListsActivity a;
-    private final Typeface b;
-
-    apl(TaskListsActivity taskListsActivity, Typeface typeface) {
+    apl(com.google.android.apps.tasks.ui.TaskListsActivity taskListsActivity, android.graphics.Typeface typeface) {
         this.a = taskListsActivity;
         this.b = typeface;
     }
 
     public final void run() {
-        TaskListsActivity taskListsActivity = this.a;
-        Typeface typeface = this.b;
+        com.google.android.apps.tasks.ui.TaskListsActivity taskListsActivity = this.a;
+        android.graphics.Typeface typeface = this.b;
         if (!taskListsActivity.r()) {
-            ew ewVar = taskListsActivity.collapsingToolbarLayout.c;
+            defpackage.ew ewVar = taskListsActivity.collapsingToolbarLayout.c;
             if (ewVar.l != typeface) {
                 ewVar.l = typeface;
                 ewVar.c();
             }
-            ew ewVar2 = taskListsActivity.collapsingToolbarLayout.c;
+            defpackage.ew ewVar2 = taskListsActivity.collapsingToolbarLayout.c;
             if (ewVar2.k != typeface) {
                 ewVar2.k = typeface;
                 ewVar2.c();

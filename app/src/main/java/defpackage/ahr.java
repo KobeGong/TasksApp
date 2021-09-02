@@ -1,52 +1,46 @@
 package defpackage;
 
-import android.graphics.Rect;
-import android.os.Build;
-import android.view.View;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-
-/* renamed from: ahr  reason: default package */
+/* renamed from: ahr reason: default package */
 /* compiled from: PG */
 public final class ahr {
-    private static Method a;
+    private static java.lang.reflect.Method a;
 
-    public static boolean a(View view) {
-        if (sn.a.j(view) == 1) {
+    public static boolean a(android.view.View view) {
+        if (defpackage.sn.a.j(view) == 1) {
             return true;
         }
         return false;
     }
 
-    public static void a(View view, Rect rect, Rect rect2) {
+    public static void a(android.view.View view, android.graphics.Rect rect, android.graphics.Rect rect2) {
         if (a != null) {
             try {
-                a.invoke(view, rect, rect2);
-            } catch (Exception e) {
+                a.invoke(view, new java.lang.Object[]{rect, rect2});
+            } catch (java.lang.Exception e) {
             }
         }
     }
 
-    public static void b(View view) {
+    public static void b(android.view.View view) {
         try {
-            Method method = view.getClass().getMethod("makeOptionalFitsSystemWindows", new Class[0]);
+            java.lang.reflect.Method method = view.getClass().getMethod("makeOptionalFitsSystemWindows", new java.lang.Class[0]);
             if (!method.isAccessible()) {
                 method.setAccessible(true);
             }
-            method.invoke(view, new Object[0]);
-        } catch (IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
+            method.invoke(view, new java.lang.Object[0]);
+        } catch (java.lang.IllegalAccessException | java.lang.NoSuchMethodException | java.lang.reflect.InvocationTargetException e) {
         }
     }
 
     static {
-        if (Build.VERSION.SDK_INT >= 18) {
+        if (android.os.Build.VERSION.SDK_INT >= 18) {
             try {
-                Method declaredMethod = View.class.getDeclaredMethod("computeFitSystemWindows", Rect.class, Rect.class);
+                java.lang.reflect.Method declaredMethod = android.view.View.class.getDeclaredMethod("computeFitSystemWindows", new java.lang.Class[]{android.graphics.Rect.class, android.graphics.Rect.class});
                 a = declaredMethod;
                 if (!declaredMethod.isAccessible()) {
                     a.setAccessible(true);
                 }
-            } catch (NoSuchMethodException e) {
+            } catch (java.lang.NoSuchMethodException e) {
             }
         }
     }

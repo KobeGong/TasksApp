@@ -1,7 +1,7 @@
 package defpackage;
 
-/* renamed from: cun  reason: default package */
+/* renamed from: cun reason: default package */
 /* compiled from: PG */
 public interface cun {
-    cun a(String str, Object obj);
+    defpackage.cun a(java.lang.String str, java.lang.Object obj);
 }

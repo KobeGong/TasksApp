@@ -1,20 +1,19 @@
 package defpackage;
 
-/* renamed from: bst  reason: default package */
+/* renamed from: bst reason: default package */
 /* compiled from: PG */
-public final class bst implements bsa {
-    private static final brt a = new bsu();
+public final class bst implements defpackage.bsa {
+    private static final defpackage.brt a = new defpackage.bsu();
 
-    @Override // defpackage.bsa
-    public final brb a(cql cql, String str, int i) {
-        ayp ayp;
-        if (cql instanceof bta) {
-            ayp = ((bta) cql).a;
+    public final defpackage.brb a(defpackage.cql cql, java.lang.String str, int i) {
+        defpackage.ayp ayp;
+        if (cql instanceof defpackage.bta) {
+            ayp = ((defpackage.bta) cql).a;
         } else {
             ayp = null;
         }
-        Integer.valueOf(i);
-        Integer.valueOf(1);
-        return new brb(ayp.a((bca) new bjs(ayp, str, null, i, 1)), a);
+        java.lang.Integer.valueOf(i);
+        java.lang.Integer.valueOf(1);
+        return new defpackage.brb(ayp.a((defpackage.bca) new defpackage.bjs(ayp, str, null, i, 1)), a);
     }
 }

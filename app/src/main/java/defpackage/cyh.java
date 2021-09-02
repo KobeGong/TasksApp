@@ -1,8 +1,8 @@
 package defpackage;
 
-/* renamed from: cyh  reason: default package */
+/* renamed from: cyh reason: default package */
 /* compiled from: PG */
-final class cyh implements Runnable {
+final class cyh implements java.lang.Runnable {
     cyh() {
     }
 

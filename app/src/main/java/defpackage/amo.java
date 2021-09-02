@@ -1,114 +1,108 @@
 package defpackage;
 
-import android.text.TextUtils;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-
-/* renamed from: amo  reason: default package */
+/* renamed from: amo reason: default package */
 /* compiled from: PG */
-public final class amo extends alp {
+public final class amo extends defpackage.alp {
     public static final long serialVersionUID = 1;
-    private final String a;
+    private final java.lang.String a;
     private final int b;
-    private final String c;
-    private transient dby d;
+    private final java.lang.String c;
+    private transient defpackage.dby d;
 
-    public amo(String str, dby dby, int i, String str2) {
+    public amo(java.lang.String str, defpackage.dby dby, int i, java.lang.String str2) {
         this.a = str;
         this.d = dby;
         this.b = i;
         this.c = str2;
     }
 
-    @Override // defpackage.amn
-    public final void b(alv alv) {
+    public final void b(defpackage.alv alv) {
         alv.a(this.a, this.d, this.b, this.c);
     }
 
-    @Override // defpackage.amn
-    public final void a(amb amb) {
-        dca dca;
-        dih dih;
-        czv czv;
-        String str = this.a;
-        dby dby = this.d;
+    public final void a(defpackage.amb amb) {
+        defpackage.dca dca;
+        defpackage.dih dih;
+        defpackage.czv czv;
+        java.lang.String str = this.a;
+        defpackage.dby dby = this.d;
         int i = this.b;
-        String str2 = this.c;
-        dbo[] dboArr = new dbo[1];
-        dii dii = (dii) czu.f.a(bg.ao);
+        java.lang.String str2 = this.c;
+        defpackage.dbo[] dboArr = new defpackage.dbo[1];
+        defpackage.dii dii = (defpackage.dii) defpackage.czu.f.a(defpackage.bg.ao);
         dii.b();
-        czu czu = (czu) dii.a;
+        defpackage.czu czu = (defpackage.czu) dii.a;
         if (str == null) {
-            throw new NullPointerException();
+            throw new java.lang.NullPointerException();
         }
         czu.c = str;
         dii.b();
-        ((czu) dii.a).e = i;
+        ((defpackage.czu) dii.a).e = i;
         if (dby.e == null) {
-            dca = dca.g;
+            dca = defpackage.dca.g;
         } else {
             dca = dby.e;
         }
         dii.b();
-        czu czu2 = (czu) dii.a;
+        defpackage.czu czu2 = (defpackage.czu) dii.a;
         if (dca == null) {
-            throw new NullPointerException();
+            throw new java.lang.NullPointerException();
         }
         czu2.b = dca;
-        crb crb = amb.a;
+        defpackage.crb crb = defpackage.amb.a;
         dii.b();
-        czu czu3 = (czu) dii.a;
+        defpackage.czu czu3 = (defpackage.czu) dii.a;
         if (crb == null) {
-            throw new NullPointerException();
+            throw new java.lang.NullPointerException();
         }
         czu3.a = crb;
-        if (!TextUtils.isEmpty(str2)) {
+        if (!android.text.TextUtils.isEmpty(str2)) {
             dii.b();
-            czu czu4 = (czu) dii.a;
+            defpackage.czu czu4 = (defpackage.czu) dii.a;
             if (str2 == null) {
-                throw new NullPointerException();
+                throw new java.lang.NullPointerException();
             }
             czu4.d = str2;
         }
-        dii d2 = ((dii) dbo.d.a(bg.ao)).d(dby.d);
+        defpackage.dii d2 = ((defpackage.dii) defpackage.dbo.d.a(defpackage.bg.ao)).d(dby.d);
         d2.b();
-        dbo.c((dbo) d2.a, dii);
+        defpackage.dbo.c((defpackage.dbo) d2.a, dii);
         if (d2.b) {
             dih = d2.a;
         } else {
-            dih dih2 = d2.a;
-            djz.a.a(dih2).c(dih2);
+            defpackage.dih dih2 = d2.a;
+            defpackage.djz.a.a((java.lang.Object) dih2).c(dih2);
             d2.b = true;
             dih = d2.a;
         }
-        dih dih3 = dih;
-        if (!dih.a(dih3, Boolean.TRUE.booleanValue())) {
-            throw new dkw();
+        defpackage.dih dih3 = dih;
+        if (!defpackage.dih.a(dih3, java.lang.Boolean.TRUE.booleanValue())) {
+            throw new defpackage.dkw();
         }
-        dboArr[0] = (dbo) dih3;
-        dbp dbp = (dbp) amb.a(dboArr).b.get(0);
+        dboArr[0] = (defpackage.dbo) dih3;
+        defpackage.dbp dbp = (defpackage.dbp) amb.a(dboArr).b.get(0);
         if (dbp.a == 5) {
-            czv = (czv) dbp.b;
+            czv = (defpackage.czv) dbp.b;
         } else {
-            czv = czv.c;
+            czv = defpackage.czv.c;
         }
         if (czv.a != null) {
-            dby dby2 = czv.a;
+            defpackage.dby dby2 = czv.a;
         }
     }
 
-    public final String toString() {
-        String join = TextUtils.join(", ", csp.a(this.a, this.d, Integer.valueOf(this.b), this.c != null ? this.c : "null"));
-        return new StringBuilder(String.valueOf(join).length() + 49).append("AddTask(listId, task, position, parentTaskId): {").append(join).append("}").toString();
+    public final java.lang.String toString() {
+        java.lang.String join = android.text.TextUtils.join(", ", defpackage.csp.a(this.a, this.d, java.lang.Integer.valueOf(this.b), this.c != null ? this.c : "null"));
+        return new java.lang.StringBuilder(java.lang.String.valueOf(join).length() + 49).append("AddTask(listId, task, position, parentTaskId): {").append(join).append("}").toString();
     }
 
-    private final void writeObject(ObjectOutputStream objectOutputStream) {
+    private final void writeObject(java.io.ObjectOutputStream objectOutputStream) {
         objectOutputStream.defaultWriteObject();
-        objectOutputStream.writeObject(bdk.a(this.d));
+        objectOutputStream.writeObject(defpackage.bdk.a((defpackage.dih) this.d));
     }
 
-    private final void readObject(ObjectInputStream objectInputStream) {
+    private final void readObject(java.io.ObjectInputStream objectInputStream) {
         objectInputStream.defaultReadObject();
-        this.d = (dby) bdk.a((byte[]) objectInputStream.readObject(), dby.g);
+        this.d = (defpackage.dby) defpackage.bdk.a((byte[]) objectInputStream.readObject(), (defpackage.dih) defpackage.dby.g);
     }
 }

@@ -1,29 +1,26 @@
 package defpackage;
 
-import android.view.View;
+/* renamed from: akx reason: default package */
+final /* synthetic */ class akx implements android.view.View.OnClickListener {
+    private final defpackage.akv a;
 
-/* access modifiers changed from: package-private */
-/* renamed from: akx  reason: default package */
-public final /* synthetic */ class akx implements View.OnClickListener {
-    private final akv a;
-
-    akx(akv akv) {
+    akx(defpackage.akv akv) {
         this.a = akv;
     }
 
-    public final void onClick(View view) {
-        akv akv = this.a;
+    public final void onClick(android.view.View view) {
+        defpackage.akv akv = this.a;
         if (akv.p != null) {
-            aky aky = akv.p;
+            defpackage.aky aky = akv.p;
             int d = akv.d();
             if (aky.a.b != null) {
-                akz akz = (akz) aky.a.a.get(d);
-                aku aku = aky.a.b;
-                String str = akz.a().b;
-                String str2 = akz.b().d;
+                defpackage.akz akz = (defpackage.akz) aky.a.a.get(d);
+                defpackage.aku aku = aky.a.b;
+                java.lang.String str = akz.a().b;
+                java.lang.String str2 = akz.b().d;
                 FragmentActivity j = aku.a.getActivity();
-                if (j instanceof alh) {
-                    ((alh) j).a(str, str2);
+                if (j instanceof defpackage.alh) {
+                    ((defpackage.alh) j).a(str, str2);
                 }
             }
         }

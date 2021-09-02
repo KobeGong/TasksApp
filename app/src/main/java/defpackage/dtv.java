@@ -1,12 +1,12 @@
 package defpackage;
 
-/* renamed from: dtv  reason: default package */
+/* renamed from: dtv reason: default package */
 /* compiled from: PG */
-final class dtv implements Runnable {
-    private final /* synthetic */ doa a;
-    private final /* synthetic */ dtt b;
+final class dtv implements java.lang.Runnable {
+    private final /* synthetic */ defpackage.doa a;
+    private final /* synthetic */ defpackage.dtt b;
 
-    dtv(dtt dtt, doa doa) {
+    dtv(defpackage.dtt dtt, defpackage.doa doa) {
         this.b = dtt;
         this.a = doa;
     }

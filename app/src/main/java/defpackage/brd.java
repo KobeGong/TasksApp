@@ -1,7 +1,7 @@
 package defpackage;
 
-/* renamed from: brd  reason: default package */
+/* renamed from: brd reason: default package */
 /* compiled from: PG */
 public interface brd {
-    void a(brc brc);
+    void a(defpackage.brc brc);
 }

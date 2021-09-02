@@ -1,23 +1,21 @@
 package defpackage;
 
-import java.util.Map;
-
-/* renamed from: bxd  reason: default package */
+/* renamed from: bxd reason: default package */
 /* compiled from: PG */
 public abstract class bxd {
-    public static bxe e() {
-        bxe bxe = new bxe();
+    public static defpackage.bxe e() {
+        defpackage.bxe bxe = new defpackage.bxe();
         bxe.b = "application/x-protobuf";
         return bxe;
     }
 
-    public abstract String a();
+    public abstract java.lang.String a();
 
     public abstract byte[] b();
 
-    public abstract String c();
+    public abstract java.lang.String c();
 
-    public abstract Map d();
+    public abstract java.util.Map d();
 
     bxd() {
     }

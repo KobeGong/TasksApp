@@ -1,46 +1,32 @@
 package defpackage;
 
-import android.animation.Animator;
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.content.res.Resources;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Animatable;
-import android.graphics.drawable.Drawable;
-import android.view.animation.Interpolator;
-import android.view.animation.LinearInterpolator;
-
-/* renamed from: uc  reason: default package */
+/* renamed from: uc reason: default package */
 /* compiled from: PG */
-public final class uc extends Drawable implements Animatable {
-    public static final Interpolator a = new tt();
-    private static final Interpolator g = new LinearInterpolator();
+public final class uc extends android.graphics.drawable.Drawable implements android.graphics.drawable.Animatable {
+    public static final android.view.animation.Interpolator a = new defpackage.tt();
+    private static final android.view.animation.Interpolator g = new android.view.animation.LinearInterpolator();
     private static final int[] h = {-16777216};
-    public final uf b = new uf();
+    public final defpackage.uf b = new defpackage.uf();
     public float c;
-    public Resources d;
+    public android.content.res.Resources d;
     public float e;
     public boolean f;
-    private Animator i;
+    private android.animation.Animator i;
 
-    public uc(Context context) {
-        this.d = ((Context) jd.a((Object) context)).getResources();
-        uf ufVar = this.b;
+    public uc(android.content.Context context) {
+        this.d = ((android.content.Context) defpackage.jd.a((java.lang.Object) context)).getResources();
+        defpackage.uf ufVar = this.b;
         ufVar.i = h;
         ufVar.a(0);
         this.b.a(2.5f);
         invalidateSelf();
-        uf ufVar2 = this.b;
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        ofFloat.addUpdateListener(new ud(this, ufVar2));
+        defpackage.uf ufVar2 = this.b;
+        android.animation.ValueAnimator ofFloat = android.animation.ValueAnimator.ofFloat(new float[]{0.0f, 1.0f});
+        ofFloat.addUpdateListener(new defpackage.ud(this, ufVar2));
         ofFloat.setRepeatCount(-1);
         ofFloat.setRepeatMode(1);
         ofFloat.setInterpolator(g);
-        ofFloat.addListener(new ue(this, ufVar2));
+        ofFloat.addListener(new defpackage.ue(this, ufVar2));
         this.i = ofFloat;
     }
 
@@ -50,7 +36,7 @@ public final class uc extends Drawable implements Animatable {
     }
 
     public final void a(float f2) {
-        uf ufVar = this.b;
+        defpackage.uf ufVar = this.b;
         if (f2 != ufVar.o) {
             ufVar.o = f2;
         }
@@ -63,15 +49,15 @@ public final class uc extends Drawable implements Animatable {
         invalidateSelf();
     }
 
-    public final void draw(Canvas canvas) {
-        Rect bounds = getBounds();
+    public final void draw(android.graphics.Canvas canvas) {
+        android.graphics.Rect bounds = getBounds();
         canvas.save();
         canvas.rotate(this.c, bounds.exactCenterX(), bounds.exactCenterY());
-        uf ufVar = this.b;
-        RectF rectF = ufVar.a;
+        defpackage.uf ufVar = this.b;
+        android.graphics.RectF rectF = ufVar.a;
         float f2 = ufVar.p + (ufVar.h / 2.0f);
         if (ufVar.p <= 0.0f) {
-            f2 = (((float) Math.min(bounds.width(), bounds.height())) / 2.0f) - Math.max((((float) ufVar.q) * ufVar.o) / 2.0f, ufVar.h / 2.0f);
+            f2 = (((float) java.lang.Math.min(bounds.width(), bounds.height())) / 2.0f) - java.lang.Math.max((((float) ufVar.q) * ufVar.o) / 2.0f, ufVar.h / 2.0f);
         }
         rectF.set(((float) bounds.centerX()) - f2, ((float) bounds.centerY()) - f2, ((float) bounds.centerX()) + f2, f2 + ((float) bounds.centerY()));
         float f3 = (ufVar.e + ufVar.g) * 360.0f;
@@ -85,15 +71,17 @@ public final class uc extends Drawable implements Animatable {
         canvas.drawArc(rectF, f3, f4, false, ufVar.b);
         if (ufVar.m) {
             if (ufVar.n == null) {
-                ufVar.n = new Path();
-                ufVar.n.setFillType(Path.FillType.EVEN_ODD);
+                ufVar.n = new android.graphics.Path();
+                ufVar.n.setFillType(android.graphics.Path.FillType.EVEN_ODD);
             } else {
                 ufVar.n.reset();
             }
+            float min = java.lang.Math.min(rectF.width(), rectF.height()) / 2.0f;
+            float f6 = (((float) ufVar.q) * ufVar.o) / 2.0f;
             ufVar.n.moveTo(0.0f, 0.0f);
             ufVar.n.lineTo(((float) ufVar.q) * ufVar.o, 0.0f);
             ufVar.n.lineTo((((float) ufVar.q) * ufVar.o) / 2.0f, ((float) ufVar.r) * ufVar.o);
-            ufVar.n.offset(((Math.min(rectF.width(), rectF.height()) / 2.0f) + rectF.centerX()) - ((((float) ufVar.q) * ufVar.o) / 2.0f), rectF.centerY() + (ufVar.h / 2.0f));
+            ufVar.n.offset((min + rectF.centerX()) - f6, rectF.centerY() + (ufVar.h / 2.0f));
             ufVar.n.close();
             ufVar.c.setColor(ufVar.t);
             ufVar.c.setAlpha(ufVar.s);
@@ -114,7 +102,7 @@ public final class uc extends Drawable implements Animatable {
         return this.b.s;
     }
 
-    public final void setColorFilter(ColorFilter colorFilter) {
+    public final void setColorFilter(android.graphics.ColorFilter colorFilter) {
         this.b.b.setColorFilter(colorFilter);
         invalidateSelf();
     }
@@ -151,7 +139,7 @@ public final class uc extends Drawable implements Animatable {
         invalidateSelf();
     }
 
-    static void a(float f2, uf ufVar) {
+    static void a(float f2, defpackage.uf ufVar) {
         if (f2 > 0.75f) {
             float f3 = (f2 - 0.75f) / 0.25f;
             int b2 = ufVar.b();

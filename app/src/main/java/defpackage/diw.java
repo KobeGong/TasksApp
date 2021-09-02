@@ -1,15 +1,11 @@
 package defpackage;
 
-import java.util.Iterator;
-import java.util.Map;
-
-/* access modifiers changed from: package-private */
-/* renamed from: diw  reason: default package */
+/* renamed from: diw reason: default package */
 /* compiled from: PG */
-public final class diw implements Iterator {
-    private Iterator a;
+final class diw implements java.util.Iterator {
+    private java.util.Iterator a;
 
-    public diw(Iterator it) {
+    public diw(java.util.Iterator it) {
         this.a = it;
     }
 
@@ -21,11 +17,10 @@ public final class diw implements Iterator {
         this.a.remove();
     }
 
-    @Override // java.util.Iterator
-    public final /* synthetic */ Object next() {
-        Map.Entry entry = (Map.Entry) this.a.next();
-        if (entry.getValue() instanceof diu) {
-            return new div(entry);
+    public final /* synthetic */ java.lang.Object next() {
+        java.util.Map.Entry entry = (java.util.Map.Entry) this.a.next();
+        if (entry.getValue() instanceof defpackage.diu) {
+            return new defpackage.div(entry);
         }
         return entry;
     }

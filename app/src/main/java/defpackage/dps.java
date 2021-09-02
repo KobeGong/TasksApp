@@ -1,6 +1,6 @@
 package defpackage;
 
-/* renamed from: dps  reason: default package */
+/* renamed from: dps reason: default package */
 /* compiled from: PG */
 public enum dps {
     NONE,

@@ -1,9 +1,6 @@
 package com.google.android.libraries.performance.primes;
 
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Target;
-
-@Target({ElementType.CONSTRUCTOR, ElementType.METHOD})
+@java.lang.annotation.Target({java.lang.annotation.ElementType.CONSTRUCTOR, java.lang.annotation.ElementType.METHOD})
 /* compiled from: PG */
 public @interface DoNotKeep {
 }

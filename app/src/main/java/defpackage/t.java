@@ -1,7 +1,7 @@
 package defpackage;
 
-/* renamed from: t  reason: default package */
+/* renamed from: t reason: default package */
 /* compiled from: PG */
-public interface t extends x {
-    void a(y yVar, v vVar);
+public interface t extends LifecycleObserver {
+    void a(LifecycleOwner yVar, defpackage.v vVar);
 }

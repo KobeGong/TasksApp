@@ -1,13 +1,13 @@
 package defpackage;
 
-/* renamed from: cvz  reason: default package */
+/* renamed from: cvz reason: default package */
 /* compiled from: PG */
 public abstract class cvz {
-    cvz(cts cts) {
-        cub.a(cts, "log format");
+    cvz(defpackage.cts cts) {
+        defpackage.cub.a((java.lang.Object) cts, "log format");
     }
 
-    public abstract void a(cvy cvy);
+    public abstract void a(defpackage.cvy cvy);
 
-    public abstract void a(StringBuilder sb, String str, int i, int i2);
+    public abstract void a(java.lang.StringBuilder sb, java.lang.String str, int i, int i2);
 }

@@ -1,14 +1,14 @@
 package defpackage;
 
-/* renamed from: eij  reason: default package */
+/* renamed from: eij reason: default package */
 /* compiled from: PG */
-final class eij implements Runnable {
+final class eij implements java.lang.Runnable {
     private final /* synthetic */ long a;
     private final /* synthetic */ int b;
     private final /* synthetic */ boolean c;
-    private final /* synthetic */ eii d;
+    private final /* synthetic */ defpackage.eii d;
 
-    eij(eii eii, long j, int i, boolean z) {
+    eij(defpackage.eii eii, long j, int i, boolean z) {
         this.d = eii;
         this.a = j;
         this.b = i;

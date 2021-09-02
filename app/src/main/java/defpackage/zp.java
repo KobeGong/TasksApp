@@ -1,36 +1,27 @@
 package defpackage;
 
-import android.content.Context;
-import android.view.ActionProvider;
-import android.view.MenuItem;
-import android.view.View;
-
-/* renamed from: zp  reason: default package */
+/* renamed from: zp reason: default package */
 /* compiled from: PG */
-final class zp extends zk implements ActionProvider.VisibilityListener {
-    private rt c;
+final class zp extends defpackage.zk implements android.view.ActionProvider.VisibilityListener {
+    private defpackage.rt c;
 
-    public zp(zo zoVar, Context context, ActionProvider actionProvider) {
+    public zp(defpackage.zo zoVar, android.content.Context context, android.view.ActionProvider actionProvider) {
         super(zoVar, actionProvider);
     }
 
-    @Override // defpackage.rs
-    public final View a(MenuItem menuItem) {
+    public final android.view.View a(android.view.MenuItem menuItem) {
         return this.b.onCreateActionView(menuItem);
     }
 
-    @Override // defpackage.rs
     public final boolean b() {
         return this.b.overridesItemVisibility();
     }
 
-    @Override // defpackage.rs
     public final boolean c() {
         return this.b.isVisible();
     }
 
-    @Override // defpackage.rs
-    public final void a(rt rtVar) {
+    public final void a(defpackage.rt rtVar) {
         this.c = rtVar;
         this.b.setVisibilityListener(this);
     }

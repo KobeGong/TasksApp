@@ -1,11 +1,9 @@
 package defpackage;
 
-import android.view.View;
-
-/* renamed from: adx  reason: default package */
+/* renamed from: adx reason: default package */
 /* compiled from: PG */
 final class adx {
-    public aep a;
+    public defpackage.aep a;
     public int b;
     public int c;
     public boolean d;
@@ -15,7 +13,7 @@ final class adx {
         a();
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public final void a() {
         this.b = -1;
         this.c = Integer.MIN_VALUE;
@@ -23,7 +21,7 @@ final class adx {
         this.e = false;
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public final void b() {
         int b2;
         if (this.d) {
@@ -34,11 +32,11 @@ final class adx {
         this.c = b2;
     }
 
-    public final String toString() {
+    public final java.lang.String toString() {
         return "AnchorInfo{mPosition=" + this.b + ", mCoordinate=" + this.c + ", mLayoutFromEnd=" + this.d + ", mValid=" + this.e + '}';
     }
 
-    public final void a(View view, int i) {
+    public final void a(android.view.View view, int i) {
         int a2 = this.a.a();
         if (a2 >= 0) {
             b(view, i);
@@ -51,9 +49,9 @@ final class adx {
             if (c2 > 0) {
                 int e2 = this.c - this.a.e(view);
                 int b2 = this.a.b();
-                int min = e2 - (b2 + Math.min(this.a.a(view) - b2, 0));
+                int min = e2 - (b2 + java.lang.Math.min(this.a.a(view) - b2, 0));
                 if (min < 0) {
-                    this.c = Math.min(c2, -min) + this.c;
+                    this.c = java.lang.Math.min(c2, -min) + this.c;
                     return;
                 }
                 return;
@@ -64,14 +62,14 @@ final class adx {
         int b3 = a3 - this.a.b();
         this.c = a3;
         if (b3 > 0) {
-            int c3 = (this.a.c() - Math.min(0, (this.a.c() - a2) - this.a.b(view))) - (a3 + this.a.e(view));
+            int c3 = (this.a.c() - java.lang.Math.min(0, (this.a.c() - a2) - this.a.b(view))) - (a3 + this.a.e(view));
             if (c3 < 0) {
-                this.c -= Math.min(b3, -c3);
+                this.c -= java.lang.Math.min(b3, -c3);
             }
         }
     }
 
-    public final void b(View view, int i) {
+    public final void b(android.view.View view, int i) {
         if (this.d) {
             this.c = this.a.b(view) + this.a.a();
         } else {

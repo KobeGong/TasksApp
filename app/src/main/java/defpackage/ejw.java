@@ -1,26 +1,27 @@
 package defpackage;
 
-/* renamed from: ejw  reason: default package */
+/* renamed from: ejw reason: default package */
 /* compiled from: PG */
 public final class ejw {
-    public ech a;
-    private Boolean b;
+    public defpackage.ech a;
+    private java.lang.Boolean b;
 
-    public final ejw a(boolean z) {
-        this.b = Boolean.valueOf(z);
+    public final defpackage.ejw a(boolean z) {
+        this.b = java.lang.Boolean.valueOf(z);
         return this;
     }
 
-    public final ebw a() {
-        String str = "";
+    public final defpackage.ebw a() {
+        java.lang.String str = "";
         if (this.b == null) {
-            str = String.valueOf(str).concat(" sampleToLocalSpanStore");
+            str = java.lang.String.valueOf(str).concat(" sampleToLocalSpanStore");
         }
         if (str.isEmpty()) {
-            return new ebs(this.b.booleanValue(), this.a);
+            return new defpackage.ebs(this.b.booleanValue(), this.a);
         }
-        String valueOf = String.valueOf(str);
-        throw new IllegalStateException(valueOf.length() != 0 ? "Missing required properties:".concat(valueOf) : new String("Missing required properties:"));
+        java.lang.String str2 = "Missing required properties:";
+        java.lang.String valueOf = java.lang.String.valueOf(str);
+        throw new java.lang.IllegalStateException(valueOf.length() != 0 ? str2.concat(valueOf) : new java.lang.String(str2));
     }
 
     public ejw() {

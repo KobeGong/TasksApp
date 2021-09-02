@@ -1,29 +1,22 @@
 package defpackage;
 
-import android.content.Context;
-import android.text.TextUtils;
-import com.google.android.apps.tasks.R;
-import java.util.ArrayList;
-import java.util.Arrays;
-
-/* renamed from: amz  reason: default package */
+/* renamed from: amz reason: default package */
 /* compiled from: PG */
-public final class amz implements amn {
+public final class amz implements defpackage.amn {
     public static final long serialVersionUID = 1;
-    private final String a;
-    private final String[] b;
+    private final java.lang.String a;
+    private final java.lang.String[] b;
     private final boolean c;
-    private transient ajq d;
+    private transient defpackage.ajq d;
     private transient int e;
 
-    public amz(String str, boolean z, String... strArr) {
+    public amz(java.lang.String str, boolean z, java.lang.String... strArr) {
         this.a = str;
         this.b = strArr;
         this.c = z;
     }
 
-    @Override // defpackage.amn
-    public final void b(alv alv) {
+    public final void b(defpackage.alv alv) {
         this.d = alv.b(this.a);
         this.e = this.b.length;
         for (int length = this.b.length - 1; length >= 0; length--) {
@@ -31,84 +24,83 @@ public final class amz implements amn {
         }
     }
 
-    @Override // defpackage.amn
-    public final void a(amb amb) {
-        dbg dbg;
-        dih dih;
-        String str = this.a;
+    public final void a(defpackage.amb amb) {
+        defpackage.dbg dbg;
+        defpackage.dih dih;
+        java.lang.String str = this.a;
         boolean z = this.c;
-        String[] strArr = this.b;
-        ArrayList arrayList = new ArrayList();
+        java.lang.String[] strArr = this.b;
+        java.util.ArrayList arrayList = new java.util.ArrayList();
         for (int length = strArr.length - 1; length >= 0; length--) {
-            dii e2 = ((dii) dbo.d.a(bg.ao)).d(strArr[length]).e(((dii) dbb.e.a(bg.ao)).b(((dii) dca.g.a(bg.ao)).a(z)).a(cqz.a().a(1).a().b()));
+            defpackage.dii e2 = ((defpackage.dii) defpackage.dbo.d.a(defpackage.bg.ao)).d(strArr[length]).e(((defpackage.dii) defpackage.dbb.e.a(defpackage.bg.ao)).b(((defpackage.dii) defpackage.dca.g.a(defpackage.bg.ao)).a(z)).a(defpackage.cqz.a().a(1).a().b()));
             if (e2.b) {
                 dih = e2.a;
             } else {
-                dih dih2 = e2.a;
-                djz.a.a(dih2).c(dih2);
+                defpackage.dih dih2 = e2.a;
+                defpackage.djz.a.a((java.lang.Object) dih2).c(dih2);
                 e2.b = true;
                 dih = e2.a;
             }
-            dih dih3 = dih;
-            if (!dih.a(dih3, Boolean.TRUE.booleanValue())) {
-                throw new dkw();
+            defpackage.dih dih3 = dih;
+            if (!defpackage.dih.a(dih3, java.lang.Boolean.TRUE.booleanValue())) {
+                throw new defpackage.dkw();
             }
-            arrayList.add((dbo) dih3);
+            arrayList.add((defpackage.dbo) dih3);
             if (!z) {
-                arrayList.add(amb.a(str, strArr[length], 0, null));
+                arrayList.add(defpackage.amb.a(str, strArr[length], 0, null));
             }
         }
-        dbp dbp = (dbp) amb.a((dbo[]) arrayList.toArray(new dbo[0])).b.get(0);
+        defpackage.dbp dbp = (defpackage.dbp) amb.a((defpackage.dbo[]) arrayList.toArray(new defpackage.dbo[0])).b.get(0);
         if (dbp.a == 8) {
-            dbg = (dbg) dbp.b;
+            dbg = (defpackage.dbg) dbp.b;
         } else {
-            dbg = dbg.d;
+            dbg = defpackage.dbg.d;
         }
         if (dbg.b != null) {
-            dby dby = dbg.b;
+            defpackage.dby dby = dbg.b;
         }
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a, Integer.valueOf(Arrays.hashCode(this.b)), Boolean.valueOf(this.c)});
+        return java.util.Arrays.hashCode(new java.lang.Object[]{this.a, java.lang.Integer.valueOf(java.util.Arrays.hashCode(this.b)), java.lang.Boolean.valueOf(this.c)});
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         if (this == obj) {
             return true;
         }
-        if (!(obj instanceof amz)) {
+        if (!(obj instanceof defpackage.amz)) {
             return false;
         }
-        amz amz = (amz) obj;
-        return cru.d(this.a, amz.a) && Arrays.equals(this.b, amz.b) && cru.d(Boolean.valueOf(this.c), Boolean.valueOf(amz.c));
+        defpackage.amz amz = (defpackage.amz) obj;
+        if (!defpackage.cru.d(this.a, amz.a) || !java.util.Arrays.equals(this.b, amz.b) || !defpackage.cru.d(java.lang.Boolean.valueOf(this.c), java.lang.Boolean.valueOf(amz.c))) {
+            return false;
+        }
+        return true;
     }
 
-    public final String toString() {
-        String str = this.a;
+    public final java.lang.String toString() {
+        java.lang.String str = this.a;
         boolean z = this.c;
-        String join = TextUtils.join(", ", this.b);
-        return new StringBuilder(String.valueOf(str).length() + 56 + String.valueOf(join).length()).append("UpdateTaskStatus(listId, status, taskId...): {").append(str).append(", ").append(z).append(", ").append(join).append("}").toString();
+        java.lang.String join = android.text.TextUtils.join(", ", this.b);
+        return new java.lang.StringBuilder(java.lang.String.valueOf(str).length() + 56 + java.lang.String.valueOf(join).length()).append("UpdateTaskStatus(listId, status, taskId...): {").append(str).append(", ").append(z).append(", ").append(join).append("}").toString();
     }
 
-    @Override // defpackage.amn
     public final boolean a() {
         return this.b.length > 1;
     }
 
-    @Override // defpackage.amn
-    public final void a(alv alv) {
+    public final void a(defpackage.alv alv) {
         if (this.e == 0) {
-            throw new amh();
+            throw new defpackage.amh();
         }
         alv.a(this.a, this.d);
         this.d = null;
         this.e = 0;
-        alq.a().a(alv.a, this.a);
+        defpackage.alq.a().a(alv.a, this.a);
     }
 
-    @Override // defpackage.amn
-    public final String a(Context context) {
-        return aaz.a(context, this.c ? R.string.operation_task_completed : R.string.operation_task_opened, "taskCount", Integer.valueOf(this.e));
+    public final java.lang.String a(android.content.Context context) {
+        return defpackage.aaz.a(context, this.c ? 2131951791 : 2131951796, "taskCount", java.lang.Integer.valueOf(this.e));
     }
 }

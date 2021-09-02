@@ -1,10 +1,8 @@
 package defpackage;
 
-import android.view.animation.Interpolator;
-
-/* renamed from: vw  reason: default package */
+/* renamed from: vw reason: default package */
 /* compiled from: PG */
-final class vw implements Interpolator {
+final class vw implements android.view.animation.Interpolator {
     vw() {
     }
 

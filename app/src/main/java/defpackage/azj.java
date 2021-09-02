@@ -1,17 +1,15 @@
 package defpackage;
 
-/* renamed from: azj  reason: default package */
+/* renamed from: azj reason: default package */
 /* compiled from: PG */
-final class azj extends bag {
-    private /* synthetic */ azi b;
+final class azj extends defpackage.bag {
+    private /* synthetic */ defpackage.azi b;
 
-    /* JADX INFO: super call moved to the top of the method (can break code semantics) */
-    azj(azi azi, bae bae) {
-        super(bae);
+    azj(defpackage.azi azi, defpackage.bae bae) {
         this.b = azi;
+        super(bae);
     }
 
-    @Override // defpackage.bag
     public final void a() {
         this.b.a(1);
     }

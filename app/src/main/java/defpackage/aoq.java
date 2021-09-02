@@ -1,25 +1,20 @@
 package defpackage;
 
-import android.content.Context;
-
-/* renamed from: aoq  reason: default package */
+/* renamed from: aoq reason: default package */
 /* compiled from: PG */
-public class aoq implements aoe {
+public class aoq implements defpackage.aoe {
     aoq() {
     }
 
-    @Override // defpackage.aoe
-    public String a(Context context) {
+    public java.lang.String a(android.content.Context context) {
         return null;
     }
 
-    @Override // defpackage.aoe
-    public aof a(Context context, String str) {
-        return aoe.a;
+    public defpackage.aof a(android.content.Context context, java.lang.String str) {
+        return defpackage.aoe.a;
     }
 
-    @Override // defpackage.aoe
-    public final void a(String str) {
+    public final void a(java.lang.String str) {
     }
 
     public aoq(byte b) {

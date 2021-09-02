@@ -1,28 +1,25 @@
 package defpackage;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-/* renamed from: bmg  reason: default package */
+/* renamed from: bmg reason: default package */
 /* compiled from: PG */
-public final class bmg extends biq {
-    public static final Parcelable.Creator CREATOR = new bmt();
+public final class bmg extends defpackage.biq {
+    public static final android.os.Parcelable.Creator CREATOR = new defpackage.bmt();
     private final boolean a;
-    private final String b;
+    private final java.lang.String b;
 
-    bmg(boolean z, String str) {
+    bmg(boolean z, java.lang.String str) {
         this.a = z;
         this.b = str;
     }
 
-    public final String toString() {
-        return azb.a(this).a("isLastCallback", Boolean.valueOf(this.a)).a("query", this.b).toString();
+    public final java.lang.String toString() {
+        return defpackage.azb.a((java.lang.Object) this).a("isLastCallback", java.lang.Boolean.valueOf(this.a)).a("query", this.b).toString();
     }
 
-    public final void writeToParcel(Parcel parcel, int i) {
-        int q = bjr.q(parcel, 20293);
-        bjr.a(parcel, 2, this.a);
-        bjr.a(parcel, 3, this.b);
-        bjr.r(parcel, q);
+    public final void writeToParcel(android.os.Parcel parcel, int i) {
+        int q = defpackage.bjr.q(parcel, 20293);
+        defpackage.bjr.a(parcel, 2, this.a);
+        defpackage.bjr.a(parcel, 3, this.b);
+        defpackage.bjr.r(parcel, q);
     }
 }

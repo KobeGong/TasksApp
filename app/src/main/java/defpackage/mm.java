@@ -1,22 +1,18 @@
 package defpackage;
 
-import android.view.View;
-import java.util.ArrayList;
-
-/* access modifiers changed from: package-private */
-/* renamed from: mm  reason: default package */
+/* renamed from: mm reason: default package */
 /* compiled from: PG */
-public final class mm implements Runnable {
-    private final /* synthetic */ Object a;
-    private final /* synthetic */ mv b;
-    private final /* synthetic */ View c;
-    private final /* synthetic */ lc d;
-    private final /* synthetic */ ArrayList e;
-    private final /* synthetic */ ArrayList f;
-    private final /* synthetic */ ArrayList g;
-    private final /* synthetic */ Object h;
+final class mm implements java.lang.Runnable {
+    private final /* synthetic */ java.lang.Object a;
+    private final /* synthetic */ defpackage.mv b;
+    private final /* synthetic */ android.view.View c;
+    private final /* synthetic */ Fragment d;
+    private final /* synthetic */ java.util.ArrayList e;
+    private final /* synthetic */ java.util.ArrayList f;
+    private final /* synthetic */ java.util.ArrayList g;
+    private final /* synthetic */ java.lang.Object h;
 
-    mm(Object obj, mv mvVar, View view, lc lcVar, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, Object obj2) {
+    mm(java.lang.Object obj, defpackage.mv mvVar, android.view.View view, Fragment lcVar, java.util.ArrayList arrayList, java.util.ArrayList arrayList2, java.util.ArrayList arrayList3, java.lang.Object obj2) {
         this.a = obj;
         this.b = mvVar;
         this.c = view;
@@ -30,11 +26,11 @@ public final class mm implements Runnable {
     public final void run() {
         if (this.a != null) {
             this.b.c(this.a, this.c);
-            this.f.addAll(mk.a(this.b, this.a, this.d, this.e, this.c));
+            this.f.addAll(defpackage.mk.a(this.b, this.a, this.d, this.e, this.c));
         }
         if (this.g != null) {
             if (this.h != null) {
-                ArrayList arrayList = new ArrayList();
+                java.util.ArrayList arrayList = new java.util.ArrayList();
                 arrayList.add(this.c);
                 this.b.b(this.h, this.g, arrayList);
             }

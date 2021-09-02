@@ -1,18 +1,13 @@
 package defpackage;
 
-import android.util.Log;
-import android.view.MenuItem;
-import android.view.SubMenu;
-import android.view.View;
-
-/* renamed from: rs  reason: default package */
+/* renamed from: rs reason: default package */
 /* compiled from: PG */
 public abstract class rs {
-    public rt a;
+    public defpackage.rt a;
 
-    public abstract View a();
+    public abstract android.view.View a();
 
-    public View a(MenuItem menuItem) {
+    public android.view.View a(android.view.MenuItem menuItem) {
         return a();
     }
 
@@ -32,12 +27,12 @@ public abstract class rs {
         return false;
     }
 
-    public void a(SubMenu subMenu) {
+    public void a(android.view.SubMenu subMenu) {
     }
 
-    public void a(rt rtVar) {
+    public void a(defpackage.rt rtVar) {
         if (this.a != null) {
-            Log.w("ActionProvider(support)", "setVisibilityListener: Setting a new ActionProvider.VisibilityListener when one is already set. Are you reusing this " + getClass().getSimpleName() + " instance while it is still in use somewhere else?");
+            android.util.Log.w("ActionProvider(support)", "setVisibilityListener: Setting a new ActionProvider.VisibilityListener when one is already set. Are you reusing this " + getClass().getSimpleName() + " instance while it is still in use somewhere else?");
         }
         this.a = rtVar;
     }

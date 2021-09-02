@@ -1,10 +1,10 @@
 package defpackage;
 
-/* renamed from: dfs  reason: default package */
+/* renamed from: dfs reason: default package */
 /* compiled from: PG */
-public final class dfs extends dih implements djq {
-    public static final dfs d = new dfs();
-    private static volatile djx e;
+public final class dfs extends defpackage.dih implements defpackage.djq {
+    public static final defpackage.dfs d = new defpackage.dfs();
+    private static volatile defpackage.djx e;
     public int a;
     public boolean b;
     public boolean c;
@@ -13,41 +13,42 @@ public final class dfs extends dih implements djq {
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.dih
-    public final Object a(int i) {
-        djx djx;
+    public final java.lang.Object a(int i) {
+        defpackage.djx djx;
         switch (i - 1) {
             case 0:
-                return (byte) 1;
+                return java.lang.Byte.valueOf(1);
             case 1:
                 return null;
             case 2:
-                return new dkb(d, "\u0001\u0002\u0000\u0001\u0002\u0003\u0002\u0000\u0000\u0000\u0002\u0007\u0001\u0003\u0007\u0002", new Object[]{"a", "b", "c"});
+                java.lang.Object[] objArr = {"a", "b", "c"};
+                return new defpackage.dkb(d, "\u0001\u0002\u0000\u0001\u0002\u0003\u0002\u0000\u0000\u0000\u0002\u0007\u0001\u0003\u0007\u0002", objArr);
             case 3:
-                return new dfs();
+                return new defpackage.dfs();
             case 4:
-                return new dii((boolean[][][][][][][][][][][][][][][][][][][][][]) null);
+                return new defpackage.dii((boolean[][][][][][][][][][][][][][][][][][][][][]) null);
             case 5:
                 return d;
             case 6:
-                djx djx2 = e;
+                defpackage.djx djx2 = e;
                 if (djx2 != null) {
                     return djx2;
                 }
-                synchronized (dfs.class) {
+                synchronized (defpackage.dfs.class) {
                     djx = e;
                     if (djx == null) {
-                        djx = new dgr(d);
+                        djx = new defpackage.dgr(d);
                         e = djx;
                     }
                 }
                 return djx;
             default:
-                throw new UnsupportedOperationException();
+                throw new java.lang.UnsupportedOperationException();
         }
     }
 
     static {
-        dih.t.put(dfs.class, d);
+        defpackage.dfs dfs = d;
+        defpackage.dih.t.put(defpackage.dfs.class, dfs);
     }
 }

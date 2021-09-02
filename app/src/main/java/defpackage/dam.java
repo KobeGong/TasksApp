@@ -1,50 +1,51 @@
 package defpackage;
 
-/* renamed from: dam  reason: default package */
+/* renamed from: dam reason: default package */
 /* compiled from: PG */
-public final class dam extends dih implements djq {
-    public static final dam a = new dam();
-    private static volatile djx b;
+public final class dam extends defpackage.dih implements defpackage.djq {
+    public static final defpackage.dam a = new defpackage.dam();
+    private static volatile defpackage.djx b;
 
     private dam() {
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.dih
-    public final Object a(int i) {
-        djx djx;
+    public final java.lang.Object a(int i) {
+        defpackage.djx djx;
         switch (i - 1) {
             case 0:
-                return (byte) 1;
+                return java.lang.Byte.valueOf(1);
             case 1:
                 return null;
             case 2:
-                return new dkb(a, "\u0000\u0000", new Object[0]);
+                java.lang.Object[] objArr = new java.lang.Object[0];
+                return new defpackage.dkb(a, "\u0000\u0000", objArr);
             case 3:
-                return new dam();
+                return new defpackage.dam();
             case 4:
-                return new dii((char[][][][]) null);
+                return new defpackage.dii((char[][][][]) null);
             case 5:
                 return a;
             case 6:
-                djx djx2 = b;
+                defpackage.djx djx2 = b;
                 if (djx2 != null) {
                     return djx2;
                 }
-                synchronized (dam.class) {
+                synchronized (defpackage.dam.class) {
                     djx = b;
                     if (djx == null) {
-                        djx = new dgr(a);
+                        djx = new defpackage.dgr(a);
                         b = djx;
                     }
                 }
                 return djx;
             default:
-                throw new UnsupportedOperationException();
+                throw new java.lang.UnsupportedOperationException();
         }
     }
 
     static {
-        dih.t.put(dam.class, a);
+        defpackage.dam dam = a;
+        defpackage.dih.t.put(defpackage.dam.class, dam);
     }
 }

@@ -1,18 +1,16 @@
 package defpackage;
 
-/* renamed from: dot  reason: default package */
+/* renamed from: dot reason: default package */
 /* compiled from: PG */
-final class dot implements dov {
+final class dot implements defpackage.dov {
     dot() {
     }
 
-    @Override // defpackage.dov
-    public final /* synthetic */ Object a(String str) {
+    public final /* synthetic */ java.lang.Object a(java.lang.String str) {
         return str;
     }
 
-    @Override // defpackage.dov
-    public final /* synthetic */ String a(Object obj) {
-        return (String) obj;
+    public final /* synthetic */ java.lang.String a(java.lang.Object obj) {
+        return (java.lang.String) obj;
     }
 }

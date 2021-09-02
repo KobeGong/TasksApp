@@ -1,14 +1,14 @@
 package defpackage;
 
-/* renamed from: dul  reason: default package */
+/* renamed from: dul reason: default package */
 /* compiled from: PG */
-final class dul implements Runnable {
-    private final /* synthetic */ dpw a;
+final class dul implements java.lang.Runnable {
+    private final /* synthetic */ defpackage.dpw a;
     private final /* synthetic */ int b;
-    private final /* synthetic */ dor c;
-    private final /* synthetic */ dug d;
+    private final /* synthetic */ defpackage.dor c;
+    private final /* synthetic */ defpackage.dug d;
 
-    dul(dug dug, dpw dpw, int i, dor dor) {
+    dul(defpackage.dug dug, defpackage.dpw dpw, int i, defpackage.dor dor) {
         this.d = dug;
         this.a = dpw;
         this.b = i;

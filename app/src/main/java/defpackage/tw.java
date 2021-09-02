@@ -1,24 +1,16 @@
 package defpackage;
 
-import android.content.res.Resources;
-import android.util.DisplayMetrics;
-import android.view.View;
-import android.view.ViewConfiguration;
-import android.view.animation.AccelerateInterpolator;
-import android.view.animation.AnimationUtils;
-import android.view.animation.Interpolator;
-
-/* renamed from: tw  reason: default package */
+/* renamed from: tw reason: default package */
 /* compiled from: PG */
-public abstract class tw implements View.OnTouchListener {
-    private static final int q = ViewConfiguration.getTapTimeout();
-    public final tx a = new tx();
-    public final View b;
+public abstract class tw implements android.view.View.OnTouchListener {
+    private static final int q = android.view.ViewConfiguration.getTapTimeout();
+    public final defpackage.tx a = new defpackage.tx();
+    public final android.view.View b;
     public boolean c;
     public boolean d;
     public boolean e;
-    private final Interpolator f = new AccelerateInterpolator();
-    private Runnable g;
+    private final android.view.animation.Interpolator f = new android.view.animation.AccelerateInterpolator();
+    private java.lang.Runnable g;
     private float[] h = {0.0f, 0.0f};
     private float[] i = {Float.MAX_VALUE, Float.MAX_VALUE};
     private int j;
@@ -29,13 +21,15 @@ public abstract class tw implements View.OnTouchListener {
     private boolean o;
     private boolean p;
 
-    public tw(View view) {
+    public tw(android.view.View view) {
         this.b = view;
-        DisplayMetrics displayMetrics = Resources.getSystem().getDisplayMetrics();
-        float f2 = (float) ((int) ((1575.0f * displayMetrics.density) + 0.5f));
+        android.util.DisplayMetrics displayMetrics = android.content.res.Resources.getSystem().getDisplayMetrics();
+        int i2 = (int) ((1575.0f * displayMetrics.density) + 0.5f);
+        int i3 = (int) ((displayMetrics.density * 315.0f) + 0.5f);
+        float f2 = (float) i2;
         this.n[0] = f2 / 1000.0f;
         this.n[1] = f2 / 1000.0f;
-        float f3 = (float) ((int) ((displayMetrics.density * 315.0f) + 0.5f));
+        float f3 = (float) i3;
         this.m[0] = f3 / 1000.0f;
         this.m[1] = f3 / 1000.0f;
         this.j = 1;
@@ -56,7 +50,7 @@ public abstract class tw implements View.OnTouchListener {
 
     public abstract boolean b(int i2);
 
-    public final tw a(boolean z) {
+    public final defpackage.tw a(boolean z) {
         if (this.p && !z) {
             c();
         }
@@ -64,21 +58,47 @@ public abstract class tw implements View.OnTouchListener {
         return this;
     }
 
-    /* JADX INFO: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARNING: Removed duplicated region for block: B:12:0x004f  */
-    /* Code decompiled incorrectly, please refer to instructions dump. */
-    public boolean onTouch(android.view.View r7, android.view.MotionEvent r8) {
-        /*
-        // Method dump skipped, instructions count: 134
-        */
-        throw new UnsupportedOperationException("Method not decompiled: defpackage.tw.onTouch(android.view.View, android.view.MotionEvent):boolean");
+    public boolean onTouch(android.view.View view, android.view.MotionEvent motionEvent) {
+        if (this.p) {
+            switch (motionEvent.getActionMasked()) {
+                case 0:
+                    this.d = true;
+                    this.o = false;
+                    break;
+                case 1:
+                case 3:
+                    c();
+                    break;
+                case 2:
+                    break;
+            }
+            float a2 = a(0, motionEvent.getX(), (float) view.getWidth(), (float) this.b.getWidth());
+            float a3 = a(1, motionEvent.getY(), (float) view.getHeight(), (float) this.b.getHeight());
+            defpackage.tx txVar = this.a;
+            txVar.c = a2;
+            txVar.d = a3;
+            if (!this.e && a()) {
+                if (this.g == null) {
+                    this.g = new defpackage.ty(this);
+                }
+                this.e = true;
+                this.c = true;
+                if (this.o || this.k <= 0) {
+                    this.g.run();
+                } else {
+                    defpackage.sn.a(this.b, this.g, (long) this.k);
+                }
+                this.o = true;
+            }
+        }
+        return false;
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public final boolean a() {
-        tx txVar = this.a;
-        int abs = (int) (txVar.d / Math.abs(txVar.d));
-        int abs2 = (int) (txVar.c / Math.abs(txVar.c));
+        defpackage.tx txVar = this.a;
+        int abs = (int) (txVar.d / java.lang.Math.abs(txVar.d));
+        int abs2 = (int) (txVar.c / java.lang.Math.abs(txVar.c));
         if (abs != 0 && b(abs)) {
             return true;
         }
@@ -93,8 +113,8 @@ public abstract class tw implements View.OnTouchListener {
             this.e = false;
             return;
         }
-        tx txVar = this.a;
-        long currentAnimationTimeMillis = AnimationUtils.currentAnimationTimeMillis();
+        defpackage.tx txVar = this.a;
+        long currentAnimationTimeMillis = android.view.animation.AnimationUtils.currentAnimationTimeMillis();
         int i2 = (int) (currentAnimationTimeMillis - txVar.e);
         int i3 = txVar.b;
         if (i2 <= i3) {
@@ -187,7 +207,10 @@ public abstract class tw implements View.OnTouchListener {
                 if (f2 >= 0.0f) {
                     return 1.0f - (f2 / f3);
                 }
-                return (!this.e || this.j != 1) ? 0.0f : 1.0f;
+                if (!this.e || this.j != 1) {
+                    return 0.0f;
+                }
+                return 1.0f;
             case 2:
                 if (f2 < 0.0f) {
                     return f2 / (-f3);
@@ -202,6 +225,9 @@ public abstract class tw implements View.OnTouchListener {
         if (f2 > f4) {
             return f4;
         }
-        return f2 < f3 ? f3 : f2;
+        if (f2 < f3) {
+            return f3;
+        }
+        return f2;
     }
 }

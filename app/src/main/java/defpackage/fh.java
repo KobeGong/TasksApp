@@ -1,13 +1,12 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: fh  reason: default package */
+/* renamed from: fh reason: default package */
 /* compiled from: PG */
-public final class fh implements ff {
-    public final MenuItemImpl a;
+final class fh implements defpackage.ff {
+    public final defpackage.zi a;
     public boolean b;
 
-    fh(MenuItemImpl ziVar) {
+    fh(defpackage.zi ziVar) {
         this.a = ziVar;
     }
 }

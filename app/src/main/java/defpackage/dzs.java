@@ -1,18 +1,14 @@
 package defpackage;
 
-import java.util.Arrays;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-/* renamed from: dzs  reason: default package */
+/* renamed from: dzs reason: default package */
 /* compiled from: PG */
 public final class dzs {
-    private static final Logger a = Logger.getLogger(dzs.class.getName());
-    private static final byte[] b = "-bin".getBytes(crp.a);
+    private static final java.util.logging.Logger a = java.util.logging.Logger.getLogger(defpackage.dzs.class.getName());
+    private static final byte[] b = "-bin".getBytes(defpackage.crp.a);
 
-    public static byte[][] a(dor dor) {
+    public static byte[][] a(defpackage.dor dor) {
         boolean z;
-        byte[][] a2 = doh.a(dor);
+        byte[][] a2 = defpackage.doh.a(dor);
         if (a2 == null) {
             return new byte[0][];
         }
@@ -22,7 +18,7 @@ public final class dzs {
             byte[] bArr2 = a2[i2 + 1];
             if (a(bArr, b)) {
                 a2[i] = bArr;
-                a2[i + 1] = cwe.a.a(bArr2, bArr2.length).getBytes(crp.a);
+                a2[i + 1] = defpackage.cwe.a.a(bArr2, bArr2.length).getBytes(defpackage.crp.a);
                 i += 2;
             } else {
                 int length = bArr2.length;
@@ -45,15 +41,16 @@ public final class dzs {
                     a2[i + 1] = bArr2;
                     i += 2;
                 } else {
-                    String str = new String(bArr, crp.a);
-                    Logger logger = a;
-                    Level level = Level.WARNING;
-                    String arrays = Arrays.toString(bArr2);
-                    logger.logp(level, "io.grpc.internal.TransportFrameUtil", "toHttp2Headers", new StringBuilder(String.valueOf(str).length() + 55 + String.valueOf(arrays).length()).append("Metadata key=").append(str).append(", value=").append(arrays).append(" contains invalid ASCII characters").toString());
+                    java.lang.String str = new java.lang.String(bArr, defpackage.crp.a);
+                    java.lang.String arrays = java.util.Arrays.toString(bArr2);
+                    a.logp(java.util.logging.Level.WARNING, "io.grpc.internal.TransportFrameUtil", "toHttp2Headers", new java.lang.StringBuilder(java.lang.String.valueOf(str).length() + 55 + java.lang.String.valueOf(arrays).length()).append("Metadata key=").append(str).append(", value=").append(arrays).append(" contains invalid ASCII characters").toString());
                 }
             }
         }
-        return i == a2.length ? a2 : (byte[][]) Arrays.copyOfRange(a2, 0, i);
+        if (i == a2.length) {
+            return a2;
+        }
+        return (byte[][]) java.util.Arrays.copyOfRange(a2, 0, i);
     }
 
     public static byte[][] a(byte[][] bArr) {
@@ -62,7 +59,7 @@ public final class dzs {
             byte[] bArr3 = bArr[i + 1];
             bArr[i] = bArr2;
             if (a(bArr2, b)) {
-                bArr[i + 1] = cwe.a.a(new String(bArr3, crp.a));
+                bArr[i + 1] = defpackage.cwe.a.a((java.lang.CharSequence) new java.lang.String(bArr3, defpackage.crp.a));
             }
         }
         return bArr;

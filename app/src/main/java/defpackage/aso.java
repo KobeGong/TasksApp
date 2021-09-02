@@ -1,16 +1,14 @@
 package defpackage;
 
-import android.view.View;
+/* renamed from: aso reason: default package */
+final /* synthetic */ class aso implements android.view.View.OnClickListener {
+    private final EditTaskFragment a;
 
-/* renamed from: aso  reason: default package */
-final /* synthetic */ class aso implements View.OnClickListener {
-    private final asi a;
-
-    aso(asi asi) {
+    aso(EditTaskFragment asi) {
         this.a = asi;
     }
 
-    public final void onClick(View view) {
+    public final void onClick(android.view.View view) {
         this.a.Q();
     }
 }

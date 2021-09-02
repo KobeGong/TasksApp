@@ -1,22 +1,22 @@
 package defpackage;
 
-/* renamed from: ahp  reason: default package */
+/* renamed from: ahp reason: default package */
 /* compiled from: PG */
 public final class ahp {
-    public static rg d = new rg(20);
+    public static defpackage.rg d = new defpackage.rg(20);
     public int a;
-    public afb b;
-    public afb c;
+    public defpackage.afb b;
+    public defpackage.afb c;
 
     private ahp() {
     }
 
-    public static ahp a() {
-        ahp ahp = (ahp) d.a();
-        return ahp == null ? new ahp() : ahp;
+    public static defpackage.ahp a() {
+        defpackage.ahp ahp = (defpackage.ahp) d.a();
+        return ahp == null ? new defpackage.ahp() : ahp;
     }
 
-    public static void a(ahp ahp) {
+    public static void a(defpackage.ahp ahp) {
         ahp.a = 0;
         ahp.b = null;
         ahp.c = null;

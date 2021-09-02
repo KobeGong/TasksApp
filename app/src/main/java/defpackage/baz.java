@@ -1,15 +1,13 @@
 package defpackage;
 
-import com.google.android.gms.common.api.internal.LifecycleCallback;
-
-/* renamed from: baz  reason: default package */
+/* renamed from: baz reason: default package */
 /* compiled from: PG */
-final class baz implements Runnable {
-    private /* synthetic */ LifecycleCallback a;
-    private /* synthetic */ String b;
-    private /* synthetic */ bay c;
+final class baz implements java.lang.Runnable {
+    private /* synthetic */ com.google.android.gms.common.api.internal.LifecycleCallback a;
+    private /* synthetic */ java.lang.String b;
+    private /* synthetic */ defpackage.bay c;
 
-    baz(bay bay, LifecycleCallback lifecycleCallback, String str) {
+    baz(defpackage.bay bay, com.google.android.gms.common.api.internal.LifecycleCallback lifecycleCallback, java.lang.String str) {
         this.c = bay;
         this.a = lifecycleCallback;
         this.b = str;
@@ -28,6 +26,6 @@ final class baz implements Runnable {
         if (this.c.c >= 4) {
             this.a.d();
         }
-        int unused = this.c.c;
+        this.c.c;
     }
 }

@@ -1,56 +1,51 @@
 package defpackage;
 
-/* renamed from: dss  reason: default package */
+/* renamed from: dss reason: default package */
 /* compiled from: PG */
-final class dss implements dzq {
-    public final dne a;
+final class dss implements defpackage.dzq {
+    public final defpackage.dne a;
     public boolean b;
-    public final /* synthetic */ dsq c;
+    public final /* synthetic */ defpackage.dsq c;
 
-    public dss(dsq dsq, dne dne) {
+    public dss(defpackage.dsq dsq, defpackage.dne dne) {
         this.c = dsq;
-        this.a = (dne) cld.a(dne, "observer");
+        this.a = (defpackage.dne) defpackage.cld.a((java.lang.Object) dne, (java.lang.Object) "observer");
     }
 
-    @Override // defpackage.dzq
-    public final void a(dor dor) {
-        this.c.b.execute(new dst(this, dor));
+    public final void a(defpackage.dor dor) {
+        this.c.b.execute(new defpackage.dst(this, dor));
     }
 
-    @Override // defpackage.dzq
-    public final void a(dzr dzr) {
-        this.c.b.execute(new dsu(this, dzr));
+    public final void a(defpackage.dzr dzr) {
+        this.c.b.execute(new defpackage.dsu(this, dzr));
     }
 
-    /* access modifiers changed from: package-private */
-    public final void a(dpw dpw, dor dor) {
+    /* access modifiers changed from: 0000 */
+    public final void a(defpackage.dpw dpw, defpackage.dor dor) {
         this.b = true;
         this.c.f = true;
         try {
-            dsq.a(this.a, dpw, dor);
+            defpackage.dsq.a(this.a, dpw, dor);
         } finally {
             this.c.b();
             this.c.c.a(dpw.a());
         }
     }
 
-    @Override // defpackage.dzq
-    public final void b(dpw dpw, dor dor) {
-        a(dpw, bg.av, dor);
+    public final void b(defpackage.dpw dpw, defpackage.dor dor) {
+        a(dpw, defpackage.bg.av, dor);
     }
 
-    @Override // defpackage.dzq
-    public final void a(dpw dpw, int i, dor dor) {
-        dny c2 = this.c.c();
-        if (dpw.l == dpx.CANCELLED && c2 != null && c2.a()) {
-            dpw = dpw.e;
-            dor = new dor();
+    public final void a(defpackage.dpw dpw, int i, defpackage.dor dor) {
+        defpackage.dny c2 = this.c.c();
+        if (dpw.l == defpackage.dpx.CANCELLED && c2 != null && c2.a()) {
+            dpw = defpackage.dpw.e;
+            dor = new defpackage.dor();
         }
-        this.c.b.execute(new dsv(this, dpw, dor));
+        this.c.b.execute(new defpackage.dsv(this, dpw, dor));
     }
 
-    @Override // defpackage.dzq
     public final void a() {
-        this.c.b.execute(new dsw(this));
+        this.c.b.execute(new defpackage.dsw(this));
     }
 }

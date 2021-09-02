@@ -1,25 +1,26 @@
 package defpackage;
 
-import android.widget.FrameLayout;
-import com.google.android.apps.tasks.R;
+/* renamed from: auc reason: default package */
+final /* synthetic */ class auc implements java.lang.Runnable {
+    private final defpackage.atx a;
 
-/* access modifiers changed from: package-private */
-/* renamed from: auc  reason: default package */
-public final /* synthetic */ class auc implements Runnable {
-    private final atx a;
-
-    auc(atx atx) {
+    auc(defpackage.atx atx) {
         this.a = atx;
     }
 
     public final void run() {
+        int i;
         boolean z = true;
-        atx atx = this.a;
+        defpackage.atx atx = this.a;
         if (atx.u.getLineCount() <= 1 && atx.u()) {
             z = false;
         }
-        int i = z ? R.dimen.task_item_top_to_check_when_multiline : R.dimen.task_item_top_to_check_when_singleline;
-        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) atx.t.getLayoutParams();
+        if (z) {
+            i = 2131689889;
+        } else {
+            i = 2131689890;
+        }
+        android.widget.FrameLayout.LayoutParams layoutParams = (android.widget.FrameLayout.LayoutParams) atx.t.getLayoutParams();
         int dimension = (int) atx.s.getResources().getDimension(i);
         if (dimension != layoutParams.topMargin) {
             layoutParams.topMargin = dimension;

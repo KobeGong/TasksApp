@@ -1,10 +1,10 @@
 package defpackage;
 
-/* renamed from: dgm  reason: default package */
+/* renamed from: dgm reason: default package */
 /* compiled from: PG */
-public final class dgm extends dih implements djq {
-    public static final dgm f = new dgm();
-    private static volatile djx g;
+public final class dgm extends defpackage.dih implements defpackage.djq {
+    public static final defpackage.dgm f = new defpackage.dgm();
+    private static volatile defpackage.djx g;
     public int a;
     public int b;
     public int c;
@@ -15,41 +15,42 @@ public final class dgm extends dih implements djq {
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.dih
-    public final Object a(int i) {
-        djx djx;
+    public final java.lang.Object a(int i) {
+        defpackage.djx djx;
         switch (i - 1) {
             case 0:
-                return (byte) 1;
+                return java.lang.Byte.valueOf(1);
             case 1:
                 return null;
             case 2:
-                return new dkb(f, "\u0001\u0004\u0000\u0001\u0001\u0004\u0004\u0000\u0000\u0000\u0001\f\u0000\u0002\f\u0001\u0003\f\u0002\u0004\f\u0003", new Object[]{"a", "b", dge.c, "c", dfw.c, "d", dfu.c, "e", dgj.c});
+                java.lang.Object[] objArr = {"a", "b", defpackage.dge.c, "c", defpackage.dfw.c, "d", defpackage.dfu.c, "e", defpackage.dgj.c};
+                return new defpackage.dkb(f, "\u0001\u0004\u0000\u0001\u0001\u0004\u0004\u0000\u0000\u0000\u0001\f\u0000\u0002\f\u0001\u0003\f\u0002\u0004\f\u0003", objArr);
             case 3:
-                return new dgm();
+                return new defpackage.dgm();
             case 4:
-                return new dii((short[][][][][][][][][][][][][][][][][][][][][][][]) null);
+                return new defpackage.dii((short[][][][][][][][][][][][][][][][][][][][][][][]) null);
             case 5:
                 return f;
             case 6:
-                djx djx2 = g;
+                defpackage.djx djx2 = g;
                 if (djx2 != null) {
                     return djx2;
                 }
-                synchronized (dgm.class) {
+                synchronized (defpackage.dgm.class) {
                     djx = g;
                     if (djx == null) {
-                        djx = new dgr(f);
+                        djx = new defpackage.dgr(f);
                         g = djx;
                     }
                 }
                 return djx;
             default:
-                throw new UnsupportedOperationException();
+                throw new java.lang.UnsupportedOperationException();
         }
     }
 
     static {
-        dih.t.put(dgm.class, f);
+        defpackage.dgm dgm = f;
+        defpackage.dih.t.put(defpackage.dgm.class, dgm);
     }
 }

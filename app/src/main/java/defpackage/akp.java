@@ -1,15 +1,14 @@
 package defpackage;
 
-import android.content.Context;
-
-/* renamed from: akp  reason: default package */
+/* renamed from: akp reason: default package */
 /* compiled from: PG */
 public final class akp {
-    public static boolean a(Context context, String str) {
+    public static boolean a(android.content.Context context, java.lang.String str) {
+        boolean z = false;
         try {
-            return bqb.a(context.getContentResolver(), str, false);
-        } catch (SecurityException e) {
-            return false;
+            return defpackage.bqb.a(context.getContentResolver(), str, false);
+        } catch (java.lang.SecurityException e) {
+            return z;
         }
     }
 }

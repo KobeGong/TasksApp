@@ -1,11 +1,11 @@
 package defpackage;
 
-/* renamed from: bcy  reason: default package */
+/* renamed from: bcy reason: default package */
 /* compiled from: PG */
 public final class bcy {
-    public /* synthetic */ ayr a;
+    public /* synthetic */ defpackage.ayr a;
 
-    bcy(ayr ayr) {
+    bcy(defpackage.ayr ayr) {
         this.a = ayr;
     }
 }

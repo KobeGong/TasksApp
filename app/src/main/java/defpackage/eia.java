@@ -1,46 +1,34 @@
 package defpackage;
 
-import android.accounts.Account;
-import android.accounts.AccountManagerCallback;
-import android.accounts.AccountManagerFuture;
-import android.accounts.AuthenticatorException;
-import android.accounts.OperationCanceledException;
-import android.os.Bundle;
-import android.os.Handler;
-import java.io.IOException;
-import org.chromium.base.ThreadUtils;
-import org.chromium.net.HttpNegotiateAuthenticator;
-
-/* renamed from: eia  reason: default package */
+/* renamed from: eia reason: default package */
 /* compiled from: PG */
-public final class eia implements AccountManagerCallback {
-    private final eid a;
-    private final /* synthetic */ HttpNegotiateAuthenticator b;
+public final class eia implements android.accounts.AccountManagerCallback {
+    private final defpackage.eid a;
+    private final /* synthetic */ org.chromium.net.HttpNegotiateAuthenticator b;
 
-    public eia(HttpNegotiateAuthenticator httpNegotiateAuthenticator, eid eid) {
+    public eia(org.chromium.net.HttpNegotiateAuthenticator httpNegotiateAuthenticator, defpackage.eid eid) {
         this.b = httpNegotiateAuthenticator;
         this.a = eid;
     }
 
-    @Override // android.accounts.AccountManagerCallback
-    public final void run(AccountManagerFuture accountManagerFuture) {
+    public final void run(android.accounts.AccountManagerFuture accountManagerFuture) {
         try {
-            Account[] accountArr = (Account[]) accountManagerFuture.getResult();
+            android.accounts.Account[] accountArr = (android.accounts.Account[]) accountManagerFuture.getResult();
             if (accountArr.length == 0) {
-                dpt.b("net_auth", "ERR_MISSING_AUTH_CREDENTIALS: No account provided for the kerberos authentication. Please verify the configuration policies and that the CONTACTS runtime permission is granted. ", new Object[0]);
+                defpackage.dpt.b("net_auth", "ERR_MISSING_AUTH_CREDENTIALS: No account provided for the kerberos authentication. Please verify the configuration policies and that the CONTACTS runtime permission is granted. ", new java.lang.Object[0]);
                 this.b.nativeSetResult(this.a.a, -341, null);
             } else if (accountArr.length > 1) {
-                dpt.b("net_auth", "ERR_MISSING_AUTH_CREDENTIALS: Found %d accounts eligible for the kerberos authentication. Please fix the configuration by providing a single account.", Integer.valueOf(accountArr.length));
+                defpackage.dpt.b("net_auth", "ERR_MISSING_AUTH_CREDENTIALS: Found %d accounts eligible for the kerberos authentication. Please fix the configuration by providing a single account.", java.lang.Integer.valueOf(accountArr.length));
                 this.b.nativeSetResult(this.a.a, -341, null);
-            } else if (HttpNegotiateAuthenticator.a(ehw.a, "android.permission.USE_CREDENTIALS", true)) {
-                dpt.c("net_auth", "ERR_MISCONFIGURED_AUTH_ENVIRONMENT: USE_CREDENTIALS permission not granted. Aborting authentication.", new Object[0]);
+            } else if (org.chromium.net.HttpNegotiateAuthenticator.a(defpackage.ehw.a, "android.permission.USE_CREDENTIALS", true)) {
+                defpackage.dpt.c("net_auth", "ERR_MISCONFIGURED_AUTH_ENVIRONMENT: USE_CREDENTIALS permission not granted. Aborting authentication.", new java.lang.Object[0]);
                 this.b.nativeSetResult(this.a.a, -343, null);
             } else {
                 this.a.e = accountArr[0];
-                this.a.b.getAuthToken(this.a.e, this.a.d, this.a.c, true, (AccountManagerCallback<Bundle>) new eib(this.b, this.a), new Handler(ThreadUtils.a().getLooper()));
+                this.a.b.getAuthToken(this.a.e, this.a.d, this.a.c, true, new defpackage.eib(this.b, this.a), new android.os.Handler(org.chromium.base.ThreadUtils.a().getLooper()));
             }
-        } catch (AuthenticatorException | OperationCanceledException | IOException e) {
-            dpt.b("net_auth", "ERR_UNEXPECTED: Error while attempting to retrieve accounts.", e);
+        } catch (android.accounts.AuthenticatorException | android.accounts.OperationCanceledException | java.io.IOException e) {
+            defpackage.dpt.b("net_auth", "ERR_UNEXPECTED: Error while attempting to retrieve accounts.", e);
             this.b.nativeSetResult(this.a.a, -9, null);
         }
     }

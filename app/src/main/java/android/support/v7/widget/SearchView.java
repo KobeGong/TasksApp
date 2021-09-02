@@ -1,96 +1,64 @@
 package android.support.v7.widget;
 
-import android.app.SearchableInfo;
-import android.content.Context;
-import android.content.Intent;
-import android.content.res.Configuration;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import android.os.Parcelable;
-import android.text.Editable;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import android.text.style.ImageSpan;
-import android.util.AttributeSet;
-import android.util.DisplayMetrics;
-import android.util.TypedValue;
-import android.view.KeyEvent;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.inputmethod.EditorInfo;
-import android.view.inputmethod.InputConnection;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.AdapterView;
-import android.widget.ImageView;
-import android.widget.TextView;
-import com.google.android.apps.tasks.R;
-import java.util.WeakHashMap;
-
 /* compiled from: PG */
-public class SearchView extends adu implements ye {
-    public static final agk p = new agk();
-    private final Intent A;
-    private final CharSequence B;
+public class SearchView extends defpackage.adu implements defpackage.ye {
+    public static final defpackage.agk p = new defpackage.agk();
+    private final android.content.Intent A;
+    private final java.lang.CharSequence B;
     private boolean C;
-    private CharSequence D;
+    private java.lang.CharSequence D;
     private boolean E;
     private int F;
     private boolean G;
     private int H;
-    private final Runnable I;
-    private Runnable J;
-    private final View.OnClickListener K;
-    private View.OnKeyListener L;
-    private final TextView.OnEditorActionListener M;
-    private final AdapterView.OnItemClickListener N;
-    private final AdapterView.OnItemSelectedListener O;
-    private TextWatcher P;
-    public final SearchAutoComplete a;
-    public final View b;
-    public final ImageView c;
-    public final ImageView d;
-    public final ImageView e;
-    public final ImageView f;
-    public final View g;
-    public View.OnFocusChangeListener l;
+    private final java.lang.Runnable I;
+    private java.lang.Runnable J;
+    private final android.view.View.OnClickListener K;
+    private android.view.View.OnKeyListener L;
+    private final android.widget.TextView.OnEditorActionListener M;
+    private final android.widget.AdapterView.OnItemClickListener N;
+    private final android.widget.AdapterView.OnItemSelectedListener O;
+    private android.text.TextWatcher P;
+    public final android.support.v7.widget.SearchView.SearchAutoComplete a;
+    public final android.view.View b;
+    public final android.widget.ImageView c;
+    public final android.widget.ImageView d;
+    public final android.widget.ImageView e;
+    public final android.widget.ImageView f;
+    public final android.view.View g;
+    public android.view.View.OnFocusChangeListener l;
     public boolean m;
-    public uk n;
-    public SearchableInfo o;
-    private final View q;
-    private final View r;
-    private ago s;
-    private Rect t;
-    private Rect u;
+    public defpackage.uk n;
+    public android.app.SearchableInfo o;
+    private final android.view.View q;
+    private final android.view.View r;
+    private defpackage.ago s;
+    private android.graphics.Rect t;
+    private android.graphics.Rect u;
     private int[] v;
     private int[] w;
-    private final ImageView x;
-    private final Drawable y;
-    private final Intent z;
-
-    public SearchView(Context context) {
-        this(context, null);
-    }
+    private final android.widget.ImageView x;
+    private final android.graphics.drawable.Drawable y;
+    private final android.content.Intent z;
 
     /* compiled from: PG */
-    public class SearchAutoComplete extends abf {
-        public SearchView a;
+    public class SearchAutoComplete extends defpackage.abf {
+        public android.support.v7.widget.SearchView a;
         public boolean b;
         private int c;
-        private final Runnable d;
+        private final java.lang.Runnable d;
 
-        public SearchAutoComplete(Context context) {
+        public SearchAutoComplete(android.content.Context context) {
             this(context, null);
         }
 
-        public SearchAutoComplete(Context context, AttributeSet attributeSet) {
-            this(context, attributeSet, R.attr.autoCompleteTextViewStyle);
+        public SearchAutoComplete(android.content.Context context, android.util.AttributeSet attributeSet) {
+            this(context, attributeSet, 2130772230);
         }
 
-        public SearchAutoComplete(Context context, AttributeSet attributeSet, int i) {
+        public SearchAutoComplete(android.content.Context context, android.util.AttributeSet attributeSet, int i) {
             super(context, attributeSet, i);
-            this.d = new agn(this);
+            this.d = new defpackage.agn(this);
             this.c = getThreshold();
         }
 
@@ -98,8 +66,8 @@ public class SearchView extends adu implements ye {
         public void onFinishInflate() {
             int i;
             super.onFinishInflate();
-            DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
-            Configuration configuration = getResources().getConfiguration();
+            android.util.DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
+            android.content.res.Configuration configuration = getResources().getConfiguration();
             int i2 = configuration.screenWidthDp;
             int i3 = configuration.screenHeightDp;
             if (i2 >= 960 && i3 >= 720 && configuration.orientation == 2) {
@@ -109,7 +77,7 @@ public class SearchView extends adu implements ye {
             } else {
                 i = 160;
             }
-            setMinWidth((int) TypedValue.applyDimension(1, (float) i, displayMetrics));
+            setMinWidth((int) android.util.TypedValue.applyDimension(1, (float) i, displayMetrics));
         }
 
         public void setThreshold(int i) {
@@ -118,7 +86,7 @@ public class SearchView extends adu implements ye {
         }
 
         /* access modifiers changed from: protected */
-        public void replaceText(CharSequence charSequence) {
+        public void replaceText(java.lang.CharSequence charSequence) {
         }
 
         public void performCompletion() {
@@ -128,12 +96,12 @@ public class SearchView extends adu implements ye {
             super.onWindowFocusChanged(z);
             if (z && this.a.hasFocus() && getVisibility() == 0) {
                 this.b = true;
-                if (SearchView.a(getContext())) {
-                    agk agk = SearchView.p;
+                if (android.support.v7.widget.SearchView.a(getContext())) {
+                    defpackage.agk agk = android.support.v7.widget.SearchView.p;
                     if (agk.c != null) {
                         try {
-                            agk.c.invoke(this, true);
-                        } catch (Exception e) {
+                            agk.c.invoke(this, new java.lang.Object[]{java.lang.Boolean.valueOf(true)});
+                        } catch (java.lang.Exception e) {
                         }
                     }
                 }
@@ -141,7 +109,7 @@ public class SearchView extends adu implements ye {
         }
 
         /* access modifiers changed from: protected */
-        public void onFocusChanged(boolean z, int i, Rect rect) {
+        public void onFocusChanged(boolean z, int i, android.graphics.Rect rect) {
             super.onFocusChanged(z, i, rect);
             this.a.h();
         }
@@ -150,17 +118,17 @@ public class SearchView extends adu implements ye {
             return this.c <= 0 || super.enoughToFilter();
         }
 
-        public boolean onKeyPreIme(int i, KeyEvent keyEvent) {
+        public boolean onKeyPreIme(int i, android.view.KeyEvent keyEvent) {
             if (i == 4) {
                 if (keyEvent.getAction() == 0 && keyEvent.getRepeatCount() == 0) {
-                    KeyEvent.DispatcherState keyDispatcherState = getKeyDispatcherState();
+                    android.view.KeyEvent.DispatcherState keyDispatcherState = getKeyDispatcherState();
                     if (keyDispatcherState == null) {
                         return true;
                     }
                     keyDispatcherState.startTracking(keyEvent, this);
                     return true;
                 } else if (keyEvent.getAction() == 1) {
-                    KeyEvent.DispatcherState keyDispatcherState2 = getKeyDispatcherState();
+                    android.view.KeyEvent.DispatcherState keyDispatcherState2 = getKeyDispatcherState();
                     if (keyDispatcherState2 != null) {
                         keyDispatcherState2.handleUpEvent(keyEvent);
                     }
@@ -174,9 +142,8 @@ public class SearchView extends adu implements ye {
             return super.onKeyPreIme(i, keyEvent);
         }
 
-        @Override // defpackage.abf
-        public InputConnection onCreateInputConnection(EditorInfo editorInfo) {
-            InputConnection onCreateInputConnection = super.onCreateInputConnection(editorInfo);
+        public android.view.inputmethod.InputConnection onCreateInputConnection(android.view.inputmethod.EditorInfo editorInfo) {
+            android.view.inputmethod.InputConnection onCreateInputConnection = super.onCreateInputConnection(editorInfo);
             if (this.b) {
                 removeCallbacks(this.d);
                 post(this.d);
@@ -184,9 +151,9 @@ public class SearchView extends adu implements ye {
             return onCreateInputConnection;
         }
 
-        /* access modifiers changed from: package-private */
+        /* access modifiers changed from: 0000 */
         public final void a(boolean z) {
-            InputMethodManager inputMethodManager = (InputMethodManager) getContext().getSystemService("input_method");
+            android.view.inputmethod.InputMethodManager inputMethodManager = (android.view.inputmethod.InputMethodManager) getContext().getSystemService("input_method");
             if (!z) {
                 this.b = false;
                 removeCallbacks(this.d);
@@ -201,48 +168,52 @@ public class SearchView extends adu implements ye {
         }
     }
 
-    public SearchView(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, R.attr.searchViewStyle);
+    public SearchView(android.content.Context context) {
+        this(context, null);
     }
 
-    public SearchView(Context context, AttributeSet attributeSet, int i) {
+    public SearchView(android.content.Context context, android.util.AttributeSet attributeSet) {
+        this(context, attributeSet, 2130772197);
+    }
+
+    public SearchView(android.content.Context context, android.util.AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.t = new Rect();
-        this.u = new Rect();
+        this.t = new android.graphics.Rect();
+        this.u = new android.graphics.Rect();
         this.v = new int[2];
         this.w = new int[2];
-        this.I = new aga(this);
-        this.J = new agc(this);
-        new WeakHashMap();
-        this.K = new agf(this);
-        this.L = new agg(this);
-        this.M = new agh(this);
-        this.N = new agi(this);
-        this.O = new agj(this);
-        this.P = new agb(this);
-        agw a2 = agw.a(context, attributeSet, xu.bO, i, 0);
-        LayoutInflater.from(context).inflate(a2.g(xu.bY, R.layout.abc_search_view), (ViewGroup) this, true);
-        this.a = (SearchAutoComplete) findViewById(R.id.search_src_text);
+        this.I = new defpackage.aga(this);
+        this.J = new defpackage.agc(this);
+        new java.util.WeakHashMap();
+        this.K = new defpackage.agf(this);
+        this.L = new defpackage.agg(this);
+        this.M = new defpackage.agh(this);
+        this.N = new defpackage.agi(this);
+        this.O = new defpackage.agj(this);
+        this.P = new defpackage.agb(this);
+        defpackage.agw a2 = defpackage.agw.a(context, attributeSet, defpackage.xu.bO, i, 0);
+        android.view.LayoutInflater.from(context).inflate(a2.g(defpackage.xu.bY, 2131034136), this, true);
+        this.a = (android.support.v7.widget.SearchView.SearchAutoComplete) findViewById(2131755216);
         this.a.a = this;
-        this.q = findViewById(R.id.search_edit_frame);
-        this.b = findViewById(R.id.search_plate);
-        this.r = findViewById(R.id.submit_area);
-        this.c = (ImageView) findViewById(R.id.search_button);
-        this.d = (ImageView) findViewById(R.id.search_go_btn);
-        this.e = (ImageView) findViewById(R.id.search_close_btn);
-        this.f = (ImageView) findViewById(R.id.search_voice_btn);
-        this.x = (ImageView) findViewById(R.id.search_mag_icon);
-        sn.a(this.b, a2.a(xu.bZ));
-        sn.a(this.r, a2.a(xu.cd));
-        this.c.setImageDrawable(a2.a(xu.cc));
-        this.d.setImageDrawable(a2.a(xu.bW));
-        this.e.setImageDrawable(a2.a(xu.bT));
-        this.f.setImageDrawable(a2.a(xu.cf));
-        this.x.setImageDrawable(a2.a(xu.cc));
-        this.y = a2.a(xu.cb);
-        aaz.a(this.c, getResources().getString(R.string.abc_searchview_description_search));
-        a2.g(xu.ce, R.layout.abc_search_dropdown_item_icons_2line);
-        a2.g(xu.bU, 0);
+        this.q = findViewById(2131755213);
+        this.b = findViewById(2131755215);
+        this.r = findViewById(2131755218);
+        this.c = (android.widget.ImageView) findViewById(2131755212);
+        this.d = (android.widget.ImageView) findViewById(2131755219);
+        this.e = (android.widget.ImageView) findViewById(2131755217);
+        this.f = (android.widget.ImageView) findViewById(2131755220);
+        this.x = (android.widget.ImageView) findViewById(2131755214);
+        defpackage.sn.a(this.b, a2.a(defpackage.xu.bZ));
+        defpackage.sn.a(this.r, a2.a(defpackage.xu.cd));
+        this.c.setImageDrawable(a2.a(defpackage.xu.cc));
+        this.d.setImageDrawable(a2.a(defpackage.xu.bW));
+        this.e.setImageDrawable(a2.a(defpackage.xu.bT));
+        this.f.setImageDrawable(a2.a(defpackage.xu.cf));
+        this.x.setImageDrawable(a2.a(defpackage.xu.cc));
+        this.y = a2.a(defpackage.xu.cb);
+        defpackage.aaz.a((android.view.View) this.c, (java.lang.CharSequence) getResources().getString(2131951674));
+        a2.g(defpackage.xu.ce, 2131034135);
+        a2.g(defpackage.xu.bU, 0);
         this.c.setOnClickListener(this.K);
         this.e.setOnClickListener(this.K);
         this.d.setOnClickListener(this.K);
@@ -253,44 +224,44 @@ public class SearchView extends adu implements ye {
         this.a.setOnItemClickListener(this.N);
         this.a.setOnItemSelectedListener(this.O);
         this.a.setOnKeyListener(this.L);
-        this.a.setOnFocusChangeListener(new agd(this));
-        boolean a3 = a2.a(xu.bX, true);
+        this.a.setOnFocusChangeListener(new defpackage.agd(this));
+        boolean a3 = a2.a(defpackage.xu.bX, true);
         if (this.m != a3) {
             this.m = a3;
             a(a3);
             p();
         }
-        int e2 = a2.e(xu.bS, -1);
+        int e2 = a2.e(defpackage.xu.bS, -1);
         if (e2 != -1) {
             this.F = e2;
             requestLayout();
         }
-        this.B = a2.c(xu.bV);
-        this.D = a2.c(xu.ca);
-        int a4 = a2.a(xu.bQ, -1);
+        this.B = a2.c(defpackage.xu.bV);
+        this.D = a2.c(defpackage.xu.ca);
+        int a4 = a2.a(defpackage.xu.bQ, -1);
         if (a4 != -1) {
             this.a.setImeOptions(a4);
         }
-        int a5 = a2.a(xu.bR, -1);
+        int a5 = a2.a(defpackage.xu.bR, -1);
         if (a5 != -1) {
             this.a.setInputType(a5);
         }
-        setFocusable(a2.a(xu.bP, true));
+        setFocusable(a2.a(defpackage.xu.bP, true));
         a2.b.recycle();
-        this.z = new Intent("android.speech.action.WEB_SEARCH");
+        this.z = new android.content.Intent("android.speech.action.WEB_SEARCH");
         this.z.addFlags(268435456);
         this.z.putExtra("android.speech.extra.LANGUAGE_MODEL", "web_search");
-        this.A = new Intent("android.speech.action.RECOGNIZE_SPEECH");
+        this.A = new android.content.Intent("android.speech.action.RECOGNIZE_SPEECH");
         this.A.addFlags(268435456);
         this.g = findViewById(this.a.getDropDownAnchor());
         if (this.g != null) {
-            this.g.addOnLayoutChangeListener(new age(this));
+            this.g.addOnLayoutChangeListener(new defpackage.age(this));
         }
         a(this.m);
         p();
     }
 
-    public boolean requestFocus(int i, Rect rect) {
+    public boolean requestFocus(int i, android.graphics.Rect rect) {
         if (this.E || !isFocusable()) {
             return false;
         }
@@ -313,21 +284,20 @@ public class SearchView extends adu implements ye {
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.adu
     public void onMeasure(int i, int i2) {
         if (this.C) {
             super.onMeasure(i, i2);
             return;
         }
-        int mode = View.MeasureSpec.getMode(i);
-        int size = View.MeasureSpec.getSize(i);
+        int mode = android.view.View.MeasureSpec.getMode(i);
+        int size = android.view.View.MeasureSpec.getSize(i);
         switch (mode) {
             case Integer.MIN_VALUE:
                 if (this.F <= 0) {
-                    size = Math.min(j(), size);
+                    size = java.lang.Math.min(j(), size);
                     break;
                 } else {
-                    size = Math.min(this.F, size);
+                    size = java.lang.Math.min(this.F, size);
                     break;
                 }
             case 0:
@@ -340,31 +310,30 @@ public class SearchView extends adu implements ye {
                 }
             case 1073741824:
                 if (this.F > 0) {
-                    size = Math.min(this.F, size);
+                    size = java.lang.Math.min(this.F, size);
                     break;
                 }
                 break;
         }
-        int mode2 = View.MeasureSpec.getMode(i2);
-        int size2 = View.MeasureSpec.getSize(i2);
+        int mode2 = android.view.View.MeasureSpec.getMode(i2);
+        int size2 = android.view.View.MeasureSpec.getSize(i2);
         switch (mode2) {
             case Integer.MIN_VALUE:
-                size2 = Math.min(k(), size2);
+                size2 = java.lang.Math.min(k(), size2);
                 break;
             case 0:
                 size2 = k();
                 break;
         }
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(size2, 1073741824));
+        super.onMeasure(android.view.View.MeasureSpec.makeMeasureSpec(size, 1073741824), android.view.View.MeasureSpec.makeMeasureSpec(size2, 1073741824));
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.adu
     public void onLayout(boolean z2, int i, int i2, int i3, int i4) {
         super.onLayout(z2, i, i2, i3, i4);
         if (z2) {
-            SearchAutoComplete searchAutoComplete = this.a;
-            Rect rect = this.t;
+            android.support.v7.widget.SearchView.SearchAutoComplete searchAutoComplete = this.a;
+            android.graphics.Rect rect = this.t;
             searchAutoComplete.getLocationInWindow(this.v);
             getLocationInWindow(this.w);
             int i5 = this.v[1] - this.w[1];
@@ -372,7 +341,7 @@ public class SearchView extends adu implements ye {
             rect.set(i6, i5, searchAutoComplete.getWidth() + i6, searchAutoComplete.getHeight() + i5);
             this.u.set(this.t.left, 0, this.t.right, i4 - i2);
             if (this.s == null) {
-                this.s = new ago(this.u, this.t, this.a);
+                this.s = new defpackage.ago(this.u, this.t, this.a);
                 setTouchDelegate(this.s);
                 return;
             }
@@ -381,11 +350,11 @@ public class SearchView extends adu implements ye {
     }
 
     private final int j() {
-        return getContext().getResources().getDimensionPixelSize(R.dimen.abc_search_view_preferred_width);
+        return getContext().getResources().getDimensionPixelSize(2131689524);
     }
 
     private final int k() {
-        return getContext().getResources().getDimensionPixelSize(R.dimen.abc_search_view_preferred_height);
+        return getContext().getResources().getDimensionPixelSize(2131689523);
     }
 
     private final void a(boolean z2) {
@@ -393,10 +362,10 @@ public class SearchView extends adu implements ye {
         int i2 = 0;
         this.C = z2;
         int i3 = z2 ? 0 : 8;
-        TextUtils.isEmpty(this.a.getText());
+        android.text.TextUtils.isEmpty(this.a.getText());
         this.c.setVisibility(i3);
         l();
-        View view = this.q;
+        android.view.View view = this.q;
         if (z2) {
             i = 8;
         } else {
@@ -423,16 +392,16 @@ public class SearchView extends adu implements ye {
     private final void n() {
         boolean z2 = true;
         int i = 0;
-        boolean z3 = !TextUtils.isEmpty(this.a.getText());
+        boolean z3 = !android.text.TextUtils.isEmpty(this.a.getText());
         if (!z3 && (!this.m || this.G)) {
             z2 = false;
         }
-        ImageView imageView = this.e;
+        android.widget.ImageView imageView = this.e;
         if (!z2) {
             i = 8;
         }
         imageView.setVisibility(i);
-        Drawable drawable = this.e.getDrawable();
+        android.graphics.drawable.Drawable drawable = this.e.getDrawable();
         if (drawable != null) {
             drawable.setState(z3 ? ENABLED_STATE_SET : EMPTY_STATE_SET);
         }
@@ -444,11 +413,11 @@ public class SearchView extends adu implements ye {
 
     public final void c() {
         int[] iArr = this.a.hasFocus() ? FOCUSED_STATE_SET : EMPTY_STATE_SET;
-        Drawable background = this.b.getBackground();
+        android.graphics.drawable.Drawable background = this.b.getBackground();
         if (background != null) {
             background.setState(iArr);
         }
-        Drawable background2 = this.r.getBackground();
+        android.graphics.drawable.Drawable background2 = this.r.getBackground();
         if (background2 != null) {
             background2.setState(iArr);
         }
@@ -463,33 +432,33 @@ public class SearchView extends adu implements ye {
     }
 
     private final void p() {
-        SpannableStringBuilder spannableStringBuilder;
+        java.lang.CharSequence charSequence;
         if (this.D != null) {
-            spannableStringBuilder = this.D;
+            charSequence = this.D;
         } else {
-            spannableStringBuilder = this.B;
+            charSequence = this.B;
         }
-        SearchAutoComplete searchAutoComplete = this.a;
-        if (spannableStringBuilder == null) {
-            spannableStringBuilder = "";
+        android.support.v7.widget.SearchView.SearchAutoComplete searchAutoComplete = this.a;
+        if (charSequence == 0) {
+            charSequence = "";
         }
         if (this.m && this.y != null) {
             int textSize = (int) (((double) this.a.getTextSize()) * 1.25d);
             this.y.setBounds(0, 0, textSize, textSize);
-            SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("   ");
-            spannableStringBuilder2.setSpan(new ImageSpan(this.y), 1, 2, 33);
-            spannableStringBuilder2.append(spannableStringBuilder);
-            spannableStringBuilder = spannableStringBuilder2;
+            android.text.SpannableStringBuilder spannableStringBuilder = new android.text.SpannableStringBuilder("   ");
+            spannableStringBuilder.setSpan(new android.text.style.ImageSpan(this.y), 1, 2, 33);
+            spannableStringBuilder.append(charSequence);
+            charSequence = spannableStringBuilder;
         }
-        searchAutoComplete.setHint(spannableStringBuilder);
+        searchAutoComplete.setHint(charSequence);
     }
 
     private final void q() {
         this.f.setVisibility(8);
     }
 
-    public final void a(CharSequence charSequence) {
-        TextUtils.isEmpty(this.a.getText());
+    public final void a(java.lang.CharSequence charSequence) {
+        android.text.TextUtils.isEmpty(this.a.getText());
         l();
         q();
         n();
@@ -498,15 +467,15 @@ public class SearchView extends adu implements ye {
     }
 
     public final void e() {
-        Editable text = this.a.getText();
-        if (text != null && TextUtils.getTrimmedLength(text) > 0) {
+        android.text.Editable text = this.a.getText();
+        if (text != null && android.text.TextUtils.getTrimmedLength(text) > 0) {
             this.a.a(false);
             this.a.dismissDropDown();
         }
     }
 
     public final void f() {
-        if (!TextUtils.isEmpty(this.a.getText())) {
+        if (!android.text.TextUtils.isEmpty(this.a.getText())) {
             this.a.setText("");
             this.a.requestFocus();
             this.a.a(true);
@@ -522,7 +491,7 @@ public class SearchView extends adu implements ye {
         this.a.a(true);
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public final void h() {
         a(this.C);
         o();
@@ -536,7 +505,6 @@ public class SearchView extends adu implements ye {
         o();
     }
 
-    @Override // defpackage.ye
     public final void b() {
         this.a.setText("");
         this.a.setSelection(this.a.length());
@@ -546,7 +514,6 @@ public class SearchView extends adu implements ye {
         this.G = false;
     }
 
-    @Override // defpackage.ye
     public final void a() {
         if (!this.G) {
             this.G = true;
@@ -558,44 +525,44 @@ public class SearchView extends adu implements ye {
     }
 
     /* access modifiers changed from: protected */
-    public Parcelable onSaveInstanceState() {
-        agl agl = new agl(super.onSaveInstanceState());
+    public android.os.Parcelable onSaveInstanceState() {
+        defpackage.agl agl = new defpackage.agl(super.onSaveInstanceState());
         agl.a = this.C;
         return agl;
     }
 
     /* access modifiers changed from: protected */
-    public void onRestoreInstanceState(Parcelable parcelable) {
-        if (!(parcelable instanceof agl)) {
+    public void onRestoreInstanceState(android.os.Parcelable parcelable) {
+        if (!(parcelable instanceof defpackage.agl)) {
             super.onRestoreInstanceState(parcelable);
             return;
         }
-        agl agl = (agl) parcelable;
+        defpackage.agl agl = (defpackage.agl) parcelable;
         super.onRestoreInstanceState(agl.e);
         a(agl.a);
         requestLayout();
     }
 
     public final void i() {
-        agk agk = p;
-        SearchAutoComplete searchAutoComplete = this.a;
+        defpackage.agk agk = p;
+        android.support.v7.widget.SearchView.SearchAutoComplete searchAutoComplete = this.a;
         if (agk.a != null) {
             try {
-                agk.a.invoke(searchAutoComplete, new Object[0]);
-            } catch (Exception e2) {
+                agk.a.invoke(searchAutoComplete, new java.lang.Object[0]);
+            } catch (java.lang.Exception e2) {
             }
         }
-        agk agk2 = p;
-        SearchAutoComplete searchAutoComplete2 = this.a;
+        defpackage.agk agk2 = p;
+        android.support.v7.widget.SearchView.SearchAutoComplete searchAutoComplete2 = this.a;
         if (agk2.b != null) {
             try {
-                agk2.b.invoke(searchAutoComplete2, new Object[0]);
-            } catch (Exception e3) {
+                agk2.b.invoke(searchAutoComplete2, new java.lang.Object[0]);
+            } catch (java.lang.Exception e3) {
             }
         }
     }
 
-    static boolean a(Context context) {
+    static boolean a(android.content.Context context) {
         return context.getResources().getConfiguration().orientation == 2;
     }
 }

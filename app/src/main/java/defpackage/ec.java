@@ -1,26 +1,20 @@
 package defpackage;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-/* renamed from: ec  reason: default package */
+/* renamed from: ec reason: default package */
 /* compiled from: PG */
-final class ec implements Parcelable.ClassLoaderCreator {
+final class ec implements android.os.Parcelable.ClassLoaderCreator {
     ec() {
     }
 
-    @Override // android.os.Parcelable.ClassLoaderCreator
-    public final /* synthetic */ Object createFromParcel(Parcel parcel, ClassLoader classLoader) {
-        return new eb(parcel, classLoader);
+    public final /* synthetic */ java.lang.Object createFromParcel(android.os.Parcel parcel, java.lang.ClassLoader classLoader) {
+        return new defpackage.eb(parcel, classLoader);
     }
 
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object[] newArray(int i) {
-        return new eb[i];
+    public final /* synthetic */ java.lang.Object[] newArray(int i) {
+        return new defpackage.eb[i];
     }
 
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object createFromParcel(Parcel parcel) {
-        return new eb(parcel, (ClassLoader) null);
+    public final /* synthetic */ java.lang.Object createFromParcel(android.os.Parcel parcel) {
+        return new defpackage.eb(parcel, (java.lang.ClassLoader) null);
     }
 }

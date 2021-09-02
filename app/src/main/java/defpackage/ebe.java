@@ -1,15 +1,14 @@
 package defpackage;
 
-/* renamed from: ebe  reason: default package */
+/* renamed from: ebe reason: default package */
 /* compiled from: PG */
-public final class ebe extends ebr {
-    public static final ebr a = new ebe();
+public final class ebe extends defpackage.ebr {
+    public static final defpackage.ebr a = new defpackage.ebe();
 
     private ebe() {
     }
 
-    @Override // defpackage.ebr
-    public final ebp a() {
-        return ebc.a;
+    public final defpackage.ebp a() {
+        return defpackage.ebc.a;
     }
 }

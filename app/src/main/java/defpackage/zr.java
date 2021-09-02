@@ -1,38 +1,28 @@
 package defpackage;
 
-import android.content.Context;
-import android.graphics.Point;
-import android.graphics.Rect;
-import android.os.Build;
-import android.view.Display;
-import android.view.View;
-import android.view.WindowManager;
-import android.widget.PopupWindow;
-import com.google.android.apps.tasks.R;
-
-/* renamed from: zr  reason: default package */
+/* renamed from: zr reason: default package */
 /* compiled from: PG */
 public class zr {
-    public View a;
-    public int b;
-    public PopupWindow.OnDismissListener c;
-    private final Context d;
-    private final MenuBuilder e;
+    public android.view.View a;
+    public int b = 8388613;
+    public android.widget.PopupWindow.OnDismissListener c;
+    private final android.content.Context d;
+    private final defpackage.ze e;
     private final boolean f;
     private final int g;
     private final int h;
     private boolean i;
-    private zu j;
-    private zq k;
-    private final PopupWindow.OnDismissListener l;
+    private defpackage.zu j;
+    private defpackage.zq k;
+    private final android.widget.PopupWindow.OnDismissListener l;
 
-    public zr(Context context, MenuBuilder zeVar, View view, boolean z) {
-        this(context, zeVar, view, z, R.attr.actionOverflowMenuStyle, 0);
+    public zr(android.content.Context context, defpackage.ze zeVar, android.view.View view, boolean z) {
+        this(context, zeVar, view, z, 2130772143, 0);
     }
 
-    public zr(Context context, MenuBuilder zeVar, View view, boolean z, int i2, int i3) {
+    public zr(android.content.Context context, defpackage.ze zeVar, android.view.View view, boolean z, int i2, int i3) {
         this.b = 8388611;
-        this.l = new zs(this);
+        this.l = new defpackage.zs(this);
         this.d = context;
         this.e = zeVar;
         this.a = view;
@@ -48,20 +38,20 @@ public class zr {
         }
     }
 
-    public final zq a() {
-        zq aaa;
+    public final defpackage.zq a() {
+        defpackage.zq aaa;
         if (this.k == null) {
-            Display defaultDisplay = ((WindowManager) this.d.getSystemService("window")).getDefaultDisplay();
-            Point point = new Point();
-            if (Build.VERSION.SDK_INT >= 17) {
+            android.view.Display defaultDisplay = ((android.view.WindowManager) this.d.getSystemService("window")).getDefaultDisplay();
+            android.graphics.Point point = new android.graphics.Point();
+            if (android.os.Build.VERSION.SDK_INT >= 17) {
                 defaultDisplay.getRealSize(point);
             } else {
                 defaultDisplay.getSize(point);
             }
-            if (Math.min(point.x, point.y) >= this.d.getResources().getDimensionPixelSize(R.dimen.abc_cascading_menus_min_smallest_width)) {
-                aaa = new yv(this.d, this.a, this.g, this.h, this.f);
+            if (java.lang.Math.min(point.x, point.y) >= this.d.getResources().getDimensionPixelSize(2131689494)) {
+                aaa = new defpackage.yv(this.d, this.a, this.g, this.h, this.f);
             } else {
-                aaa = new aaa(this.d, this.e, this.a, this.g, this.h, this.f);
+                aaa = new defpackage.aaa(this.d, this.e, this.a, this.g, this.h, this.f);
             }
             aaa.a(this.e);
             aaa.a(this.l);
@@ -85,18 +75,18 @@ public class zr {
         return true;
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public final void a(int i2, int i3, boolean z, boolean z2) {
-        zq a2 = a();
+        defpackage.zq a2 = a();
         a2.c(z2);
         if (z) {
-            if ((jd.a(this.b, sn.a.j(this.a)) & 7) == 5) {
+            if ((defpackage.jd.a(this.b, defpackage.sn.a.j(this.a)) & 7) == 5) {
                 i2 -= this.a.getWidth();
             }
             a2.b(i2);
             a2.c(i3);
             int i4 = (int) ((this.d.getResources().getDisplayMetrics().density * 48.0f) / 2.0f);
-            a2.g = new Rect(i2 - i4, i3 - i4, i2 + i4, i4 + i3);
+            a2.g = new android.graphics.Rect(i2 - i4, i3 - i4, i2 + i4, i4 + i3);
         }
         a2.d();
     }
@@ -118,7 +108,7 @@ public class zr {
         return this.k != null && this.k.f();
     }
 
-    public final void a(zu zuVar) {
+    public final void a(defpackage.zu zuVar) {
         this.j = zuVar;
         if (this.k != null) {
             this.k.a(zuVar);

@@ -1,23 +1,18 @@
 package defpackage;
 
-import android.os.Bundle;
-
-/* access modifiers changed from: package-private */
-/* renamed from: brl  reason: default package */
+/* renamed from: brl reason: default package */
 /* compiled from: PG */
-public final class brl implements ayr {
-    private final /* synthetic */ bqz a;
+final class brl implements defpackage.ayr {
+    private final /* synthetic */ defpackage.bqz a;
 
-    brl(bqz bqz) {
+    brl(defpackage.bqz bqz) {
         this.a = bqz;
     }
 
-    @Override // defpackage.ayr
-    public final void a(Bundle bundle) {
+    public final void a(android.os.Bundle bundle) {
     }
 
-    @Override // defpackage.ayr
     public final void a(int i) {
-        coi.a(i);
+        defpackage.coi.a(i);
     }
 }

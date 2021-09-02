@@ -1,35 +1,31 @@
 package defpackage;
 
-import android.content.res.ColorStateList;
-import android.graphics.PorterDuff;
-import android.widget.ImageView;
-
-/* renamed from: uu  reason: default package */
+/* renamed from: uu reason: default package */
 /* compiled from: PG */
 public class uu {
-    public ColorStateList a(ImageView imageView) {
-        if (imageView instanceof vu) {
-            return ((vu) imageView).c();
+    public android.content.res.ColorStateList a(android.widget.ImageView imageView) {
+        if (imageView instanceof defpackage.vu) {
+            return ((defpackage.vu) imageView).c();
         }
         return null;
     }
 
-    public void a(ImageView imageView, ColorStateList colorStateList) {
-        if (imageView instanceof vu) {
-            ((vu) imageView).b(colorStateList);
+    public void a(android.widget.ImageView imageView, android.content.res.ColorStateList colorStateList) {
+        if (imageView instanceof defpackage.vu) {
+            ((defpackage.vu) imageView).b(colorStateList);
         }
     }
 
-    public PorterDuff.Mode b(ImageView imageView) {
-        if (imageView instanceof vu) {
-            return ((vu) imageView).d();
+    public android.graphics.PorterDuff.Mode b(android.widget.ImageView imageView) {
+        if (imageView instanceof defpackage.vu) {
+            return ((defpackage.vu) imageView).d();
         }
         return null;
     }
 
-    public void a(ImageView imageView, PorterDuff.Mode mode) {
-        if (imageView instanceof vu) {
-            ((vu) imageView).b(mode);
+    public void a(android.widget.ImageView imageView, android.graphics.PorterDuff.Mode mode) {
+        if (imageView instanceof defpackage.vu) {
+            ((defpackage.vu) imageView).b(mode);
         }
     }
 

@@ -1,22 +1,22 @@
 package defpackage;
 
-/* renamed from: efs  reason: default package */
+/* renamed from: efs reason: default package */
 /* compiled from: PG */
-public final class efs extends dlz {
-    private static volatile efs[] f;
-    public String a = null;
-    public Long b = null;
-    public Long c = null;
-    public Long d = null;
-    public Long e = null;
-    private Long g = null;
-    private int h = Integer.MIN_VALUE;
+public final class efs extends defpackage.dlz {
+    private static volatile defpackage.efs[] f;
+    public java.lang.String a;
+    public java.lang.Long b;
+    public java.lang.Long c;
+    public java.lang.Long d;
+    public java.lang.Long e;
+    private java.lang.Long g;
+    private int h;
 
-    public static efs[] d() {
+    public static defpackage.efs[] d() {
         if (f == null) {
-            synchronized (dmd.b) {
+            synchronized (defpackage.dmd.b) {
                 if (f == null) {
-                    f = new efs[0];
+                    f = new defpackage.efs[0];
                 }
             }
         }
@@ -24,11 +24,17 @@ public final class efs extends dlz {
     }
 
     public efs() {
+        this.a = null;
+        this.b = null;
+        this.c = null;
+        this.d = null;
+        this.e = null;
+        this.g = null;
+        this.h = Integer.MIN_VALUE;
         this.k = -1;
     }
 
-    @Override // defpackage.dlz, defpackage.dmf
-    public final void a(dlx dlx) {
+    public final void a(defpackage.dlx dlx) {
         if (this.a != null) {
             dlx.a(1, this.a);
         }
@@ -54,45 +60,82 @@ public final class efs extends dlz {
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.dlz, defpackage.dmf
     public final int a() {
         int a2 = super.a();
         if (this.a != null) {
-            a2 += dlx.b(1, this.a);
+            a2 += defpackage.dlx.b(1, this.a);
         }
         if (this.b != null) {
             this.b.longValue();
-            a2 += dlx.c(16) + 8;
+            a2 += defpackage.dlx.c(16) + 8;
         }
         if (this.c != null) {
             this.c.longValue();
-            a2 += dlx.c(24) + 8;
+            a2 += defpackage.dlx.c(24) + 8;
         }
         if (this.d != null) {
-            a2 += dlx.c(4, this.d.longValue());
+            a2 += defpackage.dlx.c(4, this.d.longValue());
         }
         if (this.e != null) {
-            a2 += dlx.c(5, this.e.longValue());
+            a2 += defpackage.dlx.c(5, this.e.longValue());
         }
         if (this.g != null) {
-            a2 += dlx.c(6, this.g.longValue());
+            a2 += defpackage.dlx.c(6, this.g.longValue());
         }
         if (this.h != Integer.MIN_VALUE) {
-            return a2 + dlx.c(7, this.h);
+            return a2 + defpackage.dlx.c(7, this.h);
         }
         return a2;
     }
 
     /* access modifiers changed from: private */
-    /* JADX WARNING: Code restructure failed: missing block: B:4:0x000d, code lost:
-        return r6;
-     */
     /* renamed from: b */
-    /* Code decompiled incorrectly, please refer to instructions dump. */
-    public final defpackage.efs a(defpackage.dlw r7) {
-        /*
-        // Method dump skipped, instructions count: 162
-        */
-        throw new UnsupportedOperationException("Method not decompiled: defpackage.efs.a(dlw):efs");
+    public final defpackage.efs a(defpackage.dlw dlw) {
+        while (true) {
+            int a2 = dlw.a();
+            switch (a2) {
+                case 0:
+                    break;
+                case 10:
+                    this.a = dlw.d();
+                    continue;
+                case 17:
+                    this.b = java.lang.Long.valueOf(dlw.g());
+                    continue;
+                case 25:
+                    this.c = java.lang.Long.valueOf(dlw.g());
+                    continue;
+                case 32:
+                    this.d = java.lang.Long.valueOf(dlw.b());
+                    continue;
+                case 40:
+                    this.e = java.lang.Long.valueOf(dlw.b());
+                    continue;
+                case 48:
+                    this.g = java.lang.Long.valueOf(dlw.b());
+                    continue;
+                case 56:
+                    int i = dlw.i();
+                    try {
+                        int e2 = dlw.e();
+                        if (e2 < 0 || e2 > 3) {
+                            throw new java.lang.IllegalArgumentException(e2 + " is not a valid enum SpanType");
+                        }
+                        this.h = e2;
+                        continue;
+                    } catch (java.lang.IllegalArgumentException e3) {
+                        dlw.e(i);
+                        a(dlw, a2);
+                        break;
+                    }
+                default:
+                    if (!super.a(dlw, a2)) {
+                        break;
+                    } else {
+                        continue;
+                    }
+            }
+        }
+        return this;
     }
 }

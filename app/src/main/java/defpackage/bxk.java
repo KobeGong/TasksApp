@@ -1,21 +1,19 @@
 package defpackage;
 
-import android.content.Context;
-
-/* renamed from: bxk  reason: default package */
+/* renamed from: bxk reason: default package */
 /* compiled from: PG */
 public final class bxk {
-    public static volatile bxl a = null;
+    public static volatile defpackage.bxl a = null;
 
-    public static bxl a(Context context) {
-        Context applicationContext = context.getApplicationContext();
-        if (applicationContext instanceof cqb) {
-            return (bxl) ((cqb) applicationContext).a();
+    public static defpackage.bxl a(android.content.Context context) {
+        android.content.Context applicationContext = context.getApplicationContext();
+        if (applicationContext instanceof defpackage.cqb) {
+            return (defpackage.bxl) ((defpackage.cqb) applicationContext).a();
         }
-        if (applicationContext instanceof aik) {
-            return (bxl) ((aik) applicationContext).a();
+        if (applicationContext instanceof defpackage.aik) {
+            return (defpackage.bxl) ((defpackage.aik) applicationContext).a();
         }
-        cld.b(a != null, "Unable to get ChimeComponent from host app.");
+        defpackage.cld.b(a != null, (java.lang.Object) "Unable to get ChimeComponent from host app.");
         return a;
     }
 }

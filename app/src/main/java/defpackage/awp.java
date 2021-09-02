@@ -1,6 +1,6 @@
 package defpackage;
 
-/* renamed from: awp  reason: default package */
+/* renamed from: awp reason: default package */
 /* compiled from: PG */
 public enum awp {
     CLIENT_LOGIN_DISABLED("ClientLoginDisabled"),
@@ -57,19 +57,19 @@ public enum awp {
     GPLUS_INTERSTITIAL("GPlusInterstitial"),
     GPLUS_PROFILE_ERROR("ProfileUpgradeError");
     
-    private final String ab;
+    private final java.lang.String ab;
 
-    private awp(String str) {
+    private awp(java.lang.String str) {
         this.ab = str;
     }
 
-    public static final awp a(String str) {
-        awp awp = null;
-        awp[] values = values();
+    public static final defpackage.awp a(java.lang.String str) {
+        defpackage.awp awp = null;
+        defpackage.awp[] values = values();
         int length = values.length;
         int i = 0;
         while (i < length) {
-            awp awp2 = values[i];
+            defpackage.awp awp2 = values[i];
             if (!awp2.ab.equals(str)) {
                 awp2 = awp;
             }

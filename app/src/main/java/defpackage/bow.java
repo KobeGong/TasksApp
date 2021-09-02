@@ -1,32 +1,24 @@
 package defpackage;
 
-import android.content.ContentResolver;
-import android.database.ContentObserver;
-import android.database.Cursor;
-import android.net.Uri;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-
-/* renamed from: bow  reason: default package */
+/* renamed from: bow reason: default package */
 /* compiled from: PG */
 public final class bow {
-    public static final ConcurrentHashMap a = new ConcurrentHashMap();
-    private static final String[] g = {"key", "value"};
-    public final ContentResolver b;
-    public final Uri c;
-    public final ContentObserver d;
-    public final Object e = new Object();
-    public volatile Map f;
+    public static final java.util.concurrent.ConcurrentHashMap a = new java.util.concurrent.ConcurrentHashMap();
+    private static final java.lang.String[] g = {"key", "value"};
+    public final android.content.ContentResolver b;
+    public final android.net.Uri c;
+    public final android.database.ContentObserver d;
+    public final java.lang.Object e = new java.lang.Object();
+    public volatile java.util.Map f;
 
-    bow(ContentResolver contentResolver, Uri uri) {
+    bow(android.content.ContentResolver contentResolver, android.net.Uri uri) {
         this.b = contentResolver;
         this.c = uri;
-        this.d = new bpc(this);
+        this.d = new defpackage.bpc(this);
     }
 
-    public final Map a() {
-        Map b2 = boz.b("gms:phenotype:phenotype_flag:debug_disable_caching") ? b() : this.f;
+    public final java.util.Map a() {
+        java.util.Map b2 = defpackage.boz.b("gms:phenotype:phenotype_flag:debug_disable_caching") ? b() : this.f;
         if (b2 == null) {
             synchronized (this.e) {
                 b2 = this.f;
@@ -39,9 +31,9 @@ public final class bow {
         return b2;
     }
 
-    private final Map b() {
-        HashMap hashMap = new HashMap();
-        Cursor query = this.b.query(this.c, g, null, null, null);
+    private final java.util.Map b() {
+        java.util.HashMap hashMap = new java.util.HashMap();
+        android.database.Cursor query = this.b.query(this.c, g, null, null, null);
         if (query != null) {
             while (query.moveToNext()) {
                 try {

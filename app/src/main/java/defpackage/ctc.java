@@ -1,13 +1,11 @@
 package defpackage;
 
-import java.util.AbstractMap;
-
-/* renamed from: ctc  reason: default package */
+/* renamed from: ctc reason: default package */
 /* compiled from: PG */
-final class ctc extends csp {
-    private final /* synthetic */ ctb a;
+final class ctc extends defpackage.csp {
+    private final /* synthetic */ defpackage.ctb a;
 
-    ctc(ctb ctb) {
+    ctc(defpackage.ctb ctb) {
         this.a = ctb;
     }
 
@@ -15,14 +13,12 @@ final class ctc extends csp {
         return this.a.b;
     }
 
-    @Override // defpackage.csn
     public final boolean c() {
         return true;
     }
 
-    @Override // java.util.List
-    public final /* synthetic */ Object get(int i) {
-        cld.a(i, this.a.b);
-        return new AbstractMap.SimpleImmutableEntry(this.a.a[i * 2], this.a.a[(i * 2) + 1]);
+    public final /* synthetic */ java.lang.Object get(int i) {
+        defpackage.cld.a(i, this.a.b);
+        return new java.util.AbstractMap.SimpleImmutableEntry(this.a.a[i * 2], this.a.a[(i * 2) + 1]);
     }
 }

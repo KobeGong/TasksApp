@@ -1,31 +1,25 @@
 package defpackage;
 
-import android.content.DialogInterface;
-import android.os.Handler;
-import android.os.Message;
-import java.lang.ref.WeakReference;
-
-/* renamed from: wj  reason: default package */
+/* renamed from: wj reason: default package */
 /* compiled from: PG */
-public final class wj extends Handler {
-    private WeakReference a;
+public final class wj extends android.os.Handler {
+    private java.lang.ref.WeakReference a;
 
-    public wj(DialogInterface dialogInterface) {
-        this.a = new WeakReference(dialogInterface);
+    public wj(android.content.DialogInterface dialogInterface) {
+        this.a = new java.lang.ref.WeakReference(dialogInterface);
     }
 
-    public final void handleMessage(Message message) {
+    public final void handleMessage(android.os.Message message) {
         switch (message.what) {
             case -3:
             case -2:
             case -1:
-                ((DialogInterface.OnClickListener) message.obj).onClick((DialogInterface) this.a.get(), message.what);
-                return;
-            case 0:
-            default:
+                ((android.content.DialogInterface.OnClickListener) message.obj).onClick((android.content.DialogInterface) this.a.get(), message.what);
                 return;
             case 1:
-                ((DialogInterface) message.obj).dismiss();
+                ((android.content.DialogInterface) message.obj).dismiss();
+                return;
+            default:
                 return;
         }
     }

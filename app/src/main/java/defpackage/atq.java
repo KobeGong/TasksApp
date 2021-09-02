@@ -1,6 +1,6 @@
 package defpackage;
 
-/* renamed from: atq  reason: default package */
+/* renamed from: atq reason: default package */
 /* compiled from: PG */
 enum atq {
     OVERDUE,

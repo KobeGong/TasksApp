@@ -1,40 +1,38 @@
 package defpackage;
 
-import java.util.concurrent.TimeUnit;
-
-/* renamed from: csc  reason: default package */
+/* renamed from: csc reason: default package */
 /* compiled from: PG */
 final /* synthetic */ class csc {
-    public static final /* synthetic */ int[] a = new int[TimeUnit.values().length];
+    public static final /* synthetic */ int[] a = new int[java.util.concurrent.TimeUnit.values().length];
 
     static {
         try {
-            a[TimeUnit.NANOSECONDS.ordinal()] = 1;
-        } catch (NoSuchFieldError e) {
+            a[java.util.concurrent.TimeUnit.NANOSECONDS.ordinal()] = 1;
+        } catch (java.lang.NoSuchFieldError e) {
         }
         try {
-            a[TimeUnit.MICROSECONDS.ordinal()] = 2;
-        } catch (NoSuchFieldError e2) {
+            a[java.util.concurrent.TimeUnit.MICROSECONDS.ordinal()] = 2;
+        } catch (java.lang.NoSuchFieldError e2) {
         }
         try {
-            a[TimeUnit.MILLISECONDS.ordinal()] = 3;
-        } catch (NoSuchFieldError e3) {
+            a[java.util.concurrent.TimeUnit.MILLISECONDS.ordinal()] = 3;
+        } catch (java.lang.NoSuchFieldError e3) {
         }
         try {
-            a[TimeUnit.SECONDS.ordinal()] = 4;
-        } catch (NoSuchFieldError e4) {
+            a[java.util.concurrent.TimeUnit.SECONDS.ordinal()] = 4;
+        } catch (java.lang.NoSuchFieldError e4) {
         }
         try {
-            a[TimeUnit.MINUTES.ordinal()] = 5;
-        } catch (NoSuchFieldError e5) {
+            a[java.util.concurrent.TimeUnit.MINUTES.ordinal()] = 5;
+        } catch (java.lang.NoSuchFieldError e5) {
         }
         try {
-            a[TimeUnit.HOURS.ordinal()] = 6;
-        } catch (NoSuchFieldError e6) {
+            a[java.util.concurrent.TimeUnit.HOURS.ordinal()] = 6;
+        } catch (java.lang.NoSuchFieldError e6) {
         }
         try {
-            a[TimeUnit.DAYS.ordinal()] = 7;
-        } catch (NoSuchFieldError e7) {
+            a[java.util.concurrent.TimeUnit.DAYS.ordinal()] = 7;
+        } catch (java.lang.NoSuchFieldError e7) {
         }
     }
 }

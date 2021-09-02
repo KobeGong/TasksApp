@@ -1,49 +1,42 @@
 package defpackage;
 
-import java.io.PrintStream;
-import java.io.PrintWriter;
-import java.util.List;
-
-/* renamed from: cze  reason: default package */
+/* renamed from: cze reason: default package */
 /* compiled from: PG */
-final class cze extends czb {
-    private final czc a = new czc();
+final class cze extends defpackage.czb {
+    private final defpackage.czc a = new defpackage.czc();
 
     cze() {
     }
 
-    @Override // defpackage.czb
-    public final void a(Throwable th, Throwable th2) {
+    public final void a(java.lang.Throwable th, java.lang.Throwable th2) {
         if (th2 == th) {
-            throw new IllegalArgumentException("Self suppression is not allowed.", th2);
+            throw new java.lang.IllegalArgumentException("Self suppression is not allowed.", th2);
         } else if (th2 == null) {
-            throw new NullPointerException("The suppressed exception cannot be null.");
+            throw new java.lang.NullPointerException("The suppressed exception cannot be null.");
         } else {
             this.a.a(th, true).add(th2);
         }
     }
 
-    @Override // defpackage.czb
-    public final void a(Throwable th) {
+    public final void a(java.lang.Throwable th) {
         th.printStackTrace();
-        List<Throwable> a2 = this.a.a(th, false);
+        java.util.List<java.lang.Throwable> a2 = this.a.a(th, false);
         if (a2 != null) {
             synchronized (a2) {
-                for (Throwable th2 : a2) {
-                    System.err.print("Suppressed: ");
+                for (java.lang.Throwable th2 : a2) {
+                    java.lang.System.err.print("Suppressed: ");
                     th2.printStackTrace();
                 }
             }
         }
     }
 
-    @Override // defpackage.czb
-    public final void a(Throwable th, PrintStream printStream) {
+    public final void a(java.lang.Throwable th, java.io.PrintStream printStream) {
         th.printStackTrace(printStream);
-        List<Throwable> a2 = this.a.a(th, false);
+        java.util.List<java.lang.Throwable> a2 = this.a.a(th, false);
         if (a2 != null) {
             synchronized (a2) {
-                for (Throwable th2 : a2) {
+                for (java.lang.Throwable th2 : a2) {
                     printStream.print("Suppressed: ");
                     th2.printStackTrace(printStream);
                 }
@@ -51,13 +44,12 @@ final class cze extends czb {
         }
     }
 
-    @Override // defpackage.czb
-    public final void a(Throwable th, PrintWriter printWriter) {
+    public final void a(java.lang.Throwable th, java.io.PrintWriter printWriter) {
         th.printStackTrace(printWriter);
-        List<Throwable> a2 = this.a.a(th, false);
+        java.util.List<java.lang.Throwable> a2 = this.a.a(th, false);
         if (a2 != null) {
             synchronized (a2) {
-                for (Throwable th2 : a2) {
+                for (java.lang.Throwable th2 : a2) {
                     printWriter.print("Suppressed: ");
                     th2.printStackTrace(printWriter);
                 }

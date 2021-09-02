@@ -1,69 +1,65 @@
 package defpackage;
 
-import android.os.Looper;
-import com.google.android.gms.common.api.Status;
-import java.util.TimeZone;
-
-/* renamed from: awu  reason: default package */
+/* renamed from: awu reason: default package */
 /* compiled from: PG */
 public final class awu {
-    public String a;
-    public /* synthetic */ awt b;
+    public java.lang.String a;
+    public /* synthetic */ defpackage.awt b;
     private int c;
-    private String d;
-    private String e;
+    private java.lang.String d;
+    private java.lang.String e;
     private int f;
-    private final aww g;
+    private final defpackage.aww g;
     private boolean h;
-    private final blh i;
+    private final defpackage.blh i;
     private boolean j;
 
-    public awu(awt awt, byte[] bArr) {
+    public awu(defpackage.awt awt, byte[] bArr) {
         this(awt, bArr, null);
     }
 
-    public awu(awt awt, aww aww) {
+    public awu(defpackage.awt awt, defpackage.aww aww) {
         this(awt, null, aww);
     }
 
-    private awu(awt awt, byte[] bArr, aww aww) {
+    private awu(defpackage.awt awt, byte[] bArr, defpackage.aww aww) {
         this.b = awt;
         this.c = this.b.g;
         this.d = this.b.f;
         this.a = this.b.h;
-        this.e = awt.d(this.b);
-        this.f = awt.a();
+        this.e = defpackage.awt.d(this.b);
+        this.f = defpackage.awt.a();
         this.h = true;
-        this.i = new blh();
+        this.i = new defpackage.blh();
         this.j = false;
         this.a = awt.h;
-        this.e = awt.d(awt);
+        this.e = defpackage.awt.d(awt);
         this.i.c = awt.k.a();
         this.i.d = awt.k.b();
-        blh blh = this.i;
-        awx unused = awt.l;
-        blh.f = (long) (TimeZone.getDefault().getOffset(this.i.c) / 1000);
+        defpackage.blh blh = this.i;
+        awt.l;
+        blh.f = (long) (java.util.TimeZone.getDefault().getOffset(this.i.c) / 1000);
         if (bArr != null) {
             this.i.e = bArr;
         }
         this.g = aww;
     }
 
-    @Deprecated
-    public final ayt a() {
+    @java.lang.Deprecated
+    public final defpackage.ayt a() {
         if (this.j) {
-            throw new IllegalStateException("do not reuse LogEventBuilder");
+            throw new java.lang.IllegalStateException("do not reuse LogEventBuilder");
         }
         this.j = true;
-        axa axa = new axa(new axb(this.b.d, this.b.e, this.c, this.d, this.a, this.e, awt.b(), this.f), this.i, this.g, awt.c(), awt.c(), this.h);
-        axb axb = axa.a;
+        defpackage.axa axa = new defpackage.axa(new defpackage.axb(this.b.d, this.b.e, this.c, this.d, this.a, this.e, defpackage.awt.b(), this.f), this.i, this.g, defpackage.awt.c(), defpackage.awt.c(), this.h);
+        defpackage.axb axb = axa.a;
         if (this.b.m.a(axb.b, axb.a)) {
             return this.b.j.a(axa);
         }
-        Status status = Status.a;
-        azb.b(status, "Result must not be null");
-        bbn bbn = new bbn(Looper.getMainLooper());
-        bbn.a((ayw) status);
+        com.google.android.gms.common.api.Status status = com.google.android.gms.common.api.Status.a;
+        defpackage.azb.b((java.lang.Object) status, (java.lang.Object) "Result must not be null");
+        defpackage.bbn bbn = new defpackage.bbn(android.os.Looper.getMainLooper());
+        bbn.a((defpackage.ayw) status);
         return bbn;
     }
 }

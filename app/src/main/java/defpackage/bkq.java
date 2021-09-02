@@ -1,25 +1,20 @@
 package defpackage;
 
-import android.os.IBinder;
-import android.os.IInterface;
-import android.os.Parcel;
-
-/* renamed from: bkq  reason: default package */
+/* renamed from: bkq reason: default package */
 /* compiled from: PG */
-public abstract class bkq extends bkn implements bkp {
-    public static bkp a(IBinder iBinder) {
+public abstract class bkq extends defpackage.bkn implements defpackage.bkp {
+    public static defpackage.bkp a(android.os.IBinder iBinder) {
         if (iBinder == null) {
             return null;
         }
-        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.auth.IAuthManagerService");
-        if (queryLocalInterface instanceof bkp) {
-            return (bkp) queryLocalInterface;
+        android.os.IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.auth.IAuthManagerService");
+        if (queryLocalInterface instanceof defpackage.bkp) {
+            return (defpackage.bkp) queryLocalInterface;
         }
-        return new bkr(iBinder);
+        return new defpackage.bkr(iBinder);
     }
 
-    @Override // android.os.Binder
-    public boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) {
-        throw new NoSuchMethodError();
+    public boolean onTransact(int i, android.os.Parcel parcel, android.os.Parcel parcel2, int i2) {
+        throw new java.lang.NoSuchMethodError();
     }
 }

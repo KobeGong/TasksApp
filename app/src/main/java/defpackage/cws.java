@@ -1,13 +1,12 @@
 package defpackage;
 
-/* renamed from: cws  reason: default package */
+/* renamed from: cws reason: default package */
 /* compiled from: PG */
-final class cws implements dio {
+final class cws implements defpackage.dio {
     cws() {
     }
 
-    @Override // defpackage.dio
-    public final /* synthetic */ din a(int i) {
-        return cwr.a(i);
+    public final /* synthetic */ defpackage.din a(int i) {
+        return defpackage.cwr.a(i);
     }
 }

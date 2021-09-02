@@ -1,25 +1,25 @@
 package defpackage;
 
-import java.nio.charset.Charset;
-
-/* renamed from: dqt  reason: default package */
+/* renamed from: dqt reason: default package */
 /* compiled from: PG */
 public final class dqt {
-    public final /* synthetic */ dqk a;
+    public final /* synthetic */ defpackage.dqk a;
 
     public final void a(byte[] bArr) {
-        String str;
+        java.lang.String str;
+        boolean z;
         this.a.g.run();
-        dql dql = new dql(this.a);
-        String str2 = this.a.b;
+        defpackage.dql dql = new defpackage.dql(this.a);
+        java.lang.String str2 = this.a.b;
         if (bArr != null) {
-            String valueOf = String.valueOf(str2);
-            String a2 = cwe.a.a(bArr, bArr.length);
-            str = new StringBuilder(String.valueOf(valueOf).length() + 1 + String.valueOf(a2).length()).append(valueOf).append("?").append(a2).toString();
+            java.lang.String valueOf = java.lang.String.valueOf(str2);
+            java.lang.String a2 = defpackage.cwe.a.a(bArr, bArr.length);
+            str = new java.lang.StringBuilder(java.lang.String.valueOf(valueOf).length() + 1 + java.lang.String.valueOf(a2).length()).append(valueOf).append("?").append(a2).toString();
         } else {
             str = str2;
         }
-        ehq a3 = ((ehy) this.a.n.a).a(str, dql, this.a.d);
+        defpackage.dqj dqj = this.a.n;
+        defpackage.ehq a3 = ((defpackage.ehy) dqj.a).a(str, dql, this.a.d);
         if (bArr != null) {
             a3.a("GET");
         } else if (this.a.h) {
@@ -32,26 +32,31 @@ public final class dqt {
             a3.a(this.a.k);
         }
         if (this.a.l != null) {
-            for (Object obj : this.a.l) {
-                a3.a(obj);
+            for (java.lang.Object a4 : this.a.l) {
+                a3.a(a4);
             }
         }
-        dqk dqk = this.a;
-        a3.a(dvc.i.a, dqk.c);
-        a3.a(dvc.g.a, "application/grpc");
+        defpackage.dqk dqk = this.a;
+        a3.a(defpackage.dvc.i.a, dqk.c);
+        a3.a(defpackage.dvc.g.a, "application/grpc");
         a3.a("te", "trailers");
-        byte[][] a4 = dzs.a(dqk.e);
-        for (int i = 0; i < a4.length; i += 2) {
-            String str3 = new String(a4[i], Charset.forName("UTF-8"));
-            if (!dvc.g.a.equalsIgnoreCase(str3) && !dvc.i.a.equalsIgnoreCase(str3) && !dvc.h.a.equalsIgnoreCase(str3)) {
-                a3.a(str3, new String(a4[i + 1], Charset.forName("UTF-8")));
+        byte[][] a5 = defpackage.dzs.a(dqk.e);
+        for (int i = 0; i < a5.length; i += 2) {
+            java.lang.String str3 = new java.lang.String(a5[i], java.nio.charset.Charset.forName("UTF-8"));
+            if (defpackage.dvc.g.a.equalsIgnoreCase(str3) || defpackage.dvc.i.a.equalsIgnoreCase(str3) || defpackage.dvc.h.a.equalsIgnoreCase(str3)) {
+                z = false;
+            } else {
+                z = true;
+            }
+            if (z) {
+                a3.a(str3, new java.lang.String(a5[i + 1], java.nio.charset.Charset.forName("UTF-8")));
             }
         }
         this.a.i = a3.b();
         this.a.i.a();
     }
 
-    public dqt(dqk dqk) {
+    public dqt(defpackage.dqk dqk) {
         this.a = dqk;
     }
 }

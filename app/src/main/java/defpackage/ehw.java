@@ -1,17 +1,14 @@
 package defpackage;
 
-import android.content.Context;
-import java.nio.ByteBuffer;
-
-@Deprecated
-/* renamed from: ehw  reason: default package */
+@java.lang.Deprecated
+/* renamed from: ehw reason: default package */
 /* compiled from: PG */
 public class ehw {
-    public static Context a;
+    public static android.content.Context a;
 
-    public static void a(ByteBuffer byteBuffer) {
+    public static void a(java.nio.ByteBuffer byteBuffer) {
         if (!byteBuffer.isDirect()) {
-            throw new IllegalArgumentException("byteBuffer must be a direct ByteBuffer.");
+            throw new java.lang.IllegalArgumentException("byteBuffer must be a direct ByteBuffer.");
         }
     }
 
@@ -19,6 +16,6 @@ public class ehw {
         if (i >= 0 && i <= 0) {
             return i;
         }
-        throw new IllegalArgumentException(new StringBuilder(42).append(i).append(" is not a valid enum MetricType").toString());
+        throw new java.lang.IllegalArgumentException(i + " is not a valid enum MetricType");
     }
 }

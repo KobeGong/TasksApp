@@ -1,51 +1,52 @@
 package defpackage;
 
-/* renamed from: dat  reason: default package */
+/* renamed from: dat reason: default package */
 /* compiled from: PG */
-public final class dat extends dih implements djq {
-    public static final dat b = new dat();
-    private static volatile djx c;
-    public diq a = dka.b;
+public final class dat extends defpackage.dih implements defpackage.djq {
+    public static final defpackage.dat b = new defpackage.dat();
+    private static volatile defpackage.djx c;
+    public defpackage.diq a = defpackage.dka.b;
 
     private dat() {
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.dih
-    public final Object a(int i) {
-        djx djx;
+    public final java.lang.Object a(int i) {
+        defpackage.djx djx;
         switch (i - 1) {
             case 0:
-                return (byte) 1;
+                return java.lang.Byte.valueOf(1);
             case 1:
                 return null;
             case 2:
-                return new dkb(b, "\u0000\u0001\u0000\u0000\u0001\u0001\u0001\u0000\u0001\u0000\u0001\u001b", new Object[]{"a", dcb.class});
+                java.lang.Object[] objArr = {"a", defpackage.dcb.class};
+                return new defpackage.dkb(b, "\u0000\u0001\u0000\u0000\u0001\u0001\u0001\u0000\u0001\u0000\u0001\u001b", objArr);
             case 3:
-                return new dat();
+                return new defpackage.dat();
             case 4:
-                return new dii((byte[][][][][]) null);
+                return new defpackage.dii((byte[][][][][]) null);
             case 5:
                 return b;
             case 6:
-                djx djx2 = c;
+                defpackage.djx djx2 = c;
                 if (djx2 != null) {
                     return djx2;
                 }
-                synchronized (dat.class) {
+                synchronized (defpackage.dat.class) {
                     djx = c;
                     if (djx == null) {
-                        djx = new dgr(b);
+                        djx = new defpackage.dgr(b);
                         c = djx;
                     }
                 }
                 return djx;
             default:
-                throw new UnsupportedOperationException();
+                throw new java.lang.UnsupportedOperationException();
         }
     }
 
     static {
-        dih.t.put(dat.class, b);
+        defpackage.dat dat = b;
+        defpackage.dih.t.put(defpackage.dat.class, dat);
     }
 }

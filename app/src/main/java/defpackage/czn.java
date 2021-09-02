@@ -1,8 +1,8 @@
 package defpackage;
 
-/* renamed from: czn  reason: default package */
+/* renamed from: czn reason: default package */
 /* compiled from: PG */
-public enum czn implements din {
+public enum czn implements defpackage.din {
     UNKNOWN(0),
     ANDROID(1),
     IOS(2),
@@ -11,15 +11,14 @@ public enum czn implements din {
     
     private final int f;
 
-    @Override // defpackage.din
     public final int a() {
         if (this != UNRECOGNIZED) {
             return this.f;
         }
-        throw new IllegalArgumentException("Can't get the number of an unknown enum value.");
+        throw new java.lang.IllegalArgumentException("Can't get the number of an unknown enum value.");
     }
 
-    public static czn a(int i) {
+    public static defpackage.czn a(int i) {
         switch (i) {
             case 0:
                 return UNKNOWN;
@@ -39,6 +38,6 @@ public enum czn implements din {
     }
 
     static {
-        new czo();
+        new defpackage.czo();
     }
 }

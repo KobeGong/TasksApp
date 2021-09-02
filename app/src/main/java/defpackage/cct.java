@@ -1,18 +1,17 @@
 package defpackage;
 
-/* renamed from: cct  reason: default package */
+/* renamed from: cct reason: default package */
 /* compiled from: PG */
-public final class cct implements ecz {
-    private final ecz a;
+public final class cct implements defpackage.ecz {
+    private final defpackage.ecz a;
 
-    public cct(ecz ecz) {
+    public cct(defpackage.ecz ecz) {
         this.a = ecz;
     }
 
-    @Override // defpackage.ecz
-    public final /* synthetic */ Object a() {
-        ccq ccq = new ccq();
-        ccq.a = (ccx) this.a.a();
+    public final /* synthetic */ java.lang.Object a() {
+        defpackage.ccq ccq = new defpackage.ccq();
+        ccq.a = (defpackage.ccx) this.a.a();
         return ccq;
     }
 }

@@ -1,34 +1,28 @@
 package defpackage;
 
-import android.accounts.Account;
-import android.os.Binder;
-import android.os.RemoteException;
-import android.util.Log;
-
-/* renamed from: bdu  reason: default package */
+/* renamed from: bdu reason: default package */
 /* compiled from: PG */
-public final class bdu extends bdq {
-    public static Account a(bdp bdp) {
-        Account account = null;
+public final class bdu extends defpackage.bdq {
+    public static android.accounts.Account a(defpackage.bdp bdp) {
+        android.accounts.Account account = null;
         if (bdp != null) {
-            long clearCallingIdentity = Binder.clearCallingIdentity();
+            long clearCallingIdentity = android.os.Binder.clearCallingIdentity();
             try {
                 account = bdp.a();
-            } catch (RemoteException e) {
-                Log.w("AccountAccessor", "Remote account accessor probably died");
+            } catch (android.os.RemoteException e) {
+                android.util.Log.w("AccountAccessor", "Remote account accessor probably died");
             } finally {
-                Binder.restoreCallingIdentity(clearCallingIdentity);
+                android.os.Binder.restoreCallingIdentity(clearCallingIdentity);
             }
         }
         return account;
     }
 
-    @Override // defpackage.bdp
-    public final Account a() {
-        throw new NoSuchMethodError();
+    public final android.accounts.Account a() {
+        throw new java.lang.NoSuchMethodError();
     }
 
-    public final boolean equals(Object obj) {
-        throw new NoSuchMethodError();
+    public final boolean equals(java.lang.Object obj) {
+        throw new java.lang.NoSuchMethodError();
     }
 }

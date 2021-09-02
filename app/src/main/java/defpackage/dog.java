@@ -1,40 +1,35 @@
 package defpackage;
 
-/* renamed from: dog  reason: default package */
+/* renamed from: dog reason: default package */
 /* compiled from: PG */
-public class dog extends dpn {
-    private final dne a;
+public class dog extends defpackage.dpn {
+    private final defpackage.dne a;
 
     public dog() {
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.dpn
-    public final dne b() {
+    public final defpackage.dne b() {
         return this.a;
     }
 
-    @Override // defpackage.dne
-    public final void a(Object obj) {
+    public final void a(java.lang.Object obj) {
         b().a(obj);
     }
 
-    @Override // defpackage.dpn, defpackage.dne
     public final /* bridge */ /* synthetic */ void a() {
         super.a();
     }
 
-    @Override // defpackage.dpn, defpackage.dne
-    public /* bridge */ /* synthetic */ void a(dpw dpw, dor dor) {
+    public /* bridge */ /* synthetic */ void a(defpackage.dpw dpw, defpackage.dor dor) {
         super.a(dpw, dor);
     }
 
-    @Override // defpackage.dpn, defpackage.dne
-    public final /* bridge */ /* synthetic */ void a(dor dor) {
+    public final /* bridge */ /* synthetic */ void a(defpackage.dor dor) {
         super.a(dor);
     }
 
-    public dog(dne dne) {
+    public dog(defpackage.dne dne) {
         this();
         this.a = dne;
     }

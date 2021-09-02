@@ -1,22 +1,18 @@
 package defpackage;
 
-import com.google.android.gms.common.api.Status;
-
-/* renamed from: bjv  reason: default package */
+/* renamed from: bjv reason: default package */
 /* compiled from: PG */
-public final class bjv extends bmc {
-    private /* synthetic */ bly e;
+public final class bjv extends defpackage.bmc {
+    private /* synthetic */ defpackage.bly e;
 
-    /* JADX INFO: super call moved to the top of the method (can break code semantics) */
-    public bjv(ayp ayp, bly bly) {
-        super(ayp, (byte) 0);
+    public bjv(defpackage.ayp ayp, defpackage.bly bly) {
         this.e = bly;
+        super(ayp, 0);
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.bca
-    public final /* synthetic */ void a(ayg ayg) {
-        ((bnq) ayg).a(this.e);
-        a((ayw) Status.a);
+    public final /* synthetic */ void a(defpackage.ayg ayg) {
+        ((defpackage.bnq) ayg).a(this.e);
+        a((defpackage.ayw) com.google.android.gms.common.api.Status.a);
     }
 }

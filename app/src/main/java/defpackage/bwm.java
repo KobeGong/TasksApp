@@ -1,22 +1,16 @@
 package defpackage;
 
-import android.content.Intent;
-import android.text.TextUtils;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
-
-/* renamed from: bwm  reason: default package */
+/* renamed from: bwm reason: default package */
 /* compiled from: PG */
-public final class bwm implements bvn {
-    private final bup a;
-    private final bza b;
-    private final cbb c;
-    private final bux d;
-    private final bwk e;
-    private final cbl f;
+public final class bwm implements defpackage.bvn {
+    private final defpackage.bup a;
+    private final defpackage.bza b;
+    private final defpackage.cbb c;
+    private final defpackage.bux d;
+    private final defpackage.bwk e;
+    private final defpackage.cbl f;
 
-    bwm(bup bup, bza bza, cbb cbb, bux bux, bwk bwk, cbl cbl, bzd bzd) {
+    bwm(defpackage.bup bup, defpackage.bza bza, defpackage.cbb cbb, defpackage.bux bux, defpackage.bwk bwk, defpackage.cbl cbl, defpackage.bzd bzd) {
         this.a = bup;
         this.b = bza;
         this.c = cbb;
@@ -25,80 +19,78 @@ public final class bwm implements bvn {
         this.f = cbl;
     }
 
-    @Override // defpackage.bvn
-    public final boolean a(Intent intent) {
+    public final boolean a(android.content.Intent intent) {
         return intent != null && "com.google.android.libraries.notifications.SYSTEM_TRAY_EVENT".equals(intent.getAction());
     }
 
-    @Override // defpackage.bvn
-    public final void a(Intent intent, bvo bvo) {
-        bul a2;
-        dfr dfr;
-        dfl dfl;
-        dih dih;
-        String stringExtra = intent.getStringExtra("com.google.android.libraries.notifications.ACCOUNT_NAME");
-        String[] stringArrayExtra = intent.getStringArrayExtra("com.google.android.libraries.notifications.THREAD_IDS");
-        String stringExtra2 = intent.getStringExtra("com.google.android.libraries.notifications.ACTION_ID");
+    public final void a(android.content.Intent intent, defpackage.bvo bvo) {
+        defpackage.bul a2;
+        defpackage.dfr dfr;
+        defpackage.dfl dfl;
+        defpackage.dih dih;
+        java.lang.String stringExtra = intent.getStringExtra("com.google.android.libraries.notifications.ACCOUNT_NAME");
+        java.lang.String[] stringArrayExtra = intent.getStringArrayExtra("com.google.android.libraries.notifications.THREAD_IDS");
+        java.lang.String stringExtra2 = intent.getStringExtra("com.google.android.libraries.notifications.ACTION_ID");
         int intExtra = intent.getIntExtra("com.google.android.libraries.notifications.INTENT_EXTRA_THREAD_STATE_UPDATE_BITMASK", 0);
-        cld.a(stringArrayExtra);
+        defpackage.cld.a((java.lang.Object) stringArrayExtra);
         if (stringExtra == null) {
             a2 = null;
         } else {
             try {
                 a2 = this.a.a(stringExtra);
-            } catch (buo e2) {
-                bty.b("SystemTrayIntentHandler", e2, "Error handling system tray action [%s]", stringExtra2);
+            } catch (defpackage.buo e2) {
+                defpackage.bty.b("SystemTrayIntentHandler", e2, "Error handling system tray action [%s]", stringExtra2);
                 return;
             }
         }
-        List<buv> a3 = this.d.a(stringExtra, stringArrayExtra);
+        java.util.List<defpackage.buv> a3 = this.d.a(stringExtra, stringArrayExtra);
         if ((intExtra & 8) > 0) {
-            this.f.a(a2, Arrays.asList(stringArrayExtra));
+            this.f.a(a2, java.util.Arrays.asList(stringArrayExtra));
         }
         if (!a3.isEmpty()) {
-            bwk bwk = this.e;
+            defpackage.bwk bwk = this.e;
             if ("com.google.android.libraries.notifications.NOTIFICATION_CLICKED".equals(stringExtra2)) {
-                bty.d("EventCallbackHelper", "Notification clicked for account [%s], on threads [%s]", stringExtra, bwk.a(a3));
+                defpackage.bty.d("EventCallbackHelper", "Notification clicked for account [%s], on threads [%s]", stringExtra, defpackage.bwk.a((java.util.List) a3));
                 if (bwk.b.a()) {
-                    ((cbu) bwk.b.b()).b();
+                    ((defpackage.cbu) bwk.b.b()).b();
                 } else if (a3.size() == 1) {
-                    bwk.a(((buv) a3.get(0)).g().g);
+                    bwk.a(((defpackage.buv) a3.get(0)).g().g);
                 }
             } else if ("com.google.android.libraries.notifications.NOTIFICATION_REMOVED".equals(stringExtra2)) {
-                bty.d("EventCallbackHelper", "Notification removed for account [%s], on threads [%s]", stringExtra, bwk.a(a3));
+                defpackage.bty.d("EventCallbackHelper", "Notification removed for account [%s], on threads [%s]", stringExtra, defpackage.bwk.a((java.util.List) a3));
                 if (bwk.b.a()) {
-                    ((cbu) bwk.b.b()).c();
+                    ((defpackage.cbu) bwk.b.b()).c();
                 }
             } else if ("com.google.android.libraries.notifications.NOTIFICATION_EXPIRED".equals(stringExtra2)) {
-                bty.d("EventCallbackHelper", "Notification expired for account [%s], on threads [%s]", stringExtra, bwk.a(a3));
+                defpackage.bty.d("EventCallbackHelper", "Notification expired for account [%s], on threads [%s]", stringExtra, defpackage.bwk.a((java.util.List) a3));
                 if (bwk.b.a()) {
-                    ((cbu) bwk.b.b()).d();
+                    ((defpackage.cbu) bwk.b.b()).d();
                 }
-            } else if (!TextUtils.isEmpty(stringExtra2)) {
-                cld.a(a3.size() == 1);
-                cld.a(stringExtra2.startsWith("com.google.android.libraries.notifications.ACTION_ID:"));
-                String replaceFirst = stringExtra2.replaceFirst("com.google.android.libraries.notifications.ACTION_ID:", "");
-                dfn g = ((buv) a3.get(0)).g();
+            } else if (!android.text.TextUtils.isEmpty(stringExtra2)) {
+                defpackage.cld.a(a3.size() == 1);
+                defpackage.cld.a(stringExtra2.startsWith("com.google.android.libraries.notifications.ACTION_ID:"));
+                java.lang.String replaceFirst = stringExtra2.replaceFirst("com.google.android.libraries.notifications.ACTION_ID:", "");
+                defpackage.dfn g = ((defpackage.buv) a3.get(0)).g();
                 if (g.h == null) {
-                    dfr = dfr.f;
+                    dfr = defpackage.dfr.f;
                 } else {
                     dfr = g.h;
                 }
-                Iterator it = dfr.e.iterator();
+                java.util.Iterator it = dfr.e.iterator();
                 while (true) {
                     if (!it.hasNext()) {
                         dfl = null;
                         break;
                     }
-                    dfl dfl2 = (dfl) it.next();
+                    defpackage.dfl dfl2 = (defpackage.dfl) it.next();
                     if (replaceFirst.equals(dfl2.d)) {
                         dfl = dfl2;
                         break;
                     }
                 }
-                bty.d("EventCallbackHelper", "Notification action clicked for account [%s], on thread [%s]", stringExtra, ((buv) a3.get(0)).a());
+                defpackage.bty.d("EventCallbackHelper", "Notification action clicked for account [%s], on thread [%s]", stringExtra, ((defpackage.buv) a3.get(0)).a());
                 if (bwk.b.a()) {
-                    ((cbu) bwk.b.b()).e();
+                    ((defpackage.cbu) bwk.b.b()).e();
                 } else {
                     bwk.a(dfl.c);
                 }
@@ -107,42 +99,42 @@ public final class bwm implements bvn {
                 return;
             }
             if (a2 != null) {
-                this.c.a.a(a2, bzd.a(bzd.a(intExtra)), buv.a(a3), "UpdateThreadStateCallback");
+                this.c.a.a(a2, defpackage.bzd.a(defpackage.bzd.a(intExtra)), defpackage.buv.a((java.util.List) a3), "UpdateThreadStateCallback");
                 return;
             }
-            for (buv buv : a3) {
-                if (!TextUtils.isEmpty(buv.j())) {
-                    bza bza = this.b;
-                    String j = buv.j();
-                    dii dii = (dii) deu.d.a(bg.ao);
+            for (defpackage.buv buv : a3) {
+                if (!android.text.TextUtils.isEmpty(buv.j())) {
+                    defpackage.bza bza = this.b;
+                    java.lang.String j = buv.j();
+                    defpackage.dii dii = (defpackage.dii) defpackage.deu.d.a(defpackage.bg.ao);
                     dii.b();
-                    deu deu = (deu) dii.a;
+                    defpackage.deu deu = (defpackage.deu) dii.a;
                     if (j == null) {
-                        throw new NullPointerException();
+                        throw new java.lang.NullPointerException();
                     }
                     deu.a |= 1;
                     deu.b = j;
-                    dgm a4 = bzd.a(intExtra);
+                    defpackage.dgm a4 = defpackage.bzd.a(intExtra);
                     dii.b();
-                    deu deu2 = (deu) dii.a;
+                    defpackage.deu deu2 = (defpackage.deu) dii.a;
                     if (a4 == null) {
-                        throw new NullPointerException();
+                        throw new java.lang.NullPointerException();
                     }
                     deu2.c = a4;
                     deu2.a |= 2;
                     if (dii.b) {
                         dih = dii.a;
                     } else {
-                        dih dih2 = dii.a;
-                        djz.a.a(dih2).c(dih2);
+                        defpackage.dih dih2 = dii.a;
+                        defpackage.djz.a.a((java.lang.Object) dih2).c(dih2);
                         dii.b = true;
                         dih = dii.a;
                     }
-                    dih dih3 = dih;
-                    if (!dih.a(dih3, Boolean.TRUE.booleanValue())) {
-                        throw new dkw();
+                    defpackage.dih dih3 = dih;
+                    if (!defpackage.dih.a(dih3, java.lang.Boolean.TRUE.booleanValue())) {
+                        throw new defpackage.dkw();
                     }
-                    bza.a.a.a("/v1/updatethreadstatebytoken", null, (deu) dih3, dev.a);
+                    bza.a.a.a("/v1/updatethreadstatebytoken", null, (defpackage.deu) dih3, defpackage.dev.a);
                 }
             }
         }

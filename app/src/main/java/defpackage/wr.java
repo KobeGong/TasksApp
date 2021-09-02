@@ -1,47 +1,35 @@
 package defpackage;
 
-import android.view.KeyEvent;
-import android.view.Menu;
-import android.view.View;
-import android.view.Window;
-
-/* access modifiers changed from: package-private */
-/* renamed from: wr  reason: default package */
+/* renamed from: wr reason: default package */
 /* compiled from: PG */
-public class wr extends yo {
-    private final /* synthetic */ wp a;
+class wr extends defpackage.yo {
+    private final /* synthetic */ defpackage.wp a;
 
-    /* JADX INFO: super call moved to the top of the method (can break code semantics) */
-    wr(wp wpVar, Window.Callback callback) {
-        super(callback);
+    wr(defpackage.wp wpVar, android.view.Window.Callback callback) {
         this.a = wpVar;
+        super(callback);
     }
 
-    @Override // defpackage.yo
-    public boolean dispatchKeyEvent(KeyEvent keyEvent) {
+    public boolean dispatchKeyEvent(android.view.KeyEvent keyEvent) {
         return this.a.a(keyEvent) || super.dispatchKeyEvent(keyEvent);
     }
 
-    @Override // defpackage.yo
-    public boolean dispatchKeyShortcutEvent(KeyEvent keyEvent) {
+    public boolean dispatchKeyShortcutEvent(android.view.KeyEvent keyEvent) {
         return super.dispatchKeyShortcutEvent(keyEvent) || this.a.a(keyEvent.getKeyCode(), keyEvent);
     }
 
-    @Override // defpackage.yo
-    public boolean onCreatePanelMenu(int i, Menu menu) {
-        if (i != 0 || (menu instanceof MenuBuilder)) {
+    public boolean onCreatePanelMenu(int i, android.view.Menu menu) {
+        if (i != 0 || (menu instanceof defpackage.ze)) {
             return super.onCreatePanelMenu(i, menu);
         }
         return false;
     }
 
-    @Override // defpackage.yo
     public void onContentChanged() {
     }
 
-    @Override // defpackage.yo
-    public boolean onPreparePanel(int i, View view, Menu menu) {
-        MenuBuilder zeVar = menu instanceof MenuBuilder ? (MenuBuilder) menu : null;
+    public boolean onPreparePanel(int i, android.view.View view, android.view.Menu menu) {
+        defpackage.ze zeVar = menu instanceof defpackage.ze ? (defpackage.ze) menu : null;
         if (i == 0 && zeVar == null) {
             return false;
         }
@@ -56,15 +44,13 @@ public class wr extends yo {
         return onPreparePanel;
     }
 
-    @Override // defpackage.yo
-    public boolean onMenuOpened(int i, Menu menu) {
+    public boolean onMenuOpened(int i, android.view.Menu menu) {
         super.onMenuOpened(i, menu);
         this.a.e(i);
         return true;
     }
 
-    @Override // defpackage.yo
-    public void onPanelClosed(int i, Menu menu) {
+    public void onPanelClosed(int i, android.view.Menu menu) {
         super.onPanelClosed(i, menu);
         this.a.d(i);
     }

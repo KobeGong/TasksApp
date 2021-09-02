@@ -1,30 +1,27 @@
 package defpackage;
 
-import android.view.animation.Animation;
-
-/* access modifiers changed from: package-private */
-/* renamed from: lx  reason: default package */
+/* renamed from: lx reason: default package */
 /* compiled from: PG */
-public class lx implements Animation.AnimationListener {
-    private final Animation.AnimationListener a;
+class lx implements android.view.animation.Animation.AnimationListener {
+    private final android.view.animation.Animation.AnimationListener a;
 
-    lx(Animation.AnimationListener animationListener) {
+    lx(android.view.animation.Animation.AnimationListener animationListener) {
         this.a = animationListener;
     }
 
-    public void onAnimationStart(Animation animation) {
+    public void onAnimationStart(android.view.animation.Animation animation) {
         if (this.a != null) {
             this.a.onAnimationStart(animation);
         }
     }
 
-    public void onAnimationEnd(Animation animation) {
+    public void onAnimationEnd(android.view.animation.Animation animation) {
         if (this.a != null) {
             this.a.onAnimationEnd(animation);
         }
     }
 
-    public void onAnimationRepeat(Animation animation) {
+    public void onAnimationRepeat(android.view.animation.Animation animation) {
         if (this.a != null) {
             this.a.onAnimationRepeat(animation);
         }

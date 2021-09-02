@@ -1,28 +1,23 @@
 package defpackage;
 
-import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
-
-/* access modifiers changed from: package-private */
-/* renamed from: mh  reason: default package */
+/* renamed from: mh reason: default package */
 /* compiled from: PG */
-public final class mh implements Parcelable {
-    public static final Parcelable.Creator CREATOR = new mi();
-    public final String a;
+final class mh implements android.os.Parcelable {
+    public static final android.os.Parcelable.Creator CREATOR = new defpackage.mi();
+    public final java.lang.String a;
     public final int b;
     public final boolean c;
     public final int d;
     public final int e;
-    public final String f;
+    public final java.lang.String f;
     public final boolean g;
     public final boolean h;
-    public final Bundle i;
+    public final android.os.Bundle i;
     public final boolean j;
-    public Bundle k;
-    public lc l;
+    public android.os.Bundle k;
+    public Fragment l;
 
-    mh(lc lcVar) {
+    mh(Fragment lcVar) {
         this.a = lcVar.getClass().getName();
         this.b = lcVar.g;
         this.c = lcVar.o;
@@ -35,7 +30,7 @@ public final class mh implements Parcelable {
         this.j = lcVar.C;
     }
 
-    mh(Parcel parcel) {
+    mh(android.os.Parcel parcel) {
         boolean z;
         boolean z2;
         boolean z3 = true;
@@ -58,7 +53,10 @@ public final class mh implements Parcelable {
         }
         this.h = z2;
         this.i = parcel.readBundle();
-        this.j = parcel.readInt() == 0 ? false : z3;
+        if (parcel.readInt() == 0) {
+            z3 = false;
+        }
+        this.j = z3;
         this.k = parcel.readBundle();
     }
 
@@ -66,7 +64,7 @@ public final class mh implements Parcelable {
         return 0;
     }
 
-    public final void writeToParcel(Parcel parcel, int i2) {
+    public final void writeToParcel(android.os.Parcel parcel, int i2) {
         int i3;
         int i4;
         int i5 = 1;

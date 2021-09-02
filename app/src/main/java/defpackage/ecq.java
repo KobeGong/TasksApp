@@ -1,49 +1,48 @@
 package defpackage;
 
-import java.util.Map;
-
-/* renamed from: ecq  reason: default package */
+/* renamed from: ecq reason: default package */
 /* compiled from: PG */
-final class ecq extends ecu {
-    private final Map a;
-    private final Map b;
+final class ecq extends defpackage.ecu {
+    private final java.util.Map a;
+    private final java.util.Map b;
 
-    ecq(Map map, Map map2) {
+    ecq(java.util.Map map, java.util.Map map2) {
         if (map == null) {
-            throw new NullPointerException("Null numbersOfLatencySampledSpans");
+            throw new java.lang.NullPointerException("Null numbersOfLatencySampledSpans");
         }
         this.a = map;
         if (map2 == null) {
-            throw new NullPointerException("Null numbersOfErrorSampledSpans");
+            throw new java.lang.NullPointerException("Null numbersOfErrorSampledSpans");
         }
         this.b = map2;
     }
 
-    @Override // defpackage.ecu
-    public final Map a() {
+    public final java.util.Map a() {
         return this.a;
     }
 
-    @Override // defpackage.ecu
-    public final Map b() {
+    public final java.util.Map b() {
         return this.b;
     }
 
-    public final String toString() {
-        String valueOf = String.valueOf(this.a);
-        String valueOf2 = String.valueOf(this.b);
-        return new StringBuilder(String.valueOf(valueOf).length() + 78 + String.valueOf(valueOf2).length()).append("PerSpanNameSummary{numbersOfLatencySampledSpans=").append(valueOf).append(", numbersOfErrorSampledSpans=").append(valueOf2).append("}").toString();
+    public final java.lang.String toString() {
+        java.lang.String valueOf = java.lang.String.valueOf(this.a);
+        java.lang.String valueOf2 = java.lang.String.valueOf(this.b);
+        return new java.lang.StringBuilder(java.lang.String.valueOf(valueOf).length() + 78 + java.lang.String.valueOf(valueOf2).length()).append("PerSpanNameSummary{numbersOfLatencySampledSpans=").append(valueOf).append(", numbersOfErrorSampledSpans=").append(valueOf2).append("}").toString();
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof ecu)) {
+        if (!(obj instanceof defpackage.ecu)) {
             return false;
         }
-        ecu ecu = (ecu) obj;
-        return this.a.equals(ecu.a()) && this.b.equals(ecu.b());
+        defpackage.ecu ecu = (defpackage.ecu) obj;
+        if (!this.a.equals(ecu.a()) || !this.b.equals(ecu.b())) {
+            return false;
+        }
+        return true;
     }
 
     public final int hashCode() {

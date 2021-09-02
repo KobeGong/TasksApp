@@ -1,15 +1,14 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: mp  reason: default package */
+/* renamed from: mp reason: default package */
 /* compiled from: PG */
-public final class mp {
-    public lc a;
+final class mp {
+    public Fragment a;
     public boolean b;
-    public kv c;
-    public lc d;
+    public defpackage.kv c;
+    public Fragment d;
     public boolean e;
-    public kv f;
+    public defpackage.kv f;
 
     mp() {
     }

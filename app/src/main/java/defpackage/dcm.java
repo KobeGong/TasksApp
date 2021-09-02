@@ -1,13 +1,12 @@
 package defpackage;
 
-/* renamed from: dcm  reason: default package */
+/* renamed from: dcm reason: default package */
 /* compiled from: PG */
-final class dcm implements dio {
+final class dcm implements defpackage.dio {
     dcm() {
     }
 
-    @Override // defpackage.dio
-    public final /* synthetic */ din a(int i) {
-        return dcl.a(i);
+    public final /* synthetic */ defpackage.din a(int i) {
+        return defpackage.dcl.a(i);
     }
 }

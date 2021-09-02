@@ -1,34 +1,32 @@
 package defpackage;
 
-import java.util.List;
-
-/* renamed from: buc  reason: default package */
+/* renamed from: buc reason: default package */
 /* compiled from: PG */
 public abstract class buc {
     buc() {
     }
 
-    public abstract String a();
+    public abstract java.lang.String a();
 
-    public abstract List b();
+    public abstract java.util.List b();
 
-    public abstract List c();
+    public abstract java.util.List c();
 
-    public abstract String d();
+    public abstract java.lang.String d();
 
-    public abstract bue e();
+    public abstract defpackage.bue e();
 
-    public abstract buf f();
+    public abstract defpackage.buf f();
 
-    public abstract String g();
+    public abstract java.lang.String g();
 
-    public abstract Long h();
+    public abstract java.lang.Long h();
 
-    public abstract String i();
+    public abstract java.lang.String i();
 
-    public abstract String j();
+    public abstract java.lang.String j();
 
     public abstract boolean k();
 
-    public abstract Integer l();
+    public abstract java.lang.Integer l();
 }

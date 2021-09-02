@@ -1,55 +1,51 @@
 package org.chromium.base;
 
-import android.os.Looper;
-import org.chromium.base.annotations.CalledByNative;
-
 /* compiled from: PG */
-public class TraceEvent implements AutoCloseable {
+public class TraceEvent implements java.lang.AutoCloseable {
     public static volatile boolean a;
 
-    private static native void nativeBegin(String str, String str2);
+    private static native void nativeBegin(java.lang.String str, java.lang.String str2);
 
     /* access modifiers changed from: private */
-    public static native void nativeBeginToplevel(String str);
+    public static native void nativeBeginToplevel(java.lang.String str);
 
-    private static native void nativeEnd(String str, String str2);
+    private static native void nativeEnd(java.lang.String str, java.lang.String str2);
 
     /* access modifiers changed from: private */
     public static native void nativeEndToplevel();
 
-    private static native void nativeFinishAsync(String str, long j);
+    private static native void nativeFinishAsync(java.lang.String str, long j);
 
-    private static native void nativeInstant(String str, String str2);
+    private static native void nativeInstant(java.lang.String str, java.lang.String str2);
 
     private static native void nativeRegisterEnabledObserver();
 
     private static native void nativeStartATrace();
 
-    private static native void nativeStartAsync(String str, long j);
+    private static native void nativeStartAsync(java.lang.String str, long j);
 
     private static native void nativeStopATrace();
 
-    @Override // java.lang.AutoCloseable
     public void close() {
-        throw new NoSuchMethodError();
+        throw new java.lang.NoSuchMethodError();
     }
 
-    @CalledByNative
+    @org.chromium.base.annotations.CalledByNative
     public static void setEnabled(boolean z) {
-        ehf ehf;
+        defpackage.ehf ehf;
         if (z) {
-            synchronized (EarlyTraceEvent.a) {
-                if (EarlyTraceEvent.b()) {
-                    EarlyTraceEvent.b = 2;
-                    EarlyTraceEvent.c();
+            synchronized (org.chromium.base.EarlyTraceEvent.a) {
+                if (org.chromium.base.EarlyTraceEvent.b()) {
+                    org.chromium.base.EarlyTraceEvent.b = 2;
+                    org.chromium.base.EarlyTraceEvent.c();
                 }
             }
         }
         if (a != z) {
             a = z;
-            Looper looper = ThreadUtils.a().getLooper();
+            android.os.Looper looper = org.chromium.base.ThreadUtils.a().getLooper();
             if (z) {
-                ehf = ehh.a;
+                ehf = defpackage.ehh.a;
             } else {
                 ehf = null;
             }
@@ -57,21 +53,21 @@ public class TraceEvent implements AutoCloseable {
         }
     }
 
-    public static void a(String str, String str2) {
+    public static void a(java.lang.String str, java.lang.String str2) {
         if (a) {
             nativeInstant(str, str2);
         }
     }
 
-    public static void b(String str, String str2) {
-        EarlyTraceEvent.a(str);
+    public static void b(java.lang.String str, java.lang.String str2) {
+        org.chromium.base.EarlyTraceEvent.a(str);
         if (a) {
             nativeBegin(str, str2);
         }
     }
 
-    public static void a(String str) {
-        EarlyTraceEvent.b(str);
+    public static void a(java.lang.String str) {
+        org.chromium.base.EarlyTraceEvent.b(str);
         if (a) {
             nativeEnd(str, null);
         }

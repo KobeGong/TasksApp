@@ -1,25 +1,21 @@
 package defpackage;
 
-import android.support.design.appbar.AppBarLayout;
-import android.view.View;
-
-/* renamed from: es  reason: default package */
+/* renamed from: es reason: default package */
 /* compiled from: PG */
-public final class es implements sl {
-    private final /* synthetic */ AppBarLayout a;
+public final class es implements defpackage.sl {
+    private final /* synthetic */ android.support.design.appbar.AppBarLayout a;
 
-    public es(AppBarLayout appBarLayout) {
+    public es(android.support.design.appbar.AppBarLayout appBarLayout) {
         this.a = appBarLayout;
     }
 
-    @Override // defpackage.sl
-    public final tk a(View view, tk tkVar) {
-        AppBarLayout appBarLayout = this.a;
-        tk tkVar2 = null;
-        if (sn.a.h(appBarLayout)) {
+    public final defpackage.tk a(android.view.View view, defpackage.tk tkVar) {
+        android.support.design.appbar.AppBarLayout appBarLayout = this.a;
+        defpackage.tk tkVar2 = null;
+        if (defpackage.sn.a.h(appBarLayout)) {
             tkVar2 = tkVar;
         }
-        if (!jd.a(appBarLayout.c, tkVar2)) {
+        if (!defpackage.jd.a((java.lang.Object) appBarLayout.c, (java.lang.Object) tkVar2)) {
             appBarLayout.c = tkVar2;
             appBarLayout.a();
         }

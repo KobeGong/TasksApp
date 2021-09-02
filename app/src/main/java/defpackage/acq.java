@@ -1,18 +1,15 @@
 package defpackage;
 
-import android.view.Menu;
-import android.view.Window;
-
-/* renamed from: acq  reason: default package */
+/* renamed from: acq reason: default package */
 /* compiled from: PG */
 public interface acq {
     void a(int i);
 
-    void a(Menu menu, zu zuVar);
+    void a(android.view.Menu menu, defpackage.zu zuVar);
 
-    void a(Window.Callback callback);
+    void a(android.view.Window.Callback callback);
 
-    void a(CharSequence charSequence);
+    void a(java.lang.CharSequence charSequence);
 
     boolean c();
 

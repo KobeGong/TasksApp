@@ -1,11 +1,8 @@
 package defpackage;
 
-import android.animation.LayoutTransition;
-
-/* access modifiers changed from: package-private */
-/* renamed from: jw  reason: default package */
+/* renamed from: jw reason: default package */
 /* compiled from: PG */
-public final class jw extends LayoutTransition {
+final class jw extends android.animation.LayoutTransition {
     jw() {
     }
 

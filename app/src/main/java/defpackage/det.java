@@ -1,50 +1,51 @@
 package defpackage;
 
-/* renamed from: det  reason: default package */
+/* renamed from: det reason: default package */
 /* compiled from: PG */
-public final class det extends dih implements djq {
-    public static final det a = new det();
-    private static volatile djx b;
+public final class det extends defpackage.dih implements defpackage.djq {
+    public static final defpackage.det a = new defpackage.det();
+    private static volatile defpackage.djx b;
 
     private det() {
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.dih
-    public final Object a(int i) {
-        djx djx;
+    public final java.lang.Object a(int i) {
+        defpackage.djx djx;
         switch (i - 1) {
             case 0:
-                return (byte) 1;
+                return java.lang.Byte.valueOf(1);
             case 1:
                 return null;
             case 2:
-                return new dkb(a, "\u0001\u0000", new Object[0]);
+                java.lang.Object[] objArr = new java.lang.Object[0];
+                return new defpackage.dkb(a, "\u0001\u0000", objArr);
             case 3:
-                return new det();
+                return new defpackage.det();
             case 4:
-                return new dii((char[][][][][][][][][][][][][][][][][][]) null);
+                return new defpackage.dii((char[][][][][][][][][][][][][][][][][][]) null);
             case 5:
                 return a;
             case 6:
-                djx djx2 = b;
+                defpackage.djx djx2 = b;
                 if (djx2 != null) {
                     return djx2;
                 }
-                synchronized (det.class) {
+                synchronized (defpackage.det.class) {
                     djx = b;
                     if (djx == null) {
-                        djx = new dgr(a);
+                        djx = new defpackage.dgr(a);
                         b = djx;
                     }
                 }
                 return djx;
             default:
-                throw new UnsupportedOperationException();
+                throw new java.lang.UnsupportedOperationException();
         }
     }
 
     static {
-        dih.t.put(det.class, a);
+        defpackage.det det = a;
+        defpackage.dih.t.put(defpackage.det.class, det);
     }
 }

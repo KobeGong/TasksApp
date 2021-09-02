@@ -1,12 +1,8 @@
 package defpackage;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.RandomAccess;
-
-/* renamed from: dgy  reason: default package */
+/* renamed from: dgy reason: default package */
 /* compiled from: PG */
-final class dgy extends dgs implements diq, djy, RandomAccess {
+final class dgy extends defpackage.dgs implements defpackage.diq, defpackage.djy, java.util.RandomAccess {
     private boolean[] b;
     private int c;
 
@@ -23,22 +19,21 @@ final class dgy extends dgs implements diq, djy, RandomAccess {
     public final void removeRange(int i, int i2) {
         c();
         if (i2 < i) {
-            throw new IndexOutOfBoundsException("toIndex < fromIndex");
+            throw new java.lang.IndexOutOfBoundsException("toIndex < fromIndex");
         }
-        System.arraycopy(this.b, i2, this.b, i, this.c - i2);
+        java.lang.System.arraycopy(this.b, i2, this.b, i, this.c - i2);
         this.c -= i2 - i;
         this.modCount++;
     }
 
-    @Override // defpackage.dgs
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         if (this == obj) {
             return true;
         }
-        if (!(obj instanceof dgy)) {
+        if (!(obj instanceof defpackage.dgy)) {
             return super.equals(obj);
         }
-        dgy dgy = (dgy) obj;
+        defpackage.dgy dgy = (defpackage.dgy) obj;
         if (this.c != dgy.c) {
             return false;
         }
@@ -51,11 +46,10 @@ final class dgy extends dgs implements diq, djy, RandomAccess {
         return true;
     }
 
-    @Override // defpackage.dgs
     public final int hashCode() {
         int i = 1;
         for (int i2 = 0; i2 < this.c; i2++) {
-            i = (i * 31) + dim.a(this.b[i2]);
+            i = (i * 31) + defpackage.dim.a(this.b[i2]);
         }
         return i;
     }
@@ -71,14 +65,14 @@ final class dgy extends dgs implements diq, djy, RandomAccess {
     private final void a(int i, boolean z) {
         c();
         if (i < 0 || i > this.c) {
-            throw new IndexOutOfBoundsException(c(i));
+            throw new java.lang.IndexOutOfBoundsException(c(i));
         }
         if (this.c < this.b.length) {
-            System.arraycopy(this.b, i, this.b, i + 1, this.c - i);
+            java.lang.System.arraycopy(this.b, i, this.b, i + 1, this.c - i);
         } else {
             boolean[] zArr = new boolean[(((this.c * 3) / 2) + 1)];
-            System.arraycopy(this.b, 0, zArr, 0, i);
-            System.arraycopy(this.b, i, zArr, i + 1, this.c - i);
+            java.lang.System.arraycopy(this.b, 0, zArr, 0, i);
+            java.lang.System.arraycopy(this.b, i, zArr, i + 1, this.c - i);
             this.b = zArr;
         }
         this.b[i] = z;
@@ -86,36 +80,34 @@ final class dgy extends dgs implements diq, djy, RandomAccess {
         this.modCount++;
     }
 
-    @Override // defpackage.dgs, java.util.AbstractCollection, java.util.List, java.util.Collection
-    public final boolean addAll(Collection collection) {
+    public final boolean addAll(java.util.Collection collection) {
         c();
-        dim.a(collection);
-        if (!(collection instanceof dgy)) {
+        defpackage.dim.a((java.lang.Object) collection);
+        if (!(collection instanceof defpackage.dgy)) {
             return super.addAll(collection);
         }
-        dgy dgy = (dgy) collection;
+        defpackage.dgy dgy = (defpackage.dgy) collection;
         if (dgy.c == 0) {
             return false;
         }
         if (Integer.MAX_VALUE - this.c < dgy.c) {
-            throw new OutOfMemoryError();
+            throw new java.lang.OutOfMemoryError();
         }
         int i = this.c + dgy.c;
         if (i > this.b.length) {
-            this.b = Arrays.copyOf(this.b, i);
+            this.b = java.util.Arrays.copyOf(this.b, i);
         }
-        System.arraycopy(dgy.b, 0, this.b, this.c, dgy.c);
+        java.lang.System.arraycopy(dgy.b, 0, this.b, this.c, dgy.c);
         this.c = i;
         this.modCount++;
         return true;
     }
 
-    @Override // defpackage.dgs, java.util.List
-    public final boolean remove(Object obj) {
+    public final boolean remove(java.lang.Object obj) {
         c();
         for (int i = 0; i < this.c; i++) {
-            if (obj.equals(Boolean.valueOf(this.b[i]))) {
-                System.arraycopy(this.b, i + 1, this.b, i, this.c - i);
+            if (obj.equals(java.lang.Boolean.valueOf(this.b[i]))) {
+                java.lang.System.arraycopy(this.b, i + 1, this.b, i, this.c - i);
                 this.c--;
                 this.modCount++;
                 return true;
@@ -126,57 +118,52 @@ final class dgy extends dgs implements diq, djy, RandomAccess {
 
     private final void b(int i) {
         if (i < 0 || i >= this.c) {
-            throw new IndexOutOfBoundsException(c(i));
+            throw new java.lang.IndexOutOfBoundsException(c(i));
         }
     }
 
-    private final String c(int i) {
-        return new StringBuilder(35).append("Index:").append(i).append(", Size:").append(this.c).toString();
+    private final java.lang.String c(int i) {
+        return "Index:" + i + ", Size:" + this.c;
     }
 
-    @Override // defpackage.dgs, java.util.List, java.util.AbstractList
-    public final /* synthetic */ Object set(int i, Object obj) {
-        boolean booleanValue = ((Boolean) obj).booleanValue();
+    public final /* synthetic */ java.lang.Object set(int i, java.lang.Object obj) {
+        boolean booleanValue = ((java.lang.Boolean) obj).booleanValue();
         c();
         b(i);
         boolean z = this.b[i];
         this.b[i] = booleanValue;
-        return Boolean.valueOf(z);
+        return java.lang.Boolean.valueOf(z);
     }
 
-    @Override // defpackage.dgs, java.util.List, java.util.AbstractList
-    public final /* synthetic */ Object remove(int i) {
+    public final /* synthetic */ java.lang.Object remove(int i) {
         c();
         b(i);
         boolean z = this.b[i];
         if (i < this.c - 1) {
-            System.arraycopy(this.b, i + 1, this.b, i, this.c - i);
+            java.lang.System.arraycopy(this.b, i + 1, this.b, i, this.c - i);
         }
         this.c--;
         this.modCount++;
-        return Boolean.valueOf(z);
+        return java.lang.Boolean.valueOf(z);
     }
 
-    @Override // defpackage.dgs, java.util.List, java.util.AbstractList
-    public final /* synthetic */ void add(int i, Object obj) {
-        a(i, ((Boolean) obj).booleanValue());
+    public final /* synthetic */ void add(int i, java.lang.Object obj) {
+        a(i, ((java.lang.Boolean) obj).booleanValue());
     }
 
-    @Override // defpackage.diq
-    public final /* synthetic */ diq a(int i) {
+    public final /* synthetic */ defpackage.diq a(int i) {
         if (i >= this.c) {
-            return new dgy(Arrays.copyOf(this.b, i), this.c);
+            return new defpackage.dgy(java.util.Arrays.copyOf(this.b, i), this.c);
         }
-        throw new IllegalArgumentException();
+        throw new java.lang.IllegalArgumentException();
     }
 
-    @Override // java.util.List, java.util.AbstractList
-    public final /* synthetic */ Object get(int i) {
+    public final /* synthetic */ java.lang.Object get(int i) {
         b(i);
-        return Boolean.valueOf(this.b[i]);
+        return java.lang.Boolean.valueOf(this.b[i]);
     }
 
     static {
-        new dgy().a = false;
+        new defpackage.dgy().a = false;
     }
 }

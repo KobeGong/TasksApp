@@ -1,6 +1,6 @@
 package defpackage;
 
-/* renamed from: v  reason: default package */
+/* renamed from: v reason: default package */
 /* compiled from: PG */
 public enum v {
     ON_CREATE,

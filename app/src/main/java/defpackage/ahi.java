@@ -1,12 +1,11 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: ahi  reason: default package */
+/* renamed from: ahi reason: default package */
 /* compiled from: PG */
-public final class ahi implements Runnable {
-    private final /* synthetic */ ahg a;
+final class ahi implements java.lang.Runnable {
+    private final /* synthetic */ defpackage.ahg a;
 
-    ahi(ahg ahg) {
+    ahi(defpackage.ahg ahg) {
         this.a = ahg;
     }
 

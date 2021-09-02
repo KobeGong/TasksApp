@@ -1,20 +1,19 @@
 package defpackage;
 
-/* renamed from: btz  reason: default package */
+/* renamed from: btz reason: default package */
 /* compiled from: PG */
-public final class btz implements ecz {
-    private final ecz a;
-    private final ecz b;
+public final class btz implements defpackage.ecz {
+    private final defpackage.ecz a;
+    private final defpackage.ecz b;
 
-    public btz(ecz ecz, ecz ecz2) {
+    public btz(defpackage.ecz ecz, defpackage.ecz ecz2) {
         this.a = ecz;
         this.b = ecz2;
     }
 
-    @Override // defpackage.ecz
-    public final /* synthetic */ Object a() {
+    public final /* synthetic */ java.lang.Object a() {
         this.a.a();
         this.b.a();
-        return new bty();
+        return new defpackage.bty();
     }
 }

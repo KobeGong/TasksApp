@@ -1,41 +1,33 @@
 package defpackage;
 
-import android.app.Activity;
-import android.app.Application;
-import android.app.admin.DevicePolicyManager;
-import android.os.Build;
-import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.atomic.AtomicLong;
-
-/* renamed from: chz  reason: default package */
+/* renamed from: chz reason: default package */
 /* compiled from: PG */
-public final class chz extends cgj implements cgr {
-    public final Application a;
-    public final clt b;
-    public final cha d;
-    public final cnn e;
+public final class chz extends defpackage.cgj implements defpackage.cgr {
+    public final android.app.Application a;
+    public final defpackage.clt b;
+    public final defpackage.cha d;
+    public final defpackage.cnn e;
     public final boolean f;
     public final boolean g;
     public final boolean h;
-    public final AtomicLong i = new AtomicLong();
-    public final AtomicBoolean j = new AtomicBoolean();
-    public ScheduledFuture k;
+    public final java.util.concurrent.atomic.AtomicLong i = new java.util.concurrent.atomic.AtomicLong();
+    public final java.util.concurrent.atomic.AtomicBoolean j = new java.util.concurrent.atomic.AtomicBoolean();
+    public java.util.concurrent.ScheduledFuture k;
 
-    chz(Application application, boolean z, boolean z2, cha cha, clt clt, cnn cnn, coe coe) {
-        super(coe, application, clt, bg.aa);
+    chz(android.app.Application application, boolean z, boolean z2, defpackage.cha cha, defpackage.clt clt, defpackage.cnn cnn, defpackage.coe coe) {
         boolean z3;
         int storageEncryptionStatus;
         boolean z4;
-        this.a = (Application) cky.a((Object) application);
+        super(coe, application, clt, defpackage.bg.aa);
+        this.a = (android.app.Application) defpackage.cky.a((java.lang.Object) application);
         this.f = z;
         this.g = z2;
-        this.d = (cha) cky.a(cha);
-        this.b = (clt) cky.a(clt);
-        this.e = (cnn) cky.a(cnn);
-        this.e.b = new cnm(this);
-        if (Build.VERSION.SDK_INT >= 23) {
-            DevicePolicyManager devicePolicyManager = (DevicePolicyManager) application.getSystemService("device_policy");
+        this.d = (defpackage.cha) defpackage.cky.a((java.lang.Object) cha);
+        this.b = (defpackage.clt) defpackage.cky.a((java.lang.Object) clt);
+        this.e = (defpackage.cnn) defpackage.cky.a((java.lang.Object) cnn);
+        this.e.b = new defpackage.cnm(this);
+        if (android.os.Build.VERSION.SDK_INT >= 23) {
+            android.app.admin.DevicePolicyManager devicePolicyManager = (android.app.admin.DevicePolicyManager) application.getSystemService("device_policy");
             if (devicePolicyManager == null) {
                 storageEncryptionStatus = 0;
             } else {
@@ -46,7 +38,7 @@ public final class chz extends cgj implements cgr {
             } else {
                 z4 = false;
             }
-            if (z4 && Build.FINGERPRINT.contains("userdebug")) {
+            if (z4 && android.os.Build.FINGERPRINT.contains("userdebug")) {
                 z3 = true;
                 this.h = z3;
             }
@@ -55,22 +47,20 @@ public final class chz extends cgj implements cgr {
         this.h = z3;
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.cgj
+    /* access modifiers changed from: 0000 */
     public final void d() {
         this.d.b(this);
         this.e.b();
         e();
     }
 
-    @Override // defpackage.cgr
-    public final void a(Activity activity) {
+    public final void a(android.app.Activity activity) {
         if (!this.c) {
             this.e.a(activity, activity.getClass().getName());
         }
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public final void e() {
         if (this.k != null) {
             if (!this.k.isDone()) {

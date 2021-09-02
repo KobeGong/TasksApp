@@ -1,24 +1,21 @@
 package defpackage;
 
-import android.view.View;
-
-/* renamed from: auu  reason: default package */
+/* renamed from: auu reason: default package */
 /* compiled from: PG */
-final class auu extends acs {
-    private final /* synthetic */ auj m;
+final class auu extends defpackage.acs {
+    private final /* synthetic */ TasksFragment m;
 
-    auu(auj auj) {
+    auu(TasksFragment auj) {
         this.m = auj;
     }
 
-    @Override // defpackage.aey, defpackage.agp
-    public final boolean b(ViewHolder afv, afb afb, afb afb2) {
-        dby g = this.m.taskAdapter.g(afv.d());
-        if (g == null || !g.d.equals(this.m.taskAdapter.a)) {
+    public final boolean b(defpackage.afv afv, defpackage.afb afb, defpackage.afb afb2) {
+        defpackage.dby g = this.m.W.g(afv.d());
+        if (g == null || !g.d.equals(this.m.W.a)) {
             return super.b(afv, afb, afb2);
         }
-        this.m.taskAdapter.a = null;
-        View view = afv.a;
+        this.m.W.a = null;
+        android.view.View view = afv.a;
         return a(afv, -view.getWidth(), view.getTop(), 0, view.getTop());
     }
 }

@@ -1,33 +1,24 @@
 package defpackage;
 
-import android.content.Context;
-import android.content.res.ColorStateList;
-import android.graphics.Bitmap;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
-import android.net.Uri;
-import android.util.AttributeSet;
-import android.widget.ImageView;
-
-/* renamed from: abt  reason: default package */
+/* renamed from: abt reason: default package */
 /* compiled from: PG */
-public class abt extends ImageView implements sm, vu {
-    private final abg a;
-    private final abs b;
+public class abt extends android.widget.ImageView implements defpackage.sm, defpackage.vu {
+    private final defpackage.abg a;
+    private final defpackage.abs b;
 
-    public abt(Context context) {
+    public abt(android.content.Context context) {
         this(context, null);
     }
 
-    public abt(Context context, AttributeSet attributeSet) {
+    public abt(android.content.Context context, android.util.AttributeSet attributeSet) {
         this(context, attributeSet, 0);
     }
 
-    public abt(Context context, AttributeSet attributeSet, int i) {
-        super(agt.a(context), attributeSet, i);
-        this.a = new abg(this);
+    public abt(android.content.Context context, android.util.AttributeSet attributeSet, int i) {
+        super(defpackage.agt.a(context), attributeSet, i);
+        this.a = new defpackage.abg(this);
         this.a.a(attributeSet, i);
-        this.b = new abs(this);
+        this.b = new defpackage.abs(this);
         this.b.a(attributeSet, i);
     }
 
@@ -37,21 +28,21 @@ public class abt extends ImageView implements sm, vu {
         }
     }
 
-    public void setImageDrawable(Drawable drawable) {
+    public void setImageDrawable(android.graphics.drawable.Drawable drawable) {
         super.setImageDrawable(drawable);
         if (this.b != null) {
             this.b.d();
         }
     }
 
-    public void setImageBitmap(Bitmap bitmap) {
+    public void setImageBitmap(android.graphics.Bitmap bitmap) {
         super.setImageBitmap(bitmap);
         if (this.b != null) {
             this.b.d();
         }
     }
 
-    public void setImageURI(Uri uri) {
+    public void setImageURI(android.net.Uri uri) {
         super.setImageURI(uri);
         if (this.b != null) {
             this.b.d();
@@ -65,67 +56,59 @@ public class abt extends ImageView implements sm, vu {
         }
     }
 
-    public void setBackgroundDrawable(Drawable drawable) {
+    public void setBackgroundDrawable(android.graphics.drawable.Drawable drawable) {
         super.setBackgroundDrawable(drawable);
         if (this.a != null) {
             this.a.a();
         }
     }
 
-    @Override // defpackage.sm
-    public final void a(ColorStateList colorStateList) {
+    public final void a(android.content.res.ColorStateList colorStateList) {
         if (this.a != null) {
             this.a.a(colorStateList);
         }
     }
 
-    @Override // defpackage.sm
-    public final ColorStateList d_() {
+    public final android.content.res.ColorStateList d_() {
         if (this.a != null) {
             return this.a.b();
         }
         return null;
     }
 
-    @Override // defpackage.sm
-    public final void a(PorterDuff.Mode mode) {
+    public final void a(android.graphics.PorterDuff.Mode mode) {
         if (this.a != null) {
             this.a.a(mode);
         }
     }
 
-    @Override // defpackage.sm
-    public final PorterDuff.Mode b() {
+    public final android.graphics.PorterDuff.Mode b() {
         if (this.a != null) {
             return this.a.c();
         }
         return null;
     }
 
-    @Override // defpackage.vu
-    public final void b(ColorStateList colorStateList) {
+    public final void b(android.content.res.ColorStateList colorStateList) {
         if (this.b != null) {
             this.b.a(colorStateList);
         }
     }
 
-    @Override // defpackage.vu
-    public final ColorStateList c() {
+    public final android.content.res.ColorStateList c() {
         if (this.b != null) {
             return this.b.b();
         }
         return null;
     }
 
-    @Override // defpackage.vu
-    public final void b(PorterDuff.Mode mode) {
+    public final void b(android.graphics.PorterDuff.Mode mode) {
         if (this.b != null) {
             this.b.a(mode);
         }
     }
 
-    @Override // defpackage.vu
-    public final PorterDuff.Mode d() {
+    public final android.graphics.PorterDuff.Mode d() {
         if (this.b != null) {
             return this.b.c();
         }

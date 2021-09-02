@@ -1,22 +1,21 @@
 package defpackage;
 
-/* renamed from: czz  reason: default package */
+/* renamed from: czz reason: default package */
 /* compiled from: PG */
-public enum czz implements din {
+public enum czz implements defpackage.din {
     UNKNOWN(0),
     DASHER_ADMIN_DISABLED(1),
     SUSPENDED(2),
     NOT_AUTHORIZED(3);
     
-    public static final dio b = new daa();
+    public static final defpackage.dio b = null;
     private final int f;
 
-    @Override // defpackage.din
     public final int a() {
         return this.f;
     }
 
-    public static czz a(int i) {
+    public static defpackage.czz a(int i) {
         switch (i) {
             case 0:
                 return UNKNOWN;
@@ -33,5 +32,9 @@ public enum czz implements din {
 
     private czz(int i) {
         this.f = i;
+    }
+
+    static {
+        b = new defpackage.daa();
     }
 }

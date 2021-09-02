@@ -1,19 +1,17 @@
 package defpackage;
 
-import android.os.Build;
-
-/* renamed from: ug  reason: default package */
+/* renamed from: ug reason: default package */
 /* compiled from: PG */
 public final class ug {
-    public static final uj a;
+    public static final defpackage.uj a;
 
     static {
-        if (Build.VERSION.SDK_INT >= 23) {
-            a = new ui();
-        } else if (Build.VERSION.SDK_INT >= 21) {
-            a = new uh();
+        if (android.os.Build.VERSION.SDK_INT >= 23) {
+            a = new defpackage.ui();
+        } else if (android.os.Build.VERSION.SDK_INT >= 21) {
+            a = new defpackage.uh();
         } else {
-            a = new uj();
+            a = new defpackage.uj();
         }
     }
 }

@@ -1,15 +1,13 @@
 package defpackage;
 
-import java.util.List;
-
-/* renamed from: cac  reason: default package */
+/* renamed from: cac reason: default package */
 /* compiled from: PG */
 public interface cac {
-    btl a(bul bul, String str);
+    defpackage.btl a(defpackage.bul bul, java.lang.String str);
 
-    void a(bul bul, int i, List list, String str);
+    void a(defpackage.bul bul, int i, java.util.List list, java.lang.String str);
 
-    void a(bul bul, long j, String str);
+    void a(defpackage.bul bul, long j, java.lang.String str);
 
-    void b(bul bul, String str);
+    void b(defpackage.bul bul, java.lang.String str);
 }

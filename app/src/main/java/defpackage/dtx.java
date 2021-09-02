@@ -1,12 +1,12 @@
 package defpackage;
 
-/* renamed from: dtx  reason: default package */
+/* renamed from: dtx reason: default package */
 /* compiled from: PG */
-final class dtx implements Runnable {
-    private final /* synthetic */ dob a;
-    private final /* synthetic */ dtt b;
+final class dtx implements java.lang.Runnable {
+    private final /* synthetic */ defpackage.dob a;
+    private final /* synthetic */ defpackage.dtt b;
 
-    dtx(dtt dtt, dob dob) {
+    dtx(defpackage.dtt dtt, defpackage.dob dob) {
         this.b = dtt;
         this.a = dob;
     }

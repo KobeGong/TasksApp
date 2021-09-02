@@ -1,19 +1,11 @@
 package defpackage;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import android.util.Base64;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-
-/* renamed from: box  reason: default package */
+/* renamed from: box reason: default package */
 /* compiled from: PG */
-public final class box extends biq {
-    public static final Parcelable.Creator CREATOR = new bpl();
+public final class box extends defpackage.biq {
+    public static final android.os.Parcelable.Creator CREATOR = new defpackage.bpl();
     private static final byte[][] a = new byte[0][];
-    private final String b;
+    private final java.lang.String b;
     private final byte[] c;
     private final byte[][] d;
     private final byte[][] e;
@@ -22,7 +14,7 @@ public final class box extends biq {
     private final int[] h;
     private final byte[][] i;
 
-    public box(String str, byte[] bArr, byte[][] bArr2, byte[][] bArr3, byte[][] bArr4, byte[][] bArr5, int[] iArr, byte[][] bArr6) {
+    public box(java.lang.String str, byte[] bArr, byte[][] bArr2, byte[][] bArr3, byte[][] bArr4, byte[][] bArr5, int[] iArr, byte[][] bArr6) {
         this.b = str;
         this.c = bArr;
         this.d = bArr2;
@@ -33,15 +25,17 @@ public final class box extends biq {
         this.i = bArr6;
     }
 
-    public final String toString() {
-        String sb;
-        StringBuilder sb2 = new StringBuilder("ExperimentTokens");
+    public final java.lang.String toString() {
+        java.lang.String sb;
+        java.lang.StringBuilder sb2 = new java.lang.StringBuilder("ExperimentTokens");
         sb2.append("(");
         if (this.b == null) {
             sb = "null";
         } else {
-            String str = this.b;
-            sb = new StringBuilder(String.valueOf("'").length() + String.valueOf(str).length() + String.valueOf("'").length()).append("'").append(str).append("'").toString();
+            java.lang.String str = "'";
+            java.lang.String str2 = this.b;
+            java.lang.String str3 = "'";
+            sb = new java.lang.StringBuilder(java.lang.String.valueOf(str).length() + java.lang.String.valueOf(str2).length() + java.lang.String.valueOf(str3).length()).append(str).append(str2).append(str3).toString();
         }
         sb2.append(sb);
         sb2.append(", ");
@@ -52,7 +46,7 @@ public final class box extends biq {
             sb2.append("null");
         } else {
             sb2.append("'");
-            sb2.append(Base64.encodeToString(bArr, 3));
+            sb2.append(android.util.Base64.encodeToString(bArr, 3));
             sb2.append("'");
         }
         sb2.append(", ");
@@ -91,7 +85,7 @@ public final class box extends biq {
         return sb2.toString();
     }
 
-    private static void a(StringBuilder sb, String str, byte[][] bArr) {
+    private static void a(java.lang.StringBuilder sb, java.lang.String str, byte[][] bArr) {
         sb.append(str);
         sb.append("=");
         if (bArr == null) {
@@ -108,7 +102,7 @@ public final class box extends biq {
                 sb.append(", ");
             }
             sb.append("'");
-            sb.append(Base64.encodeToString(bArr2, 3));
+            sb.append(android.util.Base64.encodeToString(bArr2, 3));
             sb.append("'");
             i2++;
             z = false;
@@ -116,59 +110,59 @@ public final class box extends biq {
         sb.append(")");
     }
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof box)) {
+    public final boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof defpackage.box)) {
             return false;
         }
-        box box = (box) obj;
-        if (!bjr.a(this.b, box.b) || !Arrays.equals(this.c, box.c) || !bjr.a(a(this.d), a(box.d)) || !bjr.a(a(this.e), a(box.e)) || !bjr.a(a(this.f), a(box.f)) || !bjr.a(a(this.g), a(box.g)) || !bjr.a(a(this.h), a(box.h)) || !bjr.a(a(this.i), a(box.i))) {
+        defpackage.box box = (defpackage.box) obj;
+        if (!defpackage.bjr.a((java.lang.Object) this.b, (java.lang.Object) box.b) || !java.util.Arrays.equals(this.c, box.c) || !defpackage.bjr.a((java.lang.Object) a(this.d), (java.lang.Object) a(box.d)) || !defpackage.bjr.a((java.lang.Object) a(this.e), (java.lang.Object) a(box.e)) || !defpackage.bjr.a((java.lang.Object) a(this.f), (java.lang.Object) a(box.f)) || !defpackage.bjr.a((java.lang.Object) a(this.g), (java.lang.Object) a(box.g)) || !defpackage.bjr.a((java.lang.Object) a(this.h), (java.lang.Object) a(box.h)) || !defpackage.bjr.a((java.lang.Object) a(this.i), (java.lang.Object) a(box.i))) {
             return false;
         }
         return true;
     }
 
-    private static List a(byte[][] bArr) {
+    private static java.util.List a(byte[][] bArr) {
         if (bArr == null) {
-            return Collections.emptyList();
+            return java.util.Collections.emptyList();
         }
-        ArrayList arrayList = new ArrayList(bArr.length);
-        for (byte[] bArr2 : bArr) {
-            arrayList.add(Base64.encodeToString(bArr2, 3));
+        java.util.ArrayList arrayList = new java.util.ArrayList(bArr.length);
+        for (byte[] encodeToString : bArr) {
+            arrayList.add(android.util.Base64.encodeToString(encodeToString, 3));
         }
-        Collections.sort(arrayList);
+        java.util.Collections.sort(arrayList);
         return arrayList;
     }
 
-    private static List a(int[] iArr) {
+    private static java.util.List a(int[] iArr) {
         if (iArr == null) {
-            return Collections.emptyList();
+            return java.util.Collections.emptyList();
         }
-        ArrayList arrayList = new ArrayList(iArr.length);
-        for (int i2 : iArr) {
-            arrayList.add(Integer.valueOf(i2));
+        java.util.ArrayList arrayList = new java.util.ArrayList(iArr.length);
+        for (int valueOf : iArr) {
+            arrayList.add(java.lang.Integer.valueOf(valueOf));
         }
-        Collections.sort(arrayList);
+        java.util.Collections.sort(arrayList);
         return arrayList;
     }
 
-    public final void writeToParcel(Parcel parcel, int i2) {
-        int q = bjr.q(parcel, 20293);
-        bjr.a(parcel, 2, this.b);
-        bjr.a(parcel, 3, this.c);
-        bjr.a(parcel, 4, this.d);
-        bjr.a(parcel, 5, this.e);
-        bjr.a(parcel, 6, this.f);
-        bjr.a(parcel, 7, this.g);
-        bjr.a(parcel, 8, this.h);
-        bjr.a(parcel, 9, this.i);
-        bjr.r(parcel, q);
+    public final void writeToParcel(android.os.Parcel parcel, int i2) {
+        int q = defpackage.bjr.q(parcel, 20293);
+        defpackage.bjr.a(parcel, 2, this.b);
+        defpackage.bjr.a(parcel, 3, this.c);
+        defpackage.bjr.a(parcel, 4, this.d);
+        defpackage.bjr.a(parcel, 5, this.e);
+        defpackage.bjr.a(parcel, 6, this.f);
+        defpackage.bjr.a(parcel, 7, this.g);
+        defpackage.bjr.a(parcel, 8, this.h);
+        defpackage.bjr.a(parcel, 9, this.i);
+        defpackage.bjr.r(parcel, q);
     }
 
     static {
-        new box("", null, a, a, a, a, null, null);
-        new bph();
-        new bpi();
-        new bpj();
-        new bpk();
+        new defpackage.box("", null, a, a, a, a, null, null);
+        new defpackage.bph();
+        new defpackage.bpi();
+        new defpackage.bpj();
+        new defpackage.bpk();
     }
 }

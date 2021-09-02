@@ -1,54 +1,46 @@
 package com.google.android.gms.people.protomodel;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 /* compiled from: PG */
-public class FetchBackUpDeviceContactInfoResponseEntity extends biq implements bnu {
-    public static final Parcelable.Creator CREATOR = new boe();
-    private final List a;
-    private List b;
+public class FetchBackUpDeviceContactInfoResponseEntity extends defpackage.biq implements defpackage.bnu {
+    public static final android.os.Parcelable.Creator CREATOR = new defpackage.boe();
+    private final java.util.List a;
+    private java.util.List b;
 
-    public FetchBackUpDeviceContactInfoResponseEntity(List list) {
+    public FetchBackUpDeviceContactInfoResponseEntity(java.util.List list) {
         this.a = list;
     }
 
-    public void writeToParcel(Parcel parcel, int i) {
-        int q = bjr.q(parcel, 20293);
-        bjr.b(parcel, 2, b());
-        bjr.r(parcel, q);
+    public void writeToParcel(android.os.Parcel parcel, int i) {
+        int q = defpackage.bjr.q(parcel, 20293);
+        defpackage.bjr.b(parcel, 2, b());
+        defpackage.bjr.r(parcel, q);
     }
 
-    @Override // defpackage.bcs
     public final boolean a() {
         return true;
     }
 
-    @Override // defpackage.bnu
-    public final List b() {
+    public final java.util.List b() {
         if (this.b == null && this.a != null) {
-            this.b = new ArrayList(this.a.size());
-            for (bnt bnt : this.a) {
-                this.b.add(bnt);
+            this.b = new java.util.ArrayList(this.a.size());
+            for (defpackage.bnt add : this.a) {
+                this.b.add(add);
             }
         }
         return this.b;
     }
 
-    public boolean equals(Object obj) {
-        if (!(obj instanceof bnu)) {
+    public boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof defpackage.bnu)) {
             return false;
         }
         if (this == obj) {
             return true;
         }
-        return azb.a(b(), ((bnu) obj).b());
+        return defpackage.azb.a((java.lang.Object) b(), (java.lang.Object) ((defpackage.bnu) obj).b());
     }
 
     public int hashCode() {
-        return Arrays.hashCode(new Object[]{b()});
+        return java.util.Arrays.hashCode(new java.lang.Object[]{b()});
     }
 }

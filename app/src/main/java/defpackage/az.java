@@ -1,10 +1,7 @@
 package defpackage;
 
-import java.io.Serializable;
-
-/* access modifiers changed from: package-private */
-/* renamed from: az  reason: default package */
+/* renamed from: az reason: default package */
 /* compiled from: PG */
-public interface az extends Serializable {
-    boolean a(bb bbVar);
+interface az extends java.io.Serializable {
+    boolean a(defpackage.bb bbVar);
 }

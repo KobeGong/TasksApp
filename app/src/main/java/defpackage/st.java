@@ -1,86 +1,65 @@
 package defpackage;
 
-import android.content.res.ColorStateList;
-import android.graphics.PorterDuff;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import android.os.Build;
-import android.view.View;
-import android.view.ViewParent;
-import android.view.WindowInsets;
-
-/* renamed from: st  reason: default package */
+/* renamed from: st reason: default package */
 /* compiled from: PG */
-class st extends ss {
-    private static ThreadLocal b;
+class st extends defpackage.ss {
+    private static java.lang.ThreadLocal b;
 
     st() {
     }
 
-    @Override // defpackage.sw
-    public final void a(View view, String str) {
+    public final void a(android.view.View view, java.lang.String str) {
         view.setTransitionName(str);
     }
 
-    @Override // defpackage.sw
-    public final String t(View view) {
+    public final java.lang.String t(android.view.View view) {
         return view.getTransitionName();
     }
 
-    @Override // defpackage.sw, defpackage.sp
-    public final void g(View view) {
+    public final void g(android.view.View view) {
         view.requestApplyInsets();
     }
 
-    @Override // defpackage.sw
-    public final void a(View view, float f) {
+    public final void a(android.view.View view, float f) {
         view.setElevation(f);
     }
 
-    @Override // defpackage.sw
-    public final float u(View view) {
+    public final float u(android.view.View view) {
         return view.getElevation();
     }
 
-    @Override // defpackage.sw
-    public final void b(View view, float f) {
+    public final void b(android.view.View view, float f) {
         view.setTranslationZ(f);
     }
 
-    @Override // defpackage.sw
-    public final float v(View view) {
+    public final float v(android.view.View view) {
         return view.getTranslationZ();
     }
 
-    @Override // defpackage.sw
-    public final void a(View view, sl slVar) {
+    public final void a(android.view.View view, defpackage.sl slVar) {
         if (slVar == null) {
             view.setOnApplyWindowInsetsListener(null);
         } else {
-            view.setOnApplyWindowInsetsListener(new su(slVar));
+            view.setOnApplyWindowInsetsListener(new defpackage.su(slVar));
         }
     }
 
-    @Override // defpackage.sw
-    public final boolean w(View view) {
+    public final boolean w(android.view.View view) {
         return view.isNestedScrollingEnabled();
     }
 
-    @Override // defpackage.sw
-    public final void x(View view) {
+    public final void x(android.view.View view) {
         view.stopNestedScroll();
     }
 
-    @Override // defpackage.sw
-    public final ColorStateList y(View view) {
+    public final android.content.res.ColorStateList y(android.view.View view) {
         return view.getBackgroundTintList();
     }
 
-    @Override // defpackage.sw
-    public final void a(View view, ColorStateList colorStateList) {
+    public final void a(android.view.View view, android.content.res.ColorStateList colorStateList) {
         view.setBackgroundTintList(colorStateList);
-        if (Build.VERSION.SDK_INT == 21) {
-            Drawable background = view.getBackground();
+        if (android.os.Build.VERSION.SDK_INT == 21) {
+            android.graphics.drawable.Drawable background = view.getBackground();
             boolean z = (view.getBackgroundTintList() == null && view.getBackgroundTintMode() == null) ? false : true;
             if (background != null && z) {
                 if (background.isStateful()) {
@@ -91,11 +70,10 @@ class st extends ss {
         }
     }
 
-    @Override // defpackage.sw
-    public final void a(View view, PorterDuff.Mode mode) {
+    public final void a(android.view.View view, android.graphics.PorterDuff.Mode mode) {
         view.setBackgroundTintMode(mode);
-        if (Build.VERSION.SDK_INT == 21) {
-            Drawable background = view.getBackground();
+        if (android.os.Build.VERSION.SDK_INT == 21) {
+            android.graphics.drawable.Drawable background = view.getBackground();
             boolean z = (view.getBackgroundTintList() == null && view.getBackgroundTintMode() == null) ? false : true;
             if (background != null && z) {
                 if (background.isStateful()) {
@@ -106,43 +84,38 @@ class st extends ss {
         }
     }
 
-    @Override // defpackage.sw
-    public final PorterDuff.Mode z(View view) {
+    public final android.graphics.PorterDuff.Mode z(android.view.View view) {
         return view.getBackgroundTintMode();
     }
 
-    @Override // defpackage.sw
-    public final tk a(View view, tk tkVar) {
-        WindowInsets windowInsets = (WindowInsets) tk.a(tkVar);
-        WindowInsets onApplyWindowInsets = view.onApplyWindowInsets(windowInsets);
+    public final defpackage.tk a(android.view.View view, defpackage.tk tkVar) {
+        android.view.WindowInsets windowInsets = (android.view.WindowInsets) defpackage.tk.a(tkVar);
+        android.view.WindowInsets onApplyWindowInsets = view.onApplyWindowInsets(windowInsets);
         if (onApplyWindowInsets != windowInsets) {
-            windowInsets = new WindowInsets(onApplyWindowInsets);
+            windowInsets = new android.view.WindowInsets(onApplyWindowInsets);
         }
-        return tk.a(windowInsets);
+        return defpackage.tk.a((java.lang.Object) windowInsets);
     }
 
-    @Override // defpackage.sw
-    public final tk b(View view, tk tkVar) {
-        WindowInsets windowInsets = (WindowInsets) tk.a(tkVar);
-        WindowInsets dispatchApplyWindowInsets = view.dispatchApplyWindowInsets(windowInsets);
+    public final defpackage.tk b(android.view.View view, defpackage.tk tkVar) {
+        android.view.WindowInsets windowInsets = (android.view.WindowInsets) defpackage.tk.a(tkVar);
+        android.view.WindowInsets dispatchApplyWindowInsets = view.dispatchApplyWindowInsets(windowInsets);
         if (dispatchApplyWindowInsets != windowInsets) {
-            windowInsets = new WindowInsets(dispatchApplyWindowInsets);
+            windowInsets = new android.view.WindowInsets(dispatchApplyWindowInsets);
         }
-        return tk.a(windowInsets);
+        return defpackage.tk.a((java.lang.Object) windowInsets);
     }
 
-    @Override // defpackage.sw
-    public final float A(View view) {
+    public final float A(android.view.View view) {
         return view.getZ();
     }
 
-    @Override // defpackage.sw
-    public void b(View view, int i) {
+    public void b(android.view.View view, int i) {
         boolean z;
-        Rect a = a();
-        ViewParent parent = view.getParent();
-        if (parent instanceof View) {
-            View view2 = (View) parent;
+        android.graphics.Rect a = a();
+        android.view.ViewParent parent = view.getParent();
+        if (parent instanceof android.view.View) {
+            android.view.View view2 = (android.view.View) parent;
             a.set(view2.getLeft(), view2.getTop(), view2.getRight(), view2.getBottom());
             z = !a.intersects(view.getLeft(), view.getTop(), view.getRight(), view.getBottom());
         } else {
@@ -150,17 +123,16 @@ class st extends ss {
         }
         super.b(view, i);
         if (z && a.intersect(view.getLeft(), view.getTop(), view.getRight(), view.getBottom())) {
-            ((View) parent).invalidate(a);
+            ((android.view.View) parent).invalidate(a);
         }
     }
 
-    @Override // defpackage.sw
-    public void c(View view, int i) {
+    public void c(android.view.View view, int i) {
         boolean z;
-        Rect a = a();
-        ViewParent parent = view.getParent();
-        if (parent instanceof View) {
-            View view2 = (View) parent;
+        android.graphics.Rect a = a();
+        android.view.ViewParent parent = view.getParent();
+        if (parent instanceof android.view.View) {
+            android.view.View view2 = (android.view.View) parent;
             a.set(view2.getLeft(), view2.getTop(), view2.getRight(), view2.getBottom());
             z = !a.intersects(view.getLeft(), view.getTop(), view.getRight(), view.getBottom());
         } else {
@@ -168,17 +140,17 @@ class st extends ss {
         }
         super.c(view, i);
         if (z && a.intersect(view.getLeft(), view.getTop(), view.getRight(), view.getBottom())) {
-            ((View) parent).invalidate(a);
+            ((android.view.View) parent).invalidate(a);
         }
     }
 
-    private static Rect a() {
+    private static android.graphics.Rect a() {
         if (b == null) {
-            b = new ThreadLocal();
+            b = new java.lang.ThreadLocal();
         }
-        Rect rect = (Rect) b.get();
+        android.graphics.Rect rect = (android.graphics.Rect) b.get();
         if (rect == null) {
-            rect = new Rect();
+            rect = new android.graphics.Rect();
             b.set(rect);
         }
         rect.setEmpty();

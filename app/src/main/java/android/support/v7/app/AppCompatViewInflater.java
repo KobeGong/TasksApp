@@ -1,26 +1,18 @@
 package android.support.v7.app;
 
-import android.content.Context;
-import android.content.ContextWrapper;
-import android.content.res.TypedArray;
-import android.util.AttributeSet;
-import android.view.View;
-import java.lang.reflect.Constructor;
-import java.util.Map;
-
 /* compiled from: PG */
 public class AppCompatViewInflater {
-    public static final String LOG_TAG = "AppCompatViewInflater";
-    public static final String[] sClassPrefixList = {"android.widget.", "android.view.", "android.webkit."};
-    public static final Map sConstructorMap = new qr();
-    public static final Class[] sConstructorSignature = {Context.class, AttributeSet.class};
+    public static final java.lang.String LOG_TAG = "AppCompatViewInflater";
+    public static final java.lang.String[] sClassPrefixList = {"android.widget.", "android.view.", "android.webkit."};
+    public static final java.util.Map sConstructorMap = new defpackage.qr();
+    public static final java.lang.Class[] sConstructorSignature = {android.content.Context.class, android.util.AttributeSet.class};
     public static final int[] sOnClickAttrs = {16843375};
-    public final Object[] mConstructorArgs = new Object[2];
+    public final java.lang.Object[] mConstructorArgs = new java.lang.Object[2];
 
-    public final View createView(View view, String str, Context context, AttributeSet attributeSet, boolean z, boolean z2, boolean z3, boolean z4) {
-        Context context2;
-        View createSeekBar;
-        View view2;
+    public final android.view.View createView(android.view.View view, java.lang.String str, android.content.Context context, android.util.AttributeSet attributeSet, boolean z, boolean z2, boolean z3, boolean z4) {
+        android.content.Context context2;
+        android.view.View createSeekBar;
+        android.view.View view2;
         if (!z || view == null) {
             context2 = context;
         } else {
@@ -30,7 +22,7 @@ public class AppCompatViewInflater {
             context2 = themifyContext(context2, attributeSet, z2, z3);
         }
         if (z4) {
-            context2 = agt.a(context2);
+            context2 = defpackage.agt.a(context2);
         }
         char c = 65535;
         switch (str.hashCode()) {
@@ -42,13 +34,13 @@ public class AppCompatViewInflater {
                 break;
             case -1455429095:
                 if (str.equals("CheckedTextView")) {
-                    c = '\b';
+                    c = 8;
                     break;
                 }
                 break;
             case -1346021293:
                 if (str.equals("MultiAutoCompleteTextView")) {
-                    c = '\n';
+                    c = 10;
                     break;
                 }
                 break;
@@ -66,7 +58,7 @@ public class AppCompatViewInflater {
                 break;
             case -658531749:
                 if (str.equals("SeekBar")) {
-                    c = '\f';
+                    c = 12;
                     break;
                 }
                 break;
@@ -90,7 +82,7 @@ public class AppCompatViewInflater {
                 break;
             case 1413872058:
                 if (str.equals("AutoCompleteTextView")) {
-                    c = '\t';
+                    c = 9;
                     break;
                 }
                 break;
@@ -146,15 +138,15 @@ public class AppCompatViewInflater {
                 createSeekBar = createRadioButton(context2, attributeSet);
                 verifyNotNull(createSeekBar, str);
                 break;
-            case '\b':
+            case 8:
                 createSeekBar = createCheckedTextView(context2, attributeSet);
                 verifyNotNull(createSeekBar, str);
                 break;
-            case '\t':
+            case 9:
                 createSeekBar = createAutoCompleteTextView(context2, attributeSet);
                 verifyNotNull(createSeekBar, str);
                 break;
-            case '\n':
+            case 10:
                 createSeekBar = createMultiAutoCompleteTextView(context2, attributeSet);
                 verifyNotNull(createSeekBar, str);
                 break;
@@ -162,7 +154,7 @@ public class AppCompatViewInflater {
                 createSeekBar = createRatingBar(context2, attributeSet);
                 verifyNotNull(createSeekBar, str);
                 break;
-            case '\f':
+            case 12:
                 createSeekBar = createSeekBar(context2, attributeSet);
                 verifyNotNull(createSeekBar, str);
                 break;
@@ -182,81 +174,82 @@ public class AppCompatViewInflater {
     }
 
     /* access modifiers changed from: protected */
-    public ack createTextView(Context context, AttributeSet attributeSet) {
-        return new ack(context, attributeSet);
+    public defpackage.ack createTextView(android.content.Context context, android.util.AttributeSet attributeSet) {
+        return new defpackage.ack(context, attributeSet);
     }
 
     /* access modifiers changed from: protected */
-    public abt createImageView(Context context, AttributeSet attributeSet) {
-        return new abt(context, attributeSet);
+    public defpackage.abt createImageView(android.content.Context context, android.util.AttributeSet attributeSet) {
+        return new defpackage.abt(context, attributeSet);
     }
 
-    public abh createButton(Context context, AttributeSet attributeSet) {
-        return new abh(context, attributeSet);
-    }
-
-    /* access modifiers changed from: protected */
-    public abq createEditText(Context context, AttributeSet attributeSet) {
-        return new abq(context, attributeSet);
+    public defpackage.abh createButton(android.content.Context context, android.util.AttributeSet attributeSet) {
+        return new defpackage.abh(context, attributeSet);
     }
 
     /* access modifiers changed from: protected */
-    public acb createSpinner(Context context, AttributeSet attributeSet) {
-        return new acb(context, attributeSet);
+    public defpackage.abq createEditText(android.content.Context context, android.util.AttributeSet attributeSet) {
+        return new defpackage.abq(context, attributeSet);
     }
 
     /* access modifiers changed from: protected */
-    public abr createImageButton(Context context, AttributeSet attributeSet) {
-        return new abr(context, attributeSet);
+    public defpackage.acb createSpinner(android.content.Context context, android.util.AttributeSet attributeSet) {
+        return new defpackage.acb(context, attributeSet);
     }
 
     /* access modifiers changed from: protected */
-    public abi createCheckBox(Context context, AttributeSet attributeSet) {
-        return new abi(context, attributeSet);
+    public defpackage.abr createImageButton(android.content.Context context, android.util.AttributeSet attributeSet) {
+        return new defpackage.abr(context, attributeSet);
     }
 
     /* access modifiers changed from: protected */
-    public abx createRadioButton(Context context, AttributeSet attributeSet) {
-        return new abx(context, attributeSet);
+    public defpackage.abi createCheckBox(android.content.Context context, android.util.AttributeSet attributeSet) {
+        return new defpackage.abi(context, attributeSet);
     }
 
     /* access modifiers changed from: protected */
-    public abj createCheckedTextView(Context context, AttributeSet attributeSet) {
-        return new abj(context, attributeSet);
+    public defpackage.abx createRadioButton(android.content.Context context, android.util.AttributeSet attributeSet) {
+        return new defpackage.abx(context, attributeSet);
     }
 
     /* access modifiers changed from: protected */
-    public abf createAutoCompleteTextView(Context context, AttributeSet attributeSet) {
-        return new abf(context, attributeSet);
+    public defpackage.abj createCheckedTextView(android.content.Context context, android.util.AttributeSet attributeSet) {
+        return new defpackage.abj(context, attributeSet);
     }
 
     /* access modifiers changed from: protected */
-    public abu createMultiAutoCompleteTextView(Context context, AttributeSet attributeSet) {
-        return new abu(context, attributeSet);
+    public defpackage.abf createAutoCompleteTextView(android.content.Context context, android.util.AttributeSet attributeSet) {
+        return new defpackage.abf(context, attributeSet);
     }
 
     /* access modifiers changed from: protected */
-    public aby createRatingBar(Context context, AttributeSet attributeSet) {
-        return new aby(context, attributeSet);
+    public defpackage.abu createMultiAutoCompleteTextView(android.content.Context context, android.util.AttributeSet attributeSet) {
+        return new defpackage.abu(context, attributeSet);
     }
 
     /* access modifiers changed from: protected */
-    public abz createSeekBar(Context context, AttributeSet attributeSet) {
-        return new abz(context, attributeSet);
+    public defpackage.aby createRatingBar(android.content.Context context, android.util.AttributeSet attributeSet) {
+        return new defpackage.aby(context, attributeSet);
     }
 
-    private void verifyNotNull(View view, String str) {
+    /* access modifiers changed from: protected */
+    public defpackage.abz createSeekBar(android.content.Context context, android.util.AttributeSet attributeSet) {
+        return new defpackage.abz(context, attributeSet);
+    }
+
+    private void verifyNotNull(android.view.View view, java.lang.String str) {
         if (view == null) {
-            throw new IllegalStateException(getClass().getName() + " asked to inflate view for <" + str + ">, but returned null");
+            throw new java.lang.IllegalStateException(getClass().getName() + " asked to inflate view for <" + str + ">, but returned null");
         }
     }
 
     /* access modifiers changed from: protected */
-    public View createView(Context context, String str, AttributeSet attributeSet) {
+    public android.view.View createView(android.content.Context context, java.lang.String str, android.util.AttributeSet attributeSet) {
         return null;
     }
 
-    private View createViewFromTag(Context context, String str, AttributeSet attributeSet) {
+    /* JADX INFO: finally extract failed */
+    private android.view.View createViewFromTag(android.content.Context context, java.lang.String str, android.util.AttributeSet attributeSet) {
         if (str.equals("view")) {
             str = attributeSet.getAttributeValue(null, "class");
         }
@@ -264,74 +257,79 @@ public class AppCompatViewInflater {
             this.mConstructorArgs[0] = context;
             this.mConstructorArgs[1] = attributeSet;
             if (-1 == str.indexOf(46)) {
-                for (int i = 0; i < sClassPrefixList.length; i++) {
-                    View createViewByPrefix = createViewByPrefix(context, str, sClassPrefixList[i]);
-                    if (createViewByPrefix != null) {
-                        return createViewByPrefix;
+                for (java.lang.String createViewByPrefix : sClassPrefixList) {
+                    android.view.View createViewByPrefix2 = createViewByPrefix(context, str, createViewByPrefix);
+                    if (createViewByPrefix2 != null) {
+                        this.mConstructorArgs[0] = null;
+                        this.mConstructorArgs[1] = null;
+                        return createViewByPrefix2;
                     }
                 }
                 this.mConstructorArgs[0] = null;
                 this.mConstructorArgs[1] = null;
                 return null;
             }
-            View createViewByPrefix2 = createViewByPrefix(context, str, null);
+            android.view.View createViewByPrefix3 = createViewByPrefix(context, str, null);
             this.mConstructorArgs[0] = null;
             this.mConstructorArgs[1] = null;
-            return createViewByPrefix2;
-        } catch (Exception e) {
+            return createViewByPrefix3;
+        } catch (java.lang.Exception e) {
+            this.mConstructorArgs[0] = null;
+            this.mConstructorArgs[1] = null;
             return null;
-        } finally {
+        } catch (Throwable th) {
             this.mConstructorArgs[0] = null;
             this.mConstructorArgs[1] = null;
+            throw th;
         }
     }
 
-    private void checkOnClickListener(View view, AttributeSet attributeSet) {
-        Context context = view.getContext();
-        if ((context instanceof ContextWrapper) && sn.a.a(view)) {
-            TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, sOnClickAttrs);
-            String string = obtainStyledAttributes.getString(0);
+    private void checkOnClickListener(android.view.View view, android.util.AttributeSet attributeSet) {
+        android.content.Context context = view.getContext();
+        if ((context instanceof android.content.ContextWrapper) && defpackage.sn.a.a(view)) {
+            android.content.res.TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, sOnClickAttrs);
+            java.lang.String string = obtainStyledAttributes.getString(0);
             if (string != null) {
-                view.setOnClickListener(new xi(view, string));
+                view.setOnClickListener(new defpackage.xi(view, string));
             }
             obtainStyledAttributes.recycle();
         }
     }
 
-    private View createViewByPrefix(Context context, String str, String str2) {
-        Constructor<? extends U> constructor = (Constructor) sConstructorMap.get(str);
+    private android.view.View createViewByPrefix(android.content.Context context, java.lang.String str, java.lang.String str2) {
+        java.lang.reflect.Constructor constructor = (java.lang.reflect.Constructor) sConstructorMap.get(str);
         if (constructor == null) {
             try {
-                constructor = context.getClassLoader().loadClass(str2 != null ? str2 + str : str).asSubclass(View.class).getConstructor(sConstructorSignature);
+                constructor = context.getClassLoader().loadClass(str2 != null ? str2 + str : str).asSubclass(android.view.View.class).getConstructor(sConstructorSignature);
                 sConstructorMap.put(str, constructor);
-            } catch (Exception e) {
+            } catch (java.lang.Exception e) {
                 return null;
             }
         }
         constructor.setAccessible(true);
-        return (View) constructor.newInstance(this.mConstructorArgs);
+        return (android.view.View) constructor.newInstance(this.mConstructorArgs);
     }
 
-    private static Context themifyContext(Context context, AttributeSet attributeSet, boolean z, boolean z2) {
+    private static android.content.Context themifyContext(android.content.Context context, android.util.AttributeSet attributeSet, boolean z, boolean z2) {
         int i;
         int i2;
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, xu.dc, 0, 0);
+        android.content.res.TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, defpackage.xu.dc, 0, 0);
         if (z) {
-            i = obtainStyledAttributes.getResourceId(xu.dl, 0);
+            i = obtainStyledAttributes.getResourceId(defpackage.xu.dl, 0);
         } else {
             i = 0;
         }
         if (!z2 || i != 0) {
             i2 = i;
         } else {
-            i2 = obtainStyledAttributes.getResourceId(xu.dm, 0);
+            i2 = obtainStyledAttributes.getResourceId(defpackage.xu.dm, 0);
         }
         obtainStyledAttributes.recycle();
         if (i2 == 0) {
             return context;
         }
-        if (!(context instanceof yf) || ((yf) context).a != i2) {
-            return new yf(context, i2);
+        if (!(context instanceof defpackage.yf) || ((defpackage.yf) context).a != i2) {
+            return new defpackage.yf(context, i2);
         }
         return context;
     }

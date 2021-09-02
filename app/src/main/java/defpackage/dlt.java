@@ -1,10 +1,9 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: dlt  reason: default package */
+/* renamed from: dlt reason: default package */
 /* compiled from: PG */
-public final class dlt {
-    public final dhn a;
+final class dlt {
+    public final defpackage.dhn a;
 
     public final void a(int i, int i2) {
         this.a.e(i, i2);
@@ -50,7 +49,7 @@ public final class dlt {
         this.a.a(i, z);
     }
 
-    public final void a(int i, dha dha) {
+    public final void a(int i, defpackage.dha dha) {
         this.a.a(i, dha);
     }
 
@@ -66,38 +65,38 @@ public final class dlt {
         this.a.b(i, j);
     }
 
-    public final void a(int i, Object obj, dkh dkh) {
-        this.a.a(i, (djo) obj, dkh);
+    public final void a(int i, java.lang.Object obj, defpackage.dkh dkh) {
+        this.a.a(i, (defpackage.djo) obj, dkh);
     }
 
-    @Deprecated
-    public final void b(int i, Object obj, dkh dkh) {
-        dhn dhn = this.a;
+    @java.lang.Deprecated
+    public final void b(int i, java.lang.Object obj, defpackage.dkh dkh) {
+        defpackage.dhn dhn = this.a;
+        defpackage.djo djo = (defpackage.djo) obj;
         dhn.a(i, 3);
-        dkh.a((Object) ((djo) obj), dhn.b);
+        dkh.a((java.lang.Object) djo, dhn.b);
         dhn.a(i, 4);
     }
 
-    @Deprecated
+    @java.lang.Deprecated
     public final void a(int i) {
         this.a.a(i, 3);
     }
 
-    @Deprecated
+    @java.lang.Deprecated
     public final void b(int i) {
         this.a.a(i, 4);
     }
 
-    public final void a(int i, Object obj) {
-        if (obj instanceof dha) {
-            this.a.b(i, (dha) obj);
+    public final void a(int i, java.lang.Object obj) {
+        if (obj instanceof defpackage.dha) {
+            this.a.b(i, (defpackage.dha) obj);
         } else {
-            this.a.b(i, (djo) obj);
+            this.a.b(i, (defpackage.djo) obj);
         }
     }
 
-    dlt(dhn dhn) {
-        this.a = (dhn) dim.a((Object) dhn, "output");
-        this.a.b = this;
+    dlt(defpackage.dhn dhn) {
+        this.a = (defpackage.dhn) defpackage.dim.a((java.lang.Object) dhn, "output");
     }
 }

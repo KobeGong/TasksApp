@@ -1,24 +1,18 @@
 package android.support.v7.view.menu;
 
-import android.content.Context;
-import android.util.AttributeSet;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ListView;
-
 /* compiled from: PG */
-public final class ExpandedMenuView extends ListView implements AdapterView.OnItemClickListener, zg, zv {
+public final class ExpandedMenuView extends android.widget.ListView implements android.widget.AdapterView.OnItemClickListener, defpackage.zg, defpackage.zv {
     private static final int[] a = {16842964, 16843049};
-    private ze b;
+    private defpackage.ze b;
 
-    public ExpandedMenuView(Context context, AttributeSet attributeSet) {
+    public ExpandedMenuView(android.content.Context context, android.util.AttributeSet attributeSet) {
         this(context, attributeSet, 16842868);
     }
 
-    public ExpandedMenuView(Context context, AttributeSet attributeSet, int i) {
+    public ExpandedMenuView(android.content.Context context, android.util.AttributeSet attributeSet, int i) {
         super(context, attributeSet);
         setOnItemClickListener(this);
-        agw a2 = agw.a(context, attributeSet, a, i, 0);
+        defpackage.agw a2 = defpackage.agw.a(context, attributeSet, a, i, 0);
         if (a2.f(0)) {
             setBackgroundDrawable(a2.a(0));
         }
@@ -28,8 +22,7 @@ public final class ExpandedMenuView extends ListView implements AdapterView.OnIt
         a2.b.recycle();
     }
 
-    @Override // defpackage.zv
-    public final void a(ze zeVar) {
+    public final void a(defpackage.ze zeVar) {
         this.b = zeVar;
     }
 
@@ -39,13 +32,11 @@ public final class ExpandedMenuView extends ListView implements AdapterView.OnIt
         setChildrenDrawingCacheEnabled(false);
     }
 
-    @Override // defpackage.zg
-    public final boolean a(zi ziVar) {
-        return this.b.a(ziVar, (zt) null, 0);
+    public final boolean a(defpackage.zi ziVar) {
+        return this.b.a((android.view.MenuItem) ziVar, (defpackage.zt) null, 0);
     }
 
-    @Override // android.widget.AdapterView.OnItemClickListener
-    public final void onItemClick(AdapterView adapterView, View view, int i, long j) {
-        a((zi) getAdapter().getItem(i));
+    public final void onItemClick(android.widget.AdapterView adapterView, android.view.View view, int i, long j) {
+        a((defpackage.zi) getAdapter().getItem(i));
     }
 }

@@ -1,19 +1,16 @@
 package defpackage;
 
-import android.content.Context;
-
-/* renamed from: ekl  reason: default package */
+/* renamed from: ekl reason: default package */
 /* compiled from: PG */
-public final class ekl extends ejv {
-    public ekl(Context context) {
+public final class ekl extends defpackage.ejv {
+    public ekl(android.content.Context context) {
         super(context);
     }
 
-    @Override // defpackage.eie
-    public final ehy a() {
+    public final defpackage.ehy a() {
         if (this.e == null) {
-            this.e = ekr.a(this.a);
+            this.e = defpackage.ekr.a(this.a);
         }
-        return new eki(this);
+        return new defpackage.eki(this);
     }
 }

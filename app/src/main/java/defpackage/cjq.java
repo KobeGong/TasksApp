@@ -1,14 +1,12 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: cjq  reason: default package */
+/* renamed from: cjq reason: default package */
 /* compiled from: PG */
-public final class cjq implements clt {
+final class cjq implements defpackage.clt {
     cjq() {
     }
 
-    @Override // defpackage.clt
-    public final /* synthetic */ Object a() {
-        return new clr((byte) 0);
+    public final /* synthetic */ java.lang.Object a() {
+        return new defpackage.clr(0);
     }
 }

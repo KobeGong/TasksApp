@@ -1,23 +1,21 @@
 package defpackage;
 
-import android.view.View;
+/* renamed from: ate reason: default package */
+final /* synthetic */ class ate implements android.view.View.OnClickListener {
+    private final defpackage.atd a;
+    private final defpackage.dcb b;
 
-/* renamed from: ate  reason: default package */
-final /* synthetic */ class ate implements View.OnClickListener {
-    private final atd a;
-    private final dcb b;
-
-    ate(atd atd, dcb dcb) {
+    ate(defpackage.atd atd, defpackage.dcb dcb) {
         this.a = atd;
         this.b = dcb;
     }
 
-    public final void onClick(View view) {
-        atd atd = this.a;
-        dcb dcb = this.b;
+    public final void onClick(android.view.View view) {
+        defpackage.atd atd = this.a;
+        defpackage.dcb dcb = this.b;
         FragmentActivity j = atd.getActivity();
-        if (j instanceof atf) {
-            ((atf) j).a(dcb);
+        if (j instanceof defpackage.atf) {
+            ((defpackage.atf) j).a(dcb);
         }
         atd.a(false);
     }

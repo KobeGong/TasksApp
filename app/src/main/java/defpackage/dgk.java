@@ -1,13 +1,12 @@
 package defpackage;
 
-/* renamed from: dgk  reason: default package */
+/* renamed from: dgk reason: default package */
 /* compiled from: PG */
-final class dgk implements dio {
+final class dgk implements defpackage.dio {
     dgk() {
     }
 
-    @Override // defpackage.dio
-    public final /* synthetic */ din a(int i) {
-        return dgj.a(i);
+    public final /* synthetic */ defpackage.din a(int i) {
+        return defpackage.dgj.a(i);
     }
 }

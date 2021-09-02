@@ -1,17 +1,15 @@
 package defpackage;
 
-import android.view.View;
-
-/* renamed from: aaj  reason: default package */
+/* renamed from: aaj reason: default package */
 /* compiled from: PG */
-public final class aaj implements View.OnClickListener {
-    private final /* synthetic */ yc a;
+public final class aaj implements android.view.View.OnClickListener {
+    private final /* synthetic */ defpackage.yc a;
 
-    public aaj(yc ycVar) {
+    public aaj(defpackage.yc ycVar) {
         this.a = ycVar;
     }
 
-    public final void onClick(View view) {
+    public final void onClick(android.view.View view) {
         this.a.c();
     }
 }

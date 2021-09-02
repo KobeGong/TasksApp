@@ -1,15 +1,13 @@
 package defpackage;
 
-import android.content.Intent;
-
-/* renamed from: bhy  reason: default package */
+/* renamed from: bhy reason: default package */
 /* compiled from: PG */
-final class bhy implements Runnable {
-    private /* synthetic */ Intent a;
-    private /* synthetic */ Intent b;
-    private /* synthetic */ bhx c;
+final class bhy implements java.lang.Runnable {
+    private /* synthetic */ android.content.Intent a;
+    private /* synthetic */ android.content.Intent b;
+    private /* synthetic */ defpackage.bhx c;
 
-    bhy(bhx bhx, Intent intent, Intent intent2) {
+    bhy(defpackage.bhx bhx, android.content.Intent intent, android.content.Intent intent2) {
         this.c = bhx;
         this.a = intent;
         this.b = intent2;

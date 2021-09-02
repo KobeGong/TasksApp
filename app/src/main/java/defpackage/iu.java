@@ -1,38 +1,31 @@
 package defpackage;
 
-import android.view.View;
-import java.util.ArrayList;
-
-/* renamed from: iu  reason: default package */
+/* renamed from: iu reason: default package */
 /* compiled from: PG */
-final class iu implements ji {
-    private final /* synthetic */ View a;
-    private final /* synthetic */ ArrayList b;
+final class iu implements defpackage.ji {
+    private final /* synthetic */ android.view.View a;
+    private final /* synthetic */ java.util.ArrayList b;
 
-    iu(View view, ArrayList arrayList) {
+    iu(android.view.View view, java.util.ArrayList arrayList) {
         this.a = view;
         this.b = arrayList;
     }
 
-    @Override // defpackage.ji
     public final void c() {
     }
 
-    @Override // defpackage.ji
-    public final void a(je jeVar) {
-        jeVar.b(this);
+    public final void a(defpackage.je jeVar) {
+        jeVar.b((defpackage.ji) this);
         this.a.setVisibility(8);
         int size = this.b.size();
         for (int i = 0; i < size; i++) {
-            ((View) this.b.get(i)).setVisibility(0);
+            ((android.view.View) this.b.get(i)).setVisibility(0);
         }
     }
 
-    @Override // defpackage.ji
     public final void a() {
     }
 
-    @Override // defpackage.ji
     public final void b() {
     }
 }

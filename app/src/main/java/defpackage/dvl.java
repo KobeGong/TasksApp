@@ -1,35 +1,34 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: dvl  reason: default package */
+/* renamed from: dvl reason: default package */
 /* compiled from: PG */
-public final class dvl {
-    public final /* synthetic */ dvk a;
+final class dvl {
+    public final /* synthetic */ defpackage.dvk a;
 
-    dvl(dvk dvk) {
+    dvl(defpackage.dvk dvk) {
         this.a = dvk;
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public final int a() {
         int b;
         if (this.a.f - this.a.e > 0) {
             b = this.a.d[this.a.e] & 255;
-            dvk.a(this.a, 1);
+            defpackage.dvk.a(this.a, 1);
         } else {
             b = this.a.a.b();
         }
         this.a.b.update(b);
-        dvk.b(this.a, 1);
+        defpackage.dvk.b(this.a, 1);
         return b;
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public final int b() {
         return (this.a.f - this.a.e) + this.a.a.a;
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public final int c() {
         return a() | (a() << 8);
     }

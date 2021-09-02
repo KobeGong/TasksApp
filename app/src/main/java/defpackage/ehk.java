@@ -1,25 +1,17 @@
 package defpackage;
 
-import android.annotation.TargetApi;
-import android.telephony.PhoneStateListener;
-import android.telephony.SignalStrength;
-import android.telephony.TelephonyManager;
-import org.chromium.base.ApplicationStatus;
-import org.chromium.base.ThreadUtils;
-import org.chromium.net.AndroidCellularSignalStrength;
-
-/* renamed from: ehk  reason: default package */
+/* renamed from: ehk reason: default package */
 /* compiled from: PG */
-public final class ehk extends PhoneStateListener implements egk {
-    private final TelephonyManager a = ((TelephonyManager) ehw.a.getSystemService("phone"));
-    private final /* synthetic */ AndroidCellularSignalStrength b;
+public final class ehk extends android.telephony.PhoneStateListener implements defpackage.egk {
+    private final android.telephony.TelephonyManager a = ((android.telephony.TelephonyManager) defpackage.ehw.a.getSystemService("phone"));
+    private final /* synthetic */ org.chromium.net.AndroidCellularSignalStrength b;
 
-    ehk(AndroidCellularSignalStrength androidCellularSignalStrength) {
+    ehk(org.chromium.net.AndroidCellularSignalStrength androidCellularSignalStrength) {
         this.b = androidCellularSignalStrength;
-        ThreadUtils.c();
+        org.chromium.base.ThreadUtils.c();
         if (this.a.getSimState() == 5) {
-            ApplicationStatus.a(this);
-            int stateForApplication = ApplicationStatus.getStateForApplication();
+            org.chromium.base.ApplicationStatus.a(this);
+            int stateForApplication = org.chromium.base.ApplicationStatus.getStateForApplication();
             if (stateForApplication == 1) {
                 this.a.listen(this, 256);
             } else if (stateForApplication == 2) {
@@ -29,12 +21,12 @@ public final class ehk extends PhoneStateListener implements egk {
         }
     }
 
-    @TargetApi(23)
-    public final void onSignalStrengthsChanged(SignalStrength signalStrength) {
-        if (ApplicationStatus.getStateForApplication() == 1) {
+    @android.annotation.TargetApi(23)
+    public final void onSignalStrengthsChanged(android.telephony.SignalStrength signalStrength) {
+        if (org.chromium.base.ApplicationStatus.getStateForApplication() == 1) {
             try {
                 this.b.a = signalStrength.getLevel();
-            } catch (SecurityException e) {
+            } catch (java.lang.SecurityException e) {
                 this.b.a = Integer.MIN_VALUE;
             }
         }

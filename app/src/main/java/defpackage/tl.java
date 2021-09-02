@@ -1,40 +1,36 @@
 package defpackage;
 
-import android.graphics.Rect;
-import android.os.Build;
-import android.view.accessibility.AccessibilityNodeInfo;
-
-/* renamed from: tl  reason: default package */
+/* renamed from: tl reason: default package */
 /* compiled from: PG */
 public final class tl {
-    public final AccessibilityNodeInfo a;
+    public final android.view.accessibility.AccessibilityNodeInfo a;
     public int b = -1;
 
-    private tl(AccessibilityNodeInfo accessibilityNodeInfo) {
+    private tl(android.view.accessibility.AccessibilityNodeInfo accessibilityNodeInfo) {
         this.a = accessibilityNodeInfo;
     }
 
-    public static tl a(AccessibilityNodeInfo accessibilityNodeInfo) {
-        return new tl(accessibilityNodeInfo);
+    public static defpackage.tl a(android.view.accessibility.AccessibilityNodeInfo accessibilityNodeInfo) {
+        return new defpackage.tl(accessibilityNodeInfo);
     }
 
     public final void a(int i) {
         this.a.addAction(i);
     }
 
-    public final void a(Rect rect) {
+    public final void a(android.graphics.Rect rect) {
         this.a.getBoundsInParent(rect);
     }
 
-    public final void b(Rect rect) {
+    public final void b(android.graphics.Rect rect) {
         this.a.setBoundsInParent(rect);
     }
 
-    public final void c(Rect rect) {
+    public final void c(android.graphics.Rect rect) {
         this.a.getBoundsInScreen(rect);
     }
 
-    public final void d(Rect rect) {
+    public final void d(android.graphics.Rect rect) {
         this.a.setBoundsInScreen(rect);
     }
 
@@ -54,16 +50,16 @@ public final class tl {
         this.a.setScrollable(true);
     }
 
-    public final void a(CharSequence charSequence) {
+    public final void a(java.lang.CharSequence charSequence) {
         this.a.setClassName(charSequence);
     }
 
-    public final void b(CharSequence charSequence) {
+    public final void b(java.lang.CharSequence charSequence) {
         this.a.setContentDescription(charSequence);
     }
 
     public final void d(boolean z) {
-        if (Build.VERSION.SDK_INT >= 19) {
+        if (android.os.Build.VERSION.SDK_INT >= 19) {
             this.a.setDismissable(z);
         }
     }
@@ -75,7 +71,7 @@ public final class tl {
         return this.a.hashCode();
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         if (this == obj) {
             return true;
         }
@@ -85,16 +81,25 @@ public final class tl {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        tl tlVar = (tl) obj;
-        return this.a == null ? tlVar.a == null : this.a.equals(tlVar.a);
+        defpackage.tl tlVar = (defpackage.tl) obj;
+        if (this.a == null) {
+            if (tlVar.a != null) {
+                return false;
+            }
+            return true;
+        } else if (!this.a.equals(tlVar.a)) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
-    public final String toString() {
-        String str;
-        String str2;
-        StringBuilder sb = new StringBuilder();
+    public final java.lang.String toString() {
+        java.lang.String str;
+        java.lang.String str2;
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append(super.toString());
-        Rect rect = new Rect();
+        android.graphics.Rect rect = new android.graphics.Rect();
         a(rect);
         sb.append("; boundsInParent: " + rect);
         c(rect);
@@ -103,8 +108,8 @@ public final class tl {
         sb.append("; className: ").append(this.a.getClassName());
         sb.append("; text: ").append(this.a.getText());
         sb.append("; contentDescription: ").append(this.a.getContentDescription());
-        StringBuilder append = sb.append("; viewId: ");
-        if (Build.VERSION.SDK_INT >= 18) {
+        java.lang.StringBuilder append = sb.append("; viewId: ");
+        if (android.os.Build.VERSION.SDK_INT >= 18) {
             str = this.a.getViewIdResourceName();
         } else {
             str = null;
@@ -123,7 +128,7 @@ public final class tl {
         sb.append("; [");
         int actions = this.a.getActions();
         while (actions != 0) {
-            int numberOfTrailingZeros = 1 << Integer.numberOfTrailingZeros(actions);
+            int numberOfTrailingZeros = 1 << java.lang.Integer.numberOfTrailingZeros(actions);
             int i = (numberOfTrailingZeros ^ -1) & actions;
             switch (numberOfTrailingZeros) {
                 case 1:

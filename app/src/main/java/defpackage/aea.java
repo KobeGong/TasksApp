@@ -1,12 +1,9 @@
 package defpackage;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-/* renamed from: aea  reason: default package */
+/* renamed from: aea reason: default package */
 /* compiled from: PG */
-public final class aea implements Parcelable {
-    public static final Parcelable.Creator CREATOR = new aeb();
+public final class aea implements android.os.Parcelable {
+    public static final android.os.Parcelable.Creator CREATOR = new defpackage.aeb();
     public int a;
     public int b;
     public boolean c;
@@ -14,20 +11,23 @@ public final class aea implements Parcelable {
     public aea() {
     }
 
-    aea(Parcel parcel) {
+    aea(android.os.Parcel parcel) {
         boolean z = true;
         this.a = parcel.readInt();
         this.b = parcel.readInt();
-        this.c = parcel.readInt() != 1 ? false : z;
+        if (parcel.readInt() != 1) {
+            z = false;
+        }
+        this.c = z;
     }
 
-    public aea(aea aea) {
+    public aea(defpackage.aea aea) {
         this.a = aea.a;
         this.b = aea.b;
         this.c = aea.c;
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public final boolean a() {
         return this.a >= 0;
     }
@@ -36,7 +36,7 @@ public final class aea implements Parcelable {
         return 0;
     }
 
-    public final void writeToParcel(Parcel parcel, int i) {
+    public final void writeToParcel(android.os.Parcel parcel, int i) {
         parcel.writeInt(this.a);
         parcel.writeInt(this.b);
         parcel.writeInt(this.c ? 1 : 0);

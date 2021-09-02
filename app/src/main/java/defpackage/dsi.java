@@ -1,24 +1,23 @@
 package defpackage;
 
-/* renamed from: dsi  reason: default package */
+/* renamed from: dsi reason: default package */
 /* compiled from: PG */
-final class dsi extends dnm {
+final class dsi extends defpackage.dnm {
     public volatile int a;
     public final boolean b;
-    public final ecc c = ebv.a;
-    private final /* synthetic */ dsg d;
+    public final defpackage.ecc c = defpackage.ebv.a;
+    private final /* synthetic */ defpackage.dsg d;
 
-    dsi(dsg dsg, dpb dpb) {
+    dsi(defpackage.dsg dsg, defpackage.dpb dpb) {
         this.d = dsg;
-        cld.a(dpb, "method");
+        defpackage.cld.a((java.lang.Object) dpb, (java.lang.Object) "method");
         this.b = dpb.h;
-        dsg.c.a(dsg.a(dpb.b));
+        dsg.c.a(defpackage.dsg.a(dpb.b));
     }
 
-    @Override // defpackage.dnm
-    public final dqc a(dor dor) {
+    public final defpackage.dqc a(defpackage.dor dor) {
         dor.b(this.d.d);
-        dor.a(this.d.d, this.c.b);
-        return new dsj(this.c);
+        dor.a(this.d.d, (java.lang.Object) this.c.b);
+        return new defpackage.dsj(this.c);
     }
 }

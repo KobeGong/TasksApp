@@ -1,6 +1,6 @@
 package defpackage;
 
-/* renamed from: bp  reason: default package */
+/* renamed from: bp reason: default package */
 /* compiled from: PG */
 public enum bp {
     MSG_START,

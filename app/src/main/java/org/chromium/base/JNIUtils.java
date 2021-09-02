@@ -1,20 +1,18 @@
 package org.chromium.base;
 
-import org.chromium.base.annotations.CalledByNative;
-
 /* compiled from: PG */
 public class JNIUtils {
-    private static Boolean a;
+    private static java.lang.Boolean a;
 
-    @CalledByNative
-    public static Object getClassLoader() {
-        return JNIUtils.class.getClassLoader();
+    @org.chromium.base.annotations.CalledByNative
+    public static java.lang.Object getClassLoader() {
+        return org.chromium.base.JNIUtils.class.getClassLoader();
     }
 
-    @CalledByNative
+    @org.chromium.base.annotations.CalledByNative
     public static boolean isSelectiveJniRegistrationEnabled() {
         if (a == null) {
-            a = false;
+            a = java.lang.Boolean.valueOf(false);
         }
         return a.booleanValue();
     }

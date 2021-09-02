@@ -1,16 +1,16 @@
 package defpackage;
 
-/* renamed from: gi  reason: default package */
+/* renamed from: gi reason: default package */
 /* compiled from: PG */
 public final class gi {
-    private static final gb i = new gb();
-    private static final gc j = new gc();
-    public gb a = i;
-    public gb b = i;
-    public gb c = i;
-    public gb d = i;
-    public gc e = j;
-    public gc f = j;
-    public gc g = j;
-    public gc h = j;
+    private static final defpackage.gb i = new defpackage.gb();
+    private static final defpackage.gc j = new defpackage.gc();
+    public defpackage.gb a = i;
+    public defpackage.gb b = i;
+    public defpackage.gb c = i;
+    public defpackage.gb d = i;
+    public defpackage.gc e = j;
+    public defpackage.gc f = j;
+    public defpackage.gc g = j;
+    public defpackage.gc h = j;
 }

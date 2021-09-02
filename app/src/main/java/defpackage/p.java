@@ -1,22 +1,21 @@
 package defpackage;
 
-/* renamed from: p  reason: default package */
+/* renamed from: p reason: default package */
 /* compiled from: PG */
-public final class p implements t {
-    private final s[] a;
+public final class p implements defpackage.t {
+    private final defpackage.s[] a;
 
-    p(s[] sVarArr) {
+    p(defpackage.s[] sVarArr) {
         this.a = sVarArr;
     }
 
-    @Override // defpackage.t
-    public final void a(y yVar, v vVar) {
-        new ga();
-        for (s sVar : this.a) {
-            sVar.a();
+    public final void a(LifecycleOwner yVar, defpackage.v vVar) {
+        new defpackage.ga();
+        for (defpackage.s a2 : this.a) {
+            a2.a();
         }
-        for (s sVar2 : this.a) {
-            sVar2.a();
+        for (defpackage.s a3 : this.a) {
+            a3.a();
         }
     }
 }

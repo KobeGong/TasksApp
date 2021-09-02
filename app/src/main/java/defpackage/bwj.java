@@ -1,76 +1,72 @@
 package defpackage;
 
-import android.content.Context;
-import android.os.Build;
-
-/* renamed from: bwj  reason: default package */
+/* renamed from: bwj reason: default package */
 /* compiled from: PG */
-public final class bwj implements ecz {
-    private static bxl a;
+public final class bwj implements defpackage.ecz {
+    private static defpackage.bxl a;
 
-    @Override // defpackage.ecz
-    public final /* synthetic */ Object a() {
-        throw new NoSuchMethodError();
+    public final /* synthetic */ java.lang.Object a() {
+        throw new java.lang.NoSuchMethodError();
     }
 
-    public static synchronized void a(bxx bxx) {
-        synchronized (bwj.class) {
-            cld.b(!g(), "ChimeInstall must be initialized only once.");
-            bxz bxz = new bxz();
-            bxz.a = (bxm) dgv.a(new bxm(bxx));
+    public static synchronized void a(defpackage.bxx bxx) {
+        synchronized (defpackage.bwj.class) {
+            defpackage.cld.b(!g(), (java.lang.Object) "ChimeInstall must be initialized only once.");
+            defpackage.bxz bxz = new defpackage.bxz();
+            bxz.a = (defpackage.bxm) defpackage.dgv.a((java.lang.Object) new defpackage.bxm(bxx));
             if (bxz.a == null) {
-                throw new IllegalStateException(String.valueOf(bxm.class.getCanonicalName()).concat(" must be set"));
+                throw new java.lang.IllegalStateException(java.lang.String.valueOf(defpackage.bxm.class.getCanonicalName()).concat(" must be set"));
             }
             if (bxz.b == null) {
-                bxz.b = new brv();
+                bxz.b = new defpackage.brv();
             }
             if (bxz.c == null) {
-                bxz.c = new bqi();
+                bxz.c = new defpackage.bqi();
             }
-            bxl bxl = new bxl(bxz);
+            defpackage.bxl bxl = new defpackage.bxl(bxz);
             a = bxl;
-            bxk.a = bxl;
+            defpackage.bxk.a = bxl;
         }
     }
 
     private static synchronized boolean g() {
         boolean z;
-        synchronized (bwj.class) {
+        synchronized (defpackage.bwj.class) {
             z = a != null;
         }
         return z;
     }
 
-    public static synchronized bxl b() {
-        bxl bxl;
-        synchronized (bwj.class) {
-            cld.b(g(), "ChimeInstall has not been initialized.");
+    public static synchronized defpackage.bxl b() {
+        defpackage.bxl bxl;
+        synchronized (defpackage.bwj.class) {
+            defpackage.cld.b(g(), (java.lang.Object) "ChimeInstall has not been initialized.");
             bxl = a;
         }
         return bxl;
     }
 
     public static boolean c() {
-        return Build.VERSION.SDK_INT >= 26;
+        return android.os.Build.VERSION.SDK_INT >= 26;
     }
 
     public static boolean d() {
-        return Build.VERSION.SDK_INT >= 24;
+        return android.os.Build.VERSION.SDK_INT >= 24;
     }
 
     public static boolean e() {
-        return Build.VERSION.SDK_INT >= 21;
+        return android.os.Build.VERSION.SDK_INT >= 21;
     }
 
     public static boolean f() {
-        return Build.VERSION.SDK_INT >= 17;
+        return android.os.Build.VERSION.SDK_INT >= 17;
     }
 
-    public static boolean a(Context context, String str) {
-        return ob.a(context, str) == 0;
+    public static boolean a(android.content.Context context, java.lang.String str) {
+        return defpackage.ob.a(context, str) == 0;
     }
 
-    public static boolean a(Context context) {
+    public static boolean a(android.content.Context context) {
         return c() && context.getApplicationInfo().targetSdkVersion >= 26;
     }
 }

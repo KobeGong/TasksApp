@@ -1,19 +1,14 @@
 package defpackage;
 
-import android.content.res.ColorStateList;
-import android.content.res.Resources;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
-
-/* renamed from: pi  reason: default package */
+/* renamed from: pi reason: default package */
 /* compiled from: PG */
-public abstract class pi extends Drawable.ConstantState {
+public abstract class pi extends android.graphics.drawable.Drawable.ConstantState {
     public int a;
-    public Drawable.ConstantState b;
-    public ColorStateList c = null;
-    public PorterDuff.Mode d = ph.a;
+    public android.graphics.drawable.Drawable.ConstantState b;
+    public android.content.res.ColorStateList c = null;
+    public android.graphics.PorterDuff.Mode d = defpackage.ph.a;
 
-    pi(pi piVar) {
+    pi(defpackage.pi piVar) {
         if (piVar != null) {
             this.a = piVar.a;
             this.b = piVar.b;
@@ -22,9 +17,9 @@ public abstract class pi extends Drawable.ConstantState {
         }
     }
 
-    public abstract Drawable newDrawable(Resources resources);
+    public abstract android.graphics.drawable.Drawable newDrawable(android.content.res.Resources resources);
 
-    public Drawable newDrawable() {
+    public android.graphics.drawable.Drawable newDrawable() {
         return newDrawable(null);
     }
 

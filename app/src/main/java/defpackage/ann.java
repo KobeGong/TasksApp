@@ -1,21 +1,20 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: ann  reason: default package */
-public final /* synthetic */ class ann implements Runnable {
-    private final anc a;
-    private final String b;
+/* renamed from: ann reason: default package */
+final /* synthetic */ class ann implements java.lang.Runnable {
+    private final defpackage.anc a;
+    private final java.lang.String b;
 
-    ann(anc anc, String str) {
+    ann(defpackage.anc anc, java.lang.String str) {
         this.a = anc;
         this.b = str;
     }
 
     public final void run() {
-        anc anc = this.a;
-        String str = this.b;
+        defpackage.anc anc = this.a;
+        java.lang.String str = this.b;
         if (anc.a.a.a(str) != null) {
-            anc.a(str, anc.a, new cyu());
+            anc.a(str, anc.a, new defpackage.cyu());
         }
     }
 }

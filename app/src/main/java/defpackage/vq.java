@@ -1,26 +1,20 @@
 package defpackage;
 
-import android.graphics.drawable.Drawable;
-import android.widget.TextView;
-
-/* renamed from: vq  reason: default package */
+/* renamed from: vq reason: default package */
 /* compiled from: PG */
-class vq extends vp {
+class vq extends defpackage.vp {
     vq() {
     }
 
-    @Override // defpackage.vp, defpackage.vs
-    public final void a(TextView textView, Drawable drawable) {
+    public final void a(android.widget.TextView textView, android.graphics.drawable.Drawable drawable) {
         textView.setCompoundDrawablesRelative(drawable, null, null, null);
     }
 
-    @Override // defpackage.vp, defpackage.vs
-    public final void b(TextView textView, Drawable drawable) {
-        textView.setCompoundDrawablesRelativeWithIntrinsicBounds(drawable, (Drawable) null, (Drawable) null, (Drawable) null);
+    public final void b(android.widget.TextView textView, android.graphics.drawable.Drawable drawable) {
+        textView.setCompoundDrawablesRelativeWithIntrinsicBounds(drawable, null, null, null);
     }
 
-    @Override // defpackage.vp, defpackage.vs
-    public final void a(TextView textView, int i) {
+    public final void a(android.widget.TextView textView, int i) {
         textView.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, i, 0);
     }
 }

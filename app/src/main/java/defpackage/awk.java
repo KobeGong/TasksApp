@@ -1,68 +1,59 @@
 package defpackage;
 
-import android.accounts.Account;
-import android.os.Parcel;
-import android.os.Parcelable;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.api.Scope;
-import java.util.ArrayList;
-
-/* renamed from: awk  reason: default package */
+/* renamed from: awk reason: default package */
 /* compiled from: PG */
-public final class awk implements Parcelable.Creator {
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object[] newArray(int i) {
-        return new GoogleSignInOptions[i];
+public final class awk implements android.os.Parcelable.Creator {
+    public final /* synthetic */ java.lang.Object[] newArray(int i) {
+        return new com.google.android.gms.auth.api.signin.GoogleSignInOptions[i];
     }
 
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object createFromParcel(Parcel parcel) {
+    public final /* synthetic */ java.lang.Object createFromParcel(android.os.Parcel parcel) {
         boolean z = false;
-        ArrayList arrayList = null;
-        int a = bjr.a(parcel);
-        String str = null;
-        String str2 = null;
+        java.util.ArrayList arrayList = null;
+        int a = defpackage.bjr.a(parcel);
+        java.lang.String str = null;
+        java.lang.String str2 = null;
         boolean z2 = false;
         boolean z3 = false;
-        Account account = null;
-        ArrayList arrayList2 = null;
+        android.accounts.Account account = null;
+        java.util.ArrayList arrayList2 = null;
         int i = 0;
         while (parcel.dataPosition() < a) {
             int readInt = parcel.readInt();
             switch (65535 & readInt) {
                 case 1:
-                    i = bjr.d(parcel, readInt);
+                    i = defpackage.bjr.d(parcel, readInt);
                     break;
                 case 2:
-                    arrayList2 = bjr.c(parcel, readInt, Scope.CREATOR);
+                    arrayList2 = defpackage.bjr.c(parcel, readInt, com.google.android.gms.common.api.Scope.CREATOR);
                     break;
                 case 3:
-                    account = (Account) bjr.a(parcel, readInt, Account.CREATOR);
+                    account = (android.accounts.Account) defpackage.bjr.a(parcel, readInt, android.accounts.Account.CREATOR);
                     break;
                 case 4:
-                    z3 = bjr.c(parcel, readInt);
+                    z3 = defpackage.bjr.c(parcel, readInt);
                     break;
                 case 5:
-                    z2 = bjr.c(parcel, readInt);
+                    z2 = defpackage.bjr.c(parcel, readInt);
                     break;
                 case 6:
-                    z = bjr.c(parcel, readInt);
+                    z = defpackage.bjr.c(parcel, readInt);
                     break;
                 case 7:
-                    str2 = bjr.h(parcel, readInt);
+                    str2 = defpackage.bjr.h(parcel, readInt);
                     break;
                 case 8:
-                    str = bjr.h(parcel, readInt);
+                    str = defpackage.bjr.h(parcel, readInt);
                     break;
                 case 9:
-                    arrayList = bjr.c(parcel, readInt, avx.CREATOR);
+                    arrayList = defpackage.bjr.c(parcel, readInt, defpackage.avx.CREATOR);
                     break;
                 default:
-                    bjr.b(parcel, readInt);
+                    defpackage.bjr.b(parcel, readInt);
                     break;
             }
         }
-        bjr.p(parcel, a);
-        return new GoogleSignInOptions(i, arrayList2, account, z3, z2, z, str2, str, arrayList);
+        defpackage.bjr.p(parcel, a);
+        return new com.google.android.gms.auth.api.signin.GoogleSignInOptions(i, arrayList2, account, z3, z2, z, str2, str, arrayList);
     }
 }

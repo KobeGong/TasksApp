@@ -1,14 +1,11 @@
 package defpackage;
 
-import android.database.DataSetObserver;
-
-/* access modifiers changed from: package-private */
-/* renamed from: aeg  reason: default package */
+/* renamed from: aeg reason: default package */
 /* compiled from: PG */
-public final class aeg extends DataSetObserver {
-    private final /* synthetic */ aec a;
+final class aeg extends android.database.DataSetObserver {
+    private final /* synthetic */ defpackage.aec a;
 
-    aeg(aec aec) {
+    aeg(defpackage.aec aec) {
         this.a = aec;
     }
 

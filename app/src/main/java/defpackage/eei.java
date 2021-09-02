@@ -1,21 +1,21 @@
 package defpackage;
 
-/* renamed from: eei  reason: default package */
+/* renamed from: eei reason: default package */
 /* compiled from: PG */
-public final class eei extends dlz {
+public final class eei extends defpackage.dlz {
     public eei() {
         this.k = -1;
     }
 
-    @Override // defpackage.dmf
-    public final /* synthetic */ dmf a(dlw dlw) {
+    public final /* synthetic */ defpackage.dmf a(defpackage.dlw dlw) {
         int a;
         do {
             a = dlw.a();
             switch (a) {
                 case 0:
-                    return this;
+                    break;
             }
+            return this;
         } while (super.a(dlw, a));
         return this;
     }

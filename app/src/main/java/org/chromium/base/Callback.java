@@ -1,26 +1,24 @@
 package org.chromium.base;
 
-import org.chromium.base.annotations.CalledByNative;
-
 /* compiled from: PG */
 public interface Callback {
 
     /* compiled from: PG */
     public class Helper {
-        @CalledByNative
-        static void onObjectResultFromNative(Callback callback, Object obj) {
+        @org.chromium.base.annotations.CalledByNative
+        static void onObjectResultFromNative(org.chromium.base.Callback callback, java.lang.Object obj) {
             callback.a();
         }
 
-        @CalledByNative
-        static void onBooleanResultFromNative(Callback callback, boolean z) {
-            Boolean.valueOf(z);
+        @org.chromium.base.annotations.CalledByNative
+        static void onBooleanResultFromNative(org.chromium.base.Callback callback, boolean z) {
+            java.lang.Boolean.valueOf(z);
             callback.a();
         }
 
-        @CalledByNative
-        static void onIntResultFromNative(Callback callback, int i) {
-            Integer.valueOf(i);
+        @org.chromium.base.annotations.CalledByNative
+        static void onIntResultFromNative(org.chromium.base.Callback callback, int i) {
+            java.lang.Integer.valueOf(i);
             callback.a();
         }
     }

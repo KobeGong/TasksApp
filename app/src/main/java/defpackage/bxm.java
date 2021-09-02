@@ -1,11 +1,11 @@
 package defpackage;
 
-/* renamed from: bxm  reason: default package */
+/* renamed from: bxm reason: default package */
 /* compiled from: PG */
 public final class bxm {
-    public final bxx a;
+    public final defpackage.bxx a;
 
-    public bxm(bxx bxx) {
+    public bxm(defpackage.bxx bxx) {
         this.a = bxx;
     }
 }

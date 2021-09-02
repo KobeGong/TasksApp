@@ -1,54 +1,55 @@
 package defpackage;
 
-/* renamed from: dcw  reason: default package */
+/* renamed from: dcw reason: default package */
 /* compiled from: PG */
-public final class dcw extends dih implements djq {
-    public static final dcw e = new dcw();
-    private static volatile djx f;
+public final class dcw extends defpackage.dih implements defpackage.djq {
+    public static final defpackage.dcw e = new defpackage.dcw();
+    private static volatile defpackage.djx f;
     public int a;
     public int b = 0;
-    public Object c;
-    public dcu d;
+    public java.lang.Object c;
+    public defpackage.dcu d;
 
     private dcw() {
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.dih
-    public final Object a(int i) {
-        djx djx;
+    public final java.lang.Object a(int i) {
+        defpackage.djx djx;
         switch (i - 1) {
             case 0:
-                return (byte) 1;
+                return java.lang.Byte.valueOf(1);
             case 1:
                 return null;
             case 2:
-                return new dkb(e, "\u0001\u0003\u0001\u0001\u0001\u0003\u0003\u0000\u0000\u0000\u0001\t\u0000\u0002<\u0000\u0003<\u0000", new Object[]{"c", "b", "a", "d", ddq.class, ddh.class});
+                java.lang.Object[] objArr = {"c", "b", "a", "d", defpackage.ddq.class, defpackage.ddh.class};
+                return new defpackage.dkb(e, "\u0001\u0003\u0001\u0001\u0001\u0003\u0003\u0000\u0000\u0000\u0001\t\u0000\u0002<\u0000\u0003<\u0000", objArr);
             case 3:
-                return new dcw();
+                return new defpackage.dcw();
             case 4:
-                return new dii((boolean[][][][][][][][][][][]) null);
+                return new defpackage.dii((boolean[][][][][][][][][][][]) null);
             case 5:
                 return e;
             case 6:
-                djx djx2 = f;
+                defpackage.djx djx2 = f;
                 if (djx2 != null) {
                     return djx2;
                 }
-                synchronized (dcw.class) {
+                synchronized (defpackage.dcw.class) {
                     djx = f;
                     if (djx == null) {
-                        djx = new dgr(e);
+                        djx = new defpackage.dgr(e);
                         f = djx;
                     }
                 }
                 return djx;
             default:
-                throw new UnsupportedOperationException();
+                throw new java.lang.UnsupportedOperationException();
         }
     }
 
     static {
-        dih.t.put(dcw.class, e);
+        defpackage.dcw dcw = e;
+        defpackage.dih.t.put(defpackage.dcw.class, dcw);
     }
 }

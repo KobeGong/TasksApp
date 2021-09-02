@@ -1,17 +1,13 @@
 package defpackage;
 
-import com.google.android.gms.common.api.Scope;
-import java.util.Comparator;
-
-/* renamed from: awh  reason: default package */
-public final /* synthetic */ class awh implements Comparator {
-    public static final Comparator a = new awh();
+/* renamed from: awh reason: default package */
+public final /* synthetic */ class awh implements java.util.Comparator {
+    public static final java.util.Comparator a = new defpackage.awh();
 
     private awh() {
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        return ((Scope) obj).a.compareTo(((Scope) obj2).a);
+    public final int compare(java.lang.Object obj, java.lang.Object obj2) {
+        return ((com.google.android.gms.common.api.Scope) obj).a.compareTo(((com.google.android.gms.common.api.Scope) obj2).a);
     }
 }

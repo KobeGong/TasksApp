@@ -1,11 +1,11 @@
 package defpackage;
 
-/* renamed from: aro  reason: default package */
+/* renamed from: aro reason: default package */
 /* compiled from: PG */
 final class aro {
-    public final /* synthetic */ ard a;
+    public final /* synthetic */ defpackage.ard a;
 
-    aro(ard ard) {
+    aro(defpackage.ard ard) {
         this.a = ard;
     }
 }

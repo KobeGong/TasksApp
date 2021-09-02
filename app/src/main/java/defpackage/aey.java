@@ -1,15 +1,10 @@
 package defpackage;
 
-import android.support.v7.widget.RecyclerView;
-import android.view.View;
-import java.util.ArrayList;
-import java.util.List;
-
-/* renamed from: aey  reason: default package */
+/* renamed from: aey reason: default package */
 /* compiled from: PG */
 public abstract class aey {
-    private ArrayList a = new ArrayList();
-    public afa h = null;
+    private java.util.ArrayList a = new java.util.ArrayList();
+    public defpackage.afa h = null;
     public long i = 120;
     public long j = 120;
     public long k = 250;
@@ -17,21 +12,21 @@ public abstract class aey {
 
     public abstract void a();
 
-    public abstract boolean a(ViewHolder afv, afb afb, afb afb2);
+    public abstract boolean a(defpackage.afv afv, defpackage.afb afb, defpackage.afb afb2);
 
-    public abstract boolean a(ViewHolder afv, ViewHolder afv2, afb afb, afb afb2);
+    public abstract boolean a(defpackage.afv afv, defpackage.afv afv2, defpackage.afb afb, defpackage.afb afb2);
 
     public abstract boolean b();
 
-    public abstract boolean b(ViewHolder afv, afb afb, afb afb2);
+    public abstract boolean b(defpackage.afv afv, defpackage.afb afb, defpackage.afb afb2);
 
-    public abstract void c(ViewHolder afv);
+    public abstract void c(defpackage.afv afv);
 
-    public abstract boolean c(ViewHolder afv, afb afb, afb afb2);
+    public abstract boolean c(defpackage.afv afv, defpackage.afb afb, defpackage.afb afb2);
 
     public abstract void d();
 
-    public static int d(ViewHolder afv) {
+    public static int d(defpackage.afv afv) {
         int i2 = afv.j & 14;
         if (afv.j()) {
             return 4;
@@ -47,21 +42,21 @@ public abstract class aey {
         return i2 | 2048;
     }
 
-    public final void e(ViewHolder afv) {
+    public final void e(defpackage.afv afv) {
         boolean z;
         boolean z2 = true;
         if (this.h != null) {
-            afa afa = this.h;
+            defpackage.afa afa = this.h;
             afv.a(true);
             if (afv.h != null && afv.i == null) {
                 afv.h = null;
             }
             afv.i = null;
             if (!((afv.j & 16) != 0)) {
-                RecyclerView recyclerView = afa.a;
-                View view = afv.a;
+                android.support.v7.widget.RecyclerView recyclerView = afa.a;
+                android.view.View view = afv.a;
                 recyclerView.d();
-                acm acm = recyclerView.g;
+                defpackage.acm acm = recyclerView.g;
                 int a2 = acm.a.a(view);
                 if (a2 == -1) {
                     acm.b(view);
@@ -75,7 +70,7 @@ public abstract class aey {
                     z = false;
                 }
                 if (z) {
-                    ViewHolder c = RecyclerView.c(view);
+                    defpackage.afv c = android.support.v7.widget.RecyclerView.c(view);
                     recyclerView.e.b(c);
                     recyclerView.e.a(c);
                 }
@@ -90,18 +85,18 @@ public abstract class aey {
         }
     }
 
-    public boolean f(ViewHolder afv) {
+    public boolean f(defpackage.afv afv) {
         return true;
     }
 
-    public boolean a(ViewHolder afv, List list) {
+    public boolean a(defpackage.afv afv, java.util.List list) {
         return f(afv);
     }
 
     public final void e() {
         int size = this.a.size();
         for (int i2 = 0; i2 < size; i2++) {
-            ((aez) this.a.get(i2)).a();
+            ((defpackage.aez) this.a.get(i2)).a();
         }
         this.a.clear();
     }

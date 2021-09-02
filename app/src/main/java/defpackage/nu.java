@@ -1,12 +1,9 @@
 package defpackage;
 
-import android.util.AndroidRuntimeException;
-
-/* access modifiers changed from: package-private */
-/* renamed from: nu  reason: default package */
+/* renamed from: nu reason: default package */
 /* compiled from: PG */
-public final class nu extends AndroidRuntimeException {
-    public nu(String str) {
+final class nu extends android.util.AndroidRuntimeException {
+    public nu(java.lang.String str) {
         super(str);
     }
 }

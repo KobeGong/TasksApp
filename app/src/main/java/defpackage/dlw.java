@@ -1,6 +1,6 @@
 package defpackage;
 
-/* renamed from: dlw  reason: default package */
+/* renamed from: dlw reason: default package */
 /* compiled from: PG */
 public final class dlw {
     public final byte[] a;
@@ -10,13 +10,13 @@ public final class dlw {
     public int e;
     public int f;
     public int g = 64;
-    public dhj h;
+    public defpackage.dhj h;
     private int i;
     private int j;
     private int k = Integer.MAX_VALUE;
 
-    public static dlw a(byte[] bArr, int i2, int i3) {
-        return new dlw(bArr, i2, i3);
+    public static defpackage.dlw a(byte[] bArr, int i2, int i3) {
+        return new defpackage.dlw(bArr, i2, i3);
     }
 
     public final int a() {
@@ -28,12 +28,12 @@ public final class dlw {
         if (this.e != 0) {
             return this.e;
         }
-        throw new dme("Protocol message contained an invalid tag (zero).");
+        throw new defpackage.dme("Protocol message contained an invalid tag (zero).");
     }
 
     public final void a(int i2) {
         if (this.e != i2) {
-            throw new dme("Protocol message end-group tag did not match expected tag.");
+            throw new defpackage.dme("Protocol message end-group tag did not match expected tag.");
         }
     }
 
@@ -57,7 +57,7 @@ public final class dlw {
                 f();
                 return true;
             default:
-                throw new dme("Protocol message tag had invalid wire type.");
+                throw new defpackage.dme("Protocol message tag had invalid wire type.");
         }
         do {
             a2 = a();
@@ -79,30 +79,30 @@ public final class dlw {
                 return j2;
             }
         }
-        throw dme.c();
+        throw defpackage.dme.c();
     }
 
     public final boolean c() {
         return e() != 0;
     }
 
-    public final String d() {
+    public final java.lang.String d() {
         int e2 = e();
         if (e2 < 0) {
-            throw dme.b();
+            throw defpackage.dme.b();
         } else if (e2 > this.i - this.d) {
-            throw dme.a();
+            throw defpackage.dme.a();
         } else {
-            String str = new String(this.a, this.d, e2, dmd.a);
+            java.lang.String str = new java.lang.String(this.a, this.d, e2, defpackage.dmd.a);
             this.d = e2 + this.d;
             return str;
         }
     }
 
-    public final void a(dmf dmf) {
+    public final void a(defpackage.dmf dmf) {
         int e2 = e();
         if (this.f >= this.g) {
-            throw new dme("Protocol message had too many levels of nesting.  May be malicious.  Use CodedInputStream.setRecursionLimit() to increase the depth limit.");
+            throw new defpackage.dme("Protocol message had too many levels of nesting.  May be malicious.  Use CodedInputStream.setRecursionLimit() to increase the depth limit.");
         }
         int c2 = c(e2);
         this.f++;
@@ -117,33 +117,33 @@ public final class dlw {
         if (j2 >= 0) {
             return j2;
         }
-        int i2 = j2 & Byte.MAX_VALUE;
+        byte b2 = j2 & Byte.MAX_VALUE;
         byte j3 = j();
         if (j3 >= 0) {
-            return i2 | (j3 << 7);
+            return b2 | (j3 << 7);
         }
-        int i3 = i2 | ((j3 & Byte.MAX_VALUE) << 7);
+        byte b3 = b2 | ((j3 & Byte.MAX_VALUE) << 7);
         byte j4 = j();
         if (j4 >= 0) {
-            return i3 | (j4 << 14);
+            return b3 | (j4 << 14);
         }
-        int i4 = i3 | ((j4 & Byte.MAX_VALUE) << 14);
+        byte b4 = b3 | ((j4 & Byte.MAX_VALUE) << 14);
         byte j5 = j();
         if (j5 >= 0) {
-            return i4 | (j5 << 21);
+            return b4 | (j5 << 21);
         }
-        int i5 = i4 | ((j5 & Byte.MAX_VALUE) << 21);
+        byte b5 = b4 | ((j5 & Byte.MAX_VALUE) << 21);
         byte j6 = j();
-        int i6 = i5 | (j6 << 28);
+        byte b6 = b5 | (j6 << 28);
         if (j6 >= 0) {
-            return i6;
+            return b6;
         }
-        for (int i7 = 0; i7 < 5; i7++) {
+        for (int i2 = 0; i2 < 5; i2++) {
             if (j() >= 0) {
-                return i6;
+                return b6;
             }
         }
-        throw dme.c();
+        throw defpackage.dme.c();
     }
 
     public final int f() {
@@ -167,12 +167,12 @@ public final class dlw {
 
     public final int c(int i2) {
         if (i2 < 0) {
-            throw dme.b();
+            throw defpackage.dme.b();
         }
         int i3 = this.d + i2;
         int i4 = this.k;
         if (i3 > i4) {
-            throw dme.a();
+            throw defpackage.dme.a();
         }
         this.k = i3;
         k();
@@ -210,12 +210,12 @@ public final class dlw {
         a(i2, this.e);
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public final void a(int i2, int i3) {
         if (i2 > this.d - this.b) {
-            throw new IllegalArgumentException(new StringBuilder(50).append("Position ").append(i2).append(" is beyond current ").append(this.d - this.b).toString());
+            throw new java.lang.IllegalArgumentException("Position " + i2 + " is beyond current " + (this.d - this.b));
         } else if (i2 < 0) {
-            throw new IllegalArgumentException(new StringBuilder(24).append("Bad position ").append(i2).toString());
+            throw new java.lang.IllegalArgumentException("Bad position " + i2);
         } else {
             this.d = this.b + i2;
             this.e = i3;
@@ -224,7 +224,7 @@ public final class dlw {
 
     public final byte j() {
         if (this.d == this.i) {
-            throw dme.a();
+            throw defpackage.dme.a();
         }
         byte[] bArr = this.a;
         int i2 = this.d;
@@ -234,14 +234,14 @@ public final class dlw {
 
     private final void f(int i2) {
         if (i2 < 0) {
-            throw dme.b();
+            throw defpackage.dme.b();
         } else if (this.d + i2 > this.k) {
             f(this.k - this.d);
-            throw dme.a();
+            throw defpackage.dme.a();
         } else if (i2 <= this.i - this.d) {
             this.d += i2;
         } else {
-            throw dme.a();
+            throw defpackage.dme.a();
         }
     }
 }

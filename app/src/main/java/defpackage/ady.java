@@ -1,6 +1,6 @@
 package defpackage;
 
-/* renamed from: ady  reason: default package */
+/* renamed from: ady reason: default package */
 /* compiled from: PG */
 public final class ady {
     public int a;

@@ -1,28 +1,28 @@
 package defpackage;
 
-/* renamed from: ehq  reason: default package */
+/* renamed from: ehq reason: default package */
 /* compiled from: PG */
 public abstract class ehq {
     public ehq() {
     }
 
     /* renamed from: b */
-    public abstract ehq a(String str);
+    public abstract defpackage.ehq a(java.lang.String str);
 
     /* renamed from: b */
-    public abstract ehq a(String str, String str2);
+    public abstract defpackage.ehq a(java.lang.String str, java.lang.String str2);
 
     /* renamed from: c */
-    public abstract ehq a();
+    public abstract defpackage.ehq a();
 
     /* renamed from: d */
-    public abstract ehp b();
+    public abstract defpackage.ehp b();
 
     public ehq(byte b) {
         this();
     }
 
-    public ehq a(Object obj) {
+    public defpackage.ehq a(java.lang.Object obj) {
         return this;
     }
 }

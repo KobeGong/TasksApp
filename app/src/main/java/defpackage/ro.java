@@ -1,31 +1,24 @@
 package defpackage;
 
-import android.os.Bundle;
-import android.view.View;
-import android.view.accessibility.AccessibilityNodeProvider;
-
-/* renamed from: ro  reason: default package */
+/* renamed from: ro reason: default package */
 /* compiled from: PG */
-final class ro extends rq {
+final class ro extends defpackage.rq {
     ro() {
     }
 
-    @Override // defpackage.rq
-    public final View.AccessibilityDelegate a(rn rnVar) {
-        return new rp(rnVar);
+    public final android.view.View.AccessibilityDelegate a(defpackage.rn rnVar) {
+        return new defpackage.rp(rnVar);
     }
 
-    @Override // defpackage.rq
-    public final tp a(View.AccessibilityDelegate accessibilityDelegate, View view) {
-        AccessibilityNodeProvider accessibilityNodeProvider = accessibilityDelegate.getAccessibilityNodeProvider(view);
+    public final defpackage.tp a(android.view.View.AccessibilityDelegate accessibilityDelegate, android.view.View view) {
+        android.view.accessibility.AccessibilityNodeProvider accessibilityNodeProvider = accessibilityDelegate.getAccessibilityNodeProvider(view);
         if (accessibilityNodeProvider != null) {
-            return new tp(accessibilityNodeProvider);
+            return new defpackage.tp(accessibilityNodeProvider);
         }
         return null;
     }
 
-    @Override // defpackage.rq
-    public final boolean a(View.AccessibilityDelegate accessibilityDelegate, View view, int i, Bundle bundle) {
+    public final boolean a(android.view.View.AccessibilityDelegate accessibilityDelegate, android.view.View view, int i, android.os.Bundle bundle) {
         return accessibilityDelegate.performAccessibilityAction(view, i, bundle);
     }
 }

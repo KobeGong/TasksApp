@@ -1,71 +1,71 @@
 package defpackage;
 
-import android.os.Build;
-import android.view.WindowInsets;
-
-/* renamed from: tk  reason: default package */
+/* renamed from: tk reason: default package */
 /* compiled from: PG */
 public final class tk {
-    public final Object a;
+    public final java.lang.Object a;
 
-    public tk(Object obj) {
+    public tk(java.lang.Object obj) {
         this.a = obj;
     }
 
     public final int a() {
-        if (Build.VERSION.SDK_INT >= 20) {
-            return ((WindowInsets) this.a).getSystemWindowInsetLeft();
+        if (android.os.Build.VERSION.SDK_INT >= 20) {
+            return ((android.view.WindowInsets) this.a).getSystemWindowInsetLeft();
         }
         return 0;
     }
 
     public final int b() {
-        if (Build.VERSION.SDK_INT >= 20) {
-            return ((WindowInsets) this.a).getSystemWindowInsetTop();
+        if (android.os.Build.VERSION.SDK_INT >= 20) {
+            return ((android.view.WindowInsets) this.a).getSystemWindowInsetTop();
         }
         return 0;
     }
 
     public final int c() {
-        if (Build.VERSION.SDK_INT >= 20) {
-            return ((WindowInsets) this.a).getSystemWindowInsetRight();
+        if (android.os.Build.VERSION.SDK_INT >= 20) {
+            return ((android.view.WindowInsets) this.a).getSystemWindowInsetRight();
         }
         return 0;
     }
 
     public final int d() {
-        if (Build.VERSION.SDK_INT >= 20) {
-            return ((WindowInsets) this.a).getSystemWindowInsetBottom();
+        if (android.os.Build.VERSION.SDK_INT >= 20) {
+            return ((android.view.WindowInsets) this.a).getSystemWindowInsetBottom();
         }
         return 0;
     }
 
     public final boolean e() {
-        if (Build.VERSION.SDK_INT >= 21) {
-            return ((WindowInsets) this.a).isConsumed();
+        if (android.os.Build.VERSION.SDK_INT >= 21) {
+            return ((android.view.WindowInsets) this.a).isConsumed();
         }
         return false;
     }
 
-    public final tk f() {
-        if (Build.VERSION.SDK_INT >= 20) {
-            return new tk(((WindowInsets) this.a).consumeSystemWindowInsets());
+    public final defpackage.tk f() {
+        if (android.os.Build.VERSION.SDK_INT >= 20) {
+            return new defpackage.tk(((android.view.WindowInsets) this.a).consumeSystemWindowInsets());
         }
         return null;
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         if (this == obj) {
             return true;
         }
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        tk tkVar = (tk) obj;
-        if (this.a == null) {
-            return tkVar.a == null;
+        defpackage.tk tkVar = (defpackage.tk) obj;
+        if (this.a != null) {
+            return this.a.equals(tkVar.a);
         }
-        return this.a.equals(tkVar.a);
+        if (tkVar.a != null) {
+            return false;
+        }
+        return true;
     }
 
     public final int hashCode() {
@@ -75,14 +75,14 @@ public final class tk {
         return this.a.hashCode();
     }
 
-    static tk a(Object obj) {
+    static defpackage.tk a(java.lang.Object obj) {
         if (obj == null) {
             return null;
         }
-        return new tk(obj);
+        return new defpackage.tk(obj);
     }
 
-    static Object a(tk tkVar) {
+    static java.lang.Object a(defpackage.tk tkVar) {
         if (tkVar == null) {
             return null;
         }

@@ -1,59 +1,52 @@
 package defpackage;
 
-import android.graphics.Matrix;
-import android.view.View;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-
-/* renamed from: kg  reason: default package */
+/* renamed from: kg reason: default package */
 /* compiled from: PG */
-class kg extends kf {
-    private static Method a;
+class kg extends defpackage.kf {
+    private static java.lang.reflect.Method a;
     private static boolean b;
-    private static Method c;
+    private static java.lang.reflect.Method c;
     private static boolean d;
 
     kg() {
     }
 
-    @Override // defpackage.ki
-    public final void a(View view, Matrix matrix) {
+    public final void a(android.view.View view, android.graphics.Matrix matrix) {
         if (!b) {
             try {
-                Method declaredMethod = View.class.getDeclaredMethod("transformMatrixToGlobal", Matrix.class);
+                java.lang.reflect.Method declaredMethod = android.view.View.class.getDeclaredMethod("transformMatrixToGlobal", new java.lang.Class[]{android.graphics.Matrix.class});
                 a = declaredMethod;
                 declaredMethod.setAccessible(true);
-            } catch (NoSuchMethodException e) {
+            } catch (java.lang.NoSuchMethodException e) {
             }
             b = true;
         }
         if (a != null) {
             try {
-                a.invoke(view, matrix);
-            } catch (IllegalAccessException e2) {
-            } catch (InvocationTargetException e3) {
-                throw new RuntimeException(e3.getCause());
+                a.invoke(view, new java.lang.Object[]{matrix});
+            } catch (java.lang.IllegalAccessException e2) {
+            } catch (java.lang.reflect.InvocationTargetException e3) {
+                throw new java.lang.RuntimeException(e3.getCause());
             }
         }
     }
 
-    @Override // defpackage.ki
-    public final void b(View view, Matrix matrix) {
+    public final void b(android.view.View view, android.graphics.Matrix matrix) {
         if (!d) {
             try {
-                Method declaredMethod = View.class.getDeclaredMethod("transformMatrixToLocal", Matrix.class);
+                java.lang.reflect.Method declaredMethod = android.view.View.class.getDeclaredMethod("transformMatrixToLocal", new java.lang.Class[]{android.graphics.Matrix.class});
                 c = declaredMethod;
                 declaredMethod.setAccessible(true);
-            } catch (NoSuchMethodException e) {
+            } catch (java.lang.NoSuchMethodException e) {
             }
             d = true;
         }
         if (c != null) {
             try {
-                c.invoke(view, matrix);
-            } catch (IllegalAccessException e2) {
-            } catch (InvocationTargetException e3) {
-                throw new RuntimeException(e3.getCause());
+                c.invoke(view, new java.lang.Object[]{matrix});
+            } catch (java.lang.IllegalAccessException e2) {
+            } catch (java.lang.reflect.InvocationTargetException e3) {
+                throw new java.lang.RuntimeException(e3.getCause());
             }
         }
     }

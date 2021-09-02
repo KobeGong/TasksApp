@@ -1,13 +1,11 @@
 package defpackage;
 
-import android.content.Context;
-
-/* renamed from: ajg  reason: default package */
+/* renamed from: ajg reason: default package */
 /* compiled from: PG */
 public interface ajg {
-    cyl c();
+    defpackage.cyl c();
 
-    cym d();
+    defpackage.cym d();
 
-    Context getApplicationContext();
+    android.content.Context getApplicationContext();
 }

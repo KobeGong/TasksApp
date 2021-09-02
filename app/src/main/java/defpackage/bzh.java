@@ -1,8 +1,8 @@
 package defpackage;
 
-/* renamed from: bzh  reason: default package */
+/* renamed from: bzh reason: default package */
 /* compiled from: PG */
 public final class bzh {
-    public buc a;
-    public bzc b;
+    public defpackage.buc a;
+    public defpackage.bzc b;
 }

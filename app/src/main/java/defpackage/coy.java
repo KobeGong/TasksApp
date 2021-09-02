@@ -1,20 +1,18 @@
 package defpackage;
 
-import java.util.concurrent.Executor;
-
-/* renamed from: coy  reason: default package */
+/* renamed from: coy reason: default package */
 /* compiled from: PG */
 public final class coy {
-    public final cop a;
-    public final Executor b;
-    public final bqm c;
+    public final defpackage.cop a;
+    public final java.util.concurrent.Executor b;
+    public final defpackage.bqm c;
 
-    private coy(cop cop, cov cov, Executor executor) {
+    private coy(defpackage.cop cop, defpackage.cov cov, java.util.concurrent.Executor executor) {
         this.a = cop;
-        this.b = cub.a(executor);
+        this.b = defpackage.cub.a(executor);
     }
 
-    public coy(cop cop, cov cov, bqm bqm, Executor executor) {
+    public coy(defpackage.cop cop, defpackage.cov cov, defpackage.bqm bqm, java.util.concurrent.Executor executor) {
         this(cop, cov, executor);
         this.c = bqm;
     }

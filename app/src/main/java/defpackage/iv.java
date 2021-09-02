@@ -1,19 +1,17 @@
 package defpackage;
 
-import java.util.ArrayList;
-
-/* renamed from: iv  reason: default package */
+/* renamed from: iv reason: default package */
 /* compiled from: PG */
-final class iv implements ji {
-    private final /* synthetic */ Object a;
-    private final /* synthetic */ ArrayList b;
-    private final /* synthetic */ Object c;
-    private final /* synthetic */ ArrayList d;
-    private final /* synthetic */ Object e;
-    private final /* synthetic */ ArrayList f;
-    private final /* synthetic */ it g;
+final class iv implements defpackage.ji {
+    private final /* synthetic */ java.lang.Object a;
+    private final /* synthetic */ java.util.ArrayList b;
+    private final /* synthetic */ java.lang.Object c;
+    private final /* synthetic */ java.util.ArrayList d;
+    private final /* synthetic */ java.lang.Object e;
+    private final /* synthetic */ java.util.ArrayList f;
+    private final /* synthetic */ defpackage.it g;
 
-    iv(it itVar, Object obj, ArrayList arrayList, Object obj2, ArrayList arrayList2, Object obj3, ArrayList arrayList3) {
+    iv(defpackage.it itVar, java.lang.Object obj, java.util.ArrayList arrayList, java.lang.Object obj2, java.util.ArrayList arrayList2, java.lang.Object obj3, java.util.ArrayList arrayList3) {
         this.g = itVar;
         this.a = obj;
         this.b = arrayList;
@@ -23,28 +21,24 @@ final class iv implements ji {
         this.f = arrayList3;
     }
 
-    @Override // defpackage.ji
     public final void c() {
         if (this.a != null) {
-            this.g.b(this.a, this.b, (ArrayList) null);
+            this.g.b(this.a, this.b, (java.util.ArrayList) null);
         }
         if (this.c != null) {
-            this.g.b(this.c, this.d, (ArrayList) null);
+            this.g.b(this.c, this.d, (java.util.ArrayList) null);
         }
         if (this.e != null) {
-            this.g.b(this.e, this.f, (ArrayList) null);
+            this.g.b(this.e, this.f, (java.util.ArrayList) null);
         }
     }
 
-    @Override // defpackage.ji
-    public final void a(je jeVar) {
+    public final void a(defpackage.je jeVar) {
     }
 
-    @Override // defpackage.ji
     public final void a() {
     }
 
-    @Override // defpackage.ji
     public final void b() {
     }
 }

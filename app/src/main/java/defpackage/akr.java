@@ -1,11 +1,11 @@
 package defpackage;
 
-/* renamed from: akr  reason: default package */
+/* renamed from: akr reason: default package */
 /* compiled from: PG */
 public interface akr {
-    cyi a();
+    defpackage.cyi a();
 
-    cyi b();
+    defpackage.cyi b();
 
-    cyi c();
+    defpackage.cyi c();
 }

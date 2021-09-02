@@ -1,25 +1,24 @@
 package defpackage;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-/* renamed from: afq  reason: default package */
+/* renamed from: afq reason: default package */
 /* compiled from: PG */
-public final class afq extends rl {
-    public static final Parcelable.Creator CREATOR = new afr();
-    public Parcelable a;
+public final class afq extends defpackage.rl {
+    public static final android.os.Parcelable.Creator CREATOR = new defpackage.afr();
+    public android.os.Parcelable a;
 
-    afq(Parcel parcel, ClassLoader classLoader) {
+    afq(android.os.Parcel parcel, java.lang.ClassLoader classLoader) {
         super(parcel, classLoader);
-        this.a = parcel.readParcelable(classLoader == null ? LayoutManager.class.getClassLoader() : classLoader);
+        if (classLoader == null) {
+            classLoader = defpackage.afd.class.getClassLoader();
+        }
+        this.a = parcel.readParcelable(classLoader);
     }
 
-    public afq(Parcelable parcelable) {
+    public afq(android.os.Parcelable parcelable) {
         super(parcelable);
     }
 
-    @Override // defpackage.rl
-    public final void writeToParcel(Parcel parcel, int i) {
+    public final void writeToParcel(android.os.Parcel parcel, int i) {
         super.writeToParcel(parcel, i);
         parcel.writeParcelable(this.a, 0);
     }

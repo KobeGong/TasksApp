@@ -1,30 +1,27 @@
 package defpackage;
 
-import android.graphics.Bitmap;
+/* renamed from: cek reason: default package */
+final /* synthetic */ class cek implements defpackage.cdq {
+    private final defpackage.cei a;
+    private final defpackage.cel b;
+    private final java.lang.String c;
+    private final java.lang.Object d;
 
-/* renamed from: cek  reason: default package */
-final /* synthetic */ class cek implements cdq {
-    private final cei a;
-    private final cel b;
-    private final String c;
-    private final Object d;
-
-    cek(cei cei, cel cel, String str, Object obj) {
+    cek(defpackage.cei cei, defpackage.cel cel, java.lang.String str, java.lang.Object obj) {
         this.a = cei;
         this.b = cel;
         this.c = str;
         this.d = obj;
     }
 
-    @Override // defpackage.cdq
-    public final void a(Bitmap bitmap) {
-        cei cei = this.a;
-        cel cel = this.b;
-        String str = this.c;
-        Object obj = this.d;
+    public final void a(android.graphics.Bitmap bitmap) {
+        defpackage.cei cei = this.a;
+        defpackage.cel cel = this.b;
+        java.lang.String str = this.c;
+        java.lang.Object obj = this.d;
         if (!cel.a()) {
             if (bitmap != null) {
-                cei.a.put(str, bitmap);
+                defpackage.cei.a.put(str, bitmap);
             }
             if (bitmap == null) {
                 bitmap = cei.c.a(obj);

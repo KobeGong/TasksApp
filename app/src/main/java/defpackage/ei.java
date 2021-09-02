@@ -1,12 +1,9 @@
 package defpackage;
 
-import android.app.Dialog;
-
-/* renamed from: ei  reason: default package */
+/* renamed from: ei reason: default package */
 /* compiled from: PG */
-public class ei extends xh {
-    @Override // defpackage.xh, defpackage.lb
-    public Dialog c() {
-        return new ee(i(), this.a);
+public class ei extends defpackage.xh {
+    public android.app.Dialog c() {
+        return new defpackage.ee(getContext(), this.a);
     }
 }

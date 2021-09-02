@@ -1,8 +1,8 @@
 package defpackage;
 
-/* renamed from: dcn  reason: default package */
+/* renamed from: dcn reason: default package */
 /* compiled from: PG */
-public enum dcn implements din {
+public enum dcn implements defpackage.din {
     ENDPOINT_UNKNOWN(0),
     ANDROID(1),
     IOS(2),
@@ -11,15 +11,14 @@ public enum dcn implements din {
     WEB_PUSH(5),
     HTTP_STREAMING(6);
     
-    public static final dio a = new dco();
+    public static final defpackage.dio a = null;
     private final int i;
 
-    @Override // defpackage.din
     public final int a() {
         return this.i;
     }
 
-    public static dcn a(int i2) {
+    public static defpackage.dcn a(int i2) {
         switch (i2) {
             case 0:
                 return ENDPOINT_UNKNOWN;
@@ -42,5 +41,9 @@ public enum dcn implements din {
 
     private dcn(int i2) {
         this.i = i2;
+    }
+
+    static {
+        a = new defpackage.dco();
     }
 }

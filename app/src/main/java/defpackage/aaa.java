@@ -1,71 +1,51 @@
 package defpackage;
 
-import android.content.Context;
-import android.content.res.Resources;
-import android.os.Parcelable;
-import android.view.Gravity;
-import android.view.KeyEvent;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
-import android.widget.AdapterView;
-import android.widget.FrameLayout;
-import android.widget.ListView;
-import android.widget.PopupWindow;
-import android.widget.TextView;
-import com.google.android.apps.tasks.R;
-
-/* access modifiers changed from: package-private */
-/* renamed from: aaa  reason: default package */
+/* renamed from: aaa reason: default package */
 /* compiled from: PG */
-public final class aaa extends zq implements View.OnKeyListener, AdapterView.OnItemClickListener, PopupWindow.OnDismissListener, MenuPresenter {
-    public final ael a;
-    public final ViewTreeObserver.OnGlobalLayoutListener b = new aab(this);
-    public View c;
-    public ViewTreeObserver d;
-    private final Context e;
-    private final MenuBuilder f;
-    private final zd h;
+final class aaa extends defpackage.zq implements android.view.View.OnKeyListener, android.widget.AdapterView.OnItemClickListener, android.widget.PopupWindow.OnDismissListener, defpackage.zt {
+    public final defpackage.ael a;
+    public final android.view.ViewTreeObserver.OnGlobalLayoutListener b = new defpackage.aab(this);
+    public android.view.View c;
+    public android.view.ViewTreeObserver d;
+    private final android.content.Context e;
+    private final defpackage.ze f;
+    private final defpackage.zd h;
     private final boolean i;
     private final int j;
     private final int k;
     private final int l;
-    private final View.OnAttachStateChangeListener m = new aac(this);
-    private PopupWindow.OnDismissListener n;
-    private View o;
-    private zu p;
+    private final android.view.View.OnAttachStateChangeListener m = new defpackage.aac(this);
+    private android.widget.PopupWindow.OnDismissListener n;
+    private android.view.View o;
+    private defpackage.zu p;
     private boolean q;
     private boolean r;
     private int s;
     private int t = 0;
     private boolean u;
 
-    public aaa(Context context, MenuBuilder zeVar, View view, int i2, int i3, boolean z) {
+    public aaa(android.content.Context context, defpackage.ze zeVar, android.view.View view, int i2, int i3, boolean z) {
         this.e = context;
         this.f = zeVar;
         this.i = z;
-        this.h = new zd(zeVar, LayoutInflater.from(context), this.i);
+        this.h = new defpackage.zd(zeVar, android.view.LayoutInflater.from(context), this.i);
         this.k = i2;
         this.l = i3;
-        Resources resources = context.getResources();
-        this.j = Math.max(resources.getDisplayMetrics().widthPixels / 2, resources.getDimensionPixelSize(R.dimen.abc_config_prefDialogWidth));
+        android.content.res.Resources resources = context.getResources();
+        this.j = java.lang.Math.max(resources.getDisplayMetrics().widthPixels / 2, resources.getDimensionPixelSize(2131689495));
         this.o = view;
-        this.a = new ael(this.e, this.k, this.l);
-        zeVar.a(this, context);
+        this.a = new defpackage.ael(this.e, this.k, this.l);
+        zeVar.a((defpackage.zt) this, context);
     }
 
-    @Override // defpackage.zq
     public final void b(boolean z) {
         this.h.b = z;
     }
 
-    @Override // defpackage.zq
     public final void a(int i2) {
         this.t = i2;
     }
 
-    @Override // defpackage.zz
     public final void d() {
         boolean z = true;
         if (!f()) {
@@ -73,10 +53,10 @@ public final class aaa extends zq implements View.OnKeyListener, AdapterView.OnI
                 z = false;
             } else {
                 this.c = this.o;
-                this.a.a(this);
+                this.a.a((android.widget.PopupWindow.OnDismissListener) this);
                 this.a.m = this;
                 this.a.b();
-                View view = this.c;
+                android.view.View view = this.c;
                 boolean z2 = this.d == null;
                 this.d = view.getViewTreeObserver();
                 if (z2) {
@@ -93,38 +73,35 @@ public final class aaa extends zq implements View.OnKeyListener, AdapterView.OnI
                 this.a.h();
                 this.a.p = this.g;
                 this.a.d();
-                ade ade = this.a.e;
+                defpackage.ade ade = this.a.e;
                 ade.setOnKeyListener(this);
                 if (this.u && this.f.f != null) {
-                    FrameLayout frameLayout = (FrameLayout) LayoutInflater.from(this.e).inflate(R.layout.abc_popup_menu_header_item_layout, (ViewGroup) ade, false);
-                    TextView textView = (TextView) frameLayout.findViewById(16908310);
+                    android.widget.FrameLayout frameLayout = (android.widget.FrameLayout) android.view.LayoutInflater.from(this.e).inflate(2131034129, ade, false);
+                    android.widget.TextView textView = (android.widget.TextView) frameLayout.findViewById(16908310);
                     if (textView != null) {
                         textView.setText(this.f.f);
                     }
                     frameLayout.setEnabled(false);
                     ade.addHeaderView(frameLayout, null, false);
                 }
-                this.a.a(this.h);
+                this.a.a((android.widget.ListAdapter) this.h);
                 this.a.d();
             }
         }
         if (!z) {
-            throw new IllegalStateException("StandardMenuPopup cannot be used without an anchor");
+            throw new java.lang.IllegalStateException("StandardMenuPopup cannot be used without an anchor");
         }
     }
 
-    @Override // defpackage.zz
     public final void e() {
         if (f()) {
             this.a.e();
         }
     }
 
-    @Override // defpackage.zq
-    public final void a(MenuBuilder zeVar) {
+    public final void a(defpackage.ze zeVar) {
     }
 
-    @Override // defpackage.zz
     public final boolean f() {
         return !this.q && this.a.r.isShowing();
     }
@@ -145,7 +122,6 @@ public final class aaa extends zq implements View.OnKeyListener, AdapterView.OnI
         }
     }
 
-    @Override // defpackage.zt
     public final void a(boolean z) {
         this.r = false;
         if (this.h != null) {
@@ -153,24 +129,22 @@ public final class aaa extends zq implements View.OnKeyListener, AdapterView.OnI
         }
     }
 
-    @Override // defpackage.zt
-    public final void a(zu zuVar) {
+    public final void a(defpackage.zu zuVar) {
         this.p = zuVar;
     }
 
-    @Override // defpackage.zt
-    public final boolean a(aad aad) {
+    public final boolean a(defpackage.aad aad) {
         boolean z;
         if (aad.hasVisibleItems()) {
-            zr zrVar = new zr(this.e, aad, this.c, this.i, this.k, this.l);
+            defpackage.zr zrVar = new defpackage.zr(this.e, aad, this.c, this.i, this.k, this.l);
             zrVar.a(this.p);
-            zrVar.a(zq.b(aad));
+            zrVar.a(defpackage.zq.b((defpackage.ze) aad));
             zrVar.c = this.n;
             this.n = null;
             this.f.b(false);
             int i2 = this.a.g;
             int c2 = this.a.c();
-            if ((Gravity.getAbsoluteGravity(this.t, sn.a.j(this.o)) & 7) == 5) {
+            if ((android.view.Gravity.getAbsoluteGravity(this.t, defpackage.sn.a.j(this.o)) & 7) == 5) {
                 i2 += this.o.getWidth();
             }
             if (zrVar.e()) {
@@ -191,8 +165,7 @@ public final class aaa extends zq implements View.OnKeyListener, AdapterView.OnI
         return false;
     }
 
-    @Override // defpackage.zt
-    public final void a(MenuBuilder zeVar, boolean z) {
+    public final void a(defpackage.ze zeVar, boolean z) {
         if (zeVar == this.f) {
             e();
             if (this.p != null) {
@@ -201,26 +174,22 @@ public final class aaa extends zq implements View.OnKeyListener, AdapterView.OnI
         }
     }
 
-    @Override // defpackage.zt
     public final boolean a() {
         return false;
     }
 
-    @Override // defpackage.zt
-    public final Parcelable c() {
+    public final android.os.Parcelable c() {
         return null;
     }
 
-    @Override // defpackage.zt
-    public final void a(Parcelable parcelable) {
+    public final void a(android.os.Parcelable parcelable) {
     }
 
-    @Override // defpackage.zq
-    public final void a(View view) {
+    public final void a(android.view.View view) {
         this.o = view;
     }
 
-    public final boolean onKey(View view, int i2, KeyEvent keyEvent) {
+    public final boolean onKey(android.view.View view, int i2, android.view.KeyEvent keyEvent) {
         if (keyEvent.getAction() != 1 || i2 != 82) {
             return false;
         }
@@ -228,27 +197,22 @@ public final class aaa extends zq implements View.OnKeyListener, AdapterView.OnI
         return true;
     }
 
-    @Override // defpackage.zq
-    public final void a(PopupWindow.OnDismissListener onDismissListener) {
+    public final void a(android.widget.PopupWindow.OnDismissListener onDismissListener) {
         this.n = onDismissListener;
     }
 
-    @Override // defpackage.zz
-    public final ListView g() {
+    public final android.widget.ListView g() {
         return this.a.e;
     }
 
-    @Override // defpackage.zq
     public final void b(int i2) {
         this.a.g = i2;
     }
 
-    @Override // defpackage.zq
     public final void c(int i2) {
         this.a.a(i2);
     }
 
-    @Override // defpackage.zq
     public final void c(boolean z) {
         this.u = z;
     }

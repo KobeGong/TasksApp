@@ -1,17 +1,14 @@
 package defpackage;
 
-import java.util.Iterator;
-import java.util.Map;
-
-/* renamed from: dks  reason: default package */
+/* renamed from: dks reason: default package */
 /* compiled from: PG */
-final class dks implements Iterator {
+final class dks implements java.util.Iterator {
     private int a = -1;
     private boolean b;
-    private Iterator c;
-    private final /* synthetic */ dkk d;
+    private java.util.Iterator c;
+    private final /* synthetic */ defpackage.dkk d;
 
-    dks(dkk dkk) {
+    dks(defpackage.dkk dkk) {
         this.d = dkk;
     }
 
@@ -21,12 +18,12 @@ final class dks implements Iterator {
 
     public final void remove() {
         if (!this.b) {
-            throw new IllegalStateException("remove() was called before next()");
+            throw new java.lang.IllegalStateException("remove() was called before next()");
         }
         this.b = false;
         this.d.e();
         if (this.a < this.d.a.size()) {
-            dkk dkk = this.d;
+            defpackage.dkk dkk = this.d;
             int i = this.a;
             this.a = i - 1;
             dkk.c(i);
@@ -35,21 +32,20 @@ final class dks implements Iterator {
         a().remove();
     }
 
-    private final Iterator a() {
+    private final java.util.Iterator a() {
         if (this.c == null) {
             this.c = this.d.b.entrySet().iterator();
         }
         return this.c;
     }
 
-    @Override // java.util.Iterator
-    public final /* synthetic */ Object next() {
+    public final /* synthetic */ java.lang.Object next() {
         this.b = true;
         int i = this.a + 1;
         this.a = i;
         if (i < this.d.a.size()) {
-            return (Map.Entry) this.d.a.get(this.a);
+            return (java.util.Map.Entry) this.d.a.get(this.a);
         }
-        return (Map.Entry) a().next();
+        return (java.util.Map.Entry) a().next();
     }
 }

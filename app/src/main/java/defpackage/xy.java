@@ -1,19 +1,11 @@
 package defpackage;
 
-import android.content.res.ColorStateList;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.PorterDuff;
-import android.graphics.Rect;
-import android.graphics.Region;
-import android.graphics.drawable.Drawable;
-
-/* renamed from: xy  reason: default package */
+/* renamed from: xy reason: default package */
 /* compiled from: PG */
-public class xy extends Drawable implements Drawable.Callback {
-    public Drawable a;
+public class xy extends android.graphics.drawable.Drawable implements android.graphics.drawable.Drawable.Callback {
+    public android.graphics.drawable.Drawable a;
 
-    public xy(Drawable drawable) {
+    public xy(android.graphics.drawable.Drawable drawable) {
         if (this.a != null) {
             this.a.setCallback(null);
         }
@@ -23,11 +15,11 @@ public class xy extends Drawable implements Drawable.Callback {
         }
     }
 
-    public void draw(Canvas canvas) {
+    public void draw(android.graphics.Canvas canvas) {
         this.a.draw(canvas);
     }
 
-    public void onBoundsChange(Rect rect) {
+    public void onBoundsChange(android.graphics.Rect rect) {
         this.a.setBounds(rect);
     }
 
@@ -51,7 +43,7 @@ public class xy extends Drawable implements Drawable.Callback {
         this.a.setAlpha(i);
     }
 
-    public void setColorFilter(ColorFilter colorFilter) {
+    public void setColorFilter(android.graphics.ColorFilter colorFilter) {
         this.a.setColorFilter(colorFilter);
     }
 
@@ -71,7 +63,7 @@ public class xy extends Drawable implements Drawable.Callback {
         this.a.jumpToCurrentState();
     }
 
-    public Drawable getCurrent() {
+    public android.graphics.drawable.Drawable getCurrent() {
         return this.a.getCurrent();
     }
 
@@ -83,7 +75,7 @@ public class xy extends Drawable implements Drawable.Callback {
         return this.a.getOpacity();
     }
 
-    public Region getTransparentRegion() {
+    public android.graphics.Region getTransparentRegion() {
         return this.a.getTransparentRegion();
     }
 
@@ -103,19 +95,19 @@ public class xy extends Drawable implements Drawable.Callback {
         return this.a.getMinimumHeight();
     }
 
-    public boolean getPadding(Rect rect) {
+    public boolean getPadding(android.graphics.Rect rect) {
         return this.a.getPadding(rect);
     }
 
-    public void invalidateDrawable(Drawable drawable) {
+    public void invalidateDrawable(android.graphics.drawable.Drawable drawable) {
         invalidateSelf();
     }
 
-    public void scheduleDrawable(Drawable drawable, Runnable runnable, long j) {
+    public void scheduleDrawable(android.graphics.drawable.Drawable drawable, java.lang.Runnable runnable, long j) {
         scheduleSelf(runnable, j);
     }
 
-    public void unscheduleDrawable(Drawable drawable, Runnable runnable) {
+    public void unscheduleDrawable(android.graphics.drawable.Drawable drawable, java.lang.Runnable runnable) {
         unscheduleSelf(runnable);
     }
 
@@ -125,30 +117,30 @@ public class xy extends Drawable implements Drawable.Callback {
     }
 
     public void setAutoMirrored(boolean z) {
-        jd.a(this.a, z);
+        defpackage.jd.a(this.a, z);
     }
 
     public boolean isAutoMirrored() {
-        return jd.a(this.a);
+        return defpackage.jd.a(this.a);
     }
 
     public void setTint(int i) {
-        jd.a(this.a, i);
+        defpackage.jd.a(this.a, i);
     }
 
-    public void setTintList(ColorStateList colorStateList) {
-        jd.a(this.a, colorStateList);
+    public void setTintList(android.content.res.ColorStateList colorStateList) {
+        defpackage.jd.a(this.a, colorStateList);
     }
 
-    public void setTintMode(PorterDuff.Mode mode) {
-        jd.a(this.a, mode);
+    public void setTintMode(android.graphics.PorterDuff.Mode mode) {
+        defpackage.jd.a(this.a, mode);
     }
 
     public void setHotspot(float f, float f2) {
-        jd.a(this.a, f, f2);
+        defpackage.jd.a(this.a, f, f2);
     }
 
     public void setHotspotBounds(int i, int i2, int i3, int i4) {
-        jd.a(this.a, i, i2, i3, i4);
+        defpackage.jd.a(this.a, i, i2, i3, i4);
     }
 }

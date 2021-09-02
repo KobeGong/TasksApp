@@ -3,11 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/layout/app_bar_task_lists.xml" value="0.33152173913043476" />
-        <entry key="app/src/main/res/layout/fab.xml" value="0.33152173913043476" />
-        <entry key="app/src/main/res/layout/task.xml" value="0.2619047619047619" />
-        <entry key="app/src/main/res/layout/task_drag_num_subtasks.xml" value="0.5385416666666667" />
-        <entry key="app/src/main/res/layout/tasks_fragment.xml" value="0.31476449275362317" />
+        <entry key="app/src/main/res/layout/add_task_fragment.xml" value="0.48867753623188404" />
+        <entry key="app/src/main/res/layout/app_bar_task_lists.xml" value="0.48867753623188404" />
+        <entry key="app/src/main/res/layout/bottom_sheet_menu.xml" value="0.48867753623188404" />
+        <entry key="app/src/main/res/layout/edit_task_fragment.xml" value="0.48867753623188404" />
+        <entry key="app/src/main/res/layout/navigation_view_tasks_lists.xml" value="0.48867753623188404" />
+        <entry key="app/src/main/res/layout/splash.xml" value="0.32760416666666664" />
+        <entry key="app/src/main/res/layout/subtask.xml" value="0.48867753623188404" />
+        <entry key="app/src/main/res/layout/welcome_fragment.xml" value="0.48867753623188404" />
       </map>
     </option>
   </component>

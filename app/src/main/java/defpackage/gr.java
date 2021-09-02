@@ -1,28 +1,23 @@
 package defpackage;
 
-import android.os.Handler;
-import android.os.Message;
-import java.lang.ref.WeakReference;
-
-/* access modifiers changed from: package-private */
-/* renamed from: gr  reason: default package */
+/* renamed from: gr reason: default package */
 /* compiled from: PG */
-public final class gr implements Handler.Callback {
-    private final /* synthetic */ gq a;
+final class gr implements android.os.Handler.Callback {
+    private final /* synthetic */ defpackage.gq a;
 
-    gr(gq gqVar) {
+    gr(defpackage.gq gqVar) {
         this.a = gqVar;
     }
 
-    public final boolean handleMessage(Message message) {
+    public final boolean handleMessage(android.os.Message message) {
         switch (message.what) {
             case 0:
-                gq gqVar = this.a;
-                gt gtVar = (gt) message.obj;
+                defpackage.gq gqVar = this.a;
+                ViewModelStore gtVar = (ViewModelStore) message.obj;
                 synchronized (gqVar.a) {
                     if (gtVar == null || gtVar == null) {
-                        WeakReference weakReference = null;
-                        gs gsVar = (gs) weakReference.get();
+                        java.lang.ref.WeakReference weakReference = null;
+                        defpackage.gs gsVar = (defpackage.gs) weakReference.get();
                         if (gsVar != null) {
                             gqVar.b.removeCallbacksAndMessages(gtVar);
                             gsVar.a();

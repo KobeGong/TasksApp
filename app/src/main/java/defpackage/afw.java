@@ -1,91 +1,131 @@
 package defpackage;
 
-import android.os.Build;
-import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
-import android.view.View;
-import android.view.accessibility.AccessibilityEvent;
-import android.view.accessibility.AccessibilityNodeInfo;
-
-/* renamed from: afw  reason: default package */
+/* renamed from: afw reason: default package */
 /* compiled from: PG */
-public class afw extends rn {
-    public final RecyclerView b;
-    public final rn c = new afx(this);
+public class afw extends defpackage.rn {
+    public final android.support.v7.widget.RecyclerView b;
+    public final defpackage.rn c = new defpackage.afx(this);
 
-    public afw(RecyclerView recyclerView) {
+    public afw(android.support.v7.widget.RecyclerView recyclerView) {
         this.b = recyclerView;
     }
 
-    @Override // defpackage.rn
-    public final boolean a(View view, int i, Bundle bundle) {
-        int i2;
-        int i3;
-        int i4;
-        if (super.a(view, i, bundle)) {
-            return true;
-        }
-        if (this.b.n() || this.b.layoutManager == null) {
-            return false;
-        }
-        LayoutManager afd = this.b.layoutManager;
-        afn afn = afd.b.e;
-        aft aft = afd.b.D;
-        if (afd.b == null) {
-            return false;
-        }
-        switch (i) {
-            case 4096:
-                if (afd.b.canScrollVertically(1)) {
-                    i2 = (afd.m - afd.m()) - afd.o();
-                } else {
-                    i2 = 0;
-                }
-                if (afd.b.canScrollHorizontally(1)) {
-                    i3 = i2;
-                    i4 = (afd.l - afd.l()) - afd.n();
-                    break;
-                }
-                i3 = i2;
-                i4 = 0;
-                break;
-            case 8192:
-                if (afd.b.canScrollVertically(-1)) {
-                    i2 = -((afd.m - afd.m()) - afd.o());
-                } else {
-                    i2 = 0;
-                }
-                if (afd.b.canScrollHorizontally(-1)) {
-                    i3 = i2;
-                    i4 = -((afd.l - afd.l()) - afd.n());
-                    break;
-                }
-                i3 = i2;
-                i4 = 0;
-                break;
-            default:
-                i4 = 0;
-                i3 = 0;
-                break;
-        }
-        if (i3 == 0 && i4 == 0) {
-            return false;
-        }
-        afd.b.a(i4, i3);
-        return true;
+    /* JADX WARNING: Code restructure failed: missing block: B:26:0x0093, code lost:
+        r3 = r0;
+        r0 = 0;
+     */
+    /* Code decompiled incorrectly, please refer to instructions dump. */
+    public final boolean a(android.view.View r8, int r9, android.os.Bundle r10) {
+        /*
+            r7 = this;
+            r5 = -1
+            r2 = 1
+            r1 = 0
+            boolean r0 = super.a(r8, r9, r10)
+            if (r0 == 0) goto L_0x000b
+            r1 = r2
+        L_0x000a:
+            return r1
+        L_0x000b:
+            android.support.v7.widget.RecyclerView r0 = r7.b
+            boolean r0 = r0.n()
+            if (r0 != 0) goto L_0x000a
+            android.support.v7.widget.RecyclerView r0 = r7.b
+            afd r0 = r0.l
+            if (r0 == 0) goto L_0x000a
+            android.support.v7.widget.RecyclerView r0 = r7.b
+            afd r4 = r0.l
+            android.support.v7.widget.RecyclerView r0 = r4.b
+            afn r0 = r0.e
+            android.support.v7.widget.RecyclerView r0 = r4.b
+            aft r0 = r0.D
+            android.support.v7.widget.RecyclerView r0 = r4.b
+            if (r0 == 0) goto L_0x000a
+            switch(r9) {
+                case 4096: goto L_0x0067;
+                case 8192: goto L_0x0039;
+                default: goto L_0x002c;
+            }
+        L_0x002c:
+            r0 = r1
+            r3 = r1
+        L_0x002e:
+            if (r3 != 0) goto L_0x0032
+            if (r0 == 0) goto L_0x000a
+        L_0x0032:
+            android.support.v7.widget.RecyclerView r1 = r4.b
+            r1.a(r0, r3)
+            r1 = r2
+            goto L_0x000a
+        L_0x0039:
+            android.support.v7.widget.RecyclerView r0 = r4.b
+            boolean r0 = r0.canScrollVertically(r5)
+            if (r0 == 0) goto L_0x0098
+            int r0 = r4.m
+            int r3 = r4.m()
+            int r0 = r0 - r3
+            int r3 = r4.o()
+            int r0 = r0 - r3
+            int r0 = -r0
+        L_0x004e:
+            android.support.v7.widget.RecyclerView r3 = r4.b
+            boolean r3 = r3.canScrollHorizontally(r5)
+            if (r3 == 0) goto L_0x0093
+            int r3 = r4.l
+            int r5 = r4.l()
+            int r3 = r3 - r5
+            int r5 = r4.n()
+            int r3 = r3 - r5
+            int r3 = -r3
+            r6 = r3
+            r3 = r0
+            r0 = r6
+            goto L_0x002e
+        L_0x0067:
+            android.support.v7.widget.RecyclerView r0 = r4.b
+            boolean r0 = r0.canScrollVertically(r2)
+            if (r0 == 0) goto L_0x0096
+            int r0 = r4.m
+            int r3 = r4.m()
+            int r0 = r0 - r3
+            int r3 = r4.o()
+            int r0 = r0 - r3
+        L_0x007b:
+            android.support.v7.widget.RecyclerView r3 = r4.b
+            boolean r3 = r3.canScrollHorizontally(r2)
+            if (r3 == 0) goto L_0x0093
+            int r3 = r4.l
+            int r5 = r4.l()
+            int r3 = r3 - r5
+            int r5 = r4.n()
+            int r3 = r3 - r5
+            r6 = r3
+            r3 = r0
+            r0 = r6
+            goto L_0x002e
+        L_0x0093:
+            r3 = r0
+            r0 = r1
+            goto L_0x002e
+        L_0x0096:
+            r0 = r1
+            goto L_0x007b
+        L_0x0098:
+            r0 = r1
+            goto L_0x004e
+        */
+        throw new UnsupportedOperationException("Method not decompiled: defpackage.afw.a(android.view.View, int, android.os.Bundle):boolean");
     }
 
-    @Override // defpackage.rn
-    public final void a(View view, tl tlVar) {
-        int i;
-        tn tnVar;
-        int i2 = 1;
+    public final void a(android.view.View view, defpackage.tl tlVar) {
+        defpackage.tn tnVar;
+        int i = 1;
         super.a(view, tlVar);
-        tlVar.a(RecyclerView.class.getName());
-        if (!this.b.n() && this.b.layoutManager != null) {
-            LayoutManager afd = this.b.layoutManager;
-            afn afn = afd.b.e;
-            aft aft = afd.b.D;
+        tlVar.a((java.lang.CharSequence) android.support.v7.widget.RecyclerView.class.getName());
+        if (!this.b.n() && this.b.l != null) {
+            defpackage.afd afd = this.b.l;
+            defpackage.afn afn = afd.b.e;
+            defpackage.aft aft = afd.b.D;
             if (afd.b.canScrollVertically(-1) || afd.b.canScrollHorizontally(-1)) {
                 tlVar.a(8192);
                 tlVar.a();
@@ -94,35 +134,30 @@ public class afw extends rn {
                 tlVar.a(4096);
                 tlVar.a();
             }
-            if (afd.b == null || afd.b.adapter == null) {
-                i = 1;
+            int i2 = (afd.b == null || afd.b.k == null) ? 1 : afd.e() ? afd.b.k.a() : 1;
+            if (!(afd.b == null || afd.b.k == null || !afd.d())) {
+                i = afd.b.k.a();
+            }
+            if (android.os.Build.VERSION.SDK_INT >= 21) {
+                tnVar = new defpackage.tn(android.view.accessibility.AccessibilityNodeInfo.CollectionInfo.obtain(i2, i, false, 0));
+            } else if (android.os.Build.VERSION.SDK_INT >= 19) {
+                tnVar = new defpackage.tn(android.view.accessibility.AccessibilityNodeInfo.CollectionInfo.obtain(i2, i, false));
             } else {
-                i = afd.e() ? afd.b.adapter.getCount() : 1;
+                tnVar = new defpackage.tn(null);
             }
-            if (!(afd.b == null || afd.b.adapter == null || !afd.d())) {
-                i2 = afd.b.adapter.getCount();
-            }
-            if (Build.VERSION.SDK_INT >= 21) {
-                tnVar = new tn(AccessibilityNodeInfo.CollectionInfo.obtain(i, i2, false, 0));
-            } else if (Build.VERSION.SDK_INT >= 19) {
-                tnVar = new tn(AccessibilityNodeInfo.CollectionInfo.obtain(i, i2, false));
-            } else {
-                tnVar = new tn(null);
-            }
-            if (Build.VERSION.SDK_INT >= 19) {
-                tlVar.a.setCollectionInfo((AccessibilityNodeInfo.CollectionInfo) tnVar.a);
+            if (android.os.Build.VERSION.SDK_INT >= 19) {
+                tlVar.a.setCollectionInfo((android.view.accessibility.AccessibilityNodeInfo.CollectionInfo) tnVar.a);
             }
         }
     }
 
-    @Override // defpackage.rn
-    public void a(View view, AccessibilityEvent accessibilityEvent) {
+    public void a(android.view.View view, android.view.accessibility.AccessibilityEvent accessibilityEvent) {
         super.a(view, accessibilityEvent);
-        accessibilityEvent.setClassName(RecyclerView.class.getName());
-        if ((view instanceof RecyclerView) && !this.b.n()) {
-            RecyclerView recyclerView = (RecyclerView) view;
-            if (recyclerView.layoutManager != null) {
-                recyclerView.layoutManager.a(accessibilityEvent);
+        accessibilityEvent.setClassName(android.support.v7.widget.RecyclerView.class.getName());
+        if ((view instanceof android.support.v7.widget.RecyclerView) && !this.b.n()) {
+            android.support.v7.widget.RecyclerView recyclerView = (android.support.v7.widget.RecyclerView) view;
+            if (recyclerView.l != null) {
+                recyclerView.l.a(accessibilityEvent);
             }
         }
     }

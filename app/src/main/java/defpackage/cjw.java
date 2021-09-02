@@ -1,14 +1,12 @@
 package defpackage;
 
-import android.app.Application;
-
-/* renamed from: cjw  reason: default package */
+/* renamed from: cjw reason: default package */
 /* compiled from: PG */
 public final class cjw {
-    public final coe a;
-    public final Application b;
+    public final defpackage.coe a;
+    public final android.app.Application b;
 
-    public cjw(akp akp, coe coe, Application application) {
+    public cjw(defpackage.akp akp, defpackage.coe coe, android.app.Application application) {
         this.a = coe;
         this.b = application;
     }

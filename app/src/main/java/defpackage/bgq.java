@@ -1,52 +1,41 @@
 package defpackage;
 
-import android.app.ApplicationErrorReport;
-import android.content.Context;
-import android.text.TextUtils;
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.common.data.BitmapTeleporter;
-import com.google.android.gms.feedback.ErrorReport;
-import java.io.File;
-import java.util.List;
-
-/* renamed from: bgq  reason: default package */
+/* renamed from: bgq reason: default package */
 /* compiled from: PG */
-final class bgq extends bgi {
-    private /* synthetic */ bgj e;
-    private /* synthetic */ Context f;
+final class bgq extends defpackage.bgi {
+    private /* synthetic */ defpackage.bgj e;
+    private /* synthetic */ android.content.Context f;
     private /* synthetic */ long g;
 
-    /* JADX INFO: super call moved to the top of the method (can break code semantics) */
-    bgq(ayp ayp, bgj bgj, Context context, long j) {
-        super(ayp);
+    bgq(defpackage.ayp ayp, defpackage.bgj bgj, android.content.Context context, long j) {
         this.e = bgj;
         this.f = context;
         this.g = j;
+        super(ayp);
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.bca
-    public final /* synthetic */ void a(ayg ayg) {
-        ApplicationErrorReport.CrashInfo crashInfo;
-        ErrorReport errorReport;
-        bjh bjh = (bjh) ayg;
+    public final /* synthetic */ void a(defpackage.ayg ayg) {
+        android.app.ApplicationErrorReport.CrashInfo crashInfo;
+        com.google.android.gms.feedback.ErrorReport errorReport;
+        defpackage.bjh bjh = (defpackage.bjh) ayg;
         if (this.e != null) {
-            azb azb = this.e.n;
+            defpackage.azb azb = this.e.n;
         }
-        bgj bgj = this.e;
-        bji bji = (bji) bjh.o();
-        File cacheDir = bjh.d.getCacheDir();
-        ErrorReport errorReport2 = new ErrorReport();
+        defpackage.bgj bgj = this.e;
+        defpackage.bji bji = (defpackage.bji) bjh.o();
+        java.io.File cacheDir = bjh.d.getCacheDir();
+        com.google.android.gms.feedback.ErrorReport errorReport2 = new com.google.android.gms.feedback.ErrorReport();
         if (bgj == null) {
             errorReport = errorReport2;
         } else {
             if (bgj.b != null && bgj.b.size() > 0) {
                 errorReport2.d = bgj.b;
             }
-            if (!TextUtils.isEmpty(bgj.a)) {
+            if (!android.text.TextUtils.isEmpty(bgj.a)) {
                 errorReport2.c = bgj.a;
             }
-            if (!TextUtils.isEmpty(bgj.c)) {
+            if (!android.text.TextUtils.isEmpty(bgj.c)) {
                 errorReport2.b = bgj.c;
             }
             if (bgj.d == null) {
@@ -66,10 +55,10 @@ final class bgq extends bgi {
             if (bgj.j != null) {
                 errorReport2.q = bgj.j;
             }
-            if (!TextUtils.isEmpty(bgj.e)) {
+            if (!android.text.TextUtils.isEmpty(bgj.e)) {
                 errorReport2.l = bgj.e;
             }
-            if (!TextUtils.isEmpty(bgj.g)) {
+            if (!android.text.TextUtils.isEmpty(bgj.g)) {
                 errorReport2.a.packageName = bgj.g;
             }
             if (bgj.m != null) {
@@ -78,16 +67,16 @@ final class bgq extends bgi {
             if (cacheDir != null) {
                 if (bgj.f != null) {
                     errorReport2.m = bgj.f;
-                    BitmapTeleporter bitmapTeleporter = errorReport2.m;
+                    com.google.android.gms.common.data.BitmapTeleporter bitmapTeleporter = errorReport2.m;
                     if (cacheDir == null) {
-                        throw new NullPointerException("Cannot set null temp directory");
+                        throw new java.lang.NullPointerException("Cannot set null temp directory");
                     }
                     bitmapTeleporter.a = cacheDir;
                 }
-                List list = bgj.h;
+                java.util.List list = bgj.h;
                 if (!(list == null || list.size() == 0)) {
-                    bjh.a(list, cacheDir);
-                    errorReport2.n = (bgl[]) bgj.h.toArray(new bgl[bgj.h.size()]);
+                    defpackage.bjh.a(list, cacheDir);
+                    errorReport2.n = (defpackage.bgl[]) bgj.h.toArray(new defpackage.bgl[bgj.h.size()]);
                 }
             }
             if (bgj.k != null) {
@@ -98,6 +87,6 @@ final class bgq extends bgi {
             errorReport = errorReport2;
         }
         bji.a(errorReport);
-        a((ayw) Status.a);
+        a((defpackage.ayw) com.google.android.gms.common.api.Status.a);
     }
 }

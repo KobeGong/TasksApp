@@ -1,35 +1,28 @@
 package defpackage;
 
-import android.content.BroadcastReceiver;
-import android.content.IntentFilter;
-import android.view.MenuItem;
-
-/* access modifiers changed from: package-private */
-/* renamed from: xl  reason: default package */
+/* renamed from: xl reason: default package */
 /* compiled from: PG */
-public final class xl implements zf {
-    public xn a;
+final class xl implements defpackage.zf {
+    public defpackage.xn a;
     public boolean b;
-    public BroadcastReceiver c;
-    public IntentFilter d;
-    public final /* synthetic */ wu e;
+    public android.content.BroadcastReceiver c;
+    public android.content.IntentFilter d;
+    public final /* synthetic */ defpackage.wu e;
 
-    @Override // defpackage.zf
-    public final boolean a(MenuBuilder zeVar, MenuItem menuItem) {
+    public final boolean a(defpackage.ze zeVar, android.view.MenuItem menuItem) {
         return false;
     }
 
-    @Override // defpackage.zf
-    public final void a(MenuBuilder zeVar) {
+    public final void a(defpackage.ze zeVar) {
     }
 
-    xl(wu wuVar, xn xnVar) {
+    xl(defpackage.wu wuVar, defpackage.xn xnVar) {
         this.e = wuVar;
         this.a = xnVar;
         this.b = xnVar.a();
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public final void a() {
         if (this.c != null) {
             this.e.b.unregisterReceiver(this.c);

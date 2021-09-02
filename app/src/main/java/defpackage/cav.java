@@ -1,132 +1,129 @@
 package defpackage;
 
-import android.os.Bundle;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-
-/* renamed from: cav  reason: default package */
+/* renamed from: cav reason: default package */
 /* compiled from: PG */
-public final class cav extends cau {
-    private final bza a;
-    private final buu b;
+public final class cav extends defpackage.cau {
+    private final defpackage.bza a;
+    private final defpackage.buu b;
 
-    cav(bza bza, buu buu) {
+    cav(defpackage.bza bza, defpackage.buu buu) {
         this.a = bza;
         this.b = buu;
     }
 
-    @Override // defpackage.bwg
-    public final String a() {
+    public final java.lang.String a() {
         return "RPC_SET_USER_PREFERENCE";
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.cau
-    public final ccr b(Bundle bundle) {
-        ccr a2;
-        dih dih;
-        deb deb;
-        btr btr;
-        String string = bundle.getString("com.google.android.libraries.notifications.ACCOUNT_NAME");
+    /* access modifiers changed from: 0000 */
+    public final defpackage.ccr b(android.os.Bundle bundle) {
+        defpackage.ccr a2;
+        defpackage.dih dih;
+        defpackage.deb deb;
+        defpackage.btr btr;
+        java.lang.String string = bundle.getString("com.google.android.libraries.notifications.ACCOUNT_NAME");
         boolean z = bundle.getInt("com.google.android.libraries.notifications.internal.scheduled.impl.INTENT_EXTRA_INCLUDE_TARGET") == 1;
-        List<bus> a3 = this.b.a(string, 6);
-        LinkedHashMap linkedHashMap = new LinkedHashMap();
-        for (bus bus : a3) {
+        java.util.List<defpackage.bus> a3 = this.b.a(string, 6);
+        java.util.LinkedHashMap linkedHashMap = new java.util.LinkedHashMap();
+        for (defpackage.bus bus : a3) {
             try {
-                dez dez = dez.d;
-                dii dii = (dii) dez.a(bg.ao);
-                dii.a((dih) dez);
+                defpackage.dez dez = defpackage.dez.d;
+                defpackage.dii dii = (defpackage.dii) dez.a(defpackage.bg.ao);
+                dii.a((defpackage.dih) dez);
+                defpackage.dii dii2 = dii;
                 byte[] c = bus.c();
-                dii dii2 = (dii) dii.a(c, c.length);
-                if (dii2.b) {
-                    dih = dii2.a;
+                defpackage.dii dii3 = (defpackage.dii) dii2.a(c, c.length);
+                if (dii3.b) {
+                    dih = dii3.a;
                 } else {
-                    dih dih2 = dii2.a;
-                    djz.a.a(dih2).c(dih2);
-                    dii2.b = true;
-                    dih = dii2.a;
+                    defpackage.dih dih2 = dii3.a;
+                    defpackage.djz.a.a((java.lang.Object) dih2).c(dih2);
+                    dii3.b = true;
+                    dih = dii3.a;
                 }
-                dih dih3 = dih;
-                if (!dih.a(dih3, Boolean.TRUE.booleanValue())) {
-                    throw new dkw();
+                defpackage.dih dih3 = dih;
+                if (!defpackage.dih.a(dih3, java.lang.Boolean.TRUE.booleanValue())) {
+                    throw new defpackage.dkw();
                 }
-                dez dez2 = (dez) dih3;
-                btt btt = new btt();
+                defpackage.dez dez2 = (defpackage.dez) dih3;
+                defpackage.btt btt = new defpackage.btt();
                 if (dez2.b == null) {
-                    deb = deb.d;
+                    deb = defpackage.deb.d;
                 } else {
                     deb = dez2.b;
                 }
-                btv btv = new btv();
-                String str = deb.b;
+                defpackage.btv btv = new defpackage.btv();
+                java.lang.String str = deb.b;
                 if (str == null) {
-                    throw new NullPointerException("Null key");
+                    throw new java.lang.NullPointerException("Null key");
                 }
                 btv.a = str;
                 btv.b = deb.c;
-                String str2 = "";
+                java.lang.String str2 = "";
                 if (btv.a == null) {
-                    str2 = String.valueOf(str2).concat(" key");
+                    str2 = java.lang.String.valueOf(str2).concat(" key");
                 }
                 if (!str2.isEmpty()) {
-                    String valueOf = String.valueOf(str2);
-                    throw new IllegalStateException(valueOf.length() != 0 ? "Missing required properties:".concat(valueOf) : new String("Missing required properties:"));
+                    java.lang.String str3 = "Missing required properties:";
+                    java.lang.String valueOf = java.lang.String.valueOf(str2);
+                    throw new java.lang.IllegalStateException(valueOf.length() != 0 ? str3.concat(valueOf) : new java.lang.String(str3));
                 }
-                btt.a = new btp(btv.a, btv.b);
-                dey a4 = dey.a(dez2.c);
+                btt.a = new defpackage.btp(btv.a, btv.b);
+                defpackage.dey a4 = defpackage.dey.a(dez2.c);
                 if (a4 == null) {
-                    a4 = dey.NOTIFY_PREFERENCE_UNKNOWN;
+                    a4 = defpackage.dey.NOTIFY_PREFERENCE_UNKNOWN;
                 }
-                if (a4 == dey.NOTIFY) {
-                    btr = btr.NOTIFY;
-                } else if (a4 == dey.DROP) {
-                    btr = btr.DROP;
+                if (a4 == defpackage.dey.NOTIFY) {
+                    btr = defpackage.btr.NOTIFY;
+                } else if (a4 == defpackage.dey.DROP) {
+                    btr = defpackage.btr.DROP;
                 } else {
-                    btr = btr.UNKNOWN_PREFERENCE;
+                    btr = defpackage.btr.UNKNOWN_PREFERENCE;
                 }
                 if (btr == null) {
-                    throw new NullPointerException("Null preference");
+                    throw new java.lang.NullPointerException("Null preference");
                 }
                 btt.b = btr;
-                String str3 = "";
+                java.lang.String str4 = "";
                 if (btt.a == null) {
-                    str3 = String.valueOf(str3).concat(" preferenceKey");
+                    str4 = java.lang.String.valueOf(str4).concat(" preferenceKey");
                 }
                 if (btt.b == null) {
-                    str3 = String.valueOf(str3).concat(" preference");
+                    str4 = java.lang.String.valueOf(str4).concat(" preference");
                 }
-                if (!str3.isEmpty()) {
-                    String valueOf2 = String.valueOf(str3);
-                    throw new IllegalStateException(valueOf2.length() != 0 ? "Missing required properties:".concat(valueOf2) : new String("Missing required properties:"));
+                if (!str4.isEmpty()) {
+                    java.lang.String str5 = "Missing required properties:";
+                    java.lang.String valueOf2 = java.lang.String.valueOf(str4);
+                    throw new java.lang.IllegalStateException(valueOf2.length() != 0 ? str5.concat(valueOf2) : new java.lang.String(str5));
                 }
-                bto bto = new bto(btt.a, btt.b);
+                defpackage.bto bto = new defpackage.bto(btt.a, btt.b);
                 linkedHashMap.put(bto.a(), bto);
-            } catch (dir e) {
-                bty.b("SetUserPreferenceHandler", e, "Failed to parse PreferenceEntry from ChimeTaskData", new Object[0]);
+            } catch (defpackage.dir e) {
+                defpackage.bty.b("SetUserPreferenceHandler", e, "Failed to parse PreferenceEntry from ChimeTaskData", new java.lang.Object[0]);
             }
         }
-        ArrayList arrayList = new ArrayList(linkedHashMap.values());
+        java.util.ArrayList arrayList = new java.util.ArrayList(linkedHashMap.values());
         if (!arrayList.isEmpty()) {
-            bza bza = this.a;
-            btx btx = new btx();
+            defpackage.bza bza = this.a;
+            defpackage.btx btx = new defpackage.btx();
             btx.a = arrayList;
-            String str4 = "";
+            java.lang.String str6 = "";
             if (btx.a == null) {
-                str4 = String.valueOf(str4).concat(" preferenceEntries");
+                str6 = java.lang.String.valueOf(str6).concat(" preferenceEntries");
             }
-            if (!str4.isEmpty()) {
-                String valueOf3 = String.valueOf(str4);
-                throw new IllegalStateException(valueOf3.length() != 0 ? "Missing required properties:".concat(valueOf3) : new String("Missing required properties:"));
+            if (!str6.isEmpty()) {
+                java.lang.String str7 = "Missing required properties:";
+                java.lang.String valueOf3 = java.lang.String.valueOf(str6);
+                throw new java.lang.IllegalStateException(valueOf3.length() != 0 ? str7.concat(valueOf3) : new java.lang.String(str7));
             }
-            a2 = bza.a(string, new btq(btx.a), z);
+            a2 = bza.a(string, (defpackage.btw) new defpackage.btq(btx.a), z);
         } else {
-            ccs e2 = ccr.e();
-            e2.b = new IllegalArgumentException("No preferences to set.");
+            defpackage.ccs e2 = defpackage.ccr.e();
+            e2.b = new java.lang.IllegalArgumentException("No preferences to set.");
             a2 = e2.a(false).a();
         }
         if (!a2.d() || !a2.c()) {
-            this.b.a(string, a3);
+            this.b.a(string, (java.util.List) a3);
         }
         return a2;
     }

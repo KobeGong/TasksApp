@@ -1,20 +1,18 @@
 package defpackage;
 
-import org.chromium.net.impl.VersionSafeCallbacks$UrlRequestStatusListener;
-
-/* renamed from: ekc  reason: default package */
+/* renamed from: ekc reason: default package */
 /* compiled from: PG */
-public final class ekc implements Runnable {
-    private final /* synthetic */ VersionSafeCallbacks$UrlRequestStatusListener a;
+public final class ekc implements java.lang.Runnable {
+    private final /* synthetic */ org.chromium.net.impl.VersionSafeCallbacks$UrlRequestStatusListener a;
     private final /* synthetic */ int b;
 
-    public ekc(VersionSafeCallbacks$UrlRequestStatusListener versionSafeCallbacks$UrlRequestStatusListener, int i) {
+    public ekc(org.chromium.net.impl.VersionSafeCallbacks$UrlRequestStatusListener versionSafeCallbacks$UrlRequestStatusListener, int i) {
         this.a = versionSafeCallbacks$UrlRequestStatusListener;
         this.b = i;
     }
 
     public final void run() {
-        VersionSafeCallbacks$UrlRequestStatusListener versionSafeCallbacks$UrlRequestStatusListener = this.a;
+        org.chromium.net.impl.VersionSafeCallbacks$UrlRequestStatusListener versionSafeCallbacks$UrlRequestStatusListener = this.a;
         switch (this.b) {
             case 0:
             case 1:
@@ -33,9 +31,8 @@ public final class ekc implements Runnable {
             case 15:
                 versionSafeCallbacks$UrlRequestStatusListener.a();
                 return;
-            case 5:
             default:
-                throw new IllegalArgumentException("No request status found.");
+                throw new java.lang.IllegalArgumentException("No request status found.");
         }
     }
 }

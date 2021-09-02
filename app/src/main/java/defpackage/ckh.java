@@ -1,21 +1,19 @@
 package defpackage;
 
-import android.os.Process;
-
-/* renamed from: ckh  reason: default package */
+/* renamed from: ckh reason: default package */
 /* compiled from: PG */
-final class ckh implements Runnable {
-    private final /* synthetic */ Runnable a;
-    private final /* synthetic */ ckg b;
+final class ckh implements java.lang.Runnable {
+    private final /* synthetic */ java.lang.Runnable a;
+    private final /* synthetic */ defpackage.ckg b;
 
-    ckh(ckg ckg, Runnable runnable) {
+    ckh(defpackage.ckg ckg, java.lang.Runnable runnable) {
         this.b = ckg;
         this.a = runnable;
     }
 
     public final void run() {
         if (this.b.a != 0) {
-            Process.setThreadPriority(this.b.a);
+            android.os.Process.setThreadPriority(this.b.a);
         }
         this.a.run();
     }

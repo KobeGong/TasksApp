@@ -1,28 +1,23 @@
 package defpackage;
 
-import android.view.Window;
-
-/* renamed from: xv  reason: default package */
+/* renamed from: xv reason: default package */
 /* compiled from: PG */
-public final class xv implements zu {
-    private final /* synthetic */ wz a;
+public final class xv implements defpackage.zu {
+    private final /* synthetic */ defpackage.wz a;
 
-    public xv(wz wzVar) {
+    public xv(defpackage.wz wzVar) {
         this.a = wzVar;
     }
 
-    @Override // defpackage.zu
-    public final boolean a(MenuBuilder zeVar) {
-        Window.Callback callback = this.a.c.getCallback();
-        if (callback == null) {
-            return true;
+    public final boolean a(defpackage.ze zeVar) {
+        android.view.Window.Callback callback = this.a.c.getCallback();
+        if (callback != null) {
+            callback.onMenuOpened(108, zeVar);
         }
-        callback.onMenuOpened(108, zeVar);
         return true;
     }
 
-    @Override // defpackage.zu
-    public final void a(MenuBuilder zeVar, boolean z) {
+    public final void a(defpackage.ze zeVar, boolean z) {
         this.a.b(zeVar);
     }
 }

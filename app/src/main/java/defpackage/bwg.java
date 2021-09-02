@@ -1,11 +1,9 @@
 package defpackage;
 
-import android.os.Bundle;
-
-/* renamed from: bwg  reason: default package */
+/* renamed from: bwg reason: default package */
 /* compiled from: PG */
 public interface bwg {
-    btl a(Bundle bundle);
+    defpackage.btl a(android.os.Bundle bundle);
 
-    String a();
+    java.lang.String a();
 }

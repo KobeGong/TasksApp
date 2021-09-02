@@ -1,16 +1,14 @@
 package defpackage;
 
-import android.view.View;
-
-/* renamed from: dj  reason: default package */
+/* renamed from: dj reason: default package */
 /* compiled from: PG */
 public final class dj {
     public int a;
     public int b;
-    private final View c;
+    private final android.view.View c;
     private int d;
 
-    public dj(View view) {
+    public dj(android.view.View view) {
         this.c = view;
     }
 
@@ -21,8 +19,8 @@ public final class dj {
     }
 
     private final void b() {
-        sn.b(this.c, this.b - (this.c.getTop() - this.a));
-        sn.c(this.c, 0 - (this.c.getLeft() - this.d));
+        defpackage.sn.b(this.c, this.b - (this.c.getTop() - this.a));
+        defpackage.sn.c(this.c, 0 - (this.c.getLeft() - this.d));
     }
 
     public final boolean a(int i) {

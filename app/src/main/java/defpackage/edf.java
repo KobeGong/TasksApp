@@ -1,19 +1,22 @@
 package defpackage;
 
-/* renamed from: edf  reason: default package */
+/* renamed from: edf reason: default package */
 /* compiled from: PG */
-public final class edf extends dlz {
-    public Long a = null;
-    public Boolean b = null;
-    public Integer c = null;
-    public String d = null;
+public final class edf extends defpackage.dlz {
+    public java.lang.Long a;
+    public java.lang.Boolean b;
+    public java.lang.Integer c;
+    public java.lang.String d;
 
     public edf() {
+        this.a = null;
+        this.b = null;
+        this.c = null;
+        this.d = null;
         this.k = -1;
     }
 
-    @Override // defpackage.dlz, defpackage.dmf
-    public final void a(dlx dlx) {
+    public final void a(defpackage.dlx dlx) {
         if (this.a != null) {
             dlx.a(1, this.a.longValue());
         }
@@ -30,49 +33,47 @@ public final class edf extends dlz {
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.dlz, defpackage.dmf
     public final int a() {
         int a2 = super.a();
         if (this.a != null) {
-            a2 += dlx.c(1, this.a.longValue());
+            a2 += defpackage.dlx.c(1, this.a.longValue());
         }
         if (this.b != null) {
             this.b.booleanValue();
-            a2 += dlx.c(16) + 1;
+            a2 += defpackage.dlx.c(16) + 1;
         }
         if (this.c != null) {
-            a2 += dlx.c(3, this.c.intValue());
+            a2 += defpackage.dlx.c(3, this.c.intValue());
         }
         if (this.d != null) {
-            return a2 + dlx.b(4, this.d);
+            return a2 + defpackage.dlx.b(4, this.d);
         }
         return a2;
     }
 
-    @Override // defpackage.dmf
-    public final /* synthetic */ dmf a(dlw dlw) {
+    public final /* synthetic */ defpackage.dmf a(defpackage.dlw dlw) {
         while (true) {
             int a2 = dlw.a();
             switch (a2) {
                 case 0:
                     break;
                 case 8:
-                    this.a = Long.valueOf(dlw.b());
-                    break;
+                    this.a = java.lang.Long.valueOf(dlw.b());
+                    continue;
                 case 16:
-                    this.b = Boolean.valueOf(dlw.c());
-                    break;
+                    this.b = java.lang.Boolean.valueOf(dlw.c());
+                    continue;
                 case 24:
-                    this.c = Integer.valueOf(dlw.e());
-                    break;
+                    this.c = java.lang.Integer.valueOf(dlw.e());
+                    continue;
                 case 34:
                     this.d = dlw.d();
-                    break;
+                    continue;
                 default:
-                    if (super.a(dlw, a2)) {
+                    if (!super.a(dlw, a2)) {
                         break;
                     } else {
-                        break;
+                        continue;
                     }
             }
         }

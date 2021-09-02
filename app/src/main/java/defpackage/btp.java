@@ -1,40 +1,38 @@
 package defpackage;
 
-/* renamed from: btp  reason: default package */
+/* renamed from: btp reason: default package */
 /* compiled from: PG */
-public final class btp extends btu {
-    private final String a;
-    private final String b;
+public final class btp extends defpackage.btu {
+    private final java.lang.String a;
+    private final java.lang.String b;
 
-    public btp(String str, String str2) {
+    public btp(java.lang.String str, java.lang.String str2) {
         this.a = str;
         this.b = str2;
     }
 
-    @Override // defpackage.btu
-    public final String a() {
+    public final java.lang.String a() {
         return this.a;
     }
 
-    @Override // defpackage.btu
-    public final String b() {
+    public final java.lang.String b() {
         return this.b;
     }
 
-    public final String toString() {
-        String str = this.a;
-        String str2 = this.b;
-        return new StringBuilder(String.valueOf(str).length() + 32 + String.valueOf(str2).length()).append("PreferenceKey{key=").append(str).append(", dynamicKey=").append(str2).append("}").toString();
+    public final java.lang.String toString() {
+        java.lang.String str = this.a;
+        java.lang.String str2 = this.b;
+        return new java.lang.StringBuilder(java.lang.String.valueOf(str).length() + 32 + java.lang.String.valueOf(str2).length()).append("PreferenceKey{key=").append(str).append(", dynamicKey=").append(str2).append("}").toString();
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof btu)) {
+        if (!(obj instanceof defpackage.btu)) {
             return false;
         }
-        btu btu = (btu) obj;
+        defpackage.btu btu = (defpackage.btu) obj;
         if (this.a.equals(btu.a())) {
             if (this.b == null) {
                 if (btu.b() == null) {

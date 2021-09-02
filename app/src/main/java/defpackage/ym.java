@@ -1,20 +1,16 @@
 package defpackage;
 
-import android.view.View;
-import android.view.animation.Interpolator;
-import java.util.ArrayList;
-
-/* renamed from: ym  reason: default package */
+/* renamed from: ym reason: default package */
 /* compiled from: PG */
 public final class ym {
-    public final ArrayList a = new ArrayList();
-    public th b;
+    public final java.util.ArrayList a = new java.util.ArrayList();
+    public defpackage.th b;
     public boolean c;
     private long d = -1;
-    private Interpolator e;
-    private final ti f = new yn(this);
+    private android.view.animation.Interpolator e;
+    private final defpackage.ti f = new defpackage.yn(this);
 
-    public final ym a(te teVar) {
+    public final defpackage.ym a(defpackage.te teVar) {
         if (!this.c) {
             this.a.add(teVar);
         }
@@ -23,26 +19,26 @@ public final class ym {
 
     public final void a() {
         if (!this.c) {
-            ArrayList arrayList = this.a;
+            java.util.ArrayList arrayList = this.a;
             int size = arrayList.size();
             int i = 0;
             while (i < size) {
                 int i2 = i + 1;
-                te teVar = (te) arrayList.get(i);
+                defpackage.te teVar = (defpackage.te) arrayList.get(i);
                 if (this.d >= 0) {
                     teVar.a(this.d);
                 }
                 if (this.e != null) {
-                    Interpolator interpolator = this.e;
-                    View view = (View) teVar.a.get();
+                    android.view.animation.Interpolator interpolator = this.e;
+                    android.view.View view = (android.view.View) teVar.a.get();
                     if (view != null) {
                         view.animate().setInterpolator(interpolator);
                     }
                 }
                 if (this.b != null) {
-                    teVar.a(this.f);
+                    teVar.a((defpackage.th) this.f);
                 }
-                View view2 = (View) teVar.a.get();
+                android.view.View view2 = (android.view.View) teVar.a.get();
                 if (view2 != null) {
                     view2.animate().start();
                 }
@@ -54,33 +50,33 @@ public final class ym {
 
     public final void b() {
         if (this.c) {
-            ArrayList arrayList = this.a;
+            java.util.ArrayList arrayList = this.a;
             int size = arrayList.size();
             int i = 0;
             while (i < size) {
-                Object obj = arrayList.get(i);
+                java.lang.Object obj = arrayList.get(i);
                 i++;
-                ((te) obj).a();
+                ((defpackage.te) obj).a();
             }
             this.c = false;
         }
     }
 
-    public final ym c() {
+    public final defpackage.ym c() {
         if (!this.c) {
             this.d = 250;
         }
         return this;
     }
 
-    public final ym a(Interpolator interpolator) {
+    public final defpackage.ym a(android.view.animation.Interpolator interpolator) {
         if (!this.c) {
             this.e = interpolator;
         }
         return this;
     }
 
-    public final ym a(th thVar) {
+    public final defpackage.ym a(defpackage.th thVar) {
         if (!this.c) {
             this.b = thVar;
         }

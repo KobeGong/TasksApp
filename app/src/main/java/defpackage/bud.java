@@ -1,17 +1,17 @@
 package defpackage;
 
-/* renamed from: bud  reason: default package */
+/* renamed from: bud reason: default package */
 /* compiled from: PG */
 public final class bud {
-    public String a;
-    public String b;
-    public bue c;
-    public buf d;
-    public String e;
-    public Long f;
-    public String g;
-    public Boolean h;
-    public Integer i;
+    public java.lang.String a;
+    public java.lang.String b;
+    public defpackage.bue c;
+    public defpackage.buf d;
+    public java.lang.String e;
+    public java.lang.Long f;
+    public java.lang.String g;
+    public java.lang.Boolean h;
+    public java.lang.Integer i;
 
     public bud() {
     }

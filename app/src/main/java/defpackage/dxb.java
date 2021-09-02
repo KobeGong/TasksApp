@@ -1,9 +1,9 @@
 package defpackage;
 
-/* renamed from: dxb  reason: default package */
+/* renamed from: dxb reason: default package */
 /* compiled from: PG */
-public interface dxb extends dtb {
-    Runnable a(dxc dxc);
+public interface dxb extends defpackage.dtb {
+    java.lang.Runnable a(defpackage.dxc dxc);
 
-    void a(dpw dpw);
+    void a(defpackage.dpw dpw);
 }

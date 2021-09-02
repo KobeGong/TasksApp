@@ -1,12 +1,12 @@
 package defpackage;
 
-/* renamed from: qm  reason: default package */
+/* renamed from: qm reason: default package */
 /* compiled from: PG */
 public final class qm {
-    public static final ql a = new ql(null, false);
-    public static final ql b = new ql(null, true);
-    public static final ql c = new ql(qo.a, false);
-    public static final ql d = new ql(qo.a, true);
+    public static final defpackage.ql a = new defpackage.ql(null, false);
+    public static final defpackage.ql b = new defpackage.ql(null, true);
+    public static final defpackage.ql c = new defpackage.ql(defpackage.qo.a, false);
+    public static final defpackage.ql d = new defpackage.ql(defpackage.qo.a, true);
 
     static int a(int i) {
         switch (i) {
@@ -37,6 +37,6 @@ public final class qm {
     }
 
     static {
-        new ql(qn.a, false);
+        new defpackage.ql(defpackage.qn.a, false);
     }
 }

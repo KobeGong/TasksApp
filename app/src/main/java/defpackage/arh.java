@@ -1,16 +1,12 @@
 package defpackage;
 
-import android.view.View;
-
-/* access modifiers changed from: package-private */
-/* renamed from: arh  reason: default package */
+/* renamed from: arh reason: default package */
 /* compiled from: PG */
-public final class arh implements sl {
+final class arh implements defpackage.sl {
     arh() {
     }
 
-    @Override // defpackage.sl
-    public final tk a(View view, tk tkVar) {
+    public final defpackage.tk a(android.view.View view, defpackage.tk tkVar) {
         view.setPadding(view.getPaddingLeft(), view.getPaddingTop(), view.getPaddingRight(), tkVar.d());
         return tkVar;
     }

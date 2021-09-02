@@ -1,25 +1,25 @@
 package defpackage;
 
-/* renamed from: dkh  reason: default package */
+/* renamed from: dkh reason: default package */
 /* compiled from: PG */
 public interface dkh {
-    int a(Object obj);
+    int a(java.lang.Object obj);
 
-    Object a();
+    java.lang.Object a();
 
-    void a(Object obj, dkc dkc, dhw dhw);
+    void a(java.lang.Object obj, defpackage.dkc dkc, defpackage.dhw dhw);
 
-    void a(Object obj, dlt dlt);
+    void a(java.lang.Object obj, defpackage.dlt dlt);
 
-    void a(Object obj, byte[] bArr, int i, int i2, dgw dgw);
+    void a(java.lang.Object obj, byte[] bArr, int i, int i2, defpackage.dgw dgw);
 
-    boolean a(Object obj, Object obj2);
+    boolean a(java.lang.Object obj, java.lang.Object obj2);
 
-    int b(Object obj);
+    int b(java.lang.Object obj);
 
-    void b(Object obj, Object obj2);
+    void b(java.lang.Object obj, java.lang.Object obj2);
 
-    void c(Object obj);
+    void c(java.lang.Object obj);
 
-    boolean d(Object obj);
+    boolean d(java.lang.Object obj);
 }

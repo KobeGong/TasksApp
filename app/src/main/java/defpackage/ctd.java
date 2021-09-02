@@ -1,41 +1,34 @@
 package defpackage;
 
-import java.util.Iterator;
-
-/* renamed from: ctd  reason: default package */
+/* renamed from: ctd reason: default package */
 /* compiled from: PG */
-final class ctd extends csv {
-    private final transient css a;
-    private final transient csp b;
+final class ctd extends defpackage.csv {
+    private final transient defpackage.css a;
+    private final transient defpackage.csp b;
 
-    ctd(css css, csp csp) {
+    ctd(defpackage.css css, defpackage.csp csp) {
         this.a = css;
         this.b = csp;
     }
 
-    @Override // defpackage.csn
-    public final cth a() {
-        return (cth) b().iterator();
+    public final defpackage.cth a() {
+        return (defpackage.cth) b().iterator();
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.csn
-    public final int a(Object[] objArr, int i) {
+    /* access modifiers changed from: 0000 */
+    public final int a(java.lang.Object[] objArr, int i) {
         return b().a(objArr, i);
     }
 
-    @Override // defpackage.csv, defpackage.csn
-    public final csp b() {
+    public final defpackage.csp b() {
         return this.b;
     }
 
-    @Override // defpackage.csn
-    public final boolean contains(Object obj) {
+    public final boolean contains(java.lang.Object obj) {
         return this.a.get(obj) != null;
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.csn
+    /* access modifiers changed from: 0000 */
     public final boolean c() {
         return true;
     }
@@ -44,8 +37,7 @@ final class ctd extends csv {
         return this.a.size();
     }
 
-    @Override // java.util.AbstractCollection, defpackage.csv, java.util.Collection, java.util.Set, java.lang.Iterable, defpackage.csn
-    public final /* synthetic */ Iterator iterator() {
+    public final /* synthetic */ java.util.Iterator iterator() {
         return iterator();
     }
 }

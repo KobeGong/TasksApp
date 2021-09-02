@@ -1,28 +1,25 @@
 package defpackage;
 
-import java.util.ConcurrentModificationException;
-import java.util.Map;
-
-/* renamed from: ri  reason: default package */
+/* renamed from: ri reason: default package */
 /* compiled from: PG */
 public class ri {
-    private static Object[] c;
+    private static java.lang.Object[] c;
     private static int d;
-    private static Object[] e;
+    private static java.lang.Object[] e;
     private static int f;
-    public Object[] a;
+    public java.lang.Object[] a;
     public int b;
     private int[] g;
 
     private static int a(int[] iArr, int i, int i2) {
         try {
-            return qv.a(iArr, i, i2);
-        } catch (ArrayIndexOutOfBoundsException e2) {
-            throw new ConcurrentModificationException();
+            return defpackage.qv.a(iArr, i, i2);
+        } catch (java.lang.ArrayIndexOutOfBoundsException e2) {
+            throw new java.util.ConcurrentModificationException();
         }
     }
 
-    private final int a(Object obj, int i) {
+    private final int a(java.lang.Object obj, int i) {
         int i2 = this.b;
         if (i2 == 0) {
             return -1;
@@ -76,11 +73,11 @@ public class ri {
 
     private final void e(int i) {
         if (i == 8) {
-            synchronized (qr.class) {
+            synchronized (defpackage.qr.class) {
                 if (e != null) {
-                    Object[] objArr = e;
+                    java.lang.Object[] objArr = e;
                     this.a = objArr;
-                    e = (Object[]) objArr[0];
+                    e = (java.lang.Object[]) objArr[0];
                     this.g = (int[]) objArr[1];
                     objArr[1] = null;
                     objArr[0] = null;
@@ -89,11 +86,11 @@ public class ri {
                 }
             }
         } else if (i == 4) {
-            synchronized (qr.class) {
+            synchronized (defpackage.qr.class) {
                 if (c != null) {
-                    Object[] objArr2 = c;
+                    java.lang.Object[] objArr2 = c;
                     this.a = objArr2;
-                    c = (Object[]) objArr2[0];
+                    c = (java.lang.Object[]) objArr2[0];
                     this.g = (int[]) objArr2[1];
                     objArr2[1] = null;
                     objArr2[0] = null;
@@ -103,12 +100,12 @@ public class ri {
             }
         }
         this.g = new int[i];
-        this.a = new Object[(i << 1)];
+        this.a = new java.lang.Object[(i << 1)];
     }
 
-    private static void a(int[] iArr, Object[] objArr, int i) {
+    private static void a(int[] iArr, java.lang.Object[] objArr, int i) {
         if (iArr.length == 8) {
-            synchronized (qr.class) {
+            synchronized (defpackage.qr.class) {
                 if (f < 10) {
                     objArr[0] = e;
                     objArr[1] = iArr;
@@ -120,7 +117,7 @@ public class ri {
                 }
             }
         } else if (iArr.length == 4) {
-            synchronized (qr.class) {
+            synchronized (defpackage.qr.class) {
                 if (d < 10) {
                     objArr[0] = c;
                     objArr[1] = iArr;
@@ -135,23 +132,22 @@ public class ri {
     }
 
     public ri() {
-        this.g = qv.a;
-        this.a = qv.b;
+        this.g = defpackage.qv.a;
+        this.a = defpackage.qv.b;
         this.b = 0;
     }
 
     public ri(int i) {
         if (i == 0) {
-            this.g = qv.a;
-            this.a = qv.b;
+            this.g = defpackage.qv.a;
+            this.a = defpackage.qv.b;
         } else {
             e(i);
         }
         this.b = 0;
     }
 
-    /* JADX INFO: this call moved to the top of the method (can break code semantics) */
-    public ri(ri riVar) {
+    public ri(defpackage.ri riVar) {
         this();
         if (riVar != null) {
             int i = riVar.b;
@@ -161,8 +157,8 @@ public class ri {
                     put(riVar.b(i2), riVar.c(i2));
                 }
             } else if (i > 0) {
-                System.arraycopy(riVar.g, 0, this.g, 0, i);
-                System.arraycopy(riVar.a, 0, this.a, 0, i << 1);
+                java.lang.System.arraycopy(riVar.g, 0, this.g, 0, i);
+                java.lang.System.arraycopy(riVar.a, 0, this.a, 0, i << 1);
                 this.b = i;
             }
         }
@@ -171,15 +167,15 @@ public class ri {
     public void clear() {
         if (this.b > 0) {
             int[] iArr = this.g;
-            Object[] objArr = this.a;
+            java.lang.Object[] objArr = this.a;
             int i = this.b;
-            this.g = qv.a;
-            this.a = qv.b;
+            this.g = defpackage.qv.a;
+            this.a = defpackage.qv.b;
             this.b = 0;
             a(iArr, objArr, i);
         }
         if (this.b > 0) {
-            throw new ConcurrentModificationException();
+            throw new java.util.ConcurrentModificationException();
         }
     }
 
@@ -187,32 +183,32 @@ public class ri {
         int i2 = this.b;
         if (this.g.length < i) {
             int[] iArr = this.g;
-            Object[] objArr = this.a;
+            java.lang.Object[] objArr = this.a;
             e(i);
             if (this.b > 0) {
-                System.arraycopy(iArr, 0, this.g, 0, i2);
-                System.arraycopy(objArr, 0, this.a, 0, i2 << 1);
+                java.lang.System.arraycopy(iArr, 0, this.g, 0, i2);
+                java.lang.System.arraycopy(objArr, 0, this.a, 0, i2 << 1);
             }
             a(iArr, objArr, i2);
         }
         if (this.b != i2) {
-            throw new ConcurrentModificationException();
+            throw new java.util.ConcurrentModificationException();
         }
     }
 
-    public boolean containsKey(Object obj) {
+    public boolean containsKey(java.lang.Object obj) {
         return a(obj) >= 0;
     }
 
-    public final int a(Object obj) {
+    public final int a(java.lang.Object obj) {
         return obj == null ? a() : a(obj, obj.hashCode());
     }
 
-    /* access modifiers changed from: package-private */
-    public final int b(Object obj) {
+    /* access modifiers changed from: 0000 */
+    public final int b(java.lang.Object obj) {
         int i = 1;
         int i2 = this.b << 1;
-        Object[] objArr = this.a;
+        java.lang.Object[] objArr = this.a;
         if (obj == null) {
             while (i < i2) {
                 if (objArr[i] == null) {
@@ -231,11 +227,11 @@ public class ri {
         return -1;
     }
 
-    public boolean containsValue(Object obj) {
+    public boolean containsValue(java.lang.Object obj) {
         return b(obj) >= 0;
     }
 
-    public Object get(Object obj) {
+    public java.lang.Object get(java.lang.Object obj) {
         int a2 = a(obj);
         if (a2 >= 0) {
             return this.a[(a2 << 1) + 1];
@@ -243,11 +239,11 @@ public class ri {
         return null;
     }
 
-    public final Object b(int i) {
+    public final java.lang.Object b(int i) {
         return this.a[i << 1];
     }
 
-    public final Object c(int i) {
+    public final java.lang.Object c(int i) {
         return this.a[(i << 1) + 1];
     }
 
@@ -255,7 +251,7 @@ public class ri {
         return this.b <= 0;
     }
 
-    public Object put(Object obj, Object obj2) {
+    public java.lang.Object put(java.lang.Object obj, java.lang.Object obj2) {
         int hashCode;
         int a2;
         int i = 8;
@@ -269,7 +265,7 @@ public class ri {
         }
         if (a2 >= 0) {
             int i3 = (a2 << 1) + 1;
-            Object obj3 = this.a[i3];
+            java.lang.Object obj3 = this.a[i3];
             this.a[i3] = obj2;
             return obj3;
         }
@@ -281,23 +277,23 @@ public class ri {
                 i = 4;
             }
             int[] iArr = this.g;
-            Object[] objArr = this.a;
+            java.lang.Object[] objArr = this.a;
             e(i);
             if (i2 != this.b) {
-                throw new ConcurrentModificationException();
+                throw new java.util.ConcurrentModificationException();
             }
             if (this.g.length > 0) {
-                System.arraycopy(iArr, 0, this.g, 0, iArr.length);
-                System.arraycopy(objArr, 0, this.a, 0, objArr.length);
+                java.lang.System.arraycopy(iArr, 0, this.g, 0, iArr.length);
+                java.lang.System.arraycopy(objArr, 0, this.a, 0, objArr.length);
             }
             a(iArr, objArr, i2);
         }
         if (i4 < i2) {
-            System.arraycopy(this.g, i4, this.g, i4 + 1, i2 - i4);
-            System.arraycopy(this.a, i4 << 1, this.a, (i4 + 1) << 1, (this.b - i4) << 1);
+            java.lang.System.arraycopy(this.g, i4, this.g, i4 + 1, i2 - i4);
+            java.lang.System.arraycopy(this.a, i4 << 1, this.a, (i4 + 1) << 1, (this.b - i4) << 1);
         }
         if (i2 != this.b || i4 >= this.g.length) {
-            throw new ConcurrentModificationException();
+            throw new java.util.ConcurrentModificationException();
         }
         this.g[i4] = hashCode;
         this.a[i4 << 1] = obj;
@@ -306,7 +302,7 @@ public class ri {
         return null;
     }
 
-    public Object remove(Object obj) {
+    public java.lang.Object remove(java.lang.Object obj) {
         int a2 = a(obj);
         if (a2 >= 0) {
             return d(a2);
@@ -314,22 +310,22 @@ public class ri {
         return null;
     }
 
-    public final Object d(int i) {
+    public final java.lang.Object d(int i) {
         int i2;
         int i3 = 8;
-        Object obj = this.a[(i << 1) + 1];
+        java.lang.Object obj = this.a[(i << 1) + 1];
         int i4 = this.b;
         if (i4 <= 1) {
             a(this.g, this.a, i4);
-            this.g = qv.a;
-            this.a = qv.b;
+            this.g = defpackage.qv.a;
+            this.a = defpackage.qv.b;
             i2 = 0;
         } else {
             int i5 = i4 - 1;
             if (this.g.length <= 8 || this.b >= this.g.length / 3) {
                 if (i < i5) {
-                    System.arraycopy(this.g, i + 1, this.g, i, i5 - i);
-                    System.arraycopy(this.a, (i + 1) << 1, this.a, i << 1, (i5 - i) << 1);
+                    java.lang.System.arraycopy(this.g, i + 1, this.g, i, i5 - i);
+                    java.lang.System.arraycopy(this.a, (i + 1) << 1, this.a, i << 1, (i5 - i) << 1);
                 }
                 this.a[i5 << 1] = null;
                 this.a[(i5 << 1) + 1] = null;
@@ -339,24 +335,24 @@ public class ri {
                     i3 = (i4 >> 1) + i4;
                 }
                 int[] iArr = this.g;
-                Object[] objArr = this.a;
+                java.lang.Object[] objArr = this.a;
                 e(i3);
                 if (i4 != this.b) {
-                    throw new ConcurrentModificationException();
+                    throw new java.util.ConcurrentModificationException();
                 }
                 if (i > 0) {
-                    System.arraycopy(iArr, 0, this.g, 0, i);
-                    System.arraycopy(objArr, 0, this.a, 0, i << 1);
+                    java.lang.System.arraycopy(iArr, 0, this.g, 0, i);
+                    java.lang.System.arraycopy(objArr, 0, this.a, 0, i << 1);
                 }
                 if (i < i5) {
-                    System.arraycopy(iArr, i + 1, this.g, i, i5 - i);
-                    System.arraycopy(objArr, (i + 1) << 1, this.a, i << 1, (i5 - i) << 1);
+                    java.lang.System.arraycopy(iArr, i + 1, this.g, i, i5 - i);
+                    java.lang.System.arraycopy(objArr, (i + 1) << 1, this.a, i << 1, (i5 - i) << 1);
                 }
                 i2 = i5;
             }
         }
         if (i4 != this.b) {
-            throw new ConcurrentModificationException();
+            throw new java.util.ConcurrentModificationException();
         }
         this.b = i2;
         return obj;
@@ -366,20 +362,21 @@ public class ri {
         return this.b;
     }
 
-    public boolean equals(Object obj) {
+    public boolean equals(java.lang.Object obj) {
         if (this == obj) {
             return true;
         }
-        if (obj instanceof ri) {
-            ri riVar = (ri) obj;
+        if (obj instanceof defpackage.ri) {
+            defpackage.ri riVar = (defpackage.ri) obj;
             if (size() != riVar.size()) {
                 return false;
             }
-            for (int i = 0; i < this.b; i++) {
+            int i = 0;
+            while (i < this.b) {
                 try {
-                    Object b2 = b(i);
-                    Object c2 = c(i);
-                    Object obj2 = riVar.get(b2);
+                    java.lang.Object b2 = b(i);
+                    java.lang.Object c2 = c(i);
+                    java.lang.Object obj2 = riVar.get(b2);
                     if (c2 == null) {
                         if (obj2 != null || !riVar.containsKey(b2)) {
                             return false;
@@ -387,25 +384,27 @@ public class ri {
                     } else if (!c2.equals(obj2)) {
                         return false;
                     }
-                } catch (NullPointerException e2) {
+                    i++;
+                } catch (java.lang.NullPointerException e2) {
                     return false;
-                } catch (ClassCastException e3) {
+                } catch (java.lang.ClassCastException e3) {
                     return false;
                 }
             }
             return true;
-        } else if (!(obj instanceof Map)) {
+        } else if (!(obj instanceof java.util.Map)) {
             return false;
         } else {
-            Map map = (Map) obj;
+            java.util.Map map = (java.util.Map) obj;
             if (size() != map.size()) {
                 return false;
             }
-            for (int i2 = 0; i2 < this.b; i2++) {
+            int i2 = 0;
+            while (i2 < this.b) {
                 try {
-                    Object b3 = b(i2);
-                    Object c3 = c(i2);
-                    Object obj3 = map.get(b3);
+                    java.lang.Object b3 = b(i2);
+                    java.lang.Object c3 = c(i2);
+                    java.lang.Object obj3 = map.get(b3);
                     if (c3 == null) {
                         if (obj3 != null || !map.containsKey(b3)) {
                             return false;
@@ -413,9 +412,10 @@ public class ri {
                     } else if (!c3.equals(obj3)) {
                         return false;
                     }
-                } catch (NullPointerException e4) {
+                    i2++;
+                } catch (java.lang.NullPointerException e4) {
                     return false;
-                } catch (ClassCastException e5) {
+                } catch (java.lang.ClassCastException e5) {
                     return false;
                 }
             }
@@ -425,13 +425,13 @@ public class ri {
 
     public int hashCode() {
         int[] iArr = this.g;
-        Object[] objArr = this.a;
+        java.lang.Object[] objArr = this.a;
         int i = this.b;
         int i2 = 1;
         int i3 = 0;
         int i4 = 0;
         while (i3 < i) {
-            Object obj = objArr[i2];
+            java.lang.Object obj = objArr[i2];
             i4 += (obj == null ? 0 : obj.hashCode()) ^ iArr[i3];
             i3++;
             i2 += 2;
@@ -439,24 +439,24 @@ public class ri {
         return i4;
     }
 
-    public String toString() {
+    public java.lang.String toString() {
         if (isEmpty()) {
             return "{}";
         }
-        StringBuilder sb = new StringBuilder(this.b * 28);
+        java.lang.StringBuilder sb = new java.lang.StringBuilder(this.b * 28);
         sb.append('{');
         for (int i = 0; i < this.b; i++) {
             if (i > 0) {
                 sb.append(", ");
             }
-            Object b2 = b(i);
+            java.lang.Object b2 = b(i);
             if (b2 != this) {
                 sb.append(b2);
             } else {
                 sb.append("(this Map)");
             }
             sb.append('=');
-            Object c2 = c(i);
+            java.lang.Object c2 = c(i);
             if (c2 != this) {
                 sb.append(c2);
             } else {

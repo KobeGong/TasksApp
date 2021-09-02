@@ -1,25 +1,20 @@
 package defpackage;
 
-import android.view.View;
-
-/* renamed from: sv  reason: default package */
+/* renamed from: sv reason: default package */
 /* compiled from: PG */
-final class sv extends st {
+final class sv extends defpackage.st {
     sv() {
     }
 
-    @Override // defpackage.sw
-    public final void d(View view, int i) {
+    public final void d(android.view.View view, int i) {
         view.setScrollIndicators(i, 3);
     }
 
-    @Override // defpackage.st, defpackage.sw
-    public final void b(View view, int i) {
+    public final void b(android.view.View view, int i) {
         view.offsetLeftAndRight(i);
     }
 
-    @Override // defpackage.st, defpackage.sw
-    public final void c(View view, int i) {
+    public final void c(android.view.View view, int i) {
         view.offsetTopAndBottom(i);
     }
 
@@ -28,6 +23,6 @@ final class sv extends st {
     }
 
     sv(char c) {
-        this((byte) 0);
+        this(0);
     }
 }

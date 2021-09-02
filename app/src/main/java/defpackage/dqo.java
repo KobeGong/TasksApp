@@ -1,90 +1,85 @@
 package defpackage;
 
-import java.net.InetSocketAddress;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.concurrent.Executor;
-
-/* renamed from: dqo  reason: default package */
+/* renamed from: dqo reason: default package */
 /* compiled from: PG */
-public final class dqo implements dth {
-    public final String a;
-    public dxc b;
-    public final Object c = new Object();
-    public final Set d = new HashSet();
-    public final Executor e;
+public final class dqo implements defpackage.dth {
+    public final java.lang.String a;
+    public defpackage.dxc b;
+    public final java.lang.Object c = new java.lang.Object();
+    public final java.util.Set d = new java.util.HashSet();
+    public final java.util.concurrent.Executor e;
     public final int f;
     public final boolean g;
-    public final dzt h;
+    public final defpackage.dzt h;
     public boolean i;
-    public dpw j;
+    public defpackage.dpw j;
     public boolean k;
-    public dqj l;
-    private final dwd m = dwd.a(getClass().getName());
-    private final InetSocketAddress n;
-    private final String o;
+    public defpackage.dqj l;
+    private final defpackage.dwd m = defpackage.dwd.a(getClass().getName());
+    private final java.net.InetSocketAddress n;
+    private final java.lang.String o;
     private boolean p;
     private boolean q;
 
-    dqo(dqj dqj, InetSocketAddress inetSocketAddress, String str, String str2, Executor executor, int i2, boolean z, dzt dzt) {
-        this.n = (InetSocketAddress) cld.a(inetSocketAddress, "address");
+    dqo(defpackage.dqj dqj, java.net.InetSocketAddress inetSocketAddress, java.lang.String str, java.lang.String str2, java.util.concurrent.Executor executor, int i2, boolean z, defpackage.dzt dzt) {
+        this.n = (java.net.InetSocketAddress) defpackage.cld.a((java.lang.Object) inetSocketAddress, (java.lang.Object) "address");
         this.o = str;
-        this.a = dvc.a("cronet", str2);
+        this.a = defpackage.dvc.a("cronet", str2);
         this.f = i2;
         this.g = z;
-        this.e = (Executor) cld.a(executor, "executor");
-        this.l = (dqj) cld.a(dqj, "streamFactory");
-        this.h = (dzt) cld.a(dzt, "transportTracer");
+        this.e = (java.util.concurrent.Executor) defpackage.cld.a((java.lang.Object) executor, (java.lang.Object) "executor");
+        this.l = (defpackage.dqj) defpackage.cld.a((java.lang.Object) dqj, (java.lang.Object) "streamFactory");
+        this.h = (defpackage.dzt) defpackage.cld.a((java.lang.Object) dzt, (java.lang.Object) "transportTracer");
     }
 
-    @Override // defpackage.dxb
-    public final Runnable a(dxc dxc) {
-        this.b = (dxc) cld.a(dxc, "listener");
+    public final java.lang.Runnable a(defpackage.dxc dxc) {
+        this.b = (defpackage.dxc) defpackage.cld.a((java.lang.Object) dxc, (java.lang.Object) "listener");
         synchronized (this.c) {
             this.k = true;
         }
-        return new dqp(this);
+        return new defpackage.dqp(this);
     }
 
-    public final String toString() {
-        String obj = super.toString();
-        String valueOf = String.valueOf(this.n);
-        return new StringBuilder(String.valueOf(obj).length() + 2 + String.valueOf(valueOf).length()).append(obj).append("(").append(valueOf).append(")").toString();
+    public final java.lang.String toString() {
+        java.lang.String obj = super.toString();
+        java.lang.String valueOf = java.lang.String.valueOf(this.n);
+        return new java.lang.StringBuilder(java.lang.String.valueOf(obj).length() + 2 + java.lang.String.valueOf(valueOf).length()).append(obj).append("(").append(valueOf).append(")").toString();
     }
 
+    /* JADX INFO: used method not loaded: dxc.a(dpw):null, types can be incorrect */
     /* JADX WARNING: Code restructure failed: missing block: B:11:0x000f, code lost:
         if (r2.p == false) goto L_0x0019;
      */
     /* JADX WARNING: Code restructure failed: missing block: B:12:0x0011, code lost:
         monitor-exit(r1);
      */
-    /* JADX WARNING: Code restructure failed: missing block: B:20:0x0019, code lost:
+    /* JADX WARNING: Code restructure failed: missing block: B:23:?, code lost:
         r2.p = true;
      */
-    /* JADX WARNING: Code restructure failed: missing block: B:21:0x001c, code lost:
+    /* JADX WARNING: Code restructure failed: missing block: B:24:0x001c, code lost:
         monitor-exit(r1);
      */
-    /* JADX WARNING: Code restructure failed: missing block: B:22:0x001d, code lost:
+    /* JADX WARNING: Code restructure failed: missing block: B:25:0x001d, code lost:
         r2.b.a(r3);
         r1 = r2.c;
      */
-    /* JADX WARNING: Code restructure failed: missing block: B:23:0x0024, code lost:
+    /* JADX WARNING: Code restructure failed: missing block: B:26:0x0024, code lost:
         monitor-enter(r1);
      */
-    /* JADX WARNING: Code restructure failed: missing block: B:26:?, code lost:
+    /* JADX WARNING: Code restructure failed: missing block: B:29:?, code lost:
         r2.i = true;
         r2.j = r3;
      */
-    /* JADX WARNING: Code restructure failed: missing block: B:27:0x002a, code lost:
+    /* JADX WARNING: Code restructure failed: missing block: B:30:0x002a, code lost:
         monitor-exit(r1);
      */
-    /* JADX WARNING: Code restructure failed: missing block: B:28:0x002b, code lost:
+    /* JADX WARNING: Code restructure failed: missing block: B:31:0x002b, code lost:
         c();
      */
-    /* JADX WARNING: Code restructure failed: missing block: B:33:?, code lost:
+    /* JADX WARNING: Code restructure failed: missing block: B:43:?, code lost:
         return;
      */
-    /* JADX WARNING: Code restructure failed: missing block: B:34:?, code lost:
+    /* JADX WARNING: Code restructure failed: missing block: B:44:?, code lost:
         return;
      */
     /* JADX WARNING: Code restructure failed: missing block: B:7:0x000a, code lost:
@@ -93,7 +88,6 @@ public final class dqo implements dth {
     /* JADX WARNING: Code restructure failed: missing block: B:8:0x000c, code lost:
         monitor-enter(r1);
      */
-    @Override // defpackage.dxb
     /* Code decompiled incorrectly, please refer to instructions dump. */
     public final void a(defpackage.dpw r3) {
         /*
@@ -119,12 +113,12 @@ public final class dqo implements dth {
             throw r0
         L_0x0016:
             r0 = move-exception
-            monitor-exit(r1)
+            monitor-exit(r1)     // Catch:{ all -> 0x0016 }
             throw r0
         L_0x0019:
             r0 = 1
-            r2.p = r0
-            monitor-exit(r1)
+            r2.p = r0     // Catch:{ all -> 0x0013 }
+            monitor-exit(r1)     // Catch:{ all -> 0x0013 }
             dxc r0 = r2.b
             r0.a(r3)
             java.lang.Object r1 = r2.c
@@ -137,19 +131,17 @@ public final class dqo implements dth {
             goto L_0x0008
         L_0x002f:
             r0 = move-exception
-            monitor-exit(r1)
+            monitor-exit(r1)     // Catch:{ all -> 0x002f }
             throw r0
         */
         throw new UnsupportedOperationException("Method not decompiled: defpackage.dqo.a(dpw):void");
     }
 
-    @Override // defpackage.dth
-    public final dmv a() {
-        return dmv.b;
+    public final defpackage.dmv a() {
+        return defpackage.dmv.b;
     }
 
-    @Override // defpackage.dzw
-    public final dwd b() {
+    public final defpackage.dwd b() {
         return this.m;
     }
 
@@ -162,22 +154,22 @@ public final class dqo implements dth {
         }
     }
 
-    public final void a(dqk dqk, dpw dpw) {
+    public final void a(defpackage.dqk dqk, defpackage.dpw dpw) {
         synchronized (this.c) {
             if (this.d.remove(dqk)) {
-                dqk.m.b(dpw, dpw.l == dpx.CANCELLED || dpw.l == dpx.DEADLINE_EXCEEDED, new dor());
+                dqk.m.b(dpw, dpw.l == defpackage.dpx.CANCELLED || dpw.l == defpackage.dpx.DEADLINE_EXCEEDED, new defpackage.dor());
                 c();
             }
         }
     }
 
-    @Override // defpackage.dtb
-    public final /* synthetic */ dta a(dpb dpb, dor dor, dna dna) {
-        cld.a(dpb, "method");
-        cld.a(dor, "headers");
-        String valueOf = String.valueOf(dpb.b);
-        String concat = valueOf.length() != 0 ? "/".concat(valueOf) : new String("/");
-        String str = this.o;
-        return new dqq(this, new StringBuilder(String.valueOf(str).length() + 8 + String.valueOf(concat).length()).append("https://").append(str).append(concat).toString(), dor, dpb, dzo.a(dna, dor), dna).a;
+    public final /* synthetic */ defpackage.dta a(defpackage.dpb dpb, defpackage.dor dor, defpackage.dna dna) {
+        defpackage.cld.a((java.lang.Object) dpb, (java.lang.Object) "method");
+        defpackage.cld.a((java.lang.Object) dor, (java.lang.Object) "headers");
+        java.lang.String str = "/";
+        java.lang.String valueOf = java.lang.String.valueOf(dpb.b);
+        java.lang.String str2 = valueOf.length() != 0 ? str.concat(valueOf) : new java.lang.String(str);
+        java.lang.String str3 = this.o;
+        return new defpackage.dqq(this, new java.lang.StringBuilder(java.lang.String.valueOf(str3).length() + 8 + java.lang.String.valueOf(str2).length()).append("https://").append(str3).append(str2).toString(), dor, dpb, defpackage.dzo.a(dna, dor), dna).a;
     }
 }

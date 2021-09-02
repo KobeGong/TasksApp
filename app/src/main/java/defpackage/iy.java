@@ -1,18 +1,12 @@
 package defpackage;
 
-import android.animation.ObjectAnimator;
-import android.animation.TypeConverter;
-import android.graphics.Path;
-import android.util.Property;
-
-/* renamed from: iy  reason: default package */
+/* renamed from: iy reason: default package */
 /* compiled from: PG */
-final class iy implements iz {
+final class iy implements defpackage.iz {
     iy() {
     }
 
-    @Override // defpackage.iz
-    public final ObjectAnimator a(Object obj, Property property, Path path) {
-        return ObjectAnimator.ofObject(obj, property, (TypeConverter) null, path);
+    public final android.animation.ObjectAnimator a(java.lang.Object obj, android.util.Property property, android.graphics.Path path) {
+        return android.animation.ObjectAnimator.ofObject(obj, property, null, path);
     }
 }

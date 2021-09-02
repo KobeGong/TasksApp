@@ -1,11 +1,11 @@
 package defpackage;
 
-/* renamed from: aww  reason: default package */
+/* renamed from: aww reason: default package */
 /* compiled from: PG */
 public final class aww {
-    public final /* synthetic */ bqo a;
+    public final /* synthetic */ defpackage.bqo a;
 
-    public aww(bqo bqo) {
+    public aww(defpackage.bqo bqo) {
         this.a = bqo;
     }
 }

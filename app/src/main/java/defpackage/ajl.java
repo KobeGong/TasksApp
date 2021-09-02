@@ -1,43 +1,44 @@
 package defpackage;
 
-/* renamed from: ajl  reason: default package */
+/* renamed from: ajl reason: default package */
 /* compiled from: PG */
-public final class ajl extends ajp {
-    private final dcb a;
+public final class ajl extends defpackage.ajp {
+    private final defpackage.dcb a;
     private final int b;
 
-    public ajl(dcb dcb, int i) {
+    public ajl(defpackage.dcb dcb, int i) {
         if (dcb == null) {
-            throw new NullPointerException("Null destinationList");
+            throw new java.lang.NullPointerException("Null destinationList");
         }
         this.a = dcb;
         this.b = i;
     }
 
-    @Override // defpackage.ajp
-    public final dcb a() {
+    public final defpackage.dcb a() {
         return this.a;
     }
 
-    @Override // defpackage.ajp
     public final int b() {
         return this.b;
     }
 
-    public final String toString() {
-        String valueOf = String.valueOf(this.a);
-        return new StringBuilder(String.valueOf(valueOf).length() + 69).append("TaskDeleteAfterMoveData{destinationList=").append(valueOf).append(", movedTaskCount=").append(this.b).append("}").toString();
+    public final java.lang.String toString() {
+        java.lang.String valueOf = java.lang.String.valueOf(this.a);
+        return new java.lang.StringBuilder(java.lang.String.valueOf(valueOf).length() + 69).append("TaskDeleteAfterMoveData{destinationList=").append(valueOf).append(", movedTaskCount=").append(this.b).append("}").toString();
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof ajp)) {
+        if (!(obj instanceof defpackage.ajp)) {
             return false;
         }
-        ajp ajp = (ajp) obj;
-        return this.a.equals(ajp.a()) && this.b == ajp.b();
+        defpackage.ajp ajp = (defpackage.ajp) obj;
+        if (!this.a.equals(ajp.a()) || this.b != ajp.b()) {
+            return false;
+        }
+        return true;
     }
 
     public final int hashCode() {

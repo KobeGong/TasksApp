@@ -1,107 +1,95 @@
 package defpackage;
 
-import android.app.Notification;
-import android.app.PendingIntent;
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.media.AudioAttributes;
-import android.net.Uri;
-import android.os.Build;
-import android.os.Bundle;
-import android.os.Parcelable;
-import android.util.SparseArray;
-import java.util.ArrayList;
-
-/* renamed from: ni  reason: default package */
+/* renamed from: ni reason: default package */
 /* compiled from: PG */
 public final class ni {
-    public Context a;
-    public ArrayList b;
-    public ArrayList c;
-    public CharSequence d;
-    public CharSequence e;
-    public PendingIntent f;
-    public Bitmap g;
+    public android.content.Context a;
+    public java.util.ArrayList b;
+    public java.util.ArrayList c;
+    public java.lang.CharSequence d;
+    public java.lang.CharSequence e;
+    public android.app.PendingIntent f;
+    public android.graphics.Bitmap g;
     public int h;
     public boolean i;
-    public CharSequence j;
-    public String k;
+    public java.lang.CharSequence j;
+    public java.lang.String k;
     public boolean l;
     public boolean m;
-    public String n;
-    public Bundle o;
+    public java.lang.String n;
+    public android.os.Bundle o;
     public int p;
     public int q;
-    public Notification r;
-    public String s;
+    public android.app.Notification r;
+    public java.lang.String s;
     public int t;
-    public Notification u;
-    @Deprecated
-    public ArrayList v;
-    private nk w;
+    public android.app.Notification u;
+    @java.lang.Deprecated
+    public java.util.ArrayList v;
+    private defpackage.nk w;
 
-    private ni(Context context) {
-        this.b = new ArrayList();
-        this.c = new ArrayList();
+    private ni(android.content.Context context) {
+        this.b = new java.util.ArrayList();
+        this.c = new java.util.ArrayList();
         this.i = true;
         this.m = false;
         this.p = 0;
         this.q = 0;
         this.t = 0;
-        this.u = new Notification();
+        this.u = new android.app.Notification();
         this.a = context;
         this.s = null;
-        this.u.when = System.currentTimeMillis();
+        this.u.when = java.lang.System.currentTimeMillis();
         this.u.audioStreamType = -1;
         this.h = 0;
-        this.v = new ArrayList();
+        this.v = new java.util.ArrayList();
     }
 
-    @Deprecated
-    public ni(Context context, byte b2) {
+    @java.lang.Deprecated
+    public ni(android.content.Context context, byte b2) {
         this(context);
     }
 
-    public final ni a(long j2) {
+    public final defpackage.ni a(long j2) {
         this.u.when = j2;
         return this;
     }
 
-    public final ni a(int i2) {
+    public final defpackage.ni a(int i2) {
         this.u.icon = i2;
         return this;
     }
 
-    public final ni a(CharSequence charSequence) {
+    public final defpackage.ni a(java.lang.CharSequence charSequence) {
         this.d = e(charSequence);
         return this;
     }
 
-    public final ni b(CharSequence charSequence) {
+    public final defpackage.ni b(java.lang.CharSequence charSequence) {
         this.e = e(charSequence);
         return this;
     }
 
-    public final ni c(CharSequence charSequence) {
+    public final defpackage.ni c(java.lang.CharSequence charSequence) {
         this.j = e(charSequence);
         return this;
     }
 
-    public final ni a(PendingIntent pendingIntent) {
+    public final defpackage.ni a(android.app.PendingIntent pendingIntent) {
         this.u.deleteIntent = pendingIntent;
         return this;
     }
 
-    public final ni d(CharSequence charSequence) {
+    public final defpackage.ni d(java.lang.CharSequence charSequence) {
         this.u.tickerText = e(charSequence);
         return this;
     }
 
-    public final ni a(Uri uri) {
+    public final defpackage.ni a(android.net.Uri uri) {
         this.u.sound = uri;
         this.u.audioStreamType = -1;
-        if (Build.VERSION.SDK_INT >= 21) {
-            this.u.audioAttributes = new AudioAttributes.Builder().setContentType(4).setUsage(5).build();
+        if (android.os.Build.VERSION.SDK_INT >= 21) {
+            this.u.audioAttributes = new android.media.AudioAttributes.Builder().setContentType(4).setUsage(5).build();
         }
         return this;
     }
@@ -110,14 +98,14 @@ public final class ni {
         this.u.flags |= i2;
     }
 
-    public final Bundle a() {
+    public final android.os.Bundle a() {
         if (this.o == null) {
-            this.o = new Bundle();
+            this.o = new android.os.Bundle();
         }
         return this.o;
     }
 
-    public final ni a(nk nkVar) {
+    public final defpackage.ni a(defpackage.nk nkVar) {
         if (this.w != nkVar) {
             this.w = nkVar;
             if (this.w != null) {
@@ -127,77 +115,77 @@ public final class ni {
         return this;
     }
 
-    public final Notification b() {
-        Notification notification;
-        ne neVar = new ne(this);
-        nk nkVar = neVar.b.w;
+    public final android.app.Notification b() {
+        android.app.Notification notification;
+        defpackage.ne neVar = new defpackage.ne(this);
+        defpackage.nk nkVar = neVar.b.w;
         if (nkVar != null) {
             nkVar.a(neVar);
         }
-        if (Build.VERSION.SDK_INT >= 26) {
+        if (android.os.Build.VERSION.SDK_INT >= 26) {
             notification = neVar.a.build();
-        } else if (Build.VERSION.SDK_INT >= 24) {
+        } else if (android.os.Build.VERSION.SDK_INT >= 24) {
             notification = neVar.a.build();
             if (neVar.e != 0) {
                 if (!(notification.getGroup() == null || (notification.flags & 512) == 0 || neVar.e != 2)) {
-                    ne.a(notification);
+                    defpackage.ne.a(notification);
                 }
                 if (notification.getGroup() != null && (notification.flags & 512) == 0 && neVar.e == 1) {
-                    ne.a(notification);
+                    defpackage.ne.a(notification);
                 }
             }
-        } else if (Build.VERSION.SDK_INT >= 21) {
+        } else if (android.os.Build.VERSION.SDK_INT >= 21) {
             neVar.a.setExtras(neVar.d);
             notification = neVar.a.build();
             if (neVar.e != 0) {
                 if (!(notification.getGroup() == null || (notification.flags & 512) == 0 || neVar.e != 2)) {
-                    ne.a(notification);
+                    defpackage.ne.a(notification);
                 }
                 if (notification.getGroup() != null && (notification.flags & 512) == 0 && neVar.e == 1) {
-                    ne.a(notification);
+                    defpackage.ne.a(notification);
                 }
             }
-        } else if (Build.VERSION.SDK_INT >= 20) {
+        } else if (android.os.Build.VERSION.SDK_INT >= 20) {
             neVar.a.setExtras(neVar.d);
             notification = neVar.a.build();
             if (neVar.e != 0) {
                 if (!(notification.getGroup() == null || (notification.flags & 512) == 0 || neVar.e != 2)) {
-                    ne.a(notification);
+                    defpackage.ne.a(notification);
                 }
                 if (notification.getGroup() != null && (notification.flags & 512) == 0 && neVar.e == 1) {
-                    ne.a(notification);
+                    defpackage.ne.a(notification);
                 }
             }
-        } else if (Build.VERSION.SDK_INT >= 19) {
-            SparseArray<? extends Parcelable> a2 = nl.a(neVar.c);
+        } else if (android.os.Build.VERSION.SDK_INT >= 19) {
+            android.util.SparseArray a2 = defpackage.nl.a(neVar.c);
             if (a2 != null) {
                 neVar.d.putSparseParcelableArray("android.support.actionExtras", a2);
             }
             neVar.a.setExtras(neVar.d);
             notification = neVar.a.build();
         } else {
-            Notification build = neVar.a.build();
-            Bundle a3 = jd.a(build);
-            Bundle bundle = new Bundle(neVar.d);
-            for (String str : neVar.d.keySet()) {
+            android.app.Notification build = neVar.a.build();
+            android.os.Bundle a3 = defpackage.jd.a(build);
+            android.os.Bundle bundle = new android.os.Bundle(neVar.d);
+            for (java.lang.String str : neVar.d.keySet()) {
                 if (a3.containsKey(str)) {
                     bundle.remove(str);
                 }
             }
             a3.putAll(bundle);
-            SparseArray<? extends Parcelable> a4 = nl.a(neVar.c);
+            android.util.SparseArray a4 = defpackage.nl.a(neVar.c);
             if (a4 != null) {
-                jd.a(build).putSparseParcelableArray("android.support.actionExtras", a4);
+                defpackage.jd.a(build).putSparseParcelableArray("android.support.actionExtras", a4);
             }
             notification = build;
         }
         if (nkVar != null) {
-            jd.a(notification);
+            defpackage.jd.a(notification);
         }
         return notification;
     }
 
-    public static CharSequence e(CharSequence charSequence) {
+    public static java.lang.CharSequence e(java.lang.CharSequence charSequence) {
         if (charSequence != null && charSequence.length() > 5120) {
             return charSequence.subSequence(0, 5120);
         }

@@ -1,38 +1,34 @@
 package defpackage;
 
-import java.io.InputStream;
-
-/* renamed from: dkg  reason: default package */
+/* renamed from: dkg reason: default package */
 /* compiled from: PG */
-final class dkg extends InputStream {
-    private dkf a;
-    private dhg b;
+final class dkg extends java.io.InputStream {
+    private defpackage.dkf a;
+    private defpackage.dhg b;
     private int c;
     private int d;
     private int e;
     private int f;
-    private final /* synthetic */ dkd g;
+    private final /* synthetic */ defpackage.dkd g;
 
-    public dkg(dkd dkd) {
+    public dkg(defpackage.dkd dkd) {
         this.g = dkd;
         a();
     }
 
-    @Override // java.io.InputStream
     public final int read(byte[] bArr, int i, int i2) {
         if (bArr == null) {
-            throw new NullPointerException();
+            throw new java.lang.NullPointerException();
         } else if (i >= 0 && i2 >= 0 && i2 <= bArr.length - i) {
             return a(bArr, i, i2);
         } else {
-            throw new IndexOutOfBoundsException();
+            throw new java.lang.IndexOutOfBoundsException();
         }
     }
 
-    @Override // java.io.InputStream
     public final long skip(long j) {
         if (j < 0) {
-            throw new IndexOutOfBoundsException();
+            throw new java.lang.IndexOutOfBoundsException();
         }
         if (j > 2147483647L) {
             j = 2147483647L;
@@ -49,7 +45,7 @@ final class dkg extends InputStream {
             }
             b();
             if (this.b != null) {
-                int min = Math.min(this.c - this.d, i3);
+                int min = java.lang.Math.min(this.c - this.d, i3);
                 if (bArr != null) {
                     this.b.a(bArr, this.d, i4, min);
                     i4 += min;
@@ -63,19 +59,17 @@ final class dkg extends InputStream {
         return i2 - i3;
     }
 
-    @Override // java.io.InputStream
     public final int read() {
         b();
         if (this.b == null) {
             return -1;
         }
-        dhg dhg = this.b;
+        defpackage.dhg dhg = this.b;
         int i = this.d;
         this.d = i + 1;
         return dhg.a(i) & 255;
     }
 
-    @Override // java.io.InputStream
     public final int available() {
         return this.g.a() - (this.e + this.d);
     }
@@ -88,15 +82,14 @@ final class dkg extends InputStream {
         this.f = this.e + this.d;
     }
 
-    @Override // java.io.InputStream
     public final synchronized void reset() {
         a();
         a(null, 0, this.f);
     }
 
     private final void a() {
-        this.a = new dkf(this.g);
-        this.b = (dhg) this.a.next();
+        this.a = new defpackage.dkf(this.g);
+        this.b = (defpackage.dhg) this.a.next();
         this.c = this.b.a();
         this.d = 0;
         this.e = 0;
@@ -107,7 +100,7 @@ final class dkg extends InputStream {
             this.e += this.c;
             this.d = 0;
             if (this.a.hasNext()) {
-                this.b = (dhg) this.a.next();
+                this.b = (defpackage.dhg) this.a.next();
                 this.c = this.b.a();
                 return;
             }

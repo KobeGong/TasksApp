@@ -1,36 +1,33 @@
 package defpackage;
 
-import android.text.TextUtils;
-import java.util.ArrayList;
-
-/* renamed from: aym  reason: default package */
+/* renamed from: aym reason: default package */
 /* compiled from: PG */
-public final class aym extends Exception {
-    public final qr a;
+public final class aym extends java.lang.Exception {
+    public final defpackage.qr a;
 
-    public aym(qr qrVar) {
+    public aym(defpackage.qr qrVar) {
         this.a = qrVar;
     }
 
-    public final String getMessage() {
-        ArrayList arrayList = new ArrayList();
+    public final java.lang.String getMessage() {
+        java.util.ArrayList arrayList = new java.util.ArrayList();
         boolean z = true;
-        for (bbu bbu : this.a.keySet()) {
-            axq axq = (axq) this.a.get(bbu);
+        for (defpackage.bbu bbu : this.a.keySet()) {
+            defpackage.axq axq = (defpackage.axq) this.a.get(bbu);
             if (axq.b()) {
                 z = false;
             }
-            String str = bbu.a.b;
-            String valueOf = String.valueOf(axq);
-            arrayList.add(new StringBuilder(String.valueOf(str).length() + 2 + String.valueOf(valueOf).length()).append(str).append(": ").append(valueOf).toString());
+            java.lang.String str = bbu.a.b;
+            java.lang.String valueOf = java.lang.String.valueOf(axq);
+            arrayList.add(new java.lang.StringBuilder(java.lang.String.valueOf(str).length() + 2 + java.lang.String.valueOf(valueOf).length()).append(str).append(": ").append(valueOf).toString());
         }
-        StringBuilder sb = new StringBuilder();
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
         if (z) {
             sb.append("None of the queried APIs are available. ");
         } else {
             sb.append("Some of the queried APIs are unavailable. ");
         }
-        sb.append(TextUtils.join("; ", arrayList));
+        sb.append(android.text.TextUtils.join("; ", arrayList));
         return sb.toString();
     }
 }

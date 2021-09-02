@@ -1,11 +1,11 @@
 package defpackage;
 
-/* renamed from: csl  reason: default package */
+/* renamed from: csl reason: default package */
 /* compiled from: PG */
 public abstract class csl {
-    public abstract Object c();
+    public abstract java.lang.Object c();
 
-    public String toString() {
+    public java.lang.String toString() {
         return c().toString();
     }
 }

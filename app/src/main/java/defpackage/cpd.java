@@ -1,51 +1,57 @@
 package defpackage;
 
-import android.content.Context;
-import android.content.Intent;
-import android.view.View;
-import android.view.ViewParent;
-import java.util.List;
-
-/* renamed from: cpd  reason: default package */
+/* renamed from: cpd reason: default package */
 /* compiled from: PG */
 public final class cpd {
-    private final cor a;
+    private final defpackage.cor a;
 
-    public final void a(int i, View view) {
-        cpe cpe;
-        cot cot;
-        cpc a2;
-        if (cky.b(view)) {
-            coo coo = (coo) this.a.a();
-            Context context = view.getContext();
-            cpe cpe2 = new cpe();
-            cpe2.a(view);
-            for (ViewParent parent = view.getParent(); parent != null; parent = parent.getParent()) {
-                if (parent instanceof View) {
-                    cpe2.a((View) parent);
+    public final void a(int i, android.view.View view) {
+        if (defpackage.cky.b(view)) {
+            defpackage.coo coo = (defpackage.coo) this.a.a();
+            android.content.Context context = view.getContext();
+            defpackage.cpe cpe = new defpackage.cpe();
+            cpe.a(view);
+            for (android.view.ViewParent parent = view.getParent(); parent != null; parent = parent.getParent()) {
+                if (parent instanceof android.view.View) {
+                    cpe.a((android.view.View) parent);
                 }
             }
-            Context context2 = view.getContext();
-            cqd a3 = cqd.a(context2);
-            List b = a3.b(cpf.class);
-            for (int i2 = 0; i2 < b.size(); i2++) {
-                cpc a4 = ((cpf) b.get(i2)).a();
-                if (a4 != null) {
-                    cpe2.b.add(a4);
+            android.content.Context context2 = view.getContext();
+            defpackage.cqd a2 = defpackage.cqd.a(context2);
+            java.util.List b = a2.b(defpackage.cpf.class);
+            int i2 = 0;
+            while (true) {
+                int i3 = i2;
+                if (i3 >= b.size()) {
+                    break;
+                }
+                defpackage.cpc a3 = ((defpackage.cpf) b.get(i3)).a();
+                if (a3 != null) {
+                    cpe.b.add(a3);
+                }
+                i2 = i3 + 1;
+            }
+            if (cpe.b.isEmpty() || !((defpackage.cpc) cpe.b.get(cpe.b.size() - 1)).a.b) {
+                defpackage.cot cot = (defpackage.cot) a2.a(defpackage.cot.class);
+                if (cot != null) {
+                    defpackage.cpc a4 = cot.a();
+                    if (a4 != null) {
+                        cpe.b.add(a4);
+                    }
                 }
             }
-            if (!((!cpe2.b.isEmpty() && ((cpc) cpe2.b.get(cpe2.b.size() - 1)).a.b) || (cot = (cot) a3.a(cot.class)) == null || (a2 = cot.a()) == null)) {
-                cpe2.b.add(a2);
+            android.content.Intent a5 = defpackage.cpe.a(context2);
+            if (a5 != null) {
+                defpackage.cpe cpe2 = (defpackage.cpe) a5.getSerializableExtra(defpackage.cpe.a);
+                if (cpe2 != null) {
+                    cpe.b.addAll(cpe2.b);
+                }
             }
-            Intent a5 = cpe.a(context2);
-            if (!(a5 == null || (cpe = (cpe) a5.getSerializableExtra(cpe.a)) == null)) {
-                cpe2.b.addAll(cpe.b);
-            }
-            coo.a(context, new cou(i, cpe2));
+            coo.a(context, new defpackage.cou(i, cpe));
         }
     }
 
-    public cpd(cor cor) {
+    public cpd(defpackage.cor cor) {
         this.a = cor;
     }
 }

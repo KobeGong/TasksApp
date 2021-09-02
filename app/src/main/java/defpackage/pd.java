@@ -1,18 +1,16 @@
 package defpackage;
 
-/* renamed from: pd  reason: default package */
+/* renamed from: pd reason: default package */
 /* compiled from: PG */
-final class pd implements pe {
+final class pd implements defpackage.pe {
     pd() {
     }
 
-    @Override // defpackage.pe
-    public final /* synthetic */ boolean a(Object obj) {
-        return ((on) obj).c;
+    public final /* synthetic */ boolean a(java.lang.Object obj) {
+        return ((defpackage.on) obj).c;
     }
 
-    @Override // defpackage.pe
-    public final /* synthetic */ int b(Object obj) {
-        return ((on) obj).b;
+    public final /* synthetic */ int b(java.lang.Object obj) {
+        return ((defpackage.on) obj).b;
     }
 }

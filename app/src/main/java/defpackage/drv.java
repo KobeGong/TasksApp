@@ -1,53 +1,49 @@
 package defpackage;
 
-import java.util.concurrent.Executor;
-
-/* renamed from: drv  reason: default package */
+/* renamed from: drv reason: default package */
 /* compiled from: PG */
-final class drv extends duy {
-    private final dth a;
-    private final String b;
-    private final /* synthetic */ dru c;
+final class drv extends defpackage.duy {
+    private final defpackage.dth a;
+    private final java.lang.String b;
+    private final /* synthetic */ defpackage.dru c;
 
-    drv(dru dru, dth dth, String str) {
+    drv(defpackage.dru dru, defpackage.dth dth, java.lang.String str) {
         this.c = dru;
-        this.a = (dth) cld.a(dth, "delegate");
-        this.b = (String) cld.a(str, "authority");
+        this.a = (defpackage.dth) defpackage.cld.a((java.lang.Object) dth, (java.lang.Object) "delegate");
+        this.b = (java.lang.String) defpackage.cld.a((java.lang.Object) str, (java.lang.Object) "authority");
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.duy
-    public final dth c() {
+    public final defpackage.dth c() {
         return this.a;
     }
 
-    @Override // defpackage.dtb, defpackage.duy
-    public final dta a(dpb dpb, dor dor, dna dna) {
-        dmy dmy = dna.e;
+    public final defpackage.dta a(defpackage.dpb dpb, defpackage.dor dor, defpackage.dna dna) {
+        defpackage.dmy dmy = dna.e;
         if (dmy == null) {
             return this.a.a(dpb, dor, dna);
         }
-        dmz dmz = new dmz(this.a, dpb, dor, dna);
-        dmw a2 = dmv.a().a(dmy.b, this.b).a(dmy.a, dps.NONE);
-        dmv a3 = this.a.a();
+        defpackage.dmz dmz = new defpackage.dmz(this.a, dpb, dor, dna);
+        defpackage.dmw a2 = defpackage.dmv.a().a(defpackage.dmy.b, this.b).a(defpackage.dmy.a, defpackage.dps.NONE);
+        defpackage.dmv a3 = this.a.a();
         a2.a(a3.a.size()).putAll(a3.a);
         if (dna.d != null) {
-            a2.a(dmy.b, dna.d);
+            a2.a(defpackage.dmy.b, dna.d);
         }
         try {
-            dmv a4 = a2.a();
-            Executor executor = dna.c;
-            Executor executor2 = this.c.a;
+            defpackage.dmv a4 = a2.a();
+            java.util.concurrent.Executor executor = dna.c;
+            java.util.concurrent.Executor executor2 = this.c.a;
             if (executor == null) {
                 if (executor2 != null) {
                     executor = executor2;
                 } else {
-                    throw new NullPointerException("Both parameters are null");
+                    throw new java.lang.NullPointerException("Both parameters are null");
                 }
             }
             dmy.a(dpb, a4, executor, dmz);
         } catch (Throwable th) {
-            dmz.a(dpw.f.a("Credentials should use fail() instead of throwing exceptions").b(th));
+            dmz.a(defpackage.dpw.f.a("Credentials should use fail() instead of throwing exceptions").b(th));
         }
         return dmz.a();
     }

@@ -1,19 +1,18 @@
 package defpackage;
 
-/* renamed from: aw  reason: default package */
+/* renamed from: aw reason: default package */
 /* compiled from: PG */
-final class aw implements az {
+final class aw implements defpackage.az {
     public static final long serialVersionUID = 9163464945387899416L;
 
     aw() {
     }
 
-    @Override // defpackage.az
-    public final boolean a(bb bbVar) {
+    public final boolean a(defpackage.bb bbVar) {
         return true;
     }
 
-    public final String toString() {
+    public final java.lang.String toString() {
         return "";
     }
 }

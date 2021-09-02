@@ -1,10 +1,6 @@
 package defpackage;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
-
-/* renamed from: cvr  reason: default package */
+/* renamed from: cvr reason: default package */
 /* compiled from: PG */
 public enum cvr {
     TIME_HOUR_OF_DAY_PADDED('H'),
@@ -39,7 +35,7 @@ public enum cvr {
     DATETIME_YEAR_MONTH_DAY('F'),
     DATETIME_FULL('c');
     
-    public static final Map a;
+    public static final java.util.Map a = null;
     public final char b;
 
     private cvr(char c) {
@@ -47,14 +43,15 @@ public enum cvr {
     }
 
     static {
-        HashMap hashMap = new HashMap();
-        cvr[] values = values();
-        for (cvr cvr : values) {
-            if (hashMap.put(Character.valueOf(cvr.b), cvr) != null) {
-                String valueOf = String.valueOf(cvr);
-                throw new IllegalStateException(new StringBuilder(String.valueOf(valueOf).length() + 28).append("duplicate format character: ").append(valueOf).toString());
+        int i;
+        defpackage.cvr[] values;
+        java.util.HashMap hashMap = new java.util.HashMap();
+        for (defpackage.cvr cvr : values()) {
+            if (hashMap.put(java.lang.Character.valueOf(cvr.b), cvr) != null) {
+                java.lang.String valueOf = java.lang.String.valueOf(cvr);
+                throw new java.lang.IllegalStateException(new java.lang.StringBuilder(java.lang.String.valueOf(valueOf).length() + 28).append("duplicate format character: ").append(valueOf).toString());
             }
         }
-        a = Collections.unmodifiableMap(hashMap);
+        a = java.util.Collections.unmodifiableMap(hashMap);
     }
 }

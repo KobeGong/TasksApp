@@ -1,17 +1,14 @@
 package defpackage;
 
-import java.util.concurrent.ExecutionException;
+/* renamed from: ani reason: default package */
+final /* synthetic */ class ani implements java.lang.Runnable {
+    private final defpackage.anc a;
+    private final defpackage.cyi b;
+    private final defpackage.anu c;
+    private final defpackage.cyu d;
+    private final java.lang.String e;
 
-/* access modifiers changed from: package-private */
-/* renamed from: ani  reason: default package */
-public final /* synthetic */ class ani implements Runnable {
-    private final anc a;
-    private final cyi b;
-    private final anu c;
-    private final cyu d;
-    private final String e;
-
-    ani(anc anc, cyi cyi, anu anu, cyu cyu, String str) {
+    ani(defpackage.anc anc, defpackage.cyi cyi, defpackage.anu anu, defpackage.cyu cyu, java.lang.String str) {
         this.a = anc;
         this.b = cyi;
         this.c = anu;
@@ -20,27 +17,28 @@ public final /* synthetic */ class ani implements Runnable {
     }
 
     public final void run() {
-        anc anc = this.a;
-        cyi cyi = this.b;
-        anu anu = this.c;
-        cyu cyu = this.d;
-        String str = this.e;
+        defpackage.anc anc = this.a;
+        defpackage.cyi cyi = this.b;
+        defpackage.anu anu = this.c;
+        defpackage.cyu cyu = this.d;
+        java.lang.String str = this.e;
         synchronized (anc) {
             try {
-                anw anw = (anw) cyi.get();
+                defpackage.anw anw = (defpackage.anw) cyi.get();
                 if (anc.a != anu) {
-                    cyu.a((Object) null);
+                    cyu.a((java.lang.Object) null);
                     return;
                 }
-                if (anw == anw.LOCAL_CHANGES) {
+                if (anw == defpackage.anw.LOCAL_CHANGES) {
                     anc.a(str, anu, cyu);
                 } else {
-                    cyu.a((Object) null);
-                    if (anw == anw.SERVER_CHANGES) {
-                        alq.a().a(anu.a.a, str);
+                    cyu.a((java.lang.Object) null);
+                    if (anw == defpackage.anw.SERVER_CHANGES) {
+                        defpackage.alq.a().a(anu.a.a, str);
                     }
                 }
-            } catch (InterruptedException | ExecutionException e2) {
+                return;
+            } catch (java.lang.InterruptedException | java.util.concurrent.ExecutionException e2) {
                 cyu.a(e2);
             }
         }

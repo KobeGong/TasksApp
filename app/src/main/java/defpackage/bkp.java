@@ -1,13 +1,9 @@
 package defpackage;
 
-import android.accounts.Account;
-import android.os.Bundle;
-import android.os.IInterface;
-
-/* renamed from: bkp  reason: default package */
+/* renamed from: bkp reason: default package */
 /* compiled from: PG */
-public interface bkp extends IInterface {
-    Bundle a(Account account, String str, Bundle bundle);
+public interface bkp extends android.os.IInterface {
+    android.os.Bundle a(android.accounts.Account account, java.lang.String str, android.os.Bundle bundle);
 
-    Bundle a(String str, Bundle bundle);
+    android.os.Bundle a(java.lang.String str, android.os.Bundle bundle);
 }

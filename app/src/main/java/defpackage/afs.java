@@ -1,44 +1,40 @@
 package defpackage;
 
-import android.view.Menu;
-import android.view.Window;
-
-/* renamed from: afs  reason: default package */
+/* renamed from: afs reason: default package */
 /* compiled from: PG */
-public final class afs implements zu {
-    private final /* synthetic */ wz a;
+public final class afs implements defpackage.zu {
+    private final /* synthetic */ defpackage.wz a;
 
-    public afs(wz wzVar) {
+    public afs(defpackage.wz wzVar) {
         this.a = wzVar;
     }
 
-    @Override // defpackage.zu
-    public final void a(MenuBuilder zeVar, boolean z) {
-        MenuBuilder l = zeVar.l();
+    public final void a(defpackage.ze zeVar, boolean z) {
+        defpackage.ze l = zeVar.l();
         boolean z2 = l != zeVar;
-        wz wzVar = this.a;
+        defpackage.wz wzVar = this.a;
         if (z2) {
             zeVar = l;
         }
-        zx a2 = wzVar.a((Menu) zeVar);
+        defpackage.zx a2 = wzVar.a((android.view.Menu) zeVar);
         if (a2 == null) {
             return;
         }
         if (z2) {
-            this.a.a(a2.a, a2, l);
+            this.a.a(a2.a, a2, (android.view.Menu) l);
             this.a.a(a2, true);
             return;
         }
         this.a.a(a2, z);
     }
 
-    @Override // defpackage.zu
-    public final boolean a(MenuBuilder zeVar) {
-        Window.Callback callback;
-        if (zeVar != null || !this.a.g || (callback = this.a.c.getCallback()) == null || this.a.m) {
-            return true;
+    public final boolean a(defpackage.ze zeVar) {
+        if (zeVar == null && this.a.g) {
+            android.view.Window.Callback callback = this.a.c.getCallback();
+            if (callback != null && !this.a.m) {
+                callback.onMenuOpened(108, zeVar);
+            }
         }
-        callback.onMenuOpened(108, zeVar);
         return true;
     }
 }

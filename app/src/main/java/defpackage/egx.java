@@ -1,14 +1,9 @@
 package defpackage;
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import org.chromium.base.PowerMonitor;
-
-/* renamed from: egx  reason: default package */
+/* renamed from: egx reason: default package */
 /* compiled from: PG */
-public final class egx extends BroadcastReceiver {
-    public final void onReceive(Context context, Intent intent) {
-        PowerMonitor.a(intent);
+public final class egx extends android.content.BroadcastReceiver {
+    public final void onReceive(android.content.Context context, android.content.Intent intent) {
+        org.chromium.base.PowerMonitor.a(intent);
     }
 }

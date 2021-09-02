@@ -1,29 +1,45 @@
 package defpackage;
 
-import com.google.android.gms.common.api.Status;
-
-/* renamed from: biv  reason: default package */
+/* renamed from: biv reason: default package */
 /* compiled from: PG */
-public final class biv extends bca {
-    private biv(ayp ayp) {
+public final class biv extends defpackage.bca {
+    private biv(defpackage.ayp ayp) {
         super(ayp);
     }
 
-    @Override // com.google.android.gms.common.api.internal.BasePendingResult
-    public final /* synthetic */ ayw a(Status status) {
+    public final /* synthetic */ defpackage.ayw a(com.google.android.gms.common.api.Status status) {
         return status;
     }
 
-    public biv(ayp ayp, byte b) {
+    public biv(defpackage.ayp ayp, byte b) {
         this(ayp);
     }
 
-    /* JADX DEBUG: Multi-variable search result rejected for r0v1, resolved type: biz */
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r1v0, types: [bix, biu] */
+    /* JADX WARNING: type inference failed for: r1v0, types: [bix, biu] */
     /* access modifiers changed from: protected */
+    /* JADX WARNING: Multi-variable type inference failed. Error: jadx.core.utils.exceptions.JadxRuntimeException: No candidate types for var: r1v0, types: [bix, biu]
+      assigns: [biu]
+      uses: [bix]
+      mth insns count: 6
+    	at jadx.core.dex.visitors.typeinference.TypeSearch.fillTypeCandidates(TypeSearch.java:237)
+    	at java.util.ArrayList.forEach(ArrayList.java:1257)
+    	at jadx.core.dex.visitors.typeinference.TypeSearch.run(TypeSearch.java:53)
+    	at jadx.core.dex.visitors.typeinference.TypeInferenceVisitor.runMultiVariableSearch(TypeInferenceVisitor.java:99)
+    	at jadx.core.dex.visitors.typeinference.TypeInferenceVisitor.visit(TypeInferenceVisitor.java:92)
+    	at jadx.core.dex.visitors.DepthTraversal.visit(DepthTraversal.java:27)
+    	at jadx.core.dex.visitors.DepthTraversal.lambda$visit$1(DepthTraversal.java:14)
+    	at java.util.ArrayList.forEach(ArrayList.java:1257)
+    	at jadx.core.dex.visitors.DepthTraversal.visit(DepthTraversal.java:14)
+    	at jadx.core.ProcessClass.process(ProcessClass.java:30)
+    	at jadx.core.ProcessClass.lambda$processDependencies$0(ProcessClass.java:49)
+    	at java.util.ArrayList.forEach(ArrayList.java:1257)
+    	at jadx.core.ProcessClass.processDependencies(ProcessClass.java:49)
+    	at jadx.core.ProcessClass.process(ProcessClass.java:35)
+    	at jadx.api.JadxDecompiler.processClass(JadxDecompiler.java:311)
+    	at jadx.api.JavaClass.decompile(JavaClass.java:62)
+    	at jadx.api.JadxDecompiler.lambda$appendSourcesSave$0(JadxDecompiler.java:217)
+     */
     /* JADX WARNING: Unknown variable types count: 1 */
-    @Override // defpackage.bca
     /* Code decompiled incorrectly, please refer to instructions dump. */
     public final /* synthetic */ void a(defpackage.ayg r3) {
         /*

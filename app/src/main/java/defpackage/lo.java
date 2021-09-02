@@ -1,20 +1,18 @@
 package defpackage;
 
-import android.view.View;
-
-/* renamed from: lo  reason: default package */
+/* renamed from: lo reason: default package */
 /* compiled from: PG */
 public final class lo {
-    public View a;
-    public String b;
-    public jr c;
-    public kp d;
-    public je e;
+    public android.view.View a;
+    public java.lang.String b;
+    public defpackage.jr c;
+    public defpackage.kp d;
+    public defpackage.je e;
 
     public lo() {
     }
 
-    public lo(View view, String str, je jeVar, kp kpVar, jr jrVar) {
+    public lo(android.view.View view, java.lang.String str, defpackage.je jeVar, defpackage.kp kpVar, defpackage.jr jrVar) {
         this.a = view;
         this.b = str;
         this.c = jrVar;

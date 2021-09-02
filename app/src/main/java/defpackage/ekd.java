@@ -1,9 +1,9 @@
 package defpackage;
 
-/* renamed from: ekd  reason: default package */
+/* renamed from: ekd reason: default package */
 /* compiled from: PG */
-public final class ekd implements Runnable {
+public final class ekd implements java.lang.Runnable {
     public final void run() {
-        throw new NoSuchMethodError();
+        throw new java.lang.NoSuchMethodError();
     }
 }

@@ -1,19 +1,18 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: cij  reason: default package */
+/* renamed from: cij reason: default package */
 /* compiled from: PG */
-public final class cij {
-    private final /* synthetic */ cik a;
+final class cij {
+    private final /* synthetic */ defpackage.cik a;
 
-    public final void a(int i, String str) {
-        cik cik = this.a;
+    public final void a(int i, java.lang.String str) {
+        defpackage.cik cik = this.a;
         if (cik.b()) {
-            cik.c().submit(new cil(cik, i, str));
+            cik.c().submit(new defpackage.cil(cik, i, str));
         }
     }
 
-    cij(cik cik) {
+    cij(defpackage.cik cik) {
         this.a = cik;
     }
 }

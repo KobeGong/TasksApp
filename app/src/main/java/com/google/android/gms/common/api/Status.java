@@ -1,25 +1,19 @@
 package com.google.android.gms.common.api;
 
-import android.app.PendingIntent;
-import android.os.Parcel;
-import android.os.Parcelable;
-import com.google.android.gms.common.internal.ReflectedParcelable;
-import java.util.Arrays;
-
 /* compiled from: PG */
-public final class Status extends biq implements ayw, ReflectedParcelable {
-    public static final Parcelable.Creator CREATOR = new bcq();
-    public static final Status a = new Status(0);
-    public static final Status b = new Status(14);
-    public static final Status c = new Status(8);
-    public static final Status d = new Status(15);
-    public static final Status e = new Status(16);
+public final class Status extends defpackage.biq implements defpackage.ayw, com.google.android.gms.common.internal.ReflectedParcelable {
+    public static final android.os.Parcelable.Creator CREATOR = new defpackage.bcq();
+    public static final com.google.android.gms.common.api.Status a = new com.google.android.gms.common.api.Status(0);
+    public static final com.google.android.gms.common.api.Status b = new com.google.android.gms.common.api.Status(14);
+    public static final com.google.android.gms.common.api.Status c = new com.google.android.gms.common.api.Status(8);
+    public static final com.google.android.gms.common.api.Status d = new com.google.android.gms.common.api.Status(15);
+    public static final com.google.android.gms.common.api.Status e = new com.google.android.gms.common.api.Status(16);
     public final int f;
-    public final String g;
-    public final PendingIntent h;
+    public final java.lang.String g;
+    public final android.app.PendingIntent h;
     private int i;
 
-    public Status(int i2, int i3, String str, PendingIntent pendingIntent) {
+    public Status(int i2, int i3, java.lang.String str, android.app.PendingIntent pendingIntent) {
         this.i = i2;
         this.f = i3;
         this.g = str;
@@ -30,11 +24,11 @@ public final class Status extends biq implements ayw, ReflectedParcelable {
         this(i2, null);
     }
 
-    public Status(int i2, String str) {
+    public Status(int i2, java.lang.String str) {
         this(1, i2, str, null);
     }
 
-    public Status(int i2, String str, PendingIntent pendingIntent) {
+    public Status(int i2, java.lang.String str, android.app.PendingIntent pendingIntent) {
         this(1, i2, str, pendingIntent);
     }
 
@@ -43,47 +37,47 @@ public final class Status extends biq implements ayw, ReflectedParcelable {
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Integer.valueOf(this.i), Integer.valueOf(this.f), this.g, this.h});
+        return java.util.Arrays.hashCode(new java.lang.Object[]{java.lang.Integer.valueOf(this.i), java.lang.Integer.valueOf(this.f), this.g, this.h});
     }
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof Status)) {
+    public final boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof com.google.android.gms.common.api.Status)) {
             return false;
         }
-        Status status = (Status) obj;
-        if (this.i != status.i || this.f != status.f || !azb.a((Object) this.g, (Object) status.g) || !azb.a(this.h, status.h)) {
+        com.google.android.gms.common.api.Status status = (com.google.android.gms.common.api.Status) obj;
+        if (this.i != status.i || this.f != status.f || !defpackage.azb.a((java.lang.Object) this.g, (java.lang.Object) status.g) || !defpackage.azb.a((java.lang.Object) this.h, (java.lang.Object) status.h)) {
             return false;
         }
         return true;
     }
 
-    public final String toString() {
-        String a2;
-        bea a3 = azb.a(this);
+    public final java.lang.String toString() {
+        java.lang.String a2;
+        defpackage.bea a3 = defpackage.azb.a((java.lang.Object) this);
+        java.lang.String str = "statusCode";
         if (this.g != null) {
             a2 = this.g;
         } else {
-            a2 = azb.a(this.f);
+            a2 = defpackage.azb.a(this.f);
         }
-        return a3.a("statusCode", a2).a("resolution", this.h).toString();
+        return a3.a(str, a2).a("resolution", this.h).toString();
     }
 
-    public final void writeToParcel(Parcel parcel, int i2) {
-        int q = bjr.q(parcel, 20293);
-        bjr.c(parcel, 1, this.f);
-        bjr.a(parcel, 2, this.g);
-        bjr.a(parcel, 3, this.h, i2);
-        bjr.c(parcel, 1000, this.i);
-        bjr.r(parcel, q);
+    public final void writeToParcel(android.os.Parcel parcel, int i2) {
+        int q = defpackage.bjr.q(parcel, 20293);
+        defpackage.bjr.c(parcel, 1, this.f);
+        defpackage.bjr.a(parcel, 2, this.g);
+        defpackage.bjr.a(parcel, 3, (android.os.Parcelable) this.h, i2);
+        defpackage.bjr.c(parcel, 1000, this.i);
+        defpackage.bjr.r(parcel, q);
     }
 
-    @Override // defpackage.ayw
-    public final Status b() {
+    public final com.google.android.gms.common.api.Status b() {
         return this;
     }
 
     static {
-        new Status(17);
-        new Status(18);
+        new com.google.android.gms.common.api.Status(17);
+        new com.google.android.gms.common.api.Status(18);
     }
 }

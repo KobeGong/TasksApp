@@ -1,14 +1,17 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: be  reason: default package */
+/* renamed from: be reason: default package */
 /* compiled from: PG */
-public enum be {
+enum be {
     n,
     i,
     f,
     t,
     v,
     w,
-    j
+    j;
+
+    public static defpackage.be a(java.lang.String str) {
+        return (defpackage.be) java.lang.Enum.valueOf(defpackage.be.class, str);
+    }
 }

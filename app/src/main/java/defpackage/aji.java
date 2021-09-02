@@ -1,9 +1,8 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: aji  reason: default package */
+/* renamed from: aji reason: default package */
 /* compiled from: PG */
-public final class aji extends ajh {
+final class aji extends defpackage.ajh {
     private final boolean a;
     private final boolean b;
 
@@ -12,30 +11,31 @@ public final class aji extends ajh {
         this.b = z2;
     }
 
-    @Override // defpackage.ajh
     public final boolean a() {
         return this.a;
     }
 
-    @Override // defpackage.ajh
     public final boolean b() {
         return this.b;
     }
 
-    public final String toString() {
+    public final java.lang.String toString() {
         boolean z = this.a;
-        return new StringBuilder(44).append("AccountSetupResult{success=").append(z).append(", new=").append(this.b).append("}").toString();
+        return "AccountSetupResult{success=" + z + ", new=" + this.b + "}";
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof ajh)) {
+        if (!(obj instanceof defpackage.ajh)) {
             return false;
         }
-        ajh ajh = (ajh) obj;
-        return this.a == ajh.a() && this.b == ajh.b();
+        defpackage.ajh ajh = (defpackage.ajh) obj;
+        if (this.a == ajh.a() && this.b == ajh.b()) {
+            return true;
+        }
+        return false;
     }
 
     public final int hashCode() {

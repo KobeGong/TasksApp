@@ -1,38 +1,29 @@
 package defpackage;
 
-import android.view.ActionProvider;
-import android.view.SubMenu;
-import android.view.View;
-
-/* access modifiers changed from: package-private */
-/* renamed from: zk  reason: default package */
+/* renamed from: zk reason: default package */
 /* compiled from: PG */
-public class zk extends rs {
-    public final ActionProvider b;
-    private final /* synthetic */ zj c;
+class zk extends defpackage.rs {
+    public final android.view.ActionProvider b;
+    private final /* synthetic */ defpackage.zj c;
 
-    public zk(zj zjVar, ActionProvider actionProvider) {
+    public zk(defpackage.zj zjVar, android.view.ActionProvider actionProvider) {
         this.c = zjVar;
         this.b = actionProvider;
     }
 
-    @Override // defpackage.rs
-    public final View a() {
+    public final android.view.View a() {
         return this.b.onCreateActionView();
     }
 
-    @Override // defpackage.rs
     public final boolean d() {
         return this.b.onPerformDefaultAction();
     }
 
-    @Override // defpackage.rs
     public final boolean e() {
         return this.b.hasSubMenu();
     }
 
-    @Override // defpackage.rs
-    public final void a(SubMenu subMenu) {
+    public final void a(android.view.SubMenu subMenu) {
         this.b.onPrepareSubMenu(this.c.a(subMenu));
     }
 }

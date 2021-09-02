@@ -1,15 +1,15 @@
 package defpackage;
 
-/* renamed from: dtl  reason: default package */
+/* renamed from: dtl reason: default package */
 /* compiled from: PG */
 public interface dtl {
     void a();
 
-    void a(doa doa);
+    void a(defpackage.doa doa);
 
-    void a(dvk dvk);
+    void a(defpackage.dvk dvk);
 
-    void a(dxv dxv);
+    void a(defpackage.dxv dxv);
 
     void b(int i);
 

@@ -1,11 +1,8 @@
 package defpackage;
 
-import java.util.Arrays;
-
-/* access modifiers changed from: package-private */
-/* renamed from: dmg  reason: default package */
+/* renamed from: dmg reason: default package */
 /* compiled from: PG */
-public final class dmg {
+final class dmg {
     public final int a;
     public final byte[] b;
 
@@ -14,18 +11,21 @@ public final class dmg {
         this.b = bArr;
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof dmg)) {
+        if (!(obj instanceof defpackage.dmg)) {
             return false;
         }
-        dmg dmg = (dmg) obj;
-        return this.a == dmg.a && Arrays.equals(this.b, dmg.b);
+        defpackage.dmg dmg = (defpackage.dmg) obj;
+        if (this.a != dmg.a || !java.util.Arrays.equals(this.b, dmg.b)) {
+            return false;
+        }
+        return true;
     }
 
     public final int hashCode() {
-        return ((this.a + 527) * 31) + Arrays.hashCode(this.b);
+        return ((this.a + 527) * 31) + java.util.Arrays.hashCode(this.b);
     }
 }

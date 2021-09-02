@@ -1,22 +1,22 @@
 package defpackage;
 
-/* renamed from: dix  reason: default package */
+/* renamed from: dix reason: default package */
 /* compiled from: PG */
 public class dix {
-    public dha a;
-    public volatile djo b;
-    public volatile dha c;
+    public defpackage.dha a;
+    public volatile defpackage.djo b;
+    public volatile defpackage.dha c;
 
-    public boolean equals(Object obj) {
+    public boolean equals(java.lang.Object obj) {
         if (this == obj) {
             return true;
         }
-        if (!(obj instanceof dix)) {
+        if (!(obj instanceof defpackage.dix)) {
             return false;
         }
-        dix dix = (dix) obj;
-        djo djo = this.b;
-        djo djo2 = dix.b;
+        defpackage.dix dix = (defpackage.dix) obj;
+        defpackage.djo djo = this.b;
+        defpackage.djo djo2 = dix.b;
         if (djo == null && djo2 == null) {
             return b().equals(dix.b());
         }
@@ -33,16 +33,16 @@ public class dix {
         return 1;
     }
 
-    private final djo a(djo djo) {
+    private final defpackage.djo a(defpackage.djo djo) {
         if (this.b == null) {
             synchronized (this) {
                 if (this.b == null) {
                     try {
                         this.b = djo;
-                        this.c = dha.a;
-                    } catch (dir e) {
+                        this.c = defpackage.dha.a;
+                    } catch (defpackage.dir e) {
                         this.b = djo;
-                        this.c = dha.a;
+                        this.c = defpackage.dha.a;
                     }
                 }
             }
@@ -50,24 +50,26 @@ public class dix {
         return this.b;
     }
 
-    public final dha b() {
+    public final defpackage.dha b() {
         if (this.c != null) {
             return this.c;
         }
         synchronized (this) {
             if (this.c != null) {
-                return this.c;
+                defpackage.dha dha = this.c;
+                return dha;
             }
             if (this.b == null) {
-                this.c = dha.a;
+                this.c = defpackage.dha.a;
             } else {
                 this.c = this.b.a();
             }
-            return this.c;
+            defpackage.dha dha2 = this.c;
+            return dha2;
         }
     }
 
     static {
-        dhw.a();
+        defpackage.dhw.a();
     }
 }

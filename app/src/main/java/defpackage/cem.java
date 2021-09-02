@@ -1,14 +1,11 @@
 package defpackage;
 
-import android.graphics.Bitmap;
+/* renamed from: cem reason: default package */
+final /* synthetic */ class cem implements java.lang.Runnable {
+    private final defpackage.cel a;
+    private final android.graphics.Bitmap b;
 
-/* access modifiers changed from: package-private */
-/* renamed from: cem  reason: default package */
-public final /* synthetic */ class cem implements Runnable {
-    private final cel a;
-    private final Bitmap b;
-
-    cem(cel cel, Bitmap bitmap) {
+    cem(defpackage.cel cel, android.graphics.Bitmap bitmap) {
         this.a = cel;
         this.b = bitmap;
     }

@@ -1,52 +1,50 @@
 package defpackage;
 
-import android.text.TextUtils;
-
-/* renamed from: ccd  reason: default package */
+/* renamed from: ccd reason: default package */
 /* compiled from: PG */
 public final class ccd {
-    public cbx a;
-    public buc b;
-    public cac c;
-    public bup d;
-    public bqg e;
-    public byd f;
-    public bzw g;
+    public defpackage.cbx a;
+    public defpackage.buc b;
+    public defpackage.cac c;
+    public defpackage.bup d;
+    public defpackage.bqg e;
+    public defpackage.byd f;
+    public defpackage.bzw g;
 
     ccd() {
     }
 
-    public final btl a(String str) {
+    public final defpackage.btl a(java.lang.String str) {
         boolean contains;
         boolean z;
-        cld.a(!TextUtils.isEmpty(str), "Account name must not be empty.");
+        defpackage.cld.a(!android.text.TextUtils.isEmpty(str), (java.lang.Object) "Account name must not be empty.");
         if (!this.f.a()) {
             contains = true;
         } else {
             contains = this.f.b().contains(str);
         }
         if (!contains) {
-            bty.e("RegistrationHandler", "Registration failed. Account is not available on device, %s.", str);
-            return btl.a(new Exception("Account intended to register is not available on device."));
+            defpackage.bty.e("RegistrationHandler", "Registration failed. Account is not available on device, %s.", str);
+            return defpackage.btl.a(new java.lang.Exception("Account intended to register is not available on device."));
         }
         try {
-            bul b2 = b(str);
+            defpackage.bul b2 = b(str);
             try {
                 int hashCode = this.g.a().hashCode();
-                if (b2.f() == btk.REGISTERED || b2.f() == btk.PENDING_REGISTRATION) {
+                if (b2.f() == defpackage.btk.REGISTERED || b2.f() == defpackage.btk.PENDING_REGISTRATION) {
                     int h = b2.h();
                     if (h == 0 || h != hashCode) {
-                        bty.a("RegistrationHandler", "New request hash [%d] differs with old request hash [%d].", Integer.valueOf(h), Integer.valueOf(hashCode));
+                        defpackage.bty.a("RegistrationHandler", "New request hash [%d] differs with old request hash [%d].", java.lang.Integer.valueOf(h), java.lang.Integer.valueOf(hashCode));
                         z = true;
                     } else {
-                        long currentTimeMillis = System.currentTimeMillis();
+                        long currentTimeMillis = java.lang.System.currentTimeMillis();
                         long longValue = b2.g().longValue();
-                        long max = Math.max(0L, this.b.h().longValue());
+                        long max = java.lang.Math.max(0, this.b.h().longValue());
                         if (currentTimeMillis - longValue > max) {
-                            bty.a("RegistrationHandler", "Last registration was more than [%d] ms ago, considering this as new.", Long.valueOf(max));
+                            defpackage.bty.a("RegistrationHandler", "Last registration was more than [%d] ms ago, considering this as new.", java.lang.Long.valueOf(max));
                             z = true;
                         } else {
-                            bty.a("RegistrationHandler", "Not treating this register request as new. The last registration was at [%d], which is less than [%d] ms ago (current time [%d]), also the request hash [%d] doesn't differ from the old one.", Long.valueOf(longValue), Long.valueOf(max), Long.valueOf(currentTimeMillis), Integer.valueOf(hashCode));
+                            defpackage.bty.a("RegistrationHandler", "Not treating this register request as new. The last registration was at [%d], which is less than [%d] ms ago (current time [%d]), also the request hash [%d] doesn't differ from the old one.", java.lang.Long.valueOf(longValue), java.lang.Long.valueOf(max), java.lang.Long.valueOf(currentTimeMillis), java.lang.Integer.valueOf(hashCode));
                             z = false;
                         }
                     }
@@ -54,52 +52,52 @@ public final class ccd {
                     z = true;
                 }
                 if (!z) {
-                    bty.a("RegistrationHandler", "Skip registration. Target already stored for account: %s.", str);
-                    return btl.a;
+                    defpackage.bty.a("RegistrationHandler", "Skip registration. Target already stored for account: %s.", str);
+                    return defpackage.btl.a;
                 }
-                cbx cbx = this.a;
+                defpackage.cbx cbx = this.a;
                 synchronized (cbx.a) {
                     try {
                         cbx.a.b(cbx.a.a(str).i().a(hashCode).a());
-                    } catch (buo e2) {
+                    } catch (defpackage.buo e2) {
                     }
                 }
-                this.a.a(str, btk.PENDING_REGISTRATION);
-                bty.a("RegistrationHandler", "Registration scheduled for account: %s.", str);
+                this.a.a(str, defpackage.btk.PENDING_REGISTRATION);
+                defpackage.bty.a("RegistrationHandler", "Registration scheduled for account: %s.", str);
                 return this.c.a(b2, "StoreTargetCallback");
-            } catch (byl e3) {
+            } catch (defpackage.byl e3) {
             }
-        } catch (bun e4) {
-            bty.e("RegistrationHandler", "Registration failed. Error inserting account, %s.", str);
-            return btl.b(e4);
+        } catch (defpackage.bun e4) {
+            defpackage.bty.e("RegistrationHandler", "Registration failed. Error inserting account, %s.", str);
+            return defpackage.btl.b(e4);
         }
     }
 
-    private final bul b(String str) {
-        bul a2;
+    private final defpackage.bul b(java.lang.String str) {
+        defpackage.bul a2;
         try {
             a2 = this.d.a(str);
-        } catch (buo e2) {
-            bul a3 = bul.j().a(str).a();
+        } catch (defpackage.buo e2) {
+            defpackage.bul a3 = defpackage.bul.j().a(str).a();
             long a4 = this.d.a(a3);
-            bum i = a3.i();
-            i.a = Long.valueOf(a4);
+            defpackage.bum i = a3.i();
+            i.a = java.lang.Long.valueOf(a4);
             a2 = i.a();
         }
-        if (TextUtils.isEmpty(a2.c())) {
+        if (android.text.TextUtils.isEmpty(a2.c())) {
             try {
-                cbx cbx = this.a;
-                String a5 = this.e.a(str);
+                defpackage.cbx cbx = this.a;
+                java.lang.String a5 = this.e.a(str);
                 synchronized (cbx.a) {
                     try {
-                        bum i2 = cbx.a.a(str).i();
+                        defpackage.bum i2 = cbx.a.a(str).i();
                         i2.b = a5;
                         cbx.a.b(i2.a());
-                    } catch (buo e3) {
+                    } catch (defpackage.buo e3) {
                     }
                 }
-            } catch (Exception e4) {
-                bty.b("RegistrationHandler", e4, "Failed to get the obfuscated account ID for: %s", str);
+            } catch (java.lang.Exception e4) {
+                defpackage.bty.b("RegistrationHandler", e4, "Failed to get the obfuscated account ID for: %s", str);
             }
         }
         return a2;

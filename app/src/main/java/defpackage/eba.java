@@ -1,36 +1,34 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: eba  reason: default package */
+/* renamed from: eba reason: default package */
 /* compiled from: PG */
-public final class eba extends ebl {
-    private final String a;
+final class eba extends defpackage.ebl {
+    private final java.lang.String a;
 
-    eba(String str) {
+    eba(java.lang.String str) {
         if (str == null) {
-            throw new NullPointerException("Null asString");
+            throw new java.lang.NullPointerException("Null asString");
         }
         this.a = str;
     }
 
-    @Override // defpackage.ebl
-    public final String a() {
+    public final java.lang.String a() {
         return this.a;
     }
 
-    public final String toString() {
-        String str = this.a;
-        return new StringBuilder(String.valueOf(str).length() + 19).append("TagValue{asString=").append(str).append("}").toString();
+    public final java.lang.String toString() {
+        java.lang.String str = this.a;
+        return new java.lang.StringBuilder(java.lang.String.valueOf(str).length() + 19).append("TagValue{asString=").append(str).append("}").toString();
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         if (obj == this) {
             return true;
         }
-        if (obj instanceof ebl) {
-            return this.a.equals(((ebl) obj).a());
+        if (!(obj instanceof defpackage.ebl)) {
+            return false;
         }
-        return false;
+        return this.a.equals(((defpackage.ebl) obj).a());
     }
 
     public final int hashCode() {

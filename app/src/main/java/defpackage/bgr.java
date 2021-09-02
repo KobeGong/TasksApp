@@ -1,86 +1,75 @@
 package defpackage;
 
-import android.app.ApplicationErrorReport;
-import android.graphics.Bitmap;
-import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
-import com.google.android.gms.common.data.BitmapTeleporter;
-import java.util.ArrayList;
-
-/* renamed from: bgr  reason: default package */
+/* renamed from: bgr reason: default package */
 /* compiled from: PG */
-public final class bgr implements Parcelable.Creator {
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object[] newArray(int i) {
-        return new bgj[i];
+public final class bgr implements android.os.Parcelable.Creator {
+    public final /* synthetic */ java.lang.Object[] newArray(int i) {
+        return new defpackage.bgj[i];
     }
 
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object createFromParcel(Parcel parcel) {
-        int a = bjr.a(parcel);
-        String str = null;
-        Bundle bundle = null;
-        String str2 = null;
-        ApplicationErrorReport applicationErrorReport = null;
-        String str3 = null;
-        BitmapTeleporter bitmapTeleporter = null;
-        String str4 = null;
-        ArrayList arrayList = null;
+    public final /* synthetic */ java.lang.Object createFromParcel(android.os.Parcel parcel) {
+        int a = defpackage.bjr.a(parcel);
+        java.lang.String str = null;
+        android.os.Bundle bundle = null;
+        java.lang.String str2 = null;
+        android.app.ApplicationErrorReport applicationErrorReport = null;
+        java.lang.String str3 = null;
+        com.google.android.gms.common.data.BitmapTeleporter bitmapTeleporter = null;
+        java.lang.String str4 = null;
+        java.util.ArrayList arrayList = null;
         boolean z = false;
-        bgn bgn = null;
-        bgm bgm = null;
+        defpackage.bgn bgn = null;
+        defpackage.bgm bgm = null;
         boolean z2 = false;
-        Bitmap bitmap = null;
+        android.graphics.Bitmap bitmap = null;
         while (parcel.dataPosition() < a) {
             int readInt = parcel.readInt();
             switch (65535 & readInt) {
                 case 2:
-                    str = bjr.h(parcel, readInt);
+                    str = defpackage.bjr.h(parcel, readInt);
                     break;
                 case 3:
-                    bundle = bjr.j(parcel, readInt);
-                    break;
-                case 4:
-                default:
-                    bjr.b(parcel, readInt);
+                    bundle = defpackage.bjr.j(parcel, readInt);
                     break;
                 case 5:
-                    str2 = bjr.h(parcel, readInt);
+                    str2 = defpackage.bjr.h(parcel, readInt);
                     break;
                 case 6:
-                    applicationErrorReport = (ApplicationErrorReport) bjr.a(parcel, readInt, ApplicationErrorReport.CREATOR);
+                    applicationErrorReport = (android.app.ApplicationErrorReport) defpackage.bjr.a(parcel, readInt, android.app.ApplicationErrorReport.CREATOR);
                     break;
                 case 7:
-                    str3 = bjr.h(parcel, readInt);
+                    str3 = defpackage.bjr.h(parcel, readInt);
                     break;
                 case 8:
-                    bitmapTeleporter = (BitmapTeleporter) bjr.a(parcel, readInt, BitmapTeleporter.CREATOR);
+                    bitmapTeleporter = (com.google.android.gms.common.data.BitmapTeleporter) defpackage.bjr.a(parcel, readInt, com.google.android.gms.common.data.BitmapTeleporter.CREATOR);
                     break;
                 case 9:
-                    str4 = bjr.h(parcel, readInt);
+                    str4 = defpackage.bjr.h(parcel, readInt);
                     break;
                 case 10:
-                    arrayList = bjr.c(parcel, readInt, bgl.CREATOR);
+                    arrayList = defpackage.bjr.c(parcel, readInt, defpackage.bgl.CREATOR);
                     break;
                 case 11:
-                    z = bjr.c(parcel, readInt);
+                    z = defpackage.bjr.c(parcel, readInt);
                     break;
                 case 12:
-                    bgn = (bgn) bjr.a(parcel, readInt, bgn.CREATOR);
+                    bgn = (defpackage.bgn) defpackage.bjr.a(parcel, readInt, defpackage.bgn.CREATOR);
                     break;
                 case 13:
-                    bgm = (bgm) bjr.a(parcel, readInt, bgm.CREATOR);
+                    bgm = (defpackage.bgm) defpackage.bjr.a(parcel, readInt, defpackage.bgm.CREATOR);
                     break;
                 case 14:
-                    z2 = bjr.c(parcel, readInt);
+                    z2 = defpackage.bjr.c(parcel, readInt);
                     break;
                 case 15:
-                    bitmap = (Bitmap) bjr.a(parcel, readInt, Bitmap.CREATOR);
+                    bitmap = (android.graphics.Bitmap) defpackage.bjr.a(parcel, readInt, android.graphics.Bitmap.CREATOR);
+                    break;
+                default:
+                    defpackage.bjr.b(parcel, readInt);
                     break;
             }
         }
-        bjr.p(parcel, a);
-        return new bgj(str, bundle, str2, applicationErrorReport, str3, bitmapTeleporter, str4, arrayList, z, bgn, bgm, z2, bitmap);
+        defpackage.bjr.p(parcel, a);
+        return new defpackage.bgj(str, bundle, str2, applicationErrorReport, str3, bitmapTeleporter, str4, arrayList, z, bgn, bgm, z2, bitmap);
     }
 }

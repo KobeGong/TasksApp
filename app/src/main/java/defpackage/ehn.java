@@ -1,12 +1,9 @@
 package defpackage;
 
-import java.io.FileDescriptor;
-import java.net.Socket;
-
-/* renamed from: ehn  reason: default package */
+/* renamed from: ehn reason: default package */
 /* compiled from: PG */
-public final class ehn extends Socket {
-    public ehn(FileDescriptor fileDescriptor) {
-        super(new eho(fileDescriptor));
+public final class ehn extends java.net.Socket {
+    public ehn(java.io.FileDescriptor fileDescriptor) {
+        super(new defpackage.eho(fileDescriptor));
     }
 }

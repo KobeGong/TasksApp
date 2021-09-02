@@ -1,46 +1,34 @@
 package defpackage;
 
-import android.content.Context;
-import android.support.v7.widget.ActionBarContextView;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
-import java.lang.ref.WeakReference;
-
-/* renamed from: xs  reason: default package */
+/* renamed from: xs reason: default package */
 /* compiled from: PG */
-public final class xs extends yc implements zf {
-    private final Context c;
-    private final MenuBuilder d;
-    private yd e;
-    private WeakReference f;
-    private final /* synthetic */ xp g;
+public final class xs extends defpackage.yc implements defpackage.zf {
+    private final android.content.Context c;
+    private final defpackage.ze d;
+    private defpackage.yd e;
+    private java.lang.ref.WeakReference f;
+    private final /* synthetic */ defpackage.xp g;
 
-    public xs(xp xpVar, Context context, yd ydVar) {
+    public xs(defpackage.xp xpVar, android.content.Context context, defpackage.yd ydVar) {
         this.g = xpVar;
         this.c = context;
         this.e = ydVar;
-        MenuBuilder zeVar = new MenuBuilder(context);
-        zeVar.e = 1;
+        defpackage.ze zeVar = new defpackage.ze(context);
         this.d = zeVar;
-        this.d.a(this);
+        this.d.a((defpackage.zf) this);
     }
 
-    @Override // defpackage.yc
-    public final MenuInflater a() {
-        return new yj(this.c);
+    public final android.view.MenuInflater a() {
+        return new defpackage.yj(this.c);
     }
 
-    @Override // defpackage.yc
-    public final Menu b() {
+    public final android.view.Menu b() {
         return this.d;
     }
 
-    @Override // defpackage.yc
     public final void c() {
         if (this.g.g == this) {
-            if (!xp.a(this.g.k, this.g.l, false)) {
+            if (!defpackage.xp.a(this.g.k, this.g.l, false)) {
                 this.g.h = this;
                 this.g.i = this.e;
             } else {
@@ -48,7 +36,7 @@ public final class xs extends yc implements zf {
             }
             this.e = null;
             this.g.f(false);
-            ActionBarContextView actionBarContextView = this.g.e;
+            android.support.v7.widget.ActionBarContextView actionBarContextView = this.g.e;
             if (actionBarContextView.h == null) {
                 actionBarContextView.b();
             }
@@ -58,7 +46,6 @@ public final class xs extends yc implements zf {
         }
     }
 
-    @Override // defpackage.yc
     public final void d() {
         if (this.g.g == this) {
             this.d.e();
@@ -73,77 +60,65 @@ public final class xs extends yc implements zf {
     public final boolean e() {
         this.d.e();
         try {
-            return this.e.a(this, this.d);
+            return this.e.a((defpackage.yc) this, (android.view.Menu) this.d);
         } finally {
             this.d.f();
         }
     }
 
-    @Override // defpackage.yc
-    public final void a(View view) {
+    public final void a(android.view.View view) {
         this.g.e.a(view);
-        this.f = new WeakReference(view);
+        this.f = new java.lang.ref.WeakReference(view);
     }
 
-    @Override // defpackage.yc
-    public final void a(CharSequence charSequence) {
+    public final void a(java.lang.CharSequence charSequence) {
         this.g.e.b(charSequence);
     }
 
-    @Override // defpackage.yc
-    public final void b(CharSequence charSequence) {
+    public final void b(java.lang.CharSequence charSequence) {
         this.g.e.a(charSequence);
     }
 
-    @Override // defpackage.yc
     public final void a(int i) {
-        b(this.g.a.getResources().getString(i));
+        b((java.lang.CharSequence) this.g.a.getResources().getString(i));
     }
 
-    @Override // defpackage.yc
     public final void b(int i) {
-        a(this.g.a.getResources().getString(i));
+        a((java.lang.CharSequence) this.g.a.getResources().getString(i));
     }
 
-    @Override // defpackage.yc
-    public final CharSequence f() {
+    public final java.lang.CharSequence f() {
         return this.g.e.f;
     }
 
-    @Override // defpackage.yc
-    public final CharSequence g() {
+    public final java.lang.CharSequence g() {
         return this.g.e.g;
     }
 
-    @Override // defpackage.yc
     public final void a(boolean z) {
         super.a(z);
         this.g.e.a(z);
     }
 
-    @Override // defpackage.yc
     public final boolean h() {
         return this.g.e.i;
     }
 
-    @Override // defpackage.yc
-    public final View i() {
+    public final android.view.View i() {
         if (this.f != null) {
-            return (View) this.f.get();
+            return (android.view.View) this.f.get();
         }
         return null;
     }
 
-    @Override // defpackage.zf
-    public final boolean a(MenuBuilder zeVar, MenuItem menuItem) {
+    public final boolean a(defpackage.ze zeVar, android.view.MenuItem menuItem) {
         if (this.e != null) {
-            return this.e.a(this, menuItem);
+            return this.e.a((defpackage.yc) this, menuItem);
         }
         return false;
     }
 
-    @Override // defpackage.zf
-    public final void a(MenuBuilder zeVar) {
+    public final void a(defpackage.ze zeVar) {
         if (this.e != null) {
             d();
             this.g.e.a();

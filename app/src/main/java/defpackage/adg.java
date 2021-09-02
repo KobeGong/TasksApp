@@ -1,12 +1,11 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: adg  reason: default package */
+/* renamed from: adg reason: default package */
 /* compiled from: PG */
-public final class adg implements Runnable {
-    public final /* synthetic */ ade a;
+final class adg implements java.lang.Runnable {
+    public final /* synthetic */ defpackage.ade a;
 
-    adg(ade ade) {
+    adg(defpackage.ade ade) {
         this.a = ade;
     }
 

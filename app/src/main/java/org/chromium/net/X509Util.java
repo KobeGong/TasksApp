@@ -1,42 +1,16 @@
 package org.chromium.net;
 
-import android.content.IntentFilter;
-import android.os.Build;
-import android.util.Log;
-import android.util.Pair;
-import java.io.ByteArrayInputStream;
-import java.io.File;
-import java.io.IOException;
-import java.security.KeyStore;
-import java.security.KeyStoreException;
-import java.security.MessageDigest;
-import java.security.cert.Certificate;
-import java.security.cert.CertificateException;
-import java.security.cert.CertificateExpiredException;
-import java.security.cert.CertificateFactory;
-import java.security.cert.CertificateNotYetValidException;
-import java.security.cert.X509Certificate;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import javax.net.ssl.TrustManager;
-import javax.net.ssl.TrustManagerFactory;
-import javax.net.ssl.X509TrustManager;
-import org.chromium.base.metrics.RecordHistogram;
-
 /* compiled from: PG */
 public class X509Util {
-    public static KeyStore a;
-    public static final Object b = new Object();
-    private static CertificateFactory c;
-    private static ejk d;
-    private static eji e;
-    private static ejk f;
-    private static KeyStore g;
-    private static File h;
-    private static Set i;
+    public static java.security.KeyStore a;
+    public static final java.lang.Object b = new java.lang.Object();
+    private static java.security.cert.CertificateFactory c;
+    private static defpackage.ejk d;
+    private static defpackage.eji e;
+    private static defpackage.ejk f;
+    private static java.security.KeyStore g;
+    private static java.io.File h;
+    private static java.util.Set i;
     private static boolean j;
     private static final char[] k = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
 
@@ -50,70 +24,75 @@ public class X509Util {
 
     private static void d() {
         if (c == null) {
-            c = CertificateFactory.getInstance("X.509");
+            c = java.security.cert.CertificateFactory.getInstance("X.509");
         }
         if (d == null) {
-            d = a((KeyStore) null);
+            d = a((java.security.KeyStore) null);
         }
         if (!j) {
             try {
-                g = KeyStore.getInstance("AndroidCAStore");
+                g = java.security.KeyStore.getInstance("AndroidCAStore");
                 try {
                     g.load(null);
-                } catch (IOException e2) {
+                } catch (java.io.IOException e2) {
                 }
-                h = new File(System.getenv("ANDROID_ROOT") + "/etc/security/cacerts");
-            } catch (KeyStoreException e3) {
+                h = new java.io.File(java.lang.System.getenv("ANDROID_ROOT") + "/etc/security/cacerts");
+            } catch (java.security.KeyStoreException e3) {
             }
-            if (Build.VERSION.SDK_INT >= 17) {
-                RecordHistogram.a("Net.FoundSystemTrustRootsAndroid", g != null);
+            if (android.os.Build.VERSION.SDK_INT >= 17) {
+                org.chromium.base.metrics.RecordHistogram.a("Net.FoundSystemTrustRootsAndroid", g != null);
             }
             j = true;
         }
         if (i == null) {
-            i = new HashSet();
+            i = new java.util.HashSet();
         }
         if (a == null) {
-            a = KeyStore.getInstance(KeyStore.getDefaultType());
+            a = java.security.KeyStore.getInstance(java.security.KeyStore.getDefaultType());
             try {
                 a.load(null);
-            } catch (IOException e4) {
+            } catch (java.io.IOException e4) {
             }
         }
         if (f == null) {
             f = a(a);
         }
         if (e == null) {
-            e = new eji();
-            IntentFilter intentFilter = new IntentFilter();
-            if (Build.VERSION.SDK_INT >= 26) {
+            e = new defpackage.eji();
+            android.content.IntentFilter intentFilter = new android.content.IntentFilter();
+            if (android.os.Build.VERSION.SDK_INT >= 26) {
                 intentFilter.addAction("android.security.action.KEYCHAIN_CHANGED");
                 intentFilter.addAction("android.security.action.KEY_ACCESS_CHANGED");
                 intentFilter.addAction("android.security.action.TRUST_STORE_CHANGED");
             } else {
                 intentFilter.addAction("android.security.STORAGE_CHANGED");
             }
-            ehw.a.registerReceiver(e, intentFilter);
+            defpackage.ehw.a.registerReceiver(e, intentFilter);
         }
     }
 
-    private static ejk a(KeyStore keyStore) {
-        TrustManagerFactory instance = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
+    private static defpackage.ejk a(java.security.KeyStore keyStore) {
+        javax.net.ssl.TrustManagerFactory instance = javax.net.ssl.TrustManagerFactory.getInstance(javax.net.ssl.TrustManagerFactory.getDefaultAlgorithm());
         instance.init(keyStore);
-        TrustManager[] trustManagers = instance.getTrustManagers();
-        for (TrustManager trustManager : trustManagers) {
-            if (trustManager instanceof X509TrustManager) {
+        javax.net.ssl.TrustManager[] trustManagers = instance.getTrustManagers();
+        int length = trustManagers.length;
+        int i2 = 0;
+        while (i2 < length) {
+            javax.net.ssl.TrustManager trustManager = trustManagers[i2];
+            if (trustManager instanceof javax.net.ssl.X509TrustManager) {
                 try {
-                    if (Build.VERSION.SDK_INT >= 17) {
-                        return new ejl((X509TrustManager) trustManager);
+                    if (android.os.Build.VERSION.SDK_INT >= 17) {
+                        return new defpackage.ejl((javax.net.ssl.X509TrustManager) trustManager);
                     }
-                    return new ejj((X509TrustManager) trustManager);
-                } catch (IllegalArgumentException e2) {
-                    Log.e("X509Util", "Error creating trust manager (" + trustManager.getClass().getName() + "): " + e2);
+                    return new defpackage.ejj((javax.net.ssl.X509TrustManager) trustManager);
+                } catch (java.lang.IllegalArgumentException e2) {
+                    android.util.Log.e("X509Util", "Error creating trust manager (" + trustManager.getClass().getName() + "): " + e2);
                 }
+            } else {
+                i2++;
             }
         }
-        Log.e("X509Util", "Could not find suitable trust manager");
+        android.util.Log.e("X509Util", "Could not find suitable trust manager");
         return null;
     }
 
@@ -130,121 +109,98 @@ public class X509Util {
         nativeNotifyKeyChainChanged();
     }
 
-    public static X509Certificate a(byte[] bArr) {
+    public static java.security.cert.X509Certificate a(byte[] bArr) {
         a();
-        return (X509Certificate) c.generateCertificate(new ByteArrayInputStream(bArr));
+        return (java.security.cert.X509Certificate) c.generateCertificate(new java.io.ByteArrayInputStream(bArr));
     }
 
-    /* JADX WARNING: Removed duplicated region for block: B:10:0x0017  */
-    /* Code decompiled incorrectly, please refer to instructions dump. */
-    private static boolean a(java.security.cert.X509Certificate r5) {
-        /*
-            r1 = 1
-            r2 = 0
-            java.util.List r0 = r5.getExtendedKeyUsage()     // Catch:{ NullPointerException -> 0x000a }
-            if (r0 != 0) goto L_0x000d
-            r0 = r1
-        L_0x0009:
-            return r0
-        L_0x000a:
-            r0 = move-exception
-            r0 = r2
-            goto L_0x0009
-        L_0x000d:
-            java.util.Iterator r3 = r0.iterator()
-        L_0x0011:
-            boolean r0 = r3.hasNext()
-            if (r0 == 0) goto L_0x003f
-            java.lang.Object r0 = r3.next()
-            java.lang.String r0 = (java.lang.String) r0
-            java.lang.String r4 = "1.3.6.1.5.5.7.3.1"
-            boolean r4 = r0.equals(r4)
-            if (r4 != 0) goto L_0x003d
-            java.lang.String r4 = "2.5.29.37.0"
-            boolean r4 = r0.equals(r4)
-            if (r4 != 0) goto L_0x003d
-            java.lang.String r4 = "2.16.840.1.113730.4.1"
-            boolean r4 = r0.equals(r4)
-            if (r4 != 0) goto L_0x003d
-            java.lang.String r4 = "1.3.6.1.4.1.311.10.3.3"
-            boolean r0 = r0.equals(r4)
-            if (r0 == 0) goto L_0x0011
-        L_0x003d:
-            r0 = r1
-            goto L_0x0009
-        L_0x003f:
-            r0 = r2
-            goto L_0x0009
-        */
-        throw new UnsupportedOperationException("Method not decompiled: org.chromium.net.X509Util.a(java.security.cert.X509Certificate):boolean");
+    private static boolean a(java.security.cert.X509Certificate x509Certificate) {
+        try {
+            java.util.List<java.lang.String> extendedKeyUsage = x509Certificate.getExtendedKeyUsage();
+            if (extendedKeyUsage == null) {
+                return true;
+            }
+            for (java.lang.String str : extendedKeyUsage) {
+                if (str.equals("1.3.6.1.5.5.7.3.1") || str.equals("2.5.29.37.0") || str.equals("2.16.840.1.113730.4.1")) {
+                    return true;
+                }
+                if (str.equals("1.3.6.1.4.1.311.10.3.3")) {
+                    return true;
+                }
+            }
+            return false;
+        } catch (java.lang.NullPointerException e2) {
+            return false;
+        }
     }
 
-    public static AndroidCertVerifyResult a(byte[][] bArr, String str, String str2) {
-        List a2;
+    public static org.chromium.net.AndroidCertVerifyResult a(byte[][] bArr, java.lang.String str, java.lang.String str2) {
+        java.util.List a2;
         boolean z = true;
         if (bArr == null || bArr.length == 0 || bArr[0] == null) {
-            throw new IllegalArgumentException("Expected non-null and non-empty certificate chain passed as |certChain|. |certChain|=" + Arrays.deepToString(bArr));
+            throw new java.lang.IllegalArgumentException("Expected non-null and non-empty certificate chain passed as |certChain|. |certChain|=" + java.util.Arrays.deepToString(bArr));
         }
         try {
             a();
-            ArrayList arrayList = new ArrayList();
+            java.util.ArrayList arrayList = new java.util.ArrayList();
             try {
                 arrayList.add(a(bArr[0]));
                 for (int i2 = 1; i2 < bArr.length; i2++) {
                     try {
                         arrayList.add(a(bArr[i2]));
-                    } catch (CertificateException e2) {
-                        Log.w("X509Util", "intermediate " + i2 + " failed parsing");
+                    } catch (java.security.cert.CertificateException e2) {
+                        android.util.Log.w("X509Util", "intermediate " + i2 + " failed parsing");
                     }
                 }
-                X509Certificate[] x509CertificateArr = (X509Certificate[]) arrayList.toArray(new X509Certificate[arrayList.size()]);
+                java.security.cert.X509Certificate[] x509CertificateArr = (java.security.cert.X509Certificate[]) arrayList.toArray(new java.security.cert.X509Certificate[arrayList.size()]);
                 try {
                     x509CertificateArr[0].checkValidity();
                     if (!a(x509CertificateArr[0])) {
-                        return new AndroidCertVerifyResult(-6);
+                        return new org.chromium.net.AndroidCertVerifyResult(-6);
                     }
                     synchronized (b) {
                         if (d == null) {
-                            return new AndroidCertVerifyResult(-1);
+                            org.chromium.net.AndroidCertVerifyResult androidCertVerifyResult = new org.chromium.net.AndroidCertVerifyResult(-1);
+                            return androidCertVerifyResult;
                         }
                         try {
                             a2 = d.a(x509CertificateArr, str, str2);
-                        } catch (CertificateException e3) {
+                        } catch (java.security.cert.CertificateException e3) {
                             try {
                                 a2 = f.a(x509CertificateArr, str, str2);
-                            } catch (CertificateException e4) {
-                                new StringBuilder("Failed to validate the certificate chain, error: ").append(e3.getMessage());
-                                return new AndroidCertVerifyResult(-2);
+                            } catch (java.security.cert.CertificateException e4) {
+                                new java.lang.StringBuilder("Failed to validate the certificate chain, error: ").append(e3.getMessage());
+                                return new org.chromium.net.AndroidCertVerifyResult(-2);
                             }
                         }
                         if (a2.size() > 0) {
-                            X509Certificate x509Certificate = (X509Certificate) a2.get(a2.size() - 1);
+                            java.security.cert.X509Certificate x509Certificate = (java.security.cert.X509Certificate) a2.get(a2.size() - 1);
                             if (g != null) {
-                                Pair pair = new Pair(x509Certificate.getSubjectX500Principal(), x509Certificate.getPublicKey());
+                                android.util.Pair pair = new android.util.Pair(x509Certificate.getSubjectX500Principal(), x509Certificate.getPublicKey());
                                 if (!i.contains(pair)) {
-                                    byte[] digest = MessageDigest.getInstance("MD5").digest(x509Certificate.getSubjectX500Principal().getEncoded());
+                                    byte[] digest = java.security.MessageDigest.getInstance("MD5").digest(x509Certificate.getSubjectX500Principal().getEncoded());
                                     char[] cArr = new char[8];
                                     for (int i3 = 0; i3 < 4; i3++) {
                                         cArr[i3 * 2] = k[(digest[3 - i3] >> 4) & 15];
                                         cArr[(i3 * 2) + 1] = k[digest[3 - i3] & 15];
                                     }
-                                    String str3 = new String(cArr);
+                                    java.lang.String str3 = new java.lang.String(cArr);
                                     int i4 = 0;
                                     while (true) {
-                                        String str4 = str3 + '.' + i4;
-                                        if (!new File(h, str4).exists()) {
+                                        java.lang.String str4 = str3 + '.' + i4;
+                                        if (!new java.io.File(h, str4).exists()) {
                                             break;
                                         }
-                                        Certificate certificate = g.getCertificate("system:" + str4);
+                                        java.security.cert.Certificate certificate = g.getCertificate("system:" + str4);
                                         if (certificate != null) {
-                                            if (certificate instanceof X509Certificate) {
-                                                X509Certificate x509Certificate2 = (X509Certificate) certificate;
+                                            if (certificate instanceof java.security.cert.X509Certificate) {
+                                                java.security.cert.X509Certificate x509Certificate2 = (java.security.cert.X509Certificate) certificate;
                                                 if (x509Certificate.getSubjectX500Principal().equals(x509Certificate2.getSubjectX500Principal()) && x509Certificate.getPublicKey().equals(x509Certificate2.getPublicKey())) {
                                                     i.add(pair);
                                                     break;
                                                 }
                                             } else {
-                                                Log.e("X509Util", "Anchor " + str4 + " not an X509Certificate: " + certificate.getClass().getName());
+                                                android.util.Log.e("X509Util", "Anchor " + str4 + " not an X509Certificate: " + certificate.getClass().getName());
                                             }
                                         }
                                         i4++;
@@ -255,20 +211,21 @@ public class X509Util {
                         } else {
                             z = false;
                         }
-                        return new AndroidCertVerifyResult(z, a2);
+                        org.chromium.net.AndroidCertVerifyResult androidCertVerifyResult2 = new org.chromium.net.AndroidCertVerifyResult(z, a2);
+                        return androidCertVerifyResult2;
                     }
-                } catch (CertificateExpiredException e5) {
-                    return new AndroidCertVerifyResult(-3);
-                } catch (CertificateNotYetValidException e6) {
-                    return new AndroidCertVerifyResult(-4);
-                } catch (CertificateException e7) {
-                    return new AndroidCertVerifyResult(-1);
+                } catch (java.security.cert.CertificateExpiredException e5) {
+                    return new org.chromium.net.AndroidCertVerifyResult(-3);
+                } catch (java.security.cert.CertificateNotYetValidException e6) {
+                    return new org.chromium.net.AndroidCertVerifyResult(-4);
+                } catch (java.security.cert.CertificateException e7) {
+                    return new org.chromium.net.AndroidCertVerifyResult(-1);
                 }
-            } catch (CertificateException e8) {
-                return new AndroidCertVerifyResult(-5);
+            } catch (java.security.cert.CertificateException e8) {
+                return new org.chromium.net.AndroidCertVerifyResult(-5);
             }
-        } catch (CertificateException e9) {
-            return new AndroidCertVerifyResult(-1);
+        } catch (java.security.cert.CertificateException e9) {
+            return new org.chromium.net.AndroidCertVerifyResult(-1);
         }
     }
 }

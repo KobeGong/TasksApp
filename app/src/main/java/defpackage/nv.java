@@ -1,34 +1,29 @@
 package defpackage;
 
-import android.app.Activity;
-import android.app.FragmentManager;
-import android.os.Bundle;
-
-/* renamed from: nv  reason: default package */
+/* renamed from: nv reason: default package */
 /* compiled from: PG */
-public class nv extends Activity implements y {
-    public z g = new z(this);
+public class nv extends android.app.Activity implements LifecycleOwner {
+    public defpackage.z g = new defpackage.z(this);
 
     public nv() {
-        new ri();
+        new defpackage.ri();
     }
 
-    public void onCreate(Bundle bundle) {
+    public void onCreate(android.os.Bundle bundle) {
         super.onCreate(bundle);
-        FragmentManager fragmentManager = getFragmentManager();
+        android.app.FragmentManager fragmentManager = getFragmentManager();
         if (fragmentManager.findFragmentByTag("android.arch.lifecycle.LifecycleDispatcher.report_fragment_tag") == null) {
-            fragmentManager.beginTransaction().add(new ai(), "android.arch.lifecycle.LifecycleDispatcher.report_fragment_tag").commit();
+            fragmentManager.beginTransaction().add(new defpackage.ai(), "android.arch.lifecycle.LifecycleDispatcher.report_fragment_tag").commit();
             fragmentManager.executePendingTransactions();
         }
     }
 
-    public void onSaveInstanceState(Bundle bundle) {
-        this.g.a(w.CREATED);
+    public void onSaveInstanceState(android.os.Bundle bundle) {
+        this.g.a(State.CREATED);
         super.onSaveInstanceState(bundle);
     }
 
-    @Override // defpackage.y
-    public final u a() {
+    public final Lifecycle getLifecycle() {
         return this.g;
     }
 }

@@ -1,38 +1,27 @@
 package defpackage;
 
-import android.accounts.AccountManagerCallback;
-import android.accounts.AccountManagerFuture;
-import android.accounts.AuthenticatorException;
-import android.accounts.OperationCanceledException;
-import android.content.Context;
-import android.content.IntentFilter;
-import android.os.Bundle;
-import java.io.IOException;
-import org.chromium.net.HttpNegotiateAuthenticator;
-
-/* renamed from: eib  reason: default package */
+/* renamed from: eib reason: default package */
 /* compiled from: PG */
-public final class eib implements AccountManagerCallback {
-    public final eid a;
-    public final /* synthetic */ HttpNegotiateAuthenticator b;
+public final class eib implements android.accounts.AccountManagerCallback {
+    public final defpackage.eid a;
+    public final /* synthetic */ org.chromium.net.HttpNegotiateAuthenticator b;
 
-    public eib(HttpNegotiateAuthenticator httpNegotiateAuthenticator, eid eid) {
+    public eib(org.chromium.net.HttpNegotiateAuthenticator httpNegotiateAuthenticator, defpackage.eid eid) {
         this.b = httpNegotiateAuthenticator;
         this.a = eid;
     }
 
-    @Override // android.accounts.AccountManagerCallback
-    public final void run(AccountManagerFuture accountManagerFuture) {
+    public final void run(android.accounts.AccountManagerFuture accountManagerFuture) {
         int i = 0;
         try {
-            Bundle bundle = (Bundle) accountManagerFuture.getResult();
+            android.os.Bundle bundle = (android.os.Bundle) accountManagerFuture.getResult();
             if (bundle.containsKey("intent")) {
-                Context context = ehw.a;
-                context.registerReceiver(new eic(this, context), new IntentFilter("android.accounts.LOGIN_ACCOUNTS_CHANGED"));
+                android.content.Context context = defpackage.ehw.a;
+                context.registerReceiver(new defpackage.eic(this, context), new android.content.IntentFilter("android.accounts.LOGIN_ACCOUNTS_CHANGED"));
                 return;
             }
-            HttpNegotiateAuthenticator httpNegotiateAuthenticator = this.b;
-            eid eid = this.a;
+            org.chromium.net.HttpNegotiateAuthenticator httpNegotiateAuthenticator = this.b;
+            defpackage.eid eid = this.a;
             httpNegotiateAuthenticator.a = bundle.getBundle("spnegoContext");
             switch (bundle.getInt("spnegoResult", 1)) {
                 case 0:
@@ -69,8 +58,8 @@ public final class eib implements AccountManagerCallback {
                     break;
             }
             httpNegotiateAuthenticator.nativeSetResult(eid.a, i, bundle.getString("authtoken"));
-        } catch (AuthenticatorException | OperationCanceledException | IOException e) {
-            dpt.b("net_auth", "ERR_UNEXPECTED: Error while attempting to obtain a token.", e);
+        } catch (android.accounts.AuthenticatorException | android.accounts.OperationCanceledException | java.io.IOException e) {
+            defpackage.dpt.b("net_auth", "ERR_UNEXPECTED: Error while attempting to obtain a token.", e);
             this.b.nativeSetResult(this.a.a, -9, null);
         }
     }

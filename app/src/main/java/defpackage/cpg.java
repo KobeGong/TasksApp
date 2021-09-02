@@ -1,11 +1,8 @@
 package defpackage;
 
-import java.io.Serializable;
-import java.util.Locale;
-
-/* renamed from: cpg  reason: default package */
+/* renamed from: cpg reason: default package */
 /* compiled from: PG */
-public final class cpg implements Serializable {
+public final class cpg implements java.io.Serializable {
     public static final long serialVersionUID = 1;
     public final int a;
     public final boolean b;
@@ -19,18 +16,21 @@ public final class cpg implements Serializable {
         this.b = z;
     }
 
-    public final String toString() {
-        return String.format(Locale.US, "VisualElementTag {id: %d, isRootPage: %b}", Integer.valueOf(this.a), Boolean.valueOf(this.b));
+    public final java.lang.String toString() {
+        return java.lang.String.format(java.util.Locale.US, "VisualElementTag {id: %d, isRootPage: %b}", new java.lang.Object[]{java.lang.Integer.valueOf(this.a), java.lang.Boolean.valueOf(this.b)});
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         if (this == obj) {
             return true;
         }
-        if (!(obj instanceof cpg)) {
+        if (!(obj instanceof defpackage.cpg)) {
             return false;
         }
-        return this.a == ((cpg) obj).a;
+        if (this.a != ((defpackage.cpg) obj).a) {
+            return false;
+        }
+        return true;
     }
 
     public final int hashCode() {

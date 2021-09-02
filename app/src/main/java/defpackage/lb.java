@@ -1,29 +1,22 @@
 package defpackage;
 
-import android.app.Dialog;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-
-/* renamed from: lb  reason: default package */
+/* renamed from: lb reason: default package */
 /* compiled from: PG */
-public class lb extends lc implements DialogInterface.OnCancelListener, DialogInterface.OnDismissListener {
+public class lb extends Fragment implements android.content.DialogInterface.OnCancelListener, android.content.DialogInterface.OnDismissListener {
     private int U = 0;
     private boolean V = true;
     private int W = -1;
-    private Dialog X;
+    private android.app.Dialog X;
     private boolean Y;
     private boolean Z;
     public int a = 0;
     private boolean aa;
     public boolean b = true;
 
-    public final void a(ln lnVar, String str) {
+    public final void a(defpackage.ln lnVar, java.lang.String str) {
         this.Z = false;
         this.aa = true;
-        mj a2 = lnVar.a();
+        defpackage.mj a2 = lnVar.a();
         a2.a(this, str);
         a2.b();
     }
@@ -41,7 +34,7 @@ public class lb extends lc implements DialogInterface.OnCancelListener, DialogIn
                 this.W = -1;
                 return;
             }
-            mj a2 = this.t.a();
+            defpackage.mj a2 = this.t.a();
             a2.c(this);
             if (z) {
                 a2.c();
@@ -51,15 +44,13 @@ public class lb extends lc implements DialogInterface.OnCancelListener, DialogIn
         }
     }
 
-    @Override // defpackage.lc
-    public void a(Context context) {
+    public void a(android.content.Context context) {
         super.a(context);
         if (!this.aa) {
             this.Z = false;
         }
     }
 
-    @Override // defpackage.lc
     public final void d() {
         super.d();
         if (!this.aa && !this.Z) {
@@ -67,8 +58,7 @@ public class lb extends lc implements DialogInterface.OnCancelListener, DialogIn
         }
     }
 
-    @Override // defpackage.lc
-    public final void a(Bundle bundle) {
+    public final void a(android.os.Bundle bundle) {
         super.a(bundle);
         this.b = this.A == 0;
         if (bundle != null) {
@@ -80,55 +70,52 @@ public class lb extends lc implements DialogInterface.OnCancelListener, DialogIn
         }
     }
 
-    @Override // defpackage.lc
-    public final LayoutInflater b(Bundle bundle) {
+    public final android.view.LayoutInflater b(android.os.Bundle bundle) {
         if (!this.b) {
             return super.b(bundle);
         }
         this.X = c();
         if (this.X == null) {
-            return (LayoutInflater) this.u.b.getSystemService("layout_inflater");
+            return (android.view.LayoutInflater) this.u.mContext.getSystemService("layout_inflater");
         }
         a(this.X, this.U);
-        return (LayoutInflater) this.X.getContext().getSystemService("layout_inflater");
+        return (android.view.LayoutInflater) this.X.getContext().getSystemService("layout_inflater");
     }
 
-    public void a(Dialog dialog, int i) {
+    public void a(android.app.Dialog dialog, int i) {
         switch (i) {
             case 1:
             case 2:
                 break;
-            default:
-                return;
             case 3:
                 dialog.getWindow().addFlags(24);
                 break;
+            default:
+                return;
         }
         dialog.requestWindowFeature(1);
     }
 
-    public Dialog c() {
-        return new Dialog(getActivity(), this.a);
+    public android.app.Dialog c() {
+        return new android.app.Dialog(getActivity(), this.a);
     }
 
-    public void onCancel(DialogInterface dialogInterface) {
+    public void onCancel(android.content.DialogInterface dialogInterface) {
     }
 
-    public void onDismiss(DialogInterface dialogInterface) {
+    public void onDismiss(android.content.DialogInterface dialogInterface) {
         if (!this.Y) {
             a(true);
         }
     }
 
-    @Override // defpackage.lc
-    public void c(Bundle bundle) {
-        Bundle bundle2;
+    public void c(android.os.Bundle bundle) {
         super.c(bundle);
         if (this.b) {
-            View view = this.J;
+            android.view.View view = this.J;
             if (view != null) {
                 if (view.getParent() != null) {
-                    throw new IllegalStateException("DialogFragment can not be attached to a container view");
+                    throw new java.lang.IllegalStateException("DialogFragment can not be attached to a container view");
                 }
                 this.X.setContentView(view);
             }
@@ -139,13 +126,15 @@ public class lb extends lc implements DialogInterface.OnCancelListener, DialogIn
             this.X.setCancelable(this.V);
             this.X.setOnCancelListener(this);
             this.X.setOnDismissListener(this);
-            if (bundle != null && (bundle2 = bundle.getBundle("android:savedDialogState")) != null) {
-                this.X.onRestoreInstanceState(bundle2);
+            if (bundle != null) {
+                android.os.Bundle bundle2 = bundle.getBundle("android:savedDialogState");
+                if (bundle2 != null) {
+                    this.X.onRestoreInstanceState(bundle2);
+                }
             }
         }
     }
 
-    @Override // defpackage.lc
     public final void e() {
         super.e();
         if (this.X != null) {
@@ -154,12 +143,13 @@ public class lb extends lc implements DialogInterface.OnCancelListener, DialogIn
         }
     }
 
-    @Override // defpackage.lc
-    public void d(Bundle bundle) {
-        Bundle onSaveInstanceState;
+    public void d(android.os.Bundle bundle) {
         super.d(bundle);
-        if (!(this.X == null || (onSaveInstanceState = this.X.onSaveInstanceState()) == null)) {
-            bundle.putBundle("android:savedDialogState", onSaveInstanceState);
+        if (this.X != null) {
+            android.os.Bundle onSaveInstanceState = this.X.onSaveInstanceState();
+            if (onSaveInstanceState != null) {
+                bundle.putBundle("android:savedDialogState", onSaveInstanceState);
+            }
         }
         if (this.U != 0) {
             bundle.putInt("android:style", this.U);
@@ -178,7 +168,6 @@ public class lb extends lc implements DialogInterface.OnCancelListener, DialogIn
         }
     }
 
-    @Override // defpackage.lc
     public final void f() {
         super.f();
         if (this.X != null) {
@@ -186,7 +175,6 @@ public class lb extends lc implements DialogInterface.OnCancelListener, DialogIn
         }
     }
 
-    @Override // defpackage.lc
     public final void g() {
         super.g();
         if (this.X != null) {

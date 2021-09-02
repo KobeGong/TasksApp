@@ -1,12 +1,12 @@
 package defpackage;
 
-/* renamed from: bxh  reason: default package */
+/* renamed from: bxh reason: default package */
 /* compiled from: PG */
-public final class bxh extends Exception {
+public final class bxh extends java.lang.Exception {
     public final int a;
 
-    public bxh(Integer num, String str) {
-        super(String.format("HTTP Error Code: %d %s", num, str));
+    public bxh(java.lang.Integer num, java.lang.String str) {
+        super(java.lang.String.format("HTTP Error Code: %d %s", new java.lang.Object[]{num, str}));
         this.a = num.intValue();
     }
 }

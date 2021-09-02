@@ -1,28 +1,23 @@
 package defpackage;
 
-import java.nio.BufferUnderflowException;
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
-import java.nio.charset.Charset;
-
-/* renamed from: cnc  reason: default package */
+/* renamed from: cnc reason: default package */
 /* compiled from: PG */
 public final class cnc {
-    public final ByteBuffer a;
+    public final java.nio.ByteBuffer a;
     public final int b;
-    public final cne c;
+    public final defpackage.cne c;
     private final int[] d;
-    private final ByteBuffer e;
+    private final java.nio.ByteBuffer e;
 
-    private cnc(ByteBuffer byteBuffer) {
+    private cnc(java.nio.ByteBuffer byteBuffer) {
         byteBuffer.rewind();
-        byteBuffer.order(ByteOrder.BIG_ENDIAN);
+        byteBuffer.order(java.nio.ByteOrder.BIG_ENDIAN);
         this.a = byteBuffer;
         this.e = byteBuffer.duplicate();
         do {
         } while (byteBuffer.get() != 0);
         this.b = byteBuffer.getInt();
-        cky.b(this.b > 0);
+        defpackage.cky.b(this.b > 0);
         byteBuffer.getLong();
         int[] iArr = new int[12];
         iArr[2] = this.b;
@@ -35,9 +30,9 @@ public final class cnc {
         iArr[10] = 4;
         iArr[11] = 8;
         this.d = iArr;
-        this.c = new cne();
+        this.c = new defpackage.cne();
         int i = this.b;
-        cnb cnb = new cnb(this);
+        defpackage.cnb cnb = new defpackage.cnb(this);
         cnb.a(137, i);
         cnb.a(255, i);
         cnb.a(139, i);
@@ -102,25 +97,25 @@ public final class cnc {
         throw new UnsupportedOperationException("Method not decompiled: defpackage.cnc.a(java.io.File):cnc");
     }
 
-    public final String a(int i) {
-        cky.a(i >= 0);
+    public final java.lang.String a(int i) {
+        defpackage.cky.a(i >= 0);
         byte[] bArr = new byte[(this.e.getInt(i) - this.b)];
         this.e.position(i + 4 + this.b);
         this.e.get(bArr);
-        return new String(bArr, Charset.defaultCharset());
+        return new java.lang.String(bArr, java.nio.charset.Charset.defaultCharset());
     }
 
     public final int b(int i) {
         int i2 = this.d[i];
-        cky.b(i2 > 0);
+        defpackage.cky.b(i2 > 0);
         return i2;
     }
 
     public final void c(int i) {
-        cky.a(i >= 0);
+        defpackage.cky.a(i >= 0);
         int position = this.a.position() + i;
         if (position > this.a.limit()) {
-            throw new BufferUnderflowException();
+            throw new java.nio.BufferUnderflowException();
         }
         this.a.position(position);
     }
@@ -131,11 +126,10 @@ public final class cnc {
                 return this.a.get();
             case 2:
                 return this.a.getShort();
-            case 3:
-            default:
-                throw new IllegalStateException();
             case 4:
                 return this.a.getInt();
+            default:
+                throw new java.lang.IllegalStateException();
         }
     }
 
@@ -145,11 +139,10 @@ public final class cnc {
                 return this.a.get(i);
             case 2:
                 return this.a.getShort(i);
-            case 3:
-            default:
-                throw new IllegalStateException();
             case 4:
                 return this.a.getInt(i);
+            default:
+                throw new java.lang.IllegalStateException();
         }
     }
 

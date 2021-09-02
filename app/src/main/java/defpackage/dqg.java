@@ -1,9 +1,9 @@
 package defpackage;
 
-/* renamed from: dqg  reason: default package */
+/* renamed from: dqg reason: default package */
 /* compiled from: PG */
 public final class dqg {
-    @Deprecated
-    public static final dnb a = dnb.a("cronet-annotation");
-    public static final dnb b = dnb.a("cronet-annotations");
+    @java.lang.Deprecated
+    public static final defpackage.dnb a = defpackage.dnb.a("cronet-annotation");
+    public static final defpackage.dnb b = defpackage.dnb.a("cronet-annotations");
 }

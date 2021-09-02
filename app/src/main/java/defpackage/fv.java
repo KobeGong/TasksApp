@@ -1,26 +1,20 @@
 package defpackage;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-/* renamed from: fv  reason: default package */
+/* renamed from: fv reason: default package */
 /* compiled from: PG */
-final class fv implements Parcelable.ClassLoaderCreator {
+final class fv implements android.os.Parcelable.ClassLoaderCreator {
     fv() {
     }
 
-    @Override // android.os.Parcelable.ClassLoaderCreator
-    public final /* synthetic */ Object createFromParcel(Parcel parcel, ClassLoader classLoader) {
-        return new fu(parcel, classLoader);
+    public final /* synthetic */ java.lang.Object createFromParcel(android.os.Parcel parcel, java.lang.ClassLoader classLoader) {
+        return new defpackage.fu(parcel, classLoader);
     }
 
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object[] newArray(int i) {
-        return new fu[i];
+    public final /* synthetic */ java.lang.Object[] newArray(int i) {
+        return new defpackage.fu[i];
     }
 
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object createFromParcel(Parcel parcel) {
-        return new fu(parcel, null);
+    public final /* synthetic */ java.lang.Object createFromParcel(android.os.Parcel parcel) {
+        return new defpackage.fu(parcel, null);
     }
 }

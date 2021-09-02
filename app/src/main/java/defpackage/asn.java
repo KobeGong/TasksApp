@@ -1,16 +1,14 @@
 package defpackage;
 
-import android.view.View;
+/* renamed from: asn reason: default package */
+final /* synthetic */ class asn implements android.view.View.OnClickListener {
+    private final EditTaskFragment a;
 
-/* renamed from: asn  reason: default package */
-final /* synthetic */ class asn implements View.OnClickListener {
-    private final asi a;
-
-    asn(asi asi) {
+    asn(EditTaskFragment asi) {
         this.a = asi;
     }
 
-    public final void onClick(View view) {
+    public final void onClick(android.view.View view) {
         this.a.Q();
     }
 }

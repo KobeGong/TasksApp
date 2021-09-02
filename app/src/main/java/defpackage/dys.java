@@ -1,9 +1,8 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: dys  reason: default package */
+/* renamed from: dys reason: default package */
 /* compiled from: PG */
-public final class dys {
+final class dys {
     public final boolean a;
     public final long b;
 

@@ -1,17 +1,16 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: cqw  reason: default package */
-public final /* synthetic */ class cqw implements Runnable {
-    private final cqv a;
-    private final cyi b;
+/* renamed from: cqw reason: default package */
+final /* synthetic */ class cqw implements java.lang.Runnable {
+    private final defpackage.cqv a;
+    private final defpackage.cyi b;
 
-    cqw(cqv cqv, cyi cyi) {
+    cqw(defpackage.cqv cqv, defpackage.cyi cyi) {
         this.a = cqv;
         this.b = cyi;
     }
 
     public final void run() {
-        this.a.b.set(cqv.a(this.b));
+        this.a.b.set(defpackage.cqv.a(this.b));
     }
 }

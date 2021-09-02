@@ -1,37 +1,32 @@
 package defpackage;
 
-import android.content.ComponentName;
-import android.content.ServiceConnection;
-import android.os.IBinder;
-import android.os.IInterface;
-
-/* renamed from: bdf  reason: default package */
+/* renamed from: bdf reason: default package */
 /* compiled from: PG */
-public final class bdf implements ServiceConnection {
+public final class bdf implements android.content.ServiceConnection {
     private final int a;
-    private /* synthetic */ bcx b;
+    private /* synthetic */ defpackage.bcx b;
 
-    public bdf(bcx bcx, int i) {
+    public bdf(defpackage.bcx bcx, int i) {
         this.b = bcx;
         this.a = i;
     }
 
-    public final void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-        bdt bdt;
+    public final void onServiceConnected(android.content.ComponentName componentName, android.os.IBinder iBinder) {
+        defpackage.bdt bdt;
         if (iBinder == null) {
-            bcx.a(this.b);
+            defpackage.bcx.a(this.b);
             return;
         }
         synchronized (this.b.m) {
-            bcx bcx = this.b;
+            defpackage.bcx bcx = this.b;
             if (iBinder == null) {
                 bdt = null;
             } else {
-                IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.common.internal.IGmsServiceBroker");
-                if (queryLocalInterface == null || !(queryLocalInterface instanceof bdt)) {
-                    bdt = new bdt(iBinder);
+                android.os.IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.common.internal.IGmsServiceBroker");
+                if (queryLocalInterface == null || !(queryLocalInterface instanceof defpackage.bdt)) {
+                    bdt = new defpackage.bdt(iBinder);
                 } else {
-                    bdt = (bdt) queryLocalInterface;
+                    bdt = (defpackage.bdt) queryLocalInterface;
                 }
             }
             bcx.n = bdt;
@@ -39,7 +34,7 @@ public final class bdf implements ServiceConnection {
         this.b.a(0, this.a);
     }
 
-    public final void onServiceDisconnected(ComponentName componentName) {
+    public final void onServiceDisconnected(android.content.ComponentName componentName) {
         synchronized (this.b.m) {
             this.b.n = null;
         }

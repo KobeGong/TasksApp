@@ -1,16 +1,13 @@
 package defpackage;
 
-import java.util.Iterator;
-import java.util.NoSuchElementException;
-
-/* renamed from: dhe  reason: default package */
+/* renamed from: dhe reason: default package */
 /* compiled from: PG */
-public final class dhe implements Iterator {
+public final class dhe implements java.util.Iterator {
     private int a = 0;
     private final int b = this.c.a();
-    private final /* synthetic */ dha c;
+    private final /* synthetic */ defpackage.dha c;
 
-    dhe(dha dha) {
+    dhe(defpackage.dha dha) {
         this.c = dha;
     }
 
@@ -20,21 +17,20 @@ public final class dhe implements Iterator {
 
     private final byte a() {
         try {
-            dha dha = this.c;
+            defpackage.dha dha = this.c;
             int i = this.a;
             this.a = i + 1;
             return dha.a(i);
-        } catch (IndexOutOfBoundsException e) {
-            throw new NoSuchElementException(e.getMessage());
+        } catch (java.lang.IndexOutOfBoundsException e) {
+            throw new java.util.NoSuchElementException(e.getMessage());
         }
     }
 
     public final void remove() {
-        throw new UnsupportedOperationException();
+        throw new java.lang.UnsupportedOperationException();
     }
 
-    @Override // java.util.Iterator
-    public final /* synthetic */ Object next() {
-        return Byte.valueOf(a());
+    public final /* synthetic */ java.lang.Object next() {
+        return java.lang.Byte.valueOf(a());
     }
 }

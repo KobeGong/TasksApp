@@ -1,33 +1,28 @@
 package com.google.android.apps.tasks.sync;
 
-import android.content.ContentProvider;
-import android.content.ContentValues;
-import android.database.Cursor;
-import android.net.Uri;
-
 /* compiled from: PG */
-public class StubContentProvider extends ContentProvider {
+public class StubContentProvider extends android.content.ContentProvider {
     public boolean onCreate() {
         return true;
     }
 
-    public String getType(Uri uri) {
+    public java.lang.String getType(android.net.Uri uri) {
         return null;
     }
 
-    public Cursor query(Uri uri, String[] strArr, String str, String[] strArr2, String str2) {
+    public android.database.Cursor query(android.net.Uri uri, java.lang.String[] strArr, java.lang.String str, java.lang.String[] strArr2, java.lang.String str2) {
         return null;
     }
 
-    public Uri insert(Uri uri, ContentValues contentValues) {
+    public android.net.Uri insert(android.net.Uri uri, android.content.ContentValues contentValues) {
         return null;
     }
 
-    public int delete(Uri uri, String str, String[] strArr) {
+    public int delete(android.net.Uri uri, java.lang.String str, java.lang.String[] strArr) {
         return 0;
     }
 
-    public int update(Uri uri, ContentValues contentValues, String str, String[] strArr) {
+    public int update(android.net.Uri uri, android.content.ContentValues contentValues, java.lang.String str, java.lang.String[] strArr) {
         return 0;
     }
 }

@@ -1,19 +1,17 @@
 package defpackage;
 
-import java.io.Serializable;
-
-/* renamed from: csq  reason: default package */
+/* renamed from: csq reason: default package */
 /* compiled from: PG */
-final class csq implements Serializable {
+final class csq implements java.io.Serializable {
     public static final long serialVersionUID = 0;
-    private final Object[] a;
+    private final java.lang.Object[] a;
 
-    csq(Object[] objArr) {
+    csq(java.lang.Object[] objArr) {
         this.a = objArr;
     }
 
-    /* access modifiers changed from: package-private */
-    public final Object readResolve() {
-        return csp.a(this.a);
+    /* access modifiers changed from: 0000 */
+    public final java.lang.Object readResolve() {
+        return defpackage.csp.a(this.a);
     }
 }

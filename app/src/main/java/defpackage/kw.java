@@ -1,11 +1,10 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: kw  reason: default package */
+/* renamed from: kw reason: default package */
 /* compiled from: PG */
-public final class kw {
+final class kw {
     public int a;
-    public lc b;
+    public Fragment b;
     public int c;
     public int d;
     public int e;
@@ -14,7 +13,7 @@ public final class kw {
     kw() {
     }
 
-    kw(int i, lc lcVar) {
+    kw(int i, Fragment lcVar) {
         this.a = i;
         this.b = lcVar;
     }

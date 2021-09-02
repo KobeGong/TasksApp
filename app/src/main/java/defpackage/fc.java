@@ -1,22 +1,19 @@
 package defpackage;
 
-import android.support.design.internal.NavigationMenuItemView;
-import android.view.View;
-
-/* access modifiers changed from: package-private */
-/* renamed from: fc  reason: default package */
+/* renamed from: fc reason: default package */
 /* compiled from: PG */
-public final class fc implements View.OnClickListener {
-    private final /* synthetic */ NavigationMenuPresenter a;
+final class fc implements android.view.View.OnClickListener {
+    private final /* synthetic */ defpackage.fb a;
 
-    fc(NavigationMenuPresenter fbVar) {
+    fc(defpackage.fb fbVar) {
         this.a = fbVar;
     }
 
-    public final void onClick(View view) {
+    public final void onClick(android.view.View view) {
+        android.support.design.internal.NavigationMenuItemView navigationMenuItemView = (android.support.design.internal.NavigationMenuItemView) view;
         this.a.b(true);
-        MenuItemImpl ziVar = ((NavigationMenuItemView) view).e;
-        boolean a2 = this.a.c.a(ziVar, this.a, 0);
+        defpackage.zi ziVar = navigationMenuItemView.e;
+        boolean a2 = this.a.c.a((android.view.MenuItem) ziVar, (defpackage.zt) this.a, 0);
         if (ziVar != null && ziVar.isCheckable() && a2) {
             this.a.e.a(ziVar);
         }

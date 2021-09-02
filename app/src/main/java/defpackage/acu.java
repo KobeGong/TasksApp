@@ -1,48 +1,44 @@
 package defpackage;
 
-import android.view.View;
-import android.view.ViewPropertyAnimator;
-import java.util.ArrayList;
-
-/* renamed from: acu  reason: default package */
+/* renamed from: acu reason: default package */
 /* compiled from: PG */
-final class acu implements Runnable {
-    private final /* synthetic */ ArrayList a;
-    private final /* synthetic */ acs b;
+final class acu implements java.lang.Runnable {
+    private final /* synthetic */ java.util.ArrayList a;
+    private final /* synthetic */ defpackage.acs b;
 
-    acu(acs acs, ArrayList arrayList) {
+    acu(defpackage.acs acs, java.util.ArrayList arrayList) {
         this.b = acs;
         this.a = arrayList;
     }
 
     public final void run() {
-        View view;
-        ArrayList arrayList = this.a;
+        android.view.View view;
+        java.util.ArrayList arrayList = this.a;
         int size = arrayList.size();
         int i = 0;
         while (i < size) {
             int i2 = i + 1;
-            adb adb = (adb) arrayList.get(i);
-            acs acs = this.b;
-            ViewHolder afv = adb.a;
-            View view2 = afv == null ? null : afv.a;
-            ViewHolder afv2 = adb.b;
+            defpackage.adb adb = (defpackage.adb) arrayList.get(i);
+            defpackage.acs acs = this.b;
+            defpackage.afv afv = adb.a;
+            android.view.View view2 = afv == null ? null : afv.a;
+            defpackage.afv afv2 = adb.b;
             if (afv2 != null) {
                 view = afv2.a;
             } else {
                 view = null;
             }
             if (view2 != null) {
-                ViewPropertyAnimator duration = view2.animate().setDuration(acs.l);
+                android.view.ViewPropertyAnimator duration = view2.animate().setDuration(acs.l);
                 acs.g.add(adb.a);
                 duration.translationX((float) (adb.e - adb.c));
                 duration.translationY((float) (adb.f - adb.d));
-                duration.alpha(0.0f).setListener(new acz(acs, adb, duration, view2)).start();
+                duration.alpha(0.0f).setListener(new defpackage.acz(acs, adb, duration, view2)).start();
             }
             if (view != null) {
-                ViewPropertyAnimator animate = view.animate();
+                android.view.ViewPropertyAnimator animate = view.animate();
                 acs.g.add(adb.b);
-                animate.translationX(0.0f).translationY(0.0f).setDuration(acs.l).alpha(1.0f).setListener(new ada(acs, adb, animate, view)).start();
+                animate.translationX(0.0f).translationY(0.0f).setDuration(acs.l).alpha(1.0f).setListener(new defpackage.ada(acs, adb, animate, view)).start();
             }
             i = i2;
         }

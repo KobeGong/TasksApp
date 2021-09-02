@@ -1,48 +1,13 @@
 package com.google.android.apps.tasks.features.notificationmanager;
 
-import android.accounts.Account;
-import android.app.AlarmManager;
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.BroadcastReceiver;
-import android.content.ContentResolver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
-import android.content.PeriodicSync;
-import android.net.Uri;
-import android.os.AsyncTask;
-import android.os.Build;
-import android.os.Bundle;
-import android.service.notification.StatusBarNotification;
-import android.text.SpannableString;
-import android.text.TextUtils;
-import android.text.style.TextAppearanceSpan;
-import com.google.android.apps.tasks.R;
-import com.google.android.apps.tasks.common.TaskApplication;
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
-import defpackage.ajd;
-import defpackage.akl;
-import defpackage.any;
-import defpackage.azb;
-
 /* compiled from: PG */
-public class NotificationManagerImpl extends BroadcastReceiver implements akm {
-    private static final Map a;
-    private Context b;
+public class NotificationManagerImpl extends android.content.BroadcastReceiver implements defpackage.akm {
+    private static final java.util.Map a;
+    private android.content.Context b;
 
-    public void onReceive(Context context, Intent intent) {
+    public void onReceive(android.content.Context context, android.content.Intent intent) {
         this.b = context.getApplicationContext();
-        String action = intent.getAction();
+        java.lang.String action = intent.getAction();
         char c = 65535;
         switch (action.hashCode()) {
             case -2056854998:
@@ -60,63 +25,61 @@ public class NotificationManagerImpl extends BroadcastReceiver implements akm {
         }
         switch (c) {
             case 0:
-                List a2 = ajd.a(context);
-                a(akl.DUE, a(akl.DUE, a2, any.get()));
-                a(akl.OVERDUE, a(akl.OVERDUE, a2, any.get()));
+                java.util.List a2 = defpackage.ajd.a(context);
+                a(defpackage.akl.DUE, a(defpackage.akl.DUE, a2, defpackage.any.a()));
+                a(defpackage.akl.OVERDUE, a(defpackage.akl.OVERDUE, a2, defpackage.any.a()));
                 return;
             case 1:
-                String stringExtra = intent.getStringExtra("task_id");
-                if (!TextUtils.isEmpty(stringExtra)) {
+                java.lang.String stringExtra = intent.getStringExtra("task_id");
+                if (!android.text.TextUtils.isEmpty(stringExtra)) {
                     b(stringExtra);
                     return;
                 }
                 return;
             default:
-                azb.b("Unknown intent", new Object[0]);
+                defpackage.azb.b("Unknown intent", new java.lang.Object[0]);
                 return;
         }
     }
 
-    @Override // defpackage.akm
-    public final void a(Context context, List list) {
+    public final void a(android.content.Context context, java.util.List list) {
         this.b = context;
-        Intent intent = new Intent("com.google.android.apps.tasks.NOTIFICATIONS");
-        if (!(PendingIntent.getBroadcast(context, 0, intent, 536870912) != null)) {
-            Calendar instance = Calendar.getInstance();
+        android.content.Intent intent = new android.content.Intent("com.google.android.apps.tasks.NOTIFICATIONS");
+        if (!(android.app.PendingIntent.getBroadcast(context, 0, intent, 536870912) != null)) {
+            java.util.Calendar instance = java.util.Calendar.getInstance();
             instance.set(11, 9);
             instance.set(12, 0);
             instance.set(13, 0);
             instance.set(14, 0);
-            if (instance.getTimeInMillis() < auz.a()) {
+            if (instance.getTimeInMillis() < defpackage.auz.a()) {
                 instance.add(5, 1);
             }
-            ((AlarmManager) TaskApplication.b().getApplicationContext().getSystemService("alarm")).setRepeating(0, instance.getTimeInMillis(), 86400000, PendingIntent.getBroadcast(context, 0, intent, 0));
+            ((android.app.AlarmManager) com.google.android.apps.tasks.common.TaskApplication.getApplication().getApplicationContext().getSystemService("alarm")).setRepeating(0, instance.getTimeInMillis(), 86400000, android.app.PendingIntent.getBroadcast(context, 0, intent, 0));
         }
         if (!list.isEmpty()) {
-            AsyncTask.execute(new akk(list));
+            android.os.AsyncTask.execute(new defpackage.akk(list));
         }
-        if (Build.VERSION.SDK_INT >= 26) {
-            context.registerReceiver(this, new IntentFilter("com.google.android.apps.tasks.NOTIFICATIONS"));
+        if (android.os.Build.VERSION.SDK_INT >= 26) {
+            context.registerReceiver(this, new android.content.IntentFilter("com.google.android.apps.tasks.NOTIFICATIONS"));
         }
     }
 
-    private final NotificationManager a() {
-        return (NotificationManager) this.b.getSystemService("notification");
+    private final android.app.NotificationManager a() {
+        return (android.app.NotificationManager) this.b.getSystemService("notification");
     }
 
-    @Override // defpackage.akm
-    public final void a(String str) {
+    public final void a(java.lang.String str) {
         b(str);
-        for (Map.Entry entry : a.entrySet()) {
-            akl akl = (akl) entry.getKey();
-            Map a2 = a(akl, ajd.a(this.b), any.get());
-            Iterator it = a2.keySet().iterator();
+        for (java.util.Map.Entry key : a.entrySet()) {
+            defpackage.akl akl = (defpackage.akl) key.getKey();
+            java.util.Map a2 = a(akl, defpackage.ajd.a(this.b), defpackage.any.a());
+            java.util.Iterator it = a2.keySet().iterator();
             boolean z = false;
             while (it.hasNext()) {
-                String str2 = ((dby) ((Map.Entry) it.next()).getKey()).d;
+                java.lang.String str2 = ((defpackage.dby) ((java.util.Map.Entry) it.next()).getKey()).d;
                 if (str2.equals(str)) {
                     z = true;
-                } else if (a(str2.hashCode()) == null && Build.VERSION.SDK_INT >= 24) {
+                } else if (a(str2.hashCode()) == null && android.os.Build.VERSION.SDK_INT >= 24) {
                     it.remove();
                 }
             }
@@ -127,33 +90,32 @@ public class NotificationManagerImpl extends BroadcastReceiver implements akm {
         b();
     }
 
-    private static akl a(int i) {
-        for (Map.Entry entry : a.entrySet()) {
-            if (((Set) entry.getValue()).contains(Integer.valueOf(i))) {
-                return (akl) entry.getKey();
+    private static defpackage.akl a(int i) {
+        for (java.util.Map.Entry entry : a.entrySet()) {
+            if (((java.util.Set) entry.getValue()).contains(java.lang.Integer.valueOf(i))) {
+                return (defpackage.akl) entry.getKey();
             }
         }
         return null;
     }
 
-    @Override // defpackage.akm
-    public final void b(String str) {
+    public final void b(java.lang.String str) {
         int hashCode = str.hashCode();
         a().cancel(hashCode);
-        new Object[1][0] = Integer.valueOf(hashCode);
-        for (Map.Entry entry : a.entrySet()) {
-            akl akl = (akl) entry.getKey();
-            Set set = (Set) entry.getValue();
-            if (set.contains(Integer.valueOf(hashCode))) {
-                set.remove(Integer.valueOf(hashCode));
+        new java.lang.Object[1][0] = java.lang.Integer.valueOf(hashCode);
+        for (java.util.Map.Entry entry : a.entrySet()) {
+            defpackage.akl akl = (defpackage.akl) entry.getKey();
+            java.util.Set set = (java.util.Set) entry.getValue();
+            if (set.contains(java.lang.Integer.valueOf(hashCode))) {
+                set.remove(java.lang.Integer.valueOf(hashCode));
             }
             if (set.size() > 1) {
-                Map a2 = a(akl, ajd.a(this.b), any.get());
+                java.util.Map a2 = a(akl, defpackage.ajd.a(this.b), defpackage.any.a());
                 if (a2 != null && !a2.isEmpty()) {
                     int i = akl.e;
-                    ni a3 = a(akl, a2, b(i));
-                    ((Set) a.get(akl)).add(Integer.valueOf(i));
-                    new Object[1][0] = this.b.getString(akl.e);
+                    defpackage.ni a3 = a(akl, a2, b(i));
+                    ((java.util.Set) a.get(akl)).add(java.lang.Integer.valueOf(i));
+                    new java.lang.Object[1][0] = this.b.getString(akl.e);
                     a().notify(i, a3.b());
                 }
             } else {
@@ -164,16 +126,16 @@ public class NotificationManagerImpl extends BroadcastReceiver implements akm {
 
     private final void b() {
         int i;
-        for (Map.Entry entry : a.entrySet()) {
-            Set set = (Set) entry.getValue();
-            int i2 = ((akl) entry.getKey()).e;
-            if (Build.VERSION.SDK_INT >= 23) {
-                StatusBarNotification[] activeNotifications = a().getActiveNotifications();
+        for (java.util.Map.Entry entry : a.entrySet()) {
+            java.util.Set set = (java.util.Set) entry.getValue();
+            int i2 = ((defpackage.akl) entry.getKey()).e;
+            if (android.os.Build.VERSION.SDK_INT >= 23) {
+                android.service.notification.StatusBarNotification[] activeNotifications = a().getActiveNotifications();
                 int length = activeNotifications.length;
                 int i3 = 0;
                 int i4 = 0;
                 while (i3 < length) {
-                    if (this.b.getString(((akl) entry.getKey()).d).equals(activeNotifications[i3].getNotification().getGroup())) {
+                    if (this.b.getString(((defpackage.akl) entry.getKey()).d).equals(activeNotifications[i3].getNotification().getGroup())) {
                         i = i4 + 1;
                     } else {
                         i = i4;
@@ -189,224 +151,267 @@ public class NotificationManagerImpl extends BroadcastReceiver implements akm {
         }
     }
 
-    private static Map a(akl akl, List list, any any) {
-        if (akl == akl.DUE) {
+    private static java.util.Map a(defpackage.akl akl, java.util.List list, defpackage.any any) {
+        if (akl == defpackage.akl.DUE) {
             return a(86400000, list, any);
         }
-        if (akl == akl.OVERDUE) {
+        if (akl == defpackage.akl.OVERDUE) {
             return a(-86400000, list, any);
         }
-        return cta.a;
+        return defpackage.cta.a;
     }
 
-    private static Map a(long j, List list, any any) {
-        HashMap hashMap = new HashMap();
-        Iterator it = list.iterator();
-        while (it.hasNext()) {
-            Account account = (Account) it.next();
-            new Object[1][0] = azb.a(account.name);
-            for (Map.Entry entry : any.b(account).a(j).entrySet()) {
-                hashMap.put(entry, account);
-            }
-        }
-        return hashMap;
+    /* JADX WARNING: Incorrect type for immutable var: ssa=java.util.List, code=java.util.List<android.accounts.Account>, for r8v0, types: [java.util.List, java.util.List<android.accounts.Account>] */
+    /* Code decompiled incorrectly, please refer to instructions dump. */
+    private static java.util.Map a(long r6, java.util.List<android.accounts.Account> r8, defpackage.any r9) {
+        /*
+            java.util.HashMap r2 = new java.util.HashMap
+            r2.<init>()
+            java.util.Iterator r3 = r8.iterator()
+        L_0x0009:
+            boolean r0 = r3.hasNext()
+            if (r0 == 0) goto L_0x0041
+            java.lang.Object r0 = r3.next()
+            android.accounts.Account r0 = (android.accounts.Account) r0
+            r1 = 1
+            java.lang.Object[] r1 = new java.lang.Object[r1]
+            r4 = 0
+            java.lang.String r5 = r0.name
+            java.lang.String r5 = defpackage.azb.a(r5)
+            r1[r4] = r5
+            anc r1 = r9.b(r0)
+            java.util.Map r1 = r1.a(r6)
+            java.util.Set r1 = r1.entrySet()
+            java.util.Iterator r4 = r1.iterator()
+        L_0x0031:
+            boolean r1 = r4.hasNext()
+            if (r1 == 0) goto L_0x0009
+            java.lang.Object r1 = r4.next()
+            java.util.Map$Entry r1 = (java.util.Map.Entry) r1
+            r2.put(r1, r0)
+            goto L_0x0031
+        L_0x0041:
+            return r2
+        */
+        throw new UnsupportedOperationException("Method not decompiled: com.google.android.apps.tasks.features.notificationmanager.NotificationManagerImpl.a(long, java.util.List, any):java.util.Map");
     }
 
-    private final void a(akl akl, Map map) {
-        dca dca;
-        dmk dmk;
-        dca dca2;
-        String str;
-        dca dca3;
-        dca dca4;
-        Set<Integer> set = (Set) a.get(akl);
-        for (Integer num : set) {
-            a().cancel(num.intValue());
+    private final void a(defpackage.akl akl, java.util.Map map) {
+        defpackage.dca dca;
+        defpackage.dmk dmk;
+        defpackage.dca dca2;
+        java.lang.String str;
+        defpackage.dca dca3;
+        defpackage.dca dca4;
+        java.util.Set<java.lang.Integer> set = (java.util.Set) a.get(akl);
+        for (java.lang.Integer intValue : set) {
+            a().cancel(intValue.intValue());
         }
         set.clear();
         if (!map.isEmpty()) {
-            Set set2 = (Set) a.get(akl);
+            java.util.Set set2 = (java.util.Set) a.get(akl);
             int i = akl.e;
-            if (Build.VERSION.SDK_INT >= 24 || map.size() > 1) {
-                ni a2 = a(akl, map, b(i));
-                set2.add(Integer.valueOf(i));
+            if (android.os.Build.VERSION.SDK_INT >= 24 || map.size() > 1) {
+                defpackage.ni a2 = a(akl, map, b(i));
+                set2.add(java.lang.Integer.valueOf(i));
                 a().notify(i, a2.b());
             }
-            if (Build.VERSION.SDK_INT >= 24 || map.size() <= 1) {
-                if (Build.VERSION.SDK_INT >= 26) {
-                    String string = this.b.getString(akl.c);
+            if (android.os.Build.VERSION.SDK_INT >= 24 || map.size() <= 1) {
+                if (android.os.Build.VERSION.SDK_INT >= 26) {
+                    java.lang.String string = this.b.getString(akl.c);
                     int i2 = akl.e;
                     if (a().getNotificationChannel(string) == null) {
-                        a().createNotificationChannel(new NotificationChannel(string, this.b.getString(i2), 3));
+                        a().createNotificationChannel(new android.app.NotificationChannel(string, this.b.getString(i2), 3));
                     }
                 }
-                for (Map.Entry entry : map.entrySet()) {
-                    Map.Entry entry2 = (Map.Entry) entry.getKey();
-                    String str2 = ((Account) entry.getValue()).name;
-                    dby dby = (dby) entry2.getKey();
-                    String str3 = (String) entry2.getValue();
-                    Object[] objArr = new Object[2];
+                for (java.util.Map.Entry entry : map.entrySet()) {
+                    java.util.Map.Entry entry2 = (java.util.Map.Entry) entry.getKey();
+                    java.lang.String str2 = ((android.accounts.Account) entry.getValue()).name;
+                    defpackage.dby dby = (defpackage.dby) entry2.getKey();
+                    java.lang.String str3 = (java.lang.String) entry2.getValue();
+                    java.lang.Object[] objArr = new java.lang.Object[2];
                     objArr[0] = dby.d;
                     if (dby.e == null) {
-                        dca = dca.g;
+                        dca = defpackage.dca.g;
                     } else {
                         dca = dby.e;
                     }
                     if (dca.d == null) {
-                        dmk = dmk.d;
+                        dmk = defpackage.dmk.d;
                     } else {
                         dmk = dca.d;
                     }
                     objArr[1] = dmk;
-                    int hashCode = Arrays.hashCode(objArr);
-                    akl a3 = a(hashCode);
+                    int hashCode = java.util.Arrays.hashCode(objArr);
+                    defpackage.akl a3 = a(hashCode);
                     if (a3 != null) {
-                        ((Set) a.get(a3)).remove(Integer.valueOf(hashCode));
+                        ((java.util.Set) a.get(a3)).remove(java.lang.Integer.valueOf(hashCode));
                     }
                     int size = map.size();
-                    Context context = this.b;
+                    android.content.Context context = this.b;
                     int hashCode2 = dby.d.hashCode();
-                    String str4 = dby.d;
-                    Intent intent = new Intent("android.intent.action.VIEW");
-                    ajk ajk = new ajk(str2, str3, str4);
-                    intent.setData(new Uri.Builder().scheme("https").authority("tasks.google.com").appendPath("task").appendPath(ajk.a()).appendPath(ajk.b()).appendPath(ajk.c()).build());
-                    PendingIntent activity = PendingIntent.getActivity(context, hashCode2, intent, 0);
-                    Intent intent2 = new Intent(this.b, NotificationManagerImpl.class);
+                    java.lang.String str4 = dby.d;
+                    android.content.Intent intent = new android.content.Intent("android.intent.action.VIEW");
+                    defpackage.ajk ajk = new defpackage.ajk(str2, str3, str4);
+                    intent.setData(new android.net.Uri.Builder().scheme("https").authority("tasks.google.com").appendPath("task").appendPath(ajk.a()).appendPath(ajk.b()).appendPath(ajk.c()).build());
+                    android.app.PendingIntent activity = android.app.PendingIntent.getActivity(context, hashCode2, intent, 0);
+                    android.content.Intent intent2 = new android.content.Intent(this.b, com.google.android.apps.tasks.features.notificationmanager.NotificationManagerImpl.class);
                     intent2.setAction("com.google.android.apps.tasks.NOTIFICATION_DISMISSED");
                     intent2.putExtra("task_id", dby.d);
-                    PendingIntent broadcast = PendingIntent.getBroadcast(this.b.getApplicationContext(), dby.d.hashCode(), intent2, 0);
+                    android.app.PendingIntent broadcast = android.app.PendingIntent.getBroadcast(this.b.getApplicationContext(), dby.d.hashCode(), intent2, 0);
                     if (dby.e == null) {
-                        dca2 = dca.g;
+                        dca2 = defpackage.dca.g;
                     } else {
                         dca2 = dby.e;
                     }
-                    String str5 = dca2.b;
+                    java.lang.String str5 = dca2.b;
                     if (str5.isEmpty()) {
-                        str5 = this.b.getString(R.string.task_no_title);
+                        str5 = this.b.getString(2131951826);
                     }
-                    ni a4 = new ni(this.b, (byte) 0).a(R.drawable.quantum_ic_tasks_white_24).a(str5);
+                    defpackage.ni a4 = new defpackage.ni(this.b, 0).a(2130837692).a((java.lang.CharSequence) str5);
                     if (size != 1) {
                         if (dby.e == null) {
-                            dca3 = dca.g;
+                            dca3 = defpackage.dca.g;
                         } else {
                             dca3 = dby.e;
                         }
-                        if (!TextUtils.isEmpty(dca3.c)) {
+                        if (!android.text.TextUtils.isEmpty(dca3.c)) {
                             if (dby.e == null) {
-                                dca4 = dca.g;
+                                dca4 = defpackage.dca.g;
                             } else {
                                 dca4 = dby.e;
                             }
                             str = dca4.c;
-                            ni b2 = a4.b(str);
+                            defpackage.ni b2 = a4.b((java.lang.CharSequence) str);
                             b2.f = activity;
-                            ni c = b2.a(broadcast).c(str2);
+                            defpackage.ni c = b2.a(broadcast).c(str2);
                             c.n = "reminder";
                             c.s = this.b.getString(akl.c);
                             c.k = this.b.getString(akl.d);
                             c.b(16);
-                            c.p = ob.c(this.b, akl.g);
-                            set2.add(Integer.valueOf(hashCode));
+                            c.p = defpackage.ob.c(this.b, akl.g);
+                            set2.add(java.lang.Integer.valueOf(hashCode));
                             a().notify(hashCode, c.b());
                         }
                     }
                     str = this.b.getResources().getQuantityString(akl.f, 1);
-                    ni b22 = a4.b(str);
+                    defpackage.ni b22 = a4.b((java.lang.CharSequence) str);
                     b22.f = activity;
-                    ni c2 = b22.a(broadcast).c(str2);
+                    defpackage.ni c2 = b22.a(broadcast).c(str2);
                     c2.n = "reminder";
                     c2.s = this.b.getString(akl.c);
                     c2.k = this.b.getString(akl.d);
                     c2.b(16);
-                    c2.p = ob.c(this.b, akl.g);
-                    set2.add(Integer.valueOf(hashCode));
+                    c2.p = defpackage.ob.c(this.b, akl.g);
+                    set2.add(java.lang.Integer.valueOf(hashCode));
                     a().notify(hashCode, c2.b());
                 }
             }
         }
     }
 
-    private final ni a(akl akl, Map map, PendingIntent pendingIntent) {
-        dca dca;
-        dca dca2;
-        String quantityString = this.b.getResources().getQuantityString(akl.f, map.size(), Integer.valueOf(map.size()));
-        ni c = new ni(this.b, (byte) 0).a(R.drawable.quantum_ic_tasks_white_24).c(quantityString);
+    private final defpackage.ni a(defpackage.akl akl, java.util.Map map, android.app.PendingIntent pendingIntent) {
+        defpackage.dca dca;
+        defpackage.dca dca2;
+        java.lang.String quantityString = this.b.getResources().getQuantityString(akl.f, map.size(), new java.lang.Object[]{java.lang.Integer.valueOf(map.size())});
+        defpackage.ni c = new defpackage.ni(this.b, 0).a(2130837692).c(quantityString);
         c.n = "reminder";
         c.s = this.b.getString(akl.c);
         c.k = this.b.getString(akl.d);
         c.l = true;
-        ni d = c.d(quantityString);
-        d.p = ob.c(this.b, akl.g);
-        if (Build.VERSION.SDK_INT >= 24) {
+        defpackage.ni d = c.d(quantityString);
+        d.p = defpackage.ob.c(this.b, akl.g);
+        if (android.os.Build.VERSION.SDK_INT >= 24) {
             return d;
         }
-        nj njVar = new nj(d);
-        StringBuilder sb = new StringBuilder();
+        defpackage.nj njVar = new defpackage.nj(d);
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
         int i = 0;
-        Iterator it = map.entrySet().iterator();
+        java.util.Iterator it = map.entrySet().iterator();
         while (true) {
+            int i2 = i;
             if (!it.hasNext()) {
                 break;
             }
-            Map.Entry entry = (Map.Entry) it.next();
-            if (i + 1 == 5 && map.size() > 5) {
-                njVar.a(this.b.getString(R.string.notification_more_tasks, Integer.valueOf(map.size() - 4)));
+            java.util.Map.Entry entry = (java.util.Map.Entry) it.next();
+            if (i2 + 1 == 5 && map.size() > 5) {
+                njVar.a((java.lang.CharSequence) this.b.getString(2131951770, new java.lang.Object[]{java.lang.Integer.valueOf(map.size() - 4)}));
                 break;
             }
-            dby dby = (dby) ((Map.Entry) entry.getKey()).getKey();
+            defpackage.dby dby = (defpackage.dby) ((java.util.Map.Entry) entry.getKey()).getKey();
             if (dby.e == null) {
-                dca = dca.g;
+                dca = defpackage.dca.g;
             } else {
                 dca = dby.e;
             }
-            String trim = dca.b.trim();
-            if (TextUtils.isEmpty(trim)) {
-                trim = this.b.getString(R.string.task_no_title);
+            java.lang.String trim = dca.b.trim();
+            if (android.text.TextUtils.isEmpty(trim)) {
+                trim = this.b.getString(2131951826);
             }
             if (dby.e == null) {
-                dca2 = dca.g;
+                dca2 = defpackage.dca.g;
             } else {
                 dca2 = dby.e;
             }
-            String str = dca2.c;
-            sb.append(i > 0 ? ", " : "");
+            java.lang.String str = dca2.c;
+            sb.append(i2 > 0 ? ", " : "");
             sb.append(trim);
-            SpannableString spannableString = new SpannableString(String.format("%s %s", trim, str));
-            spannableString.setSpan(new TextAppearanceSpan(this.b, R.style.notification_primary_text), 0, trim.length(), 33);
-            njVar.a(spannableString);
-            i++;
+            android.text.SpannableString spannableString = new android.text.SpannableString(java.lang.String.format("%s %s", new java.lang.Object[]{trim, str}));
+            spannableString.setSpan(new android.text.style.TextAppearanceSpan(this.b, 2132017818), 0, trim.length(), 33);
+            njVar.a((java.lang.CharSequence) spannableString);
+            i = i2 + 1;
         }
         d.b(16);
-        d.a(this.b.getString(R.string.app_name)).b(sb).a(njVar).f = pendingIntent;
+        d.a((java.lang.CharSequence) this.b.getString(2131951686)).b((java.lang.CharSequence) sb).a((defpackage.nk) njVar).f = pendingIntent;
         return d;
     }
 
-    private final PendingIntent b(int i) {
-        return PendingIntent.getActivity(this.b, i, this.b.getPackageManager().getLaunchIntentForPackage("com.google.android.apps.tasks"), 0);
+    private final android.app.PendingIntent b(int i) {
+        return android.app.PendingIntent.getActivity(this.b, i, this.b.getPackageManager().getLaunchIntentForPackage("com.google.android.apps.tasks"), 0);
     }
 
-    public static final /* synthetic */ void a(List list) {
-        Iterator it = list.iterator();
-        while (it.hasNext()) {
-            Account account = (Account) it.next();
-            List<PeriodicSync> periodicSyncs = ContentResolver.getPeriodicSyncs(account, "com.google.android.apps.tasks.sync.provider");
-            String a2 = azb.a(account.name);
-            if (periodicSyncs.isEmpty()) {
-                new Object[1][0] = a2;
-                ContentResolver.addPeriodicSync(account, "com.google.android.apps.tasks.sync.provider", Bundle.EMPTY, 43200);
-            } else {
-                new Object[1][0] = a2;
-            }
-        }
+    /* JADX WARNING: Incorrect type for immutable var: ssa=java.util.List, code=java.util.List<android.accounts.Account>, for r8v0, types: [java.util.List, java.util.List<android.accounts.Account>] */
+    /* Code decompiled incorrectly, please refer to instructions dump. */
+    public static final /* synthetic */ void a(java.util.List<android.accounts.Account> r8) {
+        /*
+            r7 = 1
+            r6 = 0
+            java.util.Iterator r1 = r8.iterator()
+        L_0x0006:
+            boolean r0 = r1.hasNext()
+            if (r0 == 0) goto L_0x0038
+            java.lang.Object r0 = r1.next()
+            android.accounts.Account r0 = (android.accounts.Account) r0
+            java.lang.String r2 = "com.google.android.apps.tasks.sync.provider"
+            java.util.List r2 = android.content.ContentResolver.getPeriodicSyncs(r0, r2)
+            java.lang.String r3 = r0.name
+            java.lang.String r3 = defpackage.azb.a(r3)
+            boolean r2 = r2.isEmpty()
+            if (r2 == 0) goto L_0x0033
+            java.lang.Object[] r2 = new java.lang.Object[r7]
+            r2[r6] = r3
+            java.lang.String r2 = "com.google.android.apps.tasks.sync.provider"
+            android.os.Bundle r3 = android.os.Bundle.EMPTY
+            r4 = 43200(0xa8c0, double:2.13436E-319)
+            android.content.ContentResolver.addPeriodicSync(r0, r2, r3, r4)
+            goto L_0x0006
+        L_0x0033:
+            java.lang.Object[] r0 = new java.lang.Object[r7]
+            r0[r6] = r3
+            goto L_0x0006
+        L_0x0038:
+            return
+        */
+        throw new UnsupportedOperationException("Method not decompiled: com.google.android.apps.tasks.features.notificationmanager.NotificationManagerImpl.a(java.util.List):void");
     }
 
     static {
-        akl akl = akl.DUE;
-        HashSet hashSet = new HashSet();
-        akl akl2 = akl.OVERDUE;
-        HashSet hashSet2 = new HashSet();
-        cky.c(akl, hashSet);
-        cky.c(akl2, hashSet2);
-        a = cta.a(2, new Object[]{akl, hashSet, akl2, hashSet2});
+        defpackage.akl akl = defpackage.akl.DUE;
+        java.util.HashSet hashSet = new java.util.HashSet();
+        defpackage.akl akl2 = defpackage.akl.OVERDUE;
+        java.util.HashSet hashSet2 = new java.util.HashSet();
+        defpackage.cky.c((java.lang.Object) akl, (java.lang.Object) hashSet);
+        defpackage.cky.c((java.lang.Object) akl2, (java.lang.Object) hashSet2);
+        a = defpackage.cta.a(2, new java.lang.Object[]{akl, hashSet, akl2, hashSet2});
     }
 }

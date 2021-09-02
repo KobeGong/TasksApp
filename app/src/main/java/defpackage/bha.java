@@ -1,18 +1,15 @@
 package defpackage;
 
-import android.content.Context;
-import android.content.SharedPreferences;
-
-/* renamed from: bha  reason: default package */
+/* renamed from: bha reason: default package */
 /* compiled from: PG */
 public final class bha {
-    private static SharedPreferences a = null;
+    private static android.content.SharedPreferences a = null;
 
-    public static SharedPreferences a(Context context) {
-        SharedPreferences sharedPreferences;
-        synchronized (SharedPreferences.class) {
+    public static android.content.SharedPreferences a(android.content.Context context) {
+        android.content.SharedPreferences sharedPreferences;
+        synchronized (android.content.SharedPreferences.class) {
             if (a == null) {
-                a = (SharedPreferences) bjr.a(new bhb(context));
+                a = (android.content.SharedPreferences) defpackage.bjr.a((java.util.concurrent.Callable) new defpackage.bhb(context));
             }
             sharedPreferences = a;
         }

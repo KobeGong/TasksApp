@@ -1,34 +1,33 @@
 package defpackage;
 
-import java.lang.ref.ReferenceQueue;
-import java.lang.ref.WeakReference;
-
-/* access modifiers changed from: package-private */
-/* renamed from: czd  reason: default package */
+/* renamed from: czd reason: default package */
 /* compiled from: PG */
-public final class czd extends WeakReference {
+final class czd extends java.lang.ref.WeakReference {
     private final int a;
 
-    public czd(Throwable th, ReferenceQueue referenceQueue) {
+    public czd(java.lang.Throwable th, java.lang.ref.ReferenceQueue referenceQueue) {
         super(th, referenceQueue);
         if (th == null) {
-            throw new NullPointerException("The referent cannot be null");
+            throw new java.lang.NullPointerException("The referent cannot be null");
         }
-        this.a = System.identityHashCode(th);
+        this.a = java.lang.System.identityHashCode(th);
     }
 
     public final int hashCode() {
         return this.a;
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         if (obj == null || obj.getClass() != getClass()) {
             return false;
         }
         if (this == obj) {
             return true;
         }
-        czd czd = (czd) obj;
-        return this.a == czd.a && get() == czd.get();
+        defpackage.czd czd = (defpackage.czd) obj;
+        if (this.a == czd.a && get() == czd.get()) {
+            return true;
+        }
+        return false;
     }
 }

@@ -1,19 +1,18 @@
 package defpackage;
 
-/* renamed from: cor  reason: default package */
+/* renamed from: cor reason: default package */
 /* compiled from: PG */
-public final class cor implements ecz {
-    private final ecz a;
-    private coo b;
+public final class cor implements defpackage.ecz {
+    private final defpackage.ecz a;
+    private defpackage.coo b;
 
-    cor(ecz ecz) {
+    cor(defpackage.ecz ecz) {
         this.a = ecz;
     }
 
-    @Override // defpackage.ecz
-    public final /* synthetic */ Object a() {
+    public final /* synthetic */ java.lang.Object a() {
         if (this.b == null) {
-            this.b = (coo) this.a.a();
+            this.b = (defpackage.coo) this.a.a();
         }
         return this.b;
     }

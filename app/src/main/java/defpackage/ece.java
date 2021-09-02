@@ -1,13 +1,13 @@
 package defpackage;
 
-/* renamed from: ece  reason: default package */
+/* renamed from: ece reason: default package */
 /* compiled from: PG */
 public final class ece {
     public ece() {
     }
 
-    ece(String str) {
+    ece(java.lang.String str) {
         this();
-        cld.a(str, "name");
+        defpackage.cld.a((java.lang.Object) str, (java.lang.Object) "name");
     }
 }

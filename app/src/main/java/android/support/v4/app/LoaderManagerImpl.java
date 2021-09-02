@@ -1,52 +1,45 @@
 package android.support.v4.app;
 
-import android.os.Looper;
-import java.io.FileDescriptor;
-import java.io.PrintWriter;
-import java.lang.reflect.Modifier;
+import defpackage.LifecycleOwner;
+import defpackage.ViewModelStore;
 
 /* compiled from: PG */
-public final class LoaderManagerImpl extends na {
-    private final y a;
-    private final LoaderViewModel b;
-
-    public LoaderManagerImpl(y yVar, gt gtVar) {
-        this.a = yVar;
-        this.b = LoaderViewModel.a(gtVar);
-    }
+public final class LoaderManagerImpl extends defpackage.na {
+    private final LifecycleOwner a;
+    private final android.support.v4.app.LoaderManagerImpl.LoaderViewModel b;
 
     /* compiled from: PG */
-    public class LoaderViewModel extends gm {
-        private static final gn c = new gn();
-        public rj a = new rj();
+    public class LoaderViewModel extends defpackage.gm {
+        private static final defpackage.gn c = new defpackage.gn();
+        public defpackage.rj a = new defpackage.rj();
         public boolean b = false;
 
-        static LoaderViewModel a(gt gtVar) {
-            gl glVar = new gl(gtVar, c);
-            String canonicalName = LoaderViewModel.class.getCanonicalName();
+        static android.support.v4.app.LoaderManagerImpl.LoaderViewModel a(ViewModelStore gtVar) {
+            defpackage.gl glVar = new defpackage.gl(gtVar, c);
+            java.lang.Class<android.support.v4.app.LoaderManagerImpl.LoaderViewModel> cls = android.support.v4.app.LoaderManagerImpl.LoaderViewModel.class;
+            java.lang.String canonicalName = cls.getCanonicalName();
             if (canonicalName == null) {
-                throw new IllegalArgumentException("Local and anonymous classes can not be ViewModels");
+                throw new java.lang.IllegalArgumentException("Local and anonymous classes can not be ViewModels");
             }
-            String str = "android.arch.lifecycle.ViewModelProvider.DefaultKey:" + canonicalName;
-            gm gmVar = (gm) glVar.a.a.get(str);
-            if (!LoaderViewModel.class.isInstance(gmVar)) {
-                LoaderViewModel loaderViewModel = new LoaderViewModel();
-                gt gtVar2 = glVar.a;
-                gm gmVar2 = (gm) gtVar2.a.get(str);
+            java.lang.String str = "android.arch.lifecycle.ViewModelProvider.DefaultKey:" + canonicalName;
+            defpackage.gm gmVar = (defpackage.gm) glVar.a.a.get(str);
+            if (!cls.isInstance(gmVar)) {
+                defpackage.gm loaderViewModel = new android.support.v4.app.LoaderManagerImpl.LoaderViewModel();
+                ViewModelStore gtVar2 = glVar.a;
+                defpackage.gm gmVar2 = (defpackage.gm) gtVar2.a.get(str);
                 if (gmVar2 != null) {
                     gmVar2.a();
                 }
                 gtVar2.a.put(str, loaderViewModel);
                 gmVar = loaderViewModel;
             }
-            return (LoaderViewModel) gmVar;
+            return (android.support.v4.app.LoaderManagerImpl.LoaderViewModel) gmVar;
         }
 
-        /* JADX WARN: Multi-variable type inference failed */
-        /* JADX WARN: Type inference failed for: r0v4, types: [java.lang.Object[]] */
-        /* JADX WARN: Type inference failed for: r0v5 */
-        /* access modifiers changed from: package-private */
-        /* JADX WARNING: Unknown variable types count: 2 */
+        /* JADX WARNING: type inference failed for: r0v5 */
+        /* JADX WARNING: type inference failed for: r0v6 */
+        /* access modifiers changed from: 0000 */
+        /* JADX WARNING: Multi-variable type inference failed */
         /* Code decompiled incorrectly, please refer to instructions dump. */
         public final defpackage.nc a(int r5) {
             /*
@@ -74,16 +67,15 @@ public final class LoaderManagerImpl extends na {
         }
 
         /* access modifiers changed from: protected */
-        @Override // defpackage.gm
         public final void a() {
             super.a();
             int b2 = this.a.b();
             for (int i = 0; i < b2; i++) {
-                ((nc) this.a.c(i)).d();
+                ((defpackage.nc) this.a.c(i)).d();
             }
-            rj rjVar = this.a;
+            defpackage.rj rjVar = this.a;
             int i2 = rjVar.e;
-            Object[] objArr = rjVar.d;
+            java.lang.Object[] objArr = rjVar.d;
             for (int i3 = 0; i3 < i2; i3++) {
                 objArr[i3] = null;
             }
@@ -92,32 +84,36 @@ public final class LoaderManagerImpl extends na {
         }
     }
 
+    public LoaderManagerImpl(LifecycleOwner yVar, ViewModelStore gtVar) {
+        this.a = yVar;
+        this.b = android.support.v4.app.LoaderManagerImpl.LoaderViewModel.a(gtVar);
+    }
+
     /* JADX INFO: finally extract failed */
-    private final oc b(int i, nb nbVar) {
+    private final defpackage.oc b(int i, defpackage.nb nbVar) {
         try {
             this.b.b = true;
-            oc i_ = nbVar.i_();
-            if (!i_.getClass().isMemberClass() || Modifier.isStatic(i_.getClass().getModifiers())) {
-                nc ncVar = new nc(i, null, i_);
+            defpackage.oc i_ = nbVar.i_();
+            if (!i_.getClass().isMemberClass() || java.lang.reflect.Modifier.isStatic(i_.getClass().getModifiers())) {
+                defpackage.nc ncVar = new defpackage.nc(i, null, i_);
                 this.b.a.a(i, ncVar);
                 this.b.b = false;
                 return ncVar.a(this.a, nbVar);
             }
-            throw new IllegalArgumentException("Object returned from onCreateLoader must not be a non-static inner member class: " + i_);
+            throw new java.lang.IllegalArgumentException("Object returned from onCreateLoader must not be a non-static inner member class: " + i_);
         } catch (Throwable th) {
             this.b.b = false;
             throw th;
         }
     }
 
-    @Override // defpackage.na
-    public final oc a(int i, nb nbVar) {
+    public final defpackage.oc a(int i, defpackage.nb nbVar) {
         if (this.b.b) {
-            throw new IllegalStateException("Called while creating a loader");
-        } else if (Looper.getMainLooper() != Looper.myLooper()) {
-            throw new IllegalStateException("initLoader must be called on the main thread");
+            throw new java.lang.IllegalStateException("Called while creating a loader");
+        } else if (android.os.Looper.getMainLooper() != android.os.Looper.myLooper()) {
+            throw new java.lang.IllegalStateException("initLoader must be called on the main thread");
         } else {
-            nc a2 = this.b.a(i);
+            defpackage.nc a2 = this.b.a(i);
             if (a2 == null) {
                 return b(i, nbVar);
             }
@@ -125,54 +121,52 @@ public final class LoaderManagerImpl extends na {
         }
     }
 
-    @Override // defpackage.na
     public final void a() {
         if (this.b.b) {
-            throw new IllegalStateException("Called while creating a loader");
-        } else if (Looper.getMainLooper() != Looper.myLooper()) {
-            throw new IllegalStateException("destroyLoader must be called on the main thread");
+            throw new java.lang.IllegalStateException("Called while creating a loader");
+        } else if (android.os.Looper.getMainLooper() != android.os.Looper.myLooper()) {
+            throw new java.lang.IllegalStateException("destroyLoader must be called on the main thread");
         } else {
-            nc a2 = this.b.a(54321);
+            defpackage.nc a2 = this.b.a(54321);
             if (a2 != null) {
                 a2.d();
-                rj rjVar = this.b.a;
-                int a3 = qv.a(rjVar.c, rjVar.e, 54321);
-                if (a3 >= 0 && rjVar.d[a3] != rj.a) {
-                    rjVar.d[a3] = rj.a;
+                defpackage.rj rjVar = this.b.a;
+                int a3 = defpackage.qv.a(rjVar.c, rjVar.e, 54321);
+                if (a3 >= 0 && rjVar.d[a3] != defpackage.rj.a) {
+                    rjVar.d[a3] = defpackage.rj.a;
                     rjVar.b = true;
                 }
             }
         }
     }
 
-    @Override // defpackage.na
     public final void b() {
-        LoaderViewModel loaderViewModel = this.b;
+        android.support.v4.app.LoaderManagerImpl.LoaderViewModel loaderViewModel = this.b;
         int b2 = loaderViewModel.a.b();
         for (int i = 0; i < b2; i++) {
-            ((nc) loaderViewModel.a.c(i)).c();
+            ((defpackage.nc) loaderViewModel.a.c(i)).c();
         }
     }
 
-    public final String toString() {
-        StringBuilder sb = new StringBuilder(128);
+    public final java.lang.String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder(128);
         sb.append("LoaderManager{");
-        sb.append(Integer.toHexString(System.identityHashCode(this)));
+        sb.append(java.lang.Integer.toHexString(java.lang.System.identityHashCode(this)));
         sb.append(" in ");
-        jd.a((Object) this.a, sb);
+        defpackage.jd.a((java.lang.Object) this.a, sb);
         sb.append("}}");
         return sb.toString();
     }
 
-    @Override // defpackage.na
-    public final void a(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {
-        LoaderViewModel loaderViewModel = this.b;
+    public final void a(java.lang.String str, java.io.FileDescriptor fileDescriptor, java.io.PrintWriter printWriter, java.lang.String[] strArr) {
+        boolean z;
+        android.support.v4.app.LoaderManagerImpl.LoaderViewModel loaderViewModel = this.b;
         if (loaderViewModel.a.b() > 0) {
             printWriter.print(str);
             printWriter.println("Loaders:");
-            String str2 = str + "    ";
+            java.lang.String str2 = str + "    ";
             for (int i = 0; i < loaderViewModel.a.b(); i++) {
-                nc ncVar = (nc) loaderViewModel.a.c(i);
+                defpackage.nc ncVar = (defpackage.nc) loaderViewModel.a.c(i);
                 printWriter.print(str);
                 printWriter.print("  #");
                 printWriter.print(loaderViewModel.a.b(i));
@@ -191,24 +185,29 @@ public final class LoaderManagerImpl extends na {
                     printWriter.print(str2);
                     printWriter.print("mCallbacks=");
                     printWriter.println(ncVar.j);
-                    nd ndVar = ncVar.j;
+                    defpackage.nd ndVar = ncVar.j;
                     printWriter.print(str2 + "  ");
                     printWriter.print("mDeliveredData=");
                     printWriter.println(ndVar.b);
                 }
                 printWriter.print(str2);
                 printWriter.print("mData=");
-                Object obj = ncVar.d;
-                if (obj == ac.b) {
+                java.lang.Object obj = ncVar.d;
+                if (obj == defpackage.ac.b) {
                     obj = null;
                 }
-                StringBuilder sb = new StringBuilder(64);
-                jd.a(obj, sb);
+                java.lang.StringBuilder sb = new java.lang.StringBuilder(64);
+                defpackage.jd.a(obj, sb);
                 sb.append("}");
                 printWriter.println(sb.toString());
                 printWriter.print(str2);
                 printWriter.print("mStarted=");
-                printWriter.println(ncVar.c > 0);
+                if (ncVar.c > 0) {
+                    z = true;
+                } else {
+                    z = false;
+                }
+                printWriter.println(z);
             }
         }
     }

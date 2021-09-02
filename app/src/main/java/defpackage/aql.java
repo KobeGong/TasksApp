@@ -1,25 +1,13 @@
 package defpackage;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Toast;
-import com.google.android.apps.tasks.R;
-import com.google.android.apps.tasks.common.TaskApplication;
-import com.google.android.apps.tasks.ui.components.snackbar.Snackbar;
-import java.util.Locale;
-import java.util.concurrent.ExecutionException;
-
-/* renamed from: aql  reason: default package */
+/* renamed from: aql reason: default package */
 /* compiled from: PG */
-public abstract class aql extends wm {
-    private cyi h;
-    public wl r;
-    public Snackbar s;
+public abstract class aql extends defpackage.wm {
+    private defpackage.cyi h;
+    public defpackage.wl r;
+    public com.google.android.apps.tasks.ui.components.snackbar.Snackbar s;
 
-    public abstract void a(ajn ajn);
+    public abstract void a(defpackage.ajn ajn);
 
     public abstract void h();
 
@@ -31,39 +19,37 @@ public abstract class aql extends wm {
 
     public abstract void n();
 
-    @Override // defpackage.nv, defpackage.wm, defpackage.lg
-    public void onCreate(Bundle bundle) {
+    public void onCreate(android.os.Bundle bundle) {
         super.onCreate(bundle);
-        crk crk = crk.a;
+        defpackage.crk crk = defpackage.crk.a;
         if (crk.a()) {
-            ((aki) crk.b()).a();
+            ((defpackage.aki) crk.b()).a();
         }
     }
 
-    @Override // defpackage.wm, defpackage.lg
     public void onStop() {
         super.onStop();
-        aiq.a().a((ajc) null);
-        any.get().d.a((aoc) null);
+        defpackage.aiq.a().a((defpackage.ajc) null);
+        defpackage.any.a().d.a((defpackage.aoc) null);
     }
 
     public final boolean q() {
-        if (!(axv.a(this) == 0)) {
+        if (!(defpackage.axv.a((android.content.Context) this) == 0)) {
             k();
             return false;
         }
-        aiq.a().a(new ajc(this));
-        any.get().d.a(new aoc(this));
+        defpackage.aiq.a().a(new defpackage.ajc(this));
+        defpackage.any.a().d.a(new defpackage.aoc(this));
         return true;
     }
 
-    /* access modifiers changed from: package-private */
-    public final boolean a(Throwable th) {
-        Throwable th2 = th;
-        while (!(th2 instanceof axx)) {
-            if (th2 instanceof avf) {
-                if (any.get().c().a()) {
-                    this.s = (Snackbar) Snackbar.a(m(), (int) R.string.invalid_credentials, -2).a(R.string.sign_in, new aqm(this, th2)).a(new aqz());
+    /* access modifiers changed from: 0000 */
+    public final boolean a(java.lang.Throwable th) {
+        java.lang.Throwable th2 = th;
+        while (!(th2 instanceof defpackage.axx)) {
+            if (th2 instanceof defpackage.avf) {
+                if (defpackage.any.a().c().a()) {
+                    this.s = (com.google.android.apps.tasks.ui.components.snackbar.Snackbar) com.google.android.apps.tasks.ui.components.snackbar.Snackbar.a(m(), 2131951741, -2).a(2131951810, (android.view.View.OnClickListener) new defpackage.aqm(this, th2)).a((defpackage.arl) new defpackage.aqz());
                     this.s.a();
                 } else {
                     j();
@@ -75,29 +61,29 @@ public abstract class aql extends wm {
                 th2 = th2.getCause();
             }
         }
-        axt.a.a((Activity) this, ((axx) th2).a).show();
+        defpackage.axt.a.a((android.app.Activity) this, ((defpackage.axx) th2).a).show();
         return true;
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.lg
-    public void onActivityResult(int i, int i2, Intent intent) {
+    public void onActivityResult(int i, int i2, android.content.Intent intent) {
         super.onActivityResult(i, i2, intent);
         switch (i) {
             case 1001:
                 if (i2 == -1) {
-                    aiq.a().b();
+                    defpackage.aiq.a().b();
                     h();
                     return;
                 }
                 return;
             case 1002:
                 if (i2 != -1) {
-                    Toast.makeText(getApplicationContext(), "This app requires Google Play Services. Please install Google Play Services on your device and relaunch this app.", 1).show();
-                    azb.b("This app requires Google Play Services. Please install Google Play Services on your device and relaunch this app.", new Object[0]);
+                    java.lang.String str = "This app requires Google Play Services. Please install Google Play Services on your device and relaunch this app.";
+                    android.widget.Toast.makeText(getApplicationContext(), str, 1).show();
+                    defpackage.azb.b(str, new java.lang.Object[0]);
                     return;
                 }
-                aiq.a().b();
+                defpackage.aiq.a().b();
                 n();
                 return;
             default:
@@ -105,7 +91,7 @@ public abstract class aql extends wm {
         }
     }
 
-    public View m() {
+    public android.view.View m() {
         return findViewById(16908290);
     }
 
@@ -113,63 +99,63 @@ public abstract class aql extends wm {
         return isFinishing() || isDestroyed();
     }
 
-    /* access modifiers changed from: package-private */
-    public final void a(czq czq) {
-        runOnUiThread(new aqq(this, czq));
+    /* access modifiers changed from: 0000 */
+    public final void a(defpackage.czq czq) {
+        runOnUiThread(new defpackage.aqq(this, czq));
     }
 
-    /* access modifiers changed from: package-private */
-    public final void a(int i, Intent intent) {
-        Snackbar a = Snackbar.a(m(), i, 0);
-        a.a(R.string.update_required_button, new aqr(this, intent));
+    /* access modifiers changed from: 0000 */
+    public final void a(int i, android.content.Intent intent) {
+        com.google.android.apps.tasks.ui.components.snackbar.Snackbar a = com.google.android.apps.tasks.ui.components.snackbar.Snackbar.a(m(), i, 0);
+        a.a(2131951847, (android.view.View.OnClickListener) new defpackage.aqr(this, intent));
         a.a();
     }
 
-    /* access modifiers changed from: package-private */
-    public final /* synthetic */ Object a(int i, cyi cyi, cyu cyu, Locale locale) {
+    /* access modifiers changed from: 0000 */
+    public final /* synthetic */ java.lang.Object a(int i, defpackage.cyi cyi, defpackage.cyu cyu, java.util.Locale locale) {
         boolean z = true;
-        czq czq = TaskApplication.b().b;
+        defpackage.czq czq = com.google.android.apps.tasks.common.TaskApplication.getApplication().b;
         if (czq != null) {
             a(czq);
         } else if (this.h == null) {
-            cyi a = any.get().c().a(i);
+            defpackage.cyi a = defpackage.any.a().c().a(i);
             this.h = a;
-            a.a(new aqp(this, a), TaskApplication.b().a);
+            a.a(new defpackage.aqp(this, a), com.google.android.apps.tasks.common.TaskApplication.getApplication().a);
         }
         try {
-            ain ain = (ain) cyi.get();
+            defpackage.ain ain = (defpackage.ain) cyi.get();
             if (ain.a.getBoolean("setup-called", false)) {
                 z = false;
             }
-            if (any.get().c().a() || z) {
-                runOnUiThread(new aqu(this));
+            if (defpackage.any.a().c().a() || z) {
+                runOnUiThread(new defpackage.aqu(this));
             }
             if (z) {
                 try {
-                    any.get().c().e(locale.getCountry(), locale.getLanguage()).get();
-                    SharedPreferences.Editor edit = ain.a.edit();
+                    defpackage.any.a().c().e(locale.getCountry(), locale.getLanguage()).get();
+                    android.content.SharedPreferences.Editor edit = ain.a.edit();
                     edit.putBoolean("setup-called", true);
                     edit.apply();
-                } catch (InterruptedException | ExecutionException e) {
-                    cyu.a(ajh.c());
+                } catch (java.lang.InterruptedException | java.util.concurrent.ExecutionException e) {
+                    cyu.a((java.lang.Object) defpackage.ajh.c());
                 }
             }
-            if (!any.get().c().a()) {
-                cyu.a(ajh.a(false));
+            if (!defpackage.any.a().c().a()) {
+                cyu.a((java.lang.Object) defpackage.ajh.a(false));
             } else {
                 try {
-                    any.get().c().c().get();
+                    defpackage.any.a().c().c().get();
                     try {
-                        any.get().c().a("~default").get();
-                    } catch (InterruptedException | ExecutionException e2) {
+                        defpackage.any.a().c().a("~default").get();
+                    } catch (java.lang.InterruptedException | java.util.concurrent.ExecutionException e2) {
                     }
-                    cyu.a(ajh.a(true));
-                } catch (InterruptedException | ExecutionException e3) {
-                    cyu.a(ajh.c());
+                    cyu.a((java.lang.Object) defpackage.ajh.a(true));
+                } catch (java.lang.InterruptedException | java.util.concurrent.ExecutionException e3) {
+                    cyu.a((java.lang.Object) defpackage.ajh.c());
                 }
             }
-        } catch (InterruptedException | ExecutionException e4) {
-            cyu.a(ajh.c());
+        } catch (java.lang.InterruptedException | java.util.concurrent.ExecutionException e4) {
+            cyu.a((java.lang.Object) defpackage.ajh.c());
         }
         return null;
     }

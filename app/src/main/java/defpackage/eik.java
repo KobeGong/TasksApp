@@ -1,13 +1,13 @@
 package defpackage;
 
-/* renamed from: eik  reason: default package */
+/* renamed from: eik reason: default package */
 /* compiled from: PG */
-final class eik implements Runnable {
+final class eik implements java.lang.Runnable {
     private final /* synthetic */ long a;
     private final /* synthetic */ int b;
-    private final /* synthetic */ eii c;
+    private final /* synthetic */ defpackage.eii c;
 
-    eik(eii eii, long j, int i) {
+    eik(defpackage.eii eii, long j, int i) {
         this.c = eii;
         this.a = j;
         this.b = i;

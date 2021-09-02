@@ -1,16 +1,15 @@
 package defpackage;
 
-/* renamed from: r  reason: default package */
+/* renamed from: r reason: default package */
 /* compiled from: PG */
-final class r implements t {
-    private final q a;
+final class r implements defpackage.t {
+    private final defpackage.q a;
 
-    r(q qVar) {
+    r(defpackage.q qVar) {
         this.a = qVar;
     }
 
-    @Override // defpackage.t
-    public final void a(y yVar, v vVar) {
+    public final void a(LifecycleOwner yVar, defpackage.v vVar) {
         switch (vVar.ordinal()) {
             case 0:
                 this.a.a();
@@ -31,7 +30,7 @@ final class r implements t {
                 this.a.f();
                 return;
             case 6:
-                throw new IllegalArgumentException("ON_ANY must not been send by anybody");
+                throw new java.lang.IllegalArgumentException("ON_ANY must not been send by anybody");
             default:
                 return;
         }

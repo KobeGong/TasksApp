@@ -1,25 +1,22 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: duv  reason: default package */
+/* renamed from: duv reason: default package */
 /* compiled from: PG */
-public final class duv implements dtb {
-    private final dpw a;
+final class duv implements defpackage.dtb {
+    private final defpackage.dpw a;
     private final int b;
 
-    duv(dpw dpw, int i) {
-        cld.a(!dpw.a(), "error must not be OK");
+    duv(defpackage.dpw dpw, int i) {
+        defpackage.cld.a(!dpw.a(), (java.lang.Object) "error must not be OK");
         this.a = dpw;
         this.b = i;
     }
 
-    @Override // defpackage.dtb
-    public final dta a(dpb dpb, dor dor, dna dna) {
-        return new duu(this.a, this.b);
+    public final defpackage.dta a(defpackage.dpb dpb, defpackage.dor dor, defpackage.dna dna) {
+        return new defpackage.duu(this.a, this.b);
     }
 
-    @Override // defpackage.dzw
-    public final dwd b() {
-        throw new UnsupportedOperationException("Not a real transport");
+    public final defpackage.dwd b() {
+        throw new java.lang.UnsupportedOperationException("Not a real transport");
     }
 }

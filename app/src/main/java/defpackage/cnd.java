@@ -1,17 +1,14 @@
 package defpackage;
 
-import java.util.List;
-import java.util.Map;
-
-/* renamed from: cnd  reason: default package */
+/* renamed from: cnd reason: default package */
 /* compiled from: PG */
 public final class cnd {
-    public final cng a;
-    public final cng b;
-    public final List c;
-    public final Map d;
+    public final defpackage.cng a;
+    public final defpackage.cng b;
+    public final java.util.List c;
+    public final java.util.Map d;
 
-    public cnd(cng cng, cng cng2, List list, Map map) {
+    public cnd(defpackage.cng cng, defpackage.cng cng2, java.util.List list, java.util.Map map) {
         this.a = cng;
         this.b = cng2;
         this.c = list;

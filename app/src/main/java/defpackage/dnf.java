@@ -1,7 +1,7 @@
 package defpackage;
 
-/* renamed from: dnf  reason: default package */
+/* renamed from: dnf reason: default package */
 /* compiled from: PG */
 public interface dnf {
-    dnd a(dpb dpb, dna dna, dnc dnc);
+    defpackage.dnd a(defpackage.dpb dpb, defpackage.dna dna, defpackage.dnc dnc);
 }

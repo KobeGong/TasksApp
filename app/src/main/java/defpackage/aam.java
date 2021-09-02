@@ -1,13 +1,11 @@
 package defpackage;
 
-import android.support.v7.widget.ActionBarOverlayLayout;
-
-/* renamed from: aam  reason: default package */
+/* renamed from: aam reason: default package */
 /* compiled from: PG */
-public final class aam implements Runnable {
-    private final /* synthetic */ ActionBarOverlayLayout a;
+public final class aam implements java.lang.Runnable {
+    private final /* synthetic */ android.support.v7.widget.ActionBarOverlayLayout a;
 
-    public aam(ActionBarOverlayLayout actionBarOverlayLayout) {
+    public aam(android.support.v7.widget.ActionBarOverlayLayout actionBarOverlayLayout) {
         this.a = actionBarOverlayLayout;
     }
 

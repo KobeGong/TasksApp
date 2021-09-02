@@ -1,66 +1,56 @@
 package defpackage;
 
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
-import android.content.Context;
-import android.text.TextUtils;
-import java.util.Collections;
-import java.util.Set;
-
-/* renamed from: cbj  reason: default package */
+/* renamed from: cbj reason: default package */
 /* compiled from: PG */
 public final class cbj {
-    public Context a;
-    public buc b;
+    public android.content.Context a;
+    public defpackage.buc b;
 
-    public final void a(ni niVar, buv buv) {
-        String b2 = b(buv);
-        if (!TextUtils.isEmpty(b2)) {
-            bty.d("NotificationChannelHelperImpl", "Setting channel Id: '%s'", b2);
+    public final void a(defpackage.ni niVar, defpackage.buv buv) {
+        java.lang.String b2 = b(buv);
+        if (!android.text.TextUtils.isEmpty(b2)) {
+            defpackage.bty.d("NotificationChannelHelperImpl", "Setting channel Id: '%s'", b2);
             niVar.s = b2;
         }
     }
 
-    public final Set a() {
-        if (!bwj.c()) {
-            return Collections.emptySet();
+    public final java.util.Set a() {
+        if (!defpackage.bwj.c()) {
+            return java.util.Collections.emptySet();
         }
-        qt qtVar = new qt();
-        for (NotificationChannel notificationChannel : ((NotificationManager) this.a.getSystemService("notification")).getNotificationChannels()) {
-            qtVar.add(notificationChannel.getId());
+        defpackage.qt qtVar = new defpackage.qt();
+        for (android.app.NotificationChannel id : ((android.app.NotificationManager) this.a.getSystemService("notification")).getNotificationChannels()) {
+            qtVar.add(id.getId());
         }
         return qtVar;
     }
 
-    public final boolean a(buv buv) {
-        if (!bwj.a(this.a)) {
+    public final boolean a(defpackage.buv buv) {
+        if (!defpackage.bwj.a(this.a)) {
             return true;
         }
-        String b2 = b(buv);
-        if (TextUtils.isEmpty(b2) || ((NotificationManager) this.a.getSystemService("notification")).getNotificationChannel(b2).getImportance() <= 0) {
-            return false;
-        }
-        return true;
+        java.lang.String b2 = b(buv);
+        return !android.text.TextUtils.isEmpty(b2) && ((android.app.NotificationManager) this.a.getSystemService("notification")).getNotificationChannel(b2).getImportance() > 0;
     }
 
-    private final String b(buv buv) {
-        dfq dfq;
-        Set a2 = a();
-        dfn g = buv.g();
+    private final java.lang.String b(defpackage.buv buv) {
+        defpackage.dfq dfq;
+        java.util.Set a2 = a();
+        defpackage.dfn g = buv.g();
         if (g.n == null) {
-            dfq = dfq.c;
+            dfq = defpackage.dfq.c;
         } else {
             dfq = g.n;
         }
-        String str = dfq.b;
-        if (!TextUtils.isEmpty(str) && a2.contains(str)) {
+        java.lang.String str = dfq.b;
+        if (!android.text.TextUtils.isEmpty(str) && a2.contains(str)) {
             return str;
         }
-        String k = this.b.f().k();
-        if (!TextUtils.isEmpty(k) && a2.contains(k)) {
+        java.lang.String k = this.b.f().k();
+        if (!android.text.TextUtils.isEmpty(k) && a2.contains(k)) {
             return k;
         }
-        bty.e("NotificationChannelHelperImpl", "Did not find the intended channel '%s' or the default channel '%s'", str, k);
+        defpackage.bty.e("NotificationChannelHelperImpl", "Did not find the intended channel '%s' or the default channel '%s'", str, k);
         return null;
     }
 }

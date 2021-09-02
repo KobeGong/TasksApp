@@ -1,41 +1,37 @@
 package defpackage;
 
-import java.util.Arrays;
-
-/* renamed from: ecl  reason: default package */
+/* renamed from: ecl reason: default package */
 /* compiled from: PG */
-public final class ecl implements Comparable {
-    public static final ecl a = new ecl(new byte[16]);
+public final class ecl implements java.lang.Comparable {
+    public static final defpackage.ecl a = new defpackage.ecl(new byte[16]);
     private final byte[] b;
 
     private ecl(byte[] bArr) {
         this.b = bArr;
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof ecl)) {
+        if (!(obj instanceof defpackage.ecl)) {
             return false;
         }
-        return Arrays.equals(this.b, ((ecl) obj).b);
+        return java.util.Arrays.equals(this.b, ((defpackage.ecl) obj).b);
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(this.b);
+        return java.util.Arrays.hashCode(this.b);
     }
 
-    public final String toString() {
-        crs b2 = cky.b(this);
-        cwe a2 = cwe.b.a();
+    public final java.lang.String toString() {
+        defpackage.cwe a2 = defpackage.cwe.b.a();
         byte[] bArr = this.b;
-        return b2.a("traceId", a2.a(bArr, bArr.length)).toString();
+        return defpackage.cky.b((java.lang.Object) this).a("traceId", (java.lang.Object) a2.a(bArr, bArr.length)).toString();
     }
 
-    @Override // java.lang.Comparable
-    public final /* synthetic */ int compareTo(Object obj) {
-        ecl ecl = (ecl) obj;
+    public final /* synthetic */ int compareTo(java.lang.Object obj) {
+        defpackage.ecl ecl = (defpackage.ecl) obj;
         for (int i = 0; i < 16; i++) {
             if (this.b[i] != ecl.b[i]) {
                 return this.b[i] < ecl.b[i] ? -1 : 1;

@@ -1,9 +1,7 @@
 package defpackage;
 
-import android.view.View;
-
-/* renamed from: aif  reason: default package */
+/* renamed from: aif reason: default package */
 /* compiled from: PG */
 public interface aif {
-    void a(View view, View view2);
+    void a(android.view.View view, android.view.View view2);
 }

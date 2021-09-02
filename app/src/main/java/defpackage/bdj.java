@@ -1,37 +1,33 @@
 package defpackage;
 
-import android.accounts.Account;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
-
-/* renamed from: bdj  reason: default package */
+/* renamed from: bdj reason: default package */
 /* compiled from: PG */
 public final class bdj {
-    public final Account a;
-    public final Set b;
-    public final Set c;
-    public final Map d;
-    public final String e;
-    public final String f;
-    public final bpn g;
-    public Integer h;
+    public final android.accounts.Account a;
+    public final java.util.Set b;
+    public final java.util.Set c;
+    public final java.util.Map d;
+    public final java.lang.String e;
+    public final java.lang.String f;
+    public final defpackage.bpn g;
+    public java.lang.Integer h;
 
-    public bdj(Account account, Set set, Map map, String str, String str2, bpn bpn) {
+    public bdj(android.accounts.Account account, java.util.Set set, java.util.Map map, java.lang.String str, java.lang.String str2, defpackage.bpn bpn) {
         this.a = account;
-        this.b = set == null ? Collections.EMPTY_SET : Collections.unmodifiableSet(set);
-        this.d = map == null ? Collections.EMPTY_MAP : map;
+        this.b = set == null ? java.util.Collections.EMPTY_SET : java.util.Collections.unmodifiableSet(set);
+        if (map == null) {
+            map = java.util.Collections.EMPTY_MAP;
+        }
+        this.d = map;
         this.e = str;
         this.f = str2;
         this.g = bpn;
-        HashSet hashSet = new HashSet(this.b);
-        Iterator it = this.d.values().iterator();
+        java.util.HashSet hashSet = new java.util.HashSet(this.b);
+        java.util.Iterator it = this.d.values().iterator();
         while (it.hasNext()) {
             it.next();
             hashSet.addAll(null);
         }
-        this.c = Collections.unmodifiableSet(hashSet);
+        this.c = java.util.Collections.unmodifiableSet(hashSet);
     }
 }

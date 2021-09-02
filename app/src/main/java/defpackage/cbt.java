@@ -1,13 +1,11 @@
 package defpackage;
 
-import java.util.List;
-
-/* renamed from: cbt  reason: default package */
+/* renamed from: cbt reason: default package */
 /* compiled from: PG */
 public interface cbt {
     void a();
 
-    List b();
+    java.util.List b();
 
     void c();
 }

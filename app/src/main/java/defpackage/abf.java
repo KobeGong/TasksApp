@@ -1,46 +1,36 @@
 package defpackage;
 
-import android.content.Context;
-import android.content.res.ColorStateList;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
-import android.util.AttributeSet;
-import android.view.inputmethod.EditorInfo;
-import android.view.inputmethod.InputConnection;
-import android.widget.AutoCompleteTextView;
-import com.google.android.apps.tasks.R;
-
-/* renamed from: abf  reason: default package */
+/* renamed from: abf reason: default package */
 /* compiled from: PG */
-public class abf extends AutoCompleteTextView implements sm {
+public class abf extends android.widget.AutoCompleteTextView implements defpackage.sm {
     private static final int[] a = {16843126};
-    private final abg b;
-    private final aci c;
+    private final defpackage.abg b;
+    private final defpackage.aci c;
 
-    public abf(Context context) {
+    public abf(android.content.Context context) {
         this(context, null);
     }
 
-    public abf(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, R.attr.autoCompleteTextViewStyle);
+    public abf(android.content.Context context, android.util.AttributeSet attributeSet) {
+        this(context, attributeSet, 2130772230);
     }
 
-    public abf(Context context, AttributeSet attributeSet, int i) {
-        super(agt.a(context), attributeSet, i);
-        agw a2 = agw.a(getContext(), attributeSet, a, i, 0);
+    public abf(android.content.Context context, android.util.AttributeSet attributeSet, int i) {
+        super(defpackage.agt.a(context), attributeSet, i);
+        defpackage.agw a2 = defpackage.agw.a(getContext(), attributeSet, a, i, 0);
         if (a2.f(0)) {
             setDropDownBackgroundDrawable(a2.a(0));
         }
         a2.b.recycle();
-        this.b = new abg(this);
+        this.b = new defpackage.abg(this);
         this.b.a(attributeSet, i);
-        this.c = aci.a(this);
+        this.c = defpackage.aci.a((android.widget.TextView) this);
         this.c.a(attributeSet, i);
         this.c.a();
     }
 
     public void setDropDownBackgroundResource(int i) {
-        setDropDownBackgroundDrawable(xw.b(getContext(), i));
+        setDropDownBackgroundDrawable(defpackage.xw.b(getContext(), i));
     }
 
     public void setBackgroundResource(int i) {
@@ -50,37 +40,33 @@ public class abf extends AutoCompleteTextView implements sm {
         }
     }
 
-    public void setBackgroundDrawable(Drawable drawable) {
+    public void setBackgroundDrawable(android.graphics.drawable.Drawable drawable) {
         super.setBackgroundDrawable(drawable);
         if (this.b != null) {
             this.b.a();
         }
     }
 
-    @Override // defpackage.sm
-    public final void a(ColorStateList colorStateList) {
+    public final void a(android.content.res.ColorStateList colorStateList) {
         if (this.b != null) {
             this.b.a(colorStateList);
         }
     }
 
-    @Override // defpackage.sm
-    public final ColorStateList d_() {
+    public final android.content.res.ColorStateList d_() {
         if (this.b != null) {
             return this.b.b();
         }
         return null;
     }
 
-    @Override // defpackage.sm
-    public final void a(PorterDuff.Mode mode) {
+    public final void a(android.graphics.PorterDuff.Mode mode) {
         if (this.b != null) {
             this.b.a(mode);
         }
     }
 
-    @Override // defpackage.sm
-    public final PorterDuff.Mode b() {
+    public final android.graphics.PorterDuff.Mode b() {
         if (this.b != null) {
             return this.b.c();
         }
@@ -98,14 +84,14 @@ public class abf extends AutoCompleteTextView implements sm {
         }
     }
 
-    public void setTextAppearance(Context context, int i) {
+    public void setTextAppearance(android.content.Context context, int i) {
         super.setTextAppearance(context, i);
         if (this.c != null) {
             this.c.a(context, i);
         }
     }
 
-    public InputConnection onCreateInputConnection(EditorInfo editorInfo) {
-        return aaz.a(super.onCreateInputConnection(editorInfo), editorInfo, this);
+    public android.view.inputmethod.InputConnection onCreateInputConnection(android.view.inputmethod.EditorInfo editorInfo) {
+        return defpackage.aaz.a(super.onCreateInputConnection(editorInfo), editorInfo, (android.view.View) this);
     }
 }

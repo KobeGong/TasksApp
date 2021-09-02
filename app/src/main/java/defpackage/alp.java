@@ -1,22 +1,17 @@
 package defpackage;
 
-import android.content.Context;
-
-/* renamed from: alp  reason: default package */
+/* renamed from: alp reason: default package */
 /* compiled from: PG */
-public abstract class alp implements amn {
-    @Override // defpackage.amn
+public abstract class alp implements defpackage.amn {
     public final boolean a() {
         return false;
     }
 
-    @Override // defpackage.amn
-    public final void a(alv alv) {
-        throw new UnsupportedOperationException();
+    public final void a(defpackage.alv alv) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
-    @Override // defpackage.amn
-    public final String a(Context context) {
+    public final java.lang.String a(android.content.Context context) {
         return null;
     }
 }

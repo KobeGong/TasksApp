@@ -1,25 +1,21 @@
 package defpackage;
 
-import android.os.Parcel;
-
-/* access modifiers changed from: package-private */
-/* renamed from: nn  reason: default package */
+/* renamed from: nn reason: default package */
 /* compiled from: PG */
-public final class nn implements ns {
-    private final String a;
+final class nn implements defpackage.ns {
+    private final java.lang.String a;
     private final int b = 0;
-    private final String c;
+    private final java.lang.String c;
 
-    nn(String str, String str2) {
+    nn(java.lang.String str, java.lang.String str2) {
         this.a = str;
         this.c = str2;
     }
 
-    @Override // defpackage.ns
-    public final void a(mz mzVar) {
-        String str = this.a;
-        String str2 = this.c;
-        Parcel obtain = Parcel.obtain();
+    public final void a(defpackage.mz mzVar) {
+        java.lang.String str = this.a;
+        java.lang.String str2 = this.c;
+        android.os.Parcel obtain = android.os.Parcel.obtain();
         try {
             obtain.writeInterfaceToken("android.support.v4.app.INotificationSideChannel");
             obtain.writeString(str);
@@ -31,8 +27,8 @@ public final class nn implements ns {
         }
     }
 
-    public final String toString() {
-        StringBuilder sb = new StringBuilder("CancelTask[");
+    public final java.lang.String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder("CancelTask[");
         sb.append("packageName:").append(this.a);
         sb.append(", id:0");
         sb.append(", tag:").append(this.c);

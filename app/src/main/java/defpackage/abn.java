@@ -1,16 +1,13 @@
 package defpackage;
 
-import android.graphics.PorterDuff;
-
-/* access modifiers changed from: package-private */
-/* renamed from: abn  reason: default package */
+/* renamed from: abn reason: default package */
 /* compiled from: PG */
-public final class abn extends qy {
+final class abn extends defpackage.qy {
     public abn() {
         super(6);
     }
 
-    static int a(int i, PorterDuff.Mode mode) {
+    static int a(int i, android.graphics.PorterDuff.Mode mode) {
         return ((i + 31) * 31) + mode.hashCode();
     }
 }

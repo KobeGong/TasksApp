@@ -1,15 +1,13 @@
 package defpackage;
 
-import com.google.android.apps.tasks.ui.TaskListsActivity;
+/* renamed from: aoy reason: default package */
+public final /* synthetic */ class aoy implements java.lang.Runnable {
+    private final com.google.android.apps.tasks.ui.TaskListsActivity a;
+    private final defpackage.aoe b;
+    private final defpackage.cdu c;
+    private final defpackage.cyi d;
 
-/* renamed from: aoy  reason: default package */
-public final /* synthetic */ class aoy implements Runnable {
-    private final TaskListsActivity a;
-    private final aoe b;
-    private final cdu c;
-    private final cyi d;
-
-    public aoy(TaskListsActivity taskListsActivity, aoe aoe, cdu cdu, cyi cyi) {
+    public aoy(com.google.android.apps.tasks.ui.TaskListsActivity taskListsActivity, defpackage.aoe aoe, defpackage.cdu cdu, defpackage.cyi cyi) {
         this.a = taskListsActivity;
         this.b = aoe;
         this.c = cdu;
@@ -17,7 +15,7 @@ public final /* synthetic */ class aoy implements Runnable {
     }
 
     public final void run() {
-        TaskListsActivity taskListsActivity = this.a;
-        taskListsActivity.runOnUiThread(new apk(taskListsActivity, this.b, this.c, this.d));
+        com.google.android.apps.tasks.ui.TaskListsActivity taskListsActivity = this.a;
+        taskListsActivity.runOnUiThread(new defpackage.apk(taskListsActivity, this.b, this.c, this.d));
     }
 }

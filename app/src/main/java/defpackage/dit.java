@@ -1,30 +1,22 @@
 package defpackage;
 
-/* renamed from: dit  reason: default package */
+/* renamed from: dit reason: default package */
 /* compiled from: PG */
 public enum dit {
-    VOID(Void.class),
-    INT(Integer.class),
-    LONG(Long.class),
-    FLOAT(Float.class),
-    DOUBLE(Double.class),
-    BOOLEAN(Boolean.class),
-    STRING(String.class),
-    BYTE_STRING(dha.class),
-    ENUM(Integer.class),
-    MESSAGE(Object.class);
+    VOID(java.lang.Void.class),
+    INT(java.lang.Integer.class),
+    LONG(java.lang.Long.class),
+    FLOAT(java.lang.Float.class),
+    DOUBLE(java.lang.Double.class),
+    BOOLEAN(java.lang.Boolean.class),
+    STRING(java.lang.String.class),
+    BYTE_STRING(defpackage.dha.class),
+    ENUM(java.lang.Integer.class),
+    MESSAGE(java.lang.Object.class);
     
-    public final Class k;
+    public final java.lang.Class k;
 
-    private dit(Class cls) {
+    private dit(java.lang.Class cls) {
         this.k = cls;
-    }
-
-    static {
-        Integer.valueOf(0);
-        Long.valueOf(0);
-        Float.valueOf(0.0f);
-        Double.valueOf(0.0d);
-        Boolean.valueOf(false);
     }
 }

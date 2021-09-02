@@ -1,17 +1,15 @@
 package defpackage;
 
-import android.content.Context;
-
-/* renamed from: cco  reason: default package */
+/* renamed from: cco reason: default package */
 /* compiled from: PG */
-public final class cco implements ecz {
-    private final ecz a;
-    private final ecz b;
-    private final ecz c;
-    private final ecz d;
-    private final ecz e;
+public final class cco implements defpackage.ecz {
+    private final defpackage.ecz a;
+    private final defpackage.ecz b;
+    private final defpackage.ecz c;
+    private final defpackage.ecz d;
+    private final defpackage.ecz e;
 
-    public cco(ecz ecz, ecz ecz2, ecz ecz3, ecz ecz4, ecz ecz5) {
+    public cco(defpackage.ecz ecz, defpackage.ecz ecz2, defpackage.ecz ecz3, defpackage.ecz ecz4, defpackage.ecz ecz5) {
         this.a = ecz;
         this.b = ecz2;
         this.c = ecz3;
@@ -19,8 +17,7 @@ public final class cco implements ecz {
         this.e = ecz5;
     }
 
-    @Override // defpackage.ecz
-    public final /* synthetic */ Object a() {
-        return new cci((Context) this.a.a(), (bxc) this.b.a(), (bqg) this.c.a(), (crv) this.d.a(), (bwq) this.e.a());
+    public final /* synthetic */ java.lang.Object a() {
+        return new defpackage.cci((android.content.Context) this.a.a(), (defpackage.bxc) this.b.a(), (defpackage.bqg) this.c.a(), (defpackage.crv) this.d.a(), (defpackage.bwq) this.e.a());
     }
 }

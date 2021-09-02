@@ -1,14 +1,11 @@
 package defpackage;
 
-import java.io.InputStream;
-import java.io.OutputStream;
-
-/* renamed from: doa  reason: default package */
+/* renamed from: doa reason: default package */
 /* compiled from: PG */
 public interface doa {
-    InputStream a(InputStream inputStream);
+    java.io.InputStream a(java.io.InputStream inputStream);
 
-    OutputStream a(OutputStream outputStream);
+    java.io.OutputStream a(java.io.OutputStream outputStream);
 
-    String a();
+    java.lang.String a();
 }

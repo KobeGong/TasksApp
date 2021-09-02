@@ -1,19 +1,17 @@
 package defpackage;
 
-import android.os.Build;
-
-/* renamed from: sy  reason: default package */
+/* renamed from: sy reason: default package */
 /* compiled from: PG */
 public final class sy {
-    public static final ta a;
+    public static final defpackage.ta a;
 
     static {
-        if (Build.VERSION.SDK_INT >= 21) {
-            a = new sz();
-        } else if (Build.VERSION.SDK_INT >= 18) {
-            a = new ta((byte) 0);
+        if (android.os.Build.VERSION.SDK_INT >= 21) {
+            a = new defpackage.sz();
+        } else if (android.os.Build.VERSION.SDK_INT >= 18) {
+            a = new defpackage.ta(0);
         } else {
-            a = new ta();
+            a = new defpackage.ta();
         }
     }
 }

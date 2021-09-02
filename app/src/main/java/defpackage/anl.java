@@ -1,18 +1,17 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: anl  reason: default package */
-public final /* synthetic */ class anl implements Runnable {
-    private final anu a;
-    private final amn b;
+/* renamed from: anl reason: default package */
+final /* synthetic */ class anl implements java.lang.Runnable {
+    private final defpackage.anu a;
+    private final defpackage.amn b;
 
-    anl(anu anu, amn amn) {
+    anl(defpackage.anu anu, defpackage.amn amn) {
         this.a = anu;
         this.b = amn;
     }
 
     public final void run() {
-        anu anu = this.a;
+        defpackage.anu anu = this.a;
         anu.a.b(this.b);
     }
 }

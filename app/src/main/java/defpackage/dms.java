@@ -1,20 +1,19 @@
 package defpackage;
 
-/* renamed from: dms  reason: default package */
+/* renamed from: dms reason: default package */
 /* compiled from: PG */
-public final class dms implements dml, ecz {
-    private final Object a;
+public final class dms implements defpackage.dml, defpackage.ecz {
+    private final java.lang.Object a;
 
-    dms(Object obj) {
+    dms(java.lang.Object obj) {
         this.a = obj;
     }
 
-    @Override // defpackage.dml, defpackage.ecz
-    public final Object a() {
+    public final java.lang.Object a() {
         return this.a;
     }
 
     static {
-        new dms(null);
+        new defpackage.dms(null);
     }
 }

@@ -1,6 +1,6 @@
 package defpackage;
 
-/* renamed from: aan  reason: default package */
+/* renamed from: aan reason: default package */
 /* compiled from: PG */
 public interface aan {
     void a(int i);

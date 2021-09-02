@@ -1,16 +1,15 @@
 package defpackage;
 
-/* renamed from: alg  reason: default package */
+/* renamed from: alg reason: default package */
 /* compiled from: PG */
-final class alg extends alu {
-    private final /* synthetic */ ala a;
+final class alg extends defpackage.alu {
+    private final /* synthetic */ defpackage.ala a;
 
-    alg(ala ala) {
+    alg(defpackage.ala ala) {
         this.a = ala;
     }
 
-    @Override // defpackage.alu
-    public final void a(String str) {
+    public final void a(java.lang.String str) {
         this.a.c();
     }
 }

@@ -1,26 +1,22 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: dpn  reason: default package */
+/* renamed from: dpn reason: default package */
 /* compiled from: PG */
-public abstract class dpn extends dne {
+abstract class dpn extends defpackage.dne {
     dpn() {
     }
 
     /* access modifiers changed from: protected */
-    public abstract dne b();
+    public abstract defpackage.dne b();
 
-    @Override // defpackage.dne
-    public void a(dor dor) {
+    public void a(defpackage.dor dor) {
         b().a(dor);
     }
 
-    @Override // defpackage.dne
-    public void a(dpw dpw, dor dor) {
+    public void a(defpackage.dpw dpw, defpackage.dor dor) {
         b().a(dpw, dor);
     }
 
-    @Override // defpackage.dne
     public void a() {
         b().a();
     }

@@ -1,15 +1,12 @@
 package defpackage;
 
-import android.widget.TextView;
-
-/* renamed from: vr  reason: default package */
+/* renamed from: vr reason: default package */
 /* compiled from: PG */
-final class vr extends vq {
+final class vr extends defpackage.vq {
     vr() {
     }
 
-    @Override // defpackage.vs
-    public final void b(TextView textView, int i) {
+    public final void b(android.widget.TextView textView, int i) {
         textView.setTextAppearance(i);
     }
 
@@ -18,6 +15,6 @@ final class vr extends vq {
     }
 
     vr(char c) {
-        this((byte) 0);
+        this(0);
     }
 }

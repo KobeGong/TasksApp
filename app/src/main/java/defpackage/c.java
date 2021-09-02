@@ -1,14 +1,12 @@
 package defpackage;
 
-import java.util.concurrent.Executor;
-
-/* renamed from: c  reason: default package */
+/* renamed from: c reason: default package */
 /* compiled from: PG */
-final class c implements Executor {
+final class c implements java.util.concurrent.Executor {
     c() {
     }
 
-    public final void execute(Runnable runnable) {
-        a.a().a(runnable);
+    public final void execute(java.lang.Runnable runnable) {
+        defpackage.a.a().a(runnable);
     }
 }

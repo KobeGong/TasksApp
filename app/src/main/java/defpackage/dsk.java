@@ -1,22 +1,19 @@
 package defpackage;
 
-/* renamed from: dsk  reason: default package */
+/* renamed from: dsk reason: default package */
 /* compiled from: PG */
-final class dsk extends dqc {
+final class dsk extends defpackage.dqc {
     public volatile int a;
 
-    @Override // defpackage.dqc
     public final void a() {
-        throw new NoSuchMethodError();
+        throw new java.lang.NoSuchMethodError();
     }
 
-    @Override // defpackage.dqc
     public final void a(int i, long j, long j2) {
-        throw new NoSuchMethodError();
+        throw new java.lang.NoSuchMethodError();
     }
 
-    @Override // defpackage.dqc
     public final void a(int i, long j) {
-        throw new NoSuchMethodError();
+        throw new java.lang.NoSuchMethodError();
     }
 }

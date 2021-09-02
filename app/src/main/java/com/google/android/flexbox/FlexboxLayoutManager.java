@@ -1,143 +1,112 @@
 package com.google.android.flexbox;
 
-import android.content.Context;
-import android.graphics.Rect;
-import android.os.Parcelable;
-import android.util.AttributeSet;
-
 /* compiled from: PG */
-public class FlexboxLayoutManager extends afd {
-    @Override // defpackage.afd
-    public final afh b() {
-        throw new NoSuchMethodError();
+public class FlexboxLayoutManager extends defpackage.afd {
+    public final defpackage.afh b() {
+        throw new java.lang.NoSuchMethodError();
     }
 
-    @Override // defpackage.afd
-    public final afh a(Context context, AttributeSet attributeSet) {
-        throw new NoSuchMethodError();
+    public final defpackage.afh a(android.content.Context context, android.util.AttributeSet attributeSet) {
+        throw new java.lang.NoSuchMethodError();
     }
 
-    @Override // defpackage.afd
-    public final boolean a(afh afh) {
-        throw new NoSuchMethodError();
+    public final boolean a(defpackage.afh afh) {
+        throw new java.lang.NoSuchMethodError();
     }
 
-    @Override // defpackage.afd
     public final void q() {
-        throw new NoSuchMethodError();
+        throw new java.lang.NoSuchMethodError();
     }
 
-    @Override // defpackage.afd
-    public final Parcelable c() {
-        throw new NoSuchMethodError();
+    public final android.os.Parcelable c() {
+        throw new java.lang.NoSuchMethodError();
     }
 
-    @Override // defpackage.afd
-    public final void a(Parcelable parcelable) {
-        throw new NoSuchMethodError();
+    public final void a(android.os.Parcelable parcelable) {
+        throw new java.lang.NoSuchMethodError();
     }
 
-    @Override // defpackage.afd
     public final void r() {
-        throw new NoSuchMethodError();
+        throw new java.lang.NoSuchMethodError();
     }
 
-    @Override // defpackage.afd
     public final void u() {
-        throw new NoSuchMethodError();
+        throw new java.lang.NoSuchMethodError();
     }
 
-    @Override // defpackage.afd
     public final void t() {
-        throw new NoSuchMethodError();
+        throw new java.lang.NoSuchMethodError();
     }
 
-    @Override // defpackage.afd
     public final void s() {
-        throw new NoSuchMethodError();
+        throw new java.lang.NoSuchMethodError();
     }
 
-    @Override // defpackage.afd
     public final void v() {
-        throw new NoSuchMethodError();
+        throw new java.lang.NoSuchMethodError();
     }
 
-    @Override // defpackage.afd
-    public final void a(afn afn, aft aft) {
-        throw new NoSuchMethodError();
+    public final void a(defpackage.afn afn, defpackage.aft aft) {
+        throw new java.lang.NoSuchMethodError();
     }
 
-    @Override // defpackage.afd
-    public final void a(aft aft) {
-        throw new NoSuchMethodError();
+    public final void a(defpackage.aft aft) {
+        throw new java.lang.NoSuchMethodError();
     }
 
-    @Override // defpackage.afd
     public final void b(int i) {
-        throw new NoSuchMethodError();
+        throw new java.lang.NoSuchMethodError();
     }
 
-    @Override // defpackage.afd
     public final void i() {
-        throw new NoSuchMethodError();
+        throw new java.lang.NoSuchMethodError();
     }
 
-    @Override // defpackage.afd
     public final void j() {
-        throw new NoSuchMethodError();
+        throw new java.lang.NoSuchMethodError();
     }
 
-    @Override // defpackage.afd
     public final boolean d() {
-        throw new NoSuchMethodError();
+        throw new java.lang.NoSuchMethodError();
     }
 
-    @Override // defpackage.afd
     public final boolean e() {
-        throw new NoSuchMethodError();
+        throw new java.lang.NoSuchMethodError();
     }
 
-    @Override // defpackage.afd
-    public final int a(int i, afn afn, aft aft) {
-        throw new NoSuchMethodError();
+    public final int a(int i, defpackage.afn afn, defpackage.aft aft) {
+        throw new java.lang.NoSuchMethodError();
     }
 
-    @Override // defpackage.afd
-    public final int b(int i, afn afn, aft aft) {
-        throw new NoSuchMethodError();
+    public final int b(int i, defpackage.afn afn, defpackage.aft aft) {
+        throw new java.lang.NoSuchMethodError();
     }
 
-    @Override // defpackage.afd
-    public final int d(aft aft) {
-        throw new NoSuchMethodError();
+    public final int d(defpackage.aft aft) {
+        throw new java.lang.NoSuchMethodError();
     }
 
-    @Override // defpackage.afd
-    public final int e(aft aft) {
-        throw new NoSuchMethodError();
+    public final int e(defpackage.aft aft) {
+        throw new java.lang.NoSuchMethodError();
     }
 
-    @Override // defpackage.afd
-    public final int b(aft aft) {
-        throw new NoSuchMethodError();
+    public final int b(defpackage.aft aft) {
+        throw new java.lang.NoSuchMethodError();
     }
 
-    @Override // defpackage.afd
-    public final int c(aft aft) {
-        throw new NoSuchMethodError();
+    public final int c(defpackage.aft aft) {
+        throw new java.lang.NoSuchMethodError();
     }
 
-    @Override // defpackage.afd
-    public final int f(aft aft) {
-        throw new NoSuchMethodError();
+    public final int f(defpackage.aft aft) {
+        throw new java.lang.NoSuchMethodError();
     }
 
-    @Override // defpackage.afd
-    public final int g(aft aft) {
-        throw new NoSuchMethodError();
+    public final int g(defpackage.aft aft) {
+        throw new java.lang.NoSuchMethodError();
     }
 
     static {
-        new Rect();
+        new android.graphics.Rect();
     }
 }

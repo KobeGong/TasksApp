@@ -1,35 +1,31 @@
 package defpackage;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-
-/* access modifiers changed from: package-private */
-/* renamed from: bj  reason: default package */
+/* renamed from: bj reason: default package */
 /* compiled from: PG */
-public final class bj implements Serializable {
+final class bj implements java.io.Serializable {
     public static final long serialVersionUID = 1;
     public boolean a = false;
-    public final List b = new ArrayList();
+    public final java.util.List b = new java.util.ArrayList();
 
     bj() {
     }
 
-    public final bj a(bi biVar) {
-        String str = biVar.a;
-        for (bi biVar2 : this.b) {
+    public final defpackage.bj a(defpackage.bi biVar) {
+        java.lang.String str = biVar.a;
+        for (defpackage.bi biVar2 : this.b) {
             if (str.equals(biVar2.a)) {
-                String valueOf = String.valueOf(str);
-                throw new IllegalArgumentException(valueOf.length() != 0 ? "Duplicate keyword: ".concat(valueOf) : new String("Duplicate keyword: "));
+                java.lang.String str2 = "Duplicate keyword: ";
+                java.lang.String valueOf = java.lang.String.valueOf(str);
+                throw new java.lang.IllegalArgumentException(valueOf.length() != 0 ? str2.concat(valueOf) : new java.lang.String(str2));
             }
         }
         this.b.add(biVar);
         return this;
     }
 
-    public final String toString() {
-        StringBuilder sb = new StringBuilder();
-        for (bi biVar : this.b) {
+    public final java.lang.String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        for (defpackage.bi biVar : this.b) {
             if (sb.length() != 0) {
                 sb.append(";  ");
             }

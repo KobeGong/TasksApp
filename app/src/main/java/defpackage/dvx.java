@@ -1,25 +1,23 @@
 package defpackage;
 
-/* renamed from: dvx  reason: default package */
+/* renamed from: dvx reason: default package */
 /* compiled from: PG */
-final class dvx extends duw {
-    public final /* synthetic */ dvw a;
-    private final /* synthetic */ dta b;
+final class dvx extends defpackage.duw {
+    public final /* synthetic */ defpackage.dvw a;
+    private final /* synthetic */ defpackage.dta b;
 
-    dvx(dvw dvw, dta dta) {
+    dvx(defpackage.dvw dvw, defpackage.dta dta) {
         this.a = dvw;
         this.b = dta;
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.duw
-    public final dta a() {
+    public final defpackage.dta a() {
         return this.b;
     }
 
-    @Override // defpackage.dta, defpackage.duw
-    public final void a(dzq dzq) {
+    public final void a(defpackage.dzq dzq) {
         this.a.a.a();
-        super.a(new dvy(this, dzq));
+        super.a((defpackage.dzq) new defpackage.dvy(this, dzq));
     }
 }

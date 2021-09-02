@@ -1,62 +1,47 @@
 package defpackage;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.ContextWrapper;
-import android.content.res.Resources;
-import android.util.DisplayMetrics;
-import android.util.Log;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewConfiguration;
-import android.view.ViewGroup;
-import android.view.WindowManager;
-import android.view.accessibility.AccessibilityManager;
-import com.google.android.apps.tasks.R;
-
-/* access modifiers changed from: package-private */
-/* renamed from: ahg  reason: default package */
+/* renamed from: ahg reason: default package */
 /* compiled from: PG */
-public final class ahg implements View.OnAttachStateChangeListener, View.OnHoverListener, View.OnLongClickListener {
-    public static ahg b;
-    public static ahg c;
-    public final View a;
-    private final CharSequence d;
+final class ahg implements android.view.View.OnAttachStateChangeListener, android.view.View.OnHoverListener, android.view.View.OnLongClickListener {
+    public static defpackage.ahg b;
+    public static defpackage.ahg c;
+    public final android.view.View a;
+    private final java.lang.CharSequence d;
     private final int e;
-    private final Runnable f = new ahh(this);
-    private final Runnable g = new ahi(this);
+    private final java.lang.Runnable f = new defpackage.ahh(this);
+    private final java.lang.Runnable g = new defpackage.ahi(this);
     private int h;
     private int i;
-    private ahj j;
+    private defpackage.ahj j;
     private boolean k;
 
-    ahg(View view, CharSequence charSequence) {
+    ahg(android.view.View view, java.lang.CharSequence charSequence) {
         this.a = view;
         this.d = charSequence;
-        this.e = sx.a(ViewConfiguration.get(this.a.getContext()));
+        this.e = defpackage.sx.a(android.view.ViewConfiguration.get(this.a.getContext()));
         b();
         this.a.setOnLongClickListener(this);
         this.a.setOnHoverListener(this);
     }
 
-    public final boolean onLongClick(View view) {
+    public final boolean onLongClick(android.view.View view) {
         this.h = view.getWidth() / 2;
         this.i = view.getHeight() / 2;
         a(true);
         return true;
     }
 
-    public final boolean onHover(View view, MotionEvent motionEvent) {
+    public final boolean onHover(android.view.View view, android.view.MotionEvent motionEvent) {
         boolean z;
         if (this.j == null || !this.k) {
-            AccessibilityManager accessibilityManager = (AccessibilityManager) this.a.getContext().getSystemService("accessibility");
+            android.view.accessibility.AccessibilityManager accessibilityManager = (android.view.accessibility.AccessibilityManager) this.a.getContext().getSystemService("accessibility");
             if (!accessibilityManager.isEnabled() || !accessibilityManager.isTouchExplorationEnabled()) {
                 switch (motionEvent.getAction()) {
                     case 7:
                         if (this.a.isEnabled() && this.j == null) {
                             int x = (int) motionEvent.getX();
                             int y = (int) motionEvent.getY();
-                            if (Math.abs(x - this.h) > this.e || Math.abs(y - this.i) > this.e) {
+                            if (java.lang.Math.abs(x - this.h) > this.e || java.lang.Math.abs(y - this.i) > this.e) {
                                 this.h = x;
                                 this.i = y;
                                 z = true;
@@ -79,48 +64,48 @@ public final class ahg implements View.OnAttachStateChangeListener, View.OnHover
         return false;
     }
 
-    public final void onViewAttachedToWindow(View view) {
+    public final void onViewAttachedToWindow(android.view.View view) {
     }
 
-    public final void onViewDetachedFromWindow(View view) {
+    public final void onViewDetachedFromWindow(android.view.View view) {
         a();
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public final void a(boolean z) {
         int width;
         int height;
         int i2;
         int i3;
         long longPressTimeout;
-        if (sn.a.s(this.a)) {
-            a((ahg) null);
+        if (defpackage.sn.a.s(this.a)) {
+            a((defpackage.ahg) null);
             if (c != null) {
                 c.a();
             }
             c = this;
             this.k = z;
-            this.j = new ahj(this.a.getContext());
-            ahj ahj = this.j;
-            View view = this.a;
+            this.j = new defpackage.ahj(this.a.getContext());
+            defpackage.ahj ahj = this.j;
+            android.view.View view = this.a;
             int i4 = this.h;
             int i5 = this.i;
             boolean z2 = this.k;
-            CharSequence charSequence = this.d;
+            java.lang.CharSequence charSequence = this.d;
             if (ahj.b()) {
                 ahj.a();
             }
             ahj.c.setText(charSequence);
-            WindowManager.LayoutParams layoutParams = ahj.d;
+            android.view.WindowManager.LayoutParams layoutParams = ahj.d;
             layoutParams.token = view.getApplicationWindowToken();
-            int dimensionPixelOffset = ahj.a.getResources().getDimensionPixelOffset(R.dimen.tooltip_precise_anchor_threshold);
+            int dimensionPixelOffset = ahj.a.getResources().getDimensionPixelOffset(2131689904);
             if (view.getWidth() >= dimensionPixelOffset) {
                 width = i4;
             } else {
                 width = view.getWidth() / 2;
             }
             if (view.getHeight() >= dimensionPixelOffset) {
-                int dimensionPixelOffset2 = ahj.a.getResources().getDimensionPixelOffset(R.dimen.tooltip_precise_anchor_extra_offset);
+                int dimensionPixelOffset2 = ahj.a.getResources().getDimensionPixelOffset(2131689903);
                 int i6 = i5 + dimensionPixelOffset2;
                 int i7 = i5 - dimensionPixelOffset2;
                 height = i6;
@@ -130,35 +115,35 @@ public final class ahg implements View.OnAttachStateChangeListener, View.OnHover
                 i2 = 0;
             }
             layoutParams.gravity = 49;
-            int dimensionPixelOffset3 = ahj.a.getResources().getDimensionPixelOffset(z2 ? R.dimen.tooltip_y_offset_touch : R.dimen.tooltip_y_offset_non_touch);
-            View rootView = view.getRootView();
-            ViewGroup.LayoutParams layoutParams2 = rootView.getLayoutParams();
-            if (!(layoutParams2 instanceof WindowManager.LayoutParams) || ((WindowManager.LayoutParams) layoutParams2).type != 2) {
-                Context context = view.getContext();
+            int dimensionPixelOffset3 = ahj.a.getResources().getDimensionPixelOffset(z2 ? 2131689907 : 2131689906);
+            android.view.View rootView = view.getRootView();
+            android.view.ViewGroup.LayoutParams layoutParams2 = rootView.getLayoutParams();
+            if (!(layoutParams2 instanceof android.view.WindowManager.LayoutParams) || ((android.view.WindowManager.LayoutParams) layoutParams2).type != 2) {
+                android.content.Context context = view.getContext();
                 while (true) {
-                    if (!(context instanceof ContextWrapper)) {
+                    if (!(context instanceof android.content.ContextWrapper)) {
                         break;
-                    } else if (context instanceof Activity) {
-                        rootView = ((Activity) context).getWindow().getDecorView();
+                    } else if (context instanceof android.app.Activity) {
+                        rootView = ((android.app.Activity) context).getWindow().getDecorView();
                         break;
                     } else {
-                        context = ((ContextWrapper) context).getBaseContext();
+                        context = ((android.content.ContextWrapper) context).getBaseContext();
                     }
                 }
             }
             if (rootView == null) {
-                Log.e("TooltipPopup", "Cannot find app view");
+                android.util.Log.e("TooltipPopup", "Cannot find app view");
             } else {
                 rootView.getWindowVisibleDisplayFrame(ahj.e);
                 if (ahj.e.left < 0 && ahj.e.top < 0) {
-                    Resources resources = ahj.a.getResources();
+                    android.content.res.Resources resources = ahj.a.getResources();
                     int identifier = resources.getIdentifier("status_bar_height", "dimen", "android");
                     if (identifier != 0) {
                         i3 = resources.getDimensionPixelSize(identifier);
                     } else {
                         i3 = 0;
                     }
-                    DisplayMetrics displayMetrics = resources.getDisplayMetrics();
+                    android.util.DisplayMetrics displayMetrics = resources.getDisplayMetrics();
                     ahj.e.set(0, i3, displayMetrics.widthPixels, displayMetrics.heightPixels);
                 }
                 rootView.getLocationOnScreen(ahj.g);
@@ -168,7 +153,7 @@ public final class ahg implements View.OnAttachStateChangeListener, View.OnHover
                 int[] iArr2 = ahj.f;
                 iArr2[1] = iArr2[1] - ahj.g[1];
                 layoutParams.x = (ahj.f[0] + width) - (rootView.getWidth() / 2);
-                int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, 0);
+                int makeMeasureSpec = android.view.View.MeasureSpec.makeMeasureSpec(0, 0);
                 ahj.b.measure(makeMeasureSpec, makeMeasureSpec);
                 int measuredHeight = ahj.b.getMeasuredHeight();
                 int i8 = ((ahj.f[1] + i2) - dimensionPixelOffset3) - measuredHeight;
@@ -182,15 +167,15 @@ public final class ahg implements View.OnAttachStateChangeListener, View.OnHover
                 }
                 layoutParams.y = i8;
             }
-            ((WindowManager) ahj.a.getSystemService("window")).addView(ahj.b, ahj.d);
+            ((android.view.WindowManager) ahj.a.getSystemService("window")).addView(ahj.b, ahj.d);
             this.a.addOnAttachStateChangeListener(this);
             if (this.k) {
                 longPressTimeout = 2500;
             } else {
-                if ((sn.a.m(this.a) & 1) == 1) {
-                    longPressTimeout = 3000 - ((long) ViewConfiguration.getLongPressTimeout());
+                if ((defpackage.sn.a.m(this.a) & 1) == 1) {
+                    longPressTimeout = 3000 - ((long) android.view.ViewConfiguration.getLongPressTimeout());
                 } else {
-                    longPressTimeout = 15000 - ((long) ViewConfiguration.getLongPressTimeout());
+                    longPressTimeout = 15000 - ((long) android.view.ViewConfiguration.getLongPressTimeout());
                 }
             }
             this.a.removeCallbacks(this.g);
@@ -198,7 +183,7 @@ public final class ahg implements View.OnAttachStateChangeListener, View.OnHover
         }
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public final void a() {
         if (c == this) {
             c = null;
@@ -208,24 +193,24 @@ public final class ahg implements View.OnAttachStateChangeListener, View.OnHover
                 b();
                 this.a.removeOnAttachStateChangeListener(this);
             } else {
-                Log.e("TooltipCompatHandler", "sActiveHandler.mPopup == null");
+                android.util.Log.e("TooltipCompatHandler", "sActiveHandler.mPopup == null");
             }
         }
         if (b == this) {
-            a((ahg) null);
+            a((defpackage.ahg) null);
         }
         this.a.removeCallbacks(this.g);
     }
 
-    static void a(ahg ahg) {
+    static void a(defpackage.ahg ahg) {
         if (b != null) {
-            ahg ahg2 = b;
+            defpackage.ahg ahg2 = b;
             ahg2.a.removeCallbacks(ahg2.f);
         }
         b = ahg;
         if (ahg != null) {
-            ahg ahg3 = b;
-            ahg3.a.postDelayed(ahg3.f, (long) ViewConfiguration.getLongPressTimeout());
+            defpackage.ahg ahg3 = b;
+            ahg3.a.postDelayed(ahg3.f, (long) android.view.ViewConfiguration.getLongPressTimeout());
         }
     }
 

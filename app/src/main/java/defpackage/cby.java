@@ -1,16 +1,15 @@
 package defpackage;
 
-/* renamed from: cby  reason: default package */
+/* renamed from: cby reason: default package */
 /* compiled from: PG */
-public final class cby implements ecz {
-    private final ecz a;
+public final class cby implements defpackage.ecz {
+    private final defpackage.ecz a;
 
-    public cby(ecz ecz) {
+    public cby(defpackage.ecz ecz) {
         this.a = ecz;
     }
 
-    @Override // defpackage.ecz
-    public final /* synthetic */ Object a() {
-        return new cbx((bup) this.a.a());
+    public final /* synthetic */ java.lang.Object a() {
+        return new defpackage.cbx((defpackage.bup) this.a.a());
     }
 }

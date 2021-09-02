@@ -1,13 +1,12 @@
 package defpackage;
 
-/* renamed from: bsy  reason: default package */
+/* renamed from: bsy reason: default package */
 /* compiled from: PG */
-final class bsy implements brt {
+final class bsy implements defpackage.brt {
     bsy() {
     }
 
-    @Override // defpackage.brt
-    public final brc a(ayw ayw) {
-        return new bro(ayw, (byte) 0);
+    public final defpackage.brc a(defpackage.ayw ayw) {
+        return new defpackage.bro(ayw, 0);
     }
 }

@@ -1,18 +1,16 @@
 package defpackage;
 
-import java.util.ArrayList;
-
-/* renamed from: cj  reason: default package */
+/* renamed from: cj reason: default package */
 /* compiled from: PG */
-public final class cj extends ch {
+public final class cj extends defpackage.ch {
     public float ac = -1.0f;
     public int ad = -1;
     public int ae = -1;
     public int af = 0;
-    private cg ag = this.j;
+    private defpackage.cg ag = this.j;
 
     public cj() {
-        new ck();
+        new defpackage.ck();
         this.n.clear();
         this.n.add(this.ag);
     }
@@ -30,8 +28,7 @@ public final class cj extends ch {
         }
     }
 
-    @Override // defpackage.ch
-    public final cg e(int i) {
+    public final defpackage.cg e(int i) {
         switch (i - 1) {
             case 1:
             case 3:
@@ -49,36 +46,34 @@ public final class cj extends ch {
         return null;
     }
 
-    @Override // defpackage.ch
-    public final ArrayList l() {
+    public final java.util.ArrayList l() {
         return this.n;
     }
 
-    @Override // defpackage.ch
-    public final void a(cd cdVar) {
-        cg cgVar;
-        cg cgVar2;
-        ci ciVar = (ci) this.o;
+    public final void a(defpackage.cd cdVar) {
+        defpackage.cg cgVar;
+        defpackage.cg cgVar2;
+        defpackage.ci ciVar = (defpackage.ci) this.o;
         if (ciVar != null) {
-            cg e = ciVar.e(bg.n);
-            cg e2 = ciVar.e(bg.p);
+            defpackage.cg e = ciVar.e(defpackage.bg.n);
+            defpackage.cg e2 = ciVar.e(defpackage.bg.p);
             if (this.af == 0) {
-                cgVar2 = ciVar.e(bg.o);
-                cgVar = ciVar.e(bg.q);
+                cgVar2 = ciVar.e(defpackage.bg.o);
+                cgVar = ciVar.e(defpackage.bg.q);
             } else {
                 cgVar = e2;
                 cgVar2 = e;
             }
             if (this.ad != -1) {
-                cdVar.a(cd.a(cdVar, cdVar.a(this.ag), cdVar.a(cgVar2), this.ad, false));
+                cdVar.a(defpackage.cd.a(cdVar, cdVar.a((java.lang.Object) this.ag), cdVar.a((java.lang.Object) cgVar2), this.ad, false));
             } else if (this.ae != -1) {
-                cdVar.a(cd.a(cdVar, cdVar.a(this.ag), cdVar.a(cgVar), -this.ae, false));
+                cdVar.a(defpackage.cd.a(cdVar, cdVar.a((java.lang.Object) this.ag), cdVar.a((java.lang.Object) cgVar), -this.ae, false));
             } else if (this.ac != -1.0f) {
-                cf a = cdVar.a(this.ag);
-                cf a2 = cdVar.a(cgVar2);
-                cf a3 = cdVar.a(cgVar);
+                defpackage.cf a = cdVar.a((java.lang.Object) this.ag);
+                defpackage.cf a2 = cdVar.a((java.lang.Object) cgVar2);
+                defpackage.cf a3 = cdVar.a((java.lang.Object) cgVar);
                 float f = this.ac;
-                ca b = cdVar.b();
+                defpackage.ca b = cdVar.b();
                 b.c.a(a, -1.0f);
                 b.c.a(a2, 1.0f - f);
                 b.c.a(a3, f);
@@ -87,10 +82,9 @@ public final class cj extends ch {
         }
     }
 
-    @Override // defpackage.ch
     public final void n() {
         if (this.o != null) {
-            int b = cd.b(this.ag);
+            int b = defpackage.cd.b((java.lang.Object) this.ag);
             if (this.af == 1) {
                 this.t = b;
                 this.u = 0;

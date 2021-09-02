@@ -1,37 +1,31 @@
 package defpackage;
 
-import java.util.logging.Level;
-
-/* renamed from: ctk  reason: default package */
+/* renamed from: ctk reason: default package */
 /* compiled from: PG */
-public final class ctk extends ctn implements cua {
-    private final /* synthetic */ ctl a;
+public final class ctk extends defpackage.ctn implements defpackage.cua {
+    private final /* synthetic */ defpackage.ctl a;
 
-    private ctk(Level level, boolean z) {
+    private ctk(java.util.logging.Level level, boolean z) {
         super(level, z);
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.ctn
-    public final cvz a() {
-        return cvw.a;
+    public final defpackage.cvz a() {
+        return defpackage.cvw.a;
     }
 
-    /* JADX INFO: this call moved to the top of the method (can break code semantics) */
-    ctk(ctl ctl, Level level, boolean z) {
-        this(level, z);
+    ctk(defpackage.ctl ctl, java.util.logging.Level level, boolean z) {
         this.a = ctl;
+        this(level, z);
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.ctn
-    public final /* synthetic */ ctj b() {
+    public final /* synthetic */ defpackage.ctj b() {
         return this.a;
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.ctn
-    public final /* bridge */ /* synthetic */ cua c() {
+    public final /* bridge */ /* synthetic */ defpackage.cua c() {
         if (this != null) {
             return this;
         }

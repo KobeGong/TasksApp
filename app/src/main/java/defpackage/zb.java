@@ -1,44 +1,31 @@
 package defpackage;
 
-import android.content.Context;
-import android.os.Bundle;
-import android.os.Parcelable;
-import android.support.v7.view.menu.ExpandedMenuView;
-import android.util.SparseArray;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.WindowManager;
-import android.widget.AdapterView;
-import android.widget.ListAdapter;
-import com.google.android.apps.tasks.R;
-
-/* renamed from: zb  reason: default package */
+/* renamed from: zb reason: default package */
 /* compiled from: PG */
-public final class zb implements AdapterView.OnItemClickListener, MenuPresenter {
-    public LayoutInflater a;
-    public MenuBuilder b;
-    public ExpandedMenuView c;
+public final class zb implements android.widget.AdapterView.OnItemClickListener, defpackage.zt {
+    public android.view.LayoutInflater a;
+    public defpackage.ze b;
+    public android.support.v7.view.menu.ExpandedMenuView c;
     public int d;
-    public zu e;
-    public zc f;
-    private Context g;
+    public defpackage.zu e;
+    public defpackage.zc f;
+    private android.content.Context g;
 
-    public zb(Context context) {
-        this((int) R.layout.abc_list_menu_item_layout);
+    public zb(android.content.Context context) {
+        this(2131034127);
         this.g = context;
-        this.a = LayoutInflater.from(this.g);
+        this.a = android.view.LayoutInflater.from(this.g);
     }
 
     private zb(int i) {
-        this.d = R.layout.abc_list_menu_item_layout;
+        this.d = 2131034127;
     }
 
-    @Override // defpackage.zt
-    public final void a(Context context, MenuBuilder zeVar) {
+    public final void a(android.content.Context context, defpackage.ze zeVar) {
         if (this.g != null) {
             this.g = context;
             if (this.a == null) {
-                this.a = LayoutInflater.from(this.g);
+                this.a = android.view.LayoutInflater.from(this.g);
             }
         }
         this.b = zeVar;
@@ -47,39 +34,36 @@ public final class zb implements AdapterView.OnItemClickListener, MenuPresenter 
         }
     }
 
-    public final ListAdapter d() {
+    public final android.widget.ListAdapter d() {
         if (this.f == null) {
-            this.f = new zc(this);
+            this.f = new defpackage.zc(this);
         }
         return this.f;
     }
 
-    @Override // defpackage.zt
     public final void a(boolean z) {
         if (this.f != null) {
             this.f.notifyDataSetChanged();
         }
     }
 
-    @Override // defpackage.zt
-    public final void a(zu zuVar) {
+    public final void a(defpackage.zu zuVar) {
         this.e = zuVar;
     }
 
-    @Override // defpackage.zt
-    public final boolean a(aad aad) {
+    public final boolean a(defpackage.aad aad) {
         if (!aad.hasVisibleItems()) {
             return false;
         }
-        zh zhVar = new zh(aad);
-        MenuBuilder zeVar = zhVar.a;
-        xk xkVar = new xk(zeVar.a);
-        zhVar.c = new zb(xkVar.a.a);
+        defpackage.zh zhVar = new defpackage.zh(aad);
+        defpackage.ze zeVar = zhVar.a;
+        defpackage.xk xkVar = new defpackage.xk(zeVar.a);
+        zhVar.c = new defpackage.zb(xkVar.a.a);
         zhVar.c.e = zhVar;
-        zhVar.a.a(zhVar.c);
+        zhVar.a.a((defpackage.zt) zhVar.c);
         xkVar.a.n = zhVar.c.d();
         xkVar.a.o = zhVar;
-        View view = zeVar.h;
+        android.view.View view = zeVar.h;
         if (view != null) {
             xkVar.a.e = view;
         } else {
@@ -89,7 +73,7 @@ public final class zb implements AdapterView.OnItemClickListener, MenuPresenter 
         xkVar.a.m = zhVar;
         zhVar.b = xkVar.a();
         zhVar.b.setOnDismissListener(zhVar);
-        WindowManager.LayoutParams attributes = zhVar.b.getWindow().getAttributes();
+        android.view.WindowManager.LayoutParams attributes = zhVar.b.getWindow().getAttributes();
         attributes.type = 1003;
         attributes.flags |= 131072;
         zhVar.b.show();
@@ -99,45 +83,38 @@ public final class zb implements AdapterView.OnItemClickListener, MenuPresenter 
         return true;
     }
 
-    @Override // defpackage.zt
-    public final void a(MenuBuilder zeVar, boolean z) {
+    public final void a(defpackage.ze zeVar, boolean z) {
         if (this.e != null) {
             this.e.a(zeVar, z);
         }
     }
 
-    @Override // android.widget.AdapterView.OnItemClickListener
-    public final void onItemClick(AdapterView adapterView, View view, int i, long j) {
-        this.b.a((MenuItemImpl) this.f.getItem(i), this, 0);
+    public final void onItemClick(android.widget.AdapterView adapterView, android.view.View view, int i, long j) {
+        this.b.a((android.view.MenuItem) (defpackage.zi) this.f.getItem(i), (defpackage.zt) this, 0);
     }
 
-    @Override // defpackage.zt
     public final boolean a() {
         return false;
     }
 
-    @Override // defpackage.zt
-    public final boolean a(MenuItemImpl ziVar) {
+    public final boolean a(defpackage.zi ziVar) {
         return false;
     }
 
-    @Override // defpackage.zt
-    public final boolean b(MenuItemImpl ziVar) {
+    public final boolean b(defpackage.zi ziVar) {
         return false;
     }
 
-    @Override // defpackage.zt
     public final int b() {
         return 0;
     }
 
-    @Override // defpackage.zt
-    public final Parcelable c() {
+    public final android.os.Parcelable c() {
         if (this.c == null) {
             return null;
         }
-        Bundle bundle = new Bundle();
-        SparseArray<Parcelable> sparseArray = new SparseArray<>();
+        android.os.Bundle bundle = new android.os.Bundle();
+        android.util.SparseArray sparseArray = new android.util.SparseArray();
         if (this.c != null) {
             this.c.saveHierarchyState(sparseArray);
         }
@@ -145,9 +122,8 @@ public final class zb implements AdapterView.OnItemClickListener, MenuPresenter 
         return bundle;
     }
 
-    @Override // defpackage.zt
-    public final void a(Parcelable parcelable) {
-        SparseArray<Parcelable> sparseParcelableArray = ((Bundle) parcelable).getSparseParcelableArray("android:menu:list");
+    public final void a(android.os.Parcelable parcelable) {
+        android.util.SparseArray sparseParcelableArray = ((android.os.Bundle) parcelable).getSparseParcelableArray("android:menu:list");
         if (sparseParcelableArray != null) {
             this.c.restoreHierarchyState(sparseParcelableArray);
         }

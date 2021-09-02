@@ -1,29 +1,23 @@
 package defpackage;
 
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
-import java.util.concurrent.ConcurrentNavigableMap;
-import java.util.concurrent.ConcurrentSkipListMap;
-
-/* renamed from: dsp  reason: default package */
+/* renamed from: dsp reason: default package */
 /* compiled from: PG */
 public final class dsp {
-    public static final dsp a = new dsp();
-    public final ConcurrentNavigableMap b = new ConcurrentSkipListMap();
-    public final ConcurrentMap c = new ConcurrentHashMap();
-    public final ConcurrentMap d = new ConcurrentHashMap();
+    public static final defpackage.dsp a = new defpackage.dsp();
+    public final java.util.concurrent.ConcurrentNavigableMap b = new java.util.concurrent.ConcurrentSkipListMap();
+    public final java.util.concurrent.ConcurrentMap c = new java.util.concurrent.ConcurrentHashMap();
+    public final java.util.concurrent.ConcurrentMap d = new java.util.concurrent.ConcurrentHashMap();
 
     public dsp() {
-        new ConcurrentSkipListMap();
-        new ConcurrentHashMap();
+        new java.util.concurrent.ConcurrentSkipListMap();
+        new java.util.concurrent.ConcurrentHashMap();
     }
 
-    static void a(Map map, dzw dzw) {
-        map.put(Long.valueOf(dzw.b().a), dzw);
+    static void a(java.util.Map map, defpackage.dzw dzw) {
+        map.put(java.lang.Long.valueOf(dzw.b().a), dzw);
     }
 
-    static void b(Map map, dzw dzw) {
-        map.remove(Long.valueOf(dzw.b().a));
+    static void b(java.util.Map map, defpackage.dzw dzw) {
+        map.remove(java.lang.Long.valueOf(dzw.b().a));
     }
 }

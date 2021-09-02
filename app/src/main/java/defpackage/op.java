@@ -1,50 +1,43 @@
 package defpackage;
 
-import android.graphics.Typeface;
-import android.os.Handler;
-import android.os.Looper;
-import android.widget.TextView;
-import java.lang.ref.WeakReference;
-
-/* renamed from: op  reason: default package */
+/* renamed from: op reason: default package */
 /* compiled from: PG */
 public final class op {
-    private final /* synthetic */ WeakReference a;
-    private final /* synthetic */ aci b;
+    private final /* synthetic */ java.lang.ref.WeakReference a;
+    private final /* synthetic */ defpackage.aci b;
 
     public op() {
     }
 
-    public final void a(Typeface typeface) {
-        aci aci = this.b;
-        WeakReference weakReference = this.a;
+    public final void a(android.graphics.Typeface typeface) {
+        defpackage.aci aci = this.b;
+        java.lang.ref.WeakReference weakReference = this.a;
         if (aci.e) {
             aci.d = typeface;
-            TextView textView = (TextView) weakReference.get();
+            android.widget.TextView textView = (android.widget.TextView) weakReference.get();
             if (textView != null) {
                 textView.setTypeface(typeface, aci.c);
             }
         }
     }
 
-    public final void a(Typeface typeface, Handler handler) {
+    public final void a(android.graphics.Typeface typeface, android.os.Handler handler) {
         if (handler == null) {
-            handler = new Handler(Looper.getMainLooper());
+            handler = new android.os.Handler(android.os.Looper.getMainLooper());
         }
-        handler.post(new oq(this, typeface));
+        handler.post(new defpackage.oq(this, typeface));
     }
 
-    public final void a(int i, Handler handler) {
+    public final void a(int i, android.os.Handler handler) {
         if (handler == null) {
-            handler = new Handler(Looper.getMainLooper());
+            handler = new android.os.Handler(android.os.Looper.getMainLooper());
         }
-        handler.post(new or(this));
+        handler.post(new defpackage.or(this));
     }
 
-    /* JADX INFO: this call moved to the top of the method (can break code semantics) */
-    public op(aci aci, WeakReference weakReference) {
-        this();
+    public op(defpackage.aci aci, java.lang.ref.WeakReference weakReference) {
         this.b = aci;
         this.a = weakReference;
+        this();
     }
 }

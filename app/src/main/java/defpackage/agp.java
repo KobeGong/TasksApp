@@ -1,58 +1,51 @@
 package defpackage;
 
-import android.view.View;
-
-/* renamed from: agp  reason: default package */
+/* renamed from: agp reason: default package */
 /* compiled from: PG */
-public abstract class agp extends aey {
+public abstract class agp extends defpackage.aey {
     private boolean a = true;
 
-    public abstract boolean a(ViewHolder afv);
+    public abstract boolean a(defpackage.afv afv);
 
-    public abstract boolean a(ViewHolder afv, int i, int i2, int i3, int i4);
+    public abstract boolean a(defpackage.afv afv, int i, int i2, int i3, int i4);
 
-    public abstract boolean a(ViewHolder afv, ViewHolder afv2, int i, int i2, int i3, int i4);
+    public abstract boolean a(defpackage.afv afv, defpackage.afv afv2, int i, int i2, int i3, int i4);
 
-    public abstract boolean b(ViewHolder afv);
+    public abstract boolean b(defpackage.afv afv);
 
-    @Override // defpackage.aey
-    public final boolean f(ViewHolder afv) {
+    public final boolean f(defpackage.afv afv) {
         return !this.a || afv.j();
     }
 
-    @Override // defpackage.aey
-    public final boolean a(ViewHolder afv, afb afb, afb afb2) {
+    public final boolean a(defpackage.afv afv, defpackage.afb afb, defpackage.afb afb2) {
         int i = afb.a;
         int i2 = afb.b;
-        View view = afv.a;
-        int left = afb2 == null ? view.getLeft() : afb2.a;
-        int top = afb2 == null ? view.getTop() : afb2.b;
-        if (afv.m() || (i == left && i2 == top)) {
+        android.view.View view = afv.a;
+        int i3 = afb2 == null ? view.getLeft() : afb2.a;
+        int i4 = afb2 == null ? view.getTop() : afb2.b;
+        if (afv.m() || (i == i3 && i2 == i4)) {
             return a(afv);
         }
-        view.layout(left, top, view.getWidth() + left, view.getHeight() + top);
-        return a(afv, i, i2, left, top);
+        view.layout(i3, i4, view.getWidth() + i3, view.getHeight() + i4);
+        return a(afv, i, i2, i3, i4);
     }
 
-    @Override // defpackage.aey
-    public boolean b(ViewHolder afv, afb afb, afb afb2) {
+    public boolean b(defpackage.afv afv, defpackage.afb afb, defpackage.afb afb2) {
         if (afb == null || (afb.a == afb2.a && afb.b == afb2.b)) {
             return b(afv);
         }
         return a(afv, afb.a, afb.b, afb2.a, afb2.b);
     }
 
-    @Override // defpackage.aey
-    public final boolean c(ViewHolder afv, afb afb, afb afb2) {
-        if (afb.a != afb2.a || afb.b != afb2.b) {
-            return a(afv, afb.a, afb.b, afb2.a, afb2.b);
+    public final boolean c(defpackage.afv afv, defpackage.afb afb, defpackage.afb afb2) {
+        if (afb.a == afb2.a && afb.b == afb2.b) {
+            e(afv);
+            return false;
         }
-        e(afv);
-        return false;
+        return a(afv, afb.a, afb.b, afb2.a, afb2.b);
     }
 
-    @Override // defpackage.aey
-    public final boolean a(ViewHolder afv, ViewHolder afv2, afb afb, afb afb2) {
+    public final boolean a(defpackage.afv afv, defpackage.afv afv2, defpackage.afb afb, defpackage.afb afb2) {
         int i;
         int i2;
         int i3 = afb.a;

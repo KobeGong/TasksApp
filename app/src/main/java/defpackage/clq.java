@@ -1,6 +1,6 @@
 package defpackage;
 
-/* renamed from: clq  reason: default package */
+/* renamed from: clq reason: default package */
 /* compiled from: PG */
 public final class clq {
     public float a;

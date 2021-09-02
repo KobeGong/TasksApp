@@ -1,10 +1,7 @@
 package defpackage;
 
-import java.security.cert.X509Certificate;
-import java.util.List;
-
-/* renamed from: ejk  reason: default package */
+/* renamed from: ejk reason: default package */
 /* compiled from: PG */
 public interface ejk {
-    List a(X509Certificate[] x509CertificateArr, String str, String str2);
+    java.util.List a(java.security.cert.X509Certificate[] x509CertificateArr, java.lang.String str, java.lang.String str2);
 }

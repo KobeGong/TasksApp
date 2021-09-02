@@ -1,12 +1,12 @@
 package defpackage;
 
-/* renamed from: dre  reason: default package */
+/* renamed from: dre reason: default package */
 /* compiled from: PG */
-final class dre implements Runnable {
+final class dre implements java.lang.Runnable {
     private final /* synthetic */ int a;
-    private final /* synthetic */ dqz b;
+    private final /* synthetic */ defpackage.dqz b;
 
-    dre(dqz dqz, int i) {
+    dre(defpackage.dqz dqz, int i) {
         this.b = dqz;
         this.a = i;
     }

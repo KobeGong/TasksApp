@@ -1,20 +1,15 @@
 package defpackage;
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-
-/* access modifiers changed from: package-private */
-/* renamed from: bii  reason: default package */
+/* renamed from: bii reason: default package */
 /* compiled from: PG */
-public final class bii extends BroadcastReceiver {
-    private /* synthetic */ bhw a;
+final class bii extends android.content.BroadcastReceiver {
+    private /* synthetic */ defpackage.bhw a;
 
-    bii(bhw bhw) {
+    bii(defpackage.bhw bhw) {
         this.a = bhw;
     }
 
-    public final void onReceive(Context context, Intent intent) {
+    public final void onReceive(android.content.Context context, android.content.Intent intent) {
         this.a.a(intent);
     }
 }

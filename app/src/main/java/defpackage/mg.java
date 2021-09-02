@@ -1,21 +1,16 @@
 package defpackage;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-/* renamed from: mg  reason: default package */
+/* renamed from: mg reason: default package */
 /* compiled from: PG */
-final class mg implements Parcelable.Creator {
+final class mg implements android.os.Parcelable.Creator {
     mg() {
     }
 
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object[] newArray(int i) {
-        return new mf[i];
+    public final /* synthetic */ java.lang.Object[] newArray(int i) {
+        return new defpackage.mf[i];
     }
 
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object createFromParcel(Parcel parcel) {
-        return new mf(parcel);
+    public final /* synthetic */ java.lang.Object createFromParcel(android.os.Parcel parcel) {
+        return new defpackage.mf(parcel);
     }
 }

@@ -1,25 +1,20 @@
 package defpackage;
 
-import java.nio.ByteBuffer;
-import java.nio.charset.Charset;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-
-/* renamed from: chs  reason: default package */
+/* renamed from: chs reason: default package */
 /* compiled from: PG */
 public final class chs {
-    private static final Charset a = Charset.forName("UTF-8");
+    private static final java.nio.charset.Charset a = java.nio.charset.Charset.forName("UTF-8");
 
-    public static Long a(String str) {
+    public static java.lang.Long a(java.lang.String str) {
         if (str == null || str.trim().isEmpty()) {
             return null;
         }
         try {
-            MessageDigest instance = MessageDigest.getInstance("MD5");
+            java.security.MessageDigest instance = java.security.MessageDigest.getInstance("MD5");
             instance.update(str.getBytes(a));
-            return Long.valueOf(ByteBuffer.wrap(instance.digest()).getLong());
-        } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException(e);
+            return java.lang.Long.valueOf(java.nio.ByteBuffer.wrap(instance.digest()).getLong());
+        } catch (java.security.NoSuchAlgorithmException e) {
+            throw new java.lang.RuntimeException(e);
         }
     }
 }

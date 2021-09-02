@@ -1,22 +1,17 @@
 package defpackage;
 
-import android.support.v4.widget.NestedScrollView;
-import android.support.v7.app.AlertController;
-import android.view.View;
-
-/* renamed from: we  reason: default package */
+/* renamed from: we reason: default package */
 /* compiled from: PG */
-final class we implements uy {
-    private final /* synthetic */ View a;
-    private final /* synthetic */ View b;
+final class we implements defpackage.uy {
+    private final /* synthetic */ android.view.View a;
+    private final /* synthetic */ android.view.View b;
 
-    we(View view, View view2) {
+    we(android.view.View view, android.view.View view2) {
         this.a = view;
         this.b = view2;
     }
 
-    @Override // defpackage.uy
-    public final void a(NestedScrollView nestedScrollView, int i, int i2) {
-        AlertController.a(nestedScrollView, this.a, this.b);
+    public final void a(android.support.v4.widget.NestedScrollView nestedScrollView, int i, int i2) {
+        android.support.v7.app.AlertController.a(nestedScrollView, this.a, this.b);
     }
 }

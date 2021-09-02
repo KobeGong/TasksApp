@@ -1,18 +1,14 @@
 package defpackage;
 
-import android.graphics.drawable.Drawable;
-import android.widget.TextView;
-
-/* renamed from: vp  reason: default package */
+/* renamed from: vp reason: default package */
 /* compiled from: PG */
-class vp extends vs {
+class vp extends defpackage.vs {
     vp() {
-        super((byte) 0);
+        super(0);
     }
 
-    @Override // defpackage.vs
-    public void a(TextView textView, Drawable drawable) {
-        Drawable drawable2;
+    public void a(android.widget.TextView textView, android.graphics.drawable.Drawable drawable) {
+        android.graphics.drawable.Drawable drawable2;
         boolean z = textView.getLayoutDirection() == 1;
         if (z) {
             drawable2 = null;
@@ -25,9 +21,8 @@ class vp extends vs {
         textView.setCompoundDrawables(drawable2, null, drawable, null);
     }
 
-    @Override // defpackage.vs
-    public void b(TextView textView, Drawable drawable) {
-        Drawable drawable2;
+    public void b(android.widget.TextView textView, android.graphics.drawable.Drawable drawable) {
+        android.graphics.drawable.Drawable drawable2;
         boolean z = textView.getLayoutDirection() == 1;
         if (z) {
             drawable2 = null;
@@ -37,11 +32,10 @@ class vp extends vs {
         if (!z) {
             drawable = null;
         }
-        textView.setCompoundDrawablesWithIntrinsicBounds(drawable2, (Drawable) null, drawable, (Drawable) null);
+        textView.setCompoundDrawablesWithIntrinsicBounds(drawable2, null, drawable, null);
     }
 
-    @Override // defpackage.vs
-    public void a(TextView textView, int i) {
+    public void a(android.widget.TextView textView, int i) {
         boolean z;
         int i2;
         if (textView.getLayoutDirection() == 1) {

@@ -1,14 +1,11 @@
 package defpackage;
 
-import android.widget.PopupWindow;
-
-/* access modifiers changed from: package-private */
-/* renamed from: zs  reason: default package */
+/* renamed from: zs reason: default package */
 /* compiled from: PG */
-public final class zs implements PopupWindow.OnDismissListener {
-    private final /* synthetic */ zr a;
+final class zs implements android.widget.PopupWindow.OnDismissListener {
+    private final /* synthetic */ defpackage.zr a;
 
-    zs(zr zrVar) {
+    zs(defpackage.zr zrVar) {
         this.a = zrVar;
     }
 

@@ -1,14 +1,12 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: drk  reason: default package */
+/* renamed from: drk reason: default package */
 /* compiled from: PG */
-public final class drk extends dol {
+final class drk extends defpackage.dol {
     drk() {
     }
 
-    @Override // defpackage.dol
-    public final dok a(dom dom) {
-        return new drl(dom);
+    public final defpackage.dok a(defpackage.dom dom) {
+        return new defpackage.drl(dom);
     }
 }

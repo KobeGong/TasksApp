@@ -1,18 +1,16 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: bpd  reason: default package */
-public final /* synthetic */ class bpd implements bpb {
-    private final boz a;
-    private final bow b;
+/* renamed from: bpd reason: default package */
+final /* synthetic */ class bpd implements defpackage.bpb {
+    private final defpackage.boz a;
+    private final defpackage.bow b;
 
-    bpd(boz boz, bow bow) {
+    bpd(defpackage.boz boz, defpackage.bow bow) {
         this.a = boz;
         this.b = bow;
     }
 
-    @Override // defpackage.bpb
-    public final Object a() {
-        return (String) this.b.a().get(this.a.e);
+    public final java.lang.Object a() {
+        return (java.lang.String) this.b.a().get(this.a.e);
     }
 }

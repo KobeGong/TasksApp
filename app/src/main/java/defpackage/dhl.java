@@ -1,14 +1,9 @@
 package defpackage;
 
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.List;
-
-/* access modifiers changed from: package-private */
-/* renamed from: dhl  reason: default package */
+/* renamed from: dhl reason: default package */
 /* compiled from: PG */
-public final class dhl extends dhj {
-    private final InputStream e;
+final class dhl extends defpackage.dhj {
+    private final java.io.InputStream e;
     private final byte[] f;
     private int g;
     private int h;
@@ -17,8 +12,8 @@ public final class dhl extends dhj {
     private int k;
     private int l = Integer.MAX_VALUE;
 
-    dhl(InputStream inputStream) {
-        dim.a((Object) inputStream, "input");
+    dhl(java.io.InputStream inputStream) {
+        defpackage.dim.a((java.lang.Object) inputStream, "input");
         this.e = inputStream;
         this.f = new byte[4096];
         this.g = 0;
@@ -26,7 +21,6 @@ public final class dhl extends dhj {
         this.k = 0;
     }
 
-    @Override // defpackage.dhj
     public final int a() {
         if (t()) {
             this.j = 0;
@@ -36,17 +30,15 @@ public final class dhl extends dhj {
         if ((this.j >>> 3) != 0) {
             return this.j;
         }
-        throw dir.d();
+        throw defpackage.dir.d();
     }
 
-    @Override // defpackage.dhj
     public final void a(int i2) {
         if (this.j != i2) {
-            throw dir.e();
+            throw defpackage.dir.e();
         }
     }
 
-    @Override // defpackage.dhj
     public final boolean b(int i2) {
         int a;
         int i3 = 0;
@@ -62,7 +54,7 @@ public final class dhl extends dhj {
                         }
                         i3++;
                     }
-                    throw dir.c();
+                    throw defpackage.dir.c();
                 }
                 while (i3 < 10) {
                     if (A() >= 0) {
@@ -70,7 +62,7 @@ public final class dhl extends dhj {
                     }
                     i3++;
                 }
-                throw dir.c();
+                throw defpackage.dir.c();
             case 1:
                 e(8);
                 return true;
@@ -85,7 +77,7 @@ public final class dhl extends dhj {
                 e(4);
                 return true;
             default:
-                throw dir.f();
+                throw defpackage.dir.f();
         }
         do {
             a = a();
@@ -98,68 +90,58 @@ public final class dhl extends dhj {
         return true;
     }
 
-    @Override // defpackage.dhj
     public final double b() {
-        return Double.longBitsToDouble(y());
+        return java.lang.Double.longBitsToDouble(y());
     }
 
-    @Override // defpackage.dhj
     public final float c() {
-        return Float.intBitsToFloat(x());
+        return java.lang.Float.intBitsToFloat(x());
     }
 
-    @Override // defpackage.dhj
     public final long d() {
         return w();
     }
 
-    @Override // defpackage.dhj
     public final long e() {
         return w();
     }
 
-    @Override // defpackage.dhj
     public final int f() {
         return v();
     }
 
-    @Override // defpackage.dhj
     public final long g() {
         return y();
     }
 
-    @Override // defpackage.dhj
     public final int h() {
         return x();
     }
 
-    @Override // defpackage.dhj
     public final boolean i() {
         return w() != 0;
     }
 
-    @Override // defpackage.dhj
-    public final String j() {
+    public final java.lang.String j() {
         int v = v();
         if (v > 0 && v <= this.g - this.i) {
-            String str = new String(this.f, this.i, v, dim.a);
+            java.lang.String str = new java.lang.String(this.f, this.i, v, defpackage.dim.a);
             this.i = v + this.i;
             return str;
         } else if (v == 0) {
             return "";
         } else {
             if (v > this.g) {
-                return new String(i(v), dim.a);
+                return new java.lang.String(i(v), defpackage.dim.a);
             }
             g(v);
-            String str2 = new String(this.f, this.i, v, dim.a);
+            java.lang.String str2 = new java.lang.String(this.f, this.i, v, defpackage.dim.a);
             this.i = v + this.i;
             return str2;
         }
     }
 
-    @Override // defpackage.dhj
-    public final String k() {
+    public final java.lang.String k() {
         byte[] i2;
         int v = v();
         int i3 = this.i;
@@ -180,82 +162,74 @@ public final class dhl extends dhj {
                 i3 = 0;
             }
         }
-        if (dli.a(i2, i3, i3 + v)) {
-            return new String(i2, i3, v, dim.a);
+        if (defpackage.dli.a(i2, i3, i3 + v)) {
+            return new java.lang.String(i2, i3, v, defpackage.dim.a);
         }
-        throw dir.j();
+        throw defpackage.dir.j();
     }
 
-    @Override // defpackage.dhj
-    public final djo a(djx djx, dhw dhw) {
+    public final defpackage.djo a(defpackage.djx djx, defpackage.dhw dhw) {
         int v = v();
         if (this.a >= this.b) {
-            throw dir.g();
+            throw defpackage.dir.g();
         }
         int c = c(v);
         this.a++;
-        djo djo = (djo) djx.b(this, dhw);
+        defpackage.djo djo = (defpackage.djo) djx.b(this, dhw);
         a(0);
         this.a--;
         d(c);
         return djo;
     }
 
-    @Override // defpackage.dhj
-    public final dha l() {
+    public final defpackage.dha l() {
         int v = v();
         if (v <= this.g - this.i && v > 0) {
-            dha a = dha.a(this.f, this.i, v);
+            defpackage.dha a = defpackage.dha.a(this.f, this.i, v);
             this.i = v + this.i;
             return a;
         } else if (v == 0) {
-            return dha.a;
+            return defpackage.dha.a;
         } else {
             byte[] j2 = j(v);
             if (j2 != null) {
-                return dha.a(j2);
+                return defpackage.dha.a(j2);
             }
             int i2 = this.i;
             int i3 = this.g - this.i;
             this.k += this.g;
             this.i = 0;
             this.g = 0;
-            List<byte[]> k2 = k(v - i3);
-            ArrayList arrayList = new ArrayList(k2.size() + 1);
-            arrayList.add(dha.a(this.f, i2, i3));
-            for (byte[] bArr : k2) {
-                arrayList.add(dha.a(bArr));
+            java.util.List<byte[]> k2 = k(v - i3);
+            java.util.ArrayList arrayList = new java.util.ArrayList(k2.size() + 1);
+            arrayList.add(defpackage.dha.a(this.f, i2, i3));
+            for (byte[] a2 : k2) {
+                arrayList.add(defpackage.dha.a(a2));
             }
-            return dha.a(arrayList);
+            return defpackage.dha.a((java.lang.Iterable) arrayList);
         }
     }
 
-    @Override // defpackage.dhj
     public final int m() {
         return v();
     }
 
-    @Override // defpackage.dhj
     public final int n() {
         return v();
     }
 
-    @Override // defpackage.dhj
     public final int o() {
         return x();
     }
 
-    @Override // defpackage.dhj
     public final long p() {
         return y();
     }
 
-    @Override // defpackage.dhj
     public final int q() {
         return f(v());
     }
 
-    @Override // defpackage.dhj
     public final long r() {
         return a(w());
     }
@@ -266,7 +240,79 @@ public final class dhl extends dhj {
     /* Code decompiled incorrectly, please refer to instructions dump. */
     private final int v() {
         /*
-        // Method dump skipped, instructions count: 116
+            r5 = this;
+            int r0 = r5.i
+            int r1 = r5.g
+            if (r1 == r0) goto L_0x006c
+            byte[] r3 = r5.f
+            int r2 = r0 + 1
+            byte r0 = r3[r0]
+            if (r0 < 0) goto L_0x0011
+            r5.i = r2
+        L_0x0010:
+            return r0
+        L_0x0011:
+            int r1 = r5.g
+            int r1 = r1 - r2
+            r4 = 9
+            if (r1 < r4) goto L_0x006c
+            int r1 = r2 + 1
+            byte r2 = r3[r2]
+            int r2 = r2 << 7
+            r0 = r0 ^ r2
+            if (r0 >= 0) goto L_0x0026
+            r0 = r0 ^ -128(0xffffffffffffff80, float:NaN)
+        L_0x0023:
+            r5.i = r1
+            goto L_0x0010
+        L_0x0026:
+            int r2 = r1 + 1
+            byte r1 = r3[r1]
+            int r1 = r1 << 14
+            r0 = r0 ^ r1
+            if (r0 < 0) goto L_0x0033
+            r0 = r0 ^ 16256(0x3f80, float:2.278E-41)
+            r1 = r2
+            goto L_0x0023
+        L_0x0033:
+            int r1 = r2 + 1
+            byte r2 = r3[r2]
+            int r2 = r2 << 21
+            r0 = r0 ^ r2
+            if (r0 >= 0) goto L_0x0041
+            r2 = -2080896(0xffffffffffe03f80, float:NaN)
+            r0 = r0 ^ r2
+            goto L_0x0023
+        L_0x0041:
+            int r2 = r1 + 1
+            byte r1 = r3[r1]
+            int r4 = r1 << 28
+            r0 = r0 ^ r4
+            r4 = 266354560(0xfe03f80, float:2.2112565E-29)
+            r0 = r0 ^ r4
+            if (r1 >= 0) goto L_0x0072
+            int r1 = r2 + 1
+            byte r2 = r3[r2]
+            if (r2 >= 0) goto L_0x0023
+            int r2 = r1 + 1
+            byte r1 = r3[r1]
+            if (r1 >= 0) goto L_0x0072
+            int r1 = r2 + 1
+            byte r2 = r3[r2]
+            if (r2 >= 0) goto L_0x0023
+            int r2 = r1 + 1
+            byte r1 = r3[r1]
+            if (r1 >= 0) goto L_0x0072
+            int r1 = r2 + 1
+            byte r2 = r3[r2]
+            if (r2 >= 0) goto L_0x0023
+        L_0x006c:
+            long r0 = r5.s()
+            int r0 = (int) r0
+            goto L_0x0010
+        L_0x0072:
+            r1 = r2
+            goto L_0x0023
         */
         throw new UnsupportedOperationException("Method not decompiled: defpackage.dhl.v():int");
     }
@@ -277,13 +323,132 @@ public final class dhl extends dhj {
     /* Code decompiled incorrectly, please refer to instructions dump. */
     private final long w() {
         /*
-        // Method dump skipped, instructions count: 189
+            r10 = this;
+            r8 = 0
+            int r0 = r10.i
+            int r1 = r10.g
+            if (r1 == r0) goto L_0x00b4
+            byte[] r4 = r10.f
+            int r1 = r0 + 1
+            byte r0 = r4[r0]
+            if (r0 < 0) goto L_0x0014
+            r10.i = r1
+            long r0 = (long) r0
+        L_0x0013:
+            return r0
+        L_0x0014:
+            int r2 = r10.g
+            int r2 = r2 - r1
+            r3 = 9
+            if (r2 < r3) goto L_0x00b4
+            int r2 = r1 + 1
+            byte r1 = r4[r1]
+            int r1 = r1 << 7
+            r0 = r0 ^ r1
+            if (r0 >= 0) goto L_0x002a
+            r0 = r0 ^ -128(0xffffffffffffff80, float:NaN)
+            long r0 = (long) r0
+        L_0x0027:
+            r10.i = r2
+            goto L_0x0013
+        L_0x002a:
+            int r3 = r2 + 1
+            byte r1 = r4[r2]
+            int r1 = r1 << 14
+            r0 = r0 ^ r1
+            if (r0 < 0) goto L_0x0038
+            r0 = r0 ^ 16256(0x3f80, float:2.278E-41)
+            long r0 = (long) r0
+            r2 = r3
+            goto L_0x0027
+        L_0x0038:
+            int r2 = r3 + 1
+            byte r1 = r4[r3]
+            int r1 = r1 << 21
+            r0 = r0 ^ r1
+            if (r0 >= 0) goto L_0x0047
+            r1 = -2080896(0xffffffffffe03f80, float:NaN)
+            r0 = r0 ^ r1
+            long r0 = (long) r0
+            goto L_0x0027
+        L_0x0047:
+            long r0 = (long) r0
+            int r3 = r2 + 1
+            byte r2 = r4[r2]
+            long r6 = (long) r2
+            r2 = 28
+            long r6 = r6 << r2
+            long r0 = r0 ^ r6
+            int r2 = (r0 > r8 ? 1 : (r0 == r8 ? 0 : -1))
+            if (r2 < 0) goto L_0x005b
+            r4 = 266354560(0xfe03f80, double:1.315966377E-315)
+            long r0 = r0 ^ r4
+            r2 = r3
+            goto L_0x0027
+        L_0x005b:
+            int r2 = r3 + 1
+            byte r3 = r4[r3]
+            long r6 = (long) r3
+            r3 = 35
+            long r6 = r6 << r3
+            long r0 = r0 ^ r6
+            int r3 = (r0 > r8 ? 1 : (r0 == r8 ? 0 : -1))
+            if (r3 >= 0) goto L_0x006f
+            r4 = -34093383808(0xfffffff80fe03f80, double:NaN)
+            long r0 = r0 ^ r4
+            goto L_0x0027
+        L_0x006f:
+            int r3 = r2 + 1
+            byte r2 = r4[r2]
+            long r6 = (long) r2
+            r2 = 42
+            long r6 = r6 << r2
+            long r0 = r0 ^ r6
+            int r2 = (r0 > r8 ? 1 : (r0 == r8 ? 0 : -1))
+            if (r2 < 0) goto L_0x0084
+            r4 = 4363953127296(0x3f80fe03f80, double:2.1560793202584E-311)
+            long r0 = r0 ^ r4
+            r2 = r3
+            goto L_0x0027
+        L_0x0084:
+            int r2 = r3 + 1
+            byte r3 = r4[r3]
+            long r6 = (long) r3
+            r3 = 49
+            long r6 = r6 << r3
+            long r0 = r0 ^ r6
+            int r3 = (r0 > r8 ? 1 : (r0 == r8 ? 0 : -1))
+            if (r3 >= 0) goto L_0x0098
+            r4 = -558586000294016(0xfffe03f80fe03f80, double:NaN)
+            long r0 = r0 ^ r4
+            goto L_0x0027
+        L_0x0098:
+            int r3 = r2 + 1
+            byte r2 = r4[r2]
+            long r6 = (long) r2
+            r2 = 56
+            long r6 = r6 << r2
+            long r0 = r0 ^ r6
+            r6 = 71499008037633920(0xfe03f80fe03f80, double:6.838959413692434E-304)
+            long r0 = r0 ^ r6
+            int r2 = (r0 > r8 ? 1 : (r0 == r8 ? 0 : -1))
+            if (r2 >= 0) goto L_0x00ba
+            int r2 = r3 + 1
+            byte r3 = r4[r3]
+            long r4 = (long) r3
+            int r3 = (r4 > r8 ? 1 : (r4 == r8 ? 0 : -1))
+            if (r3 >= 0) goto L_0x0027
+        L_0x00b4:
+            long r0 = r10.s()
+            goto L_0x0013
+        L_0x00ba:
+            r2 = r3
+            goto L_0x0027
         */
         throw new UnsupportedOperationException("Method not decompiled: defpackage.dhl.w():long");
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.dhj
+    /* access modifiers changed from: 0000 */
     public final long s() {
         long j2 = 0;
         for (int i2 = 0; i2 < 64; i2 += 7) {
@@ -293,7 +458,7 @@ public final class dhl extends dhj {
                 return j2;
             }
         }
-        throw dir.c();
+        throw defpackage.dir.c();
     }
 
     private final int x() {
@@ -318,15 +483,14 @@ public final class dhl extends dhj {
         return ((((long) bArr[i2 + 7]) & 255) << 56) | (((long) bArr[i2]) & 255) | ((((long) bArr[i2 + 1]) & 255) << 8) | ((((long) bArr[i2 + 2]) & 255) << 16) | ((((long) bArr[i2 + 3]) & 255) << 24) | ((((long) bArr[i2 + 4]) & 255) << 32) | ((((long) bArr[i2 + 5]) & 255) << 40) | ((((long) bArr[i2 + 6]) & 255) << 48);
     }
 
-    @Override // defpackage.dhj
     public final int c(int i2) {
         if (i2 < 0) {
-            throw dir.b();
+            throw defpackage.dir.b();
         }
         int i3 = this.k + this.i + i2;
         int i4 = this.l;
         if (i3 > i4) {
-            throw dir.a();
+            throw defpackage.dir.a();
         }
         this.l = i3;
         z();
@@ -344,18 +508,15 @@ public final class dhl extends dhj {
         this.h = 0;
     }
 
-    @Override // defpackage.dhj
     public final void d(int i2) {
         this.l = i2;
         z();
     }
 
-    @Override // defpackage.dhj
     public final boolean t() {
         return this.i == this.g && !h(1);
     }
 
-    @Override // defpackage.dhj
     public final int u() {
         return this.k + this.i;
     }
@@ -365,9 +526,9 @@ public final class dhl extends dhj {
             return;
         }
         if (i2 > (this.c - this.k) - this.i) {
-            throw dir.h();
+            throw defpackage.dir.h();
         }
-        throw dir.a();
+        throw defpackage.dir.a();
     }
 
     private final boolean h(int i2) {
@@ -378,15 +539,15 @@ public final class dhl extends dhj {
             int i3 = this.i;
             if (i3 > 0) {
                 if (this.g > i3) {
-                    System.arraycopy(this.f, i3, this.f, 0, this.g - i3);
+                    java.lang.System.arraycopy(this.f, i3, this.f, 0, this.g - i3);
                 }
                 this.k += i3;
                 this.g -= i3;
                 this.i = 0;
             }
-            int read = this.e.read(this.f, this.g, Math.min(this.f.length - this.g, (this.c - this.k) - this.g));
+            int read = this.e.read(this.f, this.g, java.lang.Math.min(this.f.length - this.g, (this.c - this.k) - this.g));
             if (read == 0 || read < -1 || read > this.f.length) {
-                throw new IllegalStateException(new StringBuilder(102).append("InputStream#read(byte[]) returned invalid result: ").append(read).append("\nThe InputStream implementation is buggy.").toString());
+                throw new java.lang.IllegalStateException("InputStream#read(byte[]) returned invalid result: " + read + "\nThe InputStream implementation is buggy.");
             } else if (read <= 0) {
                 return false;
             } else {
@@ -397,7 +558,7 @@ public final class dhl extends dhj {
                 }
             }
         }
-        throw new IllegalStateException(new StringBuilder(77).append("refillBuffer() called when ").append(i2).append(" bytes were already available in buffer").toString());
+        throw new java.lang.IllegalStateException("refillBuffer() called when " + i2 + " bytes were already available in buffer");
     }
 
     private final byte A() {
@@ -420,29 +581,34 @@ public final class dhl extends dhj {
         this.k += this.g;
         this.i = 0;
         this.g = 0;
-        List<byte[]> k2 = k(i2 - i4);
+        java.util.List k2 = k(i2 - i4);
         byte[] bArr = new byte[i2];
-        System.arraycopy(this.f, i3, bArr, 0, i4);
-        for (byte[] bArr2 : k2) {
-            System.arraycopy(bArr2, 0, bArr, i4, bArr2.length);
-            i4 = bArr2.length + i4;
+        java.lang.System.arraycopy(this.f, i3, bArr, 0, i4);
+        java.util.Iterator it = k2.iterator();
+        while (true) {
+            int i5 = i4;
+            if (!it.hasNext()) {
+                return bArr;
+            }
+            byte[] bArr2 = (byte[]) it.next();
+            java.lang.System.arraycopy(bArr2, 0, bArr, i5, bArr2.length);
+            i4 = bArr2.length + i5;
         }
-        return bArr;
     }
 
     private final byte[] j(int i2) {
         if (i2 == 0) {
-            return dim.b;
+            return defpackage.dim.b;
         }
         if (i2 < 0) {
-            throw dir.b();
+            throw defpackage.dir.b();
         }
         int i3 = this.k + this.i + i2;
         if (i3 - this.c > 0) {
-            throw dir.h();
+            throw defpackage.dir.h();
         } else if (i3 > this.l) {
             e((this.l - this.k) - this.i);
-            throw dir.a();
+            throw defpackage.dir.a();
         } else {
             int i4 = this.g - this.i;
             int i5 = i2 - i4;
@@ -450,14 +616,14 @@ public final class dhl extends dhj {
                 return null;
             }
             byte[] bArr = new byte[i2];
-            System.arraycopy(this.f, this.i, bArr, 0, i4);
+            java.lang.System.arraycopy(this.f, this.i, bArr, 0, i4);
             this.k += this.g;
             this.i = 0;
             this.g = 0;
             while (i4 < bArr.length) {
                 int read = this.e.read(bArr, i4, i2 - i4);
                 if (read == -1) {
-                    throw dir.a();
+                    throw defpackage.dir.a();
                 }
                 this.k += read;
                 i4 += read;
@@ -466,15 +632,15 @@ public final class dhl extends dhj {
         }
     }
 
-    private final List k(int i2) {
-        ArrayList arrayList = new ArrayList();
+    private final java.util.List k(int i2) {
+        java.util.ArrayList arrayList = new java.util.ArrayList();
         while (i2 > 0) {
-            byte[] bArr = new byte[Math.min(i2, 4096)];
+            byte[] bArr = new byte[java.lang.Math.min(i2, 4096)];
             int i3 = 0;
             while (i3 < bArr.length) {
                 int read = this.e.read(bArr, i3, bArr.length - i3);
                 if (read == -1) {
-                    throw dir.a();
+                    throw defpackage.dir.a();
                 }
                 this.k += read;
                 i3 += read;
@@ -485,15 +651,14 @@ public final class dhl extends dhj {
         return arrayList;
     }
 
-    @Override // defpackage.dhj
     public final void e(int i2) {
         if (i2 <= this.g - this.i && i2 >= 0) {
             this.i += i2;
         } else if (i2 < 0) {
-            throw dir.b();
+            throw defpackage.dir.b();
         } else if (this.k + this.i + i2 > this.l) {
             e((this.l - this.k) - this.i);
-            throw dir.a();
+            throw defpackage.dir.a();
         } else {
             int i3 = this.g - this.i;
             this.i = this.g;

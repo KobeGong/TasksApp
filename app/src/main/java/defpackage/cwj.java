@@ -1,18 +1,14 @@
 package defpackage;
 
-import java.math.RoundingMode;
-import java.util.Arrays;
-
-/* access modifiers changed from: package-private */
-/* renamed from: cwj  reason: default package */
+/* renamed from: cwj reason: default package */
 /* compiled from: PG */
-public class cwj extends cwe {
-    public final cwf c;
-    private final Character d;
-    private transient cwe e;
+class cwj extends defpackage.cwe {
+    public final defpackage.cwf c;
+    private final java.lang.Character d;
+    private transient defpackage.cwe e;
 
-    cwj(String str, String str2, Character ch) {
-        this(new cwf(str, str2.toCharArray()), ch);
+    cwj(java.lang.String str, java.lang.String str2, java.lang.Character ch) {
+        this(new defpackage.cwf(str, str2.toCharArray()), ch);
     }
 
     /* JADX WARNING: Removed duplicated region for block: B:11:0x0027  */
@@ -63,29 +59,27 @@ public class cwj extends cwe {
         throw new UnsupportedOperationException("Method not decompiled: defpackage.cwj.<init>(cwf, java.lang.Character):void");
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.cwe
+    /* access modifiers changed from: 0000 */
     public final int a(int i) {
-        return this.c.e * cmr.a(i, this.c.f, RoundingMode.CEILING);
+        return this.c.e * defpackage.cmr.a(i, this.c.f, java.math.RoundingMode.CEILING);
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.cwe
-    public void a(Appendable appendable, byte[] bArr, int i) {
+    /* access modifiers changed from: 0000 */
+    public void a(java.lang.Appendable appendable, byte[] bArr, int i) {
         int i2 = 0;
-        cld.a(appendable);
-        cld.a(0, i, bArr.length);
+        defpackage.cld.a((java.lang.Object) appendable);
+        defpackage.cld.a(0, i, bArr.length);
         while (i2 < i) {
-            a(appendable, bArr, i2, Math.min(this.c.f, i - i2));
+            a(appendable, bArr, i2, java.lang.Math.min(this.c.f, i - i2));
             i2 += this.c.f;
         }
     }
 
-    /* access modifiers changed from: package-private */
-    public final void a(Appendable appendable, byte[] bArr, int i, int i2) {
-        cld.a(appendable);
-        cld.a(i, i + i2, bArr.length);
-        cld.a(i2 <= this.c.f);
+    /* access modifiers changed from: 0000 */
+    public final void a(java.lang.Appendable appendable, byte[] bArr, int i, int i2) {
+        defpackage.cld.a((java.lang.Object) appendable);
+        defpackage.cld.a(i, i + i2, bArr.length);
+        defpackage.cld.a(i2 <= this.c.f);
         long j = 0;
         for (int i3 = 0; i3 < i2; i3++) {
             j = (j | ((long) (bArr[i + i3] & 255))) << 8;
@@ -104,16 +98,14 @@ public class cwj extends cwe {
         }
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.cwe
+    /* access modifiers changed from: 0000 */
     public final int b(int i) {
         return (int) (((((long) this.c.d) * ((long) i)) + 7) / 8);
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.cwe
-    public final CharSequence b(CharSequence charSequence) {
-        cld.a(charSequence);
+    /* access modifiers changed from: 0000 */
+    public final java.lang.CharSequence b(java.lang.CharSequence charSequence) {
+        defpackage.cld.a((java.lang.Object) charSequence);
         if (this.d == null) {
             return charSequence;
         }
@@ -125,13 +117,12 @@ public class cwj extends cwe {
         return charSequence.subSequence(0, length + 1);
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.cwe
-    public int a(byte[] bArr, CharSequence charSequence) {
-        cld.a(bArr);
-        CharSequence b = b(charSequence);
+    /* access modifiers changed from: 0000 */
+    public int a(byte[] bArr, java.lang.CharSequence charSequence) {
+        defpackage.cld.a((java.lang.Object) bArr);
+        java.lang.CharSequence b = b(charSequence);
         if (!this.c.a(b.length())) {
-            throw new cwi(new StringBuilder(32).append("Invalid input length ").append(b.length()).toString());
+            throw new defpackage.cwi("Invalid input length " + b.length());
         }
         int i = 0;
         int i2 = 0;
@@ -149,26 +140,26 @@ public class cwj extends cwe {
             int i5 = (this.c.f << 3) - (i3 * this.c.d);
             int i6 = (this.c.f - 1) << 3;
             while (i6 >= i5) {
+                int i7 = i + 1;
                 bArr[i] = (byte) ((int) ((j >>> i6) & 255));
                 i6 -= 8;
-                i++;
+                i = i7;
             }
             i2 += this.c.e;
         }
         return i;
     }
 
-    @Override // defpackage.cwe
-    public final cwe a() {
+    public final defpackage.cwe a() {
         boolean z;
         boolean z2;
-        cwf cwf;
+        defpackage.cwf cwf;
         boolean z3 = true;
-        cwe cwe = this.e;
+        defpackage.cwe cwe = this.e;
         if (cwe != null) {
             return cwe;
         }
-        cwf cwf2 = this.c;
+        defpackage.cwf cwf2 = this.c;
         char[] cArr = cwf2.b;
         int length = cArr.length;
         int i = 0;
@@ -176,7 +167,7 @@ public class cwj extends cwe {
             if (i >= length) {
                 z = false;
                 break;
-            } else if (cky.a(cArr[i])) {
+            } else if (defpackage.cky.a(cArr[i])) {
                 z = true;
                 break;
             } else {
@@ -204,29 +195,29 @@ public class cwj extends cwe {
             if (z2) {
                 z3 = false;
             }
-            cld.b(z3, "Cannot call lowerCase() on a mixed-case alphabet");
+            defpackage.cld.b(z3, (java.lang.Object) "Cannot call lowerCase() on a mixed-case alphabet");
             char[] cArr3 = new char[cwf2.b.length];
             for (int i3 = 0; i3 < cwf2.b.length; i3++) {
                 char c3 = cwf2.b[i3];
-                if (cky.a(c3)) {
+                if (defpackage.cky.a(c3)) {
                     c3 = (char) (c3 ^ ' ');
                 }
                 cArr3[i3] = c3;
             }
-            cwf = new cwf(String.valueOf(cwf2.a).concat(".lowerCase()"), cArr3);
+            cwf = new defpackage.cwf(java.lang.String.valueOf(cwf2.a).concat(".lowerCase()"), cArr3);
         }
-        cwe a = cwf == this.c ? this : a(cwf, this.d);
+        defpackage.cwe a = cwf == this.c ? this : a(cwf, this.d);
         this.e = a;
         return a;
     }
 
-    /* access modifiers changed from: package-private */
-    public cwe a(cwf cwf, Character ch) {
-        return new cwj(cwf, ch);
+    /* access modifiers changed from: 0000 */
+    public defpackage.cwe a(defpackage.cwf cwf, java.lang.Character ch) {
+        return new defpackage.cwj(cwf, ch);
     }
 
-    public String toString() {
-        StringBuilder sb = new StringBuilder("BaseEncoding.");
+    public java.lang.String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder("BaseEncoding.");
         sb.append(this.c.toString());
         if (8 % this.c.d != 0) {
             if (this.d == null) {
@@ -238,18 +229,18 @@ public class cwj extends cwe {
         return sb.toString();
     }
 
-    public boolean equals(Object obj) {
-        if (!(obj instanceof cwj)) {
+    public boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof defpackage.cwj)) {
             return false;
         }
-        cwj cwj = (cwj) obj;
-        if (!this.c.equals(cwj.c) || !cru.d(this.d, cwj.d)) {
+        defpackage.cwj cwj = (defpackage.cwj) obj;
+        if (!this.c.equals(cwj.c) || !defpackage.cru.d(this.d, cwj.d)) {
             return false;
         }
         return true;
     }
 
     public int hashCode() {
-        return this.c.hashCode() ^ Arrays.hashCode(new Object[]{this.d});
+        return this.c.hashCode() ^ java.util.Arrays.hashCode(new java.lang.Object[]{this.d});
     }
 }

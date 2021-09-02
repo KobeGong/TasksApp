@@ -1,8 +1,6 @@
 package defpackage;
 
-import android.os.IInterface;
-
-/* renamed from: bix  reason: default package */
+/* renamed from: bix reason: default package */
 /* compiled from: PG */
-public interface bix extends IInterface {
+public interface bix extends android.os.IInterface {
 }

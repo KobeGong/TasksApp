@@ -1,21 +1,14 @@
 package android.support.v7.widget;
 
-import android.content.Context;
-import android.content.res.TypedArray;
-import android.util.AttributeSet;
-import android.view.View;
-import android.widget.LinearLayout;
-import com.google.android.apps.tasks.R;
-
 /* compiled from: PG */
-public class ButtonBarLayout extends LinearLayout {
+public class ButtonBarLayout extends android.widget.LinearLayout {
     private boolean a;
     private int b = -1;
 
-    public ButtonBarLayout(Context context, AttributeSet attributeSet) {
+    public ButtonBarLayout(android.content.Context context, android.util.AttributeSet attributeSet) {
         super(context, attributeSet);
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, xu.ay);
-        this.a = obtainStyledAttributes.getBoolean(xu.az, true);
+        android.content.res.TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, defpackage.xu.ay);
+        this.a = obtainStyledAttributes.getBoolean(defpackage.xu.az, true);
         obtainStyledAttributes.recycle();
     }
 
@@ -24,18 +17,18 @@ public class ButtonBarLayout extends LinearLayout {
         int i3;
         boolean z;
         int i4;
-        int size = View.MeasureSpec.getSize(i);
+        int size = android.view.View.MeasureSpec.getSize(i);
         if (this.a) {
             if (size > this.b && a()) {
                 a(false);
             }
             this.b = size;
         }
-        if (a() || View.MeasureSpec.getMode(i) != 1073741824) {
+        if (a() || android.view.View.MeasureSpec.getMode(i) != 1073741824) {
             i3 = i;
             z = false;
         } else {
-            i3 = View.MeasureSpec.makeMeasureSpec(size, Integer.MIN_VALUE);
+            i3 = android.view.View.MeasureSpec.makeMeasureSpec(size, Integer.MIN_VALUE);
             z = true;
         }
         super.onMeasure(i3, i2);
@@ -48,8 +41,8 @@ public class ButtonBarLayout extends LinearLayout {
         }
         int a2 = a(0);
         if (a2 >= 0) {
-            View childAt = getChildAt(a2);
-            LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) childAt.getLayoutParams();
+            android.view.View childAt = getChildAt(a2);
+            android.widget.LinearLayout.LayoutParams layoutParams = (android.widget.LinearLayout.LayoutParams) childAt.getLayoutParams();
             i4 = layoutParams.bottomMargin + childAt.getMeasuredHeight() + getPaddingTop() + layoutParams.topMargin + 0;
             if (a()) {
                 int a3 = a(a2 + 1);
@@ -62,7 +55,7 @@ public class ButtonBarLayout extends LinearLayout {
         } else {
             i4 = 0;
         }
-        if (sn.a.f(this) != i4) {
+        if (defpackage.sn.a.f(this) != i4) {
             setMinimumHeight(i4);
         }
     }
@@ -78,13 +71,13 @@ public class ButtonBarLayout extends LinearLayout {
     }
 
     public int getMinimumHeight() {
-        return Math.max(0, super.getMinimumHeight());
+        return java.lang.Math.max(0, super.getMinimumHeight());
     }
 
     private final void a(boolean z) {
         setOrientation(z ? 1 : 0);
         setGravity(z ? 5 : 80);
-        View findViewById = findViewById(R.id.spacer);
+        android.view.View findViewById = findViewById(2131755181);
         if (findViewById != null) {
             findViewById.setVisibility(z ? 8 : 4);
         }

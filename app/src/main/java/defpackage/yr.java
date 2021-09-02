@@ -1,16 +1,15 @@
 package defpackage;
 
-/* renamed from: yr  reason: default package */
+/* renamed from: yr reason: default package */
 /* compiled from: PG */
 public final class yr {
-    public final /* synthetic */ aap a;
+    public final /* synthetic */ defpackage.aap a;
 
     public yr() {
     }
 
-    /* JADX INFO: this call moved to the top of the method (can break code semantics) */
-    public yr(aap aap) {
-        this();
+    public yr(defpackage.aap aap) {
         this.a = aap;
+        this();
     }
 }

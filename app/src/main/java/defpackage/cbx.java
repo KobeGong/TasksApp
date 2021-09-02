@@ -1,21 +1,20 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: cbx  reason: default package */
+/* renamed from: cbx reason: default package */
 /* compiled from: PG */
-public final class cbx {
-    public final bup a;
+final class cbx {
+    public final defpackage.bup a;
 
-    cbx(bup bup) {
+    cbx(defpackage.bup bup) {
         this.a = bup;
     }
 
-    /* access modifiers changed from: package-private */
-    public final void a(String str, btk btk) {
+    /* access modifiers changed from: 0000 */
+    public final void a(java.lang.String str, defpackage.btk btk) {
         synchronized (this.a) {
             try {
                 this.a.b(this.a.a(str).i().a(btk).a());
-            } catch (buo e) {
+            } catch (defpackage.buo e) {
             }
         }
     }

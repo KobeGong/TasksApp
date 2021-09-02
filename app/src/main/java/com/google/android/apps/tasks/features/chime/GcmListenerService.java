@@ -1,26 +1,20 @@
 package com.google.android.apps.tasks.features.chime;
 
-import android.os.Bundle;
-import android.util.Base64;
-
-import defpackage.bhg;
-
 /* compiled from: PG */
-public class GcmListenerService extends bhg {
-    @Override // defpackage.bhg
-    public final void a(Bundle bundle) {
-        dfy dfy;
-        dch dch;
+public class GcmListenerService extends defpackage.bhg {
+    public final void a(android.os.Bundle bundle) {
+        defpackage.dfy dfy;
+        defpackage.dch dch;
         boolean z = false;
-        dfm a = a(bundle.getString("casp"));
+        defpackage.dfm a = a(bundle.getString("casp"));
         if (a != null) {
             if (a.c == null) {
-                dfy = dfy.m;
+                dfy = defpackage.dfy.m;
             } else {
                 dfy = a.c;
             }
             if (dfy != null) {
-                String str = dfy.e;
+                java.lang.String str = dfy.e;
                 char c = 65535;
                 switch (str.hashCode()) {
                     case 1469540231:
@@ -32,18 +26,18 @@ public class GcmListenerService extends bhg {
                 }
                 switch (c) {
                     case 0:
-                        dbq a2 = a(dfy);
+                        defpackage.dbq a2 = a(dfy);
                         if (a2 != null) {
                             if (a2.a != null) {
                                 z = true;
                             }
                             if (z) {
                                 if (a2.a == null) {
-                                    dch = dch.b;
+                                    dch = defpackage.dch.b;
                                 } else {
                                     dch = a2.a;
                                 }
-                                akf.a().a(getApplicationContext(), a.b, dch.a);
+                                defpackage.akf.a().a(getApplicationContext(), a.b, dch.a);
                                 return;
                             }
                             return;
@@ -56,33 +50,33 @@ public class GcmListenerService extends bhg {
         }
     }
 
-    private static dbq a(dfy dfy) {
-        dgu dgu;
+    private static defpackage.dbq a(defpackage.dfy dfy) {
+        defpackage.dgu dgu;
         try {
             if (dfy.j == null) {
-                dgu = dgu.b;
+                dgu = defpackage.dgu.b;
             } else {
                 dgu = dfy.j;
             }
-            return (dbq) dih.a(dbq.b, dgu.a);
-        } catch (dir e) {
-            azb.a("Failed to parse PushNotificationPayload proto", new Object[0]);
+            return (defpackage.dbq) defpackage.dih.a((defpackage.dih) defpackage.dbq.b, dgu.a);
+        } catch (defpackage.dir e) {
+            defpackage.azb.a("Failed to parse PushNotificationPayload proto", new java.lang.Object[0]);
             return null;
         }
     }
 
-    private static dfm a(String str) {
+    private static defpackage.dfm a(java.lang.String str) {
         byte[] bArr;
         try {
-            bArr = Base64.decode(str, 1);
-        } catch (IllegalArgumentException e) {
-            azb.a("Failed to decode AndroidPayload", new Object[0]);
+            bArr = android.util.Base64.decode(str, 1);
+        } catch (java.lang.IllegalArgumentException e) {
+            defpackage.azb.a("Failed to decode AndroidPayload", new java.lang.Object[0]);
             bArr = null;
         }
         try {
-            return (dfm) dih.a(dfm.e, bArr);
-        } catch (dir e2) {
-            azb.a("Failed to parse AndroidPayload proto", new Object[0]);
+            return (defpackage.dfm) defpackage.dih.a((defpackage.dih) defpackage.dfm.e, bArr);
+        } catch (defpackage.dir e2) {
+            defpackage.azb.a("Failed to parse AndroidPayload proto", new java.lang.Object[0]);
             return null;
         }
     }

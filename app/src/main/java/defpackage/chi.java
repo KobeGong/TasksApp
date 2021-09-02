@@ -1,40 +1,43 @@
 package defpackage;
 
-import java.util.List;
-import java.util.concurrent.Future;
+/* renamed from: chi reason: default package */
+final /* synthetic */ class chi implements java.lang.Runnable {
+    private final defpackage.che a;
+    private final java.util.List b;
 
-/* renamed from: chi  reason: default package */
-final /* synthetic */ class chi implements Runnable {
-    private final che a;
-    private final List b;
-
-    chi(che che, List list) {
+    chi(defpackage.che che, java.util.List list) {
         this.a = che;
         this.b = list;
     }
 
     public final void run() {
-        Exception e;
-        che che = this.a;
-        List<Future> list = this.b;
-        cml g = che.g();
-        for (Future future : list) {
-            try {
-                g = ((cma) future.get()).a();
-                if (g != null) {
-                    try {
-                        che.a(g, g);
-                    } catch (Exception e2) {
-                        e = e2;
-                        cdm.c("BatteryMetricService", "unpexpected failure", e, new Object[0]);
+        java.lang.Throwable e;
+        defpackage.che che = this.a;
+        java.util.List list = this.b;
+        defpackage.cml g = che.g();
+        java.util.Iterator it = list.iterator();
+        while (true) {
+            defpackage.cml cml = g;
+            if (it.hasNext()) {
+                try {
+                    g = ((defpackage.cma) ((java.util.concurrent.Future) it.next()).get()).a();
+                    if (cml != null) {
+                        try {
+                            che.a(cml, g);
+                        } catch (java.lang.Exception e2) {
+                            e = e2;
+                            defpackage.cdm.c("BatteryMetricService", "unpexpected failure", e, new java.lang.Object[0]);
+                        }
                     }
+                } catch (java.lang.Exception e3) {
+                    java.lang.Throwable th = e3;
+                    g = cml;
+                    e = th;
                 }
-            } catch (Exception e3) {
-                g = g;
-                e = e3;
-                cdm.c("BatteryMetricService", "unpexpected failure", e, new Object[0]);
+            } else {
+                che.a(cml);
+                return;
             }
         }
-        che.a(g);
     }
 }

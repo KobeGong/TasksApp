@@ -1,32 +1,26 @@
 package defpackage;
 
-import android.graphics.drawable.Drawable;
-import android.os.Build;
-import android.support.design.button.MaterialButton;
-import android.view.View;
-import com.google.android.apps.tasks.R;
+/* renamed from: ary reason: default package */
+final /* synthetic */ class ary implements android.view.View.OnClickListener {
+    private final AddTaskFragment a;
 
-/* renamed from: ary  reason: default package */
-final /* synthetic */ class ary implements View.OnClickListener {
-    private final arx a;
-
-    ary(arx arx) {
+    ary(AddTaskFragment arx) {
         this.a = arx;
     }
 
-    public final void onClick(View view) {
-        arx arx = this.a;
-        arx.V.setVisibility(0);
-        arx.V.requestFocus();
+    public final void onClick(android.view.View view) {
+        AddTaskFragment arx = this.a;
+        arx.taskDetailView.setVisibility(0);
+        arx.taskDetailView.requestFocus();
         view.setEnabled(false);
-        if (Build.VERSION.SDK_INT <= 21) {
-            MaterialButton materialButton = (MaterialButton) view;
-            Drawable d = jd.d(materialButton.a);
+        if (android.os.Build.VERSION.SDK_INT <= 21) {
+            android.support.design.button.MaterialButton materialButton = (android.support.design.button.MaterialButton) view;
+            android.graphics.drawable.Drawable d = defpackage.jd.d(materialButton.a);
             if (materialButton.a != d) {
                 materialButton.a = d;
                 materialButton.c();
             }
-            jd.a(d, jd.b(arx.k(), (int) R.color.google_grey600));
+            defpackage.jd.a(d, defpackage.jd.b(arx.getResource(), 2131624064));
         }
     }
 }

@@ -1,43 +1,35 @@
 package defpackage;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
-import android.os.ParcelFileDescriptor;
-import java.io.IOException;
-
-/* renamed from: cdt  reason: default package */
+/* renamed from: cdt reason: default package */
 /* compiled from: PG */
-public final class cdt extends AsyncTask {
-    private final bsb a;
-    private final cdq b;
+public final class cdt extends android.os.AsyncTask {
+    private final defpackage.bsb a;
+    private final defpackage.cdq b;
 
-    public cdt(bsb bsb, cdq cdq) {
+    public cdt(defpackage.bsb bsb, defpackage.cdq cdq) {
         this.a = bsb;
         this.b = cdq;
     }
 
-    private final Bitmap a() {
-        ParcelFileDescriptor.AutoCloseInputStream autoCloseInputStream = new ParcelFileDescriptor.AutoCloseInputStream(this.a.b());
+    private final android.graphics.Bitmap a() {
+        android.os.ParcelFileDescriptor.AutoCloseInputStream autoCloseInputStream = new android.os.ParcelFileDescriptor.AutoCloseInputStream(this.a.b());
         try {
-            return BitmapFactory.decodeStream(autoCloseInputStream);
+            return android.graphics.BitmapFactory.decodeStream(autoCloseInputStream);
         } finally {
             try {
                 autoCloseInputStream.close();
-            } catch (IOException e) {
+            } catch (java.io.IOException e) {
             }
         }
     }
 
     /* access modifiers changed from: protected */
-    @Override // android.os.AsyncTask
-    public final /* synthetic */ void onPostExecute(Object obj) {
-        this.b.a((Bitmap) obj);
+    public final /* synthetic */ void onPostExecute(java.lang.Object obj) {
+        this.b.a((android.graphics.Bitmap) obj);
     }
 
     /* access modifiers changed from: protected */
-    @Override // android.os.AsyncTask
-    public final /* synthetic */ Object doInBackground(Object[] objArr) {
+    public final /* synthetic */ java.lang.Object doInBackground(java.lang.Object[] objArr) {
         return a();
     }
 }

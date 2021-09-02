@@ -1,30 +1,24 @@
 package defpackage;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.View;
-import android.view.ViewGroup;
-
-/* access modifiers changed from: package-private */
-/* renamed from: lt  reason: default package */
+/* renamed from: lt reason: default package */
 /* compiled from: PG */
-public final class lt extends AnimatorListenerAdapter {
-    private final /* synthetic */ ViewGroup a;
-    private final /* synthetic */ View b;
-    private final /* synthetic */ lc c;
-    private final /* synthetic */ lp d;
+final class lt extends android.animation.AnimatorListenerAdapter {
+    private final /* synthetic */ android.view.ViewGroup a;
+    private final /* synthetic */ android.view.View b;
+    private final /* synthetic */ Fragment c;
+    private final /* synthetic */ FragmentManagerImpl d;
 
-    lt(lp lpVar, ViewGroup viewGroup, View view, lc lcVar) {
+    lt(FragmentManagerImpl lpVar, android.view.ViewGroup viewGroup, android.view.View view, Fragment lcVar) {
         this.d = lpVar;
         this.a = viewGroup;
         this.b = view;
         this.c = lcVar;
     }
 
-    public final void onAnimationEnd(Animator animator) {
+    public final void onAnimationEnd(android.animation.Animator animator) {
         this.a.endViewTransition(this.b);
-        Animator J = this.c.J();
-        this.c.a((Animator) null);
+        android.animation.Animator J = this.c.J();
+        this.c.a((android.animation.Animator) null);
         if (J != null && this.a.indexOfChild(this.b) < 0) {
             this.d.a(this.c, this.c.K(), 0, 0, false);
         }

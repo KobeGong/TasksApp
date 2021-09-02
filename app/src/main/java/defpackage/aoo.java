@@ -1,21 +1,17 @@
 package defpackage;
 
-import android.view.View;
-import android.view.accessibility.AccessibilityEvent;
-import com.google.android.apps.tasks.R;
-
-/* renamed from: aoo  reason: default package */
+/* renamed from: aoo reason: default package */
 /* compiled from: PG */
-final class aoo extends View.AccessibilityDelegate {
-    private final /* synthetic */ aol a;
+final class aoo extends android.view.View.AccessibilityDelegate {
+    private final /* synthetic */ BottomSheetMenuDialogFragment a;
 
-    aoo(aol aol) {
+    aoo(BottomSheetMenuDialogFragment aol) {
         this.a = aol;
     }
 
-    public final void onPopulateAccessibilityEvent(View view, AccessibilityEvent accessibilityEvent) {
+    public final void onPopulateAccessibilityEvent(android.view.View view, android.view.accessibility.AccessibilityEvent accessibilityEvent) {
         if (accessibilityEvent.getEventType() == 32) {
-            accessibilityEvent.getText().add(this.a.k().getString(R.string.a11y_more_options_open));
+            accessibilityEvent.getText().add(this.a.getResource().getString(2131951636));
         } else {
             super.onPopulateAccessibilityEvent(view, accessibilityEvent);
         }

@@ -1,18 +1,15 @@
 package defpackage;
 
-import android.os.Handler;
-import android.os.Looper;
-
-/* renamed from: gq  reason: default package */
+/* renamed from: gq reason: default package */
 /* compiled from: PG */
 public final class gq {
-    private static gq c;
-    public final Object a = new Object();
-    public final Handler b = new Handler(Looper.getMainLooper(), new gr(this));
+    private static defpackage.gq c;
+    public final java.lang.Object a = new java.lang.Object();
+    public final android.os.Handler b = new android.os.Handler(android.os.Looper.getMainLooper(), new defpackage.gr(this));
 
-    public static gq a() {
+    public static defpackage.gq a() {
         if (c == null) {
-            c = new gq();
+            c = new defpackage.gq();
         }
         return c;
     }

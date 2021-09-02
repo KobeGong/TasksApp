@@ -1,13 +1,13 @@
 package defpackage;
 
-/* renamed from: cxd  reason: default package */
+/* renamed from: cxd reason: default package */
 /* compiled from: PG */
-class cxd extends Throwable {
-    cxd(String str) {
+class cxd extends java.lang.Throwable {
+    cxd(java.lang.String str) {
         super(str);
     }
 
-    public synchronized Throwable fillInStackTrace() {
+    public synchronized java.lang.Throwable fillInStackTrace() {
         return this;
     }
 }

@@ -1,21 +1,21 @@
 package defpackage;
 
-/* renamed from: cvf  reason: default package */
+/* renamed from: cvf reason: default package */
 /* compiled from: PG */
 public final class cvf {
-    public final cvz a;
-    public final String b;
+    public final defpackage.cvz a;
+    public final java.lang.String b;
 
-    public cvf(cvz cvz, String str) {
-        this.a = (cvz) cub.a(cvz, "parser");
-        this.b = (String) cub.a(str, "message");
+    public cvf(defpackage.cvz cvz, java.lang.String str) {
+        this.a = (defpackage.cvz) defpackage.cub.a((java.lang.Object) cvz, "parser");
+        this.b = (java.lang.String) defpackage.cub.a((java.lang.Object) str, "message");
     }
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof cvf)) {
+    public final boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof defpackage.cvf)) {
             return false;
         }
-        cvf cvf = (cvf) obj;
+        defpackage.cvf cvf = (defpackage.cvf) obj;
         if (!this.a.equals(cvf.a) || !this.b.equals(cvf.b)) {
             return false;
         }

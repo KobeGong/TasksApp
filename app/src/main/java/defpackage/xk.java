@@ -1,81 +1,71 @@
 package defpackage;
 
-import android.content.Context;
-import android.content.DialogInterface;
-import android.graphics.drawable.Drawable;
-import android.support.v7.app.AlertController;
-import android.view.ContextThemeWrapper;
-import android.view.ViewGroup;
-import android.widget.ListAdapter;
-
-/* renamed from: xk  reason: default package */
+/* renamed from: xk reason: default package */
 /* compiled from: PG */
-public final class xk implements zu {
-    public final agq a;
+public final class xk implements defpackage.zu {
+    public final defpackage.agq a;
     private boolean b;
     private final int c;
 
-    @Override // defpackage.zu
-    public final boolean a(MenuBuilder zeVar) {
+    public final boolean a(defpackage.ze zeVar) {
         return false;
     }
 
-    @Override // defpackage.zu
-    public final void a(MenuBuilder zeVar, boolean z) {
+    public final void a(defpackage.ze zeVar, boolean z) {
         if (!this.b) {
             this.b = true;
-            acr acr = null;
+            defpackage.acr acr = null;
             acr.a();
             this.b = false;
         }
     }
 
-    public xk(Context context) {
-        this(context, wl.a(context, 0));
+    public xk(android.content.Context context) {
+        this(context, defpackage.wl.a(context, 0));
     }
 
-    private xk(Context context, int i) {
-        this.a = new agq(new ContextThemeWrapper(context, wl.a(context, i)));
+    private xk(android.content.Context context, int i) {
+        this.a = new defpackage.agq(new android.view.ContextThemeWrapper(context, defpackage.wl.a(context, i)));
         this.c = i;
     }
 
-    public final xk a(int i) {
+    public final defpackage.xk a(int i) {
         this.a.d = this.a.a.getText(i);
         return this;
     }
 
-    public final xk b(int i) {
+    public final defpackage.xk b(int i) {
         this.a.f = this.a.a.getText(i);
         return this;
     }
 
-    public final xk a(CharSequence charSequence) {
+    public final defpackage.xk a(java.lang.CharSequence charSequence) {
         this.a.f = charSequence;
         return this;
     }
 
-    public final xk a(int i, DialogInterface.OnClickListener onClickListener) {
+    public final defpackage.xk a(int i, android.content.DialogInterface.OnClickListener onClickListener) {
         this.a.g = this.a.a.getText(i);
         this.a.h = onClickListener;
         return this;
     }
 
-    public final xk a(DialogInterface.OnClickListener onClickListener) {
+    public final defpackage.xk a(android.content.DialogInterface.OnClickListener onClickListener) {
         this.a.i = this.a.a.getText(17039360);
         this.a.j = onClickListener;
         return this;
     }
 
-    public final xk a(DialogInterface.OnDismissListener onDismissListener) {
+    public final defpackage.xk a(android.content.DialogInterface.OnDismissListener onDismissListener) {
         this.a.l = onDismissListener;
         return this;
     }
 
-    public final wl a() {
-        ListAdapter wkVar;
-        wl wlVar = new wl(this.a.a, this.c);
-        agq agq = this.a;
-        AlertController alertController = wlVar.a;
+    public final defpackage.wl a() {
+        android.widget.ListAdapter wkVar;
+        defpackage.wl wlVar = new defpackage.wl(this.a.a, this.c);
+        defpackage.agq agq = this.a;
+        android.support.v7.app.AlertController alertController = wlVar.a;
         if (agq.e != null) {
             alertController.y = agq.e;
         } else {
@@ -83,7 +73,7 @@ public final class xk implements zu {
                 alertController.a(agq.d);
             }
             if (agq.c != null) {
-                Drawable drawable = agq.c;
+                android.graphics.drawable.Drawable drawable = agq.c;
                 alertController.u = drawable;
                 if (alertController.v != null) {
                     if (drawable != null) {
@@ -96,7 +86,7 @@ public final class xk implements zu {
             }
         }
         if (agq.f != null) {
-            CharSequence charSequence = agq.f;
+            java.lang.CharSequence charSequence = agq.f;
             alertController.f = charSequence;
             if (alertController.x != null) {
                 alertController.x.setText(charSequence);
@@ -109,17 +99,17 @@ public final class xk implements zu {
             alertController.a(-2, agq.i, agq.j, null);
         }
         if (agq.n != null) {
-            AlertController.RecycleListView recycleListView = (AlertController.RecycleListView) agq.b.inflate(alertController.C, (ViewGroup) null);
+            android.support.v7.app.AlertController.RecycleListView recycleListView = (android.support.v7.app.AlertController.RecycleListView) agq.b.inflate(alertController.C, null);
             int i = alertController.D;
             if (agq.n != null) {
                 wkVar = agq.n;
             } else {
-                wkVar = new wk(agq.a, i);
+                wkVar = new defpackage.wk(agq.a, i);
             }
             alertController.z = wkVar;
             alertController.A = agq.p;
             if (agq.o != null) {
-                recycleListView.setOnItemClickListener(new wi(agq, alertController));
+                recycleListView.setOnItemClickListener(new defpackage.wi(agq, alertController));
             }
             alertController.g = recycleListView;
         }

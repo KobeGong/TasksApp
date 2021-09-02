@@ -1,19 +1,15 @@
 package defpackage;
 
-import org.chromium.net.NetworkChangeNotifierAutoDetect;
-
-/* renamed from: eiz  reason: default package */
+/* renamed from: eiz reason: default package */
 /* compiled from: PG */
-public final class eiz extends eiq {
+public final class eiz extends defpackage.eiq {
     /* access modifiers changed from: protected */
-    @Override // defpackage.eiq
-    public final void a(NetworkChangeNotifierAutoDetect networkChangeNotifierAutoDetect) {
+    public final void a(org.chromium.net.NetworkChangeNotifierAutoDetect networkChangeNotifierAutoDetect) {
         super.a(networkChangeNotifierAutoDetect);
         a();
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.eiq
     public final void b() {
     }
 }

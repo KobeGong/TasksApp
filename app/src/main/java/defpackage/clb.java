@@ -1,12 +1,11 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: clb  reason: default package */
+/* renamed from: clb reason: default package */
 /* compiled from: PG */
-public final class clb implements Runnable {
-    private final /* synthetic */ Runnable a;
+final class clb implements java.lang.Runnable {
+    private final /* synthetic */ java.lang.Runnable a;
 
-    clb(cla cla, Runnable runnable) {
+    clb(defpackage.cla cla, java.lang.Runnable runnable) {
         this.a = runnable;
     }
 
@@ -14,7 +13,7 @@ public final class clb implements Runnable {
         try {
             this.a.run();
         } catch (Throwable th) {
-            cld.a(th);
+            defpackage.cld.a(th);
             throw th;
         }
     }

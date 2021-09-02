@@ -1,11 +1,11 @@
 package defpackage;
 
-/* renamed from: arj  reason: default package */
+/* renamed from: arj reason: default package */
 /* compiled from: PG */
-final class arj implements Runnable {
-    private final /* synthetic */ arn a;
+final class arj implements java.lang.Runnable {
+    private final /* synthetic */ defpackage.arn a;
 
-    arj(arn arn) {
+    arj(defpackage.arn arn) {
         this.a = arn;
     }
 

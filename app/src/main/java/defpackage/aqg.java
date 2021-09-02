@@ -1,20 +1,17 @@
 package defpackage;
 
-import android.view.View;
+/* renamed from: aqg reason: default package */
+final /* synthetic */ class aqg implements java.lang.Runnable {
+    private final WelcomeFragment a;
+    private final android.view.View b;
 
-/* access modifiers changed from: package-private */
-/* renamed from: aqg  reason: default package */
-public final /* synthetic */ class aqg implements Runnable {
-    private final aqa a;
-    private final View b;
-
-    aqg(aqa aqa, View view) {
+    aqg(WelcomeFragment aqa, android.view.View view) {
         this.a = aqa;
         this.b = view;
     }
 
     public final void run() {
-        aqa aqa = this.a;
+        WelcomeFragment aqa = this.a;
         aqa.b.removeView(this.b);
     }
 }

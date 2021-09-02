@@ -1,79 +1,60 @@
 package defpackage;
 
-import android.annotation.TargetApi;
-import android.content.Context;
-import android.net.ConnectivityManager;
-import android.net.Network;
-import android.net.NetworkCapabilities;
-import android.net.NetworkInfo;
-import java.io.IOException;
-import java.net.Socket;
-import org.chromium.net.NetworkChangeNotifierAutoDetect;
-
-/* renamed from: eih  reason: default package */
+/* renamed from: eih reason: default package */
 /* compiled from: PG */
 public final class eih {
-    public final ConnectivityManager a;
+    public final android.net.ConnectivityManager a;
 
-    public eih(Context context) {
-        this.a = (ConnectivityManager) context.getSystemService("connectivity");
+    public eih(android.content.Context context) {
+        this.a = (android.net.ConnectivityManager) context.getSystemService("connectivity");
     }
 
     eih() {
         this.a = null;
     }
 
-    public final NetworkInfo a(Network network) {
+    public final android.net.NetworkInfo a(android.net.Network network) {
         try {
             return this.a.getNetworkInfo(network);
-        } catch (NullPointerException e) {
+        } catch (java.lang.NullPointerException e) {
             try {
                 return this.a.getNetworkInfo(network);
-            } catch (NullPointerException e2) {
+            } catch (java.lang.NullPointerException e2) {
                 return null;
             }
         }
     }
 
-    @TargetApi(21)
-    public final int b(Network network) {
-        NetworkInfo a2 = a(network);
+    @android.annotation.TargetApi(21)
+    public final int b(android.net.Network network) {
+        android.net.NetworkInfo a2 = a(network);
         if (a2 != null && a2.getType() == 17) {
             a2 = this.a.getActiveNetworkInfo();
         }
         if (a2 == null || !a2.isConnected()) {
             return 6;
         }
-        return NetworkChangeNotifierAutoDetect.a(a2.getType(), a2.getSubtype());
+        return org.chromium.net.NetworkChangeNotifierAutoDetect.a(a2.getType(), a2.getSubtype());
     }
 
-    @TargetApi(21)
-    public static boolean c(Network network) {
-        Socket socket = new Socket();
+    @android.annotation.TargetApi(21)
+    public static boolean c(android.net.Network network) {
+        java.net.Socket socket = new java.net.Socket();
         try {
             network.bindSocket(socket);
-            try {
-                socket.close();
-            } catch (IOException e) {
-            }
             return true;
-        } catch (IOException e2) {
-            try {
-                socket.close();
-            } catch (IOException e3) {
-            }
+        } catch (java.io.IOException e) {
             return false;
-        } catch (Throwable th) {
+        } finally {
             try {
                 socket.close();
-            } catch (IOException e4) {
+            } catch (java.io.IOException e2) {
             }
-            throw th;
         }
     }
 
-    @TargetApi(21)
-    public final NetworkCapabilities d(Network network) {
+    @android.annotation.TargetApi(21)
+    public final android.net.NetworkCapabilities d(android.net.Network network) {
         return this.a.getNetworkCapabilities(network);
     }
 }

@@ -1,39 +1,20 @@
 package defpackage;
 
-import android.accounts.Account;
-import android.content.Context;
-import android.text.TextUtils;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.CancellationException;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Executor;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
-
-/* renamed from: anc  reason: default package */
+/* renamed from: anc reason: default package */
 /* compiled from: PG */
 public final class anc {
-    public anu a;
-    public final Executor b;
-    private final Context c;
-    private final aiz d;
-    private final Executor e;
-    private final amg f = new amg();
-    private final Map g = new HashMap();
-    private final aoa h;
+    public defpackage.anu a;
+    public final java.util.concurrent.Executor b;
+    private final android.content.Context c;
+    private final defpackage.aiz d;
+    private final java.util.concurrent.Executor e;
+    private final defpackage.amg f = new defpackage.amg();
+    private final java.util.Map g = new java.util.HashMap();
+    private final defpackage.aoa h;
 
-    public anc(Account account, Context context, Executor executor, Executor executor2, ScheduledExecutorService scheduledExecutorService, aoa aoa) {
+    public anc(android.accounts.Account account, android.content.Context context, java.util.concurrent.Executor executor, java.util.concurrent.Executor executor2, java.util.concurrent.ScheduledExecutorService scheduledExecutorService, defpackage.aoa aoa) {
         this.c = context.getApplicationContext();
-        this.d = new aiz(this.c);
+        this.d = new defpackage.aiz(this.c);
         this.b = executor;
         this.e = executor2;
         this.h = aoa;
@@ -41,67 +22,67 @@ public final class anc {
     }
 
     public final boolean a() {
-        alv alv = this.a.a;
+        defpackage.alv alv = this.a.a;
         return alv.b == null || alv.b.isEmpty();
     }
 
-    public final synchronized String b() {
+    public final synchronized java.lang.String b() {
         return this.a.a.a;
     }
 
-    public final synchronized cyi c() {
+    public final synchronized defpackage.cyi c() {
         return a("sync_lists", new and(this));
     }
 
-    public final synchronized cyi a(String str) {
-        String valueOf;
-        String valueOf2;
+    public final synchronized defpackage.cyi a(java.lang.String str) {
+        java.lang.String valueOf;
+        java.lang.String valueOf2;
         valueOf = "sync_list_tasks:";
-        valueOf2 = String.valueOf(str);
+        valueOf2 = java.lang.String.valueOf(str);
         return a(valueOf2.length() != 0 ? valueOf.concat(valueOf2) : valueOf, new ane(this, str));
     }
 
-    /* access modifiers changed from: package-private */
-    public final synchronized void b(String str) {
-        cyu cyu = new cyu();
+    /* access modifiers changed from: 0000 */
+    public final synchronized void b(java.lang.String str) {
+        defpackage.cyu cyu = new defpackage.cyu();
         a(this.a, cyu);
-        cyu.a(new ann(this, str), this.b);
+        cyu.a(new defpackage.ann(this, str), this.b);
     }
 
-    public final synchronized List d() {
+    public final synchronized java.util.List d() {
         return this.a.a.a();
     }
 
-    public final synchronized dcb c(String str) {
+    public final synchronized defpackage.dcb c(java.lang.String str) {
         return this.a.a.a(str);
     }
 
-    public final synchronized ajq d(String str) {
-        ajq b2;
+    public final synchronized defpackage.ajq d(java.lang.String str) {
+        defpackage.ajq b2;
         b2 = this.a.a.b(str);
         if (b2 == null) {
-            b2 = ajq.d();
+            b2 = defpackage.ajq.d();
         }
         return b2;
     }
 
-    public final synchronized Map a(long j) {
-        HashMap hashMap;
-        dca dca;
-        dmk dmk;
-        Calendar instance = Calendar.getInstance();
+    public final synchronized java.util.Map a(long j) {
+        java.util.HashMap hashMap;
+        defpackage.dca dca;
+        defpackage.dmk dmk;
+        java.util.Calendar instance = java.util.Calendar.getInstance();
         instance.set(11, 0);
         instance.set(12, 0);
         instance.set(13, 0);
         instance.set(14, 0);
         long timeInMillis = instance.getTimeInMillis() + j;
-        hashMap = new HashMap();
-        for (dcb dcb : d()) {
-            String str = dcb.b;
-            new Object[1][0] = str;
-            for (dby dby : d(str).a()) {
+        hashMap = new java.util.HashMap();
+        for (defpackage.dcb dcb : d()) {
+            java.lang.String str = dcb.b;
+            new java.lang.Object[1][0] = str;
+            for (defpackage.dby dby : d(str).a()) {
                 if (!(dby.e != null)) {
-                    azb.a("Task %s has no properties!", dby.d);
+                    defpackage.azb.a("Task %s has no properties!", dby.d);
                 } else {
                     if (dby.e == null) {
                         dca = defpackage.dca.g;
@@ -115,7 +96,7 @@ public final class anc {
                             } else {
                                 dmk = dca.d;
                             }
-                            long a2 = ajd.a(dmk);
+                            long a2 = defpackage.ajd.a(dmk);
                             if (j == 0) {
                                 if (a2 < instance.getTimeInMillis()) {
                                     hashMap.put(dby, str);
@@ -135,222 +116,223 @@ public final class anc {
         return hashMap;
     }
 
-    public final synchronized dby a(String str, String str2) {
+    public final synchronized defpackage.dby a(java.lang.String str, java.lang.String str2) {
         return this.a.a.a(str, str2);
     }
 
-    public final synchronized boolean b(String str, String str2) {
+    public final synchronized boolean b(java.lang.String str, java.lang.String str2) {
         return this.a.a.b(str, str2);
     }
 
-    public final synchronized List c(String str, String str2) {
+    public final synchronized java.util.List c(java.lang.String str, java.lang.String str2) {
         return this.a.a.c(str, str2);
     }
 
-    public final synchronized void a(String str, String str2, boolean z) {
-        ajq b2;
-        ArrayList arrayList = new ArrayList();
+    public final synchronized void a(java.lang.String str, java.lang.String str2, boolean z) {
+        java.util.ArrayList arrayList = new java.util.ArrayList();
         arrayList.add(str2);
-        if (z && (b2 = this.a.a.b(str)) != null) {
-            Iterator it = b2.b().a.iterator();
-            while (true) {
-                if (!it.hasNext()) {
-                    break;
-                }
-                dcf dcf = (dcf) it.next();
-                if (dcf.b.equals(str2)) {
-                    for (dcf dcf2 : dcf.c) {
-                        arrayList.add(dcf2.b);
+        if (z) {
+            defpackage.ajq b2 = this.a.a.b(str);
+            if (b2 != null) {
+                java.util.Iterator it = b2.b().a.iterator();
+                while (true) {
+                    if (it.hasNext()) {
+                        defpackage.dcf dcf = (defpackage.dcf) it.next();
+                        if (dcf.b.equals(str2)) {
+                            for (defpackage.dcf dcf2 : dcf.c) {
+                                arrayList.add(dcf2.b);
+                            }
+                        }
                     }
                 }
             }
         }
-        a(new amz(str, z, (String[]) arrayList.toArray(new String[0])), (Object) null);
+        a(new amz(str, z, (String[]) arrayList.toArray(new String[0])), null);
     }
 
-    public final synchronized void a(String str, String str2, String str3) {
-        a(new ana(str, str2, str3), (Object) null);
+    public final synchronized void a(java.lang.String str, java.lang.String str2, java.lang.String str3) {
+        a(new ana(str, str2, str3), null);
     }
 
-    public final synchronized void b(String str, String str2, String str3) {
-        a(new amv(str, str2, str3), (Object) null);
+    public final synchronized void b(java.lang.String str, java.lang.String str2, java.lang.String str3) {
+        a(new amv(str, str2, str3), null);
     }
 
-    public final synchronized void a(String str, String str2, dmk dmk) {
-        a(new amw(str, str2, dmk, amx.UPDATE), (Object) null);
+    public final synchronized void a(java.lang.String str, java.lang.String str2, defpackage.dmk dmk) {
+        a(new amw(str, str2, dmk, amx.UPDATE), null);
     }
 
-    public final synchronized void b(String str, String str2, dmk dmk) {
-        a(new amw(str, str2, dmk, amx.SNOOZE), (Object) null);
+    public final synchronized void b(java.lang.String str, java.lang.String str2, defpackage.dmk dmk) {
+        a(new amw(str, str2, dmk, amx.SNOOZE), null);
     }
 
-    public final synchronized String a(String str, String str2, String str3, boolean z) {
-        String a2;
-        dcb a3 = this.a.a.a(str3);
+    public final synchronized java.lang.String a(java.lang.String str, java.lang.String str2, java.lang.String str3, boolean z) {
+        java.lang.String a2;
+        defpackage.dcb a3 = this.a.a.a(str3);
         a2 = this.f.a(a3);
-        HashMap hashMap = new HashMap();
-        ajq b2 = this.a.a.b(str);
+        java.util.HashMap hashMap = new java.util.HashMap();
+        defpackage.ajq b2 = this.a.a.b(str);
         if (b2 != null) {
-            Iterator it = b2.b().a.iterator();
+            java.util.Iterator it = b2.b().a.iterator();
             while (true) {
-                if (!it.hasNext()) {
-                    break;
-                }
-                dcf dcf = (dcf) it.next();
-                if (dcf.b.equals(str2)) {
-                    for (dcf dcf2 : dcf.c) {
-                        hashMap.put(dcf2.b, this.f.a(a3));
+                if (it.hasNext()) {
+                    defpackage.dcf dcf = (defpackage.dcf) it.next();
+                    if (dcf.b.equals(str2)) {
+                        for (defpackage.dcf dcf2 : dcf.c) {
+                            hashMap.put(dcf2.b, this.f.a(a3));
+                        }
                     }
                 }
             }
         }
-        a(new amu(str, str2, str3, a2, hashMap, z), (Object) null);
+        a(new amu(str, str2, str3, a2, hashMap, z), null);
         return a2;
     }
 
-    public final synchronized dby a(String str, dby dby, int i, String str2) {
-        dih dih;
-        dby dby2;
-        dcb a2 = this.a.a.a(str);
-        dii dii = (dii) dby.a(bg.ao);
-        dii.a((dih) dby);
-        dii e2 = dii.e(this.f.a(a2));
+    public final synchronized defpackage.dby a(java.lang.String str, defpackage.dby dby, int i, java.lang.String str2) {
+        defpackage.dih dih;
+        defpackage.dby dby2;
+        defpackage.dcb a2 = this.a.a.a(str);
+        defpackage.dii dii = (defpackage.dii) dby.a(defpackage.bg.ao);
+        dii.a(dby);
+        defpackage.dii e2 = dii.e(this.f.a(a2));
         if (e2.b) {
             dih = e2.a;
         } else {
-            dih dih2 = e2.a;
-            djz.a.a(dih2).c(dih2);
+            defpackage.dih dih2 = e2.a;
+            defpackage.djz.a.a(dih2).c(dih2);
             e2.b = true;
             dih = e2.a;
         }
-        dih dih3 = dih;
-        if (!defpackage.dih.a(dih3, Boolean.TRUE.booleanValue())) {
-            throw new dkw();
+        defpackage.dih dih3 = dih;
+        if (!defpackage.dih.a(dih3, java.lang.Boolean.TRUE.booleanValue())) {
+            throw new defpackage.dkw();
         }
-        dby2 = (dby) dih3;
-        a(new amo(str, dby2, i, str2), (Object) null);
+        dby2 = (defpackage.dby) dih3;
+        a(new amo(str, dby2, i, str2), null);
         return dby2;
     }
 
-    public final synchronized void a(String str, String str2, int i, String str3) {
-        a(new amt(str, str2, i, str3), (Object) null);
+    public final synchronized void a(java.lang.String str, java.lang.String str2, int i, java.lang.String str3) {
+        a(new amt(str, str2, i, str3), null);
     }
 
-    public final synchronized void a(String str, String str2, Object obj) {
+    public final synchronized void a(java.lang.String str, java.lang.String str2, java.lang.Object obj) {
         a(new amr(str, str2), obj);
     }
 
-    public final synchronized void e(String str) {
-        a(new amq(str), (Object) null);
+    public final synchronized void e(java.lang.String str) {
+        a(new amq(str), null);
     }
 
-    public final synchronized dcb a(dcb dcb) {
-        String a2;
-        dih dih;
-        dcb dcb2;
-        dii dii = (dii) dcb.a(bg.ao);
-        dii.a((dih) dcb);
-        dii dii2 = dii;
-        amg amg = this.f;
-        String str = ((dcb) this.a.a.a().get(0)).e;
-        if (!TextUtils.isEmpty(str)) {
-            String substring = str.substring(0, str.indexOf(58));
-            String b2 = amg.b();
-            a2 = new StringBuilder(substring.length() + 3 + b2.length()).append(substring).append(":").append(b2).append(":0").toString();
+    public final synchronized defpackage.dcb a(defpackage.dcb dcb) {
+        java.lang.String a2;
+        defpackage.dih dih;
+        defpackage.dcb dcb2;
+        defpackage.dcb dcb3 = (defpackage.dcb) this.a.a.a().get(0);
+        defpackage.dii dii = (defpackage.dii) dcb.a(defpackage.bg.ao);
+        dii.a(dcb);
+        defpackage.dii dii2 = dii;
+        defpackage.amg amg = this.f;
+        java.lang.String str = dcb3.e;
+        if (!android.text.TextUtils.isEmpty(str)) {
+            java.lang.String substring = str.substring(0, str.indexOf(58));
+            java.lang.String b2 = amg.b();
+            a2 = substring + ":" + b2 + ":0";
         } else {
             a2 = amg.a();
         }
         dii2.b();
-        dcb dcb3 = (dcb) dii2.a;
+        defpackage.dcb dcb4 = (defpackage.dcb) dii2.a;
         if (a2 == null) {
-            throw new NullPointerException();
+            throw new java.lang.NullPointerException();
         }
-        dcb3.b = a2;
+        dcb4.b = a2;
         if (dii2.b) {
             dih = dii2.a;
         } else {
-            dih dih2 = dii2.a;
-            djz.a.a(dih2).c(dih2);
+            defpackage.dih dih2 = dii2.a;
+            defpackage.djz.a.a(dih2).c(dih2);
             dii2.b = true;
             dih = dii2.a;
         }
-        dih dih3 = dih;
-        if (!defpackage.dih.a(dih3, Boolean.TRUE.booleanValue())) {
-            throw new dkw();
+        defpackage.dih dih3 = dih;
+        if (!defpackage.dih.a(dih3, java.lang.Boolean.TRUE.booleanValue())) {
+            throw new defpackage.dkw();
         }
-        dcb2 = (dcb) dih3;
-        a(new amp(dcb2), (Object) null);
+        dcb2 = (defpackage.dcb) dih3;
+        a(new amp(dcb2), null);
         return dcb2;
     }
 
-    public final synchronized void d(String str, String str2) {
-        a(new amy(str, str2), (Object) null);
+    public final synchronized void d(java.lang.String str, java.lang.String str2) {
+        a(new amy(str, str2), null);
     }
 
-    public final synchronized void a(String str, int i, Object obj) {
+    public final synchronized void a(java.lang.String str, int i, java.lang.Object obj) {
         a(new ams(str, i == 0), obj);
     }
 
-    public final synchronized void f(String str) {
+    public final synchronized void f(java.lang.String str) {
         this.g.clear();
-        a("flatten_list", this.a, new anp(str), bg.D, null);
+        a("flatten_list", this.a, new defpackage.anp(str), defpackage.bg.D, null);
     }
 
-    public final synchronized cyi e(String str, String str2) {
-        return a("setup_account", this.a, new anq(str, str2), bg.D, null);
+    public final synchronized defpackage.cyi e(java.lang.String str, java.lang.String str2) {
+        return a("setup_account", this.a, new defpackage.anq(str, str2), defpackage.bg.D, null);
     }
 
-    public final synchronized cyi a(int i) {
-        return a("check_version", this.a, new anr(i), bg.D, null);
+    public final synchronized defpackage.cyi a(int i) {
+        return a("check_version", this.a, new defpackage.anr(i), defpackage.bg.D, null);
     }
 
-    private final synchronized void a(Account account, ScheduledExecutorService scheduledExecutorService) {
-        alv alv = new alv(account.name, this.c, scheduledExecutorService);
-        aiz aiz = this.d;
-        ajb a2 = ajb.a(this.c);
-        aka.a().b();
-        amb amb = new amb(aiz, a2, akf.a());
+    private final synchronized void a(android.accounts.Account account, java.util.concurrent.ScheduledExecutorService scheduledExecutorService) {
+        defpackage.alv alv = new defpackage.alv(account.name, this.c, scheduledExecutorService);
+        defpackage.aiz aiz = this.d;
+        defpackage.ajb a2 = defpackage.ajb.a(this.c);
+        defpackage.aka.a().b();
+        defpackage.amb amb = new defpackage.amb(aiz, a2, defpackage.akf.a());
         amb.c = account;
-        amj amj = new amj(aiq.a().b(account.name), this.e, this.c);
+        defpackage.amj amj = new defpackage.amj(defpackage.aiq.a().b(account.name), this.e, this.c);
         amj.a();
-        anu anu = new anu(alv, amb, amj);
-        ArrayList a3 = cky.a((Iterable) anu.a.b());
+        defpackage.anu anu = new defpackage.anu(alv, amb, amj);
+        java.util.ArrayList a3 = defpackage.cky.a(anu.a.b());
         int size = a3.size();
         int i = 0;
         while (i < size) {
-            Object obj = a3.get(i);
+            java.lang.Object obj = a3.get(i);
             i++;
-            a(anu, (amn) obj);
+            a(anu, (defpackage.amn) obj);
         }
         this.a = anu;
     }
 
-    private final void a(amn amn, Object obj) {
+    private final void a(defpackage.amn amn, java.lang.Object obj) {
         amn.b(this.a.a);
         this.a.a.a(amn);
-        if (!aln.a().a() || !amn.a()) {
+        if (!defpackage.aln.a().a() || !amn.a()) {
             this.h.b(b());
             a(this.a, amn);
             return;
         }
-        this.h.a(b(), new aod(this, amn, obj));
+        this.h.a(b(), new defpackage.aod(this, amn, obj));
     }
 
-    /* access modifiers changed from: package-private */
-    public final void a(anu anu, cyu cyu) {
-        cyi a2 = a("sync_lists", anu, new anf(this), bg.D, null);
-        a2.a(new ang(this, a2, anu, cyu), this.b);
+    /* access modifiers changed from: 0000 */
+    public final void a(defpackage.anu anu, defpackage.cyu cyu) {
+        defpackage.cyi a2 = a("sync_lists", anu, new defpackage.anf(this), defpackage.bg.D, null);
+        a2.a(new defpackage.ang(this, a2, anu, cyu), this.b);
     }
 
-    /* access modifiers changed from: package-private */
-    public final void a(String str, anu anu, cyu cyu) {
-        cyi a2 = a("sync_list_tasks", anu, new anh(this, str), bg.D, null);
-        a2.a(new ani(this, a2, anu, cyu, str), this.b);
+    /* access modifiers changed from: 0000 */
+    public final void a(java.lang.String str, defpackage.anu anu, defpackage.cyu cyu) {
+        defpackage.cyi a2 = a("sync_list_tasks", anu, new defpackage.anh(this, str), defpackage.bg.D, null);
+        a2.a(new defpackage.ani(this, a2, anu, cyu, str), this.b);
     }
 
-    static anw a(anu anu) {
-        anw anw;
-        List a2 = anu.b.a();
+    static defpackage.anw a(defpackage.anu anu) {
+        defpackage.anw anw;
+        java.util.List a2 = anu.b.a();
         synchronized (anu.a) {
             if (!anu.a.b().isEmpty()) {
                 anw = defpackage.anw.LOCAL_CHANGES;
@@ -364,15 +346,15 @@ public final class anc {
         return anw;
     }
 
-    static anw a(String str, anu anu) {
-        anw anw;
-        ajq a2 = anu.b.a(str);
+    static defpackage.anw a(java.lang.String str, defpackage.anu anu) {
+        defpackage.anw anw;
+        defpackage.ajq a2 = anu.b.a(str);
         synchronized (anu.a) {
             if (!anu.a.b().isEmpty()) {
                 anw = defpackage.anw.LOCAL_CHANGES;
             } else {
-                ajq b2 = anu.a.b(str);
-                if (b2 == null || !csv.a(b2.a()).equals(csv.a(a2.a())) || !b2.b().equals(a2.b())) {
+                defpackage.ajq b2 = anu.a.b(str);
+                if (b2 == null || !defpackage.csv.a(b2.a()).equals(defpackage.csv.a(a2.a())) || !b2.b().equals(a2.b())) {
                     anu.a.a(str, a2);
                     anw = defpackage.anw.SERVER_CHANGES;
                 } else {
@@ -383,123 +365,123 @@ public final class anc {
         return anw;
     }
 
-    static Void b(anu anu) {
-        List<dcb> a2 = anu.b.a();
-        ConcurrentHashMap concurrentHashMap = new ConcurrentHashMap();
-        ExecutorService newFixedThreadPool = Executors.newFixedThreadPool(Math.min(5, Math.max(1, a2.size())));
-        for (dcb dcb : a2) {
-            newFixedThreadPool.execute(new anj(concurrentHashMap, dcb, anu));
+    static java.lang.Void b(defpackage.anu anu) {
+        java.util.List<defpackage.dcb> a2 = anu.b.a();
+        java.util.concurrent.ConcurrentHashMap concurrentHashMap = new java.util.concurrent.ConcurrentHashMap();
+        java.util.concurrent.ExecutorService newFixedThreadPool = java.util.concurrent.Executors.newFixedThreadPool(java.lang.Math.min(5, java.lang.Math.max(1, a2.size())));
+        for (defpackage.dcb anj : a2) {
+            newFixedThreadPool.execute(new defpackage.anj(concurrentHashMap, anj, anu));
         }
         newFixedThreadPool.shutdown();
         try {
-            newFixedThreadPool.awaitTermination(10, TimeUnit.SECONDS);
-        } catch (InterruptedException e2) {
+            newFixedThreadPool.awaitTermination(10, java.util.concurrent.TimeUnit.SECONDS);
+        } catch (java.lang.InterruptedException e2) {
         }
         synchronized (anu.a) {
             if (!a2.isEmpty()) {
                 anu.a.a(a2);
             }
-            for (dcb dcb2 : a2) {
-                ajq ajq = (ajq) concurrentHashMap.remove(dcb2.b);
+            for (defpackage.dcb dcb : a2) {
+                defpackage.ajq ajq = (defpackage.ajq) concurrentHashMap.remove(dcb.b);
                 if (ajq != null) {
-                    anu.a.a(dcb2.b, ajq);
+                    anu.a.a(dcb.b, ajq);
                 }
             }
-            for (amn amn : anu.a.b()) {
-                amn.b(anu.a);
+            for (defpackage.amn b2 : anu.a.b()) {
+                b2.b(anu.a);
             }
         }
         return null;
     }
 
-    /* access modifiers changed from: package-private */
-    public final void a(anu anu, amn amn) {
+    /* access modifiers changed from: 0000 */
+    public final void a(defpackage.anu anu, defpackage.amn amn) {
         this.g.clear();
-        a(amn.toString(), anu, new ank(amn, anu), bg.E, new anl(anu, amn));
+        a(amn.toString(), anu, new defpackage.ank(amn, anu), defpackage.bg.E, new defpackage.anl(anu, amn));
     }
 
-    static cyi a(String str, anu anu, anx anx, int i, Runnable runnable) {
-        cyi a2 = anu.c.a(new anm(str, anx, anu), i, runnable);
-        new Object[1][0] = str;
+    static defpackage.cyi a(java.lang.String str, defpackage.anu anu, defpackage.anx anx, int i, java.lang.Runnable runnable) {
+        defpackage.cyi a2 = anu.c.a(new defpackage.anm(str, anx, anu), i, runnable);
+        new java.lang.Object[1][0] = str;
         return a2;
     }
 
-    /* access modifiers changed from: package-private */
-    public final cyi a(String str, csd csd) {
-        anv anv = (anv) this.g.get(str);
+    /* access modifiers changed from: 0000 */
+    public final defpackage.cyi a(java.lang.String str, defpackage.csd csd) {
+        defpackage.anv anv = (defpackage.anv) this.g.get(str);
         if (anv != null) {
-            if (!anv.a.isDone() || (!a(anv.a) && anv.b + 5000 >= System.currentTimeMillis())) {
+            if (!anv.a.isDone() || (!a(anv.a) && anv.b + 5000 >= java.lang.System.currentTimeMillis())) {
                 return anv.a;
             }
             this.g.remove(str);
         }
-        cyi cyi = (cyi) csd.b();
-        this.g.put(str, new anv(cyi));
+        defpackage.cyi cyi = (defpackage.cyi) csd.b();
+        this.g.put(str, new defpackage.anv(cyi));
         return cyi;
     }
 
-    private static boolean a(Future future) {
+    private static boolean a(java.util.concurrent.Future future) {
         try {
             future.get();
             return false;
-        } catch (InterruptedException | CancellationException | ExecutionException e2) {
+        } catch (java.lang.InterruptedException | java.util.concurrent.CancellationException | java.util.concurrent.ExecutionException e2) {
             return true;
         }
     }
 
-    static final /* synthetic */ Object a(String str, anx anx, anu anu) {
-        new Object[1][0] = str;
+    static final /* synthetic */ java.lang.Object a(java.lang.String str, defpackage.anx anx, defpackage.anu anu) {
+        new java.lang.Object[1][0] = str;
         try {
-            Object a2 = anx.a(anu);
-            new Object[1][0] = str;
+            java.lang.Object a2 = anx.a(anu);
+            new java.lang.Object[1][0] = str;
             return a2;
-        } catch (Exception e2) {
-            new Object[1][0] = str;
-            throw new RuntimeException(e2);
+        } catch (java.lang.Exception e2) {
+            new java.lang.Object[1][0] = str;
+            throw new java.lang.RuntimeException(e2);
         }
     }
 
-    static final /* synthetic */ Void a(String str, String str2, anu anu) {
-        dih dih;
+    static final /* synthetic */ java.lang.Void a(java.lang.String str, java.lang.String str2, defpackage.anu anu) {
+        defpackage.dih dih;
         try {
-            amb amb = anu.b;
-            ead b2 = amb.b();
-            dii dii = (dii) dbv.b.a(bg.ao);
-            dii dii2 = (dii) dbw.c.a(bg.ao);
+            defpackage.amb amb = anu.b;
+            defpackage.ead b2 = amb.b();
+            defpackage.dii dii = (defpackage.dii) defpackage.dbv.b.a(defpackage.bg.ao);
+            defpackage.dii dii2 = (defpackage.dii) defpackage.dbw.c.a(defpackage.bg.ao);
             dii2.b();
-            dbw dbw = (dbw) dii2.a;
+            defpackage.dbw dbw = (defpackage.dbw) dii2.a;
             if (str == null) {
-                throw new NullPointerException();
+                throw new java.lang.NullPointerException();
             }
             dbw.b = str;
             dii2.b();
-            dbw dbw2 = (dbw) dii2.a;
+            defpackage.dbw dbw2 = (defpackage.dbw) dii2.a;
             if (str2 == null) {
-                throw new NullPointerException();
+                throw new java.lang.NullPointerException();
             }
             dbw2.a = str2;
             dii.b();
-            dbv.a((dbv) dii.a, dii2);
+            defpackage.dbv.a((defpackage.dbv) dii.a, dii2);
             if (dii.b) {
                 dih = dii.a;
             } else {
-                dih dih2 = dii.a;
-                djz.a.a(dih2).c(dih2);
+                defpackage.dih dih2 = dii.a;
+                defpackage.djz.a.a(dih2).c(dih2);
                 dii.b = true;
                 dih = dii.a;
             }
-            dih dih3 = dih;
-            if (!defpackage.dih.a(dih3, Boolean.TRUE.booleanValue())) {
-                throw new dkw();
+            defpackage.dih dih3 = dih;
+            if (!defpackage.dih.a(dih3, java.lang.Boolean.TRUE.booleanValue())) {
+                throw new defpackage.dkw();
             }
+            defpackage.dbv dbv = (defpackage.dbv) dih3;
             b2.getClass();
-            amb.a((dbv) dih3, new amc(b2));
+            amb.a(dbv, new defpackage.amc(b2));
             return null;
-        } catch (dqb e2) {
-            if (ajd.b(e2)) {
-                return null;
+        } catch (defpackage.dqb e2) {
+            if (!defpackage.ajd.b(e2)) {
+                throw e2;
             }
-            throw e2;
         }
     }
 }

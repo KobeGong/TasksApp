@@ -1,40 +1,42 @@
 package defpackage;
 
-import android.content.Context;
-import android.util.AttributeSet;
-import android.view.ViewGroup;
-
-/* renamed from: aha  reason: default package */
+/* renamed from: aha reason: default package */
 /* compiled from: PG */
-public final class aha extends wb {
-    public int b = 0;
+public final class aha extends defpackage.wb {
+    public int b;
 
-    public aha(Context context, AttributeSet attributeSet) {
+    public aha(android.content.Context context, android.util.AttributeSet attributeSet) {
         super(context, attributeSet);
+        this.b = 0;
     }
 
     public aha() {
+        this.b = 0;
         this.a = 8388627;
     }
 
-    public aha(aha aha) {
-        super((wb) aha);
+    public aha(defpackage.aha aha) {
+        super((defpackage.wb) aha);
+        this.b = 0;
         this.b = aha.b;
     }
 
-    public aha(wb wbVar) {
+    public aha(defpackage.wb wbVar) {
         super(wbVar);
+        this.b = 0;
     }
 
-    public aha(ViewGroup.MarginLayoutParams marginLayoutParams) {
-        super(marginLayoutParams);
+    public aha(android.view.ViewGroup.MarginLayoutParams marginLayoutParams) {
+        super((android.view.ViewGroup.LayoutParams) marginLayoutParams);
+        this.b = 0;
         this.leftMargin = marginLayoutParams.leftMargin;
         this.topMargin = marginLayoutParams.topMargin;
         this.rightMargin = marginLayoutParams.rightMargin;
         this.bottomMargin = marginLayoutParams.bottomMargin;
     }
 
-    public aha(ViewGroup.LayoutParams layoutParams) {
+    public aha(android.view.ViewGroup.LayoutParams layoutParams) {
         super(layoutParams);
+        this.b = 0;
     }
 }

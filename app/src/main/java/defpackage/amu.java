@@ -1,110 +1,101 @@
 package defpackage;
 
-import android.content.Context;
-import com.google.android.apps.tasks.R;
-import java.util.Map;
-
-/* renamed from: amu  reason: default package */
+/* renamed from: amu reason: default package */
 /* compiled from: PG */
-public final class amu implements amn {
+public final class amu implements defpackage.amn {
     public static final long serialVersionUID = 1;
-    private final String a;
-    private final String b;
-    private final String c;
-    private final String d;
-    private final Map e;
-    private transient ajq f;
+    private final java.lang.String a;
+    private final java.lang.String b;
+    private final java.lang.String c;
+    private final java.lang.String d;
+    private final java.util.Map e;
+    private transient defpackage.ajq f;
     private transient int g;
     private final transient boolean h;
 
-    public amu(String str, String str2, String str3, String str4, Map map, boolean z) {
+    public amu(java.lang.String str, java.lang.String str2, java.lang.String str3, java.lang.String str4, java.util.Map map, boolean z) {
         this.a = str;
         this.b = str2;
         this.c = str3;
         this.d = str4;
-        this.e = css.a(map);
+        this.e = defpackage.css.a(map);
         this.h = z;
     }
 
-    @Override // defpackage.amn
-    public final void b(alv alv) {
+    public final void b(defpackage.alv alv) {
         this.f = alv.b(this.a);
         this.g = (this.e == null ? 0 : this.e.size()) + 1;
         alv.a(this.a, this.b, this.c, this.d, this.e);
     }
 
-    @Override // defpackage.amn
-    public final void a(amb amb) {
-        dih dih;
-        String str = this.a;
-        String str2 = this.b;
-        String str3 = this.c;
-        String str4 = this.d;
-        Map map = this.e;
-        dbo[] dboArr = new dbo[1];
-        dii a2 = ((dii) daw.h.a(bg.ao)).c(str).a(0);
+    public final void a(defpackage.amb amb) {
+        defpackage.dih dih;
+        java.lang.String str = this.a;
+        java.lang.String str2 = this.b;
+        java.lang.String str3 = this.c;
+        java.lang.String str4 = this.d;
+        java.util.Map map = this.e;
+        defpackage.dbo[] dboArr = new defpackage.dbo[1];
+        defpackage.dii a2 = ((defpackage.dii) defpackage.daw.h.a(defpackage.bg.ao)).c(str).a(0);
         a2.b();
-        daw daw = (daw) a2.a;
+        defpackage.daw daw = (defpackage.daw) a2.a;
         if (str3 == null) {
-            throw new NullPointerException();
+            throw new java.lang.NullPointerException();
         }
         daw.c = str3;
         a2.b();
-        daw daw2 = (daw) a2.a;
+        defpackage.daw daw2 = (defpackage.daw) a2.a;
         if (str4 == null) {
-            throw new NullPointerException();
+            throw new java.lang.NullPointerException();
         }
         daw2.f = str4;
         a2.b();
-        daw daw3 = (daw) a2.a;
+        defpackage.daw daw3 = (defpackage.daw) a2.a;
         if (!daw3.g.a) {
             daw3.g = daw3.g.a();
         }
         daw3.g.putAll(map);
-        dii f2 = ((dii) dbo.d.a(bg.ao)).d(str2).f(a2);
+        defpackage.dii f2 = ((defpackage.dii) defpackage.dbo.d.a(defpackage.bg.ao)).d(str2).f(a2);
         if (f2.b) {
             dih = f2.a;
         } else {
-            dih dih2 = f2.a;
-            djz.a.a(dih2).c(dih2);
+            defpackage.dih dih2 = f2.a;
+            defpackage.djz.a.a((java.lang.Object) dih2).c(dih2);
             f2.b = true;
             dih = f2.a;
         }
-        dih dih3 = dih;
-        if (!dih.a(dih3, Boolean.TRUE.booleanValue())) {
-            throw new dkw();
+        defpackage.dih dih3 = dih;
+        if (!defpackage.dih.a(dih3, java.lang.Boolean.TRUE.booleanValue())) {
+            throw new defpackage.dkw();
         }
-        dboArr[0] = (dbo) dih3;
+        dboArr[0] = (defpackage.dbo) dih3;
         amb.a(dboArr);
     }
 
-    public final String toString() {
-        String str = this.a;
-        String str2 = this.b;
-        String str3 = this.c;
-        String str4 = this.d;
-        String valueOf = String.valueOf(this.e);
-        return new StringBuilder(String.valueOf(str).length() + 77 + String.valueOf(str2).length() + String.valueOf(str3).length() + String.valueOf(str4).length() + String.valueOf(valueOf).length()).append("MoveTaskToList(listId, taskId, toListId, newTaskId, subtaskIdMap): {").append(str).append(", ").append(str2).append(", ").append(str3).append(", ").append(str4).append(", ").append(valueOf).append("}").toString();
+    public final java.lang.String toString() {
+        java.lang.String str = this.a;
+        java.lang.String str2 = this.b;
+        java.lang.String str3 = this.c;
+        java.lang.String str4 = this.d;
+        java.lang.String valueOf = java.lang.String.valueOf(this.e);
+        return new java.lang.StringBuilder(java.lang.String.valueOf(str).length() + 77 + java.lang.String.valueOf(str2).length() + java.lang.String.valueOf(str3).length() + java.lang.String.valueOf(str4).length() + java.lang.String.valueOf(valueOf).length()).append("MoveTaskToList(listId, taskId, toListId, newTaskId, subtaskIdMap): {").append(str).append(", ").append(str2).append(", ").append(str3).append(", ").append(str4).append(", ").append(valueOf).append("}").toString();
     }
 
-    @Override // defpackage.amn
     public final boolean a() {
         return this.h;
     }
 
-    @Override // defpackage.amn
-    public final void a(alv alv) {
+    public final void a(defpackage.alv alv) {
         if (this.g == 0) {
-            throw new IllegalStateException("Cannot undo before operation is applied locally");
+            throw new java.lang.IllegalStateException("Cannot undo before operation is applied locally");
         }
         alv.d(this.c, this.d);
         alv.a(this.a, this.f);
-        alq.a().a(alv.a, this.c);
-        alq.a().a(alv.a, this.a);
+        defpackage.alq.a().a(alv.a, this.c);
+        defpackage.alq.a().a(alv.a, this.a);
     }
 
-    @Override // defpackage.amn
-    public final String a(Context context) {
-        return aaz.a(context, (int) R.string.operation_task_moved, "taskCount", Integer.valueOf(this.g));
+    public final java.lang.String a(android.content.Context context) {
+        return defpackage.aaz.a(context, 2131951794, "taskCount", java.lang.Integer.valueOf(this.g));
     }
 }

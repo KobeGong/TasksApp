@@ -1,26 +1,23 @@
 package defpackage;
 
-import android.app.PendingIntent;
-import android.os.Bundle;
-
-/* renamed from: nf  reason: default package */
+/* renamed from: nf reason: default package */
 /* compiled from: PG */
 public final class nf {
-    public final Bundle a;
+    public final android.os.Bundle a;
     public boolean b;
     public boolean c;
     public int d;
-    public CharSequence e;
-    public PendingIntent f;
+    public java.lang.CharSequence e;
+    public android.app.PendingIntent f;
 
-    public nf(int i, CharSequence charSequence, PendingIntent pendingIntent) {
-        this(i, charSequence, pendingIntent, new Bundle());
+    public nf(int i, java.lang.CharSequence charSequence, android.app.PendingIntent pendingIntent) {
+        this(i, charSequence, pendingIntent, new android.os.Bundle());
     }
 
-    private nf(int i, CharSequence charSequence, PendingIntent pendingIntent, Bundle bundle) {
+    private nf(int i, java.lang.CharSequence charSequence, android.app.PendingIntent pendingIntent, android.os.Bundle bundle) {
         this.c = true;
         this.d = i;
-        this.e = ni.e(charSequence);
+        this.e = defpackage.ni.e(charSequence);
         this.f = pendingIntent;
         this.a = bundle;
         this.b = true;

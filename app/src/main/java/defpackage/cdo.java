@@ -1,15 +1,15 @@
 package defpackage;
 
-/* renamed from: cdo  reason: default package */
+/* renamed from: cdo reason: default package */
 /* compiled from: PG */
-public final class cdo extends cdj {
-    private final cdl a;
-    private final cdf b;
-    private final cdh c;
-    private final cdp d;
-    private final cqo e;
+public final class cdo extends defpackage.cdj {
+    private final defpackage.cdl a;
+    private final defpackage.cdf b;
+    private final defpackage.cdh c;
+    private final defpackage.cdp d;
+    private final defpackage.cqo e;
 
-    public cdo(cdl cdl, cdf cdf, cdh cdh, cdp cdp, cqo cqo) {
+    public cdo(defpackage.cdl cdl, defpackage.cdf cdf, defpackage.cdh cdh, defpackage.cdp cdp, defpackage.cqo cqo) {
         this.a = cdl;
         this.b = cdf;
         this.c = cdh;
@@ -17,49 +17,47 @@ public final class cdo extends cdj {
         this.e = cqo;
     }
 
-    @Override // defpackage.cdj
-    public final cdl a() {
+    public final defpackage.cdl a() {
         return this.a;
     }
 
-    @Override // defpackage.cdj
-    public final cdf b() {
+    public final defpackage.cdf b() {
         return this.b;
     }
 
-    @Override // defpackage.cdj
-    public final cdh c() {
+    public final defpackage.cdh c() {
         return this.c;
     }
 
-    @Override // defpackage.cdj
-    public final cdp d() {
+    public final defpackage.cdp d() {
         return this.d;
     }
 
-    @Override // defpackage.cdj
-    public final cqo e() {
+    public final defpackage.cqo e() {
         return this.e;
     }
 
-    public final String toString() {
-        String valueOf = String.valueOf(this.a);
-        String valueOf2 = String.valueOf(this.b);
-        String valueOf3 = String.valueOf(this.c);
-        String valueOf4 = String.valueOf(this.d);
-        String valueOf5 = String.valueOf(this.e);
-        return new StringBuilder(String.valueOf(valueOf).length() + 107 + String.valueOf(valueOf2).length() + String.valueOf(valueOf3).length() + String.valueOf(valueOf4).length() + String.valueOf(valueOf5).length()).append("AccountMenuManager{accountsModel=").append(valueOf).append(", accountConverter=").append(valueOf2).append(", clickListeners=").append(valueOf3).append(", avatarRetriever=").append(valueOf4).append(", monogramRenderer=").append(valueOf5).append("}").toString();
+    public final java.lang.String toString() {
+        java.lang.String valueOf = java.lang.String.valueOf(this.a);
+        java.lang.String valueOf2 = java.lang.String.valueOf(this.b);
+        java.lang.String valueOf3 = java.lang.String.valueOf(this.c);
+        java.lang.String valueOf4 = java.lang.String.valueOf(this.d);
+        java.lang.String valueOf5 = java.lang.String.valueOf(this.e);
+        return new java.lang.StringBuilder(java.lang.String.valueOf(valueOf).length() + 107 + java.lang.String.valueOf(valueOf2).length() + java.lang.String.valueOf(valueOf3).length() + java.lang.String.valueOf(valueOf4).length() + java.lang.String.valueOf(valueOf5).length()).append("AccountMenuManager{accountsModel=").append(valueOf).append(", accountConverter=").append(valueOf2).append(", clickListeners=").append(valueOf3).append(", avatarRetriever=").append(valueOf4).append(", monogramRenderer=").append(valueOf5).append("}").toString();
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof cdj)) {
+        if (!(obj instanceof defpackage.cdj)) {
             return false;
         }
-        cdj cdj = (cdj) obj;
-        return this.a.equals(cdj.a()) && this.b.equals(cdj.b()) && this.c.equals(cdj.c()) && this.d.equals(cdj.d()) && this.e.equals(cdj.e());
+        defpackage.cdj cdj = (defpackage.cdj) obj;
+        if (!this.a.equals(cdj.a()) || !this.b.equals(cdj.b()) || !this.c.equals(cdj.c()) || !this.d.equals(cdj.d()) || !this.e.equals(cdj.e())) {
+            return false;
+        }
+        return true;
     }
 
     public final int hashCode() {

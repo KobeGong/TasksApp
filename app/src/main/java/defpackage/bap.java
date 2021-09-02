@@ -1,14 +1,12 @@
 package defpackage;
 
-import java.util.Collections;
-
-/* renamed from: bap  reason: default package */
+/* renamed from: bap reason: default package */
 /* compiled from: PG */
-final class bap implements Runnable {
-    private /* synthetic */ axq a;
-    private /* synthetic */ bbl b;
+final class bap implements java.lang.Runnable {
+    private /* synthetic */ defpackage.axq a;
+    private /* synthetic */ defpackage.bbl b;
 
-    bap(bbl bbl, axq axq) {
+    bap(defpackage.bbl bbl, defpackage.axq axq) {
         this.b = bbl;
         this.a = axq;
     }
@@ -19,10 +17,10 @@ final class bap implements Runnable {
             if (this.b.a.h()) {
                 this.b.a();
             } else {
-                this.b.a.a((bdp) null, Collections.emptySet());
+                this.b.a.a((defpackage.bdp) null, java.util.Collections.emptySet());
             }
         } else {
-            ((bak) this.b.f.n.get(this.b.b)).a(this.a);
+            ((defpackage.bak) this.b.f.n.get(this.b.b)).a(this.a);
         }
     }
 }

@@ -1,23 +1,19 @@
 package defpackage;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-
-/* access modifiers changed from: package-private */
-/* renamed from: adk  reason: default package */
+/* renamed from: adk reason: default package */
 /* compiled from: PG */
-public final class adk extends AnimatorListenerAdapter {
+final class adk extends android.animation.AnimatorListenerAdapter {
     private boolean a = false;
-    private final /* synthetic */ adh b;
+    private final /* synthetic */ defpackage.adh b;
 
-    adk(adh adh) {
+    adk(defpackage.adh adh) {
         this.b = adh;
     }
 
-    public final void onAnimationEnd(Animator animator) {
+    public final void onAnimationEnd(android.animation.Animator animator) {
         if (this.a) {
             this.a = false;
-        } else if (((Float) this.b.n.getAnimatedValue()).floatValue() == 0.0f) {
+        } else if (((java.lang.Float) this.b.n.getAnimatedValue()).floatValue() == 0.0f) {
             this.b.o = 0;
             this.b.a(0);
         } else {
@@ -26,7 +22,7 @@ public final class adk extends AnimatorListenerAdapter {
         }
     }
 
-    public final void onAnimationCancel(Animator animator) {
+    public final void onAnimationCancel(android.animation.Animator animator) {
         this.a = true;
     }
 }

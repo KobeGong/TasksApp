@@ -1,16 +1,8 @@
 package com.google.android.libraries.notifications.entrypoints.gcm;
 
-import android.content.Context;
-
-import defpackage.bvk;
-import defpackage.bvn;
-import defpackage.bwa;
-import defpackage.bxk;
-
 /* compiled from: PG */
-public final class GcmBroadcastReceiver extends bvk {
-    @Override // defpackage.bvk
-    public final bvn a(Context context) {
-        return (bwa) bxk.a(context).h.a();
+public final class GcmBroadcastReceiver extends defpackage.bvk {
+    public final defpackage.bvn a(android.content.Context context) {
+        return (defpackage.bwa) defpackage.bxk.a(context).h.a();
     }
 }

@@ -1,16 +1,16 @@
 package defpackage;
 
-/* renamed from: efv  reason: default package */
+/* renamed from: efv reason: default package */
 /* compiled from: PG */
-public final class efv extends dlz {
-    private static volatile efv[] a;
-    private String b = null;
+public final class efv extends defpackage.dlz {
+    private static volatile defpackage.efv[] a;
+    private java.lang.String b;
 
-    public static efv[] d() {
+    public static defpackage.efv[] d() {
         if (a == null) {
-            synchronized (dmd.b) {
+            synchronized (defpackage.dmd.b) {
                 if (a == null) {
-                    a = new efv[0];
+                    a = new defpackage.efv[0];
                 }
             }
         }
@@ -18,11 +18,11 @@ public final class efv extends dlz {
     }
 
     public efv() {
+        this.b = null;
         this.k = -1;
     }
 
-    @Override // defpackage.dlz, defpackage.dmf
-    public final void a(dlx dlx) {
+    public final void a(defpackage.dlx dlx) {
         if (this.b != null) {
             dlx.a(1, this.b);
         }
@@ -30,17 +30,15 @@ public final class efv extends dlz {
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.dlz, defpackage.dmf
     public final int a() {
         int a2 = super.a();
         if (this.b != null) {
-            return a2 + dlx.b(1, this.b);
+            return a2 + defpackage.dlx.b(1, this.b);
         }
         return a2;
     }
 
-    @Override // defpackage.dmf
-    public final /* synthetic */ dmf a(dlw dlw) {
+    public final /* synthetic */ defpackage.dmf a(defpackage.dlw dlw) {
         while (true) {
             int a2 = dlw.a();
             switch (a2) {
@@ -48,12 +46,12 @@ public final class efv extends dlz {
                     break;
                 case 10:
                     this.b = dlw.d();
-                    break;
+                    continue;
                 default:
-                    if (super.a(dlw, a2)) {
+                    if (!super.a(dlw, a2)) {
                         break;
                     } else {
-                        break;
+                        continue;
                     }
             }
         }

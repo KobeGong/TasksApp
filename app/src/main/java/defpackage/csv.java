@@ -1,72 +1,69 @@
 package defpackage;
 
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.Set;
-
-/* renamed from: csv  reason: default package */
+/* renamed from: csv reason: default package */
 /* compiled from: PG */
-public abstract class csv extends csn implements Set {
-    private transient csp a;
+public abstract class csv extends defpackage.csn implements java.util.Set {
+    private transient defpackage.csp a;
 
-    public static csv a(Object obj) {
-        return new ctg(obj);
+    public static defpackage.csv a(java.lang.Object obj) {
+        return new defpackage.ctg(obj);
     }
 
-    public static csv a(int i, Object... objArr) {
-        Object[] objArr2;
+    public static defpackage.csv a(int i, java.lang.Object... objArr) {
+        java.lang.Object[] objArr2;
         while (true) {
             switch (i) {
                 case 0:
-                    return ctf.a;
+                    return defpackage.ctf.a;
                 case 1:
                     return a(objArr[0]);
                 default:
                     int a2 = a(i);
-                    Object[] objArr3 = new Object[a2];
+                    java.lang.Object[] objArr3 = new java.lang.Object[a2];
                     int i2 = a2 - 1;
                     int i3 = 0;
                     int i4 = 0;
                     for (int i5 = 0; i5 < i; i5++) {
-                        Object b = cky.b(objArr[i5], i5);
+                        java.lang.Object b = defpackage.cky.b(objArr[i5], i5);
                         int hashCode = b.hashCode();
-                        int a3 = cky.a(hashCode);
+                        int a3 = defpackage.cky.a(hashCode);
                         while (true) {
                             int i6 = a3 & i2;
-                            Object obj = objArr3[i6];
+                            java.lang.Object obj = objArr3[i6];
                             if (obj == null) {
+                                int i7 = i3 + 1;
                                 objArr[i3] = b;
                                 objArr3[i6] = b;
                                 i4 += hashCode;
-                                i3++;
+                                i3 = i7;
                             } else if (!obj.equals(b)) {
                                 a3++;
                             }
                         }
                     }
-                    Arrays.fill(objArr, i3, i, (Object) null);
+                    java.util.Arrays.fill(objArr, i3, i, null);
                     if (i3 == 1) {
-                        return new ctg(objArr[0], i4);
+                        return new defpackage.ctg(objArr[0], i4);
                     }
                     if (a(i3) < a2 / 2) {
                         i = i3;
                     } else {
                         int length = objArr.length;
                         if (i3 < (length >> 2) + (length >> 1)) {
-                            objArr2 = Arrays.copyOf(objArr, i3);
+                            objArr2 = java.util.Arrays.copyOf(objArr, i3);
                         } else {
                             objArr2 = objArr;
                         }
-                        return new ctf(objArr2, i4, objArr3, i2, i3);
+                        return new defpackage.ctf(objArr2, i4, objArr3, i2, i3);
                     }
             }
         }
     }
 
     static int a(int i) {
-        int max = Math.max(i, 2);
+        int max = java.lang.Math.max(i, 2);
         if (max < 751619276) {
-            int highestOneBit = Integer.highestOneBit(max - 1);
+            int highestOneBit = java.lang.Integer.highestOneBit(max - 1);
             while (true) {
                 highestOneBit <<= 1;
                 if (((double) highestOneBit) * 0.7d >= ((double) max)) {
@@ -74,68 +71,65 @@ public abstract class csv extends csn implements Set {
                 }
             }
         } else {
-            cld.a(max < 1073741824, "collection too large");
+            defpackage.cld.a(max < 1073741824, (java.lang.Object) "collection too large");
             return 1073741824;
         }
     }
 
-    public static csv a(Object[] objArr) {
+    public static defpackage.csv a(java.lang.Object[] objArr) {
         switch (objArr.length) {
             case 0:
-                return ctf.a;
+                return defpackage.ctf.a;
             case 1:
                 return a(objArr[0]);
             default:
-                return a(objArr.length, (Object[]) objArr.clone());
+                return a(objArr.length, (java.lang.Object[]) objArr.clone());
         }
     }
 
     csv() {
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public boolean d() {
         return false;
     }
 
-    public boolean equals(Object obj) {
+    public boolean equals(java.lang.Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof csv) || !d() || !((csv) obj).d() || hashCode() == obj.hashCode()) {
-            return cky.a((Set) this, obj);
+        if (!(obj instanceof defpackage.csv) || !d() || !((defpackage.csv) obj).d() || hashCode() == obj.hashCode()) {
+            return defpackage.cky.a((java.util.Set) this, obj);
         }
         return false;
     }
 
     public int hashCode() {
-        return cky.a((Set) this);
+        return defpackage.cky.a((java.util.Set) this);
     }
 
-    @Override // defpackage.csn
-    public csp b() {
-        csp csp = this.a;
+    public defpackage.csp b() {
+        defpackage.csp csp = this.a;
         if (csp != null) {
             return csp;
         }
-        csp e = e();
+        defpackage.csp e = e();
         this.a = e;
         return e;
     }
 
-    /* access modifiers changed from: package-private */
-    public csp e() {
-        return csp.b(toArray());
+    /* access modifiers changed from: 0000 */
+    public defpackage.csp e() {
+        return defpackage.csp.b(toArray());
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.csn
-    public Object writeReplace() {
-        return new csw(toArray());
+    /* access modifiers changed from: 0000 */
+    public java.lang.Object writeReplace() {
+        return new defpackage.csw(toArray());
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set, java.lang.Iterable, defpackage.csn
-    public /* synthetic */ Iterator iterator() {
+    public /* synthetic */ java.util.Iterator iterator() {
         return iterator();
     }
 }

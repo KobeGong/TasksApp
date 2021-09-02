@@ -1,42 +1,37 @@
 package defpackage;
 
-import android.os.Handler;
-import android.os.Looper;
-import java.util.ArrayList;
-import java.util.List;
-
-/* renamed from: alq  reason: default package */
+/* renamed from: alq reason: default package */
 /* compiled from: PG */
 public final class alq {
-    private static alq d;
-    public List a = new ArrayList();
-    public Handler b = new Handler(Looper.getMainLooper());
-    public String c;
+    private static defpackage.alq d;
+    public java.util.List a = new java.util.ArrayList();
+    public android.os.Handler b = new android.os.Handler(android.os.Looper.getMainLooper());
+    public java.lang.String c;
 
     private alq() {
     }
 
-    public final void a(alu alu) {
+    public final void a(defpackage.alu alu) {
         this.a.add(alu);
     }
 
-    public final void b(alu alu) {
+    public final void b(defpackage.alu alu) {
         this.a.remove(alu);
     }
 
-    public final void a(String str) {
-        this.b.post(new als(this, str));
+    public final void a(java.lang.String str) {
+        this.b.post(new defpackage.als(this, str));
     }
 
-    public final void a(String str, String str2) {
-        this.b.post(new alt(this, str, str2));
+    public final void a(java.lang.String str, java.lang.String str2) {
+        this.b.post(new defpackage.alt(this, str, str2));
     }
 
-    public static synchronized alq a() {
-        alq alq;
-        synchronized (alq.class) {
+    public static synchronized defpackage.alq a() {
+        defpackage.alq alq;
+        synchronized (defpackage.alq.class) {
             if (d == null) {
-                d = new alq();
+                d = new defpackage.alq();
             }
             alq = d;
         }

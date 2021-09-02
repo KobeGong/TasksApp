@@ -1,7 +1,7 @@
 package defpackage;
 
-/* renamed from: cqe  reason: default package */
+/* renamed from: cqe reason: default package */
 /* compiled from: PG */
 public interface cqe {
-    cqd a();
+    defpackage.cqd a();
 }

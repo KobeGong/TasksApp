@@ -1,41 +1,43 @@
 package defpackage;
 
-/* renamed from: aug  reason: default package */
+/* renamed from: aug reason: default package */
 /* compiled from: PG */
 public final class aug {
-    public final /* synthetic */ SortableAdapter adapter;
+    public final /* synthetic */ defpackage.atg a;
 
     public final void a(int i, int i2, boolean z) {
-        dby g;
-        dca dca;
-        dmk dmk;
-        if (this.adapter.f != null && (g = this.adapter.g(i)) != null) {
-            atl atl = this.adapter.f;
-            String str = g.d;
-            FragmentActivity activity = atl.a.getActivity();
-            if (z) {
-                dby a2 = auj.N().a(atl.a.X, str);
-                if (a2 != null) {
-                    atl.a.Z = a2.d;
-                    if (a2.e == null) {
-                        dca = dca.g;
-                    } else {
-                        dca = a2.e;
+        defpackage.dca dca;
+        defpackage.dmk dmk;
+        if (this.a.f != null) {
+            defpackage.dby g = this.a.g(i);
+            if (g != null) {
+                defpackage.atl atl = this.a.f;
+                java.lang.String str = g.d;
+                FragmentActivity j = atl.a.getActivity();
+                if (z) {
+                    defpackage.dby a2 = TasksFragment.N().a(atl.a.X, str);
+                    if (a2 != null) {
+                        atl.a.Z = a2.d;
+                        if (a2.e == null) {
+                            dca = defpackage.dca.g;
+                        } else {
+                            dca = a2.e;
+                        }
+                        if (dca.d == null) {
+                            dmk = defpackage.dmk.d;
+                        } else {
+                            dmk = dca.d;
+                        }
+                        defpackage.aqj.a(dmk).a((defpackage.ln) atl.a.t, "datePicker - tasks fragment");
                     }
-                    if (dca.d == null) {
-                        dmk = dmk.d;
-                    } else {
-                        dmk = dca.d;
-                    }
-                    aqj.a(dmk).a(atl.a.t, "datePicker - tasks fragment");
+                } else if (j instanceof defpackage.aux) {
+                    ((defpackage.aux) j).a(atl.a.X, str, i2);
                 }
-            } else if (activity instanceof aux) {
-                ((aux) activity).a(atl.a.X, str, i2);
             }
         }
     }
 
-    aug(SortableAdapter atg) {
-        this.adapter = atg;
+    aug(defpackage.atg atg) {
+        this.a = atg;
     }
 }

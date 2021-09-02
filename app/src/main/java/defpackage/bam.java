@@ -1,12 +1,11 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: bam  reason: default package */
+/* renamed from: bam reason: default package */
 /* compiled from: PG */
-public final class bam implements Runnable {
-    private /* synthetic */ bak a;
+final class bam implements java.lang.Runnable {
+    private /* synthetic */ defpackage.bak a;
 
-    bam(bak bak) {
+    bam(defpackage.bak bak) {
         this.a = bak;
     }
 

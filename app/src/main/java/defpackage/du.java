@@ -1,27 +1,23 @@
 package defpackage;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-/* renamed from: du  reason: default package */
+/* renamed from: du reason: default package */
 /* compiled from: PG */
-public final class du extends rl {
-    public static final Parcelable.Creator CREATOR = new dv();
+public final class du extends defpackage.rl {
+    public static final android.os.Parcelable.Creator CREATOR = new defpackage.dv();
     public int a;
     public boolean b;
 
-    public du(Parcelable parcelable) {
+    public du(android.os.Parcelable parcelable) {
         super(parcelable);
     }
 
-    public du(Parcel parcel, ClassLoader classLoader) {
+    public du(android.os.Parcel parcel, java.lang.ClassLoader classLoader) {
         super(parcel, classLoader);
         this.a = parcel.readInt();
         this.b = parcel.readInt() != 0;
     }
 
-    @Override // defpackage.rl
-    public final void writeToParcel(Parcel parcel, int i) {
+    public final void writeToParcel(android.os.Parcel parcel, int i) {
         super.writeToParcel(parcel, i);
         parcel.writeInt(this.a);
         parcel.writeInt(this.b ? 1 : 0);

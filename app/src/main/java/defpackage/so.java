@@ -1,16 +1,12 @@
 package defpackage;
 
-import android.view.View;
-
-/* access modifiers changed from: package-private */
-/* renamed from: so  reason: default package */
+/* renamed from: so reason: default package */
 /* compiled from: PG */
-public class so extends sw {
+class so extends defpackage.sw {
     so() {
     }
 
-    @Override // defpackage.sw
-    public final boolean a(View view) {
+    public final boolean a(android.view.View view) {
         return view.hasOnClickListeners();
     }
 }

@@ -1,16 +1,12 @@
 package defpackage;
 
-import android.util.Printer;
-import org.chromium.base.EarlyTraceEvent;
-import org.chromium.base.TraceEvent;
-
-/* renamed from: ehf  reason: default package */
+/* renamed from: ehf reason: default package */
 /* compiled from: PG */
-public class ehf implements Printer {
+public class ehf implements android.util.Printer {
     ehf() {
     }
 
-    public void println(String str) {
+    public void println(java.lang.String str) {
         if (str.startsWith(">")) {
             a(str);
         } else {
@@ -18,30 +14,30 @@ public class ehf implements Printer {
         }
     }
 
-    /* access modifiers changed from: package-private */
-    public void a(String str) {
-        boolean a = EarlyTraceEvent.a();
-        if (TraceEvent.a || a) {
-            String c = c(str);
-            if (TraceEvent.a) {
-                TraceEvent.nativeBeginToplevel(c);
+    /* access modifiers changed from: 0000 */
+    public void a(java.lang.String str) {
+        boolean a = org.chromium.base.EarlyTraceEvent.a();
+        if (org.chromium.base.TraceEvent.a || a) {
+            java.lang.String c = c(str);
+            if (org.chromium.base.TraceEvent.a) {
+                org.chromium.base.TraceEvent.nativeBeginToplevel(c);
             } else if (a) {
-                EarlyTraceEvent.a("Looper.dispatchMessage: " + c);
+                org.chromium.base.EarlyTraceEvent.a("Looper.dispatchMessage: " + c);
             }
         }
     }
 
-    /* access modifiers changed from: package-private */
-    public void b(String str) {
-        if (EarlyTraceEvent.a()) {
-            EarlyTraceEvent.b("Looper.dispatchMessage: " + c(str));
+    /* access modifiers changed from: 0000 */
+    public void b(java.lang.String str) {
+        if (org.chromium.base.EarlyTraceEvent.a()) {
+            org.chromium.base.EarlyTraceEvent.b("Looper.dispatchMessage: " + c(str));
         }
-        if (TraceEvent.a) {
-            TraceEvent.nativeEndToplevel();
+        if (org.chromium.base.TraceEvent.a) {
+            org.chromium.base.TraceEvent.nativeEndToplevel();
         }
     }
 
-    private static String c(String str) {
+    private static java.lang.String c(java.lang.String str) {
         int indexOf = str.indexOf(40, 21);
         int indexOf2 = indexOf == -1 ? -1 : str.indexOf(41, indexOf);
         return indexOf2 != -1 ? str.substring(indexOf + 1, indexOf2) : "";

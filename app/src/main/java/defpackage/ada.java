@@ -1,29 +1,24 @@
 package defpackage;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.View;
-import android.view.ViewPropertyAnimator;
-
-/* renamed from: ada  reason: default package */
+/* renamed from: ada reason: default package */
 /* compiled from: PG */
-final class ada extends AnimatorListenerAdapter {
-    private final /* synthetic */ adb a;
-    private final /* synthetic */ ViewPropertyAnimator b;
-    private final /* synthetic */ View c;
-    private final /* synthetic */ acs d;
+final class ada extends android.animation.AnimatorListenerAdapter {
+    private final /* synthetic */ defpackage.adb a;
+    private final /* synthetic */ android.view.ViewPropertyAnimator b;
+    private final /* synthetic */ android.view.View c;
+    private final /* synthetic */ defpackage.acs d;
 
-    ada(acs acs, adb adb, ViewPropertyAnimator viewPropertyAnimator, View view) {
+    ada(defpackage.acs acs, defpackage.adb adb, android.view.ViewPropertyAnimator viewPropertyAnimator, android.view.View view) {
         this.d = acs;
         this.a = adb;
         this.b = viewPropertyAnimator;
         this.c = view;
     }
 
-    public final void onAnimationStart(Animator animator) {
+    public final void onAnimationStart(android.animation.Animator animator) {
     }
 
-    public final void onAnimationEnd(Animator animator) {
+    public final void onAnimationEnd(android.animation.Animator animator) {
         this.b.setListener(null);
         this.c.setAlpha(1.0f);
         this.c.setTranslationX(0.0f);

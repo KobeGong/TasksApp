@@ -1,11 +1,7 @@
 package defpackage;
 
-import java.util.Collections;
-import java.util.Set;
-import java.util.WeakHashMap;
-
-/* renamed from: bbe  reason: default package */
+/* renamed from: bbe reason: default package */
 /* compiled from: PG */
 public final class bbe {
-    public final Set a = Collections.newSetFromMap(new WeakHashMap());
+    public final java.util.Set a = java.util.Collections.newSetFromMap(new java.util.WeakHashMap());
 }

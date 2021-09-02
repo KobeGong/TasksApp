@@ -1,18 +1,17 @@
 package defpackage;
 
-/* renamed from: byi  reason: default package */
+/* renamed from: byi reason: default package */
 /* compiled from: PG */
-public final class byi implements ecz {
-    private final ecz a;
-    private final ecz b;
+public final class byi implements defpackage.ecz {
+    private final defpackage.ecz a;
+    private final defpackage.ecz b;
 
-    public byi(ecz ecz, ecz ecz2) {
+    public byi(defpackage.ecz ecz, defpackage.ecz ecz2) {
         this.a = ecz;
         this.b = ecz2;
     }
 
-    @Override // defpackage.ecz
-    public final /* synthetic */ Object a() {
-        return new byg((crv) this.a.a(), (bya) this.b.a());
+    public final /* synthetic */ java.lang.Object a() {
+        return new defpackage.byg((defpackage.crv) this.a.a(), (defpackage.bya) this.b.a());
     }
 }

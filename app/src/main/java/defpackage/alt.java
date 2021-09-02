@@ -1,32 +1,29 @@
 package defpackage;
 
-import java.util.ArrayList;
+/* renamed from: alt reason: default package */
+final /* synthetic */ class alt implements java.lang.Runnable {
+    private final defpackage.alq a;
+    private final java.lang.String b;
+    private final java.lang.String c;
 
-/* access modifiers changed from: package-private */
-/* renamed from: alt  reason: default package */
-public final /* synthetic */ class alt implements Runnable {
-    private final alq a;
-    private final String b;
-    private final String c;
-
-    alt(alq alq, String str, String str2) {
+    alt(defpackage.alq alq, java.lang.String str, java.lang.String str2) {
         this.a = alq;
         this.b = str;
         this.c = str2;
     }
 
     public final void run() {
-        alq alq = this.a;
-        String str = this.b;
-        String str2 = this.c;
-        if (cru.d(str, alq.c)) {
-            ArrayList a2 = cky.a((Iterable) alq.a);
+        defpackage.alq alq = this.a;
+        java.lang.String str = this.b;
+        java.lang.String str2 = this.c;
+        if (defpackage.cru.d(str, alq.c)) {
+            java.util.ArrayList a2 = defpackage.cky.a((java.lang.Iterable) alq.a);
             int size = a2.size();
             int i = 0;
             while (i < size) {
-                Object obj = a2.get(i);
+                java.lang.Object obj = a2.get(i);
                 i++;
-                ((alu) obj).a(str2);
+                ((defpackage.alu) obj).a(str2);
             }
         }
     }

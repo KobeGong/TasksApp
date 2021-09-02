@@ -1,11 +1,11 @@
 package defpackage;
 
-/* renamed from: ccr  reason: default package */
+/* renamed from: ccr reason: default package */
 /* compiled from: PG */
 public abstract class ccr {
-    public abstract djo a();
+    public abstract defpackage.djo a();
 
-    public abstract Throwable b();
+    public abstract java.lang.Throwable b();
 
     public abstract boolean c();
 
@@ -13,8 +13,8 @@ public abstract class ccr {
         return b() != null;
     }
 
-    public static ccs e() {
-        return new ccs().a(true);
+    public static defpackage.ccs e() {
+        return new defpackage.ccs().a(true);
     }
 
     ccr() {

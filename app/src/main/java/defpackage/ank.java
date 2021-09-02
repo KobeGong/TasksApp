@@ -1,18 +1,16 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: ank  reason: default package */
-public final /* synthetic */ class ank implements anx {
-    private final amn a;
-    private final anu b;
+/* renamed from: ank reason: default package */
+final /* synthetic */ class ank implements defpackage.anx {
+    private final defpackage.amn a;
+    private final defpackage.anu b;
 
-    ank(amn amn, anu anu) {
+    ank(defpackage.amn amn, defpackage.anu anu) {
         this.a = amn;
         this.b = anu;
     }
 
-    @Override // defpackage.anx
-    public final Object a(anu anu) {
+    public final java.lang.Object a(defpackage.anu anu) {
         this.a.a(this.b.b);
         return null;
     }

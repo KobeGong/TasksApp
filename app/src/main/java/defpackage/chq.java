@@ -1,37 +1,32 @@
 package defpackage;
 
-import android.app.Activity;
-import android.text.TextUtils;
-
-/* renamed from: chq  reason: default package */
+/* renamed from: chq reason: default package */
 /* compiled from: PG */
-final class chq implements cgv, cgx {
-    public final /* synthetic */ chn a;
+final class chq implements defpackage.cgv, defpackage.cgx {
+    public final /* synthetic */ defpackage.chn a;
 
-    chq(chn chn) {
+    chq(defpackage.chn chn) {
         this.a = chn;
     }
 
-    @Override // defpackage.cgv
-    public final void a(Activity activity) {
-        civ civ;
-        chn chn = this.a;
-        Class<?> cls = activity.getClass();
-        if (!TextUtils.isEmpty(null)) {
-            String valueOf = String.valueOf((Object) null);
-            String valueOf2 = String.valueOf(cls.getSimpleName());
-            civ = new civ(valueOf2.length() != 0 ? valueOf.concat(valueOf2) : new String(valueOf));
+    public final void a(android.app.Activity activity) {
+        defpackage.civ civ;
+        defpackage.chn chn = this.a;
+        java.lang.Class cls = activity.getClass();
+        if (!android.text.TextUtils.isEmpty(null)) {
+            java.lang.String valueOf = java.lang.String.valueOf(null);
+            java.lang.String valueOf2 = java.lang.String.valueOf(cls.getSimpleName());
+            civ = new defpackage.civ(valueOf2.length() != 0 ? valueOf.concat(valueOf2) : new java.lang.String(valueOf));
         } else {
-            civ = new civ(cls.getSimpleName());
+            civ = new defpackage.civ(cls.getSimpleName());
         }
         chn.a(civ);
     }
 
-    @Override // defpackage.cgx
-    public final void b(Activity activity) {
-        this.a.a((civ) null);
+    public final void b(android.app.Activity activity) {
+        this.a.a((defpackage.civ) null);
         if (this.a.i.get()) {
-            this.a.c().submit(new cho(this));
+            this.a.c().submit(new defpackage.cho(this));
         }
     }
 }

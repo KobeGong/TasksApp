@@ -1,11 +1,11 @@
 package defpackage;
 
-/* renamed from: aky  reason: default package */
+/* renamed from: aky reason: default package */
 /* compiled from: PG */
 public final class aky {
-    public final /* synthetic */ akt a;
+    public final /* synthetic */ defpackage.akt a;
 
-    aky(akt akt) {
+    aky(defpackage.akt akt) {
         this.a = akt;
     }
 }

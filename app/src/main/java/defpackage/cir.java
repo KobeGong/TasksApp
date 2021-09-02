@@ -1,8 +1,6 @@
 package defpackage;
 
-import android.os.SystemClock;
-
-/* renamed from: cir  reason: default package */
+/* renamed from: cir reason: default package */
 /* compiled from: PG */
 public final class cir {
     public long a;
@@ -10,20 +8,20 @@ public final class cir {
     public long c;
     public int d;
     public int e;
-    public String f;
-    public String g;
+    public java.lang.String f;
+    public java.lang.String g;
     public int h;
-    public String i;
-    public edf j;
+    public java.lang.String i;
+    public defpackage.edf j;
     public int k;
     public int l;
     public int m;
     public int n;
 
-    public cir(String str) {
+    public cir(java.lang.String str) {
         if (str != null && !str.isEmpty()) {
             this.f = str;
         }
-        this.a = SystemClock.elapsedRealtime();
+        this.a = android.os.SystemClock.elapsedRealtime();
     }
 }

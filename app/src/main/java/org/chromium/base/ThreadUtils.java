@@ -1,20 +1,15 @@
 package org.chromium.base;
 
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Process;
-import org.chromium.base.annotations.CalledByNative;
-
 /* compiled from: PG */
 public class ThreadUtils {
-    private static final Object a = new Object();
-    private static Handler b;
+    private static final java.lang.Object a = new java.lang.Object();
+    private static android.os.Handler b;
 
-    public static Handler a() {
-        Handler handler;
+    public static android.os.Handler a() {
+        android.os.Handler handler;
         synchronized (a) {
             if (b == null) {
-                b = new Handler(Looper.getMainLooper());
+                b = new android.os.Handler(android.os.Looper.getMainLooper());
             }
             handler = b;
         }
@@ -27,13 +22,13 @@ public class ThreadUtils {
     public static void c() {
     }
 
-    @CalledByNative
+    @org.chromium.base.annotations.CalledByNative
     public static void setThreadPriorityAudio(int i) {
-        Process.setThreadPriority(i, -16);
+        android.os.Process.setThreadPriority(i, -16);
     }
 
-    @CalledByNative
+    @org.chromium.base.annotations.CalledByNative
     private static boolean isThreadPriorityAudio(int i) {
-        return Process.getThreadPriority(i) == -16;
+        return android.os.Process.getThreadPriority(i) == -16;
     }
 }

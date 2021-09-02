@@ -1,52 +1,52 @@
 package defpackage;
 
-import java.util.Iterator;
-import java.util.Map;
-
-/* renamed from: azn  reason: default package */
+/* renamed from: azn reason: default package */
 /* compiled from: PG */
-final class azn extends azu {
-    public final /* synthetic */ azk a;
-    private final Map b;
+final class azn extends defpackage.azu {
+    public final /* synthetic */ defpackage.azk a;
+    private final java.util.Map b;
 
-    /* JADX INFO: super call moved to the top of the method (can break code semantics) */
-    public azn(azk azk, Map map) {
-        super(azk);
+    public azn(defpackage.azk azk, java.util.Map map) {
         this.a = azk;
+        super(azk);
         this.b = map;
     }
 
-    @Override // defpackage.azu
     public final void a() {
         boolean z;
-        Iterator it = this.b.keySet().iterator();
+        int i;
+        java.util.Iterator it = this.b.keySet().iterator();
         boolean z2 = false;
         while (true) {
             if (!it.hasNext()) {
                 z = z2;
                 break;
             }
-            ayj ayj = (ayj) it.next();
+            defpackage.ayj ayj = (defpackage.ayj) it.next();
             ayj.i();
             z = true;
-            if (!((azm) this.b.get(ayj)).a) {
+            if (!((defpackage.azm) this.b.get(ayj)).a) {
                 break;
             }
             z2 = true;
         }
-        int a2 = z ? axv.a(this.a.c) : 0;
-        if (a2 != 0) {
-            this.a.a.a(new azo(this, this.a, new axq(a2, null)));
+        if (z) {
+            i = defpackage.axv.a(this.a.c);
+        } else {
+            i = 0;
+        }
+        if (i != 0) {
+            this.a.a.a((defpackage.bag) new defpackage.azo(this, this.a, new defpackage.axq(i, null)));
             return;
         }
         if (this.a.e) {
             this.a.d.r();
         }
-        for (ayj ayj2 : this.b.keySet()) {
-            bda bda = (bda) this.b.get(ayj2);
+        for (defpackage.ayj ayj2 : this.b.keySet()) {
+            defpackage.bda bda = (defpackage.bda) this.b.get(ayj2);
             ayj2.i();
-            if (a2 != 0) {
-                this.a.a.a(new azp(this.a, bda));
+            if (i != 0) {
+                this.a.a.a((defpackage.bag) new defpackage.azp(this.a, bda));
             } else {
                 ayj2.a(bda);
             }

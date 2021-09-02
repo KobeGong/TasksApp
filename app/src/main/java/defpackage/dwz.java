@@ -1,23 +1,18 @@
 package defpackage;
 
-import java.lang.ref.ReferenceQueue;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
-import java.util.logging.Logger;
-
-/* renamed from: dwz  reason: default package */
+/* renamed from: dwz reason: default package */
 /* compiled from: PG */
-public final class dwz extends duz {
-    public static final Logger a = Logger.getLogger(dwz.class.getName());
-    private static final ReferenceQueue b = new ReferenceQueue();
-    private static final ConcurrentMap c = new ConcurrentHashMap();
+public final class dwz extends defpackage.duz {
+    public static final java.util.logging.Logger a = java.util.logging.Logger.getLogger(defpackage.dwz.class.getName());
+    private static final java.lang.ref.ReferenceQueue b = new java.lang.ref.ReferenceQueue();
+    private static final java.util.concurrent.ConcurrentMap c = new java.util.concurrent.ConcurrentHashMap();
 
-    public dwz(dnc dnc) {
+    public dwz(defpackage.dnc dnc) {
         this(dnc, b, c);
     }
 
-    private dwz(dnc dnc, ReferenceQueue referenceQueue, ConcurrentMap concurrentMap) {
+    private dwz(defpackage.dnc dnc, java.lang.ref.ReferenceQueue referenceQueue, java.util.concurrent.ConcurrentMap concurrentMap) {
         super(dnc);
-        new dxa(this, dnc, referenceQueue, concurrentMap);
+        new defpackage.dxa(this, dnc, referenceQueue, concurrentMap);
     }
 }

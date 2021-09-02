@@ -1,30 +1,28 @@
 package defpackage;
 
-import java.text.ParseException;
-
-/* renamed from: ecv  reason: default package */
+/* renamed from: ecv reason: default package */
 /* compiled from: PG */
 public class ecv {
-    public static final ecw a = new ecw();
+    public static final defpackage.ecw a = new defpackage.ecw();
 
-    public byte[] a(ecf ecf) {
+    public byte[] a(defpackage.ecf ecf) {
         return a(ecf);
     }
 
-    @Deprecated
-    private final ecf b(byte[] bArr) {
+    @java.lang.Deprecated
+    private final defpackage.ecf b(byte[] bArr) {
         try {
             return a(bArr);
-        } catch (ecy e) {
-            throw new ParseException(e.toString(), 0);
+        } catch (defpackage.ecy e) {
+            throw new java.text.ParseException(e.toString(), 0);
         }
     }
 
-    public ecf a(byte[] bArr) {
+    public defpackage.ecf a(byte[] bArr) {
         try {
             return b(bArr);
-        } catch (ParseException e) {
-            throw new ecy("Error while parsing.", e);
+        } catch (java.text.ParseException e) {
+            throw new defpackage.ecy("Error while parsing.", e);
         }
     }
 }

@@ -1,20 +1,17 @@
 package defpackage;
 
-import java.security.PrivilegedAction;
-
-/* renamed from: ao  reason: default package */
+/* renamed from: ao reason: default package */
 /* compiled from: PG */
-final class ao implements PrivilegedAction {
-    private final /* synthetic */ Class a;
-    private final /* synthetic */ String b;
+final class ao implements java.security.PrivilegedAction {
+    private final /* synthetic */ java.lang.Class a;
+    private final /* synthetic */ java.lang.String b;
 
-    ao(Class cls, String str) {
+    ao(java.lang.Class cls, java.lang.String str) {
         this.a = cls;
         this.b = str;
     }
 
-    @Override // java.security.PrivilegedAction
-    public final /* synthetic */ Object run() {
+    public final /* synthetic */ java.lang.Object run() {
         return this.a.getResourceAsStream(this.b);
     }
 }

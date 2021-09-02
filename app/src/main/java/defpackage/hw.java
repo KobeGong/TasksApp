@@ -1,34 +1,29 @@
 package defpackage;
 
-import android.content.res.Resources;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.VectorDrawable;
-
-/* access modifiers changed from: package-private */
-/* renamed from: hw  reason: default package */
+/* renamed from: hw reason: default package */
 /* compiled from: PG */
-public final class hw extends Drawable.ConstantState {
-    private final Drawable.ConstantState a;
+final class hw extends android.graphics.drawable.Drawable.ConstantState {
+    private final android.graphics.drawable.Drawable.ConstantState a;
 
-    public hw(Drawable.ConstantState constantState) {
+    public hw(android.graphics.drawable.Drawable.ConstantState constantState) {
         this.a = constantState;
     }
 
-    public final Drawable newDrawable() {
-        hp hpVar = new hp();
-        hpVar.b = (VectorDrawable) this.a.newDrawable();
+    public final android.graphics.drawable.Drawable newDrawable() {
+        defpackage.hp hpVar = new defpackage.hp();
+        hpVar.b = (android.graphics.drawable.VectorDrawable) this.a.newDrawable();
         return hpVar;
     }
 
-    public final Drawable newDrawable(Resources resources) {
-        hp hpVar = new hp();
-        hpVar.b = (VectorDrawable) this.a.newDrawable(resources);
+    public final android.graphics.drawable.Drawable newDrawable(android.content.res.Resources resources) {
+        defpackage.hp hpVar = new defpackage.hp();
+        hpVar.b = (android.graphics.drawable.VectorDrawable) this.a.newDrawable(resources);
         return hpVar;
     }
 
-    public final Drawable newDrawable(Resources resources, Resources.Theme theme) {
-        hp hpVar = new hp();
-        hpVar.b = (VectorDrawable) this.a.newDrawable(resources, theme);
+    public final android.graphics.drawable.Drawable newDrawable(android.content.res.Resources resources, android.content.res.Resources.Theme theme) {
+        defpackage.hp hpVar = new defpackage.hp();
+        hpVar.b = (android.graphics.drawable.VectorDrawable) this.a.newDrawable(resources, theme);
         return hpVar;
     }
 

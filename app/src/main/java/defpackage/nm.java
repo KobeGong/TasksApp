@@ -1,48 +1,35 @@
 package defpackage;
 
-import android.app.AppOpsManager;
-import android.app.Notification;
-import android.app.NotificationManager;
-import android.content.ComponentName;
-import android.content.Context;
-import android.content.pm.ApplicationInfo;
-import android.os.Build;
-import android.os.Bundle;
-import android.provider.Settings;
-import java.lang.reflect.InvocationTargetException;
-import java.util.HashSet;
-import java.util.Set;
-
-/* renamed from: nm  reason: default package */
+/* renamed from: nm reason: default package */
 /* compiled from: PG */
 public final class nm {
-    private static final Object a = new Object();
-    private static String b;
-    private static Set c = new HashSet();
-    private static final Object f = new Object();
-    private static nq g;
-    private final Context d;
-    private final NotificationManager e = ((NotificationManager) this.d.getSystemService("notification"));
+    private static final java.lang.Object a = new java.lang.Object();
+    private static java.lang.String b;
+    private static java.util.Set c = new java.util.HashSet();
+    private static final java.lang.Object f = new java.lang.Object();
+    private static defpackage.nq g;
+    private final android.content.Context d;
+    private final android.app.NotificationManager e = ((android.app.NotificationManager) this.d.getSystemService("notification"));
 
-    public static nm a(Context context) {
-        return new nm(context);
+    public static defpackage.nm a(android.content.Context context) {
+        return new defpackage.nm(context);
     }
 
-    private nm(Context context) {
+    private nm(android.content.Context context) {
         this.d = context;
     }
 
-    public final void a(String str) {
+    public final void a(java.lang.String str) {
         this.e.cancel(str, 0);
-        if (Build.VERSION.SDK_INT <= 19) {
-            a(new nn(this.d.getPackageName(), str));
+        if (android.os.Build.VERSION.SDK_INT <= 19) {
+            a((defpackage.ns) new defpackage.nn(this.d.getPackageName(), str));
         }
     }
 
-    public final void a(String str, Notification notification) {
-        Bundle a2 = jd.a(notification);
+    public final void a(java.lang.String str, android.app.Notification notification) {
+        android.os.Bundle a2 = defpackage.jd.a(notification);
         if (a2 != null && a2.getBoolean("android.support.useSideChannel")) {
-            a(new no(this.d.getPackageName(), str, notification));
+            a((defpackage.ns) new defpackage.no(this.d.getPackageName(), str, notification));
             this.e.cancel(str, 0);
             return;
         }
@@ -50,36 +37,36 @@ public final class nm {
     }
 
     public final boolean a() {
-        if (Build.VERSION.SDK_INT >= 24) {
+        if (android.os.Build.VERSION.SDK_INT >= 24) {
             return this.e.areNotificationsEnabled();
         }
-        if (Build.VERSION.SDK_INT < 19) {
+        if (android.os.Build.VERSION.SDK_INT < 19) {
             return true;
         }
-        AppOpsManager appOpsManager = (AppOpsManager) this.d.getSystemService("appops");
-        ApplicationInfo applicationInfo = this.d.getApplicationInfo();
-        String packageName = this.d.getApplicationContext().getPackageName();
+        android.app.AppOpsManager appOpsManager = (android.app.AppOpsManager) this.d.getSystemService("appops");
+        android.content.pm.ApplicationInfo applicationInfo = this.d.getApplicationInfo();
+        java.lang.String packageName = this.d.getApplicationContext().getPackageName();
         int i = applicationInfo.uid;
         try {
-            Class<?> cls = Class.forName(AppOpsManager.class.getName());
-            return ((Integer) cls.getMethod("checkOpNoThrow", new Class[]{Integer.TYPE, Integer.TYPE, String.class}).invoke(appOpsManager, new Object[]{Integer.valueOf(((Integer) cls.getDeclaredField("OP_POST_NOTIFICATION").get(Integer.class)).intValue()), Integer.valueOf(i), packageName})).intValue() == 0;
-        } catch (ClassNotFoundException | IllegalAccessException | NoSuchFieldException | NoSuchMethodException | RuntimeException | InvocationTargetException e2) {
+            java.lang.Class cls = java.lang.Class.forName(android.app.AppOpsManager.class.getName());
+            return ((java.lang.Integer) cls.getMethod("checkOpNoThrow", new java.lang.Class[]{java.lang.Integer.TYPE, java.lang.Integer.TYPE, java.lang.String.class}).invoke(appOpsManager, new java.lang.Object[]{java.lang.Integer.valueOf(((java.lang.Integer) cls.getDeclaredField("OP_POST_NOTIFICATION").get(java.lang.Integer.class)).intValue()), java.lang.Integer.valueOf(i), packageName})).intValue() == 0;
+        } catch (java.lang.ClassNotFoundException | java.lang.IllegalAccessException | java.lang.NoSuchFieldException | java.lang.NoSuchMethodException | java.lang.RuntimeException | java.lang.reflect.InvocationTargetException e2) {
             return true;
         }
     }
 
-    public static Set b(Context context) {
-        Set set;
-        String string = Settings.Secure.getString(context.getContentResolver(), "enabled_notification_listeners");
+    public static java.util.Set b(android.content.Context context) {
+        java.util.Set set;
+        java.lang.String string = android.provider.Settings.Secure.getString(context.getContentResolver(), "enabled_notification_listeners");
         synchronized (a) {
             if (string != null) {
                 if (!string.equals(b)) {
-                    String[] split = string.split(":");
-                    HashSet hashSet = new HashSet(split.length);
-                    for (String str : split) {
-                        ComponentName unflattenFromString = ComponentName.unflattenFromString(str);
-                        if (unflattenFromString != null) {
-                            hashSet.add(unflattenFromString.getPackageName());
+                    java.lang.String[] split = string.split(":");
+                    java.util.HashSet hashSet = new java.util.HashSet(split.length);
+                    for (java.lang.String unflattenFromString : split) {
+                        android.content.ComponentName unflattenFromString2 = android.content.ComponentName.unflattenFromString(unflattenFromString);
+                        if (unflattenFromString2 != null) {
+                            hashSet.add(unflattenFromString2.getPackageName());
                         }
                     }
                     c = hashSet;
@@ -91,10 +78,10 @@ public final class nm {
         return set;
     }
 
-    private final void a(ns nsVar) {
+    private final void a(defpackage.ns nsVar) {
         synchronized (f) {
             if (g == null) {
-                g = new nq(this.d.getApplicationContext());
+                g = new defpackage.nq(this.d.getApplicationContext());
             }
             g.a.obtainMessage(0, nsVar).sendToTarget();
         }

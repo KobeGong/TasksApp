@@ -1,27 +1,29 @@
 package defpackage;
 
-/* renamed from: cwb  reason: default package */
+/* renamed from: cwb reason: default package */
 /* compiled from: PG */
-public abstract class cwb extends cvz {
-    private static final String a = a();
+public abstract class cwb extends defpackage.cvz {
+    private static final java.lang.String a = a();
 
-    private static String a() {
+    private static java.lang.String a() {
         try {
-            String property = System.getProperty("line.separator");
-            return property.matches("\\n|\\r(?:\\n)?") ? property : "\n";
-        } catch (SecurityException e) {
+            java.lang.String property = java.lang.System.getProperty("line.separator");
+            if (property.matches("\\n|\\r(?:\\n)?")) {
+                return property;
+            }
+        } catch (java.lang.SecurityException e) {
         }
+        return "\n";
     }
 
-    /* access modifiers changed from: package-private */
-    public abstract int a(cvy cvy, int i, String str, int i2, int i3, int i4);
+    /* access modifiers changed from: 0000 */
+    public abstract int a(defpackage.cvy cvy, int i, java.lang.String str, int i2, int i3, int i4);
 
     protected cwb() {
-        super(cts.PRINTF_STYLE);
+        super(defpackage.cts.PRINTF_STYLE);
     }
 
-    @Override // defpackage.cvz
-    public final void a(StringBuilder sb, String str, int i, int i2) {
+    public final void a(java.lang.StringBuilder sb, java.lang.String str, int i, int i2) {
         int i3 = i;
         while (i < i2) {
             int i4 = i + 1;
@@ -31,9 +33,9 @@ public abstract class cwb extends cvz {
                 }
                 char charAt = str.charAt(i4);
                 if (charAt == '%') {
-                    sb.append((CharSequence) str, i3, i4);
+                    sb.append(str, i3, i4);
                 } else if (charAt == 'n') {
-                    sb.append((CharSequence) str, i3, i4 - 1);
+                    sb.append(str, i3, i4 - 1);
                     sb.append(a);
                 }
                 i = i4 + 1;
@@ -42,16 +44,15 @@ public abstract class cwb extends cvz {
             i = i4;
         }
         if (i3 < i2) {
-            sb.append((CharSequence) str, i3, i2);
+            sb.append(str, i3, i2);
         }
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.cvz
-    public final void a(cvy cvy) {
+    public final void a(defpackage.cvy cvy) {
         int i;
         int i2;
-        String str = cvy.a.b;
+        java.lang.String str = cvy.a.b;
         int a2 = a(str, 0);
         int i3 = 0;
         int i4 = -1;
@@ -63,54 +64,58 @@ public abstract class cwb extends cvz {
                 int i8 = i7 + 1;
                 char charAt = str.charAt(i7);
                 char c = (char) (charAt - '0');
-                if (c < '\n') {
+                if (c < 10) {
                     i6 = (i6 * 10) + c;
                     if (i6 >= 1000000) {
-                        throw cwa.a("index too large", str, a2, i8);
+                        throw defpackage.cwa.a("index too large", str, a2, i8);
                     }
                     i7 = i8;
                 } else {
                     if (charAt == '$') {
                         if ((i8 - 1) - i5 == 0) {
-                            throw cwa.a("missing index", str, a2, i8);
+                            throw defpackage.cwa.a("missing index", str, a2, i8);
                         } else if (str.charAt(i5) == '0') {
-                            throw cwa.a("index has leading zero", str, a2, i8);
+                            throw defpackage.cwa.a("index has leading zero", str, a2, i8);
                         } else {
                             i2 = i6 - 1;
                             if (i8 == str.length()) {
-                                throw cwa.b("unterminated parameter", str, a2);
+                                throw defpackage.cwa.b("unterminated parameter", str, a2);
                             }
                             i = i8 + 1;
                             str.charAt(i8);
                         }
                     } else if (charAt != '<') {
+                        int i9 = i3;
                         i3++;
                         i = i8;
                         i8 = i5;
-                        i2 = i3;
+                        i2 = i9;
                     } else if (i4 == -1) {
-                        throw cwa.a("invalid relative parameter", str, a2, i8);
+                        throw defpackage.cwa.a("invalid relative parameter", str, a2, i8);
                     } else if (i8 == str.length()) {
-                        throw cwa.b("unterminated parameter", str, a2);
+                        throw defpackage.cwa.b("unterminated parameter", str, a2);
                     } else {
                         i = i8 + 1;
                         str.charAt(i8);
                         i2 = i4;
                     }
-                    for (int i9 = i - 1; i9 < str.length(); i9++) {
-                        if (((char) ((str.charAt(i9) & 65503) - 65)) < 26) {
-                            a2 = a(str, a(cvy, i2, str, a2, i8, i9));
+                    int i10 = i - 1;
+                    while (i10 < str.length()) {
+                        if (((char) ((str.charAt(i10) & 65503) - 'A')) < 26) {
+                            a2 = a(str, a(cvy, i2, str, a2, i8, i10));
                             i4 = i2;
+                        } else {
+                            i10++;
                         }
                     }
-                    throw cwa.b("unterminated parameter", str, a2);
+                    throw defpackage.cwa.b("unterminated parameter", str, a2);
                 }
             }
-            throw cwa.b("unterminated parameter", str, a2);
+            throw defpackage.cwa.b("unterminated parameter", str, a2);
         }
     }
 
-    private static int a(String str, int i) {
+    private static int a(java.lang.String str, int i) {
         while (i < str.length()) {
             int i2 = i + 1;
             if (str.charAt(i) != '%') {
@@ -122,7 +127,7 @@ public abstract class cwb extends cvz {
                 }
                 i = i2 + 1;
             } else {
-                throw cwa.b("trailing unquoted '%' character", str, i2 - 1);
+                throw defpackage.cwa.b("trailing unquoted '%' character", str, i2 - 1);
             }
         }
         return -1;

@@ -1,8 +1,6 @@
 package defpackage;
 
-import android.widget.ListView;
-
-/* renamed from: zz  reason: default package */
+/* renamed from: zz reason: default package */
 /* compiled from: PG */
 public interface zz {
     void d();
@@ -11,5 +9,5 @@ public interface zz {
 
     boolean f();
 
-    ListView g();
+    android.widget.ListView g();
 }

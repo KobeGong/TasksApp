@@ -1,97 +1,91 @@
 package defpackage;
 
-import java.nio.ByteBuffer;
-
-/* access modifiers changed from: package-private */
-/* renamed from: dlj  reason: default package */
+/* renamed from: dlj reason: default package */
 /* compiled from: PG */
-public abstract class dlj {
+abstract class dlj {
     dlj() {
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public abstract int a(int i, byte[] bArr, int i2, int i3);
 
-    /* access modifiers changed from: package-private */
-    public abstract int a(CharSequence charSequence, byte[] bArr, int i, int i2);
+    /* access modifiers changed from: 0000 */
+    public abstract int a(java.lang.CharSequence charSequence, byte[] bArr, int i, int i2);
 
-    /* access modifiers changed from: package-private */
-    public abstract void a(CharSequence charSequence, ByteBuffer byteBuffer);
+    /* access modifiers changed from: 0000 */
+    public abstract void a(java.lang.CharSequence charSequence, java.nio.ByteBuffer byteBuffer);
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public final boolean a(byte[] bArr, int i, int i2) {
         return a(0, bArr, i, i2) == 0;
     }
 
-    static void b(CharSequence charSequence, ByteBuffer byteBuffer) {
+    static void b(java.lang.CharSequence charSequence, java.nio.ByteBuffer byteBuffer) {
+        int i;
         int length = charSequence.length();
         int position = byteBuffer.position();
-        int i = 0;
-        while (i < length) {
+        int i2 = 0;
+        while (i2 < length) {
             try {
-                char charAt = charSequence.charAt(i);
+                char charAt = charSequence.charAt(i2);
                 if (charAt >= 128) {
                     break;
                 }
-                byteBuffer.put(position + i, (byte) charAt);
-                i++;
-            } catch (IndexOutOfBoundsException e) {
-                int position2 = byteBuffer.position();
-                throw new ArrayIndexOutOfBoundsException(new StringBuilder(37).append("Failed writing ").append(charSequence.charAt(i)).append(" at index ").append(Math.max(i, (position - byteBuffer.position()) + 1) + position2).toString());
+                byteBuffer.put(position + i2, (byte) charAt);
+                i2++;
+            } catch (java.lang.IndexOutOfBoundsException e) {
             }
         }
-        if (i == length) {
-            byteBuffer.position(position + i);
+        if (i2 == length) {
+            byteBuffer.position(position + i2);
             return;
         }
-        int i2 = position + i;
-        while (i < length) {
-            char charAt2 = charSequence.charAt(i);
+        position += i2;
+        while (i2 < length) {
+            char charAt2 = charSequence.charAt(i2);
             if (charAt2 < 128) {
-                byteBuffer.put(i2, (byte) charAt2);
+                byteBuffer.put(position, (byte) charAt2);
             } else if (charAt2 < 2048) {
-                int i3 = i2 + 1;
+                i = position + 1;
                 try {
-                    byteBuffer.put(i2, (byte) ((charAt2 >>> 6) | 192));
-                    byteBuffer.put(i3, (byte) ((charAt2 & '?') | 128));
-                    i2 = i3;
-                } catch (IndexOutOfBoundsException e2) {
-                    position = i3;
-                    int position22 = byteBuffer.position();
-                    throw new ArrayIndexOutOfBoundsException(new StringBuilder(37).append("Failed writing ").append(charSequence.charAt(i)).append(" at index ").append(Math.max(i, (position - byteBuffer.position()) + 1) + position22).toString());
+                    byteBuffer.put(position, (byte) ((charAt2 >>> 6) | 192));
+                    byteBuffer.put(i, (byte) ((charAt2 & '?') | 128));
+                    position = i;
+                } catch (java.lang.IndexOutOfBoundsException e2) {
+                    position = i;
+                    throw new java.lang.ArrayIndexOutOfBoundsException("Failed writing " + charSequence.charAt(i2) + " at index " + (java.lang.Math.max(i2, (position - byteBuffer.position()) + 1) + byteBuffer.position()));
                 }
             } else if (charAt2 < 55296 || 57343 < charAt2) {
-                int i4 = i2 + 1;
-                byteBuffer.put(i2, (byte) ((charAt2 >>> '\f') | 224));
-                i2 = i4 + 1;
-                byteBuffer.put(i4, (byte) (((charAt2 >>> 6) & 63) | 128));
-                byteBuffer.put(i2, (byte) ((charAt2 & '?') | 128));
+                int i3 = position + 1;
+                byteBuffer.put(position, (byte) ((charAt2 >>> 12) | 224));
+                position = i3 + 1;
+                byteBuffer.put(i3, (byte) (((charAt2 >>> 6) & 63) | 128));
+                byteBuffer.put(position, (byte) ((charAt2 & '?') | 128));
             } else {
-                if (i + 1 != length) {
-                    i++;
-                    char charAt3 = charSequence.charAt(i);
-                    if (Character.isSurrogatePair(charAt2, charAt3)) {
-                        int codePoint = Character.toCodePoint(charAt2, charAt3);
-                        int i5 = i2 + 1;
+                if (i2 + 1 != length) {
+                    i2++;
+                    char charAt3 = charSequence.charAt(i2);
+                    if (java.lang.Character.isSurrogatePair(charAt2, charAt3)) {
+                        int codePoint = java.lang.Character.toCodePoint(charAt2, charAt3);
+                        int i4 = position + 1;
                         try {
-                            byteBuffer.put(i2, (byte) ((codePoint >>> 18) | 240));
-                            int i6 = i5 + 1;
-                            byteBuffer.put(i5, (byte) (((codePoint >>> 12) & 63) | 128));
-                            i2 = i6 + 1;
-                            byteBuffer.put(i6, (byte) (((codePoint >>> 6) & 63) | 128));
-                            byteBuffer.put(i2, (byte) ((codePoint & 63) | 128));
-                        } catch (IndexOutOfBoundsException e3) {
-                            position = i5;
-                            int position222 = byteBuffer.position();
-                            throw new ArrayIndexOutOfBoundsException(new StringBuilder(37).append("Failed writing ").append(charSequence.charAt(i)).append(" at index ").append(Math.max(i, (position - byteBuffer.position()) + 1) + position222).toString());
+                            byteBuffer.put(position, (byte) ((codePoint >>> 18) | 240));
+                            i = i4 + 1;
+                            byteBuffer.put(i4, (byte) (((codePoint >>> 12) & 63) | 128));
+                            position = i + 1;
+                            byteBuffer.put(i, (byte) (((codePoint >>> 6) & 63) | 128));
+                            byteBuffer.put(position, (byte) ((codePoint & 63) | 128));
+                        } catch (java.lang.IndexOutOfBoundsException e3) {
+                            position = i4;
+                            throw new java.lang.ArrayIndexOutOfBoundsException("Failed writing " + charSequence.charAt(i2) + " at index " + (java.lang.Math.max(i2, (position - byteBuffer.position()) + 1) + byteBuffer.position()));
                         }
                     }
                 }
-                throw new dll(i, length);
+                throw new defpackage.dll(i2, length);
             }
-            i++;
             i2++;
+            position++;
         }
-        byteBuffer.position(i2);
+        byteBuffer.position(position);
     }
 }

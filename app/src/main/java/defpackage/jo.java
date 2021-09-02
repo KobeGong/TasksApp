@@ -1,24 +1,20 @@
 package defpackage;
 
-import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-
-/* renamed from: jo  reason: default package */
+/* renamed from: jo reason: default package */
 /* compiled from: PG */
-public final class jo extends je {
-    public ArrayList l;
+public final class jo extends defpackage.je {
+    public java.util.ArrayList l;
     public int m;
     public boolean n;
     private boolean o;
 
     public jo() {
-        this.l = new ArrayList();
+        this.l = new java.util.ArrayList();
         this.o = true;
         this.n = false;
     }
 
-    public final jo a(je jeVar) {
+    public final defpackage.jo a(defpackage.je jeVar) {
         this.l.add(jeVar);
         jeVar.g = this;
         if (this.b >= 0) {
@@ -27,20 +23,19 @@ public final class jo extends je {
         return this;
     }
 
-    public final je a(int i) {
+    public final defpackage.je a(int i) {
         if (i < 0 || i >= this.l.size()) {
             return null;
         }
-        return (je) this.l.get(i);
+        return (defpackage.je) this.l.get(i);
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.je
-    public final void a(ViewGroup viewGroup, js jsVar, js jsVar2, ArrayList arrayList, ArrayList arrayList2) {
+    public final void a(android.view.ViewGroup viewGroup, defpackage.js jsVar, defpackage.js jsVar2, java.util.ArrayList arrayList, java.util.ArrayList arrayList2) {
         long j = this.a;
         int size = this.l.size();
         for (int i = 0; i < size; i++) {
-            je jeVar = (je) this.l.get(i);
+            defpackage.je jeVar = (defpackage.je) this.l.get(i);
             if (j > 0 && (this.o || i == 0)) {
                 long j2 = jeVar.a;
                 if (j2 > 0) {
@@ -54,54 +49,58 @@ public final class jo extends je {
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.je
     public final void c() {
         if (this.l.isEmpty()) {
             d();
             e();
             return;
         }
-        jq jqVar = new jq(this);
-        ArrayList arrayList = this.l;
+        defpackage.jq jqVar = new defpackage.jq(this);
+        java.util.ArrayList arrayList = this.l;
         int size = arrayList.size();
         int i = 0;
         while (i < size) {
-            Object obj = arrayList.get(i);
+            java.lang.Object obj = arrayList.get(i);
             i++;
-            ((je) obj).a(jqVar);
+            ((defpackage.je) obj).a((defpackage.ji) jqVar);
         }
         this.m = this.l.size();
         if (!this.o) {
-            for (int i2 = 1; i2 < this.l.size(); i2++) {
-                ((je) this.l.get(i2 - 1)).a(new jp((je) this.l.get(i2)));
+            int i2 = 1;
+            while (true) {
+                int i3 = i2;
+                if (i3 >= this.l.size()) {
+                    break;
+                }
+                ((defpackage.je) this.l.get(i3 - 1)).a((defpackage.ji) new defpackage.jp((defpackage.je) this.l.get(i3)));
+                i2 = i3 + 1;
             }
-            je jeVar = (je) this.l.get(0);
+            defpackage.je jeVar = (defpackage.je) this.l.get(0);
             if (jeVar != null) {
                 jeVar.c();
                 return;
             }
             return;
         }
-        ArrayList arrayList2 = this.l;
+        java.util.ArrayList arrayList2 = this.l;
         int size2 = arrayList2.size();
-        int i3 = 0;
-        while (i3 < size2) {
-            Object obj2 = arrayList2.get(i3);
-            i3++;
-            ((je) obj2).c();
+        int i4 = 0;
+        while (i4 < size2) {
+            java.lang.Object obj2 = arrayList2.get(i4);
+            i4++;
+            ((defpackage.je) obj2).c();
         }
     }
 
-    @Override // defpackage.je
-    public final void a(jr jrVar) {
+    public final void a(defpackage.jr jrVar) {
         if (a(jrVar.b)) {
-            ArrayList arrayList = this.l;
+            java.util.ArrayList arrayList = this.l;
             int size = arrayList.size();
             int i = 0;
             while (i < size) {
-                Object obj = arrayList.get(i);
+                java.lang.Object obj = arrayList.get(i);
                 i++;
-                je jeVar = (je) obj;
+                defpackage.je jeVar = (defpackage.je) obj;
                 if (jeVar.a(jrVar.b)) {
                     jeVar.a(jrVar);
                     jrVar.c.add(jeVar);
@@ -110,16 +109,15 @@ public final class jo extends je {
         }
     }
 
-    @Override // defpackage.je
-    public final void b(jr jrVar) {
+    public final void b(defpackage.jr jrVar) {
         if (a(jrVar.b)) {
-            ArrayList arrayList = this.l;
+            java.util.ArrayList arrayList = this.l;
             int size = arrayList.size();
             int i = 0;
             while (i < size) {
-                Object obj = arrayList.get(i);
+                java.lang.Object obj = arrayList.get(i);
                 i++;
-                je jeVar = (je) obj;
+                defpackage.je jeVar = (defpackage.je) obj;
                 if (jeVar.a(jrVar.b)) {
                     jeVar.b(jrVar);
                     jrVar.c.add(jeVar);
@@ -128,118 +126,115 @@ public final class jo extends je {
         }
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.je
-    public final void c(jr jrVar) {
+    /* access modifiers changed from: 0000 */
+    public final void c(defpackage.jr jrVar) {
         super.c(jrVar);
         int size = this.l.size();
         for (int i = 0; i < size; i++) {
-            ((je) this.l.get(i)).c(jrVar);
+            ((defpackage.je) this.l.get(i)).c(jrVar);
         }
     }
 
-    @Override // defpackage.je
-    public final void d(View view) {
+    public final void d(android.view.View view) {
         super.d(view);
         int size = this.l.size();
         for (int i = 0; i < size; i++) {
-            ((je) this.l.get(i)).d(view);
+            ((defpackage.je) this.l.get(i)).d(view);
         }
     }
 
-    @Override // defpackage.je
-    public final void e(View view) {
+    public final void e(android.view.View view) {
         super.e(view);
         int size = this.l.size();
         for (int i = 0; i < size; i++) {
-            ((je) this.l.get(i)).e(view);
+            ((defpackage.je) this.l.get(i)).e(view);
         }
     }
 
-    @Override // defpackage.je
-    public final void a(jh jhVar) {
+    public final void a(defpackage.jh jhVar) {
         super.a(jhVar);
         int size = this.l.size();
         for (int i = 0; i < size; i++) {
-            ((je) this.l.get(i)).a(jhVar);
+            ((defpackage.je) this.l.get(i)).a(jhVar);
         }
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.je
-    public final String a(String str) {
-        String a = super.a(str);
+    /* access modifiers changed from: 0000 */
+    public final java.lang.String a(java.lang.String str) {
+        java.lang.String a = super.a(str);
         int i = 0;
         while (i < this.l.size()) {
-            String str2 = a + "\n" + ((je) this.l.get(i)).a(str + "  ");
+            java.lang.String str2 = a + "\n" + ((defpackage.je) this.l.get(i)).a(str + "  ");
             i++;
             a = str2;
         }
         return a;
     }
 
-    @Override // defpackage.je
-    public final je f() {
-        jo joVar = (jo) super.clone();
-        joVar.l = new ArrayList();
+    public final defpackage.je f() {
+        defpackage.jo joVar = (defpackage.jo) super.clone();
+        joVar.l = new java.util.ArrayList();
         int size = this.l.size();
         for (int i = 0; i < size; i++) {
-            joVar.a((je) ((je) this.l.get(i)).clone());
+            joVar.a((defpackage.je) ((defpackage.je) this.l.get(i)).clone());
         }
         return joVar;
     }
 
-    @Override // defpackage.je
-    public final /* synthetic */ je b(ji jiVar) {
-        return (jo) super.b(jiVar);
+    public final /* synthetic */ defpackage.je b(defpackage.ji jiVar) {
+        return (defpackage.jo) super.b(jiVar);
     }
 
-    @Override // defpackage.je
-    public final /* synthetic */ je a(ji jiVar) {
-        return (jo) super.a(jiVar);
+    public final /* synthetic */ defpackage.je a(defpackage.ji jiVar) {
+        return (defpackage.jo) super.a(jiVar);
     }
 
-    @Override // defpackage.je
-    public final /* synthetic */ je c(View view) {
-        for (int i = 0; i < this.l.size(); i++) {
-            ((je) this.l.get(i)).c(view);
+    public final /* synthetic */ defpackage.je c(android.view.View view) {
+        int i = 0;
+        while (true) {
+            int i2 = i;
+            if (i2 >= this.l.size()) {
+                return (defpackage.jo) super.c(view);
+            }
+            ((defpackage.je) this.l.get(i2)).c(view);
+            i = i2 + 1;
         }
-        return (jo) super.c(view);
     }
 
-    @Override // defpackage.je
-    public final /* synthetic */ je b(View view) {
-        for (int i = 0; i < this.l.size(); i++) {
-            ((je) this.l.get(i)).b(view);
+    public final /* synthetic */ defpackage.je b(android.view.View view) {
+        int i = 0;
+        while (true) {
+            int i2 = i;
+            if (i2 >= this.l.size()) {
+                return (defpackage.jo) super.b(view);
+            }
+            ((defpackage.je) this.l.get(i2)).b(view);
+            i = i2 + 1;
         }
-        return (jo) super.b(view);
     }
 
-    @Override // defpackage.je
-    public final /* synthetic */ je b(long j) {
-        return (jo) super.b(j);
+    public final /* synthetic */ defpackage.je b(long j) {
+        return (defpackage.jo) super.b(j);
     }
 
-    @Override // defpackage.je
-    public final /* synthetic */ je a(long j) {
+    public final /* synthetic */ defpackage.je a(long j) {
         super.a(j);
         if (this.b >= 0) {
             int size = this.l.size();
             for (int i = 0; i < size; i++) {
-                ((je) this.l.get(i)).a(j);
+                ((defpackage.je) this.l.get(i)).a(j);
             }
         }
         return this;
     }
 
-    @Override // java.lang.Object, defpackage.je
-    public final /* synthetic */ Object clone() {
+    public final /* synthetic */ java.lang.Object clone() {
         return clone();
     }
 
     public jo(byte b) {
         this();
         this.o = false;
-        a(new iq(2)).a(new ig()).a(new iq(1));
+        a((defpackage.je) new defpackage.iq(2)).a((defpackage.je) new defpackage.ig()).a((defpackage.je) new defpackage.iq(1));
     }
 }

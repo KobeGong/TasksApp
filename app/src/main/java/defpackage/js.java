@@ -1,15 +1,12 @@
 package defpackage;
 
-import android.util.SparseArray;
-
-/* access modifiers changed from: package-private */
-/* renamed from: js  reason: default package */
+/* renamed from: js reason: default package */
 /* compiled from: PG */
-public final class js {
-    public final qr a = new qr();
-    public final SparseArray b = new SparseArray();
-    public final qx c = new qx();
-    public final qr d = new qr();
+final class js {
+    public final defpackage.qr a = new defpackage.qr();
+    public final android.util.SparseArray b = new android.util.SparseArray();
+    public final defpackage.qx c = new defpackage.qx();
+    public final defpackage.qr d = new defpackage.qr();
 
     js() {
     }

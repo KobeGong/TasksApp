@@ -1,129 +1,128 @@
 package defpackage;
 
-import java.util.List;
-
-/* renamed from: buw  reason: default package */
+/* renamed from: buw reason: default package */
 /* compiled from: PG */
 public final class buw {
-    public List a;
-    public dgu b;
-    public String c;
-    private String d;
-    private dge e;
-    private dfu f;
-    private dgj g;
-    private Long h;
-    private Long i;
-    private dfn j;
-    private String k;
-    private Long l;
+    public java.util.List a;
+    public defpackage.dgu b;
+    public java.lang.String c;
+    private java.lang.String d;
+    private defpackage.dge e;
+    private defpackage.dfu f;
+    private defpackage.dgj g;
+    private java.lang.Long h;
+    private java.lang.Long i;
+    private defpackage.dfn j;
+    private java.lang.String k;
+    private java.lang.Long l;
 
-    public final buw a(String str) {
+    public final defpackage.buw a(java.lang.String str) {
         if (str == null) {
-            throw new NullPointerException("Null id");
+            throw new java.lang.NullPointerException("Null id");
         }
         this.d = str;
         return this;
     }
 
-    public final buw a(dge dge) {
+    public final defpackage.buw a(defpackage.dge dge) {
         if (dge == null) {
-            throw new NullPointerException("Null readState");
+            throw new java.lang.NullPointerException("Null readState");
         }
         this.e = dge;
         return this;
     }
 
-    public final buw a(dfu dfu) {
+    public final defpackage.buw a(defpackage.dfu dfu) {
         if (dfu == null) {
-            throw new NullPointerException("Null countBehavior");
+            throw new java.lang.NullPointerException("Null countBehavior");
         }
         this.f = dfu;
         return this;
     }
 
-    public final buw a(dgj dgj) {
+    public final defpackage.buw a(defpackage.dgj dgj) {
         if (dgj == null) {
-            throw new NullPointerException("Null systemTrayBehavior");
+            throw new java.lang.NullPointerException("Null systemTrayBehavior");
         }
         this.g = dgj;
         return this;
     }
 
-    public final buw a(Long l2) {
+    public final defpackage.buw a(java.lang.Long l2) {
         if (l2 == null) {
-            throw new NullPointerException("Null lastUpdatedVersion");
+            throw new java.lang.NullPointerException("Null lastUpdatedVersion");
         }
         this.h = l2;
         return this;
     }
 
-    public final buw b(Long l2) {
+    public final defpackage.buw b(java.lang.Long l2) {
         if (l2 == null) {
-            throw new NullPointerException("Null lastNotificationVersion");
+            throw new java.lang.NullPointerException("Null lastNotificationVersion");
         }
         this.i = l2;
         return this;
     }
 
-    public final buw a(dfn dfn) {
+    public final defpackage.buw a(defpackage.dfn dfn) {
         if (dfn == null) {
-            throw new NullPointerException("Null androidSdkMessage");
+            throw new java.lang.NullPointerException("Null androidSdkMessage");
         }
         this.j = dfn;
         return this;
     }
 
-    public final buw b(String str) {
+    public final defpackage.buw b(java.lang.String str) {
         if (str == null) {
-            throw new NullPointerException("Null groupId");
+            throw new java.lang.NullPointerException("Null groupId");
         }
         this.k = str;
         return this;
     }
 
-    public final buw c(Long l2) {
+    public final defpackage.buw c(java.lang.Long l2) {
         if (l2 == null) {
-            throw new NullPointerException("Null expirationTimestampUsec");
+            throw new java.lang.NullPointerException("Null expirationTimestampUsec");
         }
         this.l = l2;
         return this;
     }
 
-    public final buv a() {
-        String str = "";
+    public final defpackage.buv a() {
+        java.lang.String str = "";
         if (this.d == null) {
-            str = String.valueOf(str).concat(" id");
+            str = java.lang.String.valueOf(str).concat(" id");
         }
         if (this.e == null) {
-            str = String.valueOf(str).concat(" readState");
+            str = java.lang.String.valueOf(str).concat(" readState");
         }
         if (this.f == null) {
-            str = String.valueOf(str).concat(" countBehavior");
+            str = java.lang.String.valueOf(str).concat(" countBehavior");
         }
         if (this.g == null) {
-            str = String.valueOf(str).concat(" systemTrayBehavior");
+            str = java.lang.String.valueOf(str).concat(" systemTrayBehavior");
         }
         if (this.h == null) {
-            str = String.valueOf(str).concat(" lastUpdatedVersion");
+            str = java.lang.String.valueOf(str).concat(" lastUpdatedVersion");
         }
         if (this.i == null) {
-            str = String.valueOf(str).concat(" lastNotificationVersion");
+            str = java.lang.String.valueOf(str).concat(" lastNotificationVersion");
         }
         if (this.j == null) {
-            str = String.valueOf(str).concat(" androidSdkMessage");
+            str = java.lang.String.valueOf(str).concat(" androidSdkMessage");
         }
         if (this.k == null) {
-            str = String.valueOf(str).concat(" groupId");
+            str = java.lang.String.valueOf(str).concat(" groupId");
         }
         if (this.l == null) {
-            str = String.valueOf(str).concat(" expirationTimestampUsec");
+            str = java.lang.String.valueOf(str).concat(" expirationTimestampUsec");
         }
         if (str.isEmpty()) {
-            return new buk(this.d, this.e, this.f, this.g, this.h, this.i, this.j, this.a, this.b, this.c, this.k, this.l);
+            return new defpackage.buk(this.d, this.e, this.f, this.g, this.h, this.i, this.j, this.a, this.b, this.c, this.k, this.l);
         }
-        String valueOf = String.valueOf(str);
-        throw new IllegalStateException(valueOf.length() != 0 ? "Missing required properties:".concat(valueOf) : new String("Missing required properties:"));
+        java.lang.String str2 = "Missing required properties:";
+        java.lang.String valueOf = java.lang.String.valueOf(str);
+        throw new java.lang.IllegalStateException(valueOf.length() != 0 ? str2.concat(valueOf) : new java.lang.String(str2));
     }
 
     buw() {

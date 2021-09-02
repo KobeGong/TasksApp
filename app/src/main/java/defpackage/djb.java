@@ -1,69 +1,62 @@
 package defpackage;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
-/* renamed from: djb  reason: default package */
+/* renamed from: djb reason: default package */
 /* compiled from: PG */
-final class djb extends dja {
-    private static final Class c = Collections.unmodifiableList(Collections.emptyList()).getClass();
+final class djb extends defpackage.dja {
+    private static final java.lang.Class c = java.util.Collections.unmodifiableList(java.util.Collections.emptyList()).getClass();
 
     djb() {
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.dja
-    public final List a(Object obj, long j) {
+    /* access modifiers changed from: 0000 */
+    public final java.util.List a(java.lang.Object obj, long j) {
         return a(obj, j, 10);
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.dja
-    public final void b(Object obj, long j) {
-        Object unmodifiableList;
-        List list = (List) dlc.f(obj, j);
-        if (list instanceof diz) {
-            unmodifiableList = ((diz) list).e();
+    /* access modifiers changed from: 0000 */
+    public final void b(java.lang.Object obj, long j) {
+        java.lang.Object unmodifiableList;
+        java.util.List list = (java.util.List) defpackage.dlc.f(obj, j);
+        if (list instanceof defpackage.diz) {
+            unmodifiableList = ((defpackage.diz) list).e();
         } else if (!c.isAssignableFrom(list.getClass())) {
-            unmodifiableList = Collections.unmodifiableList(list);
+            unmodifiableList = java.util.Collections.unmodifiableList(list);
         } else {
             return;
         }
-        dlc.a(obj, j, unmodifiableList);
+        defpackage.dlc.a(obj, j, unmodifiableList);
     }
 
-    private static List a(Object obj, long j, int i) {
-        List arrayList;
-        List c2 = c(obj, j);
+    private static java.util.List a(java.lang.Object obj, long j, int i) {
+        java.util.List arrayList;
+        java.util.List c2 = c(obj, j);
         if (c2.isEmpty()) {
-            if (c2 instanceof diz) {
-                arrayList = new diy(i);
+            if (c2 instanceof defpackage.diz) {
+                arrayList = new defpackage.diy(i);
             } else {
-                arrayList = new ArrayList(i);
+                arrayList = new java.util.ArrayList(i);
             }
-            dlc.a(obj, j, arrayList);
+            defpackage.dlc.a(obj, j, (java.lang.Object) arrayList);
             return arrayList;
         } else if (c.isAssignableFrom(c2.getClass())) {
-            ArrayList arrayList2 = new ArrayList(c2.size() + i);
+            java.util.ArrayList arrayList2 = new java.util.ArrayList(c2.size() + i);
             arrayList2.addAll(c2);
-            dlc.a(obj, j, arrayList2);
+            defpackage.dlc.a(obj, j, (java.lang.Object) arrayList2);
             return arrayList2;
-        } else if (!(c2 instanceof dkz)) {
+        } else if (!(c2 instanceof defpackage.dkz)) {
             return c2;
         } else {
-            diy diy = new diy(c2.size() + i);
-            diy.addAll((dkz) c2);
-            dlc.a(obj, j, diy);
+            defpackage.diy diy = new defpackage.diy(c2.size() + i);
+            diy.addAll((defpackage.dkz) c2);
+            defpackage.dlc.a(obj, j, (java.lang.Object) diy);
             return diy;
         }
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.dja
-    public final void a(Object obj, Object obj2, long j) {
-        List c2 = c(obj2, j);
-        List a = a(obj, j, c2.size());
+    /* access modifiers changed from: 0000 */
+    public final void a(java.lang.Object obj, java.lang.Object obj2, long j) {
+        java.util.List c2 = c(obj2, j);
+        java.util.List a = a(obj, j, c2.size());
         int size = a.size();
         int size2 = c2.size();
         if (size > 0 && size2 > 0) {
@@ -72,10 +65,10 @@ final class djb extends dja {
         if (size <= 0) {
             a = c2;
         }
-        dlc.a(obj, j, a);
+        defpackage.dlc.a(obj, j, (java.lang.Object) a);
     }
 
-    private static List c(Object obj, long j) {
-        return (List) dlc.f(obj, j);
+    private static java.util.List c(java.lang.Object obj, long j) {
+        return (java.util.List) defpackage.dlc.f(obj, j);
     }
 }

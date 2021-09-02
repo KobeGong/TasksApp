@@ -1,22 +1,16 @@
 package defpackage;
 
-import android.content.res.ColorStateList;
-import android.graphics.PorterDuff;
-import android.widget.CompoundButton;
-
-/* renamed from: uh  reason: default package */
+/* renamed from: uh reason: default package */
 /* compiled from: PG */
-class uh extends uj {
+class uh extends defpackage.uj {
     uh() {
     }
 
-    @Override // defpackage.uj
-    public final void a(CompoundButton compoundButton, ColorStateList colorStateList) {
+    public final void a(android.widget.CompoundButton compoundButton, android.content.res.ColorStateList colorStateList) {
         compoundButton.setButtonTintList(colorStateList);
     }
 
-    @Override // defpackage.uj
-    public final void a(CompoundButton compoundButton, PorterDuff.Mode mode) {
+    public final void a(android.widget.CompoundButton compoundButton, android.graphics.PorterDuff.Mode mode) {
         compoundButton.setButtonTintMode(mode);
     }
 }

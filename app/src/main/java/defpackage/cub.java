@@ -1,39 +1,26 @@
 package defpackage;
 
-import com.google.common.flogger.backend.google.GooglePlatform;
-import com.google.common.flogger.backend.system.DefaultPlatform;
-import java.lang.reflect.InvocationTargetException;
-import java.util.concurrent.Executor;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ThreadFactory;
-
-/* renamed from: cub  reason: default package */
+/* renamed from: cub reason: default package */
 /* compiled from: PG */
-public class cub implements cua {
+public class cub implements defpackage.cua {
     public cub() {
     }
 
-    @Override // defpackage.cua
-    public final cua a(String str, String str2, String str3) {
+    public final defpackage.cua a(java.lang.String str, java.lang.String str2, java.lang.String str3) {
         if (this != null) {
             return this;
         }
         throw null;
     }
 
-    @Override // defpackage.cua
-    public final cua a(Throwable th) {
+    public final defpackage.cua a(java.lang.Throwable th) {
         if (this != null) {
             return this;
         }
         throw null;
     }
 
-    @Override // defpackage.cua
-    public final void a(String str) {
+    public final void a(java.lang.String str) {
     }
 
     private cub(byte b) {
@@ -41,30 +28,30 @@ public class cub implements cua {
     }
 
     cub(char c) {
-        this((byte) 0);
+        this(0);
     }
 
-    public static cut a() {
+    public static defpackage.cut a() {
         try {
-            return (cut) cvk.class.getDeclaredConstructor(new Class[0]).newInstance(new Object[0]);
-        } catch (IllegalAccessException | InstantiationException | NoClassDefFoundError | NoSuchMethodException | InvocationTargetException e) {
+            return (defpackage.cut) defpackage.cvk.class.getDeclaredConstructor(new java.lang.Class[0]).newInstance(new java.lang.Object[0]);
+        } catch (java.lang.IllegalAccessException | java.lang.InstantiationException | java.lang.NoClassDefFoundError | java.lang.NoSuchMethodException | java.lang.reflect.InvocationTargetException e) {
             try {
-                return (cut) GooglePlatform.class.getDeclaredConstructor(new Class[0]).newInstance(new Object[0]);
-            } catch (IllegalAccessException | InstantiationException | NoClassDefFoundError | NoSuchMethodException | InvocationTargetException e2) {
+                return (defpackage.cut) com.google.common.flogger.backend.google.GooglePlatform.class.getDeclaredConstructor(new java.lang.Class[0]).newInstance(new java.lang.Object[0]);
+            } catch (java.lang.IllegalAccessException | java.lang.InstantiationException | java.lang.NoClassDefFoundError | java.lang.NoSuchMethodException | java.lang.reflect.InvocationTargetException e2) {
                 try {
-                    return (cut) DefaultPlatform.class.getDeclaredConstructor(new Class[0]).newInstance(new Object[0]);
-                } catch (IllegalAccessException | InstantiationException | NoClassDefFoundError | NoSuchMethodException | InvocationTargetException e3) {
+                    return (defpackage.cut) com.google.common.flogger.backend.system.DefaultPlatform.class.getDeclaredConstructor(new java.lang.Class[0]).newInstance(new java.lang.Object[0]);
+                } catch (java.lang.IllegalAccessException | java.lang.InstantiationException | java.lang.NoClassDefFoundError | java.lang.NoSuchMethodException | java.lang.reflect.InvocationTargetException e3) {
                     return null;
                 }
             }
         }
     }
 
-    public static Object a(Object obj, String str) {
+    public static java.lang.Object a(java.lang.Object obj, java.lang.String str) {
         if (obj != null) {
             return obj;
         }
-        throw new NullPointerException(String.valueOf(str).concat(" must not be null"));
+        throw new java.lang.NullPointerException(java.lang.String.valueOf(str).concat(" must not be null"));
     }
 
     public static boolean a(char c) {
@@ -73,7 +60,7 @@ public class cub implements cua {
 
     public static void a(boolean z) {
         if (!z) {
-            throw new ArithmeticException("mode was UNNECESSARY, but rounding was necessary");
+            throw new java.lang.ArithmeticException("mode was UNNECESSARY, but rounding was necessary");
         }
     }
 
@@ -94,65 +81,65 @@ public class cub implements cua {
         return j > j2 ? 1 : 0;
     }
 
-    public static Executor a(Executor executor) {
-        return new cyr(executor);
+    public static java.util.concurrent.Executor a(java.util.concurrent.Executor executor) {
+        return new defpackage.cyr(executor);
     }
 
-    public static cyl a(ExecutorService executorService) {
-        if (executorService instanceof cyl) {
-            return (cyl) executorService;
+    public static defpackage.cyl a(java.util.concurrent.ExecutorService executorService) {
+        if (executorService instanceof defpackage.cyl) {
+            return (defpackage.cyl) executorService;
         }
-        if (executorService instanceof ScheduledExecutorService) {
-            return new cyo((ScheduledExecutorService) executorService);
+        if (executorService instanceof java.util.concurrent.ScheduledExecutorService) {
+            return new defpackage.cyo((java.util.concurrent.ScheduledExecutorService) executorService);
         }
-        return new cxm(executorService);
+        return new defpackage.cxm(executorService);
     }
 
-    public static ThreadFactory b() {
+    public static java.util.concurrent.ThreadFactory b() {
         if (!c()) {
-            return Executors.defaultThreadFactory();
+            return java.util.concurrent.Executors.defaultThreadFactory();
         }
         try {
-            return (ThreadFactory) Class.forName("com.google.appengine.api.ThreadManager").getMethod("currentRequestThreadFactory", new Class[0]).invoke(null, new Object[0]);
-        } catch (ClassNotFoundException | IllegalAccessException | NoSuchMethodException e) {
-            throw new RuntimeException("Couldn't invoke ThreadManager.currentRequestThreadFactory", e);
-        } catch (InvocationTargetException e2) {
-            throw cse.b(e2.getCause());
+            return (java.util.concurrent.ThreadFactory) java.lang.Class.forName("com.google.appengine.api.ThreadManager").getMethod("currentRequestThreadFactory", new java.lang.Class[0]).invoke(null, new java.lang.Object[0]);
+        } catch (java.lang.ClassNotFoundException | java.lang.IllegalAccessException | java.lang.NoSuchMethodException e) {
+            throw new java.lang.RuntimeException("Couldn't invoke ThreadManager.currentRequestThreadFactory", e);
+        } catch (java.lang.reflect.InvocationTargetException e2) {
+            throw defpackage.cse.b(e2.getCause());
         }
     }
 
     private static boolean c() {
-        if (System.getProperty("com.google.appengine.runtime.environment") == null) {
+        if (java.lang.System.getProperty("com.google.appengine.runtime.environment") == null) {
             return false;
         }
         try {
-            if (Class.forName("com.google.apphosting.api.ApiProxy").getMethod("getCurrentEnvironment", new Class[0]).invoke(null, new Object[0]) != null) {
+            if (java.lang.Class.forName("com.google.apphosting.api.ApiProxy").getMethod("getCurrentEnvironment", new java.lang.Class[0]).invoke(null, new java.lang.Object[0]) != null) {
                 return true;
             }
             return false;
-        } catch (ClassNotFoundException | IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
+        } catch (java.lang.ClassNotFoundException | java.lang.IllegalAccessException | java.lang.NoSuchMethodException | java.lang.reflect.InvocationTargetException e) {
             return false;
         }
     }
 
-    public static Object a(Future future) {
-        Object obj;
+    public static java.lang.Object a(java.util.concurrent.Future future) {
+        java.lang.Object obj;
         boolean z = false;
         while (true) {
             try {
                 obj = future.get();
                 break;
-            } catch (InterruptedException e) {
+            } catch (java.lang.InterruptedException e) {
                 z = true;
             } catch (Throwable th) {
                 if (z) {
-                    Thread.currentThread().interrupt();
+                    java.lang.Thread.currentThread().interrupt();
                 }
                 throw th;
             }
         }
         if (z) {
-            Thread.currentThread().interrupt();
+            java.lang.Thread.currentThread().interrupt();
         }
         return obj;
     }

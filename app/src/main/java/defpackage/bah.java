@@ -1,27 +1,20 @@
 package defpackage;
 
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
-import android.util.Log;
-
-/* access modifiers changed from: package-private */
-/* renamed from: bah  reason: default package */
+/* renamed from: bah reason: default package */
 /* compiled from: PG */
-public final class bah extends Handler {
-    private /* synthetic */ baf a;
+final class bah extends android.os.Handler {
+    private /* synthetic */ defpackage.baf a;
 
-    /* JADX INFO: super call moved to the top of the method (can break code semantics) */
-    bah(baf baf, Looper looper) {
-        super(looper);
+    bah(defpackage.baf baf, android.os.Looper looper) {
         this.a = baf;
+        super(looper);
     }
 
-    public final void handleMessage(Message message) {
+    public final void handleMessage(android.os.Message message) {
         switch (message.what) {
             case 1:
-                bag bag = (bag) message.obj;
-                baf baf = this.a;
+                defpackage.bag bag = (defpackage.bag) message.obj;
+                defpackage.baf baf = this.a;
                 baf.a.lock();
                 try {
                     if (baf.k == bag.a) {
@@ -34,9 +27,9 @@ public final class bah extends Handler {
                     baf.a.unlock();
                 }
             case 2:
-                throw ((RuntimeException) message.obj);
+                throw ((java.lang.RuntimeException) message.obj);
             default:
-                Log.w("GACStateManager", new StringBuilder(31).append("Unknown message id: ").append(message.what).toString());
+                android.util.Log.w("GACStateManager", "Unknown message id: " + message.what);
                 return;
         }
     }

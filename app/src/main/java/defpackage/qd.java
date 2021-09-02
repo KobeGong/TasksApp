@@ -1,29 +1,25 @@
 package defpackage;
 
-import android.os.Handler;
-import java.util.concurrent.Callable;
-
-/* access modifiers changed from: package-private */
-/* renamed from: qd  reason: default package */
+/* renamed from: qd reason: default package */
 /* compiled from: PG */
-public final class qd implements Runnable {
-    public final /* synthetic */ qg a;
-    private final /* synthetic */ Callable b;
-    private final /* synthetic */ Handler c;
+final class qd implements java.lang.Runnable {
+    public final /* synthetic */ defpackage.qg a;
+    private final /* synthetic */ java.util.concurrent.Callable b;
+    private final /* synthetic */ android.os.Handler c;
 
-    qd(Callable callable, Handler handler, qg qgVar) {
+    qd(java.util.concurrent.Callable callable, android.os.Handler handler, defpackage.qg qgVar) {
         this.b = callable;
         this.c = handler;
         this.a = qgVar;
     }
 
     public final void run() {
-        Object obj;
+        java.lang.Object obj;
         try {
             obj = this.b.call();
-        } catch (Exception e) {
+        } catch (java.lang.Exception e) {
             obj = null;
         }
-        this.c.post(new qe(this, obj));
+        this.c.post(new defpackage.qe(this, obj));
     }
 }

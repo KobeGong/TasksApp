@@ -1,11 +1,11 @@
 package defpackage;
 
-/* renamed from: bal  reason: default package */
+/* renamed from: bal reason: default package */
 /* compiled from: PG */
-final class bal implements Runnable {
-    private /* synthetic */ bak a;
+final class bal implements java.lang.Runnable {
+    private /* synthetic */ defpackage.bak a;
 
-    bal(bak bak) {
+    bal(defpackage.bak bak) {
         this.a = bak;
     }
 

@@ -1,59 +1,50 @@
 package defpackage;
 
-import android.app.Activity;
-import android.app.Application;
-
-/* access modifiers changed from: package-private */
-/* renamed from: chx  reason: default package */
+/* renamed from: chx reason: default package */
 /* compiled from: PG */
-public final class chx extends cgj implements cgx, cgy, cle {
+final class chx extends defpackage.cgj implements defpackage.cgx, defpackage.cgy, defpackage.cle {
     private boolean d;
 
-    chx(coe coe, Application application, clt clt) {
-        super(coe, application, clt, bg.Z);
+    chx(defpackage.coe coe, android.app.Application application, defpackage.clt clt) {
+        super(coe, application, clt, defpackage.bg.Z);
     }
 
-    @Override // defpackage.cle
     public final void e() {
         g();
     }
 
-    @Override // defpackage.cle
     public final void f() {
     }
 
-    @Override // defpackage.cgx
-    public final void b(Activity activity) {
+    public final void b(android.app.Activity activity) {
         a(2);
-        cdm.a(3, "MagicEyeLogService", "Logging APP_TO_BACKGROUND", new Object[0]);
+        defpackage.cdm.a(3, "MagicEyeLogService", "Logging APP_TO_BACKGROUND", new java.lang.Object[0]);
     }
 
-    @Override // defpackage.cgy
-    public final void a(Activity activity) {
+    public final void a(android.app.Activity activity) {
         a(1);
-        cdm.a(3, "MagicEyeLogService", "Logging APP_TO_FOREGROUND", new Object[0]);
+        defpackage.cdm.a(3, "MagicEyeLogService", "Logging APP_TO_FOREGROUND", new java.lang.Object[0]);
     }
 
     private final synchronized void g() {
         if (!this.d && !this.c) {
-            cha.a(this.a).a(this);
+            defpackage.cha.a(this.a).a((defpackage.cgp) this);
             this.d = true;
         }
     }
 
     private final synchronized void h() {
         if (this.d) {
-            cha.a(this.a).b(this);
+            defpackage.cha.a(this.a).b(this);
             this.d = false;
         }
     }
 
     private final void a(int i) {
-        c().submit(new chy(this, i));
+        c().submit(new defpackage.chy(this, i));
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.cgj
+    /* access modifiers changed from: 0000 */
     public final void d() {
         h();
     }

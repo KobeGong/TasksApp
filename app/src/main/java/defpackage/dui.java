@@ -1,11 +1,11 @@
 package defpackage;
 
-/* renamed from: dui  reason: default package */
+/* renamed from: dui reason: default package */
 /* compiled from: PG */
-final class dui implements Runnable {
-    private final /* synthetic */ dug a;
+final class dui implements java.lang.Runnable {
+    private final /* synthetic */ defpackage.dug a;
 
-    dui(dug dug) {
+    dui(defpackage.dug dug) {
         this.a = dug;
     }
 

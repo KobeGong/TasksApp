@@ -1,13 +1,10 @@
 package defpackage;
 
-import android.view.View;
+/* renamed from: ase reason: default package */
+final /* synthetic */ class ase implements java.lang.Runnable {
+    private final android.view.View a;
 
-/* access modifiers changed from: package-private */
-/* renamed from: ase  reason: default package */
-public final /* synthetic */ class ase implements Runnable {
-    private final View a;
-
-    ase(View view) {
+    ase(android.view.View view) {
         this.a = view;
     }
 

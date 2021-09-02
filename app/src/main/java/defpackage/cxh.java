@@ -1,26 +1,23 @@
 package defpackage;
 
-/* renamed from: cxh  reason: default package */
+/* renamed from: cxh reason: default package */
 /* compiled from: PG */
-final class cxh extends cxa {
+final class cxh extends defpackage.cxa {
     cxh() {
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.cxa
-    public final void a(cxl cxl, Thread thread) {
+    /* access modifiers changed from: 0000 */
+    public final void a(defpackage.cxl cxl, java.lang.Thread thread) {
         cxl.thread = thread;
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.cxa
-    public final void a(cxl cxl, cxl cxl2) {
+    /* access modifiers changed from: 0000 */
+    public final void a(defpackage.cxl cxl, defpackage.cxl cxl2) {
         cxl.next = cxl2;
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.cxa
-    public final boolean a(cwz cwz, cxl cxl, cxl cxl2) {
+    /* access modifiers changed from: 0000 */
+    public final boolean a(defpackage.cwz cwz, defpackage.cxl cxl, defpackage.cxl cxl2) {
         boolean z;
         synchronized (cwz) {
             if (cwz.waiters == cxl) {
@@ -33,9 +30,8 @@ final class cxh extends cxa {
         return z;
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.cxa
-    public final boolean a(cwz cwz, cxe cxe, cxe cxe2) {
+    /* access modifiers changed from: 0000 */
+    public final boolean a(defpackage.cwz cwz, defpackage.cxe cxe, defpackage.cxe cxe2) {
         boolean z;
         synchronized (cwz) {
             if (cwz.listeners == cxe) {
@@ -48,9 +44,8 @@ final class cxh extends cxa {
         return z;
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.cxa
-    public final boolean a(cwz cwz, Object obj, Object obj2) {
+    /* access modifiers changed from: 0000 */
+    public final boolean a(defpackage.cwz cwz, java.lang.Object obj, java.lang.Object obj2) {
         boolean z;
         synchronized (cwz) {
             if (cwz.value == obj) {

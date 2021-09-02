@@ -1,11 +1,9 @@
 package defpackage;
 
-import android.content.Intent;
-
-/* renamed from: bvn  reason: default package */
+/* renamed from: bvn reason: default package */
 /* compiled from: PG */
 public interface bvn {
-    void a(Intent intent, bvo bvo);
+    void a(android.content.Intent intent, defpackage.bvo bvo);
 
-    boolean a(Intent intent);
+    boolean a(android.content.Intent intent);
 }

@@ -1,9 +1,9 @@
 package defpackage;
 
-/* renamed from: ecj  reason: default package */
+/* renamed from: ecj reason: default package */
 /* compiled from: PG */
 public abstract class ecj {
-    public abstract ecn a();
+    public abstract defpackage.ecn a();
 
-    public abstract ecx b();
+    public abstract defpackage.ecx b();
 }

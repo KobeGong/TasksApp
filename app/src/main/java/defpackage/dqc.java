@@ -1,6 +1,6 @@
 package defpackage;
 
-/* renamed from: dqc  reason: default package */
+/* renamed from: dqc reason: default package */
 /* compiled from: PG */
 public class dqc {
     public dqc() {
@@ -38,7 +38,7 @@ public class dqc {
     }
 
     public dqc(char c) {
-        this((byte) 0);
+        this(0);
     }
 
     public dqc(short s) {

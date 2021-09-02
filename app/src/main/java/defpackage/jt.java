@@ -1,25 +1,19 @@
 package defpackage;
 
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewGroupOverlay;
-
-/* renamed from: jt  reason: default package */
+/* renamed from: jt reason: default package */
 /* compiled from: PG */
-final class jt implements ju {
-    private final ViewGroupOverlay a;
+final class jt implements defpackage.ju {
+    private final android.view.ViewGroupOverlay a;
 
-    jt(ViewGroup viewGroup) {
+    jt(android.view.ViewGroup viewGroup) {
         this.a = viewGroup.getOverlay();
     }
 
-    @Override // defpackage.ju
-    public final void a(View view) {
+    public final void a(android.view.View view) {
         this.a.add(view);
     }
 
-    @Override // defpackage.ju
-    public final void b(View view) {
+    public final void b(android.view.View view) {
         this.a.remove(view);
     }
 }

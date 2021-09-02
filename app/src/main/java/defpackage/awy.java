@@ -1,7 +1,7 @@
 package defpackage;
 
-/* renamed from: awy  reason: default package */
+/* renamed from: awy reason: default package */
 /* compiled from: PG */
 public interface awy {
-    ayt a(axa axa);
+    defpackage.ayt a(defpackage.axa axa);
 }

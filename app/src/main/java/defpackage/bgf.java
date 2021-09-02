@@ -1,9 +1,7 @@
 package defpackage;
 
-import android.os.IInterface;
-
-/* renamed from: bgf  reason: default package */
+/* renamed from: bgf reason: default package */
 /* compiled from: PG */
-public interface bgf extends IInterface {
-    bfl a(bfl bfl, String str, int i, bfl bfl2);
+public interface bgf extends android.os.IInterface {
+    defpackage.bfl a(defpackage.bfl bfl, java.lang.String str, int i, defpackage.bfl bfl2);
 }

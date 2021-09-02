@@ -1,13 +1,10 @@
 package defpackage;
 
-import android.content.Context;
-
-/* renamed from: bfu  reason: default package */
+/* renamed from: bfu reason: default package */
 /* compiled from: PG */
-public final class bfu implements bfs {
-    @Override // defpackage.bfs
-    public final bgc a(Context context, String str, bgb bgb) {
-        bgc bgc = new bgc();
+public final class bfu implements defpackage.bfs {
+    public final defpackage.bgc a(android.content.Context context, java.lang.String str, defpackage.bgb bgb) {
+        defpackage.bgc bgc = new defpackage.bgc();
         bgc.b = bgb.a(context, str, true);
         if (bgc.b != 0) {
             bgc.c = 1;

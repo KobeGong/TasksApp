@@ -1,7 +1,7 @@
 package defpackage;
 
-/* renamed from: awv  reason: default package */
+/* renamed from: awv reason: default package */
 /* compiled from: PG */
 public interface awv {
-    boolean a(String str, int i);
+    boolean a(java.lang.String str, int i);
 }

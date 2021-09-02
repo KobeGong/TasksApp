@@ -1,15 +1,15 @@
 package defpackage;
 
-/* renamed from: bcz  reason: default package */
+/* renamed from: bcz reason: default package */
 /* compiled from: PG */
 public final class bcz {
-    private /* synthetic */ ays a;
+    private /* synthetic */ defpackage.ays a;
 
-    public final void a(axq axq) {
+    public final void a(defpackage.axq axq) {
         this.a.a(axq);
     }
 
-    bcz(ays ays) {
+    bcz(defpackage.ays ays) {
         this.a = ays;
     }
 }

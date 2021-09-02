@@ -1,18 +1,12 @@
 package org.chromium.base;
 
-import android.os.Handler;
-import android.os.HandlerThread;
-import android.os.Looper;
-import java.lang.Thread;
-import org.chromium.base.annotations.CalledByNative;
-
 /* compiled from: PG */
 public class JavaHandlerThread {
-    public final HandlerThread a;
-    public Throwable b;
+    public final android.os.HandlerThread a;
+    public java.lang.Throwable b;
 
-    private JavaHandlerThread(String str) {
-        this.a = new HandlerThread(str);
+    private JavaHandlerThread(java.lang.String str) {
+        this.a = new android.os.HandlerThread(str);
     }
 
     /* access modifiers changed from: private */
@@ -23,59 +17,59 @@ public class JavaHandlerThread {
 
     private native void nativeStopThread(long j);
 
-    @CalledByNative
-    private static JavaHandlerThread create(String str) {
-        return new JavaHandlerThread(str);
+    @org.chromium.base.annotations.CalledByNative
+    private static org.chromium.base.JavaHandlerThread create(java.lang.String str) {
+        return new org.chromium.base.JavaHandlerThread(str);
     }
 
-    @CalledByNative
+    @org.chromium.base.annotations.CalledByNative
     private void startAndInitialize(long j, long j2) {
-        if (!(this.a.getState() != Thread.State.NEW)) {
+        if (!(this.a.getState() != java.lang.Thread.State.NEW)) {
             this.a.start();
         }
-        new Handler(this.a.getLooper()).post(new egp(this, j, j2));
+        new android.os.Handler(this.a.getLooper()).post(new defpackage.egp(this, j, j2));
     }
 
     /* access modifiers changed from: private */
-    @CalledByNative
+    @org.chromium.base.annotations.CalledByNative
     public void stopOnThread(long j) {
         nativeStopThread(j);
-        Looper.myQueue().addIdleHandler(new egq(this, j));
+        android.os.Looper.myQueue().addIdleHandler(new defpackage.egq(this, j));
     }
 
-    @CalledByNative
+    @org.chromium.base.annotations.CalledByNative
     private void joinThread() {
         boolean z = false;
         while (!z) {
             try {
                 this.a.join();
                 z = true;
-            } catch (InterruptedException e) {
+            } catch (java.lang.InterruptedException e) {
             }
         }
     }
 
-    @CalledByNative
+    @org.chromium.base.annotations.CalledByNative
     private void stop(long j) {
-        Looper looper = this.a.getLooper();
+        android.os.Looper looper = this.a.getLooper();
         if (isAlive() && looper != null) {
-            new Handler(looper).post(new egr(this, j));
+            new android.os.Handler(looper).post(new defpackage.egr(this, j));
             joinThread();
         }
     }
 
-    @CalledByNative
+    @org.chromium.base.annotations.CalledByNative
     private boolean isAlive() {
         return this.a.isAlive();
     }
 
-    @CalledByNative
+    @org.chromium.base.annotations.CalledByNative
     private void listenForUncaughtExceptionsForTesting() {
-        this.a.setUncaughtExceptionHandler(new egs(this));
+        this.a.setUncaughtExceptionHandler(new defpackage.egs(this));
     }
 
-    @CalledByNative
-    private Throwable getUncaughtExceptionIfAny() {
+    @org.chromium.base.annotations.CalledByNative
+    private java.lang.Throwable getUncaughtExceptionIfAny() {
         return this.b;
     }
 }

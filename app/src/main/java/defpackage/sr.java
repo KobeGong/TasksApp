@@ -1,21 +1,16 @@
 package defpackage;
 
-import android.graphics.Rect;
-import android.view.View;
-
-/* renamed from: sr  reason: default package */
+/* renamed from: sr reason: default package */
 /* compiled from: PG */
-class sr extends sq {
+class sr extends defpackage.sq {
     sr() {
     }
 
-    @Override // defpackage.sw
-    public final void a(View view, Rect rect) {
+    public final void a(android.view.View view, android.graphics.Rect rect) {
         view.setClipBounds(rect);
     }
 
-    @Override // defpackage.sw
-    public final Rect p(View view) {
+    public final android.graphics.Rect p(android.view.View view) {
         return view.getClipBounds();
     }
 }

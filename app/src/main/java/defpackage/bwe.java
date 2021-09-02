@@ -1,23 +1,19 @@
 package defpackage;
 
-import android.content.Intent;
-
-/* renamed from: bwe  reason: default package */
+/* renamed from: bwe reason: default package */
 /* compiled from: PG */
-public final class bwe implements bvn {
-    public cbw a;
+public final class bwe implements defpackage.bvn {
+    public defpackage.cbw a;
 
     bwe() {
     }
 
-    @Override // defpackage.bvn
-    public final boolean a(Intent intent) {
+    public final boolean a(android.content.Intent intent) {
         return intent != null && "android.intent.action.LOCALE_CHANGED".equals(intent.getAction());
     }
 
-    @Override // defpackage.bvn
-    public final void a(Intent intent, bvo bvo) {
-        bty.a("LocaleChangedIntentHandler", "Syncing registration statuses due to Locale change.", new Object[0]);
+    public final void a(android.content.Intent intent, defpackage.bvo bvo) {
+        defpackage.bty.a("LocaleChangedIntentHandler", "Syncing registration statuses due to Locale change.", new java.lang.Object[0]);
         this.a.a();
     }
 }

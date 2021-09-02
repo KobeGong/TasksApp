@@ -1,31 +1,27 @@
 package defpackage;
 
-import android.os.IInterface;
-import android.os.Parcel;
-import android.os.Parcelable;
-
-/* renamed from: bko  reason: default package */
+/* renamed from: bko reason: default package */
 /* compiled from: PG */
 public class bko {
     private bko() {
     }
 
-    public static boolean a(Parcel parcel) {
+    public static boolean a(android.os.Parcel parcel) {
         return parcel.readInt() != 0;
     }
 
-    public static void a(Parcel parcel, boolean z) {
+    public static void a(android.os.Parcel parcel, boolean z) {
         parcel.writeInt(z ? 1 : 0);
     }
 
-    public static Parcelable a(Parcel parcel, Parcelable.Creator creator) {
+    public static android.os.Parcelable a(android.os.Parcel parcel, android.os.Parcelable.Creator creator) {
         if (parcel.readInt() == 0) {
             return null;
         }
-        return (Parcelable) creator.createFromParcel(parcel);
+        return (android.os.Parcelable) creator.createFromParcel(parcel);
     }
 
-    public static void a(Parcel parcel, Parcelable parcelable) {
+    public static void a(android.os.Parcel parcel, android.os.Parcelable parcelable) {
         if (parcelable == null) {
             parcel.writeInt(0);
             return;
@@ -34,7 +30,7 @@ public class bko {
         parcelable.writeToParcel(parcel, 0);
     }
 
-    public static void a(Parcel parcel, IInterface iInterface) {
+    public static void a(android.os.Parcel parcel, android.os.IInterface iInterface) {
         if (iInterface == null) {
             parcel.writeStrongBinder(null);
         } else {
@@ -43,6 +39,6 @@ public class bko {
     }
 
     static {
-        bko.class.getClassLoader();
+        defpackage.bko.class.getClassLoader();
     }
 }

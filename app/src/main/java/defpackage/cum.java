@@ -1,25 +1,22 @@
 package defpackage;
 
-import java.util.HashSet;
-import java.util.Set;
-
-/* renamed from: cum  reason: default package */
+/* renamed from: cum reason: default package */
 /* compiled from: PG */
-final class cum implements cun {
-    private static final Set a = new HashSet();
-    private final String b;
-    private final String c;
-    private final StringBuilder d;
+final class cum implements defpackage.cun {
+    private static final java.util.Set a = new java.util.HashSet();
+    private final java.lang.String b;
+    private final java.lang.String c;
+    private final java.lang.StringBuilder d;
     private boolean e = false;
 
-    cum(String str, String str2, StringBuilder sb) {
-        a.add(Boolean.class);
-        a.add(Byte.class);
-        a.add(Short.class);
-        a.add(Integer.class);
-        a.add(Long.class);
-        a.add(Float.class);
-        a.add(Double.class);
+    cum(java.lang.String str, java.lang.String str2, java.lang.StringBuilder sb) {
+        a.add(java.lang.Boolean.class);
+        a.add(java.lang.Byte.class);
+        a.add(java.lang.Short.class);
+        a.add(java.lang.Integer.class);
+        a.add(java.lang.Long.class);
+        a.add(java.lang.Float.class);
+        a.add(java.lang.Double.class);
         this.b = str;
         this.c = str2;
         this.d = sb;
@@ -31,7 +28,7 @@ final class cum implements cun {
         }
     }
 
-    private static int a(String str, int i) {
+    private static int a(java.lang.String str, int i) {
         while (i < str.length()) {
             char charAt = str.charAt(i);
             if (charAt < ' ' || charAt == '\"' || charAt == '\\') {
@@ -42,17 +39,16 @@ final class cum implements cun {
         return -1;
     }
 
-    @Override // defpackage.cun
-    public final /* synthetic */ cun a(String str, Object obj) {
+    public final /* synthetic */ defpackage.cun a(java.lang.String str, java.lang.Object obj) {
         char c2 = ' ';
         int i = 0;
         if (this.e) {
             this.d.append(' ');
         } else {
             if (this.d.length() > 0) {
-                StringBuilder sb = this.d;
+                java.lang.StringBuilder sb = this.d;
                 if (this.d.length() > 1000 || this.d.indexOf("\n") != -1) {
-                    c2 = '\n';
+                    c2 = 10;
                 }
                 sb.append(c2);
             }
@@ -66,35 +62,34 @@ final class cum implements cun {
             this.d.append(obj);
         } else {
             this.d.append('\"');
-            StringBuilder sb2 = this.d;
-            String obj2 = obj.toString();
+            java.lang.StringBuilder sb2 = this.d;
+            java.lang.String obj2 = obj.toString();
             int a2 = a(obj2, 0);
             while (a2 != -1) {
-                sb2.append((CharSequence) obj2, i, a2);
+                sb2.append(obj2, i, a2);
                 i = a2 + 1;
                 char charAt = obj2.charAt(a2);
                 switch (charAt) {
-                    case '\t':
+                    case 9:
                         charAt = 't';
                         break;
-                    case '\n':
+                    case 10:
                         charAt = 'n';
                         break;
-                    case '\r':
+                    case 13:
                         charAt = 'r';
                         break;
                     case '\"':
                     case '\\':
                         break;
                     default:
-                        sb2.append((char) 65533);
+                        sb2.append(65533);
                         continue;
-                        a2 = a(obj2, i);
                 }
                 sb2.append("\\").append(charAt);
                 a2 = a(obj2, i);
             }
-            sb2.append((CharSequence) obj2, i, obj2.length());
+            sb2.append(obj2, i, obj2.length());
             this.d.append('\"');
         }
         return this;

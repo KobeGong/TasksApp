@@ -1,9 +1,7 @@
 package defpackage;
 
-import android.content.Intent;
-
-/* renamed from: nx  reason: default package */
+/* renamed from: nx reason: default package */
 /* compiled from: PG */
 public interface nx {
-    Intent b_();
+    android.content.Intent b_();
 }

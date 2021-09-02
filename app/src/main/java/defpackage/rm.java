@@ -1,33 +1,27 @@
 package defpackage;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-/* renamed from: rm  reason: default package */
+/* renamed from: rm reason: default package */
 /* compiled from: PG */
-final class rm implements Parcelable.ClassLoaderCreator {
+final class rm implements android.os.Parcelable.ClassLoaderCreator {
     rm() {
     }
 
-    private static rl a(Parcel parcel, ClassLoader classLoader) {
+    private static defpackage.rl a(android.os.Parcel parcel, java.lang.ClassLoader classLoader) {
         if (parcel.readParcelable(classLoader) == null) {
-            return rl.d;
+            return defpackage.rl.d;
         }
-        throw new IllegalStateException("superState must be null");
+        throw new java.lang.IllegalStateException("superState must be null");
     }
 
-    @Override // android.os.Parcelable.ClassLoaderCreator
-    public final /* synthetic */ Object createFromParcel(Parcel parcel, ClassLoader classLoader) {
+    public final /* synthetic */ java.lang.Object createFromParcel(android.os.Parcel parcel, java.lang.ClassLoader classLoader) {
         return a(parcel, classLoader);
     }
 
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object[] newArray(int i) {
-        return new rl[i];
+    public final /* synthetic */ java.lang.Object[] newArray(int i) {
+        return new defpackage.rl[i];
     }
 
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object createFromParcel(Parcel parcel) {
+    public final /* synthetic */ java.lang.Object createFromParcel(android.os.Parcel parcel) {
         return a(parcel, null);
     }
 }

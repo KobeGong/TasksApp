@@ -1,13 +1,9 @@
 package defpackage;
 
-import android.content.Context;
-import android.util.AttributeSet;
-import android.view.ViewGroup;
-
-/* renamed from: aao  reason: default package */
+/* renamed from: aao reason: default package */
 /* compiled from: PG */
-public final class aao extends ViewGroup.MarginLayoutParams {
-    public aao(Context context, AttributeSet attributeSet) {
+public final class aao extends android.view.ViewGroup.MarginLayoutParams {
+    public aao(android.content.Context context, android.util.AttributeSet attributeSet) {
         super(context, attributeSet);
     }
 
@@ -15,7 +11,7 @@ public final class aao extends ViewGroup.MarginLayoutParams {
         super(-1, -1);
     }
 
-    public aao(ViewGroup.LayoutParams layoutParams) {
+    public aao(android.view.ViewGroup.LayoutParams layoutParams) {
         super(layoutParams);
     }
 }

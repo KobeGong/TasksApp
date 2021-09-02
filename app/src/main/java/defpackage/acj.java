@@ -1,44 +1,35 @@
 package defpackage;
 
-import android.content.Context;
-import android.content.res.TypedArray;
-import android.graphics.drawable.Drawable;
-import android.util.AttributeSet;
-import android.widget.TextView;
-
-/* access modifiers changed from: package-private */
-/* renamed from: acj  reason: default package */
+/* renamed from: acj reason: default package */
 /* compiled from: PG */
-public final class acj extends aci {
-    private agu f;
-    private agu g;
+final class acj extends defpackage.aci {
+    private defpackage.agu f;
+    private defpackage.agu g;
 
-    acj(TextView textView) {
+    acj(android.widget.TextView textView) {
         super(textView);
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.aci
-    public final void a(AttributeSet attributeSet, int i) {
+    /* access modifiers changed from: 0000 */
+    public final void a(android.util.AttributeSet attributeSet, int i) {
         super.a(attributeSet, i);
-        Context context = this.a.getContext();
-        abl a = abl.a();
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, xu.V, i, 0);
-        if (obtainStyledAttributes.hasValue(xu.aa)) {
-            this.f = a(context, a, obtainStyledAttributes.getResourceId(xu.aa, 0));
+        android.content.Context context = this.a.getContext();
+        defpackage.abl a = defpackage.abl.a();
+        android.content.res.TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, defpackage.xu.V, i, 0);
+        if (obtainStyledAttributes.hasValue(defpackage.xu.aa)) {
+            this.f = a(context, a, obtainStyledAttributes.getResourceId(defpackage.xu.aa, 0));
         }
-        if (obtainStyledAttributes.hasValue(xu.X)) {
-            this.g = a(context, a, obtainStyledAttributes.getResourceId(xu.X, 0));
+        if (obtainStyledAttributes.hasValue(defpackage.xu.X)) {
+            this.g = a(context, a, obtainStyledAttributes.getResourceId(defpackage.xu.X, 0));
         }
         obtainStyledAttributes.recycle();
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.aci
+    /* access modifiers changed from: 0000 */
     public final void a() {
         super.a();
         if (this.f != null || this.g != null) {
-            Drawable[] compoundDrawablesRelative = this.a.getCompoundDrawablesRelative();
+            android.graphics.drawable.Drawable[] compoundDrawablesRelative = this.a.getCompoundDrawablesRelative();
             a(compoundDrawablesRelative[0], this.f);
             a(compoundDrawablesRelative[2], this.g);
         }

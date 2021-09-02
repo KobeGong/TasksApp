@@ -1,28 +1,24 @@
 package defpackage;
 
-import android.content.Context;
-
-/* renamed from: bqp  reason: default package */
+/* renamed from: bqp reason: default package */
 /* compiled from: PG */
-public final class bqp implements bqm {
-    public static final brt a = new bqq();
-    private final awt b;
+public final class bqp implements defpackage.bqm {
+    public static final defpackage.brt a = new defpackage.bqq();
+    private final defpackage.awt b;
 
-    private bqp(Context context, String str, String str2) {
-        this.b = new awt(context, str, str2);
+    private bqp(android.content.Context context, java.lang.String str, java.lang.String str2) {
+        this.b = new defpackage.awt(context, str, str2);
     }
 
-    @Override // defpackage.bqm
-    public final bql a(byte[] bArr) {
-        return new bql(this.b, bArr, (byte) 0);
+    public final defpackage.bql a(byte[] bArr) {
+        return new defpackage.bql(this.b, bArr, 0);
     }
 
-    @Override // defpackage.bqm
-    public final bql a(bqo bqo) {
-        return new bql(this.b, new aww(bqo), (byte) 0);
+    public final defpackage.bql a(defpackage.bqo bqo) {
+        return new defpackage.bql(this.b, new defpackage.aww(bqo), 0);
     }
 
-    public bqp(Context context, String str, String str2, byte b2) {
+    public bqp(android.content.Context context, java.lang.String str, java.lang.String str2, byte b2) {
         this(context, str, str2);
     }
 }

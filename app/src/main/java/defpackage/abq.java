@@ -1,38 +1,26 @@
 package defpackage;
 
-import android.content.Context;
-import android.content.res.ColorStateList;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
-import android.text.Editable;
-import android.util.AttributeSet;
-import android.view.inputmethod.EditorInfo;
-import android.view.inputmethod.InputConnection;
-import android.widget.EditText;
-import com.google.android.apps.tasks.R;
-
-/* renamed from: abq  reason: default package */
+/* renamed from: abq reason: default package */
 /* compiled from: PG */
-public final class abq extends EditText implements sm {
-    private final abg a;
-    private final aci b;
+public final class abq extends android.widget.EditText implements defpackage.sm {
+    private final defpackage.abg a;
+    private final defpackage.aci b;
 
-    public abq(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, (byte) 0);
+    public abq(android.content.Context context, android.util.AttributeSet attributeSet) {
+        this(context, attributeSet, 0);
     }
 
-    private abq(Context context, AttributeSet attributeSet, byte b2) {
-        super(agt.a(context), attributeSet, R.attr.editTextStyle);
-        this.a = new abg(this);
-        this.a.a(attributeSet, R.attr.editTextStyle);
-        this.b = aci.a(this);
-        this.b.a(attributeSet, R.attr.editTextStyle);
+    private abq(android.content.Context context, android.util.AttributeSet attributeSet, byte b2) {
+        super(defpackage.agt.a(context), attributeSet, 2130772235);
+        this.a = new defpackage.abg(this);
+        this.a.a(attributeSet, 2130772235);
+        this.b = defpackage.aci.a((android.widget.TextView) this);
+        this.b.a(attributeSet, 2130772235);
         this.b.a();
     }
 
-    @Override // android.widget.EditText, android.widget.EditText
-    public final Editable getText() {
-        if (jd.a()) {
+    public final android.text.Editable getText() {
+        if (defpackage.jd.a()) {
             return super.getText();
         }
         return super.getEditableText();
@@ -45,37 +33,33 @@ public final class abq extends EditText implements sm {
         }
     }
 
-    public final void setBackgroundDrawable(Drawable drawable) {
+    public final void setBackgroundDrawable(android.graphics.drawable.Drawable drawable) {
         super.setBackgroundDrawable(drawable);
         if (this.a != null) {
             this.a.a();
         }
     }
 
-    @Override // defpackage.sm
-    public final void a(ColorStateList colorStateList) {
+    public final void a(android.content.res.ColorStateList colorStateList) {
         if (this.a != null) {
             this.a.a(colorStateList);
         }
     }
 
-    @Override // defpackage.sm
-    public final ColorStateList d_() {
+    public final android.content.res.ColorStateList d_() {
         if (this.a != null) {
             return this.a.b();
         }
         return null;
     }
 
-    @Override // defpackage.sm
-    public final void a(PorterDuff.Mode mode) {
+    public final void a(android.graphics.PorterDuff.Mode mode) {
         if (this.a != null) {
             this.a.a(mode);
         }
     }
 
-    @Override // defpackage.sm
-    public final PorterDuff.Mode b() {
+    public final android.graphics.PorterDuff.Mode b() {
         if (this.a != null) {
             return this.a.c();
         }
@@ -93,14 +77,14 @@ public final class abq extends EditText implements sm {
         }
     }
 
-    public final void setTextAppearance(Context context, int i) {
+    public final void setTextAppearance(android.content.Context context, int i) {
         super.setTextAppearance(context, i);
         if (this.b != null) {
             this.b.a(context, i);
         }
     }
 
-    public final InputConnection onCreateInputConnection(EditorInfo editorInfo) {
-        return aaz.a(super.onCreateInputConnection(editorInfo), editorInfo, this);
+    public final android.view.inputmethod.InputConnection onCreateInputConnection(android.view.inputmethod.EditorInfo editorInfo) {
+        return defpackage.aaz.a(super.onCreateInputConnection(editorInfo), editorInfo, (android.view.View) this);
     }
 }

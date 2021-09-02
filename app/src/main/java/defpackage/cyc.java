@@ -1,31 +1,26 @@
 package defpackage;
 
-import java.util.concurrent.Future;
-
-/* renamed from: cyc  reason: default package */
+/* renamed from: cyc reason: default package */
 /* compiled from: PG */
-public class cyc extends cyb {
-    private final cyi a;
+public class cyc extends defpackage.cyb {
+    private final defpackage.cyi a;
 
-    protected cyc(cyi cyi) {
-        this.a = (cyi) cld.a(cyi);
+    protected cyc(defpackage.cyi cyi) {
+        this.a = (defpackage.cyi) defpackage.cld.a((java.lang.Object) cyi);
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.cyb
-    public final cyi b() {
+    public final defpackage.cyi b() {
         return this.a;
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.cya, defpackage.cyb
-    public final /* synthetic */ Future a() {
+    public final /* synthetic */ java.util.concurrent.Future a() {
         return c();
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.cya, defpackage.cyb, defpackage.csl
-    public final /* synthetic */ Object c() {
+    public final /* synthetic */ java.lang.Object c() {
         return c();
     }
 }

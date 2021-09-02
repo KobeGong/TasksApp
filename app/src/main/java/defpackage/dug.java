@@ -1,21 +1,17 @@
 package defpackage;
 
-import java.util.ArrayList;
-import java.util.List;
-
-/* access modifiers changed from: package-private */
-/* renamed from: dug  reason: default package */
+/* renamed from: dug reason: default package */
 /* compiled from: PG */
-public final class dug implements dzq {
-    public final dzq a;
+final class dug implements defpackage.dzq {
+    public final defpackage.dzq a;
     public volatile boolean b;
-    public List c = new ArrayList();
+    public java.util.List c = new java.util.ArrayList();
 
-    public dug(dzq dzq) {
+    public dug(defpackage.dzq dzq) {
         this.a = dzq;
     }
 
-    private final void a(Runnable runnable) {
+    private final void a(java.lang.Runnable runnable) {
         synchronized (this) {
             if (!this.b) {
                 this.c.add(runnable);
@@ -25,36 +21,31 @@ public final class dug implements dzq {
         }
     }
 
-    @Override // defpackage.dzq
-    public final void a(dzr dzr) {
+    public final void a(defpackage.dzr dzr) {
         if (this.b) {
             this.a.a(dzr);
         } else {
-            a(new duh(this, dzr));
+            a((java.lang.Runnable) new defpackage.duh(this, dzr));
         }
     }
 
-    @Override // defpackage.dzq
     public final void a() {
         if (this.b) {
             this.a.a();
         } else {
-            a(new dui(this));
+            a((java.lang.Runnable) new defpackage.dui(this));
         }
     }
 
-    @Override // defpackage.dzq
-    public final void a(dor dor) {
-        a(new duj(this, dor));
+    public final void a(defpackage.dor dor) {
+        a((java.lang.Runnable) new defpackage.duj(this, dor));
     }
 
-    @Override // defpackage.dzq
-    public final void b(dpw dpw, dor dor) {
-        a(new duk(this, dpw, dor));
+    public final void b(defpackage.dpw dpw, defpackage.dor dor) {
+        a((java.lang.Runnable) new defpackage.duk(this, dpw, dor));
     }
 
-    @Override // defpackage.dzq
-    public final void a(dpw dpw, int i, dor dor) {
-        a(new dul(this, dpw, i, dor));
+    public final void a(defpackage.dpw dpw, int i, defpackage.dor dor) {
+        a((java.lang.Runnable) new defpackage.dul(this, dpw, i, dor));
     }
 }

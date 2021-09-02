@@ -1,29 +1,28 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: dow  reason: default package */
+/* renamed from: dow reason: default package */
 /* compiled from: PG */
-public final class dow extends doy {
-    private final dox c;
+final class dow extends defpackage.doy {
+    private final defpackage.dox c;
 
-    /* JADX INFO: super call moved to the top of the method (can break code semantics) */
-    dow(String str, dox dox) {
-        super(str, false);
+    dow(java.lang.String str, defpackage.dox dox) {
         boolean z = false;
-        cld.a(str.endsWith("-bin"), "Binary header is named %s. It must end with %s", str, "-bin");
-        cld.a(str.length() > 4 ? true : z, "empty key name");
-        this.c = (dox) cld.a(dox, "marshaller is null");
+        super(str, false);
+        defpackage.cld.a(str.endsWith("-bin"), "Binary header is named %s. It must end with %s", (java.lang.Object) str, (java.lang.Object) "-bin");
+        if (str.length() > 4) {
+            z = true;
+        }
+        defpackage.cld.a(z, (java.lang.Object) "empty key name");
+        this.c = (defpackage.dox) defpackage.cld.a((java.lang.Object) dox, (java.lang.Object) "marshaller is null");
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.doy
-    public final byte[] a(Object obj) {
+    /* access modifiers changed from: 0000 */
+    public final byte[] a(java.lang.Object obj) {
         return this.c.a(obj);
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.doy
-    public final Object a(byte[] bArr) {
+    /* access modifiers changed from: 0000 */
+    public final java.lang.Object a(byte[] bArr) {
         return this.c.a(bArr);
     }
 }

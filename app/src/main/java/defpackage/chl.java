@@ -1,11 +1,8 @@
 package defpackage;
 
-import android.os.Debug;
-
-/* access modifiers changed from: package-private */
-/* renamed from: chl  reason: default package */
+/* renamed from: chl reason: default package */
 /* compiled from: PG */
-public final class chl {
+final class chl {
     public final long a;
     public final long b;
 
@@ -14,7 +11,7 @@ public final class chl {
         this.b = j2;
     }
 
-    static chl a() {
-        return new chl(System.nanoTime(), Debug.threadCpuTimeNanos());
+    static defpackage.chl a() {
+        return new defpackage.chl(java.lang.System.nanoTime(), android.os.Debug.threadCpuTimeNanos());
     }
 }

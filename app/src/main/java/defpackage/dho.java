@@ -1,28 +1,24 @@
 package defpackage;
 
-import java.io.OutputStream;
-
-/* access modifiers changed from: package-private */
-/* renamed from: dho  reason: default package */
+/* renamed from: dho reason: default package */
 /* compiled from: PG */
-public final class dho extends dhn {
+final class dho extends defpackage.dhn {
     private final byte[] c;
     private final int d;
     private int e;
     private int f;
-    private final OutputStream g;
+    private final java.io.OutputStream g;
 
     private dho(int i) {
         if (i < 0) {
-            throw new IllegalArgumentException("bufferSize must be >= 0");
+            throw new java.lang.IllegalArgumentException("bufferSize must be >= 0");
         }
-        this.c = new byte[Math.max(i, 20)];
+        this.c = new byte[java.lang.Math.max(i, 20)];
         this.d = this.c.length;
     }
 
-    @Override // defpackage.dhn
     public final int i() {
-        throw new UnsupportedOperationException("spaceLeft() can only be called on CodedOutputStreams that are writing to a flat array or ByteBuffer.");
+        throw new java.lang.UnsupportedOperationException("spaceLeft() can only be called on CodedOutputStreams that are writing to a flat array or ByteBuffer.");
     }
 
     private final void b(byte b) {
@@ -38,19 +34,19 @@ public final class dho extends dhn {
     }
 
     private final void s(int i) {
-        if (dhn.a) {
+        if (defpackage.dhn.a) {
             long j = (long) this.e;
             while ((i & -128) != 0) {
                 byte[] bArr = this.c;
                 int i2 = this.e;
                 this.e = i2 + 1;
-                dlc.a(bArr, (long) i2, (byte) ((i & 127) | 128));
+                defpackage.dlc.a(bArr, (long) i2, (byte) ((i & 127) | 128));
                 i >>>= 7;
             }
             byte[] bArr2 = this.c;
             int i3 = this.e;
             this.e = i3 + 1;
-            dlc.a(bArr2, (long) i3, (byte) i);
+            defpackage.dlc.a(bArr2, (long) i3, (byte) i);
             this.f = ((int) (((long) this.e) - j)) + this.f;
             return;
         }
@@ -70,19 +66,19 @@ public final class dho extends dhn {
     }
 
     private final void g(long j) {
-        if (dhn.a) {
+        if (defpackage.dhn.a) {
             long j2 = (long) this.e;
             while ((j & -128) != 0) {
                 byte[] bArr = this.c;
                 int i = this.e;
                 this.e = i + 1;
-                dlc.a(bArr, (long) i, (byte) ((((int) j) & 127) | 128));
+                defpackage.dlc.a(bArr, (long) i, (byte) ((((int) j) & 127) | 128));
                 j >>>= 7;
             }
             byte[] bArr2 = this.c;
             int i2 = this.e;
             this.e = i2 + 1;
-            dlc.a(bArr2, (long) i2, (byte) ((int) j));
+            defpackage.dlc.a(bArr2, (long) i2, (byte) ((int) j));
             this.f = ((int) (((long) this.e) - j2)) + this.f;
             return;
         }
@@ -101,24 +97,47 @@ public final class dho extends dhn {
         this.f++;
     }
 
-    private final void t(int i) {
-        byte[] bArr = this.c;
-        int i2 = this.e;
-        this.e = i2 + 1;
-        bArr[i2] = (byte) i;
-        byte[] bArr2 = this.c;
-        int i3 = this.e;
-        this.e = i3 + 1;
-        bArr2[i3] = (byte) (i >> 8);
-        byte[] bArr3 = this.c;
-        int i4 = this.e;
-        this.e = i4 + 1;
-        bArr3[i4] = (byte) (i >> 16);
-        byte[] bArr4 = this.c;
-        int i5 = this.e;
-        this.e = i5 + 1;
-        bArr4[i5] = i >> 24;
-        this.f += 4;
+    /* JADX WARNING: type inference failed for: r0v3, types: [byte[]] */
+    /* JADX WARNING: type inference failed for: r2v9, types: [byte, int] */
+    /* JADX WARNING: Incorrect type for immutable var: ssa=byte[], code=null, for r0v3, types: [byte[]] */
+    /* JADX WARNING: Incorrect type for immutable var: ssa=int, code=null, for r2v9, types: [byte, int] */
+    /* JADX WARNING: Unknown variable types count: 2 */
+    /* Code decompiled incorrectly, please refer to instructions dump. */
+    private final void t(int r4) {
+        /*
+            r3 = this;
+            byte[] r0 = r3.c
+            int r1 = r3.e
+            int r2 = r1 + 1
+            r3.e = r2
+            byte r2 = (byte) r4
+            r0[r1] = r2
+            byte[] r0 = r3.c
+            int r1 = r3.e
+            int r2 = r1 + 1
+            r3.e = r2
+            int r2 = r4 >> 8
+            byte r2 = (byte) r2
+            r0[r1] = r2
+            byte[] r0 = r3.c
+            int r1 = r3.e
+            int r2 = r1 + 1
+            r3.e = r2
+            int r2 = r4 >> 16
+            byte r2 = (byte) r2
+            r0[r1] = r2
+            byte[] r0 = r3.c
+            int r1 = r3.e
+            int r2 = r1 + 1
+            r3.e = r2
+            int r2 = r4 >> 24
+            r0[r1] = r2
+            int r0 = r3.f
+            int r0 = r0 + 4
+            r3.f = r0
+            return
+        */
+        throw new UnsupportedOperationException("Method not decompiled: defpackage.dho.t(int):void");
     }
 
     private final void h(long j) {
@@ -157,20 +176,18 @@ public final class dho extends dhn {
         this.f += 8;
     }
 
-    dho(OutputStream outputStream, int i) {
+    dho(java.io.OutputStream outputStream, int i) {
         this(i);
         if (outputStream == null) {
-            throw new NullPointerException("out");
+            throw new java.lang.NullPointerException("out");
         }
         this.g = outputStream;
     }
 
-    @Override // defpackage.dhn
     public final void a(int i, int i2) {
         c((i << 3) | i2);
     }
 
-    @Override // defpackage.dhn
     public final void b(int i, int i2) {
         u(20);
         j(i, 0);
@@ -181,35 +198,30 @@ public final class dho extends dhn {
         }
     }
 
-    @Override // defpackage.dhn
     public final void c(int i, int i2) {
         u(20);
         j(i, 0);
         s(i2);
     }
 
-    @Override // defpackage.dhn
     public final void e(int i, int i2) {
         u(14);
         j(i, 5);
         t(i2);
     }
 
-    @Override // defpackage.dhn
     public final void a(int i, long j) {
         u(20);
         j(i, 0);
         g(j);
     }
 
-    @Override // defpackage.dhn
     public final void c(int i, long j) {
         u(18);
         j(i, 1);
         h(j);
     }
 
-    @Override // defpackage.dhn
     public final void a(int i, boolean z) {
         int i2 = 0;
         u(11);
@@ -220,79 +232,68 @@ public final class dho extends dhn {
         b((byte) i2);
     }
 
-    @Override // defpackage.dhn
-    public final void a(int i, String str) {
+    public final void a(int i, java.lang.String str) {
         a(i, 2);
         a(str);
     }
 
-    @Override // defpackage.dhn
-    public final void a(int i, dha dha) {
+    public final void a(int i, defpackage.dha dha) {
         a(i, 2);
         a(dha);
     }
 
-    @Override // defpackage.dhn
-    public final void a(dha dha) {
+    public final void a(defpackage.dha dha) {
         c(dha.a());
-        dha.a(this);
+        dha.a((defpackage.dgz) this);
     }
 
-    @Override // defpackage.dhn
     public final void a(byte[] bArr, int i) {
         c(i);
         c(bArr, 0, i);
     }
 
-    @Override // defpackage.dhn
-    public final void a(int i, djo djo) {
+    public final void a(int i, defpackage.djo djo) {
         a(i, 2);
         a(djo);
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.dhn
-    public final void a(int i, djo djo, dkh dkh) {
+    /* access modifiers changed from: 0000 */
+    public final void a(int i, defpackage.djo djo, defpackage.dkh dkh) {
         a(i, 2);
         a(djo, dkh);
     }
 
-    @Override // defpackage.dhn
-    public final void b(int i, djo djo) {
+    public final void b(int i, defpackage.djo djo) {
         a(1, 3);
         c(2, i);
         a(3, djo);
         a(1, 4);
     }
 
-    @Override // defpackage.dhn
-    public final void b(int i, dha dha) {
+    public final void b(int i, defpackage.dha dha) {
         a(1, 3);
         c(2, i);
         a(3, dha);
         a(1, 4);
     }
 
-    @Override // defpackage.dhn
-    public final void a(djo djo) {
+    public final void a(defpackage.djo djo) {
         c(djo.f());
-        djo.a(this);
+        djo.a((defpackage.dhn) this);
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.dhn
-    public final void a(djo djo, dkh dkh) {
-        dgo dgo = (dgo) djo;
+    /* access modifiers changed from: 0000 */
+    public final void a(defpackage.djo djo, defpackage.dkh dkh) {
+        defpackage.dgo dgo = (defpackage.dgo) djo;
         int c2 = dgo.c();
         if (c2 == -1) {
             c2 = dkh.b(dgo);
             dgo.b(c2);
         }
         c(c2);
-        dkh.a((Object) djo, this.b);
+        dkh.a((java.lang.Object) djo, this.b);
     }
 
-    @Override // defpackage.dhn
     public final void a(byte b) {
         if (this.e == this.d) {
             k();
@@ -300,7 +301,6 @@ public final class dho extends dhn {
         b(b);
     }
 
-    @Override // defpackage.dhn
     public final void b(int i) {
         if (i >= 0) {
             c(i);
@@ -309,96 +309,125 @@ public final class dho extends dhn {
         }
     }
 
-    @Override // defpackage.dhn
     public final void c(int i) {
         u(10);
         s(i);
     }
 
-    @Override // defpackage.dhn
     public final void e(int i) {
         u(4);
         t(i);
     }
 
-    @Override // defpackage.dhn
     public final void a(long j) {
         u(10);
         g(j);
     }
 
-    @Override // defpackage.dhn
     public final void c(long j) {
         u(8);
         h(j);
     }
 
-    @Override // defpackage.dhn
-    public final void a(String str) {
-        int a;
-        try {
-            int length = str.length() * 3;
-            int o = o(length);
-            if (o + length > this.d) {
-                byte[] bArr = new byte[length];
-                int a2 = dli.a(str, bArr, 0, length);
-                c(a2);
-                a(bArr, 0, a2);
-                return;
-            }
-            if (length + o > this.d - this.e) {
-                k();
-            }
-            int o2 = o(str.length());
-            int i = this.e;
-            if (o2 == o) {
-                try {
-                    this.e = i + o2;
-                    int a3 = dli.a(str, this.c, this.e, this.d - this.e);
-                    this.e = i;
-                    a = (a3 - i) - o2;
-                    s(a);
-                    this.e = a3;
-                } catch (dll e2) {
-                    this.f -= this.e - i;
-                    this.e = i;
-                    throw e2;
-                } catch (ArrayIndexOutOfBoundsException e3) {
-                    throw new dhr(e3);
-                }
-            } else {
-                a = dli.a(str);
-                s(a);
-                this.e = dli.a(str, this.c, this.e, a);
-            }
-            this.f = a + this.f;
-        } catch (dll e4) {
-            a(str, e4);
-        }
+    /* JADX WARNING: No exception handlers in catch block: Catch:{  } */
+    /* Code decompiled incorrectly, please refer to instructions dump. */
+    public final void a(java.lang.String r7) {
+        /*
+            r6 = this;
+            int r0 = r7.length()     // Catch:{ dll -> 0x0064 }
+            int r0 = r0 * 3
+            int r1 = o(r0)     // Catch:{ dll -> 0x0064 }
+            int r2 = r1 + r0
+            int r3 = r6.d     // Catch:{ dll -> 0x0064 }
+            if (r2 <= r3) goto L_0x001f
+            byte[] r1 = new byte[r0]     // Catch:{ dll -> 0x0064 }
+            r2 = 0
+            int r0 = defpackage.dli.a(r7, r1, r2, r0)     // Catch:{ dll -> 0x0064 }
+            r6.c(r0)     // Catch:{ dll -> 0x0064 }
+            r2 = 0
+            r6.a(r1, r2, r0)     // Catch:{ dll -> 0x0064 }
+        L_0x001e:
+            return
+        L_0x001f:
+            int r0 = r0 + r1
+            int r2 = r6.d     // Catch:{ dll -> 0x0064 }
+            int r3 = r6.e     // Catch:{ dll -> 0x0064 }
+            int r2 = r2 - r3
+            if (r0 <= r2) goto L_0x002a
+            r6.k()     // Catch:{ dll -> 0x0064 }
+        L_0x002a:
+            int r0 = r7.length()     // Catch:{ dll -> 0x0064 }
+            int r0 = o(r0)     // Catch:{ dll -> 0x0064 }
+            int r2 = r6.e     // Catch:{ dll -> 0x0064 }
+            if (r0 != r1) goto L_0x0069
+            int r1 = r2 + r0
+            r6.e = r1     // Catch:{ dll -> 0x0058, ArrayIndexOutOfBoundsException -> 0x007b }
+            byte[] r1 = r6.c     // Catch:{ dll -> 0x0058, ArrayIndexOutOfBoundsException -> 0x007b }
+            int r3 = r6.e     // Catch:{ dll -> 0x0058, ArrayIndexOutOfBoundsException -> 0x007b }
+            int r4 = r6.d     // Catch:{ dll -> 0x0058, ArrayIndexOutOfBoundsException -> 0x007b }
+            int r5 = r6.e     // Catch:{ dll -> 0x0058, ArrayIndexOutOfBoundsException -> 0x007b }
+            int r4 = r4 - r5
+            int r1 = defpackage.dli.a(r7, r1, r3, r4)     // Catch:{ dll -> 0x0058, ArrayIndexOutOfBoundsException -> 0x007b }
+            r6.e = r2     // Catch:{ dll -> 0x0058, ArrayIndexOutOfBoundsException -> 0x007b }
+            int r3 = r1 - r2
+            int r0 = r3 - r0
+            r6.s(r0)     // Catch:{ dll -> 0x0058, ArrayIndexOutOfBoundsException -> 0x007b }
+            r6.e = r1     // Catch:{ dll -> 0x0058, ArrayIndexOutOfBoundsException -> 0x007b }
+        L_0x0052:
+            int r1 = r6.f     // Catch:{ dll -> 0x0058, ArrayIndexOutOfBoundsException -> 0x007b }
+            int r0 = r0 + r1
+            r6.f = r0     // Catch:{ dll -> 0x0058, ArrayIndexOutOfBoundsException -> 0x007b }
+            goto L_0x001e
+        L_0x0058:
+            r0 = move-exception
+            int r1 = r6.f     // Catch:{ dll -> 0x0064 }
+            int r3 = r6.e     // Catch:{ dll -> 0x0064 }
+            int r3 = r3 - r2
+            int r1 = r1 - r3
+            r6.f = r1     // Catch:{ dll -> 0x0064 }
+            r6.e = r2     // Catch:{ dll -> 0x0064 }
+            throw r0     // Catch:{ dll -> 0x0064 }
+        L_0x0064:
+            r0 = move-exception
+            r6.a(r7, r0)
+            goto L_0x001e
+        L_0x0069:
+            int r0 = defpackage.dli.a(r7)     // Catch:{ dll -> 0x0058, ArrayIndexOutOfBoundsException -> 0x007b }
+            r6.s(r0)     // Catch:{ dll -> 0x0058, ArrayIndexOutOfBoundsException -> 0x007b }
+            byte[] r1 = r6.c     // Catch:{ dll -> 0x0058, ArrayIndexOutOfBoundsException -> 0x007b }
+            int r3 = r6.e     // Catch:{ dll -> 0x0058, ArrayIndexOutOfBoundsException -> 0x007b }
+            int r1 = defpackage.dli.a(r7, r1, r3, r0)     // Catch:{ dll -> 0x0058, ArrayIndexOutOfBoundsException -> 0x007b }
+            r6.e = r1     // Catch:{ dll -> 0x0058, ArrayIndexOutOfBoundsException -> 0x007b }
+            goto L_0x0052
+        L_0x007b:
+            r0 = move-exception
+            dhr r1 = new dhr     // Catch:{ dll -> 0x0064 }
+            r1.<init>(r0)     // Catch:{ dll -> 0x0064 }
+            throw r1     // Catch:{ dll -> 0x0064 }
+        */
+        throw new UnsupportedOperationException("Method not decompiled: defpackage.dho.a(java.lang.String):void");
     }
 
-    @Override // defpackage.dhn
     public final void h() {
         if (this.e > 0) {
             k();
         }
     }
 
-    @Override // defpackage.dhn
     public final void c(byte[] bArr, int i, int i2) {
         if (this.d - this.e >= i2) {
-            System.arraycopy(bArr, i, this.c, this.e, i2);
+            java.lang.System.arraycopy(bArr, i, this.c, this.e, i2);
             this.e += i2;
         } else {
             int i3 = this.d - this.e;
-            System.arraycopy(bArr, i, this.c, this.e, i3);
+            java.lang.System.arraycopy(bArr, i, this.c, this.e, i3);
             int i4 = i + i3;
             i2 -= i3;
             this.e = this.d;
             this.f = i3 + this.f;
             k();
             if (i2 <= this.d) {
-                System.arraycopy(bArr, i4, this.c, 0, i2);
+                java.lang.System.arraycopy(bArr, i4, this.c, 0, i2);
                 this.e = i2;
             } else {
                 this.g.write(bArr, i4, i2);
@@ -407,7 +436,6 @@ public final class dho extends dhn {
         this.f += i2;
     }
 
-    @Override // defpackage.dgz
     public final void a(byte[] bArr, int i, int i2) {
         c(bArr, i, i2);
     }

@@ -1,17 +1,12 @@
 package defpackage;
 
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import java.util.ArrayList;
-
-/* renamed from: zc  reason: default package */
+/* renamed from: zc reason: default package */
 /* compiled from: PG */
-public final class zc extends BaseAdapter {
+public final class zc extends android.widget.BaseAdapter {
     private int a = -1;
-    private final /* synthetic */ zb b;
+    private final /* synthetic */ defpackage.zb b;
 
-    public zc(zb zbVar) {
+    public zc(defpackage.zb zbVar) {
         this.b = zbVar;
         a();
     }
@@ -25,24 +20,24 @@ public final class zc extends BaseAdapter {
         return (long) i;
     }
 
-    public final View getView(int i, View view, ViewGroup viewGroup) {
-        View view2;
+    public final android.view.View getView(int i, android.view.View view, android.view.ViewGroup viewGroup) {
+        android.view.View view2;
         if (view == null) {
             view2 = this.b.a.inflate(this.b.d, viewGroup, false);
         } else {
             view2 = view;
         }
-        ((zw) view2).a((MenuItemImpl) getItem(i));
+        ((defpackage.zw) view2).a((defpackage.zi) getItem(i));
         return view2;
     }
 
     private final void a() {
-        MenuItemImpl ziVar = this.b.b.j;
+        defpackage.zi ziVar = this.b.b.j;
         if (ziVar != null) {
-            ArrayList k = this.b.b.k();
+            java.util.ArrayList k = this.b.b.k();
             int size = k.size();
             for (int i = 0; i < size; i++) {
-                if (((MenuItemImpl) k.get(i)) == ziVar) {
+                if (((defpackage.zi) k.get(i)) == ziVar) {
                     this.a = i;
                     return;
                 }
@@ -56,11 +51,11 @@ public final class zc extends BaseAdapter {
         super.notifyDataSetChanged();
     }
 
-    public final /* synthetic */ Object getItem(int i) {
-        ArrayList k = this.b.b.k();
+    public final /* synthetic */ java.lang.Object getItem(int i) {
+        java.util.ArrayList k = this.b.b.k();
         if (this.a >= 0 && i >= this.a) {
             i++;
         }
-        return (MenuItemImpl) k.get(i);
+        return (defpackage.zi) k.get(i);
     }
 }

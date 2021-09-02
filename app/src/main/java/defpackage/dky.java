@@ -1,31 +1,29 @@
 package defpackage;
 
-import java.util.Arrays;
-
-/* renamed from: dky  reason: default package */
+/* renamed from: dky reason: default package */
 /* compiled from: PG */
 public final class dky {
-    public static final dky a = new dky(0, new int[0], new Object[0], false);
+    public static final defpackage.dky a = new defpackage.dky(0, new int[0], new java.lang.Object[0], false);
     public int b;
     public int[] c;
-    public Object[] d;
+    public java.lang.Object[] d;
     public int e;
     public boolean f;
 
-    static dky a(dky dky, dky dky2) {
+    static defpackage.dky a(defpackage.dky dky, defpackage.dky dky2) {
         int i = dky.b + dky2.b;
-        int[] copyOf = Arrays.copyOf(dky.c, i);
-        System.arraycopy(dky2.c, 0, copyOf, dky.b, dky2.b);
-        Object[] copyOf2 = Arrays.copyOf(dky.d, i);
-        System.arraycopy(dky2.d, 0, copyOf2, dky.b, dky2.b);
-        return new dky(i, copyOf, copyOf2, true);
+        int[] copyOf = java.util.Arrays.copyOf(dky.c, i);
+        java.lang.System.arraycopy(dky2.c, 0, copyOf, dky.b, dky2.b);
+        java.lang.Object[] copyOf2 = java.util.Arrays.copyOf(dky.d, i);
+        java.lang.System.arraycopy(dky2.d, 0, copyOf2, dky.b, dky2.b);
+        return new defpackage.dky(i, copyOf, copyOf2, true);
     }
 
     dky() {
-        this(0, new int[8], new Object[8], true);
+        this(0, new int[8], new java.lang.Object[8], true);
     }
 
-    private dky(int i, int[] iArr, Object[] objArr, boolean z) {
+    private dky(int i, int[] iArr, java.lang.Object[] objArr, boolean z) {
         this.e = -1;
         this.b = i;
         this.c = iArr;
@@ -33,9 +31,9 @@ public final class dky {
         this.f = z;
     }
 
-    public final void a(dlt dlt) {
+    public final void a(defpackage.dlt dlt) {
         if (this.b != 0) {
-            if (bg.at == bg.at) {
+            if (defpackage.bg.at == defpackage.bg.at) {
                 for (int i = 0; i < this.b; i++) {
                     a(this.c[i], this.d[i], dlt);
                 }
@@ -47,35 +45,34 @@ public final class dky {
         }
     }
 
-    private static void a(int i, Object obj, dlt dlt) {
+    private static void a(int i, java.lang.Object obj, defpackage.dlt dlt) {
         int i2 = i >>> 3;
         switch (i & 7) {
             case 0:
-                dlt.a(i2, ((Long) obj).longValue());
+                dlt.a(i2, ((java.lang.Long) obj).longValue());
                 return;
             case 1:
-                dlt.d(i2, ((Long) obj).longValue());
+                dlt.d(i2, ((java.lang.Long) obj).longValue());
                 return;
             case 2:
-                dlt.a(i2, (dha) obj);
+                dlt.a(i2, (defpackage.dha) obj);
                 return;
             case 3:
-                if (bg.at == bg.at) {
+                if (defpackage.bg.at == defpackage.bg.at) {
                     dlt.a(i2);
-                    ((dky) obj).a(dlt);
+                    ((defpackage.dky) obj).a(dlt);
                     dlt.b(i2);
                     return;
                 }
                 dlt.b(i2);
-                ((dky) obj).a(dlt);
+                ((defpackage.dky) obj).a(dlt);
                 dlt.a(i2);
                 return;
-            case 4:
-            default:
-                throw new RuntimeException(dir.f());
             case 5:
-                dlt.d(i2, ((Integer) obj).intValue());
+                dlt.d(i2, ((java.lang.Integer) obj).intValue());
                 return;
+            default:
+                throw new java.lang.RuntimeException(defpackage.dir.f());
         }
     }
 
@@ -89,25 +86,24 @@ public final class dky {
                 int i4 = i3 >>> 3;
                 switch (i3 & 7) {
                     case 0:
-                        a2 = dhn.e(i4, ((Long) this.d[i2]).longValue());
+                        a2 = defpackage.dhn.e(i4, ((java.lang.Long) this.d[i2]).longValue());
                         break;
                     case 1:
-                        ((Long) this.d[i2]).longValue();
-                        a2 = dhn.h(i4);
+                        ((java.lang.Long) this.d[i2]).longValue();
+                        a2 = defpackage.dhn.h(i4);
                         break;
                     case 2:
-                        a2 = dhn.c(i4, (dha) this.d[i2]);
+                        a2 = defpackage.dhn.c(i4, (defpackage.dha) this.d[i2]);
                         break;
                     case 3:
-                        a2 = ((dky) this.d[i2]).a() + (dhn.m(i4) << 1);
+                        a2 = ((defpackage.dky) this.d[i2]).a() + (defpackage.dhn.m(i4) << 1);
                         break;
-                    case 4:
-                    default:
-                        throw new IllegalStateException(dir.f());
                     case 5:
-                        ((Integer) this.d[i2]).intValue();
-                        a2 = dhn.f(i4);
+                        ((java.lang.Integer) this.d[i2]).intValue();
+                        a2 = defpackage.dhn.f(i4);
                         break;
+                    default:
+                        throw new java.lang.IllegalStateException(defpackage.dir.f());
                 }
                 i += a2;
             }
@@ -116,7 +112,7 @@ public final class dky {
         return i;
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         boolean z;
         boolean z2;
         if (this == obj) {
@@ -125,10 +121,10 @@ public final class dky {
         if (obj == null) {
             return false;
         }
-        if (!(obj instanceof dky)) {
+        if (!(obj instanceof defpackage.dky)) {
             return false;
         }
-        dky dky = (dky) obj;
+        defpackage.dky dky = (defpackage.dky) obj;
         if (this.b == dky.b) {
             int[] iArr = this.c;
             int[] iArr2 = dky.c;
@@ -146,8 +142,8 @@ public final class dky {
                 }
             }
             if (z) {
-                Object[] objArr = this.d;
-                Object[] objArr2 = dky.d;
+                java.lang.Object[] objArr = this.d;
+                java.lang.Object[] objArr2 = dky.d;
                 int i3 = this.b;
                 int i4 = 0;
                 while (true) {
@@ -173,29 +169,27 @@ public final class dky {
         int i = 17;
         int i2 = (this.b + 527) * 31;
         int[] iArr = this.c;
-        int i3 = this.b;
-        int i4 = 17;
-        for (int i5 = 0; i5 < i3; i5++) {
-            i4 = (i4 * 31) + iArr[i5];
+        int i3 = 17;
+        for (int i4 = 0; i4 < this.b; i4++) {
+            i3 = (i3 * 31) + iArr[i4];
         }
-        int i6 = (i2 + i4) * 31;
-        Object[] objArr = this.d;
-        int i7 = this.b;
-        for (int i8 = 0; i8 < i7; i8++) {
-            i = (i * 31) + objArr[i8].hashCode();
+        int i5 = (i2 + i3) * 31;
+        java.lang.Object[] objArr = this.d;
+        for (int i6 = 0; i6 < this.b; i6++) {
+            i = (i * 31) + objArr[i6].hashCode();
         }
-        return i6 + i;
+        return i5 + i;
     }
 
-    /* access modifiers changed from: package-private */
-    public final void a(int i, Object obj) {
+    /* access modifiers changed from: 0000 */
+    public final void a(int i, java.lang.Object obj) {
         if (!this.f) {
-            throw new UnsupportedOperationException();
+            throw new java.lang.UnsupportedOperationException();
         }
         if (this.b == this.c.length) {
             int i2 = (this.b < 4 ? 8 : this.b >> 1) + this.b;
-            this.c = Arrays.copyOf(this.c, i2);
-            this.d = Arrays.copyOf(this.d, i2);
+            this.c = java.util.Arrays.copyOf(this.c, i2);
+            this.d = java.util.Arrays.copyOf(this.d, i2);
         }
         this.c[this.b] = i;
         this.d[this.b] = obj;

@@ -1,18 +1,18 @@
 package defpackage;
 
-/* renamed from: ega  reason: default package */
+/* renamed from: ega reason: default package */
 /* compiled from: PG */
-public final class ega extends dlz {
-    private static volatile ega[] d;
-    public efz a = null;
-    public Integer b = null;
-    public Long c = null;
+public final class ega extends defpackage.dlz {
+    private static volatile defpackage.ega[] d;
+    public defpackage.efz a;
+    public java.lang.Integer b;
+    public java.lang.Long c;
 
-    public static ega[] d() {
+    public static defpackage.ega[] d() {
         if (d == null) {
-            synchronized (dmd.b) {
+            synchronized (defpackage.dmd.b) {
                 if (d == null) {
-                    d = new ega[0];
+                    d = new defpackage.ega[0];
                 }
             }
         }
@@ -20,13 +20,15 @@ public final class ega extends dlz {
     }
 
     public ega() {
+        this.a = null;
+        this.b = null;
+        this.c = null;
         this.k = -1;
     }
 
-    @Override // defpackage.dlz, defpackage.dmf
-    public final void a(dlx dlx) {
+    public final void a(defpackage.dlx dlx) {
         if (this.a != null) {
-            dlx.a(1, this.a);
+            dlx.a(1, (defpackage.dmf) this.a);
         }
         if (this.b != null) {
             dlx.a(2, this.b.intValue());
@@ -38,23 +40,21 @@ public final class ega extends dlz {
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.dlz, defpackage.dmf
     public final int a() {
         int a2 = super.a();
         if (this.a != null) {
-            a2 += dlx.b(1, this.a);
+            a2 += defpackage.dlx.b(1, (defpackage.dmf) this.a);
         }
         if (this.b != null) {
-            a2 += dlx.c(2, this.b.intValue());
+            a2 += defpackage.dlx.c(2, this.b.intValue());
         }
         if (this.c != null) {
-            return a2 + dlx.c(3, this.c.longValue());
+            return a2 + defpackage.dlx.c(3, this.c.longValue());
         }
         return a2;
     }
 
-    @Override // defpackage.dmf
-    public final /* synthetic */ dmf a(dlw dlw) {
+    public final /* synthetic */ defpackage.dmf a(defpackage.dlw dlw) {
         while (true) {
             int a2 = dlw.a();
             switch (a2) {
@@ -62,21 +62,21 @@ public final class ega extends dlz {
                     break;
                 case 10:
                     if (this.a == null) {
-                        this.a = new efz();
+                        this.a = new defpackage.efz();
                     }
-                    dlw.a(this.a);
-                    break;
+                    dlw.a((defpackage.dmf) this.a);
+                    continue;
                 case 16:
-                    this.b = Integer.valueOf(dlw.e());
-                    break;
+                    this.b = java.lang.Integer.valueOf(dlw.e());
+                    continue;
                 case 24:
-                    this.c = Long.valueOf(dlw.b());
-                    break;
+                    this.c = java.lang.Long.valueOf(dlw.b());
+                    continue;
                 default:
-                    if (super.a(dlw, a2)) {
+                    if (!super.a(dlw, a2)) {
                         break;
                     } else {
-                        break;
+                        continue;
                     }
             }
         }

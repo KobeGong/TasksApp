@@ -1,6 +1,6 @@
 package defpackage;
 
-/* renamed from: cia  reason: default package */
+/* renamed from: cia reason: default package */
 /* compiled from: PG */
 public final class cia {
     public int a;

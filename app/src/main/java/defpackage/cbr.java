@@ -1,51 +1,52 @@
 package defpackage;
 
-/* renamed from: cbr  reason: default package */
+/* renamed from: cbr reason: default package */
 /* compiled from: PG */
-public final class cbr extends dih implements djq {
-    public static final cbr b = new cbr();
-    private static volatile djx c;
-    public diq a = dka.b;
+public final class cbr extends defpackage.dih implements defpackage.djq {
+    public static final defpackage.cbr b = new defpackage.cbr();
+    private static volatile defpackage.djx c;
+    public defpackage.diq a = defpackage.dka.b;
 
     private cbr() {
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.dih
-    public final Object a(int i) {
-        djx djx;
+    public final java.lang.Object a(int i) {
+        defpackage.djx djx;
         switch (i - 1) {
             case 0:
-                return (byte) 1;
+                return java.lang.Byte.valueOf(1);
             case 1:
                 return null;
             case 2:
-                return new dkb(b, "\u0000\u0001\u0000\u0000\u0001\u0001\u0001\u0000\u0001\u0000\u0001\u001b", new Object[]{"a", dgu.class});
+                java.lang.Object[] objArr = {"a", defpackage.dgu.class};
+                return new defpackage.dkb(b, "\u0000\u0001\u0000\u0000\u0001\u0001\u0001\u0000\u0001\u0000\u0001\u001b", objArr);
             case 3:
-                return new cbr();
+                return new defpackage.cbr();
             case 4:
-                return new dii();
+                return new defpackage.dii();
             case 5:
                 return b;
             case 6:
-                djx djx2 = c;
+                defpackage.djx djx2 = c;
                 if (djx2 != null) {
                     return djx2;
                 }
-                synchronized (cbr.class) {
+                synchronized (defpackage.cbr.class) {
                     djx = c;
                     if (djx == null) {
-                        djx = new dgr(b);
+                        djx = new defpackage.dgr(b);
                         c = djx;
                     }
                 }
                 return djx;
             default:
-                throw new UnsupportedOperationException();
+                throw new java.lang.UnsupportedOperationException();
         }
     }
 
     static {
-        dih.t.put(cbr.class, b);
+        defpackage.cbr cbr = b;
+        defpackage.dih.t.put(defpackage.cbr.class, cbr);
     }
 }

@@ -1,22 +1,19 @@
 package defpackage;
 
-import android.os.SystemClock;
-
-/* access modifiers changed from: package-private */
-/* renamed from: coj  reason: default package */
+/* renamed from: coj reason: default package */
 /* compiled from: PG */
-public final class coj implements Runnable {
-    private final /* synthetic */ coi a;
+final class coj implements java.lang.Runnable {
+    private final /* synthetic */ defpackage.coi a;
 
-    coj(coi coi) {
+    coj(defpackage.coi coi) {
         this.a = coi;
     }
 
     public final void run() {
-        coi coi = this.a;
-        long uptimeMillis = SystemClock.uptimeMillis() - coi.c.get();
+        defpackage.coi coi = this.a;
+        long uptimeMillis = android.os.SystemClock.uptimeMillis() - coi.c.get();
         if (uptimeMillis < 15000) {
-            cdm.a(3, "ClearcutTransmitter", "ignoring early disconnect, postScheduledMs = %d", Long.valueOf(uptimeMillis));
+            defpackage.cdm.a(3, "ClearcutTransmitter", "ignoring early disconnect, postScheduledMs = %d", java.lang.Long.valueOf(uptimeMillis));
             return;
         }
         synchronized (coi.b) {

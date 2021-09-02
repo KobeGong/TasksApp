@@ -1,24 +1,18 @@
 package defpackage;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import org.chromium.base.UnguessableToken;
-
-/* renamed from: ehi  reason: default package */
+/* renamed from: ehi reason: default package */
 /* compiled from: PG */
-public final class ehi implements Parcelable.Creator {
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object[] newArray(int i) {
-        return new UnguessableToken[i];
+public final class ehi implements android.os.Parcelable.Creator {
+    public final /* synthetic */ java.lang.Object[] newArray(int i) {
+        return new org.chromium.base.UnguessableToken[i];
     }
 
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object createFromParcel(Parcel parcel) {
+    public final /* synthetic */ java.lang.Object createFromParcel(android.os.Parcel parcel) {
         long readLong = parcel.readLong();
         long readLong2 = parcel.readLong();
         if (readLong == 0 || readLong2 == 0) {
             return null;
         }
-        return new UnguessableToken(readLong, readLong2);
+        return new org.chromium.base.UnguessableToken(readLong, readLong2);
     }
 }

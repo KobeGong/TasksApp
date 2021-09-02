@@ -1,18 +1,17 @@
 package defpackage;
 
-/* renamed from: aka  reason: default package */
+/* renamed from: aka reason: default package */
 /* compiled from: PG */
-public final class aka implements csd {
-    public static crv a() {
-        return crv.b(new akc());
+public final class aka implements defpackage.csd {
+    public static defpackage.crv a() {
+        return defpackage.crv.b(new defpackage.akc());
     }
 
-    @Override // defpackage.csd
-    public final /* synthetic */ Object b() {
+    public final /* synthetic */ java.lang.Object b() {
         return a();
     }
 
     static {
-        new aka();
+        new defpackage.aka();
     }
 }

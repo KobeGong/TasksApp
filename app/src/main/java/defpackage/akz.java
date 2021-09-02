@@ -1,13 +1,13 @@
 package defpackage;
 
-/* renamed from: akz  reason: default package */
+/* renamed from: akz reason: default package */
 /* compiled from: PG */
 public abstract class akz {
-    public abstract dcb a();
+    public abstract defpackage.dcb a();
 
-    public abstract dby b();
+    public abstract defpackage.dby b();
 
-    public static akz a(dcb dcb, dby dby) {
-        return new aks(dcb, dby);
+    public static defpackage.akz a(defpackage.dcb dcb, defpackage.dby dby) {
+        return new defpackage.aks(dcb, dby);
     }
 }

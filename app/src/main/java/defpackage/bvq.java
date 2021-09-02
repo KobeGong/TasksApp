@@ -1,27 +1,22 @@
 package defpackage;
 
-import android.content.Intent;
-import android.os.Build;
-import java.util.Set;
-
-/* renamed from: bvq  reason: default package */
+/* renamed from: bvq reason: default package */
 /* compiled from: PG */
-public final class bvq implements bvn {
-    private final bup a;
-    private final bvs b;
-    private final byd c;
+public final class bvq implements defpackage.bvn {
+    private final defpackage.bup a;
+    private final defpackage.bvs b;
+    private final defpackage.byd c;
 
-    bvq(bup bup, bvs bvs, byd byd) {
+    bvq(defpackage.bup bup, defpackage.bvs bvs, defpackage.byd byd) {
         this.a = bup;
         this.b = bvs;
         this.c = byd;
     }
 
-    @Override // defpackage.bvn
-    public final boolean a(Intent intent) {
+    public final boolean a(android.content.Intent intent) {
         boolean z;
         if (intent != null && "android.accounts.LOGIN_ACCOUNTS_CHANGED".equals(intent.getAction())) {
-            if (Build.VERSION.SDK_INT >= 26) {
+            if (android.os.Build.VERSION.SDK_INT >= 26) {
                 z = true;
             } else {
                 z = false;
@@ -33,11 +28,10 @@ public final class bvq implements bvn {
         return false;
     }
 
-    @Override // defpackage.bvn
-    public final void a(Intent intent, bvo bvo) {
-        bty.a("AccountChangedIntentHandler", "Account changed event received.", new Object[0]);
-        Set b2 = this.c.b();
-        for (bul bul : this.a.a()) {
+    public final void a(android.content.Intent intent, defpackage.bvo bvo) {
+        defpackage.bty.a("AccountChangedIntentHandler", "Account changed event received.", new java.lang.Object[0]);
+        java.util.Set b2 = this.c.b();
+        for (defpackage.bul bul : this.a.a()) {
             if (!b2.contains(bul.b())) {
                 this.b.a(bul);
             }

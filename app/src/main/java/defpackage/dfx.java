@@ -1,13 +1,12 @@
 package defpackage;
 
-/* renamed from: dfx  reason: default package */
+/* renamed from: dfx reason: default package */
 /* compiled from: PG */
-final class dfx implements dio {
+final class dfx implements defpackage.dio {
     dfx() {
     }
 
-    @Override // defpackage.dio
-    public final /* synthetic */ din a(int i) {
-        return dfw.a(i);
+    public final /* synthetic */ defpackage.din a(int i) {
+        return defpackage.dfw.a(i);
     }
 }

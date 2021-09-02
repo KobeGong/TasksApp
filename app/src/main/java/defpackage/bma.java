@@ -1,11 +1,11 @@
 package defpackage;
 
-/* renamed from: bma  reason: default package */
+/* renamed from: bma reason: default package */
 /* compiled from: PG */
-public final class bma implements aye {
+public final class bma implements defpackage.aye {
     public final int a;
 
-    public bma(bmb bmb) {
+    public bma(defpackage.bmb bmb) {
         this.a = bmb.a;
     }
 }

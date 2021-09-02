@@ -1,17 +1,15 @@
 package defpackage;
 
-import java.io.InputStream;
-
-/* renamed from: djx  reason: default package */
+/* renamed from: djx reason: default package */
 /* compiled from: PG */
 public interface djx {
-    Object a(dhj dhj, dhw dhw);
+    java.lang.Object a(defpackage.dhj dhj, defpackage.dhw dhw);
 
-    Object a(InputStream inputStream);
+    java.lang.Object a(java.io.InputStream inputStream);
 
-    Object a(byte[] bArr);
+    java.lang.Object a(byte[] bArr);
 
-    Object a(byte[] bArr, dhw dhw);
+    java.lang.Object a(byte[] bArr, defpackage.dhw dhw);
 
-    Object b(dhj dhj, dhw dhw);
+    java.lang.Object b(defpackage.dhj dhj, defpackage.dhw dhw);
 }

@@ -1,42 +1,37 @@
 package defpackage;
 
-/* renamed from: ae  reason: default package */
+/* renamed from: ae reason: default package */
 /* compiled from: PG */
-final class ae extends af implements t {
-    private final y d;
-    private final /* synthetic */ ac e;
+final class ae extends defpackage.af implements defpackage.t {
+    private final LifecycleOwner d;
+    private final /* synthetic */ defpackage.ac e;
 
-    /* JADX INFO: super call moved to the top of the method (can break code semantics) */
-    ae(ac acVar, y yVar, ag agVar) {
-        super(acVar, agVar);
+    ae(defpackage.ac acVar, LifecycleOwner yVar, defpackage.ag agVar) {
         this.e = acVar;
+        super(acVar, agVar);
         this.d = yVar;
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.af
+    /* access modifiers changed from: 0000 */
     public final boolean a() {
-        return this.d.a().a().a(w.STARTED);
+        return this.d.getLifecycle().getCurrentState().a(State.STARTED);
     }
 
-    @Override // defpackage.t
-    public final void a(y yVar, v vVar) {
-        if (this.d.a().a() == w.DESTROYED) {
+    public final void a(LifecycleOwner yVar, defpackage.v vVar) {
+        if (this.d.getLifecycle().getCurrentState() == State.DESTROYED) {
             this.e.a(this.a);
         } else {
             a(a());
         }
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.af
-    public final boolean a(y yVar) {
+    /* access modifiers changed from: 0000 */
+    public final boolean a(LifecycleOwner yVar) {
         return this.d == yVar;
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.af
+    /* access modifiers changed from: 0000 */
     public final void b() {
-        this.d.a().b(this);
+        this.d.getLifecycle().removeObserver(this);
     }
 }

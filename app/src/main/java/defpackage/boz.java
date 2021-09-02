@@ -1,68 +1,61 @@
 package defpackage;
 
-import android.content.ContentResolver;
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.net.Uri;
-import android.os.Binder;
-import android.os.Build;
-import android.os.Process;
-import android.os.UserManager;
-
-/* renamed from: boz */
+/* renamed from: boz reason: default package */
+/* compiled from: PG */
 public abstract class boz {
-    public static final Object a = new Object();
-    public static Context b = null;
-    public static Boolean c = null;
-    public final bpa d;
-    public final String e;
-    public final String f;
-    public final Object g;
+    public static final java.lang.Object a = new java.lang.Object();
+    public static android.content.Context b = null;
+    public static java.lang.Boolean c = null;
+    public final defpackage.bpa d;
+    public final java.lang.String e;
+    public final java.lang.String f;
+    public final java.lang.Object g;
 
-    boz(bpa bpa, String str, Object obj) {
+    boz(defpackage.bpa bpa, java.lang.String str, java.lang.Object obj) {
         if (bpa.a == null && bpa.b == null) {
-            throw new IllegalArgumentException("Must pass a valid SharedPreferences file name or ContentProvider URI");
+            throw new java.lang.IllegalArgumentException("Must pass a valid SharedPreferences file name or ContentProvider URI");
         } else if (bpa.a == null || bpa.b == null) {
             this.d = bpa;
-            String valueOf = String.valueOf(bpa.c);
-            String valueOf2 = String.valueOf(str);
-            this.f = valueOf2.length() != 0 ? valueOf.concat(valueOf2) : new String(valueOf);
-            String valueOf3 = String.valueOf(bpa.d);
-            String valueOf4 = String.valueOf(str);
-            this.e = valueOf4.length() != 0 ? valueOf3.concat(valueOf4) : new String(valueOf3);
+            java.lang.String valueOf = java.lang.String.valueOf(bpa.c);
+            java.lang.String valueOf2 = java.lang.String.valueOf(str);
+            this.f = valueOf2.length() != 0 ? valueOf.concat(valueOf2) : new java.lang.String(valueOf);
+            java.lang.String valueOf3 = java.lang.String.valueOf(bpa.d);
+            java.lang.String valueOf4 = java.lang.String.valueOf(str);
+            this.e = valueOf4.length() != 0 ? valueOf3.concat(valueOf4) : new java.lang.String(valueOf3);
             this.g = obj;
         } else {
-            throw new IllegalArgumentException("Must pass one of SharedPreferences file name or ContentProvider URI");
+            throw new java.lang.IllegalArgumentException("Must pass one of SharedPreferences file name or ContentProvider URI");
         }
     }
 
-    public abstract Object a(SharedPreferences sharedPreferences);
+    public abstract java.lang.Object a(android.content.SharedPreferences sharedPreferences);
 
-    public abstract Object a(String str);
+    public abstract java.lang.Object a(java.lang.String str);
 
-    public final Object a() {
+    @android.annotation.TargetApi(24)
+    public final java.lang.Object a() {
         if (!b("gms:phenotype:phenotype_flag:debug_bypass_phenotype")) {
             if (this.d.b != null) {
-                ContentResolver contentResolver = b.getContentResolver();
-                Uri uri = this.d.b;
-                bow bow = (bow) bow.a.get(uri);
+                android.content.ContentResolver contentResolver = b.getContentResolver();
+                android.net.Uri uri = this.d.b;
+                defpackage.bow bow = (defpackage.bow) defpackage.bow.a.get(uri);
                 if (bow == null) {
-                    bow bow2 = new bow(contentResolver, uri);
-                    bow = (bow) bow.a.putIfAbsent(uri, bow2);
+                    defpackage.bow bow2 = new defpackage.bow(contentResolver, uri);
+                    bow = (defpackage.bow) defpackage.bow.a.putIfAbsent(uri, bow2);
                     if (bow == null) {
                         bow2.b.registerContentObserver(bow2.c, false, bow2.d);
                         bow = bow2;
                     }
                 }
-                String str = (String) a(new bpd(this, bow));
+                java.lang.String str = (java.lang.String) a((defpackage.bpb) new defpackage.bpd(this, bow));
                 if (str != null) {
                     return a(str);
                 }
             } else if (this.d.a != null) {
-                if (Build.VERSION.SDK_INT >= 24 && !b.isDeviceProtectedStorage() && !((UserManager) b.getSystemService(UserManager.class)).isUserUnlocked()) {
+                if (android.os.Build.VERSION.SDK_INT >= 24 && !b.isDeviceProtectedStorage() && !((android.os.UserManager) b.getSystemService(android.os.UserManager.class)).isUserUnlocked()) {
                     return null;
                 }
-                SharedPreferences sharedPreferences = b.getSharedPreferences(this.d.a, 0);
+                android.content.SharedPreferences sharedPreferences = b.getSharedPreferences(this.d.a, 0);
                 if (sharedPreferences.contains(this.e)) {
                     return a(sharedPreferences);
                 }
@@ -71,32 +64,34 @@ public abstract class boz {
         return null;
     }
 
-    public final Object b() {
-        String str;
-        if (this.d.e || !c() || (str = (String) a(new bpe(this))) == null) {
-            return null;
+    public final java.lang.Object b() {
+        if (!this.d.e && c()) {
+            java.lang.String str = (java.lang.String) a((defpackage.bpb) new defpackage.bpe(this));
+            if (str != null) {
+                return a(str);
+            }
         }
-        return a(str);
+        return null;
     }
 
-    private static Object a(bpb bpb) {
+    private static java.lang.Object a(defpackage.bpb bpb) {
         long clearCallingIdentity;
         try {
             return bpb.a();
-        } catch (SecurityException e2) {
-            clearCallingIdentity = Binder.clearCallingIdentity();
-            Object a2 = bpb.a();
-            Binder.restoreCallingIdentity(clearCallingIdentity);
+        } catch (java.lang.SecurityException e2) {
+            clearCallingIdentity = android.os.Binder.clearCallingIdentity();
+            java.lang.Object a2 = bpb.a();
+            android.os.Binder.restoreCallingIdentity(clearCallingIdentity);
             return a2;
         } catch (Throwable th) {
-            Binder.restoreCallingIdentity(clearCallingIdentity);
+            android.os.Binder.restoreCallingIdentity(clearCallingIdentity);
             throw th;
         }
     }
 
-    static boolean b(String str) {
+    static boolean b(java.lang.String str) {
         if (c()) {
-            return ((Boolean) a(new bpf(str))).booleanValue();
+            return ((java.lang.Boolean) a((defpackage.bpb) new defpackage.bpf(str))).booleanValue();
         }
         return false;
     }
@@ -107,18 +102,18 @@ public abstract class boz {
             if (b == null) {
                 return false;
             }
-            Context context = b;
-            if (jd.a(context, "com.google.android.providers.gsf.permission.READ_GSERVICES", Binder.getCallingPid(), Binder.getCallingUid(), Binder.getCallingPid() == Process.myPid() ? context.getPackageName() : null) == 0) {
+            android.content.Context context = b;
+            if (defpackage.jd.a(context, "com.google.android.providers.gsf.permission.READ_GSERVICES", android.os.Binder.getCallingPid(), android.os.Binder.getCallingUid(), android.os.Binder.getCallingPid() == android.os.Process.myPid() ? context.getPackageName() : null) == 0) {
                 z = true;
             } else {
                 z = false;
             }
-            c = Boolean.valueOf(z);
+            c = java.lang.Boolean.valueOf(z);
         }
         return c.booleanValue();
     }
 
-    public static /* synthetic */ boz a(bpa bpa, String str) {
-        return new bpg(bpa, str, null);
+    public static /* synthetic */ defpackage.boz a(defpackage.bpa bpa, java.lang.String str) {
+        return new defpackage.bpg(bpa, str, null);
     }
 }

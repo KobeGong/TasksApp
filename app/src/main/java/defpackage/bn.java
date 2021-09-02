@@ -1,6 +1,6 @@
 package defpackage;
 
-/* renamed from: bn  reason: default package */
+/* renamed from: bn reason: default package */
 /* compiled from: PG */
 public enum bn {
     NONE,

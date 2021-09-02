@@ -1,30 +1,30 @@
 package defpackage;
 
-/* renamed from: dcg  reason: default package */
+/* renamed from: dcg reason: default package */
 /* compiled from: PG */
 public final class dcg {
-    private static volatile dpb a;
-    private static volatile dpb b;
-    private static volatile dpb c;
-    private static volatile dpb d;
+    private static volatile defpackage.dpb a;
+    private static volatile defpackage.dpb b;
+    private static volatile defpackage.dpb c;
+    private static volatile defpackage.dpb d;
 
     private dcg() {
     }
 
-    public static dpb a() {
-        dpb dpb = a;
+    public static defpackage.dpb a() {
+        defpackage.dpb dpb = a;
         if (dpb == null) {
-            synchronized (dcg.class) {
+            synchronized (defpackage.dcg.class) {
                 dpb = a;
                 if (dpb == null) {
-                    dpc dpc = new dpc();
+                    defpackage.dpc dpc = new defpackage.dpc();
                     dpc.a = null;
                     dpc.b = null;
-                    dpc.c = dpe.UNARY;
-                    dpc.d = dpb.a("google.internal.tasks.v1.TasksApiService", "Query");
+                    dpc.c = defpackage.dpe.UNARY;
+                    dpc.d = defpackage.dpb.a("google.internal.tasks.v1.TasksApiService", "Query");
                     dpc.h = true;
-                    dpc.a = eaa.a(dbs.b);
-                    dpc.b = eaa.a(dbt.b);
+                    dpc.a = defpackage.eaa.a(defpackage.dbs.b);
+                    dpc.b = defpackage.eaa.a(defpackage.dbt.b);
                     dpb = dpc.a();
                     a = dpb;
                 }
@@ -33,20 +33,20 @@ public final class dcg {
         return dpb;
     }
 
-    public static dpb b() {
-        dpb dpb = b;
+    public static defpackage.dpb b() {
+        defpackage.dpb dpb = b;
         if (dpb == null) {
-            synchronized (dcg.class) {
+            synchronized (defpackage.dcg.class) {
                 dpb = b;
                 if (dpb == null) {
-                    dpc dpc = new dpc();
+                    defpackage.dpc dpc = new defpackage.dpc();
                     dpc.a = null;
                     dpc.b = null;
-                    dpc.c = dpe.UNARY;
-                    dpc.d = dpb.a("google.internal.tasks.v1.TasksApiService", "Mutate");
+                    dpc.c = defpackage.dpe.UNARY;
+                    dpc.d = defpackage.dpb.a("google.internal.tasks.v1.TasksApiService", "Mutate");
                     dpc.h = true;
-                    dpc.a = eaa.a(daz.b);
-                    dpc.b = eaa.a(dba.d);
+                    dpc.a = defpackage.eaa.a(defpackage.daz.b);
+                    dpc.b = defpackage.eaa.a(defpackage.dba.d);
                     dpb = dpc.a();
                     b = dpb;
                 }
@@ -55,20 +55,20 @@ public final class dcg {
         return dpb;
     }
 
-    public static dpb c() {
-        dpb dpb = c;
+    public static defpackage.dpb c() {
+        defpackage.dpb dpb = c;
         if (dpb == null) {
-            synchronized (dcg.class) {
+            synchronized (defpackage.dcg.class) {
                 dpb = c;
                 if (dpb == null) {
-                    dpc dpc = new dpc();
+                    defpackage.dpc dpc = new defpackage.dpc();
                     dpc.a = null;
                     dpc.b = null;
-                    dpc.c = dpe.UNARY;
-                    dpc.d = dpb.a("google.internal.tasks.v1.TasksApiService", "CheckVersion");
+                    dpc.c = defpackage.dpe.UNARY;
+                    dpc.d = defpackage.dpb.a("google.internal.tasks.v1.TasksApiService", "CheckVersion");
                     dpc.h = true;
-                    dpc.a = eaa.a(czm.c);
-                    dpc.b = eaa.a(czp.b);
+                    dpc.a = defpackage.eaa.a(defpackage.czm.c);
+                    dpc.b = defpackage.eaa.a(defpackage.czp.b);
                     dpb = dpc.a();
                     c = dpb;
                 }
@@ -77,20 +77,20 @@ public final class dcg {
         return dpb;
     }
 
-    public static dpb d() {
-        dpb dpb = d;
+    public static defpackage.dpb d() {
+        defpackage.dpb dpb = d;
         if (dpb == null) {
-            synchronized (dcg.class) {
+            synchronized (defpackage.dcg.class) {
                 dpb = d;
                 if (dpb == null) {
-                    dpc dpc = new dpc();
+                    defpackage.dpc dpc = new defpackage.dpc();
                     dpc.a = null;
                     dpc.b = null;
-                    dpc.c = dpe.UNARY;
-                    dpc.d = dpb.a("google.internal.tasks.v1.TasksApiService", "Setup");
+                    dpc.c = defpackage.dpe.UNARY;
+                    dpc.d = defpackage.dpb.a("google.internal.tasks.v1.TasksApiService", "Setup");
                     dpc.h = true;
-                    dpc.a = eaa.a(dbv.b);
-                    dpc.b = eaa.a(dbx.a);
+                    dpc.a = defpackage.eaa.a(defpackage.dbv.b);
+                    dpc.b = defpackage.eaa.a(defpackage.dbx.a);
                     dpb = dpc.a();
                     d = dpb;
                 }
@@ -99,8 +99,8 @@ public final class dcg {
         return dpb;
     }
 
-    public static ead a(dnc dnc) {
-        return new ead(dnc, (byte) 0);
+    public static defpackage.ead a(defpackage.dnc dnc) {
+        return new defpackage.ead(dnc, 0);
     }
 
     static {

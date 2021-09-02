@@ -1,20 +1,20 @@
 package defpackage;
 
-/* renamed from: eao  reason: default package */
+/* renamed from: eao reason: default package */
 /* compiled from: PG */
-public abstract class eao extends ean {
+public abstract class eao extends defpackage.ean {
     eao() {
-        super((byte) 0);
+        super(0);
     }
 
-    public abstract String a();
+    public abstract java.lang.String a();
 
-    public abstract String b();
+    public abstract java.lang.String b();
 
-    public abstract String c();
+    public abstract java.lang.String c();
 
-    public static eao a(String str, String str2, String str3) {
-        cld.a(dtj.a(str) && str.length() <= 255, "Name should be a ASCII string with a length no greater than 255 characters.");
-        return new eal(str, str2, str3);
+    public static defpackage.eao a(java.lang.String str, java.lang.String str2, java.lang.String str3) {
+        defpackage.cld.a(defpackage.dtj.a(str) && str.length() <= 255, (java.lang.Object) "Name should be a ASCII string with a length no greater than 255 characters.");
+        return new defpackage.eal(str, str2, str3);
     }
 }

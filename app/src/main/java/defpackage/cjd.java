@@ -1,16 +1,15 @@
 package defpackage;
 
-/* renamed from: cjd  reason: default package */
+/* renamed from: cjd reason: default package */
 /* compiled from: PG */
-final class cjd implements cjf {
-    private final /* synthetic */ cir a;
+final class cjd implements defpackage.cjf {
+    private final /* synthetic */ defpackage.cir a;
 
-    cjd(cir cir) {
+    cjd(defpackage.cir cir) {
         this.a = cir;
     }
 
-    @Override // defpackage.cjf
-    public final void a(chk chk) {
+    public final void a(defpackage.chk chk) {
         chk.a(this.a);
     }
 }

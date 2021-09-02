@@ -1,19 +1,18 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: cpp  reason: default package */
+/* renamed from: cpp reason: default package */
 /* compiled from: PG */
-public final class cpp implements Runnable {
-    private final /* synthetic */ cpn a;
+final class cpp implements java.lang.Runnable {
+    private final /* synthetic */ defpackage.cpn a;
 
-    cpp(cpn cpn) {
+    cpp(defpackage.cpn cpn) {
         this.a = cpn;
     }
 
     public final void run() {
-        cpo.a.add(this.a);
-        if (cpo.b != -1) {
-            this.a.a(cpo.b);
+        defpackage.cpo.a.add(this.a);
+        if (defpackage.cpo.b != -1) {
+            this.a.a(defpackage.cpo.b);
         }
     }
 }

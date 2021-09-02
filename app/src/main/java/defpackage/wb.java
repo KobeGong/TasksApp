@@ -1,20 +1,15 @@
 package defpackage;
 
-import android.content.Context;
-import android.content.res.TypedArray;
-import android.util.AttributeSet;
-import android.view.ViewGroup;
-
-/* renamed from: wb  reason: default package */
+/* renamed from: wb reason: default package */
 /* compiled from: PG */
-public class wb extends ViewGroup.MarginLayoutParams {
+public class wb extends android.view.ViewGroup.MarginLayoutParams {
     public int a;
 
-    public wb(Context context, AttributeSet attributeSet) {
+    public wb(android.content.Context context, android.util.AttributeSet attributeSet) {
         super(context, attributeSet);
         this.a = 0;
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, xu.b);
-        this.a = obtainStyledAttributes.getInt(xu.c, 0);
+        android.content.res.TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, defpackage.xu.b);
+        this.a = obtainStyledAttributes.getInt(defpackage.xu.c, 0);
         obtainStyledAttributes.recycle();
     }
 
@@ -24,13 +19,13 @@ public class wb extends ViewGroup.MarginLayoutParams {
         this.a = 8388627;
     }
 
-    public wb(wb wbVar) {
-        super((ViewGroup.MarginLayoutParams) wbVar);
+    public wb(defpackage.wb wbVar) {
+        super(wbVar);
         this.a = 0;
         this.a = wbVar.a;
     }
 
-    public wb(ViewGroup.LayoutParams layoutParams) {
+    public wb(android.view.ViewGroup.LayoutParams layoutParams) {
         super(layoutParams);
         this.a = 0;
     }

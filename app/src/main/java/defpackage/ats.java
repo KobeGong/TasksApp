@@ -1,68 +1,66 @@
 package defpackage;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.graphics.drawable.LayerDrawable;
-import android.support.v7.widget.RecyclerView;
-import android.view.View;
-import com.google.android.apps.tasks.R;
-
-/* renamed from: ats  reason: default package */
+/* renamed from: ats reason: default package */
 /* compiled from: PG */
-public final class ats extends afc {
-    private final LayerDrawable a;
+public final class ats extends defpackage.afc {
+    private final android.graphics.drawable.LayerDrawable a;
     private final int b;
     private final int c;
 
-    public ats(Context context) {
-        this((LayerDrawable) ob.a(context, (int) R.drawable.horizontal_separator), (int) context.getResources().getDimension(R.dimen.default_separator_height), (int) context.getResources().getDimension(R.dimen.task_item_subtask_start_to_border));
+    public ats(android.content.Context context) {
+        this((android.graphics.drawable.LayerDrawable) defpackage.ob.a(context, 2130837632), (int) context.getResources().getDimension(2131689615), (int) context.getResources().getDimension(2131689887));
     }
 
-    private ats(LayerDrawable layerDrawable, int i, int i2) {
+    private ats(android.graphics.drawable.LayerDrawable layerDrawable, int i, int i2) {
         this.a = layerDrawable;
         this.b = i;
         this.c = i2;
     }
 
-    @Override // defpackage.afc
-    public final void a(Rect rect, View view, RecyclerView recyclerView) {
-        ViewHolder b2 = recyclerView.b(view);
+    public final void a(android.graphics.Rect rect, android.view.View view, android.support.v7.widget.RecyclerView recyclerView) {
+        defpackage.afv b2 = recyclerView.b(view);
         if (a(b2)) {
             if (a(recyclerView, b2.d())) {
                 rect.bottom = this.b;
             }
-        } else if (!(b2 instanceof atp) && !(b2 instanceof atk)) {
+        } else if (!(b2 instanceof defpackage.atp) && !(b2 instanceof defpackage.atk)) {
             rect.bottom = this.b;
         }
     }
 
-    private static boolean a(RecyclerView recyclerView, int i) {
+    private static boolean a(android.support.v7.widget.RecyclerView recyclerView, int i) {
         boolean z;
-        if (i == recyclerView.adapter.getCount() - 1) {
+        if (i == recyclerView.k.a() - 1) {
             z = true;
         } else {
             z = false;
         }
-        return z || recyclerView.adapter.getItemViewType(i + 1) == 0;
+        if (z || recyclerView.k.b(i + 1) == 0) {
+            return true;
+        }
+        return false;
     }
 
-    @Override // defpackage.afc
-    public final void b(Canvas canvas, RecyclerView recyclerView) {
+    public final void b(android.graphics.Canvas canvas, android.support.v7.widget.RecyclerView recyclerView) {
+        boolean z;
         int i;
-        SortableAdapter atg = (SortableAdapter) recyclerView.adapter;
-        boolean z = sn.a.j(recyclerView) == 1;
+        defpackage.atg atg = (defpackage.atg) recyclerView.k;
+        if (defpackage.sn.a.j(recyclerView) == 1) {
+            z = true;
+        } else {
+            z = false;
+        }
         int width = recyclerView.getWidth();
         int childCount = recyclerView.getChildCount();
         for (int i2 = 0; i2 < childCount; i2++) {
-            View childAt = recyclerView.getChildAt(i2);
-            ViewHolder b2 = recyclerView.b(childAt);
-            if (!(b2 instanceof atp) && !(b2 instanceof atk)) {
+            android.view.View childAt = recyclerView.getChildAt(i2);
+            defpackage.afv b2 = recyclerView.b(childAt);
+            if (!(b2 instanceof defpackage.atp) && !(b2 instanceof defpackage.atk)) {
                 if (!a(b2)) {
                     int bottom = childAt.getBottom() + ((int) childAt.getTranslationY());
                     int i3 = bottom + this.b;
                     int i4 = 0;
-                    if (!((atg instanceof MySortAdapter) && ((MySortAdapter) atg).l(RecyclerView.d(childAt)))) {
+                    if (!((atg instanceof defpackage.atv) && ((defpackage.atv) atg).l(android.support.v7.widget.RecyclerView.d(childAt)))) {
                         i = width;
                     } else if (z) {
                         i = width - this.c;
@@ -79,17 +77,17 @@ public final class ats extends afc {
         }
     }
 
-    private final void a(Canvas canvas, int i, View view, int i2, int i3, int i4, int i5, int i6) {
+    private final void a(android.graphics.Canvas canvas, int i, android.view.View view, int i2, int i3, int i4, int i5, int i6) {
         this.a.getDrawable(0).setBounds(i6, i2, i + i6, i3);
         this.a.getDrawable(1).setBounds(i4 + i6, i2, i5 + i6, i3);
         this.a.setAlpha((int) (255.0f * view.getAlpha()));
         this.a.draw(canvas);
     }
 
-    private static boolean a(ViewHolder afv) {
+    private static boolean a(defpackage.afv afv) {
         boolean z;
-        if (afv instanceof atx) {
-            atx atx = (atx) afv;
+        if (afv instanceof defpackage.atx) {
+            defpackage.atx atx = (defpackage.atx) afv;
             if (atx.q.getParent() == atx.p) {
                 z = true;
             } else {

@@ -1,26 +1,20 @@
 package defpackage;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-/* renamed from: agm  reason: default package */
+/* renamed from: agm reason: default package */
 /* compiled from: PG */
-final class agm implements Parcelable.ClassLoaderCreator {
+final class agm implements android.os.Parcelable.ClassLoaderCreator {
     agm() {
     }
 
-    @Override // android.os.Parcelable.ClassLoaderCreator
-    public final /* synthetic */ Object createFromParcel(Parcel parcel, ClassLoader classLoader) {
-        return new agl(parcel, classLoader);
+    public final /* synthetic */ java.lang.Object createFromParcel(android.os.Parcel parcel, java.lang.ClassLoader classLoader) {
+        return new defpackage.agl(parcel, classLoader);
     }
 
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object[] newArray(int i) {
-        return new agl[i];
+    public final /* synthetic */ java.lang.Object[] newArray(int i) {
+        return new defpackage.agl[i];
     }
 
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object createFromParcel(Parcel parcel) {
-        return new agl(parcel, null);
+    public final /* synthetic */ java.lang.Object createFromParcel(android.os.Parcel parcel) {
+        return new defpackage.agl(parcel, null);
     }
 }

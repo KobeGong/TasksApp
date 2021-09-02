@@ -1,18 +1,16 @@
 package defpackage;
 
-/* renamed from: dvi  reason: default package */
+/* renamed from: dvi reason: default package */
 /* compiled from: PG */
-final class dvi implements dpa {
+final class dvi implements defpackage.dpa {
     dvi() {
     }
 
-    @Override // defpackage.dpa
-    public final /* synthetic */ Object a(byte[] bArr) {
+    public final /* synthetic */ java.lang.Object a(byte[] bArr) {
         return bArr;
     }
 
-    @Override // defpackage.dpa
-    public final /* synthetic */ byte[] a(Object obj) {
+    public final /* synthetic */ byte[] a(java.lang.Object obj) {
         return (byte[]) obj;
     }
 }

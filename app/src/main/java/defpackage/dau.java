@@ -1,53 +1,54 @@
 package defpackage;
 
-/* renamed from: dau  reason: default package */
+/* renamed from: dau reason: default package */
 /* compiled from: PG */
-public final class dau extends dih implements djq {
-    public static final dau d = new dau();
-    private static volatile djx e;
-    public crb a;
-    public String b = "";
+public final class dau extends defpackage.dih implements defpackage.djq {
+    public static final defpackage.dau d = new defpackage.dau();
+    private static volatile defpackage.djx e;
+    public defpackage.crb a;
+    public java.lang.String b = "";
     public boolean c;
 
     private dau() {
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.dih
-    public final Object a(int i) {
-        djx djx;
+    public final java.lang.Object a(int i) {
+        defpackage.djx djx;
         switch (i - 1) {
             case 0:
-                return (byte) 1;
+                return java.lang.Byte.valueOf(1);
             case 1:
                 return null;
             case 2:
-                return new dkb(d, "\u0000\u0003\u0000\u0000\u0001\u0003\u0003\u0000\u0000\u0000\u0001\t\u0002Ȉ\u0003\u0007", new Object[]{"a", "b", "c"});
+                java.lang.Object[] objArr = {"a", "b", "c"};
+                return new defpackage.dkb(d, "\u0000\u0003\u0000\u0000\u0001\u0003\u0003\u0000\u0000\u0000\u0001\t\u0002Ȉ\u0003\u0007", objArr);
             case 3:
-                return new dau();
+                return new defpackage.dau();
             case 4:
-                return new dii((char[][][][][]) null);
+                return new defpackage.dii((char[][][][][]) null);
             case 5:
                 return d;
             case 6:
-                djx djx2 = e;
+                defpackage.djx djx2 = e;
                 if (djx2 != null) {
                     return djx2;
                 }
-                synchronized (dau.class) {
+                synchronized (defpackage.dau.class) {
                     djx = e;
                     if (djx == null) {
-                        djx = new dgr(d);
+                        djx = new defpackage.dgr(d);
                         e = djx;
                     }
                 }
                 return djx;
             default:
-                throw new UnsupportedOperationException();
+                throw new java.lang.UnsupportedOperationException();
         }
     }
 
     static {
-        dih.t.put(dau.class, d);
+        defpackage.dau dau = d;
+        defpackage.dih.t.put(defpackage.dau.class, dau);
     }
 }

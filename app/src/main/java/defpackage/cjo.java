@@ -1,19 +1,17 @@
 package defpackage;
 
-import android.app.Application;
-
-/* renamed from: cjo  reason: default package */
+/* renamed from: cjo reason: default package */
 /* compiled from: PG */
 public final class cjo {
-    public final Application a;
-    public volatile cgo b;
-    public volatile clt c;
-    public volatile clt d;
-    public volatile clt e;
-    public volatile cjw f;
-    public volatile cli g;
+    public final android.app.Application a;
+    public volatile defpackage.cgo b;
+    public volatile defpackage.clt c;
+    public volatile defpackage.clt d;
+    public volatile defpackage.clt e;
+    public volatile defpackage.cjw f;
+    public volatile defpackage.cli g;
 
-    cjo(Application application) {
+    cjo(android.app.Application application) {
         this.a = application;
     }
 }

@@ -1,17 +1,16 @@
 package defpackage;
 
-/* renamed from: ajz  reason: default package */
-public final /* synthetic */ class ajz implements brd {
-    public static final brd a = new ajz();
+/* renamed from: ajz reason: default package */
+public final /* synthetic */ class ajz implements defpackage.brd {
+    public static final defpackage.brd a = new defpackage.ajz();
 
     private ajz() {
     }
 
-    @Override // defpackage.brd
-    public final void a(brc brc) {
-        bre bre = (bre) brc;
+    public final void a(defpackage.brc brc) {
+        defpackage.bre bre = (defpackage.bre) brc;
         if (!bre.b()) {
-            azb.b("Unable to log analytics events: %s", bre.c());
+            defpackage.azb.b("Unable to log analytics events: %s", bre.c());
         }
     }
 }

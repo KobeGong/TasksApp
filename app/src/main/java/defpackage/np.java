@@ -1,15 +1,12 @@
 package defpackage;
 
-import android.content.ComponentName;
-import android.os.IBinder;
-
-/* renamed from: np  reason: default package */
+/* renamed from: np reason: default package */
 /* compiled from: PG */
 final class np {
-    public final ComponentName a;
-    public final IBinder b;
+    public final android.content.ComponentName a;
+    public final android.os.IBinder b;
 
-    np(ComponentName componentName, IBinder iBinder) {
+    np(android.content.ComponentName componentName, android.os.IBinder iBinder) {
         this.a = componentName;
         this.b = iBinder;
     }

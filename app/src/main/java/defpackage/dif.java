@@ -1,82 +1,73 @@
 package defpackage;
 
-import java.lang.reflect.InvocationTargetException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.ServiceConfigurationError;
-import java.util.ServiceLoader;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-/* access modifiers changed from: package-private */
-/* renamed from: dif  reason: default package */
+/* renamed from: dif reason: default package */
 /* compiled from: PG */
-public abstract class dif {
-    private static final Logger a = Logger.getLogger(dhn.class.getName());
-    private static String b = "dgx";
+abstract class dif {
+    private static final java.util.logging.Logger a = java.util.logging.Logger.getLogger(defpackage.dhn.class.getName());
+    private static java.lang.String b = "dgx";
 
     dif() {
     }
 
     /* access modifiers changed from: protected */
-    public abstract dhw a();
+    public abstract defpackage.dhw a();
 
-    static dhw a(Class cls) {
-        String format;
-        String str;
-        ClassLoader classLoader = dif.class.getClassLoader();
-        if (cls.equals(dhw.class)) {
+    static defpackage.dhw a(java.lang.Class cls) {
+        java.lang.String format;
+        java.lang.String str;
+        java.lang.ClassLoader classLoader = defpackage.dif.class.getClassLoader();
+        if (cls.equals(defpackage.dhw.class)) {
             format = b;
-        } else if (!cls.getPackage().equals(dif.class.getPackage())) {
-            throw new IllegalArgumentException(cls.getName());
+        } else if (!cls.getPackage().equals(defpackage.dif.class.getPackage())) {
+            throw new java.lang.IllegalArgumentException(cls.getName());
         } else {
-            format = String.format("%s.BlazeGenerated%sLoader", cls.getPackage().getName(), cls.getSimpleName());
+            format = java.lang.String.format("%s.BlazeGenerated%sLoader", new java.lang.Object[]{cls.getPackage().getName(), cls.getSimpleName()});
         }
         try {
-            try {
-                return (dhw) cls.cast(((dif) Class.forName(format, true, classLoader).getConstructor(new Class[0]).newInstance(new Object[0])).a());
-            } catch (NoSuchMethodException e) {
-                throw new IllegalStateException(e);
-            } catch (InstantiationException e2) {
-                throw new IllegalStateException(e2);
-            } catch (IllegalAccessException e3) {
-                throw new IllegalStateException(e3);
-            } catch (InvocationTargetException e4) {
-                throw new IllegalStateException(e4);
-            }
-        } catch (ClassNotFoundException e5) {
-            Iterator it = ServiceLoader.load(dif.class, classLoader).iterator();
-            ArrayList arrayList = new ArrayList();
+            return (defpackage.dhw) cls.cast(((defpackage.dif) java.lang.Class.forName(format, true, classLoader).getConstructor(new java.lang.Class[0]).newInstance(new java.lang.Object[0])).a());
+        } catch (java.lang.NoSuchMethodException e) {
+            throw new java.lang.IllegalStateException(e);
+        } catch (java.lang.InstantiationException e2) {
+            throw new java.lang.IllegalStateException(e2);
+        } catch (java.lang.IllegalAccessException e3) {
+            throw new java.lang.IllegalStateException(e3);
+        } catch (java.lang.reflect.InvocationTargetException e4) {
+            throw new java.lang.IllegalStateException(e4);
+        } catch (java.lang.ClassNotFoundException e5) {
+            java.util.Iterator it = java.util.ServiceLoader.load(defpackage.dif.class, classLoader).iterator();
+            java.util.ArrayList arrayList = new java.util.ArrayList();
             while (it.hasNext()) {
                 try {
-                    arrayList.add((dhw) cls.cast(((dif) it.next()).a()));
-                } catch (ServiceConfigurationError e6) {
-                    Logger logger = a;
-                    Level level = Level.SEVERE;
-                    String valueOf = String.valueOf(cls.getSimpleName());
+                    arrayList.add((defpackage.dhw) cls.cast(((defpackage.dif) it.next()).a()));
+                } catch (java.util.ServiceConfigurationError e6) {
+                    java.util.logging.Logger logger = a;
+                    java.util.logging.Level level = java.util.logging.Level.SEVERE;
+                    java.lang.String str2 = "com.google.protobuf.GeneratedExtensionRegistryLoader";
+                    java.lang.String str3 = "load";
+                    java.lang.String str4 = "Unable to load ";
+                    java.lang.String valueOf = java.lang.String.valueOf(cls.getSimpleName());
                     if (valueOf.length() != 0) {
-                        str = "Unable to load ".concat(valueOf);
+                        str = str4.concat(valueOf);
                     } else {
-                        str = new String("Unable to load ");
+                        str = new java.lang.String(str4);
                     }
-                    logger.logp(level, "com.google.protobuf.GeneratedExtensionRegistryLoader", "load", str, (Throwable) e6);
+                    logger.logp(level, str2, str3, str, e6);
                 }
             }
             if (arrayList.size() == 1) {
-                return (dhw) arrayList.get(0);
+                return (defpackage.dhw) arrayList.get(0);
             }
             if (arrayList.size() == 0) {
                 return null;
             }
             try {
-                return (dhw) cls.getMethod("combine", Collection.class).invoke(null, arrayList);
-            } catch (NoSuchMethodException e7) {
-                throw new IllegalStateException(e7);
-            } catch (IllegalAccessException e8) {
-                throw new IllegalStateException(e8);
-            } catch (InvocationTargetException e9) {
-                throw new IllegalStateException(e9);
+                return (defpackage.dhw) cls.getMethod("combine", new java.lang.Class[]{java.util.Collection.class}).invoke(null, new java.lang.Object[]{arrayList});
+            } catch (java.lang.NoSuchMethodException e7) {
+                throw new java.lang.IllegalStateException(e7);
+            } catch (java.lang.IllegalAccessException e8) {
+                throw new java.lang.IllegalStateException(e8);
+            } catch (java.lang.reflect.InvocationTargetException e9) {
+                throw new java.lang.IllegalStateException(e9);
             }
         }
     }

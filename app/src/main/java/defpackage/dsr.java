@@ -1,20 +1,18 @@
 package defpackage;
 
-/* renamed from: dsr  reason: default package */
+/* renamed from: dsr reason: default package */
 /* compiled from: PG */
-final class dsr extends dtk {
-    private final /* synthetic */ dne a;
-    private final /* synthetic */ String b;
+final class dsr extends defpackage.dtk {
+    private final /* synthetic */ defpackage.dne a;
+    private final /* synthetic */ java.lang.String b;
 
-    /* JADX INFO: super call moved to the top of the method (can break code semantics) */
-    dsr(dsq dsq, dne dne, String str) {
-        super(dsq.d);
+    dsr(defpackage.dsq dsq, defpackage.dne dne, java.lang.String str) {
         this.a = dne;
         this.b = str;
+        super(dsq.d);
     }
 
-    @Override // defpackage.dtk
     public final void a() {
-        dsq.a(this.a, dpw.h.a(String.format("Unable to find compressor by name %s", this.b)), new dor());
+        defpackage.dsq.a(this.a, defpackage.dpw.h.a(java.lang.String.format("Unable to find compressor by name %s", new java.lang.Object[]{this.b})), new defpackage.dor());
     }
 }

@@ -1,37 +1,32 @@
 package defpackage;
 
-import java.util.ListIterator;
-import java.util.NoSuchElementException;
-
-/* renamed from: cti  reason: default package */
+/* renamed from: cti reason: default package */
 /* compiled from: PG */
-public final class cti extends cth implements ListIterator {
+public final class cti extends defpackage.cth implements java.util.ListIterator {
     private final int a;
     private int b;
-    private final csp c;
+    private final defpackage.csp c;
 
     protected cti() {
     }
 
-    @Override // java.util.ListIterator
-    @Deprecated
-    public final void add(Object obj) {
-        throw new UnsupportedOperationException();
+    @java.lang.Deprecated
+    public final void add(java.lang.Object obj) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
-    @Override // java.util.ListIterator
-    @Deprecated
-    public final void set(Object obj) {
-        throw new UnsupportedOperationException();
+    @java.lang.Deprecated
+    public final void set(java.lang.Object obj) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
-    private final Object a(int i) {
+    private final java.lang.Object a(int i) {
         return this.c.get(i);
     }
 
     private cti(int i, int i2) {
         this();
-        cld.b(i2, i);
+        defpackage.cld.b(i2, i);
         this.a = i;
         this.b = i2;
     }
@@ -40,10 +35,9 @@ public final class cti extends cth implements ListIterator {
         return this.b < this.a;
     }
 
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final Object next() {
+    public final java.lang.Object next() {
         if (!hasNext()) {
-            throw new NoSuchElementException();
+            throw new java.util.NoSuchElementException();
         }
         int i = this.b;
         this.b = i + 1;
@@ -58,10 +52,9 @@ public final class cti extends cth implements ListIterator {
         return this.b > 0;
     }
 
-    @Override // java.util.ListIterator
-    public final Object previous() {
+    public final java.lang.Object previous() {
         if (!hasPrevious()) {
-            throw new NoSuchElementException();
+            throw new java.util.NoSuchElementException();
         }
         int i = this.b - 1;
         this.b = i;
@@ -72,7 +65,7 @@ public final class cti extends cth implements ListIterator {
         return this.b - 1;
     }
 
-    cti(csp csp, int i) {
+    cti(defpackage.csp csp, int i) {
         this(csp.size(), i);
         this.c = csp;
     }

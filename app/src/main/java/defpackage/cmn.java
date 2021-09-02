@@ -1,21 +1,19 @@
 package defpackage;
 
-import android.content.Context;
-
-/* renamed from: cmn  reason: default package */
+/* renamed from: cmn reason: default package */
 /* compiled from: PG */
 public final class cmn {
     private volatile boolean a;
 
-    public final boolean a(Context context, String str, boolean z) {
+    public final boolean a(android.content.Context context, java.lang.String str, boolean z) {
         if (this.a) {
             return z;
         }
         try {
-            return bqb.a(context.getContentResolver(), str, z);
-        } catch (SecurityException e) {
+            return defpackage.bqb.a(context.getContentResolver(), str, z);
+        } catch (java.lang.SecurityException e) {
             this.a = true;
-            cdm.b("GservicesWrapper", "Failed to read GServices.", e, new Object[0]);
+            defpackage.cdm.b("GservicesWrapper", "Failed to read GServices.", e, new java.lang.Object[0]);
             return z;
         }
     }

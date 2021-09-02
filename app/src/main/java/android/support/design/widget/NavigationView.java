@@ -1,21 +1,17 @@
 package android.support.design.widget;
 
-import android.content.Context;
-import android.util.AttributeSet;
-import defpackage.fr;
-
-@Deprecated
+@java.lang.Deprecated
 /* compiled from: PG */
-public class NavigationView extends fr {
-    public NavigationView(Context context) {
+public class NavigationView extends defpackage.fr {
+    public NavigationView(android.content.Context context) {
         super(context);
     }
 
-    public NavigationView(Context context, AttributeSet attributeSet) {
+    public NavigationView(android.content.Context context, android.util.AttributeSet attributeSet) {
         super(context, attributeSet);
     }
 
-    public NavigationView(Context context, AttributeSet attributeSet, int i) {
+    public NavigationView(android.content.Context context, android.util.AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
     }
 }

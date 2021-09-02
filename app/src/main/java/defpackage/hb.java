@@ -1,14 +1,11 @@
 package defpackage;
 
-import android.support.design.widget.CoordinatorLayout;
-import android.view.ViewTreeObserver;
-
-/* renamed from: hb  reason: default package */
+/* renamed from: hb reason: default package */
 /* compiled from: PG */
-public final class hb implements ViewTreeObserver.OnPreDrawListener {
-    private final /* synthetic */ CoordinatorLayout a;
+public final class hb implements android.view.ViewTreeObserver.OnPreDrawListener {
+    private final /* synthetic */ android.support.design.widget.CoordinatorLayout a;
 
-    public hb(CoordinatorLayout coordinatorLayout) {
+    public hb(android.support.design.widget.CoordinatorLayout coordinatorLayout) {
         this.a = coordinatorLayout;
     }
 

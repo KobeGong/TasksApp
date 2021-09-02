@@ -1,14 +1,13 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: au  reason: default package */
+/* renamed from: au reason: default package */
 /* compiled from: PG */
-public final class au {
-    public ar a;
-    public av b;
+final class au {
+    public defpackage.ar a;
+    public defpackage.av b;
     public int c;
 
-    public au(ar arVar, int i) {
+    public au(defpackage.ar arVar, int i) {
         this.a = arVar;
         this.c = i;
     }

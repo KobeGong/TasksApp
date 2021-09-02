@@ -1,21 +1,16 @@
 package com.google.android.apps.tasks.ui.components;
 
-import android.content.Context;
-import android.util.AttributeSet;
-import android.widget.TextView;
-import com.google.android.apps.tasks.R;
-
 /* compiled from: PG */
-public class OptionItem extends TextView {
-    public OptionItem(Context context) {
+public class OptionItem extends android.widget.TextView {
+    public OptionItem(android.content.Context context) {
         this(context, null);
     }
 
-    public OptionItem(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, R.attr.optionItemStyle);
+    public OptionItem(android.content.Context context, android.util.AttributeSet attributeSet) {
+        this(context, attributeSet, 2130772248);
     }
 
-    public OptionItem(Context context, AttributeSet attributeSet, int i) {
+    public OptionItem(android.content.Context context, android.util.AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
     }
 }

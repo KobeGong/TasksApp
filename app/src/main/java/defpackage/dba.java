@@ -1,53 +1,54 @@
 package defpackage;
 
-/* renamed from: dba  reason: default package */
+/* renamed from: dba reason: default package */
 /* compiled from: PG */
-public final class dba extends dih implements djq {
-    public static final dba d = new dba();
-    private static volatile djx e;
+public final class dba extends defpackage.dih implements defpackage.djq {
+    public static final defpackage.dba d = new defpackage.dba();
+    private static volatile defpackage.djx e;
     public int a;
-    public diq b = dka.b;
-    public String c = "";
+    public defpackage.diq b = defpackage.dka.b;
+    public java.lang.String c = "";
 
     private dba() {
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.dih
-    public final Object a(int i) {
-        djx djx;
+    public final java.lang.Object a(int i) {
+        defpackage.djx djx;
         switch (i - 1) {
             case 0:
-                return (byte) 1;
+                return java.lang.Byte.valueOf(1);
             case 1:
                 return null;
             case 2:
-                return new dkb(d, "\u0000\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0001\u0000\u0001\u001b\u0002Ȉ", new Object[]{"a", "b", dbp.class, "c"});
+                java.lang.Object[] objArr = {"a", "b", defpackage.dbp.class, "c"};
+                return new defpackage.dkb(d, "\u0000\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0001\u0000\u0001\u001b\u0002Ȉ", objArr);
             case 3:
-                return new dba();
+                return new defpackage.dba();
             case 4:
-                return new dii((byte[][][][][][]) null);
+                return new defpackage.dii((byte[][][][][][]) null);
             case 5:
                 return d;
             case 6:
-                djx djx2 = e;
+                defpackage.djx djx2 = e;
                 if (djx2 != null) {
                     return djx2;
                 }
-                synchronized (dba.class) {
+                synchronized (defpackage.dba.class) {
                     djx = e;
                     if (djx == null) {
-                        djx = new dgr(d);
+                        djx = new defpackage.dgr(d);
                         e = djx;
                     }
                 }
                 return djx;
             default:
-                throw new UnsupportedOperationException();
+                throw new java.lang.UnsupportedOperationException();
         }
     }
 
     static {
-        dih.t.put(dba.class, d);
+        defpackage.dba dba = d;
+        defpackage.dih.t.put(defpackage.dba.class, dba);
     }
 }

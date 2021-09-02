@@ -1,33 +1,30 @@
 package defpackage;
 
-import android.content.res.Resources;
-import android.graphics.drawable.Drawable;
-
-/* renamed from: hk  reason: default package */
+/* renamed from: hk reason: default package */
 /* compiled from: PG */
-final class hk extends Drawable.ConstantState {
-    private final Drawable.ConstantState a;
+final class hk extends android.graphics.drawable.Drawable.ConstantState {
+    private final android.graphics.drawable.Drawable.ConstantState a;
 
-    public hk(Drawable.ConstantState constantState) {
+    public hk(android.graphics.drawable.Drawable.ConstantState constantState) {
         this.a = constantState;
     }
 
-    public final Drawable newDrawable() {
-        hh hhVar = new hh();
+    public final android.graphics.drawable.Drawable newDrawable() {
+        defpackage.hh hhVar = new defpackage.hh();
         hhVar.b = this.a.newDrawable();
         hhVar.b.setCallback(hhVar.a);
         return hhVar;
     }
 
-    public final Drawable newDrawable(Resources resources) {
-        hh hhVar = new hh();
+    public final android.graphics.drawable.Drawable newDrawable(android.content.res.Resources resources) {
+        defpackage.hh hhVar = new defpackage.hh();
         hhVar.b = this.a.newDrawable(resources);
         hhVar.b.setCallback(hhVar.a);
         return hhVar;
     }
 
-    public final Drawable newDrawable(Resources resources, Resources.Theme theme) {
-        hh hhVar = new hh();
+    public final android.graphics.drawable.Drawable newDrawable(android.content.res.Resources resources, android.content.res.Resources.Theme theme) {
+        defpackage.hh hhVar = new defpackage.hh();
         hhVar.b = this.a.newDrawable(resources, theme);
         hhVar.b.setCallback(hhVar.a);
         return hhVar;

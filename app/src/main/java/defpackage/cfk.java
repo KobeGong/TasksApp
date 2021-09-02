@@ -1,28 +1,24 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: cfk  reason: default package */
+/* renamed from: cfk reason: default package */
 /* compiled from: PG */
-public final class cfk implements cgi {
+final class cfk implements defpackage.cgi {
     private boolean a;
-    private final /* synthetic */ cff b;
+    private final /* synthetic */ defpackage.cff b;
 
-    cfk(cff cff) {
+    cfk(defpackage.cff cff) {
         this.b = cff;
     }
 
-    @Override // defpackage.cgi
     public final void a() {
     }
 
-    @Override // defpackage.cgi
     public final void b() {
         this.b.a(0.0f);
         this.b.c();
         this.b.b();
     }
 
-    @Override // defpackage.cgi
     public final void a(float f) {
         this.b.a(f);
         boolean z = f == 1.0f;

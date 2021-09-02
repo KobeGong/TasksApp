@@ -1,24 +1,19 @@
 package defpackage;
 
-import java.lang.reflect.Field;
-import java.security.PrivilegedExceptionAction;
-import sun.misc.Unsafe;
-
-/* access modifiers changed from: package-private */
-/* renamed from: dld  reason: default package */
+/* renamed from: dld reason: default package */
 /* compiled from: PG */
-public final class dld implements PrivilegedExceptionAction {
+final class dld implements java.security.PrivilegedExceptionAction {
     dld() {
     }
 
-    @Override // java.security.PrivilegedExceptionAction
-    public final /* synthetic */ Object run() {
-        Field[] declaredFields = Unsafe.class.getDeclaredFields();
-        for (Field field : declaredFields) {
+    public final /* synthetic */ java.lang.Object run() {
+        java.lang.reflect.Field[] declaredFields;
+        java.lang.Class<sun.misc.Unsafe> cls = sun.misc.Unsafe.class;
+        for (java.lang.reflect.Field field : cls.getDeclaredFields()) {
             field.setAccessible(true);
-            Object obj = field.get(null);
-            if (Unsafe.class.isInstance(obj)) {
-                return (Unsafe) Unsafe.class.cast(obj);
+            java.lang.Object obj = field.get(null);
+            if (cls.isInstance(obj)) {
+                return (sun.misc.Unsafe) cls.cast(obj);
             }
         }
         return null;

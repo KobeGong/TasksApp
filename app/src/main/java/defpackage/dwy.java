@@ -1,20 +1,16 @@
 package defpackage;
 
-import java.util.Collection;
-import java.util.HashSet;
-
-/* access modifiers changed from: package-private */
-/* renamed from: dwy  reason: default package */
+/* renamed from: dwy reason: default package */
 /* compiled from: PG */
-public final class dwy {
-    public final Object a = new Object();
-    public Collection b = new HashSet();
+final class dwy {
+    public final java.lang.Object a = new java.lang.Object();
+    public java.util.Collection b = new java.util.HashSet();
 
     dwy() {
     }
 
-    /* access modifiers changed from: package-private */
-    public final dpw a(dyb dyb) {
+    /* access modifiers changed from: 0000 */
+    public final defpackage.dpw a(defpackage.dyb dyb) {
         synchronized (this.a) {
             this.b.add(dyb);
         }

@@ -1,61 +1,54 @@
 package defpackage;
 
-import java.net.SocketAddress;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
-
-/* renamed from: dqv  reason: default package */
+/* renamed from: dqv reason: default package */
 /* compiled from: PG */
-public abstract class dqv extends dtj {
-    private static final dob A = dob.a;
-    private static final dnp B = dnp.a;
-    public static final long a = TimeUnit.SECONDS.toMillis(1);
-    private static final long x = TimeUnit.MINUTES.toMillis(30);
-    private static final dxn y = dzn.a(dvc.l);
-    private static final dpg z = dpi.b;
-    public dxn b = y;
-    public final List c = new ArrayList();
-    public dpg d = z;
-    public final String e;
-    public String f;
-    public dol g;
+public abstract class dqv extends defpackage.dtj {
+    private static final defpackage.dob A = defpackage.dob.a;
+    private static final defpackage.dnp B = defpackage.dnp.a;
+    public static final long a = java.util.concurrent.TimeUnit.SECONDS.toMillis(1);
+    private static final long x = java.util.concurrent.TimeUnit.MINUTES.toMillis(30);
+    private static final defpackage.dxn y = defpackage.dzn.a(defpackage.dvc.l);
+    private static final defpackage.dpg z = defpackage.dpi.b;
+    public defpackage.dxn b = y;
+    public final java.util.List c = new java.util.ArrayList();
+    public defpackage.dpg d = z;
+    public final java.lang.String e;
+    public java.lang.String f;
+    public defpackage.dol g;
     public boolean h;
-    public dob i = A;
-    public dnp j = B;
+    public defpackage.dob i = A;
+    public defpackage.dnp j = B;
     public long k = x;
     public int l = 5;
     public int m = 5;
     public long n = 16777216;
     public long o = 1048576;
     public boolean p = true;
-    public dsp q = dsp.a;
-    public dzu r = dzt.a;
-    public drp s = drp.c;
+    public defpackage.dsp q = defpackage.dsp.a;
+    public defpackage.dzu r = defpackage.dzt.a;
+    public defpackage.drp s = defpackage.drp.c;
     public boolean t = true;
     public boolean u = true;
     public boolean v = true;
     public boolean w = true;
 
-    private static String a(SocketAddress socketAddress) {
+    private static java.lang.String a(java.net.SocketAddress socketAddress) {
         try {
-            String valueOf = String.valueOf(socketAddress);
-            return new URI("directaddress", "", new StringBuilder(String.valueOf(valueOf).length() + 1).append("/").append(valueOf).toString(), null).toString();
-        } catch (URISyntaxException e2) {
-            throw new RuntimeException(e2);
+            java.lang.String valueOf = java.lang.String.valueOf(socketAddress);
+            return new java.net.URI("directaddress", "", new java.lang.StringBuilder(java.lang.String.valueOf(valueOf).length() + 1).append("/").append(valueOf).toString(), null).toString();
+        } catch (java.net.URISyntaxException e2) {
+            throw new java.lang.RuntimeException(e2);
         }
     }
 
-    public abstract dtc a();
+    public abstract defpackage.dtc a();
 
-    public dqv(SocketAddress socketAddress, String str) {
+    public dqv(java.net.SocketAddress socketAddress, java.lang.String str) {
         this.e = a(socketAddress);
-        this.d = new dqw(socketAddress, str);
+        this.d = new defpackage.dqw(socketAddress, str);
     }
 
-    public dmv b() {
-        return dmv.b;
+    public defpackage.dmv b() {
+        return defpackage.dmv.b;
     }
 }

@@ -1,46 +1,35 @@
 package defpackage;
 
-import android.content.Intent;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
-import android.os.Messenger;
-import android.os.Parcelable;
-import android.util.Log;
-import com.google.android.gms.iid.MessengerCompat;
-
-/* access modifiers changed from: package-private */
-/* renamed from: bih  reason: default package */
+/* renamed from: bih reason: default package */
 /* compiled from: PG */
-public final class bih extends Handler {
-    private /* synthetic */ bhw a;
+final class bih extends android.os.Handler {
+    private /* synthetic */ defpackage.bhw a;
 
-    /* JADX INFO: super call moved to the top of the method (can break code semantics) */
-    bih(bhw bhw, Looper looper) {
-        super(looper);
+    bih(defpackage.bhw bhw, android.os.Looper looper) {
         this.a = bhw;
+        super(looper);
     }
 
-    public final void handleMessage(Message message) {
-        bhw bhw = this.a;
+    public final void handleMessage(android.os.Message message) {
+        defpackage.bhw bhw = this.a;
         if (message == null) {
             return;
         }
-        if (message.obj instanceof Intent) {
-            Intent intent = (Intent) message.obj;
-            intent.setExtrasClassLoader(MessengerCompat.class.getClassLoader());
+        if (message.obj instanceof android.content.Intent) {
+            android.content.Intent intent = (android.content.Intent) message.obj;
+            intent.setExtrasClassLoader(com.google.android.gms.iid.MessengerCompat.class.getClassLoader());
             if (intent.hasExtra("google.messenger")) {
-                Parcelable parcelableExtra = intent.getParcelableExtra("google.messenger");
-                if (parcelableExtra instanceof MessengerCompat) {
-                    bhw.b = (MessengerCompat) parcelableExtra;
+                android.os.Parcelable parcelableExtra = intent.getParcelableExtra("google.messenger");
+                if (parcelableExtra instanceof com.google.android.gms.iid.MessengerCompat) {
+                    bhw.b = (com.google.android.gms.iid.MessengerCompat) parcelableExtra;
                 }
-                if (parcelableExtra instanceof Messenger) {
-                    bhw.a = (Messenger) parcelableExtra;
+                if (parcelableExtra instanceof android.os.Messenger) {
+                    bhw.a = (android.os.Messenger) parcelableExtra;
                 }
             }
-            bhw.a((Intent) message.obj);
+            bhw.a((android.content.Intent) message.obj);
             return;
         }
-        Log.w("InstanceID/Rpc", "Dropping invalid message");
+        android.util.Log.w("InstanceID/Rpc", "Dropping invalid message");
     }
 }

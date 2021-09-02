@@ -1,20 +1,15 @@
 package android.support.v7.widget;
 
-import android.content.Context;
-import android.util.AttributeSet;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
-
 /* compiled from: PG */
-public final class ActivityChooserView extends ViewGroup {
+public final class ActivityChooserView extends android.view.ViewGroup {
 
     /* compiled from: PG */
-    public class InnerLayout extends LinearLayout {
+    public class InnerLayout extends android.widget.LinearLayout {
         private static final int[] a = {16842964};
 
-        public InnerLayout(Context context, AttributeSet attributeSet) {
+        public InnerLayout(android.content.Context context, android.util.AttributeSet attributeSet) {
             super(context, attributeSet);
-            agw a2 = agw.a(context, attributeSet, a);
+            defpackage.agw a2 = defpackage.agw.a(context, attributeSet, a);
             setBackgroundDrawable(a2.a(0));
             a2.b.recycle();
         }
@@ -22,21 +17,21 @@ public final class ActivityChooserView extends ViewGroup {
 
     /* access modifiers changed from: protected */
     public final void onAttachedToWindow() {
-        throw new NoSuchMethodError();
+        throw new java.lang.NoSuchMethodError();
     }
 
     /* access modifiers changed from: protected */
     public final void onDetachedFromWindow() {
-        throw new NoSuchMethodError();
+        throw new java.lang.NoSuchMethodError();
     }
 
     /* access modifiers changed from: protected */
     public final void onMeasure(int i, int i2) {
-        throw new NoSuchMethodError();
+        throw new java.lang.NoSuchMethodError();
     }
 
     /* access modifiers changed from: protected */
     public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        throw new NoSuchMethodError();
+        throw new java.lang.NoSuchMethodError();
     }
 }

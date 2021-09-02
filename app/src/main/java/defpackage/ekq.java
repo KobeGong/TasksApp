@@ -1,69 +1,56 @@
 package defpackage;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-import java.util.TreeMap;
-import java.util.concurrent.atomic.AtomicLong;
-
-/* renamed from: ekq  reason: default package */
+/* renamed from: ekq reason: default package */
 /* compiled from: PG */
-public final class ekq extends ejg {
-    private final List a;
+public final class ekq extends defpackage.ejg {
+    private final java.util.List a;
     private final int b;
-    private final String c;
-    private final String d;
-    private final AtomicLong e;
-    private final ejh f;
+    private final java.lang.String c;
+    private final java.lang.String d;
+    private final java.util.concurrent.atomic.AtomicLong e;
+    private final defpackage.ejh f;
 
-    public ekq(List list, int i, String str, List list2, String str2, long j) {
-        this.a = Collections.unmodifiableList(list);
+    public ekq(java.util.List list, int i, java.lang.String str, java.util.List list2, java.lang.String str2, long j) {
+        this.a = java.util.Collections.unmodifiableList(list);
         this.b = i;
         this.c = str;
-        this.f = new ejh(Collections.unmodifiableList(list2));
+        this.f = new defpackage.ejh(java.util.Collections.unmodifiableList(list2));
         this.d = str2;
-        this.e = new AtomicLong(j);
+        this.e = new java.util.concurrent.atomic.AtomicLong(j);
     }
 
-    @Override // defpackage.ejg
     public final int a() {
         return this.b;
     }
 
-    @Override // defpackage.ejg
-    public final List b() {
+    public final java.util.List b() {
         return this.f.a;
     }
 
-    @Override // defpackage.ejg
-    public final Map c() {
-        ejh ejh = this.f;
+    public final java.util.Map c() {
+        defpackage.ejh ejh = this.f;
         if (ejh.b != null) {
             return ejh.b;
         }
-        TreeMap treeMap = new TreeMap(String.CASE_INSENSITIVE_ORDER);
-        for (Map.Entry entry : ejh.a) {
-            ArrayList arrayList = new ArrayList();
+        java.util.TreeMap treeMap = new java.util.TreeMap(java.lang.String.CASE_INSENSITIVE_ORDER);
+        for (java.util.Map.Entry entry : ejh.a) {
+            java.util.ArrayList arrayList = new java.util.ArrayList();
             if (treeMap.containsKey(entry.getKey())) {
-                arrayList.addAll((Collection) treeMap.get(entry.getKey()));
+                arrayList.addAll((java.util.Collection) treeMap.get(entry.getKey()));
             }
-            arrayList.add((String) entry.getValue());
-            treeMap.put((String) entry.getKey(), Collections.unmodifiableList(arrayList));
+            arrayList.add((java.lang.String) entry.getValue());
+            treeMap.put((java.lang.String) entry.getKey(), java.util.Collections.unmodifiableList(arrayList));
         }
-        ejh.b = Collections.unmodifiableMap(treeMap);
+        ejh.b = java.util.Collections.unmodifiableMap(treeMap);
         return ejh.b;
     }
 
-    @Override // defpackage.ejg
-    public final String d() {
+    public final java.lang.String d() {
         return this.d;
     }
 
-    public final String toString() {
-        return String.format(Locale.ROOT, "UrlResponseInfo@[%s][%s]: urlChain = %s, httpStatus = %d %s, headers = %s, wasCached = %b, negotiatedProtocol = %s, proxyServer= %s, receivedByteCount = %d", Integer.toHexString(System.identityHashCode(this)), (String) this.a.get(this.a.size() - 1), this.a.toString(), Integer.valueOf(a()), this.c, b().toString(), false, d(), null, Long.valueOf(this.e.get()));
+    public final java.lang.String toString() {
+        return java.lang.String.format(java.util.Locale.ROOT, "UrlResponseInfo@[%s][%s]: urlChain = %s, httpStatus = %d %s, headers = %s, wasCached = %b, negotiatedProtocol = %s, proxyServer= %s, receivedByteCount = %d", new java.lang.Object[]{java.lang.Integer.toHexString(java.lang.System.identityHashCode(this)), (java.lang.String) this.a.get(this.a.size() - 1), this.a.toString(), java.lang.Integer.valueOf(a()), this.c, b().toString(), java.lang.Boolean.valueOf(false), d(), null, java.lang.Long.valueOf(this.e.get())});
     }
 
     public final void a(long j) {

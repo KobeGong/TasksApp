@@ -1,51 +1,52 @@
 package defpackage;
 
-/* renamed from: but  reason: default package */
+/* renamed from: but reason: default package */
 /* compiled from: PG */
 public final class but {
-    private Long a;
-    private Integer b;
+    private java.lang.Long a;
+    private java.lang.Integer b;
     private byte[] c;
 
-    public final but a(Long l) {
+    public final defpackage.but a(java.lang.Long l) {
         if (l == null) {
-            throw new NullPointerException("Null id");
+            throw new java.lang.NullPointerException("Null id");
         }
         this.a = l;
         return this;
     }
 
-    public final but a(Integer num) {
+    public final defpackage.but a(java.lang.Integer num) {
         if (num == null) {
-            throw new NullPointerException("Null jobType");
+            throw new java.lang.NullPointerException("Null jobType");
         }
         this.b = num;
         return this;
     }
 
-    public final but a(byte[] bArr) {
+    public final defpackage.but a(byte[] bArr) {
         if (bArr == null) {
-            throw new NullPointerException("Null payload");
+            throw new java.lang.NullPointerException("Null payload");
         }
         this.c = bArr;
         return this;
     }
 
-    public final bus a() {
-        String str = "";
+    public final defpackage.bus a() {
+        java.lang.String str = "";
         if (this.a == null) {
-            str = String.valueOf(str).concat(" id");
+            str = java.lang.String.valueOf(str).concat(" id");
         }
         if (this.b == null) {
-            str = String.valueOf(str).concat(" jobType");
+            str = java.lang.String.valueOf(str).concat(" jobType");
         }
         if (this.c == null) {
-            str = String.valueOf(str).concat(" payload");
+            str = java.lang.String.valueOf(str).concat(" payload");
         }
         if (str.isEmpty()) {
-            return new buj(this.a, this.b, this.c);
+            return new defpackage.buj(this.a, this.b, this.c);
         }
-        String valueOf = String.valueOf(str);
-        throw new IllegalStateException(valueOf.length() != 0 ? "Missing required properties:".concat(valueOf) : new String("Missing required properties:"));
+        java.lang.String str2 = "Missing required properties:";
+        java.lang.String valueOf = java.lang.String.valueOf(str);
+        throw new java.lang.IllegalStateException(valueOf.length() != 0 ? str2.concat(valueOf) : new java.lang.String(str2));
     }
 }

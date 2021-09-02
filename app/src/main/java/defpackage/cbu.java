@@ -1,6 +1,6 @@
 package defpackage;
 
-/* renamed from: cbu  reason: default package */
+/* renamed from: cbu reason: default package */
 /* compiled from: PG */
 public interface cbu {
     void a();

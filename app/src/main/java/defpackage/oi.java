@@ -1,32 +1,27 @@
 package defpackage;
 
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
-
-/* access modifiers changed from: package-private */
-/* renamed from: oi  reason: default package */
+/* renamed from: oi reason: default package */
 /* compiled from: PG */
-public final class oi extends Handler {
+final class oi extends android.os.Handler {
     oi() {
-        super(Looper.getMainLooper());
+        super(android.os.Looper.getMainLooper());
     }
 
-    public final void handleMessage(Message message) {
-        oh ohVar = (oh) message.obj;
+    public final void handleMessage(android.os.Message message) {
+        defpackage.oh ohVar = (defpackage.oh) message.obj;
         switch (message.what) {
             case 1:
-                oe oeVar = ohVar.a;
-                Object obj = ohVar.b[0];
+                defpackage.oe oeVar = ohVar.a;
+                java.lang.Object obj = ohVar.b[0];
                 if (oeVar.f.get()) {
                     oeVar.a();
                 } else {
                     oeVar.a(obj);
                 }
-                oeVar.e = bg.C;
+                oeVar.e = defpackage.bg.C;
                 return;
             case 2:
-                oe.c();
+                defpackage.oe.c();
                 return;
             default:
                 return;

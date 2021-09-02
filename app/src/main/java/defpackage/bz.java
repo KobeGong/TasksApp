@@ -1,27 +1,25 @@
 package defpackage;
 
-import java.util.Arrays;
-
-/* renamed from: bz  reason: default package */
+/* renamed from: bz reason: default package */
 /* compiled from: PG */
 public final class bz {
     public int a = 0;
-    public final cb b;
+    public final defpackage.cb b;
     public int[] c = new int[this.j];
     public int[] d = new int[this.j];
     public float[] e = new float[this.j];
     public int f = -1;
     public int g = -1;
     public boolean h = false;
-    private final ca i;
+    private final defpackage.ca i;
     private int j = 8;
 
-    bz(ca caVar, cb cbVar) {
+    bz(defpackage.ca caVar, defpackage.cb cbVar) {
         this.i = caVar;
         this.b = cbVar;
     }
 
-    public final void a(cf cfVar, float f2) {
+    public final void a(defpackage.cf cfVar, float f2) {
         if (f2 == 0.0f) {
             a(cfVar);
         } else if (this.f == -1) {
@@ -74,9 +72,9 @@ public final class bz {
                 this.j <<= 1;
                 this.h = false;
                 this.g = i5 - 1;
-                this.e = Arrays.copyOf(this.e, this.j);
-                this.c = Arrays.copyOf(this.c, this.j);
-                this.d = Arrays.copyOf(this.d, this.j);
+                this.e = java.util.Arrays.copyOf(this.e, this.j);
+                this.c = java.util.Arrays.copyOf(this.c, this.j);
+                this.d = java.util.Arrays.copyOf(this.d, this.j);
             }
             this.c[i5] = cfVar.a;
             this.e[i5] = f2;
@@ -97,7 +95,7 @@ public final class bz {
         }
     }
 
-    public final void b(cf cfVar, float f2) {
+    public final void b(defpackage.cf cfVar, float f2) {
         if (f2 != 0.0f) {
             if (this.f == -1) {
                 this.f = 0;
@@ -166,9 +164,9 @@ public final class bz {
                 this.j <<= 1;
                 this.h = false;
                 this.g = i6 - 1;
-                this.e = Arrays.copyOf(this.e, this.j);
-                this.c = Arrays.copyOf(this.c, this.j);
-                this.d = Arrays.copyOf(this.d, this.j);
+                this.e = java.util.Arrays.copyOf(this.e, this.j);
+                this.c = java.util.Arrays.copyOf(this.c, this.j);
+                this.d = java.util.Arrays.copyOf(this.d, this.j);
             }
             this.c[i6] = cfVar.a;
             this.e[i6] = f2;
@@ -190,7 +188,7 @@ public final class bz {
         }
     }
 
-    public final float a(cf cfVar) {
+    public final float a(defpackage.cf cfVar) {
         if (this.f == -1) {
             return 0.0f;
         }
@@ -214,21 +212,22 @@ public final class bz {
                 return this.e[i2];
             }
             i3++;
+            int i6 = i2;
             i2 = this.d[i2];
-            i4 = i2;
+            i4 = i6;
         }
         return 0.0f;
     }
 
-    /* access modifiers changed from: package-private */
-    public final void a(ca caVar, ca caVar2) {
+    /* access modifiers changed from: 0000 */
+    public final void a(defpackage.ca caVar, defpackage.ca caVar2) {
         int i2 = this.f;
         int i3 = 0;
         while (i2 != -1 && i3 < this.a) {
             if (this.c[i2] == caVar2.a.a) {
                 float f2 = this.e[i2];
                 a(caVar2.a);
-                bz bzVar = caVar2.c;
+                defpackage.bz bzVar = caVar2.c;
                 int i4 = bzVar.f;
                 int i5 = 0;
                 while (i4 != -1 && i5 < bzVar.a) {
@@ -247,8 +246,8 @@ public final class bz {
         }
     }
 
-    /* access modifiers changed from: package-private */
-    public final cf a(int i2) {
+    /* access modifiers changed from: 0000 */
+    public final defpackage.cf a(int i2) {
         int i3 = this.f;
         int i4 = 0;
         while (i3 != -1 && i4 < this.a) {
@@ -261,7 +260,7 @@ public final class bz {
         return null;
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public final float b(int i2) {
         int i3 = this.f;
         int i4 = 0;
@@ -275,7 +274,7 @@ public final class bz {
         return 0.0f;
     }
 
-    public final float b(cf cfVar) {
+    public final float b(defpackage.cf cfVar) {
         int i2 = this.f;
         int i3 = 0;
         while (i2 != -1 && i3 < this.a) {
@@ -288,8 +287,8 @@ public final class bz {
         return 0.0f;
     }
 
-    public final String toString() {
-        String str = "";
+    public final java.lang.String toString() {
+        java.lang.String str = "";
         int i2 = this.f;
         int i3 = 0;
         while (i2 != -1 && i3 < this.a) {

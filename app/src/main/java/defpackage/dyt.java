@@ -1,15 +1,12 @@
 package defpackage;
 
-import java.util.Map;
-
-/* access modifiers changed from: package-private */
-/* renamed from: dyt  reason: default package */
+/* renamed from: dyt reason: default package */
 /* compiled from: PG */
-public final class dyt {
-    public final /* synthetic */ Map a;
-    public final /* synthetic */ Map b;
+final class dyt {
+    public final /* synthetic */ java.util.Map a;
+    public final /* synthetic */ java.util.Map b;
 
-    dyt(Map map, Map map2) {
+    dyt(java.util.Map map, java.util.Map map2) {
         this.a = map;
         this.b = map2;
     }

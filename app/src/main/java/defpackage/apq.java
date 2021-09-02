@@ -1,17 +1,14 @@
 package defpackage;
 
-import com.google.android.apps.tasks.ui.TaskListsActivity;
+/* renamed from: apq reason: default package */
+public final /* synthetic */ class apq implements defpackage.aoj {
+    private final com.google.android.apps.tasks.ui.TaskListsActivity a;
 
-/* renamed from: apq  reason: default package */
-public final /* synthetic */ class apq implements aoj {
-    private final TaskListsActivity a;
-
-    public apq(TaskListsActivity taskListsActivity) {
+    public apq(com.google.android.apps.tasks.ui.TaskListsActivity taskListsActivity) {
         this.a = taskListsActivity;
     }
 
-    @Override // defpackage.aoj
-    public final void a(aoe aoe) {
+    public final void a(defpackage.aoe aoe) {
         this.a.b(aoe);
     }
 }

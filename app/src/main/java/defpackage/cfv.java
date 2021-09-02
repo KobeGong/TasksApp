@@ -1,37 +1,31 @@
 package defpackage;
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
+/* renamed from: cfv reason: default package */
+final /* synthetic */ class cfv implements defpackage.cdq {
+    private final defpackage.cdq a;
 
-/* access modifiers changed from: package-private */
-/* renamed from: cfv  reason: default package */
-public final /* synthetic */ class cfv implements cdq {
-    private final cdq a;
-
-    cfv(cdq cdq) {
+    cfv(defpackage.cdq cdq) {
         this.a = cdq;
     }
 
-    @Override // defpackage.cdq
-    public final void a(Bitmap bitmap) {
-        Bitmap createBitmap;
-        cdq cdq = this.a;
+    public final void a(android.graphics.Bitmap bitmap) {
+        android.graphics.Bitmap createBitmap;
+        defpackage.cdq cdq = this.a;
         if (bitmap == null) {
             createBitmap = null;
         } else {
             int width = bitmap.getWidth();
             int height = bitmap.getHeight();
-            int min = Math.min(width, height);
-            createBitmap = Bitmap.createBitmap(min, min, Bitmap.Config.ARGB_8888);
-            Canvas canvas = new Canvas(createBitmap);
-            Paint paint = new Paint(1);
+            int min = java.lang.Math.min(width, height);
+            int i = (min - width) / 2;
+            int i2 = (min - height) / 2;
+            createBitmap = android.graphics.Bitmap.createBitmap(min, min, android.graphics.Bitmap.Config.ARGB_8888);
+            android.graphics.Canvas canvas = new android.graphics.Canvas(createBitmap);
+            android.graphics.Paint paint = new android.graphics.Paint(1);
             paint.setColor(-16777216);
             canvas.drawCircle((float) (min / 2), (float) (min / 2), (float) (min / 2), paint);
-            paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
-            canvas.drawBitmap(bitmap, (float) ((min - width) / 2), (float) ((min - height) / 2), paint);
+            paint.setXfermode(new android.graphics.PorterDuffXfermode(android.graphics.PorterDuff.Mode.SRC_IN));
+            canvas.drawBitmap(bitmap, (float) i, (float) i2, paint);
         }
         cdq.a(createBitmap);
     }

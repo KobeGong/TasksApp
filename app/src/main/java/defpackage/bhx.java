@@ -1,31 +1,24 @@
 package defpackage;
 
-import android.app.Service;
-import android.content.Intent;
-import android.os.Binder;
-import android.os.IBinder;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
-/* renamed from: bhx  reason: default package */
+/* renamed from: bhx reason: default package */
 /* compiled from: PG */
-public abstract class bhx extends Service {
-    public final ExecutorService a = Executors.newSingleThreadExecutor();
-    private Binder b;
-    private final Object c = new Object();
+public abstract class bhx extends android.app.Service {
+    public final java.util.concurrent.ExecutorService a = java.util.concurrent.Executors.newSingleThreadExecutor();
+    private android.os.Binder b;
+    private final java.lang.Object c = new java.lang.Object();
     private int d;
     private int e = 0;
 
-    public abstract void handleIntent(Intent intent);
+    public abstract void handleIntent(android.content.Intent intent);
 
-    public final synchronized IBinder onBind(Intent intent) {
+    public final synchronized android.os.IBinder onBind(android.content.Intent intent) {
         if (this.b == null) {
-            this.b = new bib(this);
+            this.b = new defpackage.bib(this);
         }
         return this.b;
     }
 
-    public final int onStartCommand(Intent intent, int i, int i2) {
+    public final int onStartCommand(android.content.Intent intent, int i, int i2) {
         synchronized (this.c) {
             this.d = i2;
             this.e++;
@@ -34,14 +27,14 @@ public abstract class bhx extends Service {
             a(intent);
             return 2;
         }
-        this.a.execute(new bhy(this, intent, intent));
+        this.a.execute(new defpackage.bhy(this, intent, intent));
         return 3;
     }
 
-    /* access modifiers changed from: package-private */
-    public final void a(Intent intent) {
+    /* access modifiers changed from: 0000 */
+    public final void a(android.content.Intent intent) {
         if (intent != null) {
-            bpt.a(intent);
+            defpackage.bpt.a(intent);
         }
         synchronized (this.c) {
             this.e--;

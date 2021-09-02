@@ -1,19 +1,16 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: ecw  reason: default package */
+/* renamed from: ecw reason: default package */
 /* compiled from: PG */
-public final class ecw extends ecv {
-    @Override // defpackage.ecv
-    public final byte[] a(ecf ecf) {
-        cld.a(ecf, "spanContext");
+final class ecw extends defpackage.ecv {
+    public final byte[] a(defpackage.ecf ecf) {
+        defpackage.cld.a((java.lang.Object) ecf, (java.lang.Object) "spanContext");
         return new byte[0];
     }
 
-    @Override // defpackage.ecv
-    public final ecf a(byte[] bArr) {
-        cld.a(bArr, "bytes");
-        return ecf.c;
+    public final defpackage.ecf a(byte[] bArr) {
+        defpackage.cld.a((java.lang.Object) bArr, (java.lang.Object) "bytes");
+        return defpackage.ecf.c;
     }
 
     ecw() {

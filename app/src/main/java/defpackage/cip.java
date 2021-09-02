@@ -1,22 +1,18 @@
 package defpackage;
 
-import android.content.Context;
-import android.content.pm.PackageManager;
-import android.os.Build;
-
-/* renamed from: cip  reason: default package */
+/* renamed from: cip reason: default package */
 /* compiled from: PG */
 public final class cip {
-    private static volatile cip h;
-    public final String a;
-    public final String b;
-    public final String c;
+    private static volatile defpackage.cip h;
+    public final java.lang.String a;
+    public final java.lang.String b;
+    public final java.lang.String c;
     public final int d;
-    public final bqf e;
+    public final defpackage.bqf e;
     public final long f;
-    public final Long g;
+    public final java.lang.Long g;
 
-    private cip(String str, String str2, String str3, int i, Long l, bqf bqf) {
+    private cip(java.lang.String str, java.lang.String str2, java.lang.String str3, int i, java.lang.Long l, defpackage.bqf bqf) {
         this.a = str;
         this.b = str2;
         this.c = str3;
@@ -26,9 +22,9 @@ public final class cip {
         this.f = bqf.a().getTotalSpace() / 1024;
     }
 
-    static cip a(Context context) {
+    static defpackage.cip a(android.content.Context context) {
         if (h == null) {
-            synchronized (cip.class) {
+            synchronized (defpackage.cip.class) {
                 if (h == null) {
                     h = c(context);
                 }
@@ -37,29 +33,29 @@ public final class cip {
         return h;
     }
 
-    public static clt b(Context context) {
-        cky.a((Object) context);
-        return new ciq(context);
+    public static defpackage.clt b(android.content.Context context) {
+        defpackage.cky.a((java.lang.Object) context);
+        return new defpackage.ciq(context);
     }
 
-    private static cip c(Context context) {
+    private static defpackage.cip c(android.content.Context context) {
         int i = 1;
-        String packageName = ((Context) cky.a((Object) context)).getPackageName();
-        String d2 = cnx.d(context);
-        String str = null;
-        PackageManager packageManager = context.getPackageManager();
+        java.lang.String packageName = ((android.content.Context) defpackage.cky.a((java.lang.Object) context)).getPackageName();
+        java.lang.String d2 = defpackage.cnx.d(context);
+        java.lang.String str = null;
+        android.content.pm.PackageManager packageManager = context.getPackageManager();
         try {
             str = packageManager.getPackageInfo(packageName, 0).versionName;
-        } catch (PackageManager.NameNotFoundException e2) {
-            cdm.a(5, "MetricStamper", "Failed to get PackageInfo for: %s", packageName);
+        } catch (android.content.pm.PackageManager.NameNotFoundException e2) {
+            defpackage.cdm.a(5, "MetricStamper", "Failed to get PackageInfo for: %s", packageName);
         }
-        if (Build.VERSION.SDK_INT >= 20) {
+        if (android.os.Build.VERSION.SDK_INT >= 20) {
             if (packageManager.hasSystemFeature("android.hardware.type.watch")) {
                 i = 2;
-            } else if (Build.VERSION.SDK_INT >= 21 && packageManager.hasSystemFeature("android.software.leanback")) {
+            } else if (android.os.Build.VERSION.SDK_INT >= 21 && packageManager.hasSystemFeature("android.software.leanback")) {
                 i = 3;
             }
         }
-        return new cip(packageName, d2, str, i, cky.c(context), new bqf(context));
+        return new defpackage.cip(packageName, d2, str, i, defpackage.cky.c(context), new defpackage.bqf(context));
     }
 }

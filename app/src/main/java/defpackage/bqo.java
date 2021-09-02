@@ -1,11 +1,11 @@
 package defpackage;
 
-/* renamed from: bqo  reason: default package */
+/* renamed from: bqo reason: default package */
 /* compiled from: PG */
 public final class bqo {
-    public final dii a;
+    public final defpackage.dii a;
 
-    public bqo(dii dii) {
+    public bqo(defpackage.dii dii) {
         this.a = dii;
     }
 }

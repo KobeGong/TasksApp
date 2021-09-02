@@ -1,11 +1,9 @@
 package defpackage;
 
-import java.io.InputStream;
-
-/* renamed from: dpd  reason: default package */
+/* renamed from: dpd reason: default package */
 /* compiled from: PG */
 public interface dpd {
-    InputStream a(Object obj);
+    java.io.InputStream a(java.lang.Object obj);
 
-    Object a(InputStream inputStream);
+    java.lang.Object a(java.io.InputStream inputStream);
 }

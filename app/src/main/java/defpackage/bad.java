@@ -1,22 +1,18 @@
 package defpackage;
 
-import java.lang.ref.WeakReference;
-
-/* access modifiers changed from: package-private */
-/* renamed from: bad  reason: default package */
+/* renamed from: bad reason: default package */
 /* compiled from: PG */
-public final class bad extends bas {
-    private WeakReference a;
+final class bad extends defpackage.bas {
+    private java.lang.ref.WeakReference a;
 
-    bad(azx azx) {
-        this.a = new WeakReference(azx);
+    bad(defpackage.azx azx) {
+        this.a = new java.lang.ref.WeakReference(azx);
     }
 
-    @Override // defpackage.bas
     public final void a() {
-        azx azx = (azx) this.a.get();
+        defpackage.azx azx = (defpackage.azx) this.a.get();
         if (azx != null) {
-            azx.a(azx);
+            defpackage.azx.a(azx);
         }
     }
 }

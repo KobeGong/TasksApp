@@ -1,19 +1,16 @@
 package defpackage;
 
-import android.support.v7.widget.RecyclerView;
-import android.view.View;
-
-/* renamed from: aco  reason: default package */
+/* renamed from: aco reason: default package */
 /* compiled from: PG */
 public final class aco {
-    public final /* synthetic */ RecyclerView a;
+    public final /* synthetic */ android.support.v7.widget.RecyclerView a;
 
-    public final int a(View view) {
+    public final int a(android.view.View view) {
         return this.a.indexOfChild(view);
     }
 
     public final void a(int i) {
-        View childAt = this.a.getChildAt(i);
+        android.view.View childAt = this.a.getChildAt(i);
         if (childAt != null) {
             this.a.g(childAt);
             childAt.clearAnimation();
@@ -21,19 +18,19 @@ public final class aco {
         this.a.removeViewAt(i);
     }
 
-    public final View b(int i) {
+    public final android.view.View b(int i) {
         return this.a.getChildAt(i);
     }
 
-    public final void b(View view) {
-        ViewHolder c = RecyclerView.c(view);
+    public final void b(android.view.View view) {
+        defpackage.afv c = android.support.v7.widget.RecyclerView.c(view);
         if (c != null) {
             this.a.a(c, c.m);
             c.m = 0;
         }
     }
 
-    public aco(RecyclerView recyclerView) {
+    public aco(android.support.v7.widget.RecyclerView recyclerView) {
         this.a = recyclerView;
     }
 }

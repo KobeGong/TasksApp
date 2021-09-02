@@ -1,13 +1,12 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: drg  reason: default package */
+/* renamed from: drg reason: default package */
 /* compiled from: PG */
-public final class drg implements Runnable {
-    private final /* synthetic */ Throwable a;
-    private final /* synthetic */ dqz b;
+final class drg implements java.lang.Runnable {
+    private final /* synthetic */ java.lang.Throwable a;
+    private final /* synthetic */ defpackage.dqz b;
 
-    drg(dqz dqz, Throwable th) {
+    drg(defpackage.dqz dqz, java.lang.Throwable th) {
         this.b = dqz;
         this.a = th;
     }

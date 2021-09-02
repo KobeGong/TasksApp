@@ -1,40 +1,44 @@
 package defpackage;
 
-/* renamed from: blj  reason: default package */
+/* renamed from: blj reason: default package */
 /* compiled from: PG */
-public final class blj extends bkw implements Cloneable {
-    private int c = -1;
+public final class blj extends defpackage.bkw implements java.lang.Cloneable {
+    private int c;
 
     public blj() {
+        this.c = -1;
         this.a = null;
         this.b = -1;
     }
 
     /* access modifiers changed from: private */
     /* renamed from: e */
-    public final blj clone() {
+    public final defpackage.blj clone() {
         try {
-            return (blj) super.clone();
-        } catch (CloneNotSupportedException e) {
-            throw new AssertionError(e);
+            return (defpackage.blj) super.clone();
+        } catch (java.lang.CloneNotSupportedException e) {
+            throw new java.lang.AssertionError(e);
         }
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof blj)) {
+        if (!(obj instanceof defpackage.blj)) {
             return false;
         }
-        blj blj = (blj) obj;
+        defpackage.blj blj = (defpackage.blj) obj;
         if (this.c != blj.c) {
             return false;
         }
-        if (this.a == null || this.a.a()) {
-            return blj.a == null || blj.a.a();
+        if (this.a != null && !this.a.a()) {
+            return this.a.equals(blj.a);
         }
-        return this.a.equals(blj.a);
+        if (blj.a == null || blj.a.a()) {
+            return true;
+        }
+        return false;
     }
 
     public final int hashCode() {
@@ -48,8 +52,7 @@ public final class blj extends bkw implements Cloneable {
         return i + hashCode;
     }
 
-    @Override // defpackage.blb, defpackage.bkw
-    public final void a(bku bku) {
+    public final void a(defpackage.bku bku) {
         if (this.c != -1) {
             bku.a(1, this.c);
         }
@@ -57,23 +60,20 @@ public final class blj extends bkw implements Cloneable {
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.blb, defpackage.bkw
     public final int a() {
         int a = super.a();
         if (this.c == -1) {
             return a;
         }
         int i = this.c;
-        return a + bku.a(i) + bku.c(8);
+        return a + defpackage.bku.a(i) + defpackage.bku.c(8);
     }
 
-    @Override // defpackage.bkw
-    public final /* synthetic */ bkw b() {
-        return (blj) clone();
+    public final /* synthetic */ defpackage.bkw b() {
+        return (defpackage.blj) clone();
     }
 
-    @Override // defpackage.blb, defpackage.bkw
-    public final /* synthetic */ blb c() {
-        return (blj) clone();
+    public final /* synthetic */ defpackage.blb c() {
+        return (defpackage.blj) clone();
     }
 }

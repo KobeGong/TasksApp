@@ -1,329 +1,323 @@
 package defpackage;
 
-import android.content.Context;
-import android.os.Process;
-import android.os.UserManager;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-
-/* renamed from: bzc  reason: default package */
+/* renamed from: bzc reason: default package */
 /* compiled from: PG */
 public final class bzc {
-    public Context a;
-    public buc b;
-    public byk c;
+    public android.content.Context a;
+    public defpackage.buc b;
+    public defpackage.byk c;
 
-    public final dfh a() {
-        dih dih;
-        dih dih2;
-        dih dih3;
-        dii dii = (dii) dec.f.a(bg.ao);
-        String packageName = this.a.getApplicationContext().getPackageName();
+    public final defpackage.dfh a() {
+        defpackage.dih dih;
+        defpackage.dih dih2;
+        defpackage.dih dih3;
+        defpackage.dii dii = (defpackage.dii) defpackage.dec.f.a(defpackage.bg.ao);
+        java.lang.String packageName = this.a.getApplicationContext().getPackageName();
         dii.b();
-        dec dec = (dec) dii.a;
+        defpackage.dec dec = (defpackage.dec) dii.a;
         if (packageName == null) {
-            throw new NullPointerException();
+            throw new java.lang.NullPointerException();
         }
         dec.a |= 4;
         dec.d = packageName;
-        String a2 = this.c.a();
+        java.lang.String a2 = this.c.a();
         dii.b();
-        dec dec2 = (dec) dii.a;
+        defpackage.dec dec2 = (defpackage.dec) dii.a;
         if (a2 == null) {
-            throw new NullPointerException();
+            throw new java.lang.NullPointerException();
         }
         dec2.a |= 1;
         dec2.b = a2;
         long b2 = b(this.a);
         if (b2 != -1) {
             dii.b();
-            dec dec3 = (dec) dii.a;
+            defpackage.dec dec3 = (defpackage.dec) dii.a;
             dec3.a |= 2;
             dec3.c = b2;
         }
         long a3 = a(this.a);
         if (a3 != -1) {
             dii.b();
-            dec dec4 = (dec) dii.a;
+            defpackage.dec dec4 = (defpackage.dec) dii.a;
             dec4.a |= 8;
             dec4.e = a3;
         }
-        dii dii2 = (dii) dfh.d.a(bg.ao);
-        ddw ddw = ddw.GCM_DEVICE_PUSH;
+        defpackage.dii dii2 = (defpackage.dii) defpackage.dfh.d.a(defpackage.bg.ao);
+        defpackage.ddw ddw = defpackage.ddw.GCM_DEVICE_PUSH;
         dii2.b();
-        dfh dfh = (dfh) dii2.a;
+        defpackage.dfh dfh = (defpackage.dfh) dii2.a;
         if (ddw == null) {
-            throw new NullPointerException();
+            throw new java.lang.NullPointerException();
         }
         dfh.a |= 1;
         dfh.b = ddw.c;
-        dii dii3 = (dii) ddz.d.a(bg.ao);
+        defpackage.dii dii3 = (defpackage.dii) defpackage.ddz.d.a(defpackage.bg.ao);
         if (dii.b) {
             dih = dii.a;
         } else {
-            dih dih4 = dii.a;
-            djz.a.a(dih4).c(dih4);
+            defpackage.dih dih4 = dii.a;
+            defpackage.djz.a.a((java.lang.Object) dih4).c(dih4);
             dii.b = true;
             dih = dii.a;
         }
-        dih dih5 = dih;
-        if (!dih.a(dih5, Boolean.TRUE.booleanValue())) {
-            throw new dkw();
+        defpackage.dih dih5 = dih;
+        if (!defpackage.dih.a(dih5, java.lang.Boolean.TRUE.booleanValue())) {
+            throw new defpackage.dkw();
         }
-        dec dec5 = (dec) dih5;
+        defpackage.dec dec5 = (defpackage.dec) dih5;
         dii3.b();
-        ddz ddz = (ddz) dii3.a;
+        defpackage.ddz ddz = (defpackage.ddz) dii3.a;
         if (dec5 == null) {
-            throw new NullPointerException();
+            throw new java.lang.NullPointerException();
         }
         ddz.c = dec5;
         ddz.b = 1;
         if (dii3.b) {
             dih2 = dii3.a;
         } else {
-            dih dih6 = dii3.a;
-            djz.a.a(dih6).c(dih6);
+            defpackage.dih dih6 = dii3.a;
+            defpackage.djz.a.a((java.lang.Object) dih6).c(dih6);
             dii3.b = true;
             dih2 = dii3.a;
         }
-        dih dih7 = dih2;
-        if (!dih.a(dih7, Boolean.TRUE.booleanValue())) {
-            throw new dkw();
+        defpackage.dih dih7 = dih2;
+        if (!defpackage.dih.a(dih7, java.lang.Boolean.TRUE.booleanValue())) {
+            throw new defpackage.dkw();
         }
-        ddz ddz2 = (ddz) dih7;
+        defpackage.ddz ddz2 = (defpackage.ddz) dih7;
         dii2.b();
-        dfh dfh2 = (dfh) dii2.a;
+        defpackage.dfh dfh2 = (defpackage.dfh) dii2.a;
         if (ddz2 == null) {
-            throw new NullPointerException();
+            throw new java.lang.NullPointerException();
         }
         dfh2.c = ddz2;
         dfh2.a |= 2;
         if (dii2.b) {
             dih3 = dii2.a;
         } else {
-            dih dih8 = dii2.a;
-            djz.a.a(dih8).c(dih8);
+            defpackage.dih dih8 = dii2.a;
+            defpackage.djz.a.a((java.lang.Object) dih8).c(dih8);
             dii2.b = true;
             dih3 = dii2.a;
         }
-        dih dih9 = dih3;
-        if (dih.a(dih9, Boolean.TRUE.booleanValue())) {
-            return (dfh) dih9;
+        defpackage.dih dih9 = dih3;
+        if (defpackage.dih.a(dih9, java.lang.Boolean.TRUE.booleanValue())) {
+            return (defpackage.dfh) dih9;
         }
-        throw new dkw();
+        throw new defpackage.dkw();
     }
 
-    public final dfi b() {
-        dih dih;
-        dii dii = (dii) dfi.f.a(bg.ao);
-        String packageName = this.a.getApplicationContext().getPackageName();
+    public final defpackage.dfi b() {
+        defpackage.dih dih;
+        defpackage.dii dii = (defpackage.dii) defpackage.dfi.f.a(defpackage.bg.ao);
+        java.lang.String packageName = this.a.getApplicationContext().getPackageName();
         dii.b();
-        dfi dfi = (dfi) dii.a;
+        defpackage.dfi dfi = (defpackage.dfi) dii.a;
         if (packageName == null) {
-            throw new NullPointerException();
+            throw new java.lang.NullPointerException();
         }
         dfi.a |= 4;
         dfi.d = packageName;
-        dfh a2 = a();
+        defpackage.dfh a2 = a();
         dii.b();
-        dfi dfi2 = (dfi) dii.a;
+        defpackage.dfi dfi2 = (defpackage.dfi) dii.a;
         if (a2 == null) {
-            throw new NullPointerException();
+            throw new java.lang.NullPointerException();
         }
         dfi2.c = a2;
         dfi2.b = 1;
         if (this.b.b() != null && !this.b.b().isEmpty()) {
-            List b2 = this.b.b();
+            java.util.List b2 = this.b.b();
             dii.b();
-            dfi dfi3 = (dfi) dii.a;
+            defpackage.dfi dfi3 = (defpackage.dfi) dii.a;
             if (!dfi3.e.a()) {
-                diq diq = dfi3.e;
+                defpackage.diq diq = dfi3.e;
                 int size = diq.size();
                 dfi3.e = diq.a(size == 0 ? 10 : size << 1);
             }
-            diq diq2 = dfi3.e;
-            dim.a(b2);
-            if (b2 instanceof diz) {
-                List d = ((diz) b2).d();
-                diz diz = (diz) diq2;
+            defpackage.diq diq2 = dfi3.e;
+            defpackage.dim.a((java.lang.Object) b2);
+            if (b2 instanceof defpackage.diz) {
+                java.util.List d = ((defpackage.diz) b2).d();
+                defpackage.diz diz = (defpackage.diz) diq2;
                 int size2 = diq2.size();
-                for (Object obj : d) {
-                    if (obj == null) {
-                        String sb = new StringBuilder(37).append("Element at index ").append(diz.size() - size2).append(" is null.").toString();
+                for (java.lang.Object next : d) {
+                    if (next == null) {
+                        java.lang.String str = "Element at index " + (diz.size() - size2) + " is null.";
                         for (int size3 = diz.size() - 1; size3 >= size2; size3--) {
                             diz.remove(size3);
                         }
-                        throw new NullPointerException(sb);
-                    } else if (obj instanceof dha) {
-                        diz.a((dha) obj);
+                        throw new java.lang.NullPointerException(str);
+                    } else if (next instanceof defpackage.dha) {
+                        diz.a((defpackage.dha) next);
                     } else {
-                        diz.add((String) obj);
+                        diz.add((java.lang.String) next);
                     }
                 }
-            } else if (b2 instanceof djy) {
+            } else if (b2 instanceof defpackage.djy) {
                 diq2.addAll(b2);
             } else {
-                if ((diq2 instanceof ArrayList) && (b2 instanceof Collection)) {
-                    ((ArrayList) diq2).ensureCapacity(b2.size() + diq2.size());
+                if ((diq2 instanceof java.util.ArrayList) && (b2 instanceof java.util.Collection)) {
+                    ((java.util.ArrayList) diq2).ensureCapacity(b2.size() + diq2.size());
                 }
                 int size4 = diq2.size();
-                for (Object obj2 : b2) {
-                    if (obj2 == null) {
-                        String sb2 = new StringBuilder(37).append("Element at index ").append(diq2.size() - size4).append(" is null.").toString();
+                for (java.lang.Object next2 : b2) {
+                    if (next2 == null) {
+                        java.lang.String str2 = "Element at index " + (diq2.size() - size4) + " is null.";
                         for (int size5 = diq2.size() - 1; size5 >= size4; size5--) {
                             diq2.remove(size5);
                         }
-                        throw new NullPointerException(sb2);
+                        throw new java.lang.NullPointerException(str2);
                     }
-                    diq2.add(obj2);
+                    diq2.add(next2);
                 }
             }
         }
         if (dii.b) {
             dih = dii.a;
         } else {
-            dih dih2 = dii.a;
-            djz.a.a(dih2).c(dih2);
+            defpackage.dih dih2 = dii.a;
+            defpackage.djz.a.a((java.lang.Object) dih2).c(dih2);
             dii.b = true;
             dih = dii.a;
         }
-        dih dih3 = dih;
-        if (dih.a(dih3, Boolean.TRUE.booleanValue())) {
-            return (dfi) dih3;
+        defpackage.dih dih3 = dih;
+        if (defpackage.dih.a(dih3, java.lang.Boolean.TRUE.booleanValue())) {
+            return (defpackage.dfi) dih3;
         }
-        throw new dkw();
+        throw new defpackage.dkw();
     }
 
-    public final ddo c() {
-        dih dih;
-        dih dih2;
-        dih dih3;
-        dii dii = (dii) ddd.f.a(bg.ao);
-        String packageName = this.a.getApplicationContext().getPackageName();
+    public final defpackage.ddo c() {
+        defpackage.dih dih;
+        defpackage.dih dih2;
+        defpackage.dih dih3;
+        defpackage.dii dii = (defpackage.dii) defpackage.ddd.f.a(defpackage.bg.ao);
+        java.lang.String packageName = this.a.getApplicationContext().getPackageName();
         dii.b();
-        ddd ddd = (ddd) dii.a;
+        defpackage.ddd ddd = (defpackage.ddd) dii.a;
         if (packageName == null) {
-            throw new NullPointerException();
+            throw new java.lang.NullPointerException();
         }
         ddd.a |= 4;
         ddd.d = packageName;
         try {
-            String a2 = this.c.a();
+            java.lang.String a2 = this.c.a();
             dii.b();
-            ddd ddd2 = (ddd) dii.a;
+            defpackage.ddd ddd2 = (defpackage.ddd) dii.a;
             if (a2 == null) {
-                throw new NullPointerException();
+                throw new java.lang.NullPointerException();
             }
             ddd2.a |= 1;
             ddd2.b = a2;
             long b2 = b(this.a);
             if (b2 != -1) {
                 dii.b();
-                ddd ddd3 = (ddd) dii.a;
+                defpackage.ddd ddd3 = (defpackage.ddd) dii.a;
                 ddd3.a |= 2;
                 ddd3.c = b2;
             }
             long a3 = a(this.a);
             if (a3 != -1) {
                 dii.b();
-                ddd ddd4 = (ddd) dii.a;
+                defpackage.ddd ddd4 = (defpackage.ddd) dii.a;
                 ddd4.a |= 8;
                 ddd4.e = a3;
             }
-            dii dii2 = (dii) ddo.d.a(bg.ao);
-            dcl dcl = dcl.GCM_DEVICE_PUSH;
+            defpackage.dii dii2 = (defpackage.dii) defpackage.ddo.d.a(defpackage.bg.ao);
+            defpackage.dcl dcl = defpackage.dcl.GCM_DEVICE_PUSH;
             dii2.b();
-            ddo ddo = (ddo) dii2.a;
+            defpackage.ddo ddo = (defpackage.ddo) dii2.a;
             if (dcl == null) {
-                throw new NullPointerException();
+                throw new java.lang.NullPointerException();
             }
             ddo.a |= 1;
             ddo.b = dcl.c;
-            dii dii3 = (dii) ddb.d.a(bg.ao);
+            defpackage.dii dii3 = (defpackage.dii) defpackage.ddb.d.a(defpackage.bg.ao);
             if (dii.b) {
                 dih = dii.a;
             } else {
-                dih dih4 = dii.a;
-                djz.a.a(dih4).c(dih4);
+                defpackage.dih dih4 = dii.a;
+                defpackage.djz.a.a((java.lang.Object) dih4).c(dih4);
                 dii.b = true;
                 dih = dii.a;
             }
-            dih dih5 = dih;
-            if (!dih.a(dih5, Boolean.TRUE.booleanValue())) {
-                throw new dkw();
+            defpackage.dih dih5 = dih;
+            if (!defpackage.dih.a(dih5, java.lang.Boolean.TRUE.booleanValue())) {
+                throw new defpackage.dkw();
             }
-            ddd ddd5 = (ddd) dih5;
+            defpackage.ddd ddd5 = (defpackage.ddd) dih5;
             dii3.b();
-            ddb ddb = (ddb) dii3.a;
+            defpackage.ddb ddb = (defpackage.ddb) dii3.a;
             if (ddd5 == null) {
-                throw new NullPointerException();
+                throw new java.lang.NullPointerException();
             }
             ddb.c = ddd5;
             ddb.b = 2;
             if (dii3.b) {
                 dih2 = dii3.a;
             } else {
-                dih dih6 = dii3.a;
-                djz.a.a(dih6).c(dih6);
+                defpackage.dih dih6 = dii3.a;
+                defpackage.djz.a.a((java.lang.Object) dih6).c(dih6);
                 dii3.b = true;
                 dih2 = dii3.a;
             }
-            dih dih7 = dih2;
-            if (!dih.a(dih7, Boolean.TRUE.booleanValue())) {
-                throw new dkw();
+            defpackage.dih dih7 = dih2;
+            if (!defpackage.dih.a(dih7, java.lang.Boolean.TRUE.booleanValue())) {
+                throw new defpackage.dkw();
             }
-            ddb ddb2 = (ddb) dih7;
+            defpackage.ddb ddb2 = (defpackage.ddb) dih7;
             dii2.b();
-            ddo ddo2 = (ddo) dii2.a;
+            defpackage.ddo ddo2 = (defpackage.ddo) dii2.a;
             if (ddb2 == null) {
-                throw new NullPointerException();
+                throw new java.lang.NullPointerException();
             }
             ddo2.c = ddb2;
             ddo2.a |= 2;
             if (dii2.b) {
                 dih3 = dii2.a;
             } else {
-                dih dih8 = dii2.a;
-                djz.a.a(dih8).c(dih8);
+                defpackage.dih dih8 = dii2.a;
+                defpackage.djz.a.a((java.lang.Object) dih8).c(dih8);
                 dii2.b = true;
                 dih3 = dii2.a;
             }
-            dih dih9 = dih3;
-            if (dih.a(dih9, Boolean.TRUE.booleanValue())) {
-                return (ddo) dih9;
+            defpackage.dih dih9 = dih3;
+            if (defpackage.dih.a(dih9, java.lang.Boolean.TRUE.booleanValue())) {
+                return (defpackage.ddo) dih9;
             }
-            throw new dkw();
-        } catch (byl e) {
-            bty.b("TargetCreatorHelperImpl", e, "Failed to get registraiton ID.", new Object[0]);
+            throw new defpackage.dkw();
+        } catch (defpackage.byl e) {
+            defpackage.bty.b("TargetCreatorHelperImpl", e, "Failed to get registraiton ID.", new java.lang.Object[0]);
         }
     }
 
-    private static long a(Context context) {
-        if (bwj.f()) {
-            return ((UserManager) context.getSystemService("user")).getSerialNumberForUser(Process.myUserHandle());
+    private static long a(android.content.Context context) {
+        if (defpackage.bwj.f()) {
+            return ((android.os.UserManager) context.getSystemService("user")).getSerialNumberForUser(android.os.Process.myUserHandle());
         }
         return -1;
     }
 
-    private static long b(Context context) {
-        SecurityException e;
+    private static long b(android.content.Context context) {
+        java.lang.Throwable e;
         long j;
         try {
-            j = bqb.a(context.getContentResolver(), "android_id");
+            j = defpackage.bqb.a(context.getContentResolver(), "android_id");
             if (j == -1) {
                 try {
-                    bty.e("TargetCreatorHelperImpl", "Failed to get android ID.", new Object[0]);
-                } catch (SecurityException e2) {
+                    defpackage.bty.e("TargetCreatorHelperImpl", "Failed to get android ID.", new java.lang.Object[0]);
+                } catch (java.lang.SecurityException e2) {
                     e = e2;
-                    bty.b("TargetCreatorHelperImpl", e, "Exception reading GServices key.", new Object[0]);
+                    defpackage.bty.b("TargetCreatorHelperImpl", e, "Exception reading GServices key.", new java.lang.Object[0]);
                     return j;
                 }
             }
-        } catch (SecurityException e3) {
+        } catch (java.lang.SecurityException e3) {
+            java.lang.Throwable th = e3;
             j = -1;
-            e = e3;
-            bty.b("TargetCreatorHelperImpl", e, "Exception reading GServices key.", new Object[0]);
+            e = th;
+            defpackage.bty.b("TargetCreatorHelperImpl", e, "Exception reading GServices key.", new java.lang.Object[0]);
             return j;
         }
         return j;

@@ -1,19 +1,15 @@
 package defpackage;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.support.design.behavior.HideBottomViewOnScrollBehavior;
-
-/* renamed from: dl  reason: default package */
+/* renamed from: dl reason: default package */
 /* compiled from: PG */
-public final class dl extends AnimatorListenerAdapter {
-    private final /* synthetic */ HideBottomViewOnScrollBehavior a;
+public final class dl extends android.animation.AnimatorListenerAdapter {
+    private final /* synthetic */ android.support.design.behavior.HideBottomViewOnScrollBehavior a;
 
-    public dl(HideBottomViewOnScrollBehavior hideBottomViewOnScrollBehavior) {
+    public dl(android.support.design.behavior.HideBottomViewOnScrollBehavior hideBottomViewOnScrollBehavior) {
         this.a = hideBottomViewOnScrollBehavior;
     }
 
-    public final void onAnimationEnd(Animator animator) {
+    public final void onAnimationEnd(android.animation.Animator animator) {
         this.a.a = null;
     }
 }

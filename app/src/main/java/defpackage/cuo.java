@@ -1,23 +1,21 @@
 package defpackage;
 
-import java.util.logging.Level;
-
-/* renamed from: cuo  reason: default package */
+/* renamed from: cuo reason: default package */
 /* compiled from: PG */
 public interface cuo {
-    Level d();
+    java.util.logging.Level d();
 
     long e();
 
-    ctt f();
+    defpackage.ctt f();
 
-    cvf g();
+    defpackage.cvf g();
 
-    Object[] h();
+    java.lang.Object[] h();
 
-    Object i();
+    java.lang.Object i();
 
     boolean j();
 
-    cur k();
+    defpackage.cur k();
 }

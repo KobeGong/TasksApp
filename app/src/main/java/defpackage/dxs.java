@@ -1,15 +1,12 @@
 package defpackage;
 
-import java.net.ProxySelector;
-
-/* renamed from: dxs  reason: default package */
+/* renamed from: dxs reason: default package */
 /* compiled from: PG */
-final class dxs implements csd {
+final class dxs implements defpackage.csd {
     dxs() {
     }
 
-    @Override // defpackage.csd
-    public final /* synthetic */ Object b() {
-        return ProxySelector.getDefault();
+    public final /* synthetic */ java.lang.Object b() {
+        return java.net.ProxySelector.getDefault();
     }
 }

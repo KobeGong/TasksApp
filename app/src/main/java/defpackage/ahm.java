@@ -1,9 +1,8 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: ahm  reason: default package */
+/* renamed from: ahm reason: default package */
 /* compiled from: PG */
-public final class ahm {
+final class ahm {
     public int a = 0;
     public int b;
     public int c;
@@ -13,7 +12,7 @@ public final class ahm {
     ahm() {
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public final void a(int i) {
         this.a |= i;
     }
@@ -28,7 +27,7 @@ public final class ahm {
         return 4;
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public final boolean a() {
         if ((this.a & 7) != 0 && (this.a & a(this.d, this.b)) == 0) {
             return false;

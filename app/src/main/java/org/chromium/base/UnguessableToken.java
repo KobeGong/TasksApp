@@ -1,12 +1,8 @@
 package org.chromium.base;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import org.chromium.base.annotations.CalledByNative;
-
 /* compiled from: PG */
-public class UnguessableToken implements Parcelable {
-    public static final Parcelable.Creator CREATOR = new ehi();
+public class UnguessableToken implements android.os.Parcelable {
+    public static final android.os.Parcelable.Creator CREATOR = new defpackage.ehi();
     private final long a;
     private final long b;
 
@@ -15,17 +11,17 @@ public class UnguessableToken implements Parcelable {
         this.b = j2;
     }
 
-    @CalledByNative
-    private static UnguessableToken create(long j, long j2) {
-        return new UnguessableToken(j, j2);
+    @org.chromium.base.annotations.CalledByNative
+    private static org.chromium.base.UnguessableToken create(long j, long j2) {
+        return new org.chromium.base.UnguessableToken(j, j2);
     }
 
-    @CalledByNative
+    @org.chromium.base.annotations.CalledByNative
     public long getHighForSerialization() {
         return this.a;
     }
 
-    @CalledByNative
+    @org.chromium.base.annotations.CalledByNative
     public long getLowForSerialization() {
         return this.b;
     }
@@ -34,17 +30,17 @@ public class UnguessableToken implements Parcelable {
         return 0;
     }
 
-    public void writeToParcel(Parcel parcel, int i) {
+    public void writeToParcel(android.os.Parcel parcel, int i) {
         parcel.writeLong(this.a);
         parcel.writeLong(this.b);
     }
 
-    @CalledByNative
-    private UnguessableToken parcelAndUnparcelForTesting() {
-        Parcel obtain = Parcel.obtain();
+    @org.chromium.base.annotations.CalledByNative
+    private org.chromium.base.UnguessableToken parcelAndUnparcelForTesting() {
+        android.os.Parcel obtain = android.os.Parcel.obtain();
         writeToParcel(obtain, 0);
         obtain.setDataPosition(0);
-        UnguessableToken unguessableToken = (UnguessableToken) CREATOR.createFromParcel(obtain);
+        org.chromium.base.UnguessableToken unguessableToken = (org.chromium.base.UnguessableToken) CREATOR.createFromParcel(obtain);
         obtain.recycle();
         return unguessableToken;
     }

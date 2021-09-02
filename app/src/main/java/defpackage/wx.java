@@ -1,28 +1,21 @@
 package defpackage;
 
-import android.app.UiModeManager;
-import android.content.Context;
-import android.view.Window;
-
-/* access modifiers changed from: package-private */
-/* renamed from: wx  reason: default package */
+/* renamed from: wx reason: default package */
 /* compiled from: PG */
-public class wx extends wu {
-    private final UiModeManager v;
+class wx extends defpackage.wu {
+    private final android.app.UiModeManager v;
 
-    wx(Context context, Window window, wn wnVar) {
+    wx(android.content.Context context, android.view.Window window, defpackage.wn wnVar) {
         super(context, window, wnVar);
-        this.v = (UiModeManager) context.getSystemService("uimode");
+        this.v = (android.app.UiModeManager) context.getSystemService("uimode");
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.wp, defpackage.wu
-    public Window.Callback a(Window.Callback callback) {
-        return new wy(this, callback);
+    /* access modifiers changed from: 0000 */
+    public android.view.Window.Callback a(android.view.Window.Callback callback) {
+        return new defpackage.wy(this, callback);
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.wu
+    /* access modifiers changed from: 0000 */
     public final int f(int i) {
         if (i == 0 && this.v.getNightMode() == 0) {
             return -1;

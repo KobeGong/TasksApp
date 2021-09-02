@@ -1,6 +1,6 @@
 package defpackage;
 
-/* renamed from: bjn  reason: default package */
+/* renamed from: bjn reason: default package */
 /* compiled from: PG */
 public final class bjn {
     public bjn() {

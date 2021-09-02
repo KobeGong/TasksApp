@@ -1,10 +1,9 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: pe  reason: default package */
+/* renamed from: pe reason: default package */
 /* compiled from: PG */
-public interface pe {
-    boolean a(Object obj);
+interface pe {
+    boolean a(java.lang.Object obj);
 
-    int b(Object obj);
+    int b(java.lang.Object obj);
 }

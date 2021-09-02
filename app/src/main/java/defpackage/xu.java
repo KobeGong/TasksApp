@@ -1,14 +1,12 @@
 package defpackage;
 
-import com.google.android.apps.tasks.R;
-
-/* renamed from: xu  reason: default package */
+/* renamed from: xu reason: default package */
 /* compiled from: PG */
 public final class xu {
     public static final int A = 0;
     public static final int B = 2;
     public static final int C = 1;
-    public static final int[] D = {16842994, R.attr.buttonPanelSideLayout, R.attr.listLayout, R.attr.multiChoiceItemLayout, R.attr.singleChoiceItemLayout, R.attr.listItemLayout, R.attr.showTitle, R.attr.buttonIconDimen};
+    public static final int[] D = {16842994, 2130772104, 2130772105, 2130772106, 2130772107, 2130772108, 2130772109, 2130772110};
     public static final int E = 0;
     public static final int F = 7;
     public static final int G = 1;
@@ -17,11 +15,11 @@ public final class xu {
     public static final int J = 3;
     public static final int K = 6;
     public static final int L = 4;
-    public static final int[] M = {16843033, R.attr.srcCompat, R.attr.tint, R.attr.tintMode};
+    public static final int[] M = {16843033, 2130772116, 2130772117, 2130772118};
     public static final int N = 1;
     public static final int O = 2;
     public static final int P = 3;
-    public static final int[] Q = {16843074, R.attr.tickMark, R.attr.tickMarkTint, R.attr.tickMarkTintMode};
+    public static final int[] Q = {16843074, 2130772119, 2130772120, 2130772121};
     public static final int R = 0;
     public static final int S = 1;
     public static final int T = 2;
@@ -31,16 +29,16 @@ public final class xu {
     public static final int X = 6;
     public static final int Y = 3;
     public static final int Z = 4;
-    public static final int[] a = {R.attr.height, R.attr.title, R.attr.navigationMode, R.attr.displayOptions, R.attr.subtitle, R.attr.titleTextStyle, R.attr.subtitleTextStyle, R.attr.icon, R.attr.logo, R.attr.divider, R.attr.background, R.attr.backgroundStacked, R.attr.backgroundSplit, R.attr.customNavigationLayout, R.attr.homeLayout, R.attr.progressBarStyle, R.attr.indeterminateProgressStyle, R.attr.progressBarPadding, R.attr.itemPadding, R.attr.hideOnContentScroll, R.attr.contentInsetStart, R.attr.contentInsetEnd, R.attr.contentInsetLeft, R.attr.contentInsetRight, R.attr.contentInsetStartWithNavigation, R.attr.contentInsetEndWithActions, R.attr.elevation, R.attr.popupTheme, R.attr.homeAsUpIndicator};
-    public static final int[] aA = {16843173, 16843551, R.attr.alpha};
+    public static final int[] a = {2130772004, 2130772074, 2130772075, 2130772076, 2130772077, 2130772078, 2130772079, 2130772080, 2130772081, 2130772082, 2130772083, 2130772084, 2130772085, 2130772086, 2130772087, 2130772088, 2130772089, 2130772090, 2130772091, 2130772092, 2130772093, 2130772094, 2130772095, 2130772096, 2130772097, 2130772098, 2130772099, 2130772100, 2130772177};
+    public static final int[] aA = {16843173, 16843551, 2130772323};
     public static final int aB = 2;
     public static final int aC = 1;
     public static final int aD = 0;
-    public static final int[] aE = {16843015, R.attr.buttonTint, R.attr.buttonTintMode};
+    public static final int[] aE = {16843015, 2130772324, 2130772325};
     public static final int aF = 0;
     public static final int aG = 1;
     public static final int aH = 2;
-    public static final int[] aI = {16842927, 16842948, 16843046, 16843047, 16843048, R.attr.divider, R.attr.measureWithLargestChild, R.attr.showDividers, R.attr.dividerPadding};
+    public static final int[] aI = {16842927, 16842948, 16843046, 16843047, 16843048, 2130772082, 2130772414, 2130772415, 2130772416};
     public static final int[] aJ = {16842931, 16842996, 16842997, 16843137};
     public static final int aK = 0;
     public static final int aL = 3;
@@ -61,13 +59,13 @@ public final class xu {
     public static final int aa = 5;
     public static final int ab = 1;
     public static final int ac = 0;
-    public static final int[] ad = {16842804, R.attr.textAllCaps, R.attr.autoSizeTextType, R.attr.autoSizeStepGranularity, R.attr.autoSizePresetSizes, R.attr.autoSizeMinTextSize, R.attr.autoSizeMaxTextSize, R.attr.fontFamily};
+    public static final int[] ad = {16842804, 2130772122, 2130772123, 2130772124, 2130772125, 2130772126, 2130772127, 2130772128};
     public static final int ae = 6;
     public static final int af = 5;
     public static final int ag = 4;
     public static final int ah = 3;
     public static final int ai = 2;
-    public static final int[] aj = {16842839, 16842926, R.attr.windowActionBar, R.attr.windowNoTitle, R.attr.windowActionBarOverlay, R.attr.windowActionModeOverlay, R.attr.windowFixedWidthMajor, R.attr.windowFixedHeightMinor, R.attr.windowFixedWidthMinor, R.attr.windowFixedHeightMajor, R.attr.windowMinWidthMajor, R.attr.windowMinWidthMinor, R.attr.actionBarTabStyle, R.attr.actionBarTabBarStyle, R.attr.actionBarTabTextStyle, R.attr.actionOverflowButtonStyle, R.attr.actionOverflowMenuStyle, R.attr.actionBarPopupTheme, R.attr.actionBarStyle, R.attr.actionBarSplitStyle, R.attr.actionBarTheme, R.attr.actionBarWidgetTheme, R.attr.actionBarSize, R.attr.actionBarDivider, R.attr.actionBarItemBackground, R.attr.actionMenuTextAppearance, R.attr.actionMenuTextColor, R.attr.actionModeStyle, R.attr.actionModeCloseButtonStyle, R.attr.actionModeBackground, R.attr.actionModeSplitBackground, R.attr.actionModeCloseDrawable, R.attr.actionModeCutDrawable, R.attr.actionModeCopyDrawable, R.attr.actionModePasteDrawable, R.attr.actionModeSelectAllDrawable, R.attr.actionModeShareDrawable, R.attr.actionModeFindDrawable, R.attr.actionModeWebSearchDrawable, R.attr.actionModePopupWindowStyle, R.attr.textAppearanceLargePopupMenu, R.attr.textAppearanceSmallPopupMenu, R.attr.textAppearancePopupMenuHeader, R.attr.dialogTheme, R.attr.dialogPreferredPadding, R.attr.listDividerAlertDialog, R.attr.dialogCornerRadius, R.attr.actionDropDownStyle, R.attr.dropdownListPreferredItemHeight, R.attr.spinnerDropDownItemStyle, R.attr.homeAsUpIndicator, R.attr.actionButtonStyle, R.attr.buttonBarStyle, R.attr.buttonBarButtonStyle, R.attr.selectableItemBackground, R.attr.selectableItemBackgroundBorderless, R.attr.borderlessButtonStyle, R.attr.dividerVertical, R.attr.dividerHorizontal, R.attr.activityChooserViewStyle, R.attr.toolbarStyle, R.attr.toolbarNavigationButtonStyle, R.attr.popupMenuStyle, R.attr.popupWindowStyle, R.attr.editTextColor, R.attr.editTextBackground, R.attr.imageButtonStyle, R.attr.textAppearanceSearchResultTitle, R.attr.textAppearanceSearchResultSubtitle, R.attr.textColorSearchUrl, R.attr.searchViewStyle, R.attr.listPreferredItemHeight, R.attr.listPreferredItemHeightSmall, R.attr.listPreferredItemHeightLarge, R.attr.listPreferredItemPaddingLeft, R.attr.listPreferredItemPaddingRight, R.attr.dropDownListViewStyle, R.attr.listPopupWindowStyle, R.attr.textAppearanceListItem, R.attr.textAppearanceListItemSecondary, R.attr.textAppearanceListItemSmall, R.attr.panelBackground, R.attr.panelMenuListWidth, R.attr.panelMenuListTheme, R.attr.listChoiceBackgroundIndicator, R.attr.colorPrimary, R.attr.colorPrimaryDark, R.attr.colorAccent, R.attr.colorControlNormal, R.attr.colorControlActivated, R.attr.colorControlHighlight, R.attr.colorButtonNormal, R.attr.colorSwitchThumbNormal, R.attr.controlBackground, R.attr.colorBackgroundFloating, R.attr.alertDialogStyle, R.attr.alertDialogButtonGroupStyle, R.attr.alertDialogCenterButtons, R.attr.alertDialogTheme, R.attr.textColorAlertDialogListItem, R.attr.buttonBarPositiveButtonStyle, R.attr.buttonBarNegativeButtonStyle, R.attr.buttonBarNeutralButtonStyle, R.attr.autoCompleteTextViewStyle, R.attr.buttonStyle, R.attr.buttonStyleSmall, R.attr.checkboxStyle, R.attr.checkedTextViewStyle, R.attr.editTextStyle, R.attr.radioButtonStyle, R.attr.ratingBarStyle, R.attr.ratingBarStyleIndicator, R.attr.ratingBarStyleSmall, R.attr.seekBarStyle, R.attr.spinnerStyle, R.attr.switchStyle, R.attr.listMenuViewStyle, R.attr.tooltipFrameBackground, R.attr.tooltipForegroundColor, R.attr.colorError, R.attr.viewInflaterClass};
+    public static final int[] aj = {16842839, 16842926, 2130772129, 2130772130, 2130772131, 2130772132, 2130772133, 2130772134, 2130772135, 2130772136, 2130772137, 2130772138, 2130772139, 2130772140, 2130772141, 2130772142, 2130772143, 2130772144, 2130772145, 2130772146, 2130772147, 2130772148, 2130772149, 2130772150, 2130772151, 2130772152, 2130772153, 2130772154, 2130772155, 2130772156, 2130772157, 2130772158, 2130772159, 2130772160, 2130772161, 2130772162, 2130772163, 2130772164, 2130772165, 2130772166, 2130772167, 2130772168, 2130772169, 2130772170, 2130772171, 2130772172, 2130772173, 2130772174, 2130772175, 2130772176, 2130772177, 2130772178, 2130772179, 2130772180, 2130772181, 2130772182, 2130772183, 2130772184, 2130772185, 2130772186, 2130772187, 2130772188, 2130772189, 2130772190, 2130772191, 2130772192, 2130772193, 2130772194, 2130772195, 2130772196, 2130772197, 2130772198, 2130772199, 2130772200, 2130772201, 2130772202, 2130772203, 2130772204, 2130772205, 2130772206, 2130772207, 2130772208, 2130772209, 2130772210, 2130772211, 2130772212, 2130772213, 2130772214, 2130772215, 2130772216, 2130772217, 2130772218, 2130772219, 2130772220, 2130772221, 2130772222, 2130772223, 2130772224, 2130772225, 2130772226, 2130772227, 2130772228, 2130772229, 2130772230, 2130772231, 2130772232, 2130772233, 2130772234, 2130772235, 2130772236, 2130772237, 2130772238, 2130772239, 2130772240, 2130772241, 2130772242, 2130772243, 2130772244, 2130772245, 2130772246, 2130772247};
     public static final int ak = 1;
     public static final int al = 0;
     public static final int am = 81;
@@ -82,24 +80,24 @@ public final class xu {
     public static final int av = 10;
     public static final int aw = 11;
     public static final int ax = 3;
-    public static final int[] ay = {R.attr.allowStacking};
+    public static final int[] ay = {2130772264};
     public static final int az = 0;
     public static final int[] b = {16842931};
     public static final int bA = 15;
     public static final int bB = 16;
     public static final int bC = 21;
-    public static final int[] bD = {16842926, 16843052, 16843053, 16843054, 16843055, 16843056, 16843057, R.attr.preserveIconSpacing, R.attr.subMenuArrow};
+    public static final int[] bD = {16842926, 16843052, 16843053, 16843054, 16843055, 16843056, 16843057, 2130772434, 2130772435};
     public static final int bE = 5;
     public static final int bF = 1;
     public static final int bG = 7;
     public static final int bH = 8;
-    public static final int[] bI = {16843126, 16843465, R.attr.overlapAnchor};
+    public static final int[] bI = {16843126, 16843465, 2130772444};
     public static final int bJ = 0;
     public static final int bK = 2;
-    public static final int[] bL = {R.attr.paddingBottomNoButtons, R.attr.paddingTopNoTitle};
+    public static final int[] bL = {2130772446, 2130772447};
     public static final int bM = 0;
     public static final int bN = 1;
-    public static final int[] bO = {16842970, 16843039, 16843296, 16843364, R.attr.closeIcon, R.attr.layout, R.attr.iconifiedByDefault, R.attr.queryHint, R.attr.defaultQueryHint, R.attr.goIcon, R.attr.searchIcon, R.attr.searchHintIcon, R.attr.voiceIcon, R.attr.commitIcon, R.attr.suggestionRowLayout, R.attr.queryBackground, R.attr.submitBackground};
+    public static final int[] bO = {16842970, 16843039, 16843296, 16843364, 2130772287, 2130772459, 2130772460, 2130772461, 2130772462, 2130772463, 2130772464, 2130772465, 2130772466, 2130772467, 2130772468, 2130772469, 2130772470};
     public static final int bP = 0;
     public static final int bQ = 3;
     public static final int bR = 2;
@@ -116,7 +114,7 @@ public final class xu {
     public static final int bc = 3;
     public static final int bd = 4;
     public static final int be = 2;
-    public static final int[] bf = {16842754, 16842766, 16842960, 16843014, 16843156, 16843230, 16843231, 16843233, 16843234, 16843235, 16843236, 16843237, 16843375, R.attr.iconTint, R.attr.alphabeticModifiers, R.attr.numericModifiers, R.attr.showAsAction, R.attr.actionLayout, R.attr.actionViewClass, R.attr.actionProviderClass, R.attr.contentDescription, R.attr.tooltipText, R.attr.iconTintMode};
+    public static final int[] bf = {16842754, 16842766, 16842960, 16843014, 16843156, 16843230, 16843231, 16843233, 16843234, 16843235, 16843236, 16843237, 16843375, 2130772421, 2130772425, 2130772426, 2130772427, 2130772428, 2130772429, 2130772430, 2130772431, 2130772432, 2130772433};
     public static final int bg = 17;
     public static final int bh = 19;
     public static final int bi = 18;
@@ -170,12 +168,12 @@ public final class xu {
     public static final int cd = 16;
     public static final int ce = 14;
     public static final int cf = 12;
-    public static final int[] cg = {16842930, 16843126, 16843131, 16843362, R.attr.popupTheme};
+    public static final int[] cg = {16842930, 16843126, 16843131, 16843362, 2130772100};
     public static final int ch = 3;
     public static final int ci = 1;
     public static final int cj = 2;
     public static final int ck = 4;
-    public static final int[] cl = {16842901, 16842902, 16842903, 16842904, 16842906, 16842907, 16843105, 16843106, 16843107, 16843108, 16843692, R.attr.textAllCaps, R.attr.fontFamily};
+    public static final int[] cl = {16842901, 16842902, 16842903, 16842904, 16842906, 16842907, 16843105, 16843106, 16843107, 16843108, 16843692, 2130772122, 2130772128};
     public static final int cm = 10;
     public static final int cn = 6;
     public static final int co = 7;
@@ -189,12 +187,12 @@ public final class xu {
     public static final int cw = 1;
     public static final int cx = 12;
     public static final int cy = 11;
-    public static final int[] cz = {16842927, 16843072, R.attr.title, R.attr.subtitle, R.attr.logo, R.attr.contentInsetStart, R.attr.contentInsetEnd, R.attr.contentInsetLeft, R.attr.contentInsetRight, R.attr.contentInsetStartWithNavigation, R.attr.contentInsetEndWithActions, R.attr.popupTheme, R.attr.titleTextAppearance, R.attr.subtitleTextAppearance, R.attr.titleMargin, R.attr.titleMarginStart, R.attr.titleMarginEnd, R.attr.titleMarginTop, R.attr.titleMarginBottom, R.attr.titleMargins, R.attr.maxButtonHeight, R.attr.buttonGravity, R.attr.collapseIcon, R.attr.collapseContentDescription, R.attr.navigationIcon, R.attr.navigationContentDescription, R.attr.logoDescription, R.attr.titleTextColor, R.attr.subtitleTextColor};
+    public static final int[] cz = {16842927, 16843072, 2130772074, 2130772077, 2130772081, 2130772093, 2130772094, 2130772095, 2130772096, 2130772097, 2130772098, 2130772100, 2130772553, 2130772554, 2130772555, 2130772556, 2130772557, 2130772558, 2130772559, 2130772560, 2130772561, 2130772562, 2130772563, 2130772564, 2130772565, 2130772566, 2130772567, 2130772568, 2130772569};
     public static final int d = 10;
     public static final int da = 12;
     public static final int db = 27;
-    public static final int[] dc = {16842752, 16842970, R.attr.paddingStart, R.attr.paddingEnd, R.attr.theme};
-    public static final int[] dd = {16842964, R.attr.backgroundTint, R.attr.backgroundTintMode};
+    public static final int[] dc = {16842752, 16842970, 2130772570, 2130772571, 2130772572};
+    public static final int[] dd = {16842964, 2130772573, 2130772574};
     public static final int de = 0;
     public static final int df = 1;
     public static final int dg = 2;
@@ -223,7 +221,7 @@ public final class xu {
     public static final int u = 5;
     public static final int[] v = {16843071};
     public static final int w = 0;
-    public static final int[] x = {R.attr.height, R.attr.titleTextStyle, R.attr.subtitleTextStyle, R.attr.background, R.attr.backgroundSplit, R.attr.closeItemLayout};
+    public static final int[] x = {2130772004, 2130772078, 2130772079, 2130772083, 2130772085, 2130772101};
     public static final int y = 3;
     public static final int z = 5;
 }

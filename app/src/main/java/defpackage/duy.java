@@ -1,43 +1,37 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: duy  reason: default package */
+/* renamed from: duy reason: default package */
 /* compiled from: PG */
-public abstract class duy implements dth {
+abstract class duy implements defpackage.dth {
     duy() {
     }
 
     /* access modifiers changed from: protected */
-    public abstract dth c();
+    public abstract defpackage.dth c();
 
-    @Override // defpackage.dxb
-    public final Runnable a(dxc dxc) {
+    public final java.lang.Runnable a(defpackage.dxc dxc) {
         return c().a(dxc);
     }
 
-    @Override // defpackage.dxb
-    public final void a(dpw dpw) {
+    public final void a(defpackage.dpw dpw) {
         c().a(dpw);
     }
 
-    @Override // defpackage.dtb
-    public dta a(dpb dpb, dor dor, dna dna) {
+    public defpackage.dta a(defpackage.dpb dpb, defpackage.dor dor, defpackage.dna dna) {
         return c().a(dpb, dor, dna);
     }
 
-    @Override // defpackage.dzw
-    public final dwd b() {
+    public final defpackage.dwd b() {
         return c().b();
     }
 
-    @Override // defpackage.dth
-    public final dmv a() {
+    public final defpackage.dmv a() {
         return c().a();
     }
 
-    public String toString() {
-        String simpleName = getClass().getSimpleName();
-        String obj = c().toString();
-        return new StringBuilder(String.valueOf(simpleName).length() + 2 + String.valueOf(obj).length()).append(simpleName).append("[").append(obj).append("]").toString();
+    public java.lang.String toString() {
+        java.lang.String simpleName = getClass().getSimpleName();
+        java.lang.String obj = c().toString();
+        return new java.lang.StringBuilder(java.lang.String.valueOf(simpleName).length() + 2 + java.lang.String.valueOf(obj).length()).append(simpleName).append("[").append(obj).append("]").toString();
     }
 }

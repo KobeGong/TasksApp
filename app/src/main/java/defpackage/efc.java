@@ -1,50 +1,51 @@
 package defpackage;
 
-/* renamed from: efc  reason: default package */
+/* renamed from: efc reason: default package */
 /* compiled from: PG */
-public final class efc extends dlz {
-    private edr[] a = edr.d();
-    private eds[] b = eds.d();
-    private edi[] c = edi.d();
-    private efj[] d = efj.d();
-    private efm[] e = efm.d();
-    private Integer f = null;
+public final class efc extends defpackage.dlz {
+    private defpackage.edr[] a;
+    private defpackage.eds[] b;
+    private defpackage.edi[] c;
+    private defpackage.efj[] d;
+    private defpackage.efm[] e;
+    private java.lang.Integer f;
 
     public efc() {
+        this.a = defpackage.edr.d();
+        this.b = defpackage.eds.d();
+        this.c = defpackage.edi.d();
+        this.d = defpackage.efj.d();
+        this.e = defpackage.efm.d();
+        this.f = null;
         this.k = -1;
     }
 
-    @Override // defpackage.dlz, defpackage.dmf
-    public final void a(dlx dlx) {
+    public final void a(defpackage.dlx dlx) {
         if (this.a != null && this.a.length > 0) {
-            for (int i = 0; i < this.a.length; i++) {
-                edr edr = this.a[i];
+            for (defpackage.edr edr : this.a) {
                 if (edr != null) {
-                    dlx.a(1, edr);
+                    dlx.a(1, (defpackage.dmf) edr);
                 }
             }
         }
         if (this.b != null && this.b.length > 0) {
-            for (int i2 = 0; i2 < this.b.length; i2++) {
-                eds eds = this.b[i2];
+            for (defpackage.eds eds : this.b) {
                 if (eds != null) {
-                    dlx.a(2, eds);
+                    dlx.a(2, (defpackage.dmf) eds);
                 }
             }
         }
         if (this.c != null && this.c.length > 0) {
-            for (int i3 = 0; i3 < this.c.length; i3++) {
-                edi edi = this.c[i3];
+            for (defpackage.edi edi : this.c) {
                 if (edi != null) {
-                    dlx.a(3, edi);
+                    dlx.a(3, (defpackage.dmf) edi);
                 }
             }
         }
         if (this.d != null && this.d.length > 0) {
-            for (int i4 = 0; i4 < this.d.length; i4++) {
-                efj efj = this.d[i4];
+            for (defpackage.efj efj : this.d) {
                 if (efj != null) {
-                    dlx.a(4, efj);
+                    dlx.a(4, (defpackage.dmf) efj);
                 }
             }
         }
@@ -52,10 +53,9 @@ public final class efc extends dlz {
             dlx.a(5, this.f.intValue());
         }
         if (this.e != null && this.e.length > 0) {
-            for (int i5 = 0; i5 < this.e.length; i5++) {
-                efm efm = this.e[i5];
+            for (defpackage.efm efm : this.e) {
                 if (efm != null) {
-                    dlx.a(6, efm);
+                    dlx.a(6, (defpackage.dmf) efm);
                 }
             }
         }
@@ -63,163 +63,156 @@ public final class efc extends dlz {
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.dlz, defpackage.dmf
     public final int a() {
         int a2 = super.a();
         if (this.a != null && this.a.length > 0) {
             int i = a2;
-            for (int i2 = 0; i2 < this.a.length; i2++) {
-                edr edr = this.a[i2];
+            for (defpackage.edr edr : this.a) {
                 if (edr != null) {
-                    i += dlx.b(1, edr);
+                    i += defpackage.dlx.b(1, (defpackage.dmf) edr);
                 }
             }
             a2 = i;
         }
         if (this.b != null && this.b.length > 0) {
-            int i3 = a2;
-            for (int i4 = 0; i4 < this.b.length; i4++) {
-                eds eds = this.b[i4];
+            int i2 = a2;
+            for (defpackage.eds eds : this.b) {
                 if (eds != null) {
-                    i3 += dlx.b(2, eds);
+                    i2 += defpackage.dlx.b(2, (defpackage.dmf) eds);
+                }
+            }
+            a2 = i2;
+        }
+        if (this.c != null && this.c.length > 0) {
+            int i3 = a2;
+            for (defpackage.edi edi : this.c) {
+                if (edi != null) {
+                    i3 += defpackage.dlx.b(3, (defpackage.dmf) edi);
                 }
             }
             a2 = i3;
         }
-        if (this.c != null && this.c.length > 0) {
-            int i5 = a2;
-            for (int i6 = 0; i6 < this.c.length; i6++) {
-                edi edi = this.c[i6];
-                if (edi != null) {
-                    i5 += dlx.b(3, edi);
-                }
-            }
-            a2 = i5;
-        }
         if (this.d != null && this.d.length > 0) {
-            int i7 = a2;
-            for (int i8 = 0; i8 < this.d.length; i8++) {
-                efj efj = this.d[i8];
+            int i4 = a2;
+            for (defpackage.efj efj : this.d) {
                 if (efj != null) {
-                    i7 += dlx.b(4, efj);
+                    i4 += defpackage.dlx.b(4, (defpackage.dmf) efj);
                 }
             }
-            a2 = i7;
+            a2 = i4;
         }
         if (this.f != null) {
-            a2 += dlx.c(5, this.f.intValue());
+            a2 += defpackage.dlx.c(5, this.f.intValue());
         }
         if (this.e != null && this.e.length > 0) {
-            for (int i9 = 0; i9 < this.e.length; i9++) {
-                efm efm = this.e[i9];
+            for (defpackage.efm efm : this.e) {
                 if (efm != null) {
-                    a2 += dlx.b(6, efm);
+                    a2 += defpackage.dlx.b(6, (defpackage.dmf) efm);
                 }
             }
         }
         return a2;
     }
 
-    @Override // defpackage.dmf
-    public final /* synthetic */ dmf a(dlw dlw) {
+    public final /* synthetic */ defpackage.dmf a(defpackage.dlw dlw) {
         while (true) {
             int a2 = dlw.a();
             switch (a2) {
                 case 0:
                     break;
                 case 10:
-                    int a3 = dmh.a(dlw, 10);
+                    int a3 = defpackage.dmh.a(dlw, 10);
                     int length = this.a == null ? 0 : this.a.length;
-                    edr[] edrArr = new edr[(a3 + length)];
+                    defpackage.edr[] edrArr = new defpackage.edr[(a3 + length)];
                     if (length != 0) {
-                        System.arraycopy(this.a, 0, edrArr, 0, length);
+                        java.lang.System.arraycopy(this.a, 0, edrArr, 0, length);
                     }
                     while (length < edrArr.length - 1) {
-                        edrArr[length] = new edr();
-                        dlw.a(edrArr[length]);
+                        edrArr[length] = new defpackage.edr();
+                        dlw.a((defpackage.dmf) edrArr[length]);
                         dlw.a();
                         length++;
                     }
-                    edrArr[length] = new edr();
-                    dlw.a(edrArr[length]);
+                    edrArr[length] = new defpackage.edr();
+                    dlw.a((defpackage.dmf) edrArr[length]);
                     this.a = edrArr;
-                    break;
+                    continue;
                 case 18:
-                    int a4 = dmh.a(dlw, 18);
+                    int a4 = defpackage.dmh.a(dlw, 18);
                     int length2 = this.b == null ? 0 : this.b.length;
-                    eds[] edsArr = new eds[(a4 + length2)];
+                    defpackage.eds[] edsArr = new defpackage.eds[(a4 + length2)];
                     if (length2 != 0) {
-                        System.arraycopy(this.b, 0, edsArr, 0, length2);
+                        java.lang.System.arraycopy(this.b, 0, edsArr, 0, length2);
                     }
                     while (length2 < edsArr.length - 1) {
-                        edsArr[length2] = new eds();
-                        dlw.a(edsArr[length2]);
+                        edsArr[length2] = new defpackage.eds();
+                        dlw.a((defpackage.dmf) edsArr[length2]);
                         dlw.a();
                         length2++;
                     }
-                    edsArr[length2] = new eds();
-                    dlw.a(edsArr[length2]);
+                    edsArr[length2] = new defpackage.eds();
+                    dlw.a((defpackage.dmf) edsArr[length2]);
                     this.b = edsArr;
-                    break;
+                    continue;
                 case 26:
-                    int a5 = dmh.a(dlw, 26);
+                    int a5 = defpackage.dmh.a(dlw, 26);
                     int length3 = this.c == null ? 0 : this.c.length;
-                    edi[] ediArr = new edi[(a5 + length3)];
+                    defpackage.edi[] ediArr = new defpackage.edi[(a5 + length3)];
                     if (length3 != 0) {
-                        System.arraycopy(this.c, 0, ediArr, 0, length3);
+                        java.lang.System.arraycopy(this.c, 0, ediArr, 0, length3);
                     }
                     while (length3 < ediArr.length - 1) {
-                        ediArr[length3] = new edi();
-                        dlw.a(ediArr[length3]);
+                        ediArr[length3] = new defpackage.edi();
+                        dlw.a((defpackage.dmf) ediArr[length3]);
                         dlw.a();
                         length3++;
                     }
-                    ediArr[length3] = new edi();
-                    dlw.a(ediArr[length3]);
+                    ediArr[length3] = new defpackage.edi();
+                    dlw.a((defpackage.dmf) ediArr[length3]);
                     this.c = ediArr;
-                    break;
+                    continue;
                 case 34:
-                    int a6 = dmh.a(dlw, 34);
+                    int a6 = defpackage.dmh.a(dlw, 34);
                     int length4 = this.d == null ? 0 : this.d.length;
-                    efj[] efjArr = new efj[(a6 + length4)];
+                    defpackage.efj[] efjArr = new defpackage.efj[(a6 + length4)];
                     if (length4 != 0) {
-                        System.arraycopy(this.d, 0, efjArr, 0, length4);
+                        java.lang.System.arraycopy(this.d, 0, efjArr, 0, length4);
                     }
                     while (length4 < efjArr.length - 1) {
-                        efjArr[length4] = new efj();
-                        dlw.a(efjArr[length4]);
+                        efjArr[length4] = new defpackage.efj();
+                        dlw.a((defpackage.dmf) efjArr[length4]);
                         dlw.a();
                         length4++;
                     }
-                    efjArr[length4] = new efj();
-                    dlw.a(efjArr[length4]);
+                    efjArr[length4] = new defpackage.efj();
+                    dlw.a((defpackage.dmf) efjArr[length4]);
                     this.d = efjArr;
-                    break;
+                    continue;
                 case 40:
-                    this.f = Integer.valueOf(dlw.e());
-                    break;
-                case by.aU:
-                    int a7 = dmh.a(dlw, 50);
+                    this.f = java.lang.Integer.valueOf(dlw.e());
+                    continue;
+                case 50:
+                    int a7 = defpackage.dmh.a(dlw, 50);
                     int length5 = this.e == null ? 0 : this.e.length;
-                    efm[] efmArr = new efm[(a7 + length5)];
+                    defpackage.efm[] efmArr = new defpackage.efm[(a7 + length5)];
                     if (length5 != 0) {
-                        System.arraycopy(this.e, 0, efmArr, 0, length5);
+                        java.lang.System.arraycopy(this.e, 0, efmArr, 0, length5);
                     }
                     while (length5 < efmArr.length - 1) {
-                        efmArr[length5] = new efm();
-                        dlw.a(efmArr[length5]);
+                        efmArr[length5] = new defpackage.efm();
+                        dlw.a((defpackage.dmf) efmArr[length5]);
                         dlw.a();
                         length5++;
                     }
-                    efmArr[length5] = new efm();
-                    dlw.a(efmArr[length5]);
+                    efmArr[length5] = new defpackage.efm();
+                    dlw.a((defpackage.dmf) efmArr[length5]);
                     this.e = efmArr;
-                    break;
+                    continue;
                 default:
-                    if (super.a(dlw, a2)) {
+                    if (!super.a(dlw, a2)) {
                         break;
                     } else {
-                        break;
+                        continue;
                     }
             }
         }

@@ -1,19 +1,16 @@
 package defpackage;
 
-import android.content.Context;
-
-/* renamed from: cmq  reason: default package */
+/* renamed from: cmq reason: default package */
 /* compiled from: PG */
-public final class cmq implements clt {
-    private final Context a;
-    private final cmn b = new cmn();
+public final class cmq implements defpackage.clt {
+    private final android.content.Context a;
+    private final defpackage.cmn b = new defpackage.cmn();
 
-    public cmq(Context context) {
+    public cmq(android.content.Context context) {
         this.a = context;
     }
 
-    @Override // defpackage.clt
-    public final /* synthetic */ Object a() {
-        return Boolean.valueOf(this.b.a(this.a, "primes::shutdown_primes", false));
+    public final /* synthetic */ java.lang.Object a() {
+        return java.lang.Boolean.valueOf(this.b.a(this.a, "primes::shutdown_primes", false));
     }
 }

@@ -1,23 +1,17 @@
 package defpackage;
 
-import android.annotation.TargetApi;
-import android.net.ConnectivityManager;
-import android.net.Network;
-import android.net.NetworkCapabilities;
-import org.chromium.net.NetworkChangeNotifierAutoDetect;
-
-@TargetApi(21)
-/* renamed from: eii  reason: default package */
+@android.annotation.TargetApi(21)
+/* renamed from: eii reason: default package */
 /* compiled from: PG */
-public final class eii extends ConnectivityManager.NetworkCallback {
-    public Network a;
-    public final /* synthetic */ NetworkChangeNotifierAutoDetect b;
+public final class eii extends android.net.ConnectivityManager.NetworkCallback {
+    public android.net.Network a;
+    public final /* synthetic */ org.chromium.net.NetworkChangeNotifierAutoDetect b;
 
-    public eii(NetworkChangeNotifierAutoDetect networkChangeNotifierAutoDetect) {
+    public eii(org.chromium.net.NetworkChangeNotifierAutoDetect networkChangeNotifierAutoDetect) {
         this.b = networkChangeNotifierAutoDetect;
     }
 
-    private final boolean a(Network network) {
+    private final boolean a(android.net.Network network) {
         return this.a != null && !this.a.equals(network);
     }
 
@@ -61,38 +55,38 @@ public final class eii extends ConnectivityManager.NetworkCallback {
         throw new UnsupportedOperationException("Method not decompiled: defpackage.eii.a(android.net.Network, android.net.NetworkCapabilities):boolean");
     }
 
-    public final void onAvailable(Network network) {
-        NetworkCapabilities d = this.b.d.d(network);
+    public final void onAvailable(android.net.Network network) {
+        android.net.NetworkCapabilities d = this.b.d.d(network);
         if (!a(network, d)) {
             boolean hasTransport = d.hasTransport(4);
             if (hasTransport) {
                 this.a = network;
             }
-            this.b.a(new eij(this, NetworkChangeNotifierAutoDetect.a(network), this.b.d.b(network), hasTransport));
+            this.b.a((java.lang.Runnable) new defpackage.eij(this, org.chromium.net.NetworkChangeNotifierAutoDetect.a(network), this.b.d.b(network), hasTransport));
         }
     }
 
-    public final void onCapabilitiesChanged(Network network, NetworkCapabilities networkCapabilities) {
+    public final void onCapabilitiesChanged(android.net.Network network, android.net.NetworkCapabilities networkCapabilities) {
         if (!a(network, networkCapabilities)) {
-            this.b.a(new eik(this, NetworkChangeNotifierAutoDetect.a(network), this.b.d.b(network)));
+            this.b.a((java.lang.Runnable) new defpackage.eik(this, org.chromium.net.NetworkChangeNotifierAutoDetect.a(network), this.b.d.b(network)));
         }
     }
 
-    public final void onLosing(Network network, int i) {
+    public final void onLosing(android.net.Network network, int i) {
         if (!a(network, null)) {
-            this.b.a(new eil(this, NetworkChangeNotifierAutoDetect.a(network)));
+            this.b.a((java.lang.Runnable) new defpackage.eil(this, org.chromium.net.NetworkChangeNotifierAutoDetect.a(network)));
         }
     }
 
-    public final void onLost(Network network) {
+    public final void onLost(android.net.Network network) {
         if (!a(network)) {
-            this.b.a(new eim(this, network));
+            this.b.a((java.lang.Runnable) new defpackage.eim(this, network));
             if (this.a != null) {
                 this.a = null;
-                for (Network network2 : NetworkChangeNotifierAutoDetect.a(this.b.d, network)) {
-                    onAvailable(network2);
+                for (android.net.Network onAvailable : org.chromium.net.NetworkChangeNotifierAutoDetect.a(this.b.d, network)) {
+                    onAvailable(onAvailable);
                 }
-                this.b.a(new ein(this, this.b.b().a()));
+                this.b.a((java.lang.Runnable) new defpackage.ein(this, this.b.b().a()));
             }
         }
     }

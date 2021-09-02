@@ -1,44 +1,36 @@
 package defpackage;
 
-import android.view.View;
-
-/* renamed from: cde  reason: default package */
+/* renamed from: cde reason: default package */
 /* compiled from: PG */
-public class cde implements q {
-    public static final String a = String.valueOf(cde.class.getName()).concat(".navigationDrawerAccountMenuDialogFragment");
+public class cde implements defpackage.q {
+    public static final java.lang.String a = java.lang.String.valueOf(defpackage.cde.class.getName()).concat(".navigationDrawerAccountMenuDialogFragment");
     public final FragmentActivity b;
-    public final View c;
-    public cft d;
-    private final cdj e;
+    public final android.view.View c;
+    public defpackage.cft d;
+    private final defpackage.cdj e;
 
-    public cde(FragmentActivity lgVar, cdj cdj, View view) {
-        this.e = (cdj) cky.a(cdj);
-        this.b = (FragmentActivity) cky.a((Object) lgVar);
-        this.c = (View) cky.a((Object) view);
-        lgVar.g.a(this);
+    public cde(FragmentActivity lgVar, defpackage.cdj cdj, android.view.View view) {
+        this.e = (defpackage.cdj) defpackage.cky.a((java.lang.Object) cdj);
+        this.b = (FragmentActivity) defpackage.cky.a((java.lang.Object) lgVar);
+        this.c = (android.view.View) defpackage.cky.a((java.lang.Object) view);
+        lgVar.g.addObserver(this);
     }
 
-    @Override // defpackage.q
     public final void b() {
     }
 
-    @Override // defpackage.q
     public final void c() {
     }
 
-    @Override // defpackage.q
     public final void d() {
     }
 
-    @Override // defpackage.q
     public final void e() {
     }
 
-    @Override // defpackage.q
     public final void f() {
     }
 
-    @Override // defpackage.q
     public final void a() {
         g();
     }
@@ -47,21 +39,21 @@ public class cde implements q {
         if (this.d == null) {
             this.d = h();
             if (this.d == null) {
-                this.d = new cft();
+                this.d = new defpackage.cft();
             }
-            cft cft = this.d;
-            cdj cdj = this.e;
-            cky.b(((cfc) cft).U == null, "Initialize may only be called once");
-            ((cfc) cft).U = cdj;
+            defpackage.cft cft = this.d;
+            defpackage.cdj cdj = this.e;
+            defpackage.cky.b(cft.U == null, (java.lang.Object) "Initialize may only be called once");
+            cft.U = cdj;
             this.d.b(this.c);
         }
     }
 
-    public final cft h() {
-        return (cft) this.b.c().a(a);
+    public final defpackage.cft h() {
+        return (defpackage.cft) this.b.getSupportFragmentManager().a(a);
     }
 
     static {
-        cde.class.getSimpleName();
+        defpackage.cde.class.getSimpleName();
     }
 }

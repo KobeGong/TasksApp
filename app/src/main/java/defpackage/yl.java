@@ -1,28 +1,15 @@
 package defpackage;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.ContextWrapper;
-import android.content.res.ColorStateList;
-import android.graphics.PorterDuff;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.SubMenu;
-import android.view.View;
-import java.lang.reflect.Constructor;
-
-/* access modifiers changed from: package-private */
-/* renamed from: yl  reason: default package */
+/* renamed from: yl reason: default package */
 /* compiled from: PG */
-public final class yl {
-    public rs A;
-    public CharSequence B;
-    public CharSequence C;
-    public ColorStateList D = null;
-    public PorterDuff.Mode E = null;
-    public final /* synthetic */ yj F;
-    public Menu a;
+final class yl {
+    public defpackage.rs A;
+    public java.lang.CharSequence B;
+    public java.lang.CharSequence C;
+    public android.content.res.ColorStateList D = null;
+    public android.graphics.PorterDuff.Mode E = null;
+    public final /* synthetic */ defpackage.yj F;
+    public android.view.Menu a;
     public int b;
     public int c;
     public int d;
@@ -32,8 +19,8 @@ public final class yl {
     public boolean h;
     public int i;
     public int j;
-    public CharSequence k;
-    public CharSequence l;
+    public java.lang.CharSequence k;
+    public java.lang.CharSequence l;
     public int m;
     public char n;
     public int o;
@@ -45,11 +32,11 @@ public final class yl {
     public boolean u;
     public int v;
     public int w;
-    public String x;
-    public String y;
-    public String z;
+    public java.lang.String x;
+    public java.lang.String y;
+    public java.lang.String z;
 
-    public yl(yj yjVar, Menu menu) {
+    public yl(defpackage.yj yjVar, android.view.Menu menu) {
         this.F = yjVar;
         this.a = menu;
         a();
@@ -64,15 +51,15 @@ public final class yl {
         this.g = true;
     }
 
-    static char a(String str) {
+    static char a(java.lang.String str) {
         if (str == null) {
             return 0;
         }
         return str.charAt(0);
     }
 
-    /* access modifiers changed from: package-private */
-    public final void a(MenuItem menuItem) {
+    /* access modifiers changed from: 0000 */
+    public final void a(android.view.MenuItem menuItem) {
         boolean z2 = true;
         menuItem.setChecked(this.s).setVisible(this.t).setEnabled(this.u).setCheckable(this.r > 0).setTitleCondensed(this.l).setIcon(this.m);
         if (this.v >= 0) {
@@ -80,35 +67,35 @@ public final class yl {
         }
         if (this.z != null) {
             if (this.F.c.isRestricted()) {
-                throw new IllegalStateException("The android:onClick attribute cannot be used within a restricted context");
+                throw new java.lang.IllegalStateException("The android:onClick attribute cannot be used within a restricted context");
             }
-            yj yjVar = this.F;
+            defpackage.yj yjVar = this.F;
             if (yjVar.d == null) {
-                Context context = yjVar.c;
-                while (!(context instanceof Activity) && (context instanceof ContextWrapper)) {
-                    context = ((ContextWrapper) context).getBaseContext();
+                android.content.Context context = yjVar.c;
+                while (!(context instanceof android.app.Activity) && (context instanceof android.content.ContextWrapper)) {
+                    context = ((android.content.ContextWrapper) context).getBaseContext();
                 }
                 yjVar.d = context;
             }
-            menuItem.setOnMenuItemClickListener(new yk(yjVar.d, this.z));
+            menuItem.setOnMenuItemClickListener(new defpackage.yk(yjVar.d, this.z));
         }
         if (this.r >= 2) {
-            if (menuItem instanceof MenuItemImpl) {
-                ((MenuItemImpl) menuItem).a(true);
-            } else if (menuItem instanceof zj) {
-                zj zjVar = (zj) menuItem;
+            if (menuItem instanceof defpackage.zi) {
+                ((defpackage.zi) menuItem).a(true);
+            } else if (menuItem instanceof defpackage.zj) {
+                defpackage.zj zjVar = (defpackage.zj) menuItem;
                 try {
                     if (zjVar.e == null) {
-                        zjVar.e = ((pp) zjVar.d).getClass().getDeclaredMethod("setExclusiveCheckable", Boolean.TYPE);
+                        zjVar.e = ((defpackage.pp) zjVar.d).getClass().getDeclaredMethod("setExclusiveCheckable", new java.lang.Class[]{java.lang.Boolean.TYPE});
                     }
-                    zjVar.e.invoke(zjVar.d, true);
-                } catch (Exception e2) {
-                    Log.w("MenuItemWrapper", "Error while calling setExclusiveCheckable", e2);
+                    zjVar.e.invoke(zjVar.d, new java.lang.Object[]{java.lang.Boolean.valueOf(true)});
+                } catch (java.lang.Exception e2) {
+                    android.util.Log.w("MenuItemWrapper", "Error while calling setExclusiveCheckable", e2);
                 }
             }
         }
         if (this.x != null) {
-            menuItem.setActionView((View) a(this.x, yj.a, this.F.b));
+            menuItem.setActionView((android.view.View) a(this.x, defpackage.yj.a, this.F.b));
         } else {
             z2 = false;
         }
@@ -116,39 +103,39 @@ public final class yl {
             if (!z2) {
                 menuItem.setActionView(this.w);
             } else {
-                Log.w("SupportMenuInflater", "Ignoring attribute 'itemActionViewLayout'. Action view already specified.");
+                android.util.Log.w("SupportMenuInflater", "Ignoring attribute 'itemActionViewLayout'. Action view already specified.");
             }
         }
         if (this.A != null) {
-            sc.a(menuItem, this.A);
+            defpackage.sc.a(menuItem, this.A);
         }
-        sc.a(menuItem, this.B);
-        sc.b(menuItem, this.C);
-        sc.b(menuItem, this.n, this.o);
-        sc.a(menuItem, this.p, this.q);
+        defpackage.sc.a(menuItem, this.B);
+        defpackage.sc.b(menuItem, this.C);
+        defpackage.sc.b(menuItem, this.n, this.o);
+        defpackage.sc.a(menuItem, this.p, this.q);
         if (this.E != null) {
-            sc.a(menuItem, this.E);
+            defpackage.sc.a(menuItem, this.E);
         }
         if (this.D != null) {
-            sc.a(menuItem, this.D);
+            defpackage.sc.a(menuItem, this.D);
         }
     }
 
-    public final SubMenu b() {
+    public final android.view.SubMenu b() {
         this.h = true;
-        SubMenu addSubMenu = this.a.addSubMenu(this.b, this.i, this.j, this.k);
+        android.view.SubMenu addSubMenu = this.a.addSubMenu(this.b, this.i, this.j, this.k);
         a(addSubMenu.getItem());
         return addSubMenu;
     }
 
-    /* access modifiers changed from: package-private */
-    public final Object a(String str, Class[] clsArr, Object[] objArr) {
+    /* access modifiers changed from: 0000 */
+    public final java.lang.Object a(java.lang.String str, java.lang.Class[] clsArr, java.lang.Object[] objArr) {
         try {
-            Constructor<?> constructor = this.F.c.getClassLoader().loadClass(str).getConstructor(clsArr);
+            java.lang.reflect.Constructor constructor = this.F.c.getClassLoader().loadClass(str).getConstructor(clsArr);
             constructor.setAccessible(true);
             return constructor.newInstance(objArr);
-        } catch (Exception e2) {
-            Log.w("SupportMenuInflater", "Cannot instantiate class: " + str, e2);
+        } catch (java.lang.Exception e2) {
+            android.util.Log.w("SupportMenuInflater", "Cannot instantiate class: " + str, e2);
             return null;
         }
     }

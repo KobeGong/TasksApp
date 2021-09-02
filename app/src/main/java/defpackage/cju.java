@@ -1,23 +1,23 @@
 package defpackage;
 
-/* renamed from: cju  reason: default package */
+/* renamed from: cju reason: default package */
 /* compiled from: PG */
-public final class cju extends cjs {
-    private final coe a;
-    private final ckt b;
-    private final cln c;
-    private final cjy d;
-    private final ckw e;
-    private final ckx f;
-    private final ckr g = null;
-    private final clm h = null;
-    private final clp i = null;
-    private final cjr j = null;
-    private final cku k = null;
-    private final cjx l = null;
-    private final ckv m = null;
+public final class cju extends defpackage.cjs {
+    private final defpackage.coe a;
+    private final defpackage.ckt b;
+    private final defpackage.cln c;
+    private final defpackage.cjy d;
+    private final defpackage.ckw e;
+    private final defpackage.ckx f;
+    private final defpackage.ckr g = null;
+    private final defpackage.clm h = null;
+    private final defpackage.clp i = null;
+    private final defpackage.cjr j = null;
+    private final defpackage.cku k = null;
+    private final defpackage.cjx l = null;
+    private final defpackage.ckv m = null;
 
-    public cju(coe coe, ckt ckt, cln cln, cjy cjy, ckw ckw, ckx ckx) {
+    public cju(defpackage.coe coe, defpackage.ckt ckt, defpackage.cln cln, defpackage.cjy cjy, defpackage.ckw ckw, defpackage.ckx ckx) {
         this.a = coe;
         this.b = ckt;
         this.c = cln;
@@ -26,68 +26,55 @@ public final class cju extends cjs {
         this.f = ckx;
     }
 
-    @Override // defpackage.cjs
-    public final coe a() {
+    public final defpackage.coe a() {
         return this.a;
     }
 
-    @Override // defpackage.cjs
-    public final ckt b() {
+    public final defpackage.ckt b() {
         return this.b;
     }
 
-    @Override // defpackage.cjs
-    public final cln c() {
+    public final defpackage.cln c() {
         return this.c;
     }
 
-    @Override // defpackage.cjs
-    public final cjy d() {
+    public final defpackage.cjy d() {
         return this.d;
     }
 
-    @Override // defpackage.cjs
-    public final ckw e() {
+    public final defpackage.ckw e() {
         return this.e;
     }
 
-    @Override // defpackage.cjs
-    public final ckx f() {
+    public final defpackage.ckx f() {
         return this.f;
     }
 
-    @Override // defpackage.cjs
-    public final ckr g() {
+    public final defpackage.ckr g() {
         return null;
     }
 
-    @Override // defpackage.cjs
-    public final clm h() {
+    public final defpackage.clm h() {
         return null;
     }
 
-    @Override // defpackage.cjs
-    public final clp i() {
+    public final defpackage.clp i() {
         return null;
     }
 
-    @Override // defpackage.cjs
-    public final cjr j() {
+    public final defpackage.cjr j() {
         return null;
     }
 
-    @Override // defpackage.cjs
-    public final cku k() {
+    public final defpackage.cku k() {
         return null;
     }
 
-    @Override // defpackage.cjs
-    public final cjx l() {
+    public final defpackage.cjx l() {
         return null;
     }
 
-    @Override // defpackage.cjs
-    public final ckv m() {
+    public final defpackage.ckv m() {
         return null;
     }
 }

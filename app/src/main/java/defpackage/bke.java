@@ -1,42 +1,36 @@
 package defpackage;
 
-import android.os.Parcel;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.common.api.Status;
-
-/* renamed from: bke  reason: default package */
+/* renamed from: bke reason: default package */
 /* compiled from: PG */
-public class bke extends bkn implements bkd {
+public class bke extends defpackage.bkn implements defpackage.bkd {
     public bke() {
         attachInterface(this, "com.google.android.gms.signin.internal.ISignInCallbacks");
     }
 
-    @Override // android.os.Binder
-    public boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) {
+    public boolean onTransact(int i, android.os.Parcel parcel, android.os.Parcel parcel2, int i2) {
         if (a(i, parcel, parcel2, i2)) {
             return true;
         }
         switch (i) {
             case 3:
-                bko.a(parcel, axq.CREATOR);
-                bko.a(parcel, bkb.CREATOR);
+                defpackage.bko.a(parcel, defpackage.axq.CREATOR);
+                defpackage.bko.a(parcel, defpackage.bkb.CREATOR);
                 break;
             case 4:
-                bko.a(parcel, Status.CREATOR);
+                defpackage.bko.a(parcel, com.google.android.gms.common.api.Status.CREATOR);
                 break;
-            case 5:
-            default:
-                return false;
             case 6:
-                bko.a(parcel, Status.CREATOR);
+                defpackage.bko.a(parcel, com.google.android.gms.common.api.Status.CREATOR);
                 break;
             case 7:
-                bko.a(parcel, Status.CREATOR);
-                bko.a(parcel, GoogleSignInAccount.CREATOR);
+                defpackage.bko.a(parcel, com.google.android.gms.common.api.Status.CREATOR);
+                defpackage.bko.a(parcel, com.google.android.gms.auth.api.signin.GoogleSignInAccount.CREATOR);
                 break;
             case 8:
-                a((bkk) bko.a(parcel, bkk.CREATOR));
+                a((defpackage.bkk) defpackage.bko.a(parcel, defpackage.bkk.CREATOR));
                 break;
+            default:
+                return false;
         }
         parcel2.writeNoException();
         return true;
@@ -46,7 +40,6 @@ public class bke extends bkn implements bkd {
         this();
     }
 
-    @Override // defpackage.bkd
-    public void a(bkk bkk) {
+    public void a(defpackage.bkk bkk) {
     }
 }

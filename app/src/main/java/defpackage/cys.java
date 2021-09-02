@@ -1,11 +1,11 @@
 package defpackage;
 
-/* renamed from: cys  reason: default package */
+/* renamed from: cys reason: default package */
 /* compiled from: PG */
-final class cys implements Runnable {
-    private final /* synthetic */ Runnable a;
+final class cys implements java.lang.Runnable {
+    private final /* synthetic */ java.lang.Runnable a;
 
-    cys(Runnable runnable) {
+    cys(java.lang.Runnable runnable) {
         this.a = runnable;
     }
 

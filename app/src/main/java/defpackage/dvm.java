@@ -1,9 +1,8 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: dvm  reason: default package */
+/* renamed from: dvm reason: default package */
 /* compiled from: PG */
-public enum dvm {
+enum dvm {
     HEADER,
     HEADER_EXTRA_LEN,
     HEADER_EXTRA,

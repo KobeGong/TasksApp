@@ -1,17 +1,15 @@
 package defpackage;
 
-import java.nio.charset.Charset;
-
-/* renamed from: crp  reason: default package */
+/* renamed from: crp reason: default package */
 /* compiled from: PG */
 public final class crp {
-    public static final Charset a = Charset.forName("US-ASCII");
-    public static final Charset b = Charset.forName("UTF-8");
+    public static final java.nio.charset.Charset a = java.nio.charset.Charset.forName("US-ASCII");
+    public static final java.nio.charset.Charset b = java.nio.charset.Charset.forName("UTF-8");
 
     static {
-        Charset.forName("ISO-8859-1");
-        Charset.forName("UTF-16BE");
-        Charset.forName("UTF-16LE");
-        Charset.forName("UTF-16");
+        java.nio.charset.Charset.forName("ISO-8859-1");
+        java.nio.charset.Charset.forName("UTF-16BE");
+        java.nio.charset.Charset.forName("UTF-16LE");
+        java.nio.charset.Charset.forName("UTF-16");
     }
 }

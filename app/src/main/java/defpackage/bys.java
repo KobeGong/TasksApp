@@ -1,20 +1,17 @@
 package defpackage;
 
-import android.content.Context;
-
-/* renamed from: bys  reason: default package */
+/* renamed from: bys reason: default package */
 /* compiled from: PG */
-public final class bys implements ecz {
-    private final ecz a;
+public final class bys implements defpackage.ecz {
+    private final defpackage.ecz a;
 
-    public bys(ecz ecz) {
+    public bys(defpackage.ecz ecz) {
         this.a = ecz;
     }
 
-    @Override // defpackage.ecz
-    public final /* synthetic */ Object a() {
-        byp byp = new byp();
-        byp.a = (Context) this.a.a();
+    public final /* synthetic */ java.lang.Object a() {
+        defpackage.byp byp = new defpackage.byp();
+        byp.a = (android.content.Context) this.a.a();
         return byp;
     }
 }

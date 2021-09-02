@@ -1,124 +1,101 @@
 package defpackage;
 
-import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.view.MenuItem;
-import android.view.SubMenu;
-import android.view.View;
-
-/* renamed from: aad  reason: default package */
+/* renamed from: aad reason: default package */
 /* compiled from: PG */
-public class aad extends MenuBuilder implements SubMenu {
-    public MenuBuilder l;
-    private MenuItemImpl m;
+public class aad extends defpackage.ze implements android.view.SubMenu {
+    public defpackage.ze l;
+    private defpackage.zi m;
 
-    public aad(Context context, MenuBuilder zeVar, MenuItemImpl ziVar) {
+    public aad(android.content.Context context, defpackage.ze zeVar, defpackage.zi ziVar) {
         super(context);
         this.l = zeVar;
         this.m = ziVar;
     }
 
-    @Override // defpackage.ze
     public void setQwertyMode(boolean z) {
         this.l.setQwertyMode(z);
     }
 
-    @Override // defpackage.ze
     public final boolean c() {
         return this.l.c();
     }
 
-    @Override // defpackage.ze
     public final boolean d() {
         return this.l.d();
     }
 
-    public MenuItem getItem() {
+    public android.view.MenuItem getItem() {
         return this.m;
     }
 
-    @Override // defpackage.ze
-    public final void a(zf zfVar) {
+    public final void a(defpackage.zf zfVar) {
         this.l.a(zfVar);
     }
 
-    @Override // defpackage.ze
-    public final MenuBuilder l() {
+    public final defpackage.ze l() {
         return this.l.l();
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.ze
-    public final boolean a(MenuBuilder zeVar, MenuItem menuItem) {
+    /* access modifiers changed from: 0000 */
+    public final boolean a(defpackage.ze zeVar, android.view.MenuItem menuItem) {
         return super.a(zeVar, menuItem) || this.l.a(zeVar, menuItem);
     }
 
-    @Override // android.view.SubMenu
-    public SubMenu setIcon(Drawable drawable) {
+    public android.view.SubMenu setIcon(android.graphics.drawable.Drawable drawable) {
         this.m.setIcon(drawable);
         return this;
     }
 
-    @Override // android.view.SubMenu
-    public SubMenu setIcon(int i) {
+    public android.view.SubMenu setIcon(int i) {
         this.m.setIcon(i);
         return this;
     }
 
-    @Override // android.view.SubMenu
-    public SubMenu setHeaderIcon(Drawable drawable) {
+    public android.view.SubMenu setHeaderIcon(android.graphics.drawable.Drawable drawable) {
         super.a(0, null, 0, drawable, null);
         return this;
     }
 
-    @Override // android.view.SubMenu
-    public SubMenu setHeaderIcon(int i) {
+    public android.view.SubMenu setHeaderIcon(int i) {
         super.a(0, null, i, null, null);
         return this;
     }
 
-    @Override // android.view.SubMenu
-    public SubMenu setHeaderTitle(CharSequence charSequence) {
+    public android.view.SubMenu setHeaderTitle(java.lang.CharSequence charSequence) {
         super.a(0, charSequence, 0, null, null);
         return this;
     }
 
-    @Override // android.view.SubMenu
-    public SubMenu setHeaderTitle(int i) {
+    public android.view.SubMenu setHeaderTitle(int i) {
         super.a(i, null, 0, null, null);
         return this;
     }
 
-    public SubMenu setHeaderView(View view) {
+    public android.view.SubMenu setHeaderView(android.view.View view) {
         super.a(0, null, 0, null, view);
         return this;
     }
 
-    @Override // defpackage.ze
-    public final boolean a(MenuItemImpl ziVar) {
+    public final boolean a(defpackage.zi ziVar) {
         return this.l.a(ziVar);
     }
 
-    @Override // defpackage.ze
-    public final boolean b(MenuItemImpl ziVar) {
+    public final boolean b(defpackage.zi ziVar) {
         return this.l.b(ziVar);
     }
 
-    @Override // defpackage.ze
-    public final String a() {
-        int itemId = this.m != null ? this.m.getItemId() : 0;
-        if (itemId == 0) {
+    public final java.lang.String a() {
+        int i = this.m != null ? this.m.getItemId() : 0;
+        if (i == 0) {
             return null;
         }
-        return super.a() + ":" + itemId;
+        return super.a() + ":" + i;
     }
 
-    @Override // defpackage.ze
     public void setGroupDividerEnabled(boolean z) {
         this.l.setGroupDividerEnabled(z);
     }
 
-    @Override // defpackage.ze
     public final boolean b() {
         return this.l.b();
     }

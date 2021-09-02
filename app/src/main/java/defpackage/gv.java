@@ -1,24 +1,20 @@
 package defpackage;
 
-import android.support.design.widget.CoordinatorLayout;
-import android.view.View;
-
-/* renamed from: gv  reason: default package */
+/* renamed from: gv reason: default package */
 /* compiled from: PG */
-public final class gv implements sl {
-    private final /* synthetic */ CoordinatorLayout a;
+public final class gv implements defpackage.sl {
+    private final /* synthetic */ android.support.design.widget.CoordinatorLayout a;
 
-    public gv(CoordinatorLayout coordinatorLayout) {
+    public gv(android.support.design.widget.CoordinatorLayout coordinatorLayout) {
         this.a = coordinatorLayout;
     }
 
-    @Override // defpackage.sl
-    public final tk a(View view, tk tkVar) {
-        tk tkVar2;
+    public final defpackage.tk a(android.view.View view, defpackage.tk tkVar) {
+        defpackage.tk tkVar2;
         boolean z = true;
         int i = 0;
-        CoordinatorLayout coordinatorLayout = this.a;
-        if (jd.a(coordinatorLayout.b, tkVar)) {
+        android.support.design.widget.CoordinatorLayout coordinatorLayout = this.a;
+        if (defpackage.jd.a((java.lang.Object) coordinatorLayout.b, (java.lang.Object) tkVar)) {
             return tkVar;
         }
         coordinatorLayout.b = tkVar;
@@ -31,8 +27,8 @@ public final class gv implements sl {
             int childCount = coordinatorLayout.getChildCount();
             tkVar2 = tkVar;
             while (i < childCount) {
-                View childAt = coordinatorLayout.getChildAt(i);
-                if (sn.a.h(childAt) && ((ha) childAt.getLayoutParams()).a != null && tkVar2.e()) {
+                android.view.View childAt = coordinatorLayout.getChildAt(i);
+                if (defpackage.sn.a.h(childAt) && ((defpackage.ha) childAt.getLayoutParams()).a != null && tkVar2.e()) {
                     break;
                 }
                 i++;

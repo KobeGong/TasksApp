@@ -1,49 +1,36 @@
 package com.google.android.libraries.onegoogle.bottomdrawer;
 
-import android.content.Context;
-import android.content.res.Resources;
-import android.graphics.Color;
-import android.graphics.drawable.GradientDrawable;
-import android.os.Bundle;
-import android.os.Parcelable;
-import android.util.AttributeSet;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import com.google.android.apps.tasks.R;
-import java.util.ArrayList;
-
-@gy(a = BottomDrawerBehavior.class)
+@defpackage.gy(a = com.google.android.libraries.onegoogle.bottomdrawer.BottomDrawerBehavior.class)
 /* compiled from: PG */
-public class GoogleMaterialBottomDrawer extends FrameLayout {
-    private static final String i = String.valueOf(GoogleMaterialBottomDrawer.class.getName()).concat(".BottomDrawerState");
-    private static final String j = String.valueOf(GoogleMaterialBottomDrawer.class.getName()).concat(".superState");
+public class GoogleMaterialBottomDrawer extends android.widget.FrameLayout {
+    private static final java.lang.String i = java.lang.String.valueOf(com.google.android.libraries.onegoogle.bottomdrawer.GoogleMaterialBottomDrawer.class.getName()).concat(".BottomDrawerState");
+    private static final java.lang.String j = java.lang.String.valueOf(com.google.android.libraries.onegoogle.bottomdrawer.GoogleMaterialBottomDrawer.class.getName()).concat(".superState");
     public final float a;
     public final int b;
-    public BottomDrawerBehavior c;
-    public ArrayList d;
-    public View e;
+    public com.google.android.libraries.onegoogle.bottomdrawer.BottomDrawerBehavior c;
+    public java.util.ArrayList d;
+    public android.view.View e;
     public boolean f;
-    public View g;
-    public final cgc h;
+    public android.view.View g;
+    public final defpackage.cgc h;
     private final int k;
     private final float[] l;
-    private final GradientDrawable m;
+    private final android.graphics.drawable.GradientDrawable m;
     private int n;
 
-    public GoogleMaterialBottomDrawer(Context context) {
+    public GoogleMaterialBottomDrawer(android.content.Context context) {
         this(context, null);
     }
 
-    public GoogleMaterialBottomDrawer(Context context, AttributeSet attributeSet) {
-        super(context, attributeSet);
+    public GoogleMaterialBottomDrawer(android.content.Context context, android.util.AttributeSet attributeSet) {
         int i2;
+        super(context, attributeSet);
         this.l = new float[]{0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f};
-        this.h = new cgc(this);
+        this.h = new defpackage.cgc(this);
         setFitsSystemWindows(true);
-        Resources resources = context.getResources();
-        this.n = resources.getColor(R.color.bottom_drawer_scrim_color);
-        sn.a(this, resources.getDimension(R.dimen.og_bottom_drawer_elevation));
+        android.content.res.Resources resources = context.getResources();
+        this.n = resources.getColor(2131623951);
+        defpackage.sn.a((android.view.View) this, resources.getDimension(2131689842));
         setClickable(true);
         setPadding(0, 0, 0, 0);
         int identifier = context.getResources().getIdentifier("status_bar_height", "dimen", "android");
@@ -53,32 +40,32 @@ public class GoogleMaterialBottomDrawer extends FrameLayout {
             i2 = 0;
         }
         this.b = i2;
-        this.a = resources.getDimension(R.dimen.og_round_corenr_radius);
-        this.k = resources.getColor(R.color.bottom_drawer_background_color);
-        this.m = new GradientDrawable();
+        this.a = resources.getDimension(2131689843);
+        this.k = resources.getColor(2131623950);
+        this.m = new android.graphics.drawable.GradientDrawable();
         this.m.setShape(0);
         this.m.setColor(this.k);
         a(this.a, 250);
     }
 
-    public void onViewAdded(View view) {
+    public void onViewAdded(android.view.View view) {
         super.onViewAdded(view);
         this.g = view;
     }
 
     /* access modifiers changed from: protected */
-    public Parcelable onSaveInstanceState() {
-        Bundle bundle = new Bundle();
+    public android.os.Parcelable onSaveInstanceState() {
+        android.os.Bundle bundle = new android.os.Bundle();
         bundle.putParcelable(j, super.onSaveInstanceState());
         bundle.putBoolean(i, b() || this.f);
         return bundle;
     }
 
     /* access modifiers changed from: protected */
-    public void onRestoreInstanceState(Parcelable parcelable) {
-        if (parcelable instanceof Bundle) {
-            Bundle bundle = (Bundle) parcelable;
-            Parcelable parcelable2 = bundle.getParcelable(j);
+    public void onRestoreInstanceState(android.os.Parcelable parcelable) {
+        if (parcelable instanceof android.os.Bundle) {
+            android.os.Bundle bundle = (android.os.Bundle) parcelable;
+            android.os.Parcelable parcelable2 = bundle.getParcelable(j);
             if (bundle.getBoolean(i)) {
                 a();
             }
@@ -89,15 +76,15 @@ public class GoogleMaterialBottomDrawer extends FrameLayout {
 
     public void onAttachedToWindow() {
         super.onAttachedToWindow();
-        ViewGroup viewGroup = (ViewGroup) getParent();
+        android.view.ViewGroup viewGroup = (android.view.ViewGroup) getParent();
         if (this.e == null) {
-            this.e = new View(getContext());
+            this.e = new android.view.View(getContext());
             this.e.setContentDescription(null);
-            sn.a(this.e, 2);
+            defpackage.sn.a(this.e, 2);
             this.e.setBackgroundColor(this.n);
             this.e.setFitsSystemWindows(true);
-            sn.a(this.e, sn.a.u(this));
-            viewGroup.addView(this.e, ((ViewGroup) getParent()).indexOfChild(this), new ha(-1, -1));
+            defpackage.sn.a(this.e, defpackage.sn.a.u(this));
+            viewGroup.addView(this.e, ((android.view.ViewGroup) getParent()).indexOfChild(this), new defpackage.ha(-1, -1));
         }
         a(5);
     }
@@ -122,13 +109,13 @@ public class GoogleMaterialBottomDrawer extends FrameLayout {
     public final void a() {
         if (!this.f && !b()) {
             this.f = true;
-            a(new cge(this));
+            a((java.lang.Runnable) new defpackage.cge(this));
         }
     }
 
-    private final void a(Runnable runnable) {
+    private final void a(java.lang.Runnable runnable) {
         if (this.c == null) {
-            post(new cgf(this, runnable));
+            post(new defpackage.cgf(this, runnable));
             requestLayout();
             return;
         }
@@ -140,17 +127,17 @@ public class GoogleMaterialBottomDrawer extends FrameLayout {
     }
 
     public final void c() {
-        a(new cgg(this));
+        a((java.lang.Runnable) new defpackage.cgg(this));
     }
 
-    public final void a(cgi cgi) {
+    public final void a(defpackage.cgi cgi) {
         if (this.d == null) {
-            this.d = new ArrayList();
+            this.d = new java.util.ArrayList();
         }
         this.d.add(cgi);
     }
 
-    public final void b(cgi cgi) {
+    public final void b(defpackage.cgi cgi) {
         if (this.d != null) {
             this.d.remove(cgi);
         }
@@ -165,7 +152,7 @@ public class GoogleMaterialBottomDrawer extends FrameLayout {
         fArr2[1] = f2;
         fArr[0] = f2;
         this.m.setCornerRadii(this.l);
-        this.m.setColor(Color.argb(i2, Color.red(this.k), Color.green(this.k), Color.blue(this.k)));
-        sn.a(this, this.m);
+        this.m.setColor(android.graphics.Color.argb(i2, android.graphics.Color.red(this.k), android.graphics.Color.green(this.k), android.graphics.Color.blue(this.k)));
+        defpackage.sn.a((android.view.View) this, (android.graphics.drawable.Drawable) this.m);
     }
 }

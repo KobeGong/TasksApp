@@ -1,27 +1,21 @@
 package defpackage;
 
-import android.graphics.PointF;
-import android.util.Property;
-import android.view.View;
-
-/* renamed from: im  reason: default package */
+/* renamed from: im reason: default package */
 /* compiled from: PG */
-final class im extends Property {
-    im(Class cls, String str) {
+final class im extends android.util.Property {
+    im(java.lang.Class cls, java.lang.String str) {
         super(cls, str);
     }
 
-    @Override // android.util.Property
-    public final /* bridge */ /* synthetic */ Object get(Object obj) {
+    public final /* bridge */ /* synthetic */ java.lang.Object get(java.lang.Object obj) {
         return null;
     }
 
-    @Override // android.util.Property
-    public final /* synthetic */ void set(Object obj, Object obj2) {
-        View view = (View) obj;
-        PointF pointF = (PointF) obj2;
-        int round = Math.round(pointF.x);
-        int round2 = Math.round(pointF.y);
-        kb.a(view, round, round2, view.getWidth() + round, view.getHeight() + round2);
+    public final /* synthetic */ void set(java.lang.Object obj, java.lang.Object obj2) {
+        android.view.View view = (android.view.View) obj;
+        android.graphics.PointF pointF = (android.graphics.PointF) obj2;
+        int round = java.lang.Math.round(pointF.x);
+        int round2 = java.lang.Math.round(pointF.y);
+        defpackage.kb.a(view, round, round2, view.getWidth() + round, view.getHeight() + round2);
     }
 }

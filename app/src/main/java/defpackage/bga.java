@@ -1,21 +1,18 @@
 package defpackage;
 
-import dalvik.system.PathClassLoader;
-
-/* renamed from: bga  reason: default package */
+/* renamed from: bga reason: default package */
 /* compiled from: PG */
-public final class bga extends PathClassLoader {
-    public bga(String str, ClassLoader classLoader) {
+public final class bga extends dalvik.system.PathClassLoader {
+    public bga(java.lang.String str, java.lang.ClassLoader classLoader) {
         super(str, classLoader);
     }
 
     /* access modifiers changed from: protected */
-    @Override // java.lang.ClassLoader
-    public final Class loadClass(String str, boolean z) {
+    public final java.lang.Class loadClass(java.lang.String str, boolean z) {
         if (!str.startsWith("java.") && !str.startsWith("android.")) {
             try {
                 return findClass(str);
-            } catch (ClassNotFoundException e) {
+            } catch (java.lang.ClassNotFoundException e) {
             }
         }
         return super.loadClass(str, z);

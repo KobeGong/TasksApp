@@ -1,19 +1,17 @@
 package defpackage;
 
-import android.content.Intent;
-
-/* renamed from: eix  reason: default package */
+/* renamed from: eix reason: default package */
 /* compiled from: PG */
-final class eix implements Runnable {
-    private final /* synthetic */ Intent a;
-    private final /* synthetic */ eiw b;
+final class eix implements java.lang.Runnable {
+    private final /* synthetic */ android.content.Intent a;
+    private final /* synthetic */ defpackage.eiw b;
 
-    eix(eiw eiw, Intent intent) {
+    eix(defpackage.eiw eiw, android.content.Intent intent) {
         this.b = eiw;
         this.a = intent;
     }
 
     public final void run() {
-        this.b.a.a(this.b, eiw.a(this.a));
+        this.b.a.a(this.b, defpackage.eiw.a(this.a));
     }
 }

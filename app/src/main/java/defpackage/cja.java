@@ -1,20 +1,15 @@
 package defpackage;
 
-import java.lang.Thread;
-import java.util.Queue;
-import java.util.concurrent.ConcurrentLinkedQueue;
-
-/* access modifiers changed from: package-private */
-/* renamed from: cja  reason: default package */
+/* renamed from: cja reason: default package */
 /* compiled from: PG */
-public final class cja implements cjh {
-    public volatile chk a;
-    public final Queue b = new ConcurrentLinkedQueue();
+final class cja implements defpackage.cjh {
+    public volatile defpackage.chk a;
+    public final java.util.Queue b = new java.util.concurrent.ConcurrentLinkedQueue();
 
     cja() {
     }
 
-    private final void a(cjf cjf) {
+    private final void a(defpackage.cjf cjf) {
         synchronized (this.b) {
             if (this.a == null) {
                 this.b.add(cjf);
@@ -24,59 +19,50 @@ public final class cja implements cjh {
         }
     }
 
-    /* access modifiers changed from: package-private */
-    public final void a(chk chk) {
-        cjf cjf = (cjf) this.b.poll();
+    /* access modifiers changed from: 0000 */
+    public final void a(defpackage.chk chk) {
+        defpackage.cjf cjf = (defpackage.cjf) this.b.poll();
         while (cjf != null) {
             cjf.a(chk);
-            cjf = (cjf) this.b.poll();
+            cjf = (defpackage.cjf) this.b.poll();
         }
     }
 
-    @Override // defpackage.cjh
-    public final void a(Runnable runnable) {
-        a(new cjb(runnable));
+    public final void a(java.lang.Runnable runnable) {
+        a((defpackage.cjf) new defpackage.cjb(runnable));
     }
 
-    @Override // defpackage.cjh
     public final void d() {
-        a(new cjc());
+        a((defpackage.cjf) new defpackage.cjc());
     }
 
-    @Override // defpackage.cjh
-    public final void a(cir cir) {
-        a(new cjd(cir));
+    public final void a(defpackage.cir cir) {
+        a((defpackage.cjf) new defpackage.cjd(cir));
     }
 
-    @Override // defpackage.cjh
     public final void e() {
-        Thread.setDefaultUncaughtExceptionHandler(a(Thread.getDefaultUncaughtExceptionHandler()));
+        java.lang.Thread.setDefaultUncaughtExceptionHandler(a(java.lang.Thread.getDefaultUncaughtExceptionHandler()));
     }
 
-    @Override // defpackage.cjh
-    public final Thread.UncaughtExceptionHandler a(Thread.UncaughtExceptionHandler uncaughtExceptionHandler) {
-        cje cje = new cje(uncaughtExceptionHandler);
-        a((cjf) cje);
+    public final java.lang.Thread.UncaughtExceptionHandler a(java.lang.Thread.UncaughtExceptionHandler uncaughtExceptionHandler) {
+        defpackage.cje cje = new defpackage.cje(uncaughtExceptionHandler);
+        a((defpackage.cjf) cje);
         return cje;
     }
 
-    @Override // defpackage.cjh
     public final boolean f() {
         return false;
     }
 
-    @Override // defpackage.cjh
     public final void c() {
         this.b.clear();
     }
 
-    @Override // defpackage.cjh
-    public final clt b() {
+    public final defpackage.clt b() {
         return null;
     }
 
-    @Override // defpackage.cjh
-    public final boolean a(cls cls) {
+    public final boolean a(defpackage.cls cls) {
         return false;
     }
 }

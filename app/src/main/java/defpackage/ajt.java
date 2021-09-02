@@ -1,18 +1,17 @@
 package defpackage;
 
-/* renamed from: ajt  reason: default package */
+/* renamed from: ajt reason: default package */
 /* compiled from: PG */
-public final class ajt implements csd {
-    public static crv a() {
-        return crv.b(new aju());
+public final class ajt implements defpackage.csd {
+    public static defpackage.crv a() {
+        return defpackage.crv.b(new defpackage.aju());
     }
 
-    @Override // defpackage.csd
-    public final /* synthetic */ Object b() {
+    public final /* synthetic */ java.lang.Object b() {
         return a();
     }
 
     static {
-        new ajt();
+        new defpackage.ajt();
     }
 }

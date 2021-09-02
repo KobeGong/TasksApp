@@ -1,17 +1,14 @@
 package defpackage;
 
-import android.view.View;
+/* renamed from: ath reason: default package */
+final /* synthetic */ class ath implements android.view.View.OnClickListener {
+    private final defpackage.atg a;
 
-/* access modifiers changed from: package-private */
-/* renamed from: ath  reason: default package */
-public final /* synthetic */ class ath implements View.OnClickListener {
-    private final SortableAdapter a;
-
-    ath(SortableAdapter atg) {
+    ath(defpackage.atg atg) {
         this.a = atg;
     }
 
-    public final void onClick(View view) {
+    public final void onClick(android.view.View view) {
         this.a.e();
     }
 }

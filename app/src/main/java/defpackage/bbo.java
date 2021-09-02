@@ -1,139 +1,146 @@
 package defpackage;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
-import com.google.android.gms.common.api.internal.LifecycleCallback;
-import java.io.FileDescriptor;
-import java.io.PrintWriter;
-import java.lang.ref.WeakReference;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.WeakHashMap;
-
-/* renamed from: bbo  reason: default package */
+/* renamed from: bbo reason: default package */
 /* compiled from: PG */
-public final class bbo extends lc implements bax {
-    private static WeakHashMap a = new WeakHashMap();
-    private int U = 0;
-    private Bundle V;
-    private Map b = new qr();
+public final class bbo extends Fragment implements defpackage.bax {
+    private static java.util.WeakHashMap a = new java.util.WeakHashMap();
+    /* access modifiers changed from: private */
+    public int U = 0;
+    /* access modifiers changed from: private */
+    public android.os.Bundle V;
+    private java.util.Map b = new defpackage.qr();
 
-    public static bbo a(FragmentActivity lgVar) {
-        bbo bbo;
-        WeakReference weakReference = (WeakReference) a.get(lgVar);
-        if (weakReference == null || (bbo = (bbo) weakReference.get()) == null) {
-            try {
-                bbo = (bbo) lgVar.c().a("SupportLifecycleFragmentImpl");
-                if (bbo == null || bbo.n) {
-                    bbo = new bbo();
-                    lgVar.c().a().a(bbo, "SupportLifecycleFragmentImpl").c();
-                }
-                a.put(lgVar, new WeakReference(bbo));
-            } catch (ClassCastException e) {
-                throw new IllegalStateException("Fragment with tag SupportLifecycleFragmentImpl is not a SupportLifecycleFragmentImpl", e);
-            }
-        }
-        return bbo;
+    /* JADX WARNING: Code restructure failed: missing block: B:3:0x0010, code lost:
+        if (r0 != null) goto L_0x0012;
+     */
+    /* Code decompiled incorrectly, please refer to instructions dump. */
+    public static defpackage.bbo a(FragmentActivity r3) {
+        /*
+            java.util.WeakHashMap r0 = a
+            java.lang.Object r0 = r0.get(r3)
+            java.lang.ref.WeakReference r0 = (java.lang.ref.WeakReference) r0
+            if (r0 == 0) goto L_0x0013
+            java.lang.Object r0 = r0.get()
+            bbo r0 = (defpackage.bbo) r0
+            if (r0 == 0) goto L_0x0013
+        L_0x0012:
+            return r0
+        L_0x0013:
+            ln r0 = r3.c()     // Catch:{ ClassCastException -> 0x0046 }
+            java.lang.String r1 = "SupportLifecycleFragmentImpl"
+            lc r0 = r0.a(r1)     // Catch:{ ClassCastException -> 0x0046 }
+            bbo r0 = (defpackage.bbo) r0     // Catch:{ ClassCastException -> 0x0046 }
+            if (r0 == 0) goto L_0x0025
+            boolean r1 = r0.n
+            if (r1 == 0) goto L_0x003b
+        L_0x0025:
+            bbo r0 = new bbo
+            r0.<init>()
+            ln r1 = r3.c()
+            mj r1 = r1.a()
+            java.lang.String r2 = "SupportLifecycleFragmentImpl"
+            mj r1 = r1.a(r0, r2)
+            r1.c()
+        L_0x003b:
+            java.util.WeakHashMap r1 = a
+            java.lang.ref.WeakReference r2 = new java.lang.ref.WeakReference
+            r2.<init>(r0)
+            r1.put(r3, r2)
+            goto L_0x0012
+        L_0x0046:
+            r0 = move-exception
+            java.lang.IllegalStateException r1 = new java.lang.IllegalStateException
+            java.lang.String r2 = "Fragment with tag SupportLifecycleFragmentImpl is not a SupportLifecycleFragmentImpl"
+            r1.<init>(r2, r0)
+            throw r1
+        */
+        throw new UnsupportedOperationException("Method not decompiled: defpackage.bbo.a(lg):bbo");
     }
 
-    @Override // defpackage.bax
-    public final LifecycleCallback a(String str, Class cls) {
-        return (LifecycleCallback) cls.cast(this.b.get(str));
+    public final com.google.android.gms.common.api.internal.LifecycleCallback a(java.lang.String str, java.lang.Class cls) {
+        return (com.google.android.gms.common.api.internal.LifecycleCallback) cls.cast(this.b.get(str));
     }
 
-    @Override // defpackage.bax
-    public final void a(String str, LifecycleCallback lifecycleCallback) {
+    public final void a(java.lang.String str, com.google.android.gms.common.api.internal.LifecycleCallback lifecycleCallback) {
         if (!this.b.containsKey(str)) {
             this.b.put(str, lifecycleCallback);
             if (this.U > 0) {
-                new Handler(Looper.getMainLooper()).post(new bbp(this, lifecycleCallback, str));
+                new android.os.Handler(android.os.Looper.getMainLooper()).post(new defpackage.bbp(this, lifecycleCallback, str));
                 return;
             }
             return;
         }
-        throw new IllegalArgumentException(new StringBuilder(String.valueOf(str).length() + 59).append("LifecycleCallback with tag ").append(str).append(" already added to this fragment.").toString());
+        throw new java.lang.IllegalArgumentException(new java.lang.StringBuilder(java.lang.String.valueOf(str).length() + 59).append("LifecycleCallback with tag ").append(str).append(" already added to this fragment.").toString());
     }
 
-    @Override // defpackage.lc
-    public final void a(Bundle bundle) {
+    public final void a(android.os.Bundle bundle) {
         super.a(bundle);
         this.U = 1;
         this.V = bundle;
-        for (Map.Entry entry : this.b.entrySet()) {
-            ((LifecycleCallback) entry.getValue()).a(bundle != null ? bundle.getBundle((String) entry.getKey()) : null);
+        for (java.util.Map.Entry entry : this.b.entrySet()) {
+            ((com.google.android.gms.common.api.internal.LifecycleCallback) entry.getValue()).a(bundle != null ? bundle.getBundle((java.lang.String) entry.getKey()) : null);
         }
     }
 
-    @Override // defpackage.lc
     public final void e() {
         super.e();
         this.U = 2;
-        for (LifecycleCallback lifecycleCallback : this.b.values()) {
-            lifecycleCallback.b();
+        for (com.google.android.gms.common.api.internal.LifecycleCallback b2 : this.b.values()) {
+            b2.b();
         }
     }
 
-    @Override // defpackage.lc
     public final void s() {
         super.s();
         this.U = 3;
-        for (LifecycleCallback lifecycleCallback : this.b.values()) {
-            lifecycleCallback.c();
+        for (com.google.android.gms.common.api.internal.LifecycleCallback c : this.b.values()) {
+            c.c();
         }
     }
 
-    @Override // defpackage.lc
-    public final void a(int i, int i2, Intent intent) {
+    public final void a(int i, int i2, android.content.Intent intent) {
         super.a(i, i2, intent);
-        for (LifecycleCallback lifecycleCallback : this.b.values()) {
-            lifecycleCallback.a(i, i2, intent);
+        for (com.google.android.gms.common.api.internal.LifecycleCallback a2 : this.b.values()) {
+            a2.a(i, i2, intent);
         }
     }
 
-    @Override // defpackage.lc
-    public final void d(Bundle bundle) {
+    public final void d(android.os.Bundle bundle) {
         super.d(bundle);
         if (bundle != null) {
-            for (Map.Entry entry : this.b.entrySet()) {
-                Bundle bundle2 = new Bundle();
-                ((LifecycleCallback) entry.getValue()).b(bundle2);
-                bundle.putBundle((String) entry.getKey(), bundle2);
+            for (java.util.Map.Entry entry : this.b.entrySet()) {
+                android.os.Bundle bundle2 = new android.os.Bundle();
+                ((com.google.android.gms.common.api.internal.LifecycleCallback) entry.getValue()).b(bundle2);
+                bundle.putBundle((java.lang.String) entry.getKey(), bundle2);
             }
         }
     }
 
-    @Override // defpackage.lc
     public final void f() {
         super.f();
         this.U = 4;
-        for (LifecycleCallback lifecycleCallback : this.b.values()) {
-            lifecycleCallback.d();
+        for (com.google.android.gms.common.api.internal.LifecycleCallback d : this.b.values()) {
+            d.d();
         }
     }
 
-    @Override // defpackage.lc
     public final void u() {
         super.u();
         this.U = 5;
-        Iterator it = this.b.values().iterator();
+        java.util.Iterator it = this.b.values().iterator();
         while (it.hasNext()) {
             it.next();
         }
     }
 
-    @Override // defpackage.lc
-    public final void a(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {
+    public final void a(java.lang.String str, java.io.FileDescriptor fileDescriptor, java.io.PrintWriter printWriter, java.lang.String[] strArr) {
         super.a(str, fileDescriptor, printWriter, strArr);
-        for (LifecycleCallback lifecycleCallback : this.b.values()) {
-            lifecycleCallback.a(str, fileDescriptor, printWriter, strArr);
+        for (com.google.android.gms.common.api.internal.LifecycleCallback a2 : this.b.values()) {
+            a2.a(str, fileDescriptor, printWriter, strArr);
         }
     }
 
-    @Override // defpackage.bax
-    public final /* synthetic */ Activity g_() {
+    public final /* synthetic */ android.app.Activity g_() {
         return getActivity();
     }
 }

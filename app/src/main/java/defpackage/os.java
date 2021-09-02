@@ -1,15 +1,13 @@
 package defpackage;
 
-import android.graphics.Color;
-
-/* renamed from: os  reason: default package */
+/* renamed from: os reason: default package */
 /* compiled from: PG */
 public final class os {
     public static int a(int i, int i2) {
-        int alpha = Color.alpha(i2);
-        int alpha2 = Color.alpha(i);
+        int alpha = android.graphics.Color.alpha(i2);
+        int alpha2 = android.graphics.Color.alpha(i);
         int i3 = 255 - (((255 - alpha) * (255 - alpha2)) / 255);
-        return Color.argb(i3, a(Color.red(i), alpha2, Color.red(i2), alpha, i3), a(Color.green(i), alpha2, Color.green(i2), alpha, i3), a(Color.blue(i), alpha2, Color.blue(i2), alpha, i3));
+        return android.graphics.Color.argb(i3, a(android.graphics.Color.red(i), alpha2, android.graphics.Color.red(i2), alpha, i3), a(android.graphics.Color.green(i), alpha2, android.graphics.Color.green(i2), alpha, i3), a(android.graphics.Color.blue(i), alpha2, android.graphics.Color.blue(i2), alpha, i3));
     }
 
     private static int a(int i, int i2, int i3, int i4, int i5) {
@@ -23,10 +21,10 @@ public final class os {
         if (i2 >= 0 && i2 <= 255) {
             return (16777215 & i) | (i2 << 24);
         }
-        throw new IllegalArgumentException("alpha must be between 0 and 255.");
+        throw new java.lang.IllegalArgumentException("alpha must be between 0 and 255.");
     }
 
     static {
-        new ThreadLocal();
+        new java.lang.ThreadLocal();
     }
 }

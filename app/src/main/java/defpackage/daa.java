@@ -1,13 +1,12 @@
 package defpackage;
 
-/* renamed from: daa  reason: default package */
+/* renamed from: daa reason: default package */
 /* compiled from: PG */
-final class daa implements dio {
+final class daa implements defpackage.dio {
     daa() {
     }
 
-    @Override // defpackage.dio
-    public final /* synthetic */ din a(int i) {
-        return czz.a(i);
+    public final /* synthetic */ defpackage.din a(int i) {
+        return defpackage.czz.a(i);
     }
 }

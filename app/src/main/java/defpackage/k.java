@@ -1,20 +1,17 @@
 package defpackage;
 
-import java.util.Iterator;
-
-/* renamed from: k  reason: default package */
+/* renamed from: k reason: default package */
 /* compiled from: PG */
-public final class k implements Iterator, m {
-    private j a;
+public final class k implements java.util.Iterator, defpackage.m {
+    private defpackage.j a;
     private boolean b = true;
-    private final /* synthetic */ g c;
+    private final /* synthetic */ defpackage.g c;
 
-    k(g gVar) {
+    k(defpackage.g gVar) {
         this.c = gVar;
     }
 
-    @Override // defpackage.m
-    public final void a_(j jVar) {
+    public final void a_(defpackage.j jVar) {
         if (jVar == this.a) {
             this.a = this.a.d;
             this.b = this.a == null;
@@ -22,13 +19,21 @@ public final class k implements Iterator, m {
     }
 
     public final boolean hasNext() {
-        return this.b ? this.c.b != null : (this.a == null || this.a.c == null) ? false : true;
+        if (this.b) {
+            if (this.c.b != null) {
+                return true;
+            }
+            return false;
+        } else if (this.a == null || this.a.c == null) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
-    @Override // java.util.Iterator
-    public final /* synthetic */ Object next() {
-        j jVar;
-        k kVar;
+    public final /* synthetic */ java.lang.Object next() {
+        defpackage.j jVar;
+        defpackage.k kVar;
         if (this.b) {
             this.b = false;
             jVar = this.c.b;

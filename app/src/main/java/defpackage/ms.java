@@ -1,38 +1,34 @@
 package defpackage;
 
-import android.transition.Transition;
-import android.view.View;
-import java.util.ArrayList;
-
-/* renamed from: ms  reason: default package */
+/* renamed from: ms reason: default package */
 /* compiled from: PG */
-final class ms implements Transition.TransitionListener {
-    private final /* synthetic */ View a;
-    private final /* synthetic */ ArrayList b;
+final class ms implements android.transition.Transition.TransitionListener {
+    private final /* synthetic */ android.view.View a;
+    private final /* synthetic */ java.util.ArrayList b;
 
-    ms(View view, ArrayList arrayList) {
+    ms(android.view.View view, java.util.ArrayList arrayList) {
         this.a = view;
         this.b = arrayList;
     }
 
-    public final void onTransitionStart(Transition transition) {
+    public final void onTransitionStart(android.transition.Transition transition) {
     }
 
-    public final void onTransitionEnd(Transition transition) {
+    public final void onTransitionEnd(android.transition.Transition transition) {
         transition.removeListener(this);
         this.a.setVisibility(8);
         int size = this.b.size();
         for (int i = 0; i < size; i++) {
-            ((View) this.b.get(i)).setVisibility(0);
+            ((android.view.View) this.b.get(i)).setVisibility(0);
         }
     }
 
-    public final void onTransitionCancel(Transition transition) {
+    public final void onTransitionCancel(android.transition.Transition transition) {
     }
 
-    public final void onTransitionPause(Transition transition) {
+    public final void onTransitionPause(android.transition.Transition transition) {
     }
 
-    public final void onTransitionResume(Transition transition) {
+    public final void onTransitionResume(android.transition.Transition transition) {
     }
 }

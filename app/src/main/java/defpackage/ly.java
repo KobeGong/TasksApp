@@ -1,28 +1,24 @@
 package defpackage;
 
-import android.animation.Animator;
-import android.view.animation.Animation;
-
-/* access modifiers changed from: package-private */
-/* renamed from: ly  reason: default package */
+/* renamed from: ly reason: default package */
 /* compiled from: PG */
-public final class ly {
-    public final Animation a;
-    public final Animator b;
+final class ly {
+    public final android.view.animation.Animation a;
+    public final android.animation.Animator b;
 
-    ly(Animation animation) {
+    ly(android.view.animation.Animation animation) {
         this.a = animation;
         this.b = null;
         if (animation == null) {
-            throw new IllegalStateException("Animation cannot be null");
+            throw new java.lang.IllegalStateException("Animation cannot be null");
         }
     }
 
-    ly(Animator animator) {
+    ly(android.animation.Animator animator) {
         this.a = null;
         this.b = animator;
         if (animator == null) {
-            throw new IllegalStateException("Animator cannot be null");
+            throw new java.lang.IllegalStateException("Animator cannot be null");
         }
     }
 }

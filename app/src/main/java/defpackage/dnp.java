@@ -1,16 +1,13 @@
 package defpackage;
 
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
-
-/* renamed from: dnp  reason: default package */
+/* renamed from: dnp reason: default package */
 /* compiled from: PG */
 public final class dnp {
-    public static final dnp a = new dnp(new dnn(), dno.a);
-    public final ConcurrentMap b = new ConcurrentHashMap();
+    public static final defpackage.dnp a = new defpackage.dnp(new defpackage.dnn(), defpackage.dno.a);
+    public final java.util.concurrent.ConcurrentMap b = new java.util.concurrent.ConcurrentHashMap();
 
-    private dnp(doa... doaArr) {
-        for (doa doa : doaArr) {
+    private dnp(defpackage.doa... doaArr) {
+        for (defpackage.doa doa : doaArr) {
             this.b.put(doa.a(), doa);
         }
     }

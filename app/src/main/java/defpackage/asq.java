@@ -1,26 +1,23 @@
 package defpackage;
 
-import android.os.Bundle;
-import android.view.View;
+/* renamed from: asq reason: default package */
+final /* synthetic */ class asq implements android.view.View.OnClickListener {
+    private final EditTaskFragment a;
 
-/* renamed from: asq  reason: default package */
-final /* synthetic */ class asq implements View.OnClickListener {
-    private final asi a;
-
-    asq(asi asi) {
+    asq(EditTaskFragment asi) {
         this.a = asi;
     }
 
-    public final void onClick(View view) {
-        asi asi = this.a;
-        String str = asi.U;
+    public final void onClick(android.view.View view) {
+        EditTaskFragment asi = this.a;
+        java.lang.String str = asi.U;
         if (asi.V != null) {
             str = asi.V.b;
         }
-        atd atd = new atd();
-        Bundle bundle = new Bundle();
+        defpackage.atd atd = new defpackage.atd();
+        android.os.Bundle bundle = new android.os.Bundle();
         bundle.putString("selectedTaskList", str);
         atd.e(bundle);
-        atd.a(asi.t, "TaskListSelectorBottomSheetDialogFragment");
+        atd.a((defpackage.ln) asi.t, "TaskListSelectorBottomSheetDialogFragment");
     }
 }

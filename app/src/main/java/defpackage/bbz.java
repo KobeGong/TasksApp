@@ -1,11 +1,11 @@
 package defpackage;
 
-/* renamed from: bbz  reason: default package */
+/* renamed from: bbz reason: default package */
 /* compiled from: PG */
 public final class bbz {
-    public /* synthetic */ baj a;
+    public /* synthetic */ defpackage.baj a;
 
-    bbz(baj baj) {
+    bbz(defpackage.baj baj) {
         this.a = baj;
     }
 }

@@ -1,40 +1,35 @@
 package defpackage;
 
-import android.content.Context;
-import android.content.Intent;
-import android.os.Parcel;
-import android.os.Parcelable;
-
-/* renamed from: bhr  reason: default package */
+/* renamed from: bhr reason: default package */
 /* compiled from: PG */
 public final class bhr {
-    private static bjr a = new bjr();
+    private static defpackage.bjr a = new defpackage.bjr();
 
-    public static boolean a(Context context, Intent intent) {
-        return bht.a(context, intent);
+    public static boolean a(android.content.Context context, android.content.Intent intent) {
+        return defpackage.bht.a(context, intent);
     }
 
-    public static bhq b(Context context, Intent intent) {
-        biq biq = null;
-        azb.b(context, "Context must not be null.");
-        azb.b(intent, "Intent must not be null.");
-        if (!bht.a(context, intent)) {
+    public static defpackage.bhq b(android.content.Context context, android.content.Intent intent) {
+        defpackage.biq biq = null;
+        defpackage.azb.b((java.lang.Object) context, (java.lang.Object) "Context must not be null.");
+        defpackage.azb.b((java.lang.Object) intent, (java.lang.Object) "Intent must not be null.");
+        if (!defpackage.bht.a(context, intent)) {
             return null;
         }
-        Parcelable.Creator creator = bhq.CREATOR;
+        android.os.Parcelable.Creator creator = defpackage.bhq.CREATOR;
         byte[] byteArrayExtra = intent.getByteArrayExtra("com.google.android.gms.accounts.ACCOUNT_DATA");
         if (byteArrayExtra != null) {
-            azb.b(creator);
-            Parcel obtain = Parcel.obtain();
+            defpackage.azb.b((java.lang.Object) creator);
+            android.os.Parcel obtain = android.os.Parcel.obtain();
             obtain.unmarshall(byteArrayExtra, 0, byteArrayExtra.length);
             obtain.setDataPosition(0);
-            biq = (biq) creator.createFromParcel(obtain);
+            biq = (defpackage.biq) creator.createFromParcel(obtain);
             obtain.recycle();
         }
-        return (bhq) biq;
+        return (defpackage.bhq) biq;
     }
 
     static {
-        new bht(a);
+        new defpackage.bht(a);
     }
 }

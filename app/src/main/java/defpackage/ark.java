@@ -1,19 +1,15 @@
 package defpackage;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-
-/* access modifiers changed from: package-private */
-/* renamed from: ark  reason: default package */
+/* renamed from: ark reason: default package */
 /* compiled from: PG */
-public final class ark extends AnimatorListenerAdapter {
-    private final /* synthetic */ ard a;
+final class ark extends android.animation.AnimatorListenerAdapter {
+    private final /* synthetic */ defpackage.ard a;
 
-    ark(ard ard) {
+    ark(defpackage.ard ard) {
         this.a = ard;
     }
 
-    public final void onAnimationEnd(Animator animator) {
+    public final void onAnimationEnd(android.animation.Animator animator) {
         this.a.d();
     }
 }

@@ -1,73 +1,66 @@
 package com.google.android.gms.auth.api.credentials;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import com.google.android.gms.common.internal.ReflectedParcelable;
-import java.security.SecureRandom;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
-
 /* compiled from: PG */
-public final class PasswordSpecification extends biq implements ReflectedParcelable {
-    public static final Parcelable.Creator CREATOR = new avm();
-    public static final PasswordSpecification a = new avk().a().a("abcdefghijkmnopqrstxyzABCDEFGHJKLMNPQRSTXY3456789").b("abcdefghijkmnopqrstxyz").b("ABCDEFGHJKLMNPQRSTXY").b("3456789").b();
-    private final String b;
-    private final List c;
-    private final List d;
+public final class PasswordSpecification extends defpackage.biq implements com.google.android.gms.common.internal.ReflectedParcelable {
+    public static final android.os.Parcelable.Creator CREATOR = new defpackage.avm();
+    public static final com.google.android.gms.auth.api.credentials.PasswordSpecification a = new defpackage.avk().a().a("abcdefghijkmnopqrstxyzABCDEFGHJKLMNPQRSTXY3456789").b("abcdefghijkmnopqrstxyz").b("ABCDEFGHJKLMNPQRSTXY").b("3456789").b();
+    private final java.lang.String b;
+    private final java.util.List c;
+    private final java.util.List d;
     private final int e;
     private final int f;
 
-    public PasswordSpecification(String str, List list, List list2, int i, int i2) {
+    public PasswordSpecification(java.lang.String str, java.util.List list, java.util.List list2, int i, int i2) {
         this.b = str;
-        this.c = Collections.unmodifiableList(list);
-        this.d = Collections.unmodifiableList(list2);
+        this.c = java.util.Collections.unmodifiableList(list);
+        this.d = java.util.Collections.unmodifiableList(list2);
         this.e = i;
         this.f = i2;
         int[] iArr = new int[95];
-        Arrays.fill(iArr, -1);
+        java.util.Arrays.fill(iArr, -1);
         int i3 = 0;
-        for (String str2 : this.c) {
-            char[] charArray = str2.toCharArray();
-            int length = charArray.length;
+        for (java.lang.String charArray : this.c) {
+            char[] charArray2 = charArray.toCharArray();
+            int length = charArray2.length;
             for (int i4 = 0; i4 < length; i4++) {
-                iArr[charArray[i4] - ' '] = i3;
+                iArr[charArray2[i4] - ' '] = i3;
             }
             i3++;
         }
-        new SecureRandom();
+        new java.security.SecureRandom();
     }
 
-    public final void writeToParcel(Parcel parcel, int i) {
-        int q = bjr.q(parcel, 20293);
-        bjr.a(parcel, 1, this.b);
-        bjr.a(parcel, 2, this.c);
-        List list = this.d;
+    public final void writeToParcel(android.os.Parcel parcel, int i) {
+        int q = defpackage.bjr.q(parcel, 20293);
+        defpackage.bjr.a(parcel, 1, this.b);
+        defpackage.bjr.a(parcel, 2, this.c);
+        java.util.List list = this.d;
         if (list != null) {
-            int q2 = bjr.q(parcel, 3);
+            int q2 = defpackage.bjr.q(parcel, 3);
             int size = list.size();
             parcel.writeInt(size);
             for (int i2 = 0; i2 < size; i2++) {
-                parcel.writeInt(((Integer) list.get(i2)).intValue());
+                parcel.writeInt(((java.lang.Integer) list.get(i2)).intValue());
             }
-            bjr.r(parcel, q2);
+            defpackage.bjr.r(parcel, q2);
         }
-        bjr.c(parcel, 4, this.e);
-        bjr.c(parcel, 5, this.f);
-        bjr.r(parcel, q);
+        defpackage.bjr.c(parcel, 4, this.e);
+        defpackage.bjr.c(parcel, 5, this.f);
+        defpackage.bjr.r(parcel, q);
     }
 
-    public static /* synthetic */ String a(Collection collection) {
+    public static /* synthetic */ java.lang.String a(java.util.Collection collection) {
         char[] cArr = new char[collection.size()];
         int i = 0;
-        Iterator it = collection.iterator();
-        while (it.hasNext()) {
-            i++;
-            cArr[i] = ((Character) it.next()).charValue();
+        java.util.Iterator it = collection.iterator();
+        while (true) {
+            int i2 = i;
+            if (!it.hasNext()) {
+                return new java.lang.String(cArr);
+            }
+            i = i2 + 1;
+            cArr[i2] = ((java.lang.Character) it.next()).charValue();
         }
-        return new String(cArr);
     }
 
     public static /* synthetic */ boolean a(int i) {
@@ -75,6 +68,6 @@ public final class PasswordSpecification extends biq implements ReflectedParcela
     }
 
     static {
-        new avk().a().a("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890").b("abcdefghijklmnopqrstuvwxyz").b("ABCDEFGHIJKLMNOPQRSTUVWXYZ").b("1234567890").b();
+        new defpackage.avk().a().a("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890").b("abcdefghijklmnopqrstuvwxyz").b("ABCDEFGHIJKLMNOPQRSTUVWXYZ").b("1234567890").b();
     }
 }

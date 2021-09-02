@@ -1,65 +1,57 @@
 package defpackage;
 
-import java.io.IOException;
-import java.util.ArrayDeque;
-import java.util.Queue;
-
-/* renamed from: dtd  reason: default package */
+/* renamed from: dtd reason: default package */
 /* compiled from: PG */
-public final class dtd extends dxv {
+public final class dtd extends defpackage.dxv {
     public int a;
-    private final Queue b = new ArrayDeque();
+    private final java.util.Queue b = new java.util.ArrayDeque();
 
-    public final void a(dxv dxv) {
-        if (!(dxv instanceof dtd)) {
+    public final void a(defpackage.dxv dxv) {
+        if (!(dxv instanceof defpackage.dtd)) {
             this.b.add(dxv);
             this.a += dxv.a();
             return;
         }
-        dtd dtd = (dtd) dxv;
+        defpackage.dtd dtd = (defpackage.dtd) dxv;
         while (!dtd.b.isEmpty()) {
-            this.b.add((dxv) dtd.b.remove());
+            this.b.add((defpackage.dxv) dtd.b.remove());
         }
         this.a += dtd.a;
         dtd.a = 0;
         dtd.close();
     }
 
-    @Override // defpackage.dxv
     public final int a() {
         return this.a;
     }
 
-    @Override // defpackage.dxv
     public final int b() {
-        dte dte = new dte();
+        defpackage.dte dte = new defpackage.dte();
         a(dte, 1);
         return dte.a;
     }
 
-    @Override // defpackage.dxv
     public final void a(byte[] bArr, int i, int i2) {
-        a(new dtf(i, bArr), i2);
+        a(new defpackage.dtf(i, bArr), i2);
     }
 
-    @Override // defpackage.dxv, java.io.Closeable, java.lang.AutoCloseable
     public final void close() {
         while (!this.b.isEmpty()) {
-            ((dxv) this.b.remove()).close();
+            ((defpackage.dxv) this.b.remove()).close();
         }
     }
 
-    private final void a(dtg dtg, int i) {
+    private final void a(defpackage.dtg dtg, int i) {
         b(i);
         if (!this.b.isEmpty()) {
             c();
         }
         while (i > 0 && !this.b.isEmpty()) {
-            dxv dxv = (dxv) this.b.peek();
-            int min = Math.min(i, dxv.a());
+            defpackage.dxv dxv = (defpackage.dxv) this.b.peek();
+            int min = java.lang.Math.min(i, dxv.a());
             try {
                 dtg.a = dtg.a(dxv, min);
-            } catch (IOException e) {
+            } catch (java.io.IOException e) {
                 dtg.b = e;
             }
             if (!(dtg.b != null)) {
@@ -71,28 +63,27 @@ public final class dtd extends dxv {
             }
         }
         if (i > 0) {
-            throw new AssertionError("Failed executing read operation");
+            throw new java.lang.AssertionError("Failed executing read operation");
         }
     }
 
     private final void c() {
-        if (((dxv) this.b.peek()).a() == 0) {
-            ((dxv) this.b.remove()).close();
+        if (((defpackage.dxv) this.b.peek()).a() == 0) {
+            ((defpackage.dxv) this.b.remove()).close();
         }
     }
 
-    @Override // defpackage.dxv
-    public final /* synthetic */ dxv a(int i) {
+    public final /* synthetic */ defpackage.dxv a(int i) {
         b(i);
         this.a -= i;
-        dtd dtd = new dtd();
+        defpackage.dtd dtd = new defpackage.dtd();
         while (i > 0) {
-            dxv dxv = (dxv) this.b.peek();
+            defpackage.dxv dxv = (defpackage.dxv) this.b.peek();
             if (dxv.a() > i) {
                 dtd.a(dxv.a(i));
                 i = 0;
             } else {
-                dtd.a((dxv) this.b.poll());
+                dtd.a((defpackage.dxv) this.b.poll());
                 i -= dxv.a();
             }
         }

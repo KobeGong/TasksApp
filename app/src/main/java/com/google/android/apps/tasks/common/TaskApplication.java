@@ -1,362 +1,496 @@
 package com.google.android.apps.tasks.common;
 
-import android.content.Context;
-import android.content.pm.ApplicationInfo;
-import android.os.Build;
-import android.util.Log;
-import com.google.android.apps.tasks.R;
-import java.io.File;
-import java.io.IOException;
-import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-
-import defpackage.aii;
-import defpackage.ait;
-import defpackage.aiv;
-import defpackage.aiw;
-import defpackage.ajd;
-import defpackage.ajg;
-import defpackage.ajt;
-import defpackage.ajy;
-import defpackage.aka;
-import defpackage.akb;
-import defpackage.ako;
-import defpackage.akp;
-import defpackage.alj;
-import defpackage.any;
-import defpackage.aoa;
-import defpackage.azb;
-import defpackage.bqk;
-import defpackage.bqn;
-import defpackage.bqy;
-import defpackage.brf;
-import defpackage.btj;
-import defpackage.bub;
-import defpackage.bud;
-import defpackage.bue;
-import defpackage.bug;
-import defpackage.bwj;
-import defpackage.bxy;
-import defpackage.cdj;
-import defpackage.cdw;
-import defpackage.cdz;
-import defpackage.cjg;
-import defpackage.cjn;
-import defpackage.cjw;
-import defpackage.cld;
-import defpackage.coi;
-import defpackage.crv;
-import defpackage.cub;
-import defpackage.cyl;
-import defpackage.cym;
-import defpackage.czq;
-import defpackage.dgv;
-import defpackage.dmm;
-import defpackage.dmo;
-import defpackage.hx;
 
 /* compiled from: PG */
-public class TaskApplication extends dmo implements ajg {
-    private static TaskApplication g;
-    public cyl a = cub.a(Executors.newFixedThreadPool(5, ajd.c("shared-pool-%d")));
-    public czq b;
+public class TaskApplication extends defpackage.dmo implements defpackage.ajg {
+    private static com.google.android.apps.tasks.common.TaskApplication g;
+    public defpackage.cyl a = defpackage.cub.a(Executors.newFixedThreadPool(5, defpackage.ajd.c("shared-pool-%d")));
+    public defpackage.czq b;
     public boolean c;
-    public cdj d;
-    public cdw e;
-    private akp h;
-    private final cym i;
+    public defpackage.cdj d;
+    public defpackage.cdw e;
+    private defpackage.akp h;
+    private final defpackage.cym i;
 
     public TaskApplication() {
-        super((byte) 0);
-        cym cyo;
-        ScheduledExecutorService newSingleThreadScheduledExecutor = Executors.newSingleThreadScheduledExecutor(ajd.c("scheduler-%d"));
-        if (newSingleThreadScheduledExecutor instanceof cym) {
-            cyo = (cym) newSingleThreadScheduledExecutor;
+        super(0);
+        defpackage.cym cyo;
+        java.util.concurrent.ScheduledExecutorService newSingleThreadScheduledExecutor = Executors.newSingleThreadScheduledExecutor(defpackage.ajd.c("scheduler-%d"));
+        if (newSingleThreadScheduledExecutor instanceof defpackage.cym) {
+            cyo = (defpackage.cym) newSingleThreadScheduledExecutor;
         } else {
-            cyo = new cyo(newSingleThreadScheduledExecutor);
+            cyo = new defpackage.cyo(newSingleThreadScheduledExecutor);
         }
         this.i = cyo;
         this.c = false;
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.dmo
-    public final dmm a() {
-        aiv aiv = new aiv();
-        aiv.a = (aii) dgv.a(new aii(this));
-        aiv.d = (cdz) dgv.a(new cdz());
+    public final defpackage.dmm a() {
+        defpackage.aiv aiv = new defpackage.aiv();
+        aiv.a = (defpackage.aii) defpackage.dgv.a((java.lang.Object) new defpackage.aii(this));
+        aiv.d = (defpackage.cdz) defpackage.dgv.a((java.lang.Object) new defpackage.cdz());
         if (aiv.a == null) {
-            throw new IllegalStateException(String.valueOf(aii.class.getCanonicalName()).concat(" must be set"));
+            throw new java.lang.IllegalStateException(java.lang.String.valueOf(defpackage.aii.class.getCanonicalName()).concat(" must be set"));
         }
         if (aiv.b == null) {
-            aiv.b = new brf();
+            aiv.b = new defpackage.brf();
         }
         if (aiv.c == null) {
-            aiv.c = new bwj();
+            aiv.c = new defpackage.bwj();
         }
         if (aiv.d != null) {
-            return new ait(aiv);
+            return new defpackage.ait(aiv);
         }
-        throw new IllegalStateException(String.valueOf(cdz.class.getCanonicalName()).concat(" must be set"));
+        throw new java.lang.IllegalStateException(java.lang.String.valueOf(defpackage.cdz.class.getCanonicalName()).concat(" must be set"));
     }
 
-    public static TaskApplication b() {
+    public static com.google.android.apps.tasks.common.TaskApplication getApplication() {
         if (g != null) {
             return g;
         }
-        throw new RuntimeException("Application not yet created (onCreate not yet called)");
+        throw new java.lang.RuntimeException("Application not yet created (onCreate not yet called)");
     }
 
-    @Override // defpackage.dmo
     public void onCreate() {
         boolean z;
         super.onCreate();
         g = this;
-        aiw.a(this);
-        crv a2 = ako.a();
+        defpackage.aiw.a(this);
+        defpackage.crv a2 = defpackage.ako.a();
         if (a2.a()) {
-            this.h = (akp) a2.b();
-            cjg a3 = cjg.a(cjn.a(this, new cjw(this.h, new coi(this, new bqn((byte) 0), new bqy(), new bqk(), "TASKS_ANDROID_PRIMES"), this)));
+            this.h = (defpackage.akp) a2.b();
+            defpackage.cjg a3 = defpackage.cjg.a(defpackage.cjn.a(this, new defpackage.cjw(this.h, new defpackage.coi(this, new defpackage.bqn(0), new defpackage.bqy(), new defpackage.bqk(), "TASKS_ANDROID_PRIMES"), this)));
             a3.a.d();
             a3.a.e();
         }
-        crv a4 = ajt.a();
+        defpackage.crv a4 = defpackage.ajt.a();
         if (a4.a()) {
-            ((ajy) a4.b()).a(this, this.a);
+            ((defpackage.ajy) a4.b()).a(this, this.a);
         }
-        if (!(any.inst != null)) {
-            if (any.inst == null) {
+        if (!(defpackage.any.a != null)) {
+            if (defpackage.any.a == null) {
                 z = true;
             } else {
                 z = false;
             }
-            cld.b(z);
-            any.inst = new any(getApplicationContext(), c(), cub.a(Executors.newFixedThreadPool(5, ajd.c("slow-pool-%d"))), d(), new aoa(getApplicationContext(), d()));
+            defpackage.cld.b(z);
+            defpackage.any.a = new defpackage.any(getApplicationContext(), c(), defpackage.cub.a(Executors.newFixedThreadPool(5, defpackage.ajd.c("slow-pool-%d"))), d(), new defpackage.aoa(getApplicationContext(), d()));
         } else {
-            azb.b("SyncEngineProvider already initialized. This should only be possible in tests.", new Object[0]);
+            defpackage.azb.b("SyncEngineProvider already initialized. This should only be possible in tests.", new java.lang.Object[0]);
         }
-        aka.a().b();
-        alj.a().b();
-        cyl cyl = this.a;
-        cym cym = this.i;
-        any a5 = any.get();
-        bxy bxy = new bxy();
+        defpackage.aka.a().b();
+        defpackage.alj.a().b();
+        java.lang.String str = "1000131241323";
+        defpackage.cyl cyl = this.a;
+        defpackage.cym cym = this.i;
+        defpackage.any a5 = defpackage.any.a();
+        defpackage.bxy bxy = new defpackage.bxy();
         if (this == null) {
-            throw new NullPointerException("Null context");
+            throw new java.lang.NullPointerException("Null context");
         }
         bxy.a = this;
-        bud bud = new bud((byte) 0);
-        String str = Build.MANUFACTURER;
-        String str2 = Build.MODEL;
-        String sb = new StringBuilder(String.valueOf(str).length() + 1 + String.valueOf(str2).length()).append(str).append(" ").append(str2).toString();
+        defpackage.bud bud = new defpackage.bud(0);
+        java.lang.String str2 = android.os.Build.MANUFACTURER;
+        java.lang.String str3 = android.os.Build.MODEL;
+        java.lang.String sb = new java.lang.StringBuilder(java.lang.String.valueOf(str2).length() + 1 + java.lang.String.valueOf(str3).length()).append(str2).append(" ").append(str3).toString();
         if (sb == null) {
-            throw new NullPointerException("Null deviceName");
+            throw new java.lang.NullPointerException("Null deviceName");
         }
         bud.e = sb;
-        Long l = btj.a;
+        java.lang.Long l = defpackage.btj.a;
         if (l == null) {
-            throw new NullPointerException("Null registrationStalenessTimeMs");
+            throw new java.lang.NullPointerException("Null registrationStalenessTimeMs");
         }
         bud.f = l;
         bud.g = "com.google.android.libraries.notifications.entrypoints.scheduled.ScheduledTaskService";
-        bud.h = false;
-        bud.b = "1000131241323";
+        bud.h = java.lang.Boolean.valueOf(false);
+        bud.b = str;
         bud.a = "tasks";
-        bue bue = bue.PRODUCTION;
+        defpackage.bue bue = defpackage.bue.PRODUCTION;
         if (bue == null) {
-            throw new NullPointerException("Null environment");
+            throw new java.lang.NullPointerException("Null environment");
         }
         bud.c = bue;
-        if (111000000 == null) {
-            throw new NullPointerException("Null jobSchedulerAllowedIDsRange");
+        java.lang.Integer valueOf = java.lang.Integer.valueOf(111000000);
+        if (valueOf == null) {
+            throw new java.lang.NullPointerException("Null jobSchedulerAllowedIDsRange");
         }
-        bud.i = 111000000;
-        bug bug = new bug();
-        bug.c = true;
-        bug.d = true;
-        bug.e = true;
+        bud.i = valueOf;
+        defpackage.bug bug = new defpackage.bug();
+        bug.c = java.lang.Boolean.valueOf(true);
+        bug.d = java.lang.Boolean.valueOf(true);
+        bug.e = java.lang.Boolean.valueOf(true);
         bug.f = "com.google.android.libraries.notifications.entrypoints.systemtray.SystemTrayActivity";
         bug.g = "com.google.android.libraries.notifications.entrypoints.systemtray.SystemTrayBroadcastReceiver";
-        Integer valueOf = Integer.valueOf((int) R.drawable.quantum_ic_check_circle_white_48);
-        if (valueOf == null) {
-            throw new NullPointerException("Null iconResourceId");
-        }
-        bug.a = valueOf;
-        Integer valueOf2 = Integer.valueOf((int) R.string.app_name);
+        java.lang.Integer valueOf2 = java.lang.Integer.valueOf(2130837663);
         if (valueOf2 == null) {
-            throw new NullPointerException("Null appNameResourceId");
+            throw new java.lang.NullPointerException("Null iconResourceId");
         }
-        bug.b = valueOf2;
-        bug.h = getString(R.string.notification_channel_default);
-        String str3 = "";
+        bug.a = valueOf2;
+        java.lang.Integer valueOf3 = java.lang.Integer.valueOf(2131951686);
+        if (valueOf3 == null) {
+            throw new java.lang.NullPointerException("Null appNameResourceId");
+        }
+        bug.b = valueOf3;
+        bug.h = getString(2131951763);
+        java.lang.String str4 = "";
         if (bug.a == null) {
-            str3 = String.valueOf(str3).concat(" iconResourceId");
+            str4 = java.lang.String.valueOf(str4).concat(" iconResourceId");
         }
         if (bug.b == null) {
-            str3 = String.valueOf(str3).concat(" appNameResourceId");
+            str4 = java.lang.String.valueOf(str4).concat(" appNameResourceId");
         }
         if (bug.c == null) {
-            str3 = String.valueOf(str3).concat(" soundEnabled");
+            str4 = java.lang.String.valueOf(str4).concat(" soundEnabled");
         }
         if (bug.d == null) {
-            str3 = String.valueOf(str3).concat(" vibrationEnabled");
+            str4 = java.lang.String.valueOf(str4).concat(" vibrationEnabled");
         }
         if (bug.e == null) {
-            str3 = String.valueOf(str3).concat(" lightsEnabled");
-        }
-        if (!str3.isEmpty()) {
-            String valueOf3 = String.valueOf(str3);
-            throw new IllegalStateException(valueOf3.length() != 0 ? "Missing required properties:".concat(valueOf3) : new String("Missing required properties:"));
-        }
-        bud.d = new bub(bug.a, bug.b, bug.c.booleanValue(), bug.d.booleanValue(), bug.e.booleanValue(), bug.f, bug.g, bug.h);
-        String str4 = "";
-        if (bud.a == null) {
-            str4 = String.valueOf(str4).concat(" clientId");
-        }
-        if (bud.b == null) {
-            str4 = String.valueOf(str4).concat(" gcmSenderProjectId");
-        }
-        if (bud.c == null) {
-            str4 = String.valueOf(str4).concat(" environment");
-        }
-        if (bud.e == null) {
-            str4 = String.valueOf(str4).concat(" deviceName");
-        }
-        if (bud.f == null) {
-            str4 = String.valueOf(str4).concat(" registrationStalenessTimeMs");
-        }
-        if (bud.h == null) {
-            str4 = String.valueOf(str4).concat(" tracingEnabled");
-        }
-        if (bud.i == null) {
-            str4 = String.valueOf(str4).concat(" jobSchedulerAllowedIDsRange");
+            str4 = java.lang.String.valueOf(str4).concat(" lightsEnabled");
         }
         if (!str4.isEmpty()) {
-            String valueOf4 = String.valueOf(str4);
-            throw new IllegalStateException(valueOf4.length() != 0 ? "Missing required properties:".concat(valueOf4) : new String("Missing required properties:"));
+            java.lang.String str5 = "Missing required properties:";
+            java.lang.String valueOf4 = java.lang.String.valueOf(str4);
+            throw new java.lang.IllegalStateException(valueOf4.length() != 0 ? str5.concat(valueOf4) : new java.lang.String(str5));
         }
-        bxy.b = new bua(bud.a, bud.b, bud.c, bud.d, bud.e, bud.f, bud.g, bud.h.booleanValue(), bud.i);
-        String str5 = "";
+        bud.d = new defpackage.bub(bug.a, bug.b, bug.c.booleanValue(), bug.d.booleanValue(), bug.e.booleanValue(), bug.f, bug.g, bug.h);
+        java.lang.String str6 = "";
+        if (bud.a == null) {
+            str6 = java.lang.String.valueOf(str6).concat(" clientId");
+        }
+        if (bud.b == null) {
+            str6 = java.lang.String.valueOf(str6).concat(" gcmSenderProjectId");
+        }
+        if (bud.c == null) {
+            str6 = java.lang.String.valueOf(str6).concat(" environment");
+        }
+        if (bud.e == null) {
+            str6 = java.lang.String.valueOf(str6).concat(" deviceName");
+        }
+        if (bud.f == null) {
+            str6 = java.lang.String.valueOf(str6).concat(" registrationStalenessTimeMs");
+        }
+        if (bud.h == null) {
+            str6 = java.lang.String.valueOf(str6).concat(" tracingEnabled");
+        }
+        if (bud.i == null) {
+            str6 = java.lang.String.valueOf(str6).concat(" jobSchedulerAllowedIDsRange");
+        }
+        if (!str6.isEmpty()) {
+            java.lang.String str7 = "Missing required properties:";
+            java.lang.String valueOf5 = java.lang.String.valueOf(str6);
+            throw new java.lang.IllegalStateException(valueOf5.length() != 0 ? str7.concat(valueOf5) : new java.lang.String(str7));
+        }
+        bxy.b = new defpackage.bua(bud.a, bud.b, bud.c, bud.d, bud.e, bud.f, bud.g, bud.h.booleanValue(), bud.i);
+        java.lang.String str8 = "";
         if (bxy.a == null) {
-            str5 = String.valueOf(str5).concat(" context");
+            str8 = java.lang.String.valueOf(str8).concat(" context");
         }
         if (bxy.b == null) {
-            str5 = String.valueOf(str5).concat(" chimeConfig");
+            str8 = java.lang.String.valueOf(str8).concat(" chimeConfig");
         }
-        if (!str5.isEmpty()) {
-            String valueOf5 = String.valueOf(str5);
-            throw new IllegalStateException(valueOf5.length() != 0 ? "Missing required properties:".concat(valueOf5) : new String("Missing required properties:"));
+        if (!str8.isEmpty()) {
+            java.lang.String str9 = "Missing required properties:";
+            java.lang.String valueOf6 = java.lang.String.valueOf(str8);
+            throw new java.lang.IllegalStateException(valueOf6.length() != 0 ? str9.concat(valueOf6) : new java.lang.String(str9));
         }
-        bwj.a(new bxw(bxy.a, bxy.b));
-        akf a6 = akf.a();
+        defpackage.bwj.a((defpackage.bxx) new defpackage.bxw(bxy.a, bxy.b));
+        defpackage.akf a6 = defpackage.akf.a();
         a6.a = cym;
         a6.b = a5;
-        cyl.execute(new akb(this));
+        cyl.execute(new defpackage.akb(this));
     }
 
-    @Override // defpackage.ajg
-    public final cyl c() {
+    public final defpackage.cyl c() {
         return this.a;
     }
 
-    @Override // defpackage.ajg
-    public final cym d() {
+    public final defpackage.cym d() {
         return this.i;
     }
 
     /* access modifiers changed from: protected */
-    public void attachBaseContext(Context context) {
-        IOException[] iOExceptionArr;
-        super.attachBaseContext(context);
-        if (!hx.b) {
-            try {
-                ApplicationInfo a2 = hx.a(this);
-                if (a2 != null) {
-                    synchronized (hx.a) {
-                        String str = a2.sourceDir;
-                        if (!hx.a.contains(str)) {
-                            hx.a.add(str);
-                            if (Build.VERSION.SDK_INT > 20) {
-                                Log.w("MultiDex", "MultiDex is not guaranteed to work in SDK version " + Build.VERSION.SDK_INT + ": SDK version higher than 20 should be backed by runtime with built-in multidex capabilty but it's not the case here: java.vm.version=\"" + System.getProperty("java.vm.version") + "\"");
-                            }
-                            try {
-                                ClassLoader classLoader = getClassLoader();
-                                if (classLoader == null) {
-                                    Log.e("MultiDex", "Context class loader is null. Must be running in test mode. Skip patching.");
-                                    return;
-                                }
-                                try {
-                                    File file = new File(getFilesDir(), "secondary-dexes");
-                                    if (file.isDirectory()) {
-                                        new StringBuilder("Clearing old secondary dex dir (").append(file.getPath()).append(").");
-                                        File[] listFiles = file.listFiles();
-                                        if (listFiles == null) {
-                                            Log.w("MultiDex", "Failed to list secondary dex dir content (" + file.getPath() + ").");
-                                        } else {
-                                            for (File file2 : listFiles) {
-                                                new StringBuilder("Trying to delete old file ").append(file2.getPath()).append(" of size ").append(file2.length());
-                                                if (!file2.delete()) {
-                                                    Log.w("MultiDex", "Failed to delete old file " + file2.getPath());
-                                                } else {
-                                                    new StringBuilder("Deleted old file ").append(file2.getPath());
-                                                }
-                                            }
-                                            if (!file.delete()) {
-                                                Log.w("MultiDex", "Failed to delete secondary dex dir " + file.getPath());
-                                            } else {
-                                                new StringBuilder("Deleted old secondary dex dir ").append(file.getPath());
-                                            }
-                                        }
-                                    }
-                                } catch (Throwable th) {
-                                    Log.w("MultiDex", "Something went wrong when trying to clear old MultiDex extraction, continuing without cleaning.", th);
-                                }
-                                File a3 = hx.a(this, a2);
-                                List a4 = gm.a(this, a2, a3);
-                                if (!a4.isEmpty()) {
-                                    if (Build.VERSION.SDK_INT >= 19) {
-                                        Object obj = hx.a(classLoader, "pathList").get(classLoader);
-                                        ArrayList arrayList = new ArrayList();
-                                        hx.a(obj, "dexElements", (Object[]) hx.a(obj, "makeDexElements", ArrayList.class, File.class, ArrayList.class).invoke(obj, new ArrayList(a4), a3, arrayList));
-                                        if (arrayList.size() > 0) {
-                                            ArrayList arrayList2 = arrayList;
-                                            int size = arrayList2.size();
-                                            int i2 = 0;
-                                            while (i2 < size) {
-                                                Object obj2 = arrayList2.get(i2);
-                                                i2++;
-                                                Log.w("MultiDex", "Exception in makeDexElement", (IOException) obj2);
-                                            }
-                                            Field a5 = hx.a(obj, "dexElementsSuppressedExceptions");
-                                            IOException[] iOExceptionArr2 = (IOException[]) a5.get(obj);
-                                            if (iOExceptionArr2 == null) {
-                                                iOExceptionArr = (IOException[]) arrayList.toArray(new IOException[arrayList.size()]);
-                                            } else {
-                                                IOException[] iOExceptionArr3 = new IOException[(arrayList.size() + iOExceptionArr2.length)];
-                                                arrayList.toArray(iOExceptionArr3);
-                                                System.arraycopy(iOExceptionArr2, 0, iOExceptionArr3, arrayList.size(), iOExceptionArr2.length);
-                                                iOExceptionArr = iOExceptionArr3;
-                                            }
-                                            a5.set(obj, iOExceptionArr);
-                                        }
-                                    } else {
-                                        Object obj3 = hx.a(classLoader, "pathList").get(classLoader);
-                                        hx.a(obj3, "dexElements", (Object[]) hx.a(obj3, "makeDexElements", ArrayList.class, File.class).invoke(obj3, new ArrayList(a4), a3));
-                                    }
-                                }
-                            } catch (RuntimeException e2) {
-                                Log.w("MultiDex", "Failure while trying to obtain Context class loader. Must be running in test mode. Skip patching.", e2);
-                            }
-                        }
-                    }
-                }
-            } catch (Exception e3) {
-                Log.e("MultiDex", "Multidex installation failure", e3);
-                throw new RuntimeException("Multi dex installation failed (" + e3.getMessage() + ").");
-            }
-        }
+    /* JADX WARNING: Code restructure failed: missing block: B:84:?, code lost:
+        return;
+     */
+    /* JADX WARNING: No exception handlers in catch block: Catch:{  } */
+    /* Code decompiled incorrectly, please refer to instructions dump. */
+    public void attachBaseContext(android.content.Context r15) {
+        /*
+            r14 = this;
+            r4 = 0
+            super.attachBaseContext(r15)
+            boolean r2 = defpackage.hx.b
+            if (r2 != 0) goto L_0x000e
+            android.content.pm.ApplicationInfo r3 = defpackage.hx.a(r14)     // Catch:{ Exception -> 0x0021 }
+            if (r3 != 0) goto L_0x000f
+        L_0x000e:
+            return
+        L_0x000f:
+            java.util.Set r6 = defpackage.hx.a     // Catch:{ Exception -> 0x0021 }
+            monitor-enter(r6)     // Catch:{ Exception -> 0x0021 }
+            java.lang.String r2 = r3.sourceDir     // Catch:{ all -> 0x001e }
+            java.util.Set r5 = defpackage.hx.a     // Catch:{ all -> 0x001e }
+            boolean r5 = r5.contains(r2)     // Catch:{ all -> 0x001e }
+            if (r5 == 0) goto L_0x0048
+            monitor-exit(r6)     // Catch:{ all -> 0x001e }
+            goto L_0x000e
+        L_0x001e:
+            r2 = move-exception
+            monitor-exit(r6)     // Catch:{ all -> 0x001e }
+            throw r2     // Catch:{ Exception -> 0x0021 }
+        L_0x0021:
+            r2 = move-exception
+            java.lang.String r3 = "MultiDex"
+            java.lang.String r4 = "Multidex installation failure"
+            android.util.Log.e(r3, r4, r2)
+            java.lang.RuntimeException r3 = new java.lang.RuntimeException
+            java.lang.StringBuilder r4 = new java.lang.StringBuilder
+            java.lang.String r5 = "Multi dex installation failed ("
+            r4.<init>(r5)
+            java.lang.String r2 = r2.getMessage()
+            java.lang.StringBuilder r2 = r4.append(r2)
+            java.lang.String r4 = ")."
+            java.lang.StringBuilder r2 = r2.append(r4)
+            java.lang.String r2 = r2.toString()
+            r3.<init>(r2)
+            throw r3
+        L_0x0048:
+            java.util.Set r5 = defpackage.hx.a     // Catch:{ all -> 0x001e }
+            r5.add(r2)     // Catch:{ all -> 0x001e }
+            int r2 = android.os.Build.VERSION.SDK_INT     // Catch:{ all -> 0x001e }
+            r5 = 20
+            if (r2 <= r5) goto L_0x007f
+            java.lang.String r2 = "MultiDex"
+            java.lang.StringBuilder r5 = new java.lang.StringBuilder     // Catch:{ all -> 0x001e }
+            java.lang.String r7 = "MultiDex is not guaranteed to work in SDK version "
+            r5.<init>(r7)     // Catch:{ all -> 0x001e }
+            int r7 = android.os.Build.VERSION.SDK_INT     // Catch:{ all -> 0x001e }
+            java.lang.StringBuilder r5 = r5.append(r7)     // Catch:{ all -> 0x001e }
+            java.lang.String r7 = ": SDK version higher than 20 should be backed by runtime with built-in multidex capabilty but it's not the case here: java.vm.version=\""
+            java.lang.StringBuilder r5 = r5.append(r7)     // Catch:{ all -> 0x001e }
+            java.lang.String r7 = "java.vm.version"
+            java.lang.String r7 = java.lang.System.getProperty(r7)     // Catch:{ all -> 0x001e }
+            java.lang.StringBuilder r5 = r5.append(r7)     // Catch:{ all -> 0x001e }
+            java.lang.String r7 = "\""
+            java.lang.StringBuilder r5 = r5.append(r7)     // Catch:{ all -> 0x001e }
+            java.lang.String r5 = r5.toString()     // Catch:{ all -> 0x001e }
+            android.util.Log.w(r2, r5)     // Catch:{ all -> 0x001e }
+        L_0x007f:
+            java.lang.ClassLoader r5 = r14.getClassLoader()     // Catch:{ RuntimeException -> 0x008e }
+            if (r5 != 0) goto L_0x0099
+            java.lang.String r2 = "MultiDex"
+            java.lang.String r3 = "Context class loader is null. Must be running in test mode. Skip patching."
+            android.util.Log.e(r2, r3)     // Catch:{ all -> 0x001e }
+            monitor-exit(r6)     // Catch:{ all -> 0x001e }
+            goto L_0x000e
+        L_0x008e:
+            r2 = move-exception
+            java.lang.String r3 = "MultiDex"
+            java.lang.String r4 = "Failure while trying to obtain Context class loader. Must be running in test mode. Skip patching."
+            android.util.Log.w(r3, r4, r2)     // Catch:{ all -> 0x001e }
+            monitor-exit(r6)     // Catch:{ all -> 0x001e }
+            goto L_0x000e
+        L_0x0099:
+            java.io.File r7 = new java.io.File     // Catch:{ Throwable -> 0x01ac }
+            java.io.File r2 = r14.getFilesDir()     // Catch:{ Throwable -> 0x01ac }
+            java.lang.String r8 = "secondary-dexes"
+            r7.<init>(r2, r8)     // Catch:{ Throwable -> 0x01ac }
+            boolean r2 = r7.isDirectory()     // Catch:{ Throwable -> 0x01ac }
+            if (r2 == 0) goto L_0x00e2
+            java.lang.StringBuilder r2 = new java.lang.StringBuilder     // Catch:{ Throwable -> 0x01ac }
+            java.lang.String r8 = "Clearing old secondary dex dir ("
+            r2.<init>(r8)     // Catch:{ Throwable -> 0x01ac }
+            java.lang.String r8 = r7.getPath()     // Catch:{ Throwable -> 0x01ac }
+            java.lang.StringBuilder r2 = r2.append(r8)     // Catch:{ Throwable -> 0x01ac }
+            java.lang.String r8 = ")."
+            r2.append(r8)     // Catch:{ Throwable -> 0x01ac }
+            java.io.File[] r8 = r7.listFiles()     // Catch:{ Throwable -> 0x01ac }
+            if (r8 != 0) goto L_0x015a
+            java.lang.String r2 = "MultiDex"
+            java.lang.StringBuilder r8 = new java.lang.StringBuilder     // Catch:{ Throwable -> 0x01ac }
+            java.lang.String r9 = "Failed to list secondary dex dir content ("
+            r8.<init>(r9)     // Catch:{ Throwable -> 0x01ac }
+            java.lang.String r7 = r7.getPath()     // Catch:{ Throwable -> 0x01ac }
+            java.lang.StringBuilder r7 = r8.append(r7)     // Catch:{ Throwable -> 0x01ac }
+            java.lang.String r8 = ")."
+            java.lang.StringBuilder r7 = r7.append(r8)     // Catch:{ Throwable -> 0x01ac }
+            java.lang.String r7 = r7.toString()     // Catch:{ Throwable -> 0x01ac }
+            android.util.Log.w(r2, r7)     // Catch:{ Throwable -> 0x01ac }
+        L_0x00e2:
+            java.io.File r2 = defpackage.hx.a(r14, r3)     // Catch:{ all -> 0x001e }
+            java.util.List r7 = defpackage.gm.a(r14, r3, r2)     // Catch:{ all -> 0x001e }
+            boolean r3 = r7.isEmpty()     // Catch:{ all -> 0x001e }
+            if (r3 != 0) goto L_0x0203
+            int r3 = android.os.Build.VERSION.SDK_INT     // Catch:{ all -> 0x001e }
+            r8 = 19
+            if (r3 < r8) goto L_0x021c
+            java.lang.String r3 = "pathList"
+            java.lang.reflect.Field r3 = defpackage.hx.a(r5, r3)     // Catch:{ all -> 0x001e }
+            java.lang.Object r8 = r3.get(r5)     // Catch:{ all -> 0x001e }
+            java.util.ArrayList r3 = new java.util.ArrayList     // Catch:{ all -> 0x001e }
+            r3.<init>()     // Catch:{ all -> 0x001e }
+            java.lang.String r5 = "dexElements"
+            java.util.ArrayList r9 = new java.util.ArrayList     // Catch:{ all -> 0x001e }
+            r9.<init>(r7)     // Catch:{ all -> 0x001e }
+            java.lang.String r7 = "makeDexElements"
+            r10 = 3
+            java.lang.Class[] r10 = new java.lang.Class[r10]     // Catch:{ all -> 0x001e }
+            r11 = 0
+            java.lang.Class<java.util.ArrayList> r12 = java.util.ArrayList.class
+            r10[r11] = r12     // Catch:{ all -> 0x001e }
+            r11 = 1
+            java.lang.Class<java.io.File> r12 = java.io.File.class
+            r10[r11] = r12     // Catch:{ all -> 0x001e }
+            r11 = 2
+            java.lang.Class<java.util.ArrayList> r12 = java.util.ArrayList.class
+            r10[r11] = r12     // Catch:{ all -> 0x001e }
+            java.lang.reflect.Method r7 = defpackage.hx.a(r8, r7, r10)     // Catch:{ all -> 0x001e }
+            r10 = 3
+            java.lang.Object[] r10 = new java.lang.Object[r10]     // Catch:{ all -> 0x001e }
+            r11 = 0
+            r10[r11] = r9     // Catch:{ all -> 0x001e }
+            r9 = 1
+            r10[r9] = r2     // Catch:{ all -> 0x001e }
+            r2 = 2
+            r10[r2] = r3     // Catch:{ all -> 0x001e }
+            java.lang.Object r2 = r7.invoke(r8, r10)     // Catch:{ all -> 0x001e }
+            java.lang.Object[] r2 = (java.lang.Object[]) r2     // Catch:{ all -> 0x001e }
+            defpackage.hx.a(r8, r5, r2)     // Catch:{ all -> 0x001e }
+            int r2 = r3.size()     // Catch:{ all -> 0x001e }
+            if (r2 <= 0) goto L_0x0203
+            r0 = r3
+            java.util.ArrayList r0 = (java.util.ArrayList) r0     // Catch:{ all -> 0x001e }
+            r2 = r0
+            int r7 = r2.size()     // Catch:{ all -> 0x001e }
+            r5 = r4
+        L_0x0148:
+            if (r5 >= r7) goto L_0x01e6
+            java.lang.Object r4 = r2.get(r5)     // Catch:{ all -> 0x001e }
+            int r5 = r5 + 1
+            java.io.IOException r4 = (java.io.IOException) r4     // Catch:{ all -> 0x001e }
+            java.lang.String r9 = "MultiDex"
+            java.lang.String r10 = "Exception in makeDexElement"
+            android.util.Log.w(r9, r10, r4)     // Catch:{ all -> 0x001e }
+            goto L_0x0148
+        L_0x015a:
+            int r9 = r8.length     // Catch:{ Throwable -> 0x01ac }
+            r2 = r4
+        L_0x015c:
+            if (r2 >= r9) goto L_0x01b6
+            r10 = r8[r2]     // Catch:{ Throwable -> 0x01ac }
+            java.lang.StringBuilder r11 = new java.lang.StringBuilder     // Catch:{ Throwable -> 0x01ac }
+            java.lang.String r12 = "Trying to delete old file "
+            r11.<init>(r12)     // Catch:{ Throwable -> 0x01ac }
+            java.lang.String r12 = r10.getPath()     // Catch:{ Throwable -> 0x01ac }
+            java.lang.StringBuilder r11 = r11.append(r12)     // Catch:{ Throwable -> 0x01ac }
+            java.lang.String r12 = " of size "
+            java.lang.StringBuilder r11 = r11.append(r12)     // Catch:{ Throwable -> 0x01ac }
+            long r12 = r10.length()     // Catch:{ Throwable -> 0x01ac }
+            r11.append(r12)     // Catch:{ Throwable -> 0x01ac }
+            boolean r11 = r10.delete()     // Catch:{ Throwable -> 0x01ac }
+            if (r11 != 0) goto L_0x019d
+            java.lang.String r11 = "MultiDex"
+            java.lang.StringBuilder r12 = new java.lang.StringBuilder     // Catch:{ Throwable -> 0x01ac }
+            java.lang.String r13 = "Failed to delete old file "
+            r12.<init>(r13)     // Catch:{ Throwable -> 0x01ac }
+            java.lang.String r10 = r10.getPath()     // Catch:{ Throwable -> 0x01ac }
+            java.lang.StringBuilder r10 = r12.append(r10)     // Catch:{ Throwable -> 0x01ac }
+            java.lang.String r10 = r10.toString()     // Catch:{ Throwable -> 0x01ac }
+            android.util.Log.w(r11, r10)     // Catch:{ Throwable -> 0x01ac }
+        L_0x019a:
+            int r2 = r2 + 1
+            goto L_0x015c
+        L_0x019d:
+            java.lang.StringBuilder r11 = new java.lang.StringBuilder     // Catch:{ Throwable -> 0x01ac }
+            java.lang.String r12 = "Deleted old file "
+            r11.<init>(r12)     // Catch:{ Throwable -> 0x01ac }
+            java.lang.String r10 = r10.getPath()     // Catch:{ Throwable -> 0x01ac }
+            r11.append(r10)     // Catch:{ Throwable -> 0x01ac }
+            goto L_0x019a
+        L_0x01ac:
+            r2 = move-exception
+            java.lang.String r7 = "MultiDex"
+            java.lang.String r8 = "Something went wrong when trying to clear old MultiDex extraction, continuing without cleaning."
+            android.util.Log.w(r7, r8, r2)     // Catch:{ all -> 0x001e }
+            goto L_0x00e2
+        L_0x01b6:
+            boolean r2 = r7.delete()     // Catch:{ Throwable -> 0x01ac }
+            if (r2 != 0) goto L_0x01d6
+            java.lang.String r2 = "MultiDex"
+            java.lang.StringBuilder r8 = new java.lang.StringBuilder     // Catch:{ Throwable -> 0x01ac }
+            java.lang.String r9 = "Failed to delete secondary dex dir "
+            r8.<init>(r9)     // Catch:{ Throwable -> 0x01ac }
+            java.lang.String r7 = r7.getPath()     // Catch:{ Throwable -> 0x01ac }
+            java.lang.StringBuilder r7 = r8.append(r7)     // Catch:{ Throwable -> 0x01ac }
+            java.lang.String r7 = r7.toString()     // Catch:{ Throwable -> 0x01ac }
+            android.util.Log.w(r2, r7)     // Catch:{ Throwable -> 0x01ac }
+            goto L_0x00e2
+        L_0x01d6:
+            java.lang.StringBuilder r2 = new java.lang.StringBuilder     // Catch:{ Throwable -> 0x01ac }
+            java.lang.String r8 = "Deleted old secondary dex dir "
+            r2.<init>(r8)     // Catch:{ Throwable -> 0x01ac }
+            java.lang.String r7 = r7.getPath()     // Catch:{ Throwable -> 0x01ac }
+            r2.append(r7)     // Catch:{ Throwable -> 0x01ac }
+            goto L_0x00e2
+        L_0x01e6:
+            java.lang.String r2 = "dexElementsSuppressedExceptions"
+            java.lang.reflect.Field r5 = defpackage.hx.a(r8, r2)     // Catch:{ all -> 0x001e }
+            java.lang.Object r2 = r5.get(r8)     // Catch:{ all -> 0x001e }
+            java.io.IOException[] r2 = (java.io.IOException[]) r2     // Catch:{ all -> 0x001e }
+            if (r2 != 0) goto L_0x0206
+            int r2 = r3.size()     // Catch:{ all -> 0x001e }
+            java.io.IOException[] r2 = new java.io.IOException[r2]     // Catch:{ all -> 0x001e }
+            java.lang.Object[] r2 = r3.toArray(r2)     // Catch:{ all -> 0x001e }
+            java.io.IOException[] r2 = (java.io.IOException[]) r2     // Catch:{ all -> 0x001e }
+        L_0x0200:
+            r5.set(r8, r2)     // Catch:{ all -> 0x001e }
+        L_0x0203:
+            monitor-exit(r6)     // Catch:{ all -> 0x001e }
+            goto L_0x000e
+        L_0x0206:
+            int r4 = r3.size()     // Catch:{ all -> 0x001e }
+            int r7 = r2.length     // Catch:{ all -> 0x001e }
+            int r4 = r4 + r7
+            java.io.IOException[] r4 = new java.io.IOException[r4]     // Catch:{ all -> 0x001e }
+            r3.toArray(r4)     // Catch:{ all -> 0x001e }
+            r7 = 0
+            int r3 = r3.size()     // Catch:{ all -> 0x001e }
+            int r9 = r2.length     // Catch:{ all -> 0x001e }
+            java.lang.System.arraycopy(r2, r7, r4, r3, r9)     // Catch:{ all -> 0x001e }
+            r2 = r4
+            goto L_0x0200
+        L_0x021c:
+            java.lang.String r3 = "pathList"
+            java.lang.reflect.Field r3 = defpackage.hx.a(r5, r3)     // Catch:{ all -> 0x001e }
+            java.lang.Object r3 = r3.get(r5)     // Catch:{ all -> 0x001e }
+            java.lang.String r4 = "dexElements"
+            java.util.ArrayList r5 = new java.util.ArrayList     // Catch:{ all -> 0x001e }
+            r5.<init>(r7)     // Catch:{ all -> 0x001e }
+            java.lang.String r7 = "makeDexElements"
+            r8 = 2
+            java.lang.Class[] r8 = new java.lang.Class[r8]     // Catch:{ all -> 0x001e }
+            r9 = 0
+            java.lang.Class<java.util.ArrayList> r10 = java.util.ArrayList.class
+            r8[r9] = r10     // Catch:{ all -> 0x001e }
+            r9 = 1
+            java.lang.Class<java.io.File> r10 = java.io.File.class
+            r8[r9] = r10     // Catch:{ all -> 0x001e }
+            java.lang.reflect.Method r7 = defpackage.hx.a(r3, r7, r8)     // Catch:{ all -> 0x001e }
+            r8 = 2
+            java.lang.Object[] r8 = new java.lang.Object[r8]     // Catch:{ all -> 0x001e }
+            r9 = 0
+            r8[r9] = r5     // Catch:{ all -> 0x001e }
+            r5 = 1
+            r8[r5] = r2     // Catch:{ all -> 0x001e }
+            java.lang.Object r2 = r7.invoke(r3, r8)     // Catch:{ all -> 0x001e }
+            java.lang.Object[] r2 = (java.lang.Object[]) r2     // Catch:{ all -> 0x001e }
+            defpackage.hx.a(r3, r4, r2)     // Catch:{ all -> 0x001e }
+            goto L_0x0203
+        */
+        throw new UnsupportedOperationException("Method not decompiled: com.google.android.apps.tasks.common.TaskApplication.attachBaseContext(android.content.Context):void");
     }
 }

@@ -1,16 +1,14 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: bpf  reason: default package */
-public final /* synthetic */ class bpf implements bpb {
-    private final String a;
+/* renamed from: bpf reason: default package */
+final /* synthetic */ class bpf implements defpackage.bpb {
+    private final java.lang.String a;
 
-    bpf(String str) {
+    bpf(java.lang.String str) {
         this.a = str;
     }
 
-    @Override // defpackage.bpb
-    public final Object a() {
-        return Boolean.valueOf(bks.c(boz.b.getContentResolver(), this.a));
+    public final java.lang.Object a() {
+        return java.lang.Boolean.valueOf(defpackage.bks.c(defpackage.boz.b.getContentResolver(), this.a));
     }
 }

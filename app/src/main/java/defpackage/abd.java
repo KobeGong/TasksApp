@@ -1,25 +1,22 @@
 package defpackage;
 
-import android.support.v7.widget.RecyclerView;
-import android.view.View;
-
-/* renamed from: abd  reason: default package */
+/* renamed from: abd reason: default package */
 /* compiled from: PG */
 public final class abd {
-    public final /* synthetic */ RecyclerView a;
+    public final /* synthetic */ android.support.v7.widget.RecyclerView a;
 
-    public final ViewHolder a(int i) {
-        ViewHolder afv;
-        RecyclerView recyclerView = this.a;
+    public final defpackage.afv a(int i) {
+        defpackage.afv afv;
+        android.support.v7.widget.RecyclerView recyclerView = this.a;
         int childCount = recyclerView.g.a.a.getChildCount();
         int i2 = 0;
-        ViewHolder afv2 = null;
+        defpackage.afv afv2 = null;
         while (true) {
             if (i2 >= childCount) {
                 afv = afv2;
                 break;
             }
-            afv = RecyclerView.c(recyclerView.g.c(i2));
+            afv = android.support.v7.widget.RecyclerView.c(recyclerView.g.c(i2));
             if (afv != null && !afv.m() && afv.c == i) {
                 if (!recyclerView.g.d(afv.a)) {
                     break;
@@ -45,46 +42,48 @@ public final class abd {
         this.a.D.c += i2;
     }
 
-    public final void a(int i, int i2, Object obj) {
-        int i3;
-        RecyclerView recyclerView = this.a;
+    public final void a(int i, int i2, java.lang.Object obj) {
+        android.support.v7.widget.RecyclerView recyclerView = this.a;
         int childCount = recyclerView.g.a.a.getChildCount();
-        int i4 = i + i2;
-        for (int i5 = 0; i5 < childCount; i5++) {
-            View c = recyclerView.g.c(i5);
-            ViewHolder c2 = RecyclerView.c(c);
-            if (c2 != null && !c2.b() && c2.c >= i && c2.c < i4) {
+        int i3 = i + i2;
+        for (int i4 = 0; i4 < childCount; i4++) {
+            android.view.View c = recyclerView.g.c(i4);
+            defpackage.afv c2 = android.support.v7.widget.RecyclerView.c(c);
+            if (c2 != null && !c2.b() && c2.c >= i && c2.c < i3) {
                 c2.b(2);
                 c2.a(obj);
-                ((afh) c.getLayoutParams()).c = true;
+                ((defpackage.afh) c.getLayoutParams()).c = true;
             }
         }
-        afn afn = recyclerView.e;
-        int i6 = i + i2;
+        defpackage.afn afn = recyclerView.e;
+        int i5 = i + i2;
         for (int size = afn.c.size() - 1; size >= 0; size--) {
-            ViewHolder afv = (ViewHolder) afn.c.get(size);
-            if (afv != null && (i3 = afv.c) >= i && i3 < i6) {
-                afv.b(2);
-                afn.a(size);
+            defpackage.afv afv = (defpackage.afv) afn.c.get(size);
+            if (afv != null) {
+                int i6 = afv.c;
+                if (i6 >= i && i6 < i5) {
+                    afv.b(2);
+                    afn.a(size);
+                }
             }
         }
         this.a.G = true;
     }
 
     public final void b(int i, int i2) {
-        RecyclerView recyclerView = this.a;
+        android.support.v7.widget.RecyclerView recyclerView = this.a;
         int childCount = recyclerView.g.a.a.getChildCount();
         for (int i3 = 0; i3 < childCount; i3++) {
-            ViewHolder c = RecyclerView.c(recyclerView.g.c(i3));
+            defpackage.afv c = android.support.v7.widget.RecyclerView.c(recyclerView.g.c(i3));
             if (c != null && !c.b() && c.c >= i) {
                 c.a(i2, false);
                 recyclerView.D.f = true;
             }
         }
-        afn afn = recyclerView.e;
+        defpackage.afn afn = recyclerView.e;
         int size = afn.c.size();
         for (int i4 = 0; i4 < size; i4++) {
-            ViewHolder afv = (ViewHolder) afn.c.get(i4);
+            defpackage.afv afv = (defpackage.afv) afn.c.get(i4);
             if (afv != null && afv.c >= i) {
                 afv.a(i2, true);
             }
@@ -100,7 +99,7 @@ public final class abd {
         int i6;
         int i7;
         int i8 = -1;
-        RecyclerView recyclerView = this.a;
+        android.support.v7.widget.RecyclerView recyclerView = this.a;
         int childCount = recyclerView.g.a.a.getChildCount();
         if (i < i2) {
             i3 = -1;
@@ -112,7 +111,7 @@ public final class abd {
             i5 = i2;
         }
         for (int i9 = 0; i9 < childCount; i9++) {
-            ViewHolder c = RecyclerView.c(recyclerView.g.c(i9));
+            defpackage.afv c = android.support.v7.widget.RecyclerView.c(recyclerView.g.c(i9));
             if (c != null && c.c >= i5 && c.c <= i4) {
                 if (c.c == i) {
                     c.a(i2 - i, false);
@@ -122,7 +121,7 @@ public final class abd {
                 recyclerView.D.f = true;
             }
         }
-        afn afn = recyclerView.e;
+        defpackage.afn afn = recyclerView.e;
         if (i < i2) {
             i6 = i2;
             i7 = i;
@@ -133,7 +132,7 @@ public final class abd {
         }
         int size = afn.c.size();
         for (int i10 = 0; i10 < size; i10++) {
-            ViewHolder afv = (ViewHolder) afn.c.get(i10);
+            defpackage.afv afv = (defpackage.afv) afn.c.get(i10);
             if (afv != null && afv.c >= i7 && afv.c <= i6) {
                 if (afv.c == i) {
                     afv.a(i2 - i, false);
@@ -146,30 +145,26 @@ public final class abd {
         this.a.F = true;
     }
 
-    public abd(RecyclerView recyclerView) {
+    public abd(android.support.v7.widget.RecyclerView recyclerView) {
         this.a = recyclerView;
     }
 
-    /* access modifiers changed from: package-private */
-    public final void a(abe abe) {
+    /* access modifiers changed from: 0000 */
+    public final void a(defpackage.abe abe) {
         switch (abe.a) {
             case 1:
-                this.a.layoutManager.r();
+                this.a.l.r();
                 return;
             case 2:
-                this.a.layoutManager.s();
-                return;
-            case 3:
-            case 5:
-            case 6:
-            case 7:
-            default:
+                this.a.l.s();
                 return;
             case 4:
-                this.a.layoutManager.u();
+                this.a.l.u();
                 return;
             case 8:
-                this.a.layoutManager.v();
+                this.a.l.v();
+                return;
+            default:
                 return;
         }
     }

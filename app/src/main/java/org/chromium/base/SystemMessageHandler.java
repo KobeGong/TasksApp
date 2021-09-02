@@ -1,20 +1,14 @@
 package org.chromium.base;
 
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
-import android.os.MessageQueue;
-import org.chromium.base.annotations.CalledByNative;
-
 /* compiled from: PG */
-public class SystemMessageHandler extends Handler {
+public class SystemMessageHandler extends android.os.Handler {
     public long a;
     private boolean b;
-    private final MessageQueue.IdleHandler c = new egz(this);
+    private final android.os.MessageQueue.IdleHandler c = new defpackage.egz(this);
 
     private SystemMessageHandler(long j) {
         this.a = j;
-        Looper.myQueue().addIdleHandler(this.c);
+        android.os.Looper.myQueue().addIdleHandler(this.c);
     }
 
     /* access modifiers changed from: private */
@@ -22,7 +16,7 @@ public class SystemMessageHandler extends Handler {
 
     private native void nativeDoRunLoopOnce(long j, boolean z);
 
-    public void handleMessage(Message message) {
+    public void handleMessage(android.os.Message message) {
         boolean z;
         if (this.a != 0) {
             if (message.what == 2) {
@@ -37,12 +31,12 @@ public class SystemMessageHandler extends Handler {
         }
     }
 
-    @CalledByNative
+    @org.chromium.base.annotations.CalledByNative
     private void scheduleWork() {
         sendMessage(a(1));
     }
 
-    @CalledByNative
+    @org.chromium.base.annotations.CalledByNative
     private void scheduleDelayedWork(long j) {
         if (this.b) {
             removeMessages(2);
@@ -51,20 +45,20 @@ public class SystemMessageHandler extends Handler {
         sendMessageDelayed(a(2), j);
     }
 
-    @CalledByNative
+    @org.chromium.base.annotations.CalledByNative
     private void shutdown() {
         this.a = 0;
     }
 
-    private static Message a(int i) {
-        Message obtain = Message.obtain();
+    private static android.os.Message a(int i) {
+        android.os.Message obtain = android.os.Message.obtain();
         obtain.what = i;
-        eha.a.a(obtain);
+        defpackage.eha.a.a(obtain);
         return obtain;
     }
 
-    @CalledByNative
-    private static SystemMessageHandler create(long j) {
-        return new SystemMessageHandler(j);
+    @org.chromium.base.annotations.CalledByNative
+    private static org.chromium.base.SystemMessageHandler create(long j) {
+        return new org.chromium.base.SystemMessageHandler(j);
     }
 }

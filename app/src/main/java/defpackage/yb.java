@@ -1,24 +1,20 @@
 package defpackage;
 
-import android.content.Context;
-import android.content.res.Configuration;
-import com.google.android.apps.tasks.R;
-
-/* renamed from: yb  reason: default package */
+/* renamed from: yb reason: default package */
 /* compiled from: PG */
 public final class yb {
-    public Context a;
+    public android.content.Context a;
 
-    public static yb a(Context context) {
-        return new yb(context);
+    public static defpackage.yb a(android.content.Context context) {
+        return new defpackage.yb(context);
     }
 
-    private yb(Context context) {
+    private yb(android.content.Context context) {
         this.a = context;
     }
 
     public final int a() {
-        Configuration configuration = this.a.getResources().getConfiguration();
+        android.content.res.Configuration configuration = this.a.getResources().getConfiguration();
         int i = configuration.screenWidthDp;
         int i2 = configuration.screenHeightDp;
         if (configuration.smallestScreenWidthDp > 600 || i > 600 || ((i > 960 && i2 > 720) || (i > 720 && i2 > 960))) {
@@ -34,6 +30,6 @@ public final class yb {
     }
 
     public final boolean b() {
-        return this.a.getResources().getBoolean(R.bool.abc_action_bar_embed_tabs);
+        return this.a.getResources().getBoolean(2131558400);
     }
 }

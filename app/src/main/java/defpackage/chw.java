@@ -1,19 +1,17 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: chw  reason: default package */
+/* renamed from: chw reason: default package */
 /* compiled from: PG */
-public final class chw implements clt {
-    private final /* synthetic */ cht a;
+final class chw implements defpackage.clt {
+    private final /* synthetic */ defpackage.cht a;
 
-    chw(cht cht) {
+    chw(defpackage.cht cht) {
         this.a = cht;
     }
 
     /* JADX WARNING: Code restructure failed: missing block: B:7:0x0021, code lost:
         if ((r6.d.j) != false) goto L_0x0023;
      */
-    @Override // defpackage.clt
     /* Code decompiled incorrectly, please refer to instructions dump. */
     public final /* synthetic */ java.lang.Object a() {
         /*

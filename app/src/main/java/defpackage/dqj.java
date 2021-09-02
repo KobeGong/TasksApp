@@ -1,9 +1,9 @@
 package defpackage;
 
-/* renamed from: dqj  reason: default package */
+/* renamed from: dqj reason: default package */
 /* compiled from: PG */
 public final class dqj {
-    public final eht a;
+    public final defpackage.eht a;
     public final boolean b;
     public final int c;
     public final boolean d;
@@ -12,7 +12,7 @@ public final class dqj {
     public dqj() {
     }
 
-    dqj(eht eht) {
+    dqj(defpackage.eht eht) {
         this();
         this.a = eht;
         this.b = false;

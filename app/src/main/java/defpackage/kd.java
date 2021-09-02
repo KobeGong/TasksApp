@@ -1,23 +1,17 @@
 package defpackage;
 
-import android.graphics.Rect;
-import android.util.Property;
-import android.view.View;
-
-/* renamed from: kd  reason: default package */
+/* renamed from: kd reason: default package */
 /* compiled from: PG */
-final class kd extends Property {
-    kd(Class cls, String str) {
+final class kd extends android.util.Property {
+    kd(java.lang.Class cls, java.lang.String str) {
         super(cls, str);
     }
 
-    @Override // android.util.Property
-    public final /* synthetic */ Object get(Object obj) {
-        return sn.a.p((View) obj);
+    public final /* synthetic */ java.lang.Object get(java.lang.Object obj) {
+        return defpackage.sn.a.p((android.view.View) obj);
     }
 
-    @Override // android.util.Property
-    public final /* synthetic */ void set(Object obj, Object obj2) {
-        sn.a.a((View) obj, (Rect) obj2);
+    public final /* synthetic */ void set(java.lang.Object obj, java.lang.Object obj2) {
+        defpackage.sn.a.a((android.view.View) obj, (android.graphics.Rect) obj2);
     }
 }

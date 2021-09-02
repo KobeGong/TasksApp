@@ -1,15 +1,12 @@
 package defpackage;
 
-import android.os.MessageQueue;
-import org.chromium.base.JavaHandlerThread;
-
-/* renamed from: egq  reason: default package */
+/* renamed from: egq reason: default package */
 /* compiled from: PG */
-public final class egq implements MessageQueue.IdleHandler {
+public final class egq implements android.os.MessageQueue.IdleHandler {
     private final /* synthetic */ long a;
-    private final /* synthetic */ JavaHandlerThread b;
+    private final /* synthetic */ org.chromium.base.JavaHandlerThread b;
 
-    public egq(JavaHandlerThread javaHandlerThread, long j) {
+    public egq(org.chromium.base.JavaHandlerThread javaHandlerThread, long j) {
         this.b = javaHandlerThread;
         this.a = j;
     }

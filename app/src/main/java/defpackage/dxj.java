@@ -1,20 +1,14 @@
 package defpackage;
 
-import java.io.OutputStream;
-import java.util.ArrayList;
-import java.util.List;
-
-/* access modifiers changed from: package-private */
-/* renamed from: dxj  reason: default package */
+/* renamed from: dxj reason: default package */
 /* compiled from: PG */
-public final class dxj extends OutputStream {
-    public final List a = new ArrayList();
-    private dzx b;
+final class dxj extends java.io.OutputStream {
+    public final java.util.List a = new java.util.ArrayList();
+    private defpackage.dzx b;
 
-    dxj(dxi dxi) {
+    dxj(defpackage.dxi dxi) {
     }
 
-    @Override // java.io.OutputStream
     public final void write(int i) {
         if (this.b == null || this.b.a.remaining() <= 0) {
             write(new byte[]{(byte) i}, 0, 1);
@@ -23,16 +17,15 @@ public final class dxj extends OutputStream {
         this.b.a.put((byte) i);
     }
 
-    @Override // java.io.OutputStream
     public final void write(byte[] bArr, int i, int i2) {
         if (this.b == null) {
-            this.b = dzy.a(i2);
+            this.b = defpackage.dzy.a(i2);
             this.a.add(this.b);
         }
         while (i2 > 0) {
-            int min = Math.min(i2, this.b.a.remaining());
+            int min = java.lang.Math.min(i2, this.b.a.remaining());
             if (min == 0) {
-                this.b = dzy.a(Math.max(i2, this.b.a.position() << 1));
+                this.b = defpackage.dzy.a(java.lang.Math.max(i2, this.b.a.position() << 1));
                 this.a.add(this.b);
             } else {
                 this.b.a(bArr, i, min);

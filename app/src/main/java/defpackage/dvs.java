@@ -1,13 +1,11 @@
 package defpackage;
 
-import java.util.logging.Level;
-
-/* renamed from: dvs  reason: default package */
+/* renamed from: dvs reason: default package */
 /* compiled from: PG */
-final class dvs implements Runnable {
-    private final /* synthetic */ dvq a;
+final class dvs implements java.lang.Runnable {
+    private final /* synthetic */ defpackage.dvq a;
 
-    dvs(dvq dvq) {
+    dvs(defpackage.dvq dvq) {
         this.a = dvq;
     }
 
@@ -15,16 +13,20 @@ final class dvs implements Runnable {
         try {
             synchronized (this.a.g) {
                 this.a.m = null;
-                if (!this.a.n) {
-                    this.a.a(dnq.CONNECTING);
-                    this.a.c();
+                if (this.a.n) {
                     this.a.h.a();
+                    return;
                 }
+                this.a.a(defpackage.dnq.CONNECTING);
+                this.a.c();
+                this.a.h.a();
             }
         } catch (Throwable th) {
-            dvq.a.logp(Level.WARNING, "io.grpc.internal.InternalSubchannel$1EndOfCurrentBackoff", "run", "Exception handling end of backoff", th);
-        } finally {
-            this.a.h.a();
+            try {
+                defpackage.dvq.a.logp(java.util.logging.Level.WARNING, "io.grpc.internal.InternalSubchannel$1EndOfCurrentBackoff", "run", "Exception handling end of backoff", th);
+            } finally {
+                this.a.h.a();
+            }
         }
     }
 }

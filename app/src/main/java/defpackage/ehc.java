@@ -1,17 +1,13 @@
 package defpackage;
 
-import android.annotation.SuppressLint;
-import android.os.Message;
-
-/* renamed from: ehc  reason: default package */
+/* renamed from: ehc reason: default package */
 /* compiled from: PG */
-final class ehc implements ehd {
+final class ehc implements defpackage.ehd {
     ehc() {
     }
 
-    @Override // defpackage.ehd
-    @SuppressLint({"NewApi"})
-    public final void a(Message message) {
+    @android.annotation.SuppressLint({"NewApi"})
+    public final void a(android.os.Message message) {
         message.setAsynchronous(true);
     }
 }

@@ -1,38 +1,32 @@
 package defpackage;
 
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-
-/* renamed from: drs  reason: default package */
+/* renamed from: drs reason: default package */
 /* compiled from: PG */
-final class drs implements dpd {
+final class drs implements defpackage.dpd {
     drs() {
     }
 
-    private static byte[] b(InputStream inputStream) {
+    private static byte[] b(java.io.InputStream inputStream) {
         try {
             return c(inputStream);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        } catch (java.io.IOException e) {
+            throw new java.lang.RuntimeException(e);
         }
     }
 
-    private static byte[] c(InputStream inputStream) {
+    private static byte[] c(java.io.InputStream inputStream) {
         try {
-            return dtj.a(inputStream);
+            return defpackage.dtj.a(inputStream);
         } finally {
             inputStream.close();
         }
     }
 
-    @Override // defpackage.dpd
-    public final /* synthetic */ Object a(InputStream inputStream) {
+    public final /* synthetic */ java.lang.Object a(java.io.InputStream inputStream) {
         return b(inputStream);
     }
 
-    @Override // defpackage.dpd
-    public final /* synthetic */ InputStream a(Object obj) {
-        return new ByteArrayInputStream((byte[]) obj);
+    public final /* synthetic */ java.io.InputStream a(java.lang.Object obj) {
+        return new java.io.ByteArrayInputStream((byte[]) obj);
     }
 }

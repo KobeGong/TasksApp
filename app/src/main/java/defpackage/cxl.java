@@ -1,22 +1,21 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: cxl  reason: default package */
+/* renamed from: cxl reason: default package */
 /* compiled from: PG */
-public final class cxl {
-    public static final cxl a = new cxl();
-    public volatile cxl next;
-    public volatile Thread thread;
+final class cxl {
+    public static final defpackage.cxl a = new defpackage.cxl();
+    public volatile defpackage.cxl next;
+    public volatile java.lang.Thread thread;
 
     cxl() {
     }
 
     cxl(byte b) {
-        cwz.c.a(this, Thread.currentThread());
+        defpackage.cwz.c.a(this, java.lang.Thread.currentThread());
     }
 
-    /* access modifiers changed from: package-private */
-    public final void a(cxl cxl) {
-        cwz.c.a(this, cxl);
+    /* access modifiers changed from: 0000 */
+    public final void a(defpackage.cxl cxl) {
+        defpackage.cwz.c.a(this, cxl);
     }
 }

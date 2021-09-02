@@ -1,12 +1,12 @@
 package defpackage;
 
-/* renamed from: cig  reason: default package */
+/* renamed from: cig reason: default package */
 /* compiled from: PG */
-final class cig implements Runnable {
-    private final /* synthetic */ String a;
-    private final /* synthetic */ cif b;
+final class cig implements java.lang.Runnable {
+    private final /* synthetic */ java.lang.String a;
+    private final /* synthetic */ defpackage.cif b;
 
-    cig(cif cif, String str) {
+    cig(defpackage.cif cif, java.lang.String str) {
         this.b = cif;
         this.a = str;
     }

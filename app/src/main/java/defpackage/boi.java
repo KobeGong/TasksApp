@@ -1,59 +1,47 @@
 package defpackage;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.ArrayList;
-
-/* renamed from: boi  reason: default package */
+/* renamed from: boi reason: default package */
 /* compiled from: PG */
-public final class boi implements Parcelable.Creator {
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object[] newArray(int i) {
-        return new boj[i];
+public final class boi implements android.os.Parcelable.Creator {
+    public final /* synthetic */ java.lang.Object[] newArray(int i) {
+        return new defpackage.boj[i];
     }
 
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object createFromParcel(Parcel parcel) {
-        ArrayList arrayList = null;
-        int a = bjr.a(parcel);
-        ArrayList arrayList2 = null;
-        ArrayList arrayList3 = null;
-        ArrayList arrayList4 = null;
-        ArrayList arrayList5 = null;
-        String str = null;
+    public final /* synthetic */ java.lang.Object createFromParcel(android.os.Parcel parcel) {
+        java.util.ArrayList arrayList = null;
+        int a = defpackage.bjr.a(parcel);
+        java.util.List list = null;
+        java.util.List list2 = null;
+        java.util.List list3 = null;
+        java.util.List list4 = null;
+        java.lang.String str = null;
         while (parcel.dataPosition() < a) {
             int readInt = parcel.readInt();
             switch (65535 & readInt) {
                 case 2:
-                    str = bjr.h(parcel, readInt);
-                    break;
-                case 3:
-                case 6:
-                case 7:
-                case 8:
-                case 10:
-                case 12:
-                default:
-                    bjr.b(parcel, readInt);
+                    str = defpackage.bjr.h(parcel, readInt);
                     break;
                 case 4:
-                    arrayList5 = bjr.c(parcel, readInt, boh.CREATOR);
+                    list4 = defpackage.bjr.c(parcel, readInt, defpackage.boh.CREATOR);
                     break;
                 case 5:
-                    arrayList4 = bjr.c(parcel, readInt, bor.CREATOR);
+                    list3 = defpackage.bjr.c(parcel, readInt, defpackage.bor.CREATOR);
                     break;
                 case 9:
-                    arrayList3 = bjr.c(parcel, readInt, boa.CREATOR);
+                    list2 = defpackage.bjr.c(parcel, readInt, defpackage.boa.CREATOR);
                     break;
                 case 11:
-                    arrayList2 = bjr.c(parcel, readInt, bod.CREATOR);
+                    list = defpackage.bjr.c(parcel, readInt, defpackage.bod.CREATOR);
                     break;
                 case 13:
-                    arrayList = bjr.c(parcel, readInt, boo.CREATOR);
+                    arrayList = defpackage.bjr.c(parcel, readInt, defpackage.boo.CREATOR);
+                    break;
+                default:
+                    defpackage.bjr.b(parcel, readInt);
                     break;
             }
         }
-        bjr.p(parcel, a);
-        return new boj(str, arrayList5, arrayList4, arrayList3, arrayList2, arrayList);
+        defpackage.bjr.p(parcel, a);
+        return new defpackage.boj(str, list4, list3, list2, list, arrayList);
     }
 }

@@ -1,17 +1,13 @@
 package com.google.android.gms.googlehelp.internal.common;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import com.google.android.gms.common.internal.ReflectedParcelable;
-
 /* compiled from: PG */
-public class TogglingData extends biq implements ReflectedParcelable {
-    public static final Parcelable.Creator CREATOR = new bhn();
-    private String a;
-    private String b;
-    private String c;
+public class TogglingData extends defpackage.biq implements com.google.android.gms.common.internal.ReflectedParcelable {
+    public static final android.os.Parcelable.Creator CREATOR = new defpackage.bhn();
+    private java.lang.String a;
+    private java.lang.String b;
+    private java.lang.String c;
 
-    public TogglingData(String str, String str2, String str3) {
+    public TogglingData(java.lang.String str, java.lang.String str2, java.lang.String str3) {
         this.a = str;
         this.b = str2;
         this.c = str3;
@@ -20,11 +16,11 @@ public class TogglingData extends biq implements ReflectedParcelable {
     private TogglingData() {
     }
 
-    public void writeToParcel(Parcel parcel, int i) {
-        int q = bjr.q(parcel, 20293);
-        bjr.a(parcel, 2, this.a);
-        bjr.a(parcel, 3, this.b);
-        bjr.a(parcel, 4, this.c);
-        bjr.r(parcel, q);
+    public void writeToParcel(android.os.Parcel parcel, int i) {
+        int q = defpackage.bjr.q(parcel, 20293);
+        defpackage.bjr.a(parcel, 2, this.a);
+        defpackage.bjr.a(parcel, 3, this.b);
+        defpackage.bjr.a(parcel, 4, this.c);
+        defpackage.bjr.r(parcel, q);
     }
 }

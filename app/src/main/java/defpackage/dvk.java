@@ -1,22 +1,16 @@
 package defpackage;
 
-import java.io.Closeable;
-import java.util.zip.CRC32;
-import java.util.zip.DataFormatException;
-import java.util.zip.Inflater;
-import java.util.zip.ZipException;
-
-/* renamed from: dvk  reason: default package */
+/* renamed from: dvk reason: default package */
 /* compiled from: PG */
-public final class dvk implements Closeable {
-    public final dtd a = new dtd();
-    public final CRC32 b = new CRC32();
-    public final dvl c = new dvl(this);
+public final class dvk implements java.io.Closeable {
+    public final defpackage.dtd a = new defpackage.dtd();
+    public final java.util.zip.CRC32 b = new java.util.zip.CRC32();
+    public final defpackage.dvl c = new defpackage.dvl(this);
     public final byte[] d = new byte[512];
     public int e;
     public int f;
-    public Inflater g;
-    public dvm h = dvm.HEADER;
+    public java.util.zip.Inflater g;
+    public defpackage.dvm h = defpackage.dvm.HEADER;
     public boolean i = false;
     public int j;
     public int k;
@@ -25,7 +19,6 @@ public final class dvk implements Closeable {
     public boolean n = true;
     private long o;
 
-    @Override // java.io.Closeable, java.lang.AutoCloseable
     public final void close() {
         if (!this.i) {
             this.i = true;
@@ -37,9 +30,9 @@ public final class dvk implements Closeable {
         }
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public final int a(byte[] bArr, int i2, int i3) {
-        cld.b(this.g != null, "inflater is null");
+        defpackage.cld.b(this.g != null, (java.lang.Object) "inflater is null");
         try {
             int totalIn = this.g.getTotalIn();
             int inflate = this.g.inflate(bArr, i2, i3);
@@ -50,18 +43,19 @@ public final class dvk implements Closeable {
             this.b.update(bArr, i2, inflate);
             if (this.g.finished()) {
                 this.o = this.g.getBytesWritten() & 4294967295L;
-                this.h = dvm.TRAILER;
+                this.h = defpackage.dvm.TRAILER;
             } else if (this.g.needsInput()) {
-                this.h = dvm.INFLATER_NEEDS_INPUT;
+                this.h = defpackage.dvm.INFLATER_NEEDS_INPUT;
             }
             return inflate;
-        } catch (DataFormatException e2) {
-            String valueOf = String.valueOf(e2.getMessage());
-            throw new DataFormatException(valueOf.length() != 0 ? "Inflater data format exception: ".concat(valueOf) : new String("Inflater data format exception: "));
+        } catch (java.util.zip.DataFormatException e2) {
+            java.lang.String str = "Inflater data format exception: ";
+            java.lang.String valueOf = java.lang.String.valueOf(e2.getMessage());
+            throw new java.util.zip.DataFormatException(valueOf.length() != 0 ? str.concat(valueOf) : new java.lang.String(str));
         }
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public final boolean a() {
         if (this.g != null && this.c.b() <= 18) {
             this.g.end();
@@ -71,26 +65,26 @@ public final class dvk implements Closeable {
             return false;
         }
         long value = this.b.getValue();
-        dvl dvl = this.c;
+        defpackage.dvl dvl = this.c;
         if (value == ((((long) dvl.c()) << 16) | ((long) dvl.c()))) {
             long j2 = this.o;
-            dvl dvl2 = this.c;
+            defpackage.dvl dvl2 = this.c;
             if (j2 == ((((long) dvl2.c()) << 16) | ((long) dvl2.c()))) {
                 this.b.reset();
-                this.h = dvm.HEADER;
+                this.h = defpackage.dvm.HEADER;
                 return true;
             }
         }
-        throw new ZipException("Corrupt GZIP trailer");
+        throw new java.util.zip.ZipException("Corrupt GZIP trailer");
     }
 
-    static /* synthetic */ int a(dvk dvk, int i2) {
+    static /* synthetic */ int a(defpackage.dvk dvk, int i2) {
         int i3 = dvk.e + i2;
         dvk.e = i3;
         return i3;
     }
 
-    static /* synthetic */ int b(dvk dvk, int i2) {
+    static /* synthetic */ int b(defpackage.dvk dvk, int i2) {
         int i3 = dvk.l + i2;
         dvk.l = i3;
         return i3;

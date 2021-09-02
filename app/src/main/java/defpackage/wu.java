@@ -1,88 +1,67 @@
 package defpackage;
 
-import android.app.Activity;
-import android.content.ComponentName;
-import android.content.Context;
-import android.content.IntentFilter;
-import android.content.pm.PackageManager;
-import android.content.res.Configuration;
-import android.content.res.Resources;
-import android.location.LocationManager;
-import android.os.Build;
-import android.os.Bundle;
-import android.util.AttributeSet;
-import android.util.DisplayMetrics;
-import android.view.View;
-import android.view.Window;
-
-/* access modifiers changed from: package-private */
-/* renamed from: wu  reason: default package */
+/* renamed from: wu reason: default package */
 /* compiled from: PG */
-public class wu extends wz {
+class wu extends defpackage.wz {
     private int v = -100;
     private boolean w;
     private boolean x = true;
-    private xl y;
+    private defpackage.xl y;
 
-    wu(Context context, Window window, wn wnVar) {
+    wu(android.content.Context context, android.view.Window window, defpackage.wn wnVar) {
         super(context, window, wnVar);
     }
 
-    @Override // defpackage.wz, defpackage.wo
-    public final void a(Bundle bundle) {
+    public final void a(android.os.Bundle bundle) {
         super.a(bundle);
         if (bundle != null && this.v == -100) {
             this.v = bundle.getInt("appcompat:local_night_mode", -100);
         }
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.wz
-    public final View a(String str, Context context, AttributeSet attributeSet) {
+    /* access modifiers changed from: 0000 */
+    public final android.view.View a(java.lang.String str, android.content.Context context, android.util.AttributeSet attributeSet) {
         return null;
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.wp
-    public Window.Callback a(Window.Callback callback) {
-        return new wv(this, callback);
+    /* access modifiers changed from: 0000 */
+    public android.view.Window.Callback a(android.view.Window.Callback callback) {
+        return new defpackage.wv(this, callback);
     }
 
-    @Override // defpackage.wp
     public final boolean n() {
         return this.x;
     }
 
-    @Override // defpackage.wo, defpackage.wp
     public final boolean k() {
         int i;
         boolean z;
         if (this.v != -100) {
             i = this.v;
         } else {
-            i = wo.a;
+            i = defpackage.wo.a;
         }
         int f = f(i);
         if (f != -1) {
-            Resources resources = this.b.getResources();
-            Configuration configuration = resources.getConfiguration();
+            android.content.res.Resources resources = this.b.getResources();
+            android.content.res.Configuration configuration = resources.getConfiguration();
             int i2 = configuration.uiMode & 48;
             int i3 = f == 2 ? 32 : 16;
             if (i2 != i3) {
                 if (r()) {
-                    ((Activity) this.b).recreate();
+                    ((android.app.Activity) this.b).recreate();
                 } else {
-                    Configuration configuration2 = new Configuration(configuration);
-                    DisplayMetrics displayMetrics = resources.getDisplayMetrics();
+                    android.content.res.Configuration configuration2 = new android.content.res.Configuration(configuration);
+                    android.util.DisplayMetrics displayMetrics = resources.getDisplayMetrics();
                     configuration2.uiMode = i3 | (configuration2.uiMode & -49);
                     resources.updateConfiguration(configuration2, displayMetrics);
-                    if (Build.VERSION.SDK_INT < 26) {
-                        if (Build.VERSION.SDK_INT >= 24) {
-                            agq.c(resources);
-                        } else if (Build.VERSION.SDK_INT >= 23) {
-                            agq.b(resources);
-                        } else if (Build.VERSION.SDK_INT >= 21) {
-                            agq.a(resources);
+                    if (android.os.Build.VERSION.SDK_INT < 26) {
+                        if (android.os.Build.VERSION.SDK_INT >= 24) {
+                            defpackage.agq.c(resources);
+                        } else if (android.os.Build.VERSION.SDK_INT >= 23) {
+                            defpackage.agq.b(resources);
+                        } else if (android.os.Build.VERSION.SDK_INT >= 21) {
+                            defpackage.agq.a(resources);
                         }
                     }
                 }
@@ -95,13 +74,13 @@ public class wu extends wz {
         }
         if (i == 0) {
             q();
-            xl xlVar = this.y;
+            defpackage.xl xlVar = this.y;
             xlVar.a();
             if (xlVar.c == null) {
-                xlVar.c = new ww(xlVar);
+                xlVar.c = new defpackage.ww(xlVar);
             }
             if (xlVar.d == null) {
-                xlVar.d = new IntentFilter();
+                xlVar.d = new android.content.IntentFilter();
                 xlVar.d.addAction("android.intent.action.TIME_SET");
                 xlVar.d.addAction("android.intent.action.TIMEZONE_CHANGED");
                 xlVar.d.addAction("android.intent.action.TIME_TICK");
@@ -112,13 +91,11 @@ public class wu extends wz {
         return z;
     }
 
-    @Override // defpackage.wo, defpackage.wp
     public final void e() {
         super.e();
         k();
     }
 
-    @Override // defpackage.wz, defpackage.wo, defpackage.wp
     public final void f() {
         super.f();
         if (this.y != null) {
@@ -126,14 +103,14 @@ public class wu extends wz {
         }
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public int f(int i) {
         switch (i) {
             case -100:
                 return -1;
             case 0:
                 q();
-                xl xlVar = this.y;
+                defpackage.xl xlVar = this.y;
                 xlVar.b = xlVar.a.a();
                 return xlVar.b ? 2 : 1;
             default:
@@ -141,15 +118,13 @@ public class wu extends wz {
         }
     }
 
-    @Override // defpackage.wo, defpackage.wp
-    public final void b(Bundle bundle) {
+    public final void b(android.os.Bundle bundle) {
         super.b(bundle);
         if (this.v != -100) {
             bundle.putInt("appcompat:local_night_mode", this.v);
         }
     }
 
-    @Override // defpackage.wz, defpackage.wo, defpackage.wp
     public final void i() {
         super.i();
         if (this.y != null) {
@@ -159,22 +134,25 @@ public class wu extends wz {
 
     private final void q() {
         if (this.y == null) {
-            Context context = this.b;
-            if (xn.a == null) {
-                Context applicationContext = context.getApplicationContext();
-                xn.a = new xn(applicationContext, (LocationManager) applicationContext.getSystemService("location"));
+            android.content.Context context = this.b;
+            if (defpackage.xn.a == null) {
+                android.content.Context applicationContext = context.getApplicationContext();
+                defpackage.xn.a = new defpackage.xn(applicationContext, (android.location.LocationManager) applicationContext.getSystemService("location"));
             }
-            this.y = new xl(this, xn.a);
+            this.y = new defpackage.xl(this, defpackage.xn.a);
         }
     }
 
     private final boolean r() {
-        if (!this.w || !(this.b instanceof Activity)) {
+        if (!this.w || !(this.b instanceof android.app.Activity)) {
             return false;
         }
         try {
-            return (this.b.getPackageManager().getActivityInfo(new ComponentName(this.b, this.b.getClass()), 0).configChanges & 512) == 0;
-        } catch (PackageManager.NameNotFoundException e) {
+            if ((this.b.getPackageManager().getActivityInfo(new android.content.ComponentName(this.b, this.b.getClass()), 0).configChanges & 512) == 0) {
+                return true;
+            }
+            return false;
+        } catch (android.content.pm.PackageManager.NameNotFoundException e) {
             return true;
         }
     }

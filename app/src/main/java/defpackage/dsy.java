@@ -1,11 +1,11 @@
 package defpackage;
 
-/* renamed from: dsy  reason: default package */
+/* renamed from: dsy reason: default package */
 /* compiled from: PG */
-final class dsy implements dnu {
-    private final /* synthetic */ dsq a;
+final class dsy implements defpackage.dnu {
+    private final /* synthetic */ defpackage.dsq a;
 
-    dsy(dsq dsq) {
+    dsy(defpackage.dsq dsq) {
         this.a = dsq;
     }
 }

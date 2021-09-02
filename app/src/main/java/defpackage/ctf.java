@@ -1,19 +1,16 @@
 package defpackage;
 
-import java.util.Iterator;
-
-/* access modifiers changed from: package-private */
-/* renamed from: ctf  reason: default package */
+/* renamed from: ctf reason: default package */
 /* compiled from: PG */
-public final class ctf extends csv {
-    public static final ctf a = new ctf(new Object[0], 0, null, 0, 0);
-    private final transient Object[] b;
-    private final transient Object[] c;
+final class ctf extends defpackage.csv {
+    public static final defpackage.ctf a = new defpackage.ctf(new java.lang.Object[0], 0, null, 0, 0);
+    private final transient java.lang.Object[] b;
+    private final transient java.lang.Object[] c;
     private final transient int d;
     private final transient int e;
     private final transient int f;
 
-    ctf(Object[] objArr, int i, Object[] objArr2, int i2, int i3) {
+    ctf(java.lang.Object[] objArr, int i, java.lang.Object[] objArr2, int i2, int i3) {
         this.b = objArr;
         this.c = objArr2;
         this.d = i2;
@@ -21,16 +18,15 @@ public final class ctf extends csv {
         this.f = i3;
     }
 
-    @Override // defpackage.csn
-    public final boolean contains(Object obj) {
-        Object[] objArr = this.c;
+    public final boolean contains(java.lang.Object obj) {
+        java.lang.Object[] objArr = this.c;
         if (obj == null || objArr == null) {
             return false;
         }
-        int a2 = cky.a(obj == null ? 0 : obj.hashCode());
+        int a2 = defpackage.cky.a(obj == null ? 0 : obj.hashCode());
         while (true) {
             int i = a2 & this.d;
-            Object obj2 = objArr[i];
+            java.lang.Object obj2 = objArr[i];
             if (obj2 == null) {
                 return false;
             }
@@ -45,43 +41,36 @@ public final class ctf extends csv {
         return this.f;
     }
 
-    @Override // defpackage.csn
-    public final cth a() {
-        return (cth) b().iterator();
+    public final defpackage.cth a() {
+        return (defpackage.cth) b().iterator();
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.csn
-    public final int a(Object[] objArr, int i) {
-        System.arraycopy(this.b, 0, objArr, i, this.f);
+    /* access modifiers changed from: 0000 */
+    public final int a(java.lang.Object[] objArr, int i) {
+        java.lang.System.arraycopy(this.b, 0, objArr, i, this.f);
         return this.f + i;
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.csv
-    public final csp e() {
-        return csp.b(this.b, this.f);
+    /* access modifiers changed from: 0000 */
+    public final defpackage.csp e() {
+        return defpackage.csp.b(this.b, this.f);
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.csn
+    /* access modifiers changed from: 0000 */
     public final boolean c() {
         return false;
     }
 
-    @Override // defpackage.csv
     public final int hashCode() {
         return this.e;
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.csv
+    /* access modifiers changed from: 0000 */
     public final boolean d() {
         return true;
     }
 
-    @Override // java.util.AbstractCollection, defpackage.csv, java.util.Collection, java.util.Set, java.lang.Iterable, defpackage.csn
-    public final /* synthetic */ Iterator iterator() {
+    public final /* synthetic */ java.util.Iterator iterator() {
         return iterator();
     }
 }

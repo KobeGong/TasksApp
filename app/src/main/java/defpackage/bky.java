@@ -1,9 +1,9 @@
 package defpackage;
 
-/* renamed from: bky  reason: default package */
+/* renamed from: bky reason: default package */
 /* compiled from: PG */
-public final class bky implements Cloneable {
-    public bkz[] a;
+public final class bky implements java.lang.Cloneable {
+    public defpackage.bkz[] a;
     public int b;
     private int[] c;
 
@@ -26,7 +26,7 @@ public final class bky implements Cloneable {
         }
         int i4 = i2 / 4;
         this.c = new int[i4];
-        this.a = new bkz[i4];
+        this.a = new defpackage.bkz[i4];
         this.b = 0;
     }
 
@@ -34,16 +34,16 @@ public final class bky implements Cloneable {
         return this.b == 0;
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         boolean z;
         boolean z2;
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof bky)) {
+        if (!(obj instanceof defpackage.bky)) {
             return false;
         }
-        bky bky = (bky) obj;
+        defpackage.bky bky = (defpackage.bky) obj;
         if (this.b != bky.b) {
             return false;
         }
@@ -63,8 +63,8 @@ public final class bky implements Cloneable {
             }
         }
         if (z) {
-            bkz[] bkzArr = this.a;
-            bkz[] bkzArr2 = bky.a;
+            defpackage.bkz[] bkzArr = this.a;
+            defpackage.bkz[] bkzArr2 = bky.a;
             int i3 = this.b;
             int i4 = 0;
             while (true) {
@@ -93,14 +93,13 @@ public final class bky implements Cloneable {
         return i;
     }
 
-    @Override // java.lang.Object
-    public final /* synthetic */ Object clone() {
+    public final /* synthetic */ java.lang.Object clone() {
         int i = this.b;
-        bky bky = new bky(i);
-        System.arraycopy(this.c, 0, bky.c, 0, i);
+        defpackage.bky bky = new defpackage.bky(i);
+        java.lang.System.arraycopy(this.c, 0, bky.c, 0, i);
         for (int i2 = 0; i2 < i; i2++) {
             if (this.a[i2] != null) {
-                bky.a[i2] = (bkz) this.a[i2].clone();
+                bky.a[i2] = (defpackage.bkz) this.a[i2].clone();
             }
         }
         bky.b = i;
@@ -108,6 +107,6 @@ public final class bky implements Cloneable {
     }
 
     static {
-        new bkz();
+        new defpackage.bkz();
     }
 }

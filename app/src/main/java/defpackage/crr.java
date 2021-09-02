@@ -1,35 +1,32 @@
 package defpackage;
 
-import java.io.IOException;
-import java.util.Iterator;
-
-/* renamed from: crr  reason: default package */
+/* renamed from: crr reason: default package */
 /* compiled from: PG */
 public final class crr {
-    private final String a;
+    private final java.lang.String a;
 
-    public crr(String str) {
-        this.a = (String) cld.a(str);
+    public crr(java.lang.String str) {
+        this.a = (java.lang.String) defpackage.cld.a((java.lang.Object) str);
     }
 
-    public final StringBuilder a(StringBuilder sb, Iterator it) {
+    public final java.lang.StringBuilder a(java.lang.StringBuilder sb, java.util.Iterator it) {
         try {
-            cld.a(sb);
+            defpackage.cld.a((java.lang.Object) sb);
             if (it.hasNext()) {
                 sb.append(a(it.next()));
                 while (it.hasNext()) {
-                    sb.append((CharSequence) this.a);
+                    sb.append(this.a);
                     sb.append(a(it.next()));
                 }
             }
             return sb;
-        } catch (IOException e) {
-            throw new AssertionError(e);
+        } catch (java.io.IOException e) {
+            throw new java.lang.AssertionError(e);
         }
     }
 
-    private static CharSequence a(Object obj) {
-        cld.a(obj);
-        return obj instanceof CharSequence ? (CharSequence) obj : obj.toString();
+    private static java.lang.CharSequence a(java.lang.Object obj) {
+        defpackage.cld.a(obj);
+        return obj instanceof java.lang.CharSequence ? (java.lang.CharSequence) obj : obj.toString();
     }
 }

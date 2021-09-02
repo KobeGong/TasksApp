@@ -1,27 +1,22 @@
 package defpackage;
 
-import android.os.Bundle;
-import java.util.concurrent.atomic.AtomicReference;
-
-/* renamed from: azz  reason: default package */
+/* renamed from: azz reason: default package */
 /* compiled from: PG */
-final class azz implements ayr {
-    private /* synthetic */ AtomicReference a;
-    private /* synthetic */ bbn b;
-    private /* synthetic */ azx c;
+final class azz implements defpackage.ayr {
+    private /* synthetic */ java.util.concurrent.atomic.AtomicReference a;
+    private /* synthetic */ defpackage.bbn b;
+    private /* synthetic */ defpackage.azx c;
 
-    azz(azx azx, AtomicReference atomicReference, bbn bbn) {
+    azz(defpackage.azx azx, java.util.concurrent.atomic.AtomicReference atomicReference, defpackage.bbn bbn) {
         this.c = azx;
         this.a = atomicReference;
         this.b = bbn;
     }
 
-    @Override // defpackage.ayr
-    public final void a(Bundle bundle) {
-        this.c.a((azx) ((ayp) this.a.get()), (ayp) this.b, (bbn) true);
+    public final void a(android.os.Bundle bundle) {
+        this.c.a((defpackage.ayp) this.a.get(), this.b, true);
     }
 
-    @Override // defpackage.ayr
     public final void a(int i) {
     }
 }

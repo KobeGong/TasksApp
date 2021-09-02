@@ -1,17 +1,15 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: hq  reason: default package */
+/* renamed from: hq reason: default package */
 /* compiled from: PG */
-public final class hq extends ht {
+final class hq extends defpackage.ht {
     public hq() {
     }
 
-    public hq(hq hqVar) {
+    public hq(defpackage.hq hqVar) {
         super(hqVar);
     }
 
-    @Override // defpackage.ht
     public final boolean a() {
         return true;
     }

@@ -1,23 +1,22 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: cjl  reason: default package */
+/* renamed from: cjl reason: default package */
 /* compiled from: PG */
-public final class cjl implements Runnable {
-    private final /* synthetic */ cht a;
+final class cjl implements java.lang.Runnable {
+    private final /* synthetic */ defpackage.cht a;
 
-    cjl(cht cht) {
+    cjl(defpackage.cht cht) {
         this.a = cht;
     }
 
     public final void run() {
-        ckm ckl;
-        cht cht = this.a;
+        defpackage.ckm ckl;
+        defpackage.cht cht = this.a;
         if (cht.d.i) {
-            ckl = (ckq) cht.a();
+            ckl = (defpackage.ckq) cht.a();
         } else {
-            ckl = new ckl();
+            ckl = new defpackage.ckl();
         }
-        ckl.a(new ckk());
+        ckl.a(new defpackage.ckk());
     }
 }

@@ -1,24 +1,20 @@
 package defpackage;
 
-import android.view.View;
-import android.view.ViewTreeObserver;
-
-/* access modifiers changed from: package-private */
-/* renamed from: nt  reason: default package */
+/* renamed from: nt reason: default package */
 /* compiled from: PG */
-public final class nt implements View.OnAttachStateChangeListener, ViewTreeObserver.OnPreDrawListener {
-    private final View a;
-    private ViewTreeObserver b;
-    private final Runnable c;
+final class nt implements android.view.View.OnAttachStateChangeListener, android.view.ViewTreeObserver.OnPreDrawListener {
+    private final android.view.View a;
+    private android.view.ViewTreeObserver b;
+    private final java.lang.Runnable c;
 
-    private nt(View view, Runnable runnable) {
+    private nt(android.view.View view, java.lang.Runnable runnable) {
         this.a = view;
         this.b = view.getViewTreeObserver();
         this.c = runnable;
     }
 
-    public static nt a(View view, Runnable runnable) {
-        nt ntVar = new nt(view, runnable);
+    public static defpackage.nt a(android.view.View view, java.lang.Runnable runnable) {
+        defpackage.nt ntVar = new defpackage.nt(view, runnable);
         view.getViewTreeObserver().addOnPreDrawListener(ntVar);
         view.addOnAttachStateChangeListener(ntVar);
         return ntVar;
@@ -39,11 +35,11 @@ public final class nt implements View.OnAttachStateChangeListener, ViewTreeObser
         this.a.removeOnAttachStateChangeListener(this);
     }
 
-    public final void onViewAttachedToWindow(View view) {
+    public final void onViewAttachedToWindow(android.view.View view) {
         this.b = view.getViewTreeObserver();
     }
 
-    public final void onViewDetachedFromWindow(View view) {
+    public final void onViewDetachedFromWindow(android.view.View view) {
         a();
     }
 }

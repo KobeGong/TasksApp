@@ -1,10 +1,10 @@
 package defpackage;
 
-/* renamed from: czm  reason: default package */
+/* renamed from: czm reason: default package */
 /* compiled from: PG */
-public final class czm extends dih implements djq {
-    public static final czm c = new czm();
-    private static volatile djx d;
+public final class czm extends defpackage.dih implements defpackage.djq {
+    public static final defpackage.czm c = new defpackage.czm();
+    private static volatile defpackage.djx d;
     public int a;
     public int b;
 
@@ -12,41 +12,42 @@ public final class czm extends dih implements djq {
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.dih
-    public final Object a(int i) {
-        djx djx;
+    public final java.lang.Object a(int i) {
+        defpackage.djx djx;
         switch (i - 1) {
             case 0:
-                return (byte) 1;
+                return java.lang.Byte.valueOf(1);
             case 1:
                 return null;
             case 2:
-                return new dkb(c, "\u0000\u0002\u0000\u0000\u0001\u0002\u0002\u0000\u0000\u0000\u0001\f\u0002\u0004", new Object[]{"a", "b"});
+                java.lang.Object[] objArr = {"a", "b"};
+                return new defpackage.dkb(c, "\u0000\u0002\u0000\u0000\u0001\u0002\u0002\u0000\u0000\u0000\u0001\f\u0002\u0004", objArr);
             case 3:
-                return new czm();
+                return new defpackage.czm();
             case 4:
-                return new dii(0.0f);
+                return new defpackage.dii(0.0f);
             case 5:
                 return c;
             case 6:
-                djx djx2 = d;
+                defpackage.djx djx2 = d;
                 if (djx2 != null) {
                     return djx2;
                 }
-                synchronized (czm.class) {
+                synchronized (defpackage.czm.class) {
                     djx = d;
                     if (djx == null) {
-                        djx = new dgr(c);
+                        djx = new defpackage.dgr(c);
                         d = djx;
                     }
                 }
                 return djx;
             default:
-                throw new UnsupportedOperationException();
+                throw new java.lang.UnsupportedOperationException();
         }
     }
 
     static {
-        dih.t.put(czm.class, c);
+        defpackage.czm czm = c;
+        defpackage.dih.t.put(defpackage.czm.class, czm);
     }
 }

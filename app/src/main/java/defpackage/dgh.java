@@ -1,21 +1,20 @@
 package defpackage;
 
-/* renamed from: dgh  reason: default package */
+/* renamed from: dgh reason: default package */
 /* compiled from: PG */
-public enum dgh implements din {
+public enum dgh implements defpackage.din {
     UNKNOWN_INSTRUCTION(0),
     SYNC(1),
     FULL_SYNC(2);
     
-    public static final dio d = new dgi();
+    public static final defpackage.dio d = null;
     private final int e;
 
-    @Override // defpackage.din
     public final int a() {
         return this.e;
     }
 
-    public static dgh a(int i) {
+    public static defpackage.dgh a(int i) {
         switch (i) {
             case 0:
                 return UNKNOWN_INSTRUCTION;
@@ -30,5 +29,9 @@ public enum dgh implements din {
 
     private dgh(int i) {
         this.e = i;
+    }
+
+    static {
+        d = new defpackage.dgi();
     }
 }

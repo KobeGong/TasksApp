@@ -1,13 +1,10 @@
 package defpackage;
 
-import java.util.Queue;
-
-/* access modifiers changed from: package-private */
-/* renamed from: bpz  reason: default package */
+/* renamed from: bpz reason: default package */
 /* compiled from: PG */
-public final class bpz {
-    public final Object a = new Object();
-    public Queue b;
+final class bpz {
+    public final java.lang.Object a = new java.lang.Object();
+    public java.util.Queue b;
     private boolean c;
 
     bpz() {
@@ -31,28 +28,31 @@ public final class bpz {
     /* JADX WARNING: Code restructure failed: missing block: B:16:0x0021, code lost:
         monitor-exit(r1);
      */
-    /* JADX WARNING: Code restructure failed: missing block: B:24:0x0029, code lost:
+    /* JADX WARNING: Code restructure failed: missing block: B:26:?, code lost:
         monitor-exit(r1);
      */
-    /* JADX WARNING: Code restructure failed: missing block: B:25:0x002a, code lost:
+    /* JADX WARNING: Code restructure failed: missing block: B:27:0x002a, code lost:
         r1 = r0.b;
      */
-    /* JADX WARNING: Code restructure failed: missing block: B:26:0x002c, code lost:
+    /* JADX WARNING: Code restructure failed: missing block: B:28:0x002c, code lost:
         monitor-enter(r1);
      */
-    /* JADX WARNING: Code restructure failed: missing block: B:29:0x002f, code lost:
+    /* JADX WARNING: Code restructure failed: missing block: B:31:0x002f, code lost:
         if (r0.c != null) goto L_0x0036;
      */
-    /* JADX WARNING: Code restructure failed: missing block: B:30:0x0031, code lost:
+    /* JADX WARNING: Code restructure failed: missing block: B:32:0x0031, code lost:
         monitor-exit(r1);
      */
-    /* JADX WARNING: Code restructure failed: missing block: B:35:0x0036, code lost:
+    /* JADX WARNING: Code restructure failed: missing block: B:38:?, code lost:
         monitor-exit(r1);
      */
-    /* JADX WARNING: Code restructure failed: missing block: B:36:0x0037, code lost:
+    /* JADX WARNING: Code restructure failed: missing block: B:39:0x0037, code lost:
         r0.a.execute(new defpackage.bpx(r0, r4));
      */
-    /* JADX WARNING: Code restructure failed: missing block: B:42:?, code lost:
+    /* JADX WARNING: Code restructure failed: missing block: B:47:?, code lost:
+        return;
+     */
+    /* JADX WARNING: Code restructure failed: missing block: B:48:?, code lost:
         return;
      */
     /* Code decompiled incorrectly, please refer to instructions dump. */
@@ -90,10 +90,10 @@ public final class bpz {
             throw r0
         L_0x0026:
             r0 = move-exception
-            monitor-exit(r1)
+            monitor-exit(r1)     // Catch:{ all -> 0x0026 }
             throw r0
         L_0x0029:
-            monitor-exit(r1)
+            monitor-exit(r1)     // Catch:{ all -> 0x0023 }
             java.lang.Object r1 = r0.b
             monitor-enter(r1)
             bpu r2 = r0.c     // Catch:{ all -> 0x0033 }
@@ -105,7 +105,7 @@ public final class bpz {
             monitor-exit(r1)     // Catch:{ all -> 0x0033 }
             throw r0
         L_0x0036:
-            monitor-exit(r1)
+            monitor-exit(r1)     // Catch:{ all -> 0x0033 }
             java.util.concurrent.Executor r1 = r0.a
             bpx r2 = new bpx
             r2.<init>(r0, r4)

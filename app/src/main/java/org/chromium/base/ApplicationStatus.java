@@ -1,32 +1,24 @@
 package org.chromium.base;
 
-import android.annotation.SuppressLint;
-import android.app.Activity;
-import android.os.Looper;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-import org.chromium.base.annotations.CalledByNative;
-
 /* compiled from: PG */
 public class ApplicationStatus {
-    public static egk a;
-    public static final egu b = new egu();
-    private static final Object c = new Object();
-    @SuppressLint({"SupportAnnotationUsage"})
-    private static Integer d;
-    private static final Map e = new ConcurrentHashMap();
+    public static defpackage.egk a;
+    public static final defpackage.egu b = new defpackage.egu();
+    private static final java.lang.Object c = new java.lang.Object();
+    @android.annotation.SuppressLint({"SupportAnnotationUsage"})
+    private static java.lang.Integer d;
+    private static final java.util.Map e = new java.util.concurrent.ConcurrentHashMap();
 
     private ApplicationStatus() {
     }
 
     private static native void nativeOnApplicationStateChange(int i);
 
-    public static Activity a() {
+    public static android.app.Activity a() {
         return null;
     }
 
-    @CalledByNative
+    @org.chromium.base.annotations.CalledByNative
     public static int getStateForApplication() {
         int intValue;
         boolean z;
@@ -34,11 +26,11 @@ public class ApplicationStatus {
         int i = 1;
         synchronized (c) {
             if (d == null) {
-                Iterator it = e.values().iterator();
+                java.util.Iterator it = e.values().iterator();
                 boolean z3 = false;
                 while (true) {
                     if (it.hasNext()) {
-                        int i2 = ((egj) it.next()).a;
+                        int i2 = ((defpackage.egj) it.next()).a;
                         if (i2 != 4 && i2 != 5 && i2 != 6) {
                             break;
                         } else if (i2 == 4) {
@@ -51,39 +43,37 @@ public class ApplicationStatus {
                             }
                             z2 = z;
                         }
-                    } else if (z3) {
-                        i = 2;
                     } else {
-                        i = z2 ? 3 : 4;
+                        i = z3 ? 2 : z2 ? 3 : 4;
                     }
                 }
-                d = Integer.valueOf(i);
+                d = java.lang.Integer.valueOf(i);
             }
             intValue = d.intValue();
         }
         return intValue;
     }
 
-    public static void a(egk egk) {
-        egu egu = b;
+    public static void a(defpackage.egk egk) {
+        defpackage.egu egu = b;
         if (egk != null && !egu.a.contains(egk)) {
             egu.a.add(egk);
             egu.c++;
         }
     }
 
-    @CalledByNative
+    @org.chromium.base.annotations.CalledByNative
     private static void registerThreadSafeNativeApplicationStateListener() {
-        egi egi = new egi();
-        if (ThreadUtils.a().getLooper() == Looper.myLooper()) {
+        defpackage.egi egi = new defpackage.egi();
+        if (org.chromium.base.ThreadUtils.a().getLooper() == android.os.Looper.myLooper()) {
             egi.run();
         } else {
-            ThreadUtils.a().post(egi);
+            org.chromium.base.ThreadUtils.a().post(egi);
         }
     }
 
     static {
-        new egu();
-        new egu();
+        new defpackage.egu();
+        new defpackage.egu();
     }
 }

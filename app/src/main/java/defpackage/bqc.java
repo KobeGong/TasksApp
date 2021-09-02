@@ -1,16 +1,13 @@
 package defpackage;
 
-import android.database.ContentObserver;
-
-/* access modifiers changed from: package-private */
-/* renamed from: bqc  reason: default package */
+/* renamed from: bqc reason: default package */
 /* compiled from: PG */
-public final class bqc extends ContentObserver {
+final class bqc extends android.database.ContentObserver {
     bqc() {
         super(null);
     }
 
     public final void onChange(boolean z) {
-        bqb.a.set(true);
+        defpackage.bqb.a.set(true);
     }
 }

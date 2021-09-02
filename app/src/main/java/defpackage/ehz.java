@@ -1,14 +1,13 @@
 package defpackage;
 
-/* renamed from: ehz  reason: default package */
+/* renamed from: ehz reason: default package */
 /* compiled from: PG */
-public final class ehz extends ehu {
-    public ehz(eie eie) {
+public final class ehz extends defpackage.ehu {
+    public ehz(defpackage.eie eie) {
         super(eie);
     }
 
-    @Override // defpackage.ehu
-    public final /* synthetic */ eht a() {
+    public final /* synthetic */ defpackage.eht a() {
         return this.a.a();
     }
 }

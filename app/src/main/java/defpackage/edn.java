@@ -1,61 +1,60 @@
 package defpackage;
 
-/* renamed from: edn  reason: default package */
+/* renamed from: edn reason: default package */
 /* compiled from: PG */
-public final class edn extends dlz {
-    private Boolean a = null;
-    private edo b = null;
+public final class edn extends defpackage.dlz {
+    private java.lang.Boolean a;
+    private defpackage.edo b;
 
     public edn() {
+        this.a = null;
+        this.b = null;
         this.k = -1;
     }
 
-    @Override // defpackage.dlz, defpackage.dmf
-    public final void a(dlx dlx) {
+    public final void a(defpackage.dlx dlx) {
         if (this.a != null) {
             dlx.a(1, this.a.booleanValue());
         }
         if (this.b != null) {
-            dlx.a(2, this.b);
+            dlx.a(2, (defpackage.dmf) this.b);
         }
         super.a(dlx);
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.dlz, defpackage.dmf
     public final int a() {
         int a2 = super.a();
         if (this.a != null) {
             this.a.booleanValue();
-            a2 += dlx.c(8) + 1;
+            a2 += defpackage.dlx.c(8) + 1;
         }
         if (this.b != null) {
-            return a2 + dlx.b(2, this.b);
+            return a2 + defpackage.dlx.b(2, (defpackage.dmf) this.b);
         }
         return a2;
     }
 
-    @Override // defpackage.dmf
-    public final /* synthetic */ dmf a(dlw dlw) {
+    public final /* synthetic */ defpackage.dmf a(defpackage.dlw dlw) {
         while (true) {
             int a2 = dlw.a();
             switch (a2) {
                 case 0:
                     break;
                 case 8:
-                    this.a = Boolean.valueOf(dlw.c());
-                    break;
+                    this.a = java.lang.Boolean.valueOf(dlw.c());
+                    continue;
                 case 18:
                     if (this.b == null) {
-                        this.b = new edo();
+                        this.b = new defpackage.edo();
                     }
-                    dlw.a(this.b);
-                    break;
+                    dlw.a((defpackage.dmf) this.b);
+                    continue;
                 default:
-                    if (super.a(dlw, a2)) {
+                    if (!super.a(dlw, a2)) {
                         break;
                     } else {
-                        break;
+                        continue;
                     }
             }
         }

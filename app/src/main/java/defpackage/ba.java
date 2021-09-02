@@ -1,13 +1,10 @@
 package defpackage;
 
-import android.support.design.behavior.SwipeDismissBehavior;
-import java.lang.reflect.Method;
-
-@Deprecated
-/* renamed from: ba  reason: default package */
+@java.lang.Deprecated
+/* renamed from: ba reason: default package */
 /* compiled from: PG */
 public class ba {
-    public static Method a;
+    public static java.lang.reflect.Method a;
     public static boolean b;
 
     public ba() {
@@ -20,7 +17,7 @@ public class ba {
         return i << 1;
     }
 
-    public ba(SwipeDismissBehavior swipeDismissBehavior) {
+    public ba(android.support.design.behavior.SwipeDismissBehavior swipeDismissBehavior) {
         swipeDismissBehavior.a();
         swipeDismissBehavior.b();
         swipeDismissBehavior.c = 0;

@@ -1,20 +1,16 @@
 package defpackage;
 
-import java.util.Arrays;
-
-/* access modifiers changed from: package-private */
-/* renamed from: bfe  reason: default package */
+/* renamed from: bfe reason: default package */
 /* compiled from: PG */
-public final class bfe extends bfd {
+final class bfe extends defpackage.bfd {
     private final byte[] a;
 
     bfe(byte[] bArr) {
-        super(Arrays.copyOfRange(bArr, 0, 25));
+        super(java.util.Arrays.copyOfRange(bArr, 0, 25));
         this.a = bArr;
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.bfd
+    /* access modifiers changed from: 0000 */
     public final byte[] c() {
         return this.a;
     }

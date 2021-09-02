@@ -1,29 +1,30 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: pw  reason: default package */
+/* renamed from: pw reason: default package */
 /* compiled from: PG */
-public final class pw implements qg {
-    private final /* synthetic */ String a;
+final class pw implements defpackage.qg {
+    private final /* synthetic */ java.lang.String a;
 
-    pw(String str) {
+    pw(java.lang.String str) {
         this.a = str;
     }
 
     /* JADX WARNING: Code restructure failed: missing block: B:10:0x0021, code lost:
-        if (r1 >= r0.size()) goto L_0x0012;
+        if (r2 >= r0.size()) goto L_0x0012;
      */
     /* JADX WARNING: Code restructure failed: missing block: B:11:0x0023, code lost:
-        ((defpackage.qg) r0.get(r1)).a(r5);
-        r1 = r1 + 1;
+        ((defpackage.qg) r0.get(r2)).a(r5);
+        r1 = r2 + 1;
      */
-    /* JADX WARNING: Code restructure failed: missing block: B:17:?, code lost:
+    /* JADX WARNING: Code restructure failed: missing block: B:21:?, code lost:
         return;
      */
     /* JADX WARNING: Code restructure failed: missing block: B:8:0x001b, code lost:
         r1 = 0;
      */
-    @Override // defpackage.qg
+    /* JADX WARNING: Code restructure failed: missing block: B:9:0x001d, code lost:
+        r2 = r1;
+     */
     /* Code decompiled incorrectly, please refer to instructions dump. */
     public final /* synthetic */ void a(java.lang.Object r5) {
         /*
@@ -57,7 +58,7 @@ public final class pw implements qg {
             goto L_0x001d
         L_0x0030:
             r0 = move-exception
-            monitor-exit(r1)
+            monitor-exit(r1)     // Catch:{ all -> 0x0030 }
             throw r0
         */
         throw new UnsupportedOperationException("Method not decompiled: defpackage.pw.a(java.lang.Object):void");

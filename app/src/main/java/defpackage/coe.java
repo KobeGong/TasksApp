@@ -1,9 +1,9 @@
 package defpackage;
 
-/* renamed from: coe  reason: default package */
+/* renamed from: coe reason: default package */
 /* compiled from: PG */
 public interface coe {
-    public static final coe a = new cof();
+    public static final defpackage.coe a = new defpackage.cof();
 
-    void a(efx efx);
+    void a(defpackage.efx efx);
 }

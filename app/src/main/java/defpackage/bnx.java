@@ -1,23 +1,17 @@
 package defpackage;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
-/* renamed from: bnx  reason: default package */
+/* renamed from: bnx reason: default package */
 /* compiled from: PG */
-public final class bnx extends biq implements bnt {
-    public static final Parcelable.Creator CREATOR = new bnw();
-    private final String a;
-    private final List b;
-    private final String c;
-    private final Long d;
-    private final Long e;
-    private List f;
+public final class bnx extends defpackage.biq implements defpackage.bnt {
+    public static final android.os.Parcelable.Creator CREATOR = new defpackage.bnw();
+    private final java.lang.String a;
+    private final java.util.List b;
+    private final java.lang.String c;
+    private final java.lang.Long d;
+    private final java.lang.Long e;
+    private java.util.List f;
 
-    public bnx(String str, List list, String str2, Long l, Long l2) {
+    public bnx(java.lang.String str, java.util.List list, java.lang.String str2, java.lang.Long l, java.lang.Long l2) {
         this.a = str;
         this.b = list;
         this.c = str2;
@@ -25,64 +19,61 @@ public final class bnx extends biq implements bnt {
         this.e = l2;
     }
 
-    public final void writeToParcel(Parcel parcel, int i) {
-        int q = bjr.q(parcel, 20293);
-        bjr.a(parcel, 2, this.a);
-        bjr.b(parcel, 3, c());
-        bjr.a(parcel, 4, this.c);
-        bjr.a(parcel, 5, this.d);
-        bjr.a(parcel, 6, this.e);
-        bjr.r(parcel, q);
+    public final void writeToParcel(android.os.Parcel parcel, int i) {
+        int q = defpackage.bjr.q(parcel, 20293);
+        defpackage.bjr.a(parcel, 2, this.a);
+        defpackage.bjr.b(parcel, 3, c());
+        defpackage.bjr.a(parcel, 4, this.c);
+        defpackage.bjr.a(parcel, 5, this.d);
+        defpackage.bjr.a(parcel, 6, this.e);
+        defpackage.bjr.r(parcel, q);
     }
 
-    @Override // defpackage.bcs
     public final boolean a() {
         return true;
     }
 
-    @Override // defpackage.bnt
-    public final String b() {
+    public final java.lang.String b() {
         return this.a;
     }
 
-    @Override // defpackage.bnt
-    public final List c() {
+    public final java.util.List c() {
         if (this.f == null && this.b != null) {
-            this.f = new ArrayList(this.b.size());
-            for (bnv bnv : this.b) {
-                this.f.add(bnv);
+            this.f = new java.util.ArrayList(this.b.size());
+            for (defpackage.bnv add : this.b) {
+                this.f.add(add);
             }
         }
         return this.f;
     }
 
-    @Override // defpackage.bnt
-    public final String d() {
+    public final java.lang.String d() {
         return this.c;
     }
 
-    @Override // defpackage.bnt
-    public final Long e() {
+    public final java.lang.Long e() {
         return this.d;
     }
 
-    @Override // defpackage.bnt
-    public final Long f() {
+    public final java.lang.Long f() {
         return this.e;
     }
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof bnt)) {
+    public final boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof defpackage.bnt)) {
             return false;
         }
         if (this == obj) {
             return true;
         }
-        bnt bnt = (bnt) obj;
-        return azb.a(b(), bnt.b()) && azb.a(c(), bnt.c()) && azb.a(d(), bnt.d()) && azb.a(e(), bnt.e()) && azb.a(f(), bnt.f());
+        defpackage.bnt bnt = (defpackage.bnt) obj;
+        if (!defpackage.azb.a((java.lang.Object) b(), (java.lang.Object) bnt.b()) || !defpackage.azb.a((java.lang.Object) c(), (java.lang.Object) bnt.c()) || !defpackage.azb.a((java.lang.Object) d(), (java.lang.Object) bnt.d()) || !defpackage.azb.a((java.lang.Object) e(), (java.lang.Object) bnt.e()) || !defpackage.azb.a((java.lang.Object) f(), (java.lang.Object) bnt.f())) {
+            return false;
+        }
+        return true;
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(new Object[]{b(), c(), d(), e(), f()});
+        return java.util.Arrays.hashCode(new java.lang.Object[]{b(), c(), d(), e(), f()});
     }
 }

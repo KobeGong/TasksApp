@@ -1,20 +1,16 @@
 package defpackage;
 
-import android.graphics.Rect;
-import android.view.View;
-
-/* access modifiers changed from: package-private */
-/* renamed from: mn  reason: default package */
+/* renamed from: mn reason: default package */
 /* compiled from: PG */
-public final class mn implements Runnable {
-    private final /* synthetic */ lc a;
-    private final /* synthetic */ lc b;
+final class mn implements java.lang.Runnable {
+    private final /* synthetic */ Fragment a;
+    private final /* synthetic */ Fragment b;
     private final /* synthetic */ boolean c;
-    private final /* synthetic */ qr d;
-    private final /* synthetic */ View e;
-    private final /* synthetic */ Rect f;
+    private final /* synthetic */ defpackage.qr d;
+    private final /* synthetic */ android.view.View e;
+    private final /* synthetic */ android.graphics.Rect f;
 
-    mn(lc lcVar, lc lcVar2, boolean z, qr qrVar, View view, Rect rect) {
+    mn(Fragment lcVar, Fragment lcVar2, boolean z, defpackage.qr qrVar, android.view.View view, android.graphics.Rect rect) {
         this.a = lcVar;
         this.b = lcVar2;
         this.c = z;
@@ -24,13 +20,9 @@ public final class mn implements Runnable {
     }
 
     public final void run() {
-        lc lcVar = this.a;
-        lc lcVar2 = this.b;
-        boolean z = this.c;
-        qr qrVar = this.d;
-        mk.a(lcVar, lcVar2, z);
+        defpackage.mk.a(this.a, this.b, this.c);
         if (this.e != null) {
-            mv.a(this.e, this.f);
+            defpackage.mv.a(this.e, this.f);
         }
     }
 }

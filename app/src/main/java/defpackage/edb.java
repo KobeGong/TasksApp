@@ -1,20 +1,24 @@
 package defpackage;
 
-/* renamed from: edb  reason: default package */
+/* renamed from: edb reason: default package */
 /* compiled from: PG */
-public final class edb extends dlz {
-    private Integer a = null;
-    private Integer b = null;
-    private Integer c = null;
-    private edc[] d = edc.d();
-    private int[] e = dmh.a;
+public final class edb extends defpackage.dlz {
+    private java.lang.Integer a;
+    private java.lang.Integer b;
+    private java.lang.Integer c;
+    private defpackage.edc[] d;
+    private int[] e;
 
     public edb() {
+        this.a = null;
+        this.b = null;
+        this.c = null;
+        this.d = defpackage.edc.d();
+        this.e = defpackage.dmh.a;
         this.k = -1;
     }
 
-    @Override // defpackage.dlz, defpackage.dmf
-    public final void a(dlx dlx) {
+    public final void a(defpackage.dlx dlx) {
         if (this.a != null) {
             dlx.a(1, this.a.intValue());
         }
@@ -25,40 +29,37 @@ public final class edb extends dlz {
             dlx.a(3, this.c.intValue());
         }
         if (this.d != null && this.d.length > 0) {
-            for (int i = 0; i < this.d.length; i++) {
-                edc edc = this.d[i];
+            for (defpackage.edc edc : this.d) {
                 if (edc != null) {
-                    dlx.a(4, edc);
+                    dlx.a(4, (defpackage.dmf) edc);
                 }
             }
         }
         if (this.e != null && this.e.length > 0) {
-            for (int i2 = 0; i2 < this.e.length; i2++) {
-                dlx.a(5, this.e[i2]);
+            for (int a2 : this.e) {
+                dlx.a(5, a2);
             }
         }
         super.a(dlx);
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.dlz, defpackage.dmf
     public final int a() {
         int a2 = super.a();
         if (this.a != null) {
-            a2 += dlx.c(1, this.a.intValue());
+            a2 += defpackage.dlx.c(1, this.a.intValue());
         }
         if (this.b != null) {
-            a2 += dlx.c(2, this.b.intValue());
+            a2 += defpackage.dlx.c(2, this.b.intValue());
         }
         if (this.c != null) {
-            a2 += dlx.c(3, this.c.intValue());
+            a2 += defpackage.dlx.c(3, this.c.intValue());
         }
         if (this.d != null && this.d.length > 0) {
             int i = a2;
-            for (int i2 = 0; i2 < this.d.length; i2++) {
-                edc edc = this.d[i2];
+            for (defpackage.edc edc : this.d) {
                 if (edc != null) {
-                    i += dlx.b(4, edc);
+                    i += defpackage.dlx.b(4, (defpackage.dmf) edc);
                 }
             }
             a2 = i;
@@ -66,15 +67,14 @@ public final class edb extends dlz {
         if (this.e == null || this.e.length <= 0) {
             return a2;
         }
-        int i3 = 0;
-        for (int i4 = 0; i4 < this.e.length; i4++) {
-            i3 += dlx.a(this.e[i4]);
+        int i2 = 0;
+        for (int a3 : this.e) {
+            i2 += defpackage.dlx.a(a3);
         }
-        return a2 + i3 + (this.e.length * 1);
+        return a2 + i2 + (this.e.length * 1);
     }
 
-    @Override // defpackage.dmf
-    public final /* synthetic */ dmf a(dlw dlw) {
+    public final /* synthetic */ defpackage.dmf a(defpackage.dlw dlw) {
         int length;
         while (true) {
             int a2 = dlw.a();
@@ -82,33 +82,33 @@ public final class edb extends dlz {
                 case 0:
                     break;
                 case 8:
-                    this.a = Integer.valueOf(dlw.e());
-                    break;
+                    this.a = java.lang.Integer.valueOf(dlw.e());
+                    continue;
                 case 16:
-                    this.b = Integer.valueOf(dlw.e());
-                    break;
+                    this.b = java.lang.Integer.valueOf(dlw.e());
+                    continue;
                 case 24:
-                    this.c = Integer.valueOf(dlw.e());
-                    break;
+                    this.c = java.lang.Integer.valueOf(dlw.e());
+                    continue;
                 case 34:
-                    int a3 = dmh.a(dlw, 34);
+                    int a3 = defpackage.dmh.a(dlw, 34);
                     int length2 = this.d == null ? 0 : this.d.length;
-                    edc[] edcArr = new edc[(a3 + length2)];
+                    defpackage.edc[] edcArr = new defpackage.edc[(a3 + length2)];
                     if (length2 != 0) {
-                        System.arraycopy(this.d, 0, edcArr, 0, length2);
+                        java.lang.System.arraycopy(this.d, 0, edcArr, 0, length2);
                     }
                     while (length2 < edcArr.length - 1) {
-                        edcArr[length2] = new edc();
-                        dlw.a(edcArr[length2]);
+                        edcArr[length2] = new defpackage.edc();
+                        dlw.a((defpackage.dmf) edcArr[length2]);
                         dlw.a();
                         length2++;
                     }
-                    edcArr[length2] = new edc();
-                    dlw.a(edcArr[length2]);
+                    edcArr[length2] = new defpackage.edc();
+                    dlw.a((defpackage.dmf) edcArr[length2]);
                     this.d = edcArr;
-                    break;
+                    continue;
                 case 40:
-                    int a4 = dmh.a(dlw, 40);
+                    int a4 = defpackage.dmh.a(dlw, 40);
                     if (this.e == null) {
                         length = 0;
                     } else {
@@ -116,7 +116,7 @@ public final class edb extends dlz {
                     }
                     int[] iArr = new int[(a4 + length)];
                     if (length != 0) {
-                        System.arraycopy(this.e, 0, iArr, 0, length);
+                        java.lang.System.arraycopy(this.e, 0, iArr, 0, length);
                     }
                     while (length < iArr.length - 1) {
                         iArr[length] = dlw.e();
@@ -125,7 +125,7 @@ public final class edb extends dlz {
                     }
                     iArr[length] = dlw.e();
                     this.e = iArr;
-                    break;
+                    continue;
                 case 42:
                     int c2 = dlw.c(dlw.e());
                     int i = dlw.i();
@@ -138,7 +138,7 @@ public final class edb extends dlz {
                     int length3 = this.e == null ? 0 : this.e.length;
                     int[] iArr2 = new int[(i2 + length3)];
                     if (length3 != 0) {
-                        System.arraycopy(this.e, 0, iArr2, 0, length3);
+                        java.lang.System.arraycopy(this.e, 0, iArr2, 0, length3);
                     }
                     while (length3 < iArr2.length) {
                         iArr2[length3] = dlw.e();
@@ -146,12 +146,12 @@ public final class edb extends dlz {
                     }
                     this.e = iArr2;
                     dlw.d(c2);
-                    break;
+                    continue;
                 default:
-                    if (super.a(dlw, a2)) {
+                    if (!super.a(dlw, a2)) {
                         break;
                     } else {
-                        break;
+                        continue;
                     }
             }
         }

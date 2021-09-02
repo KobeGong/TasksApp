@@ -1,17 +1,14 @@
 package defpackage;
 
-import android.view.View;
-import com.google.android.apps.tasks.ui.TaskListsActivity;
+/* renamed from: aov reason: default package */
+public final /* synthetic */ class aov implements android.view.View.OnClickListener {
+    private final com.google.android.apps.tasks.ui.TaskListsActivity a;
 
-/* renamed from: aov  reason: default package */
-public final /* synthetic */ class aov implements View.OnClickListener {
-    private final TaskListsActivity a;
-
-    public aov(TaskListsActivity taskListsActivity) {
+    public aov(com.google.android.apps.tasks.ui.TaskListsActivity taskListsActivity) {
         this.a = taskListsActivity;
     }
 
-    public final void onClick(View view) {
+    public final void onClick(android.view.View view) {
         this.a.onBackPressed();
     }
 }

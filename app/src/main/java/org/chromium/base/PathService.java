@@ -5,5 +5,5 @@ public class PathService {
     private PathService() {
     }
 
-    private static native void nativeOverride(int i, String str);
+    private static native void nativeOverride(int i, java.lang.String str);
 }

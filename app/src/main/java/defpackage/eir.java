@@ -1,31 +1,26 @@
 package defpackage;
 
-import android.content.Context;
-import android.net.wifi.WifiInfo;
-import android.net.wifi.WifiManager;
-import org.chromium.net.AndroidNetworkLibrary;
-
-/* renamed from: eir  reason: default package */
+/* renamed from: eir reason: default package */
 /* compiled from: PG */
 public final class eir {
-    private final Context a;
-    private final Object b;
+    private final android.content.Context a;
+    private final java.lang.Object b;
     private boolean c;
     private boolean d;
-    private WifiManager e;
+    private android.net.wifi.WifiManager e;
 
-    public eir(Context context) {
-        this.b = new Object();
+    public eir(android.content.Context context) {
+        this.b = new java.lang.Object();
         this.a = context;
     }
 
     eir() {
-        this.b = new Object();
+        this.b = new java.lang.Object();
         this.a = null;
     }
 
-    public final String a() {
-        WifiManager wifiManager;
+    public final java.lang.String a() {
+        android.net.wifi.WifiManager wifiManager;
         boolean z;
         boolean z2 = true;
         synchronized (this.b) {
@@ -37,7 +32,7 @@ public final class eir {
                 }
                 this.d = z2;
                 if (this.d) {
-                    wifiManager = (WifiManager) this.a.getSystemService("wifi");
+                    wifiManager = (android.net.wifi.WifiManager) this.a.getSystemService("wifi");
                 } else {
                     wifiManager = null;
                 }
@@ -46,23 +41,25 @@ public final class eir {
                 z = this.d;
             }
             if (!z) {
-                return AndroidNetworkLibrary.getWifiSSID();
+                return org.chromium.net.AndroidNetworkLibrary.getWifiSSID();
             }
-            WifiInfo b2 = b();
-            if (b2 == null) {
-                return "";
+            android.net.wifi.WifiInfo b2 = b();
+            if (b2 != null) {
+                java.lang.String ssid = b2.getSSID();
+                return ssid;
             }
-            return b2.getSSID();
+            java.lang.String str = "";
+            return str;
         }
     }
 
-    private final WifiInfo b() {
+    private final android.net.wifi.WifiInfo b() {
         try {
             return this.e.getConnectionInfo();
-        } catch (NullPointerException e2) {
+        } catch (java.lang.NullPointerException e2) {
             try {
                 return this.e.getConnectionInfo();
-            } catch (NullPointerException e3) {
+            } catch (java.lang.NullPointerException e3) {
                 return null;
             }
         }

@@ -1,22 +1,22 @@
 package defpackage;
 
-/* renamed from: btl  reason: default package */
+/* renamed from: btl reason: default package */
 /* compiled from: PG */
 public abstract class btl {
-    public static final btl a = new btm().a(btn.SUCCESS).a();
+    public static final defpackage.btl a = new defpackage.btm().a(defpackage.btn.SUCCESS).a();
 
-    public static final btl a(Throwable th) {
-        btm a2 = new btm().a(btn.PERMANENT_FAILURE);
+    public static final defpackage.btl a(java.lang.Throwable th) {
+        defpackage.btm a2 = new defpackage.btm().a(defpackage.btn.PERMANENT_FAILURE);
         a2.a = th;
         return a2.a();
     }
 
-    public abstract btn a();
+    public abstract defpackage.btn a();
 
-    public abstract Throwable b();
+    public abstract java.lang.Throwable b();
 
-    public static final btl b(Throwable th) {
-        btm a2 = new btm().a(btn.TRANSIENT_FAILURE);
+    public static final defpackage.btl b(java.lang.Throwable th) {
+        defpackage.btm a2 = new defpackage.btm().a(defpackage.btn.TRANSIENT_FAILURE);
         a2.a = th;
         return a2.a();
     }

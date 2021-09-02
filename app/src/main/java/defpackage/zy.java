@@ -1,67 +1,50 @@
 package defpackage;
 
-import android.content.ComponentName;
-import android.content.Context;
-import android.content.Intent;
-import android.view.KeyEvent;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.SubMenu;
-import java.util.Iterator;
-
-/* renamed from: zy  reason: default package */
+/* renamed from: zy reason: default package */
 /* compiled from: PG */
-class zy extends yt implements Menu {
-    zy(Context context, po poVar) {
+class zy extends defpackage.yt implements android.view.Menu {
+    zy(android.content.Context context, defpackage.po poVar) {
         super(context, poVar);
     }
 
-    @Override // android.view.Menu
-    public MenuItem add(CharSequence charSequence) {
-        return a(((po) this.d).add(charSequence));
+    public android.view.MenuItem add(java.lang.CharSequence charSequence) {
+        return a(((defpackage.po) this.d).add(charSequence));
     }
 
-    @Override // android.view.Menu
-    public MenuItem add(int i) {
-        return a(((po) this.d).add(i));
+    public android.view.MenuItem add(int i) {
+        return a(((defpackage.po) this.d).add(i));
     }
 
-    @Override // android.view.Menu
-    public MenuItem add(int i, int i2, int i3, CharSequence charSequence) {
-        return a(((po) this.d).add(i, i2, i3, charSequence));
+    public android.view.MenuItem add(int i, int i2, int i3, java.lang.CharSequence charSequence) {
+        return a(((defpackage.po) this.d).add(i, i2, i3, charSequence));
     }
 
-    @Override // android.view.Menu
-    public MenuItem add(int i, int i2, int i3, int i4) {
-        return a(((po) this.d).add(i, i2, i3, i4));
+    public android.view.MenuItem add(int i, int i2, int i3, int i4) {
+        return a(((defpackage.po) this.d).add(i, i2, i3, i4));
     }
 
-    @Override // android.view.Menu
-    public SubMenu addSubMenu(CharSequence charSequence) {
-        return a(((po) this.d).addSubMenu(charSequence));
+    public android.view.SubMenu addSubMenu(java.lang.CharSequence charSequence) {
+        return a(((defpackage.po) this.d).addSubMenu(charSequence));
     }
 
-    @Override // android.view.Menu
-    public SubMenu addSubMenu(int i) {
-        return a(((po) this.d).addSubMenu(i));
+    public android.view.SubMenu addSubMenu(int i) {
+        return a(((defpackage.po) this.d).addSubMenu(i));
     }
 
-    @Override // android.view.Menu
-    public SubMenu addSubMenu(int i, int i2, int i3, CharSequence charSequence) {
-        return a(((po) this.d).addSubMenu(i, i2, i3, charSequence));
+    public android.view.SubMenu addSubMenu(int i, int i2, int i3, java.lang.CharSequence charSequence) {
+        return a(((defpackage.po) this.d).addSubMenu(i, i2, i3, charSequence));
     }
 
-    @Override // android.view.Menu
-    public SubMenu addSubMenu(int i, int i2, int i3, int i4) {
-        return a(((po) this.d).addSubMenu(i, i2, i3, i4));
+    public android.view.SubMenu addSubMenu(int i, int i2, int i3, int i4) {
+        return a(((defpackage.po) this.d).addSubMenu(i, i2, i3, i4));
     }
 
-    public int addIntentOptions(int i, int i2, int i3, ComponentName componentName, Intent[] intentArr, Intent intent, int i4, MenuItem[] menuItemArr) {
-        MenuItem[] menuItemArr2 = null;
+    public int addIntentOptions(int i, int i2, int i3, android.content.ComponentName componentName, android.content.Intent[] intentArr, android.content.Intent intent, int i4, android.view.MenuItem[] menuItemArr) {
+        android.view.MenuItem[] menuItemArr2 = null;
         if (menuItemArr != null) {
-            menuItemArr2 = new MenuItem[menuItemArr.length];
+            menuItemArr2 = new android.view.MenuItem[menuItemArr.length];
         }
-        int addIntentOptions = ((po) this.d).addIntentOptions(i, i2, i3, componentName, intentArr, intent, i4, menuItemArr2);
+        int addIntentOptions = ((defpackage.po) this.d).addIntentOptions(i, i2, i3, componentName, intentArr, intent, i4, menuItemArr2);
         if (menuItemArr2 != null) {
             int length = menuItemArr2.length;
             for (int i5 = 0; i5 < length; i5++) {
@@ -73,10 +56,10 @@ class zy extends yt implements Menu {
 
     public void removeItem(int i) {
         if (this.b != null) {
-            Iterator it = this.b.keySet().iterator();
+            java.util.Iterator it = this.b.keySet().iterator();
             while (true) {
                 if (it.hasNext()) {
-                    if (i == ((MenuItem) it.next()).getItemId()) {
+                    if (i == ((android.view.MenuItem) it.next()).getItemId()) {
                         it.remove();
                         break;
                     }
@@ -85,19 +68,19 @@ class zy extends yt implements Menu {
                 }
             }
         }
-        ((po) this.d).removeItem(i);
+        ((defpackage.po) this.d).removeItem(i);
     }
 
     public void removeGroup(int i) {
         if (this.b != null) {
-            Iterator it = this.b.keySet().iterator();
+            java.util.Iterator it = this.b.keySet().iterator();
             while (it.hasNext()) {
-                if (i == ((MenuItem) it.next()).getGroupId()) {
+                if (i == ((android.view.MenuItem) it.next()).getGroupId()) {
                     it.remove();
                 }
             }
         }
-        ((po) this.d).removeGroup(i);
+        ((defpackage.po) this.d).removeGroup(i);
     }
 
     public void clear() {
@@ -107,54 +90,54 @@ class zy extends yt implements Menu {
         if (this.c != null) {
             this.c.clear();
         }
-        ((po) this.d).clear();
+        ((defpackage.po) this.d).clear();
     }
 
     public void setGroupCheckable(int i, boolean z, boolean z2) {
-        ((po) this.d).setGroupCheckable(i, z, z2);
+        ((defpackage.po) this.d).setGroupCheckable(i, z, z2);
     }
 
     public void setGroupVisible(int i, boolean z) {
-        ((po) this.d).setGroupVisible(i, z);
+        ((defpackage.po) this.d).setGroupVisible(i, z);
     }
 
     public void setGroupEnabled(int i, boolean z) {
-        ((po) this.d).setGroupEnabled(i, z);
+        ((defpackage.po) this.d).setGroupEnabled(i, z);
     }
 
     public boolean hasVisibleItems() {
-        return ((po) this.d).hasVisibleItems();
+        return ((defpackage.po) this.d).hasVisibleItems();
     }
 
-    public MenuItem findItem(int i) {
-        return a(((po) this.d).findItem(i));
+    public android.view.MenuItem findItem(int i) {
+        return a(((defpackage.po) this.d).findItem(i));
     }
 
     public int size() {
-        return ((po) this.d).size();
+        return ((defpackage.po) this.d).size();
     }
 
-    public MenuItem getItem(int i) {
-        return a(((po) this.d).getItem(i));
+    public android.view.MenuItem getItem(int i) {
+        return a(((defpackage.po) this.d).getItem(i));
     }
 
     public void close() {
-        ((po) this.d).close();
+        ((defpackage.po) this.d).close();
     }
 
-    public boolean performShortcut(int i, KeyEvent keyEvent, int i2) {
-        return ((po) this.d).performShortcut(i, keyEvent, i2);
+    public boolean performShortcut(int i, android.view.KeyEvent keyEvent, int i2) {
+        return ((defpackage.po) this.d).performShortcut(i, keyEvent, i2);
     }
 
-    public boolean isShortcutKey(int i, KeyEvent keyEvent) {
-        return ((po) this.d).isShortcutKey(i, keyEvent);
+    public boolean isShortcutKey(int i, android.view.KeyEvent keyEvent) {
+        return ((defpackage.po) this.d).isShortcutKey(i, keyEvent);
     }
 
     public boolean performIdentifierAction(int i, int i2) {
-        return ((po) this.d).performIdentifierAction(i, i2);
+        return ((defpackage.po) this.d).performIdentifierAction(i, i2);
     }
 
     public void setQwertyMode(boolean z) {
-        ((po) this.d).setQwertyMode(z);
+        ((defpackage.po) this.d).setQwertyMode(z);
     }
 }

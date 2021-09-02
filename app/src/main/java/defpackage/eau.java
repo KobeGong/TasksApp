@@ -1,15 +1,13 @@
 package defpackage;
 
-import java.util.HashMap;
-
-/* renamed from: eau  reason: default package */
+/* renamed from: eau reason: default package */
 /* compiled from: PG */
-public final class eau extends eay {
+public final class eau extends defpackage.eay {
     public eau() {
-        new HashMap();
+        new java.util.HashMap();
     }
 
     static {
-        eaj.c();
+        defpackage.eaj.c();
     }
 }

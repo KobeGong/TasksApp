@@ -1,80 +1,67 @@
 package defpackage;
 
-import android.accessibilityservice.AccessibilityServiceInfo;
-import android.content.Context;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-import android.support.v4.widget.NestedScrollView;
-import android.view.View;
-import android.view.accessibility.AccessibilityManager;
-import android.view.inputmethod.InputMethodManager;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
-
-/* renamed from: bdk  reason: default package */
+/* renamed from: bdk reason: default package */
 /* compiled from: PG */
-public final class bdk implements aye, uy {
-    private final /* synthetic */ auj a;
+public final class bdk implements defpackage.aye, defpackage.uy {
+    private final /* synthetic */ TasksFragment a;
 
     public bdk() {
-        new ArrayList();
+        new java.util.ArrayList();
     }
 
-    public static boolean a(Context context) {
-        NetworkInfo activeNetworkInfo = ((ConnectivityManager) context.getSystemService("connectivity")).getActiveNetworkInfo();
+    public static boolean a(android.content.Context context) {
+        android.net.NetworkInfo activeNetworkInfo = ((android.net.ConnectivityManager) context.getSystemService("connectivity")).getActiveNetworkInfo();
         return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
 
-    public static byte[] a(dih dih) {
+    public static byte[] a(defpackage.dih dih) {
+        byte[] bArr = null;
         if (dih == null) {
-            return null;
+            return bArr;
         }
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        java.io.ByteArrayOutputStream byteArrayOutputStream = new java.io.ByteArrayOutputStream();
         try {
-            dhn a2 = dhn.a(byteArrayOutputStream, dhn.a(dih.f()));
+            defpackage.dhn a2 = defpackage.dhn.a((java.io.OutputStream) byteArrayOutputStream, defpackage.dhn.a(dih.f()));
             dih.a(a2);
             a2.h();
             return byteArrayOutputStream.toByteArray();
-        } catch (IOException e) {
-            azb.a("Unable to serialize %s into ByteArray", (Throwable) e, dih.getClass().getSimpleName());
-            return null;
+        } catch (java.io.IOException e) {
+            defpackage.azb.a("Unable to serialize %s into ByteArray", (java.lang.Throwable) e, dih.getClass().getSimpleName());
+            return bArr;
         }
     }
 
-    public static dih a(byte[] bArr, dih dih) {
-        dih dih2;
+    public static defpackage.dih a(byte[] bArr, defpackage.dih dih) {
+        defpackage.dih dih2;
         if (bArr == null) {
             return null;
         }
         try {
-            dih dih3 = (dih) dih.a(bg.ap);
-            dii dii = (dii) dih3.a(bg.ao);
+            defpackage.dih dih3 = (defpackage.dih) dih.a(defpackage.bg.ap);
+            defpackage.dii dii = (defpackage.dii) dih3.a(defpackage.bg.ao);
             dii.a(dih3);
-            dii dii2 = (dii) dii.a(bArr, bArr.length);
+            defpackage.dii dii2 = (defpackage.dii) dii.a(bArr, bArr.length);
             if (dii2.b) {
                 dih2 = dii2.a;
             } else {
-                dih dih4 = dii2.a;
-                djz.a.a(dih4).c(dih4);
+                defpackage.dih dih4 = dii2.a;
+                defpackage.djz.a.a((java.lang.Object) dih4).c(dih4);
                 dii2.b = true;
                 dih2 = dii2.a;
             }
-            dih dih5 = dih2;
-            if (dih.a(dih5, Boolean.TRUE.booleanValue())) {
+            defpackage.dih dih5 = dih2;
+            if (defpackage.dih.a(dih5, java.lang.Boolean.TRUE.booleanValue())) {
                 return dih5;
             }
-            throw new dkw();
-        } catch (dir e) {
-            azb.a("Unable to parse %s from ByteArray", e, dih.getClass().getSimpleName());
+            throw new defpackage.dkw();
+        } catch (defpackage.dir e) {
+            defpackage.azb.a("Unable to parse %s from ByteArray", (java.lang.Throwable) e, dih.getClass().getSimpleName());
             return null;
         }
     }
 
-    public static void a(View view, boolean z) {
-        InputMethodManager inputMethodManager = (InputMethodManager) view.getContext().getSystemService("input_method");
+    public static void a(android.view.View view, boolean z) {
+        android.view.inputmethod.InputMethodManager inputMethodManager = (android.view.inputmethod.InputMethodManager) view.getContext().getSystemService("input_method");
         if (z) {
             inputMethodManager.showSoftInput(view, 1);
         } else {
@@ -82,34 +69,30 @@ public final class bdk implements aye, uy {
         }
     }
 
-    public static Calendar a() {
-        Calendar instance = Calendar.getInstance();
-        instance.setTimeInMillis(auz.a());
+    public static java.util.Calendar a() {
+        java.util.Calendar instance = java.util.Calendar.getInstance();
+        instance.setTimeInMillis(defpackage.auz.a());
         a(instance);
         return instance;
     }
 
-    public static void a(Calendar calendar) {
+    public static void a(java.util.Calendar calendar) {
         calendar.set(14, 0);
         calendar.set(13, 0);
         calendar.set(12, 0);
         calendar.set(11, 0);
     }
 
-    public static boolean b(Context context) {
-        List<AccessibilityServiceInfo> enabledAccessibilityServiceList = ((AccessibilityManager) context.getSystemService("accessibility")).getEnabledAccessibilityServiceList(1);
-        if (enabledAccessibilityServiceList == null || enabledAccessibilityServiceList.isEmpty()) {
-            return false;
-        }
-        return true;
+    public static boolean b(android.content.Context context) {
+        java.util.List enabledAccessibilityServiceList = ((android.view.accessibility.AccessibilityManager) context.getSystemService("accessibility")).getEnabledAccessibilityServiceList(1);
+        return enabledAccessibilityServiceList != null && !enabledAccessibilityServiceList.isEmpty();
     }
 
-    public bdk(auj auj) {
+    public bdk(TasksFragment auj) {
         this.a = auj;
     }
 
-    @Override // defpackage.uy
-    public final void a(NestedScrollView nestedScrollView, int i, int i2) {
-        this.a.b((View) nestedScrollView);
+    public final void a(android.support.v4.widget.NestedScrollView nestedScrollView, int i, int i2) {
+        this.a.b(nestedScrollView);
     }
 }

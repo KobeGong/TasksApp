@@ -1,21 +1,19 @@
 package defpackage;
 
-import android.content.Intent;
-
-/* renamed from: avf  reason: default package */
+/* renamed from: avf reason: default package */
 /* compiled from: PG */
-public class avf extends ava {
-    private final Intent a;
+public class avf extends defpackage.ava {
+    private final android.content.Intent a;
 
-    public avf(String str, Intent intent) {
+    public avf(java.lang.String str, android.content.Intent intent) {
         super(str);
         this.a = intent;
     }
 
-    public final Intent a() {
+    public final android.content.Intent a() {
         if (this.a == null) {
             return null;
         }
-        return new Intent(this.a);
+        return new android.content.Intent(this.a);
     }
 }

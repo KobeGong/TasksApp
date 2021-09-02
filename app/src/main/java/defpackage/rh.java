@@ -1,25 +1,23 @@
 package defpackage;
 
-/* renamed from: rh  reason: default package */
+/* renamed from: rh reason: default package */
 /* compiled from: PG */
-public final class rh extends rg {
-    private final Object a = new Object();
+public final class rh extends defpackage.rg {
+    private final java.lang.Object a = new java.lang.Object();
 
     public rh() {
         super(12);
     }
 
-    @Override // defpackage.rg
-    public final Object a() {
-        Object a2;
+    public final java.lang.Object a() {
+        java.lang.Object a2;
         synchronized (this.a) {
             a2 = super.a();
         }
         return a2;
     }
 
-    @Override // defpackage.rg
-    public final boolean a(Object obj) {
+    public final boolean a(java.lang.Object obj) {
         boolean a2;
         synchronized (this.a) {
             a2 = super.a(obj);

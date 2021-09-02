@@ -1,13 +1,9 @@
 package defpackage;
 
-import android.graphics.Matrix;
-import android.graphics.Path;
-import android.graphics.RectF;
-
-/* renamed from: gf  reason: default package */
+/* renamed from: gf reason: default package */
 /* compiled from: PG */
-public final class gf extends gh {
-    private static final RectF d = new RectF();
+public final class gf extends defpackage.gh {
+    private static final android.graphics.RectF d = new android.graphics.RectF();
     public float a;
     public float b;
     private float e;
@@ -22,9 +18,8 @@ public final class gf extends gh {
         this.h = f5;
     }
 
-    @Override // defpackage.gh
-    public final void a(Matrix matrix, Path path) {
-        Matrix matrix2 = this.c;
+    public final void a(android.graphics.Matrix matrix, android.graphics.Path path) {
+        android.graphics.Matrix matrix2 = this.c;
         matrix.invert(matrix2);
         path.transform(matrix2);
         d.set(this.e, this.f, this.g, this.h);

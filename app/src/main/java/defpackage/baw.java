@@ -1,14 +1,12 @@
 package defpackage;
 
-import android.app.Activity;
-
-/* renamed from: baw  reason: default package */
+/* renamed from: baw reason: default package */
 /* compiled from: PG */
 public final class baw {
-    public final Object a;
+    public final java.lang.Object a;
 
-    public baw(Activity activity) {
-        azb.b(activity, "Activity must not be null");
+    public baw(android.app.Activity activity) {
+        defpackage.azb.b((java.lang.Object) activity, (java.lang.Object) "Activity must not be null");
         this.a = activity;
     }
 }

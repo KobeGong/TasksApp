@@ -1,39 +1,33 @@
 package defpackage;
 
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.Filter;
-import android.widget.Filterable;
-
-/* renamed from: uk  reason: default package */
+/* renamed from: uk reason: default package */
 /* compiled from: PG */
-public final class uk extends BaseAdapter implements Filterable {
+public final class uk extends android.widget.BaseAdapter implements android.widget.Filterable {
     public final int getCount() {
-        throw new NoSuchMethodError();
+        throw new java.lang.NoSuchMethodError();
     }
 
-    public final Object getItem(int i) {
-        throw new NoSuchMethodError();
+    public final java.lang.Object getItem(int i) {
+        throw new java.lang.NoSuchMethodError();
     }
 
     public final long getItemId(int i) {
-        throw new NoSuchMethodError();
+        throw new java.lang.NoSuchMethodError();
     }
 
     public final boolean hasStableIds() {
-        throw new NoSuchMethodError();
+        throw new java.lang.NoSuchMethodError();
     }
 
-    public final View getView(int i, View view, ViewGroup viewGroup) {
-        throw new NoSuchMethodError();
+    public final android.view.View getView(int i, android.view.View view, android.view.ViewGroup viewGroup) {
+        throw new java.lang.NoSuchMethodError();
     }
 
-    public final View getDropDownView(int i, View view, ViewGroup viewGroup) {
-        throw new NoSuchMethodError();
+    public final android.view.View getDropDownView(int i, android.view.View view, android.view.ViewGroup viewGroup) {
+        throw new java.lang.NoSuchMethodError();
     }
 
-    public final Filter getFilter() {
-        throw new NoSuchMethodError();
+    public final android.widget.Filter getFilter() {
+        throw new java.lang.NoSuchMethodError();
     }
 }

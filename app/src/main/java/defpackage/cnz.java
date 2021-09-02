@@ -1,11 +1,9 @@
 package defpackage;
 
-import android.os.SystemClock;
-
-/* renamed from: cnz  reason: default package */
+/* renamed from: cnz reason: default package */
 /* compiled from: PG */
 public final class cnz {
-    public final Object a = new Object();
+    public final java.lang.Object a = new java.lang.Object();
     public int b = 0;
     public long c = 0;
     private final int d;
@@ -17,7 +15,7 @@ public final class cnz {
     public final boolean a() {
         boolean z = false;
         synchronized (this.a) {
-            if (SystemClock.elapsedRealtime() - this.c <= 1000) {
+            if (android.os.SystemClock.elapsedRealtime() - this.c <= 1000) {
                 if (this.b >= this.d) {
                     z = true;
                 }

@@ -1,12 +1,11 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: dyx  reason: default package */
+/* renamed from: dyx reason: default package */
 /* compiled from: PG */
-public final class dyx implements Runnable {
-    private final /* synthetic */ dyw a;
+final class dyx implements java.lang.Runnable {
+    private final /* synthetic */ defpackage.dyw a;
 
-    dyx(dyw dyw) {
+    dyx(defpackage.dyw dyw) {
         this.a = dyw;
     }
 

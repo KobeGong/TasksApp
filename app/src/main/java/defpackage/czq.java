@@ -1,8 +1,8 @@
 package defpackage;
 
-/* renamed from: czq  reason: default package */
+/* renamed from: czq reason: default package */
 /* compiled from: PG */
-public enum czq implements din {
+public enum czq implements defpackage.din {
     NONE(0),
     PROMPT(1),
     NAG(2),
@@ -11,15 +11,14 @@ public enum czq implements din {
     
     private final int f;
 
-    @Override // defpackage.din
     public final int a() {
         if (this != UNRECOGNIZED) {
             return this.f;
         }
-        throw new IllegalArgumentException("Can't get the number of an unknown enum value.");
+        throw new java.lang.IllegalArgumentException("Can't get the number of an unknown enum value.");
     }
 
-    public static czq a(int i) {
+    public static defpackage.czq a(int i) {
         switch (i) {
             case 0:
                 return NONE;
@@ -39,6 +38,6 @@ public enum czq implements din {
     }
 
     static {
-        new czr();
+        new defpackage.czr();
     }
 }

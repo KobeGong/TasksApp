@@ -1,18 +1,15 @@
 package defpackage;
 
-import android.os.IBinder;
-import android.os.IInterface;
-
-/* renamed from: bdt  reason: default package */
+/* renamed from: bdt reason: default package */
 /* compiled from: PG */
-public final class bdt implements IInterface {
-    public final IBinder a;
+public final class bdt implements android.os.IInterface {
+    public final android.os.IBinder a;
 
-    bdt(IBinder iBinder) {
+    bdt(android.os.IBinder iBinder) {
         this.a = iBinder;
     }
 
-    public final IBinder asBinder() {
+    public final android.os.IBinder asBinder() {
         return this.a;
     }
 }

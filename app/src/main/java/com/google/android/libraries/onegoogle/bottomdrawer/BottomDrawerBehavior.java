@@ -1,25 +1,15 @@
 package com.google.android.libraries.onegoogle.bottomdrawer;
 
-import android.support.design.widget.CoordinatorLayout;
-import android.support.v4.widget.NestedScrollView;
-import android.view.MotionEvent;
-import android.view.VelocityTracker;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewParent;
-import java.lang.ref.WeakReference;
-import java.util.ArrayList;
-
 /* compiled from: PG */
-public class BottomDrawerBehavior extends gx {
+public class BottomDrawerBehavior extends defpackage.gx {
     public int a;
     public int b;
     public int c = 5;
-    public vv d;
+    public defpackage.vv d;
     public int e;
-    public WeakReference f;
-    public WeakReference g;
-    public cgc h;
+    public java.lang.ref.WeakReference f;
+    public java.lang.ref.WeakReference g;
+    public defpackage.cgc h;
     public int i;
     public boolean j;
     public boolean k;
@@ -27,47 +17,47 @@ public class BottomDrawerBehavior extends gx {
     private boolean m;
     private int n;
     private boolean o;
-    private VelocityTracker p;
+    private android.view.VelocityTracker p;
     private int q;
     private boolean r;
-    private final vy s = new cgb(this);
+    private final defpackage.vy s = new defpackage.cgb(this);
 
     /* access modifiers changed from: private */
-    public final boolean a(CoordinatorLayout coordinatorLayout, GoogleMaterialBottomDrawer googleMaterialBottomDrawer, int i2) {
+    public final boolean a(android.support.design.widget.CoordinatorLayout coordinatorLayout, com.google.android.libraries.onegoogle.bottomdrawer.GoogleMaterialBottomDrawer googleMaterialBottomDrawer, int i2) {
         int top = googleMaterialBottomDrawer.getTop();
-        coordinatorLayout.a(googleMaterialBottomDrawer, i2);
+        coordinatorLayout.a((android.view.View) googleMaterialBottomDrawer, i2);
         this.e = coordinatorLayout.getHeight();
-        this.a = Math.max(0, this.e - googleMaterialBottomDrawer.getHeight());
+        this.a = java.lang.Math.max(0, this.e - googleMaterialBottomDrawer.getHeight());
         this.b = this.e / 2;
         if ((this.l || this.k) && (this.c == 3 || this.c == 6)) {
-            sn.b((View) googleMaterialBottomDrawer, 0);
+            defpackage.sn.b((android.view.View) googleMaterialBottomDrawer, 0);
         } else if (this.c == 3) {
-            sn.b((View) googleMaterialBottomDrawer, Math.max(top, this.a));
+            defpackage.sn.b((android.view.View) googleMaterialBottomDrawer, java.lang.Math.max(top, this.a));
         } else if (this.c == 6) {
-            sn.b((View) googleMaterialBottomDrawer, Math.max(this.b, this.a));
+            defpackage.sn.b((android.view.View) googleMaterialBottomDrawer, java.lang.Math.max(this.b, this.a));
         } else if (this.c == 5) {
-            sn.b((View) googleMaterialBottomDrawer, this.e);
+            defpackage.sn.b((android.view.View) googleMaterialBottomDrawer, this.e);
         } else if (this.c == 1 || this.c == 2) {
-            sn.b((View) googleMaterialBottomDrawer, top - googleMaterialBottomDrawer.getTop());
+            defpackage.sn.b((android.view.View) googleMaterialBottomDrawer, top - googleMaterialBottomDrawer.getTop());
         }
         if (this.d == null) {
-            this.d = vv.a(coordinatorLayout, this.s);
+            this.d = defpackage.vv.a((android.view.ViewGroup) coordinatorLayout, this.s);
         }
-        this.f = new WeakReference(googleMaterialBottomDrawer);
-        this.g = new WeakReference(b(googleMaterialBottomDrawer));
+        this.f = new java.lang.ref.WeakReference(googleMaterialBottomDrawer);
+        this.g = new java.lang.ref.WeakReference(b((android.view.View) googleMaterialBottomDrawer));
         return true;
     }
 
     public final void b(int i2) {
         if (i2 != this.c) {
             if (this.f != null) {
-                GoogleMaterialBottomDrawer googleMaterialBottomDrawer = (GoogleMaterialBottomDrawer) this.f.get();
+                com.google.android.libraries.onegoogle.bottomdrawer.GoogleMaterialBottomDrawer googleMaterialBottomDrawer = (com.google.android.libraries.onegoogle.bottomdrawer.GoogleMaterialBottomDrawer) this.f.get();
                 if (googleMaterialBottomDrawer != null) {
-                    ViewParent parent = googleMaterialBottomDrawer.getParent();
-                    if (parent == null || !parent.isLayoutRequested() || !sn.a.s(googleMaterialBottomDrawer)) {
+                    android.view.ViewParent parent = googleMaterialBottomDrawer.getParent();
+                    if (parent == null || !parent.isLayoutRequested() || !defpackage.sn.a.s(googleMaterialBottomDrawer)) {
                         b(googleMaterialBottomDrawer, i2);
                     } else {
-                        googleMaterialBottomDrawer.post(new cga(this, googleMaterialBottomDrawer, i2));
+                        googleMaterialBottomDrawer.post(new defpackage.cga(this, googleMaterialBottomDrawer, i2));
                     }
                 }
             } else if (i2 == 3 || i2 == 6 || i2 == 5) {
@@ -77,26 +67,31 @@ public class BottomDrawerBehavior extends gx {
     }
 
     public final void c(int i2) {
+        boolean z;
         if (this.c != i2) {
             this.c = i2;
-            if (!(((View) this.f.get()) == null || this.h == null)) {
-                cgc cgc = this.h;
+            if (((android.view.View) this.f.get()) != null && this.h != null) {
+                defpackage.cgc cgc = this.h;
                 cgc.b.a(i2);
-                boolean z = ((i2 != 3 && i2 != 6) || cgc.a == 3 || cgc.a == 6) ? false : true;
-                boolean z2 = i2 == 5 && cgc.a != 5;
-                if (z || z2) {
+                boolean z2 = ((i2 != 3 && i2 != 6) || cgc.a == 3 || cgc.a == 6) ? false : true;
+                if (i2 != 5 || cgc.a == 5) {
+                    z = false;
+                } else {
+                    z = true;
+                }
+                if (z2 || z) {
                     cgc.a = i2;
                 }
                 if (i2 != 2) {
                     cgc.b.f = false;
                 }
                 if (cgc.b.d != null) {
-                    ArrayList a2 = cky.a((Iterable) cgc.b.d);
+                    java.util.ArrayList a2 = defpackage.cky.a((java.lang.Iterable) cgc.b.d);
                     for (int size = a2.size() - 1; size >= 0; size--) {
-                        if (z) {
-                            ((cgi) a2.get(size)).a();
-                        } else if (z2) {
-                            ((cgi) a2.get(size)).b();
+                        if (z2) {
+                            ((defpackage.cgi) a2.get(size)).a();
+                        } else if (z) {
+                            ((defpackage.cgi) a2.get(size)).b();
                         }
                     }
                 }
@@ -113,15 +108,15 @@ public class BottomDrawerBehavior extends gx {
         }
     }
 
-    private final NestedScrollView b(View view) {
-        if (sn.a.w(view) && (view instanceof NestedScrollView)) {
-            return (NestedScrollView) view;
+    private final android.support.v4.widget.NestedScrollView b(android.view.View view) {
+        if (defpackage.sn.a.w(view) && (view instanceof android.support.v4.widget.NestedScrollView)) {
+            return (android.support.v4.widget.NestedScrollView) view;
         }
-        if (view instanceof ViewGroup) {
-            ViewGroup viewGroup = (ViewGroup) view;
+        if (view instanceof android.view.ViewGroup) {
+            android.view.ViewGroup viewGroup = (android.view.ViewGroup) view;
             int childCount = viewGroup.getChildCount();
             for (int i2 = 0; i2 < childCount; i2++) {
-                NestedScrollView b2 = b(viewGroup.getChildAt(i2));
+                android.support.v4.widget.NestedScrollView b2 = b(viewGroup.getChildAt(i2));
                 if (b2 != null) {
                     return b2;
                 }
@@ -130,17 +125,17 @@ public class BottomDrawerBehavior extends gx {
         return null;
     }
 
-    public final void b(View view, int i2) {
+    public final void b(android.view.View view, int i2) {
         int i3;
         int i4;
-        NestedScrollView nestedScrollView = (NestedScrollView) this.g.get();
+        android.support.v4.widget.NestedScrollView nestedScrollView = (android.support.v4.widget.NestedScrollView) this.g.get();
         if (i2 == 5) {
             i3 = this.e;
         } else if (this.l || this.k) {
             i3 = 0;
         } else {
             if (i2 == 6) {
-                i4 = Math.max(this.b, this.a);
+                i4 = java.lang.Math.max(this.b, this.a);
                 if (nestedScrollView != null) {
                     nestedScrollView.scrollTo(0, 0);
                     i3 = i4;
@@ -152,13 +147,13 @@ public class BottomDrawerBehavior extends gx {
                     i3 = i4;
                 }
             } else {
-                throw new IllegalArgumentException(new StringBuilder(35).append("Illegal state argument: ").append(i2).toString());
+                throw new java.lang.IllegalArgumentException("Illegal state argument: " + i2);
             }
             i3 = i4;
         }
         if (this.d.a(view, view.getLeft(), i3)) {
             c(2);
-            sn.a(view, new cgd(this, view, i2));
+            defpackage.sn.a(view, (java.lang.Runnable) new defpackage.cgd(this, view, i2));
             return;
         }
         c(i2);
@@ -168,7 +163,7 @@ public class BottomDrawerBehavior extends gx {
         if (this.g.get() == null) {
             return false;
         }
-        if (((NestedScrollView) this.g.get()).getScrollY() > 0) {
+        if (((android.support.v4.widget.NestedScrollView) this.g.get()).getScrollY() > 0) {
             return true;
         }
         return false;
@@ -182,7 +177,7 @@ public class BottomDrawerBehavior extends gx {
     }
 
     public final void d(int i2) {
-        View view = (View) this.f.get();
+        android.view.View view = (android.view.View) this.f.get();
         if (view != null && this.h != null) {
             float f2 = ((float) (this.e - i2)) / ((float) (this.e - this.a));
             float c2 = c(view);
@@ -195,44 +190,42 @@ public class BottomDrawerBehavior extends gx {
                 }
                 this.r = false;
             }
-            cgc cgc = this.h;
-            cgc.b.e.setAlpha(Math.max(Math.min(c(view) * 2.0f, 1.0f), f2));
+            defpackage.cgc cgc = this.h;
+            cgc.b.e.setAlpha(java.lang.Math.max(java.lang.Math.min(c(view) * 2.0f, 1.0f), f2));
         }
     }
 
-    private static float c(View view) {
-        return 1.0f - (((float) view.getTop()) / ((float) ((View) view.getParent()).getHeight()));
+    private static float c(android.view.View view) {
+        return 1.0f - (((float) view.getTop()) / ((float) ((android.view.View) view.getParent()).getHeight()));
     }
 
-    @Override // defpackage.gx
-    public final /* synthetic */ boolean a(CoordinatorLayout coordinatorLayout, View view, View view2, float f2, float f3) {
-        boolean z = view2 == this.g.get() && (this.c != 3 || super.a(coordinatorLayout, (GoogleMaterialBottomDrawer) view, view2, f2, f3));
-        if (!(view2 instanceof NestedScrollView) || this.c != 3) {
+    public final /* synthetic */ boolean a(android.support.design.widget.CoordinatorLayout coordinatorLayout, android.view.View view, android.view.View view2, float f2, float f3) {
+        boolean z = view2 == this.g.get() && (this.c != 3 || super.a(coordinatorLayout, (com.google.android.libraries.onegoogle.bottomdrawer.GoogleMaterialBottomDrawer) view, view2, f2, f3));
+        if (!(view2 instanceof android.support.v4.widget.NestedScrollView) || this.c != 3) {
             return z;
         }
-        ((NestedScrollView) view2).c((int) f3);
+        ((android.support.v4.widget.NestedScrollView) view2).c((int) f3);
         return true;
     }
 
-    @Override // defpackage.gx
-    public final /* synthetic */ void a(CoordinatorLayout coordinatorLayout, View view, View view2, int i2, int[] iArr, int i3) {
-        GoogleMaterialBottomDrawer googleMaterialBottomDrawer = (GoogleMaterialBottomDrawer) view;
-        if (i3 != 1 && view2 == ((NestedScrollView) this.g.get())) {
+    public final /* synthetic */ void a(android.support.design.widget.CoordinatorLayout coordinatorLayout, android.view.View view, android.view.View view2, int i2, int[] iArr, int i3) {
+        com.google.android.libraries.onegoogle.bottomdrawer.GoogleMaterialBottomDrawer googleMaterialBottomDrawer = (com.google.android.libraries.onegoogle.bottomdrawer.GoogleMaterialBottomDrawer) view;
+        if (i3 != 1 && view2 == ((android.support.v4.widget.NestedScrollView) this.g.get())) {
             int top = googleMaterialBottomDrawer.getTop();
             int i4 = top - i2;
             if (i2 > 0) {
                 if (i4 < this.a) {
                     iArr[1] = top - this.a;
-                    sn.b((View) googleMaterialBottomDrawer, -iArr[1]);
+                    defpackage.sn.b((android.view.View) googleMaterialBottomDrawer, -iArr[1]);
                     c(3);
                 } else {
                     iArr[1] = i2;
-                    sn.b((View) googleMaterialBottomDrawer, -i2);
+                    defpackage.sn.b((android.view.View) googleMaterialBottomDrawer, -i2);
                     c(1);
                 }
             } else if (i2 < 0 && !view2.canScrollVertically(-1)) {
                 iArr[1] = i2;
-                sn.b((View) googleMaterialBottomDrawer, -i2);
+                defpackage.sn.b((android.view.View) googleMaterialBottomDrawer, -i2);
                 c(1);
             }
             d(googleMaterialBottomDrawer.getTop());
@@ -241,11 +234,10 @@ public class BottomDrawerBehavior extends gx {
         }
     }
 
-    @Override // defpackage.gx
-    public final /* synthetic */ void a(CoordinatorLayout coordinatorLayout, View view, View view2, int i2) {
+    public final /* synthetic */ void a(android.support.design.widget.CoordinatorLayout coordinatorLayout, android.view.View view, android.view.View view2, int i2) {
         int i3;
         int i4 = 3;
-        GoogleMaterialBottomDrawer googleMaterialBottomDrawer = (GoogleMaterialBottomDrawer) view;
+        com.google.android.libraries.onegoogle.bottomdrawer.GoogleMaterialBottomDrawer googleMaterialBottomDrawer = (com.google.android.libraries.onegoogle.bottomdrawer.GoogleMaterialBottomDrawer) view;
         if (googleMaterialBottomDrawer.getTop() == this.a) {
             c(3);
         } else if (view2 == this.g.get() && this.o) {
@@ -262,9 +254,9 @@ public class BottomDrawerBehavior extends gx {
                     i4 = 6;
                     i3 = this.b;
                 }
-                if (this.d.a((View) googleMaterialBottomDrawer, googleMaterialBottomDrawer.getLeft(), i3)) {
+                if (this.d.a((android.view.View) googleMaterialBottomDrawer, googleMaterialBottomDrawer.getLeft(), i3)) {
                     c(2);
-                    sn.a(googleMaterialBottomDrawer, new cgd(this, googleMaterialBottomDrawer, i4));
+                    defpackage.sn.a((android.view.View) googleMaterialBottomDrawer, (java.lang.Runnable) new defpackage.cgd(this, googleMaterialBottomDrawer, i4));
                 } else {
                     c(i4);
                 }
@@ -273,8 +265,7 @@ public class BottomDrawerBehavior extends gx {
         }
     }
 
-    @Override // defpackage.gx
-    public final /* synthetic */ boolean a(CoordinatorLayout coordinatorLayout, View view, View view2, View view3, int i2, int i3) {
+    public final /* synthetic */ boolean a(android.support.design.widget.CoordinatorLayout coordinatorLayout, android.view.View view, android.view.View view2, android.view.View view3, int i2, int i3) {
         this.n = 0;
         this.o = false;
         if ((i2 & 2) != 0) {
@@ -283,12 +274,11 @@ public class BottomDrawerBehavior extends gx {
         return false;
     }
 
-    @Override // defpackage.gx
-    public final /* synthetic */ boolean a(CoordinatorLayout coordinatorLayout, View view, int i2, int i3, int i4, int i5) {
+    public final /* synthetic */ boolean a(android.support.design.widget.CoordinatorLayout coordinatorLayout, android.view.View view, int i2, int i3, int i4, int i5) {
         int i6;
-        GoogleMaterialBottomDrawer googleMaterialBottomDrawer = (GoogleMaterialBottomDrawer) view;
+        com.google.android.libraries.onegoogle.bottomdrawer.GoogleMaterialBottomDrawer googleMaterialBottomDrawer = (com.google.android.libraries.onegoogle.bottomdrawer.GoogleMaterialBottomDrawer) view;
         int top = this.e - googleMaterialBottomDrawer.getTop();
-        coordinatorLayout.a(googleMaterialBottomDrawer, i2, i3, i4, i5);
+        coordinatorLayout.a((android.view.View) googleMaterialBottomDrawer, i2, i3, i4, i5);
         if ((this.r || this.k) && googleMaterialBottomDrawer.getMeasuredHeight() < this.e) {
             i6 = this.e;
         } else if (top > googleMaterialBottomDrawer.getMeasuredHeight()) {
@@ -298,20 +288,19 @@ public class BottomDrawerBehavior extends gx {
         }
         if (i6 > 0) {
             googleMaterialBottomDrawer.setMinimumHeight(i6);
-            View view2 = googleMaterialBottomDrawer.g;
+            android.view.View view2 = googleMaterialBottomDrawer.g;
             if (view2 != null) {
                 view2.setMinimumHeight(i6 - (googleMaterialBottomDrawer.getPaddingTop() + googleMaterialBottomDrawer.getPaddingBottom()));
             }
-            coordinatorLayout.a(googleMaterialBottomDrawer, i2, i3, i4, i5);
+            coordinatorLayout.a((android.view.View) googleMaterialBottomDrawer, i2, i3, i4, i5);
         }
         googleMaterialBottomDrawer.setMinimumHeight(0);
         googleMaterialBottomDrawer.g.setMinimumHeight(0);
         return true;
     }
 
-    @Override // defpackage.gx
-    public final /* synthetic */ boolean b(CoordinatorLayout coordinatorLayout, View view, MotionEvent motionEvent) {
-        GoogleMaterialBottomDrawer googleMaterialBottomDrawer = (GoogleMaterialBottomDrawer) view;
+    public final /* synthetic */ boolean b(android.support.design.widget.CoordinatorLayout coordinatorLayout, android.view.View view, android.view.MotionEvent motionEvent) {
+        com.google.android.libraries.onegoogle.bottomdrawer.GoogleMaterialBottomDrawer googleMaterialBottomDrawer = (com.google.android.libraries.onegoogle.bottomdrawer.GoogleMaterialBottomDrawer) view;
         if (googleMaterialBottomDrawer.isShown()) {
             int actionMasked = motionEvent.getActionMasked();
             if (this.c == 1 && actionMasked == 0) {
@@ -325,29 +314,138 @@ public class BottomDrawerBehavior extends gx {
                     c();
                 }
                 if (this.p == null) {
-                    this.p = VelocityTracker.obtain();
+                    this.p = android.view.VelocityTracker.obtain();
                 }
                 this.p.addMovement(motionEvent);
-                if (actionMasked == 2 && !this.m && Math.abs(((float) this.q) - motionEvent.getY()) > ((float) this.d.a)) {
-                    this.d.a(googleMaterialBottomDrawer, motionEvent.getPointerId(motionEvent.getActionIndex()));
+                if (actionMasked == 2 && !this.m && java.lang.Math.abs(((float) this.q) - motionEvent.getY()) > ((float) this.d.a)) {
+                    this.d.a((android.view.View) googleMaterialBottomDrawer, motionEvent.getPointerId(motionEvent.getActionIndex()));
                 }
-                if (this.m) {
-                    return false;
+                if (!this.m) {
+                    return true;
                 }
-                return true;
             }
         }
         return false;
     }
 
-    /* JADX WARNING: Removed duplicated region for block: B:14:0x002f  */
-    /* JADX WARNING: Removed duplicated region for block: B:18:0x003b  */
-    /* JADX WARNING: Removed duplicated region for block: B:48:0x00c4  */
-    @Override // defpackage.gx
     /* Code decompiled incorrectly, please refer to instructions dump. */
     public final /* synthetic */ boolean a(android.support.design.widget.CoordinatorLayout r9, android.view.View r10, android.view.MotionEvent r11) {
         /*
-        // Method dump skipped, instructions count: 212
+            r8 = this;
+            r3 = 0
+            r7 = -1
+            r2 = 0
+            r1 = 1
+            com.google.android.libraries.onegoogle.bottomdrawer.GoogleMaterialBottomDrawer r10 = (com.google.android.libraries.onegoogle.bottomdrawer.GoogleMaterialBottomDrawer) r10
+            boolean r0 = r10.isShown()
+            if (r0 != 0) goto L_0x0010
+            r8.m = r1
+        L_0x000e:
+            r1 = r2
+        L_0x000f:
+            return r1
+        L_0x0010:
+            int r4 = r11.getActionMasked()
+            if (r4 != 0) goto L_0x0019
+            r8.c()
+        L_0x0019:
+            android.view.VelocityTracker r0 = r8.p
+            if (r0 != 0) goto L_0x0023
+            android.view.VelocityTracker r0 = android.view.VelocityTracker.obtain()
+            r8.p = r0
+        L_0x0023:
+            android.view.VelocityTracker r0 = r8.p
+            r0.addMovement(r11)
+            switch(r4) {
+                case 0: goto L_0x0081;
+                case 1: goto L_0x0076;
+                case 2: goto L_0x002b;
+                case 3: goto L_0x0076;
+                default: goto L_0x002b;
+            }
+        L_0x002b:
+            boolean r0 = r8.m
+            if (r0 != 0) goto L_0x0037
+            vv r0 = r8.d
+            boolean r0 = r0.a(r11)
+            if (r0 != 0) goto L_0x000f
+        L_0x0037:
+            java.lang.ref.WeakReference r0 = r8.g
+            if (r0 == 0) goto L_0x00c4
+            java.lang.ref.WeakReference r0 = r8.g
+            java.lang.Object r0 = r0.get()
+            android.support.v4.widget.NestedScrollView r0 = (android.support.v4.widget.NestedScrollView) r0
+        L_0x0043:
+            r3 = 2
+            if (r4 != r3) goto L_0x000e
+            if (r0 == 0) goto L_0x000e
+            boolean r3 = r8.m
+            if (r3 != 0) goto L_0x000e
+            int r3 = r8.c
+            if (r3 == r1) goto L_0x000e
+            float r3 = r11.getX()
+            int r3 = (int) r3
+            float r4 = r11.getY()
+            int r4 = (int) r4
+            boolean r0 = r9.a(r0, r3, r4)
+            if (r0 != 0) goto L_0x000e
+            int r0 = r8.q
+            float r0 = (float) r0
+            float r3 = r11.getY()
+            float r0 = r0 - r3
+            float r0 = java.lang.Math.abs(r0)
+            vv r3 = r8.d
+            int r3 = r3.a
+            float r3 = (float) r3
+            int r0 = (r0 > r3 ? 1 : (r0 == r3 ? 0 : -1))
+            if (r0 <= 0) goto L_0x000e
+            goto L_0x000f
+        L_0x0076:
+            r8.j = r2
+            r8.i = r7
+            boolean r0 = r8.m
+            if (r0 == 0) goto L_0x002b
+            r8.m = r2
+            goto L_0x000e
+        L_0x0081:
+            float r0 = r11.getX()
+            int r5 = (int) r0
+            float r0 = r11.getY()
+            int r0 = (int) r0
+            r8.q = r0
+            java.lang.ref.WeakReference r0 = r8.g
+            if (r0 == 0) goto L_0x00c0
+            java.lang.ref.WeakReference r0 = r8.g
+            java.lang.Object r0 = r0.get()
+            android.support.v4.widget.NestedScrollView r0 = (android.support.v4.widget.NestedScrollView) r0
+        L_0x0099:
+            if (r0 == 0) goto L_0x00af
+            int r6 = r8.q
+            boolean r0 = r9.a(r0, r5, r6)
+            if (r0 == 0) goto L_0x00af
+            int r0 = r11.getActionIndex()
+            int r0 = r11.getPointerId(r0)
+            r8.i = r0
+            r8.j = r1
+        L_0x00af:
+            int r0 = r8.i
+            if (r0 != r7) goto L_0x00c2
+            int r0 = r8.q
+            boolean r0 = r9.a(r10, r5, r0)
+            if (r0 != 0) goto L_0x00c2
+            r0 = r1
+        L_0x00bc:
+            r8.m = r0
+            goto L_0x002b
+        L_0x00c0:
+            r0 = r3
+            goto L_0x0099
+        L_0x00c2:
+            r0 = r2
+            goto L_0x00bc
+        L_0x00c4:
+            r0 = r3
+            goto L_0x0043
         */
         throw new UnsupportedOperationException("Method not decompiled: com.google.android.libraries.onegoogle.bottomdrawer.BottomDrawerBehavior.a(android.support.design.widget.CoordinatorLayout, android.view.View, android.view.MotionEvent):boolean");
     }

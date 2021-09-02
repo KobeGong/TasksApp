@@ -1,9 +1,9 @@
 package defpackage;
 
-/* renamed from: con  reason: default package */
+/* renamed from: con reason: default package */
 /* compiled from: PG */
 public interface con {
-    String a(cop cop);
+    java.lang.String a(defpackage.cop cop);
 
     void a();
 }

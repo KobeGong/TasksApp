@@ -1,16 +1,13 @@
 package defpackage;
 
-import android.view.Menu;
-import android.view.MenuItem;
-
-/* renamed from: yd  reason: default package */
+/* renamed from: yd reason: default package */
 /* compiled from: PG */
 public interface yd {
-    void a(yc ycVar);
+    void a(defpackage.yc ycVar);
 
-    boolean a(yc ycVar, Menu menu);
+    boolean a(defpackage.yc ycVar, android.view.Menu menu);
 
-    boolean a(yc ycVar, MenuItem menuItem);
+    boolean a(defpackage.yc ycVar, android.view.MenuItem menuItem);
 
-    boolean b(yc ycVar, Menu menu);
+    boolean b(defpackage.yc ycVar, android.view.Menu menu);
 }

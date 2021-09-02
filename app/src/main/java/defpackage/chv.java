@@ -1,17 +1,15 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: chv  reason: default package */
+/* renamed from: chv reason: default package */
 /* compiled from: PG */
-public final class chv implements clt {
-    private final /* synthetic */ cht a;
+final class chv implements defpackage.clt {
+    private final /* synthetic */ defpackage.cht a;
 
-    chv(cht cht) {
+    chv(defpackage.cht cht) {
         this.a = cht;
     }
 
-    @Override // defpackage.clt
-    public final /* synthetic */ Object a() {
+    public final /* synthetic */ java.lang.Object a() {
         return this.a.j();
     }
 }

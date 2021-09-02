@@ -1,77 +1,72 @@
 package defpackage;
 
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.Executor;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-/* renamed from: dqe  reason: default package */
+/* renamed from: dqe reason: default package */
 /* compiled from: PG */
-public final class dqe implements dmy {
-    public static final Logger c = Logger.getLogger(dqe.class.getName());
-    private static final dqf f = a(dqe.class.getClassLoader());
-    public dor d;
-    public Map e;
-    private final crd g;
+public final class dqe implements defpackage.dmy {
+    public static final java.util.logging.Logger c = java.util.logging.Logger.getLogger(defpackage.dqe.class.getName());
+    private static final defpackage.dqf f = a(defpackage.dqe.class.getClassLoader());
+    public defpackage.dor d;
+    public java.util.Map e;
+    private final defpackage.crd g;
 
-    public dqe(crd crd) {
+    public dqe(defpackage.crd crd) {
         this(crd, f);
     }
 
-    private dqe(crd crd, dqf dqf) {
-        cld.a(crd, "creds");
-        this.g = dqf != null ? dqf.a(crd) : crd;
+    private dqe(defpackage.crd crd, defpackage.dqf dqf) {
+        defpackage.cld.a((java.lang.Object) crd, (java.lang.Object) "creds");
+        if (dqf != null) {
+            crd = dqf.a(crd);
+        }
+        this.g = crd;
     }
 
-    @Override // defpackage.dmy
-    public final void a(dpb dpb, dmv dmv, Executor executor, dmz dmz) {
+    public final void a(defpackage.dpb dpb, defpackage.dmv dmv, java.util.concurrent.Executor executor, defpackage.dmz dmz) {
         try {
-            this.g.a(a((String) cld.a((String) dmv.a(b), "authority"), dpb), executor, new crf(this, dmz));
-        } catch (dqa e2) {
+            this.g.a(a((java.lang.String) defpackage.cld.a((java.lang.Object) (java.lang.String) dmv.a(b), (java.lang.Object) "authority"), dpb), executor, new defpackage.crf(this, dmz));
+        } catch (defpackage.dqa e2) {
             dmz.a(e2.a);
         }
     }
 
-    private static URI a(String str, dpb dpb) {
+    private static java.net.URI a(java.lang.String str, defpackage.dpb dpb) {
         if (str == null) {
-            throw dpw.f.a("Channel has no authority").c();
+            throw defpackage.dpw.f.a("Channel has no authority").c();
         }
-        String valueOf = String.valueOf(dpb.a(dpb.b));
+        java.lang.String str2 = "/";
+        java.lang.String valueOf = java.lang.String.valueOf(defpackage.dpb.a(dpb.b));
         try {
-            URI uri = new URI("https", str, valueOf.length() != 0 ? "/".concat(valueOf) : new String("/"), null, null);
+            java.net.URI uri = new java.net.URI("https", str, valueOf.length() != 0 ? str2.concat(valueOf) : new java.lang.String(str2), null, null);
             if (uri.getPort() == 443) {
                 return a(uri);
             }
             return uri;
-        } catch (URISyntaxException e2) {
-            throw dpw.f.a("Unable to construct service URI for auth").b(e2).c();
+        } catch (java.net.URISyntaxException e2) {
+            throw defpackage.dpw.f.a("Unable to construct service URI for auth").b((java.lang.Throwable) e2).c();
         }
     }
 
-    private static URI a(URI uri) {
+    private static java.net.URI a(java.net.URI uri) {
         try {
-            return new URI(uri.getScheme(), uri.getUserInfo(), uri.getHost(), -1, uri.getPath(), uri.getQuery(), uri.getFragment());
-        } catch (URISyntaxException e2) {
-            throw dpw.f.a("Unable to construct service URI after removing port").b(e2).c();
+            return new java.net.URI(uri.getScheme(), uri.getUserInfo(), uri.getHost(), -1, uri.getPath(), uri.getQuery(), uri.getFragment());
+        } catch (java.net.URISyntaxException e2) {
+            throw defpackage.dpw.f.a("Unable to construct service URI after removing port").b((java.lang.Throwable) e2).c();
         }
     }
 
-    public static dor a(Map map) {
-        dor dor = new dor();
+    public static defpackage.dor a(java.util.Map map) {
+        defpackage.dor dor = new defpackage.dor();
         if (map != null) {
-            for (String str : map.keySet()) {
+            for (java.lang.String str : map.keySet()) {
                 if (str.endsWith("-bin")) {
-                    doy a = doy.a(str, dor.a);
-                    for (String str2 : (List) map.get(str)) {
-                        dor.a(a, cwe.a.a(str2));
+                    defpackage.doy a = defpackage.doy.a(str, defpackage.dor.a);
+                    for (java.lang.String a2 : (java.util.List) map.get(str)) {
+                        dor.a(a, (java.lang.Object) defpackage.cwe.a.a((java.lang.CharSequence) a2));
                     }
                 } else {
-                    doy a2 = doy.a(str, dor.b);
-                    for (String str3 : (List) map.get(str)) {
-                        dor.a(a2, str3);
+                    defpackage.doy a3 = defpackage.doy.a(str, defpackage.dor.b);
+                    for (java.lang.String a4 : (java.util.List) map.get(str)) {
+                        dor.a(a3, (java.lang.Object) a4);
                     }
                 }
             }
@@ -79,15 +74,15 @@ public final class dqe implements dmy {
         return dor;
     }
 
-    private static dqf a(ClassLoader classLoader) {
+    private static defpackage.dqf a(java.lang.ClassLoader classLoader) {
         try {
             try {
-                return new dqf(Class.forName("com.google.auth.oauth2.ServiceAccountCredentials", false, classLoader), classLoader);
-            } catch (ClassNotFoundException | NoSuchMethodException e2) {
-                c.logp(Level.WARNING, "io.grpc.auth.GoogleAuthLibraryCallCredentials", "createJwtHelperOrNull", "Failed to create JWT helper. This is unexpected", e2);
+                return new defpackage.dqf(java.lang.Class.forName("com.google.auth.oauth2.ServiceAccountCredentials", false, classLoader), classLoader);
+            } catch (java.lang.ClassNotFoundException | java.lang.NoSuchMethodException e2) {
+                c.logp(java.util.logging.Level.WARNING, "io.grpc.auth.GoogleAuthLibraryCallCredentials", "createJwtHelperOrNull", "Failed to create JWT helper. This is unexpected", e2);
                 return null;
             }
-        } catch (ClassNotFoundException e3) {
+        } catch (java.lang.ClassNotFoundException e3) {
             return null;
         }
     }

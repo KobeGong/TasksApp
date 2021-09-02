@@ -1,33 +1,38 @@
 package defpackage;
 
-import android.content.Context;
-import android.content.pm.PackageManager;
-import android.util.Log;
-
-/* renamed from: awt  reason: default package */
+/* renamed from: awt reason: default package */
 /* compiled from: PG */
 public final class awt {
-    @Deprecated
-    public static final ayd a = new ayd("ClearcutLogger.API", c, b);
-    private static ayh b = new ayh((byte) 0);
-    private static ayf c = new axn();
-    private final String d;
-    private final int e;
-    private String f;
-    private int g;
-    private String h;
-    private String i;
-    private final awy j;
-    private final bex k;
-    private awx l;
-    private final awv m;
+    @java.lang.Deprecated
+    public static final defpackage.ayd a = new defpackage.ayd("ClearcutLogger.API", c, b);
+    private static defpackage.ayh b = new defpackage.ayh(0);
+    private static defpackage.ayf c = new defpackage.axn();
+    /* access modifiers changed from: private */
+    public final java.lang.String d;
+    /* access modifiers changed from: private */
+    public final int e;
+    /* access modifiers changed from: private */
+    public java.lang.String f;
+    /* access modifiers changed from: private */
+    public int g;
+    /* access modifiers changed from: private */
+    public java.lang.String h;
+    private java.lang.String i;
+    /* access modifiers changed from: private */
+    public final defpackage.awy j;
+    /* access modifiers changed from: private */
+    public final defpackage.bex k;
+    /* access modifiers changed from: private */
+    public defpackage.awx l;
+    /* access modifiers changed from: private */
+    public final defpackage.awv m;
 
-    @Deprecated
-    public awt(Context context, String str, String str2) {
-        this(context, str, str2, new axc(context), bey.a, new axk(context));
+    @java.lang.Deprecated
+    public awt(android.content.Context context, java.lang.String str, java.lang.String str2) {
+        this(context, str, str2, new defpackage.axc(context), defpackage.bey.a, new defpackage.axk(context));
     }
 
-    private awt(Context context, String str, String str2, awy awy, bex bex, awv awv) {
+    private awt(android.content.Context context, java.lang.String str, java.lang.String str2, defpackage.awy awy, defpackage.bex bex, defpackage.awv awv) {
         this.g = -1;
         this.d = context.getPackageName();
         this.e = a(context);
@@ -37,20 +42,21 @@ public final class awt {
         this.i = null;
         this.j = awy;
         this.k = bex;
-        this.l = new awx();
+        this.l = new defpackage.awx();
         this.m = awv;
     }
 
-    private static int a(Context context) {
+    private static int a(android.content.Context context) {
+        boolean z = false;
         try {
             return context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionCode;
-        } catch (PackageManager.NameNotFoundException e2) {
-            Log.wtf("ClearcutLogger", "This can't happen.");
-            return 0;
+        } catch (android.content.pm.PackageManager.NameNotFoundException e2) {
+            android.util.Log.wtf("ClearcutLogger", "This can't happen.");
+            return z;
         }
     }
 
-    static /* synthetic */ String d(awt awt) {
+    static /* synthetic */ java.lang.String d(defpackage.awt awt) {
         return null;
     }
 

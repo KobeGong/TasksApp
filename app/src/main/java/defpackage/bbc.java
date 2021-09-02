@@ -1,28 +1,31 @@
 package defpackage;
 
-/* renamed from: bbc  reason: default package */
+/* renamed from: bbc reason: default package */
 /* compiled from: PG */
 public final class bbc {
-    private final Object a;
-    private final String b;
+    private final java.lang.Object a;
+    private final java.lang.String b;
 
-    bbc(Object obj, String str) {
+    bbc(java.lang.Object obj, java.lang.String str) {
         this.a = obj;
         this.b = str;
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         if (this == obj) {
             return true;
         }
-        if (!(obj instanceof bbc)) {
+        if (!(obj instanceof defpackage.bbc)) {
             return false;
         }
-        bbc bbc = (bbc) obj;
-        return this.a == bbc.a && this.b.equals(bbc.b);
+        defpackage.bbc bbc = (defpackage.bbc) obj;
+        if (this.a != bbc.a || !this.b.equals(bbc.b)) {
+            return false;
+        }
+        return true;
     }
 
     public final int hashCode() {
-        return (System.identityHashCode(this.a) * 31) + this.b.hashCode();
+        return (java.lang.System.identityHashCode(this.a) * 31) + this.b.hashCode();
     }
 }

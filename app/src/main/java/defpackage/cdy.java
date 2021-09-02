@@ -1,25 +1,20 @@
 package defpackage;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+/* renamed from: cdy reason: default package */
+final /* synthetic */ class cdy implements defpackage.brd {
+    private final defpackage.cdw a;
 
-/* access modifiers changed from: package-private */
-/* renamed from: cdy  reason: default package */
-public final /* synthetic */ class cdy implements brd {
-    private final cdw a;
-
-    cdy(cdw cdw) {
+    cdy(defpackage.cdw cdw) {
         this.a = cdw;
     }
 
-    @Override // defpackage.brd
-    public final void a(brc brc) {
+    public final void a(defpackage.brc brc) {
         boolean z;
         boolean z2 = false;
-        cdl cdl = this.a.a;
-        List a2 = cdw.a((bsd) brc);
-        String.format("setAvailableAccounts() %d -> %d.", Integer.valueOf(cdl.a()), Integer.valueOf(a2.size()));
+        defpackage.bsd bsd = (defpackage.bsd) brc;
+        defpackage.cdl cdl = this.a.a;
+        java.util.List a2 = defpackage.cdw.a(bsd);
+        java.lang.String.format("setAvailableAccounts() %d -> %d.", new java.lang.Object[]{java.lang.Integer.valueOf(cdl.a()), java.lang.Integer.valueOf(a2.size())});
         if (!cdl.c.equals(a2)) {
             if (cdl.f() && !a2.contains(cdl.g())) {
                 cdl.d.remove(2);
@@ -35,13 +30,13 @@ public final /* synthetic */ class cdy implements brd {
                 cdl.d.clear();
                 z = true;
             }
-            ArrayList arrayList = new ArrayList(cdl.c);
+            java.util.ArrayList arrayList = new java.util.ArrayList(cdl.c);
             cdl.c.clear();
             cdl.c.addAll(a2);
-            List list = cdl.c;
-            Iterator it = cdl.b.iterator();
+            java.util.List list = cdl.c;
+            java.util.Iterator it = cdl.b.iterator();
             while (it.hasNext()) {
-                ((cdm) it.next()).a(arrayList, list);
+                ((defpackage.cdm) it.next()).a((java.util.List) arrayList, list);
                 if (z) {
                     cdl.h();
                 }
@@ -52,9 +47,9 @@ public final /* synthetic */ class cdy implements brd {
         }
         if (!cdl.a) {
             cdl.a = true;
-            Iterator it2 = cdl.b.iterator();
+            java.util.Iterator it2 = cdl.b.iterator();
             while (it2.hasNext()) {
-                ((cdm) it2.next()).h_();
+                ((defpackage.cdm) it2.next()).h_();
             }
         }
     }

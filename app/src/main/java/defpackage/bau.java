@@ -1,22 +1,19 @@
 package defpackage;
 
-import java.io.FileDescriptor;
-import java.io.PrintWriter;
-
-/* renamed from: bau  reason: default package */
+/* renamed from: bau reason: default package */
 /* compiled from: PG */
 public interface bau {
-    bca a(bca bca);
+    defpackage.bca a(defpackage.bca bca);
 
     void a();
 
-    void a(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr);
+    void a(java.lang.String str, java.io.FileDescriptor fileDescriptor, java.io.PrintWriter printWriter, java.lang.String[] strArr);
 
-    boolean a(bbh bbh);
+    boolean a(defpackage.bbh bbh);
 
-    axq b();
+    defpackage.axq b();
 
-    bca b(bca bca);
+    defpackage.bca b(defpackage.bca bca);
 
     void c();
 

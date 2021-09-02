@@ -1,67 +1,63 @@
 package defpackage;
 
-import android.text.TextUtils;
-import java.net.SocketException;
-import java.net.UnknownHostException;
-import java.util.HashMap;
-import javax.net.ssl.SSLException;
-
-/* renamed from: ccx  reason: default package */
+/* renamed from: ccx reason: default package */
 /* compiled from: PG */
 public final class ccx {
-    public bqg a;
-    public buc b;
+    public defpackage.bqg a;
+    public defpackage.buc b;
 
     ccx() {
     }
 
-    public final ccr a(String str, String str2, djo djo, djo djo2) {
-        String str3;
+    public final defpackage.ccr a(java.lang.String str, java.lang.String str2, defpackage.djo djo, defpackage.djo djo2) {
+        java.lang.String str3;
         boolean z;
         try {
-            cld.a(str);
-            cld.a(djo);
-            cld.a(djo2);
+            defpackage.cld.a((java.lang.Object) str);
+            defpackage.cld.a((java.lang.Object) djo);
+            defpackage.cld.a((java.lang.Object) djo2);
             byte[] b2 = djo.b();
-            String valueOf = String.valueOf(this.b.e().b);
-            String valueOf2 = String.valueOf(str);
+            java.lang.String valueOf = java.lang.String.valueOf(this.b.e().b);
+            java.lang.String valueOf2 = java.lang.String.valueOf(str);
             if (valueOf2.length() != 0) {
                 str3 = valueOf.concat(valueOf2);
             } else {
-                str3 = new String(valueOf);
+                str3 = new java.lang.String(valueOf);
             }
             if (this.b.k()) {
-                str3 = String.valueOf(str3).concat("?%24trace=true");
+                str3 = java.lang.String.valueOf(str3).concat("?%24trace=true");
             }
-            bxe a2 = bxd.e().a(str3);
-            HashMap hashMap = new HashMap();
-            if (!TextUtils.isEmpty(str2)) {
-                String valueOf3 = String.valueOf(this.a.a(str2, "oauth2:https://www.googleapis.com/auth/notifications"));
-                hashMap.put("Authorization", valueOf3.length() != 0 ? "Bearer ".concat(valueOf3) : new String("Bearer "));
-            } else if (!TextUtils.isEmpty(this.b.j())) {
+            defpackage.bxe a2 = defpackage.bxd.e().a(str3);
+            java.util.HashMap hashMap = new java.util.HashMap();
+            if (!android.text.TextUtils.isEmpty(str2)) {
+                java.lang.String str4 = "Authorization";
+                java.lang.String str5 = "Bearer ";
+                java.lang.String valueOf3 = java.lang.String.valueOf(this.a.a(str2, "oauth2:https://www.googleapis.com/auth/notifications"));
+                hashMap.put(str4, valueOf3.length() != 0 ? str5.concat(valueOf3) : new java.lang.String(str5));
+            } else if (!android.text.TextUtils.isEmpty(this.b.j())) {
                 hashMap.put("X-Goog-Api-Key", this.b.j());
             } else {
-                throw new Exception("One of Account Name or API Key must be set.");
+                throw new java.lang.Exception("One of Account Name or API Key must be set.");
             }
             a2.c = hashMap;
             a2.a = b2;
             a2.b = "application/x-protobuf";
-            bxf a3 = bxc.a(a2.a());
+            defpackage.bxf a3 = defpackage.bxc.a(a2.a());
             if (a3.f()) {
-                ccs e = ccr.e();
+                defpackage.ccs e = defpackage.ccr.e();
                 e.b = a3.g();
-                Throwable g = a3.g();
+                java.lang.Throwable g = a3.g();
                 if (g == null) {
                     z = true;
-                } else if (g instanceof SocketException) {
+                } else if (g instanceof java.net.SocketException) {
                     z = true;
-                } else if (g instanceof UnknownHostException) {
+                } else if (g instanceof java.net.UnknownHostException) {
                     z = true;
-                } else if (g instanceof SSLException) {
+                } else if (g instanceof javax.net.ssl.SSLException) {
                     z = true;
                 } else {
-                    if (g instanceof bxh) {
-                        switch (((bxh) g).a) {
+                    if (g instanceof defpackage.bxh) {
+                        switch (((defpackage.bxh) g).a) {
                             case 401:
                                 z = true;
                                 break;
@@ -71,11 +67,12 @@ public final class ccx {
                 }
                 return e.a(z).a();
             }
-            ccs e2 = ccr.e();
-            e2.a = (djo) djo2.d().a(a3.c());
+            defpackage.djo djo3 = (defpackage.djo) djo2.d().a(a3.c());
+            defpackage.ccs e2 = defpackage.ccr.e();
+            e2.a = djo3;
             return e2.a();
-        } catch (Exception e3) {
-            ccs e4 = ccr.e();
+        } catch (java.lang.Exception e3) {
+            defpackage.ccs e4 = defpackage.ccr.e();
             e4.b = e3;
             return e4.a(false).a();
         }

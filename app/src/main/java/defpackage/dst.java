@@ -1,28 +1,26 @@
 package defpackage;
 
-/* renamed from: dst  reason: default package */
+/* renamed from: dst reason: default package */
 /* compiled from: PG */
-final class dst extends dtk {
-    private final /* synthetic */ dor a;
-    private final /* synthetic */ dss b;
+final class dst extends defpackage.dtk {
+    private final /* synthetic */ defpackage.dor a;
+    private final /* synthetic */ defpackage.dss b;
 
-    /* JADX INFO: super call moved to the top of the method (can break code semantics) */
-    dst(dss dss, dor dor) {
-        super(dss.c.d);
+    dst(defpackage.dss dss, defpackage.dor dor) {
         this.b = dss;
         this.a = dor;
+        super(dss.c.d);
     }
 
-    @Override // defpackage.dtk
     public final void a() {
         try {
             if (!this.b.b) {
                 this.b.a.a(this.a);
             }
         } catch (Throwable th) {
-            dpw a2 = dpw.c.b(th).a("Failed to read headers");
+            defpackage.dpw a2 = defpackage.dpw.c.b(th).a("Failed to read headers");
             this.b.c.e.b(a2);
-            this.b.a(a2, new dor());
+            this.b.a(a2, new defpackage.dor());
         }
     }
 }

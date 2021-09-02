@@ -1,18 +1,17 @@
 package defpackage;
 
-/* renamed from: bvv  reason: default package */
+/* renamed from: bvv reason: default package */
 /* compiled from: PG */
-public final class bvv implements ecz {
-    private final ecz a;
-    private final ecz b;
+public final class bvv implements defpackage.ecz {
+    private final defpackage.ecz a;
+    private final defpackage.ecz b;
 
-    public bvv(ecz ecz, ecz ecz2) {
+    public bvv(defpackage.ecz ecz, defpackage.ecz ecz2) {
         this.a = ecz;
         this.b = ecz2;
     }
 
-    @Override // defpackage.ecz
-    public final /* synthetic */ Object a() {
-        return new bvu((bup) this.a.a(), (bvs) this.b.a());
+    public final /* synthetic */ java.lang.Object a() {
+        return new defpackage.bvu((defpackage.bup) this.a.a(), (defpackage.bvs) this.b.a());
     }
 }

@@ -1,33 +1,31 @@
 package defpackage;
 
-import java.util.Arrays;
-
-/* renamed from: crs  reason: default package */
+/* renamed from: crs reason: default package */
 /* compiled from: PG */
 public final class crs {
     public boolean a = false;
-    private final String b;
-    private final crt c = new crt();
-    private crt d = this.c;
+    private final java.lang.String b;
+    private final defpackage.crt c = new defpackage.crt();
+    private defpackage.crt d = this.c;
 
-    public crs(String str) {
-        this.b = (String) cld.a(str);
+    public crs(java.lang.String str) {
+        this.b = (java.lang.String) defpackage.cld.a((java.lang.Object) str);
     }
 
-    public final crs a(String str, boolean z) {
-        return a(str, String.valueOf(z));
+    public final defpackage.crs a(java.lang.String str, boolean z) {
+        return a(str, (java.lang.Object) java.lang.String.valueOf(z));
     }
 
-    public final crs a(String str, int i) {
-        return a(str, String.valueOf(i));
+    public final defpackage.crs a(java.lang.String str, int i) {
+        return a(str, (java.lang.Object) java.lang.String.valueOf(i));
     }
 
-    public final String toString() {
+    public final java.lang.String toString() {
         boolean z = this.a;
-        StringBuilder append = new StringBuilder(32).append(this.b).append('{');
-        String str = "";
-        for (crt crt = this.c.c; crt != null; crt = crt.c) {
-            Object obj = crt.b;
+        java.lang.StringBuilder append = new java.lang.StringBuilder(32).append(this.b).append('{');
+        java.lang.String str = "";
+        for (defpackage.crt crt = this.c.c; crt != null; crt = crt.c) {
+            java.lang.Object obj = crt.b;
             if (!z || obj != null) {
                 append.append(str);
                 str = ", ";
@@ -37,25 +35,25 @@ public final class crs {
                 if (obj == null || !obj.getClass().isArray()) {
                     append.append(obj);
                 } else {
-                    String deepToString = Arrays.deepToString(new Object[]{obj});
-                    append.append((CharSequence) deepToString, 1, deepToString.length() - 1);
+                    java.lang.String deepToString = java.util.Arrays.deepToString(new java.lang.Object[]{obj});
+                    append.append(deepToString, 1, deepToString.length() - 1);
                 }
             }
         }
         return append.append('}').toString();
     }
 
-    public final crt a() {
-        crt crt = new crt();
+    public final defpackage.crt a() {
+        defpackage.crt crt = new defpackage.crt();
         this.d.c = crt;
         this.d = crt;
         return crt;
     }
 
-    public final crs a(String str, Object obj) {
-        crt a2 = a();
+    public final defpackage.crs a(java.lang.String str, java.lang.Object obj) {
+        defpackage.crt a2 = a();
         a2.b = obj;
-        a2.a = (String) cld.a(str);
+        a2.a = (java.lang.String) defpackage.cld.a((java.lang.Object) str);
         return this;
     }
 }

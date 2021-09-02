@@ -1,7 +1,7 @@
 package defpackage;
 
-/* renamed from: crc  reason: default package */
+/* renamed from: crc reason: default package */
 /* compiled from: PG */
 final class crc {
-    public static final djh a = djh.a(dln.INT32, (Object) 0, dln.MESSAGE, (Object) crb.e);
+    public static final defpackage.djh a = defpackage.djh.a(defpackage.dln.INT32, (java.lang.Object) java.lang.Integer.valueOf(0), defpackage.dln.MESSAGE, (java.lang.Object) defpackage.crb.e);
 }

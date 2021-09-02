@@ -1,18 +1,15 @@
 package defpackage;
 
-import android.view.View;
+/* renamed from: cex reason: default package */
+final /* synthetic */ class cex implements android.view.View.OnClickListener {
+    private final defpackage.cdj a;
 
-/* access modifiers changed from: package-private */
-/* renamed from: cex  reason: default package */
-public final /* synthetic */ class cex implements View.OnClickListener {
-    private final cdj a;
-
-    cex(cdj cdj) {
+    cex(defpackage.cdj cdj) {
         this.a = cdj;
     }
 
-    public final void onClick(View view) {
-        cdj cdj = this.a;
+    public final void onClick(android.view.View view) {
+        defpackage.cdj cdj = this.a;
         cdj.c().a().a(view, cdj.a().c());
     }
 }

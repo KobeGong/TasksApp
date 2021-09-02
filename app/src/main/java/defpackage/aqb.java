@@ -1,16 +1,14 @@
 package defpackage;
 
-import android.view.View;
+/* renamed from: aqb reason: default package */
+final /* synthetic */ class aqb implements android.view.View.OnClickListener {
+    private final WelcomeFragment a;
 
-/* renamed from: aqb  reason: default package */
-final /* synthetic */ class aqb implements View.OnClickListener {
-    private final aqa a;
-
-    aqb(aqa aqa) {
+    aqb(WelcomeFragment aqa) {
         this.a = aqa;
     }
 
-    public final void onClick(View view) {
+    public final void onClick(android.view.View view) {
         this.a.c();
     }
 }

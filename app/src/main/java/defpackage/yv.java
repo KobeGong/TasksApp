@@ -1,49 +1,26 @@
 package defpackage;
 
-import android.content.Context;
-import android.content.res.Resources;
-import android.graphics.Rect;
-import android.os.Build;
-import android.os.Handler;
-import android.os.Parcelable;
-import android.view.KeyEvent;
-import android.view.LayoutInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
-import android.widget.FrameLayout;
-import android.widget.HeaderViewListAdapter;
-import android.widget.ListAdapter;
-import android.widget.ListView;
-import android.widget.PopupWindow;
-import android.widget.TextView;
-import com.google.android.apps.tasks.R;
-import java.util.ArrayList;
-import java.util.List;
-
-/* access modifiers changed from: package-private */
-/* renamed from: yv  reason: default package */
+/* renamed from: yv reason: default package */
 /* compiled from: PG */
-public final class yv extends zq implements View.OnKeyListener, PopupWindow.OnDismissListener, MenuPresenter {
-    private PopupWindow.OnDismissListener A;
-    public final Handler a;
-    public final List b = new ArrayList();
-    public final ViewTreeObserver.OnGlobalLayoutListener c = new yw(this);
-    public View d;
-    public ViewTreeObserver e;
+final class yv extends defpackage.zq implements android.view.View.OnKeyListener, android.widget.PopupWindow.OnDismissListener, defpackage.zt {
+    private android.widget.PopupWindow.OnDismissListener A;
+    public final android.os.Handler a;
+    public final java.util.List b = new java.util.ArrayList();
+    public final android.view.ViewTreeObserver.OnGlobalLayoutListener c = new defpackage.yw(this);
+    public android.view.View d;
+    public android.view.ViewTreeObserver e;
     public boolean f;
-    private final Context h;
+    private final android.content.Context h;
     private final int i;
     private final int j;
     private final int k;
     private final boolean l;
-    private final List m = new ArrayList();
-    private final View.OnAttachStateChangeListener n = new yx(this);
-    private final aek o = new yy(this);
+    private final java.util.List m = new java.util.ArrayList();
+    private final android.view.View.OnAttachStateChangeListener n = new defpackage.yx(this);
+    private final defpackage.aek o = new defpackage.yy(this);
     private int p = 0;
     private int q = 0;
-    private View r;
+    private android.view.View r;
     private int s;
     private boolean t;
     private boolean u;
@@ -51,9 +28,9 @@ public final class yv extends zq implements View.OnKeyListener, PopupWindow.OnDi
     private int w;
     private boolean x;
     private boolean y;
-    private zu z;
+    private defpackage.zu z;
 
-    public yv(Context context, View view, int i2, int i3, boolean z2) {
+    public yv(android.content.Context context, android.view.View view, int i2, int i3, boolean z2) {
         this.h = context;
         this.r = view;
         this.j = i2;
@@ -61,21 +38,19 @@ public final class yv extends zq implements View.OnKeyListener, PopupWindow.OnDi
         this.l = z2;
         this.x = false;
         this.s = i();
-        Resources resources = context.getResources();
-        this.i = Math.max(resources.getDisplayMetrics().widthPixels / 2, resources.getDimensionPixelSize(R.dimen.abc_config_prefDialogWidth));
-        this.a = new Handler();
+        android.content.res.Resources resources = context.getResources();
+        this.i = java.lang.Math.max(resources.getDisplayMetrics().widthPixels / 2, resources.getDimensionPixelSize(2131689495));
+        this.a = new android.os.Handler();
     }
 
-    @Override // defpackage.zq
     public final void b(boolean z2) {
         this.x = z2;
     }
 
-    @Override // defpackage.zz
     public final void d() {
         if (!f()) {
-            for (MenuBuilder zeVar : this.m) {
-                c(zeVar);
+            for (defpackage.ze c2 : this.m) {
+                c(c2);
             }
             this.m.clear();
             this.d = this.r;
@@ -90,13 +65,12 @@ public final class yv extends zq implements View.OnKeyListener, PopupWindow.OnDi
         }
     }
 
-    @Override // defpackage.zz
     public final void e() {
         int size = this.b.size();
         if (size > 0) {
-            za[] zaVarArr = (za[]) this.b.toArray(new za[size]);
+            defpackage.za[] zaVarArr = (defpackage.za[]) this.b.toArray(new defpackage.za[size]);
             for (int i2 = size - 1; i2 >= 0; i2--) {
-                za zaVar = zaVarArr[i2];
+                defpackage.za zaVar = zaVarArr[i2];
                 if (zaVar.a.r.isShowing()) {
                     zaVar.a.e();
                 }
@@ -104,7 +78,7 @@ public final class yv extends zq implements View.OnKeyListener, PopupWindow.OnDi
         }
     }
 
-    public final boolean onKey(View view, int i2, KeyEvent keyEvent) {
+    public final boolean onKey(android.view.View view, int i2, android.view.KeyEvent keyEvent) {
         if (keyEvent.getAction() != 1 || i2 != 82) {
             return false;
         }
@@ -113,15 +87,14 @@ public final class yv extends zq implements View.OnKeyListener, PopupWindow.OnDi
     }
 
     private final int i() {
-        if (sn.a.j(this.r) == 1) {
+        if (defpackage.sn.a.j(this.r) == 1) {
             return 0;
         }
         return 1;
     }
 
-    @Override // defpackage.zq
-    public final void a(MenuBuilder zeVar) {
-        zeVar.a(this, this.h);
+    public final void a(defpackage.ze zeVar) {
+        zeVar.a((defpackage.zt) this, this.h);
         if (f()) {
             c(zeVar);
         } else {
@@ -129,188 +102,340 @@ public final class yv extends zq implements View.OnKeyListener, PopupWindow.OnDi
         }
     }
 
-    private final void c(MenuBuilder zeVar) {
-        View view;
-        za zaVar;
-        int i2;
-        int i3;
-        int i4;
-        int i5;
-        MenuItemImpl ziVar;
-        int i6;
-        zd zdVar;
-        int i7;
-        View view2;
-        LayoutInflater from = LayoutInflater.from(this.h);
-        zd zdVar2 = new zd(zeVar, from, this.l);
-        if (!f() && this.x) {
-            zdVar2.b = true;
-        } else if (f()) {
-            zdVar2.b = zq.b(zeVar);
-        }
-        int a2 = a(zdVar2, null, this.h, this.i);
-        ael ael = new ael(this.h, this.j, this.k);
-        ael.b = this.o;
-        ael.m = this;
-        ael.a(this);
-        ael.l = this.r;
-        ael.j = this.q;
-        ael.b();
-        ael.h();
-        ael.a(zdVar2);
-        ael.b(a2);
-        ael.j = this.q;
-        if (this.b.size() > 0) {
-            za zaVar2 = (za) this.b.get(this.b.size() - 1);
-            MenuBuilder zeVar2 = zaVar2.b;
-            int size = zeVar2.size();
-            int i8 = 0;
-            while (true) {
-                if (i8 >= size) {
-                    ziVar = null;
-                    break;
-                }
-                MenuItem item = zeVar2.getItem(i8);
-                if (item.hasSubMenu() && zeVar == item.getSubMenu()) {
-                    ziVar = item;
-                    break;
-                }
-                i8++;
-            }
-            if (ziVar == null) {
-                view2 = null;
-            } else {
-                ade ade = zaVar2.a.e;
-                ListAdapter adapter = ade.getAdapter();
-                if (adapter instanceof HeaderViewListAdapter) {
-                    HeaderViewListAdapter headerViewListAdapter = (HeaderViewListAdapter) adapter;
-                    i6 = headerViewListAdapter.getHeadersCount();
-                    zdVar = (zd) headerViewListAdapter.getWrappedAdapter();
-                } else {
-                    i6 = 0;
-                    zdVar = (zd) adapter;
-                }
-                int i9 = 0;
-                int count = zdVar.getCount();
-                while (true) {
-                    if (i9 >= count) {
-                        i7 = -1;
-                        break;
-                    } else if (ziVar == ((MenuItemImpl) zdVar.getItem(i9))) {
-                        i7 = i9;
-                        break;
-                    } else {
-                        i9++;
-                    }
-                }
-                if (i7 == -1) {
-                    view2 = null;
-                } else {
-                    int firstVisiblePosition = (i7 + i6) - ade.getFirstVisiblePosition();
-                    if (firstVisiblePosition < 0 || firstVisiblePosition >= ade.getChildCount()) {
-                        view2 = null;
-                    } else {
-                        view2 = ade.getChildAt(firstVisiblePosition);
-                    }
-                }
-            }
-            view = view2;
-            zaVar = zaVar2;
-        } else {
-            view = null;
-            zaVar = null;
-        }
-        if (view != null) {
-            if (ael.a != null) {
-                try {
-                    ael.a.invoke(ael.r, false);
-                } catch (Exception e2) {
-                }
-            }
-            if (Build.VERSION.SDK_INT >= 23) {
-                ael.r.setEnterTransition(null);
-            }
-            ade ade2 = ((za) this.b.get(this.b.size() - 1)).a.e;
-            int[] iArr = new int[2];
-            ade2.getLocationOnScreen(iArr);
-            Rect rect = new Rect();
-            this.d.getWindowVisibleDisplayFrame(rect);
-            if (this.s == 1) {
-                if (ade2.getWidth() + iArr[0] + a2 <= rect.right) {
-                    i2 = 1;
-                }
-                i2 = 0;
-            } else {
-                if (iArr[0] - a2 < 0) {
-                    i2 = 1;
-                }
-                i2 = 0;
-            }
-            boolean z2 = i2 == 1;
-            this.s = i2;
-            if (Build.VERSION.SDK_INT >= 26) {
-                ael.l = view;
-                i3 = 0;
-                i4 = 0;
-            } else {
-                int[] iArr2 = new int[2];
-                this.r.getLocationOnScreen(iArr2);
-                int[] iArr3 = new int[2];
-                view.getLocationOnScreen(iArr3);
-                if ((this.q & 7) == 5) {
-                    iArr2[0] = iArr2[0] + this.r.getWidth();
-                    iArr3[0] = iArr3[0] + view.getWidth();
-                }
-                i3 = iArr3[0] - iArr2[0];
-                i4 = iArr3[1] - iArr2[1];
-            }
-            if ((this.q & 5) == 5) {
-                if (z2) {
-                    i5 = i3 + a2;
-                } else {
-                    i5 = i3 - view.getWidth();
-                }
-            } else if (z2) {
-                i5 = view.getWidth() + i3;
-            } else {
-                i5 = i3 - a2;
-            }
-            ael.g = i5;
-            ael.i = true;
-            ael.h = true;
-            ael.a(i4);
-        } else {
-            if (this.t) {
-                ael.g = this.v;
-            }
-            if (this.u) {
-                ael.a(this.w);
-            }
-            ael.p = this.g;
-        }
-        this.b.add(new za(ael, zeVar, this.s));
-        ael.d();
-        ade ade3 = ael.e;
-        ade3.setOnKeyListener(this);
-        if (zaVar == null && this.y && zeVar.f != null) {
-            FrameLayout frameLayout = (FrameLayout) from.inflate(R.layout.abc_popup_menu_header_item_layout, (ViewGroup) ade3, false);
-            frameLayout.setEnabled(false);
-            ((TextView) frameLayout.findViewById(16908310)).setText(zeVar.f);
-            ade3.addHeaderView(frameLayout, null, false);
-            ael.d();
-        }
+    /* JADX WARNING: type inference failed for: r6v15 */
+    /* JADX WARNING: Multi-variable type inference failed */
+    /* Code decompiled incorrectly, please refer to instructions dump. */
+    private final void c(defpackage.ze r13) {
+        /*
+            r12 = this;
+            android.content.Context r0 = r12.h
+            android.view.LayoutInflater r7 = android.view.LayoutInflater.from(r0)
+            zd r0 = new zd
+            boolean r1 = r12.l
+            r0.<init>(r13, r7, r1)
+            boolean r1 = r12.f()
+            if (r1 != 0) goto L_0x014c
+            boolean r1 = r12.x
+            if (r1 == 0) goto L_0x014c
+            r1 = 1
+            r0.b = r1
+        L_0x001a:
+            r1 = 0
+            android.content.Context r2 = r12.h
+            int r3 = r12.i
+            int r8 = a(r0, r1, r2, r3)
+            ael r9 = new ael
+            android.content.Context r1 = r12.h
+            int r2 = r12.j
+            int r3 = r12.k
+            r9.<init>(r1, r2, r3)
+            aek r1 = r12.o
+            r9.b = r1
+            r9.m = r12
+            r9.a(r12)
+            android.view.View r1 = r12.r
+            r9.l = r1
+            int r1 = r12.q
+            r9.j = r1
+            r9.b()
+            r9.h()
+            r9.a(r0)
+            r9.b(r8)
+            int r0 = r12.q
+            r9.j = r0
+            java.util.List r0 = r12.b
+            int r0 = r0.size()
+            if (r0 <= 0) goto L_0x01b4
+            java.util.List r0 = r12.b
+            java.util.List r1 = r12.b
+            int r1 = r1.size()
+            int r1 = r1 + -1
+            java.lang.Object r0 = r0.get(r1)
+            za r0 = (defpackage.za) r0
+            ze r3 = r0.b
+            r1 = 0
+            int r4 = r3.size()
+            r2 = r1
+        L_0x006f:
+            if (r2 >= r4) goto L_0x015f
+            android.view.MenuItem r1 = r3.getItem(r2)
+            boolean r5 = r1.hasSubMenu()
+            if (r5 == 0) goto L_0x015a
+            android.view.SubMenu r5 = r1.getSubMenu()
+            if (r13 != r5) goto L_0x015a
+            r6 = r1
+        L_0x0082:
+            if (r6 != 0) goto L_0x0163
+            r1 = 0
+        L_0x0085:
+            r3 = r1
+            r4 = r0
+        L_0x0087:
+            if (r3 == 0) goto L_0x021c
+            java.lang.reflect.Method r0 = defpackage.ael.a
+            if (r0 == 0) goto L_0x009f
+            java.lang.reflect.Method r0 = defpackage.ael.a     // Catch:{ Exception -> 0x0233 }
+            android.widget.PopupWindow r1 = r9.r     // Catch:{ Exception -> 0x0233 }
+            r2 = 1
+            java.lang.Object[] r2 = new java.lang.Object[r2]     // Catch:{ Exception -> 0x0233 }
+            r5 = 0
+            r6 = 0
+            java.lang.Boolean r6 = java.lang.Boolean.valueOf(r6)     // Catch:{ Exception -> 0x0233 }
+            r2[r5] = r6     // Catch:{ Exception -> 0x0233 }
+            r0.invoke(r1, r2)     // Catch:{ Exception -> 0x0233 }
+        L_0x009f:
+            int r0 = android.os.Build.VERSION.SDK_INT
+            r1 = 23
+            if (r0 < r1) goto L_0x00ab
+            android.widget.PopupWindow r0 = r9.r
+            r1 = 0
+            r0.setEnterTransition(r1)
+        L_0x00ab:
+            java.util.List r0 = r12.b
+            java.util.List r1 = r12.b
+            int r1 = r1.size()
+            int r1 = r1 + -1
+            java.lang.Object r0 = r0.get(r1)
+            za r0 = (defpackage.za) r0
+            ael r0 = r0.a
+            ade r0 = r0.e
+            r1 = 2
+            int[] r1 = new int[r1]
+            r0.getLocationOnScreen(r1)
+            android.graphics.Rect r2 = new android.graphics.Rect
+            r2.<init>()
+            android.view.View r5 = r12.d
+            r5.getWindowVisibleDisplayFrame(r2)
+            int r5 = r12.s
+            r6 = 1
+            if (r5 != r6) goto L_0x01ba
+            r5 = 0
+            r1 = r1[r5]
+            int r0 = r0.getWidth()
+            int r0 = r0 + r1
+            int r0 = r0 + r8
+            int r1 = r2.right
+            if (r0 > r1) goto L_0x01c4
+            r0 = 1
+            r1 = r0
+        L_0x00e3:
+            r0 = 1
+            if (r1 != r0) goto L_0x01c8
+            r0 = 1
+        L_0x00e7:
+            r12.s = r1
+            int r1 = android.os.Build.VERSION.SDK_INT
+            r2 = 26
+            if (r1 < r2) goto L_0x01cb
+            r9.l = r3
+            r2 = 0
+            r1 = 0
+        L_0x00f3:
+            int r5 = r12.q
+            r5 = r5 & 5
+            r6 = 5
+            if (r5 != r6) goto L_0x020f
+            if (r0 == 0) goto L_0x0207
+            int r0 = r2 + r8
+        L_0x00fe:
+            r9.g = r0
+            r0 = 1
+            r9.i = r0
+            r0 = 1
+            r9.h = r0
+            r9.a(r1)
+        L_0x0109:
+            za r0 = new za
+            int r1 = r12.s
+            r0.<init>(r9, r13, r1)
+            java.util.List r1 = r12.b
+            r1.add(r0)
+            r9.d()
+            ade r2 = r9.e
+            r2.setOnKeyListener(r12)
+            if (r4 != 0) goto L_0x014b
+            boolean r0 = r12.y
+            if (r0 == 0) goto L_0x014b
+            java.lang.CharSequence r0 = r13.f
+            if (r0 == 0) goto L_0x014b
+            r0 = 2131034129(0x7f050011, float:1.7678767E38)
+            r1 = 0
+            android.view.View r0 = r7.inflate(r0, r2, r1)
+            android.widget.FrameLayout r0 = (android.widget.FrameLayout) r0
+            r1 = 16908310(0x1020016, float:2.387729E-38)
+            android.view.View r1 = r0.findViewById(r1)
+            android.widget.TextView r1 = (android.widget.TextView) r1
+            r3 = 0
+            r0.setEnabled(r3)
+            java.lang.CharSequence r3 = r13.f
+            r1.setText(r3)
+            r1 = 0
+            r3 = 0
+            r2.addHeaderView(r0, r1, r3)
+            r9.d()
+        L_0x014b:
+            return
+        L_0x014c:
+            boolean r1 = r12.f()
+            if (r1 == 0) goto L_0x001a
+            boolean r1 = defpackage.zq.b(r13)
+            r0.b = r1
+            goto L_0x001a
+        L_0x015a:
+            int r1 = r2 + 1
+            r2 = r1
+            goto L_0x006f
+        L_0x015f:
+            r1 = 0
+            r6 = r1
+            goto L_0x0082
+        L_0x0163:
+            ael r1 = r0.a
+            ade r10 = r1.e
+            android.widget.ListAdapter r1 = r10.getAdapter()
+            boolean r2 = r1 instanceof android.widget.HeaderViewListAdapter
+            if (r2 == 0) goto L_0x0194
+            android.widget.HeaderViewListAdapter r1 = (android.widget.HeaderViewListAdapter) r1
+            int r2 = r1.getHeadersCount()
+            android.widget.ListAdapter r1 = r1.getWrappedAdapter()
+            zd r1 = (defpackage.zd) r1
+            r3 = r2
+            r2 = r1
+        L_0x017d:
+            r5 = -1
+            r4 = 0
+            int r11 = r2.getCount()
+        L_0x0183:
+            if (r4 >= r11) goto L_0x0236
+            java.lang.Object r1 = r2.getItem(r4)
+            zi r1 = (defpackage.zi) r1
+            if (r6 != r1) goto L_0x019a
+            r1 = r4
+        L_0x018e:
+            r2 = -1
+            if (r1 != r2) goto L_0x019d
+            r1 = 0
+            goto L_0x0085
+        L_0x0194:
+            r2 = 0
+            zd r1 = (defpackage.zd) r1
+            r3 = r2
+            r2 = r1
+            goto L_0x017d
+        L_0x019a:
+            int r4 = r4 + 1
+            goto L_0x0183
+        L_0x019d:
+            int r1 = r1 + r3
+            int r2 = r10.getFirstVisiblePosition()
+            int r1 = r1 - r2
+            if (r1 < 0) goto L_0x01ab
+            int r2 = r10.getChildCount()
+            if (r1 < r2) goto L_0x01ae
+        L_0x01ab:
+            r1 = 0
+            goto L_0x0085
+        L_0x01ae:
+            android.view.View r1 = r10.getChildAt(r1)
+            goto L_0x0085
+        L_0x01b4:
+            r0 = 0
+            r1 = 0
+            r3 = r1
+            r4 = r0
+            goto L_0x0087
+        L_0x01ba:
+            r0 = 0
+            r0 = r1[r0]
+            int r0 = r0 - r8
+            if (r0 >= 0) goto L_0x01c4
+            r0 = 1
+            r1 = r0
+            goto L_0x00e3
+        L_0x01c4:
+            r0 = 0
+            r1 = r0
+            goto L_0x00e3
+        L_0x01c8:
+            r0 = 0
+            goto L_0x00e7
+        L_0x01cb:
+            r1 = 2
+            int[] r1 = new int[r1]
+            android.view.View r2 = r12.r
+            r2.getLocationOnScreen(r1)
+            r2 = 2
+            int[] r5 = new int[r2]
+            r3.getLocationOnScreen(r5)
+            int r2 = r12.q
+            r2 = r2 & 7
+            r6 = 5
+            if (r2 != r6) goto L_0x01f6
+            r2 = 0
+            r6 = r1[r2]
+            android.view.View r10 = r12.r
+            int r10 = r10.getWidth()
+            int r6 = r6 + r10
+            r1[r2] = r6
+            r2 = 0
+            r6 = r5[r2]
+            int r10 = r3.getWidth()
+            int r6 = r6 + r10
+            r5[r2] = r6
+        L_0x01f6:
+            r2 = 0
+            r2 = r5[r2]
+            r6 = 0
+            r6 = r1[r6]
+            int r2 = r2 - r6
+            r6 = 1
+            r5 = r5[r6]
+            r6 = 1
+            r1 = r1[r6]
+            int r1 = r5 - r1
+            goto L_0x00f3
+        L_0x0207:
+            int r0 = r3.getWidth()
+            int r0 = r2 - r0
+            goto L_0x00fe
+        L_0x020f:
+            if (r0 == 0) goto L_0x0218
+            int r0 = r3.getWidth()
+            int r0 = r0 + r2
+            goto L_0x00fe
+        L_0x0218:
+            int r0 = r2 - r8
+            goto L_0x00fe
+        L_0x021c:
+            boolean r0 = r12.t
+            if (r0 == 0) goto L_0x0224
+            int r0 = r12.v
+            r9.g = r0
+        L_0x0224:
+            boolean r0 = r12.u
+            if (r0 == 0) goto L_0x022d
+            int r0 = r12.w
+            r9.a(r0)
+        L_0x022d:
+            android.graphics.Rect r0 = r12.g
+            r9.p = r0
+            goto L_0x0109
+        L_0x0233:
+            r0 = move-exception
+            goto L_0x009f
+        L_0x0236:
+            r1 = r5
+            goto L_0x018e
+        */
+        throw new UnsupportedOperationException("Method not decompiled: defpackage.yv.c(ze):void");
     }
 
-    @Override // defpackage.zz
     public final boolean f() {
-        if (this.b.size() <= 0 || !((za) this.b.get(0)).a.r.isShowing()) {
-            return false;
-        }
-        return true;
+        return this.b.size() > 0 && ((defpackage.za) this.b.get(0)).a.r.isShowing();
     }
 
     public final void onDismiss() {
-        za zaVar;
+        defpackage.za zaVar;
         int size = this.b.size();
         int i2 = 0;
         while (true) {
@@ -318,7 +443,7 @@ public final class yv extends zq implements View.OnKeyListener, PopupWindow.OnDi
                 zaVar = null;
                 break;
             }
-            zaVar = (za) this.b.get(i2);
+            zaVar = (defpackage.za) this.b.get(i2);
             if (!zaVar.a.r.isShowing()) {
                 break;
             }
@@ -329,21 +454,18 @@ public final class yv extends zq implements View.OnKeyListener, PopupWindow.OnDi
         }
     }
 
-    @Override // defpackage.zt
     public final void a(boolean z2) {
-        for (za zaVar : this.b) {
+        for (defpackage.za zaVar : this.b) {
             a(zaVar.a.e.getAdapter()).notifyDataSetChanged();
         }
     }
 
-    @Override // defpackage.zt
-    public final void a(zu zuVar) {
+    public final void a(defpackage.zu zuVar) {
         this.z = zuVar;
     }
 
-    @Override // defpackage.zt
-    public final boolean a(aad aad) {
-        for (za zaVar : this.b) {
+    public final boolean a(defpackage.aad aad) {
+        for (defpackage.za zaVar : this.b) {
             if (aad == zaVar.b) {
                 zaVar.a.e.requestFocus();
                 return true;
@@ -352,22 +474,21 @@ public final class yv extends zq implements View.OnKeyListener, PopupWindow.OnDi
         if (!aad.hasVisibleItems()) {
             return false;
         }
-        a((MenuBuilder) aad);
+        a((defpackage.ze) aad);
         if (this.z != null) {
             this.z.a(aad);
         }
         return true;
     }
 
-    @Override // defpackage.zt
-    public final void a(MenuBuilder zeVar, boolean z2) {
+    public final void a(defpackage.ze zeVar, boolean z2) {
         int size = this.b.size();
         int i2 = 0;
         while (true) {
             if (i2 >= size) {
                 i2 = -1;
                 break;
-            } else if (zeVar == ((za) this.b.get(i2)).b) {
+            } else if (zeVar == ((defpackage.za) this.b.get(i2)).b) {
                 break;
             } else {
                 i2++;
@@ -376,13 +497,13 @@ public final class yv extends zq implements View.OnKeyListener, PopupWindow.OnDi
         if (i2 >= 0) {
             int i3 = i2 + 1;
             if (i3 < this.b.size()) {
-                ((za) this.b.get(i3)).b.b(false);
+                ((defpackage.za) this.b.get(i3)).b.b(false);
             }
-            za zaVar = (za) this.b.remove(i2);
-            zaVar.b.b(this);
+            defpackage.za zaVar = (defpackage.za) this.b.remove(i2);
+            zaVar.b.b((defpackage.zt) this);
             if (this.f) {
-                ael ael = zaVar.a;
-                if (Build.VERSION.SDK_INT >= 23) {
+                defpackage.ael ael = zaVar.a;
+                if (android.os.Build.VERSION.SDK_INT >= 23) {
                     ael.r.setExitTransition(null);
                 }
                 zaVar.a.r.setAnimationStyle(0);
@@ -390,7 +511,7 @@ public final class yv extends zq implements View.OnKeyListener, PopupWindow.OnDi
             zaVar.a.e();
             int size2 = this.b.size();
             if (size2 > 0) {
-                this.s = ((za) this.b.get(size2 - 1)).c;
+                this.s = ((defpackage.za) this.b.get(size2 - 1)).c;
             } else {
                 this.s = i();
             }
@@ -408,73 +529,62 @@ public final class yv extends zq implements View.OnKeyListener, PopupWindow.OnDi
                 this.d.removeOnAttachStateChangeListener(this.n);
                 this.A.onDismiss();
             } else if (z2) {
-                ((za) this.b.get(0)).b.b(false);
+                ((defpackage.za) this.b.get(0)).b.b(false);
             }
         }
     }
 
-    @Override // defpackage.zt
     public final boolean a() {
         return false;
     }
 
-    @Override // defpackage.zt
-    public final Parcelable c() {
+    public final android.os.Parcelable c() {
         return null;
     }
 
-    @Override // defpackage.zt
-    public final void a(Parcelable parcelable) {
+    public final void a(android.os.Parcelable parcelable) {
     }
 
-    @Override // defpackage.zq
     public final void a(int i2) {
         if (this.p != i2) {
             this.p = i2;
-            this.q = jd.a(i2, sn.a.j(this.r));
+            this.q = defpackage.jd.a(i2, defpackage.sn.a.j(this.r));
         }
     }
 
-    @Override // defpackage.zq
-    public final void a(View view) {
+    public final void a(android.view.View view) {
         if (this.r != view) {
             this.r = view;
-            this.q = jd.a(this.p, sn.a.j(this.r));
+            this.q = defpackage.jd.a(this.p, defpackage.sn.a.j(this.r));
         }
     }
 
-    @Override // defpackage.zq
-    public final void a(PopupWindow.OnDismissListener onDismissListener) {
+    public final void a(android.widget.PopupWindow.OnDismissListener onDismissListener) {
         this.A = onDismissListener;
     }
 
-    @Override // defpackage.zz
-    public final ListView g() {
+    public final android.widget.ListView g() {
         if (this.b.isEmpty()) {
             return null;
         }
-        return ((za) this.b.get(this.b.size() - 1)).a.e;
+        return ((defpackage.za) this.b.get(this.b.size() - 1)).a.e;
     }
 
-    @Override // defpackage.zq
     public final void b(int i2) {
         this.t = true;
         this.v = i2;
     }
 
-    @Override // defpackage.zq
     public final void c(int i2) {
         this.u = true;
         this.w = i2;
     }
 
-    @Override // defpackage.zq
     public final void c(boolean z2) {
         this.y = z2;
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.zq
     public final boolean h() {
         return false;
     }

@@ -1,18 +1,17 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: cjk  reason: default package */
+/* renamed from: cjk reason: default package */
 /* compiled from: PG */
-public final class cjk implements Runnable {
-    private final /* synthetic */ cjw a;
-    private final /* synthetic */ clt b;
-    private final /* synthetic */ clt c;
-    private final /* synthetic */ clt d;
-    private final /* synthetic */ cgq e;
-    private final /* synthetic */ cjm f;
-    private final /* synthetic */ cji g;
+final class cjk implements java.lang.Runnable {
+    private final /* synthetic */ defpackage.cjw a;
+    private final /* synthetic */ defpackage.clt b;
+    private final /* synthetic */ defpackage.clt c;
+    private final /* synthetic */ defpackage.clt d;
+    private final /* synthetic */ defpackage.cgq e;
+    private final /* synthetic */ defpackage.cjm f;
+    private final /* synthetic */ defpackage.cji g;
 
-    cjk(cji cji, cjw cjw, clt clt, clt clt2, clt clt3, cgq cgq, cjm cjm) {
+    cjk(defpackage.cji cji, defpackage.cjw cjw, defpackage.clt clt, defpackage.clt clt2, defpackage.clt clt3, defpackage.cgq cgq, defpackage.cjm cjm) {
         this.g = cji;
         this.a = cjw;
         this.b = clt;
@@ -24,9 +23,9 @@ public final class cjk implements Runnable {
 
     public final void run() {
         try {
-            cji.a(this.g, this.a, this.b, this.c, this.d, this.e, this.f);
-        } catch (RuntimeException e2) {
-            cdm.b("Primes", "Primes failed to initialized in the background", e2, new Object[0]);
+            defpackage.cji.a(this.g, this.a, this.b, this.c, this.d, this.e, this.f);
+        } catch (java.lang.RuntimeException e2) {
+            defpackage.cdm.b("Primes", "Primes failed to initialized in the background", e2, new java.lang.Object[0]);
             this.g.c();
         }
     }

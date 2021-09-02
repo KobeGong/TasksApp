@@ -1,24 +1,24 @@
 package defpackage;
 
-import com.google.android.gms.common.data.DataHolder;
-import java.util.Arrays;
-
-/* renamed from: bcv  reason: default package */
+/* renamed from: bcv reason: default package */
 /* compiled from: PG */
 public class bcv {
-    public final DataHolder a;
+    public final com.google.android.gms.common.data.DataHolder a;
     public int b;
     public int c;
 
-    public bcv(DataHolder dataHolder, int i) {
+    public bcv(com.google.android.gms.common.data.DataHolder dataHolder, int i) {
         boolean z = true;
         int i2 = 0;
-        this.a = (DataHolder) azb.b(dataHolder);
-        azb.a(i >= 0 && i < this.a.e);
+        this.a = (com.google.android.gms.common.data.DataHolder) defpackage.azb.b((java.lang.Object) dataHolder);
+        defpackage.azb.a(i >= 0 && i < this.a.e);
         this.b = i;
-        DataHolder dataHolder2 = this.a;
+        com.google.android.gms.common.data.DataHolder dataHolder2 = this.a;
         int i3 = this.b;
-        azb.a((i3 < 0 || i3 >= dataHolder2.e) ? false : z);
+        if (i3 < 0 || i3 >= dataHolder2.e) {
+            z = false;
+        }
+        defpackage.azb.a(z);
         while (true) {
             if (i2 >= dataHolder2.d.length) {
                 break;
@@ -29,15 +29,18 @@ public class bcv {
                 i2++;
             }
         }
-        this.c = i2 == dataHolder2.d.length ? i2 - 1 : i2;
+        if (i2 == dataHolder2.d.length) {
+            i2--;
+        }
+        this.c = i2;
     }
 
     public boolean a() {
         return !this.a.a();
     }
 
-    public final String a(String str) {
-        DataHolder dataHolder = this.a;
+    public final java.lang.String a(java.lang.String str) {
+        com.google.android.gms.common.data.DataHolder dataHolder = this.a;
         int i = this.b;
         int i2 = this.c;
         dataHolder.a(str, i);
@@ -45,15 +48,15 @@ public class bcv {
     }
 
     public int hashCode() {
-        return Arrays.hashCode(new Object[]{Integer.valueOf(this.b), Integer.valueOf(this.c), this.a});
+        return java.util.Arrays.hashCode(new java.lang.Object[]{java.lang.Integer.valueOf(this.b), java.lang.Integer.valueOf(this.c), this.a});
     }
 
-    public boolean equals(Object obj) {
-        if (!(obj instanceof bcv)) {
+    public boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof defpackage.bcv)) {
             return false;
         }
-        bcv bcv = (bcv) obj;
-        if (!azb.a(Integer.valueOf(bcv.b), Integer.valueOf(this.b)) || !azb.a(Integer.valueOf(bcv.c), Integer.valueOf(this.c)) || bcv.a != this.a) {
+        defpackage.bcv bcv = (defpackage.bcv) obj;
+        if (!defpackage.azb.a((java.lang.Object) java.lang.Integer.valueOf(bcv.b), (java.lang.Object) java.lang.Integer.valueOf(this.b)) || !defpackage.azb.a((java.lang.Object) java.lang.Integer.valueOf(bcv.c), (java.lang.Object) java.lang.Integer.valueOf(this.c)) || bcv.a != this.a) {
             return false;
         }
         return true;

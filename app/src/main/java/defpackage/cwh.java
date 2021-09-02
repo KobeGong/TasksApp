@@ -1,47 +1,45 @@
 package defpackage;
 
-/* renamed from: cwh  reason: default package */
+/* renamed from: cwh reason: default package */
 /* compiled from: PG */
-final class cwh extends cwj {
-    cwh(String str, String str2, Character ch) {
-        this(new cwf(str, str2.toCharArray()), ch);
+final class cwh extends defpackage.cwj {
+    cwh(java.lang.String str, java.lang.String str2, java.lang.Character ch) {
+        this(new defpackage.cwf(str, str2.toCharArray()), ch);
     }
 
-    private cwh(cwf cwf, Character ch) {
+    private cwh(defpackage.cwf cwf, java.lang.Character ch) {
         super(cwf, ch);
-        cld.a(cwf.b.length == 64);
+        defpackage.cld.a(cwf.b.length == 64);
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.cwe, defpackage.cwj
-    public final void a(Appendable appendable, byte[] bArr, int i) {
-        cld.a(appendable);
-        cld.a(0, i, bArr.length);
+    /* access modifiers changed from: 0000 */
+    public final void a(java.lang.Appendable appendable, byte[] bArr, int i) {
+        defpackage.cld.a((java.lang.Object) appendable);
+        defpackage.cld.a(0, i, bArr.length);
         int i2 = 0;
         for (int i3 = i; i3 >= 3; i3 -= 3) {
             int i4 = i2 + 1;
             int i5 = i4 + 1;
-            int i6 = ((bArr[i4] & 255) << 8) | ((bArr[i2] & 255) << 16);
+            byte b = ((bArr[i4] & 255) << 8) | ((bArr[i2] & 255) << 16);
             i2 = i5 + 1;
-            int i7 = i6 | (bArr[i5] & 255);
-            appendable.append(this.c.b[i7 >>> 18]);
-            appendable.append(this.c.b[(i7 >>> 12) & 63]);
-            appendable.append(this.c.b[(i7 >>> 6) & 63]);
-            appendable.append(this.c.b[i7 & 63]);
+            byte b2 = b | (bArr[i5] & 255);
+            appendable.append(this.c.b[b2 >>> 18]);
+            appendable.append(this.c.b[(b2 >>> 12) & 63]);
+            appendable.append(this.c.b[(b2 >>> 6) & 63]);
+            appendable.append(this.c.b[b2 & 63]);
         }
         if (i2 < i) {
             a(appendable, bArr, i2, i - i2);
         }
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.cwe, defpackage.cwj
-    public final int a(byte[] bArr, CharSequence charSequence) {
+    /* access modifiers changed from: 0000 */
+    public final int a(byte[] bArr, java.lang.CharSequence charSequence) {
         int i = 0;
-        cld.a(bArr);
-        CharSequence b = b(charSequence);
+        defpackage.cld.a((java.lang.Object) bArr);
+        java.lang.CharSequence b = b(charSequence);
         if (!this.c.a(b.length())) {
-            throw new cwi(new StringBuilder(32).append("Invalid input length ").append(b.length()).toString());
+            throw new defpackage.cwi("Invalid input length " + b.length());
         }
         int i2 = 0;
         while (i < b.length()) {
@@ -72,9 +70,8 @@ final class cwh extends cwj {
         return i2;
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.cwj
-    public final cwe a(cwf cwf, Character ch) {
-        return new cwh(cwf, ch);
+    /* access modifiers changed from: 0000 */
+    public final defpackage.cwe a(defpackage.cwf cwf, java.lang.Character ch) {
+        return new defpackage.cwh(cwf, ch);
     }
 }

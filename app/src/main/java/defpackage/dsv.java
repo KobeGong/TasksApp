@@ -1,22 +1,19 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: dsv  reason: default package */
+/* renamed from: dsv reason: default package */
 /* compiled from: PG */
-public final class dsv extends dtk {
-    private final /* synthetic */ dpw a;
-    private final /* synthetic */ dor b;
-    private final /* synthetic */ dss c;
+final class dsv extends defpackage.dtk {
+    private final /* synthetic */ defpackage.dpw a;
+    private final /* synthetic */ defpackage.dor b;
+    private final /* synthetic */ defpackage.dss c;
 
-    /* JADX INFO: super call moved to the top of the method (can break code semantics) */
-    dsv(dss dss, dpw dpw, dor dor) {
-        super(dss.c.d);
+    dsv(defpackage.dss dss, defpackage.dpw dpw, defpackage.dor dor) {
         this.c = dss;
         this.a = dpw;
         this.b = dor;
+        super(dss.c.d);
     }
 
-    @Override // defpackage.dtk
     public final void a() {
         if (!this.c.b) {
             this.c.a(this.a, this.b);

@@ -1,6 +1,6 @@
 package defpackage;
 
-/* renamed from: dop  reason: default package */
+/* renamed from: dop reason: default package */
 /* compiled from: PG */
 public abstract class dop {
     public dop() {
@@ -10,7 +10,7 @@ public abstract class dop {
 
     public abstract void b();
 
-    public abstract dtb c();
+    public abstract defpackage.dtb c();
 
     public dop(byte b) {
         this();

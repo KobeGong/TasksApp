@@ -1,28 +1,23 @@
 package defpackage;
 
-import android.os.Bundle;
-import android.view.accessibility.AccessibilityNodeInfo;
-
-/* renamed from: uq  reason: default package */
+/* renamed from: uq reason: default package */
 /* compiled from: PG */
-final class uq extends tp {
-    private final /* synthetic */ up b;
+final class uq extends defpackage.tp {
+    private final /* synthetic */ defpackage.up b;
 
-    uq(up upVar) {
+    uq(defpackage.up upVar) {
         this.b = upVar;
     }
 
-    @Override // defpackage.tp
-    public final tl a(int i) {
-        return tl.a(AccessibilityNodeInfo.obtain(this.b.b(i).a));
+    public final defpackage.tl a(int i) {
+        return defpackage.tl.a(android.view.accessibility.AccessibilityNodeInfo.obtain(this.b.b(i).a));
     }
 
-    @Override // defpackage.tp
-    public final boolean a(int i, int i2, Bundle bundle) {
-        up upVar = this.b;
+    public final boolean a(int i, int i2, android.os.Bundle bundle) {
+        defpackage.up upVar = this.b;
         switch (i) {
             case -1:
-                return sn.a.a(upVar.c, i2, bundle);
+                return defpackage.sn.a.a(upVar.c, i2, bundle);
             default:
                 switch (i2) {
                     case 1:
@@ -62,8 +57,7 @@ final class uq extends tp {
         }
     }
 
-    @Override // defpackage.tp
-    public final tl b(int i) {
+    public final defpackage.tl b(int i) {
         int i2;
         if (i == 2) {
             i2 = this.b.d;

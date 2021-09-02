@@ -1,13 +1,10 @@
 package defpackage;
 
-import java.lang.ref.ReferenceQueue;
-
-/* access modifiers changed from: package-private */
-/* renamed from: cnp  reason: default package */
+/* renamed from: cnp reason: default package */
 /* compiled from: PG */
-public final class cnp {
-    public static cnl a(Object obj, String str, ReferenceQueue referenceQueue) {
-        return new cnl(obj, str, referenceQueue);
+final class cnp {
+    public static defpackage.cnl a(java.lang.Object obj, java.lang.String str, java.lang.ref.ReferenceQueue referenceQueue) {
+        return new defpackage.cnl(obj, str, referenceQueue);
     }
 
     cnp() {

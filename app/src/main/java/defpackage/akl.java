@@ -1,12 +1,10 @@
 package defpackage;
 
-import com.google.android.apps.tasks.R;
-
-/* renamed from: akl  reason: default package */
+/* renamed from: akl reason: default package */
 /* compiled from: PG */
 public enum akl {
-    DUE(R.string.notification_channel_id_due, R.string.notification_group_id_due, R.string.notification_channel_title_due_tasks, R.plurals.notification_title_due_tasks, R.color.notification_color_due_task),
-    OVERDUE(R.string.notification_channel_id_overdue, R.string.notification_group_id_overdue, R.string.notification_channel_title_overdue_tasks, R.plurals.notification_title_overdue_tasks, R.color.notification_color_overdue_task);
+    DUE(2131951764, 2131951768, 2131951766, 2131886083, 2131624123),
+    OVERDUE(2131951765, 2131951769, 2131951767, 2131886084, 2131624124);
     
     public final int c;
     public final int d;

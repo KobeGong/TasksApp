@@ -1,36 +1,39 @@
 package defpackage;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-/* renamed from: rl  reason: default package */
+/* renamed from: rl reason: default package */
 /* compiled from: PG */
-public class rl implements Parcelable {
-    public static final Parcelable.Creator CREATOR = new rm();
-    public static final rl d = new rl((byte) 0);
-    public final Parcelable e;
+public class rl implements android.os.Parcelable {
+    public static final android.os.Parcelable.Creator CREATOR = new defpackage.rm();
+    public static final defpackage.rl d = new defpackage.rl(0);
+    public final android.os.Parcelable e;
 
     private rl() {
         this.e = null;
     }
 
-    public rl(Parcelable parcelable) {
+    public rl(android.os.Parcelable parcelable) {
         if (parcelable == null) {
-            throw new IllegalArgumentException("superState must not be null");
+            throw new java.lang.IllegalArgumentException("superState must not be null");
         }
-        this.e = parcelable == d ? null : parcelable;
+        if (parcelable == d) {
+            parcelable = null;
+        }
+        this.e = parcelable;
     }
 
-    public rl(Parcel parcel, ClassLoader classLoader) {
-        Parcelable readParcelable = parcel.readParcelable(classLoader);
-        this.e = readParcelable == null ? d : readParcelable;
+    public rl(android.os.Parcel parcel, java.lang.ClassLoader classLoader) {
+        android.os.Parcelable readParcelable = parcel.readParcelable(classLoader);
+        if (readParcelable == null) {
+            readParcelable = d;
+        }
+        this.e = readParcelable;
     }
 
     public int describeContents() {
         return 0;
     }
 
-    public void writeToParcel(Parcel parcel, int i) {
+    public void writeToParcel(android.os.Parcel parcel, int i) {
         parcel.writeParcelable(this.e, i);
     }
 

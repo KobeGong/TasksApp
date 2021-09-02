@@ -1,12 +1,12 @@
 package defpackage;
 
-/* renamed from: dvt  reason: default package */
+/* renamed from: dvt reason: default package */
 /* compiled from: PG */
-final class dvt implements Runnable {
-    private final /* synthetic */ dnr a;
-    private final /* synthetic */ dvq b;
+final class dvt implements java.lang.Runnable {
+    private final /* synthetic */ defpackage.dnr a;
+    private final /* synthetic */ defpackage.dvq b;
 
-    dvt(dvq dvq, dnr dnr) {
+    dvt(defpackage.dvq dvq, defpackage.dnr dnr) {
         this.b = dvq;
         this.a = dnr;
     }

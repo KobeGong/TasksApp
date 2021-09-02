@@ -1,39 +1,32 @@
 package defpackage;
 
-import java.util.concurrent.CancellationException;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Executor;
-
-/* access modifiers changed from: package-private */
-/* renamed from: cxw  reason: default package */
+/* renamed from: cxw reason: default package */
 /* compiled from: PG */
-public abstract class cxw extends cyg {
-    public final Executor a;
+abstract class cxw extends defpackage.cyg {
+    public final java.util.concurrent.Executor a;
     public boolean b = true;
-    public final /* synthetic */ cxu c;
+    public final /* synthetic */ defpackage.cxu c;
 
-    public cxw(cxu cxu, Executor executor) {
+    public cxw(defpackage.cxu cxu, java.util.concurrent.Executor executor) {
         this.c = cxu;
-        this.a = (Executor) cld.a(executor);
+        this.a = (java.util.concurrent.Executor) defpackage.cld.a((java.lang.Object) executor);
     }
 
-    /* access modifiers changed from: package-private */
-    public abstract void a(Object obj);
+    /* access modifiers changed from: 0000 */
+    public abstract void a(java.lang.Object obj);
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.cyg
+    /* access modifiers changed from: 0000 */
     public final boolean c() {
         return this.c.isDone();
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.cyg
-    public final void a(Object obj, Throwable th) {
+    /* access modifiers changed from: 0000 */
+    public final void a(java.lang.Object obj, java.lang.Throwable th) {
         if (th == null) {
             a(obj);
-        } else if (th instanceof ExecutionException) {
+        } else if (th instanceof java.util.concurrent.ExecutionException) {
             this.c.a(th.getCause());
-        } else if (th instanceof CancellationException) {
+        } else if (th instanceof java.util.concurrent.CancellationException) {
             this.c.cancel(false);
         } else {
             this.c.a(th);

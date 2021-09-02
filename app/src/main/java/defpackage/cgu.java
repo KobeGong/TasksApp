@@ -1,7 +1,7 @@
 package defpackage;
 
-/* renamed from: cgu  reason: default package */
+/* renamed from: cgu reason: default package */
 /* compiled from: PG */
-public interface cgu extends cgp {
+public interface cgu extends defpackage.cgp {
     void a();
 }

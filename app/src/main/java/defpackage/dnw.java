@@ -1,12 +1,11 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: dnw  reason: default package */
+/* renamed from: dnw reason: default package */
 /* compiled from: PG */
-public final class dnw implements dnu {
-    private final /* synthetic */ dns a;
+final class dnw implements defpackage.dnu {
+    private final /* synthetic */ defpackage.dns a;
 
-    dnw(dns dns) {
+    dnw(defpackage.dns dns) {
         this.a = dns;
     }
 }

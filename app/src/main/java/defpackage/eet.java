@@ -1,19 +1,19 @@
 package defpackage;
 
-/* renamed from: eet  reason: default package */
+/* renamed from: eet reason: default package */
 /* compiled from: PG */
-public final class eet extends dlz {
-    private static volatile eet[] e;
-    public String a = null;
-    public Integer b = null;
-    public Integer c = null;
-    public String d = null;
+public final class eet extends defpackage.dlz {
+    private static volatile defpackage.eet[] e;
+    public java.lang.String a;
+    public java.lang.Integer b;
+    public java.lang.Integer c;
+    public java.lang.String d;
 
-    public static eet[] d() {
+    public static defpackage.eet[] d() {
         if (e == null) {
-            synchronized (dmd.b) {
+            synchronized (defpackage.dmd.b) {
                 if (e == null) {
-                    e = new eet[0];
+                    e = new defpackage.eet[0];
                 }
             }
         }
@@ -21,11 +21,14 @@ public final class eet extends dlz {
     }
 
     public eet() {
+        this.a = null;
+        this.b = null;
+        this.c = null;
+        this.d = null;
         this.k = -1;
     }
 
-    @Override // defpackage.dlz, defpackage.dmf
-    public final void a(dlx dlx) {
+    public final void a(defpackage.dlx dlx) {
         if (this.a != null) {
             dlx.a(1, this.a);
         }
@@ -42,26 +45,24 @@ public final class eet extends dlz {
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.dlz, defpackage.dmf
     public final int a() {
         int a2 = super.a();
         if (this.a != null) {
-            a2 += dlx.b(1, this.a);
+            a2 += defpackage.dlx.b(1, this.a);
         }
         if (this.b != null) {
-            a2 += dlx.c(2, this.b.intValue());
+            a2 += defpackage.dlx.c(2, this.b.intValue());
         }
         if (this.c != null) {
-            a2 += dlx.c(3, this.c.intValue());
+            a2 += defpackage.dlx.c(3, this.c.intValue());
         }
         if (this.d != null) {
-            return a2 + dlx.b(4, this.d);
+            return a2 + defpackage.dlx.b(4, this.d);
         }
         return a2;
     }
 
-    @Override // defpackage.dmf
-    public final /* synthetic */ dmf a(dlw dlw) {
+    public final /* synthetic */ defpackage.dmf a(defpackage.dlw dlw) {
         while (true) {
             int a2 = dlw.a();
             switch (a2) {
@@ -69,21 +70,21 @@ public final class eet extends dlz {
                     break;
                 case 10:
                     this.a = dlw.d();
-                    break;
+                    continue;
                 case 16:
-                    this.b = Integer.valueOf(dlw.e());
-                    break;
+                    this.b = java.lang.Integer.valueOf(dlw.e());
+                    continue;
                 case 24:
-                    this.c = Integer.valueOf(dlw.e());
-                    break;
+                    this.c = java.lang.Integer.valueOf(dlw.e());
+                    continue;
                 case 34:
                     this.d = dlw.d();
-                    break;
+                    continue;
                 default:
-                    if (super.a(dlw, a2)) {
+                    if (!super.a(dlw, a2)) {
                         break;
                     } else {
-                        break;
+                        continue;
                     }
             }
         }

@@ -1,27 +1,21 @@
 package defpackage;
 
-import android.content.Context;
-import android.content.Intent;
-import android.text.TextUtils;
-import android.widget.Toast;
-import com.google.android.apps.tasks.R;
-
-/* renamed from: aor  reason: default package */
+/* renamed from: aor reason: default package */
 /* compiled from: PG */
-public final class aor extends aoq {
-    private final bhq b;
-    private final String c;
-    private final String d;
+public final class aor extends defpackage.aoq {
+    private final defpackage.bhq b;
+    private final java.lang.String c;
+    private final java.lang.String d;
 
-    public aor(Context context, Intent intent) {
-        if (bhr.a(context, intent)) {
-            this.b = bhr.b(context, intent);
+    public aor(android.content.Context context, android.content.Intent intent) {
+        if (defpackage.bhr.a(context, intent)) {
+            this.b = defpackage.bhr.b(context, intent);
         } else {
             this.b = null;
         }
-        String stringExtra = intent.getStringExtra("android.intent.extra.SUBJECT");
-        String stringExtra2 = intent.getStringExtra("android.intent.extra.TEXT");
-        if (crx.a(stringExtra)) {
+        java.lang.String stringExtra = intent.getStringExtra("android.intent.extra.SUBJECT");
+        java.lang.String stringExtra2 = intent.getStringExtra("android.intent.extra.TEXT");
+        if (defpackage.crx.a(stringExtra)) {
             this.c = stringExtra2;
             this.d = null;
             return;
@@ -30,79 +24,77 @@ public final class aor extends aoq {
         this.d = stringExtra2;
     }
 
-    @Override // defpackage.aoq, defpackage.aoe
-    public final String a(Context context) {
+    public final java.lang.String a(android.content.Context context) {
         if (this.b != null) {
             return this.b.a;
         }
         return null;
     }
 
-    @Override // defpackage.aoq, defpackage.aoe
-    public final aof a(Context context, String str) {
-        dan dan;
-        String str2;
-        dih dih;
-        dih dih2;
+    public final defpackage.aof a(android.content.Context context, java.lang.String str) {
+        defpackage.dan dan;
+        java.lang.String str2;
+        defpackage.dih dih;
+        defpackage.dih dih2;
         if (this.b != null && !this.b.a.equals(str)) {
-            str2 = context.getResources().getString(R.string.invalid_account);
+            str2 = context.getResources().getString(2131951740);
             dan = null;
-        } else if (TextUtils.isEmpty(this.c)) {
-            str2 = context.getResources().getString(R.string.invalid_title);
+        } else if (android.text.TextUtils.isEmpty(this.c)) {
+            str2 = context.getResources().getString(2131951742);
             dan = null;
-        } else if (this.d == null || !ajd.b(this.d)) {
+        } else if (this.d == null || !defpackage.ajd.b(this.d)) {
             dan = null;
             str2 = null;
         } else {
-            dii a = ((dii) dan.f.a(bg.ao)).a(((dii) dao.c.a(bg.ao)).b(this.c).a(this.d));
+            defpackage.dii a = ((defpackage.dii) defpackage.dan.f.a(defpackage.bg.ao)).a(((defpackage.dii) defpackage.dao.c.a(defpackage.bg.ao)).b(this.c).a(this.d));
             if (a.b) {
                 dih = a.a;
             } else {
-                dih dih3 = a.a;
-                djz.a.a(dih3).c(dih3);
+                defpackage.dih dih3 = a.a;
+                defpackage.djz.a.a((java.lang.Object) dih3).c(dih3);
                 a.b = true;
                 dih = a.a;
             }
-            dih dih4 = dih;
-            if (!dih.a(dih4, Boolean.TRUE.booleanValue())) {
-                throw new dkw();
+            defpackage.dih dih4 = dih;
+            if (!defpackage.dih.a(dih4, java.lang.Boolean.TRUE.booleanValue())) {
+                throw new defpackage.dkw();
             }
-            dan = (dan) dih4;
+            dan = (defpackage.dan) dih4;
             str2 = null;
         }
         if (str2 == null) {
-            String a2 = ain.b(context, str).a();
-            dii g = ((dii) dby.g.a(bg.ao)).g(((dii) dca.g.a(bg.ao)).f(this.c));
+            java.lang.String a2 = defpackage.ain.b(context, str).a();
+            defpackage.dii g = ((defpackage.dii) defpackage.dby.g.a(defpackage.bg.ao)).g(((defpackage.dii) defpackage.dca.g.a(defpackage.bg.ao)).setTitle(this.c));
             if (dan != null) {
-                dca f = g.f();
-                dii dii = (dii) f.a(bg.ao);
-                dii.a((dih) f);
-                dii dii2 = dii;
+                defpackage.dca f = g.f();
+                defpackage.dii dii = (defpackage.dii) f.a(defpackage.bg.ao);
+                dii.a((defpackage.dih) f);
+                defpackage.dii dii2 = dii;
                 dii2.b();
-                dca dca = (dca) dii2.a;
+                defpackage.dca dca = (defpackage.dca) dii2.a;
                 if (dan == null) {
-                    throw new NullPointerException();
+                    throw new java.lang.NullPointerException();
                 }
                 dca.f = dan;
                 g.g(dii2);
             }
-            anc c2 = any.get().c();
+            defpackage.anc c2 = defpackage.any.a().c();
             if (g.b) {
                 dih2 = g.a;
             } else {
-                dih dih5 = g.a;
-                djz.a.a(dih5).c(dih5);
+                defpackage.dih dih5 = g.a;
+                defpackage.djz.a.a((java.lang.Object) dih5).c(dih5);
                 g.b = true;
                 dih2 = g.a;
             }
-            dih dih6 = dih2;
-            if (!dih.a(dih6, Boolean.TRUE.booleanValue())) {
-                throw new dkw();
+            defpackage.dih dih6 = dih2;
+            if (!defpackage.dih.a(dih6, java.lang.Boolean.TRUE.booleanValue())) {
+                throw new defpackage.dkw();
             }
-            c2.a(a2, (dby) dih6, 0, (String) null);
+            c2.a(a2, (defpackage.dby) dih6, 0, (java.lang.String) null);
         } else {
-            Toast.makeText(context, str2, 0).show();
+            android.widget.Toast.makeText(context, str2, 0).show();
         }
-        return aoe.a;
+        return defpackage.aoe.a;
     }
 }

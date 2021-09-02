@@ -1,39 +1,26 @@
 package com.google.android.apps.tasks.ui.components;
 
-import android.content.Context;
-import android.content.res.TypedArray;
-import android.util.AttributeSet;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
-import com.google.android.apps.tasks.R;
-
-import defpackage.ail;
-
 /* compiled from: PG */
-public class CheckOptionItem extends RelativeLayout {
-    private final TextView a;
-    private final ImageView b;
+public class CheckOptionItem extends android.widget.RelativeLayout {
+    private final android.widget.TextView a;
+    private final android.widget.ImageView b;
 
-    public CheckOptionItem(Context context) {
+    public CheckOptionItem(android.content.Context context) {
         this(context, null);
     }
 
-    public CheckOptionItem(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, R.attr.optionItemStyle);
+    public CheckOptionItem(android.content.Context context, android.util.AttributeSet attributeSet) {
+        this(context, attributeSet, 2130772248);
     }
 
-    public CheckOptionItem(Context context, AttributeSet attributeSet, int i) {
+    public CheckOptionItem(android.content.Context context, android.util.AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        View inflate = LayoutInflater.from(context).inflate(R.layout.check_option_item, this);
-        this.a = (TextView) inflate.findViewById(R.id.option_text);
-        this.b = (ImageView) inflate.findViewById(R.id.option_check);
-        TypedArray obtainStyledAttributes = context.getTheme().obtainStyledAttributes(attributeSet, ail.a, i, 0);
+        android.view.View inflate = android.view.LayoutInflater.from(context).inflate(2131034150, this);
+        this.a = (android.widget.TextView) inflate.findViewById(2131755269);
+        this.b = (android.widget.ImageView) inflate.findViewById(2131755268);
+        android.content.res.TypedArray obtainStyledAttributes = context.getTheme().obtainStyledAttributes(attributeSet, defpackage.ail.a, i, 0);
         try {
-            a(obtainStyledAttributes.getString(ail.b));
+            a(obtainStyledAttributes.getString(defpackage.ail.b));
         } finally {
             obtainStyledAttributes.recycle();
         }
@@ -47,15 +34,15 @@ public class CheckOptionItem extends RelativeLayout {
 
     public final void a(boolean z) {
         this.b.setVisibility(z ? 0 : 4);
-        this.a.setTextAppearance(this.a.getContext(), z ? R.style.OptionItemTextAppearanceSelected : R.style.OptionItemTextAppearance);
+        this.a.setTextAppearance(this.a.getContext(), z ? 2132017398 : 2132017397);
     }
 
-    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+    public void onInitializeAccessibilityNodeInfo(android.view.accessibility.AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
         accessibilityNodeInfo.setSelected(this.b.getVisibility() == 0);
     }
 
-    public final void a(String str) {
+    public final void a(java.lang.String str) {
         this.a.setText(str);
     }
 }

@@ -1,14 +1,12 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: cok  reason: default package */
+/* renamed from: cok reason: default package */
 /* compiled from: PG */
-public final class cok implements brd {
-    cok(coi coi) {
+final class cok implements defpackage.brd {
+    cok(defpackage.coi coi) {
     }
 
-    @Override // defpackage.brd
-    public final /* synthetic */ void a(brc brc) {
-        coi.a((bre) brc);
+    public final /* synthetic */ void a(defpackage.brc brc) {
+        defpackage.coi.a((defpackage.bre) brc);
     }
 }

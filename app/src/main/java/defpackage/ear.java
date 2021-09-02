@@ -1,20 +1,18 @@
 package defpackage;
 
-/* renamed from: ear  reason: default package */
+/* renamed from: ear reason: default package */
 /* compiled from: PG */
-public final class ear extends eaq {
-    public static final eaq a = new ear();
+public final class ear extends defpackage.eaq {
+    public static final defpackage.eaq a = new defpackage.ear();
 
     private ear() {
     }
 
-    @Override // defpackage.eaq
-    public final eaq a() {
+    public final defpackage.eaq a() {
         return this;
     }
 
-    @Override // defpackage.eaq
-    public final void a(ebi ebi) {
-        cld.a(ebi, "tags");
+    public final void a(defpackage.ebi ebi) {
+        defpackage.cld.a((java.lang.Object) ebi, (java.lang.Object) "tags");
     }
 }

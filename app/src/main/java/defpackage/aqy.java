@@ -1,15 +1,13 @@
 package defpackage;
 
-import android.view.View;
-
-/* renamed from: aqy  reason: default package */
-final /* synthetic */ class aqy implements View.OnClickListener {
-    public static final View.OnClickListener a = new aqy();
+/* renamed from: aqy reason: default package */
+final /* synthetic */ class aqy implements android.view.View.OnClickListener {
+    public static final android.view.View.OnClickListener a = new defpackage.aqy();
 
     private aqy() {
     }
 
-    public final void onClick(View view) {
-        any.get().d.a();
+    public final void onClick(android.view.View view) {
+        defpackage.any.a().d.a();
     }
 }

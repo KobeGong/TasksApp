@@ -1,28 +1,26 @@
 package defpackage;
 
-import java.lang.ref.WeakReference;
-
-/* renamed from: cpn  reason: default package */
+/* renamed from: cpn reason: default package */
 /* compiled from: PG */
 public final class cpn {
-    public Object a;
-    private final ecz b;
+    public java.lang.Object a;
+    private final defpackage.ecz b;
     private final int c;
-    private WeakReference d;
+    private java.lang.ref.WeakReference d;
     private boolean e = false;
     private boolean f = true;
 
-    public cpn(ecz ecz) {
+    public cpn(defpackage.ecz ecz) {
         this.b = ecz;
         this.c = 20;
     }
 
-    public final synchronized Object a() {
-        Object obj = null;
+    public final synchronized java.lang.Object a() {
+        java.lang.Object obj = null;
         synchronized (this) {
             if (!this.e) {
                 this.e = true;
-                cpo.a(this);
+                defpackage.cpo.a(this);
             }
             if (this.a != null) {
                 obj = this.a;
@@ -31,12 +29,12 @@ public final class cpn {
                     obj = this.d.get();
                 }
                 if (obj == null) {
-                    obj = cky.a(this.b.a());
+                    obj = defpackage.cky.a(this.b.a());
                     if (this.f) {
                         this.a = obj;
                         this.d = null;
                     } else {
-                        this.d = new WeakReference(obj);
+                        this.d = new java.lang.ref.WeakReference(obj);
                     }
                 }
             }
@@ -44,9 +42,9 @@ public final class cpn {
         return obj;
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public final synchronized void a(int i) {
-        Object obj = null;
+        java.lang.Object obj = null;
         synchronized (this) {
             boolean z = this.c > i;
             if (z != this.f) {
@@ -63,7 +61,7 @@ public final class cpn {
                         }
                     }
                 } else if (this.a != null) {
-                    this.d = new WeakReference(this.a);
+                    this.d = new java.lang.ref.WeakReference(this.a);
                     this.a = null;
                 }
             }

@@ -1,12 +1,11 @@
 package defpackage;
 
-/* renamed from: cof  reason: default package */
+/* renamed from: cof reason: default package */
 /* compiled from: PG */
-final class cof implements coe {
+final class cof implements defpackage.coe {
     cof() {
     }
 
-    @Override // defpackage.coe
-    public final void a(efx efx) {
+    public final void a(defpackage.efx efx) {
     }
 }

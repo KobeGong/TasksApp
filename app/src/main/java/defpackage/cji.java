@@ -1,51 +1,39 @@
 package defpackage;
 
-import android.app.Application;
-import android.content.IntentFilter;
-import android.content.SharedPreferences;
-import com.google.android.apps.tasks.R;
-import java.lang.Thread;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicReference;
-
-/* access modifiers changed from: package-private */
-/* renamed from: cji  reason: default package */
+/* renamed from: cji reason: default package */
 /* compiled from: PG */
-public final class cji implements cjh {
-    private static final AtomicInteger c = new AtomicInteger();
-    public final Application a;
-    public final clt b;
-    private final AtomicReference d = new AtomicReference();
+final class cji implements defpackage.cjh {
+    private static final java.util.concurrent.atomic.AtomicInteger c = new java.util.concurrent.atomic.AtomicInteger();
+    public final android.app.Application a;
+    public final defpackage.clt b;
+    private final java.util.concurrent.atomic.AtomicReference d = new java.util.concurrent.atomic.AtomicReference();
 
-    cji(Application application, clt clt) {
-        cky.b(true);
-        this.a = (Application) cky.a((Object) application);
-        this.b = (clt) cky.a(clt);
+    cji(android.app.Application application, defpackage.clt clt) {
+        defpackage.cky.b(true);
+        this.a = (android.app.Application) defpackage.cky.a((java.lang.Object) application);
+        this.b = (defpackage.clt) defpackage.cky.a((java.lang.Object) clt);
         c.incrementAndGet();
-        this.d.set(new cja());
+        this.d.set(new defpackage.cja());
     }
 
-    private final cjh g() {
-        return (cjh) this.d.get();
+    private final defpackage.cjh g() {
+        return (defpackage.cjh) this.d.get();
     }
 
-    @Override // defpackage.cjh
     public final void c() {
-        ((cjh) this.d.getAndSet(new ciw())).c();
+        ((defpackage.cjh) this.d.getAndSet(new defpackage.ciw())).c();
         try {
-            Application application = this.a;
-            synchronized (cha.class) {
-                if (cha.a != null) {
-                    chb chb = cha.a.b;
+            android.app.Application application = this.a;
+            synchronized (defpackage.cha.class) {
+                if (defpackage.cha.a != null) {
+                    defpackage.chb chb = defpackage.cha.a.b;
                     application.unregisterActivityLifecycleCallbacks(chb.a);
                     application.unregisterComponentCallbacks(chb.a);
-                    cha.a = null;
+                    defpackage.cha.a = null;
                 }
             }
-        } catch (RuntimeException e) {
-            cdm.a(5, "Primes", "Failed to shutdown app lifecycle monitor", new Object[0]);
+        } catch (java.lang.RuntimeException e) {
+            defpackage.cdm.a(5, "Primes", "Failed to shutdown app lifecycle monitor", new java.lang.Object[0]);
         }
     }
 
@@ -53,105 +41,97 @@ public final class cji implements cjh {
         return true;
     }
 
-    @Override // defpackage.cjh
-    public final boolean a(cls cls) {
+    public final boolean a(defpackage.cls cls) {
         return g().a(cls);
     }
 
-    @Override // defpackage.cjh
-    public final clt b() {
-        clt b2 = g().b();
+    public final defpackage.clt b() {
+        defpackage.clt b2 = g().b();
         return b2 != null ? b2 : this.b;
     }
 
-    @Override // defpackage.cjh
-    public final void a(Runnable runnable) {
+    public final void a(java.lang.Runnable runnable) {
         g().a(runnable);
     }
 
-    @Override // defpackage.cjh
     public final void d() {
         g().d();
     }
 
-    @Override // defpackage.cjh
-    public final void a(cir cir) {
+    public final void a(defpackage.cir cir) {
         g().a(cir);
     }
 
-    @Override // defpackage.cjh
     public final void e() {
         g().e();
     }
 
-    @Override // defpackage.cjh
-    public final Thread.UncaughtExceptionHandler a(Thread.UncaughtExceptionHandler uncaughtExceptionHandler) {
+    public final java.lang.Thread.UncaughtExceptionHandler a(java.lang.Thread.UncaughtExceptionHandler uncaughtExceptionHandler) {
         return g().a(uncaughtExceptionHandler);
     }
 
-    @Override // defpackage.cjh
     public final boolean f() {
         return g().f();
     }
 
-    static /* synthetic */ void a(cji cji, ExecutorService executorService, cjw cjw, clt clt, clt clt2, clt clt3, cgq cgq, cjm cjm) {
+    static /* synthetic */ void a(defpackage.cji cji, java.util.concurrent.ExecutorService executorService, defpackage.cjw cjw, defpackage.clt clt, defpackage.clt clt2, defpackage.clt clt3, defpackage.cgq cgq, defpackage.cjm cjm) {
         try {
-            executorService.submit(new cjk(cji, cjw, clt, clt2, clt3, cgq, cjm));
-        } catch (RuntimeException e) {
-            cdm.b("Primes", "Primes failed to initialized", e, new Object[0]);
+            executorService.submit(new defpackage.cjk(cji, cjw, clt, clt2, clt3, cgq, cjm));
+        } catch (java.lang.RuntimeException e) {
+            defpackage.cdm.b("Primes", "Primes failed to initialized", e, new java.lang.Object[0]);
             cji.c();
         }
     }
 
-    static /* synthetic */ void a(cji cji, cjw cjw, clt clt, clt clt2, clt clt3, cgq cgq, cjm cjm) {
-        cko.a.a = chl.a();
-        cky.a((Object) Integer.valueOf((int) R.string.primes_marker));
-        clr clr = (clr) clt3.a();
-        clr.a(cgq);
-        clr.a(cjm);
-        Application application = cji.a;
-        clt clt4 = cji.b;
-        cmq cmq = new cmq(application);
-        clr.a(cmq);
+    static /* synthetic */ void a(defpackage.cji cji, defpackage.cjw cjw, defpackage.clt clt, defpackage.clt clt2, defpackage.clt clt3, defpackage.cgq cgq, defpackage.cjm cjm) {
+        defpackage.cko.a.a = defpackage.chl.a();
+        defpackage.cky.a((java.lang.Object) java.lang.Integer.valueOf(2131951805));
+        defpackage.clr clr = (defpackage.clr) clt3.a();
+        clr.a((defpackage.cls) cgq);
+        clr.a((defpackage.cls) cjm);
+        android.app.Application application = cji.a;
+        defpackage.clt clt4 = cji.b;
+        defpackage.cmq cmq = new defpackage.cmq(application);
+        clr.a((defpackage.clt) cmq);
         if (!clr.a) {
-            application.registerReceiver(new cmo(clr, cmq, clt4), new IntentFilter("com.google.gservices.intent.action.GSERVICES_CHANGED"));
+            application.registerReceiver(new defpackage.cmo(clr, cmq, clt4), new android.content.IntentFilter("com.google.gservices.intent.action.GSERVICES_CHANGED"));
         }
         if (clr.a) {
             cji.c();
             return;
         }
-        cko.a.b = chl.a();
-        SharedPreferences sharedPreferences = (SharedPreferences) clt2.a();
-        coe coe = cjw.a;
-        Application application2 = cjw.b;
-        cjt cjt = new cjt();
+        defpackage.cko.a.b = defpackage.chl.a();
+        android.content.SharedPreferences sharedPreferences = (android.content.SharedPreferences) clt2.a();
+        defpackage.coe coe = cjw.a;
+        android.app.Application application2 = cjw.b;
+        defpackage.cjt cjt = new defpackage.cjt();
         cjt.a = coe;
-        cjt.b = new ckt(akp.a(application2, "Tasks:enable_memory_metric"));
-        cjt.c = new cln(akp.a(application2, "Tasks:enable_timer_metric"));
-        cjt.d = new cjy(akp.a(application2, "Tasks:enable_crash_metric"), (byte) 0);
-        cjt.e = new ckw(akp.a(application2, "Tasks:enable_network_metric"));
-        cjt.f = new ckx(akp.a(application2, "Tasks:enable_package_metric"));
-        cjs a2 = cjs.a((cjs) cky.a(cjs.a(new cju(cjt.a, cjt.b, cjt.c, cjt.d, cjt.e, cjt.f))));
-        cko.a.c = chl.a();
-        cki cki = (cki) cky.a((cki) clt.a());
+        cjt.b = new defpackage.ckt(defpackage.akp.a(application2, "Tasks:enable_memory_metric"));
+        cjt.c = new defpackage.cln(defpackage.akp.a(application2, "Tasks:enable_timer_metric"));
+        cjt.d = new defpackage.cjy(defpackage.akp.a(application2, "Tasks:enable_crash_metric"), 0);
+        cjt.e = new defpackage.ckw(defpackage.akp.a(application2, "Tasks:enable_network_metric"));
+        cjt.f = new defpackage.ckx(defpackage.akp.a(application2, "Tasks:enable_package_metric"));
+        defpackage.cjs a2 = defpackage.cjs.a((defpackage.cjs) defpackage.cky.a((java.lang.Object) defpackage.cjs.a(new defpackage.cju(cjt.a, cjt.b, cjt.c, cjt.d, cjt.e, cjt.f))));
+        defpackage.cko.a.c = defpackage.chl.a();
+        defpackage.cki cki = (defpackage.cki) defpackage.cky.a((java.lang.Object) (defpackage.cki) clt.a());
         if (clr.a) {
             cji.c();
             return;
         }
-        cko.a.d = chl.a();
-        cht cht = new cht(cji.a, cji.b, a2, cki, sharedPreferences, clr);
+        defpackage.cko.a.d = defpackage.chl.a();
+        defpackage.cht cht = new defpackage.cht(cji.a, cji.b, a2, cki, sharedPreferences, clr);
         cji.a.getPackageName();
-        chk chk = new chk(cht);
+        defpackage.chk chk = new defpackage.chk(cht);
         if (clr.a) {
             cji.c();
             return;
         }
-        cjh cjh = (cjh) cji.d.get();
-        if (!(cjh instanceof cja) || !cji.d.compareAndSet(cjh, chk)) {
-            cdm.a(3, "Primes", "Primes shutdown during initialization", new Object[0]);
+        defpackage.cjh cjh = (defpackage.cjh) cji.d.get();
+        if (!(cjh instanceof defpackage.cja) || !cji.d.compareAndSet(cjh, chk)) {
+            defpackage.cdm.a(3, "Primes", "Primes shutdown during initialization", new java.lang.Object[0]);
             chk.c();
         } else {
-            for (cle cle : chk.a()) {
+            for (defpackage.cle cle : chk.a()) {
                 cle.e();
                 synchronized (cgq) {
                     if (!cgq.c) {
@@ -162,16 +142,16 @@ public final class cji implements cjh {
                 }
             }
             if (!clr.a) {
-                cja cja = (cja) cjh;
+                defpackage.cja cja = (defpackage.cja) cjh;
                 cja.a(chk);
                 synchronized (cja.b) {
                     cja.a = chk;
                 }
                 cja.a(chk);
-                cjl cjl = new cjl(cht);
+                defpackage.cjl cjl = new defpackage.cjl(cht);
                 synchronized (cjm.b) {
                     if (cjm.c) {
-                        ((ScheduledExecutorService) cjm.a.a()).submit(cjl);
+                        ((java.util.concurrent.ScheduledExecutorService) cjm.a.a()).submit(cjl);
                     } else {
                         cjm.b.add(cjl);
                     }
@@ -179,8 +159,8 @@ public final class cji implements cjh {
             }
             cjh.c();
         }
-        cdm.c(cji.a);
-        cdm.d(cji.a);
-        cko.a.e = chl.a();
+        defpackage.cdm.c(cji.a);
+        defpackage.cdm.d(cji.a);
+        defpackage.cko.a.e = defpackage.chl.a();
     }
 }

@@ -1,12 +1,12 @@
 package defpackage;
 
-/* renamed from: duf  reason: default package */
+/* renamed from: duf reason: default package */
 /* compiled from: PG */
-final class duf implements Runnable {
+final class duf implements java.lang.Runnable {
     private final /* synthetic */ int a;
-    private final /* synthetic */ dtt b;
+    private final /* synthetic */ defpackage.dtt b;
 
-    duf(dtt dtt, int i) {
+    duf(defpackage.dtt dtt, int i) {
         this.b = dtt;
         this.a = i;
     }

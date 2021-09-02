@@ -1,27 +1,25 @@
 package defpackage;
 
-import java.io.InputStream;
-
-/* renamed from: dhj  reason: default package */
+/* renamed from: dhj reason: default package */
 /* compiled from: PG */
 public abstract class dhj {
     private static volatile boolean e = false;
     public int a;
     public int b = 100;
     public int c = Integer.MAX_VALUE;
-    public dhm d;
+    public defpackage.dhm d;
 
-    public static dhj a(InputStream inputStream) {
+    public static defpackage.dhj a(java.io.InputStream inputStream) {
         if (inputStream != null) {
-            return new dhl(inputStream);
+            return new defpackage.dhl(inputStream);
         }
-        byte[] bArr = dim.b;
+        byte[] bArr = defpackage.dim.b;
         return a(bArr, 0, bArr.length, false);
     }
 
     public abstract int a();
 
-    public abstract djo a(djx djx, dhw dhw);
+    public abstract defpackage.djo a(defpackage.djx djx, defpackage.dhw dhw);
 
     public abstract void a(int i);
 
@@ -49,11 +47,11 @@ public abstract class dhj {
 
     public abstract boolean i();
 
-    public abstract String j();
+    public abstract java.lang.String j();
 
-    public abstract String k();
+    public abstract java.lang.String k();
 
-    public abstract dha l();
+    public abstract defpackage.dha l();
 
     public abstract int m();
 
@@ -67,20 +65,20 @@ public abstract class dhj {
 
     public abstract long r();
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public abstract long s();
 
     public abstract boolean t();
 
     public abstract int u();
 
-    public static dhj a(byte[] bArr, int i, int i2, boolean z) {
-        dhk dhk = new dhk(bArr, i, i2);
+    public static defpackage.dhj a(byte[] bArr, int i, int i2, boolean z) {
+        defpackage.dhk dhk = new defpackage.dhk(bArr, i, i2);
         try {
             dhk.c(i2);
             return dhk;
-        } catch (dir e2) {
-            throw new IllegalArgumentException(e2);
+        } catch (defpackage.dir e2) {
+            throw new java.lang.IllegalArgumentException(e2);
         }
     }
 

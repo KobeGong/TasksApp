@@ -1,6 +1,6 @@
 package defpackage;
 
-/* renamed from: cot  reason: default package */
+/* renamed from: cot reason: default package */
 /* compiled from: PG */
-public interface cot extends cpf {
+public interface cot extends defpackage.cpf {
 }

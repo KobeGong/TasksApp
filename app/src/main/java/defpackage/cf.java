@@ -1,6 +1,6 @@
 package defpackage;
 
-/* renamed from: cf  reason: default package */
+/* renamed from: cf reason: default package */
 /* compiled from: PG */
 public final class cf {
     public int a = -1;
@@ -9,15 +9,15 @@ public final class cf {
     public float d;
     public float[] e = new float[6];
     public int f;
-    public ca[] g = new ca[8];
+    public defpackage.ca[] g = new defpackage.ca[8];
     public int h = 0;
 
     public cf(int i) {
         this.f = i;
     }
 
-    /* access modifiers changed from: package-private */
-    public final void a(ca caVar) {
+    /* access modifiers changed from: 0000 */
+    public final void a(defpackage.ca caVar) {
         for (int i = 0; i < this.h; i++) {
             if (this.g[i] == caVar) {
                 for (int i2 = 0; i2 < (this.h - i) - 1; i2++) {
@@ -30,7 +30,7 @@ public final class cf {
     }
 
     public final void a() {
-        this.f = bg.i;
+        this.f = defpackage.bg.i;
         this.c = 0;
         this.a = -1;
         this.b = -1;
@@ -38,7 +38,7 @@ public final class cf {
         this.h = 0;
     }
 
-    public final String toString() {
-        return "" + ((String) null);
+    public final java.lang.String toString() {
+        return "" + null;
     }
 }

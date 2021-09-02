@@ -1,44 +1,44 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: aip  reason: default package */
+/* renamed from: aip reason: default package */
 /* compiled from: PG */
-public final class aip extends air {
-    private final Throwable a;
+final class aip extends defpackage.air {
+    private final java.lang.Throwable a;
     private final boolean b;
 
-    aip(Throwable th) {
+    aip(java.lang.Throwable th) {
         if (th == null) {
-            throw new NullPointerException("Null getError");
+            throw new java.lang.NullPointerException("Null getError");
         }
         this.a = th;
         this.b = false;
     }
 
-    @Override // defpackage.air
-    public final Throwable a() {
+    public final java.lang.Throwable a() {
         return this.a;
     }
 
-    @Override // defpackage.air
     public final boolean b() {
         return false;
     }
 
-    public final String toString() {
-        String valueOf = String.valueOf(this.a);
-        return new StringBuilder(String.valueOf(valueOf).length() + 37).append("ErrorInfo{getError=").append(valueOf).append(", willRetry=false").append("}").toString();
+    public final java.lang.String toString() {
+        java.lang.String valueOf = java.lang.String.valueOf(this.a);
+        return new java.lang.StringBuilder(java.lang.String.valueOf(valueOf).length() + 37).append("ErrorInfo{getError=").append(valueOf).append(", willRetry=false").append("}").toString();
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof air)) {
+        if (!(obj instanceof defpackage.air)) {
             return false;
         }
-        air air = (air) obj;
-        return this.a.equals(air.a()) && !air.b();
+        defpackage.air air = (defpackage.air) obj;
+        if (!this.a.equals(air.a()) || air.b()) {
+            return false;
+        }
+        return true;
     }
 
     public final int hashCode() {

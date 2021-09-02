@@ -1,20 +1,15 @@
 package defpackage;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.drawable.Drawable;
-import android.support.v7.widget.ActionBarContainer;
-
-/* renamed from: aah  reason: default package */
+/* renamed from: aah reason: default package */
 /* compiled from: PG */
-public class aah extends Drawable {
-    public final ActionBarContainer a;
+public class aah extends android.graphics.drawable.Drawable {
+    public final android.support.v7.widget.ActionBarContainer a;
 
-    public aah(ActionBarContainer actionBarContainer) {
+    public aah(android.support.v7.widget.ActionBarContainer actionBarContainer) {
         this.a = actionBarContainer;
     }
 
-    public void draw(Canvas canvas) {
+    public void draw(android.graphics.Canvas canvas) {
         if (!this.a.e) {
             if (this.a.b != null) {
                 this.a.b.draw(canvas);
@@ -30,7 +25,7 @@ public class aah extends Drawable {
     public void setAlpha(int i) {
     }
 
-    public void setColorFilter(ColorFilter colorFilter) {
+    public void setColorFilter(android.graphics.ColorFilter colorFilter) {
     }
 
     public int getOpacity() {

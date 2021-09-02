@@ -1,13 +1,12 @@
 package defpackage;
 
-/* renamed from: drm  reason: default package */
+/* renamed from: drm reason: default package */
 /* compiled from: PG */
-final class drm extends doq {
+final class drm extends defpackage.doq {
     drm() {
     }
 
-    @Override // defpackage.doq
-    public final don a() {
-        return don.a;
+    public final defpackage.don a() {
+        return defpackage.don.a;
     }
 }

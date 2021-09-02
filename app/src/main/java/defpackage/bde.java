@@ -1,19 +1,19 @@
 package defpackage;
 
-/* renamed from: bde  reason: default package */
+/* renamed from: bde reason: default package */
 /* compiled from: PG */
 public abstract class bde {
-    public Object a;
+    public java.lang.Object a;
     public boolean b = false;
-    private /* synthetic */ bcx c;
+    private /* synthetic */ defpackage.bcx c;
 
-    public bde(bcx bcx, Object obj) {
+    public bde(defpackage.bcx bcx, java.lang.Object obj) {
         this.c = bcx;
         this.a = obj;
     }
 
     /* access modifiers changed from: protected */
-    public abstract void a(Object obj);
+    public abstract void a(java.lang.Object obj);
 
     /* access modifiers changed from: protected */
     public abstract void b();

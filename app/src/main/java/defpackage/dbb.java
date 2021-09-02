@@ -1,82 +1,85 @@
 package defpackage;
 
-/* renamed from: dbb */
-public final class dbb extends dih implements djq {
-    public static final dbb e = new dbb();
-    private static volatile djx f;
+/* renamed from: dbb reason: default package */
+/* compiled from: PG */
+public final class dbb extends defpackage.dih implements defpackage.djq {
+    public static final defpackage.dbb e = new defpackage.dbb();
+    private static volatile defpackage.djx f;
     public int a;
-    public crb b;
-    public dca c;
-    public djj d = djj.b;
+    public defpackage.crb b;
+    public defpackage.dca c;
+    public defpackage.djj d = defpackage.djj.b;
 
     private dbb() {
     }
 
-    @Override // defpackage.dih
-    public final Object a(int i) {
-        djx djx;
+    /* access modifiers changed from: protected */
+    public final java.lang.Object a(int i) {
+        defpackage.djx djx;
         switch (i - 1) {
             case 0:
-                return (byte) 1;
+                return java.lang.Byte.valueOf(1);
             case 1:
                 return null;
             case 2:
-                return new dkb(e, "\u0000\u0003\u0000\u0001\u0001\u0003\u0003\u0001\u0000\u0000\u0001\t\u0002\t\u00032", new Object[]{"a", "b", "c", "d", dbc.a});
+                java.lang.Object[] objArr = {"a", "b", "c", "d", defpackage.dbc.a};
+                return new defpackage.dkb(e, "\u0000\u0003\u0000\u0001\u0001\u0003\u0003\u0001\u0000\u0000\u0001\t\u0002\t\u00032", objArr);
             case 3:
-                return new dbb();
+                return new defpackage.dbb();
             case 4:
-                return new dii((char[][][][][][]) null);
+                return new defpackage.dii((char[][][][][][]) null);
             case 5:
                 return e;
             case 6:
-                djx djx2 = f;
+                defpackage.djx djx2 = f;
                 if (djx2 != null) {
                     return djx2;
                 }
-                synchronized (dbb.class) {
+                synchronized (defpackage.dbb.class) {
                     djx = f;
                     if (djx == null) {
-                        djx = new dgr(e);
+                        djx = new defpackage.dgr(e);
                         f = djx;
                     }
                 }
                 return djx;
             default:
-                throw new UnsupportedOperationException();
+                throw new java.lang.UnsupportedOperationException();
         }
     }
 
-    public static /* synthetic */ void a(dbb dbb, dii dii) {
-        dih dih;
+    public static /* synthetic */ void a(defpackage.dbb dbb, defpackage.dii dii) {
+        defpackage.dih dih;
         boolean d2;
         if (dii.b) {
             dih = dii.a;
         } else {
-            dih dih2 = dii.a;
-            djz.a.a(dih2).c(dih2);
+            defpackage.dih dih2 = dii.a;
+            defpackage.djz.a.a((java.lang.Object) dih2).c(dih2);
             dii.b = true;
             dih = dii.a;
         }
-        dih dih3 = dih;
-        boolean booleanValue = Boolean.TRUE.booleanValue();
-        byte byteValue = ((Byte) dih3.a(bg.ak)).byteValue();
+        defpackage.dih dih3 = dih;
+        boolean booleanValue = java.lang.Boolean.TRUE.booleanValue();
+        byte byteValue = ((java.lang.Byte) dih3.a(defpackage.bg.ak)).byteValue();
         if (byteValue == 1) {
             d2 = true;
         } else if (byteValue == 0) {
             d2 = false;
         } else {
-            d2 = djz.a.a(dih3).d(dih3);
+            d2 = defpackage.djz.a.a((java.lang.Object) dih3).d(dih3);
             if (booleanValue) {
-                dih3.a(bg.al);
+                dih3.a(defpackage.bg.al);
             }
         }
         if (!d2) {
-            throw new dkw();
+            throw new defpackage.dkw();
         }
-        dbb.c = (dca) dih3;
+        dbb.c = (defpackage.dca) dih3;
     }
 
     static {
-        dih.t.put(dbb.class, e);
+        defpackage.dbb dbb = e;
+        defpackage.dih.t.put(defpackage.dbb.class, dbb);
     }
 }

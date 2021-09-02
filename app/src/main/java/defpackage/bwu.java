@@ -1,16 +1,13 @@
 package defpackage;
 
-import android.content.BroadcastReceiver;
-import android.os.PowerManager;
-
-/* renamed from: bwu  reason: default package */
+/* renamed from: bwu reason: default package */
 /* compiled from: PG */
-final class bwu implements Runnable {
-    private final /* synthetic */ PowerManager.WakeLock a;
-    private final /* synthetic */ Runnable b;
-    private final /* synthetic */ BroadcastReceiver.PendingResult c;
+final class bwu implements java.lang.Runnable {
+    private final /* synthetic */ android.os.PowerManager.WakeLock a;
+    private final /* synthetic */ java.lang.Runnable b;
+    private final /* synthetic */ android.content.BroadcastReceiver.PendingResult c;
 
-    bwu(PowerManager.WakeLock wakeLock, Runnable runnable, BroadcastReceiver.PendingResult pendingResult) {
+    bwu(android.os.PowerManager.WakeLock wakeLock, java.lang.Runnable runnable, android.content.BroadcastReceiver.PendingResult pendingResult) {
         this.a = wakeLock;
         this.b = runnable;
         this.c = pendingResult;
@@ -18,17 +15,13 @@ final class bwu implements Runnable {
 
     public final void run() {
         try {
-            bty.c("ChimeExecutorApiImpl", "Started Broadcast execution [%d].", Integer.valueOf(bwt.a.incrementAndGet()));
+            defpackage.bty.c("ChimeExecutorApiImpl", "Started Broadcast execution [%d].", java.lang.Integer.valueOf(defpackage.bwt.a.incrementAndGet()));
             this.a.acquire();
             this.b.run();
+        } finally {
             this.a.release();
             this.c.finish();
-            bty.c("ChimeExecutorApiImpl", "Finished Broadcast execution [%d].", Integer.valueOf(bwt.a.get()));
-        } catch (Throwable th) {
-            this.a.release();
-            this.c.finish();
-            bty.c("ChimeExecutorApiImpl", "Finished Broadcast execution [%d].", Integer.valueOf(bwt.a.get()));
-            throw th;
+            defpackage.bty.c("ChimeExecutorApiImpl", "Finished Broadcast execution [%d].", java.lang.Integer.valueOf(defpackage.bwt.a.get()));
         }
     }
 }

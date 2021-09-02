@@ -1,51 +1,95 @@
 package defpackage;
 
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentSender;
-import android.content.res.Configuration;
-import android.os.Build;
-import android.os.Bundle;
-import android.os.Handler;
-import android.os.Parcelable;
-import android.util.AttributeSet;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import java.io.FileDescriptor;
-import java.io.PrintWriter;
-
-/* renamed from: lg  reason: default package */
+/* renamed from: lg reason: default package */
 /* compiled from: PG */
-public class FragmentActivity extends ComponentActivity implements ak, ks, ku {
-    public final Handler b = new lh(this);
-    public final ll c = new ll(new li(this));
+public class FragmentActivity extends defpackage.la implements ViewModelStoreOwner, defpackage.ks, defpackage.ku {
+    public final android.os.Handler b = new defpackage.lh(this);
+    public final defpackage.ll c = new defpackage.ll(new defpackage.li(this));
     public boolean d = true;
     public int e;
-    public rj f;
-    private gt h;
+    public defpackage.rj f;
+    private ViewModelStore h;
     private boolean i;
     private boolean j;
     private boolean k = true;
     private boolean l;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r0v11, types: [java.lang.Object[]] */
-    /* JADX WARN: Type inference failed for: r0v12 */
-    /* JADX WARNING: Unknown variable types count: 2 */
+    /* JADX WARNING: type inference failed for: r0v12 */
+    /* JADX WARNING: type inference failed for: r0v13 */
+    /* JADX WARNING: Multi-variable type inference failed */
     /* Code decompiled incorrectly, please refer to instructions dump. */
     public void onActivityResult(int r6, int r7, android.content.Intent r8) {
-        /*
-        // Method dump skipped, instructions count: 122
-        */
-        throw new UnsupportedOperationException("Method not decompiled: defpackage.lg.onActivityResult(int, int, android.content.Intent):void");
+            r5 = this;
+            ll r0 = this.c
+            r0.a()
+            int r0 = r6 >> 16
+            if (r0 == 0) goto L_0x0073
+            int r1 = r0 + -1
+            rj r0 = this.f
+            int[] r2 = r0.c
+            int r3 = r0.e
+            int r2 = defpackage.qv.a(r2, r3, r1)
+            if (r2 < 0) goto L_0x001f
+            java.lang.Object[] r3 = r0.d
+            r3 = r3[r2]
+            java.lang.Object r4 = defpackage.rj.a
+            if (r3 != r4) goto L_0x0049
+        L_0x001f:
+            r0 = 0
+        L_0x0020:
+            java.lang.String r0 = (java.lang.String) r0
+            rj r2 = this.f
+            int[] r3 = r2.c
+            int r4 = r2.e
+            int r1 = defpackage.qv.a(r3, r4, r1)
+            if (r1 < 0) goto L_0x003f
+            java.lang.Object[] r3 = r2.d
+            r3 = r3[r1]
+            java.lang.Object r4 = defpackage.rj.a
+            if (r3 == r4) goto L_0x003f
+            java.lang.Object[] r3 = r2.d
+            java.lang.Object r4 = defpackage.rj.a
+            r3[r1] = r4
+            r1 = 1
+            r2.b = r1
+        L_0x003f:
+            if (r0 != 0) goto L_0x004e
+            java.lang.String r0 = "FragmentActivity"
+            java.lang.String r1 = "Activity result delivered for unknown Fragment."
+            android.util.Log.w(r0, r1)
+        L_0x0048:
+            return
+        L_0x0049:
+            java.lang.Object[] r0 = r0.d
+            r0 = r0[r2]
+            goto L_0x0020
+        L_0x004e:
+            ll r1 = this.c
+            lc r1 = r1.a(r0)
+            if (r1 != 0) goto L_0x006b
+            java.lang.String r1 = "FragmentActivity"
+            java.lang.StringBuilder r2 = new java.lang.StringBuilder
+            java.lang.String r3 = "Activity result no fragment exists for who: "
+            r2.<init>(r3)
+            java.lang.StringBuilder r0 = r2.append(r0)
+            java.lang.String r0 = r0.toString()
+            android.util.Log.w(r1, r0)
+            goto L_0x0048
+        L_0x006b:
+            r0 = 65535(0xffff, float:9.1834E-41)
+            r0 = r0 & r6
+            r1.a(r0, r7, r8)
+            goto L_0x0048
+        L_0x0073:
+            defpackage.kq.a()
+            super.onActivityResult(r6, r7, r8)
+            goto L_0x0048
     }
 
     public void onBackPressed() {
-        lp lpVar = this.c.a.d;
+        FragmentManagerImpl lpVar = this.c.a.mFragmentManager;
         boolean h2 = lpVar.h();
-        if (h2 && Build.VERSION.SDK_INT <= 25) {
+        if (h2 && android.os.Build.VERSION.SDK_INT <= 25) {
             return;
         }
         if (h2 || !lpVar.d()) {
@@ -54,49 +98,47 @@ public class FragmentActivity extends ComponentActivity implements ak, ks, ku {
     }
 
     public void onMultiWindowModeChanged(boolean z) {
-        this.c.a.d.b(z);
+        this.c.a.mFragmentManager.b(z);
     }
 
     public void onPictureInPictureModeChanged(boolean z) {
-        this.c.a.d.c(z);
+        this.c.a.mFragmentManager.c(z);
     }
 
-    public void onConfigurationChanged(Configuration configuration) {
+    public void onConfigurationChanged(android.content.res.Configuration configuration) {
         super.onConfigurationChanged(configuration);
         this.c.a();
-        this.c.a.d.a(configuration);
+        this.c.a.mFragmentManager.a(configuration);
     }
 
-    @Override // defpackage.ak
-    public final gt b() {
+    public final ViewModelStore getViewModelStore() {
         if (getApplication() == null) {
-            throw new IllegalStateException("Your activity is not yet attached to the Application instance. You can't request ViewModel before onCreate call.");
+            throw new java.lang.IllegalStateException("Your activity is not yet attached to the Application instance. You can't request ViewModel before onCreate call.");
         }
         if (this.h == null) {
-            this.h = new gt();
+            this.h = new ViewModelStore();
         }
         return this.h;
     }
 
-    @Override // defpackage.nv
-    public void onCreate(Bundle bundle) {
-        ll llVar = this.c;
-        llVar.a.d.a(llVar.a, llVar.a, (lc) null);
+    public void onCreate(android.os.Bundle bundle) {
+        defpackage.ll llVar = this.c;
+        llVar.a.mFragmentManager.a(llVar.a, (FragmentContainer) llVar.a, (Fragment) null);
         super.onCreate(bundle);
-        lj ljVar = (lj) getLastNonConfigurationInstance();
+        defpackage.lj ljVar = (defpackage.lj) getLastNonConfigurationInstance();
         if (ljVar != null) {
             this.h = ljVar.a;
         }
         if (bundle != null) {
-            this.c.a.d.a(bundle.getParcelable("android:support:fragments"), ljVar != null ? ljVar.b : null);
+            this.c.a.mFragmentManager.a(bundle.getParcelable("android:support:fragments"), ljVar != null ? ljVar.b : null);
             if (bundle.containsKey("android:support:next_request_index")) {
                 this.e = bundle.getInt("android:support:next_request_index");
                 int[] intArray = bundle.getIntArray("android:support:request_indicies");
-                String[] stringArray = bundle.getStringArray("android:support:request_fragment_who");
+                java.lang.String[] stringArray = bundle.getStringArray("android:support:request_fragment_who");
                 if (intArray == null || stringArray == null || intArray.length != stringArray.length) {
-                    Log.w("FragmentActivity", "Invalid requestCode mapping in savedInstanceState.");
+                    android.util.Log.w("FragmentActivity", "Invalid requestCode mapping in savedInstanceState.");
                 } else {
-                    this.f = new rj(intArray.length);
+                    this.f = new defpackage.rj(intArray.length);
                     for (int i2 = 0; i2 < intArray.length; i2++) {
                         this.f.a(intArray[i2], stringArray[i2]);
                     }
@@ -104,25 +146,24 @@ public class FragmentActivity extends ComponentActivity implements ak, ks, ku {
             }
         }
         if (this.f == null) {
-            this.f = new rj();
+            this.f = new defpackage.rj();
             this.e = 0;
         }
-        this.c.a.d.n();
+        this.c.a.mFragmentManager.n();
     }
 
-    public boolean onCreatePanelMenu(int i2, Menu menu) {
+    public boolean onCreatePanelMenu(int i2, android.view.Menu menu) {
         if (i2 != 0) {
             return super.onCreatePanelMenu(i2, menu);
         }
         boolean onCreatePanelMenu = super.onCreatePanelMenu(i2, menu);
-        ll llVar = this.c;
-        return onCreatePanelMenu | llVar.a.d.a(menu, getMenuInflater());
+        defpackage.ll llVar = this.c;
+        return onCreatePanelMenu | llVar.a.mFragmentManager.a(menu, getMenuInflater());
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.kz
-    public final View a(View view, String str, Context context, AttributeSet attributeSet) {
-        return this.c.a.d.onCreateView(view, str, context, attributeSet);
+    /* access modifiers changed from: 0000 */
+    public final android.view.View a(android.view.View view, java.lang.String str, android.content.Context context, android.util.AttributeSet attributeSet) {
+        return this.c.a.mFragmentManager.onCreateView(view, str, context, attributeSet);
     }
 
     public void onDestroy() {
@@ -131,32 +172,32 @@ public class FragmentActivity extends ComponentActivity implements ak, ks, ku {
         if (this.h != null && !this.l) {
             this.h.a();
         }
-        this.c.a.d.s();
+        this.c.a.mFragmentManager.s();
     }
 
     public void onLowMemory() {
         super.onLowMemory();
-        this.c.a.d.t();
+        this.c.a.mFragmentManager.t();
     }
 
-    public boolean onMenuItemSelected(int i2, MenuItem menuItem) {
+    public boolean onMenuItemSelected(int i2, android.view.MenuItem menuItem) {
         if (super.onMenuItemSelected(i2, menuItem)) {
             return true;
         }
         switch (i2) {
             case 0:
-                return this.c.a.d.a(menuItem);
+                return this.c.a.mFragmentManager.a(menuItem);
             case 6:
-                return this.c.a.d.b(menuItem);
+                return this.c.a.mFragmentManager.b(menuItem);
             default:
                 return false;
         }
     }
 
-    public void onPanelClosed(int i2, Menu menu) {
+    public void onPanelClosed(int i2, android.view.Menu menu) {
         switch (i2) {
             case 0:
-                this.c.a.d.b(menu);
+                this.c.a.mFragmentManager.b(menu);
                 break;
         }
         super.onPanelClosed(i2, menu);
@@ -167,12 +208,12 @@ public class FragmentActivity extends ComponentActivity implements ak, ks, ku {
         this.j = false;
         if (this.b.hasMessages(2)) {
             this.b.removeMessages(2);
-            this.c.a.d.q();
+            this.c.a.mFragmentManager.q();
         }
-        this.c.a.d.c(4);
+        this.c.a.mFragmentManager.c(4);
     }
 
-    public void onNewIntent(Intent intent) {
+    public void onNewIntent(android.content.Intent intent) {
         super.onNewIntent(intent);
         this.c.a();
     }
@@ -191,51 +232,57 @@ public class FragmentActivity extends ComponentActivity implements ak, ks, ku {
     public void onPostResume() {
         super.onPostResume();
         this.b.removeMessages(2);
-        this.c.a.d.q();
+        this.c.a.mFragmentManager.q();
         this.c.b();
     }
 
-    public boolean onPreparePanel(int i2, View view, Menu menu) {
+    public boolean onPreparePanel(int i2, android.view.View view, android.view.Menu menu) {
         if (i2 != 0 || menu == null) {
             return super.onPreparePanel(i2, view, menu);
         }
-        return super.onPreparePanel(0, view, menu) | this.c.a.d.a(menu);
+        return super.onPreparePanel(0, view, menu) | this.c.a.mFragmentManager.a(menu);
     }
 
-    public final Object onRetainNonConfigurationInstance() {
+    public final java.lang.Object onRetainNonConfigurationInstance() {
         if (this.d) {
             a(true);
         }
-        lp lpVar = this.c.a.d;
-        lp.a(lpVar.k);
-        me meVar = lpVar.k;
+        FragmentManagerImpl lpVar = this.c.a.mFragmentManager;
+        FragmentManagerImpl.a(lpVar.k);
+        defpackage.me meVar = lpVar.k;
         if (meVar == null && this.h == null) {
             return null;
         }
-        lj ljVar = new lj();
+        defpackage.lj ljVar = new defpackage.lj();
         ljVar.a = this.h;
         ljVar.b = meVar;
         return ljVar;
     }
 
-    @Override // defpackage.nv
-    public void onSaveInstanceState(Bundle bundle) {
+    public void onSaveInstanceState(android.os.Bundle bundle) {
         super.onSaveInstanceState(bundle);
         g();
-        Parcelable l2 = this.c.a.d.l();
+        android.os.Parcelable l2 = this.c.a.mFragmentManager.l();
         if (l2 != null) {
             bundle.putParcelable("android:support:fragments", l2);
         }
         if (this.f.b() > 0) {
             bundle.putInt("android:support:next_request_index", this.e);
             int[] iArr = new int[this.f.b()];
-            String[] strArr = new String[this.f.b()];
-            for (int i2 = 0; i2 < this.f.b(); i2++) {
-                iArr[i2] = this.f.b(i2);
-                strArr[i2] = (String) this.f.c(i2);
+            java.lang.String[] strArr = new java.lang.String[this.f.b()];
+            int i2 = 0;
+            while (true) {
+                int i3 = i2;
+                if (i3 < this.f.b()) {
+                    iArr[i3] = this.f.b(i3);
+                    strArr[i3] = (java.lang.String) this.f.c(i3);
+                    i2 = i3 + 1;
+                } else {
+                    bundle.putIntArray("android:support:request_indicies", iArr);
+                    bundle.putStringArray("android:support:request_fragment_who", strArr);
+                    return;
+                }
             }
-            bundle.putIntArray("android:support:request_indicies", iArr);
-            bundle.putStringArray("android:support:request_fragment_who", strArr);
         }
     }
 
@@ -246,11 +293,11 @@ public class FragmentActivity extends ComponentActivity implements ak, ks, ku {
         this.b.removeMessages(1);
         if (!this.i) {
             this.i = true;
-            this.c.a.d.o();
+            this.c.a.mFragmentManager.o();
         }
         this.c.a();
         this.c.b();
-        this.c.a.d.p();
+        this.c.a.mFragmentManager.p();
     }
 
     public void onStop() {
@@ -258,16 +305,16 @@ public class FragmentActivity extends ComponentActivity implements ak, ks, ku {
         this.d = true;
         g();
         this.b.sendEmptyMessage(1);
-        this.c.a.d.r();
+        this.c.a.mFragmentManager.r();
     }
 
-    public void dump(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {
+    public void dump(java.lang.String str, java.io.FileDescriptor fileDescriptor, java.io.PrintWriter printWriter, java.lang.String[] strArr) {
         super.dump(str, fileDescriptor, printWriter, strArr);
         printWriter.print(str);
         printWriter.print("Local FragmentActivity ");
-        printWriter.print(Integer.toHexString(System.identityHashCode(this)));
+        printWriter.print(java.lang.Integer.toHexString(java.lang.System.identityHashCode(this)));
         printWriter.println(" State:");
-        String str2 = str + "  ";
+        java.lang.String str2 = str + "  ";
         printWriter.print(str2);
         printWriter.print("mCreated=");
         printWriter.print(this.i);
@@ -277,64 +324,118 @@ public class FragmentActivity extends ComponentActivity implements ak, ks, ku {
         printWriter.print(this.d);
         printWriter.print(" mReallyStopped=");
         printWriter.println(this.k);
-        na.a(this).a(str2, fileDescriptor, printWriter, strArr);
-        this.c.a.d.a(str, fileDescriptor, printWriter, strArr);
+        defpackage.na.a(this).a(str2, fileDescriptor, printWriter, strArr);
+        this.c.a.mFragmentManager.a(str, fileDescriptor, printWriter, strArr);
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public final void a(boolean z) {
         if (!this.k) {
             this.k = true;
             this.l = z;
             this.b.removeMessages(1);
-            this.c.a.d.c(2);
+            this.c.a.mFragmentManager.c(2);
         }
     }
 
-    public final ln c() {
-        return this.c.a.d;
+    public final defpackage.ln getSupportFragmentManager() {
+        return this.c.a.mFragmentManager;
     }
 
-    public void startActivityForResult(Intent intent, int i2) {
+    public void startActivityForResult(android.content.Intent intent, int i2) {
         if (!this.a && i2 != -1) {
             a(i2);
         }
         super.startActivityForResult(intent, i2);
     }
 
-    @Override // defpackage.ku
     public final void a_() {
         a(1000);
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r0v10, types: [java.lang.Object[]] */
-    /* JADX WARN: Type inference failed for: r0v11 */
-    /* JADX WARNING: Unknown variable types count: 2 */
-    @Override // defpackage.ks
+    /* JADX WARNING: type inference failed for: r0v11 */
+    /* JADX WARNING: type inference failed for: r0v12 */
+    /* JADX WARNING: Multi-variable type inference failed */
     /* Code decompiled incorrectly, please refer to instructions dump. */
     public void onRequestPermissionsResult(int r6, java.lang.String[] r7, int[] r8) {
-        /*
-        // Method dump skipped, instructions count: 115
-        */
-        throw new UnsupportedOperationException("Method not decompiled: defpackage.lg.onRequestPermissionsResult(int, java.lang.String[], int[]):void");
+            r5 = this;
+            ll r0 = this.c
+            r0.a()
+            int r0 = r6 >> 16
+            r1 = 65535(0xffff, float:9.1834E-41)
+            r0 = r0 & r1
+            if (r0 == 0) goto L_0x004c
+            int r1 = r0 + -1
+            rj r0 = this.f
+            int[] r2 = r0.c
+            int r3 = r0.e
+            int r2 = defpackage.qv.a(r2, r3, r1)
+            if (r2 < 0) goto L_0x0023
+            java.lang.Object[] r3 = r0.d
+            r3 = r3[r2]
+            java.lang.Object r4 = defpackage.rj.a
+            if (r3 != r4) goto L_0x004d
+        L_0x0023:
+            r0 = 0
+        L_0x0024:
+            java.lang.String r0 = (java.lang.String) r0
+            rj r2 = this.f
+            int[] r3 = r2.c
+            int r4 = r2.e
+            int r1 = defpackage.qv.a(r3, r4, r1)
+            if (r1 < 0) goto L_0x0043
+            java.lang.Object[] r3 = r2.d
+            r3 = r3[r1]
+            java.lang.Object r4 = defpackage.rj.a
+            if (r3 == r4) goto L_0x0043
+            java.lang.Object[] r3 = r2.d
+            java.lang.Object r4 = defpackage.rj.a
+            r3[r1] = r4
+            r1 = 1
+            r2.b = r1
+        L_0x0043:
+            if (r0 != 0) goto L_0x0052
+            java.lang.String r0 = "FragmentActivity"
+            java.lang.String r1 = "Activity result delivered for unknown Fragment."
+            android.util.Log.w(r0, r1)
+        L_0x004c:
+            return
+        L_0x004d:
+            java.lang.Object[] r0 = r0.d
+            r0 = r0[r2]
+            goto L_0x0024
+        L_0x0052:
+            ll r1 = this.c
+            lc r1 = r1.a(r0)
+            if (r1 != 0) goto L_0x006f
+            java.lang.String r1 = "FragmentActivity"
+            java.lang.StringBuilder r2 = new java.lang.StringBuilder
+            java.lang.String r3 = "Activity result no fragment exists for who: "
+            r2.<init>(r3)
+            java.lang.StringBuilder r0 = r2.append(r0)
+            java.lang.String r0 = r0.toString()
+            android.util.Log.w(r1, r0)
+            goto L_0x004c
+        L_0x006f:
+            defpackage.lc.n()
+            goto L_0x004c
     }
 
     private final void g() {
         do {
-        } while (a(c(), w.CREATED));
+        } while (a(getSupportFragmentManager(), State.CREATED));
     }
 
-    private static boolean a(ln lnVar, w wVar) {
+    private static boolean a(defpackage.ln lnVar, State wVar) {
         boolean z;
         boolean z2 = false;
-        for (lc lcVar : lnVar.g()) {
+        for (Fragment lcVar : lnVar.g()) {
             if (lcVar != null) {
-                if (lcVar.T.a().a(w.STARTED)) {
+                if (lcVar.T.getCurrentState().a(State.STARTED)) {
                     lcVar.T.a(wVar);
                     z2 = true;
                 }
-                lp lpVar = lcVar.v;
+                FragmentManagerImpl lpVar = lcVar.v;
                 if (lpVar != null) {
                     z = a(lpVar, wVar) | z2;
                 } else {
@@ -346,28 +447,23 @@ public class FragmentActivity extends ComponentActivity implements ak, ks, ku {
         return z2;
     }
 
-    @Override // defpackage.la, android.app.Activity
-    public /* bridge */ /* synthetic */ void startIntentSenderForResult(IntentSender intentSender, int i2, Intent intent, int i3, int i4, int i5, Bundle bundle) {
+    public /* bridge */ /* synthetic */ void startIntentSenderForResult(android.content.IntentSender intentSender, int i2, android.content.Intent intent, int i3, int i4, int i5, android.os.Bundle bundle) {
         super.startIntentSenderForResult(intentSender, i2, intent, i3, i4, i5, bundle);
     }
 
-    @Override // defpackage.la
-    public /* bridge */ /* synthetic */ void startActivityForResult(Intent intent, int i2, Bundle bundle) {
+    public /* bridge */ /* synthetic */ void startActivityForResult(android.content.Intent intent, int i2, android.os.Bundle bundle) {
         super.startActivityForResult(intent, i2, bundle);
     }
 
-    @Override // defpackage.kz, android.app.Activity
-    public /* bridge */ /* synthetic */ void startIntentSenderForResult(IntentSender intentSender, int i2, Intent intent, int i3, int i4, int i5) {
+    public /* bridge */ /* synthetic */ void startIntentSenderForResult(android.content.IntentSender intentSender, int i2, android.content.Intent intent, int i3, int i4, int i5) {
         super.startIntentSenderForResult(intentSender, i2, intent, i3, i4, i5);
     }
 
-    @Override // defpackage.kz
-    public /* bridge */ /* synthetic */ View onCreateView(String str, Context context, AttributeSet attributeSet) {
+    public /* bridge */ /* synthetic */ android.view.View onCreateView(java.lang.String str, android.content.Context context, android.util.AttributeSet attributeSet) {
         return super.onCreateView(str, context, attributeSet);
     }
 
-    @Override // defpackage.kz
-    public /* bridge */ /* synthetic */ View onCreateView(View view, String str, Context context, AttributeSet attributeSet) {
+    public /* bridge */ /* synthetic */ android.view.View onCreateView(android.view.View view, java.lang.String str, android.content.Context context, android.util.AttributeSet attributeSet) {
         return super.onCreateView(view, str, context, attributeSet);
     }
 }

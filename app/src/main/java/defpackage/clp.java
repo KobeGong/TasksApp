@@ -1,9 +1,9 @@
 package defpackage;
 
-/* renamed from: clp  reason: default package */
+/* renamed from: clp reason: default package */
 /* compiled from: PG */
 public final class clp {
-    public static final clp a;
+    public static final defpackage.clp a;
     public final boolean b = false;
     public final float c;
     public final int d;
@@ -16,10 +16,10 @@ public final class clp {
     }
 
     static {
-        clq clq = new clq();
+        defpackage.clq clq = new defpackage.clq();
         clq.a = 0.5f;
         clq.b = 5;
         clq.c = 1000;
-        a = new clp(clq.a, clq.b, clq.c);
+        a = new defpackage.clp(clq.a, clq.b, clq.c);
     }
 }

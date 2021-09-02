@@ -1,11 +1,11 @@
 package defpackage;
 
-/* renamed from: to  reason: default package */
+/* renamed from: to reason: default package */
 /* compiled from: PG */
 public final class to {
-    public final Object a;
+    public final java.lang.Object a;
 
-    public to(Object obj) {
+    public to(java.lang.Object obj) {
         this.a = obj;
     }
 }

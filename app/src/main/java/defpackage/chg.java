@@ -1,16 +1,13 @@
 package defpackage;
 
-import android.os.SystemClock;
-
-/* renamed from: chg  reason: default package */
-final /* synthetic */ class chg implements cmb {
-    public static final cmb a = new chg();
+/* renamed from: chg reason: default package */
+final /* synthetic */ class chg implements defpackage.cmb {
+    public static final defpackage.cmb a = new defpackage.chg();
 
     private chg() {
     }
 
-    @Override // defpackage.cmb
     public final long a() {
-        return SystemClock.elapsedRealtime();
+        return android.os.SystemClock.elapsedRealtime();
     }
 }

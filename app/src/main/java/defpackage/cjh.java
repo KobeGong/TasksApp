@@ -1,19 +1,17 @@
 package defpackage;
 
-import java.lang.Thread;
-
-/* renamed from: cjh  reason: default package */
+/* renamed from: cjh reason: default package */
 /* compiled from: PG */
 public interface cjh {
-    Thread.UncaughtExceptionHandler a(Thread.UncaughtExceptionHandler uncaughtExceptionHandler);
+    java.lang.Thread.UncaughtExceptionHandler a(java.lang.Thread.UncaughtExceptionHandler uncaughtExceptionHandler);
 
-    void a(cir cir);
+    void a(defpackage.cir cir);
 
-    void a(Runnable runnable);
+    void a(java.lang.Runnable runnable);
 
-    boolean a(cls cls);
+    boolean a(defpackage.cls cls);
 
-    clt b();
+    defpackage.clt b();
 
     void c();
 

@@ -1,21 +1,17 @@
 package defpackage;
 
-import java.util.Map;
-
-/* renamed from: dmq  reason: default package */
+/* renamed from: dmq reason: default package */
 /* compiled from: PG */
-public final class dmq implements dio, ecz {
-    public static dmp a(Map map) {
-        return new dmp(map);
+public final class dmq implements defpackage.dio, defpackage.ecz {
+    public static defpackage.dmp a(java.util.Map map) {
+        return new defpackage.dmp(map);
     }
 
-    @Override // defpackage.ecz
-    public final /* synthetic */ Object a() {
-        throw new NoSuchMethodError();
+    public final /* synthetic */ java.lang.Object a() {
+        throw new java.lang.NoSuchMethodError();
     }
 
-    @Override // defpackage.dio
-    public final /* synthetic */ din a(int i) {
-        return dfg.a(i);
+    public final /* synthetic */ defpackage.din a(int i) {
+        return defpackage.dfg.a(i);
     }
 }

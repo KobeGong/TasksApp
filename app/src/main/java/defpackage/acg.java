@@ -1,24 +1,22 @@
 package defpackage;
 
-import android.view.ViewTreeObserver;
-
-/* renamed from: acg  reason: default package */
+/* renamed from: acg reason: default package */
 /* compiled from: PG */
-final class acg implements ViewTreeObserver.OnGlobalLayoutListener {
-    private final /* synthetic */ ace a;
+final class acg implements android.view.ViewTreeObserver.OnGlobalLayoutListener {
+    private final /* synthetic */ defpackage.ace a;
 
-    acg(ace ace) {
+    acg(defpackage.ace ace) {
         this.a = ace;
     }
 
     public final void onGlobalLayout() {
-        ace ace = this.a;
-        acb acb = this.a.d;
-        if (!(sn.a.s(acb) && acb.getGlobalVisibleRect(ace.c))) {
+        defpackage.ace ace = this.a;
+        defpackage.acb acb = this.a.d;
+        if (!(defpackage.sn.a.s(acb) && acb.getGlobalVisibleRect(ace.c))) {
             this.a.e();
             return;
         }
         this.a.a();
-        acg.super.d();
+        defpackage.acg.super.d();
     }
 }

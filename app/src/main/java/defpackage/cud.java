@@ -1,6 +1,6 @@
 package defpackage;
 
-/* renamed from: cud  reason: default package */
+/* renamed from: cud reason: default package */
 /* compiled from: PG */
 public enum cud {
     SMALL(10),

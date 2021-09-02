@@ -1,17 +1,14 @@
 package defpackage;
 
-import java.util.concurrent.Future;
-import java.util.concurrent.TimeUnit;
-
-/* renamed from: cya  reason: default package */
+/* renamed from: cya reason: default package */
 /* compiled from: PG */
-public abstract class cya extends csl implements Future {
+public abstract class cya extends defpackage.csl implements java.util.concurrent.Future {
     protected cya() {
     }
 
     /* access modifiers changed from: protected */
     /* renamed from: a */
-    public abstract Future c();
+    public abstract java.util.concurrent.Future c();
 
     public boolean cancel(boolean z) {
         return c().cancel(z);
@@ -25,13 +22,11 @@ public abstract class cya extends csl implements Future {
         return c().isDone();
     }
 
-    @Override // java.util.concurrent.Future
-    public Object get() {
+    public java.lang.Object get() {
         return c().get();
     }
 
-    @Override // java.util.concurrent.Future
-    public Object get(long j, TimeUnit timeUnit) {
+    public java.lang.Object get(long j, java.util.concurrent.TimeUnit timeUnit) {
         return c().get(j, timeUnit);
     }
 }

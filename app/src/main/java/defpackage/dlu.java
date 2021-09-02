@@ -1,15 +1,14 @@
 package defpackage;
 
-/* renamed from: dlu  reason: default package */
+/* renamed from: dlu reason: default package */
 /* compiled from: PG */
-final class dlu extends dhw {
+final class dlu extends defpackage.dhw {
     dlu() {
-        super((byte) 0);
+        super(0);
     }
 
-    @Override // defpackage.dhw
-    public final dik a(djo djo, int i) {
-        String name = djo.getClass().getName();
+    public final defpackage.dik a(defpackage.djo djo, int i) {
+        java.lang.String name = djo.getClass().getName();
         char c = 65535;
         switch (name.hashCode()) {
             case 1634:
@@ -62,19 +61,19 @@ final class dlu extends dhw {
                 break;
             case 1692:
                 if (name.equals("51")) {
-                    c = '\b';
+                    c = 8;
                     break;
                 }
                 break;
             case 1694:
                 if (name.equals("53")) {
-                    c = '\t';
+                    c = 9;
                     break;
                 }
                 break;
             case 1696:
                 if (name.equals("55")) {
-                    c = '\n';
+                    c = 10;
                     break;
                 }
                 break;
@@ -86,7 +85,7 @@ final class dlu extends dhw {
                 break;
             case 1700:
                 if (name.equals("59")) {
-                    c = '\f';
+                    c = 12;
                     break;
                 }
                 break;

@@ -1,11 +1,10 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: alz  reason: default package */
-public final /* synthetic */ class alz implements Runnable {
-    private final alv a;
+/* renamed from: alz reason: default package */
+final /* synthetic */ class alz implements java.lang.Runnable {
+    private final defpackage.alv a;
 
-    alz(alv alv) {
+    alz(defpackage.alv alv) {
         this.a = alv;
     }
 

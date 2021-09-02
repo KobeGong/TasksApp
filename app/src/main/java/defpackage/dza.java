@@ -1,10 +1,9 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: dza  reason: default package */
+/* renamed from: dza reason: default package */
 /* compiled from: PG */
-public final class dza {
-    public dta a;
+final class dza {
+    public defpackage.dta a;
     public boolean b;
     public boolean c;
     public final int d;

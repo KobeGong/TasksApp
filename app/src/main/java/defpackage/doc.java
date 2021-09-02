@@ -1,13 +1,13 @@
 package defpackage;
 
-/* renamed from: doc  reason: default package */
+/* renamed from: doc reason: default package */
 /* compiled from: PG */
 public final class doc {
-    public final doa a;
+    public final defpackage.doa a;
     public final boolean b;
 
-    doc(doa doa, boolean z) {
-        this.a = (doa) cld.a(doa, "decompressor");
+    doc(defpackage.doa doa, boolean z) {
+        this.a = (defpackage.doa) defpackage.cld.a((java.lang.Object) doa, (java.lang.Object) "decompressor");
         this.b = z;
     }
 }

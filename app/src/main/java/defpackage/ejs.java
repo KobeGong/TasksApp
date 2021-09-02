@@ -1,19 +1,17 @@
 package defpackage;
 
-import org.chromium.net.impl.CronetBidirectionalStream;
-
-/* renamed from: ejs  reason: default package */
+/* renamed from: ejs reason: default package */
 /* compiled from: PG */
-public final class ejs implements Runnable {
-    private final /* synthetic */ bkv a;
-    private final /* synthetic */ CronetBidirectionalStream b;
+public final class ejs implements java.lang.Runnable {
+    private final /* synthetic */ defpackage.bkv a;
+    private final /* synthetic */ org.chromium.net.impl.CronetBidirectionalStream b;
 
-    public ejs(CronetBidirectionalStream cronetBidirectionalStream, bkv bkv) {
+    public ejs(org.chromium.net.impl.CronetBidirectionalStream cronetBidirectionalStream, defpackage.bkv bkv) {
         this.b = cronetBidirectionalStream;
         this.a = bkv;
     }
 
     public final void run() {
-        this.b.a((CronetBidirectionalStream) this.a);
+        this.b.a(this.a);
     }
 }

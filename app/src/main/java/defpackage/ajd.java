@@ -1,71 +1,50 @@
 package defpackage;
 
-import android.accounts.Account;
-import android.content.Context;
-import android.os.Process;
-import android.os.RemoteException;
-import android.text.TextUtils;
-import android.util.Patterns;
-import android.view.View;
-import android.widget.TextView;
-import com.google.android.apps.tasks.R;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Collections;
-import java.util.List;
-import java.util.Locale;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.atomic.AtomicLong;
-
-/* renamed from: ajd  reason: default package */
+/* renamed from: ajd reason: default package */
 /* compiled from: PG */
 public final class ajd {
-    private static final doy a = doy.a("google.internal.tasks.v1.errorinfo-bin", eaa.b(czy.f));
+    private static final defpackage.doy a = defpackage.doy.a("google.internal.tasks.v1.errorinfo-bin", defpackage.eaa.b(defpackage.czy.f));
 
-    public static boolean a(dby dby) {
-        dca dcaInst;
+    public static boolean a(defpackage.dby dby) {
+        defpackage.dca dca;
         if (dby.e == null) {
-            dcaInst = dca.g;
+            dca = defpackage.dca.g;
         } else {
-            dcaInst = dby.e;
+            dca = dby.e;
         }
-        return dcaInst.a;
+        return dca.a;
     }
 
-    public static boolean a(String str) {
+    public static boolean a(java.lang.String str) {
         return str.equals("~default");
     }
 
-    public static dmk a(long j) {
-        dih dih;
-        Calendar instance = Calendar.getInstance();
+    public static defpackage.dmk a(long j) {
+        defpackage.dih dih;
+        java.util.Calendar instance = java.util.Calendar.getInstance();
         instance.setTimeInMillis(j);
-        dii e = ((dii) dmk.d.a(bg.ao)).g(instance.get(5)).f(instance.get(2) + 1).e(instance.get(1));
+        defpackage.dii e = ((defpackage.dii) defpackage.dmk.d.a(defpackage.bg.ao)).g(instance.get(5)).f(instance.get(2) + 1).e(instance.get(1));
         if (e.b) {
             dih = e.a;
         } else {
-            dih dih2 = e.a;
-            djz.a.a(dih2).c(dih2);
+            defpackage.dih dih2 = e.a;
+            defpackage.djz.a.a((java.lang.Object) dih2).c(dih2);
             e.b = true;
             dih = e.a;
         }
-        dih dih3 = dih;
-        if (dih.a(dih3, Boolean.TRUE.booleanValue())) {
-            return (dmk) dih3;
+        defpackage.dih dih3 = dih;
+        if (defpackage.dih.a(dih3, java.lang.Boolean.TRUE.booleanValue())) {
+            return (defpackage.dmk) dih3;
         }
-        throw new dkw();
+        throw new defpackage.dkw();
     }
 
-    public static long a(dmk dmk) {
+    public static long a(defpackage.dmk dmk) {
         return b(dmk).getTimeInMillis();
     }
 
-    public static Calendar b(dmk dmk) {
-        Calendar instance = Calendar.getInstance();
+    public static java.util.Calendar b(defpackage.dmk dmk) {
+        java.util.Calendar instance = java.util.Calendar.getInstance();
         instance.set(1, dmk.a);
         instance.set(2, dmk.b - 1);
         instance.set(5, dmk.c);
@@ -76,8 +55,8 @@ public final class ajd {
         return instance;
     }
 
-    public static Account a(Context context, String str) {
-        for (Account account : a(context)) {
+    public static android.accounts.Account a(android.content.Context context, java.lang.String str) {
+        for (android.accounts.Account account : a(context)) {
             if (account.name.equals(str)) {
                 return account;
             }
@@ -85,69 +64,69 @@ public final class ajd {
         return null;
     }
 
-    public static Account b(Context context, String str) {
+    public static android.accounts.Account b(android.content.Context context, java.lang.String str) {
         try {
-            for (Account account : a(context)) {
-                if (str.equals(avb.b(context, account.name))) {
-                    new Object[1][0] = azb.a(account.name);
+            for (android.accounts.Account account : a(context)) {
+                if (str.equals(defpackage.avb.b(context, account.name))) {
+                    new java.lang.Object[1][0] = defpackage.azb.a(account.name);
                     return account;
                 }
             }
-        } catch (ava | IOException e) {
-            azb.a("Failed to find account ID", e, new String[0]);
+        } catch (defpackage.ava | java.io.IOException e) {
+            defpackage.azb.a("Failed to find account ID", e, new java.lang.String[0]);
         }
         return null;
     }
 
-    public static List a(Context context) {
-        ArrayList arrayList = new ArrayList();
+    public static java.util.List a(android.content.Context context) {
+        java.util.ArrayList arrayList = new java.util.ArrayList();
         try {
-            Collections.addAll(arrayList, avb.c(context, "com.google"));
-        } catch (RemoteException | axw | axx e) {
-            azb.a("Failed to obtain account", e, new String[0]);
+            java.util.Collections.addAll(arrayList, defpackage.avb.c(context, "com.google"));
+        } catch (android.os.RemoteException | defpackage.axw | defpackage.axx e) {
+            defpackage.azb.a("Failed to obtain account", e, new java.lang.String[0]);
         }
         return arrayList;
     }
 
-    public static String a(Context context, Calendar calendar) {
-        String str;
-        bdk.a(calendar);
-        Calendar a2 = bdk.a();
+    public static java.lang.String a(android.content.Context context, java.util.Calendar calendar) {
+        java.lang.String str;
+        defpackage.bdk.a(calendar);
+        java.util.Calendar a2 = defpackage.bdk.a();
         a2.add(5, 1);
         if (calendar.equals(a2)) {
-            return context.getString(R.string.due_date_tomorrow);
+            return context.getString(2131951727);
         }
-        Calendar a3 = bdk.a();
+        java.util.Calendar a3 = defpackage.bdk.a();
         a3.add(5, 7);
-        if (!calendar.before(a3) || calendar.before(bdk.a())) {
+        if (!calendar.before(a3) || calendar.before(defpackage.bdk.a())) {
             str = "MMM dd";
         } else {
             str = "EEEE";
         }
-        return new SimpleDateFormat(str, Locale.getDefault()).format(calendar.getTime());
+        return new java.text.SimpleDateFormat(str, java.util.Locale.getDefault()).format(calendar.getTime());
     }
 
-    public static void a(View view) {
-        cos.a(view.getContext()).a.a(4, view);
+    public static void a(android.view.View view) {
+        defpackage.cos.a(view.getContext()).a.a(4, view);
     }
 
-    public static boolean b(String str) {
-        return Patterns.WEB_URL.matcher(str).matches();
+    public static boolean b(java.lang.String str) {
+        return android.util.Patterns.WEB_URL.matcher(str).matches();
     }
 
-    public static boolean b(dby dby) {
-        dca dcaInst;
+    public static boolean b(defpackage.dby dby) {
+        defpackage.dca dca;
         if (dby.e == null) {
-            dcaInst = dca.g;
+            dca = defpackage.dca.g;
         } else {
-            dcaInst = dby.e;
+            dca = dby.e;
         }
-        return a(dcaInst);
+        return a(dca);
     }
 
-    public static boolean a(dca dca) {
+    public static boolean a(defpackage.dca dca) {
         boolean z;
-        if (!(dca.d != null) && TextUtils.isEmpty(dca.b) && TextUtils.isEmpty(dca.c)) {
+        if (!(dca.d != null) && android.text.TextUtils.isEmpty(dca.b) && android.text.TextUtils.isEmpty(dca.c)) {
             if (dca.f != null) {
                 z = true;
             } else {
@@ -160,23 +139,23 @@ public final class ajd {
         return false;
     }
 
-    public static void a(wl wlVar) {
+    public static void a(defpackage.wl wlVar) {
         wlVar.show();
-        View findViewById = wlVar.findViewById(16908299);
-        if (findViewById instanceof TextView) {
-            ((TextView) findViewById).setTextSize(0, findViewById.getResources().getDimension(R.dimen.small_font_size));
+        android.view.View findViewById = wlVar.findViewById(16908299);
+        if (findViewById instanceof android.widget.TextView) {
+            ((android.widget.TextView) findViewById).setTextSize(0, findViewById.getResources().getDimension(2131689849));
         }
     }
 
-    public static czy a(dqb dqb) {
+    public static defpackage.czy a(defpackage.dqb dqb) {
         boolean z = false;
-        dor dor = dqb.b;
-        doy doy = a;
+        defpackage.dor dor = dqb.b;
+        defpackage.doy doy = a;
         int i = 0;
         while (true) {
             if (i >= dor.d) {
                 break;
-            } else if (dor.a(doy.b, dor.a(i))) {
+            } else if (defpackage.dor.a(doy.b, dor.a(i))) {
                 z = true;
                 break;
             } else {
@@ -184,40 +163,42 @@ public final class ajd {
             }
         }
         if (z) {
-            return (czy) dqb.b.a(a);
+            return (defpackage.czy) dqb.b.a(a);
         }
         return null;
     }
 
-    public static boolean b(dqb dqb) {
-        czy a2;
-        if (dqb.a.l != dpx.FAILED_PRECONDITION || (a2 = a(dqb)) == null || !a2.e) {
-            return false;
+    public static boolean b(defpackage.dqb dqb) {
+        if (dqb.a.l == defpackage.dpx.FAILED_PRECONDITION) {
+            defpackage.czy a2 = a(dqb);
+            if (a2 != null && a2.e) {
+                return true;
+            }
         }
-        return true;
+        return false;
     }
 
-    public static ThreadFactory c(String str) {
-        cyv a2 = new cyv().a(false).a(str);
-        String str2 = a2.a;
-        return new aje(new cyw(Executors.defaultThreadFactory(), str2, str2 != null ? new AtomicLong(0) : null, a2.b));
+    public static java.util.concurrent.ThreadFactory c(java.lang.String str) {
+        defpackage.cyv a2 = new defpackage.cyv().a(false).a(str);
+        java.lang.String str2 = a2.a;
+        return new defpackage.aje(new defpackage.cyw(java.util.concurrent.Executors.defaultThreadFactory(), str2, str2 != null ? new java.util.concurrent.atomic.AtomicLong(0) : null, a2.b));
     }
 
-    public static boolean c(Context context, String str) {
-        aya a2 = aya.a(context);
+    public static boolean c(android.content.Context context, java.lang.String str) {
+        defpackage.aya a2 = defpackage.aya.a(context);
         context.getPackageManager();
         return a2.a(str);
     }
 
-    public static int a(Calendar calendar, Calendar calendar2) {
-        return Math.round((((((float) (calendar.getTimeInMillis() - calendar2.getTimeInMillis())) / 1000.0f) / 60.0f) / 60.0f) / 24.0f);
+    public static int a(java.util.Calendar calendar, java.util.Calendar calendar2) {
+        return java.lang.Math.round((((((float) (calendar.getTimeInMillis() - calendar2.getTimeInMillis())) / 1000.0f) / 60.0f) / 60.0f) / 24.0f);
     }
 
-    public static ajg b(Context context) {
-        return (ajg) context.getApplicationContext();
+    public static defpackage.ajg b(android.content.Context context) {
+        return (defpackage.ajg) context.getApplicationContext();
     }
 
-    public static boolean a(Future future) {
+    public static boolean a(java.util.concurrent.Future future) {
         if (!future.isDone()) {
             return false;
         }
@@ -229,8 +210,8 @@ public final class ajd {
         }
     }
 
-    static final /* synthetic */ void a(int i, Runnable runnable) {
-        Process.setThreadPriority(i);
+    static final /* synthetic */ void a(int i, java.lang.Runnable runnable) {
+        android.os.Process.setThreadPriority(i);
         runnable.run();
     }
 }

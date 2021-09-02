@@ -1,29 +1,26 @@
 package defpackage;
 
-import android.view.View;
-
-/* access modifiers changed from: package-private */
-/* renamed from: ahl  reason: default package */
+/* renamed from: ahl reason: default package */
 /* compiled from: PG */
-public final class ahl {
-    private final ahn a;
-    private ahm b = new ahm();
+final class ahl {
+    private final defpackage.ahn a;
+    private defpackage.ahm b = new defpackage.ahm();
 
-    ahl(ahn ahn) {
+    ahl(defpackage.ahn ahn) {
         this.a = ahn;
     }
 
-    /* access modifiers changed from: package-private */
-    public final View a(int i, int i2, int i3, int i4) {
+    /* access modifiers changed from: 0000 */
+    public final android.view.View a(int i, int i2, int i3, int i4) {
         int a2 = this.a.a();
         int b2 = this.a.b();
         int i5 = i2 > i ? 1 : -1;
-        View view = null;
+        android.view.View view = null;
         while (i != i2) {
-            View a3 = this.a.a(i);
+            android.view.View a3 = this.a.a(i);
             int a4 = this.a.a(a3);
             int b3 = this.a.b(a3);
-            ahm ahm = this.b;
+            defpackage.ahm ahm = this.b;
             ahm.b = a2;
             ahm.c = b2;
             ahm.d = a4;

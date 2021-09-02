@@ -1,20 +1,16 @@
 package defpackage;
 
-import android.content.Intent;
-import android.view.View;
+/* renamed from: aqr reason: default package */
+final /* synthetic */ class aqr implements android.view.View.OnClickListener {
+    private final defpackage.aql a;
+    private final android.content.Intent b;
 
-/* access modifiers changed from: package-private */
-/* renamed from: aqr  reason: default package */
-public final /* synthetic */ class aqr implements View.OnClickListener {
-    private final aql a;
-    private final Intent b;
-
-    aqr(aql aql, Intent intent) {
+    aqr(defpackage.aql aql, android.content.Intent intent) {
         this.a = aql;
         this.b = intent;
     }
 
-    public final void onClick(View view) {
+    public final void onClick(android.view.View view) {
         this.a.startActivity(this.b);
     }
 }

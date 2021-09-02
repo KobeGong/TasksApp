@@ -1,9 +1,9 @@
 package defpackage;
 
-/* renamed from: cuf  reason: default package */
+/* renamed from: cuf reason: default package */
 /* compiled from: PG */
 public final class cuf {
-    public static final cuf a = new cuf(0, -1, -1);
+    public static final defpackage.cuf a = new defpackage.cuf(0, -1, -1);
     private static final long e;
     public final int b;
     public final int c;
@@ -13,7 +13,7 @@ public final class cuf {
         return ((int) ((e >>> ((c2 - ' ') * 3)) & 7)) - 1;
     }
 
-    public static cuf a(String str, int i, int i2, boolean z) {
+    public static defpackage.cuf a(java.lang.String str, int i, int i2, boolean z) {
         if (i == i2 && !z) {
             return a;
         }
@@ -24,7 +24,7 @@ public final class cuf {
             if (charAt < ' ' || charAt > '0') {
                 int i5 = i4 - 1;
                 if (charAt > '9') {
-                    throw cwa.a("invalid flag", str, i5);
+                    throw defpackage.cwa.a("invalid flag", str, i5);
                 }
                 int i6 = charAt - '0';
                 int i7 = i4;
@@ -33,66 +33,72 @@ public final class cuf {
                     int i9 = i7 + 1;
                     char charAt2 = str.charAt(i7);
                     if (charAt2 == '.') {
-                        return new cuf(i3, i8, a(str, i9, i2));
+                        return new defpackage.cuf(i3, i8, a(str, i9, i2));
                     }
                     char c2 = (char) (charAt2 - '0');
-                    if (c2 >= '\n') {
-                        throw cwa.a("invalid width character", str, i9 - 1);
+                    if (c2 >= 10) {
+                        throw defpackage.cwa.a("invalid width character", str, i9 - 1);
                     }
                     int i10 = c2 + (i8 * 10);
                     if (i10 > 999999) {
-                        throw cwa.a("width too large", str, i5, i2);
+                        throw defpackage.cwa.a("width too large", str, i5, i2);
                     }
                     i8 = i10;
                     i7 = i9;
                 }
-                return new cuf(i3, i8, -1);
+                return new defpackage.cuf(i3, i8, -1);
             }
             int a2 = a(charAt);
             if (a2 >= 0) {
                 int i11 = 1 << a2;
                 if ((i3 & i11) != 0) {
-                    throw cwa.a("repeated flag", str, i4 - 1);
+                    throw defpackage.cwa.a("repeated flag", str, i4 - 1);
                 }
                 i3 = i11 | i3;
                 i = i4;
             } else if (charAt == '.') {
-                return new cuf(i3, -1, a(str, i4, i2));
+                return new defpackage.cuf(i3, -1, a(str, i4, i2));
             } else {
-                throw cwa.a("invalid flag", str, i4 - 1);
+                throw defpackage.cwa.a("invalid flag", str, i4 - 1);
             }
         }
-        return new cuf(i3, -1, -1);
+        return new defpackage.cuf(i3, -1, -1);
     }
 
-    private static int a(String str, int i, int i2) {
+    private static int a(java.lang.String str, int i, int i2) {
         if (i == i2) {
-            throw cwa.a("missing precision", str, i - 1);
+            throw defpackage.cwa.a("missing precision", str, i - 1);
         }
         int i3 = 0;
         for (int i4 = i; i4 < i2; i4++) {
             char charAt = (char) (str.charAt(i4) - '0');
-            if (charAt >= '\n') {
-                throw cwa.a("invalid precision character", str, i4);
+            if (charAt >= 10) {
+                throw defpackage.cwa.a("invalid precision character", str, i4);
             }
             i3 = (i3 * 10) + charAt;
             if (i3 > 999999) {
-                throw cwa.a("precision too large", str, i, i2);
+                throw defpackage.cwa.a("precision too large", str, i, i2);
             }
         }
         if (i3 != 0 || i2 == i + 1) {
             return i3;
         }
-        throw cwa.a("invalid precision", str, i, i2);
+        throw defpackage.cwa.a("invalid precision", str, i, i2);
     }
 
-    static int a(String str, boolean z) {
-        int i = z ? 128 : 0;
+    static int a(java.lang.String str, boolean z) {
+        int i;
+        if (z) {
+            i = 128;
+        } else {
+            i = 0;
+        }
         for (int i2 = 0; i2 < str.length(); i2++) {
             int a2 = a(str.charAt(i2));
             if (a2 < 0) {
-                String valueOf = String.valueOf(str);
-                throw new IllegalArgumentException(valueOf.length() != 0 ? "invalid flags: ".concat(valueOf) : new String("invalid flags: "));
+                java.lang.String str2 = "invalid flags: ";
+                java.lang.String valueOf = java.lang.String.valueOf(str);
+                throw new java.lang.IllegalArgumentException(valueOf.length() != 0 ? str2.concat(valueOf) : new java.lang.String(str2));
             }
             i |= 1 << a2;
         }
@@ -132,14 +138,17 @@ public final class cuf {
         if ((i2 & 96) == 96) {
             return false;
         }
-        return (i2 & 96) == 0 || z2;
+        if ((i2 & 96) == 0 || z2) {
+            return true;
+        }
+        return false;
     }
 
     public final boolean b() {
         return (this.b & 128) != 0;
     }
 
-    public final StringBuilder a(StringBuilder sb) {
+    public final java.lang.StringBuilder a(java.lang.StringBuilder sb) {
         if (!a()) {
             int i = this.b & -129;
             for (int i2 = 0; (1 << i2) <= i; i2++) {
@@ -157,15 +166,18 @@ public final class cuf {
         return sb;
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof cuf)) {
+        if (!(obj instanceof defpackage.cuf)) {
             return false;
         }
-        cuf cuf = (cuf) obj;
-        return cuf.b == this.b && cuf.c == this.c && cuf.d == this.d;
+        defpackage.cuf cuf = (defpackage.cuf) obj;
+        if (cuf.b == this.b && cuf.c == this.c && cuf.d == this.d) {
+            return true;
+        }
+        return false;
     }
 
     public final int hashCode() {

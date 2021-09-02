@@ -1,12 +1,11 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: dup  reason: default package */
+/* renamed from: dup reason: default package */
 /* compiled from: PG */
-public abstract class dup {
+abstract class dup {
     dup() {
     }
 
-    /* access modifiers changed from: package-private */
-    public abstract dus a(String str);
+    /* access modifiers changed from: 0000 */
+    public abstract defpackage.dus a(java.lang.String str);
 }

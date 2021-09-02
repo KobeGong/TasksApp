@@ -1,14 +1,14 @@
 package defpackage;
 
-/* renamed from: dnx  reason: default package */
+/* renamed from: dnx reason: default package */
 /* compiled from: PG */
 public abstract class dnx {
-    public abstract dns a();
+    public abstract defpackage.dns a();
 
-    public abstract void a(dns dns, dns dns2);
+    public abstract void a(defpackage.dns dns, defpackage.dns dns2);
 
-    public dns a(dns dns) {
+    public defpackage.dns a(defpackage.dns dns) {
         a();
-        throw new UnsupportedOperationException("Deprecated. Do not call.");
+        throw new java.lang.UnsupportedOperationException("Deprecated. Do not call.");
     }
 }

@@ -1,26 +1,21 @@
 package defpackage;
 
-import java.util.List;
-
-/* access modifiers changed from: package-private */
-/* renamed from: cfd  reason: default package */
+/* renamed from: cfd reason: default package */
 /* compiled from: PG */
-public final class cfd extends cdm {
-    public final /* synthetic */ cfc a;
+final class cfd extends defpackage.cdm {
+    public final /* synthetic */ defpackage.cfc a;
 
-    cfd(cfc cfc) {
+    cfd(defpackage.cfc cfc) {
         this.a = cfc;
     }
 
-    @Override // defpackage.cdm
-    public final void a(List list, List list2) {
-        cfc.O();
+    public final void a(java.util.List list, java.util.List list2) {
+        defpackage.cfc.O();
     }
 
-    @Override // defpackage.cdm
-    public final void a(Object obj, Object obj2, Object obj3) {
-        cfc cfc = this.a;
-        cfe cfe = new cfe(this);
+    public final void a(java.lang.Object obj, java.lang.Object obj2, java.lang.Object obj3) {
+        defpackage.cfc cfc = this.a;
+        defpackage.cfe cfe = new defpackage.cfe(this);
         FragmentActivity j = cfc.getActivity();
         if (j != null) {
             j.runOnUiThread(cfe);

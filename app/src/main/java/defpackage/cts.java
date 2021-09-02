@@ -1,7 +1,7 @@
 package defpackage;
 
-@Deprecated
-/* renamed from: cts  reason: default package */
+@java.lang.Deprecated
+/* renamed from: cts reason: default package */
 /* compiled from: PG */
 public enum cts {
     PRINTF_STYLE,

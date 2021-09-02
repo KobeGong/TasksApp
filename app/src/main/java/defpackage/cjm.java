@@ -1,39 +1,35 @@
 package defpackage;
 
-import android.app.Activity;
-import java.util.ArrayList;
-import java.util.concurrent.ScheduledExecutorService;
-
-/* access modifiers changed from: package-private */
-/* renamed from: cjm  reason: default package */
+/* renamed from: cjm reason: default package */
 /* compiled from: PG */
-public final class cjm implements cgx, cls {
-    public final clt a;
-    public final ArrayList b = new ArrayList();
+final class cjm implements defpackage.cgx, defpackage.cls {
+    public final defpackage.clt a;
+    public final java.util.ArrayList b = new java.util.ArrayList();
     public boolean c;
-    private final cha d;
+    private final defpackage.cha d;
 
-    cjm(cha cha, clt clt) {
+    cjm(defpackage.cha cha, defpackage.clt clt) {
         this.d = cha;
         this.a = clt;
-        cha.a(this);
+        cha.a((defpackage.cgp) this);
     }
 
-    @Override // defpackage.cls
     public final void a() {
         this.d.b(this);
     }
 
-    @Override // defpackage.cgx
-    public final void b(Activity activity) {
+    public final void b(android.app.Activity activity) {
         synchronized (this.b) {
             if (!this.c) {
                 this.c = true;
                 this.d.b(this);
-                ArrayList arrayList = this.b;
+                java.util.ArrayList arrayList = this.b;
                 int size = arrayList.size();
-                for (int i = 0; i < size; i++) {
-                    ((ScheduledExecutorService) this.a.a()).submit((Runnable) arrayList.get(i));
+                int i = 0;
+                while (i < size) {
+                    int i2 = i + 1;
+                    ((java.util.concurrent.ScheduledExecutorService) this.a.a()).submit((java.lang.Runnable) arrayList.get(i));
+                    i = i2;
                 }
                 this.b.clear();
             }

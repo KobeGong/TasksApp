@@ -1,23 +1,20 @@
 package defpackage;
 
-import android.content.Context;
-
-/* renamed from: caj  reason: default package */
+/* renamed from: caj reason: default package */
 /* compiled from: PG */
-public final class caj implements ecz {
-    private final ecz a;
-    private final ecz b;
+public final class caj implements defpackage.ecz {
+    private final defpackage.ecz a;
+    private final defpackage.ecz b;
 
-    public caj(ecz ecz, ecz ecz2) {
+    public caj(defpackage.ecz ecz, defpackage.ecz ecz2) {
         this.a = ecz;
         this.b = ecz2;
     }
 
-    @Override // defpackage.ecz
-    public final /* synthetic */ Object a() {
-        cai cai = new cai();
-        cai.a = (Context) this.a.a();
-        cai.b = (buc) this.b.a();
+    public final /* synthetic */ java.lang.Object a() {
+        defpackage.cai cai = new defpackage.cai();
+        cai.a = (android.content.Context) this.a.a();
+        cai.b = (defpackage.buc) this.b.a();
         return cai;
     }
 }

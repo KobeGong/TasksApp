@@ -1,15 +1,14 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: dzj  reason: default package */
+/* renamed from: dzj reason: default package */
 /* compiled from: PG */
-public final class dzj implements Runnable {
-    private final /* synthetic */ dzk a;
-    private final /* synthetic */ dzl b;
-    private final /* synthetic */ Object c;
-    private final /* synthetic */ dzi d;
+final class dzj implements java.lang.Runnable {
+    private final /* synthetic */ defpackage.dzk a;
+    private final /* synthetic */ defpackage.dzl b;
+    private final /* synthetic */ java.lang.Object c;
+    private final /* synthetic */ defpackage.dzi d;
 
-    dzj(dzi dzi, dzk dzk, dzl dzl, Object obj) {
+    dzj(defpackage.dzi dzi, defpackage.dzk dzk, defpackage.dzl dzl, java.lang.Object obj) {
         this.d = dzi;
         this.a = dzk;
         this.b = dzl;

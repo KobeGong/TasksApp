@@ -1,30 +1,24 @@
 package defpackage;
 
-import android.os.IBinder;
-import android.os.IInterface;
-
-/* renamed from: bef  reason: default package */
+/* renamed from: bef reason: default package */
 /* compiled from: PG */
-public final class bef extends bel {
+public final class bef extends defpackage.bel {
     /* access modifiers changed from: protected */
-    @Override // defpackage.bcx
-    public final String f_() {
-        throw new NoSuchMethodError();
+    public final java.lang.String f_() {
+        throw new java.lang.NoSuchMethodError();
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.bcx
-    public final String b() {
-        throw new NoSuchMethodError();
+    public final java.lang.String b() {
+        throw new java.lang.NoSuchMethodError();
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.bcx
-    public final IInterface a(IBinder iBinder) {
-        throw new NoSuchMethodError();
+    public final android.os.IInterface a(android.os.IBinder iBinder) {
+        throw new java.lang.NoSuchMethodError();
     }
 
-    public static ayk q() {
-        throw new NoSuchMethodError();
+    public static defpackage.ayk q() {
+        throw new java.lang.NoSuchMethodError();
     }
 }

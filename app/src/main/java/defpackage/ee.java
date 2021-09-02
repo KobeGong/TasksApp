@@ -1,68 +1,41 @@
 package defpackage;
 
-import android.content.Context;
-import android.os.Build;
-import android.os.Bundle;
-import android.support.design.bottomsheet.BottomSheetBehavior;
-import android.support.design.widget.CoordinatorLayout;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.widget.FrameLayout;
-import com.google.android.apps.tasks.R;
-
-@Deprecated
-/* renamed from: ee  reason: default package */
+@java.lang.Deprecated
+/* renamed from: ee reason: default package */
 /* compiled from: PG */
-public class ee extends xg {
+public class ee extends defpackage.xg {
     public boolean a;
     public boolean b;
     public boolean c;
-    private BottomSheetBehavior d;
-    private ea e;
+    private android.support.design.bottomsheet.BottomSheetBehavior d;
+    private defpackage.ea e;
 
-    /* JADX WARNING: Illegal instructions before constructor call */
-    /* Code decompiled incorrectly, please refer to instructions dump. */
-    public ee(android.content.Context r5, int r6) {
-        /*
-            r4 = this;
-            r3 = 1
-            if (r6 != 0) goto L_0x0017
-            android.util.TypedValue r0 = new android.util.TypedValue
-            r0.<init>()
-            android.content.res.Resources$Theme r1 = r5.getTheme()
-            r2 = 2130771970(0x7f010002, float:1.7147045E38)
-            boolean r1 = r1.resolveAttribute(r2, r0, r3)
-            if (r1 == 0) goto L_0x0029
-            int r6 = r0.resourceId
-        L_0x0017:
-            r4.<init>(r5, r6)
-            r4.a = r3
-            r4.b = r3
-            ea r0 = new ea
-            r0.<init>(r4)
-            r4.e = r0
-            r4.a()
-            return
-        L_0x0029:
-            r6 = 2132017584(0x7f1401b0, float:1.967345E38)
-            goto L_0x0017
-        */
-        throw new UnsupportedOperationException("Method not decompiled: defpackage.ee.<init>(android.content.Context, int):void");
+    public ee(android.content.Context context, int i) {
+        if (i == 0) {
+            android.util.TypedValue typedValue = new android.util.TypedValue();
+            if (context.getTheme().resolveAttribute(2130771970, typedValue, true)) {
+                i = typedValue.resourceId;
+            } else {
+                i = 2132017584;
+            }
+        }
+        super(context, i);
+        this.a = true;
+        this.b = true;
+        this.e = new defpackage.ea(this);
+        a();
     }
 
-    @Override // android.app.Dialog, defpackage.xg
     public void setContentView(int i) {
         super.setContentView(a(i, null, null));
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.xg
-    public void onCreate(Bundle bundle) {
+    public void onCreate(android.os.Bundle bundle) {
         super.onCreate(bundle);
-        Window window = getWindow();
+        android.view.Window window = getWindow();
         if (window != null) {
-            if (Build.VERSION.SDK_INT >= 21) {
+            if (android.os.Build.VERSION.SDK_INT >= 21) {
                 window.clearFlags(67108864);
                 window.addFlags(Integer.MIN_VALUE);
             }
@@ -70,13 +43,11 @@ public class ee extends xg {
         }
     }
 
-    @Override // android.app.Dialog, defpackage.xg
-    public void setContentView(View view) {
+    public void setContentView(android.view.View view) {
         super.setContentView(a(0, view, null));
     }
 
-    @Override // defpackage.xg
-    public void setContentView(View view, ViewGroup.LayoutParams layoutParams) {
+    public void setContentView(android.view.View view, android.view.ViewGroup.LayoutParams layoutParams) {
         super.setContentView(a(0, view, layoutParams));
     }
 
@@ -106,22 +77,22 @@ public class ee extends xg {
         this.c = true;
     }
 
-    private final View a(int i, View view, ViewGroup.LayoutParams layoutParams) {
-        FrameLayout frameLayout = (FrameLayout) View.inflate(getContext(), R.layout.design_bottom_sheet_dialog, null);
-        CoordinatorLayout coordinatorLayout = (CoordinatorLayout) frameLayout.findViewById(R.id.coordinator);
+    private final android.view.View a(int i, android.view.View view, android.view.ViewGroup.LayoutParams layoutParams) {
+        android.widget.FrameLayout frameLayout = (android.widget.FrameLayout) android.view.View.inflate(getContext(), 2131034156, null);
+        android.support.design.widget.CoordinatorLayout coordinatorLayout = (android.support.design.widget.CoordinatorLayout) frameLayout.findViewById(2131755280);
         if (i != 0 && view == null) {
-            view = getLayoutInflater().inflate(i, (ViewGroup) coordinatorLayout, false);
+            view = getLayoutInflater().inflate(i, coordinatorLayout, false);
         }
-        FrameLayout frameLayout2 = (FrameLayout) coordinatorLayout.findViewById(R.id.design_bottom_sheet);
-        ViewGroup.LayoutParams layoutParams2 = frameLayout2.getLayoutParams();
-        if (!(layoutParams2 instanceof ha)) {
-            throw new IllegalArgumentException("The view is not a child of CoordinatorLayout");
+        android.widget.FrameLayout frameLayout2 = (android.widget.FrameLayout) coordinatorLayout.findViewById(2131755282);
+        android.view.ViewGroup.LayoutParams layoutParams2 = frameLayout2.getLayoutParams();
+        if (!(layoutParams2 instanceof defpackage.ha)) {
+            throw new java.lang.IllegalArgumentException("The view is not a child of CoordinatorLayout");
         }
-        gx gxVar = ((ha) layoutParams2).a;
-        if (!(gxVar instanceof BottomSheetBehavior)) {
-            throw new IllegalArgumentException("The view is not associated with BottomSheetBehavior");
+        defpackage.gx gxVar = ((defpackage.ha) layoutParams2).a;
+        if (!(gxVar instanceof android.support.design.bottomsheet.BottomSheetBehavior)) {
+            throw new java.lang.IllegalArgumentException("The view is not associated with BottomSheetBehavior");
         }
-        this.d = (BottomSheetBehavior) gxVar;
+        this.d = (android.support.design.bottomsheet.BottomSheetBehavior) gxVar;
         this.d.k = this.e;
         this.d.e = this.a;
         if (layoutParams == null) {
@@ -129,13 +100,13 @@ public class ee extends xg {
         } else {
             frameLayout2.addView(view, layoutParams);
         }
-        coordinatorLayout.findViewById(R.id.touch_outside).setOnClickListener(new ef(this));
-        sn.a(frameLayout2, new eg(this));
-        frameLayout2.setOnTouchListener(new eh());
+        coordinatorLayout.findViewById(2131755281).setOnClickListener(new defpackage.ef(this));
+        defpackage.sn.a((android.view.View) frameLayout2, (defpackage.rn) new defpackage.eg(this));
+        frameLayout2.setOnTouchListener(new defpackage.eh());
         return frameLayout;
     }
 
-    public ee(Context context, int i, byte b2) {
+    public ee(android.content.Context context, int i, byte b2) {
         this(context, i);
     }
 }

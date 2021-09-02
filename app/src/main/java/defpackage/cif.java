@@ -1,23 +1,18 @@
 package defpackage;
 
-import android.app.Activity;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
-
-/* renamed from: cif  reason: default package */
+/* renamed from: cif reason: default package */
 /* compiled from: PG */
-final class cif implements cgx {
-    public final /* synthetic */ cie a;
+final class cif implements defpackage.cgx {
+    public final /* synthetic */ defpackage.cie a;
 
-    cif(cie cie) {
+    cif(defpackage.cie cie) {
         this.a = cie;
     }
 
-    @Override // defpackage.cgx
-    public final void b(Activity activity) {
-        String simpleName = activity.getClass().getSimpleName();
+    public final void b(android.app.Activity activity) {
+        java.lang.String simpleName = activity.getClass().getSimpleName();
         this.a.b.a(2, simpleName);
-        cie cie = this.a;
+        defpackage.cie cie = this.a;
         if (cie.c != null) {
             cie.c.cancel(true);
             cie.c = null;
@@ -26,6 +21,6 @@ final class cif implements cgx {
             cie.d.cancel(true);
             cie.d = null;
         }
-        this.a.d = ((ScheduledExecutorService) this.a.e.a()).schedule(new cig(this, simpleName), 10, TimeUnit.SECONDS);
+        this.a.d = ((java.util.concurrent.ScheduledExecutorService) this.a.e.a()).schedule(new defpackage.cig(this, simpleName), 10, java.util.concurrent.TimeUnit.SECONDS);
     }
 }

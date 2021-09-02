@@ -1,25 +1,16 @@
 package defpackage;
 
-import android.support.v7.view.menu.ListMenuItemView;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.ImageView;
-import com.google.android.apps.tasks.R;
-import java.util.ArrayList;
-
-/* renamed from: zd  reason: default package */
+/* renamed from: zd reason: default package */
 /* compiled from: PG */
-public final class zd extends BaseAdapter {
-    private static final int c = R.layout.abc_popup_menu_item_layout;
-    public MenuBuilder a;
+public final class zd extends android.widget.BaseAdapter {
+    private static final int c = 2131034130;
+    public defpackage.ze a;
     public boolean b;
     private int d = -1;
     private final boolean e;
-    private final LayoutInflater f;
+    private final android.view.LayoutInflater f;
 
-    public zd(MenuBuilder zeVar, LayoutInflater layoutInflater, boolean z) {
+    public zd(defpackage.ze zeVar, android.view.LayoutInflater layoutInflater, boolean z) {
         this.e = z;
         this.f = layoutInflater;
         this.a = zeVar;
@@ -27,19 +18,19 @@ public final class zd extends BaseAdapter {
     }
 
     public final int getCount() {
-        ArrayList k = this.e ? this.a.k() : this.a.i();
+        java.util.ArrayList i = this.e ? this.a.k() : this.a.i();
         if (this.d < 0) {
-            return k.size();
+            return i.size();
         }
-        return k.size() - 1;
+        return i.size() - 1;
     }
 
     public final long getItemId(int i) {
         return (long) i;
     }
 
-    public final View getView(int i, View view, ViewGroup viewGroup) {
-        View view2;
+    public final android.view.View getView(int i, android.view.View view, android.view.ViewGroup viewGroup) {
+        android.view.View view2;
         boolean z;
         int i2 = 0;
         if (view == null) {
@@ -47,38 +38,38 @@ public final class zd extends BaseAdapter {
         } else {
             view2 = view;
         }
-        int groupId = ((MenuItemImpl) getItem(i)).getGroupId();
-        int groupId2 = i + -1 >= 0 ? ((MenuItemImpl) getItem(i - 1)).getGroupId() : groupId;
-        ListMenuItemView listMenuItemView = (ListMenuItemView) view2;
-        if (!this.a.b() || groupId == groupId2) {
+        int groupId = ((defpackage.zi) getItem(i)).getGroupId();
+        int i3 = i + -1 >= 0 ? ((defpackage.zi) getItem(i - 1)).getGroupId() : groupId;
+        android.support.v7.view.menu.ListMenuItemView listMenuItemView = (android.support.v7.view.menu.ListMenuItemView) view2;
+        if (!this.a.b() || groupId == i3) {
             z = false;
         } else {
             z = true;
         }
         if (listMenuItemView.b != null) {
-            ImageView imageView = listMenuItemView.b;
+            android.widget.ImageView imageView = listMenuItemView.b;
             if (listMenuItemView.d || !z) {
                 i2 = 8;
             }
             imageView.setVisibility(i2);
         }
-        zw zwVar = (zw) view2;
+        defpackage.zw zwVar = (defpackage.zw) view2;
         if (this.b) {
-            ListMenuItemView listMenuItemView2 = (ListMenuItemView) view2;
+            android.support.v7.view.menu.ListMenuItemView listMenuItemView2 = (android.support.v7.view.menu.ListMenuItemView) view2;
             listMenuItemView2.e = true;
             listMenuItemView2.c = true;
         }
-        zwVar.a((MenuItemImpl) getItem(i));
+        zwVar.a((defpackage.zi) getItem(i));
         return view2;
     }
 
     private final void a() {
-        MenuItemImpl ziVar = this.a.j;
+        defpackage.zi ziVar = this.a.j;
         if (ziVar != null) {
-            ArrayList k = this.a.k();
+            java.util.ArrayList k = this.a.k();
             int size = k.size();
             for (int i = 0; i < size; i++) {
-                if (((MenuItemImpl) k.get(i)) == ziVar) {
+                if (((defpackage.zi) k.get(i)) == ziVar) {
                     this.d = i;
                     return;
                 }
@@ -92,11 +83,11 @@ public final class zd extends BaseAdapter {
         super.notifyDataSetChanged();
     }
 
-    public final /* synthetic */ Object getItem(int i) {
-        ArrayList k = this.e ? this.a.k() : this.a.i();
+    public final /* synthetic */ java.lang.Object getItem(int i) {
+        java.util.ArrayList i2 = this.e ? this.a.k() : this.a.i();
         if (this.d >= 0 && i >= this.d) {
             i++;
         }
-        return (MenuItemImpl) k.get(i);
+        return (defpackage.zi) i2.get(i);
     }
 }

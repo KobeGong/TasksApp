@@ -1,22 +1,19 @@
 package defpackage;
 
-import android.support.v7.app.AlertController;
-import android.view.View;
-
-/* renamed from: wf  reason: default package */
+/* renamed from: wf reason: default package */
 /* compiled from: PG */
-final class wf implements Runnable {
-    private final /* synthetic */ View a;
-    private final /* synthetic */ View b;
-    private final /* synthetic */ AlertController c;
+final class wf implements java.lang.Runnable {
+    private final /* synthetic */ android.view.View a;
+    private final /* synthetic */ android.view.View b;
+    private final /* synthetic */ android.support.v7.app.AlertController c;
 
-    wf(AlertController alertController, View view, View view2) {
+    wf(android.support.v7.app.AlertController alertController, android.view.View view, android.view.View view2) {
         this.c = alertController;
         this.a = view;
         this.b = view2;
     }
 
     public final void run() {
-        AlertController.a(this.c.t, this.a, this.b);
+        android.support.v7.app.AlertController.a(this.c.t, this.a, this.b);
     }
 }

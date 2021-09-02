@@ -1,28 +1,21 @@
 package defpackage;
 
-import android.annotation.SuppressLint;
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.os.AsyncTask;
-import java.lang.ref.WeakReference;
-
-/* renamed from: cdd  reason: default package */
+/* renamed from: cdd reason: default package */
 /* compiled from: PG */
-final class cdd extends AsyncTask {
-    @SuppressLint({"StaticFieldLeak"})
-    private final Context a;
-    private final WeakReference b;
+final class cdd extends android.os.AsyncTask {
+    @android.annotation.SuppressLint({"StaticFieldLeak"})
+    private final android.content.Context a;
+    private final java.lang.ref.WeakReference b;
 
-    cdd(Context context, cdc cdc) {
+    cdd(android.content.Context context, defpackage.cdc cdc) {
         this.a = context.getApplicationContext();
-        this.b = new WeakReference(cdc);
+        this.b = new java.lang.ref.WeakReference(cdc);
     }
 
     /* access modifiers changed from: protected */
-    @Override // android.os.AsyncTask
-    public final /* synthetic */ void onPostExecute(Object obj) {
-        SharedPreferences sharedPreferences = (SharedPreferences) obj;
-        cdc cdc = (cdc) this.b.get();
+    public final /* synthetic */ void onPostExecute(java.lang.Object obj) {
+        android.content.SharedPreferences sharedPreferences = (android.content.SharedPreferences) obj;
+        defpackage.cdc cdc = (defpackage.cdc) this.b.get();
         if (cdc != null) {
             cdc.b = sharedPreferences.getString("selected_account_id", null);
             cdc.c = sharedPreferences.getString("first_recent_account_id", null);
@@ -33,8 +26,7 @@ final class cdd extends AsyncTask {
     }
 
     /* access modifiers changed from: protected */
-    @Override // android.os.AsyncTask
-    public final /* synthetic */ Object doInBackground(Object[] objArr) {
+    public final /* synthetic */ java.lang.Object doInBackground(java.lang.Object[] objArr) {
         return this.a.getSharedPreferences("accountmenu.AccountSelectionRestorer.selectedAccount", 0);
     }
 }

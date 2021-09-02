@@ -1,28 +1,23 @@
 package defpackage;
 
-import android.graphics.Bitmap;
-import android.view.View;
-import android.widget.ImageView;
-
-/* access modifiers changed from: package-private */
-/* renamed from: cen  reason: default package */
+/* renamed from: cen reason: default package */
 /* compiled from: PG */
-public final class cen implements View.OnAttachStateChangeListener {
-    private final /* synthetic */ ImageView a;
-    private final /* synthetic */ Bitmap b;
-    private final /* synthetic */ cel c;
+final class cen implements android.view.View.OnAttachStateChangeListener {
+    private final /* synthetic */ android.widget.ImageView a;
+    private final /* synthetic */ android.graphics.Bitmap b;
+    private final /* synthetic */ defpackage.cel c;
 
-    cen(cel cel, ImageView imageView, Bitmap bitmap) {
+    cen(defpackage.cel cel, android.widget.ImageView imageView, android.graphics.Bitmap bitmap) {
         this.c = cel;
         this.a = imageView;
         this.b = bitmap;
     }
 
-    public final void onViewAttachedToWindow(View view) {
+    public final void onViewAttachedToWindow(android.view.View view) {
         this.a.removeOnAttachStateChangeListener(this);
         this.c.b(this.b);
     }
 
-    public final void onViewDetachedFromWindow(View view) {
+    public final void onViewDetachedFromWindow(android.view.View view) {
     }
 }

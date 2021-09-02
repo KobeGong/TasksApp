@@ -1,20 +1,17 @@
 package defpackage;
 
-import com.google.android.apps.tasks.common.TaskApplication;
+/* renamed from: alc reason: default package */
+final /* synthetic */ class alc implements java.lang.Runnable {
+    private final defpackage.ala a;
 
-/* access modifiers changed from: package-private */
-/* renamed from: alc  reason: default package */
-public final /* synthetic */ class alc implements Runnable {
-    private final ala a;
-
-    alc(ala ala) {
+    alc(defpackage.ala ala) {
         this.a = ala;
     }
 
     public final void run() {
-        ala ala = this.a;
+        defpackage.ala ala = this.a;
         ala.V.a(true);
-        cyi a2 = TaskApplication.b().a.a(new ale(ala, ala.i(), ala.a));
-        a2.a(new ald(ala, a2), TaskApplication.b().a);
+        defpackage.cyi a2 = com.google.android.apps.tasks.common.TaskApplication.getApplication().a.a((java.util.concurrent.Callable) new defpackage.ale(ala, ala.getContext(), ala.a));
+        a2.a(new defpackage.ald(ala, a2), com.google.android.apps.tasks.common.TaskApplication.getApplication().a);
     }
 }

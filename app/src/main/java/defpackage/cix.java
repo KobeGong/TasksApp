@@ -1,12 +1,11 @@
 package defpackage;
 
-/* renamed from: cix  reason: default package */
+/* renamed from: cix reason: default package */
 /* compiled from: PG */
-final class cix implements coe {
+final class cix implements defpackage.coe {
     cix() {
     }
 
-    @Override // defpackage.coe
-    public final void a(efx efx) {
+    public final void a(defpackage.efx efx) {
     }
 }

@@ -1,19 +1,14 @@
 package defpackage;
 
-import android.view.View;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-
-/* renamed from: jr  reason: default package */
+/* renamed from: jr reason: default package */
 /* compiled from: PG */
 public final class jr {
-    public final Map a = new HashMap();
-    public View b;
-    public final ArrayList c = new ArrayList();
+    public final java.util.Map a = new java.util.HashMap();
+    public android.view.View b;
+    public final java.util.ArrayList c = new java.util.ArrayList();
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof jr) || this.b != ((jr) obj).b || !this.a.equals(((jr) obj).a)) {
+    public final boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof defpackage.jr) || this.b != ((defpackage.jr) obj).b || !this.a.equals(((defpackage.jr) obj).a)) {
             return false;
         }
         return true;
@@ -23,11 +18,16 @@ public final class jr {
         return (this.b.hashCode() * 31) + this.a.hashCode();
     }
 
-    public final String toString() {
-        String str = (("TransitionValues@" + Integer.toHexString(hashCode()) + ":\n") + "    view = " + this.b + "\n") + "    values:";
-        for (String str2 : this.a.keySet()) {
-            str = str + "    " + str2 + ": " + this.a.get(str2) + "\n";
+    public final java.lang.String toString() {
+        java.lang.String str = (("TransitionValues@" + java.lang.Integer.toHexString(hashCode()) + ":\n") + "    view = " + this.b + "\n") + "    values:";
+        java.util.Iterator it = this.a.keySet().iterator();
+        while (true) {
+            java.lang.String str2 = str;
+            if (!it.hasNext()) {
+                return str2;
+            }
+            java.lang.String str3 = (java.lang.String) it.next();
+            str = str2 + "    " + str3 + ": " + this.a.get(str3) + "\n";
         }
-        return str;
     }
 }

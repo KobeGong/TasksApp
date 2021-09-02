@@ -1,13 +1,9 @@
 package defpackage;
 
-import com.google.android.gms.common.api.Scope;
-import java.util.Comparator;
-
-/* renamed from: awj  reason: default package */
+/* renamed from: awj reason: default package */
 /* compiled from: PG */
-public final class awj implements Comparator {
-    @Override // java.util.Comparator
-    public final /* synthetic */ int compare(Object obj, Object obj2) {
-        return ((Scope) obj).a.compareTo(((Scope) obj2).a);
+public final class awj implements java.util.Comparator {
+    public final /* synthetic */ int compare(java.lang.Object obj, java.lang.Object obj2) {
+        return ((com.google.android.gms.common.api.Scope) obj).a.compareTo(((com.google.android.gms.common.api.Scope) obj2).a);
     }
 }

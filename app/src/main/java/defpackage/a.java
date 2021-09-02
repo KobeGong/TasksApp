@@ -1,44 +1,41 @@
 package defpackage;
 
-/* renamed from: a  reason: default package */
+/* renamed from: a reason: default package */
 /* compiled from: PG */
-public class a extends e {
-    private static volatile a a;
-    private e b = this.c;
-    private e c = new d();
+public class a extends defpackage.e {
+    private static volatile defpackage.a a;
+    private defpackage.e b = this.c;
+    private defpackage.e c = new defpackage.d();
 
     private a() {
     }
 
-    public static a a() {
+    public static defpackage.a a() {
         if (a != null) {
             return a;
         }
-        synchronized (a.class) {
+        synchronized (defpackage.a.class) {
             if (a == null) {
-                a = new a();
+                a = new defpackage.a();
             }
         }
         return a;
     }
 
-    @Override // defpackage.e
-    public final void a(Runnable runnable) {
+    public final void a(java.lang.Runnable runnable) {
         this.b.a(runnable);
     }
 
-    @Override // defpackage.e
-    public final void b(Runnable runnable) {
+    public final void b(java.lang.Runnable runnable) {
         this.b.b(runnable);
     }
 
-    @Override // defpackage.e
     public final boolean b() {
         return this.b.b();
     }
 
     static {
-        new b();
-        new c();
+        new defpackage.b();
+        new defpackage.c();
     }
 }

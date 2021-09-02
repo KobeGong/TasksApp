@@ -1,19 +1,15 @@
 package defpackage;
 
-import android.os.IBinder;
-import android.os.Parcel;
-
-/* renamed from: bja  reason: default package */
+/* renamed from: bja reason: default package */
 /* compiled from: PG */
-public final class bja extends bkm implements biz {
-    bja(IBinder iBinder) {
+public final class bja extends defpackage.bkm implements defpackage.biz {
+    bja(android.os.IBinder iBinder) {
         super(iBinder, "com.google.android.gms.common.internal.service.ICommonService");
     }
 
-    @Override // defpackage.biz
-    public final void a(bix bix) {
-        Parcel c = c();
-        bko.a(c, bix);
+    public final void a(defpackage.bix bix) {
+        android.os.Parcel c = c();
+        defpackage.bko.a(c, (android.os.IInterface) bix);
         c(1, c);
     }
 }

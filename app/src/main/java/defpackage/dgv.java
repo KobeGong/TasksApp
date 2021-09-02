@@ -1,31 +1,19 @@
 package defpackage;
 
-import java.lang.reflect.Array;
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.lang.reflect.Modifier;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeSet;
-
-/* renamed from: dgv  reason: default package */
+/* renamed from: dgv reason: default package */
 /* compiled from: PG */
-public class dgv implements dio {
-    static int a(byte[] bArr, int i, dgw dgw) {
+public class dgv implements defpackage.dio {
+    static int a(byte[] bArr, int i, defpackage.dgw dgw) {
         int i2 = i + 1;
         byte b = bArr[i];
         if (b < 0) {
-            return a(b, bArr, i2, dgw);
+            return a((int) b, bArr, i2, dgw);
         }
         dgw.a = b;
         return i2;
     }
 
-    static int a(int i, byte[] bArr, int i2, dgw dgw) {
+    static int a(int i, byte[] bArr, int i2, defpackage.dgw dgw) {
         int i3 = i & 127;
         int i4 = i2 + 1;
         byte b = bArr[i2];
@@ -65,27 +53,29 @@ public class dgv implements dio {
         }
     }
 
-    static int b(byte[] bArr, int i, dgw dgw) {
+    static int b(byte[] bArr, int i, defpackage.dgw dgw) {
         int i2 = 7;
         int i3 = i + 1;
         long j = (long) bArr[i];
         if (j >= 0) {
             dgw.b = j;
         } else {
+            long j2 = j & 127;
             int i4 = i3 + 1;
             byte b = bArr[i3];
-            i3 = i4;
-            long j2 = (j & 127) | (((long) (b & Byte.MAX_VALUE)) << 7);
             byte b2 = b;
-            while (b2 < 0) {
+            i3 = i4;
+            long j3 = j2 | (((long) (b & Byte.MAX_VALUE)) << 7);
+            byte b3 = b2;
+            while (b3 < 0) {
                 int i5 = i3 + 1;
-                b2 = bArr[i3];
+                b3 = bArr[i3];
                 int i6 = i2 + 7;
-                j2 |= ((long) (b2 & Byte.MAX_VALUE)) << i6;
+                j3 |= ((long) (b3 & Byte.MAX_VALUE)) << i6;
                 i2 = i6;
                 i3 = i5;
             }
-            dgw.b = j2;
+            dgw.b = j3;
         }
         return i3;
     }
@@ -99,51 +89,51 @@ public class dgv implements dio {
     }
 
     static double c(byte[] bArr, int i) {
-        return Double.longBitsToDouble(b(bArr, i));
+        return java.lang.Double.longBitsToDouble(b(bArr, i));
     }
 
     static float d(byte[] bArr, int i) {
-        return Float.intBitsToFloat(a(bArr, i));
+        return java.lang.Float.intBitsToFloat(a(bArr, i));
     }
 
-    static int c(byte[] bArr, int i, dgw dgw) {
+    static int c(byte[] bArr, int i, defpackage.dgw dgw) {
         int a = a(bArr, i, dgw);
         int i2 = dgw.a;
         if (i2 == 0) {
             dgw.c = "";
             return a;
         }
-        dgw.c = new String(bArr, a, i2, dim.a);
+        dgw.c = new java.lang.String(bArr, a, i2, defpackage.dim.a);
         return a + i2;
     }
 
-    static int d(byte[] bArr, int i, dgw dgw) {
+    static int d(byte[] bArr, int i, defpackage.dgw dgw) {
         int a = a(bArr, i, dgw);
         int i2 = dgw.a;
         if (i2 == 0) {
             dgw.c = "";
             return a;
-        } else if (!dli.a(bArr, a, a + i2)) {
-            throw dir.j();
+        } else if (!defpackage.dli.a(bArr, a, a + i2)) {
+            throw defpackage.dir.j();
         } else {
-            dgw.c = new String(bArr, a, i2, dim.a);
+            dgw.c = new java.lang.String(bArr, a, i2, defpackage.dim.a);
             return a + i2;
         }
     }
 
-    static int e(byte[] bArr, int i, dgw dgw) {
+    static int e(byte[] bArr, int i, defpackage.dgw dgw) {
         int a = a(bArr, i, dgw);
         int i2 = dgw.a;
         if (i2 == 0) {
-            dgw.c = dha.a;
+            dgw.c = defpackage.dha.a;
             return a;
         }
-        dgw.c = dha.a(bArr, a, i2);
+        dgw.c = defpackage.dha.a(bArr, a, i2);
         return a + i2;
     }
 
-    static int a(int i, byte[] bArr, int i2, int i3, diq diq, dgw dgw) {
-        dil dil = (dil) diq;
+    static int a(int i, byte[] bArr, int i2, int i3, defpackage.diq diq, defpackage.dgw dgw) {
+        defpackage.dil dil = (defpackage.dil) diq;
         int a = a(bArr, i2, dgw);
         dil.d(dgw.a);
         while (a < i3) {
@@ -157,8 +147,8 @@ public class dgv implements dio {
         return a;
     }
 
-    static int a(byte[] bArr, int i, diq diq, dgw dgw) {
-        dil dil = (dil) diq;
+    static int a(byte[] bArr, int i, defpackage.diq diq, defpackage.dgw dgw) {
+        defpackage.dil dil = (defpackage.dil) diq;
         int a = a(bArr, i, dgw);
         int i2 = dgw.a + a;
         while (a < i2) {
@@ -168,62 +158,68 @@ public class dgv implements dio {
         if (a == i2) {
             return a;
         }
-        throw dir.a();
+        throw defpackage.dir.a();
     }
 
-    static int a(int i, byte[] bArr, int i2, int i3, dky dky, dgw dgw) {
+    static int a(int i, byte[] bArr, int i2, int i3, defpackage.dky dky, defpackage.dgw dgw) {
+        int i4;
         if ((i >>> 3) == 0) {
-            throw dir.d();
+            throw defpackage.dir.d();
         }
         switch (i & 7) {
             case 0:
                 int b = b(bArr, i2, dgw);
-                dky.a(i, Long.valueOf(dgw.b));
+                dky.a(i, (java.lang.Object) java.lang.Long.valueOf(dgw.b));
                 return b;
             case 1:
-                dky.a(i, Long.valueOf(b(bArr, i2)));
+                dky.a(i, (java.lang.Object) java.lang.Long.valueOf(b(bArr, i2)));
                 return i2 + 8;
             case 2:
                 int a = a(bArr, i2, dgw);
-                int i4 = dgw.a;
-                if (i4 == 0) {
-                    dky.a(i, dha.a);
+                int i5 = dgw.a;
+                if (i5 == 0) {
+                    dky.a(i, (java.lang.Object) defpackage.dha.a);
                 } else {
-                    dky.a(i, dha.a(bArr, a, i4));
+                    dky.a(i, (java.lang.Object) defpackage.dha.a(bArr, a, i5));
                 }
-                return a + i4;
+                return a + i5;
             case 3:
-                dky dky2 = new dky();
-                int i5 = (i & -8) | 4;
-                int i6 = 0;
-                int i7 = i2;
-                while (i7 < i3) {
-                    i7 = a(bArr, i7, dgw);
-                    i6 = dgw.a;
-                    if (i6 != i5) {
-                        i7 = a(i6, bArr, i7, i3, dky2, dgw);
-                    } else if (i7 <= i3 || i6 != i5) {
-                        throw dir.i();
+                defpackage.dky dky2 = new defpackage.dky();
+                int i6 = (i & -8) | 4;
+                int i7 = 0;
+                int i8 = i2;
+                while (i8 < i3) {
+                    i8 = a(bArr, i8, dgw);
+                    i7 = dgw.a;
+                    if (i7 != i6) {
+                        i8 = a(i7, bArr, i8, i3, dky2, dgw);
                     } else {
-                        dky.a(i, dky2);
-                        return i7;
+                        int i9 = i7;
+                        i4 = i8;
+                        if (i4 <= i3 || i9 != i6) {
+                            throw defpackage.dir.i();
+                        }
+                        dky.a(i, (java.lang.Object) dky2);
+                        return i4;
                     }
                 }
-                if (i7 <= i3) {
+                int i92 = i7;
+                i4 = i8;
+                if (i4 <= i3) {
                 }
-                throw dir.i();
-            case 4:
-            default:
-                throw dir.d();
+                throw defpackage.dir.i();
             case 5:
-                dky.a(i, Integer.valueOf(a(bArr, i2)));
+                dky.a(i, (java.lang.Object) java.lang.Integer.valueOf(a(bArr, i2)));
                 return i2 + 4;
+            default:
+                throw defpackage.dir.d();
         }
     }
 
-    static int a(int i, byte[] bArr, int i2, int i3, dgw dgw) {
+    static int a(int i, byte[] bArr, int i2, int i3, defpackage.dgw dgw) {
+        int i4;
         if ((i >>> 3) == 0) {
-            throw dir.d();
+            throw defpackage.dir.d();
         }
         switch (i & 7) {
             case 0:
@@ -233,45 +229,49 @@ public class dgv implements dio {
             case 2:
                 return a(bArr, i2, dgw) + dgw.a;
             case 3:
-                int i4 = (i & -8) | 4;
-                int i5 = 0;
-                int i6 = i2;
-                while (i6 < i3) {
-                    i6 = a(bArr, i6, dgw);
-                    i5 = dgw.a;
-                    if (i5 != i4) {
-                        i6 = a(i5, bArr, i6, i3, dgw);
-                    } else if (i6 > i3 && i5 == i4) {
-                        return i6;
+                int i5 = (i & -8) | 4;
+                int i6 = 0;
+                int i7 = i2;
+                while (i7 < i3) {
+                    i7 = a(bArr, i7, dgw);
+                    i6 = dgw.a;
+                    if (i6 != i5) {
+                        i7 = a(i6, bArr, i7, i3, dgw);
                     } else {
-                        throw dir.i();
+                        int i8 = i6;
+                        i4 = i7;
+                        int i9 = i8;
+                        if (i4 > i3 && i9 == i5) {
+                            return i4;
+                        }
+                        throw defpackage.dir.i();
                     }
                 }
-                if (i6 > i3) {
+                int i82 = i6;
+                i4 = i7;
+                int i92 = i82;
+                if (i4 > i3) {
                 }
-                throw dir.i();
-            case 4:
-            default:
-                throw dir.d();
+                throw defpackage.dir.i();
             case 5:
                 return i2 + 4;
+            default:
+                throw defpackage.dir.d();
         }
     }
 
-    @Override // defpackage.dio
-    public final /* synthetic */ din a(int i) {
-        return dea.a(i);
+    public final /* synthetic */ defpackage.din a(int i) {
+        return defpackage.dea.a(i);
     }
 
-    static void a(djo djo, StringBuilder sb, int i) {
+    static void a(defpackage.djo djo, java.lang.StringBuilder sb, int i) {
+        java.lang.reflect.Method[] declaredMethods;
         boolean booleanValue;
-        boolean z;
-        String str;
-        HashMap hashMap = new HashMap();
-        HashMap hashMap2 = new HashMap();
-        TreeSet<String> treeSet = new TreeSet();
-        Method[] declaredMethods = djo.getClass().getDeclaredMethods();
-        for (Method method : declaredMethods) {
+        java.lang.String str;
+        java.util.HashMap hashMap = new java.util.HashMap();
+        java.util.HashMap hashMap2 = new java.util.HashMap();
+        java.util.TreeSet<java.lang.String> treeSet = new java.util.TreeSet<>();
+        for (java.lang.reflect.Method method : djo.getClass().getDeclaredMethods()) {
             hashMap2.put(method.getName(), method);
             if (method.getParameterTypes().length == 0) {
                 hashMap.put(method.getName(), method);
@@ -280,123 +280,115 @@ public class dgv implements dio {
                 }
             }
         }
-        for (String str2 : treeSet) {
-            String replaceFirst = str2.replaceFirst("get", "");
+        for (java.lang.String str2 : treeSet) {
+            java.lang.String replaceFirst = str2.replaceFirst("get", "");
             if (replaceFirst.endsWith("List") && !replaceFirst.endsWith("OrBuilderList") && !replaceFirst.equals("List")) {
-                String valueOf = String.valueOf(replaceFirst.substring(0, 1).toLowerCase());
-                String valueOf2 = String.valueOf(replaceFirst.substring(1, replaceFirst.length() - 4));
-                String concat = valueOf2.length() != 0 ? valueOf.concat(valueOf2) : new String(valueOf);
-                Method method2 = (Method) hashMap.get(str2);
-                if (method2 != null && method2.getReturnType().equals(List.class)) {
-                    a(sb, i, a(concat), dih.a(method2, djo, new Object[0]));
+                java.lang.String valueOf = java.lang.String.valueOf(replaceFirst.substring(0, 1).toLowerCase());
+                java.lang.String valueOf2 = java.lang.String.valueOf(replaceFirst.substring(1, replaceFirst.length() - 4));
+                java.lang.String str3 = valueOf2.length() != 0 ? valueOf.concat(valueOf2) : new java.lang.String(valueOf);
+                java.lang.reflect.Method method2 = (java.lang.reflect.Method) hashMap.get(str2);
+                if (method2 != null && method2.getReturnType().equals(java.util.List.class)) {
+                    a(sb, i, a(str3), defpackage.dih.a(method2, (java.lang.Object) djo, new java.lang.Object[0]));
                 }
             }
             if (replaceFirst.endsWith("Map") && !replaceFirst.equals("Map")) {
-                String valueOf3 = String.valueOf(replaceFirst.substring(0, 1).toLowerCase());
-                String valueOf4 = String.valueOf(replaceFirst.substring(1, replaceFirst.length() - 3));
+                java.lang.String valueOf3 = java.lang.String.valueOf(replaceFirst.substring(0, 1).toLowerCase());
+                java.lang.String valueOf4 = java.lang.String.valueOf(replaceFirst.substring(1, replaceFirst.length() - 3));
                 if (valueOf4.length() != 0) {
                     str = valueOf3.concat(valueOf4);
                 } else {
-                    str = new String(valueOf3);
+                    str = new java.lang.String(valueOf3);
                 }
-                Method method3 = (Method) hashMap.get(str2);
-                if (method3 != null && method3.getReturnType().equals(Map.class) && !method3.isAnnotationPresent(Deprecated.class) && Modifier.isPublic(method3.getModifiers())) {
-                    a(sb, i, a(str), dih.a(method3, djo, new Object[0]));
+                java.lang.reflect.Method method3 = (java.lang.reflect.Method) hashMap.get(str2);
+                if (method3 != null && method3.getReturnType().equals(java.util.Map.class) && !method3.isAnnotationPresent(java.lang.Deprecated.class) && java.lang.reflect.Modifier.isPublic(method3.getModifiers())) {
+                    a(sb, i, a(str), defpackage.dih.a(method3, (java.lang.Object) djo, new java.lang.Object[0]));
                 }
             }
-            String valueOf5 = String.valueOf(replaceFirst);
-            if (((Method) hashMap2.get(valueOf5.length() != 0 ? "set".concat(valueOf5) : new String("set"))) != null) {
+            java.lang.String str4 = "set";
+            java.lang.String valueOf5 = java.lang.String.valueOf(replaceFirst);
+            if (((java.lang.reflect.Method) hashMap2.get(valueOf5.length() != 0 ? str4.concat(valueOf5) : new java.lang.String(str4))) != null) {
                 if (replaceFirst.endsWith("Bytes")) {
-                    String valueOf6 = String.valueOf(replaceFirst.substring(0, replaceFirst.length() - 5));
-                    if (hashMap.containsKey(valueOf6.length() != 0 ? "get".concat(valueOf6) : new String("get"))) {
+                    java.lang.String str5 = "get";
+                    java.lang.String valueOf6 = java.lang.String.valueOf(replaceFirst.substring(0, replaceFirst.length() - 5));
+                    if (hashMap.containsKey(valueOf6.length() != 0 ? str5.concat(valueOf6) : new java.lang.String(str5))) {
                     }
                 }
-                String valueOf7 = String.valueOf(replaceFirst.substring(0, 1).toLowerCase());
-                String valueOf8 = String.valueOf(replaceFirst.substring(1));
-                String concat2 = valueOf8.length() != 0 ? valueOf7.concat(valueOf8) : new String(valueOf7);
-                String valueOf9 = String.valueOf(replaceFirst);
-                Method method4 = (Method) hashMap.get(valueOf9.length() != 0 ? "get".concat(valueOf9) : new String("get"));
-                String valueOf10 = String.valueOf(replaceFirst);
-                Method method5 = (Method) hashMap.get(valueOf10.length() != 0 ? "has".concat(valueOf10) : new String("has"));
+                java.lang.String valueOf7 = java.lang.String.valueOf(replaceFirst.substring(0, 1).toLowerCase());
+                java.lang.String valueOf8 = java.lang.String.valueOf(replaceFirst.substring(1));
+                java.lang.String str6 = valueOf8.length() != 0 ? valueOf7.concat(valueOf8) : new java.lang.String(valueOf7);
+                java.lang.String str7 = "get";
+                java.lang.String valueOf9 = java.lang.String.valueOf(replaceFirst);
+                java.lang.reflect.Method method4 = (java.lang.reflect.Method) hashMap.get(valueOf9.length() != 0 ? str7.concat(valueOf9) : new java.lang.String(str7));
+                java.lang.String str8 = "has";
+                java.lang.String valueOf10 = java.lang.String.valueOf(replaceFirst);
+                java.lang.reflect.Method method5 = (java.lang.reflect.Method) hashMap.get(valueOf10.length() != 0 ? str8.concat(valueOf10) : new java.lang.String(str8));
                 if (method4 != null) {
-                    Object a = dih.a(method4, djo, new Object[0]);
+                    java.lang.Object a = defpackage.dih.a(method4, (java.lang.Object) djo, new java.lang.Object[0]);
                     if (method5 == null) {
-                        if (a instanceof Boolean) {
-                            z = !((Boolean) a).booleanValue();
-                        } else if (a instanceof Integer) {
-                            z = ((Integer) a).intValue() == 0;
-                        } else if (a instanceof Float) {
-                            z = ((Float) a).floatValue() == 0.0f;
-                        } else if (a instanceof Double) {
-                            z = ((Double) a).doubleValue() == 0.0d;
-                        } else if (a instanceof String) {
-                            z = a.equals("");
-                        } else if (a instanceof dha) {
-                            z = a.equals(dha.a);
-                        } else if (a instanceof djo) {
-                            z = a == ((djo) a).i();
+                        boolean z = a instanceof java.lang.Boolean ? !((java.lang.Boolean) a).booleanValue() : a instanceof java.lang.Integer ? ((java.lang.Integer) a).intValue() == 0 : a instanceof java.lang.Float ? ((java.lang.Float) a).floatValue() == 0.0f : a instanceof java.lang.Double ? ((java.lang.Double) a).doubleValue() == 0.0d : a instanceof java.lang.String ? a.equals("") : a instanceof defpackage.dha ? a.equals(defpackage.dha.a) : a instanceof defpackage.djo ? a == ((defpackage.djo) a).i() : a instanceof java.lang.Enum ? ((java.lang.Enum) a).ordinal() == 0 : false;
+                        if (!z) {
+                            booleanValue = true;
                         } else {
-                            z = a instanceof Enum ? ((Enum) a).ordinal() == 0 : false;
+                            booleanValue = false;
                         }
-                        booleanValue = !z;
                     } else {
-                        booleanValue = ((Boolean) dih.a(method5, djo, new Object[0])).booleanValue();
+                        booleanValue = ((java.lang.Boolean) defpackage.dih.a(method5, (java.lang.Object) djo, new java.lang.Object[0])).booleanValue();
                     }
                     if (booleanValue) {
-                        a(sb, i, a(concat2), a);
+                        a(sb, i, a(str6), a);
                     }
                 }
             }
         }
-        if (djo instanceof dij) {
-            Iterator b = ((dij) djo).a.b();
+        if (djo instanceof defpackage.dij) {
+            java.util.Iterator b = ((defpackage.dij) djo).a.b();
             if (b.hasNext()) {
-                ((Map.Entry) b.next()).getKey();
-                throw new NoSuchMethodError();
+                ((java.util.Map.Entry) b.next()).getKey();
+                throw new java.lang.NoSuchMethodError();
             }
         }
-        if (((dih) djo).s != null) {
-            dky dky = ((dih) djo).s;
+        if (((defpackage.dih) djo).s != null) {
+            defpackage.dky dky = ((defpackage.dih) djo).s;
             for (int i2 = 0; i2 < dky.b; i2++) {
-                a(sb, i, String.valueOf(dky.c[i2] >>> 3), dky.d[i2]);
+                a(sb, i, java.lang.String.valueOf(dky.c[i2] >>> 3), dky.d[i2]);
             }
         }
     }
 
-    private static void a(StringBuilder sb, int i, String str, Object obj) {
+    private static void a(java.lang.StringBuilder sb, int i, java.lang.String str, java.lang.Object obj) {
         int i2 = 0;
-        if (obj instanceof List) {
-            for (Object obj2 : (List) obj) {
-                a(sb, i, str, obj2);
+        if (obj instanceof java.util.List) {
+            for (java.lang.Object a : (java.util.List) obj) {
+                a(sb, i, str, a);
             }
-        } else if (obj instanceof Map) {
-            for (Map.Entry entry : ((Map) obj).entrySet()) {
-                a(sb, i, str, entry);
+        } else if (obj instanceof java.util.Map) {
+            for (java.util.Map.Entry a2 : ((java.util.Map) obj).entrySet()) {
+                a(sb, i, str, (java.lang.Object) a2);
             }
         } else {
-            sb.append('\n');
+            sb.append(10);
             for (int i3 = 0; i3 < i; i3++) {
                 sb.append(' ');
             }
             sb.append(str);
-            if (obj instanceof String) {
-                sb.append(": \"").append(a(dha.a((String) obj))).append('\"');
-            } else if (obj instanceof dha) {
-                sb.append(": \"").append(a((dha) obj)).append('\"');
-            } else if (obj instanceof dih) {
+            if (obj instanceof java.lang.String) {
+                sb.append(": \"").append(a(defpackage.dha.a((java.lang.String) obj))).append('\"');
+            } else if (obj instanceof defpackage.dha) {
+                sb.append(": \"").append(a((defpackage.dha) obj)).append('\"');
+            } else if (obj instanceof defpackage.dih) {
                 sb.append(" {");
-                a((dih) obj, sb, i + 2);
+                a((defpackage.djo) (defpackage.dih) obj, sb, i + 2);
                 sb.append("\n");
                 while (i2 < i) {
                     sb.append(' ');
                     i2++;
                 }
                 sb.append("}");
-            } else if (obj instanceof Map.Entry) {
+            } else if (obj instanceof java.util.Map.Entry) {
                 sb.append(" {");
-                Map.Entry entry2 = (Map.Entry) obj;
-                a(sb, i + 2, "key", entry2.getKey());
-                a(sb, i + 2, "value", entry2.getValue());
+                java.util.Map.Entry entry = (java.util.Map.Entry) obj;
+                a(sb, i + 2, "key", entry.getKey());
+                a(sb, i + 2, "value", entry.getValue());
                 sb.append("\n");
                 while (i2 < i) {
                     sb.append(' ');
@@ -409,21 +401,21 @@ public class dgv implements dio {
         }
     }
 
-    private static String a(String str) {
-        StringBuilder sb = new StringBuilder();
+    private static java.lang.String a(java.lang.String str) {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
         for (int i = 0; i < str.length(); i++) {
             char charAt = str.charAt(i);
-            if (Character.isUpperCase(charAt)) {
+            if (java.lang.Character.isUpperCase(charAt)) {
                 sb.append("_");
             }
-            sb.append(Character.toLowerCase(charAt));
+            sb.append(java.lang.Character.toLowerCase(charAt));
         }
         return sb.toString();
     }
 
-    private static String a(dha dha) {
-        dkv dkv = new dkv(dha);
-        StringBuilder sb = new StringBuilder(dkv.a.a());
+    private static java.lang.String a(defpackage.dha dha) {
+        defpackage.dkv dkv = new defpackage.dkv(dha);
+        java.lang.StringBuilder sb = new java.lang.StringBuilder(dkv.a.a());
         for (int i = 0; i < dkv.a.a(); i++) {
             byte a = dkv.a.a(i);
             switch (a) {
@@ -458,14 +450,14 @@ public class dgv implements dio {
                     sb.append("\\\\");
                     break;
                 default:
-                    if (a < 32 || a > 126) {
+                    if (a >= 32 && a <= 126) {
+                        sb.append((char) a);
+                        break;
+                    } else {
                         sb.append('\\');
                         sb.append((char) (((a >>> 6) & 3) + 48));
                         sb.append((char) (((a >>> 3) & 7) + 48));
                         sb.append((char) ((a & 7) + 48));
-                        break;
-                    } else {
-                        sb.append((char) a);
                         break;
                     }
                     break;
@@ -474,65 +466,69 @@ public class dgv implements dio {
         return sb.toString();
     }
 
-    public static String a(dmf dmf) {
+    public static java.lang.String a(defpackage.dmf dmf) {
         if (dmf == null) {
             return "";
         }
-        StringBuffer stringBuffer = new StringBuffer();
+        java.lang.StringBuffer stringBuffer = new java.lang.StringBuffer();
         try {
-            a((String) null, dmf, new StringBuffer(), stringBuffer);
+            a((java.lang.String) null, (java.lang.Object) dmf, new java.lang.StringBuffer(), stringBuffer);
             return stringBuffer.toString();
-        } catch (IllegalAccessException e) {
-            String valueOf = String.valueOf(e.getMessage());
-            return valueOf.length() != 0 ? "Error printing proto: ".concat(valueOf) : new String("Error printing proto: ");
-        } catch (InvocationTargetException e2) {
-            String valueOf2 = String.valueOf(e2.getMessage());
-            return valueOf2.length() != 0 ? "Error printing proto: ".concat(valueOf2) : new String("Error printing proto: ");
+        } catch (java.lang.IllegalAccessException e) {
+            java.lang.String str = "Error printing proto: ";
+            java.lang.String valueOf = java.lang.String.valueOf(e.getMessage());
+            return valueOf.length() != 0 ? str.concat(valueOf) : new java.lang.String(str);
+        } catch (java.lang.reflect.InvocationTargetException e2) {
+            java.lang.String str2 = "Error printing proto: ";
+            java.lang.String valueOf2 = java.lang.String.valueOf(e2.getMessage());
+            return valueOf2.length() != 0 ? str2.concat(valueOf2) : new java.lang.String(str2);
         }
     }
 
-    private static void a(String str, Object obj, StringBuffer stringBuffer, StringBuffer stringBuffer2) {
+    private static void a(java.lang.String str, java.lang.Object obj, java.lang.StringBuffer stringBuffer, java.lang.StringBuffer stringBuffer2) {
+        java.lang.reflect.Field[] fields;
         if (obj == null) {
             return;
         }
-        if (obj instanceof dmf) {
+        if (obj instanceof defpackage.dmf) {
             int length = stringBuffer.length();
             if (str != null) {
                 stringBuffer2.append(stringBuffer).append(b(str)).append(" <\n");
                 stringBuffer.append("  ");
             }
-            Class<?> cls = obj.getClass();
-            Field[] fields = cls.getFields();
-            for (Field field : fields) {
+            java.lang.Class cls = obj.getClass();
+            for (java.lang.reflect.Field field : cls.getFields()) {
                 int modifiers = field.getModifiers();
-                String name = field.getName();
+                java.lang.String name = field.getName();
                 if (!"cachedSize".equals(name) && (modifiers & 1) == 1 && (modifiers & 8) != 8 && !name.startsWith("_") && !name.endsWith("_")) {
-                    Class<?> type = field.getType();
-                    Object obj2 = field.get(obj);
-                    if (!type.isArray() || type.getComponentType() == Byte.TYPE) {
+                    java.lang.Class type = field.getType();
+                    java.lang.Object obj2 = field.get(obj);
+                    if (!type.isArray() || type.getComponentType() == java.lang.Byte.TYPE) {
                         a(name, obj2, stringBuffer, stringBuffer2);
                     } else {
-                        int length2 = obj2 == null ? 0 : Array.getLength(obj2);
+                        int length2 = obj2 == null ? 0 : java.lang.reflect.Array.getLength(obj2);
                         for (int i = 0; i < length2; i++) {
-                            a(name, Array.get(obj2, i), stringBuffer, stringBuffer2);
+                            a(name, java.lang.reflect.Array.get(obj2, i), stringBuffer, stringBuffer2);
                         }
                     }
                 }
             }
-            for (Method method : cls.getMethods()) {
-                String name2 = method.getName();
-                if (name2.startsWith("set")) {
-                    String substring = name2.substring(3);
+            for (java.lang.reflect.Method name2 : cls.getMethods()) {
+                java.lang.String name3 = name2.getName();
+                if (name3.startsWith("set")) {
+                    java.lang.String substring = name3.substring(3);
+                    java.lang.String str2 = "has";
                     try {
-                        String valueOf = String.valueOf(substring);
-                        if (((Boolean) cls.getMethod(valueOf.length() != 0 ? "has".concat(valueOf) : new String("has"), new Class[0]).invoke(obj, new Object[0])).booleanValue()) {
+                        java.lang.String valueOf = java.lang.String.valueOf(substring);
+                        if (((java.lang.Boolean) cls.getMethod(valueOf.length() != 0 ? str2.concat(valueOf) : new java.lang.String(str2), new java.lang.Class[0]).invoke(obj, new java.lang.Object[0])).booleanValue()) {
+                            java.lang.String str3 = "get";
                             try {
-                                String valueOf2 = String.valueOf(substring);
-                                a(substring, cls.getMethod(valueOf2.length() != 0 ? "get".concat(valueOf2) : new String("get"), new Class[0]).invoke(obj, new Object[0]), stringBuffer, stringBuffer2);
-                            } catch (NoSuchMethodException e) {
+                                java.lang.String valueOf2 = java.lang.String.valueOf(substring);
+                                a(substring, cls.getMethod(valueOf2.length() != 0 ? str3.concat(valueOf2) : new java.lang.String(str3), new java.lang.Class[0]).invoke(obj, new java.lang.Object[0]), stringBuffer, stringBuffer2);
+                            } catch (java.lang.NoSuchMethodException e) {
                             }
                         }
-                    } catch (NoSuchMethodException e2) {
+                    } catch (java.lang.NoSuchMethodException e2) {
                     }
                 }
             }
@@ -544,17 +540,17 @@ public class dgv implements dio {
             return;
         }
         stringBuffer2.append(stringBuffer).append(b(str)).append(": ");
-        if (obj instanceof String) {
-            String str2 = (String) obj;
-            if (!str2.startsWith("http") && str2.length() > 200) {
-                str2 = String.valueOf(str2.substring(0, 200)).concat("[...]");
+        if (obj instanceof java.lang.String) {
+            java.lang.String str4 = (java.lang.String) obj;
+            if (!str4.startsWith("http") && str4.length() > 200) {
+                str4 = java.lang.String.valueOf(str4.substring(0, 200)).concat("[...]");
             }
-            int length3 = str2.length();
-            StringBuilder sb = new StringBuilder(length3);
+            int length3 = str4.length();
+            java.lang.StringBuilder sb = new java.lang.StringBuilder(length3);
             for (int i2 = 0; i2 < length3; i2++) {
-                char charAt = str2.charAt(i2);
+                char charAt = str4.charAt(i2);
                 if (charAt < ' ' || charAt > '~' || charAt == '\"' || charAt == '\'') {
-                    sb.append(String.format("\\u%04x", Integer.valueOf(charAt)));
+                    sb.append(java.lang.String.format("\\u%04x", new java.lang.Object[]{java.lang.Integer.valueOf(charAt)}));
                 } else {
                     sb.append(charAt);
                 }
@@ -567,13 +563,13 @@ public class dgv implements dio {
             } else {
                 stringBuffer2.append('\"');
                 for (byte b : bArr) {
-                    int i3 = b & 255;
-                    if (i3 == 92 || i3 == 34) {
-                        stringBuffer2.append('\\').append((char) i3);
-                    } else if (i3 < 32 || i3 >= 127) {
-                        stringBuffer2.append(String.format("\\%03o", Integer.valueOf(i3)));
+                    byte b2 = b & 255;
+                    if (b2 == 92 || b2 == 34) {
+                        stringBuffer2.append('\\').append((char) b2);
+                    } else if (b2 < 32 || b2 >= Byte.MAX_VALUE) {
+                        stringBuffer2.append(java.lang.String.format("\\%03o", new java.lang.Object[]{java.lang.Integer.valueOf(b2)}));
                     } else {
-                        stringBuffer2.append((char) i3);
+                        stringBuffer2.append((char) b2);
                     }
                 }
                 stringBuffer2.append('\"');
@@ -584,14 +580,14 @@ public class dgv implements dio {
         stringBuffer2.append("\n");
     }
 
-    private static String b(String str) {
-        StringBuffer stringBuffer = new StringBuffer();
+    private static java.lang.String b(java.lang.String str) {
+        java.lang.StringBuffer stringBuffer = new java.lang.StringBuffer();
         for (int i = 0; i < str.length(); i++) {
             char charAt = str.charAt(i);
             if (i == 0) {
-                stringBuffer.append(Character.toLowerCase(charAt));
-            } else if (Character.isUpperCase(charAt)) {
-                stringBuffer.append('_').append(Character.toLowerCase(charAt));
+                stringBuffer.append(java.lang.Character.toLowerCase(charAt));
+            } else if (java.lang.Character.isUpperCase(charAt)) {
+                stringBuffer.append('_').append(java.lang.Character.toLowerCase(charAt));
             } else {
                 stringBuffer.append(charAt);
             }
@@ -599,7 +595,7 @@ public class dgv implements dio {
         return stringBuffer.toString();
     }
 
-    public static LinkedHashMap b(int i) {
+    public static java.util.LinkedHashMap b(int i) {
         int i2;
         if (i < 3) {
             i2 = i + 1;
@@ -608,20 +604,20 @@ public class dgv implements dio {
         } else {
             i2 = Integer.MAX_VALUE;
         }
-        return new LinkedHashMap(i2);
+        return new java.util.LinkedHashMap(i2);
     }
 
-    public static Object a(Object obj) {
+    public static java.lang.Object a(java.lang.Object obj) {
         if (obj != null) {
             return obj;
         }
-        throw new NullPointerException();
+        throw new java.lang.NullPointerException();
     }
 
-    public static Object a(Object obj, String str) {
+    public static java.lang.Object a(java.lang.Object obj, java.lang.String str) {
         if (obj != null) {
             return obj;
         }
-        throw new NullPointerException(str);
+        throw new java.lang.NullPointerException(str);
     }
 }

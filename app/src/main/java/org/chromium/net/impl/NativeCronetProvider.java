@@ -1,36 +1,24 @@
 package org.chromium.net.impl;
 
-import android.content.Context;
-import org.chromium.base.annotations.UsedByReflection;
-
-import defpackage.ehu;
-import defpackage.ehx;
-import defpackage.ehz;
-import defpackage.ekn;
-
 /* compiled from: PG */
-public class NativeCronetProvider extends ehx {
-    @UsedByReflection
-    public NativeCronetProvider(Context context) {
+public class NativeCronetProvider extends defpackage.ehx {
+    @org.chromium.base.annotations.UsedByReflection
+    public NativeCronetProvider(android.content.Context context) {
         super(context);
     }
 
-    @Override // defpackage.ehx
-    public final ehu a() {
-        return new ehz(new ekn(this.a));
+    public final defpackage.ehu a() {
+        return new defpackage.ehz(new defpackage.ekn(this.a));
     }
 
-    @Override // defpackage.ehx
-    public final String b() {
+    public final java.lang.String b() {
         return "App-Packaged-Cronet-Provider";
     }
 
-    @Override // defpackage.ehx
-    public final String c() {
+    public final java.lang.String c() {
         return "67.0.3387.0";
     }
 
-    @Override // defpackage.ehx
     public final boolean d() {
         return true;
     }

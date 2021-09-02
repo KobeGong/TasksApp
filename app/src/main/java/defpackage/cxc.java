@@ -1,13 +1,12 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: cxc  reason: default package */
+/* renamed from: cxc reason: default package */
 /* compiled from: PG */
-public final class cxc {
-    public static final cxc a = new cxc(new cxd("Failure occurred while trying to finish a future."));
-    public final Throwable b;
+final class cxc {
+    public static final defpackage.cxc a = new defpackage.cxc(new defpackage.cxd("Failure occurred while trying to finish a future."));
+    public final java.lang.Throwable b;
 
-    cxc(Throwable th) {
-        this.b = (Throwable) cld.a((Object) th);
+    cxc(java.lang.Throwable th) {
+        this.b = (java.lang.Throwable) defpackage.cld.a((java.lang.Object) th);
     }
 }

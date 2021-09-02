@@ -1,10 +1,9 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: or  reason: default package */
+/* renamed from: or reason: default package */
 /* compiled from: PG */
-public final class or implements Runnable {
-    or(op opVar) {
+final class or implements java.lang.Runnable {
+    or(defpackage.op opVar) {
     }
 
     public final void run() {

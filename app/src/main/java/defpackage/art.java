@@ -1,12 +1,11 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: art  reason: default package */
+/* renamed from: art reason: default package */
 /* compiled from: PG */
-public final class art {
-    public final /* synthetic */ ard a;
+final class art {
+    public final /* synthetic */ defpackage.ard a;
 
-    art(ard ard) {
+    art(defpackage.ard ard) {
         this.a = ard;
     }
 }

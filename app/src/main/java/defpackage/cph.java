@@ -1,16 +1,12 @@
 package defpackage;
 
-import android.content.Context;
-import android.content.res.Configuration;
-import java.util.Set;
-
-/* renamed from: cph  reason: default package */
+/* renamed from: cph reason: default package */
 /* compiled from: PG */
 public final class cph {
-    public final Set a = new qt();
-    public final Configuration b;
+    public final java.util.Set a = new defpackage.qt();
+    public final android.content.res.Configuration b;
 
-    public cph(Context context) {
-        this.b = new Configuration(context.getResources().getConfiguration());
+    public cph(android.content.Context context) {
+        this.b = new android.content.res.Configuration(context.getResources().getConfiguration());
     }
 }

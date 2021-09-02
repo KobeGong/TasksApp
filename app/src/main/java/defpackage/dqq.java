@@ -1,17 +1,17 @@
 package defpackage;
 
-/* renamed from: dqq  reason: default package */
+/* renamed from: dqq reason: default package */
 /* compiled from: PG */
-final class dqq implements Runnable {
-    public final dqk a = new dqk(this.b, this.g.a, this.g.e, this.c, this.g, this, this.g.c, this.g.f, this.g.g, this.d, this.e, this.f, this.g.h);
-    private final /* synthetic */ String b;
-    private final /* synthetic */ dor c;
-    private final /* synthetic */ dpb d;
-    private final /* synthetic */ dzo e;
-    private final /* synthetic */ dna f;
-    private final /* synthetic */ dqo g;
+final class dqq implements java.lang.Runnable {
+    public final defpackage.dqk a = new defpackage.dqk(this.b, this.g.a, this.g.e, this.c, this.g, this, this.g.c, this.g.f, this.g.g, this.d, this.e, this.f, this.g.h);
+    private final /* synthetic */ java.lang.String b;
+    private final /* synthetic */ defpackage.dor c;
+    private final /* synthetic */ defpackage.dpb d;
+    private final /* synthetic */ defpackage.dzo e;
+    private final /* synthetic */ defpackage.dna f;
+    private final /* synthetic */ defpackage.dqo g;
 
-    dqq(dqo dqo, String str, dor dor, dpb dpb, dzo dzo, dna dna) {
+    dqq(defpackage.dqo dqo, java.lang.String str, defpackage.dor dor, defpackage.dpb dpb, defpackage.dzo dzo, defpackage.dna dna) {
         this.g = dqo;
         this.b = str;
         this.c = dor;
@@ -23,14 +23,14 @@ final class dqq implements Runnable {
     public final void run() {
         synchronized (this.g.c) {
             if (this.g.i) {
-                this.a.m.b(this.g.j, true, new dor());
+                this.a.m.b(this.g.j, true, new defpackage.dor());
             } else if (this.g.k) {
-                dqo dqo = this.g;
-                dqk dqk = this.a;
+                defpackage.dqo dqo = this.g;
+                defpackage.dqk dqk = this.a;
                 dqo.d.add(dqk);
                 dqk.m.h.n = dqo.l;
             } else {
-                throw new AssertionError("Transport is not started");
+                throw new java.lang.AssertionError("Transport is not started");
             }
         }
     }

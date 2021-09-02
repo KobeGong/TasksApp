@@ -1,17 +1,15 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: amc  reason: default package */
-public final /* synthetic */ class amc implements crq {
-    private final ead a;
+/* renamed from: amc reason: default package */
+final /* synthetic */ class amc implements defpackage.crq {
+    private final defpackage.ead a;
 
-    amc(ead ead) {
+    amc(defpackage.ead ead) {
         this.a = ead;
     }
 
-    @Override // defpackage.crq
-    public final Object a(Object obj) {
-        ead ead = this.a;
-        return (dbx) eae.a(ead.a, dcg.d(), ead.b, (dbv) obj);
+    public final java.lang.Object a(java.lang.Object obj) {
+        defpackage.ead ead = this.a;
+        return (defpackage.dbx) defpackage.eae.a(ead.a, defpackage.dcg.d(), ead.b, (defpackage.dbv) obj);
     }
 }

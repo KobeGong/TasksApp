@@ -1,18 +1,15 @@
 package defpackage;
 
-import java.util.Comparator;
-
-/* renamed from: dpu  reason: default package */
+/* renamed from: dpu reason: default package */
 /* compiled from: PG */
-public final class dpu implements Comparator {
-    private final /* synthetic */ dpv a;
+public final class dpu implements java.util.Comparator {
+    private final /* synthetic */ defpackage.dpv a;
 
-    public dpu(dpv dpv) {
+    public dpu(defpackage.dpv dpv) {
         this.a = dpv;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
+    public final int compare(java.lang.Object obj, java.lang.Object obj2) {
         return this.a.a(obj) - this.a.a(obj2);
     }
 }

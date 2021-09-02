@@ -1,12 +1,12 @@
 package defpackage;
 
-/* renamed from: nk  reason: default package */
+/* renamed from: nk reason: default package */
 /* compiled from: PG */
 public class nk {
-    private ni a;
-    public CharSequence b;
+    private defpackage.ni a;
+    public java.lang.CharSequence b;
 
-    public final void a(ni niVar) {
+    public final void a(defpackage.ni niVar) {
         if (this.a != niVar) {
             this.a = niVar;
             if (this.a != null) {
@@ -15,6 +15,6 @@ public class nk {
         }
     }
 
-    public void a(ne neVar) {
+    public void a(defpackage.ne neVar) {
     }
 }

@@ -1,21 +1,16 @@
 package defpackage;
 
-import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-import com.google.android.apps.tasks.R;
-
-/* access modifiers changed from: package-private */
-/* renamed from: asz  reason: default package */
+/* renamed from: asz reason: default package */
 /* compiled from: PG */
-public final class asz extends View.AccessibilityDelegate {
-    private final /* synthetic */ asi a;
+final class asz extends android.view.View.AccessibilityDelegate {
+    private final /* synthetic */ EditTaskFragment a;
 
-    asz(asi asi) {
+    asz(EditTaskFragment asi) {
         this.a = asi;
     }
 
-    public final void onInitializeAccessibilityNodeInfo(View view, AccessibilityNodeInfo accessibilityNodeInfo) {
+    public final void onInitializeAccessibilityNodeInfo(android.view.View view, android.view.accessibility.AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
-        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, this.a.k().getString(R.string.a11y_move_task)));
+        accessibilityNodeInfo.addAction(new android.view.accessibility.AccessibilityNodeInfo.AccessibilityAction(16, this.a.getResource().getString(2131951637)));
     }
 }

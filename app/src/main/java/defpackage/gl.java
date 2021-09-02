@@ -1,14 +1,14 @@
 package defpackage;
 
-/* renamed from: gl  reason: default package */
+/* renamed from: gl reason: default package */
 /* compiled from: PG */
 public final class gl {
-    public final gt a;
+    public final ViewModelStore a;
 
     public gl() {
     }
 
-    public gl(gt gtVar, gn gnVar) {
+    public gl(ViewModelStore gtVar, defpackage.gn gnVar) {
         this.a = gtVar;
     }
 }

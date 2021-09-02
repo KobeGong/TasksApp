@@ -1,18 +1,15 @@
 package defpackage;
 
-import android.os.IBinder;
-import android.os.IInterface;
-
-/* renamed from: mz  reason: default package */
+/* renamed from: mz reason: default package */
 /* compiled from: PG */
-public final class mz implements IInterface {
-    public IBinder a;
+public final class mz implements android.os.IInterface {
+    public android.os.IBinder a;
 
-    mz(IBinder iBinder) {
+    mz(android.os.IBinder iBinder) {
         this.a = iBinder;
     }
 
-    public final IBinder asBinder() {
+    public final android.os.IBinder asBinder() {
         return this.a;
     }
 }

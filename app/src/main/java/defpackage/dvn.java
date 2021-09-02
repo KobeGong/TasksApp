@@ -1,52 +1,51 @@
 package defpackage;
 
-import java.nio.charset.Charset;
-
-/* renamed from: dvn  reason: default package */
+/* renamed from: dvn reason: default package */
 /* compiled from: PG */
-public abstract class dvn extends dri {
-    private static final dpa a = new dvo();
-    public static final doy r = doh.a(":status", a);
-    public dpw s;
-    public dor t;
-    public Charset u = crp.b;
+public abstract class dvn extends defpackage.dri {
+    private static final defpackage.dpa a = new defpackage.dvo();
+    public static final defpackage.doy r = defpackage.doh.a(":status", a);
+    public defpackage.dpw s;
+    public defpackage.dor t;
+    public java.nio.charset.Charset u = defpackage.crp.b;
     public boolean v;
 
-    public dvn(int i, dzo dzo, dzt dzt) {
-        super(i, dzo, dzt, (byte) 0);
+    public dvn(int i, defpackage.dzo dzo, defpackage.dzt dzt) {
+        super(i, dzo, dzt, 0);
     }
 
-    public abstract void a(dpw dpw, boolean z, dor dor);
+    public abstract void a(defpackage.dpw dpw, boolean z, defpackage.dor dor);
 
-    public static dpw a(dor dor) {
-        Integer num = (Integer) dor.a(r);
+    public static defpackage.dpw a(defpackage.dor dor) {
+        java.lang.Integer num = (java.lang.Integer) dor.a(r);
         if (num == null) {
-            return dpw.h.a("Missing HTTP status code");
+            return defpackage.dpw.h.a("Missing HTTP status code");
         }
-        String str = (String) dor.a(dvc.g);
-        if (dvc.a(str)) {
+        java.lang.String str = (java.lang.String) dor.a(defpackage.dvc.g);
+        if (defpackage.dvc.a(str)) {
             return null;
         }
-        dpw a2 = dvc.a(num.intValue());
-        String valueOf = String.valueOf(str);
-        return a2.b(valueOf.length() != 0 ? "invalid content-type: ".concat(valueOf) : new String("invalid content-type: "));
+        defpackage.dpw a2 = defpackage.dvc.a(num.intValue());
+        java.lang.String str2 = "invalid content-type: ";
+        java.lang.String valueOf = java.lang.String.valueOf(str);
+        return a2.b(valueOf.length() != 0 ? str2.concat(valueOf) : new java.lang.String(str2));
     }
 
-    public static Charset b(dor dor) {
-        String str = (String) dor.a(dvc.g);
+    public static java.nio.charset.Charset b(defpackage.dor dor) {
+        java.lang.String str = (java.lang.String) dor.a(defpackage.dvc.g);
         if (str != null) {
-            String[] split = str.split("charset=", 2);
+            java.lang.String[] split = str.split("charset=", 2);
             try {
-                return Charset.forName(split[split.length - 1].trim());
-            } catch (Exception e) {
+                return java.nio.charset.Charset.forName(split[split.length - 1].trim());
+            } catch (java.lang.Exception e) {
             }
         }
-        return crp.b;
+        return defpackage.crp.b;
     }
 
-    public static void c(dor dor) {
+    public static void c(defpackage.dor dor) {
         dor.b(r);
-        dor.b(doi.b);
-        dor.b(doi.a);
+        dor.b(defpackage.doi.b);
+        dor.b(defpackage.doi.a);
     }
 }

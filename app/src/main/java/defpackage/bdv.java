@@ -1,24 +1,21 @@
 package defpackage;
 
-import android.os.Parcel;
-
-/* renamed from: bdv  reason: default package */
+/* renamed from: bdv reason: default package */
 /* compiled from: PG */
-public abstract class bdv extends bkn implements bev {
+public abstract class bdv extends defpackage.bkn implements defpackage.bev {
     public bdv() {
         attachInterface(this, "com.google.android.gms.common.internal.ICertData");
     }
 
-    @Override // android.os.Binder
-    public boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) {
+    public boolean onTransact(int i, android.os.Parcel parcel, android.os.Parcel parcel2, int i2) {
         if (a(i, parcel, parcel2, i2)) {
             return true;
         }
         switch (i) {
             case 1:
-                bfl a = a();
+                defpackage.bfl a = a();
                 parcel2.writeNoException();
-                bko.a(parcel2, a);
+                defpackage.bko.a(parcel2, (android.os.IInterface) a);
                 return true;
             case 2:
                 int b = b();

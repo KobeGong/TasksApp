@@ -1,14 +1,12 @@
 package defpackage;
 
-import java.util.Iterator;
-
-/* renamed from: dlb  reason: default package */
+/* renamed from: dlb reason: default package */
 /* compiled from: PG */
-final class dlb implements Iterator {
-    private Iterator a = this.b.a.iterator();
-    private final /* synthetic */ dkz b;
+final class dlb implements java.util.Iterator {
+    private java.util.Iterator a = this.b.a.iterator();
+    private final /* synthetic */ defpackage.dkz b;
 
-    dlb(dkz dkz) {
+    dlb(defpackage.dkz dkz) {
         this.b = dkz;
     }
 
@@ -17,11 +15,10 @@ final class dlb implements Iterator {
     }
 
     public final void remove() {
-        throw new UnsupportedOperationException();
+        throw new java.lang.UnsupportedOperationException();
     }
 
-    @Override // java.util.Iterator
-    public final /* synthetic */ Object next() {
-        return (String) this.a.next();
+    public final /* synthetic */ java.lang.Object next() {
+        return (java.lang.String) this.a.next();
     }
 }

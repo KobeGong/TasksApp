@@ -1,17 +1,15 @@
 package defpackage;
 
-import android.view.View;
+/* renamed from: asd reason: default package */
+final /* synthetic */ class asd implements android.view.View.OnClickListener {
+    private final AddTaskFragment a;
 
-/* renamed from: asd  reason: default package */
-final /* synthetic */ class asd implements View.OnClickListener {
-    private final arx a;
-
-    asd(arx arx) {
+    asd(AddTaskFragment arx) {
         this.a = arx;
     }
 
-    public final void onClick(View view) {
-        arx arx = this.a;
+    public final void onClick(android.view.View view) {
+        AddTaskFragment arx = this.a;
         arx.ab = null;
         arx.N();
     }

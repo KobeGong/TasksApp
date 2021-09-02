@@ -1,31 +1,33 @@
 package defpackage;
 
-import java.io.Serializable;
-import java.util.Map;
-
-/* renamed from: csu  reason: default package */
+/* renamed from: csu reason: default package */
 /* compiled from: PG */
-final class csu implements Serializable {
+final class csu implements java.io.Serializable {
     public static final long serialVersionUID = 0;
-    private final Object[] a;
-    private final Object[] b;
+    private final java.lang.Object[] a;
+    private final java.lang.Object[] b;
 
-    csu(css css) {
-        this.a = new Object[css.size()];
-        this.b = new Object[css.size()];
+    csu(defpackage.css css) {
+        this.a = new java.lang.Object[css.size()];
+        this.b = new java.lang.Object[css.size()];
         int i = 0;
-        cth cth = (cth) ((csv) css.entrySet()).iterator();
-        while (cth.hasNext()) {
-            Map.Entry entry = (Map.Entry) cth.next();
-            this.a[i] = entry.getKey();
-            this.b[i] = entry.getValue();
-            i++;
+        defpackage.cth cth = (defpackage.cth) ((defpackage.csv) css.entrySet()).iterator();
+        while (true) {
+            int i2 = i;
+            if (cth.hasNext()) {
+                java.util.Map.Entry entry = (java.util.Map.Entry) cth.next();
+                this.a[i2] = entry.getKey();
+                this.b[i2] = entry.getValue();
+                i = i2 + 1;
+            } else {
+                return;
+            }
         }
     }
 
-    /* access modifiers changed from: package-private */
-    public final Object readResolve() {
-        cst cst = new cst(this.a.length);
+    /* access modifiers changed from: 0000 */
+    public final java.lang.Object readResolve() {
+        defpackage.cst cst = new defpackage.cst(this.a.length);
         for (int i = 0; i < this.a.length; i++) {
             cst.a(this.a[i], this.b[i]);
         }

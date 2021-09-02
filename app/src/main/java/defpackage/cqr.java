@@ -1,14 +1,13 @@
 package defpackage;
 
-/* renamed from: cqr  reason: default package */
-final /* synthetic */ class cqr implements ecz {
-    public static final ecz a = new cqr();
+/* renamed from: cqr reason: default package */
+final /* synthetic */ class cqr implements defpackage.ecz {
+    public static final defpackage.ecz a = new defpackage.cqr();
 
     private cqr() {
     }
 
-    @Override // defpackage.ecz
-    public final Object a() {
-        return cqq.a();
+    public final java.lang.Object a() {
+        return defpackage.cqq.a();
     }
 }

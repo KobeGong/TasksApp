@@ -1,34 +1,29 @@
 package com.google.android.gms.auth.api.signin.internal;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.internal.ReflectedParcelable;
-
 /* compiled from: PG */
-public final class SignInConfiguration extends biq implements ReflectedParcelable {
-    public static final Parcelable.Creator CREATOR = new awf();
-    public GoogleSignInOptions a;
-    private final String b;
+public final class SignInConfiguration extends defpackage.biq implements com.google.android.gms.common.internal.ReflectedParcelable {
+    public static final android.os.Parcelable.Creator CREATOR = new defpackage.awf();
+    public com.google.android.gms.auth.api.signin.GoogleSignInOptions a;
+    private final java.lang.String b;
 
-    public SignInConfiguration(String str, GoogleSignInOptions googleSignInOptions) {
-        this.b = azb.b(str);
+    public SignInConfiguration(java.lang.String str, com.google.android.gms.auth.api.signin.GoogleSignInOptions googleSignInOptions) {
+        this.b = defpackage.azb.b(str);
         this.a = googleSignInOptions;
     }
 
-    public final void writeToParcel(Parcel parcel, int i) {
-        int q = bjr.q(parcel, 20293);
-        bjr.a(parcel, 2, this.b);
-        bjr.a(parcel, 5, this.a, i);
-        bjr.r(parcel, q);
+    public final void writeToParcel(android.os.Parcel parcel, int i) {
+        int q = defpackage.bjr.q(parcel, 20293);
+        defpackage.bjr.a(parcel, 2, this.b);
+        defpackage.bjr.a(parcel, 5, (android.os.Parcelable) this.a, i);
+        defpackage.bjr.r(parcel, q);
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         if (obj == null) {
             return false;
         }
         try {
-            SignInConfiguration signInConfiguration = (SignInConfiguration) obj;
+            com.google.android.gms.auth.api.signin.internal.SignInConfiguration signInConfiguration = (com.google.android.gms.auth.api.signin.internal.SignInConfiguration) obj;
             if (!this.b.equals(signInConfiguration.b)) {
                 return false;
             }
@@ -40,12 +35,12 @@ public final class SignInConfiguration extends biq implements ReflectedParcelabl
                 return false;
             }
             return true;
-        } catch (ClassCastException e) {
+        } catch (java.lang.ClassCastException e) {
             return false;
         }
     }
 
     public final int hashCode() {
-        return new avz().a(this.b).a(this.a).a;
+        return new defpackage.avz().a((java.lang.Object) this.b).a((java.lang.Object) this.a).a;
     }
 }

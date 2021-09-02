@@ -1,22 +1,15 @@
 package defpackage;
 
-import java.util.AbstractList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
-import java.util.RandomAccess;
-
-/* renamed from: dkz  reason: default package */
+/* renamed from: dkz reason: default package */
 /* compiled from: PG */
-public final class dkz extends AbstractList implements diz, RandomAccess {
-    public final diz a;
+public final class dkz extends java.util.AbstractList implements defpackage.diz, java.util.RandomAccess {
+    public final defpackage.diz a;
 
-    public dkz(diz diz) {
+    public dkz(defpackage.diz diz) {
         this.a = diz;
     }
 
-    @Override // defpackage.diz
-    public final Object b(int i) {
+    public final java.lang.Object b(int i) {
         return this.a.b(i);
     }
 
@@ -24,33 +17,27 @@ public final class dkz extends AbstractList implements diz, RandomAccess {
         return this.a.size();
     }
 
-    @Override // defpackage.diz
-    public final void a(dha dha) {
-        throw new UnsupportedOperationException();
+    public final void a(defpackage.dha dha) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
-    @Override // java.util.List, java.util.AbstractList
-    public final ListIterator listIterator(int i) {
-        return new dla(this, i);
+    public final java.util.ListIterator listIterator(int i) {
+        return new defpackage.dla(this, i);
     }
 
-    @Override // java.util.AbstractCollection, java.util.List, java.util.Collection, java.util.AbstractList, java.lang.Iterable
-    public final Iterator iterator() {
-        return new dlb(this);
+    public final java.util.Iterator iterator() {
+        return new defpackage.dlb(this);
     }
 
-    @Override // defpackage.diz
-    public final List d() {
+    public final java.util.List d() {
         return this.a.d();
     }
 
-    @Override // defpackage.diz
-    public final diz e() {
+    public final defpackage.diz e() {
         return this;
     }
 
-    @Override // java.util.List, java.util.AbstractList
-    public final /* synthetic */ Object get(int i) {
-        return (String) this.a.get(i);
+    public final /* synthetic */ java.lang.Object get(int i) {
+        return (java.lang.String) this.a.get(i);
     }
 }

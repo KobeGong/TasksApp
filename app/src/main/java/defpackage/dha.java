@@ -1,15 +1,10 @@
 package defpackage;
 
-import java.io.Serializable;
-import java.nio.charset.Charset;
-import java.util.Collection;
-import java.util.Iterator;
-
-/* renamed from: dha  reason: default package */
+/* renamed from: dha reason: default package */
 /* compiled from: PG */
-public abstract class dha implements Serializable, Iterable {
-    public static final dha a = new dhh(dim.b);
-    private static final dhd c;
+public abstract class dha implements java.io.Serializable, java.lang.Iterable {
+    public static final defpackage.dha a = new defpackage.dhh(defpackage.dim.b);
+    private static final defpackage.dhd c;
     public int b = 0;
 
     dha() {
@@ -22,13 +17,13 @@ public abstract class dha implements Serializable, Iterable {
     /* access modifiers changed from: protected */
     public abstract int a(int i, int i2, int i3);
 
-    public abstract dha a(int i, int i2);
+    public abstract defpackage.dha a(int i, int i2);
 
     /* access modifiers changed from: protected */
-    public abstract String a(Charset charset);
+    public abstract java.lang.String a(java.nio.charset.Charset charset);
 
-    /* access modifiers changed from: package-private */
-    public abstract void a(dgz dgz);
+    /* access modifiers changed from: 0000 */
+    public abstract void a(defpackage.dgz dgz);
 
     /* access modifiers changed from: protected */
     public abstract int b(int i, int i2, int i3);
@@ -38,9 +33,9 @@ public abstract class dha implements Serializable, Iterable {
 
     public abstract boolean d();
 
-    public abstract dhj e();
+    public abstract defpackage.dhj e();
 
-    public abstract boolean equals(Object obj);
+    public abstract boolean equals(java.lang.Object obj);
 
     /* access modifiers changed from: protected */
     public abstract int f();
@@ -48,40 +43,40 @@ public abstract class dha implements Serializable, Iterable {
     /* access modifiers changed from: protected */
     public abstract boolean g();
 
-    public static dha a(byte[] bArr, int i, int i2) {
-        return new dhh(c.a(bArr, i, i2));
+    public static defpackage.dha a(byte[] bArr, int i, int i2) {
+        return new defpackage.dhh(c.a(bArr, i, i2));
     }
 
-    static dha a(byte[] bArr) {
-        return new dhh(bArr);
+    static defpackage.dha a(byte[] bArr) {
+        return new defpackage.dhh(bArr);
     }
 
-    public static dha a(String str) {
-        return new dhh(str.getBytes(dim.a));
+    public static defpackage.dha a(java.lang.String str) {
+        return new defpackage.dhh(str.getBytes(defpackage.dim.a));
     }
 
-    public static dha a(Iterable iterable) {
-        int size = ((Collection) iterable).size();
+    public static defpackage.dha a(java.lang.Iterable iterable) {
+        int size = ((java.util.Collection) iterable).size();
         if (size == 0) {
             return a;
         }
         return a(iterable.iterator(), size);
     }
 
-    private static dha a(Iterator it, int i) {
+    private static defpackage.dha a(java.util.Iterator it, int i) {
         if (i <= 0) {
-            throw new IllegalArgumentException(String.format("length (%s) must be >= 1", Integer.valueOf(i)));
+            throw new java.lang.IllegalArgumentException(java.lang.String.format("length (%s) must be >= 1", new java.lang.Object[]{java.lang.Integer.valueOf(i)}));
         } else if (i == 1) {
-            return (dha) it.next();
+            return (defpackage.dha) it.next();
         } else {
             int i2 = i >>> 1;
-            dha a2 = a(it, i2);
-            dha a3 = a(it, i - i2);
+            defpackage.dha a2 = a(it, i2);
+            defpackage.dha a3 = a(it, i - i2);
             if (Integer.MAX_VALUE - a2.a() >= a3.a()) {
-                return dkd.a(a2, a3);
+                return defpackage.dkd.a(a2, a3);
             }
             int a4 = a2.a();
-            throw new IllegalArgumentException(new StringBuilder(53).append("ByteString would be too long: ").append(a4).append("+").append(a3.a()).toString());
+            throw new java.lang.IllegalArgumentException("ByteString would be too long: " + a4 + "+" + a3.a());
         }
     }
 
@@ -96,15 +91,15 @@ public abstract class dha implements Serializable, Iterable {
     public final byte[] b() {
         int a2 = a();
         if (a2 == 0) {
-            return dim.b;
+            return defpackage.dim.b;
         }
         byte[] bArr = new byte[a2];
         b(bArr, 0, 0, a2);
         return bArr;
     }
 
-    public final String c() {
-        return a() == 0 ? "" : a(dim.a);
+    public final java.lang.String c() {
+        return a() == 0 ? "" : a(defpackage.dim.a);
     }
 
     public final int hashCode() {
@@ -120,8 +115,8 @@ public abstract class dha implements Serializable, Iterable {
         return i;
     }
 
-    static dhf b(int i) {
-        return new dhf(i);
+    static defpackage.dhf b(int i) {
+        return new defpackage.dhf(i);
     }
 
     static void b(int i, int i2) {
@@ -129,9 +124,9 @@ public abstract class dha implements Serializable, Iterable {
             return;
         }
         if (i < 0) {
-            throw new ArrayIndexOutOfBoundsException(new StringBuilder(22).append("Index < 0: ").append(i).toString());
+            throw new java.lang.ArrayIndexOutOfBoundsException("Index < 0: " + i);
         }
-        throw new ArrayIndexOutOfBoundsException(new StringBuilder(40).append("Index > length: ").append(i).append(", ").append(i2).toString());
+        throw new java.lang.ArrayIndexOutOfBoundsException("Index > length: " + i + ", " + i2);
     }
 
     static int c(int i, int i2, int i3) {
@@ -140,29 +135,28 @@ public abstract class dha implements Serializable, Iterable {
             return i4;
         }
         if (i < 0) {
-            throw new IndexOutOfBoundsException(new StringBuilder(32).append("Beginning index: ").append(i).append(" < 0").toString());
+            throw new java.lang.IndexOutOfBoundsException("Beginning index: " + i + " < 0");
         } else if (i2 < i) {
-            throw new IndexOutOfBoundsException(new StringBuilder(66).append("Beginning index larger than ending index: ").append(i).append(", ").append(i2).toString());
+            throw new java.lang.IndexOutOfBoundsException("Beginning index larger than ending index: " + i + ", " + i2);
         } else {
-            throw new IndexOutOfBoundsException(new StringBuilder(37).append("End index: ").append(i2).append(" >= ").append(i3).toString());
+            throw new java.lang.IndexOutOfBoundsException("End index: " + i2 + " >= " + i3);
         }
     }
 
-    public final String toString() {
-        return String.format("<ByteString@%s size=%d>", Integer.toHexString(System.identityHashCode(this)), Integer.valueOf(a()));
+    public final java.lang.String toString() {
+        return java.lang.String.format("<ByteString@%s size=%d>", new java.lang.Object[]{java.lang.Integer.toHexString(java.lang.System.identityHashCode(this)), java.lang.Integer.valueOf(a())});
     }
 
-    @Override // java.lang.Iterable
-    public /* synthetic */ Iterator iterator() {
-        return new dhe(this);
+    public /* synthetic */ java.util.Iterator iterator() {
+        return new defpackage.dhe(this);
     }
 
     static {
-        dhd dhb;
-        if (dgt.a()) {
-            dhb = new dhi();
+        defpackage.dhd dhb;
+        if (defpackage.dgt.a()) {
+            dhb = new defpackage.dhi();
         } else {
-            dhb = new dhb();
+            dhb = new defpackage.dhb();
         }
         c = dhb;
     }

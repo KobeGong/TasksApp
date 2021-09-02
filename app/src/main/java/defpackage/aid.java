@@ -1,18 +1,15 @@
 package defpackage;
 
-import android.animation.ValueAnimator;
-
-/* access modifiers changed from: package-private */
-/* renamed from: aid  reason: default package */
+/* renamed from: aid reason: default package */
 /* compiled from: PG */
-public final class aid implements ValueAnimator.AnimatorUpdateListener {
-    private final /* synthetic */ aic a;
+final class aid implements android.animation.ValueAnimator.AnimatorUpdateListener {
+    private final /* synthetic */ defpackage.aic a;
 
-    aid(aic aic) {
+    aid(defpackage.aic aic) {
         this.a = aic;
     }
 
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    public final void onAnimationUpdate(android.animation.ValueAnimator valueAnimator) {
         this.a.m = valueAnimator.getAnimatedFraction();
     }
 }

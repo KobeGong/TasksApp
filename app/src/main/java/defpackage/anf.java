@@ -1,13 +1,11 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: anf  reason: default package */
-public final /* synthetic */ class anf implements anx {
-    anf(anc anc) {
+/* renamed from: anf reason: default package */
+final /* synthetic */ class anf implements defpackage.anx {
+    anf(defpackage.anc anc) {
     }
 
-    @Override // defpackage.anx
-    public final Object a(anu anu) {
-        return anc.a(anu);
+    public final java.lang.Object a(defpackage.anu anu) {
+        return defpackage.anc.a(anu);
     }
 }

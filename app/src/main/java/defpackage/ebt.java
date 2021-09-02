@@ -1,56 +1,55 @@
 package defpackage;
 
-/* renamed from: ebt  reason: default package */
+/* renamed from: ebt reason: default package */
 /* compiled from: PG */
-public final class ebt extends ebx {
-    private final eby b;
+public final class ebt extends defpackage.ebx {
+    private final defpackage.eby b;
     private final long c;
     private final long d;
     private final long e;
 
-    public ebt(eby eby, long j, long j2, long j3) {
+    public ebt(defpackage.eby eby, long j, long j2, long j3) {
         this.b = eby;
         this.c = j;
         this.d = j2;
         this.e = j3;
     }
 
-    @Override // defpackage.ebx
-    public final eby a() {
+    public final defpackage.eby a() {
         return this.b;
     }
 
-    @Override // defpackage.ebx
     public final long b() {
         return this.c;
     }
 
-    @Override // defpackage.ebx
     public final long c() {
         return this.d;
     }
 
-    @Override // defpackage.ebx
     public final long d() {
         return this.e;
     }
 
-    public final String toString() {
-        String valueOf = String.valueOf(this.b);
+    public final java.lang.String toString() {
+        java.lang.String valueOf = java.lang.String.valueOf(this.b);
         long j = this.c;
         long j2 = this.d;
-        return new StringBuilder(String.valueOf(valueOf).length() + 141).append("MessageEvent{type=").append(valueOf).append(", messageId=").append(j).append(", uncompressedMessageSize=").append(j2).append(", compressedMessageSize=").append(this.e).append("}").toString();
+        return new java.lang.StringBuilder(java.lang.String.valueOf(valueOf).length() + 141).append("MessageEvent{type=").append(valueOf).append(", messageId=").append(j).append(", uncompressedMessageSize=").append(j2).append(", compressedMessageSize=").append(this.e).append("}").toString();
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof ebx)) {
+        if (!(obj instanceof defpackage.ebx)) {
             return false;
         }
-        ebx ebx = (ebx) obj;
-        return this.b.equals(ebx.a()) && this.c == ebx.b() && this.d == ebx.c() && this.e == ebx.d();
+        defpackage.ebx ebx = (defpackage.ebx) obj;
+        if (this.b.equals(ebx.a()) && this.c == ebx.b() && this.d == ebx.c() && this.e == ebx.d()) {
+            return true;
+        }
+        return false;
     }
 
     public final int hashCode() {

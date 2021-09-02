@@ -1,18 +1,14 @@
 package defpackage;
 
-import java.util.Iterator;
-import java.util.Map;
-import java.util.NoSuchElementException;
-
-/* renamed from: rd  reason: default package */
+/* renamed from: rd reason: default package */
 /* compiled from: PG */
-final class rd implements Iterator, Map.Entry {
+final class rd implements java.util.Iterator, java.util.Map.Entry {
     private int a;
     private int b;
     private boolean c = false;
-    private final /* synthetic */ qz d;
+    private final /* synthetic */ defpackage.qz d;
 
-    rd(qz qzVar) {
+    rd(defpackage.qz qzVar) {
         this.d = qzVar;
         this.a = qzVar.a() - 1;
         this.b = -1;
@@ -24,7 +20,7 @@ final class rd implements Iterator, Map.Entry {
 
     public final void remove() {
         if (!this.c) {
-            throw new IllegalStateException();
+            throw new java.lang.IllegalStateException();
         }
         this.d.a(this.b);
         this.b--;
@@ -32,48 +28,48 @@ final class rd implements Iterator, Map.Entry {
         this.c = false;
     }
 
-    @Override // java.util.Map.Entry
-    public final Object getKey() {
+    public final java.lang.Object getKey() {
         if (this.c) {
             return this.d.a(this.b, 0);
         }
-        throw new IllegalStateException("This container does not support retaining Map.Entry objects");
+        throw new java.lang.IllegalStateException("This container does not support retaining Map.Entry objects");
     }
 
-    @Override // java.util.Map.Entry
-    public final Object getValue() {
+    public final java.lang.Object getValue() {
         if (this.c) {
             return this.d.a(this.b, 1);
         }
-        throw new IllegalStateException("This container does not support retaining Map.Entry objects");
+        throw new java.lang.IllegalStateException("This container does not support retaining Map.Entry objects");
     }
 
-    @Override // java.util.Map.Entry
-    public final Object setValue(Object obj) {
+    public final java.lang.Object setValue(java.lang.Object obj) {
         if (this.c) {
             return this.d.a(this.b, obj);
         }
-        throw new IllegalStateException("This container does not support retaining Map.Entry objects");
+        throw new java.lang.IllegalStateException("This container does not support retaining Map.Entry objects");
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         if (!this.c) {
-            throw new IllegalStateException("This container does not support retaining Map.Entry objects");
-        } else if (!(obj instanceof Map.Entry)) {
+            throw new java.lang.IllegalStateException("This container does not support retaining Map.Entry objects");
+        } else if (!(obj instanceof java.util.Map.Entry)) {
             return false;
         } else {
-            Map.Entry entry = (Map.Entry) obj;
-            return qv.a(entry.getKey(), this.d.a(this.b, 0)) && qv.a(entry.getValue(), this.d.a(this.b, 1));
+            java.util.Map.Entry entry = (java.util.Map.Entry) obj;
+            if (!defpackage.qv.a(entry.getKey(), this.d.a(this.b, 0)) || !defpackage.qv.a(entry.getValue(), this.d.a(this.b, 1))) {
+                return false;
+            }
+            return true;
         }
     }
 
     public final int hashCode() {
         int i = 0;
         if (!this.c) {
-            throw new IllegalStateException("This container does not support retaining Map.Entry objects");
+            throw new java.lang.IllegalStateException("This container does not support retaining Map.Entry objects");
         }
-        Object a2 = this.d.a(this.b, 0);
-        Object a3 = this.d.a(this.b, 1);
+        java.lang.Object a2 = this.d.a(this.b, 0);
+        java.lang.Object a3 = this.d.a(this.b, 1);
         int hashCode = a2 == null ? 0 : a2.hashCode();
         if (a3 != null) {
             i = a3.hashCode();
@@ -81,14 +77,13 @@ final class rd implements Iterator, Map.Entry {
         return i ^ hashCode;
     }
 
-    public final String toString() {
+    public final java.lang.String toString() {
         return getKey() + "=" + getValue();
     }
 
-    @Override // java.util.Iterator
-    public final /* synthetic */ Object next() {
+    public final /* synthetic */ java.lang.Object next() {
         if (!hasNext()) {
-            throw new NoSuchElementException();
+            throw new java.util.NoSuchElementException();
         }
         this.b++;
         this.c = true;

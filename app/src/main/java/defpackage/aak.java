@@ -1,24 +1,20 @@
 package defpackage;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.support.v7.widget.ActionBarOverlayLayout;
-
-/* renamed from: aak  reason: default package */
+/* renamed from: aak reason: default package */
 /* compiled from: PG */
-public final class aak extends AnimatorListenerAdapter {
-    private final /* synthetic */ ActionBarOverlayLayout a;
+public final class aak extends android.animation.AnimatorListenerAdapter {
+    private final /* synthetic */ android.support.v7.widget.ActionBarOverlayLayout a;
 
-    public aak(ActionBarOverlayLayout actionBarOverlayLayout) {
+    public aak(android.support.v7.widget.ActionBarOverlayLayout actionBarOverlayLayout) {
         this.a = actionBarOverlayLayout;
     }
 
-    public final void onAnimationEnd(Animator animator) {
+    public final void onAnimationEnd(android.animation.Animator animator) {
         this.a.h = null;
         this.a.e = false;
     }
 
-    public final void onAnimationCancel(Animator animator) {
+    public final void onAnimationCancel(android.animation.Animator animator) {
         this.a.h = null;
         this.a.e = false;
     }

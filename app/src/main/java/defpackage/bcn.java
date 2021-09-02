@@ -1,19 +1,13 @@
 package defpackage;
 
-import android.content.Context;
-import android.os.Handler;
-import android.os.Looper;
-
-/* renamed from: bcn  reason: default package */
+/* renamed from: bcn reason: default package */
 /* compiled from: PG */
-public final class bcn extends ayn {
-    @Override // defpackage.ayn
-    public final ayj a(Looper looper, bak bak) {
-        throw new NoSuchMethodError();
+public final class bcn extends defpackage.ayn {
+    public final defpackage.ayj a(android.os.Looper looper, defpackage.bak bak) {
+        throw new java.lang.NoSuchMethodError();
     }
 
-    @Override // defpackage.ayn
-    public final bbi a(Context context, Handler handler) {
-        throw new NoSuchMethodError();
+    public final defpackage.bbi a(android.content.Context context, android.os.Handler handler) {
+        throw new java.lang.NoSuchMethodError();
     }
 }

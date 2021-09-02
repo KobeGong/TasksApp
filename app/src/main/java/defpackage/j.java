@@ -1,47 +1,45 @@
 package defpackage;
 
-import java.util.Map;
-
-/* renamed from: j  reason: default package */
+/* renamed from: j reason: default package */
 /* compiled from: PG */
-public final class j implements Map.Entry {
-    public final Object a;
-    public final Object b;
-    public j c;
-    public j d;
+public final class j implements java.util.Map.Entry {
+    public final java.lang.Object a;
+    public final java.lang.Object b;
+    public defpackage.j c;
+    public defpackage.j d;
 
-    j(Object obj, Object obj2) {
+    j(java.lang.Object obj, java.lang.Object obj2) {
         this.a = obj;
         this.b = obj2;
     }
 
-    @Override // java.util.Map.Entry
-    public final Object getKey() {
+    public final java.lang.Object getKey() {
         return this.a;
     }
 
-    @Override // java.util.Map.Entry
-    public final Object getValue() {
+    public final java.lang.Object getValue() {
         return this.b;
     }
 
-    @Override // java.util.Map.Entry
-    public final Object setValue(Object obj) {
-        throw new UnsupportedOperationException("An entry modification is not supported");
+    public final java.lang.Object setValue(java.lang.Object obj) {
+        throw new java.lang.UnsupportedOperationException("An entry modification is not supported");
     }
 
-    public final String toString() {
+    public final java.lang.String toString() {
         return this.a + "=" + this.b;
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof j)) {
+        if (!(obj instanceof defpackage.j)) {
             return false;
         }
-        j jVar = (j) obj;
-        return this.a.equals(jVar.a) && this.b.equals(jVar.b);
+        defpackage.j jVar = (defpackage.j) obj;
+        if (!this.a.equals(jVar.a) || !this.b.equals(jVar.b)) {
+            return false;
+        }
+        return true;
     }
 }

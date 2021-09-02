@@ -1,17 +1,15 @@
 package defpackage;
 
-import android.view.View;
+/* renamed from: ask reason: default package */
+final /* synthetic */ class ask implements android.view.View.OnFocusChangeListener {
+    private final EditTaskFragment a;
 
-/* renamed from: ask  reason: default package */
-final /* synthetic */ class ask implements View.OnFocusChangeListener {
-    private final asi a;
-
-    ask(asi asi) {
+    ask(EditTaskFragment asi) {
         this.a = asi;
     }
 
-    public final void onFocusChange(View view, boolean z) {
-        asi asi = this.a;
+    public final void onFocusChange(android.view.View view, boolean z) {
+        EditTaskFragment asi = this.a;
         if (!z) {
             asi.U();
         }

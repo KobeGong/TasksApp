@@ -1,31 +1,27 @@
 package defpackage;
 
-import android.view.View;
-
-/* renamed from: ari  reason: default package */
+/* renamed from: ari reason: default package */
 /* compiled from: PG */
-final class ari implements dn {
-    private final /* synthetic */ ard a;
+final class ari implements defpackage.dn {
+    private final /* synthetic */ defpackage.ard a;
 
-    ari(ard ard) {
+    ari(defpackage.ard ard) {
         this.a = ard;
     }
 
-    @Override // defpackage.dn
-    public final void a(View view) {
+    public final void a(android.view.View view) {
         view.setVisibility(8);
         this.a.a(0);
     }
 
-    @Override // defpackage.dn
     public final void a(int i) {
         switch (i) {
             case 0:
-                arr.a().b(this.a.f);
+                defpackage.arr.a().b(this.a.f);
                 return;
             case 1:
             case 2:
-                arr.a().a(this.a.f);
+                defpackage.arr.a().a(this.a.f);
                 return;
             default:
                 return;

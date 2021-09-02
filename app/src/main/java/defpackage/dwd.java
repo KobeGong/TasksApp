@@ -1,25 +1,23 @@
 package defpackage;
 
-import java.util.concurrent.atomic.AtomicLong;
-
-/* renamed from: dwd  reason: default package */
+/* renamed from: dwd reason: default package */
 /* compiled from: PG */
 public final class dwd {
-    private static final AtomicLong b = new AtomicLong();
+    private static final java.util.concurrent.atomic.AtomicLong b = new java.util.concurrent.atomic.AtomicLong();
     public final long a;
-    private final String c;
+    private final java.lang.String c;
 
-    public static dwd a(String str) {
-        return new dwd(str, b.incrementAndGet());
+    public static defpackage.dwd a(java.lang.String str) {
+        return new defpackage.dwd(str, b.incrementAndGet());
     }
 
-    private dwd(String str, long j) {
+    private dwd(java.lang.String str, long j) {
         this.c = str;
         this.a = j;
     }
 
-    public final String toString() {
-        String str = this.c;
-        return new StringBuilder(String.valueOf(str).length() + 21).append(str).append("-").append(this.a).toString();
+    public final java.lang.String toString() {
+        java.lang.String str = this.c;
+        return new java.lang.StringBuilder(java.lang.String.valueOf(str).length() + 21).append(str).append("-").append(this.a).toString();
     }
 }

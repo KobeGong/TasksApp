@@ -1,11 +1,11 @@
 package defpackage;
 
-/* renamed from: dvu  reason: default package */
+/* renamed from: dvu reason: default package */
 /* compiled from: PG */
-final class dvu implements Runnable {
-    private final /* synthetic */ dvq a;
+final class dvu implements java.lang.Runnable {
+    private final /* synthetic */ defpackage.dvq a;
 
-    dvu(dvq dvq) {
+    dvu(defpackage.dvq dvq) {
         this.a = dvq;
     }
 

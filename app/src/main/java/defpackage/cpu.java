@@ -1,84 +1,65 @@
 package defpackage;
 
-import android.content.Context;
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
-import android.widget.ListView;
-
-import java.util.ArrayList;
-import java.util.List;
-
-/* renamed from: cpu  reason: default package */
+/* renamed from: cpu reason: default package */
 /* compiled from: PG */
-public final class cpu extends lc implements nb {
-    public cpw a;
-    private ArrayAdapter b;
+public final class cpu extends Fragment implements defpackage.nb {
+    public defpackage.cpw a;
+    private android.widget.ArrayAdapter b;
 
-    @Override // defpackage.lc
-    public final void a(Context context) {
+    public final void a(android.content.Context context) {
         super.a(context);
-        lc lcVar = this.y;
-        if (lcVar instanceof cpw) {
-            this.a = (cpw) lcVar;
+        Fragment lcVar = this.y;
+        if (lcVar instanceof defpackage.cpw) {
+            this.a = (defpackage.cpw) lcVar;
             return;
         }
         FragmentActivity j = getActivity();
-        if (j instanceof cpw) {
-            this.a = (cpw) j;
+        if (j instanceof defpackage.cpw) {
+            this.a = (defpackage.cpw) j;
         }
     }
 
-    @Override // defpackage.lc
     public final void d() {
         super.d();
         this.a = null;
     }
 
-    @Override // defpackage.lc
-    public final View a(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        return layoutInflater.inflate(R.layout.libraries_social_licenses_license_menu_fragment, viewGroup, false);
+    public final android.view.View onCreateView(android.view.LayoutInflater layoutInflater, android.view.ViewGroup viewGroup, android.os.Bundle bundle) {
+        return layoutInflater.inflate(2131034180, viewGroup, false);
     }
 
-    @Override // defpackage.lc
-    public final void a(View view, Bundle bundle) {
+    public final void a(android.view.View view, android.os.Bundle bundle) {
         super.a(view, bundle);
         FragmentActivity j = getActivity();
-        this.b = new ArrayAdapter(j, (int) R.layout.libraries_social_licenses_license, (int) R.id.license, new ArrayList());
-        na.a(j).a(54321, this);
-        ListView listView = (ListView) view.findViewById(R.id.license_list);
-        listView.setAdapter((ListAdapter) this.b);
-        listView.setOnItemClickListener(new cpv(this));
+        this.b = new android.widget.ArrayAdapter(j, 2131034177, 2131755303, new java.util.ArrayList());
+        defpackage.na.a(j).a(54321, this);
+        android.widget.ListView listView = (android.widget.ListView) view.findViewById(2131755307);
+        listView.setAdapter(this.b);
+        listView.setOnItemClickListener(new defpackage.cpv(this));
     }
 
-    @Override // defpackage.lc
     public final void u() {
         super.u();
-        na.a(getActivity()).a();
+        defpackage.na.a(getActivity()).a();
     }
 
-    @Override // defpackage.nb
-    public final oc i_() {
-        Bundle bundle = this.i;
+    public final defpackage.oc i_() {
+        android.os.Bundle bundle = this.i;
         if (bundle == null || bundle.getStringArrayList("pluginLicensePaths") == null || bundle.getStringArrayList("pluginLicensePaths").isEmpty()) {
-            return new cpt(getActivity());
+            return new defpackage.cpt(getActivity());
         }
-        return new cpt(getActivity(), bundle.getStringArrayList("pluginLicensePaths"));
+        return new defpackage.cpt(getActivity(), bundle.getStringArrayList("pluginLicensePaths"));
     }
 
-    @Override // defpackage.nb
     public final void j_() {
         this.b.clear();
         this.b.notifyDataSetChanged();
     }
 
-    @Override // defpackage.nb
-    public final /* synthetic */ void a(Object obj) {
+    public final /* synthetic */ void a(java.lang.Object obj) {
+        java.util.List list = (java.util.List) obj;
         this.b.clear();
-        this.b.addAll((List) obj);
+        this.b.addAll(list);
         this.b.notifyDataSetChanged();
     }
 }

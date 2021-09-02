@@ -1,30 +1,21 @@
 package com.google.android.libraries.onegoogle.accountmenu.internal;
 
-import android.content.Context;
-import android.support.v7.widget.RecyclerView;
-import android.util.AttributeSet;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import com.google.android.apps.tasks.R;
-
 /* compiled from: PG */
-public class AccountMenuBodyView extends FrameLayout {
-    public final RecyclerView a;
-    public final View b;
-    public final View c;
-    public cdj d;
+public class AccountMenuBodyView extends android.widget.FrameLayout {
+    public final android.support.v7.widget.RecyclerView a;
+    public final android.view.View b;
+    public final android.view.View c;
+    public defpackage.cdj d;
 
-    public AccountMenuBodyView(Context context) {
+    public AccountMenuBodyView(android.content.Context context) {
         this(context, null);
     }
 
-    public AccountMenuBodyView(Context context, AttributeSet attributeSet) {
+    public AccountMenuBodyView(android.content.Context context, android.util.AttributeSet attributeSet) {
         super(context, attributeSet);
-        LayoutInflater.from(context).inflate(R.layout.account_menu_body, (ViewGroup) this, true);
-        this.b = findViewById(R.id.divider);
-        this.c = findViewById(R.id.my_account);
-        this.a = (RecyclerView) findViewById(R.id.accounts_list);
+        android.view.LayoutInflater.from(context).inflate(2131034141, this, true);
+        this.b = findViewById(2131755235);
+        this.c = findViewById(2131755234);
+        this.a = (android.support.v7.widget.RecyclerView) findViewById(2131755236);
     }
 }

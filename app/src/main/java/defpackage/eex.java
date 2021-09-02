@@ -1,55 +1,56 @@
 package defpackage;
 
-/* renamed from: eex  reason: default package */
+/* renamed from: eex reason: default package */
 /* compiled from: PG */
-public final class eex extends dlz {
-    private edj a = null;
-    private efr b = null;
-    private edk c = null;
-    private edq d = null;
+public final class eex extends defpackage.dlz {
+    private defpackage.edj a;
+    private defpackage.efr b;
+    private defpackage.edk c;
+    private defpackage.edq d;
 
     public eex() {
+        this.a = null;
+        this.b = null;
+        this.c = null;
+        this.d = null;
         this.k = -1;
     }
 
-    @Override // defpackage.dlz, defpackage.dmf
-    public final void a(dlx dlx) {
+    public final void a(defpackage.dlx dlx) {
         if (this.a != null) {
-            dlx.a(1, this.a);
+            dlx.a(1, (defpackage.dmf) this.a);
         }
         if (this.b != null) {
-            dlx.a(2, this.b);
+            dlx.a(2, (defpackage.dmf) this.b);
         }
         if (this.c != null) {
-            dlx.a(3, this.c);
+            dlx.a(3, (defpackage.dmf) this.c);
         }
         if (this.d != null) {
-            dlx.a(4, this.d);
+            dlx.a(4, (defpackage.dmf) this.d);
         }
         super.a(dlx);
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.dlz, defpackage.dmf
     public final int a() {
         int a2 = super.a();
         if (this.a != null) {
-            a2 += dlx.b(1, this.a);
+            a2 += defpackage.dlx.b(1, (defpackage.dmf) this.a);
         }
         if (this.b != null) {
-            a2 += dlx.b(2, this.b);
+            a2 += defpackage.dlx.b(2, (defpackage.dmf) this.b);
         }
         if (this.c != null) {
-            a2 += dlx.b(3, this.c);
+            a2 += defpackage.dlx.b(3, (defpackage.dmf) this.c);
         }
         if (this.d != null) {
-            return a2 + dlx.b(4, this.d);
+            return a2 + defpackage.dlx.b(4, (defpackage.dmf) this.d);
         }
         return a2;
     }
 
-    @Override // defpackage.dmf
-    public final /* synthetic */ dmf a(dlw dlw) {
+    public final /* synthetic */ defpackage.dmf a(defpackage.dlw dlw) {
         while (true) {
             int a2 = dlw.a();
             switch (a2) {
@@ -57,33 +58,33 @@ public final class eex extends dlz {
                     break;
                 case 10:
                     if (this.a == null) {
-                        this.a = new edj();
+                        this.a = new defpackage.edj();
                     }
-                    dlw.a(this.a);
-                    break;
+                    dlw.a((defpackage.dmf) this.a);
+                    continue;
                 case 18:
                     if (this.b == null) {
-                        this.b = new efr();
+                        this.b = new defpackage.efr();
                     }
-                    dlw.a(this.b);
-                    break;
+                    dlw.a((defpackage.dmf) this.b);
+                    continue;
                 case 26:
                     if (this.c == null) {
-                        this.c = new edk();
+                        this.c = new defpackage.edk();
                     }
-                    dlw.a(this.c);
-                    break;
+                    dlw.a((defpackage.dmf) this.c);
+                    continue;
                 case 34:
                     if (this.d == null) {
-                        this.d = new edq();
+                        this.d = new defpackage.edq();
                     }
-                    dlw.a(this.d);
-                    break;
+                    dlw.a((defpackage.dmf) this.d);
+                    continue;
                 default:
-                    if (super.a(dlw, a2)) {
+                    if (!super.a(dlw, a2)) {
                         break;
                     } else {
-                        break;
+                        continue;
                     }
             }
         }

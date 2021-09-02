@@ -1,34 +1,30 @@
 package defpackage;
 
-import java.io.InputStream;
-import java.nio.ByteBuffer;
-import java.nio.charset.Charset;
-
-/* renamed from: dxw  reason: default package */
+/* renamed from: dxw reason: default package */
 /* compiled from: PG */
 public final class dxw {
-    public static dxv a(byte[] bArr, int i, int i2) {
-        return new dxy(bArr, i, i2);
+    public static defpackage.dxv a(byte[] bArr, int i, int i2) {
+        return new defpackage.dxy(bArr, i, i2);
     }
 
-    public static dxv a(ByteBuffer byteBuffer) {
-        return new dxz(byteBuffer);
+    public static defpackage.dxv a(java.nio.ByteBuffer byteBuffer) {
+        return new defpackage.dxz(byteBuffer);
     }
 
-    public static String a(dxv dxv, Charset charset) {
-        cld.a(charset, "charset");
-        cld.a(dxv, "buffer");
+    public static java.lang.String a(defpackage.dxv dxv, java.nio.charset.Charset charset) {
+        defpackage.cld.a((java.lang.Object) charset, (java.lang.Object) "charset");
+        defpackage.cld.a((java.lang.Object) dxv, (java.lang.Object) "buffer");
         int a = dxv.a();
         byte[] bArr = new byte[a];
         dxv.a(bArr, 0, a);
-        return new String(bArr, charset);
+        return new java.lang.String(bArr, charset);
     }
 
-    public static InputStream a(dxv dxv) {
-        return new dxx(dxv);
+    public static java.io.InputStream a(defpackage.dxv dxv) {
+        return new defpackage.dxx(dxv);
     }
 
     static {
-        new dxy(new byte[0]);
+        new defpackage.dxy(new byte[0]);
     }
 }

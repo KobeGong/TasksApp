@@ -1,26 +1,22 @@
 package defpackage;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-/* access modifiers changed from: package-private */
-/* renamed from: mf  reason: default package */
+/* renamed from: mf reason: default package */
 /* compiled from: PG */
-public final class mf implements Parcelable {
-    public static final Parcelable.Creator CREATOR = new mg();
-    public mh[] a;
+final class mf implements android.os.Parcelable {
+    public static final android.os.Parcelable.Creator CREATOR = new defpackage.mg();
+    public defpackage.mh[] a;
     public int[] b;
-    public kx[] c;
+    public defpackage.kx[] c;
     public int d = -1;
     public int e;
 
     public mf() {
     }
 
-    public mf(Parcel parcel) {
-        this.a = (mh[]) parcel.createTypedArray(mh.CREATOR);
+    public mf(android.os.Parcel parcel) {
+        this.a = (defpackage.mh[]) parcel.createTypedArray(defpackage.mh.CREATOR);
         this.b = parcel.createIntArray();
-        this.c = (kx[]) parcel.createTypedArray(kx.CREATOR);
+        this.c = (defpackage.kx[]) parcel.createTypedArray(defpackage.kx.CREATOR);
         this.d = parcel.readInt();
         this.e = parcel.readInt();
     }
@@ -29,7 +25,7 @@ public final class mf implements Parcelable {
         return 0;
     }
 
-    public final void writeToParcel(Parcel parcel, int i) {
+    public final void writeToParcel(android.os.Parcel parcel, int i) {
         parcel.writeTypedArray(this.a, i);
         parcel.writeIntArray(this.b);
         parcel.writeTypedArray(this.c, i);

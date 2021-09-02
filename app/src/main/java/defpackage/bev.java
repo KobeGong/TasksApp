@@ -1,11 +1,9 @@
 package defpackage;
 
-import android.os.IInterface;
-
-/* renamed from: bev  reason: default package */
+/* renamed from: bev reason: default package */
 /* compiled from: PG */
-public interface bev extends IInterface {
-    bfl a();
+public interface bev extends android.os.IInterface {
+    defpackage.bfl a();
 
     int b();
 }

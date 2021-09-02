@@ -1,35 +1,32 @@
 package defpackage;
 
-import java.util.logging.Level;
-
-/* access modifiers changed from: package-private */
-/* renamed from: dsa  reason: default package */
+/* renamed from: dsa reason: default package */
 /* compiled from: PG */
-public final class dsa implements dox {
-    private final /* synthetic */ ebp a;
-    private final /* synthetic */ ebm b;
+final class dsa implements defpackage.dox {
+    private final /* synthetic */ defpackage.ebp a;
+    private final /* synthetic */ defpackage.ebm b;
 
-    dsa(ebp ebp, ebm ebm) {
+    dsa(defpackage.ebp ebp, defpackage.ebm ebm) {
         this.a = ebp;
         this.b = ebm;
     }
 
     /* access modifiers changed from: private */
-    public final byte[] a(ebi ebi) {
+    public final byte[] a(defpackage.ebi ebi) {
         try {
             return this.a.a(ebi);
-        } catch (ebq e) {
-            throw new RuntimeException(e);
+        } catch (defpackage.ebq e) {
+            throw new java.lang.RuntimeException(e);
         }
     }
 
     /* access modifiers changed from: private */
     /* renamed from: b */
-    public final ebi a(byte[] bArr) {
+    public final defpackage.ebi a(byte[] bArr) {
         try {
             return this.a.a(bArr);
-        } catch (Exception e) {
-            drz.a.logp(Level.FINE, "io.grpc.internal.CensusStatsModule$1", "parseBytes", "Failed to parse stats header", (Throwable) e);
+        } catch (java.lang.Exception e) {
+            defpackage.drz.a.logp(java.util.logging.Level.FINE, "io.grpc.internal.CensusStatsModule$1", "parseBytes", "Failed to parse stats header", e);
             return this.b.a();
         }
     }

@@ -1,65 +1,62 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-@Deprecated
-/* renamed from: ebu  reason: default package */
+@java.lang.Deprecated
+/* renamed from: ebu reason: default package */
 /* compiled from: PG */
-public final class ebu extends ebz {
-    private final eaj b = null;
-    private final ecb c;
+final class ebu extends defpackage.ebz {
+    private final defpackage.eaj b = null;
+    private final defpackage.ecb c;
     private final long d;
     private final long e;
     private final long f;
 
-    ebu(ecb ecb, long j, long j2, long j3) {
+    ebu(defpackage.ecb ecb, long j, long j2, long j3) {
         this.c = ecb;
         this.d = j;
         this.e = j2;
         this.f = j3;
     }
 
-    @Override // defpackage.ebz
-    public final eaj a() {
+    public final defpackage.eaj a() {
         return null;
     }
 
-    @Override // defpackage.ebz
-    public final ecb b() {
+    public final defpackage.ecb b() {
         return this.c;
     }
 
-    @Override // defpackage.ebz
     public final long c() {
         return this.d;
     }
 
-    @Override // defpackage.ebz
     public final long d() {
         return this.e;
     }
 
-    @Override // defpackage.ebz
     public final long e() {
         return this.f;
     }
 
-    public final String toString() {
-        String valueOf = String.valueOf((Object) null);
-        String valueOf2 = String.valueOf(this.c);
+    public final java.lang.String toString() {
+        java.lang.String valueOf = java.lang.String.valueOf(null);
+        java.lang.String valueOf2 = java.lang.String.valueOf(this.c);
         long j = this.d;
         long j2 = this.e;
-        return new StringBuilder(String.valueOf(valueOf).length() + 159 + String.valueOf(valueOf2).length()).append("NetworkEvent{kernelTimestamp=").append(valueOf).append(", type=").append(valueOf2).append(", messageId=").append(j).append(", uncompressedMessageSize=").append(j2).append(", compressedMessageSize=").append(this.f).append("}").toString();
+        return new java.lang.StringBuilder(java.lang.String.valueOf(valueOf).length() + 159 + java.lang.String.valueOf(valueOf2).length()).append("NetworkEvent{kernelTimestamp=").append(valueOf).append(", type=").append(valueOf2).append(", messageId=").append(j).append(", uncompressedMessageSize=").append(j2).append(", compressedMessageSize=").append(this.f).append("}").toString();
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof ebz)) {
+        if (!(obj instanceof defpackage.ebz)) {
             return false;
         }
-        ebz ebz = (ebz) obj;
-        return ebz.a() == null && this.c.equals(ebz.b()) && this.d == ebz.c() && this.e == ebz.d() && this.f == ebz.e();
+        defpackage.ebz ebz = (defpackage.ebz) obj;
+        if (ebz.a() == null && this.c.equals(ebz.b()) && this.d == ebz.c() && this.e == ebz.d() && this.f == ebz.e()) {
+            return true;
+        }
+        return false;
     }
 
     public final int hashCode() {

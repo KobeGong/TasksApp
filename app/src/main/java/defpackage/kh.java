@@ -1,35 +1,30 @@
 package defpackage;
 
-import android.view.View;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-
-/* renamed from: kh  reason: default package */
+/* renamed from: kh reason: default package */
 /* compiled from: PG */
-final class kh extends kg {
-    private static Method a;
+final class kh extends defpackage.kg {
+    private static java.lang.reflect.Method a;
     private static boolean b;
 
     kh() {
     }
 
-    @Override // defpackage.ki
-    public final void a(View view, int i, int i2, int i3, int i4) {
+    public final void a(android.view.View view, int i, int i2, int i3, int i4) {
         if (!b) {
             try {
-                Method declaredMethod = View.class.getDeclaredMethod("setLeftTopRightBottom", Integer.TYPE, Integer.TYPE, Integer.TYPE, Integer.TYPE);
+                java.lang.reflect.Method declaredMethod = android.view.View.class.getDeclaredMethod("setLeftTopRightBottom", new java.lang.Class[]{java.lang.Integer.TYPE, java.lang.Integer.TYPE, java.lang.Integer.TYPE, java.lang.Integer.TYPE});
                 a = declaredMethod;
                 declaredMethod.setAccessible(true);
-            } catch (NoSuchMethodException e) {
+            } catch (java.lang.NoSuchMethodException e) {
             }
             b = true;
         }
         if (a != null) {
             try {
-                a.invoke(view, Integer.valueOf(i), Integer.valueOf(i2), Integer.valueOf(i3), Integer.valueOf(i4));
-            } catch (IllegalAccessException e2) {
-            } catch (InvocationTargetException e3) {
-                throw new RuntimeException(e3.getCause());
+                a.invoke(view, new java.lang.Object[]{java.lang.Integer.valueOf(i), java.lang.Integer.valueOf(i2), java.lang.Integer.valueOf(i3), java.lang.Integer.valueOf(i4)});
+            } catch (java.lang.IllegalAccessException e2) {
+            } catch (java.lang.reflect.InvocationTargetException e3) {
+                throw new java.lang.RuntimeException(e3.getCause());
             }
         }
     }

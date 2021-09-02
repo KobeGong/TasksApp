@@ -1,31 +1,27 @@
 package defpackage;
 
-import java.util.Iterator;
-
-/* access modifiers changed from: package-private */
-/* renamed from: l  reason: default package */
+/* renamed from: l reason: default package */
 /* compiled from: PG */
-public abstract class l implements Iterator, m {
-    private j a;
-    private j b;
+abstract class l implements java.util.Iterator, defpackage.m {
+    private defpackage.j a;
+    private defpackage.j b;
 
-    l(j jVar, j jVar2) {
+    l(defpackage.j jVar, defpackage.j jVar2) {
         this.a = jVar2;
         this.b = jVar;
     }
 
-    /* access modifiers changed from: package-private */
-    public abstract j a(j jVar);
+    /* access modifiers changed from: 0000 */
+    public abstract defpackage.j a(defpackage.j jVar);
 
-    /* access modifiers changed from: package-private */
-    public abstract j b(j jVar);
+    /* access modifiers changed from: 0000 */
+    public abstract defpackage.j b(defpackage.j jVar);
 
     public boolean hasNext() {
         return this.b != null;
     }
 
-    @Override // defpackage.m
-    public final void a_(j jVar) {
+    public final void a_(defpackage.j jVar) {
         if (this.a == jVar && jVar == this.b) {
             this.b = null;
             this.a = null;
@@ -38,16 +34,15 @@ public abstract class l implements Iterator, m {
         }
     }
 
-    private final j a() {
+    private final defpackage.j a() {
         if (this.b == this.a || this.a == null) {
             return null;
         }
         return a(this.b);
     }
 
-    @Override // java.util.Iterator
-    public /* synthetic */ Object next() {
-        j jVar = this.b;
+    public /* synthetic */ java.lang.Object next() {
+        defpackage.j jVar = this.b;
         this.b = a();
         return jVar;
     }

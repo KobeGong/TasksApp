@@ -1,8 +1,7 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: ns  reason: default package */
+/* renamed from: ns reason: default package */
 /* compiled from: PG */
-public interface ns {
-    void a(mz mzVar);
+interface ns {
+    void a(defpackage.mz mzVar);
 }

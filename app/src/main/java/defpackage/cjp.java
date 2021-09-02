@@ -1,17 +1,15 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: cjp  reason: default package */
+/* renamed from: cjp reason: default package */
 /* compiled from: PG */
-public final class cjp implements clt {
-    private final /* synthetic */ cjo a;
+final class cjp implements defpackage.clt {
+    private final /* synthetic */ defpackage.cjo a;
 
-    cjp(cjo cjo) {
+    cjp(defpackage.cjo cjo) {
         this.a = cjo;
     }
 
-    @Override // defpackage.clt
-    public final /* synthetic */ Object a() {
+    public final /* synthetic */ java.lang.Object a() {
         return this.a.a.getSharedPreferences("primes", 0);
     }
 }

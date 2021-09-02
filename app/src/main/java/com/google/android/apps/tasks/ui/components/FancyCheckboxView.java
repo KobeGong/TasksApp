@@ -3,24 +3,19 @@ package com.google.android.apps.tasks.ui.components;
 import android.animation.ArgbEvaluator;
 import android.content.Context;
 import android.content.res.Resources;
-import android.graphics.Canvas;
-import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PathMeasure;
 import android.graphics.RectF;
 import android.os.Build;
 import android.util.AttributeSet;
-import android.view.View;
 
 import androidx.annotation.RequiresApi;
 
 import com.google.android.apps.tasks.R;
 
-import defpackage.cld;
-
 /* compiled from: PG */
-public class FancyCheckboxView extends View {
+public class FancyCheckboxView extends android.view.View {
     private static final Path b = new Path();
     private static final Path c;
     public float a = 0.0f;
@@ -56,27 +51,25 @@ public class FancyCheckboxView extends View {
         b();
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public FancyCheckboxView(Context context, AttributeSet attributeSet, int i2, int i3) {
         super(context, attributeSet, i2, i3);
         b();
     }
 
     public final void a(float f2) {
-        cld.a(f2 >= 0.0f && f2 <= 1.0f);
+        defpackage.cld.a(f2 >= 0.0f && f2 <= 1.0f);
         this.a = f2;
         a();
         invalidate();
     }
 
     /* access modifiers changed from: protected */
-    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
     public void onSizeChanged(int i2, int i3, int i4, int i5) {
         int paddingStart = getPaddingStart();
         int paddingEnd = getPaddingEnd();
         int paddingTop = getPaddingTop();
-        float min = ((float) Math.min((i2 - paddingStart) - paddingEnd, (i3 - paddingTop) - getPaddingBottom())) / 27.0f;
-        Matrix matrix = new Matrix();
+        float min = ((float) java.lang.Math.min((i2 - paddingStart) - paddingEnd, (i3 - paddingTop) - getPaddingBottom())) / 27.0f;
+        android.graphics.Matrix matrix = new android.graphics.Matrix();
         matrix.setScale(min, min);
         matrix.postTranslate((float) paddingStart, (float) paddingTop);
         this.f.reset();
@@ -103,7 +96,7 @@ public class FancyCheckboxView extends View {
             this.j.setColor(this.l);
         } else {
             float length = this.h.getLength();
-            float min = Math.min(length, this.a * length * 1.1f);
+            float min = java.lang.Math.min(length, this.a * length * 1.1f);
             if (min != length) {
                 this.h.getSegment(min, length, this.i, true);
             }
@@ -119,7 +112,7 @@ public class FancyCheckboxView extends View {
     }
 
     /* access modifiers changed from: protected */
-    public void onDraw(Canvas canvas) {
+    public void onDraw(android.graphics.Canvas canvas) {
         super.onDraw(canvas);
         canvas.drawPath(this.i, this.j);
     }
@@ -131,8 +124,8 @@ public class FancyCheckboxView extends View {
 
     static {
         b.addArc(new RectF(3.0f, 3.0f, 23.0f, 23.0f), 198.0f, -359.99f);
-        float cos = (float) ((Math.cos(3.455751895904541d) * 10.0d) + 13.0d);
-        float sin = (float) ((Math.sin(3.455751895904541d) * 10.0d) + 13.0d);
+        float cos = (float) (Math.cos(3.455751895904541d) * 10.0d + 13.0d);
+        float sin = (float) (Math.sin(3.455751895904541d) * 10.0d + 13.0d);
         float f2 = 13.0f - cos;
         Path path = new Path();
         c = path;

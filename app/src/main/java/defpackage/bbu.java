@@ -1,15 +1,13 @@
 package defpackage;
 
-import java.util.Arrays;
-
-/* renamed from: bbu  reason: default package */
+/* renamed from: bbu reason: default package */
 /* compiled from: PG */
 public final class bbu {
-    public final ayd a;
-    private final int b = Arrays.hashCode(new Object[]{this.a, this.c});
-    private final aye c;
+    public final defpackage.ayd a;
+    private final int b = java.util.Arrays.hashCode(new java.lang.Object[]{this.a, this.c});
+    private final defpackage.aye c;
 
-    public bbu(ayd ayd, aye aye) {
+    public bbu(defpackage.ayd ayd, defpackage.aye aye) {
         this.a = ayd;
         this.c = aye;
     }
@@ -18,14 +16,17 @@ public final class bbu {
         return this.b;
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof bbu)) {
+        if (!(obj instanceof defpackage.bbu)) {
             return false;
         }
-        bbu bbu = (bbu) obj;
-        return azb.a(this.a, bbu.a) && azb.a(this.c, bbu.c);
+        defpackage.bbu bbu = (defpackage.bbu) obj;
+        if (!defpackage.azb.a((java.lang.Object) this.a, (java.lang.Object) bbu.a) || !defpackage.azb.a((java.lang.Object) this.c, (java.lang.Object) bbu.c)) {
+            return false;
+        }
+        return true;
     }
 }

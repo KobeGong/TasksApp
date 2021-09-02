@@ -1,32 +1,25 @@
 package defpackage;
 
-import android.os.Binder;
-import android.os.Process;
-import java.util.concurrent.Callable;
-
-/* access modifiers changed from: package-private */
-/* renamed from: oj  reason: default package */
+/* renamed from: oj reason: default package */
 /* compiled from: PG */
-public final class oj implements Callable {
-    private final /* synthetic */ oe a;
+final class oj implements java.util.concurrent.Callable {
+    private final /* synthetic */ defpackage.oe a;
 
     oj() {
     }
 
-    /* JADX INFO: this call moved to the top of the method (can break code semantics) */
-    oj(oe oeVar) {
-        this();
+    oj(defpackage.oe oeVar) {
         this.a = oeVar;
+        this();
     }
 
-    @Override // java.util.concurrent.Callable
-    public final Object call() {
+    public final java.lang.Object call() {
         this.a.g.set(true);
-        Object obj = null;
+        java.lang.Object obj = null;
         try {
-            Process.setThreadPriority(10);
+            android.os.Process.setThreadPriority(10);
             obj = this.a.b();
-            Binder.flushPendingCommands();
+            android.os.Binder.flushPendingCommands();
             this.a.c(obj);
             return obj;
         } catch (Throwable th) {

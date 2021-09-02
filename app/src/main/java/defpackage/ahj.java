@@ -1,30 +1,20 @@
 package defpackage;
 
-import android.content.Context;
-import android.graphics.Rect;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.WindowManager;
-import android.widget.TextView;
-import com.google.android.apps.tasks.R;
-
-/* access modifiers changed from: package-private */
-/* renamed from: ahj  reason: default package */
+/* renamed from: ahj reason: default package */
 /* compiled from: PG */
-public final class ahj {
-    public final Context a;
-    public final View b;
-    public final TextView c;
-    public final WindowManager.LayoutParams d = new WindowManager.LayoutParams();
-    public final Rect e = new Rect();
+final class ahj {
+    public final android.content.Context a;
+    public final android.view.View b;
+    public final android.widget.TextView c;
+    public final android.view.WindowManager.LayoutParams d = new android.view.WindowManager.LayoutParams();
+    public final android.graphics.Rect e = new android.graphics.Rect();
     public final int[] f = new int[2];
     public final int[] g = new int[2];
 
-    ahj(Context context) {
+    ahj(android.content.Context context) {
         this.a = context;
-        this.b = LayoutInflater.from(this.a).inflate(R.layout.abc_tooltip, (ViewGroup) null);
-        this.c = (TextView) this.b.findViewById(R.id.message);
+        this.b = android.view.LayoutInflater.from(this.a).inflate(2131034138, null);
+        this.c = (android.widget.TextView) this.b.findViewById(2131755222);
         this.d.setTitle(getClass().getSimpleName());
         this.d.packageName = this.a.getPackageName();
         this.d.type = 1002;
@@ -35,14 +25,14 @@ public final class ahj {
         this.d.flags = 24;
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public final void a() {
         if (b()) {
-            ((WindowManager) this.a.getSystemService("window")).removeView(this.b);
+            ((android.view.WindowManager) this.a.getSystemService("window")).removeView(this.b);
         }
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public final boolean b() {
         return this.b.getParent() != null;
     }

@@ -1,7 +1,7 @@
 package defpackage;
 
-/* renamed from: bsa  reason: default package */
+/* renamed from: bsa reason: default package */
 /* compiled from: PG */
 public interface bsa {
-    brb a(cql cql, String str, int i);
+    defpackage.brb a(defpackage.cql cql, java.lang.String str, int i);
 }

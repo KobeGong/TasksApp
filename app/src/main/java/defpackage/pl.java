@@ -1,17 +1,13 @@
 package defpackage;
 
-import android.content.res.Resources;
-import android.graphics.drawable.Drawable;
-
-/* renamed from: pl  reason: default package */
+/* renamed from: pl reason: default package */
 /* compiled from: PG */
-final class pl extends pi {
-    pl(pi piVar) {
+final class pl extends defpackage.pi {
+    pl(defpackage.pi piVar) {
         super(piVar);
     }
 
-    @Override // defpackage.pi
-    public final Drawable newDrawable(Resources resources) {
-        return new pk(this, resources);
+    public final android.graphics.drawable.Drawable newDrawable(android.content.res.Resources resources) {
+        return new defpackage.pk(this, resources);
     }
 }

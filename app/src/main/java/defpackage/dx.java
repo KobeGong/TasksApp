@@ -1,11 +1,9 @@
 package defpackage;
 
-import com.google.android.apps.tasks.R;
-
-/* renamed from: dx  reason: default package */
+/* renamed from: dx reason: default package */
 /* compiled from: PG */
 public final class dx {
-    public static final int[] a = {R.attr.fabAlignmentMode, R.attr.fabAttached, R.attr.fabCradleDiameter, R.attr.fabCradleRoundedCornerRadius, R.attr.fabCradleVerticalOffset, R.attr.hideOnScroll, R.attr.backgroundTint};
+    public static final int[] a = {2130772249, 2130772250, 2130772251, 2130772252, 2130772253, 2130772254, 2130772573};
     public static final int b = 6;
     public static final int c = 0;
     public static final int d = 1;

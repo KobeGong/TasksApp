@@ -1,15 +1,15 @@
 package defpackage;
 
-/* renamed from: bwb  reason: default package */
+/* renamed from: bwb reason: default package */
 /* compiled from: PG */
-public final class bwb implements ecz {
-    private final ecz a;
-    private final ecz b;
-    private final ecz c;
-    private final ecz d;
-    private final ecz e;
+public final class bwb implements defpackage.ecz {
+    private final defpackage.ecz a;
+    private final defpackage.ecz b;
+    private final defpackage.ecz c;
+    private final defpackage.ecz d;
+    private final defpackage.ecz e;
 
-    public bwb(ecz ecz, ecz ecz2, ecz ecz3, ecz ecz4, ecz ecz5) {
+    public bwb(defpackage.ecz ecz, defpackage.ecz ecz2, defpackage.ecz ecz3, defpackage.ecz ecz4, defpackage.ecz ecz5) {
         this.a = ecz;
         this.b = ecz2;
         this.c = ecz3;
@@ -17,8 +17,7 @@ public final class bwb implements ecz {
         this.e = ecz5;
     }
 
-    @Override // defpackage.ecz
-    public final /* synthetic */ Object a() {
-        return new bwa((avi) this.a.a(), (bwc) this.b.a(), (byu) this.c.a(), (cbb) this.d.a(), (bya) this.e.a());
+    public final /* synthetic */ java.lang.Object a() {
+        return new defpackage.bwa((defpackage.avi) this.a.a(), (defpackage.bwc) this.b.a(), (defpackage.byu) this.c.a(), (defpackage.cbb) this.d.a(), (defpackage.bya) this.e.a());
     }
 }

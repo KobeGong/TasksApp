@@ -1,34 +1,29 @@
 package defpackage;
 
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-
-/* renamed from: dvf  reason: default package */
+/* renamed from: dvf reason: default package */
 /* compiled from: PG */
-final class dvf implements dzl {
+final class dvf implements defpackage.dzl {
     dvf() {
     }
 
-    private static ScheduledExecutorService b() {
-        ScheduledExecutorService newScheduledThreadPool = Executors.newScheduledThreadPool(1, dvc.b("grpc-timer-%d"));
+    private static java.util.concurrent.ScheduledExecutorService b() {
+        java.util.concurrent.ScheduledExecutorService newScheduledThreadPool = java.util.concurrent.Executors.newScheduledThreadPool(1, defpackage.dvc.b("grpc-timer-%d"));
         try {
-            newScheduledThreadPool.getClass().getMethod("setRemoveOnCancelPolicy", Boolean.TYPE).invoke(newScheduledThreadPool, true);
-        } catch (NoSuchMethodException e) {
-        } catch (RuntimeException e2) {
+            newScheduledThreadPool.getClass().getMethod("setRemoveOnCancelPolicy", new java.lang.Class[]{java.lang.Boolean.TYPE}).invoke(newScheduledThreadPool, new java.lang.Object[]{java.lang.Boolean.valueOf(true)});
+        } catch (java.lang.NoSuchMethodException e) {
+        } catch (java.lang.RuntimeException e2) {
             throw e2;
-        } catch (Exception e3) {
-            throw new RuntimeException(e3);
+        } catch (java.lang.Exception e3) {
+            throw new java.lang.RuntimeException(e3);
         }
         return newScheduledThreadPool;
     }
 
-    @Override // defpackage.dzl
-    public final /* synthetic */ void a(Object obj) {
-        ((ScheduledExecutorService) obj).shutdown();
+    public final /* synthetic */ void a(java.lang.Object obj) {
+        ((java.util.concurrent.ScheduledExecutorService) obj).shutdown();
     }
 
-    @Override // defpackage.dzl
-    public final /* synthetic */ Object a() {
+    public final /* synthetic */ java.lang.Object a() {
         return b();
     }
 }

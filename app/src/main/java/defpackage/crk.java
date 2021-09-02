@@ -1,35 +1,31 @@
 package defpackage;
 
-/* renamed from: crk  reason: default package */
+/* renamed from: crk reason: default package */
 /* compiled from: PG */
-public final class crk extends crv {
-    public static final crk a = new crk();
+public final class crk extends defpackage.crv {
+    public static final defpackage.crk a = new defpackage.crk();
     public static final long serialVersionUID = 0;
 
     private crk() {
     }
 
-    @Override // defpackage.crv
     public final boolean a() {
         return false;
     }
 
-    @Override // defpackage.crv
-    public final Object b() {
-        throw new IllegalStateException("Optional.get() cannot be called on an absent value");
+    public final java.lang.Object b() {
+        throw new java.lang.IllegalStateException("Optional.get() cannot be called on an absent value");
     }
 
-    @Override // defpackage.crv
-    public final Object a(Object obj) {
-        return cld.a(obj, "use Optional.orNull() instead of Optional.or(null)");
+    public final java.lang.Object a(java.lang.Object obj) {
+        return defpackage.cld.a(obj, (java.lang.Object) "use Optional.orNull() instead of Optional.or(null)");
     }
 
-    @Override // defpackage.crv
-    public final Object c() {
+    public final java.lang.Object c() {
         return null;
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         return obj == this;
     }
 
@@ -37,11 +33,11 @@ public final class crk extends crv {
         return 2040732332;
     }
 
-    public final String toString() {
+    public final java.lang.String toString() {
         return "Optional.absent()";
     }
 
-    private final Object readResolve() {
+    private final java.lang.Object readResolve() {
         return a;
     }
 }

@@ -1,28 +1,23 @@
 package defpackage;
 
-/* renamed from: dnk  reason: default package */
+/* renamed from: dnk reason: default package */
 /* compiled from: PG */
-final class dnk extends dnd {
+final class dnk extends defpackage.dnd {
     dnk() {
     }
 
-    @Override // defpackage.dnd
-    public final void a(dne dne, dor dor) {
+    public final void a(defpackage.dne dne, defpackage.dor dor) {
     }
 
-    @Override // defpackage.dnd
     public final void a(int i) {
     }
 
-    @Override // defpackage.dnd
-    public final void a(String str, Throwable th) {
+    public final void a(java.lang.String str, java.lang.Throwable th) {
     }
 
-    @Override // defpackage.dnd
     public final void a() {
     }
 
-    @Override // defpackage.dnd
-    public final void a(Object obj) {
+    public final void a(java.lang.Object obj) {
     }
 }

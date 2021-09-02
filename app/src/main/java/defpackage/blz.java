@@ -1,24 +1,24 @@
 package defpackage;
 
-/* renamed from: blz  reason: default package */
+/* renamed from: blz reason: default package */
 /* compiled from: PG */
 public final class blz {
-    public static final ayh a = new ayh((byte) 0);
-    public static final ayd b = new ayd("People.API_1P", d, a);
-    public static final blx c = new blx();
-    private static ayf d = new bov();
+    public static final defpackage.ayh a = new defpackage.ayh(0);
+    public static final defpackage.ayd b = new defpackage.ayd("People.API_1P", d, a);
+    public static final defpackage.blx c = new defpackage.blx();
+    private static defpackage.ayf d = new defpackage.bov();
 
     static {
-        new bjo();
-        new bln();
-        new bls();
-        new blt();
-        new bmd();
-        new blk();
-        new blv();
-        new blw();
-        new blm();
-        new bll();
-        new bou();
+        new defpackage.bjo();
+        new defpackage.bln();
+        new defpackage.bls();
+        new defpackage.blt();
+        new defpackage.bmd();
+        new defpackage.blk();
+        new defpackage.blv();
+        new defpackage.blw();
+        new defpackage.blm();
+        new defpackage.bll();
+        new defpackage.bou();
     }
 }

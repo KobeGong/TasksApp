@@ -1,53 +1,54 @@
 package defpackage;
 
-/* renamed from: ddo  reason: default package */
+/* renamed from: ddo reason: default package */
 /* compiled from: PG */
-public final class ddo extends dih implements djq {
-    public static final ddo d = new ddo();
-    private static volatile djx e;
+public final class ddo extends defpackage.dih implements defpackage.djq {
+    public static final defpackage.ddo d = new defpackage.ddo();
+    private static volatile defpackage.djx e;
     public int a;
     public int b;
-    public ddb c;
+    public defpackage.ddb c;
 
     private ddo() {
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.dih
-    public final Object a(int i) {
-        djx djx;
+    public final java.lang.Object a(int i) {
+        defpackage.djx djx;
         switch (i - 1) {
             case 0:
-                return (byte) 1;
+                return java.lang.Byte.valueOf(1);
             case 1:
                 return null;
             case 2:
-                return new dkb(d, "\u0001\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001\f\u0000\u0002\t\u0001", new Object[]{"a", "b", dcl.b, "c"});
+                java.lang.Object[] objArr = {"a", "b", defpackage.dcl.b, "c"};
+                return new defpackage.dkb(d, "\u0001\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001\f\u0000\u0002\t\u0001", objArr);
             case 3:
-                return new ddo();
+                return new defpackage.ddo();
             case 4:
-                return new dii((byte[][][][][][][][][][][][][][]) null);
+                return new defpackage.dii((byte[][][][][][][][][][][][][][]) null);
             case 5:
                 return d;
             case 6:
-                djx djx2 = e;
+                defpackage.djx djx2 = e;
                 if (djx2 != null) {
                     return djx2;
                 }
-                synchronized (ddo.class) {
+                synchronized (defpackage.ddo.class) {
                     djx = e;
                     if (djx == null) {
-                        djx = new dgr(d);
+                        djx = new defpackage.dgr(d);
                         e = djx;
                     }
                 }
                 return djx;
             default:
-                throw new UnsupportedOperationException();
+                throw new java.lang.UnsupportedOperationException();
         }
     }
 
     static {
-        dih.t.put(ddo.class, d);
+        defpackage.ddo ddo = d;
+        defpackage.dih.t.put(defpackage.ddo.class, ddo);
     }
 }

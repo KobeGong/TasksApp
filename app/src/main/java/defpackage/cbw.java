@@ -1,16 +1,16 @@
 package defpackage;
 
-/* renamed from: cbw  reason: default package */
+/* renamed from: cbw reason: default package */
 /* compiled from: PG */
 public final class cbw {
-    public ccz a;
-    public bup b;
+    public defpackage.ccz a;
+    public defpackage.bup b;
 
     public final void a() {
-        cky.c();
-        for (bul bul : this.b.a()) {
-            btk f = bul.f();
-            if (f == btk.REGISTERED || f == btk.PENDING_REGISTRATION || f == btk.FAILED_REGISTRATION) {
+        defpackage.cky.c();
+        for (defpackage.bul bul : this.b.a()) {
+            defpackage.btk f = bul.f();
+            if (f == defpackage.btk.REGISTERED || f == defpackage.btk.PENDING_REGISTRATION || f == defpackage.btk.FAILED_REGISTRATION) {
                 this.a.a(bul.b());
             }
         }

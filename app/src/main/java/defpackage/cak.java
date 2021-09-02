@@ -1,39 +1,31 @@
 package defpackage;
 
-import android.os.Bundle;
-import java.nio.charset.Charset;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.TreeSet;
-
-/* renamed from: cak  reason: default package */
+/* renamed from: cak reason: default package */
 /* compiled from: PG */
-public final class cak extends cau {
-    private static final Charset e = Charset.forName("UTF-8");
-    public bza a;
-    public buu b;
-    public cae c;
+public final class cak extends defpackage.cau {
+    private static final java.nio.charset.Charset e = java.nio.charset.Charset.forName("UTF-8");
+    public defpackage.bza a;
+    public defpackage.buu b;
+    public defpackage.cae c;
 
     cak() {
     }
 
-    @Override // defpackage.bwg
-    public final String a() {
+    public final java.lang.String a() {
         return "RPC_CREATE_USER_SUBSCRIPTION";
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.cau
-    public final ccr b(Bundle bundle) {
-        String string = bundle.getString("com.google.android.libraries.notifications.ACCOUNT_NAME");
-        List<bus> a2 = this.b.a(string, 3);
-        TreeSet treeSet = new TreeSet();
-        for (bus bus : a2) {
-            treeSet.add(new String(bus.c(), e));
+    /* access modifiers changed from: 0000 */
+    public final defpackage.ccr b(android.os.Bundle bundle) {
+        java.lang.String string = bundle.getString("com.google.android.libraries.notifications.ACCOUNT_NAME");
+        java.util.List<defpackage.bus> a2 = this.b.a(string, 3);
+        java.util.TreeSet treeSet = new java.util.TreeSet();
+        for (defpackage.bus c2 : a2) {
+            treeSet.add(new java.lang.String(c2.c(), e));
         }
-        ccr a3 = this.a.a(string, new ArrayList(treeSet));
+        defpackage.ccr a3 = this.a.a(string, (java.util.List) new java.util.ArrayList(treeSet));
         if (!a3.d() || !a3.c()) {
-            this.b.a(string, a2);
+            this.b.a(string, (java.util.List) a2);
         }
         return a3;
     }

@@ -1,16 +1,12 @@
 package defpackage;
 
-import android.content.Context;
-import android.os.Looper;
-
-/* renamed from: bis  reason: default package */
+/* renamed from: bis reason: default package */
 /* compiled from: PG */
-final class bis extends ayf {
+final class bis extends defpackage.ayf {
     bis() {
     }
 
-    @Override // defpackage.ayf
-    public final /* synthetic */ ayj a(Context context, Looper looper, bdj bdj, Object obj, ayr ayr, ays ays) {
-        return new biw(context, looper, bdj, ayr, ays);
+    public final /* synthetic */ defpackage.ayj a(android.content.Context context, android.os.Looper looper, defpackage.bdj bdj, java.lang.Object obj, defpackage.ayr ayr, defpackage.ays ays) {
+        return new defpackage.biw(context, looper, bdj, ayr, ays);
     }
 }

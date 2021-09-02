@@ -1,144 +1,133 @@
 package defpackage;
 
-import java.nio.charset.Charset;
-import java.util.concurrent.CancellationException;
-import java.util.concurrent.Executor;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-/* access modifiers changed from: package-private */
-/* renamed from: dsq  reason: default package */
+/* renamed from: dsq reason: default package */
 /* compiled from: PG */
-public final class dsq extends dnd {
-    private static final Logger j = Logger.getLogger(dsq.class.getName());
-    private static final byte[] k = "gzip".getBytes(Charset.forName("US-ASCII"));
-    public final dpb a;
-    public final Executor b;
-    public final drw c;
-    public final dns d;
-    public dta e;
+final class dsq extends defpackage.dnd {
+    private static final java.util.logging.Logger j = java.util.logging.Logger.getLogger(defpackage.dsq.class.getName());
+    private static final byte[] k = "gzip".getBytes(java.nio.charset.Charset.forName("US-ASCII"));
+    public final defpackage.dpb a;
+    public final java.util.concurrent.Executor b;
+    public final defpackage.drw c;
+    public final defpackage.dns d;
+    public defpackage.dta e;
     public volatile boolean f;
     public boolean g;
-    public dob h = dob.a;
-    public dnp i = dnp.a;
-    private volatile ScheduledFuture l;
+    public defpackage.dob h = defpackage.dob.a;
+    public defpackage.dnp i = defpackage.dnp.a;
+    private volatile java.util.concurrent.ScheduledFuture l;
     private final boolean m;
-    private final dna n;
+    private final defpackage.dna n;
     private final boolean o;
     private boolean p;
     private boolean q;
-    private final dsx r;
-    private final dnu s = new dsy(this);
-    private ScheduledExecutorService t;
+    private final defpackage.dsx r;
+    private final defpackage.dnu s = new defpackage.dsy(this);
+    private java.util.concurrent.ScheduledExecutorService t;
 
-    dsq(dpb dpb, Executor executor, dna dna, dsx dsx, ScheduledExecutorService scheduledExecutorService, drw drw, boolean z) {
-        Executor dzd;
+    dsq(defpackage.dpb dpb, java.util.concurrent.Executor executor, defpackage.dna dna, defpackage.dsx dsx, java.util.concurrent.ScheduledExecutorService scheduledExecutorService, defpackage.drw drw, boolean z) {
+        java.util.concurrent.Executor dzd;
         this.a = dpb;
-        if (executor == cyn.INSTANCE) {
-            dzd = new dzc();
+        if (executor == defpackage.cyn.a) {
+            dzd = new defpackage.dzc();
         } else {
-            dzd = new dzd(executor);
+            dzd = new defpackage.dzd(executor);
         }
         this.b = dzd;
         this.c = drw;
-        this.d = dns.a();
-        this.m = dpb.a == dpe.UNARY || dpb.a == dpe.SERVER_STREAMING;
+        this.d = defpackage.dns.a();
+        this.m = dpb.a == defpackage.dpe.UNARY || dpb.a == defpackage.dpe.SERVER_STREAMING;
         this.n = dna;
         this.r = dsx;
         this.t = scheduledExecutorService;
         this.o = z;
     }
 
-    @Override // defpackage.dnd
-    public final void a(dne dne, dor dor) {
-        doa doa;
-        dyu dyu;
-        cld.b(this.e == null, "Already started");
-        cld.b(!this.p, "call was cancelled");
-        cld.a(dne, "observer");
-        cld.a(dor, "headers");
+    public final void a(defpackage.dne dne, defpackage.dor dor) {
+        defpackage.doa doa;
+        defpackage.dyu dyu;
+        defpackage.cld.b(this.e == null, (java.lang.Object) "Already started");
+        defpackage.cld.b(!this.p, (java.lang.Object) "call was cancelled");
+        defpackage.cld.a((java.lang.Object) dne, (java.lang.Object) "observer");
+        defpackage.cld.a((java.lang.Object) dor, (java.lang.Object) "headers");
         this.d.d();
-        String str = this.n.f;
+        java.lang.String str = this.n.f;
         if (str != null) {
-            doa doa2 = (doa) this.i.b.get(str);
+            defpackage.doa doa2 = (defpackage.doa) this.i.b.get(str);
             if (doa2 == null) {
-                this.e = dxm.a;
-                this.b.execute(new dsr(this, dne, str));
+                this.e = defpackage.dxm.a;
+                this.b.execute(new defpackage.dsr(this, dne, str));
                 return;
             }
             doa = doa2;
         } else {
-            doa = dno.a;
+            doa = defpackage.dno.a;
         }
-        dob dob = this.h;
+        defpackage.dob dob = this.h;
         boolean z = this.g;
-        dor.b(dvc.c);
-        if (doa != dno.a) {
-            dor.a(dvc.c, doa.a());
+        dor.b(defpackage.dvc.c);
+        if (doa != defpackage.dno.a) {
+            dor.a(defpackage.dvc.c, (java.lang.Object) doa.a());
         }
-        dor.b(dvc.d);
+        dor.b(defpackage.dvc.d);
         byte[] bArr = dob.c;
         if (bArr.length != 0) {
-            dor.a(dvc.d, bArr);
+            dor.a(defpackage.dvc.d, (java.lang.Object) bArr);
         }
-        dor.b(dvc.e);
-        dor.b(dvc.f);
+        dor.b(defpackage.dvc.e);
+        dor.b(defpackage.dvc.f);
         if (z) {
-            dor.a(dvc.f, k);
+            dor.a(defpackage.dvc.f, (java.lang.Object) k);
         }
-        dny c2 = c();
+        defpackage.dny c2 = c();
         if (!(c2 != null && c2.a())) {
-            dny dny = this.n.b;
+            defpackage.dny dny = this.n.b;
             this.d.e();
-            dor.b(dvc.b);
+            dor.b(defpackage.dvc.b);
             if (c2 != null) {
-                long max = Math.max(0L, c2.b(TimeUnit.NANOSECONDS));
-                dor.a(dvc.b, Long.valueOf(max));
-                if (j.isLoggable(Level.FINE) && c2 == null) {
-                    StringBuilder sb = new StringBuilder();
-                    sb.append(String.format("Call timeout set to '%d' ns, due to context deadline.", Long.valueOf(max)));
+                long max = java.lang.Math.max(0, c2.b(java.util.concurrent.TimeUnit.NANOSECONDS));
+                dor.a(defpackage.dvc.b, (java.lang.Object) java.lang.Long.valueOf(max));
+                if (j.isLoggable(java.util.logging.Level.FINE) && c2 == null) {
+                    java.lang.StringBuilder sb = new java.lang.StringBuilder();
+                    sb.append(java.lang.String.format("Call timeout set to '%d' ns, due to context deadline.", new java.lang.Object[]{java.lang.Long.valueOf(max)}));
                     if (dny == null) {
                         sb.append(" Explicit call timeout was not set.");
                     } else {
-                        sb.append(String.format(" Explicit call timeout was '%d' ns.", Long.valueOf(dny.b(TimeUnit.NANOSECONDS))));
+                        sb.append(java.lang.String.format(" Explicit call timeout was '%d' ns.", new java.lang.Object[]{java.lang.Long.valueOf(dny.b(java.util.concurrent.TimeUnit.NANOSECONDS))}));
                     }
-                    j.logp(Level.FINE, "io.grpc.internal.ClientCallImpl", "logIfContextNarrowedTimeout", sb.toString());
+                    j.logp(java.util.logging.Level.FINE, "io.grpc.internal.ClientCallImpl", "logIfContextNarrowedTimeout", sb.toString());
                 }
             }
             if (this.o) {
-                dsx dsx = this.r;
-                dpb dpb = this.a;
-                dna dna = this.n;
-                dns dns = this.d;
-                cld.b(dsx.a.N, "retry should be enabled");
+                defpackage.dsx dsx = this.r;
+                defpackage.dpb dpb = this.a;
+                defpackage.dna dna = this.n;
+                defpackage.dns dns = this.d;
+                defpackage.cld.b(dsx.a.N, (java.lang.Object) "retry should be enabled");
                 if (dsx.a.M == null) {
-                    dyu = dyu.f;
+                    dyu = defpackage.dyu.f;
                 } else {
-                    dyt dyt = dsx.a.M;
-                    dyu dyu2 = (dyu) dyt.a.get(dpb.b);
+                    defpackage.dyt dyt = dsx.a.M;
+                    defpackage.dyu dyu2 = (defpackage.dyu) dyt.a.get(dpb.b);
                     if (dyu2 == null) {
-                        dyu2 = (dyu) dyt.b.get(dpb.a(dpb.b));
+                        dyu2 = (defpackage.dyu) dyt.b.get(defpackage.dpb.a(dpb.b));
                     }
                     if (dyu2 == null) {
-                        dyu2 = dyu.f;
+                        dyu2 = defpackage.dyu.f;
                     }
                     dyu = dyu2;
                 }
-                dyr dyr = dsx.a.H;
+                defpackage.dyr dyr = dsx.a.H;
                 long j2 = dsx.a.K;
                 long j3 = dsx.a.L;
-                dwf dwf = dsx.a;
-                Executor executor = dna.c;
+                defpackage.dwf dwf = dsx.a;
+                java.util.concurrent.Executor executor = dna.c;
                 if (executor == null) {
                     executor = dwf.i;
                 }
-                this.e = new dwm(dsx, dpb, dor, dyr, j2, j3, executor, dsx.a.h.a(), dyu, dsx.a.I, dna, dpb, dns);
+                this.e = new defpackage.dwm(dsx, dpb, dor, dyr, j2, j3, executor, dsx.a.h.a(), dyu, dsx.a.I, dna, dpb, dns);
             } else {
-                dtb a2 = this.r.a(new dxp(this.a, dor, this.n));
-                dns c3 = this.d.c();
+                defpackage.dtb a2 = this.r.a(new defpackage.dxp(this.a, dor, this.n));
+                defpackage.dns c3 = this.d.c();
                 try {
                     this.e = a2.a(this.a, dor, this.n);
                 } finally {
@@ -146,9 +135,9 @@ public final class dsq extends dnd {
                 }
             }
         } else {
-            dpw dpw = dpw.e;
-            String valueOf = String.valueOf(c2);
-            this.e = new duu(dpw.a(new StringBuilder(String.valueOf(valueOf).length() + 19).append("deadline exceeded: ").append(valueOf).toString()));
+            defpackage.dpw dpw = defpackage.dpw.e;
+            java.lang.String valueOf = java.lang.String.valueOf(c2);
+            this.e = new defpackage.duu(dpw.a(new java.lang.StringBuilder(java.lang.String.valueOf(valueOf).length() + 19).append("deadline exceeded: ").append(valueOf).toString()));
         }
         if (this.n.d != null) {
             this.e.a(this.n.d);
@@ -163,34 +152,34 @@ public final class dsq extends dnd {
         this.e.a(this.g);
         this.e.a(this.h);
         this.c.a();
-        this.e.a(new dss(this, dne));
-        dns dns2 = this.d;
-        dnu dnu = this.s;
-        cyn cyn = cyn.INSTANCE;
-        dns.a(dnu, "cancellationListener");
-        dns.a(cyn, "executor");
+        this.e.a((defpackage.dzq) new defpackage.dss(this, dne));
+        defpackage.dns dns2 = this.d;
+        defpackage.dnu dnu = this.s;
+        defpackage.cyn cyn = defpackage.cyn.a;
+        defpackage.dns.a(dnu, "cancellationListener");
+        defpackage.dns.a(cyn, "executor");
         dns2.b();
         if (!(c2 == null || this.d.e() == c2 || this.t == null)) {
-            long b2 = c2.b(TimeUnit.NANOSECONDS);
-            this.l = this.t.schedule(new dwc(new dsz(this, b2)), b2, TimeUnit.NANOSECONDS);
+            long b2 = c2.b(java.util.concurrent.TimeUnit.NANOSECONDS);
+            this.l = this.t.schedule(new defpackage.dwc(new defpackage.dsz(this, b2)), b2, java.util.concurrent.TimeUnit.NANOSECONDS);
         }
         if (this.f) {
             b();
         }
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public final void b() {
         this.d.b();
-        ScheduledFuture scheduledFuture = this.l;
+        java.util.concurrent.ScheduledFuture scheduledFuture = this.l;
         if (scheduledFuture != null) {
             scheduledFuture.cancel(false);
         }
     }
 
-    /* access modifiers changed from: package-private */
-    public final dny c() {
-        dny dny = this.n.b;
+    /* access modifiers changed from: 0000 */
+    public final defpackage.dny c() {
+        defpackage.dny dny = this.n.b;
         this.d.e();
         if (dny == null) {
             return null;
@@ -198,7 +187,6 @@ public final class dsq extends dnd {
         return dny;
     }
 
-    @Override // defpackage.dnd
     public final void a(int i2) {
         boolean z;
         boolean z2 = true;
@@ -207,27 +195,26 @@ public final class dsq extends dnd {
         } else {
             z = false;
         }
-        cld.b(z, "Not started");
+        defpackage.cld.b(z, (java.lang.Object) "Not started");
         if (i2 < 0) {
             z2 = false;
         }
-        cld.a(z2, "Number requested must be non-negative");
+        defpackage.cld.a(z2, (java.lang.Object) "Number requested must be non-negative");
         this.e.c(i2);
     }
 
-    @Override // defpackage.dnd
-    public final void a(String str, Throwable th) {
-        dpw a2;
+    public final void a(java.lang.String str, java.lang.Throwable th) {
+        defpackage.dpw a2;
         if (str == null && th == null) {
-            CancellationException cancellationException = new CancellationException("Cancelled without a message or cause");
-            j.logp(Level.WARNING, "io.grpc.internal.ClientCallImpl", "cancel", "Cancelling without a message or cause is suboptimal", (Throwable) cancellationException);
+            java.lang.Throwable cancellationException = new java.util.concurrent.CancellationException("Cancelled without a message or cause");
+            j.logp(java.util.logging.Level.WARNING, "io.grpc.internal.ClientCallImpl", "cancel", "Cancelling without a message or cause is suboptimal", cancellationException);
             th = cancellationException;
         }
         if (!this.p) {
             this.p = true;
             try {
                 if (this.e != null) {
-                    dpw dpw = dpw.c;
+                    defpackage.dpw dpw = defpackage.dpw.c;
                     if (str != null) {
                         a2 = dpw.a(str);
                     } else {
@@ -244,48 +231,46 @@ public final class dsq extends dnd {
         }
     }
 
-    @Override // defpackage.dnd
     public final void a() {
         boolean z;
         boolean z2 = false;
-        cld.b(this.e != null, "Not started");
+        defpackage.cld.b(this.e != null, (java.lang.Object) "Not started");
         if (!this.p) {
             z = true;
         } else {
             z = false;
         }
-        cld.b(z, "call was cancelled");
+        defpackage.cld.b(z, (java.lang.Object) "call was cancelled");
         if (!this.q) {
             z2 = true;
         }
-        cld.b(z2, "call already half-closed");
+        defpackage.cld.b(z2, (java.lang.Object) "call already half-closed");
         this.q = true;
         this.e.e();
     }
 
-    @Override // defpackage.dnd
-    public final void a(Object obj) {
+    public final void a(java.lang.Object obj) {
         boolean z;
         boolean z2 = true;
-        cld.b(this.e != null, "Not started");
+        defpackage.cld.b(this.e != null, (java.lang.Object) "Not started");
         if (!this.p) {
             z = true;
         } else {
             z = false;
         }
-        cld.b(z, "call was cancelled");
+        defpackage.cld.b(z, (java.lang.Object) "call was cancelled");
         if (this.q) {
             z2 = false;
         }
-        cld.b(z2, "call was half-closed");
+        defpackage.cld.b(z2, (java.lang.Object) "call was half-closed");
         try {
-            if (this.e instanceof dyb) {
-                dyb dyb = (dyb) this.e;
-                dyv dyv = dyb.l;
+            if (this.e instanceof defpackage.dyb) {
+                defpackage.dyb dyb = (defpackage.dyb) this.e;
+                defpackage.dyv dyv = dyb.l;
                 if (dyv.a) {
                     dyv.d.a.a(dyb.c.a(obj));
                 } else {
-                    dyb.a(new dyn(dyb, obj));
+                    dyb.a((defpackage.dyp) new defpackage.dyn(dyb, obj));
                 }
             } else {
                 this.e.a(this.a.a(obj));
@@ -293,15 +278,15 @@ public final class dsq extends dnd {
             if (!this.m) {
                 this.e.f();
             }
-        } catch (RuntimeException e2) {
-            this.e.b(dpw.c.b(e2).a("Failed to stream message"));
-        } catch (Error e3) {
-            this.e.b(dpw.c.a("Client sendMessage() failed with Error"));
+        } catch (java.lang.RuntimeException e2) {
+            this.e.b(defpackage.dpw.c.b((java.lang.Throwable) e2).a("Failed to stream message"));
+        } catch (java.lang.Error e3) {
+            this.e.b(defpackage.dpw.c.a("Client sendMessage() failed with Error"));
             throw e3;
         }
     }
 
-    static void a(dne dne, dpw dpw, dor dor) {
+    static void a(defpackage.dne dne, defpackage.dpw dpw, defpackage.dor dor) {
         dne.a(dpw, dor);
     }
 }

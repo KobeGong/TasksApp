@@ -1,34 +1,23 @@
 package defpackage;
 
-import android.content.Context;
-import android.os.Build;
-import android.text.TextUtils;
-import android.view.View;
-import android.view.ViewParent;
-import android.view.inputmethod.EditorInfo;
-import android.view.inputmethod.InputConnection;
-import java.util.Locale;
-
-/* renamed from: aaz  reason: default package */
+/* renamed from: aaz reason: default package */
 /* compiled from: PG */
-public final class aaz implements zu {
-    @Override // defpackage.zu
-    public final void a(MenuBuilder zeVar, boolean z) {
+public final class aaz implements defpackage.zu {
+    public final void a(defpackage.ze zeVar, boolean z) {
     }
 
-    @Override // defpackage.zu
-    public final boolean a(MenuBuilder zeVar) {
+    public final boolean a(defpackage.ze zeVar) {
         return false;
     }
 
-    static InputConnection a(InputConnection inputConnection, EditorInfo editorInfo, View view) {
+    static android.view.inputmethod.InputConnection a(android.view.inputmethod.InputConnection inputConnection, android.view.inputmethod.EditorInfo editorInfo, android.view.View view) {
         if (inputConnection != null && editorInfo.hintText == null) {
-            ViewParent parent = view.getParent();
+            android.view.ViewParent parent = view.getParent();
             while (true) {
-                if (!(parent instanceof View)) {
+                if (!(parent instanceof android.view.View)) {
                     break;
-                } else if (parent instanceof ahs) {
-                    editorInfo.hintText = ((ahs) parent).a();
+                } else if (parent instanceof defpackage.ahs) {
+                    editorInfo.hintText = ((defpackage.ahs) parent).a();
                     break;
                 } else {
                     parent = parent.getParent();
@@ -38,27 +27,27 @@ public final class aaz implements zu {
         return inputConnection;
     }
 
-    public static void a(View view, CharSequence charSequence) {
-        if (Build.VERSION.SDK_INT >= 26) {
+    public static void a(android.view.View view, java.lang.CharSequence charSequence) {
+        if (android.os.Build.VERSION.SDK_INT >= 26) {
             view.setTooltipText(charSequence);
             return;
         }
-        if (ahg.b != null && ahg.b.a == view) {
-            ahg.a((ahg) null);
+        if (defpackage.ahg.b != null && defpackage.ahg.b.a == view) {
+            defpackage.ahg.a((defpackage.ahg) null);
         }
-        if (TextUtils.isEmpty(charSequence)) {
-            if (ahg.c != null && ahg.c.a == view) {
-                ahg.c.a();
+        if (android.text.TextUtils.isEmpty(charSequence)) {
+            if (defpackage.ahg.c != null && defpackage.ahg.c.a == view) {
+                defpackage.ahg.c.a();
             }
             view.setOnLongClickListener(null);
             view.setLongClickable(false);
             view.setOnHoverListener(null);
             return;
         }
-        new ahg(view, charSequence);
+        new defpackage.ahg(view, charSequence);
     }
 
-    public static String a(Context context, int i, Object... objArr) {
-        return ar.a(Locale.getDefault(), context.getResources().getString(i), objArr);
+    public static java.lang.String a(android.content.Context context, int i, java.lang.Object... objArr) {
+        return defpackage.ar.a(java.util.Locale.getDefault(), context.getResources().getString(i), objArr);
     }
 }

@@ -1,60 +1,42 @@
 package defpackage;
 
-import android.annotation.TargetApi;
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.app.FragmentManager;
-import android.app.Notification;
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.IntentFilter;
-import android.content.res.Resources;
-import android.util.Log;
-import android.util.TypedValue;
-import android.widget.ProgressBar;
-import com.google.android.apps.tasks.R;
-
-/* renamed from: axt  reason: default package */
+/* renamed from: axt reason: default package */
 /* compiled from: PG */
-public final class axt extends axv {
-    public static final axt a = new axt();
-    private static final Object c = new Object();
+public final class axt extends defpackage.axv {
+    public static final defpackage.axt a = new defpackage.axt();
+    private static final java.lang.Object c = new java.lang.Object();
 
     axt() {
     }
 
-    public final Dialog a(Activity activity, int i) {
-        return a(activity, i, 1002, (DialogInterface.OnCancelListener) null);
+    public final android.app.Dialog a(android.app.Activity activity, int i) {
+        return a(activity, i, 1002, (android.content.DialogInterface.OnCancelListener) null);
     }
 
-    public static Dialog a(Activity activity, int i, int i2, DialogInterface.OnCancelListener onCancelListener) {
-        return a(activity, i, new bei(axv.a(activity, i, "d"), activity, i2), onCancelListener);
+    public static android.app.Dialog a(android.app.Activity activity, int i, int i2, android.content.DialogInterface.OnCancelListener onCancelListener) {
+        return a((android.content.Context) activity, i, (defpackage.beh) new defpackage.bei(defpackage.axv.a(activity, i, "d"), activity, i2), onCancelListener);
     }
 
-    public static Dialog a(Activity activity, DialogInterface.OnCancelListener onCancelListener) {
-        ProgressBar progressBar = new ProgressBar(activity, null, 16842874);
+    public static android.app.Dialog a(android.app.Activity activity, android.content.DialogInterface.OnCancelListener onCancelListener) {
+        android.widget.ProgressBar progressBar = new android.widget.ProgressBar(activity, null, 16842874);
         progressBar.setIndeterminate(true);
         progressBar.setVisibility(0);
-        AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+        android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(activity);
         builder.setView(progressBar);
-        builder.setMessage(beg.c(activity, 18));
-        builder.setPositiveButton("", (DialogInterface.OnClickListener) null);
-        AlertDialog create = builder.create();
-        a(activity, create, "GooglePlayServicesUpdatingDialog", onCancelListener);
+        builder.setMessage(defpackage.beg.c(activity, 18));
+        builder.setPositiveButton("", null);
+        android.app.AlertDialog create = builder.create();
+        a(activity, (android.app.Dialog) create, "GooglePlayServicesUpdatingDialog", onCancelListener);
         return create;
     }
 
-    public static bar a(Context context, bas bas) {
-        IntentFilter intentFilter = new IntentFilter("android.intent.action.PACKAGE_ADDED");
+    public static defpackage.bar a(android.content.Context context, defpackage.bas bas) {
+        android.content.IntentFilter intentFilter = new android.content.IntentFilter("android.intent.action.PACKAGE_ADDED");
         intentFilter.addDataScheme("package");
-        bar bar = new bar(bas);
+        defpackage.bar bar = new defpackage.bar(bas);
         context.registerReceiver(bar, intentFilter);
         bar.a = context;
-        if (axz.a(context, "com.google.android.gms")) {
+        if (defpackage.axz.a(context, "com.google.android.gms")) {
             return bar;
         }
         bas.a();
@@ -62,45 +44,45 @@ public final class axt extends axv {
         return null;
     }
 
-    private static String a() {
+    private static java.lang.String a() {
         synchronized (c) {
         }
         return null;
     }
 
-    public static Dialog a(Context context, int i, beh beh, DialogInterface.OnCancelListener onCancelListener) {
-        AlertDialog.Builder builder = null;
+    public static android.app.Dialog a(android.content.Context context, int i, defpackage.beh beh, android.content.DialogInterface.OnCancelListener onCancelListener) {
+        android.app.AlertDialog.Builder builder = null;
         if (i == 0) {
             return null;
         }
-        TypedValue typedValue = new TypedValue();
+        android.util.TypedValue typedValue = new android.util.TypedValue();
         context.getTheme().resolveAttribute(16843529, typedValue, true);
         if ("Theme.Dialog.Alert".equals(context.getResources().getResourceEntryName(typedValue.resourceId))) {
-            builder = new AlertDialog.Builder(context, 5);
+            builder = new android.app.AlertDialog.Builder(context, 5);
         }
         if (builder == null) {
-            builder = new AlertDialog.Builder(context);
+            builder = new android.app.AlertDialog.Builder(context);
         }
-        builder.setMessage(beg.c(context, i));
+        builder.setMessage(defpackage.beg.c(context, i));
         if (onCancelListener != null) {
             builder.setOnCancelListener(onCancelListener);
         }
-        String e = beg.e(context, i);
+        java.lang.String e = defpackage.beg.e(context, i);
         if (e != null) {
             builder.setPositiveButton(e, beh);
         }
-        String a2 = beg.a(context, i);
+        java.lang.String a2 = defpackage.beg.a(context, i);
         if (a2 != null) {
             builder.setTitle(a2);
         }
         return builder.create();
     }
 
-    public static void a(Activity activity, Dialog dialog, String str, DialogInterface.OnCancelListener onCancelListener) {
+    public static void a(android.app.Activity activity, android.app.Dialog dialog, java.lang.String str, android.content.DialogInterface.OnCancelListener onCancelListener) {
         if (activity instanceof FragmentActivity) {
-            ln c2 = ((FragmentActivity) activity).c();
-            ayb ayb = new ayb();
-            Dialog dialog2 = (Dialog) azb.b(dialog, "Cannot display null dialog");
+            defpackage.ln c2 = ((FragmentActivity) activity).getSupportFragmentManager();
+            defpackage.ayb ayb = new defpackage.ayb();
+            android.app.Dialog dialog2 = (android.app.Dialog) defpackage.azb.b((java.lang.Object) dialog, (java.lang.Object) "Cannot display null dialog");
             dialog2.setOnCancelListener(null);
             dialog2.setOnDismissListener(null);
             ayb.U = dialog2;
@@ -110,9 +92,9 @@ public final class axt extends axv {
             ayb.a(c2, str);
             return;
         }
-        FragmentManager fragmentManager = activity.getFragmentManager();
-        axr axr = new axr();
-        Dialog dialog3 = (Dialog) azb.b(dialog, "Cannot display null dialog");
+        android.app.FragmentManager fragmentManager = activity.getFragmentManager();
+        defpackage.axr axr = new defpackage.axr();
+        android.app.Dialog dialog3 = (android.app.Dialog) defpackage.azb.b((java.lang.Object) dialog, (java.lang.Object) "Cannot display null dialog");
         dialog3.setOnCancelListener(null);
         dialog3.setOnDismissListener(null);
         axr.a = dialog3;
@@ -122,32 +104,32 @@ public final class axt extends axv {
         axr.show(fragmentManager, str);
     }
 
-    @TargetApi(20)
-    public final void a(Context context, int i, PendingIntent pendingIntent) {
-        Notification b;
+    @android.annotation.TargetApi(20)
+    public final void a(android.content.Context context, int i, android.app.PendingIntent pendingIntent) {
+        android.app.Notification b;
         int i2;
         if (i == 18) {
-            new axu(this, context).sendEmptyMessageDelayed(1, 120000);
+            new defpackage.axu(this, context).sendEmptyMessageDelayed(1, 120000);
         } else if (pendingIntent != null) {
-            String b2 = beg.b(context, i);
-            String d = beg.d(context, i);
-            Resources resources = context.getResources();
-            NotificationManager notificationManager = (NotificationManager) context.getSystemService("notification");
-            if (azb.a(context)) {
-                azb.a(azb.g());
-                Notification.Builder addAction = new Notification.Builder(context).setSmallIcon(context.getApplicationInfo().icon).setPriority(2).setAutoCancel(true).setContentTitle(b2).setStyle(new Notification.BigTextStyle().bigText(d)).addAction(R.drawable.common_full_open_on_phone, resources.getString(R.string.common_open_on_phone), pendingIntent);
-                if (azb.i() && azb.i()) {
+            java.lang.String b2 = defpackage.beg.b(context, i);
+            java.lang.String d = defpackage.beg.d(context, i);
+            android.content.res.Resources resources = context.getResources();
+            android.app.NotificationManager notificationManager = (android.app.NotificationManager) context.getSystemService("notification");
+            if (defpackage.azb.a(context)) {
+                defpackage.azb.a(defpackage.azb.g());
+                android.app.Notification.Builder addAction = new android.app.Notification.Builder(context).setSmallIcon(context.getApplicationInfo().icon).setPriority(2).setAutoCancel(true).setContentTitle(b2).setStyle(new android.app.Notification.BigTextStyle().bigText(d)).addAction(2130837597, resources.getString(2131951710), pendingIntent);
+                if (defpackage.azb.i() && defpackage.azb.i()) {
                     addAction.setChannelId(a(context, notificationManager));
                 }
                 b = addAction.build();
             } else {
-                ni a2 = new ni(context, (byte) 0).a(17301642).d(resources.getString(R.string.common_google_play_services_notification_ticker)).a(System.currentTimeMillis());
+                defpackage.ni a2 = new defpackage.ni(context, 0).a(17301642).d(resources.getString(2131951702)).a(java.lang.System.currentTimeMillis());
                 a2.b(16);
                 a2.f = pendingIntent;
-                ni b3 = a2.a(b2).b(d);
+                defpackage.ni b3 = a2.a((java.lang.CharSequence) b2).b((java.lang.CharSequence) d);
                 b3.m = true;
-                ni a3 = b3.a(new nh().a(d));
-                if (azb.i() && azb.i()) {
+                defpackage.ni a3 = b3.a((defpackage.nk) new defpackage.nh().a((java.lang.CharSequence) d));
+                if (defpackage.azb.i() && defpackage.azb.i()) {
                     a3.s = a(context, notificationManager);
                 }
                 b = a3.b();
@@ -157,7 +139,7 @@ public final class axt extends axv {
                 case 2:
                 case 3:
                     i2 = 10436;
-                    axz.b.set(false);
+                    defpackage.axz.b.set(false);
                     break;
                 default:
                     i2 = 39789;
@@ -165,22 +147,23 @@ public final class axt extends axv {
             }
             notificationManager.notify(i2, b);
         } else if (i == 6) {
-            Log.w("GoogleApiAvailability", "Missing resolution for ConnectionResult.RESOLUTION_REQUIRED. Call GoogleApiAvailability#showErrorNotification(Context, ConnectionResult) instead.");
+            android.util.Log.w("GoogleApiAvailability", "Missing resolution for ConnectionResult.RESOLUTION_REQUIRED. Call GoogleApiAvailability#showErrorNotification(Context, ConnectionResult) instead.");
         }
     }
 
-    @TargetApi(26)
-    private static String a(Context context, NotificationManager notificationManager) {
-        azb.a(azb.i());
+    @android.annotation.TargetApi(26)
+    private static java.lang.String a(android.content.Context context, android.app.NotificationManager notificationManager) {
+        defpackage.azb.a(defpackage.azb.i());
         a();
-        NotificationChannel notificationChannel = notificationManager.getNotificationChannel("com.google.android.gms.availability");
-        String a2 = beg.a(context);
+        java.lang.String str = "com.google.android.gms.availability";
+        android.app.NotificationChannel notificationChannel = notificationManager.getNotificationChannel(str);
+        java.lang.String a2 = defpackage.beg.a(context);
         if (notificationChannel == null) {
-            notificationManager.createNotificationChannel(new NotificationChannel("com.google.android.gms.availability", a2, 4));
+            notificationManager.createNotificationChannel(new android.app.NotificationChannel(str, a2, 4));
         } else if (!a2.equals(notificationChannel.getName())) {
             notificationChannel.setName(a2);
             notificationManager.createNotificationChannel(notificationChannel);
         }
-        return "com.google.android.gms.availability";
+        return str;
     }
 }

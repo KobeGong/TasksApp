@@ -1,20 +1,16 @@
 package defpackage;
 
-import android.widget.PopupWindow;
-
-/* renamed from: ve  reason: default package */
+/* renamed from: ve reason: default package */
 /* compiled from: PG */
-final class ve extends vd {
+final class ve extends defpackage.vd {
     ve() {
     }
 
-    @Override // defpackage.vf, defpackage.vd
-    public final void a(PopupWindow popupWindow, boolean z) {
+    public final void a(android.widget.PopupWindow popupWindow, boolean z) {
         popupWindow.setOverlapAnchor(z);
     }
 
-    @Override // defpackage.vf
-    public final void a(PopupWindow popupWindow, int i) {
+    public final void a(android.widget.PopupWindow popupWindow, int i) {
         popupWindow.setWindowLayoutType(i);
     }
 }

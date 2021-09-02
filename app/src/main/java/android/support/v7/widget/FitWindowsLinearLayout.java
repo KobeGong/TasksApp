@@ -1,29 +1,23 @@
 package android.support.v7.widget;
 
-import android.content.Context;
-import android.graphics.Rect;
-import android.util.AttributeSet;
-import android.widget.LinearLayout;
-
 /* compiled from: PG */
-public class FitWindowsLinearLayout extends LinearLayout implements adm {
-    private adn a;
+public class FitWindowsLinearLayout extends android.widget.LinearLayout implements defpackage.adm {
+    private defpackage.adn a;
 
-    public FitWindowsLinearLayout(Context context) {
+    public FitWindowsLinearLayout(android.content.Context context) {
         super(context);
     }
 
-    public FitWindowsLinearLayout(Context context, AttributeSet attributeSet) {
+    public FitWindowsLinearLayout(android.content.Context context, android.util.AttributeSet attributeSet) {
         super(context, attributeSet);
     }
 
-    @Override // defpackage.adm
-    public final void a(adn adn) {
+    public final void a(defpackage.adn adn) {
         this.a = adn;
     }
 
     /* access modifiers changed from: protected */
-    public boolean fitSystemWindows(Rect rect) {
+    public boolean fitSystemWindows(android.graphics.Rect rect) {
         if (this.a != null) {
             this.a.a(rect);
         }

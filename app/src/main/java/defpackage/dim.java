@@ -1,34 +1,31 @@
 package defpackage;
 
-import java.nio.ByteBuffer;
-import java.nio.charset.Charset;
-
-/* renamed from: dim  reason: default package */
+/* renamed from: dim reason: default package */
 /* compiled from: PG */
 public final class dim {
-    public static final Charset a = Charset.forName("UTF-8");
+    public static final java.nio.charset.Charset a = java.nio.charset.Charset.forName("UTF-8");
     public static final byte[] b;
 
-    public static Object a(Object obj) {
+    public static java.lang.Object a(java.lang.Object obj) {
         if (obj != null) {
             return obj;
         }
-        throw new NullPointerException();
+        throw new java.lang.NullPointerException();
     }
 
-    static Object a(Object obj, String str) {
+    static java.lang.Object a(java.lang.Object obj, java.lang.String str) {
         if (obj != null) {
             return obj;
         }
-        throw new NullPointerException(str);
+        throw new java.lang.NullPointerException(str);
     }
 
     public static boolean a(byte[] bArr) {
-        return dli.a.a(bArr, 0, bArr.length);
+        return defpackage.dli.a.a(bArr, 0, bArr.length);
     }
 
-    public static String b(byte[] bArr) {
-        return new String(bArr, a);
+    public static java.lang.String b(byte[] bArr) {
+        return new java.lang.String(bArr, a);
     }
 
     public static int a(long j) {
@@ -59,16 +56,16 @@ public final class dim {
         return false;
     }
 
-    static Object a(Object obj, Object obj2) {
-        return ((djo) obj).g().a((djo) obj2).c();
+    static java.lang.Object a(java.lang.Object obj, java.lang.Object obj2) {
+        return ((defpackage.djo) obj).g().a((defpackage.djo) obj2).c();
     }
 
     static {
-        Charset.forName("ISO-8859-1");
+        java.nio.charset.Charset.forName("ISO-8859-1");
         byte[] bArr = new byte[0];
         b = bArr;
-        ByteBuffer.wrap(bArr);
+        java.nio.ByteBuffer.wrap(bArr);
         byte[] bArr2 = b;
-        dhj.a(bArr2, 0, bArr2.length, false);
+        defpackage.dhj.a(bArr2, 0, bArr2.length, false);
     }
 }

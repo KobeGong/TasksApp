@@ -1,9 +1,9 @@
 package defpackage;
 
-/* renamed from: dxn  reason: default package */
+/* renamed from: dxn reason: default package */
 /* compiled from: PG */
 public interface dxn {
-    Object a();
+    java.lang.Object a();
 
-    Object a(Object obj);
+    java.lang.Object a(java.lang.Object obj);
 }

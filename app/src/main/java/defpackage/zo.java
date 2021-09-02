@@ -1,19 +1,14 @@
 package defpackage;
 
-import android.content.Context;
-import android.view.ActionProvider;
-
-/* access modifiers changed from: package-private */
-/* renamed from: zo  reason: default package */
+/* renamed from: zo reason: default package */
 /* compiled from: PG */
-public final class zo extends zj {
-    zo(Context context, pp ppVar) {
+final class zo extends defpackage.zj {
+    zo(android.content.Context context, defpackage.pp ppVar) {
         super(context, ppVar);
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.zj
-    public final zk a(ActionProvider actionProvider) {
-        return new zp(this, this.a, actionProvider);
+    /* access modifiers changed from: 0000 */
+    public final defpackage.zk a(android.view.ActionProvider actionProvider) {
+        return new defpackage.zp(this, this.a, actionProvider);
     }
 }

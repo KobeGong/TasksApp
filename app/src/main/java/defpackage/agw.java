@@ -1,57 +1,54 @@
 package defpackage;
 
-import android.content.Context;
-import android.content.res.ColorStateList;
-import android.content.res.TypedArray;
-import android.graphics.drawable.Drawable;
-import android.util.AttributeSet;
-import android.util.TypedValue;
-
-/* renamed from: agw  reason: default package */
+/* renamed from: agw reason: default package */
 /* compiled from: PG */
 public final class agw {
-    public final Context a;
-    public final TypedArray b;
-    public TypedValue c;
+    public final android.content.Context a;
+    public final android.content.res.TypedArray b;
+    public android.util.TypedValue c;
 
-    public static agw a(Context context, AttributeSet attributeSet, int[] iArr) {
-        return new agw(context, context.obtainStyledAttributes(attributeSet, iArr));
+    public static defpackage.agw a(android.content.Context context, android.util.AttributeSet attributeSet, int[] iArr) {
+        return new defpackage.agw(context, context.obtainStyledAttributes(attributeSet, iArr));
     }
 
-    public static agw a(Context context, AttributeSet attributeSet, int[] iArr, int i, int i2) {
-        return new agw(context, context.obtainStyledAttributes(attributeSet, iArr, i, i2));
+    public static defpackage.agw a(android.content.Context context, android.util.AttributeSet attributeSet, int[] iArr, int i, int i2) {
+        return new defpackage.agw(context, context.obtainStyledAttributes(attributeSet, iArr, i, i2));
     }
 
-    public static agw a(Context context, int i, int[] iArr) {
-        return new agw(context, context.obtainStyledAttributes(i, iArr));
+    public static defpackage.agw a(android.content.Context context, int i, int[] iArr) {
+        return new defpackage.agw(context, context.obtainStyledAttributes(i, iArr));
     }
 
-    private agw(Context context, TypedArray typedArray) {
+    private agw(android.content.Context context, android.content.res.TypedArray typedArray) {
         this.a = context;
         this.b = typedArray;
     }
 
-    public final Drawable a(int i) {
-        int resourceId;
-        if (!this.b.hasValue(i) || (resourceId = this.b.getResourceId(i, 0)) == 0) {
-            return this.b.getDrawable(i);
+    public final android.graphics.drawable.Drawable a(int i) {
+        if (this.b.hasValue(i)) {
+            int resourceId = this.b.getResourceId(i, 0);
+            if (resourceId != 0) {
+                return defpackage.xw.b(this.a, resourceId);
+            }
         }
-        return xw.b(this.a, resourceId);
+        return this.b.getDrawable(i);
     }
 
-    public final Drawable b(int i) {
-        int resourceId;
-        if (!this.b.hasValue(i) || (resourceId = this.b.getResourceId(i, 0)) == 0) {
-            return null;
+    public final android.graphics.drawable.Drawable b(int i) {
+        if (this.b.hasValue(i)) {
+            int resourceId = this.b.getResourceId(i, 0);
+            if (resourceId != 0) {
+                return defpackage.abl.a().a(this.a, resourceId, true);
+            }
         }
-        return abl.a().a(this.a, resourceId, true);
+        return null;
     }
 
-    public final CharSequence c(int i) {
+    public final java.lang.CharSequence c(int i) {
         return this.b.getText(i);
     }
 
-    public final String d(int i) {
+    public final java.lang.String d(int i) {
         return this.b.getString(i);
     }
 
@@ -71,10 +68,17 @@ public final class agw {
         return this.b.getColor(i, i2);
     }
 
-    public final ColorStateList e(int i) {
-        int resourceId;
-        ColorStateList a2;
-        return (!this.b.hasValue(i) || (resourceId = this.b.getResourceId(i, 0)) == 0 || (a2 = xw.a(this.a, resourceId)) == null) ? this.b.getColorStateList(i) : a2;
+    public final android.content.res.ColorStateList e(int i) {
+        if (this.b.hasValue(i)) {
+            int resourceId = this.b.getResourceId(i, 0);
+            if (resourceId != 0) {
+                android.content.res.ColorStateList a2 = defpackage.xw.a(this.a, resourceId);
+                if (a2 != null) {
+                    return a2;
+                }
+            }
+        }
+        return this.b.getColorStateList(i);
     }
 
     public final int c(int i, int i2) {

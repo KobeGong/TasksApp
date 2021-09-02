@@ -1,23 +1,18 @@
 package defpackage;
 
-import android.app.Activity;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
-
-/* renamed from: cih  reason: default package */
+/* renamed from: cih reason: default package */
 /* compiled from: PG */
-final class cih implements cgy {
-    public final /* synthetic */ cie a;
+final class cih implements defpackage.cgy {
+    public final /* synthetic */ defpackage.cie a;
 
-    cih(cie cie) {
+    cih(defpackage.cie cie) {
         this.a = cie;
     }
 
-    @Override // defpackage.cgy
-    public final void a(Activity activity) {
-        String simpleName = activity.getClass().getSimpleName();
+    public final void a(android.app.Activity activity) {
+        java.lang.String simpleName = activity.getClass().getSimpleName();
         this.a.b.a(3, simpleName);
-        cie cie = this.a;
+        defpackage.cie cie = this.a;
         if (cie.c != null) {
             cie.c.cancel(true);
             cie.c = null;
@@ -26,6 +21,6 @@ final class cih implements cgy {
             cie.d.cancel(true);
             cie.d = null;
         }
-        this.a.c = ((ScheduledExecutorService) this.a.e.a()).schedule(new cii(this, simpleName), 10, TimeUnit.SECONDS);
+        this.a.c = ((java.util.concurrent.ScheduledExecutorService) this.a.e.a()).schedule(new defpackage.cii(this, simpleName), 10, java.util.concurrent.TimeUnit.SECONDS);
     }
 }

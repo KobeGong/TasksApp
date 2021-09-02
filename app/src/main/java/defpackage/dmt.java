@@ -1,32 +1,27 @@
 package defpackage;
 
-import java.util.Collections;
-import java.util.LinkedHashMap;
-import java.util.Map;
-
-/* renamed from: dmt  reason: default package */
+/* renamed from: dmt reason: default package */
 /* compiled from: PG */
-public final class dmt implements ecz {
-    private final Map a;
+public final class dmt implements defpackage.ecz {
+    private final java.util.Map a;
 
-    public static dmu b() {
-        return new dmu();
+    public static defpackage.dmu b() {
+        return new defpackage.dmu();
     }
 
-    public dmt(Map map) {
-        this.a = Collections.unmodifiableMap(map);
+    public dmt(java.util.Map map) {
+        this.a = java.util.Collections.unmodifiableMap(map);
     }
 
-    @Override // defpackage.ecz
-    public final /* synthetic */ Object a() {
-        LinkedHashMap b = dgv.b(this.a.size());
-        for (Map.Entry entry : this.a.entrySet()) {
-            b.put(entry.getKey(), ((ecz) entry.getValue()).a());
+    public final /* synthetic */ java.lang.Object a() {
+        java.util.LinkedHashMap b = defpackage.dgv.b(this.a.size());
+        for (java.util.Map.Entry entry : this.a.entrySet()) {
+            b.put(entry.getKey(), ((defpackage.ecz) entry.getValue()).a());
         }
-        return Collections.unmodifiableMap(b);
+        return java.util.Collections.unmodifiableMap(b);
     }
 
     static {
-        new dms(dgv.a(Collections.emptyMap(), "instance cannot be null"));
+        new defpackage.dms(defpackage.dgv.a((java.lang.Object) java.util.Collections.emptyMap(), "instance cannot be null"));
     }
 }

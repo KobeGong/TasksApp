@@ -1,27 +1,23 @@
 package defpackage;
 
-import android.app.Activity;
-import android.view.View;
-import com.google.android.apps.tasks.ui.components.snackbar.Snackbar;
+/* renamed from: aqd reason: default package */
+final /* synthetic */ class aqd implements android.view.View.OnClickListener {
+    private final WelcomeFragment a;
 
-/* renamed from: aqd  reason: default package */
-final /* synthetic */ class aqd implements View.OnClickListener {
-    private final aqa a;
-
-    aqd(aqa aqa) {
+    aqd(WelcomeFragment aqa) {
         this.a = aqa;
     }
 
-    public final void onClick(View view) {
-        aqa aqa = this.a;
-        axt axt = axt.a;
-        int a2 = axv.a(aqa.i());
+    public final void onClick(android.view.View view) {
+        WelcomeFragment aqa = this.a;
+        defpackage.axt axt = defpackage.axt.a;
+        int a2 = defpackage.axv.a(aqa.getContext());
         if (a2 == 0) {
             aqa.c();
-        } else if (axv.a(a2)) {
-            axt.a((Activity) aqa.getActivity(), a2).show();
+        } else if (defpackage.axv.a(a2)) {
+            axt.a((android.app.Activity) aqa.getActivity(), a2).show();
         } else {
-            Snackbar.a(aqa.J, axv.b(a2), 0).a();
+            com.google.android.apps.tasks.ui.components.snackbar.Snackbar.a(aqa.J, (java.lang.CharSequence) defpackage.axv.b(a2), 0).a();
         }
     }
 }

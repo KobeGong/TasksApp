@@ -1,13 +1,8 @@
 package org.chromium.base;
 
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
-import org.chromium.base.annotations.CalledByNative;
-
 /* compiled from: PG */
 public class PowerMonitor {
-    private static PowerMonitor a;
+    private static org.chromium.base.PowerMonitor a;
     private boolean b;
 
     private PowerMonitor() {
@@ -15,10 +10,10 @@ public class PowerMonitor {
 
     private static native void nativeOnBatteryChargingChanged();
 
-    public static void a(Intent intent) {
+    public static void a(android.content.Intent intent) {
         boolean z = true;
         int intExtra = intent.getIntExtra("plugged", -1);
-        PowerMonitor powerMonitor = a;
+        org.chromium.base.PowerMonitor powerMonitor = a;
         if (intExtra == 2 || intExtra == 1) {
             z = false;
         }
@@ -26,21 +21,21 @@ public class PowerMonitor {
         nativeOnBatteryChargingChanged();
     }
 
-    @CalledByNative
+    @org.chromium.base.annotations.CalledByNative
     private static boolean isBatteryPower() {
         if (a == null) {
-            ThreadUtils.b();
+            org.chromium.base.ThreadUtils.b();
             if (a == null) {
-                Context context = ehw.a;
-                a = new PowerMonitor();
-                Intent registerReceiver = context.registerReceiver(null, new IntentFilter("android.intent.action.BATTERY_CHANGED"));
+                android.content.Context context = defpackage.ehw.a;
+                a = new org.chromium.base.PowerMonitor();
+                android.content.Intent registerReceiver = context.registerReceiver(null, new android.content.IntentFilter("android.intent.action.BATTERY_CHANGED"));
                 if (registerReceiver != null) {
                     a(registerReceiver);
                 }
-                IntentFilter intentFilter = new IntentFilter();
+                android.content.IntentFilter intentFilter = new android.content.IntentFilter();
                 intentFilter.addAction("android.intent.action.ACTION_POWER_CONNECTED");
                 intentFilter.addAction("android.intent.action.ACTION_POWER_DISCONNECTED");
-                context.registerReceiver(new egx(), intentFilter);
+                context.registerReceiver(new defpackage.egx(), intentFilter);
             }
         }
         return a.b;

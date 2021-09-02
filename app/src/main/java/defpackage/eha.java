@@ -1,17 +1,15 @@
 package defpackage;
 
-import android.os.Build;
-
-/* renamed from: eha  reason: default package */
+/* renamed from: eha reason: default package */
 /* compiled from: PG */
 public final class eha {
-    public static final ehd a;
+    public static final defpackage.ehd a;
 
     static {
-        if (Build.VERSION.SDK_INT >= 22) {
-            a = new ehc();
+        if (android.os.Build.VERSION.SDK_INT >= 22) {
+            a = new defpackage.ehc();
         } else {
-            a = new ehb();
+            a = new defpackage.ehb();
         }
     }
 }

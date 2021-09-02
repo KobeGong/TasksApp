@@ -1,32 +1,28 @@
 package defpackage;
 
-import android.app.Application;
-import java.util.concurrent.ScheduledExecutorService;
-
-/* renamed from: cgj  reason: default package */
+/* renamed from: cgj reason: default package */
 /* compiled from: PG */
-public abstract class cgj implements cls {
-    public final Application a;
-    public final clt b;
+public abstract class cgj implements defpackage.cls {
+    public final android.app.Application a;
+    public final defpackage.clt b;
     public volatile boolean c;
-    private final cin d;
+    private final defpackage.cin d;
 
-    protected cgj(coe coe, Application application, clt clt, int i) {
+    protected cgj(defpackage.coe coe, android.app.Application application, defpackage.clt clt, int i) {
         this(coe, application, clt, i, Integer.MAX_VALUE);
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public abstract void d();
 
-    protected cgj(coe coe, Application application, clt clt, int i, int i2) {
-        cky.a(coe);
-        cky.a((Object) application);
+    protected cgj(defpackage.coe coe, android.app.Application application, defpackage.clt clt, int i, int i2) {
+        defpackage.cky.a((java.lang.Object) coe);
+        defpackage.cky.a((java.lang.Object) application);
         this.a = application;
         this.b = clt;
-        this.d = new cin(coe, cip.b(application), clt, i, i2);
+        this.d = new defpackage.cin(coe, defpackage.cip.b(application), clt, i, i2);
     }
 
-    @Override // defpackage.cls
     public final void a() {
         this.c = true;
         d();
@@ -37,23 +33,23 @@ public abstract class cgj implements cls {
     }
 
     /* access modifiers changed from: protected */
-    public final void a(String str, boolean z, efx efx, eeo eeo) {
+    public final void a(java.lang.String str, boolean z, defpackage.efx efx, defpackage.eeo eeo) {
         if (!this.c) {
-            cin cin = this.d;
-            if (cin.c == bg.Z) {
+            defpackage.cin cin = this.d;
+            if (cin.c == defpackage.bg.Z) {
                 cin.a(str, z, efx, eeo);
             } else {
-                ((ScheduledExecutorService) cin.b.a()).submit(new cio(cin, str, z, efx, eeo));
+                ((java.util.concurrent.ScheduledExecutorService) cin.b.a()).submit(new defpackage.cio(cin, str, z, efx, eeo));
             }
         }
     }
 
-    public final void a(efx efx) {
+    public final void a(defpackage.efx efx) {
         a(null, true, efx, null);
     }
 
-    /* access modifiers changed from: package-private */
-    public final ScheduledExecutorService c() {
-        return (ScheduledExecutorService) this.b.a();
+    /* access modifiers changed from: 0000 */
+    public final java.util.concurrent.ScheduledExecutorService c() {
+        return (java.util.concurrent.ScheduledExecutorService) this.b.a();
     }
 }

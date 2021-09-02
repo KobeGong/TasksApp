@@ -1,62 +1,54 @@
 package defpackage;
 
-import android.os.Bundle;
-import android.os.IBinder;
-import android.os.IInterface;
-import android.os.Parcel;
-
-/* renamed from: bno  reason: default package */
+/* renamed from: bno reason: default package */
 /* compiled from: PG */
-public final class bno extends bkm implements bnn {
-    bno(IBinder iBinder) {
+public final class bno extends defpackage.bkm implements defpackage.bnn {
+    bno(android.os.IBinder iBinder) {
         super(iBinder, "com.google.android.gms.people.internal.IPeopleService");
     }
 
-    @Override // defpackage.bnn
-    public final void a(bnl bnl, boolean z, int i) {
-        Parcel c = c();
-        bko.a(c, bnl);
-        bko.a(c, false);
-        bko.a(c, z);
+    public final void a(defpackage.bnl bnl, boolean z, int i) {
+        android.os.Parcel c = c();
+        defpackage.bko.a(c, (android.os.IInterface) bnl);
+        defpackage.bko.a(c, false);
+        defpackage.bko.a(c, z);
         c.writeString(null);
         c.writeString(null);
         c.writeInt(i);
         b(305, c);
     }
 
-    @Override // defpackage.bnn
-    public final Bundle a(bnl bnl, boolean z, String str, String str2, int i) {
-        Parcel c = c();
-        bko.a(c, bnl);
-        bko.a(c, z);
+    public final android.os.Bundle a(defpackage.bnl bnl, boolean z, java.lang.String str, java.lang.String str2, int i) {
+        android.os.Parcel c = c();
+        defpackage.bko.a(c, (android.os.IInterface) bnl);
+        defpackage.bko.a(c, z);
         c.writeString(str);
         c.writeString(str2);
         c.writeInt(i);
-        Parcel a = a(11, c);
-        Bundle bundle = (Bundle) bko.a(a, Bundle.CREATOR);
+        android.os.Parcel a = a(11, c);
+        android.os.Bundle bundle = (android.os.Bundle) defpackage.bko.a(a, android.os.Bundle.CREATOR);
         a.recycle();
         return bundle;
     }
 
-    @Override // defpackage.bnn
-    public final bet a(bnl bnl, String str, String str2, int i, int i2) {
-        bet beu;
-        Parcel c = c();
-        bko.a(c, bnl);
+    public final defpackage.bet a(defpackage.bnl bnl, java.lang.String str, java.lang.String str2, int i, int i2) {
+        defpackage.bet beu;
+        android.os.Parcel c = c();
+        defpackage.bko.a(c, (android.os.IInterface) bnl);
         c.writeString(str);
         c.writeString(str2);
         c.writeInt(i);
         c.writeInt(i2);
-        Parcel a = a(505, c);
-        IBinder readStrongBinder = a.readStrongBinder();
+        android.os.Parcel a = a(505, c);
+        android.os.IBinder readStrongBinder = a.readStrongBinder();
         if (readStrongBinder == null) {
             beu = null;
         } else {
-            IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.common.internal.ICancelToken");
-            if (queryLocalInterface instanceof bet) {
-                beu = (bet) queryLocalInterface;
+            android.os.IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.common.internal.ICancelToken");
+            if (queryLocalInterface instanceof defpackage.bet) {
+                beu = (defpackage.bet) queryLocalInterface;
             } else {
-                beu = new beu(readStrongBinder);
+                beu = new defpackage.beu(readStrongBinder);
             }
         }
         a.recycle();

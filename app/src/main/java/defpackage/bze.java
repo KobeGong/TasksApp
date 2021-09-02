@@ -1,22 +1,22 @@
 package defpackage;
 
-/* renamed from: bze  reason: default package */
+/* renamed from: bze reason: default package */
 /* compiled from: PG */
-public final class bze implements ecz {
-    private final ecz a;
-    private final ecz b;
-    private final ecz c;
-    private final ecz d;
-    private final ecz e;
-    private final ecz f;
-    private final ecz g;
-    private final ecz h;
-    private final ecz i;
-    private final ecz j;
-    private final ecz k;
-    private final ecz l;
+public final class bze implements defpackage.ecz {
+    private final defpackage.ecz a;
+    private final defpackage.ecz b;
+    private final defpackage.ecz c;
+    private final defpackage.ecz d;
+    private final defpackage.ecz e;
+    private final defpackage.ecz f;
+    private final defpackage.ecz g;
+    private final defpackage.ecz h;
+    private final defpackage.ecz i;
+    private final defpackage.ecz j;
+    private final defpackage.ecz k;
+    private final defpackage.ecz l;
 
-    public bze(ecz ecz, ecz ecz2, ecz ecz3, ecz ecz4, ecz ecz5, ecz ecz6, ecz ecz7, ecz ecz8, ecz ecz9, ecz ecz10, ecz ecz11, ecz ecz12) {
+    public bze(defpackage.ecz ecz, defpackage.ecz ecz2, defpackage.ecz ecz3, defpackage.ecz ecz4, defpackage.ecz ecz5, defpackage.ecz ecz6, defpackage.ecz ecz7, defpackage.ecz ecz8, defpackage.ecz ecz9, defpackage.ecz ecz10, defpackage.ecz ecz11, defpackage.ecz ecz12) {
         this.a = ecz;
         this.b = ecz2;
         this.c = ecz3;
@@ -31,21 +31,20 @@ public final class bze implements ecz {
         this.l = ecz12;
     }
 
-    @Override // defpackage.ecz
-    public final /* synthetic */ Object a() {
-        bza bza = new bza();
-        bza.a = (ccq) this.a.a();
-        bza.b = (bzw) this.b.a();
-        bza.c = (bzr) this.c.a();
+    public final /* synthetic */ java.lang.Object a() {
+        defpackage.bza bza = new defpackage.bza();
+        bza.a = (defpackage.ccq) this.a.a();
+        bza.b = (defpackage.bzw) this.b.a();
+        bza.c = (defpackage.bzr) this.c.a();
         this.d.a();
-        bza.d = (caa) this.e.a();
-        bza.e = (bzn) this.f.a();
-        bza.f = (bzj) this.g.a();
+        bza.d = (defpackage.caa) this.e.a();
+        bza.e = (defpackage.bzn) this.f.a();
+        bza.f = (defpackage.bzj) this.g.a();
         this.h.a();
-        bza.g = (bzf) this.i.a();
-        bza.h = (bzh) this.j.a();
+        bza.g = (defpackage.bzf) this.i.a();
+        bza.h = (defpackage.bzh) this.j.a();
         this.k.a();
-        bza.i = (bzu) this.l.a();
+        bza.i = (defpackage.bzu) this.l.a();
         return bza;
     }
 }

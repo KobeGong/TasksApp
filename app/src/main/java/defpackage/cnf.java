@@ -1,6 +1,6 @@
 package defpackage;
 
-/* renamed from: cnf  reason: default package */
+/* renamed from: cnf reason: default package */
 /* compiled from: PG */
 public final class cnf {
     public final int[] a;

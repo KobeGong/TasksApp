@@ -1,19 +1,14 @@
 package defpackage;
 
-import android.content.Context;
-import android.graphics.Rect;
-import android.util.AttributeSet;
-import android.view.ViewGroup;
-
-/* renamed from: afh  reason: default package */
+/* renamed from: afh reason: default package */
 /* compiled from: PG */
-public final class afh extends ViewGroup.MarginLayoutParams {
-    public ViewHolder a;
-    public final Rect b = new Rect();
+public final class afh extends android.view.ViewGroup.MarginLayoutParams {
+    public defpackage.afv a;
+    public final android.graphics.Rect b = new android.graphics.Rect();
     public boolean c = true;
     public boolean d = false;
 
-    public afh(Context context, AttributeSet attributeSet) {
+    public afh(android.content.Context context, android.util.AttributeSet attributeSet) {
         super(context, attributeSet);
     }
 
@@ -21,15 +16,15 @@ public final class afh extends ViewGroup.MarginLayoutParams {
         super(-2, -2);
     }
 
-    public afh(ViewGroup.MarginLayoutParams marginLayoutParams) {
+    public afh(android.view.ViewGroup.MarginLayoutParams marginLayoutParams) {
         super(marginLayoutParams);
     }
 
-    public afh(ViewGroup.LayoutParams layoutParams) {
+    public afh(android.view.ViewGroup.LayoutParams layoutParams) {
         super(layoutParams);
     }
 
-    public afh(afh afh) {
-        super((ViewGroup.LayoutParams) afh);
+    public afh(defpackage.afh afh) {
+        super(afh);
     }
 }

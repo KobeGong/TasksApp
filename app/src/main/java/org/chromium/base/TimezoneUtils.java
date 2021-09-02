@@ -1,19 +1,15 @@
 package org.chromium.base;
 
-import android.os.StrictMode;
-import java.util.TimeZone;
-import org.chromium.base.annotations.CalledByNative;
-
 /* compiled from: PG */
 class TimezoneUtils {
     private TimezoneUtils() {
     }
 
-    @CalledByNative
-    private static String getDefaultTimeZoneId() {
-        StrictMode.ThreadPolicy allowThreadDiskReads = StrictMode.allowThreadDiskReads();
-        String id = TimeZone.getDefault().getID();
-        StrictMode.setThreadPolicy(allowThreadDiskReads);
+    @org.chromium.base.annotations.CalledByNative
+    private static java.lang.String getDefaultTimeZoneId() {
+        android.os.StrictMode.ThreadPolicy allowThreadDiskReads = android.os.StrictMode.allowThreadDiskReads();
+        java.lang.String id = java.util.TimeZone.getDefault().getID();
+        android.os.StrictMode.setThreadPolicy(allowThreadDiskReads);
         return id;
     }
 }

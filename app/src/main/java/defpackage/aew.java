@@ -1,11 +1,11 @@
 package defpackage;
 
-/* renamed from: aew  reason: default package */
+/* renamed from: aew reason: default package */
 /* compiled from: PG */
 public final class aew {
-    public final /* synthetic */ aht a;
+    public final /* synthetic */ defpackage.aht a;
 
-    public aew(aht aht) {
+    public aew(defpackage.aht aht) {
         this.a = aht;
     }
 }

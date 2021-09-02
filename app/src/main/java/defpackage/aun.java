@@ -1,13 +1,10 @@
 package defpackage;
 
-import android.view.View;
+/* renamed from: aun reason: default package */
+final /* synthetic */ class aun implements java.lang.Runnable {
+    private final android.view.View a;
 
-/* access modifiers changed from: package-private */
-/* renamed from: aun  reason: default package */
-public final /* synthetic */ class aun implements Runnable {
-    private final View a;
-
-    aun(View view) {
+    aun(android.view.View view) {
         this.a = view;
     }
 

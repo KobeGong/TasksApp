@@ -1,22 +1,17 @@
 package defpackage;
 
-import android.util.Property;
-import android.view.View;
-
-/* renamed from: kc  reason: default package */
+/* renamed from: kc reason: default package */
 /* compiled from: PG */
-final class kc extends Property {
-    kc(Class cls, String str) {
+final class kc extends android.util.Property {
+    kc(java.lang.Class cls, java.lang.String str) {
         super(cls, str);
     }
 
-    @Override // android.util.Property
-    public final /* synthetic */ Object get(Object obj) {
-        return Float.valueOf(kb.a.b((View) obj));
+    public final /* synthetic */ java.lang.Object get(java.lang.Object obj) {
+        return java.lang.Float.valueOf(defpackage.kb.a.b((android.view.View) obj));
     }
 
-    @Override // android.util.Property
-    public final /* synthetic */ void set(Object obj, Object obj2) {
-        kb.a((View) obj, ((Float) obj2).floatValue());
+    public final /* synthetic */ void set(java.lang.Object obj, java.lang.Object obj2) {
+        defpackage.kb.a((android.view.View) obj, ((java.lang.Float) obj2).floatValue());
     }
 }

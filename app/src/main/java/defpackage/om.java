@@ -1,11 +1,11 @@
 package defpackage;
 
-/* renamed from: om  reason: default package */
+/* renamed from: om reason: default package */
 /* compiled from: PG */
-public final class om implements ol {
-    public final on[] a;
+public final class om implements defpackage.ol {
+    public final defpackage.on[] a;
 
-    public om(on[] onVarArr) {
+    public om(defpackage.on[] onVarArr) {
         this.a = onVarArr;
     }
 }

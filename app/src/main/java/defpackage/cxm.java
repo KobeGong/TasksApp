@@ -1,57 +1,43 @@
 package defpackage;
 
-import java.util.List;
-import java.util.concurrent.AbstractExecutorService;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Future;
-import java.util.concurrent.RunnableFuture;
-import java.util.concurrent.TimeUnit;
-
-/* renamed from: cxm  reason: default package */
+/* renamed from: cxm reason: default package */
 /* compiled from: PG */
-public class cxm extends AbstractExecutorService implements cyl {
-    private final ExecutorService a;
+public class cxm extends java.util.concurrent.AbstractExecutorService implements defpackage.cyl {
+    private final java.util.concurrent.ExecutorService a;
 
     public cxm() {
     }
 
     /* access modifiers changed from: protected */
-    @Override // java.util.concurrent.AbstractExecutorService
-    public final RunnableFuture newTaskFor(Runnable runnable, Object obj) {
-        return cyx.a(runnable, obj);
+    public final java.util.concurrent.RunnableFuture newTaskFor(java.lang.Runnable runnable, java.lang.Object obj) {
+        return defpackage.cyx.a(runnable, obj);
     }
 
     /* access modifiers changed from: protected */
-    @Override // java.util.concurrent.AbstractExecutorService
-    public final RunnableFuture newTaskFor(Callable callable) {
-        return cyx.a(callable);
+    public final java.util.concurrent.RunnableFuture newTaskFor(java.util.concurrent.Callable callable) {
+        return defpackage.cyx.a(callable);
     }
 
-    @Override // defpackage.cyl
     /* renamed from: a */
-    public final cyi submit(Runnable runnable) {
-        return (cyi) super.submit(runnable);
+    public final defpackage.cyi submit(java.lang.Runnable runnable) {
+        return (defpackage.cyi) super.submit(runnable);
     }
 
-    @Override // defpackage.cyl
     /* renamed from: a */
-    public final cyi submit(Callable callable) {
-        return (cyi) super.submit(callable);
+    public final defpackage.cyi submit(java.util.concurrent.Callable callable) {
+        return (defpackage.cyi) super.submit(callable);
     }
 
-    @Override // java.util.concurrent.AbstractExecutorService, java.util.concurrent.ExecutorService
-    public /* synthetic */ Future submit(Runnable runnable, Object obj) {
-        return (cyi) super.submit(runnable, obj);
+    public /* synthetic */ java.util.concurrent.Future submit(java.lang.Runnable runnable, java.lang.Object obj) {
+        return (defpackage.cyi) super.submit(runnable, obj);
     }
 
-    public cxm(ExecutorService executorService) {
+    public cxm(java.util.concurrent.ExecutorService executorService) {
         this();
-        this.a = (ExecutorService) cld.a(executorService);
+        this.a = (java.util.concurrent.ExecutorService) defpackage.cld.a((java.lang.Object) executorService);
     }
 
-    @Override // java.util.concurrent.ExecutorService
-    public boolean awaitTermination(long j, TimeUnit timeUnit) {
+    public boolean awaitTermination(long j, java.util.concurrent.TimeUnit timeUnit) {
         return this.a.awaitTermination(j, timeUnit);
     }
 
@@ -67,12 +53,11 @@ public class cxm extends AbstractExecutorService implements cyl {
         this.a.shutdown();
     }
 
-    @Override // java.util.concurrent.ExecutorService
-    public List shutdownNow() {
+    public java.util.List shutdownNow() {
         return this.a.shutdownNow();
     }
 
-    public void execute(Runnable runnable) {
+    public void execute(java.lang.Runnable runnable) {
         this.a.execute(runnable);
     }
 }

@@ -1,34 +1,36 @@
 package defpackage;
 
-/* renamed from: blf  reason: default package */
+/* renamed from: blf reason: default package */
 /* compiled from: PG */
-public final class blf extends bkw implements Cloneable {
-    private String c = "";
-    private String d = "";
+public final class blf extends defpackage.bkw implements java.lang.Cloneable {
+    private java.lang.String c;
+    private java.lang.String d;
 
     public blf() {
+        this.c = "";
+        this.d = "";
         this.a = null;
         this.b = -1;
     }
 
     /* access modifiers changed from: private */
     /* renamed from: e */
-    public final blf clone() {
+    public final defpackage.blf clone() {
         try {
-            return (blf) super.clone();
-        } catch (CloneNotSupportedException e) {
-            throw new AssertionError(e);
+            return (defpackage.blf) super.clone();
+        } catch (java.lang.CloneNotSupportedException e) {
+            throw new java.lang.AssertionError(e);
         }
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof blf)) {
+        if (!(obj instanceof defpackage.blf)) {
             return false;
         }
-        blf blf = (blf) obj;
+        defpackage.blf blf = (defpackage.blf) obj;
         if (this.c == null) {
             if (blf.c != null) {
                 return false;
@@ -43,10 +45,13 @@ public final class blf extends bkw implements Cloneable {
         } else if (!this.d.equals(blf.d)) {
             return false;
         }
-        if (this.a == null || this.a.a()) {
-            return blf.a == null || blf.a.a();
+        if (this.a != null && !this.a.a()) {
+            return this.a.equals(blf.a);
         }
-        return this.a.equals(blf.a);
+        if (blf.a == null || blf.a.a()) {
+            return true;
+        }
+        return false;
     }
 
     public final int hashCode() {
@@ -58,8 +63,7 @@ public final class blf extends bkw implements Cloneable {
         return hashCode + i;
     }
 
-    @Override // defpackage.blb, defpackage.bkw
-    public final void a(bku bku) {
+    public final void a(defpackage.bku bku) {
         if (this.c != null && !this.c.equals("")) {
             bku.a(2, this.c);
         }
@@ -70,25 +74,22 @@ public final class blf extends bkw implements Cloneable {
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.blb, defpackage.bkw
     public final int a() {
         int a = super.a();
         if (this.c != null && !this.c.equals("")) {
-            a += bku.b(2, this.c);
+            a += defpackage.bku.b(2, this.c);
         }
         if (this.d == null || this.d.equals("")) {
             return a;
         }
-        return a + bku.b(3, this.d);
+        return a + defpackage.bku.b(3, this.d);
     }
 
-    @Override // defpackage.bkw
-    public final /* synthetic */ bkw b() {
-        return (blf) clone();
+    public final /* synthetic */ defpackage.bkw b() {
+        return (defpackage.blf) clone();
     }
 
-    @Override // defpackage.blb, defpackage.bkw
-    public final /* synthetic */ blb c() {
-        return (blf) clone();
+    public final /* synthetic */ defpackage.blb c() {
+        return (defpackage.blf) clone();
     }
 }

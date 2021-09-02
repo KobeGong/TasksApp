@@ -1,9 +1,7 @@
 package defpackage;
 
-import android.app.Activity;
-
-/* renamed from: cgt  reason: default package */
+/* renamed from: cgt reason: default package */
 /* compiled from: PG */
-public interface cgt extends cgp {
-    void a(Activity activity);
+public interface cgt extends defpackage.cgp {
+    void a(android.app.Activity activity);
 }

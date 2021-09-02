@@ -1,32 +1,26 @@
 package defpackage;
 
-import android.support.design.snackbar.BaseTransientBottomBar;
-import android.view.View;
-
-/* renamed from: gk  reason: default package */
+/* renamed from: gk reason: default package */
 /* compiled from: PG */
-public final class gk implements dn, sl {
-    private final /* synthetic */ db a;
+public final class gk implements defpackage.dn, defpackage.sl {
+    private final /* synthetic */ defpackage.db a;
 
-    @Override // defpackage.dn
-    public final void a(View view) {
+    public final void a(android.view.View view) {
         view.setVisibility(8);
-        BaseTransientBottomBar.a();
+        android.support.design.snackbar.BaseTransientBottomBar.a();
     }
 
-    @Override // defpackage.dn
     public final void a(int i) {
-        BaseTransientBottomBar baseTransientBottomBar = null;
         switch (i) {
             case 0:
-                gq a2 = gq.a();
-                gs gsVar = baseTransientBottomBar.a;
+                defpackage.gq a2 = defpackage.gq.a();
+                defpackage.gs gsVar = null.a;
                 a2.c();
                 return;
             case 1:
             case 2:
-                gq a3 = gq.a();
-                gs gsVar2 = baseTransientBottomBar.a;
+                defpackage.gq a3 = defpackage.gq.a();
+                defpackage.gs gsVar2 = null.a;
                 a3.b();
                 return;
             default:
@@ -34,18 +28,17 @@ public final class gk implements dn, sl {
         }
     }
 
-    public gk(db dbVar) {
+    public gk(defpackage.db dbVar) {
         this.a = dbVar;
     }
 
-    @Override // defpackage.sl
-    public final tk a(View view, tk tkVar) {
-        db dbVar = this.a;
-        tk tkVar2 = null;
-        if (sn.a.h(dbVar)) {
+    public final defpackage.tk a(android.view.View view, defpackage.tk tkVar) {
+        defpackage.db dbVar = this.a;
+        defpackage.tk tkVar2 = null;
+        if (defpackage.sn.a.h(dbVar)) {
             tkVar2 = tkVar;
         }
-        if (!jd.a(dbVar.f, tkVar2)) {
+        if (!defpackage.jd.a((java.lang.Object) dbVar.f, (java.lang.Object) tkVar2)) {
             dbVar.f = tkVar2;
             dbVar.requestLayout();
         }

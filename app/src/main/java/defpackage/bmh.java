@@ -1,39 +1,34 @@
 package defpackage;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.Collections;
-import java.util.List;
-
-/* renamed from: bmh  reason: default package */
+/* renamed from: bmh reason: default package */
 /* compiled from: PG */
-public final class bmh extends biq {
-    public static final Parcelable.Creator CREATOR = new bmu();
+public final class bmh extends defpackage.biq {
+    public static final android.os.Parcelable.Creator CREATOR = new defpackage.bmu();
     private int a;
-    private List b;
+    private java.util.List b;
 
     public bmh() {
     }
 
-    public bmh(int i, List list) {
+    public bmh(int i, java.util.List list) {
         this.a = i;
         this.b = list;
     }
 
-    public final String toString() {
-        return azb.a(this).a("spamStatus", Integer.valueOf(this.a)).a("person", this.b).toString();
+    public final java.lang.String toString() {
+        return defpackage.azb.a((java.lang.Object) this).a("spamStatus", java.lang.Integer.valueOf(this.a)).a("person", this.b).toString();
     }
 
-    public final void writeToParcel(Parcel parcel, int i) {
-        List list;
-        int q = bjr.q(parcel, 20293);
-        bjr.c(parcel, 2, this.a);
+    public final void writeToParcel(android.os.Parcel parcel, int i) {
+        java.util.List list;
+        int q = defpackage.bjr.q(parcel, 20293);
+        defpackage.bjr.c(parcel, 2, this.a);
         if (this.b == null) {
-            list = Collections.emptyList();
+            list = java.util.Collections.emptyList();
         } else {
             list = this.b;
         }
-        bjr.b(parcel, 3, list);
-        bjr.r(parcel, q);
+        defpackage.bjr.b(parcel, 3, list);
+        defpackage.bjr.r(parcel, q);
     }
 }

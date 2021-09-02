@@ -1,15 +1,13 @@
 package defpackage;
 
-import java.util.concurrent.Executor;
-
-/* renamed from: bpv  reason: default package */
+/* renamed from: bpv reason: default package */
 /* compiled from: PG */
 public abstract class bpv {
     public abstract boolean a();
 
-    public abstract Exception b();
+    public abstract java.lang.Exception b();
 
-    public bpv a(Executor executor, bpu bpu) {
-        throw new UnsupportedOperationException("addOnCompleteListener is not implemented");
+    public defpackage.bpv a(java.util.concurrent.Executor executor, defpackage.bpu bpu) {
+        throw new java.lang.UnsupportedOperationException("addOnCompleteListener is not implemented");
     }
 }

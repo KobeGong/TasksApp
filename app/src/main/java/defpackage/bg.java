@@ -1,7 +1,7 @@
 package defpackage;
 
-@Deprecated
-/* renamed from: bg  reason: default package */
+@java.lang.Deprecated
+/* renamed from: bg reason: default package */
 /* compiled from: PG */
 public final class bg {
     public static final int A = 1;
@@ -68,11 +68,11 @@ public final class bg {
     public static final int ay = 1;
     public static final int az = 2;
     public static final int b = 2;
-    @Deprecated
+    @java.lang.Deprecated
     public static final int c = 1;
-    @Deprecated
+    @java.lang.Deprecated
     public static final int d = 2;
-    public static final /* synthetic */ String[] e;
+    public static final /* synthetic */ java.lang.String[] e;
     public static final int f = 1;
     public static final int g = 3;
     public static final int h = 4;
@@ -89,18 +89,18 @@ public final class bg {
     public static final int s = 7;
     public static final int t = 8;
     public static final int u = 9;
-    public static final /* synthetic */ String[] v;
+    public static final /* synthetic */ java.lang.String[] v;
     public static final int w = 1;
     public static final int x = 2;
     public static final int y = 3;
     public static final int z = 4;
 
     static {
-        String[] strArr = new String[2];
+        java.lang.String[] strArr = new java.lang.String[2];
         e = strArr;
         strArr[0] = "INTEGER";
         strArr[1] = "DECIMAL";
-        String[] strArr2 = new String[9];
+        java.lang.String[] strArr2 = new java.lang.String[9];
         v = strArr2;
         strArr2[0] = "NONE";
         strArr2[1] = "LEFT";

@@ -1,18 +1,15 @@
 package defpackage;
 
-import android.view.View;
-import android.view.WindowInsets;
-
-/* renamed from: su  reason: default package */
+/* renamed from: su reason: default package */
 /* compiled from: PG */
-final class su implements View.OnApplyWindowInsetsListener {
-    private final /* synthetic */ sl a;
+final class su implements android.view.View.OnApplyWindowInsetsListener {
+    private final /* synthetic */ defpackage.sl a;
 
-    su(sl slVar) {
+    su(defpackage.sl slVar) {
         this.a = slVar;
     }
 
-    public final WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
-        return (WindowInsets) tk.a(this.a.a(view, tk.a(windowInsets)));
+    public final android.view.WindowInsets onApplyWindowInsets(android.view.View view, android.view.WindowInsets windowInsets) {
+        return (android.view.WindowInsets) defpackage.tk.a(this.a.a(view, defpackage.tk.a((java.lang.Object) windowInsets)));
     }
 }

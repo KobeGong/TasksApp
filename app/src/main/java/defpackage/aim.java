@@ -1,21 +1,14 @@
 package defpackage;
 
-import android.accounts.Account;
-import android.content.Context;
-import android.os.Bundle;
-import android.os.Messenger;
-import android.text.TextUtils;
-import com.google.android.apps.tasks.addtotasks.AddToTasksBroadcastReceiver;
+/* renamed from: aim reason: default package */
+public final /* synthetic */ class aim implements java.lang.Runnable {
+    private final android.content.Context a;
+    private final defpackage.anc b;
+    private final android.accounts.Account c;
+    private final android.os.Bundle d;
+    private final android.os.Messenger e;
 
-/* renamed from: aim  reason: default package */
-public final /* synthetic */ class aim implements Runnable {
-    private final Context a;
-    private final anc b;
-    private final Account c;
-    private final Bundle d;
-    private final Messenger e;
-
-    public aim(AddToTasksBroadcastReceiver addToTasksBroadcastReceiver, Context context, anc anc, Account account, Bundle bundle, Messenger messenger) {
+    public aim(com.google.android.apps.tasks.addtotasks.AddToTasksBroadcastReceiver addToTasksBroadcastReceiver, android.content.Context context, defpackage.anc anc, android.accounts.Account account, android.os.Bundle bundle, android.os.Messenger messenger) {
         this.a = context;
         this.b = anc;
         this.c = account;
@@ -24,19 +17,19 @@ public final /* synthetic */ class aim implements Runnable {
     }
 
     public final void run() {
-        Context context = this.a;
-        anc anc = this.b;
-        Account account = this.c;
-        Bundle bundle = this.d;
-        Messenger messenger = this.e;
-        String a2 = AddToTasksBroadcastReceiver.a(context, anc, account);
-        String str = null;
-        if (TextUtils.isEmpty(a2)) {
-            azb.a("Failed to find task list, even after requesting a sync!", new Object[0]);
+        android.content.Context context = this.a;
+        defpackage.anc anc = this.b;
+        android.accounts.Account account = this.c;
+        android.os.Bundle bundle = this.d;
+        android.os.Messenger messenger = this.e;
+        java.lang.String a2 = com.google.android.apps.tasks.addtotasks.AddToTasksBroadcastReceiver.a(context, anc, account);
+        java.lang.String str = null;
+        if (android.text.TextUtils.isEmpty(a2)) {
+            defpackage.azb.a("Failed to find task list, even after requesting a sync!", new java.lang.Object[0]);
         } else {
-            ain.b(context, account.name).a(a2);
-            str = AddToTasksBroadcastReceiver.a(context, anc, a2, bundle);
+            defpackage.ain.b(context, account.name).a(a2);
+            str = com.google.android.apps.tasks.addtotasks.AddToTasksBroadcastReceiver.a(context, anc, a2, bundle);
         }
-        AddToTasksBroadcastReceiver.a(messenger, a2, str);
+        com.google.android.apps.tasks.addtotasks.AddToTasksBroadcastReceiver.a(messenger, a2, str);
     }
 }

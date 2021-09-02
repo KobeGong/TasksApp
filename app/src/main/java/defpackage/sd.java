@@ -1,42 +1,32 @@
 package defpackage;
 
-import android.content.res.ColorStateList;
-import android.graphics.PorterDuff;
-import android.view.MenuItem;
-
-/* renamed from: sd  reason: default package */
+/* renamed from: sd reason: default package */
 /* compiled from: PG */
-final class sd extends se {
+final class sd extends defpackage.se {
     sd() {
     }
 
-    @Override // defpackage.se
-    public final void a(MenuItem menuItem, CharSequence charSequence) {
+    public final void a(android.view.MenuItem menuItem, java.lang.CharSequence charSequence) {
         menuItem.setContentDescription(charSequence);
     }
 
-    @Override // defpackage.se
-    public final void b(MenuItem menuItem, CharSequence charSequence) {
+    public final void b(android.view.MenuItem menuItem, java.lang.CharSequence charSequence) {
         menuItem.setTooltipText(charSequence);
     }
 
-    @Override // defpackage.se
-    public final void a(MenuItem menuItem, char c, int i) {
+    public final void a(android.view.MenuItem menuItem, char c, int i) {
         menuItem.setAlphabeticShortcut(c, i);
     }
 
-    @Override // defpackage.se
-    public final void b(MenuItem menuItem, char c, int i) {
+    public final void b(android.view.MenuItem menuItem, char c, int i) {
         menuItem.setNumericShortcut(c, i);
     }
 
-    @Override // defpackage.se
-    public final void a(MenuItem menuItem, ColorStateList colorStateList) {
+    public final void a(android.view.MenuItem menuItem, android.content.res.ColorStateList colorStateList) {
         menuItem.setIconTintList(colorStateList);
     }
 
-    @Override // defpackage.se
-    public final void a(MenuItem menuItem, PorterDuff.Mode mode) {
+    public final void a(android.view.MenuItem menuItem, android.graphics.PorterDuff.Mode mode) {
         menuItem.setIconTintMode(mode);
     }
 }

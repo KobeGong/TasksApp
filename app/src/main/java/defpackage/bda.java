@@ -1,7 +1,7 @@
 package defpackage;
 
-/* renamed from: bda  reason: default package */
+/* renamed from: bda reason: default package */
 /* compiled from: PG */
 public interface bda {
-    void a(axq axq);
+    void a(defpackage.axq axq);
 }

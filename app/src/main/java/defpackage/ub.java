@@ -1,20 +1,13 @@
 package defpackage;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RadialGradient;
-import android.graphics.Shader;
-import android.graphics.drawable.shapes.OvalShape;
-
-/* access modifiers changed from: package-private */
-/* renamed from: ub  reason: default package */
+/* renamed from: ub reason: default package */
 /* compiled from: PG */
-public final class ub extends OvalShape {
-    private RadialGradient a;
-    private Paint b = new Paint();
-    private final /* synthetic */ ua c;
+final class ub extends android.graphics.drawable.shapes.OvalShape {
+    private android.graphics.RadialGradient a;
+    private android.graphics.Paint b = new android.graphics.Paint();
+    private final /* synthetic */ defpackage.ua c;
 
-    ub(ua uaVar, int i) {
+    ub(defpackage.ua uaVar, int i) {
         this.c = uaVar;
         uaVar.b = i;
         a((int) rect().width());
@@ -26,7 +19,7 @@ public final class ub extends OvalShape {
         a((int) f);
     }
 
-    public final void draw(Canvas canvas, Paint paint) {
+    public final void draw(android.graphics.Canvas canvas, android.graphics.Paint paint) {
         int width = this.c.getWidth();
         int height = this.c.getHeight();
         canvas.drawCircle((float) (width / 2), (float) (height / 2), (float) (width / 2), this.b);
@@ -34,7 +27,7 @@ public final class ub extends OvalShape {
     }
 
     private final void a(int i) {
-        this.a = new RadialGradient((float) (i / 2), (float) (i / 2), (float) this.c.b, new int[]{1023410176, 0}, (float[]) null, Shader.TileMode.CLAMP);
+        this.a = new android.graphics.RadialGradient((float) (i / 2), (float) (i / 2), (float) this.c.b, new int[]{1023410176, 0}, null, android.graphics.Shader.TileMode.CLAMP);
         this.b.setShader(this.a);
     }
 }

@@ -1,58 +1,58 @@
 package defpackage;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashSet;
-
-/* access modifiers changed from: package-private */
-/* renamed from: dyu  reason: default package */
+/* renamed from: dyu reason: default package */
 /* compiled from: PG */
-public final class dyu {
-    public static final dyu f = new dyu(1, 0.0d, 0.0d, 1.0d, Collections.emptyList());
+final class dyu {
+    public static final defpackage.dyu f = new defpackage.dyu(1, 0.0d, 0.0d, 1.0d, java.util.Collections.emptyList());
     public final int a;
     public final double b;
     public final double c;
     public final double d;
-    public final Collection e;
+    public final java.util.Collection e;
 
-    dyu(int i, double d2, double d3, double d4, Collection collection) {
+    dyu(int i, double d2, double d3, double d4, java.util.Collection collection) {
         boolean z;
         boolean z2;
         boolean z3 = true;
-        cld.a(i > 0, "maxAttempts");
+        defpackage.cld.a(i > 0, (java.lang.Object) "maxAttempts");
         this.a = i;
         if (d2 >= 0.0d) {
             z = true;
         } else {
             z = false;
         }
-        cld.a(z, "initialBackoffInSeconds");
+        defpackage.cld.a(z, (java.lang.Object) "initialBackoffInSeconds");
         this.b = d2;
         if (d3 >= d2) {
             z2 = true;
         } else {
             z2 = false;
         }
-        cld.a(z2, "maxBackoffInSeconds should be at least initialBackoffInSeconds");
+        defpackage.cld.a(z2, (java.lang.Object) "maxBackoffInSeconds should be at least initialBackoffInSeconds");
         this.c = d3;
-        cld.a(d4 <= 0.0d ? false : z3, "backoffMultiplier");
+        if (d4 <= 0.0d) {
+            z3 = false;
+        }
+        defpackage.cld.a(z3, (java.lang.Object) "backoffMultiplier");
         this.d = d4;
-        this.e = Collections.unmodifiableSet(new HashSet((Collection) cld.a(collection, "retryableStatusCodes")));
+        this.e = java.util.Collections.unmodifiableSet(new java.util.HashSet((java.util.Collection) defpackage.cld.a((java.lang.Object) collection, (java.lang.Object) "retryableStatusCodes")));
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         if (this == obj) {
             return true;
         }
-        if (!(obj instanceof dyu)) {
+        if (!(obj instanceof defpackage.dyu)) {
             return false;
         }
-        dyu dyu = (dyu) obj;
-        return this.a == dyu.a && Double.compare(this.d, dyu.d) == 0 && Double.compare(this.b, dyu.b) == 0 && Double.compare(this.c, dyu.c) == 0 && cru.d(this.e, dyu.e);
+        defpackage.dyu dyu = (defpackage.dyu) obj;
+        if (this.a == dyu.a && java.lang.Double.compare(this.d, dyu.d) == 0 && java.lang.Double.compare(this.b, dyu.b) == 0 && java.lang.Double.compare(this.c, dyu.c) == 0 && defpackage.cru.d(this.e, dyu.e)) {
+            return true;
+        }
+        return false;
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Integer.valueOf(this.a), Double.valueOf(this.b), Double.valueOf(this.c), Double.valueOf(this.d), this.e});
+        return java.util.Arrays.hashCode(new java.lang.Object[]{java.lang.Integer.valueOf(this.a), java.lang.Double.valueOf(this.b), java.lang.Double.valueOf(this.c), java.lang.Double.valueOf(this.d), this.e});
     }
 }

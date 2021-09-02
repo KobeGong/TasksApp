@@ -1,16 +1,14 @@
 package defpackage;
 
-import android.view.View;
+/* renamed from: cfn reason: default package */
+final /* synthetic */ class cfn implements android.view.View.OnClickListener {
+    private final defpackage.cfm a;
 
-/* renamed from: cfn  reason: default package */
-final /* synthetic */ class cfn implements View.OnClickListener {
-    private final cfm a;
-
-    cfn(cfm cfm) {
+    cfn(defpackage.cfm cfm) {
         this.a = cfm;
     }
 
-    public final void onClick(View view) {
+    public final void onClick(android.view.View view) {
         this.a.e();
     }
 }

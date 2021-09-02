@@ -1,23 +1,22 @@
 package defpackage;
 
-/* renamed from: cab  reason: default package */
+/* renamed from: cab reason: default package */
 /* compiled from: PG */
-public final class cab implements ecz {
-    private final ecz a;
-    private final ecz b;
-    private final ecz c;
+public final class cab implements defpackage.ecz {
+    private final defpackage.ecz a;
+    private final defpackage.ecz b;
+    private final defpackage.ecz c;
 
-    public cab(ecz ecz, ecz ecz2, ecz ecz3) {
+    public cab(defpackage.ecz ecz, defpackage.ecz ecz2, defpackage.ecz ecz3) {
         this.a = ecz;
         this.b = ecz2;
         this.c = ecz3;
     }
 
-    @Override // defpackage.ecz
-    public final /* synthetic */ Object a() {
-        caa caa = new caa();
-        caa.a = (buc) this.a.a();
-        caa.b = (bzc) this.b.a();
+    public final /* synthetic */ java.lang.Object a() {
+        defpackage.caa caa = new defpackage.caa();
+        caa.a = (defpackage.buc) this.a.a();
+        caa.b = (defpackage.bzc) this.b.a();
         this.c.a();
         return caa;
     }

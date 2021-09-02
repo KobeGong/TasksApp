@@ -1,34 +1,26 @@
 package defpackage;
 
-import android.content.Context;
-import android.os.Bundle;
-import android.view.View;
-
-/* access modifiers changed from: package-private */
-/* renamed from: ld  reason: default package */
+/* renamed from: ld reason: default package */
 /* compiled from: PG */
-public final class ld extends lk {
-    private final /* synthetic */ lc a;
+final class ld extends FragmentContainer {
+    private final /* synthetic */ Fragment a;
 
-    ld(lc lcVar) {
+    ld(Fragment lcVar) {
         this.a = lcVar;
     }
 
-    @Override // defpackage.lk
-    public final View a(int i) {
+    public final android.view.View onFindViewById(int i) {
         if (this.a.J != null) {
             return this.a.J.findViewById(i);
         }
-        throw new IllegalStateException("Fragment does not have a view");
+        throw new java.lang.IllegalStateException("Fragment does not have a view");
     }
 
-    @Override // defpackage.lk
-    public final boolean a() {
+    public final boolean onHasView() {
         return this.a.J != null;
     }
 
-    @Override // defpackage.lk
-    public final lc a(Context context, String str, Bundle bundle) {
-        return this.a.u.a(context, str, bundle);
+    public final Fragment instantiate(android.content.Context context, java.lang.String str, android.os.Bundle bundle) {
+        return this.a.u.instantiate(context, str, bundle);
     }
 }

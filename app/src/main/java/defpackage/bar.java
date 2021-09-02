@@ -1,17 +1,12 @@
 package defpackage;
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
-
-/* renamed from: bar  reason: default package */
+/* renamed from: bar reason: default package */
 /* compiled from: PG */
-public final class bar extends BroadcastReceiver {
-    public Context a;
-    private final bas b;
+public final class bar extends android.content.BroadcastReceiver {
+    public android.content.Context a;
+    private final defpackage.bas b;
 
-    public bar(bas bas) {
+    public bar(defpackage.bas bas) {
         this.b = bas;
     }
 
@@ -22,9 +17,9 @@ public final class bar extends BroadcastReceiver {
         this.a = null;
     }
 
-    public final void onReceive(Context context, Intent intent) {
-        Uri data = intent.getData();
-        String str = null;
+    public final void onReceive(android.content.Context context, android.content.Intent intent) {
+        android.net.Uri data = intent.getData();
+        java.lang.String str = null;
         if (data != null) {
             str = data.getSchemeSpecificPart();
         }

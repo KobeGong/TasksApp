@@ -1,24 +1,21 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: dnl  reason: default package */
+/* renamed from: dnl reason: default package */
 /* compiled from: PG */
-public final class dnl extends dnc {
-    private final dnc a;
-    private final dnf b;
+final class dnl extends defpackage.dnc {
+    private final defpackage.dnc a;
+    private final defpackage.dnf b;
 
-    dnl(dnc dnc, dnf dnf) {
+    dnl(defpackage.dnc dnc, defpackage.dnf dnf) {
         this.a = dnc;
-        this.b = (dnf) cld.a(dnf, "interceptor");
+        this.b = (defpackage.dnf) defpackage.cld.a((java.lang.Object) dnf, (java.lang.Object) "interceptor");
     }
 
-    @Override // defpackage.dnc
-    public final dnd a(dpb dpb, dna dna) {
+    public final defpackage.dnd a(defpackage.dpb dpb, defpackage.dna dna) {
         return this.b.a(dpb, dna, this.a);
     }
 
-    @Override // defpackage.dnc
-    public final String a() {
+    public final java.lang.String a() {
         return this.a.a();
     }
 }

@@ -1,12 +1,12 @@
 package defpackage;
 
-/* renamed from: ccz  reason: default package */
+/* renamed from: ccz reason: default package */
 /* compiled from: PG */
 public final class ccz {
-    public ccd a;
+    public defpackage.ccd a;
 
-    public final synchronized btl a(String str) {
-        cky.c();
+    public final synchronized defpackage.btl a(java.lang.String str) {
+        defpackage.cky.c();
         return this.a.a(str);
     }
 }

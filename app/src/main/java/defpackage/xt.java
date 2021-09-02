@@ -1,28 +1,23 @@
 package defpackage;
 
-import android.os.Build;
-import android.view.View;
-import android.view.WindowInsets;
-
-/* renamed from: xt  reason: default package */
+/* renamed from: xt reason: default package */
 /* compiled from: PG */
-public final class xt implements sl {
-    private final /* synthetic */ wz a;
+public final class xt implements defpackage.sl {
+    private final /* synthetic */ defpackage.wz a;
 
-    public xt(wz wzVar) {
+    public xt(defpackage.wz wzVar) {
         this.a = wzVar;
     }
 
-    @Override // defpackage.sl
-    public final tk a(View view, tk tkVar) {
-        tk tkVar2;
+    public final defpackage.tk a(android.view.View view, defpackage.tk tkVar) {
+        defpackage.tk tkVar2;
         int b = tkVar.b();
         int i = this.a.i(b);
         if (b != i) {
-            tkVar2 = Build.VERSION.SDK_INT >= 20 ? new tk(((WindowInsets) tkVar.a).replaceSystemWindowInsets(tkVar.a(), i, tkVar.c(), tkVar.d())) : null;
+            tkVar2 = android.os.Build.VERSION.SDK_INT >= 20 ? new defpackage.tk(((android.view.WindowInsets) tkVar.a).replaceSystemWindowInsets(tkVar.a(), i, tkVar.c(), tkVar.d())) : null;
         } else {
             tkVar2 = tkVar;
         }
-        return sn.a.a(view, tkVar2);
+        return defpackage.sn.a.a(view, tkVar2);
     }
 }

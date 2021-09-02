@@ -1,46 +1,40 @@
 package defpackage;
 
-import android.os.Bundle;
-
-/* access modifiers changed from: package-private */
-/* renamed from: bcm  reason: default package */
+/* renamed from: bcm reason: default package */
 /* compiled from: PG */
-public final class bcm implements bav {
-    private /* synthetic */ bcj a;
+final class bcm implements defpackage.bav {
+    private /* synthetic */ defpackage.bcj a;
 
-    bcm(bcj bcj) {
+    bcm(defpackage.bcj bcj) {
         this.a = bcj;
     }
 
-    @Override // defpackage.bav
-    public final void a(Bundle bundle) {
+    public final void a(android.os.Bundle bundle) {
         this.a.g.lock();
         try {
-            this.a.e = axq.a;
-            bcj.a(this.a);
+            this.a.e = defpackage.axq.a;
+            defpackage.bcj.a(this.a);
         } finally {
             this.a.g.unlock();
         }
     }
 
-    @Override // defpackage.bav
-    public final void a(axq axq) {
+    public final void a(defpackage.axq axq) {
         this.a.g.lock();
         try {
             this.a.e = axq;
-            bcj.a(this.a);
+            defpackage.bcj.a(this.a);
         } finally {
             this.a.g.unlock();
         }
     }
 
-    @Override // defpackage.bav
     public final void a(int i, boolean z) {
         this.a.g.lock();
         try {
             if (this.a.f) {
                 this.a.f = false;
-                bcj.a(this.a, i, z);
+                defpackage.bcj.a(this.a, i, z);
                 return;
             }
             this.a.f = true;

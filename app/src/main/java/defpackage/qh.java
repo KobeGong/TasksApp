@@ -1,23 +1,21 @@
 package defpackage;
 
-import java.util.Locale;
-
-/* renamed from: qh  reason: default package */
+/* renamed from: qh reason: default package */
 /* compiled from: PG */
 public final class qh {
-    public static final ql a = qm.c;
-    public static final String b = Character.toString(8206);
-    public static final String c = Character.toString(8207);
-    private static final qh g = new qh(false, 2, a);
-    private static final qh h = new qh(true, 2, a);
+    public static final defpackage.ql a = defpackage.qm.c;
+    public static final java.lang.String b = java.lang.Character.toString(8206);
+    public static final java.lang.String c = java.lang.Character.toString(8207);
+    private static final defpackage.qh g = new defpackage.qh(false, 2, a);
+    private static final defpackage.qh h = new defpackage.qh(true, 2, a);
     public final boolean d;
     public final int e;
-    public final ql f;
+    public final defpackage.ql f;
 
-    public static qh a() {
-        qi qiVar = new qi();
+    public static defpackage.qh a() {
+        defpackage.qi qiVar = new defpackage.qi();
         if (qiVar.b != 2 || qiVar.c != a) {
-            return new qh(qiVar.a, qiVar.b, qiVar.c);
+            return new defpackage.qh(qiVar.a, qiVar.b, qiVar.c);
         }
         if (qiVar.a) {
             return h;
@@ -25,18 +23,18 @@ public final class qh {
         return g;
     }
 
-    private qh(boolean z, int i, ql qlVar) {
+    private qh(boolean z, int i, defpackage.ql qlVar) {
         this.d = z;
         this.e = i;
         this.f = qlVar;
     }
 
-    static boolean a(Locale locale) {
-        return qq.a(locale) == 1;
+    static boolean a(java.util.Locale locale) {
+        return defpackage.qq.a(locale) == 1;
     }
 
-    public static int a(CharSequence charSequence) {
-        qj qjVar = new qj(charSequence);
+    public static int a(java.lang.CharSequence charSequence) {
+        defpackage.qj qjVar = new defpackage.qj(charSequence);
         qjVar.d = qjVar.c;
         int i = 0;
         int i2 = 0;
@@ -65,23 +63,6 @@ public final class qh {
                     } else {
                         return 1;
                     }
-                case 3:
-                case 4:
-                case 5:
-                case 6:
-                case 7:
-                case 8:
-                case 10:
-                case 11:
-                case 12:
-                case 13:
-                default:
-                    if (i != 0) {
-                        break;
-                    } else {
-                        i = i2;
-                        break;
-                    }
                 case 9:
                     break;
                 case 14:
@@ -103,27 +84,34 @@ public final class qh {
                 case 18:
                     i2++;
                     break;
+                default:
+                    if (i != 0) {
+                        break;
+                    } else {
+                        i = i2;
+                        break;
+                    }
             }
         }
         return 0;
     }
 
-    public static int b(CharSequence charSequence) {
+    public static int b(java.lang.CharSequence charSequence) {
         byte a2;
-        qj qjVar = new qj(charSequence);
+        defpackage.qj qjVar = new defpackage.qj(charSequence);
         qjVar.d = 0;
         int i = 0;
         int i2 = 0;
         int i3 = 0;
         while (qjVar.d < qjVar.c && i == 0) {
             qjVar.e = qjVar.a.charAt(qjVar.d);
-            if (Character.isHighSurrogate(qjVar.e)) {
-                int codePointAt = Character.codePointAt(qjVar.a, qjVar.d);
-                qjVar.d += Character.charCount(codePointAt);
-                a2 = Character.getDirectionality(codePointAt);
+            if (java.lang.Character.isHighSurrogate(qjVar.e)) {
+                int codePointAt = java.lang.Character.codePointAt(qjVar.a, qjVar.d);
+                qjVar.d += java.lang.Character.charCount(codePointAt);
+                a2 = java.lang.Character.getDirectionality(codePointAt);
             } else {
                 qjVar.d++;
-                a2 = qj.a(qjVar.e);
+                a2 = defpackage.qj.a(qjVar.e);
                 boolean z = qjVar.b;
             }
             switch (a2) {
@@ -142,19 +130,6 @@ public final class qh {
                     } else {
                         return 1;
                     }
-                case 3:
-                case 4:
-                case 5:
-                case 6:
-                case 7:
-                case 8:
-                case 10:
-                case 11:
-                case 12:
-                case 13:
-                default:
-                    i = i3;
-                    break;
                 case 9:
                     break;
                 case 14:
@@ -170,6 +145,9 @@ public final class qh {
                 case 18:
                     i3--;
                     i2 = 0;
+                    break;
+                default:
+                    i = i3;
                     break;
             }
         }

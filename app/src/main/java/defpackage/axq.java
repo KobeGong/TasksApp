@@ -1,21 +1,16 @@
 package defpackage;
 
-import android.app.PendingIntent;
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.Arrays;
-
-/* renamed from: axq  reason: default package */
+/* renamed from: axq reason: default package */
 /* compiled from: PG */
-public final class axq extends biq {
-    public static final Parcelable.Creator CREATOR = new bfa();
-    public static final axq a = new axq(0);
+public final class axq extends defpackage.biq {
+    public static final android.os.Parcelable.Creator CREATOR = new defpackage.bfa();
+    public static final defpackage.axq a = new defpackage.axq(0);
     public final int b;
-    public final PendingIntent c;
-    public final String d;
+    public final android.app.PendingIntent c;
+    public final java.lang.String d;
     private int e;
 
-    axq(int i, int i2, PendingIntent pendingIntent, String str) {
+    axq(int i, int i2, android.app.PendingIntent pendingIntent, java.lang.String str) {
         this.e = i;
         this.b = i2;
         this.c = pendingIntent;
@@ -23,14 +18,14 @@ public final class axq extends biq {
     }
 
     public axq(int i) {
-        this(i, null, (byte) 0);
+        this(i, null, 0);
     }
 
-    public axq(int i, PendingIntent pendingIntent) {
-        this(i, pendingIntent, (byte) 0);
+    public axq(int i, android.app.PendingIntent pendingIntent) {
+        this(i, pendingIntent, 0);
     }
 
-    private axq(int i, PendingIntent pendingIntent, byte b2) {
+    private axq(int i, android.app.PendingIntent pendingIntent, byte b2) {
         this(1, i, pendingIntent, null);
     }
 
@@ -42,7 +37,7 @@ public final class axq extends biq {
         return this.b == 0;
     }
 
-    static String a(int i) {
+    static java.lang.String a(int i) {
         switch (i) {
             case -1:
                 return "UNKNOWN";
@@ -93,35 +88,38 @@ public final class axq extends biq {
             case 1500:
                 return "DRIVE_EXTERNAL_STORAGE_REQUIRED";
             default:
-                return new StringBuilder(31).append("UNKNOWN_ERROR_CODE(").append(i).append(")").toString();
+                return "UNKNOWN_ERROR_CODE(" + i + ")";
         }
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof axq)) {
+        if (!(obj instanceof defpackage.axq)) {
             return false;
         }
-        axq axq = (axq) obj;
-        return this.b == axq.b && azb.a(this.c, axq.c) && azb.a(this.d, axq.d);
+        defpackage.axq axq = (defpackage.axq) obj;
+        if (this.b != axq.b || !defpackage.azb.a((java.lang.Object) this.c, (java.lang.Object) axq.c) || !defpackage.azb.a((java.lang.Object) this.d, (java.lang.Object) axq.d)) {
+            return false;
+        }
+        return true;
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Integer.valueOf(this.b), this.c, this.d});
+        return java.util.Arrays.hashCode(new java.lang.Object[]{java.lang.Integer.valueOf(this.b), this.c, this.d});
     }
 
-    public final String toString() {
-        return azb.a(this).a("statusCode", a(this.b)).a("resolution", this.c).a("message", this.d).toString();
+    public final java.lang.String toString() {
+        return defpackage.azb.a((java.lang.Object) this).a("statusCode", a(this.b)).a("resolution", this.c).a("message", this.d).toString();
     }
 
-    public final void writeToParcel(Parcel parcel, int i) {
-        int q = bjr.q(parcel, 20293);
-        bjr.c(parcel, 1, this.e);
-        bjr.c(parcel, 2, this.b);
-        bjr.a(parcel, 3, this.c, i);
-        bjr.a(parcel, 4, this.d);
-        bjr.r(parcel, q);
+    public final void writeToParcel(android.os.Parcel parcel, int i) {
+        int q = defpackage.bjr.q(parcel, 20293);
+        defpackage.bjr.c(parcel, 1, this.e);
+        defpackage.bjr.c(parcel, 2, this.b);
+        defpackage.bjr.a(parcel, 3, (android.os.Parcelable) this.c, i);
+        defpackage.bjr.a(parcel, 4, this.d);
+        defpackage.bjr.r(parcel, q);
     }
 }

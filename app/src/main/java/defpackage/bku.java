@@ -1,26 +1,21 @@
 package defpackage;
 
-import java.nio.BufferOverflowException;
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
-import java.nio.ReadOnlyBufferException;
-
-/* renamed from: bku  reason: default package */
+/* renamed from: bku reason: default package */
 /* compiled from: PG */
 public final class bku {
-    public final ByteBuffer a;
+    public final java.nio.ByteBuffer a;
 
     private bku(byte[] bArr, int i) {
-        this(ByteBuffer.wrap(bArr, 0, i));
+        this(java.nio.ByteBuffer.wrap(bArr, 0, i));
     }
 
-    private bku(ByteBuffer byteBuffer) {
+    private bku(java.nio.ByteBuffer byteBuffer) {
         this.a = byteBuffer;
-        this.a.order(ByteOrder.LITTLE_ENDIAN);
+        this.a.order(java.nio.ByteOrder.LITTLE_ENDIAN);
     }
 
-    public static bku a(byte[] bArr, int i) {
-        return new bku(bArr, i);
+    public static defpackage.bku a(byte[] bArr, int i) {
+        return new defpackage.bku(bArr, i);
     }
 
     public final void a(int i, long j) {
@@ -37,33 +32,33 @@ public final class bku {
         }
     }
 
-    public final void a(int i, String str) {
+    public final void a(int i, java.lang.String str) {
         b(i, 2);
         try {
             int c = c(str.length());
             if (c == c(str.length() * 3)) {
                 int position = this.a.position();
                 if (this.a.remaining() < c) {
-                    throw new bkv(c + position, this.a.limit());
+                    throw new defpackage.bkv(c + position, this.a.limit());
                 }
                 this.a.position(position + c);
-                a(str, this.a);
+                a((java.lang.CharSequence) str, this.a);
                 int position2 = this.a.position();
                 this.a.position(position);
                 b((position2 - position) - c);
                 this.a.position(position2);
                 return;
             }
-            b(a((CharSequence) str));
-            a(str, this.a);
-        } catch (BufferOverflowException e) {
-            bkv bkv = new bkv(this.a.position(), this.a.limit());
+            b(a((java.lang.CharSequence) str));
+            a((java.lang.CharSequence) str, this.a);
+        } catch (java.nio.BufferOverflowException e) {
+            defpackage.bkv bkv = new defpackage.bkv(this.a.position(), this.a.limit());
             bkv.initCause(e);
             throw bkv;
         }
     }
 
-    public final void a(int i, blb blb) {
+    public final void a(int i, defpackage.blb blb) {
         b(i, 2);
         if (blb.b < 0) {
             blb.d();
@@ -78,7 +73,7 @@ public final class bku {
         b(bArr);
     }
 
-    private static int a(CharSequence charSequence) {
+    private static int a(java.lang.CharSequence charSequence) {
         int i;
         int i2 = 0;
         int length = charSequence.length();
@@ -105,8 +100,8 @@ public final class bku {
                     } else {
                         i2 += 2;
                         if (55296 <= charAt2 && charAt2 <= 57343) {
-                            if (Character.codePointAt(charSequence, i3) < 65536) {
-                                throw new IllegalArgumentException(new StringBuilder(39).append("Unpaired surrogate at index ").append(i3).toString());
+                            if (java.lang.Character.codePointAt(charSequence, i3) < 65536) {
+                                throw new java.lang.IllegalArgumentException("Unpaired surrogate at index " + i3);
                             }
                             i3++;
                         }
@@ -119,15 +114,15 @@ public final class bku {
         if (i >= length) {
             return i;
         }
-        throw new IllegalArgumentException(new StringBuilder(54).append("UTF-8 length does not fit in int: ").append(((long) i) + 4294967296L).toString());
+        throw new java.lang.IllegalArgumentException("UTF-8 length does not fit in int: " + (((long) i) + 4294967296L));
     }
 
-    private static void a(CharSequence charSequence, ByteBuffer byteBuffer) {
+    private static void a(java.lang.CharSequence charSequence, java.nio.ByteBuffer byteBuffer) {
         int i;
         int i2;
         int i3 = 0;
         if (byteBuffer.isReadOnly()) {
-            throw new ReadOnlyBufferException();
+            throw new java.nio.ReadOnlyBufferException();
         } else if (byteBuffer.hasArray()) {
             try {
                 byte[] array = byteBuffer.array();
@@ -159,7 +154,7 @@ public final class bku {
                             array[i6] = (byte) ((charAt2 & '?') | 128);
                         } else if ((charAt2 < 55296 || 57343 < charAt2) && i5 <= i4 - 3) {
                             int i7 = i5 + 1;
-                            array[i5] = (byte) ((charAt2 >>> '\f') | 480);
+                            array[i5] = (byte) ((charAt2 >>> 12) | 480);
                             int i8 = i7 + 1;
                             array[i7] = (byte) (((charAt2 >>> 6) & 63) | 128);
                             i2 = i8 + 1;
@@ -168,8 +163,8 @@ public final class bku {
                             if (i3 + 1 != charSequence.length()) {
                                 i3++;
                                 char charAt3 = charSequence.charAt(i3);
-                                if (Character.isSurrogatePair(charAt2, charAt3)) {
-                                    int codePoint = Character.toCodePoint(charAt2, charAt3);
+                                if (java.lang.Character.isSurrogatePair(charAt2, charAt3)) {
+                                    int codePoint = java.lang.Character.toCodePoint(charAt2, charAt3);
                                     int i9 = i5 + 1;
                                     array[i5] = (byte) ((codePoint >>> 18) | 240);
                                     int i10 = i9 + 1;
@@ -180,9 +175,9 @@ public final class bku {
                                     array[i11] = (byte) ((codePoint & 63) | 128);
                                 }
                             }
-                            throw new IllegalArgumentException(new StringBuilder(39).append("Unpaired surrogate at index ").append(i3 - 1).toString());
+                            throw new java.lang.IllegalArgumentException("Unpaired surrogate at index " + (i3 - 1));
                         } else {
-                            throw new ArrayIndexOutOfBoundsException(new StringBuilder(37).append("Failed writing ").append(charAt2).append(" at index ").append(i5).toString());
+                            throw new java.lang.ArrayIndexOutOfBoundsException("Failed writing " + charAt2 + " at index " + i5);
                         }
                         i3++;
                         i5 = i2;
@@ -190,8 +185,8 @@ public final class bku {
                     i = i5;
                 }
                 byteBuffer.position(i - byteBuffer.arrayOffset());
-            } catch (ArrayIndexOutOfBoundsException e) {
-                BufferOverflowException bufferOverflowException = new BufferOverflowException();
+            } catch (java.lang.ArrayIndexOutOfBoundsException e) {
+                java.nio.BufferOverflowException bufferOverflowException = new java.nio.BufferOverflowException();
                 bufferOverflowException.initCause(e);
                 throw bufferOverflowException;
             }
@@ -205,22 +200,22 @@ public final class bku {
                     byteBuffer.put((byte) ((charAt4 >>> 6) | 960));
                     byteBuffer.put((byte) ((charAt4 & '?') | 128));
                 } else if (charAt4 < 55296 || 57343 < charAt4) {
-                    byteBuffer.put((byte) ((charAt4 >>> '\f') | 480));
+                    byteBuffer.put((byte) ((charAt4 >>> 12) | 480));
                     byteBuffer.put((byte) (((charAt4 >>> 6) & 63) | 128));
                     byteBuffer.put((byte) ((charAt4 & '?') | 128));
                 } else {
                     if (i3 + 1 != charSequence.length()) {
                         i3++;
                         char charAt5 = charSequence.charAt(i3);
-                        if (Character.isSurrogatePair(charAt4, charAt5)) {
-                            int codePoint2 = Character.toCodePoint(charAt4, charAt5);
+                        if (java.lang.Character.isSurrogatePair(charAt4, charAt5)) {
+                            int codePoint2 = java.lang.Character.toCodePoint(charAt4, charAt5);
                             byteBuffer.put((byte) ((codePoint2 >>> 18) | 240));
                             byteBuffer.put((byte) (((codePoint2 >>> 12) & 63) | 128));
                             byteBuffer.put((byte) (((codePoint2 >>> 6) & 63) | 128));
                             byteBuffer.put((byte) ((codePoint2 & 63) | 128));
                         }
                     }
-                    throw new IllegalArgumentException(new StringBuilder(39).append("Unpaired surrogate at index ").append(i3 - 1).toString());
+                    throw new java.lang.IllegalArgumentException("Unpaired surrogate at index " + (i3 - 1));
                 }
                 i3++;
             }
@@ -231,11 +226,11 @@ public final class bku {
         return c(i << 3) + b(j);
     }
 
-    public static int b(int i, String str) {
+    public static int b(int i, java.lang.String str) {
         return c(i << 3) + a(str);
     }
 
-    public static int b(int i, blb blb) {
+    public static int b(int i, defpackage.blb blb) {
         int c = c(i << 3);
         int d = blb.d();
         return c + d + c(d);
@@ -252,8 +247,8 @@ public final class bku {
         return 10;
     }
 
-    public static int a(String str) {
-        int a2 = a((CharSequence) str);
+    public static int a(java.lang.String str) {
+        int a2 = a((java.lang.CharSequence) str);
         return a2 + c(a2);
     }
 
@@ -264,7 +259,7 @@ public final class bku {
     private final void d(int i) {
         byte b = (byte) i;
         if (!this.a.hasRemaining()) {
-            throw new bkv(this.a.position(), this.a.limit());
+            throw new defpackage.bkv(this.a.position(), this.a.limit());
         }
         this.a.put(b);
     }
@@ -275,7 +270,7 @@ public final class bku {
             this.a.put(bArr, 0, length);
             return;
         }
-        throw new bkv(this.a.position(), this.a.limit());
+        throw new defpackage.bkv(this.a.position(), this.a.limit());
     }
 
     public final void b(int i, int i2) {
@@ -306,7 +301,7 @@ public final class bku {
         return 5;
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public final void a(long j) {
         while ((-128 & j) != 0) {
             d((((int) j) & 127) | 128);

@@ -1,20 +1,9 @@
 package defpackage;
 
-import android.content.Context;
-import android.util.Log;
-import android.view.MotionEvent;
-import android.view.VelocityTracker;
-import android.view.View;
-import android.view.ViewConfiguration;
-import android.view.ViewGroup;
-import android.view.animation.Interpolator;
-import android.widget.OverScroller;
-import java.util.Arrays;
-
-/* renamed from: vv  reason: default package */
+/* renamed from: vv reason: default package */
 /* compiled from: PG */
 public final class vv {
-    private static final Interpolator u = new vw();
+    private static final android.view.animation.Interpolator u = new defpackage.vw();
     public int a;
     private int b;
     private int c = -1;
@@ -26,41 +15,41 @@ public final class vv {
     private int[] i;
     private int[] j;
     private int k;
-    private VelocityTracker l;
+    private android.view.VelocityTracker l;
     private float m;
     private float n;
     private int o;
-    private OverScroller p;
-    private final vy q;
-    private View r;
+    private android.widget.OverScroller p;
+    private final defpackage.vy q;
+    private android.view.View r;
     private boolean s;
-    private final ViewGroup t;
-    private final Runnable v = new vx(this);
+    private final android.view.ViewGroup t;
+    private final java.lang.Runnable v = new defpackage.vx(this);
 
-    public static vv a(ViewGroup viewGroup, vy vyVar) {
-        return new vv(viewGroup.getContext(), viewGroup, vyVar);
+    public static defpackage.vv a(android.view.ViewGroup viewGroup, defpackage.vy vyVar) {
+        return new defpackage.vv(viewGroup.getContext(), viewGroup, vyVar);
     }
 
-    private vv(Context context, ViewGroup viewGroup, vy vyVar) {
+    private vv(android.content.Context context, android.view.ViewGroup viewGroup, defpackage.vy vyVar) {
         if (viewGroup == null) {
-            throw new IllegalArgumentException("Parent view may not be null");
+            throw new java.lang.IllegalArgumentException("Parent view may not be null");
         } else if (vyVar == null) {
-            throw new IllegalArgumentException("Callback may not be null");
+            throw new java.lang.IllegalArgumentException("Callback may not be null");
         } else {
             this.t = viewGroup;
             this.q = vyVar;
-            ViewConfiguration viewConfiguration = ViewConfiguration.get(context);
+            android.view.ViewConfiguration viewConfiguration = android.view.ViewConfiguration.get(context);
             this.o = (int) ((context.getResources().getDisplayMetrics().density * 20.0f) + 0.5f);
             this.a = viewConfiguration.getScaledTouchSlop();
             this.m = (float) viewConfiguration.getScaledMaximumFlingVelocity();
             this.n = (float) viewConfiguration.getScaledMinimumFlingVelocity();
-            this.p = new OverScroller(context, u);
+            this.p = new android.widget.OverScroller(context, u);
         }
     }
 
-    public final void a(View view, int i2) {
+    public final void a(android.view.View view, int i2) {
         if (view.getParent() != this.t) {
-            throw new IllegalArgumentException("captureChildView: parameter must be a descendant of the ViewDragHelper's tracked parent view (" + this.t + ")");
+            throw new java.lang.IllegalArgumentException("captureChildView: parameter must be a descendant of the ViewDragHelper's tracked parent view (" + this.t + ")");
         }
         this.r = view;
         this.c = i2;
@@ -71,13 +60,13 @@ public final class vv {
     private final void b() {
         this.c = -1;
         if (this.d != null) {
-            Arrays.fill(this.d, 0.0f);
-            Arrays.fill(this.e, 0.0f);
-            Arrays.fill(this.f, 0.0f);
-            Arrays.fill(this.g, 0.0f);
-            Arrays.fill(this.h, 0);
-            Arrays.fill(this.i, 0);
-            Arrays.fill(this.j, 0);
+            java.util.Arrays.fill(this.d, 0.0f);
+            java.util.Arrays.fill(this.e, 0.0f);
+            java.util.Arrays.fill(this.f, 0.0f);
+            java.util.Arrays.fill(this.g, 0.0f);
+            java.util.Arrays.fill(this.h, 0);
+            java.util.Arrays.fill(this.i, 0);
+            java.util.Arrays.fill(this.j, 0);
             this.k = 0;
         }
         if (this.l != null) {
@@ -86,7 +75,7 @@ public final class vv {
         }
     }
 
-    public final boolean a(View view, int i2, int i3) {
+    public final boolean a(android.view.View view, int i2, int i3) {
         this.r = view;
         this.c = -1;
         boolean a2 = a(i2, i3, 0, 0);
@@ -100,7 +89,7 @@ public final class vv {
         if (this.s) {
             return a(i2, i3, (int) this.l.getXVelocity(this.c), (int) this.l.getYVelocity(this.c));
         }
-        throw new IllegalStateException("Cannot settleCapturedViewAt outside of a call to Callback#onViewReleased");
+        throw new java.lang.IllegalStateException("Cannot settleCapturedViewAt outside of a call to Callback#onViewReleased");
     }
 
     private final boolean a(int i2, int i3, int i4, int i5) {
@@ -113,13 +102,13 @@ public final class vv {
             a(0);
             return false;
         }
-        View view = this.r;
+        android.view.View view = this.r;
         int b2 = b(i4, (int) this.n, (int) this.m);
         int b3 = b(i5, (int) this.n, (int) this.m);
-        int abs = Math.abs(i6);
-        int abs2 = Math.abs(i7);
-        int abs3 = Math.abs(b2);
-        int abs4 = Math.abs(b3);
+        int abs = java.lang.Math.abs(i6);
+        int abs2 = java.lang.Math.abs(i7);
+        int abs3 = java.lang.Math.abs(b2);
+        int abs4 = java.lang.Math.abs(b3);
         int i8 = abs3 + abs4;
         int i9 = abs + abs2;
         this.p.startScroll(left, top, i6, i7, (int) (((b3 != 0 ? ((float) abs4) / ((float) i8) : ((float) abs2) / ((float) i9)) * ((float) a(i7, b3, this.q.a()))) + ((b2 != 0 ? ((float) abs3) / ((float) i8) : ((float) abs) / ((float) i9)) * ((float) a(i6, b2, this.q.a(view))))));
@@ -134,18 +123,18 @@ public final class vv {
         }
         int width = this.t.getWidth();
         int i5 = width / 2;
-        float sin = (((float) Math.sin((double) ((Math.min(1.0f, ((float) Math.abs(i2)) / ((float) width)) - 0.5f) * 0.47123894f))) * ((float) i5)) + ((float) i5);
-        int abs2 = Math.abs(i3);
+        float sin = (((float) java.lang.Math.sin((double) ((java.lang.Math.min(1.0f, ((float) java.lang.Math.abs(i2)) / ((float) width)) - 0.5f) * 0.47123894f))) * ((float) i5)) + ((float) i5);
+        int abs2 = java.lang.Math.abs(i3);
         if (abs2 > 0) {
-            abs = Math.round(Math.abs(sin / ((float) abs2)) * 1000.0f) * 4;
+            abs = java.lang.Math.round(java.lang.Math.abs(sin / ((float) abs2)) * 1000.0f) * 4;
         } else {
-            abs = (int) (((((float) Math.abs(i2)) / ((float) i4)) + 1.0f) * 256.0f);
+            abs = (int) (((((float) java.lang.Math.abs(i2)) / ((float) i4)) + 1.0f) * 256.0f);
         }
-        return Math.min(abs, 600);
+        return java.lang.Math.min(abs, 600);
     }
 
     private static int b(int i2, int i3, int i4) {
-        int abs = Math.abs(i2);
+        int abs = java.lang.Math.abs(i2);
         if (abs < i3) {
             return 0;
         }
@@ -159,7 +148,7 @@ public final class vv {
     }
 
     private static float a(float f2, float f3, float f4) {
-        float abs = Math.abs(f2);
+        float abs = java.lang.Math.abs(f2);
         if (abs < f3) {
             return 0.0f;
         }
@@ -180,10 +169,10 @@ public final class vv {
             int left = currX - this.r.getLeft();
             int top = currY - this.r.getTop();
             if (left != 0) {
-                sn.c(this.r, left);
+                defpackage.sn.c(this.r, left);
             }
             if (top != 0) {
-                sn.b(this.r, top);
+                defpackage.sn.b(this.r, top);
             }
             if (!(left == 0 && top == 0)) {
                 this.q.a(this.r, currX, currY);
@@ -235,13 +224,13 @@ public final class vv {
             int[] iArr2 = new int[(i2 + 1)];
             int[] iArr3 = new int[(i2 + 1)];
             if (this.d != null) {
-                System.arraycopy(this.d, 0, fArr, 0, this.d.length);
-                System.arraycopy(this.e, 0, fArr2, 0, this.e.length);
-                System.arraycopy(this.f, 0, fArr3, 0, this.f.length);
-                System.arraycopy(this.g, 0, fArr4, 0, this.g.length);
-                System.arraycopy(this.h, 0, iArr, 0, this.h.length);
-                System.arraycopy(this.i, 0, iArr2, 0, this.i.length);
-                System.arraycopy(this.j, 0, iArr3, 0, this.j.length);
+                java.lang.System.arraycopy(this.d, 0, fArr, 0, this.d.length);
+                java.lang.System.arraycopy(this.e, 0, fArr2, 0, this.e.length);
+                java.lang.System.arraycopy(this.f, 0, fArr3, 0, this.f.length);
+                java.lang.System.arraycopy(this.g, 0, fArr4, 0, this.g.length);
+                java.lang.System.arraycopy(this.h, 0, iArr, 0, this.h.length);
+                java.lang.System.arraycopy(this.i, 0, iArr2, 0, this.i.length);
+                java.lang.System.arraycopy(this.j, 0, iArr3, 0, this.j.length);
             }
             this.d = fArr;
             this.e = fArr2;
@@ -276,7 +265,7 @@ public final class vv {
         this.k |= 1 << i2;
     }
 
-    private final void c(MotionEvent motionEvent) {
+    private final void c(android.view.MotionEvent motionEvent) {
         int pointerCount = motionEvent.getPointerCount();
         for (int i2 = 0; i2 < pointerCount; i2++) {
             int pointerId = motionEvent.getPointerId(i2);
@@ -293,7 +282,7 @@ public final class vv {
         return (this.k & (1 << i2)) != 0;
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public final void a(int i2) {
         this.t.removeCallbacks(this.v);
         if (this.b != i2) {
@@ -305,7 +294,7 @@ public final class vv {
         }
     }
 
-    private final boolean b(View view, int i2) {
+    private final boolean b(android.view.View view, int i2) {
         if (view == this.r && this.c == i2) {
             return true;
         }
@@ -323,12 +312,153 @@ public final class vv {
     /* Code decompiled incorrectly, please refer to instructions dump. */
     public final boolean a(android.view.MotionEvent r14) {
         /*
-        // Method dump skipped, instructions count: 284
+            r13 = this;
+            int r0 = r14.getActionMasked()
+            int r1 = r14.getActionIndex()
+            if (r0 != 0) goto L_0x000d
+            r13.b()
+        L_0x000d:
+            android.view.VelocityTracker r2 = r13.l
+            if (r2 != 0) goto L_0x0017
+            android.view.VelocityTracker r2 = android.view.VelocityTracker.obtain()
+            r13.l = r2
+        L_0x0017:
+            android.view.VelocityTracker r2 = r13.l
+            r2.addMovement(r14)
+            switch(r0) {
+                case 0: goto L_0x0026;
+                case 1: goto L_0x0102;
+                case 2: goto L_0x006f;
+                case 3: goto L_0x0102;
+                case 4: goto L_0x001f;
+                case 5: goto L_0x0049;
+                case 6: goto L_0x00f9;
+                default: goto L_0x001f;
+            }
+        L_0x001f:
+            int r0 = r13.b
+            r1 = 1
+            if (r0 != r1) goto L_0x0107
+            r0 = 1
+        L_0x0025:
+            return r0
+        L_0x0026:
+            float r0 = r14.getX()
+            float r1 = r14.getY()
+            r2 = 0
+            int r2 = r14.getPointerId(r2)
+            r13.a(r0, r1, r2)
+            int r0 = (int) r0
+            int r1 = (int) r1
+            android.view.View r0 = r13.b(r0, r1)
+            android.view.View r1 = r13.r
+            if (r0 != r1) goto L_0x001f
+            int r1 = r13.b
+            r3 = 2
+            if (r1 != r3) goto L_0x001f
+            r13.b(r0, r2)
+            goto L_0x001f
+        L_0x0049:
+            int r0 = r14.getPointerId(r1)
+            float r2 = r14.getX(r1)
+            float r1 = r14.getY(r1)
+            r13.a(r2, r1, r0)
+            int r3 = r13.b
+            if (r3 == 0) goto L_0x001f
+            int r3 = r13.b
+            r4 = 2
+            if (r3 != r4) goto L_0x001f
+            int r2 = (int) r2
+            int r1 = (int) r1
+            android.view.View r1 = r13.b(r2, r1)
+            android.view.View r2 = r13.r
+            if (r1 != r2) goto L_0x001f
+            r13.b(r1, r0)
+            goto L_0x001f
+        L_0x006f:
+            float[] r0 = r13.d
+            if (r0 == 0) goto L_0x001f
+            float[] r0 = r13.e
+            if (r0 == 0) goto L_0x001f
+            int r2 = r14.getPointerCount()
+            r0 = 0
+            r1 = r0
+        L_0x007d:
+            if (r1 >= r2) goto L_0x00f4
+            int r3 = r14.getPointerId(r1)
+            boolean r0 = r13.d(r3)
+            if (r0 == 0) goto L_0x00ee
+            float r0 = r14.getX(r1)
+            float r4 = r14.getY(r1)
+            float[] r5 = r13.d
+            r5 = r5[r3]
+            float r5 = r0 - r5
+            float[] r6 = r13.e
+            r6 = r6[r3]
+            float r6 = r4 - r6
+            int r0 = (int) r0
+            int r4 = (int) r4
+            android.view.View r4 = r13.b(r0, r4)
+            if (r4 == 0) goto L_0x00f2
+            boolean r0 = r13.a(r4, r5, r6)
+            if (r0 == 0) goto L_0x00f2
+            r0 = 1
+        L_0x00ac:
+            if (r0 == 0) goto L_0x00de
+            int r7 = r4.getLeft()
+            int r8 = (int) r5
+            int r8 = r8 + r7
+            vy r9 = r13.q
+            int r8 = r9.c(r4, r8)
+            int r9 = r4.getTop()
+            int r10 = (int) r6
+            int r10 = r10 + r9
+            vy r11 = r13.q
+            int r10 = r11.d(r4, r10)
+            vy r11 = r13.q
+            int r11 = r11.a(r4)
+            vy r12 = r13.q
+            int r12 = r12.a()
+            if (r11 == 0) goto L_0x00d8
+            if (r11 <= 0) goto L_0x00de
+            if (r8 != r7) goto L_0x00de
+        L_0x00d8:
+            if (r12 == 0) goto L_0x00f4
+            if (r12 <= 0) goto L_0x00de
+            if (r10 == r9) goto L_0x00f4
+        L_0x00de:
+            r13.b(r5, r6, r3)
+            int r5 = r13.b
+            r6 = 1
+            if (r5 == r6) goto L_0x00f4
+            if (r0 == 0) goto L_0x00ee
+            boolean r0 = r13.b(r4, r3)
+            if (r0 != 0) goto L_0x00f4
+        L_0x00ee:
+            int r0 = r1 + 1
+            r1 = r0
+            goto L_0x007d
+        L_0x00f2:
+            r0 = 0
+            goto L_0x00ac
+        L_0x00f4:
+            r13.c(r14)
+            goto L_0x001f
+        L_0x00f9:
+            int r0 = r14.getPointerId(r1)
+            r13.b(r0)
+            goto L_0x001f
+        L_0x0102:
+            r13.b()
+            goto L_0x001f
+        L_0x0107:
+            r0 = 0
+            goto L_0x0025
         */
         throw new UnsupportedOperationException("Method not decompiled: defpackage.vv.a(android.view.MotionEvent):boolean");
     }
 
-    public final void b(MotionEvent motionEvent) {
+    public final void b(android.view.MotionEvent motionEvent) {
         int i2;
         int i3 = 0;
         int actionMasked = motionEvent.getActionMasked();
@@ -337,7 +467,7 @@ public final class vv {
             b();
         }
         if (this.l == null) {
-            this.l = VelocityTracker.obtain();
+            this.l = android.view.VelocityTracker.obtain();
         }
         this.l.addMovement(motionEvent);
         switch (actionMasked) {
@@ -345,7 +475,7 @@ public final class vv {
                 float x = motionEvent.getX();
                 float y = motionEvent.getY();
                 int pointerId = motionEvent.getPointerId(0);
-                View b2 = b((int) x, (int) y);
+                android.view.View b2 = b((int) x, (int) y);
                 a(x, y, pointerId);
                 b(b2, pointerId);
                 return;
@@ -367,7 +497,7 @@ public final class vv {
                             float f3 = y2 - this.e[pointerId2];
                             b(f2, f3, pointerId2);
                             if (this.b != 1) {
-                                View b3 = b((int) x2, (int) y2);
+                                android.view.View b3 = b((int) x2, (int) y2);
                                 if (a(b3, f2, f3) && b(b3, pointerId2)) {
                                 }
                             }
@@ -381,22 +511,21 @@ public final class vv {
                 } else if (d(this.c)) {
                     int findPointerIndex = motionEvent.findPointerIndex(this.c);
                     float x3 = motionEvent.getX(findPointerIndex);
-                    float y3 = motionEvent.getY(findPointerIndex);
                     int i4 = (int) (x3 - this.f[this.c]);
-                    int i5 = (int) (y3 - this.g[this.c]);
+                    int y3 = (int) (motionEvent.getY(findPointerIndex) - this.g[this.c]);
                     int left = this.r.getLeft() + i4;
-                    int top = this.r.getTop() + i5;
+                    int top = this.r.getTop() + y3;
                     int left2 = this.r.getLeft();
                     int top2 = this.r.getTop();
                     if (i4 != 0) {
                         left = this.q.c(this.r, left);
-                        sn.c(this.r, left - left2);
+                        defpackage.sn.c(this.r, left - left2);
                     }
-                    if (i5 != 0) {
+                    if (y3 != 0) {
                         top = this.q.d(this.r, top);
-                        sn.b(this.r, top - top2);
+                        defpackage.sn.b(this.r, top - top2);
                     }
-                    if (!(i4 == 0 && i5 == 0)) {
+                    if (!(i4 == 0 && y3 == 0)) {
                         this.q.a(this.r, left, top);
                     }
                     c(motionEvent);
@@ -410,9 +539,6 @@ public final class vv {
                 }
                 b();
                 return;
-            case 4:
-            default:
-                return;
             case 5:
                 int pointerId3 = motionEvent.getPointerId(actionIndex);
                 float x4 = motionEvent.getX(actionIndex);
@@ -422,10 +548,10 @@ public final class vv {
                     b(b((int) x4, (int) y4), pointerId3);
                     return;
                 }
-                int i6 = (int) x4;
-                int i7 = (int) y4;
-                View view = this.r;
-                if (view != null && i6 >= view.getLeft() && i6 < view.getRight() && i7 >= view.getTop() && i7 < view.getBottom()) {
+                int i5 = (int) x4;
+                int i6 = (int) y4;
+                android.view.View view = this.r;
+                if (view != null && i5 >= view.getLeft() && i5 < view.getRight() && i6 >= view.getTop() && i6 < view.getBottom()) {
                     i3 = 1;
                 }
                 if (i3 != 0) {
@@ -438,9 +564,7 @@ public final class vv {
                 if (this.b == 1 && pointerId4 == this.c) {
                     int pointerCount2 = motionEvent.getPointerCount();
                     while (true) {
-                        if (i3 >= pointerCount2) {
-                            i2 = -1;
-                        } else {
+                        if (i3 < pointerCount2) {
                             int pointerId5 = motionEvent.getPointerId(i3);
                             if (pointerId5 != this.c) {
                                 if (b((int) motionEvent.getX(i3), (int) motionEvent.getY(i3)) == this.r && b(this.r, pointerId5)) {
@@ -448,6 +572,8 @@ public final class vv {
                                 }
                             }
                             i3++;
+                        } else {
+                            i2 = -1;
                         }
                     }
                     if (i2 == -1) {
@@ -455,6 +581,8 @@ public final class vv {
                     }
                 }
                 b(pointerId4);
+                return;
+            default:
                 return;
         }
     }
@@ -480,8 +608,8 @@ public final class vv {
     }
 
     private final boolean a(float f2, float f3, int i2, int i3) {
-        float abs = Math.abs(f2);
-        float abs2 = Math.abs(f3);
+        float abs = java.lang.Math.abs(f2);
+        float abs2 = java.lang.Math.abs(f3);
         if ((this.h[i2] & i3) != i3 || (i3 & 0) == 0 || (this.j[i2] & i3) == i3 || (this.i[i2] & i3) == i3) {
             return false;
         }
@@ -491,7 +619,7 @@ public final class vv {
         return false;
     }
 
-    private final boolean a(View view, float f2, float f3) {
+    private final boolean a(android.view.View view, float f2, float f3) {
         boolean z;
         boolean z2;
         if (view == null) {
@@ -507,7 +635,22 @@ public final class vv {
         } else {
             z2 = false;
         }
-        return (!z || !z2) ? z ? Math.abs(f2) > ((float) this.a) : z2 && Math.abs(f3) > ((float) this.a) : (f2 * f2) + (f3 * f3) > ((float) (this.a * this.a));
+        if (!z || !z2) {
+            if (z) {
+                if (java.lang.Math.abs(f2) > ((float) this.a)) {
+                    return true;
+                }
+                return false;
+            } else if (!z2 || java.lang.Math.abs(f3) <= ((float) this.a)) {
+                return false;
+            } else {
+                return true;
+            }
+        } else if ((f2 * f2) + (f3 * f3) > ((float) (this.a * this.a))) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     private final void c() {
@@ -515,9 +658,9 @@ public final class vv {
         a(a(this.l.getXVelocity(this.c), this.n, this.m), a(this.l.getYVelocity(this.c), this.n, this.m));
     }
 
-    private final View b(int i2, int i3) {
+    private final android.view.View b(int i2, int i3) {
         for (int childCount = this.t.getChildCount() - 1; childCount >= 0; childCount--) {
-            View childAt = this.t.getChildAt(childCount);
+            android.view.View childAt = this.t.getChildAt(childCount);
             if (i2 >= childAt.getLeft() && i2 < childAt.getRight() && i3 >= childAt.getTop() && i3 < childAt.getBottom()) {
                 return childAt;
             }
@@ -529,7 +672,7 @@ public final class vv {
         if (c(i2)) {
             return true;
         }
-        Log.e("ViewDragHelper", "Ignoring pointerId=" + i2 + " because ACTION_DOWN was not received for this pointer before ACTION_MOVE. It likely happened because  ViewDragHelper did not receive all the events in the event stream.");
+        android.util.Log.e("ViewDragHelper", "Ignoring pointerId=" + i2 + " because ACTION_DOWN was not received for this pointer before ACTION_MOVE. It likely happened because  ViewDragHelper did not receive all the events in the event stream.");
         return false;
     }
 }

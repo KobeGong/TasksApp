@@ -1,6 +1,6 @@
 package defpackage;
 
-/* renamed from: ap  reason: default package */
+/* renamed from: ap reason: default package */
 /* compiled from: PG */
 public final class ap {
     private static final byte[] a = {0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 5, 5, 5, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 0, 3, 0, 3, 3, 0, 3, 0, 3, 3, 0, 0, 0, 0, 3, 0, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -12,35 +12,41 @@ public final class ap {
             return false;
         }
         if (i <= 255) {
-            return a[i] == 5;
-        }
-        if (8206 > i || i > 8233) {
+            if (a[i] == 5) {
+                return true;
+            }
+            return false;
+        } else if (8206 > i || i > 8233) {
+            return false;
+        } else {
+            if (i <= 8207 || 8232 <= i) {
+                return true;
+            }
             return false;
         }
-        return i <= 8207 || 8232 <= i;
     }
 
-    public static int a(CharSequence charSequence, int i) {
-        while (i < charSequence.length() && a(charSequence.charAt(i))) {
+    public static int a(java.lang.CharSequence charSequence, int i) {
+        while (i < charSequence.length() && a((int) charSequence.charAt(i))) {
             i++;
         }
         return i;
     }
 
-    public static String a(String str) {
+    public static java.lang.String a(java.lang.String str) {
         int i = 0;
         if (str.length() == 0) {
             return str;
         }
-        if (!a(str.charAt(0)) && !a(str.charAt(str.length() - 1))) {
+        if (!a((int) str.charAt(0)) && !a((int) str.charAt(str.length() - 1))) {
             return str;
         }
         int length = str.length();
-        while (i < length && a(str.charAt(i))) {
+        while (i < length && a((int) str.charAt(i))) {
             i++;
         }
         if (i < length) {
-            while (a(str.charAt(length - 1))) {
+            while (a((int) str.charAt(length - 1))) {
                 length--;
             }
         }
@@ -61,7 +67,7 @@ public final class ap {
             if (r0 < 0) goto L_0x0058
             r3 = 255(0xff, float:3.57E-43)
             if (r0 > r3) goto L_0x0020
-            byte[] r3 = defpackage.ap.a
+            byte[] r3 = a
             byte r0 = r3[r0]
             if (r0 == 0) goto L_0x001e
             r0 = r1
@@ -77,8 +83,8 @@ public final class ap {
             if (r0 < r3) goto L_0x0058
             r3 = 12336(0x3030, float:1.7286E-41)
             if (r0 > r3) goto L_0x0040
-            int[] r3 = defpackage.ap.c
-            byte[] r4 = defpackage.ap.b
+            int[] r3 = c
+            byte[] r4 = b
             int r5 = r0 + -8192
             int r5 = r5 >> 5
             byte r4 = r4[r5]

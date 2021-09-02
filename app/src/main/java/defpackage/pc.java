@@ -1,19 +1,16 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: pc  reason: default package */
+/* renamed from: pc reason: default package */
 /* compiled from: PG */
-public final class pc implements pe {
+final class pc implements defpackage.pe {
     pc() {
     }
 
-    @Override // defpackage.pe
-    public final /* synthetic */ boolean a(Object obj) {
-        return ((pz) obj).d;
+    public final /* synthetic */ boolean a(java.lang.Object obj) {
+        return ((defpackage.pz) obj).d;
     }
 
-    @Override // defpackage.pe
-    public final /* synthetic */ int b(Object obj) {
-        return ((pz) obj).c;
+    public final /* synthetic */ int b(java.lang.Object obj) {
+        return ((defpackage.pz) obj).c;
     }
 }

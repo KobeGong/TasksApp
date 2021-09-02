@@ -1,17 +1,14 @@
 package defpackage;
 
-import android.view.View;
+/* renamed from: cfj reason: default package */
+final /* synthetic */ class cfj implements android.view.View.OnClickListener {
+    private final defpackage.cff a;
 
-/* access modifiers changed from: package-private */
-/* renamed from: cfj  reason: default package */
-public final /* synthetic */ class cfj implements View.OnClickListener {
-    private final cff a;
-
-    cfj(cff cff) {
+    cfj(defpackage.cff cff) {
         this.a = cff;
     }
 
-    public final void onClick(View view) {
+    public final void onClick(android.view.View view) {
         this.a.e.c();
     }
 }

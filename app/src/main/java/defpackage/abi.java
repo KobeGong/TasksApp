@@ -1,43 +1,33 @@
 package defpackage;
 
-import android.content.Context;
-import android.content.res.ColorStateList;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
-import android.util.AttributeSet;
-import android.widget.CheckBox;
-import com.google.android.apps.tasks.R;
-
-/* renamed from: abi  reason: default package */
+/* renamed from: abi reason: default package */
 /* compiled from: PG */
-public class abi extends CheckBox implements vt {
-    private final abk a;
+public class abi extends android.widget.CheckBox implements defpackage.vt {
+    private final defpackage.abk a;
 
-    public abi(Context context) {
+    public abi(android.content.Context context) {
         this(context, null);
     }
 
-    public abi(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, R.attr.checkboxStyle);
+    public abi(android.content.Context context, android.util.AttributeSet attributeSet) {
+        this(context, attributeSet, 2130772233);
     }
 
-    public abi(Context context, AttributeSet attributeSet, int i) {
-        super(agt.a(context), attributeSet, i);
-        this.a = new abk(this);
+    public abi(android.content.Context context, android.util.AttributeSet attributeSet, int i) {
+        super(defpackage.agt.a(context), attributeSet, i);
+        this.a = new defpackage.abk(this);
         this.a.a(attributeSet, i);
     }
 
-    @Override // android.widget.CompoundButton
-    public void setButtonDrawable(Drawable drawable) {
+    public void setButtonDrawable(android.graphics.drawable.Drawable drawable) {
         super.setButtonDrawable(drawable);
         if (this.a != null) {
             this.a.a();
         }
     }
 
-    @Override // android.widget.CompoundButton
     public void setButtonDrawable(int i) {
-        setButtonDrawable(xw.b(getContext(), i));
+        setButtonDrawable(defpackage.xw.b(getContext(), i));
     }
 
     public int getCompoundPaddingLeft() {
@@ -45,15 +35,13 @@ public class abi extends CheckBox implements vt {
         return this.a != null ? this.a.a(compoundPaddingLeft) : compoundPaddingLeft;
     }
 
-    @Override // defpackage.vt
-    public final void a(ColorStateList colorStateList) {
+    public final void a(android.content.res.ColorStateList colorStateList) {
         if (this.a != null) {
             this.a.a(colorStateList);
         }
     }
 
-    @Override // defpackage.vt
-    public final void a(PorterDuff.Mode mode) {
+    public final void a(android.graphics.PorterDuff.Mode mode) {
         if (this.a != null) {
             this.a.a(mode);
         }

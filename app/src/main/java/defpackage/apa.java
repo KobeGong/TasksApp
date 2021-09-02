@@ -1,14 +1,12 @@
 package defpackage;
 
-import android.content.DialogInterface;
-
-/* renamed from: apa  reason: default package */
-public final /* synthetic */ class apa implements DialogInterface.OnClickListener {
-    public static final DialogInterface.OnClickListener a = new apa();
+/* renamed from: apa reason: default package */
+public final /* synthetic */ class apa implements android.content.DialogInterface.OnClickListener {
+    public static final android.content.DialogInterface.OnClickListener a = new defpackage.apa();
 
     private apa() {
     }
 
-    public final void onClick(DialogInterface dialogInterface, int i) {
+    public final void onClick(android.content.DialogInterface dialogInterface, int i) {
     }
 }

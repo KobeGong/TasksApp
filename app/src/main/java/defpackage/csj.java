@@ -1,52 +1,53 @@
 package defpackage;
 
-import java.util.Iterator;
-import java.util.List;
-
-/* renamed from: csj  reason: default package */
+/* renamed from: csj reason: default package */
 /* compiled from: PG */
-public final class csj implements Iterable {
-    private final crv a;
-    private final /* synthetic */ Iterable b;
+public final class csj implements java.lang.Iterable {
+    private final defpackage.crv a;
+    private final /* synthetic */ java.lang.Iterable b;
     private final /* synthetic */ int c;
 
     protected csj() {
-        this.a = crk.a;
+        this.a = defpackage.crk.a;
     }
 
-    public final String toString() {
-        StringBuilder sb = new StringBuilder("[");
+    public final java.lang.String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder("[");
         boolean z = true;
-        for (Object obj : (Iterable) this.a.a(this)) {
+        for (java.lang.Object append : (java.lang.Iterable) this.a.a(this)) {
             if (!z) {
                 sb.append(", ");
             }
             z = false;
-            sb.append(obj);
+            sb.append(append);
         }
         return sb.append(']').toString();
     }
 
-    /* JADX INFO: this call moved to the top of the method (can break code semantics) */
-    public csj(Iterable iterable, int i) {
-        this();
+    public csj(java.lang.Iterable iterable, int i) {
         this.b = iterable;
         this.c = i;
+        this();
     }
 
-    @Override // java.lang.Iterable
-    public final Iterator iterator() {
-        if (this.b instanceof List) {
-            List list = (List) this.b;
-            return list.subList(Math.min(list.size(), this.c), list.size()).iterator();
+    public final java.util.Iterator iterator() {
+        boolean z;
+        if (this.b instanceof java.util.List) {
+            java.util.List list = (java.util.List) this.b;
+            return list.subList(java.lang.Math.min(list.size(), this.c), list.size()).iterator();
         }
-        Iterator it = this.b.iterator();
+        java.util.Iterator it = this.b.iterator();
         int i = this.c;
-        cld.a(it);
-        cld.a(i >= 0, "numberToAdvance must be nonnegative");
+        defpackage.cld.a((java.lang.Object) it);
+        if (i >= 0) {
+            z = true;
+        } else {
+            z = false;
+        }
+        defpackage.cld.a(z, (java.lang.Object) "numberToAdvance must be nonnegative");
         for (int i2 = 0; i2 < i && it.hasNext(); i2++) {
             it.next();
         }
-        return new csx(it);
+        return new defpackage.csx(it);
     }
 }

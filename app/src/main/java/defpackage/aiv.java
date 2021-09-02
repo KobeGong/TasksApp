@@ -1,10 +1,10 @@
 package defpackage;
 
-/* renamed from: aiv  reason: default package */
+/* renamed from: aiv reason: default package */
 /* compiled from: PG */
 public final class aiv {
-    public aii a;
-    public brf b;
-    public bwj c;
-    public cdz d;
+    public defpackage.aii a;
+    public defpackage.brf b;
+    public defpackage.bwj c;
+    public defpackage.cdz d;
 }

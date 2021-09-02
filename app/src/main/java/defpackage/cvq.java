@@ -1,49 +1,43 @@
 package defpackage;
 
-import android.os.Build;
-import android.util.Log;
-import java.util.logging.Level;
-
-/* renamed from: cvq  reason: default package */
+/* renamed from: cvq reason: default package */
 /* compiled from: PG */
-public final class cvq extends cvg implements cux {
-    private final String b;
+public final class cvq extends defpackage.cvg implements defpackage.cux {
+    private final java.lang.String b;
 
-    public cvq(String str, String str2, boolean z) {
+    public cvq(java.lang.String str, java.lang.String str2, boolean z) {
+        java.lang.String str3;
         super(str2);
-        String str3;
         if (str.length() + str2.length() <= 23) {
-            String valueOf = String.valueOf(str);
-            String valueOf2 = String.valueOf(str2);
-            this.b = valueOf2.length() != 0 ? valueOf.concat(valueOf2) : new String(valueOf);
+            java.lang.String valueOf = java.lang.String.valueOf(str);
+            java.lang.String valueOf2 = java.lang.String.valueOf(str2);
+            this.b = valueOf2.length() != 0 ? valueOf.concat(valueOf2) : new java.lang.String(valueOf);
             return;
         }
-        String replace = str2.replace('$', '.');
-        String substring = replace.substring(replace.lastIndexOf(46) + 1);
-        if (z || Build.VERSION.SDK_INT < 26) {
-            String valueOf3 = String.valueOf(str);
-            String valueOf4 = String.valueOf(substring);
-            String concat = valueOf4.length() != 0 ? valueOf3.concat(valueOf4) : new String(valueOf3);
-            str3 = concat.substring(0, Math.min(concat.length(), 23));
+        java.lang.String replace = str2.replace('$', '.');
+        java.lang.String substring = replace.substring(replace.lastIndexOf(46) + 1);
+        if (z || android.os.Build.VERSION.SDK_INT < 26) {
+            java.lang.String valueOf3 = java.lang.String.valueOf(str);
+            java.lang.String valueOf4 = java.lang.String.valueOf(substring);
+            java.lang.String str4 = valueOf4.length() != 0 ? valueOf3.concat(valueOf4) : new java.lang.String(valueOf3);
+            str3 = str4.substring(0, java.lang.Math.min(str4.length(), 23));
         } else {
-            String valueOf5 = String.valueOf(str);
-            String valueOf6 = String.valueOf(substring);
-            str3 = valueOf6.length() != 0 ? valueOf5.concat(valueOf6) : new String(valueOf5);
+            java.lang.String valueOf5 = java.lang.String.valueOf(str);
+            java.lang.String valueOf6 = java.lang.String.valueOf(substring);
+            str3 = valueOf6.length() != 0 ? valueOf5.concat(valueOf6) : new java.lang.String(valueOf5);
         }
         this.b = str3;
     }
 
-    @Override // defpackage.cup
-    public final boolean a(Level level) {
-        return Log.isLoggable(this.b, b(level));
+    public final boolean a(java.util.logging.Level level) {
+        return android.util.Log.isLoggable(this.b, b(level));
     }
 
-    @Override // defpackage.cup
-    public final void a(cuo cuo) {
-        cuw.a(cuo, this);
+    public final void a(defpackage.cuo cuo) {
+        defpackage.cuw.a(cuo, (defpackage.cux) this);
     }
 
-    private static int b(Level level) {
+    private static int b(java.util.logging.Level level) {
         int intValue = level.intValue();
         if (intValue >= 1000) {
             return 6;
@@ -60,21 +54,20 @@ public final class cvq extends cvg implements cux {
         return 2;
     }
 
-    @Override // defpackage.cux
-    public final void a(Level level, String str, Throwable th) {
+    public final void a(java.util.logging.Level level, java.lang.String str, java.lang.Throwable th) {
         switch (b(level)) {
             case 2:
             case 3:
             case 4:
                 return;
             case 5:
-                Log.w(this.b, str, th);
+                android.util.Log.w(this.b, str, th);
                 return;
             case 6:
-                Log.e(this.b, str, th);
+                android.util.Log.e(this.b, str, th);
                 return;
             default:
-                Log.wtf(this.b, String.format("Level \"%d\" is not a valid level", Integer.valueOf(level.intValue())));
+                android.util.Log.wtf(this.b, java.lang.String.format("Level \"%d\" is not a valid level", new java.lang.Object[]{java.lang.Integer.valueOf(level.intValue())}));
                 return;
         }
     }

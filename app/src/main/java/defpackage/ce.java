@@ -1,24 +1,23 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: ce  reason: default package */
+/* renamed from: ce reason: default package */
 /* compiled from: PG */
-public final class ce {
-    public final Object[] a = new Object[256];
+final class ce {
+    public final java.lang.Object[] a = new java.lang.Object[256];
     public int b;
 
-    public final Object a() {
+    public final java.lang.Object a() {
         if (this.b <= 0) {
             return null;
         }
         int i = this.b - 1;
-        Object obj = this.a[i];
+        java.lang.Object obj = this.a[i];
         this.a[i] = null;
         this.b--;
         return obj;
     }
 
-    public final boolean a(Object obj) {
+    public final boolean a(java.lang.Object obj) {
         if (this.b >= this.a.length) {
             return false;
         }

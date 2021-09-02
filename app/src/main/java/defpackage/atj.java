@@ -1,28 +1,24 @@
 package defpackage;
 
-import android.widget.ImageView;
-import com.google.android.apps.tasks.R;
-
-/* access modifiers changed from: package-private */
-/* renamed from: atj  reason: default package */
+/* renamed from: atj reason: default package */
 /* compiled from: PG */
-public final class atj {
-    public final /* synthetic */ SortableAdapter adapter;
+final class atj {
+    public final /* synthetic */ defpackage.atg a;
 
     public final void a(boolean z) {
         int i;
-        ImageView imageView = this.adapter.expandView;
+        android.widget.ImageView imageView = this.a.k;
         if (z) {
-            i = R.drawable.quantum_ic_stat_1_grey600_24;
+            i = 2130837689;
         } else {
-            i = R.drawable.quantum_ic_stat_minus_1_grey600_24;
+            i = 2130837690;
         }
         imageView.setImageResource(i);
-        SortableAdapter atg = this.adapter;
-        atg.countVIEW.setAccessibilityDelegate(new ati(atg));
+        defpackage.atg atg = this.a;
+        atg.j.setAccessibilityDelegate(new defpackage.ati(atg));
     }
 
-    atj(SortableAdapter atg) {
-        this.adapter = atg;
+    atj(defpackage.atg atg) {
+        this.a = atg;
     }
 }

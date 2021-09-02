@@ -1,86 +1,87 @@
 package defpackage;
 
-/* renamed from: dca  reason: default package */
+/* renamed from: dca reason: default package */
 /* compiled from: PG */
-public final class dca extends dih implements djq {
-    public static final dca g = new dca();
-    private static volatile djx h;
+public final class dca extends defpackage.dih implements defpackage.djq {
+    public static final defpackage.dca g = new defpackage.dca();
+    private static volatile defpackage.djx h;
     public boolean a;
-    public String b = "";//task_name
-    public String c = "";//task_detail
-    public dmk d;
+    public java.lang.String b = "";//title
+    public java.lang.String c = "";
+    public defpackage.dmk d;
     public boolean e;
-    public dan f;
+    public defpackage.dan f;
 
     private dca() {
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.dih
-    public final Object a(int i) {
-        djx djx;
+    public final java.lang.Object a(int i) {
+        defpackage.djx djx;
         switch (i - 1) {
             case 0:
-                return (byte) 1;
+                return java.lang.Byte.valueOf(1);
             case 1:
                 return null;
             case 2:
-                return new dkb(g, "\u0000\u0006\u0000\u0000\u0001\b\u0006\u0000\u0000\u0000\u0001\u0007\u0002Ȉ\u0003Ȉ\u0004\t\u0006\u0007\b\t", new Object[]{"a", "b", "c", "d", "e", "f"});
+                java.lang.Object[] objArr = {"a", "b", "c", "d", "e", "f"};
+                return new defpackage.dkb(g, "\u0000\u0006\u0000\u0000\u0001\b\u0006\u0000\u0000\u0000\u0001\u0007\u0002Ȉ\u0003Ȉ\u0004\t\u0006\u0007\b\t", objArr);
             case 3:
-                return new dca();
+                return new defpackage.dca();
             case 4:
-                return new dii((boolean[][][][][][][][][]) null);
+                return new defpackage.dii((boolean[][][][][][][][][]) null);
             case 5:
                 return g;
             case 6:
-                djx djx2 = h;
+                defpackage.djx djx2 = h;
                 if (djx2 != null) {
                     return djx2;
                 }
-                synchronized (dca.class) {
+                synchronized (defpackage.dca.class) {
                     djx = h;
                     if (djx == null) {
-                        djx = new dgr(g);
+                        djx = new defpackage.dgr(g);
                         h = djx;
                     }
                 }
                 return djx;
             default:
-                throw new UnsupportedOperationException();
+                throw new java.lang.UnsupportedOperationException();
         }
     }
 
-    public static /* synthetic */ void a(dca dca, dii dii) {
-        dih dih;
+    public static /* synthetic */ void a(defpackage.dca dca, defpackage.dii dii) {
+        defpackage.dih dih;
         boolean d2;
         if (dii.b) {
             dih = dii.a;
         } else {
-            dih dih2 = dii.a;
-            djz.a.a(dih2).c(dih2);
+            defpackage.dih dih2 = dii.a;
+            defpackage.djz.a.a((java.lang.Object) dih2).c(dih2);
             dii.b = true;
             dih = dii.a;
         }
-        dih dih3 = dih;
-        boolean booleanValue = Boolean.TRUE.booleanValue();
-        byte byteValue = ((Byte) dih3.a(bg.ak)).byteValue();
+        defpackage.dih dih3 = dih;
+        boolean booleanValue = java.lang.Boolean.TRUE.booleanValue();
+        byte byteValue = ((java.lang.Byte) dih3.a(defpackage.bg.ak)).byteValue();
         if (byteValue == 1) {
             d2 = true;
         } else if (byteValue == 0) {
             d2 = false;
         } else {
-            d2 = djz.a.a(dih3).d(dih3);
+            d2 = defpackage.djz.a.a((java.lang.Object) dih3).d(dih3);
             if (booleanValue) {
-                dih3.a(bg.al);
+                dih3.a(defpackage.bg.al);
             }
         }
         if (!d2) {
-            throw new dkw();
+            throw new defpackage.dkw();
         }
-        dca.f = (dan) dih3;
+        dca.f = (defpackage.dan) dih3;
     }
 
     static {
-        dih.t.put(dca.class, g);
+        defpackage.dca dca = g;
+        defpackage.dih.t.put(defpackage.dca.class, dca);
     }
 }

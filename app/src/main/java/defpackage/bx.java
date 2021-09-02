@@ -1,13 +1,9 @@
 package defpackage;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
-
-/* renamed from: bx  reason: default package */
+/* renamed from: bx reason: default package */
 /* compiled from: PG */
-public final class bx extends View {
-    public bx(Context context) {
+public final class bx extends android.view.View {
+    public bx(android.content.Context context) {
         super(context);
         super.setVisibility(8);
     }
@@ -15,7 +11,7 @@ public final class bx extends View {
     public final void setVisibility(int i) {
     }
 
-    public final void draw(Canvas canvas) {
+    public final void draw(android.graphics.Canvas canvas) {
     }
 
     /* access modifiers changed from: protected */

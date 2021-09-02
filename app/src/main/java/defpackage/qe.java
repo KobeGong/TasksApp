@@ -1,12 +1,12 @@
 package defpackage;
 
-/* renamed from: qe  reason: default package */
+/* renamed from: qe reason: default package */
 /* compiled from: PG */
-final class qe implements Runnable {
-    private final /* synthetic */ Object a;
-    private final /* synthetic */ qd b;
+final class qe implements java.lang.Runnable {
+    private final /* synthetic */ java.lang.Object a;
+    private final /* synthetic */ defpackage.qd b;
 
-    qe(qd qdVar, Object obj) {
+    qe(defpackage.qd qdVar, java.lang.Object obj) {
         this.b = qdVar;
         this.a = obj;
     }

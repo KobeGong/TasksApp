@@ -1,17 +1,15 @@
 package defpackage;
 
-import android.accounts.Account;
-
-/* renamed from: bdl  reason: default package */
+/* renamed from: bdl reason: default package */
 /* compiled from: PG */
 public final class bdl {
-    public Account a;
-    public qt b;
-    public String c;
-    public String d;
-    private bpn e = bpn.a;
+    public android.accounts.Account a;
+    public defpackage.qt b;
+    public java.lang.String c;
+    public java.lang.String d;
+    private defpackage.bpn e = defpackage.bpn.a;
 
-    public final bdj a() {
-        return new bdj(this.a, this.b, null, this.c, this.d, this.e);
+    public final defpackage.bdj a() {
+        return new defpackage.bdj(this.a, this.b, null, this.c, this.d, this.e);
     }
 }

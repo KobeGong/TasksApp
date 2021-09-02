@@ -1,12 +1,11 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: dtn  reason: default package */
+/* renamed from: dtn reason: default package */
 /* compiled from: PG */
-public final class dtn implements Runnable {
-    private final /* synthetic */ dxc a;
+final class dtn implements java.lang.Runnable {
+    private final /* synthetic */ defpackage.dxc a;
 
-    dtn(dxc dxc) {
+    dtn(defpackage.dxc dxc) {
         this.a = dxc;
     }
 

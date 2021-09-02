@@ -1,83 +1,63 @@
 package defpackage;
 
-import android.app.PendingIntent;
-import android.content.Context;
-import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
-import android.util.Log;
-import com.google.android.gms.common.api.Status;
-import java.io.FileDescriptor;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Map;
-import java.util.Set;
-import java.util.WeakHashMap;
-import java.util.concurrent.locks.Lock;
-
-/* access modifiers changed from: package-private */
-/* renamed from: bcj  reason: default package */
+/* renamed from: bcj reason: default package */
 /* compiled from: PG */
-public final class bcj implements bau {
-    public final baf a;
-    public final baf b;
-    public Bundle c;
-    public axq d = null;
-    public axq e = null;
+final class bcj implements defpackage.bau {
+    public final defpackage.baf a;
+    public final defpackage.baf b;
+    public android.os.Bundle c;
+    public defpackage.axq d = null;
+    public defpackage.axq e = null;
     public boolean f = false;
-    public final Lock g;
-    private final Context h;
-    private final azx i;
-    private final Looper j;
-    private final Map k;
-    private final Set l = Collections.newSetFromMap(new WeakHashMap());
-    private final ayj m;
+    public final java.util.concurrent.locks.Lock g;
+    private final android.content.Context h;
+    private final defpackage.azx i;
+    private final android.os.Looper j;
+    private final java.util.Map k;
+    private final java.util.Set l = java.util.Collections.newSetFromMap(new java.util.WeakHashMap());
+    private final defpackage.ayj m;
     private int n = 0;
 
-    bcj(Context context, azx azx, Lock lock, Looper looper, axv axv, Map map, Map map2, bdj bdj, ayf ayf, ayj ayj, ArrayList arrayList, ArrayList arrayList2, Map map3, Map map4) {
+    bcj(android.content.Context context, defpackage.azx azx, java.util.concurrent.locks.Lock lock, android.os.Looper looper, defpackage.axv axv, java.util.Map map, java.util.Map map2, defpackage.bdj bdj, defpackage.ayf ayf, defpackage.ayj ayj, java.util.ArrayList arrayList, java.util.ArrayList arrayList2, java.util.Map map3, java.util.Map map4) {
         this.h = context;
         this.i = azx;
         this.g = lock;
         this.j = looper;
         this.m = ayj;
-        this.a = new baf(context, this.i, lock, looper, axv, map2, null, map4, null, arrayList2, new bcl(this));
-        this.b = new baf(context, this.i, lock, looper, axv, map, bdj, map3, ayf, arrayList, new bcm(this));
-        qr qrVar = new qr();
-        for (ayh ayh : map2.keySet()) {
-            qrVar.put(ayh, this.a);
+        this.a = new defpackage.baf(context, this.i, lock, looper, axv, map2, null, map4, null, arrayList2, new defpackage.bcl(this));
+        this.b = new defpackage.baf(context, this.i, lock, looper, axv, map, bdj, map3, ayf, arrayList, new defpackage.bcm(this));
+        defpackage.qr qrVar = new defpackage.qr();
+        for (defpackage.ayh put : map2.keySet()) {
+            qrVar.put(put, this.a);
         }
-        for (ayh ayh2 : map.keySet()) {
-            qrVar.put(ayh2, this.b);
+        for (defpackage.ayh put2 : map.keySet()) {
+            qrVar.put(put2, this.b);
         }
-        this.k = Collections.unmodifiableMap(qrVar);
+        this.k = java.util.Collections.unmodifiableMap(qrVar);
     }
 
-    @Override // defpackage.bau
-    public final bca a(bca bca) {
+    public final defpackage.bca a(defpackage.bca bca) {
         if (!c(bca)) {
             return this.a.a(bca);
         }
         if (!h()) {
             return this.b.a(bca);
         }
-        bca.c(new Status(4, null, i()));
+        bca.c(new com.google.android.gms.common.api.Status(4, null, i()));
         return bca;
     }
 
-    @Override // defpackage.bau
-    public final bca b(bca bca) {
+    public final defpackage.bca b(defpackage.bca bca) {
         if (!c(bca)) {
             return this.a.b(bca);
         }
         if (!h()) {
             return this.b.b(bca);
         }
-        bca.c(new Status(4, null, i()));
+        bca.c(new com.google.android.gms.common.api.Status(4, null, i()));
         return bca;
     }
 
-    @Override // defpackage.bau
     public final void a() {
         this.n = 2;
         this.f = false;
@@ -87,12 +67,10 @@ public final class bcj implements bau {
         this.b.a();
     }
 
-    @Override // defpackage.bau
-    public final axq b() {
-        throw new UnsupportedOperationException();
+    public final defpackage.axq b() {
+        throw new java.lang.UnsupportedOperationException();
     }
 
-    @Override // defpackage.bau
     public final void c() {
         this.e = null;
         this.d = null;
@@ -102,7 +80,6 @@ public final class bcj implements bau {
         g();
     }
 
-    @Override // defpackage.bau
     public final boolean d() {
         boolean z = true;
         this.g.lock();
@@ -116,7 +93,6 @@ public final class bcj implements bau {
         }
     }
 
-    @Override // defpackage.bau
     public final boolean e() {
         this.g.lock();
         try {
@@ -126,8 +102,7 @@ public final class bcj implements bau {
         }
     }
 
-    @Override // defpackage.bau
-    public final boolean a(bbh bbh) {
+    public final boolean a(defpackage.bbh bbh) {
         this.g.lock();
         try {
             if ((e() || d()) && !this.b.d()) {
@@ -146,15 +121,14 @@ public final class bcj implements bau {
         }
     }
 
-    @Override // defpackage.bau
     public final void f() {
         this.g.lock();
         try {
             boolean e2 = e();
             this.b.c();
-            this.e = new axq(4);
+            this.e = new defpackage.axq(4);
             if (e2) {
-                new Handler(this.j).post(new bck(this));
+                new android.os.Handler(this.j).post(new defpackage.bck(this));
             } else {
                 g();
             }
@@ -163,23 +137,24 @@ public final class bcj implements bau {
         }
     }
 
-    private final void a(axq axq) {
+    private final void a(defpackage.axq axq) {
         switch (this.n) {
+            case 1:
+                break;
             case 2:
                 this.i.a(axq);
-            case 1:
-                g();
                 break;
             default:
-                Log.wtf("CompositeGAC", "Attempted to call failure callbacks in CONNECTION_MODE_NONE. Callbacks should be disabled via GmsClientSupervisor", new Exception());
+                android.util.Log.wtf("CompositeGAC", "Attempted to call failure callbacks in CONNECTION_MODE_NONE. Callbacks should be disabled via GmsClientSupervisor", new java.lang.Exception());
                 break;
         }
+        g();
         this.n = 0;
     }
 
     private final void g() {
-        for (bbh bbh : this.l) {
-            bbh.g();
+        for (defpackage.bbh g2 : this.l) {
+            g2.g();
         }
         this.l.clear();
     }
@@ -188,44 +163,44 @@ public final class bcj implements bau {
         return this.e != null && this.e.b == 4;
     }
 
-    private final boolean c(bca bca) {
-        ayh ayh = bca.c;
-        azb.b(this.k.containsKey(ayh), "GoogleApiClient is not configured to use the API required for this call.");
-        return ((baf) this.k.get(ayh)).equals(this.b);
+    private final boolean c(defpackage.bca bca) {
+        defpackage.ayh ayh = bca.c;
+        defpackage.azb.b(this.k.containsKey(ayh), (java.lang.Object) "GoogleApiClient is not configured to use the API required for this call.");
+        return ((defpackage.baf) this.k.get(ayh)).equals(this.b);
     }
 
-    private final PendingIntent i() {
+    private final android.app.PendingIntent i() {
         if (this.m == null) {
             return null;
         }
-        return PendingIntent.getActivity(this.h, System.identityHashCode(this.i), this.m.d(), 134217728);
+        return android.app.PendingIntent.getActivity(this.h, java.lang.System.identityHashCode(this.i), this.m.d(), 134217728);
     }
 
-    private static boolean b(axq axq) {
+    private static boolean b(defpackage.axq axq) {
         return axq != null && axq.b();
     }
 
-    @Override // defpackage.bau
-    public final void a(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {
-        printWriter.append((CharSequence) str).append("authClient").println(":");
-        this.b.a(String.valueOf(str).concat("  "), fileDescriptor, printWriter, strArr);
-        printWriter.append((CharSequence) str).append("anonClient").println(":");
-        this.a.a(String.valueOf(str).concat("  "), fileDescriptor, printWriter, strArr);
+    public final void a(java.lang.String str, java.io.FileDescriptor fileDescriptor, java.io.PrintWriter printWriter, java.lang.String[] strArr) {
+        printWriter.append(str).append("authClient").println(":");
+        this.b.a(java.lang.String.valueOf(str).concat("  "), fileDescriptor, printWriter, strArr);
+        printWriter.append(str).append("anonClient").println(":");
+        this.a.a(java.lang.String.valueOf(str).concat("  "), fileDescriptor, printWriter, strArr);
     }
 
-    static /* synthetic */ void a(bcj bcj) {
+    static /* synthetic */ void a(defpackage.bcj bcj) {
         if (b(bcj.d)) {
             if (b(bcj.e) || bcj.h()) {
                 switch (bcj.n) {
+                    case 1:
+                        break;
                     case 2:
                         bcj.i.a(bcj.c);
-                    case 1:
-                        bcj.g();
                         break;
                     default:
-                        Log.wtf("CompositeGAC", "Attempted to call success callbacks in CONNECTION_MODE_NONE. Callbacks should be disabled via GmsClientSupervisor", new AssertionError());
+                        android.util.Log.wtf("CompositeGAC", "Attempted to call success callbacks in CONNECTION_MODE_NONE. Callbacks should be disabled via GmsClientSupervisor", new java.lang.AssertionError());
                         break;
                 }
+                bcj.g();
                 bcj.n = 0;
             } else if (bcj.e == null) {
             } else {
@@ -240,7 +215,7 @@ public final class bcj implements bau {
             bcj.b.c();
             bcj.a(bcj.d);
         } else if (bcj.d != null && bcj.e != null) {
-            axq axq = bcj.d;
+            defpackage.axq axq = bcj.d;
             if (bcj.b.l < bcj.a.l) {
                 axq = bcj.e;
             }
@@ -248,7 +223,7 @@ public final class bcj implements bau {
         }
     }
 
-    static /* synthetic */ void a(bcj bcj, int i2, boolean z) {
+    static /* synthetic */ void a(defpackage.bcj bcj, int i2, boolean z) {
         bcj.i.a(i2, z);
         bcj.e = null;
         bcj.d = null;

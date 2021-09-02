@@ -1,9 +1,6 @@
 package com.google.android.gms.common.util;
 
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Target;
-
-@Target({ElementType.TYPE})
+@java.lang.annotation.Target({java.lang.annotation.ElementType.TYPE})
 /* compiled from: PG */
 public @interface DynamiteApi {
 }

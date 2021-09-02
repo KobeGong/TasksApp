@@ -1,7 +1,7 @@
 package defpackage;
 
-/* renamed from: cop  reason: default package */
+/* renamed from: cop reason: default package */
 /* compiled from: PG */
 public interface cop {
-    String a();
+    java.lang.String a();
 }

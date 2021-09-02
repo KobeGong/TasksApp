@@ -1,16 +1,16 @@
 package defpackage;
 
-/* renamed from: cjx  reason: default package */
+/* renamed from: cjx reason: default package */
 /* compiled from: PG */
 public final class cjx {
-    public static final cjx a = new cjx();
+    public static final defpackage.cjx a = new defpackage.cjx();
     public final boolean b;
     public final int c;
     public final int d;
     public final int e;
 
     private cjx() {
-        this((byte) 0);
+        this(0);
     }
 
     private cjx(byte b2) {

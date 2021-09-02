@@ -1,18 +1,16 @@
 package defpackage;
 
-/* renamed from: dpj  reason: default package */
+/* renamed from: dpj reason: default package */
 /* compiled from: PG */
-final class dpj implements dpv {
+final class dpj implements defpackage.dpv {
     dpj() {
     }
 
-    @Override // defpackage.dpv
-    public final /* synthetic */ int a(Object obj) {
-        return ((dpi) obj).c();
+    public final /* synthetic */ int a(java.lang.Object obj) {
+        return ((defpackage.dpi) obj).c();
     }
 
-    @Override // defpackage.dpv
-    public final /* synthetic */ boolean b(Object obj) {
-        return ((dpi) obj).b();
+    public final /* synthetic */ boolean b(java.lang.Object obj) {
+        return ((defpackage.dpi) obj).b();
     }
 }

@@ -1,11 +1,9 @@
 package defpackage;
 
-import org.chromium.net.NetworkChangeNotifier;
-
-/* renamed from: eip  reason: default package */
+/* renamed from: eip reason: default package */
 /* compiled from: PG */
 public final class eip {
-    public final /* synthetic */ NetworkChangeNotifier a;
+    public final /* synthetic */ org.chromium.net.NetworkChangeNotifier a;
 
     public final void a(int i) {
         this.a.a(i);
@@ -19,7 +17,7 @@ public final class eip {
         this.a.a(jArr);
     }
 
-    public eip(NetworkChangeNotifier networkChangeNotifier) {
+    public eip(org.chromium.net.NetworkChangeNotifier networkChangeNotifier) {
         this.a = networkChangeNotifier;
     }
 }

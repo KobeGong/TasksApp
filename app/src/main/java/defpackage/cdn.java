@@ -1,15 +1,15 @@
 package defpackage;
 
-/* renamed from: cdn  reason: default package */
+/* renamed from: cdn reason: default package */
 /* compiled from: PG */
-public final class cdn extends cdh {
-    private final cdg a;
-    private final cdg b;
-    private final cdg c;
-    private final cdg d;
-    private final cdg e;
+public final class cdn extends defpackage.cdh {
+    private final defpackage.cdg a;
+    private final defpackage.cdg b;
+    private final defpackage.cdg c;
+    private final defpackage.cdg d;
+    private final defpackage.cdg e;
 
-    public cdn(cdg cdg, cdg cdg2, cdg cdg3, cdg cdg4, cdg cdg5) {
+    public cdn(defpackage.cdg cdg, defpackage.cdg cdg2, defpackage.cdg cdg3, defpackage.cdg cdg4, defpackage.cdg cdg5) {
         this.a = cdg;
         this.b = cdg2;
         this.c = cdg3;
@@ -17,49 +17,47 @@ public final class cdn extends cdh {
         this.e = cdg5;
     }
 
-    @Override // defpackage.cdh
-    public final cdg a() {
+    public final defpackage.cdg a() {
         return this.a;
     }
 
-    @Override // defpackage.cdh
-    public final cdg b() {
+    public final defpackage.cdg b() {
         return this.b;
     }
 
-    @Override // defpackage.cdh
-    public final cdg c() {
+    public final defpackage.cdg c() {
         return this.c;
     }
 
-    @Override // defpackage.cdh
-    public final cdg d() {
+    public final defpackage.cdg d() {
         return this.d;
     }
 
-    @Override // defpackage.cdh
-    public final cdg e() {
+    public final defpackage.cdg e() {
         return this.e;
     }
 
-    public final String toString() {
-        String valueOf = String.valueOf(this.a);
-        String valueOf2 = String.valueOf(this.b);
-        String valueOf3 = String.valueOf(this.c);
-        String valueOf4 = String.valueOf(this.d);
-        String valueOf5 = String.valueOf(this.e);
-        return new StringBuilder(String.valueOf(valueOf).length() + 172 + String.valueOf(valueOf2).length() + String.valueOf(valueOf3).length() + String.valueOf(valueOf4).length() + String.valueOf(valueOf5).length()).append("AccountMenuClickListeners{myAccountClickListener=").append(valueOf).append(", privacyPolicyClickListener=").append(valueOf2).append(", termsOfServiceClickListener=").append(valueOf3).append(", useAnotherAccountClickListener=").append(valueOf4).append(", manageAccountsClickListener=").append(valueOf5).append("}").toString();
+    public final java.lang.String toString() {
+        java.lang.String valueOf = java.lang.String.valueOf(this.a);
+        java.lang.String valueOf2 = java.lang.String.valueOf(this.b);
+        java.lang.String valueOf3 = java.lang.String.valueOf(this.c);
+        java.lang.String valueOf4 = java.lang.String.valueOf(this.d);
+        java.lang.String valueOf5 = java.lang.String.valueOf(this.e);
+        return new java.lang.StringBuilder(java.lang.String.valueOf(valueOf).length() + 172 + java.lang.String.valueOf(valueOf2).length() + java.lang.String.valueOf(valueOf3).length() + java.lang.String.valueOf(valueOf4).length() + java.lang.String.valueOf(valueOf5).length()).append("AccountMenuClickListeners{myAccountClickListener=").append(valueOf).append(", privacyPolicyClickListener=").append(valueOf2).append(", termsOfServiceClickListener=").append(valueOf3).append(", useAnotherAccountClickListener=").append(valueOf4).append(", manageAccountsClickListener=").append(valueOf5).append("}").toString();
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof cdh)) {
+        if (!(obj instanceof defpackage.cdh)) {
             return false;
         }
-        cdh cdh = (cdh) obj;
-        return this.a.equals(cdh.a()) && this.b.equals(cdh.b()) && this.c.equals(cdh.c()) && this.d.equals(cdh.d()) && this.e.equals(cdh.e());
+        defpackage.cdh cdh = (defpackage.cdh) obj;
+        if (!this.a.equals(cdh.a()) || !this.b.equals(cdh.b()) || !this.c.equals(cdh.c()) || !this.d.equals(cdh.d()) || !this.e.equals(cdh.e())) {
+            return false;
+        }
+        return true;
     }
 
     public final int hashCode() {

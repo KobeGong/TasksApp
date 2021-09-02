@@ -1,68 +1,60 @@
 package defpackage;
 
-import java.nio.ByteBuffer;
-import java.util.Collection;
-import java.util.concurrent.Executor;
-
-/* renamed from: dqk  reason: default package */
+/* renamed from: dqk reason: default package */
 /* compiled from: PG */
-public final class dqk extends dqr {
-    public static final ByteBuffer a = ByteBuffer.allocateDirect(0);
-    public final String b;
-    public final String c;
-    public final Executor d;
-    public final dor e;
-    public final dqo f;
-    public final Runnable g;
+public final class dqk extends defpackage.dqr {
+    public static final java.nio.ByteBuffer a = java.nio.ByteBuffer.allocateDirect(0);
+    public final java.lang.String b;
+    public final java.lang.String c;
+    public final java.util.concurrent.Executor d;
+    public final defpackage.dor e;
+    public final defpackage.dqo f;
+    public final java.lang.Runnable g;
     public final boolean h;
-    public ehp i;
+    public defpackage.ehp i;
     public final boolean j;
-    public final Object k;
-    public final Collection l;
-    public final dqn m;
-    public dqj n;
-    private final dqt p = new dqt(this);
+    public final java.lang.Object k;
+    public final java.util.Collection l;
+    public final defpackage.dqn m;
+    public defpackage.dqj n;
+    private final defpackage.dqt p = new defpackage.dqt(this);
 
-    dqk(String str, String str2, Executor executor, dor dor, dqo dqo, Runnable runnable, Object obj, int i2, boolean z, dpb dpb, dzo dzo, dna dna, dzt dzt) {
-        super(new dzy(), dzo, dzt, dor, dpb.g);
-        this.b = (String) cld.a(str, "url");
-        this.c = (String) cld.a(str2, "userAgent");
-        this.d = (Executor) cld.a(executor, "executor");
-        this.e = (dor) cld.a(dor, "headers");
-        this.f = (dqo) cld.a(dqo, "transport");
-        this.g = (Runnable) cld.a(runnable, "startCallback");
+    dqk(java.lang.String str, java.lang.String str2, java.util.concurrent.Executor executor, defpackage.dor dor, defpackage.dqo dqo, java.lang.Runnable runnable, java.lang.Object obj, int i2, boolean z, defpackage.dpb dpb, defpackage.dzo dzo, defpackage.dna dna, defpackage.dzt dzt) {
+        super(new defpackage.dzy(), dzo, dzt, dor, dpb.g);
+        this.b = (java.lang.String) defpackage.cld.a((java.lang.Object) str, (java.lang.Object) "url");
+        this.c = (java.lang.String) defpackage.cld.a((java.lang.Object) str2, (java.lang.Object) "userAgent");
+        this.d = (java.util.concurrent.Executor) defpackage.cld.a((java.lang.Object) executor, (java.lang.Object) "executor");
+        this.e = (defpackage.dor) defpackage.cld.a((java.lang.Object) dor, (java.lang.Object) "headers");
+        this.f = (defpackage.dqo) defpackage.cld.a((java.lang.Object) dqo, (java.lang.Object) "transport");
+        this.g = (java.lang.Runnable) defpackage.cld.a((java.lang.Object) runnable, (java.lang.Object) "startCallback");
         this.h = dpb.f || z;
-        this.j = dpb.a == dpe.UNARY;
-        this.k = dna.a(dqg.a);
-        this.l = (Collection) dna.a(dqg.b);
-        this.m = new dqn(this, i2, dzo, obj, dzt);
+        this.j = dpb.a == defpackage.dpe.UNARY;
+        this.k = dna.a(defpackage.dqg.a);
+        this.l = (java.util.Collection) dna.a(defpackage.dqg.b);
+        this.m = new defpackage.dqn(this, i2, dzo, obj, dzt);
     }
 
-    @Override // defpackage.dta
-    public final void a(String str) {
-        throw new UnsupportedOperationException("Cronet does not support overriding authority");
+    public final void a(java.lang.String str) {
+        throw new java.lang.UnsupportedOperationException("Cronet does not support overriding authority");
     }
 
-    /* access modifiers changed from: package-private */
-    public final void a(dpw dpw) {
+    /* access modifiers changed from: 0000 */
+    public final void a(defpackage.dpw dpw) {
         this.f.a(this, dpw);
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.dqr
-    public final /* synthetic */ dqt a() {
+    public final /* synthetic */ defpackage.dqt a() {
         return this.p;
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.dqr
-    public final /* synthetic */ dri b() {
+    public final /* synthetic */ defpackage.dri b() {
         return this.m;
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.dqr, defpackage.dqy
-    public final /* synthetic */ dri c() {
+    public final /* synthetic */ defpackage.dri c() {
         return this.m;
     }
 }

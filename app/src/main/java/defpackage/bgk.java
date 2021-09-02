@@ -1,15 +1,10 @@
 package defpackage;
 
-import android.os.Bundle;
-import com.google.android.gms.common.data.BitmapTeleporter;
-import java.util.ArrayList;
-import java.util.List;
-
-/* renamed from: bgk  reason: default package */
+/* renamed from: bgk reason: default package */
 /* compiled from: PG */
 public final class bgk {
-    public BitmapTeleporter a;
-    public Bundle b = new Bundle();
-    public String c;
-    public List d = new ArrayList();
+    public com.google.android.gms.common.data.BitmapTeleporter a;
+    public android.os.Bundle b = new android.os.Bundle();
+    public java.lang.String c;
+    public java.util.List d = new java.util.ArrayList();
 }

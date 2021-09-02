@@ -1,16 +1,12 @@
 package defpackage;
 
-import android.view.MotionEvent;
-import android.view.View;
-
-/* access modifiers changed from: package-private */
-/* renamed from: eh  reason: default package */
+/* renamed from: eh reason: default package */
 /* compiled from: PG */
-public final class eh implements View.OnTouchListener {
+final class eh implements android.view.View.OnTouchListener {
     eh() {
     }
 
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
+    public final boolean onTouch(android.view.View view, android.view.MotionEvent motionEvent) {
         return true;
     }
 }

@@ -1,53 +1,54 @@
 package defpackage;
 
-/* renamed from: dga  reason: default package */
+/* renamed from: dga reason: default package */
 /* compiled from: PG */
-public final class dga extends dih implements djq {
-    public static final dga d = new dga();
-    private static volatile djx e;
+public final class dga extends defpackage.dih implements defpackage.djq {
+    public static final defpackage.dga d = new defpackage.dga();
+    private static volatile defpackage.djx e;
     public int a;
-    public String b = "";
-    public String c = "";
+    public java.lang.String b = "";
+    public java.lang.String c = "";
 
     private dga() {
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.dih
-    public final Object a(int i) {
-        djx djx;
+    public final java.lang.Object a(int i) {
+        defpackage.djx djx;
         switch (i - 1) {
             case 0:
-                return (byte) 1;
+                return java.lang.Byte.valueOf(1);
             case 1:
                 return null;
             case 2:
-                return new dkb(d, "\u0001\u0002\u0000\u0001\u0001\u0003\u0002\u0000\u0000\u0000\u0001\b\u0000\u0003\b\u0002", new Object[]{"a", "b", "c"});
+                java.lang.Object[] objArr = {"a", "b", "c"};
+                return new defpackage.dkb(d, "\u0001\u0002\u0000\u0001\u0001\u0003\u0002\u0000\u0000\u0000\u0001\b\u0000\u0003\b\u0002", objArr);
             case 3:
-                return new dga();
+                return new defpackage.dga();
             case 4:
-                return new dii((short[][][][][][][][][][][][][][][][][][][][][][]) null);
+                return new defpackage.dii((short[][][][][][][][][][][][][][][][][][][][][][]) null);
             case 5:
                 return d;
             case 6:
-                djx djx2 = e;
+                defpackage.djx djx2 = e;
                 if (djx2 != null) {
                     return djx2;
                 }
-                synchronized (dga.class) {
+                synchronized (defpackage.dga.class) {
                     djx = e;
                     if (djx == null) {
-                        djx = new dgr(d);
+                        djx = new defpackage.dgr(d);
                         e = djx;
                     }
                 }
                 return djx;
             default:
-                throw new UnsupportedOperationException();
+                throw new java.lang.UnsupportedOperationException();
         }
     }
 
     static {
-        dih.t.put(dga.class, d);
+        defpackage.dga dga = d;
+        defpackage.dih.t.put(defpackage.dga.class, dga);
     }
 }

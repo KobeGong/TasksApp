@@ -1,20 +1,17 @@
 package defpackage;
 
-import java.util.concurrent.Executor;
-
-/* renamed from: aiu  reason: default package */
+/* renamed from: aiu reason: default package */
 /* compiled from: PG */
-public final class aiu implements ecz {
-    private final bqm a;
-    private final Executor b;
+public final class aiu implements defpackage.ecz {
+    private final defpackage.bqm a;
+    private final java.util.concurrent.Executor b;
 
-    public aiu(bqm bqm, Executor executor) {
+    public aiu(defpackage.bqm bqm, java.util.concurrent.Executor executor) {
         this.a = bqm;
         this.b = executor;
     }
 
-    @Override // defpackage.ecz
-    public final Object a() {
-        return csv.a(new coy(ajw.a, new cov(), this.a, this.b));
+    public final java.lang.Object a() {
+        return defpackage.csv.a((java.lang.Object) new defpackage.coy(defpackage.ajw.a, new defpackage.cov(), this.a, this.b));
     }
 }

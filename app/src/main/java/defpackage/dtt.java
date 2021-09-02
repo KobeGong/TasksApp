@@ -1,41 +1,35 @@
 package defpackage;
 
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.List;
-
-/* renamed from: dtt  reason: default package */
+/* renamed from: dtt reason: default package */
 /* compiled from: PG */
-public class dtt implements dta {
+public class dtt implements defpackage.dta {
     private volatile boolean a;
-    private dzq b;
-    public dta c;
-    private dpw d;
-    private List e = new ArrayList();
-    private dug f;
+    private defpackage.dzq b;
+    public defpackage.dta c;
+    private defpackage.dpw d;
+    private java.util.List e = new java.util.ArrayList();
+    private defpackage.dug f;
 
-    @Override // defpackage.dta
     public final void b(int i) {
         if (this.a) {
             this.c.b(i);
         } else {
-            a(new dtu(this, i));
+            a((java.lang.Runnable) new defpackage.dtu(this, i));
         }
     }
 
-    @Override // defpackage.dta
     public final void a(int i) {
         if (this.a) {
             this.c.a(i);
         } else {
-            a(new dty(this, i));
+            a((java.lang.Runnable) new defpackage.dty(this, i));
         }
     }
 
-    public final void a(dta dta) {
+    public final void a(defpackage.dta dta) {
         synchronized (this) {
             if (this.c == null) {
-                this.c = (dta) cld.a(dta, "stream");
+                this.c = (defpackage.dta) defpackage.cld.a((java.lang.Object) dta, (java.lang.Object) "stream");
                 a();
             }
         }
@@ -51,39 +45,39 @@ public class dtt implements dta {
     /* JADX WARNING: Code restructure failed: missing block: B:14:0x002d, code lost:
         monitor-exit(r2);
      */
-    /* JADX WARNING: Code restructure failed: missing block: B:17:0x0034, code lost:
+    /* JADX WARNING: Code restructure failed: missing block: B:18:0x0034, code lost:
         r2 = r1.iterator();
      */
-    /* JADX WARNING: Code restructure failed: missing block: B:19:0x003c, code lost:
+    /* JADX WARNING: Code restructure failed: missing block: B:20:0x003c, code lost:
         if (r2.hasNext() == false) goto L_0x004b;
      */
-    /* JADX WARNING: Code restructure failed: missing block: B:20:0x003e, code lost:
+    /* JADX WARNING: Code restructure failed: missing block: B:21:0x003e, code lost:
         ((java.lang.Runnable) r2.next()).run();
      */
-    /* JADX WARNING: Code restructure failed: missing block: B:25:0x0050, code lost:
+    /* JADX WARNING: Code restructure failed: missing block: B:28:?, code lost:
         r1 = r2.c;
         r2.c = r0;
      */
-    /* JADX WARNING: Code restructure failed: missing block: B:26:0x0054, code lost:
+    /* JADX WARNING: Code restructure failed: missing block: B:29:0x0054, code lost:
         monitor-exit(r2);
      */
-    /* JADX WARNING: Code restructure failed: missing block: B:27:0x0055, code lost:
+    /* JADX WARNING: Code restructure failed: missing block: B:30:0x0055, code lost:
         r3 = r1.iterator();
      */
-    /* JADX WARNING: Code restructure failed: missing block: B:29:0x005d, code lost:
+    /* JADX WARNING: Code restructure failed: missing block: B:32:0x005d, code lost:
         if (r3.hasNext() == false) goto L_0x006c;
      */
-    /* JADX WARNING: Code restructure failed: missing block: B:30:0x005f, code lost:
+    /* JADX WARNING: Code restructure failed: missing block: B:33:0x005f, code lost:
         ((java.lang.Runnable) r3.next()).run();
      */
-    /* JADX WARNING: Code restructure failed: missing block: B:34:0x006c, code lost:
+    /* JADX WARNING: Code restructure failed: missing block: B:38:0x006c, code lost:
         r1.clear();
         r0 = r1;
      */
-    /* JADX WARNING: Code restructure failed: missing block: B:39:?, code lost:
+    /* JADX WARNING: Code restructure failed: missing block: B:51:?, code lost:
         return;
      */
-    /* JADX WARNING: Code restructure failed: missing block: B:40:?, code lost:
+    /* JADX WARNING: Code restructure failed: missing block: B:52:?, code lost:
         return;
      */
     /* JADX WARNING: Code restructure failed: missing block: B:7:0x0017, code lost:
@@ -98,12 +92,80 @@ public class dtt implements dta {
     /* Code decompiled incorrectly, please refer to instructions dump. */
     private final void a() {
         /*
-        // Method dump skipped, instructions count: 113
+            r4 = this;
+            java.util.ArrayList r0 = new java.util.ArrayList
+            r0.<init>()
+        L_0x0005:
+            monitor-enter(r4)
+            java.util.List r1 = r4.e     // Catch:{ all -> 0x0048 }
+            boolean r1 = r1.isEmpty()     // Catch:{ all -> 0x0048 }
+            if (r1 == 0) goto L_0x002f
+            r0 = 0
+            r4.e = r0     // Catch:{ all -> 0x0048 }
+            r0 = 1
+            r4.a = r0     // Catch:{ all -> 0x0048 }
+            dug r2 = r4.f     // Catch:{ all -> 0x0048 }
+            monitor-exit(r4)     // Catch:{ all -> 0x0048 }
+            if (r2 == 0) goto L_0x002e
+            java.util.ArrayList r0 = new java.util.ArrayList
+            r0.<init>()
+        L_0x001e:
+            monitor-enter(r2)
+            java.util.List r1 = r2.c     // Catch:{ all -> 0x0069 }
+            boolean r1 = r1.isEmpty()     // Catch:{ all -> 0x0069 }
+            if (r1 == 0) goto L_0x0050
+            r0 = 0
+            r2.c = r0     // Catch:{ all -> 0x0069 }
+            r0 = 1
+            r2.b = r0     // Catch:{ all -> 0x0069 }
+            monitor-exit(r2)     // Catch:{ all -> 0x0069 }
+        L_0x002e:
+            return
+        L_0x002f:
+            java.util.List r1 = r4.e     // Catch:{ all -> 0x0048 }
+            r4.e = r0     // Catch:{ all -> 0x0048 }
+            monitor-exit(r4)     // Catch:{ all -> 0x0048 }
+            java.util.Iterator r2 = r1.iterator()
+        L_0x0038:
+            boolean r0 = r2.hasNext()
+            if (r0 == 0) goto L_0x004b
+            java.lang.Object r0 = r2.next()
+            java.lang.Runnable r0 = (java.lang.Runnable) r0
+            r0.run()
+            goto L_0x0038
+        L_0x0048:
+            r0 = move-exception
+            monitor-exit(r4)     // Catch:{ all -> 0x0048 }
+            throw r0
+        L_0x004b:
+            r1.clear()
+            r0 = r1
+            goto L_0x0005
+        L_0x0050:
+            java.util.List r1 = r2.c     // Catch:{ all -> 0x0069 }
+            r2.c = r0     // Catch:{ all -> 0x0069 }
+            monitor-exit(r2)     // Catch:{ all -> 0x0069 }
+            java.util.Iterator r3 = r1.iterator()
+        L_0x0059:
+            boolean r0 = r3.hasNext()
+            if (r0 == 0) goto L_0x006c
+            java.lang.Object r0 = r3.next()
+            java.lang.Runnable r0 = (java.lang.Runnable) r0
+            r0.run()
+            goto L_0x0059
+        L_0x0069:
+            r0 = move-exception
+            monitor-exit(r2)     // Catch:{ all -> 0x0069 }
+            throw r0
+        L_0x006c:
+            r1.clear()
+            r0 = r1
+            goto L_0x001e
         */
         throw new UnsupportedOperationException("Method not decompiled: defpackage.dtt.a():void");
     }
 
-    private final void a(Runnable runnable) {
+    private final void a(java.lang.Runnable runnable) {
         synchronized (this) {
             if (!this.a) {
                 this.e.add(runnable);
@@ -113,107 +175,97 @@ public class dtt implements dta {
         }
     }
 
-    @Override // defpackage.dta
-    public final void a(String str) {
-        cld.b(this.b == null, "May only be called before start");
-        cld.a(str, "authority");
-        a(new dtz(this, str));
+    public final void a(java.lang.String str) {
+        defpackage.cld.b(this.b == null, (java.lang.Object) "May only be called before start");
+        defpackage.cld.a((java.lang.Object) str, (java.lang.Object) "authority");
+        a((java.lang.Runnable) new defpackage.dtz(this, str));
     }
 
-    @Override // defpackage.dta
-    public final void a(dzq dzq) {
-        dpw dpw;
+    public final void a(defpackage.dzq dzq) {
+        defpackage.dpw dpw;
         boolean z;
-        cld.b(this.b == null, "already started");
+        defpackage.cld.b(this.b == null, (java.lang.Object) "already started");
         synchronized (this) {
-            this.b = (dzq) cld.a(dzq, "listener");
+            this.b = (defpackage.dzq) defpackage.cld.a((java.lang.Object) dzq, (java.lang.Object) "listener");
             dpw = this.d;
             z = this.a;
             if (!z) {
-                dug dug = new dug(dzq);
+                defpackage.dug dug = new defpackage.dug(dzq);
                 this.f = dug;
                 dzq = dug;
             }
         }
         if (dpw != null) {
-            dzq.b(dpw, new dor());
+            dzq.b(dpw, new defpackage.dor());
         } else if (z) {
             this.c.a(dzq);
         } else {
-            a(new dua(this, dzq));
+            a((java.lang.Runnable) new defpackage.dua(this, dzq));
         }
     }
 
-    @Override // defpackage.dzp
-    public final void a(InputStream inputStream) {
-        cld.a(inputStream, "message");
+    public final void a(java.io.InputStream inputStream) {
+        defpackage.cld.a((java.lang.Object) inputStream, (java.lang.Object) "message");
         if (this.a) {
             this.c.a(inputStream);
         } else {
-            a(new dub(this, inputStream));
+            a((java.lang.Runnable) new defpackage.dub(this, inputStream));
         }
     }
 
-    @Override // defpackage.dzp
     public final void f() {
         if (this.a) {
             this.c.f();
         } else {
-            a(new duc(this));
+            a((java.lang.Runnable) new defpackage.duc(this));
         }
     }
 
-    @Override // defpackage.dta
-    public void b(dpw dpw) {
-        cld.a(dpw, "reason");
+    public void b(defpackage.dpw dpw) {
+        defpackage.cld.a((java.lang.Object) dpw, (java.lang.Object) "reason");
         boolean z = true;
-        dzq dzq = null;
+        defpackage.dzq dzq = null;
         synchronized (this) {
             if (this.c == null) {
-                this.c = dxm.a;
+                this.c = defpackage.dxm.a;
                 z = false;
                 dzq = this.b;
                 this.d = dpw;
             }
         }
         if (z) {
-            a(new dud(this, dpw));
+            a((java.lang.Runnable) new defpackage.dud(this, dpw));
             return;
         }
         if (dzq != null) {
-            dzq.b(dpw, new dor());
+            dzq.b(dpw, new defpackage.dor());
         }
         a();
     }
 
-    @Override // defpackage.dta
     public final void e() {
-        a(new due(this));
+        a((java.lang.Runnable) new defpackage.due(this));
     }
 
-    @Override // defpackage.dzp
     public final void c(int i) {
         if (this.a) {
             this.c.c(i);
         } else {
-            a(new duf(this, i));
+            a((java.lang.Runnable) new defpackage.duf(this, i));
         }
     }
 
-    @Override // defpackage.dzp
-    public final void a(doa doa) {
-        cld.a(doa, "compressor");
-        a(new dtv(this, doa));
+    public final void a(defpackage.doa doa) {
+        defpackage.cld.a((java.lang.Object) doa, (java.lang.Object) "compressor");
+        a((java.lang.Runnable) new defpackage.dtv(this, doa));
     }
 
-    @Override // defpackage.dta
     public final void a(boolean z) {
-        a(new dtw(this, z));
+        a((java.lang.Runnable) new defpackage.dtw(this, z));
     }
 
-    @Override // defpackage.dta
-    public final void a(dob dob) {
-        cld.a(dob, "decompressorRegistry");
-        a(new dtx(this, dob));
+    public final void a(defpackage.dob dob) {
+        defpackage.cld.a((java.lang.Object) dob, (java.lang.Object) "decompressorRegistry");
+        a((java.lang.Runnable) new defpackage.dtx(this, dob));
     }
 }

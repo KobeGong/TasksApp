@@ -1,15 +1,13 @@
 package defpackage;
 
-import java.util.List;
-
-/* renamed from: diz  reason: default package */
+/* renamed from: diz reason: default package */
 /* compiled from: PG */
-public interface diz extends List {
-    void a(dha dha);
+public interface diz extends java.util.List {
+    void a(defpackage.dha dha);
 
-    Object b(int i);
+    java.lang.Object b(int i);
 
-    List d();
+    java.util.List d();
 
-    diz e();
+    defpackage.diz e();
 }

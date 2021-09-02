@@ -1,35 +1,30 @@
 package defpackage;
 
-/* renamed from: dux  reason: default package */
+/* renamed from: dux reason: default package */
 /* compiled from: PG */
-abstract class dux implements dzq {
+abstract class dux implements defpackage.dzq {
     dux() {
     }
 
     /* access modifiers changed from: protected */
-    public abstract dzq b();
+    public abstract defpackage.dzq b();
 
-    @Override // defpackage.dzq
-    public final void a(dor dor) {
+    public final void a(defpackage.dor dor) {
         b().a(dor);
     }
 
-    @Override // defpackage.dzq
-    public void b(dpw dpw, dor dor) {
+    public void b(defpackage.dpw dpw, defpackage.dor dor) {
         b().b(dpw, dor);
     }
 
-    @Override // defpackage.dzq
-    public void a(dpw dpw, int i, dor dor) {
+    public void a(defpackage.dpw dpw, int i, defpackage.dor dor) {
         b().a(dpw, i, dor);
     }
 
-    @Override // defpackage.dzq
-    public final void a(dzr dzr) {
+    public final void a(defpackage.dzr dzr) {
         b().a(dzr);
     }
 
-    @Override // defpackage.dzq
     public final void a() {
         b().a();
     }

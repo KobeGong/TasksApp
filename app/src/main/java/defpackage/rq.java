@@ -1,24 +1,20 @@
 package defpackage;
 
-import android.os.Bundle;
-import android.view.View;
-
-/* access modifiers changed from: package-private */
-/* renamed from: rq  reason: default package */
+/* renamed from: rq reason: default package */
 /* compiled from: PG */
-public class rq {
+class rq {
     rq() {
     }
 
-    public View.AccessibilityDelegate a(rn rnVar) {
-        return new rr(rnVar);
+    public android.view.View.AccessibilityDelegate a(defpackage.rn rnVar) {
+        return new defpackage.rr(rnVar);
     }
 
-    public tp a(View.AccessibilityDelegate accessibilityDelegate, View view) {
+    public defpackage.tp a(android.view.View.AccessibilityDelegate accessibilityDelegate, android.view.View view) {
         return null;
     }
 
-    public boolean a(View.AccessibilityDelegate accessibilityDelegate, View view, int i, Bundle bundle) {
+    public boolean a(android.view.View.AccessibilityDelegate accessibilityDelegate, android.view.View view, int i, android.os.Bundle bundle) {
         return false;
     }
 }

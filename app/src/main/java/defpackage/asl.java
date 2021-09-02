@@ -1,23 +1,18 @@
 package defpackage;
 
-import android.view.View;
+/* renamed from: asl reason: default package */
+final /* synthetic */ class asl implements android.view.View.OnFocusChangeListener {
+    private final EditTaskFragment taskFragment;
+    private final SubTaskView b;
 
-/* access modifiers changed from: package-private */
-/* renamed from: asl  reason: default package */
-public final /* synthetic */ class asl implements View.OnFocusChangeListener {
-    private final asi a;
-    private final atb b;
-
-    asl(asi asi, atb atb) {
-        this.a = asi;
+    asl(EditTaskFragment asi, SubTaskView atb) {
+        this.taskFragment = asi;
         this.b = atb;
     }
 
-    public final void onFocusChange(View view, boolean z) {
-        asi asi = this.a;
-        atb atb = this.b;
+    public final void onFocusChange(android.view.View view, boolean z) {
         if (!z) {
-            asi.b(atb);
+            this.taskFragment.b(this.b);
         }
     }
 }

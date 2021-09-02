@@ -1,15 +1,13 @@
 package defpackage;
 
-/* renamed from: ebg  reason: default package */
+/* renamed from: ebg reason: default package */
 /* compiled from: PG */
-public final class ebg extends ebo {
-    @Override // defpackage.ebo
-    public final ebm a() {
-        return ebf.a;
+public final class ebg extends defpackage.ebo {
+    public final defpackage.ebm a() {
+        return defpackage.ebf.a;
     }
 
-    @Override // defpackage.ebo
-    public final ebr b() {
-        return ebe.a;
+    public final defpackage.ebr b() {
+        return defpackage.ebe.a;
     }
 }

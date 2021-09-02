@@ -1,11 +1,11 @@
 package defpackage;
 
-/* renamed from: dmb  reason: default package */
+/* renamed from: dmb reason: default package */
 /* compiled from: PG */
-public final class dmb implements Cloneable {
-    public static final dmc a = new dmc();
+public final class dmb implements java.lang.Cloneable {
+    public static final defpackage.dmc a = new defpackage.dmc();
     public int[] b;
-    public dmc[] c;
+    public defpackage.dmc[] c;
     public int d;
 
     dmb() {
@@ -15,20 +15,20 @@ public final class dmb implements Cloneable {
     private dmb(int i) {
         int a2 = a(i);
         this.b = new int[a2];
-        this.c = new dmc[a2];
+        this.c = new defpackage.dmc[a2];
         this.d = 0;
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         boolean z;
         boolean z2;
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof dmb)) {
+        if (!(obj instanceof defpackage.dmb)) {
             return false;
         }
-        dmb dmb = (dmb) obj;
+        defpackage.dmb dmb = (defpackage.dmb) obj;
         if (this.d != dmb.d) {
             return false;
         }
@@ -48,8 +48,8 @@ public final class dmb implements Cloneable {
             }
         }
         if (z) {
-            dmc[] dmcArr = this.c;
-            dmc[] dmcArr2 = dmb.c;
+            defpackage.dmc[] dmcArr = this.c;
+            defpackage.dmc[] dmcArr2 = dmb.c;
             int i3 = this.d;
             int i4 = 0;
             while (true) {
@@ -94,7 +94,7 @@ public final class dmb implements Cloneable {
         return i2 / 4;
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public final int b(int i) {
         int i2 = 0;
         int i3 = this.d - 1;
@@ -112,14 +112,13 @@ public final class dmb implements Cloneable {
         return i2 ^ -1;
     }
 
-    @Override // java.lang.Object
-    public final /* synthetic */ Object clone() {
+    public final /* synthetic */ java.lang.Object clone() {
         int i = this.d;
-        dmb dmb = new dmb(i);
-        System.arraycopy(this.b, 0, dmb.b, 0, i);
+        defpackage.dmb dmb = new defpackage.dmb(i);
+        java.lang.System.arraycopy(this.b, 0, dmb.b, 0, i);
         for (int i2 = 0; i2 < i; i2++) {
             if (this.c[i2] != null) {
-                dmb.c[i2] = (dmc) this.c[i2].clone();
+                dmb.c[i2] = (defpackage.dmc) this.c[i2].clone();
             }
         }
         dmb.d = i;

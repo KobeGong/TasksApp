@@ -1,12 +1,12 @@
 package defpackage;
 
-/* renamed from: ban  reason: default package */
+/* renamed from: ban reason: default package */
 /* compiled from: PG */
-final class ban implements Runnable {
-    private /* synthetic */ axq a;
-    private /* synthetic */ bak b;
+final class ban implements java.lang.Runnable {
+    private /* synthetic */ defpackage.axq a;
+    private /* synthetic */ defpackage.bak b;
 
-    ban(bak bak, axq axq) {
+    ban(defpackage.bak bak, defpackage.axq axq) {
         this.b = bak;
         this.a = axq;
     }

@@ -1,18 +1,18 @@
 package defpackage;
 
-/* renamed from: cdj  reason: default package */
+/* renamed from: cdj reason: default package */
 /* compiled from: PG */
 public abstract class cdj {
     cdj() {
     }
 
-    public abstract cdl a();
+    public abstract defpackage.cdl a();
 
-    public abstract cdf b();
+    public abstract defpackage.cdf b();
 
-    public abstract cdh c();
+    public abstract defpackage.cdh c();
 
-    public abstract cdp d();
+    public abstract defpackage.cdp d();
 
-    public abstract cqo e();
+    public abstract defpackage.cqo e();
 }

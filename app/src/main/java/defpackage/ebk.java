@@ -1,15 +1,15 @@
 package defpackage;
 
-/* renamed from: ebk  reason: default package */
+/* renamed from: ebk reason: default package */
 /* compiled from: PG */
 public abstract class ebk {
     ebk() {
     }
 
-    public abstract String a();
+    public abstract java.lang.String a();
 
-    public static ebk a(String str) {
-        cld.a(!str.isEmpty() && str.length() <= 255 && dtj.a(str));
-        return new eaz(str);
+    public static defpackage.ebk a(java.lang.String str) {
+        defpackage.cld.a(!str.isEmpty() && str.length() <= 255 && defpackage.dtj.a(str));
+        return new defpackage.eaz(str);
     }
 }

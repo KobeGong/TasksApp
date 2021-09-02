@@ -1,12 +1,11 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: dtp  reason: default package */
+/* renamed from: dtp reason: default package */
 /* compiled from: PG */
-public final class dtp implements Runnable {
-    private final /* synthetic */ dxc a;
+final class dtp implements java.lang.Runnable {
+    private final /* synthetic */ defpackage.dxc a;
 
-    dtp(dxc dxc) {
+    dtp(defpackage.dxc dxc) {
         this.a = dxc;
     }
 

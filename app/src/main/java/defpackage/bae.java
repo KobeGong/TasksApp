@@ -1,21 +1,19 @@
 package defpackage;
 
-import android.os.Bundle;
-
-/* renamed from: bae  reason: default package */
+/* renamed from: bae reason: default package */
 /* compiled from: PG */
 public interface bae {
-    bca a(bca bca);
+    defpackage.bca a(defpackage.bca bca);
 
     void a();
 
     void a(int i);
 
-    void a(Bundle bundle);
+    void a(android.os.Bundle bundle);
 
-    void a(axq axq, ayd ayd, boolean z);
+    void a(defpackage.axq axq, defpackage.ayd ayd, boolean z);
 
-    bca b(bca bca);
+    defpackage.bca b(defpackage.bca bca);
 
     boolean b();
 

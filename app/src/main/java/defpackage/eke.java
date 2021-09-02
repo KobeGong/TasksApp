@@ -1,19 +1,16 @@
 package defpackage;
 
-import org.chromium.net.impl.CronetLibraryLoader;
-import org.chromium.net.impl.CronetUrlRequestContext;
-
-/* renamed from: eke  reason: default package */
+/* renamed from: eke reason: default package */
 /* compiled from: PG */
-public final class eke implements Runnable {
-    private final /* synthetic */ CronetUrlRequestContext a;
+public final class eke implements java.lang.Runnable {
+    private final /* synthetic */ org.chromium.net.impl.CronetUrlRequestContext a;
 
-    public eke(CronetUrlRequestContext cronetUrlRequestContext) {
+    public eke(org.chromium.net.impl.CronetUrlRequestContext cronetUrlRequestContext) {
         this.a = cronetUrlRequestContext;
     }
 
     public final void run() {
-        CronetLibraryLoader.a();
+        org.chromium.net.impl.CronetLibraryLoader.a();
         synchronized (this.a.b) {
             this.a.nativeInitRequestContextOnInitThread(this.a.d);
         }

@@ -1,6 +1,6 @@
 package defpackage;
 
-/* renamed from: hg  reason: default package */
+/* renamed from: hg reason: default package */
 /* compiled from: PG */
 public final class hg {
     public static final int[] a = {16842755, 16843041, 16843093, 16843097, 16843551, 16843754, 16843771, 16843778, 16843779};

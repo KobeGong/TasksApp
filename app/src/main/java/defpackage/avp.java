@@ -1,60 +1,50 @@
 package defpackage;
 
-import android.accounts.Account;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.api.Scope;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
-
-/* renamed from: avp  reason: default package */
+/* renamed from: avp reason: default package */
 /* compiled from: PG */
 public final class avp {
-    public Set a = new HashSet();
+    public java.util.Set a = new java.util.HashSet();
     private boolean b;
     private boolean c;
     private boolean d;
-    private String e;
-    private Account f;
-    private String g;
-    private Map h = new HashMap();
+    private java.lang.String e;
+    private android.accounts.Account f;
+    private java.lang.String g;
+    private java.util.Map h = new java.util.HashMap();
 
     public avp() {
     }
 
-    public avp(GoogleSignInOptions googleSignInOptions) {
-        azb.b(googleSignInOptions);
-        this.a = new HashSet(googleSignInOptions.g);
+    public avp(com.google.android.gms.auth.api.signin.GoogleSignInOptions googleSignInOptions) {
+        defpackage.azb.b((java.lang.Object) googleSignInOptions);
+        this.a = new java.util.HashSet(googleSignInOptions.g);
         this.b = googleSignInOptions.j;
         this.c = googleSignInOptions.k;
         this.d = googleSignInOptions.i;
         this.e = googleSignInOptions.l;
         this.f = googleSignInOptions.h;
         this.g = googleSignInOptions.m;
-        this.h = GoogleSignInOptions.b(googleSignInOptions.n);
+        this.h = com.google.android.gms.auth.api.signin.GoogleSignInOptions.b((java.util.List) googleSignInOptions.n);
     }
 
-    public final avp a() {
-        this.a.add(GoogleSignInOptions.a);
+    public final defpackage.avp a() {
+        this.a.add(com.google.android.gms.auth.api.signin.GoogleSignInOptions.a);
         return this;
     }
 
-    public final avp a(Scope scope, Scope... scopeArr) {
+    public final defpackage.avp a(com.google.android.gms.common.api.Scope scope, com.google.android.gms.common.api.Scope... scopeArr) {
         this.a.add(scope);
-        this.a.addAll(Arrays.asList(scopeArr));
+        this.a.addAll(java.util.Arrays.asList(scopeArr));
         return this;
     }
 
-    public final GoogleSignInOptions b() {
-        if (this.a.contains(GoogleSignInOptions.c) && this.a.contains(GoogleSignInOptions.b)) {
-            this.a.remove(GoogleSignInOptions.b);
+    public final com.google.android.gms.auth.api.signin.GoogleSignInOptions b() {
+        if (this.a.contains(com.google.android.gms.auth.api.signin.GoogleSignInOptions.c) && this.a.contains(com.google.android.gms.auth.api.signin.GoogleSignInOptions.b)) {
+            this.a.remove(com.google.android.gms.auth.api.signin.GoogleSignInOptions.b);
         }
         if (this.d && (this.f == null || !this.a.isEmpty())) {
             a();
         }
-        return new GoogleSignInOptions(3, new ArrayList(this.a), this.f, this.d, this.b, this.c, this.e, this.g, this.h);
+        return new com.google.android.gms.auth.api.signin.GoogleSignInOptions(3, new java.util.ArrayList(this.a), this.f, this.d, this.b, this.c, this.e, this.g, this.h);
     }
 }

@@ -1,17 +1,15 @@
 package defpackage;
 
-import android.support.v7.widget.SearchView;
-
-/* renamed from: agc  reason: default package */
+/* renamed from: agc reason: default package */
 /* compiled from: PG */
-public final class agc implements Runnable {
-    private final /* synthetic */ SearchView a;
+public final class agc implements java.lang.Runnable {
+    private final /* synthetic */ android.support.v7.widget.SearchView a;
 
-    public agc(SearchView searchView) {
+    public agc(android.support.v7.widget.SearchView searchView) {
         this.a = searchView;
     }
 
     public final void run() {
-        uk ukVar = this.a.n;
+        defpackage.uk ukVar = this.a.n;
     }
 }

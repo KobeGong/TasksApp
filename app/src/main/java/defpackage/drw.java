@@ -1,21 +1,21 @@
 package defpackage;
 
-/* renamed from: drw  reason: default package */
+/* renamed from: drw reason: default package */
 /* compiled from: PG */
 public final class drw {
-    public static final dry a = new dry();
-    public static final drx b = new drx();
-    private final dwe c = dtj.c();
-    private final dwe d = dtj.c();
-    private final dwe e = dtj.c();
+    public static final defpackage.dry a = new defpackage.dry();
+    public static final defpackage.drx b = new defpackage.drx();
+    private final defpackage.dwe c = defpackage.dtj.c();
+    private final defpackage.dwe d = defpackage.dtj.c();
+    private final defpackage.dwe e = defpackage.dtj.c();
     private volatile long f;
 
-    drw(dry dry) {
+    drw(defpackage.dry dry) {
     }
 
     public final void a() {
         this.c.a();
-        this.f = System.currentTimeMillis();
+        this.f = java.lang.System.currentTimeMillis();
     }
 
     public final void a(boolean z) {

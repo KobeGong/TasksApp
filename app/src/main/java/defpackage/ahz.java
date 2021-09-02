@@ -1,10 +1,8 @@
 package defpackage;
 
-import android.view.animation.Interpolator;
-
-/* renamed from: ahz  reason: default package */
+/* renamed from: ahz reason: default package */
 /* compiled from: PG */
-final class ahz implements Interpolator {
+final class ahz implements android.view.animation.Interpolator {
     ahz() {
     }
 

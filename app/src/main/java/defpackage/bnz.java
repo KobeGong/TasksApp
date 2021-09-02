@@ -1,36 +1,31 @@
 package defpackage;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-/* renamed from: bnz  reason: default package */
+/* renamed from: bnz reason: default package */
 /* compiled from: PG */
-public final class bnz implements Parcelable.Creator {
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object[] newArray(int i) {
-        return new boa[i];
+public final class bnz implements android.os.Parcelable.Creator {
+    public final /* synthetic */ java.lang.Object[] newArray(int i) {
+        return new defpackage.boa[i];
     }
 
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object createFromParcel(Parcel parcel) {
-        int a = bjr.a(parcel);
-        Long l = null;
-        bol bol = null;
+    public final /* synthetic */ java.lang.Object createFromParcel(android.os.Parcel parcel) {
+        int a = defpackage.bjr.a(parcel);
+        java.lang.Long l = null;
+        defpackage.bol bol = null;
         while (parcel.dataPosition() < a) {
             int readInt = parcel.readInt();
             switch (65535 & readInt) {
                 case 2:
-                    bol = (bol) bjr.a(parcel, readInt, bol.CREATOR);
+                    bol = (defpackage.bol) defpackage.bjr.a(parcel, readInt, defpackage.bol.CREATOR);
                     break;
                 case 3:
-                    l = bjr.g(parcel, readInt);
+                    l = defpackage.bjr.g(parcel, readInt);
                     break;
                 default:
-                    bjr.b(parcel, readInt);
+                    defpackage.bjr.b(parcel, readInt);
                     break;
             }
         }
-        bjr.p(parcel, a);
-        return new boa(bol, l);
+        defpackage.bjr.p(parcel, a);
+        return new defpackage.boa(bol, l);
     }
 }

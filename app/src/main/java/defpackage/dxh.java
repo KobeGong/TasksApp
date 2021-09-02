@@ -1,9 +1,8 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: dxh  reason: default package */
+/* renamed from: dxh reason: default package */
 /* compiled from: PG */
-public enum dxh {
+enum dxh {
     HEADER,
     BODY
 }

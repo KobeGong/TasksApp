@@ -1,17 +1,17 @@
 package defpackage;
 
-/* renamed from: bwn  reason: default package */
+/* renamed from: bwn reason: default package */
 /* compiled from: PG */
-public final class bwn implements ecz {
-    private final ecz a;
-    private final ecz b;
-    private final ecz c;
-    private final ecz d;
-    private final ecz e;
-    private final ecz f;
-    private final ecz g;
+public final class bwn implements defpackage.ecz {
+    private final defpackage.ecz a;
+    private final defpackage.ecz b;
+    private final defpackage.ecz c;
+    private final defpackage.ecz d;
+    private final defpackage.ecz e;
+    private final defpackage.ecz f;
+    private final defpackage.ecz g;
 
-    public bwn(ecz ecz, ecz ecz2, ecz ecz3, ecz ecz4, ecz ecz5, ecz ecz6, ecz ecz7) {
+    public bwn(defpackage.ecz ecz, defpackage.ecz ecz2, defpackage.ecz ecz3, defpackage.ecz ecz4, defpackage.ecz ecz5, defpackage.ecz ecz6, defpackage.ecz ecz7) {
         this.a = ecz;
         this.b = ecz2;
         this.c = ecz3;
@@ -21,8 +21,7 @@ public final class bwn implements ecz {
         this.g = ecz7;
     }
 
-    @Override // defpackage.ecz
-    public final /* synthetic */ Object a() {
-        return new bwm((bup) this.a.a(), (bza) this.b.a(), (cbb) this.c.a(), (bux) this.d.a(), (bwk) this.e.a(), (cbl) this.f.a(), (bzd) this.g.a());
+    public final /* synthetic */ java.lang.Object a() {
+        return new defpackage.bwm((defpackage.bup) this.a.a(), (defpackage.bza) this.b.a(), (defpackage.cbb) this.c.a(), (defpackage.bux) this.d.a(), (defpackage.bwk) this.e.a(), (defpackage.cbl) this.f.a(), (defpackage.bzd) this.g.a());
     }
 }

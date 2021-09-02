@@ -1,45 +1,37 @@
 package defpackage;
 
-import java.io.InputStream;
-
-/* renamed from: dsu  reason: default package */
+/* renamed from: dsu reason: default package */
 /* compiled from: PG */
-final class dsu extends dtk {
-    private final /* synthetic */ dzr a;
-    private final /* synthetic */ dss b;
+final class dsu extends defpackage.dtk {
+    private final /* synthetic */ defpackage.dzr a;
+    private final /* synthetic */ defpackage.dss b;
 
-    /* JADX INFO: super call moved to the top of the method (can break code semantics) */
-    dsu(dss dss, dzr dzr) {
-        super(dss.c.d);
+    dsu(defpackage.dss dss, defpackage.dzr dzr) {
         this.b = dss;
         this.a = dzr;
+        super(dss.c.d);
     }
 
-    @Override // defpackage.dtk
     public final void a() {
+        java.io.InputStream a2;
         if (this.b.b) {
-            dvc.a(this.a);
+            defpackage.dvc.a(this.a);
             return;
         }
         while (true) {
             try {
-                InputStream a2 = this.a.a();
+                a2 = this.a.a();
                 if (a2 != null) {
-                    try {
-                        this.b.a.a(this.b.c.a.d.a(a2));
-                        a2.close();
-                    } catch (Throwable th) {
-                        dvc.a(a2);
-                        throw th;
-                    }
+                    this.b.a.a(this.b.c.a.d.a(a2));
+                    a2.close();
                 } else {
                     return;
                 }
-            } catch (Throwable th2) {
-                dvc.a(this.a);
-                dpw a3 = dpw.c.b(th2).a("Failed to read message.");
+            } catch (Throwable th) {
+                defpackage.dvc.a(this.a);
+                defpackage.dpw a3 = defpackage.dpw.c.b(th).a("Failed to read message.");
                 this.b.c.e.b(a3);
-                this.b.a(a3, new dor());
+                this.b.a(a3, new defpackage.dor());
                 return;
             }
         }

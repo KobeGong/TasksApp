@@ -1,38 +1,34 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: ctq  reason: default package */
+/* renamed from: ctq reason: default package */
 /* compiled from: PG */
-public final class ctq implements cur {
-    public Object[] a = new Object[8];
+final class ctq implements defpackage.cur {
+    public java.lang.Object[] a = new java.lang.Object[8];
     public int b = 0;
 
     ctq() {
     }
 
-    @Override // defpackage.cur
     public final int a() {
         return this.b;
     }
 
-    @Override // defpackage.cur
-    public final cuc a(int i) {
+    public final defpackage.cuc a(int i) {
         if (i < this.b) {
-            return (cuc) this.a[i * 2];
+            return (defpackage.cuc) this.a[i * 2];
         }
-        throw new IndexOutOfBoundsException();
+        throw new java.lang.IndexOutOfBoundsException();
     }
 
-    @Override // defpackage.cur
-    public final Object b(int i) {
+    public final java.lang.Object b(int i) {
         if (i < this.b) {
             return this.a[(i * 2) + 1];
         }
-        throw new IndexOutOfBoundsException();
+        throw new java.lang.IndexOutOfBoundsException();
     }
 
-    /* access modifiers changed from: package-private */
-    public final int a(cuc cuc) {
+    /* access modifiers changed from: 0000 */
+    public final int a(defpackage.cuc cuc) {
         for (int i = 0; i < this.b; i++) {
             if (this.a[i * 2].equals(cuc)) {
                 return i;
@@ -41,8 +37,7 @@ public final class ctq implements cur {
         return -1;
     }
 
-    @Override // defpackage.cur
-    public final Object b(cuc cuc) {
+    public final java.lang.Object b(defpackage.cuc cuc) {
         int a2 = a(cuc);
         if (a2 != -1) {
             return cuc.a(this.a[(a2 * 2) + 1]);
@@ -50,8 +45,8 @@ public final class ctq implements cur {
         return null;
     }
 
-    public final String toString() {
-        StringBuilder sb = new StringBuilder("Metadata{");
+    public final java.lang.String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder("Metadata{");
         for (int i = 0; i < this.b; i++) {
             sb.append(" '").append(a(i)).append("': ").append(b(i));
         }

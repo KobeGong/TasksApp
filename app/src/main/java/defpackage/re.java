@@ -1,56 +1,61 @@
 package defpackage;
 
-import java.util.Collection;
-import java.util.Iterator;
-
-/* access modifiers changed from: package-private */
-/* renamed from: re  reason: default package */
+/* renamed from: re reason: default package */
 /* compiled from: PG */
-public final class re implements Collection {
-    private final /* synthetic */ qz a;
+final class re implements java.util.Collection {
+    private final /* synthetic */ defpackage.qz a;
 
-    re(qz qzVar) {
+    re(defpackage.qz qzVar) {
         this.a = qzVar;
     }
 
-    @Override // java.util.Collection
-    public final boolean add(Object obj) {
-        throw new UnsupportedOperationException();
+    public final boolean add(java.lang.Object obj) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
-    @Override // java.util.Collection
-    public final boolean addAll(Collection collection) {
-        throw new UnsupportedOperationException();
+    public final boolean addAll(java.util.Collection collection) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     public final void clear() {
         this.a.c();
     }
 
-    public final boolean contains(Object obj) {
+    public final boolean contains(java.lang.Object obj) {
         return this.a.b(obj) >= 0;
     }
 
-    @Override // java.util.Collection
-    public final boolean containsAll(Collection collection) {
-        for (Object obj : collection) {
-            if (!contains(obj)) {
-                return false;
-            }
-        }
-        return true;
+    /* JADX WARNING: Incorrect type for immutable var: ssa=java.util.Collection, code=java.util.Collection<java.lang.Object>, for r3v0, types: [java.util.Collection<java.lang.Object>, java.util.Collection] */
+    /* Code decompiled incorrectly, please refer to instructions dump. */
+    public final boolean containsAll(java.util.Collection<java.lang.Object> r3) {
+        /*
+            r2 = this;
+            java.util.Iterator r0 = r3.iterator()
+        L_0x0004:
+            boolean r1 = r0.hasNext()
+            if (r1 == 0) goto L_0x0016
+            java.lang.Object r1 = r0.next()
+            boolean r1 = r2.contains(r1)
+            if (r1 != 0) goto L_0x0004
+            r0 = 0
+        L_0x0015:
+            return r0
+        L_0x0016:
+            r0 = 1
+            goto L_0x0015
+        */
+        throw new UnsupportedOperationException("Method not decompiled: defpackage.re.containsAll(java.util.Collection):boolean");
     }
 
     public final boolean isEmpty() {
         return this.a.a() == 0;
     }
 
-    @Override // java.util.Collection, java.lang.Iterable
-    public final Iterator iterator() {
-        return new ra(this.a, 1);
+    public final java.util.Iterator iterator() {
+        return new defpackage.ra(this.a, 1);
     }
 
-    public final boolean remove(Object obj) {
+    public final boolean remove(java.lang.Object obj) {
         int b = this.a.b(obj);
         if (b < 0) {
             return false;
@@ -59,8 +64,7 @@ public final class re implements Collection {
         return true;
     }
 
-    @Override // java.util.Collection
-    public final boolean removeAll(Collection collection) {
+    public final boolean removeAll(java.util.Collection collection) {
         int i = 0;
         int a2 = this.a.a();
         boolean z = false;
@@ -76,8 +80,7 @@ public final class re implements Collection {
         return z;
     }
 
-    @Override // java.util.Collection
-    public final boolean retainAll(Collection collection) {
+    public final boolean retainAll(java.util.Collection collection) {
         int i = 0;
         int a2 = this.a.a();
         boolean z = false;
@@ -97,12 +100,11 @@ public final class re implements Collection {
         return this.a.a();
     }
 
-    public final Object[] toArray() {
+    public final java.lang.Object[] toArray() {
         return this.a.b(1);
     }
 
-    @Override // java.util.Collection
-    public final Object[] toArray(Object[] objArr) {
+    public final java.lang.Object[] toArray(java.lang.Object[] objArr) {
         return this.a.a(objArr, 1);
     }
 }

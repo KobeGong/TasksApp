@@ -1,17 +1,12 @@
 package defpackage;
 
-import android.animation.ObjectAnimator;
-import android.graphics.Path;
-import android.util.Property;
-
-/* renamed from: ix  reason: default package */
+/* renamed from: ix reason: default package */
 /* compiled from: PG */
-final class ix implements iz {
+final class ix implements defpackage.iz {
     ix() {
     }
 
-    @Override // defpackage.iz
-    public final ObjectAnimator a(Object obj, Property property, Path path) {
-        return ObjectAnimator.ofFloat(obj, new jb(property, path), 0.0f, 1.0f);
+    public final android.animation.ObjectAnimator a(java.lang.Object obj, android.util.Property property, android.graphics.Path path) {
+        return android.animation.ObjectAnimator.ofFloat(obj, new defpackage.jb(property, path), new float[]{0.0f, 1.0f});
     }
 }

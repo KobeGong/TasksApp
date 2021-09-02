@@ -1,16 +1,13 @@
 package defpackage;
 
-import java.util.concurrent.ScheduledFuture;
-
-/* access modifiers changed from: package-private */
-/* renamed from: dzk  reason: default package */
+/* renamed from: dzk reason: default package */
 /* compiled from: PG */
-public final class dzk {
-    public final Object a;
+final class dzk {
+    public final java.lang.Object a;
     public int b;
-    public ScheduledFuture c;
+    public java.util.concurrent.ScheduledFuture c;
 
-    dzk(Object obj) {
+    dzk(java.lang.Object obj) {
         this.a = obj;
     }
 }

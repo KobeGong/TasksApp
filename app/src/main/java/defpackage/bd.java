@@ -1,81 +1,78 @@
 package defpackage;
 
-import java.util.Collections;
-import java.util.LinkedHashSet;
-import java.util.Locale;
-import java.util.Set;
-
-@Deprecated
-/* renamed from: bd  reason: default package */
+@java.lang.Deprecated
+/* renamed from: bd reason: default package */
 /* compiled from: PG */
 public final class bd {
-    @Deprecated
+    @java.lang.Deprecated
     public final int a;
-    @Deprecated
-    private final Set b;
-    @Deprecated
+    @java.lang.Deprecated
+    private final java.util.Set b;
+    @java.lang.Deprecated
     private final boolean c;
 
-    private bd(int i, Set set, boolean z) {
+    private bd(int i, java.util.Set set, boolean z) {
         this.a = i;
         this.b = set;
         this.c = z;
     }
 
-    static bd a(String str) {
+    static defpackage.bd a(java.lang.String str) {
         int i;
-        String str2;
-        LinkedHashSet linkedHashSet = new LinkedHashSet();
+        java.lang.String[] split;
+        java.lang.String str2;
+        java.util.LinkedHashSet linkedHashSet = new java.util.LinkedHashSet();
         if (str.startsWith("integer")) {
-            i = bg.c;
+            i = defpackage.bg.c;
         } else if (str.startsWith("decimal")) {
-            i = bg.d;
+            i = defpackage.bg.d;
         } else {
-            throw new IllegalArgumentException("Samples must start with 'integer' or 'decimal'");
+            throw new java.lang.IllegalArgumentException("Samples must start with 'integer' or 'decimal'");
         }
-        String[] split = av.b.split(str.substring(7).trim());
         boolean z = false;
         boolean z2 = true;
-        for (String str3 : split) {
+        for (java.lang.String str3 : defpackage.av.b.split(str.substring(7).trim())) {
             if (str3.equals("…") || str3.equals("...")) {
                 z = true;
                 z2 = false;
             } else if (z) {
-                String valueOf = String.valueOf(str3);
-                throw new IllegalArgumentException(valueOf.length() != 0 ? "Can only have … at the end of samples: ".concat(valueOf) : new String("Can only have … at the end of samples: "));
+                java.lang.String str4 = "Can only have … at the end of samples: ";
+                java.lang.String valueOf = java.lang.String.valueOf(str3);
+                throw new java.lang.IllegalArgumentException(valueOf.length() != 0 ? str4.concat(valueOf) : new java.lang.String(str4));
             } else {
-                String[] split2 = av.c.split(str3);
+                java.lang.String[] split2 = defpackage.av.c.split(str3);
                 switch (split2.length) {
                     case 1:
-                        bb bbVar = new bb(split2[0]);
+                        defpackage.bb bbVar = new defpackage.bb(split2[0]);
                         a(i, bbVar);
-                        linkedHashSet.add(new bc(bbVar, bbVar));
-                        continue;
+                        linkedHashSet.add(new defpackage.bc(bbVar, bbVar));
+                        break;
                     case 2:
-                        bb bbVar2 = new bb(split2[0]);
-                        bb bbVar3 = new bb(split2[1]);
+                        defpackage.bb bbVar2 = new defpackage.bb(split2[0]);
+                        defpackage.bb bbVar3 = new defpackage.bb(split2[1]);
                         a(i, bbVar2);
                         a(i, bbVar3);
-                        linkedHashSet.add(new bc(bbVar2, bbVar3));
-                        continue;
+                        linkedHashSet.add(new defpackage.bc(bbVar2, bbVar3));
+                        break;
                     default:
-                        String valueOf2 = String.valueOf(str3);
+                        java.lang.String str5 = "Ill-formed number range: ";
+                        java.lang.String valueOf2 = java.lang.String.valueOf(str3);
                         if (valueOf2.length() != 0) {
-                            str2 = "Ill-formed number range: ".concat(valueOf2);
+                            str2 = str5.concat(valueOf2);
                         } else {
-                            str2 = new String("Ill-formed number range: ");
+                            str2 = new java.lang.String(str5);
                         }
-                        throw new IllegalArgumentException(str2);
+                        throw new java.lang.IllegalArgumentException(str2);
                 }
             }
         }
-        return new bd(i, Collections.unmodifiableSet(linkedHashSet), z2);
+        return new defpackage.bd(i, java.util.Collections.unmodifiableSet(linkedHashSet), z2);
     }
 
-    private static void a(int i, bb bbVar) {
+    private static void a(int i, defpackage.bb bbVar) {
         boolean z;
         boolean z2 = true;
-        if (i == bg.c) {
+        if (i == defpackage.bg.c) {
             z = true;
         } else {
             z = false;
@@ -84,16 +81,16 @@ public final class bd {
             z2 = false;
         }
         if (z != z2) {
-            String valueOf = String.valueOf(bbVar);
-            throw new IllegalArgumentException(new StringBuilder(String.valueOf(valueOf).length() + 25).append("Ill-formed number range: ").append(valueOf).toString());
+            java.lang.String valueOf = java.lang.String.valueOf(bbVar);
+            throw new java.lang.IllegalArgumentException(new java.lang.StringBuilder(java.lang.String.valueOf(valueOf).length() + 25).append("Ill-formed number range: ").append(valueOf).toString());
         }
     }
 
-    @Deprecated
-    public final String toString() {
-        StringBuilder append = new StringBuilder("@").append(bg.e[this.a - 1].toLowerCase(Locale.ENGLISH));
+    @java.lang.Deprecated
+    public final java.lang.String toString() {
+        java.lang.StringBuilder append = new java.lang.StringBuilder("@").append(defpackage.bg.e[this.a - 1].toLowerCase(java.util.Locale.ENGLISH));
         boolean z = true;
-        for (bc bcVar : this.b) {
+        for (defpackage.bc bcVar : this.b) {
             if (z) {
                 z = false;
             } else {

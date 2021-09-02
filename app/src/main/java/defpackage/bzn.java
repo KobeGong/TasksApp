@@ -1,11 +1,11 @@
 package defpackage;
 
-/* renamed from: bzn  reason: default package */
+/* renamed from: bzn reason: default package */
 /* compiled from: PG */
 public final class bzn {
-    public buc a;
-    public bzb b;
-    public bzc c;
+    public defpackage.buc a;
+    public defpackage.bzb b;
+    public defpackage.bzc c;
 
     bzn() {
     }

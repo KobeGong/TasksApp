@@ -1,33 +1,28 @@
 package defpackage;
 
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
-
-/* renamed from: bbb  reason: default package */
+/* renamed from: bbb reason: default package */
 /* compiled from: PG */
-public final class bbb extends Handler {
-    private /* synthetic */ bba a;
+public final class bbb extends android.os.Handler {
+    private /* synthetic */ defpackage.bba a;
 
-    /* JADX INFO: super call moved to the top of the method (can break code semantics) */
-    public bbb(bba bba, Looper looper) {
-        super(looper);
+    public bbb(defpackage.bba bba, android.os.Looper looper) {
         this.a = bba;
+        super(looper);
     }
 
-    public final void handleMessage(Message message) {
+    public final void handleMessage(android.os.Message message) {
         boolean z = true;
         if (message.what != 1) {
             z = false;
         }
-        azb.b(z);
-        bba bba = this.a;
-        bbd bbd = (bbd) message.obj;
-        Object obj = bba.b;
+        defpackage.azb.b(z);
+        defpackage.bbd bbd = (defpackage.bbd) message.obj;
+        java.lang.Object obj = this.a.b;
         if (obj != null) {
             try {
-                ((bly) obj).a.a(bbd.a, bbd.b, bbd.c);
-            } catch (RuntimeException e) {
+                defpackage.bly bly = (defpackage.bly) obj;
+                bly.a.a(bbd.a, bbd.b, bbd.c);
+            } catch (java.lang.RuntimeException e) {
                 throw e;
             }
         }

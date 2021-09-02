@@ -1,22 +1,17 @@
 package defpackage;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
-
-/* renamed from: cdl  reason: default package */
+/* renamed from: cdl reason: default package */
 /* compiled from: PG */
 public final class cdl {
     public boolean a;
-    public final CopyOnWriteArrayList b = new CopyOnWriteArrayList();
-    public final List c = new ArrayList();
-    public final List d = new ArrayList();
+    public final java.util.concurrent.CopyOnWriteArrayList b = new java.util.concurrent.CopyOnWriteArrayList();
+    public final java.util.List c = new java.util.ArrayList();
+    public final java.util.List d = new java.util.ArrayList();
 
-    public final void a(Object obj) {
-        cky.a(obj);
-        if (!cky.a(c(), obj)) {
-            cky.a(this.c.contains(obj), "Selected account must be an available account");
+    public final void a(java.lang.Object obj) {
+        defpackage.cky.a(obj);
+        if (!defpackage.cky.a(c(), obj)) {
+            defpackage.cky.a(this.c.contains(obj), (java.lang.Object) "Selected account must be an available account");
             if (this.d.contains(obj)) {
                 this.d.set(this.d.indexOf(obj), c());
                 this.d.set(0, obj);
@@ -34,8 +29,8 @@ public final class cdl {
         return this.c.size();
     }
 
-    public final Object a(int i) {
-        cky.a(i, this.c.size());
+    public final java.lang.Object a(int i) {
+        defpackage.cky.a(i, this.c.size());
         return this.c.get(i);
     }
 
@@ -43,7 +38,7 @@ public final class cdl {
         return !this.d.isEmpty();
     }
 
-    public final Object c() {
+    public final java.lang.Object c() {
         if (b()) {
             return this.d.get(0);
         }
@@ -54,7 +49,7 @@ public final class cdl {
         return this.d.size() > 1;
     }
 
-    public final Object e() {
+    public final java.lang.Object e() {
         if (d()) {
             return this.d.get(1);
         }
@@ -65,32 +60,32 @@ public final class cdl {
         return this.d.size() > 2;
     }
 
-    public final Object g() {
+    public final java.lang.Object g() {
         if (f()) {
             return this.d.get(2);
         }
         return null;
     }
 
-    public final void a(cdm cdm) {
+    public final void a(defpackage.cdm cdm) {
         this.b.add(cdm);
     }
 
-    public final void b(cdm cdm) {
+    public final void b(defpackage.cdm cdm) {
         this.b.remove(cdm);
     }
 
     public final void h() {
-        Object c2 = c();
-        Object e = e();
-        Object g = g();
-        Iterator it = this.b.iterator();
+        java.lang.Object c2 = c();
+        java.lang.Object e = e();
+        java.lang.Object g = g();
+        java.util.Iterator it = this.b.iterator();
         while (it.hasNext()) {
-            ((cdm) it.next()).a(c2, e, g);
+            ((defpackage.cdm) it.next()).a(c2, e, g);
         }
     }
 
     static {
-        cdl.class.getSimpleName();
+        defpackage.cdl.class.getSimpleName();
     }
 }

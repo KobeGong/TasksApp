@@ -1,20 +1,15 @@
 package defpackage;
 
-import android.os.Bundle;
-import android.view.View;
-
-/* access modifiers changed from: package-private */
-/* renamed from: eg  reason: default package */
+/* renamed from: eg reason: default package */
 /* compiled from: PG */
-public final class eg extends rn {
-    private final /* synthetic */ ee b;
+final class eg extends defpackage.rn {
+    private final /* synthetic */ defpackage.ee b;
 
-    eg(ee eeVar) {
+    eg(defpackage.ee eeVar) {
         this.b = eeVar;
     }
 
-    @Override // defpackage.rn
-    public final void a(View view, tl tlVar) {
+    public final void a(android.view.View view, defpackage.tl tlVar) {
         super.a(view, tlVar);
         if (this.b.a) {
             tlVar.a(1048576);
@@ -24,8 +19,7 @@ public final class eg extends rn {
         tlVar.d(false);
     }
 
-    @Override // defpackage.rn
-    public final boolean a(View view, int i, Bundle bundle) {
+    public final boolean a(android.view.View view, int i, android.os.Bundle bundle) {
         if (i != 1048576 || !this.b.a) {
             return super.a(view, i, bundle);
         }

@@ -1,75 +1,74 @@
 package defpackage;
 
-import java.util.Arrays;
-
-/* renamed from: amv  reason: default package */
+/* renamed from: amv reason: default package */
 /* compiled from: PG */
-public final class amv extends alp {
+public final class amv extends defpackage.alp {
     public static final long serialVersionUID = 1;
-    private final String a;
-    private final String b;
-    private final String c;
+    private final java.lang.String a;
+    private final java.lang.String b;
+    private final java.lang.String c;
 
-    public amv(String str, String str2, String str3) {
+    public amv(java.lang.String str, java.lang.String str2, java.lang.String str3) {
         this.a = str;
         this.b = str2;
         this.c = str3;
     }
 
-    @Override // defpackage.amn
-    public final void b(alv alv) {
+    public final void b(defpackage.alv alv) {
         alv.b(this.a, this.b, this.c);
     }
 
-    @Override // defpackage.amn
-    public final void a(amb amb) {
-        dih dih;
-        dbg dbg;
-        dbo[] dboArr = new dbo[1];
-        dii e = ((dii) dbo.d.a(bg.ao)).d(this.b).e(((dii) dbb.e.a(bg.ao)).b(((dii) dca.g.a(bg.ao)).g(this.c)).a(cqz.a().a(3).a().b()));
+    public final void a(defpackage.amb amb) {
+        defpackage.dih dih;
+        defpackage.dbg dbg;
+        defpackage.dbo[] dboArr = new defpackage.dbo[1];
+        defpackage.dii e = ((defpackage.dii) defpackage.dbo.d.a(defpackage.bg.ao)).d(this.b).e(((defpackage.dii) defpackage.dbb.e.a(defpackage.bg.ao)).b(((defpackage.dii) defpackage.dca.g.a(defpackage.bg.ao)).setDetail(this.c)).a(defpackage.cqz.a().a(3).a().b()));
         if (e.b) {
             dih = e.a;
         } else {
-            dih dih2 = e.a;
-            djz.a.a(dih2).c(dih2);
+            defpackage.dih dih2 = e.a;
+            defpackage.djz.a.a((java.lang.Object) dih2).c(dih2);
             e.b = true;
             dih = e.a;
         }
-        dih dih3 = dih;
-        if (!dih.a(dih3, Boolean.TRUE.booleanValue())) {
-            throw new dkw();
+        defpackage.dih dih3 = dih;
+        if (!defpackage.dih.a(dih3, java.lang.Boolean.TRUE.booleanValue())) {
+            throw new defpackage.dkw();
         }
-        dboArr[0] = (dbo) dih3;
-        dbp dbp = (dbp) amb.a(dboArr).b.get(0);
+        dboArr[0] = (defpackage.dbo) dih3;
+        defpackage.dbp dbp = (defpackage.dbp) amb.a(dboArr).b.get(0);
         if (dbp.a == 8) {
-            dbg = (dbg) dbp.b;
+            dbg = (defpackage.dbg) dbp.b;
         } else {
-            dbg = dbg.d;
+            dbg = defpackage.dbg.d;
         }
         if (dbg.b != null) {
-            dby dby = dbg.b;
+            defpackage.dby dby = dbg.b;
         }
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a, this.b, this.c});
+        return java.util.Arrays.hashCode(new java.lang.Object[]{this.a, this.b, this.c});
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         if (this == obj) {
             return true;
         }
-        if (!(obj instanceof amv)) {
+        if (!(obj instanceof defpackage.amv)) {
             return false;
         }
-        amv amv = (amv) obj;
-        return cru.d(this.a, amv.a) && cru.d(this.b, amv.b) && cru.d(this.c, amv.c);
+        defpackage.amv amv = (defpackage.amv) obj;
+        if (!defpackage.cru.d(this.a, amv.a) || !defpackage.cru.d(this.b, amv.b) || !defpackage.cru.d(this.c, amv.c)) {
+            return false;
+        }
+        return true;
     }
 
-    public final String toString() {
-        String str = this.a;
-        String str2 = this.b;
-        String str3 = this.c;
-        return new StringBuilder(String.valueOf(str).length() + 50 + String.valueOf(str2).length() + String.valueOf(str3).length()).append("UpdateTaskDetails(listId, taskId, details): {").append(str).append(", ").append(str2).append(", ").append(str3).append("}").toString();
+    public final java.lang.String toString() {
+        java.lang.String str = this.a;
+        java.lang.String str2 = this.b;
+        java.lang.String str3 = this.c;
+        return new java.lang.StringBuilder(java.lang.String.valueOf(str).length() + 50 + java.lang.String.valueOf(str2).length() + java.lang.String.valueOf(str3).length()).append("UpdateTaskDetails(listId, taskId, details): {").append(str).append(", ").append(str2).append(", ").append(str3).append("}").toString();
     }
 }

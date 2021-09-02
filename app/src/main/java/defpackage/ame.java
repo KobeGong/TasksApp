@@ -1,16 +1,15 @@
 package defpackage;
 
-/* renamed from: ame  reason: default package */
-final /* synthetic */ class ame implements crq {
-    private final ead a;
+/* renamed from: ame reason: default package */
+final /* synthetic */ class ame implements defpackage.crq {
+    private final defpackage.ead a;
 
-    ame(ead ead) {
+    ame(defpackage.ead ead) {
         this.a = ead;
     }
 
-    @Override // defpackage.crq
-    public final Object a(Object obj) {
-        ead ead = this.a;
-        return (dbt) eae.a(ead.a, dcg.a(), ead.b, (dbs) obj);
+    public final java.lang.Object a(java.lang.Object obj) {
+        defpackage.ead ead = this.a;
+        return (defpackage.dbt) defpackage.eae.a(ead.a, defpackage.dcg.a(), ead.b, (defpackage.dbs) obj);
     }
 }

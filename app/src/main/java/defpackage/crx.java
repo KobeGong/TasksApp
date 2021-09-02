@@ -1,28 +1,25 @@
 package defpackage;
 
-import java.util.Locale;
-import java.util.logging.Logger;
-
-/* renamed from: crx  reason: default package */
+/* renamed from: crx reason: default package */
 /* compiled from: PG */
 public final class crx {
     private crx() {
     }
 
     static long a() {
-        return System.nanoTime();
+        return java.lang.System.nanoTime();
     }
 
-    static String a(double d) {
-        return String.format(Locale.ROOT, "%.4g", Double.valueOf(d));
+    static java.lang.String a(double d) {
+        return java.lang.String.format(java.util.Locale.ROOT, "%.4g", new java.lang.Object[]{java.lang.Double.valueOf(d)});
     }
 
-    public static boolean a(String str) {
+    public static boolean a(java.lang.String str) {
         return str == null || str.isEmpty();
     }
 
     static {
-        Logger.getLogger(crx.class.getName());
-        new crw();
+        java.util.logging.Logger.getLogger(defpackage.crx.class.getName());
+        new defpackage.crw();
     }
 }

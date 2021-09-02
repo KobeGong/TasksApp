@@ -1,23 +1,22 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: ht  reason: default package */
+/* renamed from: ht reason: default package */
 /* compiled from: PG */
-public class ht {
-    public ou[] n = null;
-    public String o;
+class ht {
+    public defpackage.ou[] n = null;
+    public java.lang.String o;
     public int p;
 
     public ht() {
     }
 
-    public ht(ht htVar) {
+    public ht(defpackage.ht htVar) {
         this.o = htVar.o;
         this.p = htVar.p;
-        this.n = jd.a(htVar.n);
+        this.n = defpackage.jd.a(htVar.n);
     }
 
-    public String getPathName() {
+    public java.lang.String getPathName() {
         return this.o;
     }
 
@@ -25,16 +24,16 @@ public class ht {
         return false;
     }
 
-    public ou[] getPathData() {
+    public defpackage.ou[] getPathData() {
         return this.n;
     }
 
-    public void setPathData(ou[] ouVarArr) {
-        if (!jd.a(this.n, ouVarArr)) {
-            this.n = jd.a(ouVarArr);
+    public void setPathData(defpackage.ou[] ouVarArr) {
+        if (!defpackage.jd.a(this.n, ouVarArr)) {
+            this.n = defpackage.jd.a(ouVarArr);
             return;
         }
-        ou[] ouVarArr2 = this.n;
+        defpackage.ou[] ouVarArr2 = this.n;
         for (int i = 0; i < ouVarArr.length; i++) {
             ouVarArr2[i].a = ouVarArr[i].a;
             for (int i2 = 0; i2 < ouVarArr[i].b.length; i2++) {

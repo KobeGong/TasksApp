@@ -1,47 +1,45 @@
 package defpackage;
 
-import java.util.Map;
-
-/* access modifiers changed from: package-private */
-/* renamed from: dkr  reason: default package */
+/* renamed from: dkr reason: default package */
 /* compiled from: PG */
-public final class dkr implements Comparable, Map.Entry {
-    private final Comparable a;
-    private Object b;
-    private final /* synthetic */ dkk c;
+final class dkr implements java.lang.Comparable, java.util.Map.Entry {
+    private final java.lang.Comparable a;
+    private java.lang.Object b;
+    private final /* synthetic */ defpackage.dkk c;
 
-    dkr(dkk dkk, Map.Entry entry) {
-        this(dkk, (Comparable) entry.getKey(), entry.getValue());
+    dkr(defpackage.dkk dkk, java.util.Map.Entry entry) {
+        this(dkk, (java.lang.Comparable) entry.getKey(), entry.getValue());
     }
 
-    dkr(dkk dkk, Comparable comparable, Object obj) {
+    dkr(defpackage.dkk dkk, java.lang.Comparable comparable, java.lang.Object obj) {
         this.c = dkk;
         this.a = comparable;
         this.b = obj;
     }
 
-    @Override // java.util.Map.Entry
-    public final Object getValue() {
+    public final java.lang.Object getValue() {
         return this.b;
     }
 
-    @Override // java.util.Map.Entry
-    public final Object setValue(Object obj) {
+    public final java.lang.Object setValue(java.lang.Object obj) {
         this.c.e();
-        Object obj2 = this.b;
+        java.lang.Object obj2 = this.b;
         this.b = obj;
         return obj2;
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof Map.Entry)) {
+        if (!(obj instanceof java.util.Map.Entry)) {
             return false;
         }
-        Map.Entry entry = (Map.Entry) obj;
-        return a(this.a, entry.getKey()) && a(this.b, entry.getValue());
+        java.util.Map.Entry entry = (java.util.Map.Entry) obj;
+        if (!a(this.a, entry.getKey()) || !a(this.b, entry.getValue())) {
+            return false;
+        }
+        return true;
     }
 
     public final int hashCode() {
@@ -53,26 +51,24 @@ public final class dkr implements Comparable, Map.Entry {
         return hashCode ^ i;
     }
 
-    public final String toString() {
-        String valueOf = String.valueOf(this.a);
-        String valueOf2 = String.valueOf(this.b);
-        return new StringBuilder(String.valueOf(valueOf).length() + 1 + String.valueOf(valueOf2).length()).append(valueOf).append("=").append(valueOf2).toString();
+    public final java.lang.String toString() {
+        java.lang.String valueOf = java.lang.String.valueOf(this.a);
+        java.lang.String valueOf2 = java.lang.String.valueOf(this.b);
+        return new java.lang.StringBuilder(java.lang.String.valueOf(valueOf).length() + 1 + java.lang.String.valueOf(valueOf2).length()).append(valueOf).append("=").append(valueOf2).toString();
     }
 
-    private static boolean a(Object obj, Object obj2) {
+    private static boolean a(java.lang.Object obj, java.lang.Object obj2) {
         if (obj == null) {
             return obj2 == null;
         }
         return obj.equals(obj2);
     }
 
-    @Override // java.util.Map.Entry
-    public final /* synthetic */ Object getKey() {
+    public final /* synthetic */ java.lang.Object getKey() {
         return this.a;
     }
 
-    @Override // java.lang.Comparable
-    public final /* synthetic */ int compareTo(Object obj) {
-        return ((Comparable) getKey()).compareTo((Comparable) ((dkr) obj).getKey());
+    public final /* synthetic */ int compareTo(java.lang.Object obj) {
+        return ((java.lang.Comparable) getKey()).compareTo((java.lang.Comparable) ((defpackage.dkr) obj).getKey());
     }
 }

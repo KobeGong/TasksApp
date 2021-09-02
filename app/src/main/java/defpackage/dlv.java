@@ -1,11 +1,10 @@
 package defpackage;
 
-/* renamed from: dlv  reason: default package */
+/* renamed from: dlv reason: default package */
 /* compiled from: PG */
-public class dlv extends dif {
+public class dlv extends defpackage.dif {
     /* access modifiers changed from: protected */
-    @Override // defpackage.dif
-    public final dhw a() {
-        return new dlu();
+    public final defpackage.dhw a() {
+        return new defpackage.dlu();
     }
 }

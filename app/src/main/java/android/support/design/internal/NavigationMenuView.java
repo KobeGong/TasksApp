@@ -1,25 +1,20 @@
 package android.support.design.internal;
 
-import android.content.Context;
-import android.support.v7.widget.RecyclerView;
-import android.util.AttributeSet;
-
 /* compiled from: PG */
-public class NavigationMenuView extends RecyclerView implements zv {
-    public NavigationMenuView(Context context) {
+public class NavigationMenuView extends android.support.v7.widget.RecyclerView implements defpackage.zv {
+    public NavigationMenuView(android.content.Context context) {
         this(context, null);
     }
 
-    public NavigationMenuView(Context context, AttributeSet attributeSet) {
+    public NavigationMenuView(android.content.Context context, android.util.AttributeSet attributeSet) {
         this(context, attributeSet, 0);
     }
 
-    public NavigationMenuView(Context context, AttributeSet attributeSet, int i) {
+    public NavigationMenuView(android.content.Context context, android.util.AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        a(new adw((byte) 0));
+        a((defpackage.afd) new defpackage.adw(0));
     }
 
-    @Override // defpackage.zv
-    public final void a(ze zeVar) {
+    public final void a(defpackage.ze zeVar) {
     }
 }

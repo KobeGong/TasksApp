@@ -1,29 +1,22 @@
 package defpackage;
 
-import android.graphics.Typeface;
-import java.lang.reflect.Array;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-
-/* renamed from: pa  reason: default package */
+/* renamed from: pa reason: default package */
 /* compiled from: PG */
-public final class pa extends oz {
+public final class pa extends defpackage.oz {
     /* access modifiers changed from: protected */
-    @Override // defpackage.oz
-    public final Typeface a(Object obj) {
+    public final android.graphics.Typeface a(java.lang.Object obj) {
         try {
-            Object newInstance = Array.newInstance(this.a, 1);
-            Array.set(newInstance, 0, obj);
-            return (Typeface) this.b.invoke(null, newInstance, "sans-serif", -1, -1);
-        } catch (IllegalAccessException | InvocationTargetException e) {
-            throw new RuntimeException(e);
+            java.lang.Object newInstance = java.lang.reflect.Array.newInstance(this.a, 1);
+            java.lang.reflect.Array.set(newInstance, 0, obj);
+            return (android.graphics.Typeface) this.b.invoke(null, new java.lang.Object[]{newInstance, "sans-serif", java.lang.Integer.valueOf(-1), java.lang.Integer.valueOf(-1)});
+        } catch (java.lang.IllegalAccessException | java.lang.reflect.InvocationTargetException e) {
+            throw new java.lang.RuntimeException(e);
         }
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.oz
-    public final Method a(Class cls) {
-        Method declaredMethod = Typeface.class.getDeclaredMethod("createFromFamiliesWithDefault", Array.newInstance(cls, 1).getClass(), String.class, Integer.TYPE, Integer.TYPE);
+    public final java.lang.reflect.Method a(java.lang.Class cls) {
+        java.lang.reflect.Method declaredMethod = android.graphics.Typeface.class.getDeclaredMethod("createFromFamiliesWithDefault", new java.lang.Class[]{java.lang.reflect.Array.newInstance(cls, 1).getClass(), java.lang.String.class, java.lang.Integer.TYPE, java.lang.Integer.TYPE});
         declaredMethod.setAccessible(true);
         return declaredMethod;
     }

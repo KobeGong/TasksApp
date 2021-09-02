@@ -1,13 +1,12 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: anv  reason: default package */
+/* renamed from: anv reason: default package */
 /* compiled from: PG */
-public final class anv {
-    public final cyi a;
-    public final long b = System.currentTimeMillis();
+final class anv {
+    public final defpackage.cyi a;
+    public final long b = java.lang.System.currentTimeMillis();
 
-    anv(cyi cyi) {
+    anv(defpackage.cyi cyi) {
         this.a = cyi;
     }
 }

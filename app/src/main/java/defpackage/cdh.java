@@ -1,18 +1,18 @@
 package defpackage;
 
-/* renamed from: cdh  reason: default package */
+/* renamed from: cdh reason: default package */
 /* compiled from: PG */
 public abstract class cdh {
     cdh() {
     }
 
-    public abstract cdg a();
+    public abstract defpackage.cdg a();
 
-    public abstract cdg b();
+    public abstract defpackage.cdg b();
 
-    public abstract cdg c();
+    public abstract defpackage.cdg c();
 
-    public abstract cdg d();
+    public abstract defpackage.cdg d();
 
-    public abstract cdg e();
+    public abstract defpackage.cdg e();
 }

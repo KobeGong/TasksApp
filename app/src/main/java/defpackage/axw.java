@@ -1,6 +1,6 @@
 package defpackage;
 
-/* renamed from: axw  reason: default package */
+/* renamed from: axw reason: default package */
 /* compiled from: PG */
-public final class axw extends Exception {
+public final class axw extends java.lang.Exception {
 }

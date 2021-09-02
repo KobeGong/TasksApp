@@ -1,26 +1,23 @@
 package defpackage;
 
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
-
-/* renamed from: cyd  reason: default package */
+/* renamed from: cyd reason: default package */
 /* compiled from: PG */
-public final class cyd extends cub {
-    public static Object b(Future future) {
-        cld.a(future.isDone(), "Future was expected to be done: %s", future);
-        return cub.a(future);
+public final class cyd extends defpackage.cub {
+    public static java.lang.Object b(java.util.concurrent.Future future) {
+        defpackage.cld.a(future.isDone(), "Future was expected to be done: %s", (java.lang.Object) future);
+        return defpackage.cub.a(future);
     }
 
-    public static Object c(Future future) {
-        cld.a(future);
+    public static java.lang.Object c(java.util.concurrent.Future future) {
+        defpackage.cld.a((java.lang.Object) future);
         try {
-            return cub.a(future);
-        } catch (ExecutionException e) {
-            Throwable cause = e.getCause();
-            if (cause instanceof Error) {
-                throw new avl((Error) cause);
+            return defpackage.cub.a(future);
+        } catch (java.util.concurrent.ExecutionException e) {
+            java.lang.Throwable cause = e.getCause();
+            if (cause instanceof java.lang.Error) {
+                throw new defpackage.avl((java.lang.Error) cause);
             }
-            throw new cyz(cause);
+            throw new defpackage.cyz(cause);
         }
     }
 }

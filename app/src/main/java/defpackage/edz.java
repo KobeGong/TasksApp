@@ -1,16 +1,16 @@
 package defpackage;
 
-/* renamed from: edz  reason: default package */
+/* renamed from: edz reason: default package */
 /* compiled from: PG */
-public final class edz extends dlz {
-    public Boolean a = null;
+public final class edz extends defpackage.dlz {
+    public java.lang.Boolean a;
 
     public edz() {
+        this.a = null;
         this.k = -1;
     }
 
-    @Override // defpackage.dlz, defpackage.dmf
-    public final void a(dlx dlx) {
+    public final void a(defpackage.dlx dlx) {
         if (this.a != null) {
             dlx.a(1, this.a.booleanValue());
         }
@@ -18,31 +18,29 @@ public final class edz extends dlz {
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.dlz, defpackage.dmf
     public final int a() {
         int a2 = super.a();
         if (this.a == null) {
             return a2;
         }
         this.a.booleanValue();
-        return a2 + dlx.c(8) + 1;
+        return a2 + defpackage.dlx.c(8) + 1;
     }
 
-    @Override // defpackage.dmf
-    public final /* synthetic */ dmf a(dlw dlw) {
+    public final /* synthetic */ defpackage.dmf a(defpackage.dlw dlw) {
         while (true) {
             int a2 = dlw.a();
             switch (a2) {
                 case 0:
                     break;
                 case 8:
-                    this.a = Boolean.valueOf(dlw.c());
-                    break;
+                    this.a = java.lang.Boolean.valueOf(dlw.c());
+                    continue;
                 default:
-                    if (super.a(dlw, a2)) {
+                    if (!super.a(dlw, a2)) {
                         break;
                     } else {
-                        break;
+                        continue;
                     }
             }
         }

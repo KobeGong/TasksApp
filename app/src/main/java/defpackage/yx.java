@@ -1,20 +1,18 @@
 package defpackage;
 
-import android.view.View;
-
-/* renamed from: yx  reason: default package */
+/* renamed from: yx reason: default package */
 /* compiled from: PG */
-final class yx implements View.OnAttachStateChangeListener {
-    private final /* synthetic */ yv a;
+final class yx implements android.view.View.OnAttachStateChangeListener {
+    private final /* synthetic */ defpackage.yv a;
 
-    yx(yv yvVar) {
+    yx(defpackage.yv yvVar) {
         this.a = yvVar;
     }
 
-    public final void onViewAttachedToWindow(View view) {
+    public final void onViewAttachedToWindow(android.view.View view) {
     }
 
-    public final void onViewDetachedFromWindow(View view) {
+    public final void onViewDetachedFromWindow(android.view.View view) {
         if (this.a.e != null) {
             if (!this.a.e.isAlive()) {
                 this.a.e = view.getViewTreeObserver();

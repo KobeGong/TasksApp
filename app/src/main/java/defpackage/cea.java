@@ -1,14 +1,11 @@
 package defpackage;
 
-import android.view.View;
-
-/* renamed from: cea  reason: default package */
-final /* synthetic */ class cea implements cdg {
-    cea(cdv cdv) {
+/* renamed from: cea reason: default package */
+final /* synthetic */ class cea implements defpackage.cdg {
+    cea(defpackage.cdv cdv) {
     }
 
-    @Override // defpackage.cdg
-    public final void a(View view, Object obj) {
-        cdv.a(view);
+    public final void a(android.view.View view, java.lang.Object obj) {
+        defpackage.cdv.a(view);
     }
 }

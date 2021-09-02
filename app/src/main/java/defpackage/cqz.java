@@ -1,113 +1,113 @@
 package defpackage;
 
-import java.util.Arrays;
-import java.util.Collections;
-
-/* renamed from: cqz  reason: default package */
+/* renamed from: cqz reason: default package */
 /* compiled from: PG */
 public final class cqz {
-    public static final cqz a = new cqz(cta.a, false);
-    public static final cqz b = new cqz(cta.a, true);
-    public final css c;
+    public static final defpackage.cqz a = new defpackage.cqz(defpackage.cta.a, false);
+    public static final defpackage.cqz b = new defpackage.cqz(defpackage.cta.a, true);
+    public final defpackage.css c;
     public final boolean d;
 
-    cqz(css css, boolean z) {
+    cqz(defpackage.css css, boolean z) {
         this.c = css;
         this.d = z;
     }
 
-    public static cra a() {
-        return new cra();
+    public static defpackage.cra a() {
+        return new defpackage.cra();
     }
 
-    public static cqz a(crb crb) {
-        cra cra = new cra();
+    public static defpackage.cqz a(defpackage.crb crb) {
+        defpackage.cra cra = new defpackage.cra();
         boolean z = crb.d;
         if (!cra.c) {
-            throw new IllegalStateException("setInverted cannot be called on a builder that has fields.");
+            throw new java.lang.IllegalStateException("setInverted cannot be called on a builder that has fields.");
         }
         cra.b = z;
-        for (Integer num : crb.c) {
-            cra.a.put(Integer.valueOf(num.intValue()), b);
+        for (java.lang.Integer intValue : crb.c) {
+            cra.a.put(java.lang.Integer.valueOf(intValue.intValue()), b);
         }
-        for (Integer num2 : Collections.unmodifiableMap(crb.b).keySet()) {
-            int intValue = num2.intValue();
-            cra.a.put(Integer.valueOf(intValue), a((crb) Collections.unmodifiableMap(crb.b).get(Integer.valueOf(intValue))));
+        for (java.lang.Integer intValue2 : java.util.Collections.unmodifiableMap(crb.b).keySet()) {
+            int intValue3 = intValue2.intValue();
+            cra.a.put(java.lang.Integer.valueOf(intValue3), a((defpackage.crb) java.util.Collections.unmodifiableMap(crb.b).get(java.lang.Integer.valueOf(intValue3))));
         }
         return cra.a();
     }
 
-    public final String toString() {
-        crs b2 = cky.b(this);
+    public final java.lang.String toString() {
+        defpackage.crs b2 = defpackage.cky.b((java.lang.Object) this);
         if (equals(a)) {
             b2.a().b = "empty()";
         } else if (equals(b)) {
             b2.a().b = "all()";
         } else {
-            b2.a("fields", this.c).a("inverted", this.d);
+            b2.a("fields", (java.lang.Object) this.c).a("inverted", this.d);
         }
         return b2.toString();
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         if (this == obj) {
             return true;
         }
         if (obj == null || obj.getClass() != getClass()) {
             return false;
         }
-        cqz cqz = (cqz) obj;
-        return cru.d(this.c, cqz.c) && cru.d(Boolean.valueOf(this.d), Boolean.valueOf(cqz.d));
+        defpackage.cqz cqz = (defpackage.cqz) obj;
+        if (!defpackage.cru.d(this.c, cqz.c) || !defpackage.cru.d(java.lang.Boolean.valueOf(this.d), java.lang.Boolean.valueOf(cqz.d))) {
+            return false;
+        }
+        return true;
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.c, Boolean.valueOf(this.d)});
+        return java.util.Arrays.hashCode(new java.lang.Object[]{this.c, java.lang.Boolean.valueOf(this.d)});
     }
 
-    public final crb b() {
-        dih dih;
-        dii dii = (dii) crb.e.a(bg.ao);
+    public final defpackage.crb b() {
+        defpackage.dih dih;
+        defpackage.dii dii = (defpackage.dii) defpackage.crb.e.a(defpackage.bg.ao);
         boolean z = this.d;
         dii.b();
-        ((crb) dii.a).d = z;
-        cth cth = (cth) ((csv) this.c.keySet()).iterator();
+        ((defpackage.crb) dii.a).d = z;
+        defpackage.cth cth = (defpackage.cth) ((defpackage.csv) this.c.keySet()).iterator();
         while (cth.hasNext()) {
-            int intValue = ((Integer) cth.next()).intValue();
-            cqz cqz = (cqz) this.c.get(Integer.valueOf(intValue));
+            int intValue = ((java.lang.Integer) cth.next()).intValue();
+            defpackage.cqz cqz = (defpackage.cqz) this.c.get(java.lang.Integer.valueOf(intValue));
             if (cqz.equals(b)) {
                 dii.b();
-                crb crb = (crb) dii.a;
+                defpackage.crb crb = (defpackage.crb) dii.a;
                 if (!crb.c.a()) {
-                    dip dip = crb.c;
+                    defpackage.dip dip = crb.c;
                     int size = dip.size();
                     crb.c = dip.b(size == 0 ? 10 : size << 1);
                 }
                 crb.c.d(intValue);
             } else {
-                crb b2 = cqz.b();
+                defpackage.crb b2 = cqz.b();
                 if (b2 == null) {
-                    throw new NullPointerException();
+                    throw new java.lang.NullPointerException();
                 }
                 dii.b();
-                crb crb2 = (crb) dii.a;
+                defpackage.crb crb2 = (defpackage.crb) dii.a;
                 if (!crb2.b.a) {
                     crb2.b = crb2.b.a();
                 }
-                crb2.b.put(Integer.valueOf(intValue), b2);
+                crb2.b.put(java.lang.Integer.valueOf(intValue), b2);
             }
         }
         if (dii.b) {
             dih = dii.a;
         } else {
-            dih dih2 = dii.a;
-            djz.a.a(dih2).c(dih2);
+            defpackage.dih dih2 = dii.a;
+            defpackage.djz.a.a((java.lang.Object) dih2).c(dih2);
             dii.b = true;
             dih = dii.a;
         }
-        dih dih3 = dih;
-        if (dih.a(dih3, Boolean.TRUE.booleanValue())) {
-            return (crb) dih3;
+        defpackage.dih dih3 = dih;
+        if (defpackage.dih.a(dih3, java.lang.Boolean.TRUE.booleanValue())) {
+            return (defpackage.crb) dih3;
         }
-        throw new dkw();
+        throw new defpackage.dkw();
     }
 }

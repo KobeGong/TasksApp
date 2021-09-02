@@ -1,11 +1,11 @@
 package defpackage;
 
-/* renamed from: bly  reason: default package */
+/* renamed from: bly reason: default package */
 /* compiled from: PG */
 public final class bly {
-    public final /* synthetic */ bso a;
+    public final /* synthetic */ defpackage.bso a;
 
-    public bly(bso bso) {
+    public bly(defpackage.bso bso) {
         this.a = bso;
     }
 }

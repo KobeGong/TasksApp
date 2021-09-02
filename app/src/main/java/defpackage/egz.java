@@ -1,14 +1,11 @@
 package defpackage;
 
-import android.os.MessageQueue;
-import org.chromium.base.SystemMessageHandler;
-
-/* renamed from: egz  reason: default package */
+/* renamed from: egz reason: default package */
 /* compiled from: PG */
-public final class egz implements MessageQueue.IdleHandler {
-    private final /* synthetic */ SystemMessageHandler a;
+public final class egz implements android.os.MessageQueue.IdleHandler {
+    private final /* synthetic */ org.chromium.base.SystemMessageHandler a;
 
-    public egz(SystemMessageHandler systemMessageHandler) {
+    public egz(org.chromium.base.SystemMessageHandler systemMessageHandler) {
         this.a = systemMessageHandler;
     }
 

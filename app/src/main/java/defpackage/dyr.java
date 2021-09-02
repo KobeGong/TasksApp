@@ -1,17 +1,14 @@
 package defpackage;
 
-import java.util.concurrent.atomic.AtomicLong;
-
-/* access modifiers changed from: package-private */
-/* renamed from: dyr  reason: default package */
+/* renamed from: dyr reason: default package */
 /* compiled from: PG */
-public final class dyr {
-    private final AtomicLong a = new AtomicLong();
+final class dyr {
+    private final java.util.concurrent.atomic.AtomicLong a = new java.util.concurrent.atomic.AtomicLong();
 
     dyr() {
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public final long a(long j) {
         return this.a.addAndGet(j);
     }

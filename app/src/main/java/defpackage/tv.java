@@ -1,11 +1,8 @@
 package defpackage;
 
-import android.view.animation.Interpolator;
-
-/* access modifiers changed from: package-private */
-/* renamed from: tv  reason: default package */
+/* renamed from: tv reason: default package */
 /* compiled from: PG */
-public class tv implements Interpolator {
+class tv implements android.view.animation.Interpolator {
     private final float[] a;
     private final float b = (1.0f / ((float) (this.a.length - 1)));
 
@@ -20,7 +17,7 @@ public class tv implements Interpolator {
         if (f <= 0.0f) {
             return 0.0f;
         }
-        int min = Math.min((int) (((float) (this.a.length - 1)) * f), this.a.length - 2);
+        int min = java.lang.Math.min((int) (((float) (this.a.length - 1)) * f), this.a.length - 2);
         float f2 = (f - (((float) min) * this.b)) / this.b;
         return ((this.a[min + 1] - this.a[min]) * f2) + this.a[min];
     }

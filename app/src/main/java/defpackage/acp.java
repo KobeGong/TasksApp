@@ -1,11 +1,11 @@
 package defpackage;
 
-/* renamed from: acp  reason: default package */
+/* renamed from: acp reason: default package */
 /* compiled from: PG */
 public final class acp {
-    public final /* synthetic */ wz a;
+    public final /* synthetic */ defpackage.wz a;
 
-    public acp(wz wzVar) {
+    public acp(defpackage.wz wzVar) {
         this.a = wzVar;
     }
 }

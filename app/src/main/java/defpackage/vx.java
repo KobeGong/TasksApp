@@ -1,12 +1,11 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: vx  reason: default package */
+/* renamed from: vx reason: default package */
 /* compiled from: PG */
-public final class vx implements Runnable {
-    private final /* synthetic */ vv a;
+final class vx implements java.lang.Runnable {
+    private final /* synthetic */ defpackage.vv a;
 
-    vx(vv vvVar) {
+    vx(defpackage.vv vvVar) {
         this.a = vvVar;
     }
 

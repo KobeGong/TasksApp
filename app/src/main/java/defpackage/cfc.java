@@ -1,56 +1,43 @@
 package defpackage;
 
-import android.app.Dialog;
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import com.google.android.apps.tasks.R;
-
-/* renamed from: cfc  reason: default package */
+/* renamed from: cfc reason: default package */
 /* compiled from: PG */
-public abstract class cfc extends xh {
-    public cdj U;
-    public cff V;
-    private final cdm W = new cfd(this);
+public abstract class cfc extends defpackage.xh {
+    public defpackage.cdj U;
+    public defpackage.cff V;
+    private final defpackage.cdm W = new defpackage.cfd(this);
 
     /* access modifiers changed from: protected */
-    public abstract cff N();
+    public abstract defpackage.cff N();
 
-    @Override // defpackage.xh, defpackage.lb
-    public final Dialog c() {
-        cky.b(this.U != null, "initialize must be called before opening the dialog");
-        return new cey(i());
+    public final android.app.Dialog c() {
+        defpackage.cky.b(this.U != null, (java.lang.Object) "initialize must be called before opening the dialog");
+        return new defpackage.cey(getContext());
     }
 
-    @Override // defpackage.lc
-    public final View a(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+    public final android.view.View onCreateView(android.view.LayoutInflater layoutInflater, android.view.ViewGroup viewGroup, android.os.Bundle bundle) {
         this.V = N();
-        this.V.setId(R.id.og_dialog_fragment_account_menu);
+        this.V.setId(2131755023);
         this.V.a(this.U);
         return this.V;
     }
 
-    @Override // defpackage.lc
-    public final void a(View view, Bundle bundle) {
+    public final void a(android.view.View view, android.os.Bundle bundle) {
         super.a(view, bundle);
         this.V.setSaveFromParentEnabled(true);
     }
 
-    @Override // defpackage.lc
     public final void s() {
         super.s();
         this.V.b();
         this.U.a().a(this.W);
     }
 
-    @Override // defpackage.lc
     public final void t() {
         super.t();
         this.U.a().b(this.W);
     }
 
-    @Override // defpackage.lc
     public void u() {
         this.V = null;
         super.u();

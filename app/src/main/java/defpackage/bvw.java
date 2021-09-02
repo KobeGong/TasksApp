@@ -1,26 +1,22 @@
 package defpackage;
 
-import android.content.Intent;
-
-/* renamed from: bvw  reason: default package */
+/* renamed from: bvw reason: default package */
 /* compiled from: PG */
-public final class bvw implements bvn {
-    private final cbw a;
-    private final cda b;
+public final class bvw implements defpackage.bvn {
+    private final defpackage.cbw a;
+    private final defpackage.cda b;
 
-    bvw(cbw cbw, cda cda) {
+    bvw(defpackage.cbw cbw, defpackage.cda cda) {
         this.a = cbw;
         this.b = cda;
     }
 
-    @Override // defpackage.bvn
-    public final boolean a(Intent intent) {
+    public final boolean a(android.content.Intent intent) {
         return intent != null && "android.intent.action.MY_PACKAGE_REPLACED".equals(intent.getAction());
     }
 
-    @Override // defpackage.bvn
-    public final void a(Intent intent, bvo bvo) {
-        bty.a("AppUpdatedIntentHandler", "Re-surface notifications and sync registrations due to app update.", new Object[0]);
+    public final void a(android.content.Intent intent, defpackage.bvo bvo) {
+        defpackage.bty.a("AppUpdatedIntentHandler", "Re-surface notifications and sync registrations due to app update.", new java.lang.Object[0]);
         this.b.a(bvo);
         this.a.a();
     }

@@ -1,25 +1,19 @@
 package defpackage;
 
-import java.io.InputStream;
-import java.io.OutputStream;
-
-/* renamed from: dno  reason: default package */
+/* renamed from: dno reason: default package */
 /* compiled from: PG */
-public final class dno implements doa {
-    public static final doa a = new dno();
+public final class dno implements defpackage.doa {
+    public static final defpackage.doa a = new defpackage.dno();
 
-    @Override // defpackage.doa
-    public final InputStream a(InputStream inputStream) {
+    public final java.io.InputStream a(java.io.InputStream inputStream) {
         return inputStream;
     }
 
-    @Override // defpackage.doa
-    public final String a() {
+    public final java.lang.String a() {
         return "identity";
     }
 
-    @Override // defpackage.doa
-    public final OutputStream a(OutputStream outputStream) {
+    public final java.io.OutputStream a(java.io.OutputStream outputStream) {
         return outputStream;
     }
 

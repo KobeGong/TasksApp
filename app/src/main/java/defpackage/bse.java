@@ -1,9 +1,9 @@
 package defpackage;
 
-/* renamed from: bse  reason: default package */
+/* renamed from: bse reason: default package */
 /* compiled from: PG */
 public interface bse {
-    brb a(cql cql, bsf bsf);
+    defpackage.brb a(defpackage.cql cql, defpackage.bsf bsf);
 
-    brb b(cql cql, bsf bsf);
+    defpackage.brb b(defpackage.cql cql, defpackage.bsf bsf);
 }

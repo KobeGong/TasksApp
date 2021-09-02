@@ -1,37 +1,33 @@
 package defpackage;
 
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.BlockingQueue;
-
-/* access modifiers changed from: package-private */
-/* renamed from: ckq  reason: default package */
+/* renamed from: ckq reason: default package */
 /* compiled from: PG */
-public final class ckq implements ckm, coe {
-    private final clt b;
-    private final BlockingQueue c;
+final class ckq implements defpackage.ckm, defpackage.coe {
+    private final defpackage.clt b;
+    private final java.util.concurrent.BlockingQueue c;
 
-    ckq(clt clt) {
-        this(clt, new ArrayBlockingQueue(5));
+    ckq(defpackage.clt clt) {
+        this(clt, new java.util.concurrent.ArrayBlockingQueue(5));
     }
 
-    private ckq(clt clt, BlockingQueue blockingQueue) {
+    private ckq(defpackage.clt clt, java.util.concurrent.BlockingQueue blockingQueue) {
         this.b = clt;
         this.c = blockingQueue;
     }
 
-    @Override // defpackage.coe
-    public final void a(efx efx) {
-        clt clt;
-        if (efx.w == null && (clt = (clt) this.c.poll()) != null) {
-            efx.w = (efa) clt.a();
+    public final void a(defpackage.efx efx) {
+        if (efx.w == null) {
+            defpackage.clt clt = (defpackage.clt) this.c.poll();
+            if (clt != null) {
+                efx.w = (defpackage.efa) clt.a();
+            }
         }
-        ((coe) cky.a((coe) this.b.a())).a(efx);
+        ((defpackage.coe) defpackage.cky.a((java.lang.Object) (defpackage.coe) this.b.a())).a(efx);
     }
 
-    @Override // defpackage.ckm
-    public final void a(clt clt) {
+    public final void a(defpackage.clt clt) {
         if (!this.c.offer(clt)) {
-            cdm.a(5, "PrimesForPrimes", "Queue overflow", new Object[0]);
+            defpackage.cdm.a(5, "PrimesForPrimes", "Queue overflow", new java.lang.Object[0]);
         }
     }
 }

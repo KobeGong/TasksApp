@@ -1,22 +1,22 @@
 package defpackage;
 
-/* renamed from: bur  reason: default package */
+/* renamed from: bur reason: default package */
 /* compiled from: PG */
 public final class bur {
-    public String a;
-    public Integer b;
-    public String c;
-    public dgm d;
-    public dgu e;
+    public java.lang.String a;
+    public java.lang.Integer b;
+    public java.lang.String c;
+    public defpackage.dgm d;
+    public defpackage.dgu e;
 
-    public final bur a() {
-        this.b = 0;
+    public final defpackage.bur a() {
+        this.b = java.lang.Integer.valueOf(0);
         return this;
     }
 
-    public final bur a(dgm dgm) {
+    public final defpackage.bur a(defpackage.dgm dgm) {
         if (dgm == null) {
-            throw new NullPointerException("Null threadStateUpdate");
+            throw new java.lang.NullPointerException("Null threadStateUpdate");
         }
         this.d = dgm;
         return this;

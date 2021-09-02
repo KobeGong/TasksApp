@@ -1,16 +1,12 @@
 package defpackage;
 
-import android.graphics.drawable.Drawable;
-import android.widget.CompoundButton;
-
-/* renamed from: ui  reason: default package */
+/* renamed from: ui reason: default package */
 /* compiled from: PG */
-final class ui extends uh {
+final class ui extends defpackage.uh {
     ui() {
     }
 
-    @Override // defpackage.uj
-    public final Drawable a(CompoundButton compoundButton) {
+    public final android.graphics.drawable.Drawable a(android.widget.CompoundButton compoundButton) {
         return compoundButton.getButtonDrawable();
     }
 }

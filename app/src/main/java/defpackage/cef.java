@@ -1,19 +1,16 @@
 package defpackage;
 
-import android.content.Context;
-import java.util.concurrent.Executors;
-
-/* renamed from: cef  reason: default package */
+/* renamed from: cef reason: default package */
 /* compiled from: PG */
-public final class cef implements ecz {
-    private final cdz a;
-    private final ecz b;
-    private final ecz c;
-    private final ecz d;
-    private final ecz e;
-    private final ecz f;
+public final class cef implements defpackage.ecz {
+    private final defpackage.cdz a;
+    private final defpackage.ecz b;
+    private final defpackage.ecz c;
+    private final defpackage.ecz d;
+    private final defpackage.ecz e;
+    private final defpackage.ecz f;
 
-    public cef(cdz cdz, ecz ecz, ecz ecz2, ecz ecz3, ecz ecz4, ecz ecz5) {
+    public cef(defpackage.cdz cdz, defpackage.ecz ecz, defpackage.ecz ecz2, defpackage.ecz ecz3, defpackage.ecz ecz4, defpackage.ecz ecz5) {
         this.a = cdz;
         this.b = ecz;
         this.c = ecz2;
@@ -22,75 +19,77 @@ public final class cef implements ecz {
         this.f = ecz5;
     }
 
-    @Override // defpackage.ecz
-    public final /* synthetic */ Object a() {
-        cdz cdz = this.a;
-        Context context = (Context) this.b.a();
-        bsa bsa = (bsa) this.d.a();
+    public final /* synthetic */ java.lang.Object a() {
+        defpackage.cdz cdz = this.a;
+        android.content.Context context = (android.content.Context) this.b.a();
+        defpackage.bqw bqw = (defpackage.bqw) this.c.a();
+        defpackage.bsa bsa = (defpackage.bsa) this.d.a();
         this.e.a();
         this.f.a();
-        cdf cdf = new cdf();
-        cql a2 = bsh.a((bqw) this.c.a());
-        cdv cdv = new cdv(cdf);
-        cdk cdk = new cdk((byte) 0);
-        cdk.e = new cqq(new cqu(new cqs(new cqv(context, cub.a(Executors.newSingleThreadExecutor()))), new cqt()));
-        cdi cdi = new cdi((byte) 0);
-        cdi.e = new cea(cdv);
-        cdi.d = new ceb(cdv);
+        defpackage.cdf cdf = new defpackage.cdf();
+        defpackage.cql a2 = defpackage.bsh.a(bqw);
+        defpackage.cdv cdv = new defpackage.cdv(cdf);
+        defpackage.cdk cdk = new defpackage.cdk(0);
+        cdk.e = new defpackage.cqq(new defpackage.cqu(new defpackage.cqs(new defpackage.cqv(context, defpackage.cub.a(java.util.concurrent.Executors.newSingleThreadExecutor()))), new defpackage.cqt()));
+        defpackage.cdi cdi = new defpackage.cdi(0);
+        cdi.e = new defpackage.cea(cdv);
+        cdi.d = new defpackage.ceb(cdv);
         cdv.getClass();
-        cdi.a = new cec(cdv);
+        cdi.a = new defpackage.cec(cdv);
         cdv.getClass();
-        cdi.b = new ced(cdv);
+        cdi.b = new defpackage.ced(cdv);
         cdv.getClass();
-        cdi.c = new cee(cdv);
-        String str = "";
+        cdi.c = new defpackage.cee(cdv);
+        java.lang.String str = "";
         if (cdi.a == null) {
-            str = String.valueOf(str).concat(" myAccountClickListener");
+            str = java.lang.String.valueOf(str).concat(" myAccountClickListener");
         }
         if (cdi.b == null) {
-            str = String.valueOf(str).concat(" privacyPolicyClickListener");
+            str = java.lang.String.valueOf(str).concat(" privacyPolicyClickListener");
         }
         if (cdi.c == null) {
-            str = String.valueOf(str).concat(" termsOfServiceClickListener");
+            str = java.lang.String.valueOf(str).concat(" termsOfServiceClickListener");
         }
         if (cdi.d == null) {
-            str = String.valueOf(str).concat(" useAnotherAccountClickListener");
+            str = java.lang.String.valueOf(str).concat(" useAnotherAccountClickListener");
         }
         if (cdi.e == null) {
-            str = String.valueOf(str).concat(" manageAccountsClickListener");
+            str = java.lang.String.valueOf(str).concat(" manageAccountsClickListener");
         }
         if (!str.isEmpty()) {
-            String valueOf = String.valueOf(str);
-            throw new IllegalStateException(valueOf.length() != 0 ? "Missing required properties:".concat(valueOf) : new String("Missing required properties:"));
+            java.lang.String str2 = "Missing required properties:";
+            java.lang.String valueOf = java.lang.String.valueOf(str);
+            throw new java.lang.IllegalStateException(valueOf.length() != 0 ? str2.concat(valueOf) : new java.lang.String(str2));
         }
-        cdk.c = new cdn(cdi.a, cdi.b, cdi.c, cdi.d, cdi.e);
+        cdk.c = new defpackage.cdn(cdi.a, cdi.b, cdi.c, cdi.d, cdi.e);
         cdk.b = cdf;
-        cdl cdl = cdz.b;
+        defpackage.cdl cdl = cdz.b;
         if (cdl == null) {
-            throw new NullPointerException("Null accountsModel");
+            throw new java.lang.NullPointerException("Null accountsModel");
         }
         cdk.a = cdl;
-        cdk.d = new cds(context, bsa, a2);
-        String str2 = "";
+        cdk.d = new defpackage.cds(context, bsa, a2);
+        java.lang.String str3 = "";
         if (cdk.a == null) {
-            str2 = String.valueOf(str2).concat(" accountsModel");
+            str3 = java.lang.String.valueOf(str3).concat(" accountsModel");
         }
         if (cdk.b == null) {
-            str2 = String.valueOf(str2).concat(" accountConverter");
+            str3 = java.lang.String.valueOf(str3).concat(" accountConverter");
         }
         if (cdk.c == null) {
-            str2 = String.valueOf(str2).concat(" clickListeners");
+            str3 = java.lang.String.valueOf(str3).concat(" clickListeners");
         }
         if (cdk.d == null) {
-            str2 = String.valueOf(str2).concat(" avatarRetriever");
+            str3 = java.lang.String.valueOf(str3).concat(" avatarRetriever");
         }
         if (cdk.e == null) {
-            str2 = String.valueOf(str2).concat(" monogramRenderer");
+            str3 = java.lang.String.valueOf(str3).concat(" monogramRenderer");
         }
-        if (str2.isEmpty()) {
-            return (cdj) dgv.a(new cdo(cdk.a, cdk.b, cdk.c, cdk.d, cdk.e), "Cannot return null from a non-@Nullable @Provides method");
+        if (str3.isEmpty()) {
+            return (defpackage.cdj) defpackage.dgv.a((java.lang.Object) new defpackage.cdo(cdk.a, cdk.b, cdk.c, cdk.d, cdk.e), "Cannot return null from a non-@Nullable @Provides method");
         }
-        String valueOf2 = String.valueOf(str2);
-        throw new IllegalStateException(valueOf2.length() != 0 ? "Missing required properties:".concat(valueOf2) : new String("Missing required properties:"));
+        java.lang.String str4 = "Missing required properties:";
+        java.lang.String valueOf2 = java.lang.String.valueOf(str3);
+        throw new java.lang.IllegalStateException(valueOf2.length() != 0 ? str4.concat(valueOf2) : new java.lang.String(str4));
     }
 }

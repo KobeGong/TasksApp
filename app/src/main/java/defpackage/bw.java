@@ -1,8 +1,6 @@
 package defpackage;
 
-import android.os.Build;
-
-/* renamed from: bw  reason: default package */
+/* renamed from: bw reason: default package */
 /* compiled from: PG */
 public final class bw {
     public int A = -1;
@@ -62,12 +60,12 @@ public final class bw {
     public int t = -1;
     public float u = 0.5f;
     public float v = 0.5f;
-    public String w = null;
+    public java.lang.String w = null;
     public int x = -1;
     public int y = -1;
     public int z = -1;
 
-    public final void a(bu buVar) {
+    public final void a(defpackage.bu buVar) {
         buVar.d = this.h;
         buVar.e = this.i;
         buVar.f = this.j;
@@ -108,15 +106,15 @@ public final class bw {
         buVar.b = this.f;
         buVar.width = this.b;
         buVar.height = this.c;
-        if (Build.VERSION.SDK_INT >= 17) {
+        if (android.os.Build.VERSION.SDK_INT >= 17) {
             buVar.setMarginStart(this.F);
             buVar.setMarginEnd(this.E);
         }
         buVar.a();
     }
 
-    public final /* synthetic */ Object clone() {
-        bw bwVar = new bw();
+    public final /* synthetic */ java.lang.Object clone() {
+        defpackage.bw bwVar = new defpackage.bw();
         bwVar.a = this.a;
         bwVar.b = this.b;
         bwVar.c = this.c;

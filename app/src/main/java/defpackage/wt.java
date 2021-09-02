@@ -1,23 +1,17 @@
 package defpackage;
 
-import android.view.Menu;
-import android.view.Window;
-import java.util.List;
-
-/* renamed from: wt  reason: default package */
+/* renamed from: wt reason: default package */
 /* compiled from: PG */
-final class wt extends wy {
-    private final /* synthetic */ ws a;
+final class wt extends defpackage.wy {
+    private final /* synthetic */ defpackage.ws a;
 
-    /* JADX INFO: super call moved to the top of the method (can break code semantics) */
-    wt(ws wsVar, Window.Callback callback) {
-        super(wsVar, callback);
+    wt(defpackage.ws wsVar, android.view.Window.Callback callback) {
         this.a = wsVar;
+        super(wsVar, callback);
     }
 
-    @Override // defpackage.yo, android.view.Window.Callback
-    public final void onProvideKeyboardShortcuts(List list, Menu menu, int i) {
-        zx g = this.a.g(0);
+    public final void onProvideKeyboardShortcuts(java.util.List list, android.view.Menu menu, int i) {
+        defpackage.zx g = this.a.g(0);
         if (g == null || g.h == null) {
             super.onProvideKeyboardShortcuts(list, menu, i);
         } else {

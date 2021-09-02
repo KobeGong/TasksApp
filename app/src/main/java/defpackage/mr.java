@@ -1,18 +1,15 @@
 package defpackage;
 
-import android.graphics.Rect;
-import android.transition.Transition;
-
-/* renamed from: mr  reason: default package */
+/* renamed from: mr reason: default package */
 /* compiled from: PG */
-final class mr extends Transition.EpicenterCallback {
-    private final /* synthetic */ Rect a;
+final class mr extends android.transition.Transition.EpicenterCallback {
+    private final /* synthetic */ android.graphics.Rect a;
 
-    mr(Rect rect) {
+    mr(android.graphics.Rect rect) {
         this.a = rect;
     }
 
-    public final Rect onGetEpicenter(Transition transition) {
+    public final android.graphics.Rect onGetEpicenter(android.transition.Transition transition) {
         return this.a;
     }
 }

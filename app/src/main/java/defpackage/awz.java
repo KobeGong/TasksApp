@@ -1,13 +1,9 @@
 package defpackage;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.Arrays;
-
-/* renamed from: awz  reason: default package */
+/* renamed from: awz reason: default package */
 /* compiled from: PG */
-public final class awz extends biq {
-    public static final Parcelable.Creator CREATOR = new axo();
+public final class awz extends defpackage.biq {
+    public static final android.os.Parcelable.Creator CREATOR = new defpackage.axo();
     private final boolean a;
     private final long b;
     private final long c;
@@ -18,30 +14,33 @@ public final class awz extends biq {
         this.c = j2;
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         if (this == obj) {
             return true;
         }
-        if (!(obj instanceof awz)) {
+        if (!(obj instanceof defpackage.awz)) {
             return false;
         }
-        awz awz = (awz) obj;
-        return this.a == awz.a && this.b == awz.b && this.c == awz.c;
+        defpackage.awz awz = (defpackage.awz) obj;
+        if (this.a == awz.a && this.b == awz.b && this.c == awz.c) {
+            return true;
+        }
+        return false;
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Boolean.valueOf(this.a), Long.valueOf(this.b), Long.valueOf(this.c)});
+        return java.util.Arrays.hashCode(new java.lang.Object[]{java.lang.Boolean.valueOf(this.a), java.lang.Long.valueOf(this.b), java.lang.Long.valueOf(this.c)});
     }
 
-    public final String toString() {
+    public final java.lang.String toString() {
         return "CollectForDebugParcelable[skipPersistentStorage: " + this.a + ",collectForDebugStartTimeMillis: " + this.b + ",collectForDebugExpiryTimeMillis: " + this.c + "]";
     }
 
-    public final void writeToParcel(Parcel parcel, int i) {
-        int q = bjr.q(parcel, 20293);
-        bjr.a(parcel, 1, this.a);
-        bjr.a(parcel, 2, this.c);
-        bjr.a(parcel, 3, this.b);
-        bjr.r(parcel, q);
+    public final void writeToParcel(android.os.Parcel parcel, int i) {
+        int q = defpackage.bjr.q(parcel, 20293);
+        defpackage.bjr.a(parcel, 1, this.a);
+        defpackage.bjr.a(parcel, 2, this.c);
+        defpackage.bjr.a(parcel, 3, this.b);
+        defpackage.bjr.r(parcel, q);
     }
 }

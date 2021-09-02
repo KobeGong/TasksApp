@@ -1,37 +1,30 @@
 package defpackage;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-/* access modifiers changed from: package-private */
-/* renamed from: cis  reason: default package */
+/* renamed from: cis reason: default package */
 /* compiled from: PG */
-public final class cis {
-    public static final Set a = new HashSet(Arrays.asList("googleapis.com", "adwords.google.com", "m.google.com", "sandbox.google.com"));
-    public static final Pattern b = Pattern.compile("(?:[^\\/]*\\/)([^;]*)");
-    public static final Pattern c = Pattern.compile("((?:https?:\\/\\/|)[a-zA-Z0-9-_\\.]+(?::\\d+)?)(.*)?");
-    private static final Pattern e = Pattern.compile("([^\\?]+)(\\?+)");
-    private static final Pattern f = Pattern.compile("([a-zA-Z0-9-_]+)");
-    private static final Pattern g = Pattern.compile("\\b([0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3})(:\\d{1,5})?\\b");
-    public final cly d;
+final class cis {
+    public static final java.util.Set a = new java.util.HashSet(java.util.Arrays.asList(new java.lang.String[]{"googleapis.com", "adwords.google.com", "m.google.com", "sandbox.google.com"}));
+    public static final java.util.regex.Pattern b = java.util.regex.Pattern.compile("(?:[^\\/]*\\/)([^;]*)");
+    public static final java.util.regex.Pattern c = java.util.regex.Pattern.compile("((?:https?:\\/\\/|)[a-zA-Z0-9-_\\.]+(?::\\d+)?)(.*)?");
+    private static final java.util.regex.Pattern e = java.util.regex.Pattern.compile("([^\\?]+)(\\?+)");
+    private static final java.util.regex.Pattern f = java.util.regex.Pattern.compile("([a-zA-Z0-9-_]+)");
+    private static final java.util.regex.Pattern g = java.util.regex.Pattern.compile("\\b([0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3})(:\\d{1,5})?\\b");
+    public final defpackage.cly d;
 
-    cis(cly cly) {
+    cis(defpackage.cly cly) {
         this.d = cly;
     }
 
-    static String a(String str) {
-        Matcher matcher = c.matcher(str);
+    static java.lang.String a(java.lang.String str) {
+        java.util.regex.Matcher matcher = c.matcher(str);
         if (matcher.matches()) {
             return matcher.group(1);
         }
         return null;
     }
 
-    static String a(String str, cly cly, boolean z) {
-        String str2;
+    static java.lang.String a(java.lang.String str, defpackage.cly cly, boolean z) {
+        java.lang.String str2;
         boolean z2;
         if (str == null || str.isEmpty()) {
             return null;
@@ -44,7 +37,7 @@ public final class cis {
         if (z) {
             z2 = true;
         } else {
-            String a2 = a(str2);
+            java.lang.String a2 = a(str2);
             if (a2 != null) {
                 str2 = a2;
                 z2 = true;
@@ -52,12 +45,12 @@ public final class cis {
                 z2 = false;
             }
         }
-        Matcher matcher = e.matcher(str2);
+        java.util.regex.Matcher matcher = e.matcher(str2);
         if (matcher.find()) {
             str2 = matcher.group(1);
             z2 = true;
         }
-        Matcher matcher2 = g.matcher(str2);
+        java.util.regex.Matcher matcher2 = g.matcher(str2);
         if (matcher2.find()) {
             str2 = matcher2.replaceFirst("<ip>");
             z2 = true;
@@ -65,7 +58,7 @@ public final class cis {
         if (z2) {
             return str2;
         }
-        Matcher matcher3 = f.matcher(str2);
+        java.util.regex.Matcher matcher3 = f.matcher(str2);
         if (matcher3.find()) {
             return matcher3.group(1);
         }

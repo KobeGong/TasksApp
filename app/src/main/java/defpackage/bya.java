@@ -1,25 +1,23 @@
 package defpackage;
 
-import android.content.Context;
-
-/* renamed from: bya  reason: default package */
+/* renamed from: bya reason: default package */
 /* compiled from: PG */
 public final class bya {
-    public final Context a;
-    public final bqn b;
-    private final buc c;
-    private final bzc d;
-    private final bzb e;
+    public final android.content.Context a;
+    public final defpackage.bqn b;
+    private final defpackage.buc c;
+    private final defpackage.bzc d;
+    private final defpackage.bzb e;
 
-    public final byb a(ddr ddr) {
-        return new byb(this, ddr, null, this.c, this.d, this.e);
+    public final defpackage.byb a(defpackage.ddr ddr) {
+        return new defpackage.byb(this, ddr, null, this.c, this.d, this.e);
     }
 
-    public final byb a(ddi ddi) {
-        return new byb(this, null, ddi, this.c, this.d, this.e);
+    public final defpackage.byb a(defpackage.ddi ddi) {
+        return new defpackage.byb(this, null, ddi, this.c, this.d, this.e);
     }
 
-    public bya(Context context, buc buc, bzc bzc, bzb bzb, bqn bqn) {
+    public bya(android.content.Context context, defpackage.buc buc, defpackage.bzc bzc, defpackage.bzb bzb, defpackage.bqn bqn) {
         this.a = context;
         this.c = buc;
         this.d = bzc;

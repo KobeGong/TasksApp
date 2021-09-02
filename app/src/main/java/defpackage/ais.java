@@ -1,34 +1,31 @@
 package defpackage;
 
-import java.util.ArrayList;
-import java.util.List;
-
-/* renamed from: ais  reason: default package */
+/* renamed from: ais reason: default package */
 /* compiled from: PG */
 public final class ais {
-    public air a;
-    public final List b = new ArrayList();
-    private final String c;
-    private final /* synthetic */ aiq d;
+    public defpackage.air a;
+    public final java.util.List b = new java.util.ArrayList();
+    private final java.lang.String c;
+    private final /* synthetic */ defpackage.aiq d;
 
-    ais(aiq aiq, String str) {
+    ais(defpackage.aiq aiq, java.lang.String str) {
         this.d = aiq;
         this.c = str;
     }
 
-    public final synchronized void a(air air) {
+    public final synchronized void a(defpackage.air air) {
         if (this.a != null) {
-            new Object[1][0] = air;
+            new java.lang.Object[1][0] = air;
         } else {
             this.a = air;
             if (!this.d.a(this.a, this.c)) {
-                new Object[1][0] = air;
+                new java.lang.Object[1][0] = air;
                 this.a = null;
             }
         }
     }
 
-    public final synchronized void a(aiy aiy) {
+    public final synchronized void a(defpackage.aiy aiy) {
         this.b.add(aiy);
     }
 

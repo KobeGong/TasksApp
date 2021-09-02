@@ -1,13 +1,11 @@
 package defpackage;
 
-import java.io.IOException;
-
-/* renamed from: dmf  reason: default package */
+/* renamed from: dmf reason: default package */
 /* compiled from: PG */
 public abstract class dmf {
     public volatile int k = -1;
 
-    public abstract dmf a(dlw dlw);
+    public abstract defpackage.dmf a(defpackage.dlw dlw);
 
     public final int c() {
         int a = a();
@@ -19,42 +17,42 @@ public abstract class dmf {
         return 0;
     }
 
-    public void a(dlx dlx) {
+    public void a(defpackage.dlx dlx) {
     }
 
-    public static final byte[] a(dmf dmf) {
+    public static final byte[] a(defpackage.dmf dmf) {
         byte[] bArr = new byte[dmf.c()];
         try {
-            dlx a = dlx.a(bArr, bArr.length);
+            defpackage.dlx a = defpackage.dlx.a(bArr, bArr.length);
             dmf.a(a);
             if (a.a.remaining() == 0) {
                 return bArr;
             }
-            throw new IllegalStateException(String.format("Did not write as much data as expected, %s bytes remaining.", Integer.valueOf(a.a.remaining())));
-        } catch (IOException e) {
-            throw new RuntimeException("Serializing to a byte array threw an IOException (should never happen).", e);
+            throw new java.lang.IllegalStateException(java.lang.String.format("Did not write as much data as expected, %s bytes remaining.", new java.lang.Object[]{java.lang.Integer.valueOf(a.a.remaining())}));
+        } catch (java.io.IOException e) {
+            throw new java.lang.RuntimeException("Serializing to a byte array threw an IOException (should never happen).", e);
         }
     }
 
-    public static final dmf a(dmf dmf, byte[] bArr, int i, int i2) {
+    public static final defpackage.dmf a(defpackage.dmf dmf, byte[] bArr, int i, int i2) {
         try {
-            dlw a = dlw.a(bArr, i, i2);
+            defpackage.dlw a = defpackage.dlw.a(bArr, i, i2);
             dmf.a(a);
             a.a(0);
             return dmf;
-        } catch (dme e) {
+        } catch (defpackage.dme e) {
             throw e;
-        } catch (IOException e2) {
-            throw new RuntimeException("Reading from a byte array threw an IOException (should never happen).", e2);
+        } catch (java.io.IOException e2) {
+            throw new java.lang.RuntimeException("Reading from a byte array threw an IOException (should never happen).", e2);
         }
     }
 
-    public String toString() {
-        return dgv.a(this);
+    public java.lang.String toString() {
+        return defpackage.dgv.a(this);
     }
 
     /* renamed from: b */
-    public dmf clone() {
-        return (dmf) super.clone();
+    public defpackage.dmf clone() {
+        return (defpackage.dmf) super.clone();
     }
 }

@@ -1,26 +1,21 @@
 package defpackage;
 
-import android.os.SystemClock;
-import android.view.MenuItem;
-
-/* renamed from: yy  reason: default package */
+/* renamed from: yy reason: default package */
 /* compiled from: PG */
-final class yy implements aek {
-    public final /* synthetic */ yv a;
+final class yy implements defpackage.aek {
+    public final /* synthetic */ defpackage.yv a;
 
-    yy(yv yvVar) {
+    yy(defpackage.yv yvVar) {
         this.a = yvVar;
     }
 
-    @Override // defpackage.aek
-    public final void a(MenuBuilder zeVar, MenuItem menuItem) {
+    public final void a(defpackage.ze zeVar, android.view.MenuItem menuItem) {
         this.a.a.removeCallbacksAndMessages(zeVar);
     }
 
-    @Override // defpackage.aek
-    public final void b(MenuBuilder zeVar, MenuItem menuItem) {
+    public final void b(defpackage.ze zeVar, android.view.MenuItem menuItem) {
         int i;
-        za zaVar;
+        defpackage.za zaVar;
         this.a.a.removeCallbacksAndMessages(null);
         int i2 = 0;
         int size = this.a.b.size();
@@ -28,7 +23,7 @@ final class yy implements aek {
             if (i2 >= size) {
                 i = -1;
                 break;
-            } else if (zeVar == ((za) this.a.b.get(i2)).b) {
+            } else if (zeVar == ((defpackage.za) this.a.b.get(i2)).b) {
                 i = i2;
                 break;
             } else {
@@ -38,11 +33,11 @@ final class yy implements aek {
         if (i != -1) {
             int i3 = i + 1;
             if (i3 < this.a.b.size()) {
-                zaVar = (za) this.a.b.get(i3);
+                zaVar = (defpackage.za) this.a.b.get(i3);
             } else {
                 zaVar = null;
             }
-            this.a.a.postAtTime(new yz(this, zaVar, menuItem, zeVar), zeVar, SystemClock.uptimeMillis() + 200);
+            this.a.a.postAtTime(new defpackage.yz(this, zaVar, menuItem, zeVar), zeVar, android.os.SystemClock.uptimeMillis() + 200);
         }
     }
 }

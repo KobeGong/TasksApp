@@ -1,28 +1,24 @@
 package defpackage;
 
-/* renamed from: cus  reason: default package */
+/* renamed from: cus reason: default package */
 /* compiled from: PG */
-final class cus implements cur {
+final class cus implements defpackage.cur {
     cus() {
     }
 
-    @Override // defpackage.cur
     public final int a() {
         return 0;
     }
 
-    @Override // defpackage.cur
-    public final cuc a(int i) {
-        throw new IndexOutOfBoundsException("cannot read from empty metadata");
+    public final defpackage.cuc a(int i) {
+        throw new java.lang.IndexOutOfBoundsException("cannot read from empty metadata");
     }
 
-    @Override // defpackage.cur
-    public final Object b(int i) {
-        throw new IndexOutOfBoundsException("cannot read from empty metadata");
+    public final java.lang.Object b(int i) {
+        throw new java.lang.IndexOutOfBoundsException("cannot read from empty metadata");
     }
 
-    @Override // defpackage.cur
-    public final Object b(cuc cuc) {
+    public final java.lang.Object b(defpackage.cuc cuc) {
         return null;
     }
 }

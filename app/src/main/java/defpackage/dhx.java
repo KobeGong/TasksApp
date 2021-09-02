@@ -1,26 +1,25 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: dhx  reason: default package */
+/* renamed from: dhx reason: default package */
 /* compiled from: PG */
-public final class dhx {
-    private final Object a;
+final class dhx {
+    private final java.lang.Object a;
     private final int b;
 
-    dhx(Object obj, int i) {
+    dhx(java.lang.Object obj, int i) {
         this.a = obj;
         this.b = i;
     }
 
     public final int hashCode() {
-        return (System.identityHashCode(this.a) * 65535) + this.b;
+        return (java.lang.System.identityHashCode(this.a) * 65535) + this.b;
     }
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof dhx)) {
+    public final boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof defpackage.dhx)) {
             return false;
         }
-        dhx dhx = (dhx) obj;
+        defpackage.dhx dhx = (defpackage.dhx) obj;
         if (this.a == dhx.a && this.b == dhx.b) {
             return true;
         }

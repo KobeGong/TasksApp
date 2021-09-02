@@ -1,52 +1,47 @@
 package defpackage;
 
-import android.content.Intent;
-import android.net.Uri;
-import com.google.android.apps.tasks.R;
-import com.google.android.apps.tasks.common.TaskApplication;
+/* renamed from: aqq reason: default package */
+final /* synthetic */ class aqq implements java.lang.Runnable {
+    private final defpackage.aql a;
+    private final defpackage.czq b;
 
-/* access modifiers changed from: package-private */
-/* renamed from: aqq  reason: default package */
-public final /* synthetic */ class aqq implements Runnable {
-    private final aql a;
-    private final czq b;
-
-    aqq(aql aql, czq czq) {
+    aqq(defpackage.aql aql, defpackage.czq czq) {
         this.a = aql;
         this.b = czq;
     }
 
     public final void run() {
-        czq czq;
-        aql aql = this.a;
-        czq czq2 = this.b;
+        defpackage.czq czq;
+        defpackage.aql aql = this.a;
+        defpackage.czq czq2 = this.b;
         if (!aql.r()) {
-            Intent intent = new Intent("android.intent.action.VIEW");
-            String valueOf = String.valueOf(Uri.encode(aql.getPackageName()));
-            intent.setData(Uri.parse(valueOf.length() != 0 ? "market://details?id=".concat(valueOf) : new String("market://details?id=")));
-            TaskApplication b2 = TaskApplication.b();
-            if (czq2 == czq.FORCE) {
-                czq = czq.FORCE;
+            android.content.Intent intent = new android.content.Intent("android.intent.action.VIEW");
+            java.lang.String str = "market://details?id=";
+            java.lang.String valueOf = java.lang.String.valueOf(android.net.Uri.encode(aql.getPackageName()));
+            intent.setData(android.net.Uri.parse(valueOf.length() != 0 ? str.concat(valueOf) : new java.lang.String(str)));
+            com.google.android.apps.tasks.common.TaskApplication b2 = com.google.android.apps.tasks.common.TaskApplication.getApplication();
+            if (czq2 == defpackage.czq.FORCE) {
+                czq = defpackage.czq.FORCE;
             } else {
-                czq = czq.NONE;
+                czq = defpackage.czq.NONE;
             }
             b2.b = czq;
             switch (czq2.ordinal()) {
                 case 1:
-                    aql.a(R.string.app_update_prompt, intent);
+                    aql.a(2131951688, intent);
                     return;
                 case 2:
-                    aql.a(R.string.app_update_nag, intent);
+                    aql.a(2131951687, intent);
                     return;
                 case 3:
                     if (aql.r == null || !aql.r.isShowing()) {
-                        xk xkVar = new xk(aql);
-                        xkVar.a(R.string.update_required_header);
-                        xkVar.b(R.string.update_required_body);
-                        xkVar.a(R.string.update_required_button, new aqs(aql, intent));
-                        xkVar.a(new aqt(aql));
+                        defpackage.xk xkVar = new defpackage.xk(aql);
+                        xkVar.a(2131951848);
+                        xkVar.b(2131951846);
+                        xkVar.a(2131951847, (android.content.DialogInterface.OnClickListener) new defpackage.aqs(aql, intent));
+                        xkVar.a((android.content.DialogInterface.OnDismissListener) new defpackage.aqt(aql));
                         aql.r = xkVar.a();
-                        ajd.a(aql.r);
+                        defpackage.ajd.a(aql.r);
                         return;
                     }
                     return;

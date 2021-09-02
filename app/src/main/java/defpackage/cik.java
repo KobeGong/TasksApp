@@ -1,48 +1,42 @@
 package defpackage;
 
-import android.app.Application;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.atomic.AtomicReference;
-
-/* access modifiers changed from: package-private */
-/* renamed from: cik  reason: default package */
+/* renamed from: cik reason: default package */
 /* compiled from: PG */
-public final class cik extends cgj {
+final class cik extends defpackage.cgj {
     public final boolean d;
-    public final cid e;
+    public final defpackage.cid e;
     public final boolean f;
     public final boolean g;
-    private cie h;
+    private defpackage.cie h;
 
-    cik(coe coe, Application application, clt clt, int i, boolean z, cid cid, boolean z2, boolean z3) {
-        super(coe, application, clt, bg.Z, i);
-        new AtomicReference(null);
-        new ConcurrentHashMap();
+    cik(defpackage.coe coe, android.app.Application application, defpackage.clt clt, int i, boolean z, defpackage.cid cid, boolean z2, boolean z3) {
+        super(coe, application, clt, defpackage.bg.Z, i);
+        new java.util.concurrent.atomic.AtomicReference(null);
+        new java.util.concurrent.ConcurrentHashMap();
         this.d = z;
         this.e = cid;
         this.f = z2;
         this.g = z3;
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public final synchronized void e() {
         if (!this.c && this.h == null) {
-            this.h = new cie(new cij(this), this.a, this.b);
-            cie cie = this.h;
+            this.h = new defpackage.cie(new defpackage.cij(this), this.a, this.b);
+            defpackage.cie cie = this.h;
             if (cie.a.getAndSet(true)) {
-                cdm.a(5, "MemoryMetricMonitor", "Memory Monitor has already started. This MemoryMetricMonitor.start() is ignored.", new Object[0]);
+                defpackage.cdm.a(5, "MemoryMetricMonitor", "Memory Monitor has already started. This MemoryMetricMonitor.start() is ignored.", new java.lang.Object[0]);
             } else {
-                cie.f.a(cie.g);
-                cie.f.a(cie.h);
+                cie.f.a((defpackage.cgp) cie.g);
+                cie.f.a((defpackage.cgp) cie.h);
             }
         }
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.cgj
+    /* access modifiers changed from: 0000 */
     public final synchronized void d() {
         if (this.h != null) {
-            cie cie = this.h;
+            defpackage.cie cie = this.h;
             cie.f.b(cie.g);
             cie.f.b(cie.h);
             this.h = null;

@@ -1,8 +1,6 @@
 package defpackage;
 
-import java.nio.ByteBuffer;
-
-/* renamed from: ehp  reason: default package */
+/* renamed from: ehp reason: default package */
 /* compiled from: PG */
 public abstract class ehp {
     public ehp() {
@@ -10,9 +8,9 @@ public abstract class ehp {
 
     public abstract void a();
 
-    public abstract void a(ByteBuffer byteBuffer);
+    public abstract void a(java.nio.ByteBuffer byteBuffer);
 
-    public abstract void a(ByteBuffer byteBuffer, boolean z);
+    public abstract void a(java.nio.ByteBuffer byteBuffer, boolean z);
 
     public abstract void b();
 

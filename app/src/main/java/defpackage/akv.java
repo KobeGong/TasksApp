@@ -1,41 +1,34 @@
 package defpackage;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.TextView;
-import com.google.android.apps.tasks.R;
-import com.google.android.apps.tasks.ui.components.FancyCheckboxView;
-import java.util.Calendar;
-
-/* renamed from: akv  reason: default package */
+/* renamed from: akv reason: default package */
 /* compiled from: PG */
-final class akv extends ViewHolder {
-    public aky p;
-    public final TextView q;
-    public final TextView r;
-    public final TextView s;
-    public final TextView t;
-    public final TextView u;
-    public final FancyCheckboxView v;
+final class akv extends defpackage.afv {
+    public defpackage.aky p;
+    public final android.widget.TextView q;
+    public final android.widget.TextView r;
+    public final android.widget.TextView s;
+    public final android.widget.TextView t;
+    public final android.widget.TextView u;
+    public final com.google.android.apps.tasks.ui.components.FancyCheckboxView v;
 
-    public akv(View view) {
+    public akv(android.view.View view) {
         super(view);
-        this.q = (TextView) view.findViewById(R.id.task_task_list);
-        this.r = (TextView) view.findViewById(R.id.task_name);
-        this.s = (TextView) view.findViewById(R.id.task_details);
-        this.t = (TextView) view.findViewById(R.id.task_due_date);
-        this.u = (TextView) view.findViewById(R.id.task_link);
-        this.v = (FancyCheckboxView) view.findViewById(R.id.task_completed);
-        this.v.setOnClickListener(new akw(this));
-        this.a.setOnClickListener(new akx(this));
+        this.q = (android.widget.TextView) view.findViewById(2131755329);
+        this.r = (android.widget.TextView) view.findViewById(2131755330);
+        this.s = (android.widget.TextView) view.findViewById(2131755332);
+        this.t = (android.widget.TextView) view.findViewById(2131755333);
+        this.u = (android.widget.TextView) view.findViewById(2131755331);
+        this.v = (com.google.android.apps.tasks.ui.components.FancyCheckboxView) view.findViewById(2131755335);
+        this.v.setOnClickListener(new defpackage.akw(this));
+        this.a.setOnClickListener(new defpackage.akx(this));
     }
 
-    static String a(Context context, String str, String str2, int i) {
-        return str.replace(str2, String.format("#%06X", Integer.valueOf(16777215 & ob.c(context, i))));
+    static java.lang.String a(android.content.Context context, java.lang.String str, java.lang.String str2, int i) {
+        return str.replace(str2, java.lang.String.format("#%06X", new java.lang.Object[]{java.lang.Integer.valueOf(16777215 & defpackage.ob.c(context, i))}));
     }
 
-    static Calendar t() {
-        Calendar instance = Calendar.getInstance();
+    static java.util.Calendar t() {
+        java.util.Calendar instance = java.util.Calendar.getInstance();
         instance.set(14, 0);
         instance.set(13, 0);
         instance.set(12, 0);

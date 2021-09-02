@@ -1,23 +1,21 @@
 package defpackage;
 
-import java.util.List;
+/* renamed from: alf reason: default package */
+final /* synthetic */ class alf implements java.lang.Runnable {
+    private final defpackage.ala a;
+    private final defpackage.cyi b;
 
-/* renamed from: alf  reason: default package */
-final /* synthetic */ class alf implements Runnable {
-    private final ala a;
-    private final cyi b;
-
-    alf(ala ala, cyi cyi) {
+    alf(defpackage.ala ala, defpackage.cyi cyi) {
         this.a = ala;
         this.b = cyi;
     }
 
     public final void run() {
-        ala ala = this.a;
-        cyi cyi = this.b;
+        defpackage.ala ala = this.a;
+        defpackage.cyi cyi = this.b;
         ala.V.a(false);
-        akt akt = ala.U;
-        akt.a = cky.a((Iterable) ((List) cyd.c(cyi)));
-        akt.mObservable.b();
+        defpackage.akt akt = ala.U;
+        akt.a = defpackage.cky.a((java.lang.Iterable) (java.util.List) defpackage.cyd.c(cyi));
+        akt.d.b();
     }
 }

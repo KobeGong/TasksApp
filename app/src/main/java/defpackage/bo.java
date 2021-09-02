@@ -1,15 +1,15 @@
 package defpackage;
 
-/* renamed from: bo  reason: default package */
+/* renamed from: bo reason: default package */
 /* compiled from: PG */
 public final class bo {
-    public final bp a;
+    public final defpackage.bp a;
     public final int b;
     public final char c;
     public short d;
     public int e;
 
-    bo(bp bpVar, int i, int i2, int i3) {
+    bo(defpackage.bp bpVar, int i, int i2, int i3) {
         this.a = bpVar;
         this.b = i;
         this.c = (char) i2;
@@ -20,29 +20,32 @@ public final class bo {
         return this.b + this.c;
     }
 
-    public final bn b() {
-        bp bpVar = this.a;
-        if (bpVar == bp.ARG_START || bpVar == bp.ARG_LIMIT) {
-            return bl.f[this.d];
+    public final defpackage.bn b() {
+        defpackage.bp bpVar = this.a;
+        if (bpVar == defpackage.bp.ARG_START || bpVar == defpackage.bp.ARG_LIMIT) {
+            return defpackage.bl.f[this.d];
         }
-        return bn.NONE;
+        return defpackage.bn.NONE;
     }
 
-    public final String toString() {
-        String name = (this.a == bp.ARG_START || this.a == bp.ARG_LIMIT) ? b().name() : Integer.toString(this.d);
-        String name2 = this.a.name();
-        return new StringBuilder(String.valueOf(name2).length() + 14 + String.valueOf(name).length()).append(name2).append("(").append(name).append(")@").append(this.b).toString();
+    public final java.lang.String toString() {
+        java.lang.String name = (this.a == defpackage.bp.ARG_START || this.a == defpackage.bp.ARG_LIMIT) ? b().name() : java.lang.Integer.toString(this.d);
+        java.lang.String name2 = this.a.name();
+        return new java.lang.StringBuilder(java.lang.String.valueOf(name2).length() + 14 + java.lang.String.valueOf(name).length()).append(name2).append("(").append(name).append(")@").append(this.b).toString();
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         if (this == obj) {
             return true;
         }
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        bo boVar = (bo) obj;
-        return this.a.equals(boVar.a) && this.b == boVar.b && this.c == boVar.c && this.d == boVar.d && this.e == boVar.e;
+        defpackage.bo boVar = (defpackage.bo) obj;
+        if (this.a.equals(boVar.a) && this.b == boVar.b && this.c == boVar.c && this.d == boVar.d && this.e == boVar.e) {
+            return true;
+        }
+        return false;
     }
 
     public final int hashCode() {

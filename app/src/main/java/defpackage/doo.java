@@ -1,11 +1,11 @@
 package defpackage;
 
-/* renamed from: doo  reason: default package */
+/* renamed from: doo reason: default package */
 /* compiled from: PG */
 public abstract class doo {
-    public abstract dna a();
+    public abstract defpackage.dna a();
 
-    public abstract dor b();
+    public abstract defpackage.dor b();
 
-    public abstract dpb c();
+    public abstract defpackage.dpb c();
 }

@@ -1,27 +1,24 @@
 package defpackage;
 
-import java.util.Map;
+/* renamed from: anj reason: default package */
+final /* synthetic */ class anj implements java.lang.Runnable {
+    private final java.util.Map a;
+    private final defpackage.dcb b;
+    private final defpackage.anu c;
 
-/* access modifiers changed from: package-private */
-/* renamed from: anj  reason: default package */
-public final /* synthetic */ class anj implements Runnable {
-    private final Map a;
-    private final dcb b;
-    private final anu c;
-
-    anj(Map map, dcb dcb, anu anu) {
+    anj(java.util.Map map, defpackage.dcb dcb, defpackage.anu anu) {
         this.a = map;
         this.b = dcb;
         this.c = anu;
     }
 
     public final void run() {
-        Map map = this.a;
-        dcb dcb = this.b;
+        java.util.Map map = this.a;
+        defpackage.dcb dcb = this.b;
         try {
             map.put(dcb.b, this.c.b.a(dcb.b));
-        } catch (Exception e) {
-            azb.a("Unable to read tasks for list: %s", (Throwable) e, dcb.b);
+        } catch (java.lang.Exception e) {
+            defpackage.azb.a("Unable to read tasks for list: %s", (java.lang.Throwable) e, dcb.b);
         }
     }
 }

@@ -1,64 +1,59 @@
 package defpackage;
 
-import java.util.HashSet;
-import java.util.concurrent.TimeUnit;
-
-/* renamed from: dyw  reason: default package */
+/* renamed from: dyw reason: default package */
 /* compiled from: PG */
-final class dyw implements dzq {
-    public final dza a;
-    public final /* synthetic */ dyb b;
+final class dyw implements defpackage.dzq {
+    public final defpackage.dza a;
+    public final /* synthetic */ defpackage.dyb b;
 
-    dyw(dyb dyb, dza dza) {
+    dyw(defpackage.dyb dyb, defpackage.dza dza) {
         this.b = dyb;
         this.a = dza;
     }
 
-    @Override // defpackage.dzq
-    public final void a(dor dor) {
+    public final void a(defpackage.dor dor) {
         int i;
-        Runnable a2 = this.b.a(this.a);
+        java.lang.Runnable a2 = this.b.a(this.a);
         if (a2 != null) {
             a2.run();
         }
         if (this.b.l.d == this.a) {
             this.b.t.a(dor);
             if (this.b.k != null) {
-                dzb dzb = this.b.k;
+                defpackage.dzb dzb = this.b.k;
                 do {
                     i = dzb.d.get();
-                    if (i == dzb.a) {
+                    if (i != dzb.a) {
+                    } else {
                         return;
                     }
-                } while (!dzb.d.compareAndSet(i, Math.min(dzb.c + i, dzb.a)));
+                } while (!dzb.d.compareAndSet(i, java.lang.Math.min(dzb.c + i, dzb.a)));
             }
         }
     }
 
-    @Override // defpackage.dzq
-    public final void b(dpw dpw, dor dor) {
-        a(dpw, bg.av, dor);
+    public final void b(defpackage.dpw dpw, defpackage.dor dor) {
+        a(dpw, defpackage.bg.av, dor);
     }
 
-    @Override // defpackage.dzq
-    public final void a(dpw dpw, int i, dor dor) {
-        dyv dyv;
+    public final void a(defpackage.dpw dpw, int i, defpackage.dor dor) {
+        defpackage.dyv dyv;
         synchronized (this.b.g) {
-            dyb dyb = this.b;
-            dyv dyv2 = this.b.l;
-            dza dza = this.a;
+            defpackage.dyb dyb = this.b;
+            defpackage.dyv dyv2 = this.b.l;
+            defpackage.dza dza = this.a;
             dza.b = true;
             if (dyv2.c.contains(dza)) {
-                HashSet hashSet = new HashSet(dyv2.c);
+                java.util.HashSet hashSet = new java.util.HashSet(dyv2.c);
                 hashSet.remove(dza);
-                dyv = new dyv(dyv2.b, hashSet, dyv2.d, dyv2.e, dyv2.a);
+                dyv = new defpackage.dyv(dyv2.b, hashSet, dyv2.d, dyv2.e, dyv2.a);
             } else {
                 dyv = dyv2;
             }
             dyb.l = dyv;
         }
         if (this.a.c) {
-            Runnable a2 = this.b.a(this.a);
+            java.lang.Runnable a2 = this.b.a(this.a);
             if (a2 != null) {
                 a2.run();
             }
@@ -69,21 +64,21 @@ final class dyw implements dzq {
             return;
         }
         if (this.b.l.d == null) {
-            if (i == bg.aw && !this.b.m) {
+            if (i == defpackage.bg.aw && !this.b.m) {
                 this.b.m = true;
-                this.b.d.execute(new dyx(this));
+                this.b.d.execute(new defpackage.dyx(this));
                 return;
-            } else if (i != bg.ax) {
+            } else if (i != defpackage.bg.ax) {
                 this.b.m = true;
-                dys a3 = a(this.b.f, dpw, dor);
+                defpackage.dys a3 = a(this.b.f, dpw, dor);
                 if (a3.a) {
-                    this.b.o = this.b.e.schedule(new dyy(this), a3.b, TimeUnit.MILLISECONDS);
+                    this.b.o = this.b.e.schedule(new defpackage.dyy(this), a3.b, java.util.concurrent.TimeUnit.MILLISECONDS);
                     return;
                 }
             }
         }
-        dyb.c();
-        Runnable a4 = this.b.a(this.a);
+        defpackage.dyb.c();
+        java.lang.Runnable a4 = this.b.a(this.a);
         if (a4 != null) {
             a4.run();
         }
@@ -92,19 +87,19 @@ final class dyw implements dzq {
         }
     }
 
-    private final dys a(dyu dyu, dpw dpw, dor dor) {
-        Integer num;
+    private final defpackage.dys a(defpackage.dyu dyu, defpackage.dpw dpw, defpackage.dor dor) {
+        java.lang.Integer num;
         boolean z;
         long j;
         boolean z2;
         boolean z3 = false;
         boolean contains = dyu.e.contains(dpw.l);
-        String str = (String) dor.a(dyb.a);
+        java.lang.String str = (java.lang.String) dor.a(defpackage.dyb.a);
         if (str != null) {
             try {
-                num = Integer.valueOf(str);
-            } catch (NumberFormatException e) {
-                num = -1;
+                num = java.lang.Integer.valueOf(str);
+            } catch (java.lang.NumberFormatException e) {
+                num = java.lang.Integer.valueOf(-1);
             }
         } else {
             num = null;
@@ -112,7 +107,7 @@ final class dyw implements dzq {
         if (this.b.k == null || (!contains && (num == null || num.intValue() >= 0))) {
             z = false;
         } else {
-            dzb dzb = this.b.k;
+            defpackage.dzb dzb = this.b.k;
             while (true) {
                 int i = dzb.d.get();
                 if (i == 0) {
@@ -120,7 +115,7 @@ final class dyw implements dzq {
                     break;
                 }
                 int i2 = i - 1000;
-                if (dzb.d.compareAndSet(i, Math.max(i2, 0))) {
+                if (dzb.d.compareAndSet(i, java.lang.Math.max(i2, 0))) {
                     z2 = i2 > dzb.b;
                 }
             }
@@ -133,32 +128,30 @@ final class dyw implements dzq {
         if (dyu.a > this.a.d + 1 && !z) {
             if (num == null) {
                 if (contains) {
-                    j = (long) (this.b.p * 1000.0d * dyb.q.nextDouble());
-                    this.b.p = Math.min(this.b.p * dyu.d, dyu.c);
+                    j = (long) (this.b.p * 1000.0d * defpackage.dyb.q.nextDouble());
+                    this.b.p = java.lang.Math.min(this.b.p * dyu.d, dyu.c);
                     z3 = true;
-                    return new dys(z3, j);
+                    return new defpackage.dys(z3, j);
                 }
             } else if (num.intValue() >= 0) {
                 j = (long) num.intValue();
                 this.b.p = dyu.b;
                 z3 = true;
-                return new dys(z3, j);
+                return new defpackage.dys(z3, j);
             }
         }
         j = 0;
-        return new dys(z3, j);
+        return new defpackage.dys(z3, j);
     }
 
-    @Override // defpackage.dzq
-    public final void a(dzr dzr) {
-        dyv dyv = this.b.l;
-        cld.b(dyv.d != null, "Headers should be received prior to messages.");
+    public final void a(defpackage.dzr dzr) {
+        defpackage.dyv dyv = this.b.l;
+        defpackage.cld.b(dyv.d != null, (java.lang.Object) "Headers should be received prior to messages.");
         if (dyv.d == this.a) {
             this.b.t.a(dzr);
         }
     }
 
-    @Override // defpackage.dzq
     public final void a() {
         if (this.b.l.c.contains(this.a)) {
             this.b.t.a();

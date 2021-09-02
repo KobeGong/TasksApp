@@ -1,291 +1,272 @@
 package defpackage;
 
-import android.content.Context;
-import android.content.Intent;
-import android.content.res.ColorStateList;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
-import android.view.ActionProvider;
-import android.view.CollapsibleActionView;
-import android.view.ContextMenu;
-import android.view.MenuItem;
-import android.view.SubMenu;
-import android.view.View;
-import java.lang.reflect.Method;
-
-/* renamed from: zj  reason: default package */
+/* renamed from: zj reason: default package */
 /* compiled from: PG */
-public class zj extends yt implements MenuItem {
-    public Method e;
+public class zj extends defpackage.yt implements android.view.MenuItem {
+    public java.lang.reflect.Method e;
 
-    zj(Context context, pp ppVar) {
+    zj(android.content.Context context, defpackage.pp ppVar) {
         super(context, ppVar);
     }
 
     public int getItemId() {
-        return ((pp) this.d).getItemId();
+        return ((defpackage.pp) this.d).getItemId();
     }
 
     public int getGroupId() {
-        return ((pp) this.d).getGroupId();
+        return ((defpackage.pp) this.d).getGroupId();
     }
 
     public int getOrder() {
-        return ((pp) this.d).getOrder();
+        return ((defpackage.pp) this.d).getOrder();
     }
 
-    @Override // android.view.MenuItem
-    public MenuItem setTitle(CharSequence charSequence) {
-        ((pp) this.d).setTitle(charSequence);
+    public android.view.MenuItem setTitle(java.lang.CharSequence charSequence) {
+        ((defpackage.pp) this.d).setTitle(charSequence);
         return this;
     }
 
-    @Override // android.view.MenuItem
-    public MenuItem setTitle(int i) {
-        ((pp) this.d).setTitle(i);
+    public android.view.MenuItem setTitle(int i) {
+        ((defpackage.pp) this.d).setTitle(i);
         return this;
     }
 
-    public CharSequence getTitle() {
-        return ((pp) this.d).getTitle();
+    public java.lang.CharSequence getTitle() {
+        return ((defpackage.pp) this.d).getTitle();
     }
 
-    public MenuItem setTitleCondensed(CharSequence charSequence) {
-        ((pp) this.d).setTitleCondensed(charSequence);
+    public android.view.MenuItem setTitleCondensed(java.lang.CharSequence charSequence) {
+        ((defpackage.pp) this.d).setTitleCondensed(charSequence);
         return this;
     }
 
-    public CharSequence getTitleCondensed() {
-        return ((pp) this.d).getTitleCondensed();
+    public java.lang.CharSequence getTitleCondensed() {
+        return ((defpackage.pp) this.d).getTitleCondensed();
     }
 
-    @Override // android.view.MenuItem
-    public MenuItem setIcon(Drawable drawable) {
-        ((pp) this.d).setIcon(drawable);
+    public android.view.MenuItem setIcon(android.graphics.drawable.Drawable drawable) {
+        ((defpackage.pp) this.d).setIcon(drawable);
         return this;
     }
 
-    @Override // android.view.MenuItem
-    public MenuItem setIcon(int i) {
-        ((pp) this.d).setIcon(i);
+    public android.view.MenuItem setIcon(int i) {
+        ((defpackage.pp) this.d).setIcon(i);
         return this;
     }
 
-    public Drawable getIcon() {
-        return ((pp) this.d).getIcon();
+    public android.graphics.drawable.Drawable getIcon() {
+        return ((defpackage.pp) this.d).getIcon();
     }
 
-    public MenuItem setIntent(Intent intent) {
-        ((pp) this.d).setIntent(intent);
+    public android.view.MenuItem setIntent(android.content.Intent intent) {
+        ((defpackage.pp) this.d).setIntent(intent);
         return this;
     }
 
-    public Intent getIntent() {
-        return ((pp) this.d).getIntent();
+    public android.content.Intent getIntent() {
+        return ((defpackage.pp) this.d).getIntent();
     }
 
-    public MenuItem setShortcut(char c, char c2) {
-        ((pp) this.d).setShortcut(c, c2);
+    public android.view.MenuItem setShortcut(char c, char c2) {
+        ((defpackage.pp) this.d).setShortcut(c, c2);
         return this;
     }
 
-    public MenuItem setShortcut(char c, char c2, int i, int i2) {
-        ((pp) this.d).setShortcut(c, c2, i, i2);
+    public android.view.MenuItem setShortcut(char c, char c2, int i, int i2) {
+        ((defpackage.pp) this.d).setShortcut(c, c2, i, i2);
         return this;
     }
 
-    public MenuItem setNumericShortcut(char c) {
-        ((pp) this.d).setNumericShortcut(c);
+    public android.view.MenuItem setNumericShortcut(char c) {
+        ((defpackage.pp) this.d).setNumericShortcut(c);
         return this;
     }
 
-    public MenuItem setNumericShortcut(char c, int i) {
-        ((pp) this.d).setNumericShortcut(c, i);
+    public android.view.MenuItem setNumericShortcut(char c, int i) {
+        ((defpackage.pp) this.d).setNumericShortcut(c, i);
         return this;
     }
 
     public char getNumericShortcut() {
-        return ((pp) this.d).getNumericShortcut();
+        return ((defpackage.pp) this.d).getNumericShortcut();
     }
 
     public int getNumericModifiers() {
-        return ((pp) this.d).getNumericModifiers();
+        return ((defpackage.pp) this.d).getNumericModifiers();
     }
 
-    public MenuItem setAlphabeticShortcut(char c) {
-        ((pp) this.d).setAlphabeticShortcut(c);
+    public android.view.MenuItem setAlphabeticShortcut(char c) {
+        ((defpackage.pp) this.d).setAlphabeticShortcut(c);
         return this;
     }
 
-    public MenuItem setAlphabeticShortcut(char c, int i) {
-        ((pp) this.d).setAlphabeticShortcut(c, i);
+    public android.view.MenuItem setAlphabeticShortcut(char c, int i) {
+        ((defpackage.pp) this.d).setAlphabeticShortcut(c, i);
         return this;
     }
 
     public char getAlphabeticShortcut() {
-        return ((pp) this.d).getAlphabeticShortcut();
+        return ((defpackage.pp) this.d).getAlphabeticShortcut();
     }
 
     public int getAlphabeticModifiers() {
-        return ((pp) this.d).getAlphabeticModifiers();
+        return ((defpackage.pp) this.d).getAlphabeticModifiers();
     }
 
-    public MenuItem setCheckable(boolean z) {
-        ((pp) this.d).setCheckable(z);
+    public android.view.MenuItem setCheckable(boolean z) {
+        ((defpackage.pp) this.d).setCheckable(z);
         return this;
     }
 
     public boolean isCheckable() {
-        return ((pp) this.d).isCheckable();
+        return ((defpackage.pp) this.d).isCheckable();
     }
 
-    public MenuItem setChecked(boolean z) {
-        ((pp) this.d).setChecked(z);
+    public android.view.MenuItem setChecked(boolean z) {
+        ((defpackage.pp) this.d).setChecked(z);
         return this;
     }
 
     public boolean isChecked() {
-        return ((pp) this.d).isChecked();
+        return ((defpackage.pp) this.d).isChecked();
     }
 
-    public MenuItem setVisible(boolean z) {
-        return ((pp) this.d).setVisible(z);
+    public android.view.MenuItem setVisible(boolean z) {
+        return ((defpackage.pp) this.d).setVisible(z);
     }
 
     public boolean isVisible() {
-        return ((pp) this.d).isVisible();
+        return ((defpackage.pp) this.d).isVisible();
     }
 
-    public MenuItem setEnabled(boolean z) {
-        ((pp) this.d).setEnabled(z);
+    public android.view.MenuItem setEnabled(boolean z) {
+        ((defpackage.pp) this.d).setEnabled(z);
         return this;
     }
 
     public boolean isEnabled() {
-        return ((pp) this.d).isEnabled();
+        return ((defpackage.pp) this.d).isEnabled();
     }
 
     public boolean hasSubMenu() {
-        return ((pp) this.d).hasSubMenu();
+        return ((defpackage.pp) this.d).hasSubMenu();
     }
 
-    public SubMenu getSubMenu() {
-        return a(((pp) this.d).getSubMenu());
+    public android.view.SubMenu getSubMenu() {
+        return a(((defpackage.pp) this.d).getSubMenu());
     }
 
-    public MenuItem setOnMenuItemClickListener(MenuItem.OnMenuItemClickListener onMenuItemClickListener) {
-        ((pp) this.d).setOnMenuItemClickListener(onMenuItemClickListener != null ? new zn(this, onMenuItemClickListener) : null);
+    public android.view.MenuItem setOnMenuItemClickListener(android.view.MenuItem.OnMenuItemClickListener onMenuItemClickListener) {
+        ((defpackage.pp) this.d).setOnMenuItemClickListener(onMenuItemClickListener != null ? new defpackage.zn(this, onMenuItemClickListener) : null);
         return this;
     }
 
-    public ContextMenu.ContextMenuInfo getMenuInfo() {
-        return ((pp) this.d).getMenuInfo();
+    public android.view.ContextMenu.ContextMenuInfo getMenuInfo() {
+        return ((defpackage.pp) this.d).getMenuInfo();
     }
 
     public void setShowAsAction(int i) {
-        ((pp) this.d).setShowAsAction(i);
+        ((defpackage.pp) this.d).setShowAsAction(i);
     }
 
-    public MenuItem setShowAsActionFlags(int i) {
-        ((pp) this.d).setShowAsActionFlags(i);
+    public android.view.MenuItem setShowAsActionFlags(int i) {
+        ((defpackage.pp) this.d).setShowAsActionFlags(i);
         return this;
     }
 
-    @Override // android.view.MenuItem
-    public MenuItem setActionView(View view) {
-        if (view instanceof CollapsibleActionView) {
-            view = new zl(view);
+    public android.view.MenuItem setActionView(android.view.View view) {
+        if (view instanceof android.view.CollapsibleActionView) {
+            view = new defpackage.zl(view);
         }
-        ((pp) this.d).setActionView(view);
+        ((defpackage.pp) this.d).setActionView(view);
         return this;
     }
 
-    @Override // android.view.MenuItem
-    public MenuItem setActionView(int i) {
-        ((pp) this.d).setActionView(i);
-        View actionView = ((pp) this.d).getActionView();
-        if (actionView instanceof CollapsibleActionView) {
-            ((pp) this.d).setActionView(new zl(actionView));
+    public android.view.MenuItem setActionView(int i) {
+        ((defpackage.pp) this.d).setActionView(i);
+        android.view.View actionView = ((defpackage.pp) this.d).getActionView();
+        if (actionView instanceof android.view.CollapsibleActionView) {
+            ((defpackage.pp) this.d).setActionView((android.view.View) new defpackage.zl(actionView));
         }
         return this;
     }
 
-    public View getActionView() {
-        View actionView = ((pp) this.d).getActionView();
-        if (actionView instanceof zl) {
-            return (View) ((zl) actionView).a;
+    public android.view.View getActionView() {
+        android.view.View actionView = ((defpackage.pp) this.d).getActionView();
+        if (actionView instanceof defpackage.zl) {
+            return (android.view.View) ((defpackage.zl) actionView).a;
         }
         return actionView;
     }
 
-    public MenuItem setActionProvider(ActionProvider actionProvider) {
-        ((pp) this.d).a(actionProvider != null ? a(actionProvider) : null);
+    public android.view.MenuItem setActionProvider(android.view.ActionProvider actionProvider) {
+        ((defpackage.pp) this.d).a((defpackage.rs) actionProvider != null ? a(actionProvider) : null);
         return this;
     }
 
-    public ActionProvider getActionProvider() {
-        rs a = ((pp) this.d).a();
-        if (a instanceof zk) {
-            return ((zk) a).b;
+    public android.view.ActionProvider getActionProvider() {
+        defpackage.rs a = ((defpackage.pp) this.d).a();
+        if (a instanceof defpackage.zk) {
+            return ((defpackage.zk) a).b;
         }
         return null;
     }
 
     public boolean expandActionView() {
-        return ((pp) this.d).expandActionView();
+        return ((defpackage.pp) this.d).expandActionView();
     }
 
     public boolean collapseActionView() {
-        return ((pp) this.d).collapseActionView();
+        return ((defpackage.pp) this.d).collapseActionView();
     }
 
     public boolean isActionViewExpanded() {
-        return ((pp) this.d).isActionViewExpanded();
+        return ((defpackage.pp) this.d).isActionViewExpanded();
     }
 
-    public MenuItem setOnActionExpandListener(MenuItem.OnActionExpandListener onActionExpandListener) {
-        ((pp) this.d).setOnActionExpandListener(onActionExpandListener != null ? new zm(this, onActionExpandListener) : null);
+    public android.view.MenuItem setOnActionExpandListener(android.view.MenuItem.OnActionExpandListener onActionExpandListener) {
+        ((defpackage.pp) this.d).setOnActionExpandListener(onActionExpandListener != null ? new defpackage.zm(this, onActionExpandListener) : null);
         return this;
     }
 
-    public MenuItem setContentDescription(CharSequence charSequence) {
-        ((pp) this.d).a(charSequence);
+    public android.view.MenuItem setContentDescription(java.lang.CharSequence charSequence) {
+        ((defpackage.pp) this.d).a(charSequence);
         return this;
     }
 
-    public CharSequence getContentDescription() {
-        return ((pp) this.d).getContentDescription();
+    public java.lang.CharSequence getContentDescription() {
+        return ((defpackage.pp) this.d).getContentDescription();
     }
 
-    public MenuItem setTooltipText(CharSequence charSequence) {
-        ((pp) this.d).b(charSequence);
+    public android.view.MenuItem setTooltipText(java.lang.CharSequence charSequence) {
+        ((defpackage.pp) this.d).b(charSequence);
         return this;
     }
 
-    public CharSequence getTooltipText() {
-        return ((pp) this.d).getTooltipText();
+    public java.lang.CharSequence getTooltipText() {
+        return ((defpackage.pp) this.d).getTooltipText();
     }
 
-    public MenuItem setIconTintList(ColorStateList colorStateList) {
-        ((pp) this.d).setIconTintList(colorStateList);
+    public android.view.MenuItem setIconTintList(android.content.res.ColorStateList colorStateList) {
+        ((defpackage.pp) this.d).setIconTintList(colorStateList);
         return this;
     }
 
-    public ColorStateList getIconTintList() {
-        return ((pp) this.d).getIconTintList();
+    public android.content.res.ColorStateList getIconTintList() {
+        return ((defpackage.pp) this.d).getIconTintList();
     }
 
-    public MenuItem setIconTintMode(PorterDuff.Mode mode) {
-        ((pp) this.d).setIconTintMode(mode);
+    public android.view.MenuItem setIconTintMode(android.graphics.PorterDuff.Mode mode) {
+        ((defpackage.pp) this.d).setIconTintMode(mode);
         return this;
     }
 
-    public PorterDuff.Mode getIconTintMode() {
-        return ((pp) this.d).getIconTintMode();
+    public android.graphics.PorterDuff.Mode getIconTintMode() {
+        return ((defpackage.pp) this.d).getIconTintMode();
     }
 
-    /* access modifiers changed from: package-private */
-    public zk a(ActionProvider actionProvider) {
-        return new zk(this, actionProvider);
+    /* access modifiers changed from: 0000 */
+    public defpackage.zk a(android.view.ActionProvider actionProvider) {
+        return new defpackage.zk(this, actionProvider);
     }
 }

@@ -1,16 +1,14 @@
 package defpackage;
 
-import java.nio.ByteBuffer;
-
-/* renamed from: cmv  reason: default package */
+/* renamed from: cmv reason: default package */
 /* compiled from: PG */
-public final class cmv extends cmx {
+public final class cmv extends defpackage.cmx {
     public int[] a;
     public int[] b;
     public int[] c;
     public int[] d;
     public int e;
-    public cmv f;
+    public defpackage.cmv f;
     public int g = -1;
     private final int k;
 
@@ -19,30 +17,27 @@ public final class cmv extends cmx {
         this.k = i2;
     }
 
-    @Override // defpackage.cmx
-    public final int a(cnc cnc) {
+    public final int a(defpackage.cnc cnc) {
         return this.a.length;
     }
 
-    @Override // defpackage.cmx
-    public final int a(cnc cnc, int i) {
+    public final int a(defpackage.cnc cnc, int i) {
         return this.a[i];
     }
 
-    @Override // defpackage.cmx
-    public final String b(cnc cnc, int i) {
+    public final java.lang.String b(defpackage.cnc cnc, int i) {
         return cnc.a(this.b[i]);
     }
 
-    @Override // defpackage.cmx
-    public final String c(cnc cnc, int i) {
+    public final java.lang.String c(defpackage.cnc cnc, int i) {
         if (i < 0 || i >= this.a.length) {
-            String valueOf = String.valueOf(b(cnc));
-            return valueOf.length() != 0 ? "static ".concat(valueOf) : new String("static ");
+            java.lang.String str = "static ";
+            java.lang.String valueOf = java.lang.String.valueOf(b(cnc));
+            return valueOf.length() != 0 ? str.concat(valueOf) : new java.lang.String(str);
         }
-        String b2 = b(cnc);
-        String b3 = b(cnc, i);
-        return new StringBuilder(String.valueOf(b2).length() + 8 + String.valueOf(b3).length()).append("static ").append(b2).append("#").append(b3).toString();
+        java.lang.String b2 = b(cnc);
+        java.lang.String b3 = b(cnc, i);
+        return new java.lang.StringBuilder(java.lang.String.valueOf(b2).length() + 8 + java.lang.String.valueOf(b3).length()).append("static ").append(b2).append("#").append(b3).toString();
     }
 
     public final void a() {
@@ -58,14 +53,14 @@ public final class cmv extends cmx {
         }
     }
 
-    public final String b(cnc cnc) {
+    public final java.lang.String b(defpackage.cnc cnc) {
         return cnc.a(this.k);
     }
 
-    public static void c(cnc cnc) {
-        ByteBuffer byteBuffer = cnc.a;
-        int i = 65535 & byteBuffer.getShort();
-        for (int i2 = 0; i2 < i; i2++) {
+    public static void c(defpackage.cnc cnc) {
+        java.nio.ByteBuffer byteBuffer = cnc.a;
+        short s = 65535 & byteBuffer.getShort();
+        for (int i = 0; i < s; i++) {
             byteBuffer.getShort();
             cnc.c(cnc.b(byteBuffer.get()));
         }

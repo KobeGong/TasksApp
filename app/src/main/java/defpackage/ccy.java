@@ -1,23 +1,22 @@
 package defpackage;
 
-/* renamed from: ccy  reason: default package */
+/* renamed from: ccy reason: default package */
 /* compiled from: PG */
-public final class ccy implements ecz {
-    private final ecz a;
-    private final ecz b;
-    private final ecz c;
+public final class ccy implements defpackage.ecz {
+    private final defpackage.ecz a;
+    private final defpackage.ecz b;
+    private final defpackage.ecz c;
 
-    public ccy(ecz ecz, ecz ecz2, ecz ecz3) {
+    public ccy(defpackage.ecz ecz, defpackage.ecz ecz2, defpackage.ecz ecz3) {
         this.a = ecz;
         this.b = ecz2;
         this.c = ecz3;
     }
 
-    @Override // defpackage.ecz
-    public final /* synthetic */ Object a() {
-        ccx ccx = new ccx();
-        ccx.a = (bqg) this.a.a();
-        ccx.b = (buc) this.b.a();
+    public final /* synthetic */ java.lang.Object a() {
+        defpackage.ccx ccx = new defpackage.ccx();
+        ccx.a = (defpackage.bqg) this.a.a();
+        ccx.b = (defpackage.buc) this.b.a();
         this.c.a();
         return ccx;
     }

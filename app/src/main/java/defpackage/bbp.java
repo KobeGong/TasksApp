@@ -1,15 +1,13 @@
 package defpackage;
 
-import com.google.android.gms.common.api.internal.LifecycleCallback;
-
-/* renamed from: bbp  reason: default package */
+/* renamed from: bbp reason: default package */
 /* compiled from: PG */
-final class bbp implements Runnable {
-    private /* synthetic */ LifecycleCallback a;
-    private /* synthetic */ String b;
-    private /* synthetic */ bbo c;
+final class bbp implements java.lang.Runnable {
+    private /* synthetic */ com.google.android.gms.common.api.internal.LifecycleCallback a;
+    private /* synthetic */ java.lang.String b;
+    private /* synthetic */ defpackage.bbo c;
 
-    bbp(bbo bbo, LifecycleCallback lifecycleCallback, String str) {
+    bbp(defpackage.bbo bbo, com.google.android.gms.common.api.internal.LifecycleCallback lifecycleCallback, java.lang.String str) {
         this.c = bbo;
         this.a = lifecycleCallback;
         this.b = str;
@@ -28,6 +26,6 @@ final class bbp implements Runnable {
         if (this.c.U >= 4) {
             this.a.d();
         }
-        int unused = this.c.U;
+        this.c.U;
     }
 }

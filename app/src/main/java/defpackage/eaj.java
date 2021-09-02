@@ -1,9 +1,9 @@
 package defpackage;
 
-/* renamed from: eaj  reason: default package */
+/* renamed from: eaj reason: default package */
 /* compiled from: PG */
-public abstract class eaj implements Comparable {
-    private static final eaj a = new eai();
+public abstract class eaj implements java.lang.Comparable {
+    private static final defpackage.eaj a = new defpackage.eai();
 
     eaj() {
     }
@@ -12,20 +12,19 @@ public abstract class eaj implements Comparable {
 
     public abstract int b();
 
-    public static eaj c() {
+    public static defpackage.eaj c() {
         if (0 < -315576000000L || 0 > 315576000000L) {
             return a;
         }
-        return new eai();
+        return new defpackage.eai();
     }
 
-    @Override // java.lang.Comparable
-    public /* synthetic */ int compareTo(Object obj) {
-        eaj eaj = (eaj) obj;
-        int a2 = cub.a(a(), eaj.a());
+    public /* synthetic */ int compareTo(java.lang.Object obj) {
+        defpackage.eaj eaj = (defpackage.eaj) obj;
+        int a2 = defpackage.cub.a(a(), eaj.a());
         if (a2 != 0) {
             return a2;
         }
-        return cub.a((long) b(), (long) eaj.b());
+        return defpackage.cub.a((long) b(), (long) eaj.b());
     }
 }

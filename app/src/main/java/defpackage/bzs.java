@@ -1,24 +1,23 @@
 package defpackage;
 
-/* renamed from: bzs  reason: default package */
+/* renamed from: bzs reason: default package */
 /* compiled from: PG */
-public final class bzs implements ecz {
-    private final ecz a;
-    private final ecz b;
-    private final ecz c;
+public final class bzs implements defpackage.ecz {
+    private final defpackage.ecz a;
+    private final defpackage.ecz b;
+    private final defpackage.ecz c;
 
-    public bzs(ecz ecz, ecz ecz2, ecz ecz3) {
+    public bzs(defpackage.ecz ecz, defpackage.ecz ecz2, defpackage.ecz ecz3) {
         this.a = ecz;
         this.b = ecz2;
         this.c = ecz3;
     }
 
-    @Override // defpackage.ecz
-    public final /* synthetic */ Object a() {
-        bzr bzr = new bzr();
-        bzr.a = (buc) this.a.a();
-        bzr.b = (byk) this.b.a();
-        bzr.c = (bzc) this.c.a();
+    public final /* synthetic */ java.lang.Object a() {
+        defpackage.bzr bzr = new defpackage.bzr();
+        bzr.a = (defpackage.buc) this.a.a();
+        bzr.b = (defpackage.byk) this.b.a();
+        bzr.c = (defpackage.bzc) this.c.a();
         return bzr;
     }
 }

@@ -1,64 +1,54 @@
 package defpackage;
 
-import java.io.IOException;
-import java.io.InputStream;
-
-/* access modifiers changed from: package-private */
-/* renamed from: dqs  reason: default package */
+/* renamed from: dqs reason: default package */
 /* compiled from: PG */
-public final class dqs implements dva {
+final class dqs implements defpackage.dva {
     private boolean a;
-    private final dzo b;
+    private final defpackage.dzo b;
     private byte[] c;
-    private final /* synthetic */ dqr d;
+    private final /* synthetic */ defpackage.dqr d;
 
-    public dqs(dqr dqr, dor dor, dzo dzo) {
+    public dqs(defpackage.dqr dqr, defpackage.dor dor, defpackage.dzo dzo) {
         this.d = dqr;
-        cld.a(dor, "headers");
-        this.b = (dzo) cld.a(dzo, "statsTraceCtx");
+        defpackage.cld.a((java.lang.Object) dor, (java.lang.Object) "headers");
+        this.b = (defpackage.dzo) defpackage.cld.a((java.lang.Object) dzo, (java.lang.Object) "statsTraceCtx");
     }
 
-    @Override // defpackage.dva
-    public final void a(InputStream inputStream) {
-        cld.b(this.c == null, "writePayload should not be called multiple times");
+    public final void a(java.io.InputStream inputStream) {
+        defpackage.cld.b(this.c == null, (java.lang.Object) "writePayload should not be called multiple times");
         try {
-            this.c = dtj.a(inputStream);
+            this.c = defpackage.dtj.a(inputStream);
             this.b.a();
             this.b.a(0, (long) this.c.length, (long) this.c.length);
             this.b.a((long) this.c.length);
             this.b.b((long) this.c.length);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        } catch (java.io.IOException e) {
+            throw new java.lang.RuntimeException(e);
         }
     }
 
-    @Override // defpackage.dva
     public final void a() {
     }
 
-    @Override // defpackage.dva
     public final boolean b() {
         return this.a;
     }
 
-    @Override // defpackage.dva
     public final void c() {
         boolean z = true;
         this.a = true;
         if (this.c == null) {
             z = false;
         }
-        cld.b(z, "Lack of request message. GET request is only supported for unary requests");
+        defpackage.cld.b(z, (java.lang.Object) "Lack of request message. GET request is only supported for unary requests");
         this.d.a().a(this.c);
         this.c = null;
     }
 
-    @Override // defpackage.dva
-    public final dva a(doa doa) {
+    public final defpackage.dva a(defpackage.doa doa) {
         return this;
     }
 
-    @Override // defpackage.dva
     public final void a(int i) {
     }
 }

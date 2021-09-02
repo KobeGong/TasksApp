@@ -1,27 +1,25 @@
 package defpackage;
 
-import java.util.ArrayList;
+/* renamed from: alr reason: default package */
+final /* synthetic */ class alr implements java.lang.Runnable {
+    private final defpackage.alq a;
+    private final java.lang.String b;
 
-/* renamed from: alr  reason: default package */
-final /* synthetic */ class alr implements Runnable {
-    private final alq a;
-    private final String b;
-
-    alr(alq alq, String str) {
+    alr(defpackage.alq alq, java.lang.String str) {
         this.a = alq;
         this.b = str;
     }
 
     public final void run() {
-        alq alq = this.a;
-        if (cru.d(this.b, alq.c)) {
-            ArrayList a2 = cky.a((Iterable) alq.a);
+        defpackage.alq alq = this.a;
+        if (defpackage.cru.d(this.b, alq.c)) {
+            java.util.ArrayList a2 = defpackage.cky.a((java.lang.Iterable) alq.a);
             int size = a2.size();
             int i = 0;
             while (i < size) {
-                Object obj = a2.get(i);
+                java.lang.Object obj = a2.get(i);
                 i++;
-                ((alu) obj).a();
+                ((defpackage.alu) obj).a();
             }
         }
     }

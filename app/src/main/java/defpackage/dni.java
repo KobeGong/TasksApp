@@ -1,31 +1,28 @@
 package defpackage;
 
-/* renamed from: dni  reason: default package */
+/* renamed from: dni reason: default package */
 /* compiled from: PG */
-final class dni extends dpm {
-    public final /* synthetic */ dpb a;
-    public final /* synthetic */ dnh b;
-    private final /* synthetic */ dnd c;
+final class dni extends defpackage.dpm {
+    public final /* synthetic */ defpackage.dpb a;
+    public final /* synthetic */ defpackage.dnh b;
+    private final /* synthetic */ defpackage.dnd c;
 
-    dni(dnh dnh, dnd dnd, dpb dpb) {
+    dni(defpackage.dnh dnh, defpackage.dnd dnd, defpackage.dpb dpb) {
         this.b = dnh;
         this.c = dnd;
         this.a = dpb;
     }
 
-    @Override // defpackage.dnd
-    public final void a(dne dne, dor dor) {
-        this.c.a(new dnj(this, dne), dor);
+    public final void a(defpackage.dne dne, defpackage.dor dor) {
+        this.c.a((defpackage.dne) new defpackage.dnj(this, dne), dor);
     }
 
-    @Override // defpackage.dnd
-    public final void a(Object obj) {
+    public final void a(java.lang.Object obj) {
         this.c.a(this.b.a.a(this.a.c.a(obj)));
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.dpm
-    public final dnd b() {
+    public final defpackage.dnd b() {
         return this.c;
     }
 }

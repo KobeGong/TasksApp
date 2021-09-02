@@ -1,45 +1,41 @@
 package defpackage;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.ContextWrapper;
-import android.os.Bundle;
-import android.os.Looper;
-
-/* renamed from: cos  reason: default package */
+/* renamed from: cos reason: default package */
 /* compiled from: PG */
 public final class cos {
-    public final cpd a = new cpd(this.c);
-    public final cpa b;
-    private final cor c;
+    public final defpackage.cpd a = new defpackage.cpd(this.c);
+    public final defpackage.cpa b;
+    private final defpackage.cor c;
 
-    cos(Activity activity, Bundle bundle, ecz ecz) {
-        this.c = new cor(ecz);
-        this.b = new cpa(activity, bundle, this.a);
+    cos(android.app.Activity activity, android.os.Bundle bundle, defpackage.ecz ecz) {
+        this.c = new defpackage.cor(ecz);
+        this.b = new defpackage.cpa(activity, bundle, this.a);
     }
 
-    public static cos a(Context context) {
-        if (Looper.getMainLooper().getThread() != Thread.currentThread()) {
-            throw new IllegalThreadStateException();
+    public static defpackage.cos a(android.content.Context context) {
+        if (android.os.Looper.getMainLooper().getThread() != java.lang.Thread.currentThread()) {
+            throw new java.lang.IllegalThreadStateException();
         }
-        coq a2 = coq.a(context);
-        for (Context context2 = context; context2 != null; context2 = ((ContextWrapper) context2).getBaseContext()) {
-            if (!(context2 instanceof Activity)) {
-                if (!(context2 instanceof ContextWrapper)) {
+        defpackage.coq a2 = defpackage.coq.a(context);
+        android.content.Context context2 = context;
+        while (context2 != null) {
+            if (!(context2 instanceof android.app.Activity)) {
+                if (!(context2 instanceof android.content.ContextWrapper)) {
                     break;
                 }
+                context2 = ((android.content.ContextWrapper) context2).getBaseContext();
             } else {
-                Activity activity = (Activity) context2;
+                android.app.Activity activity = (android.app.Activity) context2;
                 if (activity.isDestroyed()) {
-                    throw new IllegalStateException();
+                    throw new java.lang.IllegalStateException();
                 }
-                cos cos = (cos) a2.a.get(activity);
+                defpackage.cos cos = (defpackage.cos) a2.a.get(activity);
                 if (cos != null) {
                     return cos;
                 }
-                throw new IllegalStateException();
+                throw new java.lang.IllegalStateException();
             }
         }
-        throw new IllegalStateException();
+        throw new java.lang.IllegalStateException();
     }
 }

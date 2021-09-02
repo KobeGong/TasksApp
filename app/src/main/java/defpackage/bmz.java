@@ -1,74 +1,67 @@
 package defpackage;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.ArrayList;
-
-/* renamed from: bmz  reason: default package */
+/* renamed from: bmz reason: default package */
 /* compiled from: PG */
-public final class bmz implements Parcelable.Creator {
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object[] newArray(int i) {
-        return new bmm[i];
+public final class bmz implements android.os.Parcelable.Creator {
+    public final /* synthetic */ java.lang.Object[] newArray(int i) {
+        return new defpackage.bmm[i];
     }
 
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object createFromParcel(Parcel parcel) {
+    public final /* synthetic */ java.lang.Object createFromParcel(android.os.Parcel parcel) {
         int i = 0;
-        String str = null;
-        int a = bjr.a(parcel);
-        String str2 = null;
-        String str3 = null;
+        java.lang.String str = null;
+        int a = defpackage.bjr.a(parcel);
+        java.lang.String str2 = null;
+        java.lang.String str3 = null;
         boolean z = false;
         boolean z2 = false;
-        bmp bmp = null;
-        String str4 = null;
-        ArrayList arrayList = null;
-        ArrayList arrayList2 = null;
-        ArrayList arrayList3 = null;
+        defpackage.bmp bmp = null;
+        java.lang.String str4 = null;
+        java.util.List list = null;
+        java.util.List list2 = null;
+        java.util.List list3 = null;
         while (parcel.dataPosition() < a) {
             int readInt = parcel.readInt();
             switch (65535 & readInt) {
                 case 3:
-                    arrayList3 = bjr.c(parcel, readInt, bml.CREATOR);
-                    break;
-                case 4:
-                default:
-                    bjr.b(parcel, readInt);
+                    list3 = defpackage.bjr.c(parcel, readInt, defpackage.bml.CREATOR);
                     break;
                 case 5:
-                    arrayList2 = bjr.c(parcel, readInt, bmn.CREATOR);
+                    list2 = defpackage.bjr.c(parcel, readInt, defpackage.bmn.CREATOR);
                     break;
                 case 6:
-                    arrayList = bjr.c(parcel, readInt, bmf.CREATOR);
+                    list = defpackage.bjr.c(parcel, readInt, defpackage.bmf.CREATOR);
                     break;
                 case 7:
-                    str4 = bjr.h(parcel, readInt);
+                    str4 = defpackage.bjr.h(parcel, readInt);
                     break;
                 case 8:
-                    bmp = (bmp) bjr.a(parcel, readInt, bmp.CREATOR);
+                    bmp = (defpackage.bmp) defpackage.bjr.a(parcel, readInt, defpackage.bmp.CREATOR);
                     break;
                 case 9:
-                    z2 = bjr.c(parcel, readInt);
+                    z2 = defpackage.bjr.c(parcel, readInt);
                     break;
                 case 10:
-                    z = bjr.c(parcel, readInt);
+                    z = defpackage.bjr.c(parcel, readInt);
                     break;
                 case 11:
-                    str3 = bjr.h(parcel, readInt);
+                    str3 = defpackage.bjr.h(parcel, readInt);
                     break;
                 case 12:
-                    str2 = bjr.h(parcel, readInt);
+                    str2 = defpackage.bjr.h(parcel, readInt);
                     break;
                 case 13:
-                    str = bjr.h(parcel, readInt);
+                    str = defpackage.bjr.h(parcel, readInt);
                     break;
                 case 14:
-                    i = bjr.d(parcel, readInt);
+                    i = defpackage.bjr.d(parcel, readInt);
+                    break;
+                default:
+                    defpackage.bjr.b(parcel, readInt);
                     break;
             }
         }
-        bjr.p(parcel, a);
-        return new bmm(arrayList3, arrayList2, arrayList, str4, bmp, z2, z, str3, str2, str, i);
+        defpackage.bjr.p(parcel, a);
+        return new defpackage.bmm(list3, list2, list, str4, bmp, z2, z, str3, str2, str, i);
     }
 }

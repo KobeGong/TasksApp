@@ -1,16 +1,16 @@
 package defpackage;
 
-/* renamed from: edd  reason: default package */
+/* renamed from: edd reason: default package */
 /* compiled from: PG */
-public final class edd extends dlz {
-    public String a = null;
+public final class edd extends defpackage.dlz {
+    public java.lang.String a;
 
     public edd() {
+        this.a = null;
         this.k = -1;
     }
 
-    @Override // defpackage.dlz, defpackage.dmf
-    public final void a(dlx dlx) {
+    public final void a(defpackage.dlx dlx) {
         if (this.a != null) {
             dlx.a(1, this.a);
         }
@@ -18,17 +18,15 @@ public final class edd extends dlz {
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.dlz, defpackage.dmf
     public final int a() {
         int a2 = super.a();
         if (this.a != null) {
-            return a2 + dlx.b(1, this.a);
+            return a2 + defpackage.dlx.b(1, this.a);
         }
         return a2;
     }
 
-    @Override // defpackage.dmf
-    public final /* synthetic */ dmf a(dlw dlw) {
+    public final /* synthetic */ defpackage.dmf a(defpackage.dlw dlw) {
         while (true) {
             int a2 = dlw.a();
             switch (a2) {
@@ -36,12 +34,12 @@ public final class edd extends dlz {
                     break;
                 case 10:
                     this.a = dlw.d();
-                    break;
+                    continue;
                 default:
-                    if (super.a(dlw, a2)) {
+                    if (!super.a(dlw, a2)) {
                         break;
                     } else {
-                        break;
+                        continue;
                     }
             }
         }

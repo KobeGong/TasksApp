@@ -1,24 +1,17 @@
 package defpackage;
 
-import android.content.Context;
-import android.view.View;
-
-/* access modifiers changed from: package-private */
-/* renamed from: aau  reason: default package */
+/* renamed from: aau reason: default package */
 /* compiled from: PG */
-public final class aau extends zr {
-    private final /* synthetic */ aap d;
+final class aau extends defpackage.zr {
+    private final /* synthetic */ defpackage.aap d;
 
-    /* JADX INFO: super call moved to the top of the method (can break code semantics) */
-    public aau(aap aap, Context context, MenuBuilder zeVar, View view) {
-        super(context, zeVar, view, true);
+    public aau(defpackage.aap aap, android.content.Context context, defpackage.ze zeVar, android.view.View view) {
         this.d = aap;
-        this.b = 8388613;
-        a(aap.m);
+        super(context, zeVar, view, true);
+        a((defpackage.zu) aap.m);
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.zr
     public final void d() {
         if (this.d.c != null) {
             this.d.c.close();

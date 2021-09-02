@@ -1,13 +1,12 @@
 package defpackage;
 
-/* renamed from: ara  reason: default package */
+/* renamed from: ara reason: default package */
 /* compiled from: PG */
-final class ara extends arl {
+final class ara extends defpackage.arl {
     ara() {
     }
 
-    @Override // defpackage.arl
     public final /* synthetic */ void a(int i) {
-        aiq.a().b();
+        defpackage.aiq.a().b();
     }
 }

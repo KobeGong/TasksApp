@@ -1,13 +1,13 @@
 package defpackage;
 
-/* renamed from: bir  reason: default package */
+/* renamed from: bir reason: default package */
 /* compiled from: PG */
 public final class bir {
-    public static final ayh a = new ayh((byte) 0);
-    public static final ayd b = new ayd("Common.API", c, a);
-    private static final ayf c = new bis();
+    public static final defpackage.ayh a = new defpackage.ayh(0);
+    public static final defpackage.ayd b = new defpackage.ayd("Common.API", c, a);
+    private static final defpackage.ayf c = new defpackage.bis();
 
     static {
-        new bit();
+        new defpackage.bit();
     }
 }

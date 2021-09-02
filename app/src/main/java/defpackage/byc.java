@@ -1,17 +1,15 @@
 package defpackage;
 
-import android.content.Context;
-
-/* renamed from: byc  reason: default package */
+/* renamed from: byc reason: default package */
 /* compiled from: PG */
-public final class byc implements ecz {
-    private final ecz a;
-    private final ecz b;
-    private final ecz c;
-    private final ecz d;
-    private final ecz e;
+public final class byc implements defpackage.ecz {
+    private final defpackage.ecz a;
+    private final defpackage.ecz b;
+    private final defpackage.ecz c;
+    private final defpackage.ecz d;
+    private final defpackage.ecz e;
 
-    public byc(ecz ecz, ecz ecz2, ecz ecz3, ecz ecz4, ecz ecz5) {
+    public byc(defpackage.ecz ecz, defpackage.ecz ecz2, defpackage.ecz ecz3, defpackage.ecz ecz4, defpackage.ecz ecz5) {
         this.a = ecz;
         this.b = ecz2;
         this.c = ecz3;
@@ -19,8 +17,7 @@ public final class byc implements ecz {
         this.e = ecz5;
     }
 
-    @Override // defpackage.ecz
-    public final /* synthetic */ Object a() {
-        return new bya((Context) this.a.a(), (buc) this.b.a(), (bzc) this.c.a(), (bzb) this.d.a(), (bqn) this.e.a());
+    public final /* synthetic */ java.lang.Object a() {
+        return new defpackage.bya((android.content.Context) this.a.a(), (defpackage.buc) this.b.a(), (defpackage.bzc) this.c.a(), (defpackage.bzb) this.d.a(), (defpackage.bqn) this.e.a());
     }
 }

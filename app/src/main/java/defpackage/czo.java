@@ -1,13 +1,12 @@
 package defpackage;
 
-/* renamed from: czo  reason: default package */
+/* renamed from: czo reason: default package */
 /* compiled from: PG */
-final class czo implements dio {
+final class czo implements defpackage.dio {
     czo() {
     }
 
-    @Override // defpackage.dio
-    public final /* synthetic */ din a(int i) {
-        return czn.a(i);
+    public final /* synthetic */ defpackage.din a(int i) {
+        return defpackage.czn.a(i);
     }
 }

@@ -1,22 +1,21 @@
 package defpackage;
 
-/* renamed from: dcr  reason: default package */
+/* renamed from: dcr reason: default package */
 /* compiled from: PG */
-public enum dcr implements din {
+public enum dcr implements defpackage.din {
     SDK_TYPE_UNSPECIFIED(0),
     CUSTOM(1),
     GUNS(2),
     CHIME(3);
     
-    public static final dio b = new dcs();
+    public static final defpackage.dio b = null;
     public final int c;
 
-    @Override // defpackage.din
     public final int a() {
         return this.c;
     }
 
-    public static dcr a(int i) {
+    public static defpackage.dcr a(int i) {
         switch (i) {
             case 0:
                 return SDK_TYPE_UNSPECIFIED;
@@ -33,5 +32,9 @@ public enum dcr implements din {
 
     private dcr(int i) {
         this.c = i;
+    }
+
+    static {
+        b = new defpackage.dcs();
     }
 }

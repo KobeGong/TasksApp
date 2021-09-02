@@ -1,31 +1,25 @@
 package defpackage;
 
-import android.view.View;
-
-/* renamed from: acc  reason: default package */
+/* renamed from: acc reason: default package */
 /* compiled from: PG */
-final class acc extends ado {
-    private final /* synthetic */ ace c;
-    private final /* synthetic */ acb d;
+final class acc extends defpackage.ado {
+    private final /* synthetic */ defpackage.ace c;
+    private final /* synthetic */ defpackage.acb d;
 
-    /* JADX INFO: super call moved to the top of the method (can break code semantics) */
-    acc(acb acb, View view, ace ace) {
-        super(view);
+    acc(defpackage.acb acb, android.view.View view, defpackage.ace ace) {
         this.d = acb;
         this.c = ace;
+        super(view);
     }
 
-    @Override // defpackage.ado
-    public final zz a() {
+    public final defpackage.zz a() {
         return this.c;
     }
 
-    @Override // defpackage.ado
     public final boolean b() {
-        if (this.d.a.r.isShowing()) {
-            return true;
+        if (!this.d.a.r.isShowing()) {
+            this.d.a.d();
         }
-        this.d.a.d();
         return true;
     }
 }

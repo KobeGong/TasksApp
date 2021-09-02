@@ -1,20 +1,16 @@
 package defpackage;
 
-import android.os.SystemClock;
-
-/* renamed from: bey  reason: default package */
+/* renamed from: bey reason: default package */
 /* compiled from: PG */
-public final class bey implements bex {
-    public static bey a = new bey();
+public final class bey implements defpackage.bex {
+    public static defpackage.bey a = new defpackage.bey();
 
-    @Override // defpackage.bex
     public final long a() {
-        return System.currentTimeMillis();
+        return java.lang.System.currentTimeMillis();
     }
 
-    @Override // defpackage.bex
     public final long b() {
-        return SystemClock.elapsedRealtime();
+        return android.os.SystemClock.elapsedRealtime();
     }
 
     private bey() {

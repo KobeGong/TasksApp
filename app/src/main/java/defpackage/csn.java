@@ -1,42 +1,36 @@
 package defpackage;
 
-import java.io.Serializable;
-import java.lang.reflect.Array;
-import java.util.AbstractCollection;
-import java.util.Collection;
-
-/* renamed from: csn  reason: default package */
+/* renamed from: csn reason: default package */
 /* compiled from: PG */
-public abstract class csn extends AbstractCollection implements Serializable {
-    private static final Object[] a = new Object[0];
+public abstract class csn extends java.util.AbstractCollection implements java.io.Serializable {
+    private static final java.lang.Object[] a = new java.lang.Object[0];
 
     csn() {
     }
 
     /* renamed from: a */
-    public abstract cth iterator();
+    public abstract defpackage.cth iterator();
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public abstract boolean c();
 
-    public abstract boolean contains(Object obj);
+    public abstract boolean contains(java.lang.Object obj);
 
-    public final Object[] toArray() {
+    public final java.lang.Object[] toArray() {
         int size = size();
         if (size == 0) {
             return a;
         }
-        Object[] objArr = new Object[size];
+        java.lang.Object[] objArr = new java.lang.Object[size];
         a(objArr, 0);
         return objArr;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final Object[] toArray(Object[] objArr) {
-        cld.a(objArr);
+    public final java.lang.Object[] toArray(java.lang.Object[] objArr) {
+        defpackage.cld.a((java.lang.Object) objArr);
         int size = size();
         if (objArr.length < size) {
-            objArr = (Object[]) Array.newInstance(objArr.getClass().getComponentType(), size);
+            objArr = (java.lang.Object[]) java.lang.reflect.Array.newInstance(objArr.getClass().getComponentType(), size);
         } else if (objArr.length > size) {
             objArr[size] = null;
         }
@@ -44,56 +38,53 @@ public abstract class csn extends AbstractCollection implements Serializable {
         return objArr;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection
-    @Deprecated
-    public final boolean add(Object obj) {
-        throw new UnsupportedOperationException();
+    @java.lang.Deprecated
+    public final boolean add(java.lang.Object obj) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
-    @Deprecated
-    public final boolean remove(Object obj) {
-        throw new UnsupportedOperationException();
+    @java.lang.Deprecated
+    public final boolean remove(java.lang.Object obj) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection
-    @Deprecated
-    public final boolean addAll(Collection collection) {
-        throw new UnsupportedOperationException();
+    @java.lang.Deprecated
+    public final boolean addAll(java.util.Collection collection) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection
-    @Deprecated
-    public final boolean removeAll(Collection collection) {
-        throw new UnsupportedOperationException();
+    @java.lang.Deprecated
+    public final boolean removeAll(java.util.Collection collection) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection
-    @Deprecated
-    public final boolean retainAll(Collection collection) {
-        throw new UnsupportedOperationException();
+    @java.lang.Deprecated
+    public final boolean retainAll(java.util.Collection collection) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
-    @Deprecated
+    @java.lang.Deprecated
     public final void clear() {
-        throw new UnsupportedOperationException();
+        throw new java.lang.UnsupportedOperationException();
     }
 
-    public csp b() {
-        return isEmpty() ? csp.d() : csp.b(toArray());
+    public defpackage.csp b() {
+        return isEmpty() ? defpackage.csp.d() : defpackage.csp.b(toArray());
     }
 
-    /* access modifiers changed from: package-private */
-    public int a(Object[] objArr, int i) {
-        cth cth = (cth) iterator();
+    /* access modifiers changed from: 0000 */
+    public int a(java.lang.Object[] objArr, int i) {
+        defpackage.cth cth = (defpackage.cth) iterator();
         while (cth.hasNext()) {
+            int i2 = i + 1;
             objArr[i] = cth.next();
-            i++;
+            i = i2;
         }
         return i;
     }
 
-    /* access modifiers changed from: package-private */
-    public Object writeReplace() {
-        return new csq(toArray());
+    /* access modifiers changed from: 0000 */
+    public java.lang.Object writeReplace() {
+        return new defpackage.csq(toArray());
     }
 }

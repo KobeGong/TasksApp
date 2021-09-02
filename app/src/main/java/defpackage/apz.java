@@ -1,19 +1,15 @@
 package defpackage;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import com.google.android.apps.tasks.ui.TaskListsActivity;
-
-/* renamed from: apz  reason: default package */
+/* renamed from: apz reason: default package */
 /* compiled from: PG */
-public final class apz extends AnimatorListenerAdapter {
-    private final /* synthetic */ TaskListsActivity a;
+public final class apz extends android.animation.AnimatorListenerAdapter {
+    private final /* synthetic */ com.google.android.apps.tasks.ui.TaskListsActivity a;
 
-    public apz(TaskListsActivity taskListsActivity) {
+    public apz(com.google.android.apps.tasks.ui.TaskListsActivity taskListsActivity) {
         this.a = taskListsActivity;
     }
 
-    public final void onAnimationStart(Animator animator) {
+    public final void onAnimationStart(android.animation.Animator animator) {
         this.a.fab.setVisibility(0);
     }
 }

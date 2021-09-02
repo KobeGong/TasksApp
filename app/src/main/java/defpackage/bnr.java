@@ -1,11 +1,11 @@
 package defpackage;
 
-/* renamed from: bnr  reason: default package */
+/* renamed from: bnr reason: default package */
 /* compiled from: PG */
-public interface bnr extends bcs {
-    String b();
+public interface bnr extends defpackage.bcs {
+    java.lang.String b();
 
-    String c();
+    java.lang.String c();
 
     int d();
 }

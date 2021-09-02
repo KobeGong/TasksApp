@@ -1,59 +1,63 @@
 package defpackage;
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
-
-/* access modifiers changed from: package-private */
-/* renamed from: rc  reason: default package */
+/* renamed from: rc reason: default package */
 /* compiled from: PG */
-public final class rc implements Set {
-    private final /* synthetic */ qz a;
+final class rc implements java.util.Set {
+    private final /* synthetic */ defpackage.qz a;
 
-    rc(qz qzVar) {
+    rc(defpackage.qz qzVar) {
         this.a = qzVar;
     }
 
-    @Override // java.util.Collection, java.util.Set
-    public final boolean add(Object obj) {
-        throw new UnsupportedOperationException();
+    public final boolean add(java.lang.Object obj) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
-    @Override // java.util.Collection, java.util.Set
-    public final boolean addAll(Collection collection) {
-        throw new UnsupportedOperationException();
+    public final boolean addAll(java.util.Collection collection) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     public final void clear() {
         this.a.c();
     }
 
-    public final boolean contains(Object obj) {
+    public final boolean contains(java.lang.Object obj) {
         return this.a.a(obj) >= 0;
     }
 
-    @Override // java.util.Collection, java.util.Set
-    public final boolean containsAll(Collection collection) {
-        Map b = this.a.b();
-        for (Object obj : collection) {
-            if (!b.containsKey(obj)) {
-                return false;
-            }
-        }
-        return true;
+    /* JADX WARNING: Incorrect type for immutable var: ssa=java.util.Collection, code=java.util.Collection<java.lang.Object>, for r4v0, types: [java.util.Collection<java.lang.Object>, java.util.Collection] */
+    /* Code decompiled incorrectly, please refer to instructions dump. */
+    public final boolean containsAll(java.util.Collection<java.lang.Object> r4) {
+        /*
+            r3 = this;
+            qz r0 = r3.a
+            java.util.Map r0 = r0.b()
+            java.util.Iterator r1 = r4.iterator()
+        L_0x000a:
+            boolean r2 = r1.hasNext()
+            if (r2 == 0) goto L_0x001c
+            java.lang.Object r2 = r1.next()
+            boolean r2 = r0.containsKey(r2)
+            if (r2 != 0) goto L_0x000a
+            r0 = 0
+        L_0x001b:
+            return r0
+        L_0x001c:
+            r0 = 1
+            goto L_0x001b
+        */
+        throw new UnsupportedOperationException("Method not decompiled: defpackage.rc.containsAll(java.util.Collection):boolean");
     }
 
     public final boolean isEmpty() {
         return this.a.a() == 0;
     }
 
-    @Override // java.util.Collection, java.util.Set, java.lang.Iterable
-    public final Iterator iterator() {
-        return new ra(this.a, 0);
+    public final java.util.Iterator iterator() {
+        return new defpackage.ra(this.a, 0);
     }
 
-    public final boolean remove(Object obj) {
+    public final boolean remove(java.lang.Object obj) {
         int a2 = this.a.a(obj);
         if (a2 < 0) {
             return false;
@@ -62,42 +66,58 @@ public final class rc implements Set {
         return true;
     }
 
-    @Override // java.util.Collection, java.util.Set
-    public final boolean removeAll(Collection collection) {
-        Map b = this.a.b();
-        int size = b.size();
-        for (Object obj : collection) {
-            b.remove(obj);
-        }
-        return size != b.size();
+    /* JADX WARNING: Incorrect type for immutable var: ssa=java.util.Collection, code=java.util.Collection<java.lang.Object>, for r5v0, types: [java.util.Collection<java.lang.Object>, java.util.Collection] */
+    /* Code decompiled incorrectly, please refer to instructions dump. */
+    public final boolean removeAll(java.util.Collection<java.lang.Object> r5) {
+        /*
+            r4 = this;
+            qz r0 = r4.a
+            java.util.Map r0 = r0.b()
+            int r1 = r0.size()
+            java.util.Iterator r2 = r5.iterator()
+        L_0x000e:
+            boolean r3 = r2.hasNext()
+            if (r3 == 0) goto L_0x001c
+            java.lang.Object r3 = r2.next()
+            r0.remove(r3)
+            goto L_0x000e
+        L_0x001c:
+            int r0 = r0.size()
+            if (r1 == r0) goto L_0x0024
+            r0 = 1
+        L_0x0023:
+            return r0
+        L_0x0024:
+            r0 = 0
+            goto L_0x0023
+        */
+        throw new UnsupportedOperationException("Method not decompiled: defpackage.rc.removeAll(java.util.Collection):boolean");
     }
 
-    @Override // java.util.Collection, java.util.Set
-    public final boolean retainAll(Collection collection) {
-        return qz.a(this.a.b(), collection);
+    public final boolean retainAll(java.util.Collection collection) {
+        return defpackage.qz.a(this.a.b(), collection);
     }
 
     public final int size() {
         return this.a.a();
     }
 
-    public final Object[] toArray() {
+    public final java.lang.Object[] toArray() {
         return this.a.b(0);
     }
 
-    @Override // java.util.Collection, java.util.Set
-    public final Object[] toArray(Object[] objArr) {
+    public final java.lang.Object[] toArray(java.lang.Object[] objArr) {
         return this.a.a(objArr, 0);
     }
 
-    public final boolean equals(Object obj) {
-        return qz.a((Set) this, obj);
+    public final boolean equals(java.lang.Object obj) {
+        return defpackage.qz.a((java.util.Set) this, obj);
     }
 
     public final int hashCode() {
         int i = 0;
         for (int a2 = this.a.a() - 1; a2 >= 0; a2--) {
-            Object a3 = this.a.a(a2, 0);
+            java.lang.Object a3 = this.a.a(a2, 0);
             i += a3 == null ? 0 : a3.hashCode();
         }
         return i;

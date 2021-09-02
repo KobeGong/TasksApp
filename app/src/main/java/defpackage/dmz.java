@@ -1,19 +1,19 @@
 package defpackage;
 
-/* renamed from: dmz  reason: default package */
+/* renamed from: dmz reason: default package */
 /* compiled from: PG */
 public final class dmz {
-    public final dtb a;
-    public final dpb b;
-    public final dor c;
-    public final dna d;
-    public final dns e;
+    public final defpackage.dtb a;
+    public final defpackage.dpb b;
+    public final defpackage.dor c;
+    public final defpackage.dna d;
+    public final defpackage.dns e;
     public boolean f;
-    private final Object g = new Object();
-    private dta h;
-    private dtt i;
+    private final java.lang.Object g = new java.lang.Object();
+    private defpackage.dta h;
+    private defpackage.dtt i;
 
-    public final void a(dpw dpw) {
+    public final void a(defpackage.dpw dpw) {
         boolean z;
         boolean z2 = true;
         if (!dpw.a()) {
@@ -21,33 +21,34 @@ public final class dmz {
         } else {
             z = false;
         }
-        cld.a(z, "Cannot fail with OK status");
+        defpackage.cld.a(z, (java.lang.Object) "Cannot fail with OK status");
         if (this.f) {
             z2 = false;
         }
-        cld.b(z2, "apply() or fail() already called");
-        a(new duu(dpw));
+        defpackage.cld.b(z2, (java.lang.Object) "apply() or fail() already called");
+        a((defpackage.dta) new defpackage.duu(dpw));
     }
 
-    public dmz(dtb dtb, dpb dpb, dor dor, dna dna) {
+    public dmz(defpackage.dtb dtb, defpackage.dpb dpb, defpackage.dor dor, defpackage.dna dna) {
         this.a = dtb;
         this.b = dpb;
         this.c = dor;
         this.d = dna;
-        this.e = dns.a();
+        this.e = defpackage.dns.a();
     }
 
+    /* JADX INFO: used method not loaded: dtt.a(dta):null, types can be incorrect */
     /* JADX WARNING: Code restructure failed: missing block: B:13:0x001e, code lost:
         if (r4.i == null) goto L_0x002e;
      */
     /* JADX WARNING: Code restructure failed: missing block: B:14:0x0020, code lost:
-        defpackage.cld.b(r1, "delayedStream is null");
+        defpackage.cld.b(r1, (java.lang.Object) "delayedStream is null");
         r4.i.a(r5);
      */
-    /* JADX WARNING: Code restructure failed: missing block: B:18:0x002e, code lost:
+    /* JADX WARNING: Code restructure failed: missing block: B:19:0x002e, code lost:
         r1 = false;
      */
-    /* JADX WARNING: Code restructure failed: missing block: B:20:?, code lost:
+    /* JADX WARNING: Code restructure failed: missing block: B:24:?, code lost:
         return;
      */
     /* Code decompiled incorrectly, please refer to instructions dump. */
@@ -86,7 +87,7 @@ public final class dmz {
             goto L_0x0018
         L_0x002b:
             r0 = move-exception
-            monitor-exit(r3)
+            monitor-exit(r3)     // Catch:{ all -> 0x002b }
             throw r0
         L_0x002e:
             r1 = r2
@@ -95,11 +96,11 @@ public final class dmz {
         throw new UnsupportedOperationException("Method not decompiled: defpackage.dmz.a(dta):void");
     }
 
-    public final dta a() {
-        dta dta;
+    public final defpackage.dta a() {
+        defpackage.dta dta;
         synchronized (this.g) {
             if (this.h == null) {
-                this.i = new dtt();
+                this.i = new defpackage.dtt();
                 dta = this.i;
                 this.h = dta;
             } else {

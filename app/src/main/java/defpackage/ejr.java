@@ -1,22 +1,19 @@
 package defpackage;
 
-import org.chromium.net.impl.CronetBidirectionalStream;
-import org.chromium.net.impl.CronetUrlRequestContext;
-
-/* renamed from: ejr  reason: default package */
+/* renamed from: ejr reason: default package */
 /* compiled from: PG */
-public final class ejr implements Runnable {
-    private final /* synthetic */ CronetBidirectionalStream a;
+public final class ejr implements java.lang.Runnable {
+    private final /* synthetic */ org.chromium.net.impl.CronetBidirectionalStream a;
 
-    public ejr(CronetBidirectionalStream cronetBidirectionalStream) {
+    public ejr(org.chromium.net.impl.CronetBidirectionalStream cronetBidirectionalStream) {
         this.a = cronetBidirectionalStream;
     }
 
     public final void run() {
         try {
             this.a.a.c(this.a, this.a.g);
-        } catch (Exception e) {
-            dpt.c(CronetUrlRequestContext.a, "Exception in onCanceled method", e);
+        } catch (java.lang.Exception e) {
+            defpackage.dpt.c(org.chromium.net.impl.CronetUrlRequestContext.a, "Exception in onCanceled method", e);
         }
     }
 }

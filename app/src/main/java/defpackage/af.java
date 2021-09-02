@@ -1,38 +1,37 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: af  reason: default package */
+/* renamed from: af reason: default package */
 /* compiled from: PG */
-public abstract class af {
-    public final ag a;
+abstract class af {
+    public final defpackage.ag a;
     public boolean b;
     public int c = -1;
-    private final /* synthetic */ ac d;
+    private final /* synthetic */ defpackage.ac d;
 
-    af(ac acVar, ag agVar) {
+    af(defpackage.ac acVar, defpackage.ag agVar) {
         this.d = acVar;
         this.a = agVar;
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public abstract boolean a();
 
-    /* access modifiers changed from: package-private */
-    public boolean a(y yVar) {
+    /* access modifiers changed from: 0000 */
+    public boolean a(LifecycleOwner yVar) {
         return false;
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public void b() {
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public final void a(boolean z) {
         int i = 1;
         if (z != this.b) {
             this.b = z;
             boolean z2 = this.d.c == 0;
-            ac acVar = this.d;
+            defpackage.ac acVar = this.d;
             int i2 = acVar.c;
             if (!this.b) {
                 i = -1;

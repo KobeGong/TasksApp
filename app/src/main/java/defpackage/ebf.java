@@ -1,26 +1,23 @@
 package defpackage;
 
-/* renamed from: ebf  reason: default package */
+/* renamed from: ebf reason: default package */
 /* compiled from: PG */
-public final class ebf extends ebm {
-    public static final ebm a = new ebf();
+public final class ebf extends defpackage.ebm {
+    public static final defpackage.ebm a = new defpackage.ebf();
 
     private ebf() {
     }
 
-    @Override // defpackage.ebm
-    public final ebi a() {
-        return ebb.a;
+    public final defpackage.ebi a() {
+        return defpackage.ebb.a;
     }
 
-    @Override // defpackage.ebm
-    public final ebi b() {
-        return ebb.a;
+    public final defpackage.ebi b() {
+        return defpackage.ebb.a;
     }
 
-    @Override // defpackage.ebm
-    public final ebj a(ebi ebi) {
-        cld.a(ebi, "tags");
-        return ebd.a;
+    public final defpackage.ebj a(defpackage.ebi ebi) {
+        defpackage.cld.a((java.lang.Object) ebi, (java.lang.Object) "tags");
+        return defpackage.ebd.a;
     }
 }

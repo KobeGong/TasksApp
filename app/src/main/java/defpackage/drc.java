@@ -1,11 +1,11 @@
 package defpackage;
 
-/* renamed from: drc  reason: default package */
+/* renamed from: drc reason: default package */
 /* compiled from: PG */
-final class drc implements Runnable {
-    private final /* synthetic */ dqz a;
+final class drc implements java.lang.Runnable {
+    private final /* synthetic */ defpackage.dqz a;
 
-    drc(dqz dqz) {
+    drc(defpackage.dqz dqz) {
         this.a = dqz;
     }
 

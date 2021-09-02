@@ -1,14 +1,12 @@
 package defpackage;
 
-import java.util.NoSuchElementException;
-
-/* renamed from: csy  reason: default package */
+/* renamed from: csy reason: default package */
 /* compiled from: PG */
-public final class csy extends cth {
+public final class csy extends defpackage.cth {
     private boolean a;
-    private final /* synthetic */ Object b;
+    private final /* synthetic */ java.lang.Object b;
 
-    public csy(Object obj) {
+    public csy(java.lang.Object obj) {
         this.b = obj;
     }
 
@@ -16,10 +14,9 @@ public final class csy extends cth {
         return !this.a;
     }
 
-    @Override // java.util.Iterator
-    public final Object next() {
+    public final java.lang.Object next() {
         if (this.a) {
-            throw new NoSuchElementException();
+            throw new java.util.NoSuchElementException();
         }
         this.a = true;
         return this.b;

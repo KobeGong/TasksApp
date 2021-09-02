@@ -1,23 +1,21 @@
 package defpackage;
 
-/* renamed from: ebc  reason: default package */
+/* renamed from: ebc reason: default package */
 /* compiled from: PG */
-public final class ebc extends ebp {
-    public static final ebp a = new ebc();
+public final class ebc extends defpackage.ebp {
+    public static final defpackage.ebp a = new defpackage.ebc();
     private static final byte[] b = new byte[0];
 
     private ebc() {
     }
 
-    @Override // defpackage.ebp
-    public final byte[] a(ebi ebi) {
-        cld.a(ebi, "tags");
+    public final byte[] a(defpackage.ebi ebi) {
+        defpackage.cld.a((java.lang.Object) ebi, (java.lang.Object) "tags");
         return b;
     }
 
-    @Override // defpackage.ebp
-    public final ebi a(byte[] bArr) {
-        cld.a(bArr, "bytes");
-        return ebb.a;
+    public final defpackage.ebi a(byte[] bArr) {
+        defpackage.cld.a((java.lang.Object) bArr, (java.lang.Object) "bytes");
+        return defpackage.ebb.a;
     }
 }

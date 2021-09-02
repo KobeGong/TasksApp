@@ -1,11 +1,9 @@
 package defpackage;
 
-import java.net.SocketAddress;
-
-/* renamed from: dxq  reason: default package */
+/* renamed from: dxq reason: default package */
 /* compiled from: PG */
 public interface dxq {
-    public static final dmx a = dmx.a("proxy-params-key");
+    public static final defpackage.dmx a = defpackage.dmx.a("proxy-params-key");
 
-    dxu a(SocketAddress socketAddress);
+    defpackage.dxu a(java.net.SocketAddress socketAddress);
 }

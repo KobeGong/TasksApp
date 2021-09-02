@@ -1,10 +1,8 @@
 package defpackage;
 
-import android.view.animation.Interpolator;
-
-/* renamed from: aia  reason: default package */
+/* renamed from: aia reason: default package */
 /* compiled from: PG */
-final class aia implements Interpolator {
+final class aia implements android.view.animation.Interpolator {
     aia() {
     }
 

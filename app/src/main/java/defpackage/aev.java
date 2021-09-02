@@ -1,6 +1,6 @@
 package defpackage;
 
-/* renamed from: aev  reason: default package */
+/* renamed from: aev reason: default package */
 /* compiled from: PG */
 public class aev {
     public void a() {

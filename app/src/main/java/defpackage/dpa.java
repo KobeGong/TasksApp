@@ -1,9 +1,9 @@
 package defpackage;
 
-/* renamed from: dpa  reason: default package */
+/* renamed from: dpa reason: default package */
 /* compiled from: PG */
 public interface dpa {
-    Object a(byte[] bArr);
+    java.lang.Object a(byte[] bArr);
 
-    byte[] a(Object obj);
+    byte[] a(java.lang.Object obj);
 }

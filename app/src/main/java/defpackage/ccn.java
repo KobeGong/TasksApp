@@ -1,21 +1,20 @@
 package defpackage;
 
-/* renamed from: ccn  reason: default package */
+/* renamed from: ccn reason: default package */
 /* compiled from: PG */
-public final class ccn implements ecz {
-    private final ecz a;
-    private final ecz b;
-    private final ecz c;
+public final class ccn implements defpackage.ecz {
+    private final defpackage.ecz a;
+    private final defpackage.ecz b;
+    private final defpackage.ecz c;
 
-    public ccn(ecz ecz, ecz ecz2, ecz ecz3) {
+    public ccn(defpackage.ecz ecz, defpackage.ecz ecz2, defpackage.ecz ecz3) {
         this.a = ecz;
         this.b = ecz2;
         this.c = ecz3;
     }
 
-    @Override // defpackage.ecz
-    public final /* synthetic */ Object a() {
-        ccm ccm = new ccm();
+    public final /* synthetic */ java.lang.Object a() {
+        defpackage.ccm ccm = new defpackage.ccm();
         this.a.a();
         this.b.a();
         this.c.a();

@@ -1,18 +1,18 @@
 package defpackage;
 
-/* renamed from: bck  reason: default package */
+/* renamed from: bck reason: default package */
 /* compiled from: PG */
-final class bck implements Runnable {
-    private /* synthetic */ bcj a;
+final class bck implements java.lang.Runnable {
+    private /* synthetic */ defpackage.bcj a;
 
-    bck(bcj bcj) {
+    bck(defpackage.bcj bcj) {
         this.a = bcj;
     }
 
     public final void run() {
         this.a.g.lock();
         try {
-            bcj.a(this.a);
+            defpackage.bcj.a(this.a);
         } finally {
             this.a.g.unlock();
         }

@@ -1,25 +1,21 @@
 package defpackage;
 
-import android.text.TextUtils;
-
-/* renamed from: auv  reason: default package */
+/* renamed from: auv reason: default package */
 /* compiled from: PG */
-final class auv extends alu {
-    private final /* synthetic */ auj a;
+final class auv extends defpackage.alu {
+    private final /* synthetic */ TasksFragment a;
 
-    auv(auj auj) {
+    auv(TasksFragment auj) {
         this.a = auj;
     }
 
-    @Override // defpackage.alu
     public final void a() {
-        if (!TextUtils.isEmpty(this.a.X)) {
+        if (!android.text.TextUtils.isEmpty(this.a.X)) {
             this.a.a(this.a.X, this.a.Y, true);
         }
     }
 
-    @Override // defpackage.alu
-    public final void a(String str) {
+    public final void a(java.lang.String str) {
         if (str != null && str.equals(this.a.X)) {
             this.a.a(this.a.X, this.a.Y, true);
         }

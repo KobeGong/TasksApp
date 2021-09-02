@@ -1,17 +1,13 @@
 package defpackage;
 
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-
-/* renamed from: dkm  reason: default package */
+/* renamed from: dkm reason: default package */
 /* compiled from: PG */
-final class dkm implements Iterator {
+final class dkm implements java.util.Iterator {
     private int a = this.c.a.size();
-    private Iterator b;
-    private final /* synthetic */ dkk c;
+    private java.util.Iterator b;
+    private final /* synthetic */ defpackage.dkk c;
 
-    dkm(dkk dkk) {
+    dkm(defpackage.dkk dkk) {
         this.c = dkk;
     }
 
@@ -20,24 +16,23 @@ final class dkm implements Iterator {
     }
 
     public final void remove() {
-        throw new UnsupportedOperationException();
+        throw new java.lang.UnsupportedOperationException();
     }
 
-    private final Iterator a() {
+    private final java.util.Iterator a() {
         if (this.b == null) {
             this.b = this.c.d.entrySet().iterator();
         }
         return this.b;
     }
 
-    @Override // java.util.Iterator
-    public final /* synthetic */ Object next() {
+    public final /* synthetic */ java.lang.Object next() {
         if (a().hasNext()) {
-            return (Map.Entry) a().next();
+            return (java.util.Map.Entry) a().next();
         }
-        List list = this.c.a;
+        java.util.List list = this.c.a;
         int i = this.a - 1;
         this.a = i;
-        return (Map.Entry) list.get(i);
+        return (java.util.Map.Entry) list.get(i);
     }
 }

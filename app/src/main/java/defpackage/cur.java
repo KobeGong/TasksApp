@@ -1,15 +1,15 @@
 package defpackage;
 
-/* renamed from: cur  reason: default package */
+/* renamed from: cur reason: default package */
 /* compiled from: PG */
 public interface cur {
-    public static final cur c = new cus();
+    public static final defpackage.cur c = new defpackage.cus();
 
     int a();
 
-    cuc a(int i);
+    defpackage.cuc a(int i);
 
-    Object b(int i);
+    java.lang.Object b(int i);
 
-    Object b(cuc cuc);
+    java.lang.Object b(defpackage.cuc cuc);
 }

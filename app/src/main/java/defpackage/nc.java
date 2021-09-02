@@ -1,33 +1,29 @@
 package defpackage;
 
-import android.os.Bundle;
-import android.os.Looper;
-
-/* renamed from: nc  reason: default package */
+/* renamed from: nc reason: default package */
 /* compiled from: PG */
-public final class nc extends ac implements od {
+public final class nc extends defpackage.ac implements defpackage.od {
     public final int g;
-    public final Bundle h = null;
-    public final oc i;
-    public nd j;
-    private y k;
+    public final android.os.Bundle h = null;
+    public final defpackage.oc i;
+    public defpackage.nd j;
+    private LifecycleOwner k;
 
-    public nc(int i2, Bundle bundle, oc ocVar) {
-        super((byte) 0);
+    public nc(int i2, android.os.Bundle bundle, defpackage.oc ocVar) {
+        super(0);
         this.g = i2;
         this.i = ocVar;
-        oc ocVar2 = this.i;
+        defpackage.oc ocVar2 = this.i;
         if (ocVar2.d != null) {
-            throw new IllegalStateException("There is already a listener registered");
+            throw new java.lang.IllegalStateException("There is already a listener registered");
         }
         ocVar2.d = this;
         ocVar2.c = i2;
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.ac
     public final void a() {
-        oc ocVar = this.i;
+        defpackage.oc ocVar = this.i;
         ocVar.f = true;
         ocVar.h = false;
         ocVar.g = false;
@@ -35,18 +31,17 @@ public final class nc extends ac implements od {
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.ac
     public final void b() {
-        oc ocVar = this.i;
+        defpackage.oc ocVar = this.i;
         ocVar.f = false;
         ocVar.f();
     }
 
-    public final oc a(y yVar, nb nbVar) {
-        nd ndVar = new nd(this.i, nbVar);
+    public final defpackage.oc a(LifecycleOwner yVar, defpackage.nb nbVar) {
+        defpackage.nd ndVar = new defpackage.nd(this.i, nbVar);
         a(yVar, ndVar);
         if (this.j != null) {
-            a(this.j);
+            a((defpackage.ag) this.j);
         }
         this.k = yVar;
         this.j = ndVar;
@@ -54,16 +49,15 @@ public final class nc extends ac implements od {
     }
 
     public final void c() {
-        y yVar = this.k;
-        nd ndVar = this.j;
+        LifecycleOwner yVar = this.k;
+        defpackage.nd ndVar = this.j;
         if (yVar != null && ndVar != null) {
-            super.a((ag) ndVar);
+            super.a((defpackage.ag) ndVar);
             a(yVar, ndVar);
         }
     }
 
-    @Override // defpackage.ac
-    public final void a(ag agVar) {
+    public final void a(defpackage.ag agVar) {
         super.a(agVar);
         this.k = null;
         this.j = null;
@@ -72,21 +66,21 @@ public final class nc extends ac implements od {
     public final void d() {
         this.i.b();
         this.i.g = true;
-        nd ndVar = this.j;
+        defpackage.nd ndVar = this.j;
         if (ndVar != null) {
-            a((ag) ndVar);
+            a((defpackage.ag) ndVar);
             if (ndVar.b) {
                 ndVar.a.j_();
             }
         }
-        oc ocVar = this.i;
+        defpackage.oc ocVar = this.i;
         if (ocVar.d == null) {
-            throw new IllegalStateException("No listener register");
+            throw new java.lang.IllegalStateException("No listener register");
         } else if (ocVar.d != this) {
-            throw new IllegalArgumentException("Attempting to unregister the wrong listener");
+            throw new java.lang.IllegalArgumentException("Attempting to unregister the wrong listener");
         } else {
             ocVar.d = null;
-            oc ocVar2 = this.i;
+            defpackage.oc ocVar2 = this.i;
             ocVar2.h = true;
             ocVar2.f = false;
             ocVar2.g = false;
@@ -94,30 +88,29 @@ public final class nc extends ac implements od {
         }
     }
 
-    @Override // defpackage.od
-    public final void b(Object obj) {
+    public final void b(java.lang.Object obj) {
         boolean z;
-        if (Looper.myLooper() == Looper.getMainLooper()) {
+        if (android.os.Looper.myLooper() == android.os.Looper.getMainLooper()) {
             a(obj);
             return;
         }
         synchronized (this.a) {
-            z = this.e == ac.b;
+            z = this.e == defpackage.ac.b;
             this.e = obj;
         }
         if (z) {
-            a.a().b(this.f);
+            defpackage.a.a().b(this.f);
         }
     }
 
-    public final String toString() {
-        StringBuilder sb = new StringBuilder(64);
+    public final java.lang.String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder(64);
         sb.append("LoaderInfo{");
-        sb.append(Integer.toHexString(System.identityHashCode(this)));
+        sb.append(java.lang.Integer.toHexString(java.lang.System.identityHashCode(this)));
         sb.append(" #");
         sb.append(this.g);
         sb.append(" : ");
-        jd.a((Object) this.i, sb);
+        defpackage.jd.a((java.lang.Object) this.i, sb);
         sb.append("}}");
         return sb.toString();
     }

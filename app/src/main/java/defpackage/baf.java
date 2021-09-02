@@ -1,36 +1,25 @@
 package defpackage;
 
-import android.content.Context;
-import android.os.Bundle;
-import android.os.Looper;
-import java.io.FileDescriptor;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.locks.Condition;
-import java.util.concurrent.locks.Lock;
-
-/* renamed from: baf  reason: default package */
+/* renamed from: baf reason: default package */
 /* compiled from: PG */
-public final class baf implements bau, bci {
-    public final Lock a;
-    public final Condition b;
-    public final Context c;
-    public final axv d;
-    public final bah e;
-    public final Map f;
-    public final Map g = new HashMap();
-    public bdj h;
-    public Map i;
-    public ayf j;
-    public volatile bae k;
+public final class baf implements defpackage.bau, defpackage.bci {
+    public final java.util.concurrent.locks.Lock a;
+    public final java.util.concurrent.locks.Condition b;
+    public final android.content.Context c;
+    public final defpackage.axv d;
+    public final defpackage.bah e;
+    public final java.util.Map f;
+    public final java.util.Map g = new java.util.HashMap();
+    public defpackage.bdj h;
+    public java.util.Map i;
+    public defpackage.ayf j;
+    public volatile defpackage.bae k;
     public int l;
-    public final azx m;
-    public final bav n;
-    private axq o = null;
+    public final defpackage.azx m;
+    public final defpackage.bav n;
+    private defpackage.axq o = null;
 
-    public baf(Context context, azx azx, Lock lock, Looper looper, axv axv, Map map, bdj bdj, Map map2, ayf ayf, ArrayList arrayList, bav bav) {
+    public baf(android.content.Context context, defpackage.azx azx, java.util.concurrent.locks.Lock lock, android.os.Looper looper, defpackage.axv axv, java.util.Map map, defpackage.bdj bdj, java.util.Map map2, defpackage.ayf ayf, java.util.ArrayList arrayList, defpackage.bav bav) {
         this.c = context;
         this.a = lock;
         this.d = axv;
@@ -40,69 +29,64 @@ public final class baf implements bau, bci {
         this.j = ayf;
         this.m = azx;
         this.n = bav;
-        ArrayList arrayList2 = arrayList;
+        java.util.ArrayList arrayList2 = arrayList;
         int size = arrayList2.size();
         int i2 = 0;
         while (i2 < size) {
-            Object obj = arrayList2.get(i2);
+            java.lang.Object obj = arrayList2.get(i2);
             i2++;
-            ((bch) obj).b = this;
+            ((defpackage.bch) obj).b = this;
         }
-        this.e = new bah(this, looper);
+        this.e = new defpackage.bah(this, looper);
         this.b = lock.newCondition();
-        this.k = new azv(this);
+        this.k = new defpackage.azv(this);
     }
 
-    @Override // defpackage.bau
-    public final bca a(bca bca) {
+    public final defpackage.bca a(defpackage.bca bca) {
         bca.d();
         return this.k.a(bca);
     }
 
-    @Override // defpackage.bau
-    public final bca b(bca bca) {
+    public final defpackage.bca b(defpackage.bca bca) {
         bca.d();
         return this.k.b(bca);
     }
 
-    @Override // defpackage.bau
     public final void a() {
         this.k.c();
     }
 
-    @Override // defpackage.bau
-    public final axq b() {
+    public final defpackage.axq b() {
         a();
         while (e()) {
             try {
                 this.b.await();
-            } catch (InterruptedException e2) {
-                Thread.currentThread().interrupt();
-                return new axq(15, null);
+            } catch (java.lang.InterruptedException e2) {
+                java.lang.Thread.currentThread().interrupt();
+                return new defpackage.axq(15, null);
             }
         }
         if (d()) {
-            return axq.a;
+            return defpackage.axq.a;
         }
         if (this.o != null) {
             return this.o;
         }
-        return new axq(13, null);
+        return new defpackage.axq(13, null);
     }
 
-    @Override // defpackage.bau
     public final void c() {
         if (this.k.b()) {
             this.g.clear();
         }
     }
 
-    /* access modifiers changed from: package-private */
-    public final void a(axq axq) {
+    /* access modifiers changed from: 0000 */
+    public final void a(defpackage.axq axq) {
         this.a.lock();
         try {
             this.o = axq;
-            this.k = new azv(this);
+            this.k = new defpackage.azv(this);
             this.k.a();
             this.b.signalAll();
         } finally {
@@ -110,27 +94,22 @@ public final class baf implements bau, bci {
         }
     }
 
-    @Override // defpackage.bau
     public final boolean d() {
-        return this.k instanceof azi;
+        return this.k instanceof defpackage.azi;
     }
 
-    @Override // defpackage.bau
     public final boolean e() {
-        return this.k instanceof azk;
+        return this.k instanceof defpackage.azk;
     }
 
-    @Override // defpackage.bau
-    public final boolean a(bbh bbh) {
+    public final boolean a(defpackage.bbh bbh) {
         return false;
     }
 
-    @Override // defpackage.bau
     public final void f() {
     }
 
-    @Override // defpackage.bci
-    public final void a(axq axq, ayd ayd, boolean z) {
+    public final void a(defpackage.axq axq, defpackage.ayd ayd, boolean z) {
         this.a.lock();
         try {
             this.k.a(axq, ayd, z);
@@ -139,8 +118,7 @@ public final class baf implements bau, bci {
         }
     }
 
-    @Override // defpackage.ayr
-    public final void a(Bundle bundle) {
+    public final void a(android.os.Bundle bundle) {
         this.a.lock();
         try {
             this.k.a(bundle);
@@ -149,7 +127,6 @@ public final class baf implements bau, bci {
         }
     }
 
-    @Override // defpackage.ayr
     public final void a(int i2) {
         this.a.lock();
         try {
@@ -159,18 +136,17 @@ public final class baf implements bau, bci {
         }
     }
 
-    /* access modifiers changed from: package-private */
-    public final void a(bag bag) {
+    /* access modifiers changed from: 0000 */
+    public final void a(defpackage.bag bag) {
         this.e.sendMessage(this.e.obtainMessage(1, bag));
     }
 
-    @Override // defpackage.bau
-    public final void a(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {
-        String concat = String.valueOf(str).concat("  ");
-        printWriter.append((CharSequence) str).append("mState=").println(this.k);
-        for (ayd ayd : this.i.keySet()) {
-            printWriter.append((CharSequence) str).append((CharSequence) ayd.b).println(":");
-            ((ayj) this.f.get(ayd.b())).a(concat, printWriter);
+    public final void a(java.lang.String str, java.io.FileDescriptor fileDescriptor, java.io.PrintWriter printWriter, java.lang.String[] strArr) {
+        java.lang.String concat = java.lang.String.valueOf(str).concat("  ");
+        printWriter.append(str).append("mState=").println(this.k);
+        for (defpackage.ayd ayd : this.i.keySet()) {
+            printWriter.append(str).append(ayd.b).println(":");
+            ((defpackage.ayj) this.f.get(ayd.b())).a(concat, printWriter);
         }
     }
 }

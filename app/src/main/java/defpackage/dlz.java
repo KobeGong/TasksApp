@@ -1,13 +1,10 @@
 package defpackage;
 
-import java.util.Collections;
-
-/* renamed from: dlz  reason: default package */
+/* renamed from: dlz reason: default package */
 /* compiled from: PG */
-public abstract class dlz extends dmf {
-    public dmb j;
+public abstract class dlz extends defpackage.dmf {
+    public defpackage.dmb j;
 
-    @Override // defpackage.dmf
     public int a() {
         if (this.j == null) {
             return 0;
@@ -19,8 +16,7 @@ public abstract class dlz extends dmf {
         return i;
     }
 
-    @Override // defpackage.dmf
-    public void a(dlx dlx) {
+    public void a(defpackage.dlx dlx) {
         if (this.j != null) {
             for (int i = 0; i < this.j.d; i++) {
                 this.j.c[i].a(dlx);
@@ -28,10 +24,10 @@ public abstract class dlz extends dmf {
         }
     }
 
-    public final boolean a(dlw dlw, int i) {
+    public final boolean a(defpackage.dlw dlw, int i) {
         byte[] bArr;
-        dmc dmc;
-        dmc dmc2;
+        defpackage.dmc dmc;
+        defpackage.dmc dmc2;
         int i2 = dlw.i();
         if (!dlw.b(i)) {
             return false;
@@ -39,46 +35,46 @@ public abstract class dlz extends dmf {
         int i3 = i >>> 3;
         int i4 = dlw.i() - i2;
         if (i4 == 0) {
-            bArr = dmh.d;
+            bArr = defpackage.dmh.d;
         } else {
             bArr = new byte[i4];
-            System.arraycopy(dlw.a, i2 + dlw.b, bArr, 0, i4);
+            java.lang.System.arraycopy(dlw.a, i2 + dlw.b, bArr, 0, i4);
         }
-        dmg dmg = new dmg(i, bArr);
+        defpackage.dmg dmg = new defpackage.dmg(i, bArr);
         if (this.j == null) {
-            this.j = new dmb();
+            this.j = new defpackage.dmb();
             dmc = null;
         } else {
-            dmb dmb = this.j;
+            defpackage.dmb dmb = this.j;
             int b = dmb.b(i3);
-            if (b < 0 || dmb.c[b] == dmb.a) {
+            if (b < 0 || dmb.c[b] == defpackage.dmb.a) {
                 dmc = null;
             } else {
                 dmc = dmb.c[b];
             }
         }
         if (dmc == null) {
-            dmc dmc3 = new dmc();
-            dmb dmb2 = this.j;
+            defpackage.dmc dmc3 = new defpackage.dmc();
+            defpackage.dmb dmb2 = this.j;
             int b2 = dmb2.b(i3);
             if (b2 >= 0) {
                 dmb2.c[b2] = dmc3;
                 dmc2 = dmc3;
             } else {
                 int i5 = b2 ^ -1;
-                if (i5 >= dmb2.d || dmb2.c[i5] != dmb.a) {
+                if (i5 >= dmb2.d || dmb2.c[i5] != defpackage.dmb.a) {
                     if (dmb2.d >= dmb2.b.length) {
-                        int a = dmb.a(dmb2.d + 1);
+                        int a = defpackage.dmb.a(dmb2.d + 1);
                         int[] iArr = new int[a];
-                        dmc[] dmcArr = new dmc[a];
-                        System.arraycopy(dmb2.b, 0, iArr, 0, dmb2.b.length);
-                        System.arraycopy(dmb2.c, 0, dmcArr, 0, dmb2.c.length);
+                        defpackage.dmc[] dmcArr = new defpackage.dmc[a];
+                        java.lang.System.arraycopy(dmb2.b, 0, iArr, 0, dmb2.b.length);
+                        java.lang.System.arraycopy(dmb2.c, 0, dmcArr, 0, dmb2.c.length);
                         dmb2.b = iArr;
                         dmb2.c = dmcArr;
                     }
                     if (dmb2.d - i5 != 0) {
-                        System.arraycopy(dmb2.b, i5, dmb2.b, i5 + 1, dmb2.d - i5);
-                        System.arraycopy(dmb2.c, i5, dmb2.c, i5 + 1, dmb2.d - i5);
+                        java.lang.System.arraycopy(dmb2.b, i5, dmb2.b, i5 + 1, dmb2.d - i5);
+                        java.lang.System.arraycopy(dmb2.c, i5, dmb2.c, i5 + 1, dmb2.d - i5);
                     }
                     dmb2.b[i5] = i3;
                     dmb2.c[i5] = dmc3;
@@ -95,36 +91,34 @@ public abstract class dlz extends dmf {
         }
         if (dmc2.c != null) {
             dmc2.c.add(dmg);
-        } else if (dmc2.b instanceof dmf) {
+        } else if (dmc2.b instanceof defpackage.dmf) {
             byte[] bArr2 = dmg.b;
-            dlw a2 = dlw.a(bArr2, 0, bArr2.length);
+            defpackage.dlw a2 = defpackage.dlw.a(bArr2, 0, bArr2.length);
             int e = a2.e();
-            if (e != bArr2.length - dlx.a(e)) {
-                throw dme.a();
+            if (e != bArr2.length - defpackage.dlx.a(e)) {
+                throw defpackage.dme.a();
             }
-            dmf a3 = ((dmf) dmc2.b).a(a2);
+            defpackage.dmf a3 = ((defpackage.dmf) dmc2.b).a(a2);
             dmc2.a = dmc2.a;
             dmc2.b = a3;
             dmc2.c = null;
-        } else if (dmc2.b instanceof dmf[]) {
-            Collections.singletonList(dmg);
-            throw new NoSuchMethodError();
+        } else if (dmc2.b instanceof defpackage.dmf[]) {
+            java.util.Collections.singletonList(dmg);
+            throw new java.lang.NoSuchMethodError();
         } else {
-            Collections.singletonList(dmg);
-            throw new NoSuchMethodError();
+            java.util.Collections.singletonList(dmg);
+            throw new java.lang.NoSuchMethodError();
         }
         return true;
     }
 
-    @Override // defpackage.dmf
-    public final /* synthetic */ dmf b() {
-        return (dlz) clone();
+    public final /* synthetic */ defpackage.dmf b() {
+        return (defpackage.dlz) clone();
     }
 
-    @Override // defpackage.dmf
-    public /* synthetic */ Object clone() {
-        dlz dlz = (dlz) super.clone();
-        dmd.a(this, dlz);
+    public /* synthetic */ java.lang.Object clone() {
+        defpackage.dlz dlz = (defpackage.dlz) super.clone();
+        defpackage.dmd.a(this, dlz);
         return dlz;
     }
 }

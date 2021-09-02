@@ -1,13 +1,11 @@
 package defpackage;
 
-import java.io.InputStream;
-
-/* renamed from: dzp  reason: default package */
+/* renamed from: dzp reason: default package */
 /* compiled from: PG */
 public interface dzp {
-    void a(doa doa);
+    void a(defpackage.doa doa);
 
-    void a(InputStream inputStream);
+    void a(java.io.InputStream inputStream);
 
     void c(int i);
 

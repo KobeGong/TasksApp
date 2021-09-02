@@ -1,37 +1,28 @@
 package defpackage;
 
-import android.content.Context;
-import android.content.res.Resources;
-import android.graphics.Typeface;
-import java.io.Closeable;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-
-/* access modifiers changed from: package-private */
-/* renamed from: pb  reason: default package */
+/* renamed from: pb reason: default package */
 /* compiled from: PG */
-public class pb implements ow {
+class pb implements defpackage.ow {
     pb() {
     }
 
-    private static Object a(Object[] objArr, int i, pe peVar) {
+    private static java.lang.Object a(java.lang.Object[] objArr, int i, defpackage.pe peVar) {
         boolean z;
         int i2;
-        Object obj;
+        java.lang.Object obj;
         int i3 = (i & 1) == 0 ? 400 : 700;
         if ((i & 2) != 0) {
             z = true;
         } else {
             z = false;
         }
-        Object obj2 = null;
+        java.lang.Object obj2 = null;
         int i4 = Integer.MAX_VALUE;
         int length = objArr.length;
         int i5 = 0;
         while (i5 < length) {
-            Object obj3 = objArr[i5];
-            int abs = Math.abs(peVar.b(obj3) - i3) << 1;
+            java.lang.Object obj3 = objArr[i5];
+            int abs = java.lang.Math.abs(peVar.b(obj3) - i3) << 1;
             if (peVar.a(obj3) == z) {
                 i2 = 0;
             } else {
@@ -50,88 +41,98 @@ public class pb implements ow {
         return obj2;
     }
 
-    protected static pz a(pz[] pzVarArr, int i) {
-        return (pz) a(pzVarArr, i, new pc());
+    protected static defpackage.pz a(defpackage.pz[] pzVarArr, int i) {
+        return (defpackage.pz) a((java.lang.Object[]) pzVarArr, i, (defpackage.pe) new defpackage.pc());
     }
 
-    protected static Typeface a(Context context, InputStream inputStream) {
-        File a = jd.a(context);
-        if (a == null) {
-            return null;
-        }
-        try {
-            if (!jd.a(a, inputStream)) {
-                return null;
-            }
-            Typeface createFromFile = Typeface.createFromFile(a.getPath());
-            a.delete();
-            return createFromFile;
-        } catch (RuntimeException e) {
-            return null;
-        } finally {
-            a.delete();
-        }
-    }
-
-    @Override // defpackage.ow
-    public Typeface a(Context context, pz[] pzVarArr, int i) {
-        InputStream inputStream;
-        Throwable th;
-        Typeface typeface = null;
-        if (pzVarArr.length > 0) {
+    protected static android.graphics.Typeface a(android.content.Context context, java.io.InputStream inputStream) {
+        android.graphics.Typeface typeface = null;
+        java.io.File a = defpackage.jd.a(context);
+        if (a != null) {
             try {
-                inputStream = context.getContentResolver().openInputStream(a(pzVarArr, i).a);
-                try {
-                    typeface = a(context, inputStream);
-                    jd.a((Closeable) inputStream);
-                } catch (IOException e) {
-                    jd.a((Closeable) inputStream);
-                    return typeface;
-                } catch (Throwable th2) {
-                    th = th2;
-                    jd.a((Closeable) inputStream);
-                    throw th;
+                if (defpackage.jd.a(a, inputStream)) {
+                    typeface = android.graphics.Typeface.createFromFile(a.getPath());
+                    a.delete();
                 }
-            } catch (IOException e2) {
-                inputStream = null;
-                jd.a((Closeable) inputStream);
-                return typeface;
-            } catch (Throwable th3) {
-                inputStream = null;
-                th = th3;
-                jd.a((Closeable) inputStream);
-                throw th;
+            } catch (java.lang.RuntimeException e) {
+            } finally {
+                a.delete();
             }
         }
         return typeface;
     }
 
-    @Override // defpackage.ow
-    public Typeface a(Context context, om omVar, Resources resources, int i) {
-        on onVar = (on) a(omVar.a, i, new pd());
+    /* JADX WARNING: type inference failed for: r1v2, types: [java.io.Closeable] */
+    /* JADX WARNING: type inference failed for: r1v4 */
+    /* JADX WARNING: type inference failed for: r1v5, types: [java.io.Closeable] */
+    /* JADX WARNING: type inference failed for: r1v7 */
+    /* JADX WARNING: type inference failed for: r1v10 */
+    /* JADX WARNING: type inference failed for: r1v11 */
+    /* JADX WARNING: Multi-variable type inference failed */
+    /* JADX WARNING: Unknown variable types count: 2 */
+    /* Code decompiled incorrectly, please refer to instructions dump. */
+    public android.graphics.Typeface a(android.content.Context r5, defpackage.pz[] r6, int r7) {
+        /*
+            r4 = this;
+            r0 = 0
+            int r1 = r6.length
+            if (r1 > 0) goto L_0x0005
+        L_0x0004:
+            return r0
+        L_0x0005:
+            pz r1 = a(r6, r7)
+            android.content.ContentResolver r2 = r5.getContentResolver()     // Catch:{ IOException -> 0x001b, all -> 0x0021 }
+            android.net.Uri r1 = r1.a     // Catch:{ IOException -> 0x001b, all -> 0x0021 }
+            java.io.InputStream r1 = r2.openInputStream(r1)     // Catch:{ IOException -> 0x001b, all -> 0x0021 }
+            android.graphics.Typeface r0 = a(r5, r1)     // Catch:{ IOException -> 0x002b, all -> 0x0029 }
+            defpackage.jd.a(r1)
+            goto L_0x0004
+        L_0x001b:
+            r1 = move-exception
+            r1 = r0
+        L_0x001d:
+            defpackage.jd.a(r1)
+            goto L_0x0004
+        L_0x0021:
+            r1 = move-exception
+            r3 = r1
+            r1 = r0
+            r0 = r3
+        L_0x0025:
+            defpackage.jd.a(r1)
+            throw r0
+        L_0x0029:
+            r0 = move-exception
+            goto L_0x0025
+        L_0x002b:
+            r2 = move-exception
+            goto L_0x001d
+        */
+        throw new UnsupportedOperationException("Method not decompiled: defpackage.pb.a(android.content.Context, pz[], int):android.graphics.Typeface");
+    }
+
+    public android.graphics.Typeface a(android.content.Context context, defpackage.om omVar, android.content.res.Resources resources, int i) {
+        defpackage.on onVar = (defpackage.on) a((java.lang.Object[]) omVar.a, i, (defpackage.pe) new defpackage.pd());
         if (onVar == null) {
             return null;
         }
-        return ov.a(context, resources, onVar.f, onVar.a, i);
+        return defpackage.ov.a(context, resources, onVar.f, onVar.a, i);
     }
 
-    @Override // defpackage.ow
-    public Typeface a(Context context, Resources resources, int i, String str, int i2) {
-        File a = jd.a(context);
-        if (a == null) {
-            return null;
-        }
-        try {
-            if (!jd.a(a, resources, i)) {
-                return null;
+    public android.graphics.Typeface a(android.content.Context context, android.content.res.Resources resources, int i, java.lang.String str, int i2) {
+        android.graphics.Typeface typeface = null;
+        java.io.File a = defpackage.jd.a(context);
+        if (a != null) {
+            try {
+                if (defpackage.jd.a(a, resources, i)) {
+                    typeface = android.graphics.Typeface.createFromFile(a.getPath());
+                    a.delete();
+                }
+            } catch (java.lang.RuntimeException e) {
+            } finally {
+                a.delete();
             }
-            Typeface createFromFile = Typeface.createFromFile(a.getPath());
-            a.delete();
-            return createFromFile;
-        } catch (RuntimeException e) {
-            return null;
-        } finally {
-            a.delete();
         }
+        return typeface;
     }
 }

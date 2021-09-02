@@ -1,38 +1,32 @@
 package defpackage;
 
-import android.view.ViewGroup;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-
-/* renamed from: jx  reason: default package */
+/* renamed from: jx reason: default package */
 /* compiled from: PG */
-final class jx extends jy {
-    private static Method a;
+final class jx extends defpackage.jy {
+    private static java.lang.reflect.Method a;
     private static boolean b;
 
     jx() {
     }
 
-    @Override // defpackage.jy
-    public final ju a(ViewGroup viewGroup) {
-        return new jt(viewGroup);
+    public final defpackage.ju a(android.view.ViewGroup viewGroup) {
+        return new defpackage.jt(viewGroup);
     }
 
-    @Override // defpackage.jy
-    public final void a(ViewGroup viewGroup, boolean z) {
+    public final void a(android.view.ViewGroup viewGroup, boolean z) {
         if (!b) {
             try {
-                Method declaredMethod = ViewGroup.class.getDeclaredMethod("suppressLayout", Boolean.TYPE);
+                java.lang.reflect.Method declaredMethod = android.view.ViewGroup.class.getDeclaredMethod("suppressLayout", new java.lang.Class[]{java.lang.Boolean.TYPE});
                 a = declaredMethod;
                 declaredMethod.setAccessible(true);
-            } catch (NoSuchMethodException e) {
+            } catch (java.lang.NoSuchMethodException e) {
             }
             b = true;
         }
         if (a != null) {
             try {
-                a.invoke(viewGroup, Boolean.valueOf(z));
-            } catch (IllegalAccessException | InvocationTargetException e2) {
+                a.invoke(viewGroup, new java.lang.Object[]{java.lang.Boolean.valueOf(z)});
+            } catch (java.lang.IllegalAccessException | java.lang.reflect.InvocationTargetException e2) {
             }
         }
     }

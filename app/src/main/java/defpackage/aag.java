@@ -1,37 +1,34 @@
 package defpackage;
 
-/* renamed from: aag  reason: default package */
+/* renamed from: aag reason: default package */
 /* compiled from: PG */
-public final class aag implements th {
+public final class aag implements defpackage.th {
     private boolean a = false;
     private int b;
-    private final /* synthetic */ aaf c;
+    private final /* synthetic */ defpackage.aaf c;
 
-    protected aag(aaf aaf) {
+    protected aag(defpackage.aaf aaf) {
         this.c = aaf;
     }
 
-    public final aag a(te teVar, int i) {
+    public final defpackage.aag a(defpackage.te teVar, int i) {
         this.c.e = teVar;
         this.b = i;
         return this;
     }
 
-    @Override // defpackage.th
     public final void a() {
-        aaf.a(this.c);
+        defpackage.aag.super.setVisibility(0);
         this.a = false;
     }
 
-    @Override // defpackage.th
     public final void b() {
         if (!this.a) {
             this.c.e = null;
-            aaf.a(this.c, this.b);
+            defpackage.aag.super.setVisibility(this.b);
         }
     }
 
-    @Override // defpackage.th
     public final void c() {
         this.a = true;
     }

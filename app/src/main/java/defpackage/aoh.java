@@ -1,46 +1,39 @@
 package defpackage;
 
-import android.content.Context;
-import android.os.Handler;
-import android.os.Looper;
-
-/* renamed from: aoh  reason: default package */
+/* renamed from: aoh reason: default package */
 /* compiled from: PG */
-public final class aoh implements aoe, Runnable {
-    public final aoj b;
-    private final cyu c;
-    private final aoe d;
+public final class aoh implements defpackage.aoe, java.lang.Runnable {
+    public final defpackage.aoj b;
+    private final defpackage.cyu c;
+    private final defpackage.aoe d;
 
-    public aoh(aoj aoj) {
-        this(new aok(), aoj);
+    public aoh(defpackage.aoj aoj) {
+        this(new defpackage.aok(), aoj);
     }
 
-    public aoh(aoe aoe, aoj aoj) {
+    public aoh(defpackage.aoe aoe, defpackage.aoj aoj) {
         this.d = aoe;
-        this.c = new cyu();
+        this.c = new defpackage.cyu();
         this.b = aoj;
     }
 
     public final void run() {
-        new Handler(Looper.getMainLooper()).post(new aoi(this));
-        cyd.c(this.c);
+        new android.os.Handler(android.os.Looper.getMainLooper()).post(new defpackage.aoi(this));
+        defpackage.cyd.c(this.c);
     }
 
-    @Override // defpackage.aoe
-    public final String a(Context context) {
+    public final java.lang.String a(android.content.Context context) {
         return this.d.a(context);
     }
 
-    @Override // defpackage.aoe
-    public final void a(String str) {
+    public final void a(java.lang.String str) {
         this.d.a(str);
-        this.c.a((Object) null);
+        this.c.a((java.lang.Object) null);
     }
 
-    @Override // defpackage.aoe
-    public final aof a(Context context, String str) {
-        aof a = this.d.a(context, str);
-        this.c.a((Object) null);
+    public final defpackage.aof a(android.content.Context context, java.lang.String str) {
+        defpackage.aof a = this.d.a(context, str);
+        this.c.a((java.lang.Object) null);
         return a;
     }
 }

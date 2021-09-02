@@ -1,25 +1,21 @@
 package defpackage;
 
-import android.content.Context;
-import java.io.FileDescriptor;
-import java.io.PrintWriter;
-
-/* renamed from: oc  reason: default package */
+/* renamed from: oc reason: default package */
 /* compiled from: PG */
 public class oc {
     public int c;
-    public od d;
-    public Context e;
+    public defpackage.od d;
+    public android.content.Context e;
     public boolean f = false;
     public boolean g = false;
     public boolean h = true;
     public boolean i = false;
 
-    public oc(Context context) {
+    public oc(android.content.Context context) {
         this.e = context.getApplicationContext();
     }
 
-    public void a(Object obj) {
+    public void a(java.lang.Object obj) {
         if (this.d != null) {
             this.d.b(obj);
         }
@@ -38,16 +34,16 @@ public class oc {
     public void f() {
     }
 
-    public String toString() {
-        StringBuilder sb = new StringBuilder(64);
-        jd.a((Object) this, sb);
+    public java.lang.String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder(64);
+        defpackage.jd.a((java.lang.Object) this, sb);
         sb.append(" id=");
         sb.append(this.c);
         sb.append("}");
         return sb.toString();
     }
 
-    public void a(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {
+    public void a(java.lang.String str, java.io.FileDescriptor fileDescriptor, java.io.PrintWriter printWriter, java.lang.String[] strArr) {
         printWriter.print(str);
         printWriter.print("mId=");
         printWriter.print(this.c);

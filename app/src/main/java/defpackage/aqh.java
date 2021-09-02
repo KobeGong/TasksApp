@@ -1,13 +1,10 @@
 package defpackage;
 
-import android.view.View;
+/* renamed from: aqh reason: default package */
+final /* synthetic */ class aqh implements java.lang.Runnable {
+    private final android.view.View a;
 
-/* access modifiers changed from: package-private */
-/* renamed from: aqh  reason: default package */
-public final /* synthetic */ class aqh implements Runnable {
-    private final View a;
-
-    aqh(View view) {
+    aqh(android.view.View view) {
         this.a = view;
     }
 

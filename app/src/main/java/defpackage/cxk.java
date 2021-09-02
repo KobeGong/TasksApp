@@ -1,25 +1,21 @@
 package defpackage;
 
-import java.lang.reflect.Field;
-import java.security.PrivilegedExceptionAction;
-import sun.misc.Unsafe;
-
-/* renamed from: cxk  reason: default package */
+/* renamed from: cxk reason: default package */
 /* compiled from: PG */
-class cxk implements PrivilegedExceptionAction {
+class cxk implements java.security.PrivilegedExceptionAction {
     cxk() {
     }
 
-    @Override // java.security.PrivilegedExceptionAction
-    public /* synthetic */ Object run() {
-        Field[] declaredFields = Unsafe.class.getDeclaredFields();
-        for (Field field : declaredFields) {
+    public /* synthetic */ java.lang.Object run() {
+        java.lang.reflect.Field[] declaredFields;
+        java.lang.Class<sun.misc.Unsafe> cls = sun.misc.Unsafe.class;
+        for (java.lang.reflect.Field field : cls.getDeclaredFields()) {
             field.setAccessible(true);
-            Object obj = field.get(null);
-            if (Unsafe.class.isInstance(obj)) {
-                return (Unsafe) Unsafe.class.cast(obj);
+            java.lang.Object obj = field.get(null);
+            if (cls.isInstance(obj)) {
+                return (sun.misc.Unsafe) cls.cast(obj);
             }
         }
-        throw new NoSuchFieldError("the Unsafe");
+        throw new java.lang.NoSuchFieldError("the Unsafe");
     }
 }

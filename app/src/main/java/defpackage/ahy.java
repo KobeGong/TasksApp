@@ -1,26 +1,18 @@
 package defpackage;
 
-import android.graphics.Canvas;
-import android.os.Build;
-import android.support.v7.widget.RecyclerView;
-import android.view.View;
-import android.view.animation.Interpolator;
-import com.google.android.apps.tasks.R;
-import java.util.List;
-
-/* renamed from: ahy  reason: default package */
+/* renamed from: ahy reason: default package */
 /* compiled from: PG */
 public abstract class ahy {
-    private static final aig a;
-    private static final Interpolator b = new ahz();
-    private static final Interpolator c = new aia();
+    private static final defpackage.aig a;
+    private static final android.view.animation.Interpolator b = new defpackage.ahz();
+    private static final android.view.animation.Interpolator c = new defpackage.aia();
     private int d = -1;
 
-    public abstract int a(ViewHolder afv);
+    public abstract int a(defpackage.afv afv);
 
-    public abstract void a(ViewHolder afv, int i);
+    public abstract void a(defpackage.afv afv, int i);
 
-    public abstract boolean a(ViewHolder afv, ViewHolder afv2);
+    public abstract boolean a(defpackage.afv afv, defpackage.afv afv2);
 
     public static int a(int i, int i2) {
         int i3 = i & 789516;
@@ -50,9 +42,9 @@ public abstract class ahy {
         return i4 | ((i3 >> 1) & -3158065) | (((i3 >> 1) & 3158064) >> 2);
     }
 
-    /* access modifiers changed from: package-private */
-    public final int a(RecyclerView recyclerView, ViewHolder afv) {
-        return c(a(afv), sn.a.j(recyclerView));
+    /* access modifiers changed from: 0000 */
+    public final int a(android.support.v7.widget.RecyclerView recyclerView, defpackage.afv afv) {
+        return c(a(afv), defpackage.sn.a.j(recyclerView));
     }
 
     public static boolean a() {
@@ -87,104 +79,161 @@ public abstract class ahy {
         return f;
     }
 
-    public static ViewHolder a(ViewHolder afv, List list, int i, int i2) {
-        ViewHolder afv2;
-        int i3;
-        int i4;
-        int i5;
-        int i6;
-        ViewHolder afv3;
-        int bottom;
-        int abs;
-        int top;
-        int left;
-        int right;
-        int abs2;
-        int width = i + afv.a.getWidth();
-        int height = i2 + afv.a.getHeight();
-        ViewHolder afv4 = null;
-        int i7 = -1;
-        int left2 = i - afv.a.getLeft();
-        int top2 = i2 - afv.a.getTop();
-        int size = list.size();
-        int i8 = 0;
-        while (i8 < size) {
-            ViewHolder afv5 = (ViewHolder) list.get(i8);
-            if (left2 <= 0 || (right = afv5.a.getRight() - width) >= 0 || afv5.a.getRight() <= afv.a.getRight() || (abs2 = Math.abs(right)) <= i7) {
-                afv2 = afv4;
-                i3 = i7;
-            } else {
-                i3 = abs2;
-                afv2 = afv5;
-            }
-            if (left2 >= 0 || (left = afv5.a.getLeft() - i) <= 0 || afv5.a.getLeft() >= afv.a.getLeft() || (i4 = Math.abs(left)) <= i3) {
-                i4 = i3;
-            } else {
-                afv2 = afv5;
-            }
-            if (top2 >= 0 || (top = afv5.a.getTop() - i2) <= 0 || afv5.a.getTop() >= afv.a.getTop() || (i5 = Math.abs(top)) <= i4) {
-                i5 = i4;
-            } else {
-                afv2 = afv5;
-            }
-            if (top2 <= 0 || (bottom = afv5.a.getBottom() - height) >= 0 || afv5.a.getBottom() <= afv.a.getBottom() || (abs = Math.abs(bottom)) <= i5) {
-                i6 = i5;
-                afv3 = afv2;
-            } else {
-                afv3 = afv5;
-                i6 = abs;
-            }
-            i8++;
-            afv4 = afv3;
-            i7 = i6;
-        }
-        return afv4;
+    /* JADX WARNING: Removed duplicated region for block: B:12:0x0053  */
+    /* JADX WARNING: Removed duplicated region for block: B:20:0x0073  */
+    /* JADX WARNING: Removed duplicated region for block: B:28:0x0094  */
+    /* Code decompiled incorrectly, please refer to instructions dump. */
+    public static defpackage.afv a(defpackage.afv r13, java.util.List r14, int r15, int r16) {
+        /*
+            android.view.View r0 = r13.a
+            int r0 = r0.getWidth()
+            int r5 = r15 + r0
+            android.view.View r0 = r13.a
+            int r0 = r0.getHeight()
+            int r6 = r16 + r0
+            r2 = 0
+            r1 = -1
+            android.view.View r0 = r13.a
+            int r0 = r0.getLeft()
+            int r7 = r15 - r0
+            android.view.View r0 = r13.a
+            int r0 = r0.getTop()
+            int r8 = r16 - r0
+            int r9 = r14.size()
+            r0 = 0
+            r4 = r0
+        L_0x0028:
+            if (r4 >= r9) goto L_0x00bb
+            java.lang.Object r0 = r14.get(r4)
+            afv r0 = (defpackage.afv) r0
+            if (r7 <= 0) goto L_0x00bc
+            android.view.View r3 = r0.a
+            int r3 = r3.getRight()
+            int r3 = r3 - r5
+            if (r3 >= 0) goto L_0x00bc
+            android.view.View r10 = r0.a
+            int r10 = r10.getRight()
+            android.view.View r11 = r13.a
+            int r11 = r11.getRight()
+            if (r10 <= r11) goto L_0x00bc
+            int r3 = java.lang.Math.abs(r3)
+            if (r3 <= r1) goto L_0x00bc
+            r2 = r3
+            r3 = r0
+        L_0x0051:
+            if (r7 >= 0) goto L_0x00c4
+            android.view.View r1 = r0.a
+            int r1 = r1.getLeft()
+            int r1 = r1 - r15
+            if (r1 <= 0) goto L_0x00c4
+            android.view.View r10 = r0.a
+            int r10 = r10.getLeft()
+            android.view.View r11 = r13.a
+            int r11 = r11.getLeft()
+            if (r10 >= r11) goto L_0x00c4
+            int r1 = java.lang.Math.abs(r1)
+            if (r1 <= r2) goto L_0x00c4
+            r3 = r0
+        L_0x0071:
+            if (r8 >= 0) goto L_0x00c2
+            android.view.View r2 = r0.a
+            int r2 = r2.getTop()
+            int r2 = r2 - r16
+            if (r2 <= 0) goto L_0x00c2
+            android.view.View r10 = r0.a
+            int r10 = r10.getTop()
+            android.view.View r11 = r13.a
+            int r11 = r11.getTop()
+            if (r10 >= r11) goto L_0x00c2
+            int r2 = java.lang.Math.abs(r2)
+            if (r2 <= r1) goto L_0x00c2
+            r3 = r0
+        L_0x0092:
+            if (r8 <= 0) goto L_0x00bf
+            android.view.View r1 = r0.a
+            int r1 = r1.getBottom()
+            int r1 = r1 - r6
+            if (r1 >= 0) goto L_0x00bf
+            android.view.View r10 = r0.a
+            int r10 = r10.getBottom()
+            android.view.View r11 = r13.a
+            int r11 = r11.getBottom()
+            if (r10 <= r11) goto L_0x00bf
+            int r1 = java.lang.Math.abs(r1)
+            if (r1 <= r2) goto L_0x00bf
+            r12 = r1
+            r1 = r0
+            r0 = r12
+        L_0x00b4:
+            int r2 = r4 + 1
+            r4 = r2
+            r2 = r1
+            r1 = r0
+            goto L_0x0028
+        L_0x00bb:
+            return r2
+        L_0x00bc:
+            r3 = r2
+            r2 = r1
+            goto L_0x0051
+        L_0x00bf:
+            r0 = r2
+            r1 = r3
+            goto L_0x00b4
+        L_0x00c2:
+            r2 = r1
+            goto L_0x0092
+        L_0x00c4:
+            r1 = r2
+            goto L_0x0071
+        */
+        throw new UnsupportedOperationException("Method not decompiled: defpackage.ahy.a(afv, java.util.List, int, int):afv");
     }
 
-    public void b(ViewHolder afv, int i) {
+    public void b(defpackage.afv afv, int i) {
         if (afv != null) {
-            View view = afv.a;
+            android.view.View view = afv.a;
         }
     }
 
-    public static void a(RecyclerView recyclerView, ViewHolder afv, ViewHolder afv2, int i) {
-        LayoutManager afd = recyclerView.layoutManager;
-        if (afd instanceof aif) {
-            ((aif) afd).a(afv.a, afv2.a);
+    public static void a(android.support.v7.widget.RecyclerView recyclerView, defpackage.afv afv, defpackage.afv afv2, int i) {
+        defpackage.afd afd = recyclerView.l;
+        if (afd instanceof defpackage.aif) {
+            ((defpackage.aif) afd).a(afv.a, afv2.a);
             return;
         }
         if (afd.d()) {
-            if (afd.b(afv2.a) <= recyclerView.getPaddingLeft()) {
+            if (defpackage.afd.b(afv2.a) <= recyclerView.getPaddingLeft()) {
                 recyclerView.c(i);
             }
-            if (afd.d(afv2.a) >= recyclerView.getWidth() - recyclerView.getPaddingRight()) {
+            if (defpackage.afd.d(afv2.a) >= recyclerView.getWidth() - recyclerView.getPaddingRight()) {
                 recyclerView.c(i);
             }
         }
         if (afd.e()) {
-            if (afd.c(afv2.a) <= recyclerView.getPaddingTop()) {
+            if (defpackage.afd.c(afv2.a) <= recyclerView.getPaddingTop()) {
                 recyclerView.c(i);
             }
-            if (afd.e(afv2.a) >= recyclerView.getHeight() - recyclerView.getPaddingBottom()) {
+            if (defpackage.afd.e(afv2.a) >= recyclerView.getHeight() - recyclerView.getPaddingBottom()) {
                 recyclerView.c(i);
             }
         }
     }
 
-    public void b(RecyclerView recyclerView, ViewHolder afv) {
+    public void b(android.support.v7.widget.RecyclerView recyclerView, defpackage.afv afv) {
         a.a(afv.a);
     }
 
-    public void a(Canvas canvas, RecyclerView recyclerView, ViewHolder afv, float f, float f2, int i, boolean z) {
+    public void a(android.graphics.Canvas canvas, android.support.v7.widget.RecyclerView recyclerView, defpackage.afv afv, float f, float f2, int i, boolean z) {
         a.a(canvas, recyclerView, afv.a, f, f2, i, z);
     }
 
-    public static void b(ViewHolder afv) {
-        View view = afv.a;
+    public static void b(defpackage.afv afv) {
+        android.view.View view = afv.a;
     }
 
-    public static long a(RecyclerView recyclerView, int i) {
-        aey aey = recyclerView.z;
+    public static long a(android.support.v7.widget.RecyclerView recyclerView, int i) {
+        defpackage.aey aey = recyclerView.z;
         if (aey == null) {
             return i == 8 ? 200 : 250;
         }
@@ -194,12 +243,12 @@ public abstract class ahy {
         return aey.j;
     }
 
-    public final int a(RecyclerView recyclerView, int i, int i2, long j) {
+    public final int a(android.support.v7.widget.RecyclerView recyclerView, int i, int i2, long j) {
         float f = 1.0f;
         if (this.d == -1) {
-            this.d = recyclerView.getResources().getDimensionPixelSize(R.dimen.item_touch_helper_max_drag_scroll_per_frame);
+            this.d = recyclerView.getResources().getDimensionPixelSize(2131689764);
         }
-        int signum = (int) (((float) (this.d * ((int) Math.signum((float) i2)))) * c.getInterpolation(Math.min(1.0f, (((float) Math.abs(i2)) * 1.0f) / ((float) i))));
+        int signum = (int) (((float) (this.d * ((int) java.lang.Math.signum((float) i2)))) * c.getInterpolation(java.lang.Math.min(1.0f, (((float) java.lang.Math.abs(i2)) * 1.0f) / ((float) i))));
         if (j <= 2000) {
             f = ((float) j) / 2000.0f;
         }
@@ -214,10 +263,10 @@ public abstract class ahy {
     }
 
     static {
-        if (Build.VERSION.SDK_INT >= 21) {
-            a = new aih();
+        if (android.os.Build.VERSION.SDK_INT >= 21) {
+            a = new defpackage.aih();
         } else {
-            a = new aig();
+            a = new defpackage.aig();
         }
     }
 }

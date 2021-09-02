@@ -1,37 +1,31 @@
 package defpackage;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import android.text.TextUtils;
-import java.util.ArrayList;
-
-/* access modifiers changed from: package-private */
-/* renamed from: kx  reason: default package */
+/* renamed from: kx reason: default package */
 /* compiled from: PG */
-public final class kx implements Parcelable {
-    public static final Parcelable.Creator CREATOR = new ky();
+final class kx implements android.os.Parcelable {
+    public static final android.os.Parcelable.Creator CREATOR = new defpackage.ky();
     public final int[] a;
     public final int b;
     public final int c;
-    public final String d;
+    public final java.lang.String d;
     public final int e;
     public final int f;
-    public final CharSequence g;
+    public final java.lang.CharSequence g;
     public final int h;
-    public final CharSequence i;
-    public final ArrayList j;
-    public final ArrayList k;
+    public final java.lang.CharSequence i;
+    public final java.util.ArrayList j;
+    public final java.util.ArrayList k;
     public final boolean l;
 
-    public kx(kv kvVar) {
+    public kx(defpackage.kv kvVar) {
         int size = kvVar.b.size();
         this.a = new int[(size * 6)];
         if (!kvVar.i) {
-            throw new IllegalStateException("Not on back stack");
+            throw new java.lang.IllegalStateException("Not on back stack");
         }
         int i2 = 0;
         for (int i3 = 0; i3 < size; i3++) {
-            kw kwVar = (kw) kvVar.b.get(i3);
+            defpackage.kw kwVar = (defpackage.kw) kvVar.b.get(i3);
             int i4 = i2 + 1;
             this.a[i2] = kwVar.a;
             int i5 = i4 + 1;
@@ -58,16 +52,16 @@ public final class kx implements Parcelable {
         this.l = kvVar.s;
     }
 
-    public kx(Parcel parcel) {
+    public kx(android.os.Parcel parcel) {
         this.a = parcel.createIntArray();
         this.b = parcel.readInt();
         this.c = parcel.readInt();
         this.d = parcel.readString();
         this.e = parcel.readInt();
         this.f = parcel.readInt();
-        this.g = (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
+        this.g = (java.lang.CharSequence) android.text.TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
         this.h = parcel.readInt();
-        this.i = (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
+        this.i = (java.lang.CharSequence) android.text.TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
         this.j = parcel.createStringArrayList();
         this.k = parcel.createStringArrayList();
         this.l = parcel.readInt() != 0;
@@ -77,7 +71,7 @@ public final class kx implements Parcelable {
         return 0;
     }
 
-    public final void writeToParcel(Parcel parcel, int i2) {
+    public final void writeToParcel(android.os.Parcel parcel, int i2) {
         int i3 = 0;
         parcel.writeIntArray(this.a);
         parcel.writeInt(this.b);
@@ -85,9 +79,9 @@ public final class kx implements Parcelable {
         parcel.writeString(this.d);
         parcel.writeInt(this.e);
         parcel.writeInt(this.f);
-        TextUtils.writeToParcel(this.g, parcel, 0);
+        android.text.TextUtils.writeToParcel(this.g, parcel, 0);
         parcel.writeInt(this.h);
-        TextUtils.writeToParcel(this.i, parcel, 0);
+        android.text.TextUtils.writeToParcel(this.i, parcel, 0);
         parcel.writeStringList(this.j);
         parcel.writeStringList(this.k);
         if (this.l) {

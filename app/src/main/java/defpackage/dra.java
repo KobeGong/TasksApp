@@ -1,12 +1,12 @@
 package defpackage;
 
-/* renamed from: dra  reason: default package */
+/* renamed from: dra reason: default package */
 /* compiled from: PG */
-final class dra implements Runnable {
+final class dra implements java.lang.Runnable {
     private final /* synthetic */ int a;
-    private final /* synthetic */ dqz b;
+    private final /* synthetic */ defpackage.dqz b;
 
-    dra(dqz dqz, int i) {
+    dra(defpackage.dqz dqz, int i) {
         this.b = dqz;
         this.a = i;
     }

@@ -1,20 +1,16 @@
 package defpackage;
 
-import com.google.android.gms.common.api.Status;
-
-/* renamed from: axe  reason: default package */
+/* renamed from: axe reason: default package */
 /* compiled from: PG */
-final class axe extends axh {
-    private /* synthetic */ axd a;
+final class axe extends defpackage.axh {
+    private /* synthetic */ defpackage.axd a;
 
-    /* JADX INFO: super call moved to the top of the method (can break code semantics) */
-    axe(axd axd) {
-        super((byte) 0);
+    axe(defpackage.axd axd) {
         this.a = axd;
+        super(0);
     }
 
-    @Override // defpackage.axh
-    public final void a(Status status) {
-        this.a.a((ayw) status);
+    public final void a(com.google.android.gms.common.api.Status status) {
+        this.a.a((defpackage.ayw) status);
     }
 }

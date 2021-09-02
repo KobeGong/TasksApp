@@ -1,53 +1,49 @@
 package defpackage;
 
-import java.io.IOException;
-import java.io.OutputStream;
-
-/* renamed from: dgo  reason: default package */
+/* renamed from: dgo reason: default package */
 /* compiled from: PG */
-public abstract class dgo implements djo {
+public abstract class dgo implements defpackage.djo {
     public int r = 0;
 
-    @Override // defpackage.djo
-    public final dha a() {
+    public final defpackage.dha a() {
         try {
-            dhf b = dha.b(f());
+            defpackage.dhf b = defpackage.dha.b(f());
             a(b.a);
             return b.a();
-        } catch (IOException e) {
-            String name = getClass().getName();
-            throw new RuntimeException(new StringBuilder(String.valueOf(name).length() + 62 + String.valueOf("ByteString").length()).append("Serializing ").append(name).append(" to a ").append("ByteString").append(" threw an IOException (should never happen).").toString(), e);
+        } catch (java.io.IOException e) {
+            java.lang.String str = "ByteString";
+            java.lang.String name = getClass().getName();
+            throw new java.lang.RuntimeException(new java.lang.StringBuilder(java.lang.String.valueOf(name).length() + 62 + java.lang.String.valueOf(str).length()).append("Serializing ").append(name).append(" to a ").append(str).append(" threw an IOException (should never happen).").toString(), e);
         }
     }
 
-    @Override // defpackage.djo
     public final byte[] b() {
         try {
             byte[] bArr = new byte[f()];
-            dhn a = dhn.a(bArr);
+            defpackage.dhn a = defpackage.dhn.a(bArr);
             a(a);
             a.j();
             return bArr;
-        } catch (IOException e) {
-            String name = getClass().getName();
-            throw new RuntimeException(new StringBuilder(String.valueOf(name).length() + 62 + String.valueOf("byte array").length()).append("Serializing ").append(name).append(" to a ").append("byte array").append(" threw an IOException (should never happen).").toString(), e);
+        } catch (java.io.IOException e) {
+            java.lang.String str = "byte array";
+            java.lang.String name = getClass().getName();
+            throw new java.lang.RuntimeException(new java.lang.StringBuilder(java.lang.String.valueOf(name).length() + 62 + java.lang.String.valueOf(str).length()).append("Serializing ").append(name).append(" to a ").append(str).append(" threw an IOException (should never happen).").toString(), e);
         }
     }
 
-    @Override // defpackage.djo
-    public final void a(OutputStream outputStream) {
-        dhn a = dhn.a(outputStream, dhn.a(f()));
+    public final void a(java.io.OutputStream outputStream) {
+        defpackage.dhn a = defpackage.dhn.a(outputStream, defpackage.dhn.a(f()));
         a(a);
         a.h();
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public int c() {
-        throw new UnsupportedOperationException();
+        throw new java.lang.UnsupportedOperationException();
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public void b(int i) {
-        throw new UnsupportedOperationException();
+        throw new java.lang.UnsupportedOperationException();
     }
 }

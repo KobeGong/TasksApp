@@ -1,50 +1,42 @@
 package defpackage;
 
-import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.SwipeDismissBehavior;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewGroup;
-import com.google.android.apps.tasks.R;
-
-/* renamed from: arm  reason: default package */
+/* renamed from: arm reason: default package */
 /* compiled from: PG */
-final class arm extends SwipeDismissBehavior {
-    private View g;
-    private View h;
-    private final /* synthetic */ ard i;
+final class arm extends android.support.design.widget.SwipeDismissBehavior {
+    private android.view.View g;
+    private android.view.View h;
+    private final /* synthetic */ defpackage.ard i;
 
-    arm(ard ard) {
+    arm(defpackage.ard ard) {
         this.i = ard;
     }
 
-    @Override // android.support.design.behavior.SwipeDismissBehavior
-    public final boolean b(View view) {
-        return view instanceof arp;
+    public final boolean b(android.view.View view) {
+        return view instanceof defpackage.arp;
     }
 
     /* access modifiers changed from: private */
-    public final boolean a(CoordinatorLayout coordinatorLayout, arp arp, MotionEvent motionEvent) {
+    public final boolean a(android.support.design.widget.CoordinatorLayout coordinatorLayout, defpackage.arp arp, android.view.MotionEvent motionEvent) {
         switch (motionEvent.getActionMasked()) {
             case 0:
-                if (coordinatorLayout.a(arp, (int) motionEvent.getX(), (int) motionEvent.getY())) {
-                    arr.a().a(this.i.f);
+                if (coordinatorLayout.a((android.view.View) arp, (int) motionEvent.getX(), (int) motionEvent.getY())) {
+                    defpackage.arr.a().a(this.i.f);
                     break;
                 }
                 break;
             case 1:
             case 3:
-                arr.a().b(this.i.f);
+                defpackage.arr.a().b(this.i.f);
                 break;
         }
-        return super.a(coordinatorLayout, (View) arp, motionEvent);
+        return super.a(coordinatorLayout, arp, motionEvent);
     }
 
-    private final boolean a(CoordinatorLayout coordinatorLayout, arp arp) {
-        ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) arp.getLayoutParams();
+    private final boolean a(android.support.design.widget.CoordinatorLayout coordinatorLayout, defpackage.arp arp) {
+        android.view.ViewGroup.MarginLayoutParams marginLayoutParams = (android.view.ViewGroup.MarginLayoutParams) arp.getLayoutParams();
         int i2 = marginLayoutParams.bottomMargin;
-        int dimensionPixelOffset = arp.getResources().getDimensionPixelOffset(R.dimen.snackbar_bottom_spacing);
-        int dimensionPixelOffset2 = arp.getResources().getDimensionPixelOffset(R.dimen.snackbar_bottom_spacing_with_fab);
+        int dimensionPixelOffset = arp.getResources().getDimensionPixelOffset(2131689850);
+        int dimensionPixelOffset2 = arp.getResources().getDimensionPixelOffset(2131689851);
         if (a(coordinatorLayout, this.h)) {
             dimensionPixelOffset = (coordinatorLayout.getHeight() - this.h.getTop()) + dimensionPixelOffset2;
         } else if (a(coordinatorLayout, this.g)) {
@@ -57,28 +49,25 @@ final class arm extends SwipeDismissBehavior {
         return true;
     }
 
-    private static boolean a(CoordinatorLayout coordinatorLayout, View view) {
+    private static boolean a(android.support.design.widget.CoordinatorLayout coordinatorLayout, android.view.View view) {
         return view != null && view.getVisibility() == 0 && view.getParent() == coordinatorLayout;
     }
 
-    @Override // defpackage.gx
-    public final /* synthetic */ boolean a(CoordinatorLayout coordinatorLayout, View view, int i2) {
-        a(coordinatorLayout, (arp) view);
+    public final /* synthetic */ boolean a(android.support.design.widget.CoordinatorLayout coordinatorLayout, android.view.View view, int i2) {
+        a(coordinatorLayout, (defpackage.arp) view);
         return false;
     }
 
-    @Override // defpackage.gx
-    public final /* synthetic */ boolean a(CoordinatorLayout coordinatorLayout, View view, View view2) {
-        return a(coordinatorLayout, (arp) view);
+    public final /* synthetic */ boolean a(android.support.design.widget.CoordinatorLayout coordinatorLayout, android.view.View view, android.view.View view2) {
+        return a(coordinatorLayout, (defpackage.arp) view);
     }
 
-    @Override // defpackage.gx
-    public final /* synthetic */ boolean a_(View view) {
+    public final /* synthetic */ boolean a_(android.view.View view) {
         int id = view.getId();
-        if (id == R.id.bottom_app_bar) {
+        if (id == 2131755013) {
             this.g = view;
             return true;
-        } else if (id != R.id.fab) {
+        } else if (id != 2131755015) {
             return false;
         } else {
             this.h = view;

@@ -1,113 +1,103 @@
 package defpackage;
 
-import android.content.Context;
-import android.content.pm.ApplicationInfo;
-import android.util.Log;
-import java.io.File;
-import java.io.IOException;
-import java.lang.reflect.Array;
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-/* renamed from: hx  reason: default package */
+/* renamed from: hx reason: default package */
 /* compiled from: PG */
 public final class hx {
-    public static final Set a = new HashSet();
-    public static final boolean b = a(System.getProperty("java.vm.version"));
+    public static final java.util.Set a = new java.util.HashSet();
+    public static final boolean b = a(java.lang.System.getProperty("java.vm.version"));
 
-    public static ApplicationInfo a(Context context) {
+    public static android.content.pm.ApplicationInfo a(android.content.Context context) {
         try {
             return context.getApplicationInfo();
-        } catch (RuntimeException e) {
-            Log.w("MultiDex", "Failure while trying to obtain ApplicationInfo from Context. Must be running in test mode. Skip patching.", e);
+        } catch (java.lang.RuntimeException e) {
+            android.util.Log.w("MultiDex", "Failure while trying to obtain ApplicationInfo from Context. Must be running in test mode. Skip patching.", e);
             return null;
         }
     }
 
-    private static boolean a(String str) {
+    private static boolean a(java.lang.String str) {
         boolean z = false;
         if (str != null) {
-            Matcher matcher = Pattern.compile("(\\d+)\\.(\\d+)(\\.\\d+)?").matcher(str);
+            java.util.regex.Matcher matcher = java.util.regex.Pattern.compile("(\\d+)\\.(\\d+)(\\.\\d+)?").matcher(str);
             if (matcher.matches()) {
                 try {
-                    int parseInt = Integer.parseInt(matcher.group(1));
-                    int parseInt2 = Integer.parseInt(matcher.group(2));
+                    int parseInt = java.lang.Integer.parseInt(matcher.group(1));
+                    int parseInt2 = java.lang.Integer.parseInt(matcher.group(2));
                     if (parseInt > 2 || (parseInt == 2 && parseInt2 > 0)) {
                         z = true;
                     }
-                } catch (NumberFormatException e) {
+                } catch (java.lang.NumberFormatException e) {
                 }
             }
         }
-        new StringBuilder("VM with version ").append(str).append(z ? " has multidex support" : " does not have multidex support");
+        new java.lang.StringBuilder("VM with version ").append(str).append(z ? " has multidex support" : " does not have multidex support");
         return z;
     }
 
-    public static Field a(Object obj, String str) {
-        for (Class<?> cls = obj.getClass(); cls != null; cls = cls.getSuperclass()) {
+    public static java.lang.reflect.Field a(java.lang.Object obj, java.lang.String str) {
+        java.lang.Class cls = obj.getClass();
+        while (cls != null) {
             try {
-                Field declaredField = cls.getDeclaredField(str);
+                java.lang.reflect.Field declaredField = cls.getDeclaredField(str);
                 if (!declaredField.isAccessible()) {
                     declaredField.setAccessible(true);
                 }
                 return declaredField;
-            } catch (NoSuchFieldException e) {
+            } catch (java.lang.NoSuchFieldException e) {
+                cls = cls.getSuperclass();
             }
         }
-        throw new NoSuchFieldException("Field " + str + " not found in " + obj.getClass());
+        throw new java.lang.NoSuchFieldException("Field " + str + " not found in " + obj.getClass());
     }
 
-    public static Method a(Object obj, String str, Class... clsArr) {
-        for (Class<?> cls = obj.getClass(); cls != null; cls = cls.getSuperclass()) {
+    public static java.lang.reflect.Method a(java.lang.Object obj, java.lang.String str, java.lang.Class... clsArr) {
+        java.lang.Class cls = obj.getClass();
+        while (cls != null) {
             try {
-                Method declaredMethod = cls.getDeclaredMethod(str, clsArr);
+                java.lang.reflect.Method declaredMethod = cls.getDeclaredMethod(str, clsArr);
                 if (!declaredMethod.isAccessible()) {
                     declaredMethod.setAccessible(true);
                 }
                 return declaredMethod;
-            } catch (NoSuchMethodException e) {
+            } catch (java.lang.NoSuchMethodException e) {
+                cls = cls.getSuperclass();
             }
         }
-        throw new NoSuchMethodException("Method " + str + " with parameters " + Arrays.asList(clsArr) + " not found in " + obj.getClass());
+        throw new java.lang.NoSuchMethodException("Method " + str + " with parameters " + java.util.Arrays.asList(clsArr) + " not found in " + obj.getClass());
     }
 
-    public static void a(Object obj, String str, Object[] objArr) {
-        Field a2 = a(obj, str);
-        Object[] objArr2 = (Object[]) a2.get(obj);
-        Object[] objArr3 = (Object[]) Array.newInstance(objArr2.getClass().getComponentType(), objArr2.length + objArr.length);
-        System.arraycopy(objArr2, 0, objArr3, 0, objArr2.length);
-        System.arraycopy(objArr, 0, objArr3, objArr2.length, objArr.length);
+    public static void a(java.lang.Object obj, java.lang.String str, java.lang.Object[] objArr) {
+        java.lang.reflect.Field a2 = a(obj, str);
+        java.lang.Object[] objArr2 = (java.lang.Object[]) a2.get(obj);
+        java.lang.Object[] objArr3 = (java.lang.Object[]) java.lang.reflect.Array.newInstance(objArr2.getClass().getComponentType(), objArr2.length + objArr.length);
+        java.lang.System.arraycopy(objArr2, 0, objArr3, 0, objArr2.length);
+        java.lang.System.arraycopy(objArr, 0, objArr3, objArr2.length, objArr.length);
         a2.set(obj, objArr3);
     }
 
-    public static File a(Context context, ApplicationInfo applicationInfo) {
-        File file = new File(applicationInfo.dataDir, "code_cache");
+    public static java.io.File a(android.content.Context context, android.content.pm.ApplicationInfo applicationInfo) {
+        java.io.File file = new java.io.File(applicationInfo.dataDir, "code_cache");
         try {
             a(file);
-        } catch (IOException e) {
-            file = new File(context.getFilesDir(), "code_cache");
+        } catch (java.io.IOException e) {
+            file = new java.io.File(context.getFilesDir(), "code_cache");
             a(file);
         }
-        File file2 = new File(file, "secondary-dexes");
+        java.io.File file2 = new java.io.File(file, "secondary-dexes");
         a(file2);
         return file2;
     }
 
-    private static void a(File file) {
+    private static void a(java.io.File file) {
         file.mkdir();
         if (!file.isDirectory()) {
-            File parentFile = file.getParentFile();
+            java.io.File parentFile = file.getParentFile();
             if (parentFile == null) {
-                Log.e("MultiDex", "Failed to create dir " + file.getPath() + ". Parent file is null.");
+                android.util.Log.e("MultiDex", "Failed to create dir " + file.getPath() + ". Parent file is null.");
             } else {
-                Log.e("MultiDex", "Failed to create dir " + file.getPath() + ". parent file is a dir " + parentFile.isDirectory() + ", a file " + parentFile.isFile() + ", exists " + parentFile.exists() + ", readable " + parentFile.canRead() + ", writable " + parentFile.canWrite());
+                android.util.Log.e("MultiDex", "Failed to create dir " + file.getPath() + ". parent file is a dir " + parentFile.isDirectory() + ", a file " + parentFile.isFile() + ", exists " + parentFile.exists() + ", readable " + parentFile.canRead() + ", writable " + parentFile.canWrite());
             }
-            throw new IOException("Failed to create directory " + file.getPath());
+            throw new java.io.IOException("Failed to create directory " + file.getPath());
         }
     }
 }

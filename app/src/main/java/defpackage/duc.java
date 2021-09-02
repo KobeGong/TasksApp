@@ -1,11 +1,11 @@
 package defpackage;
 
-/* renamed from: duc  reason: default package */
+/* renamed from: duc reason: default package */
 /* compiled from: PG */
-final class duc implements Runnable {
-    private final /* synthetic */ dtt a;
+final class duc implements java.lang.Runnable {
+    private final /* synthetic */ defpackage.dtt a;
 
-    duc(dtt dtt) {
+    duc(defpackage.dtt dtt) {
         this.a = dtt;
     }
 

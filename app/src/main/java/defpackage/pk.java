@@ -1,16 +1,13 @@
 package defpackage;
 
-import android.content.res.Resources;
-import android.graphics.drawable.Drawable;
-
-/* renamed from: pk  reason: default package */
+/* renamed from: pk reason: default package */
 /* compiled from: PG */
-public class pk extends ph {
-    public pk(Drawable drawable) {
+public class pk extends defpackage.ph {
+    public pk(android.graphics.drawable.Drawable drawable) {
         super(drawable);
     }
 
-    pk(pi piVar, Resources resources) {
+    pk(defpackage.pi piVar, android.content.res.Resources resources) {
         super(piVar, resources);
     }
 
@@ -22,9 +19,8 @@ public class pk extends ph {
         return this.c.isAutoMirrored();
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.ph
-    public pi b() {
-        return new pl(this.b);
+    /* access modifiers changed from: 0000 */
+    public defpackage.pi b() {
+        return new defpackage.pl(this.b);
     }
 }

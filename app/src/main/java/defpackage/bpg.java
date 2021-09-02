@@ -1,30 +1,28 @@
 package defpackage;
 
-import android.content.SharedPreferences;
-import android.util.Log;
-
-/* access modifiers changed from: package-private */
-/* renamed from: bpg  reason: default package */
+/* renamed from: bpg reason: default package */
 /* compiled from: PG */
-public final class bpg extends boz {
-    bpg(bpa bpa, String str, String str2) {
+final class bpg extends defpackage.boz {
+    bpg(defpackage.bpa bpa, java.lang.String str, java.lang.String str2) {
         super(bpa, str, null);
     }
 
     /* access modifiers changed from: private */
     /* renamed from: b */
-    public final String a(SharedPreferences sharedPreferences) {
+    public final java.lang.String a(android.content.SharedPreferences sharedPreferences) {
         try {
             return sharedPreferences.getString(this.e, null);
-        } catch (ClassCastException e) {
-            String valueOf = String.valueOf(this.e);
-            Log.e("PhenotypeFlag", valueOf.length() != 0 ? "Invalid string value in SharedPreferences for ".concat(valueOf) : new String("Invalid string value in SharedPreferences for "), e);
+        } catch (java.lang.ClassCastException e) {
+            java.lang.ClassCastException classCastException = e;
+            java.lang.String str = "PhenotypeFlag";
+            java.lang.String str2 = "Invalid string value in SharedPreferences for ";
+            java.lang.String valueOf = java.lang.String.valueOf(this.e);
+            android.util.Log.e(str, valueOf.length() != 0 ? str2.concat(valueOf) : new java.lang.String(str2), classCastException);
             return null;
         }
     }
 
-    @Override // defpackage.boz
-    public final /* synthetic */ Object a(String str) {
+    public final /* synthetic */ java.lang.Object a(java.lang.String str) {
         return str;
     }
 }

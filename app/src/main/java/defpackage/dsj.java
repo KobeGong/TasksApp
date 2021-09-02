@@ -1,22 +1,20 @@
 package defpackage;
 
-/* renamed from: dsj  reason: default package */
+/* renamed from: dsj reason: default package */
 /* compiled from: PG */
-final class dsj extends dqc {
-    private final ecc a;
+final class dsj extends defpackage.dqc {
+    private final defpackage.ecc a;
 
-    dsj(ecc ecc) {
-        super((short) 0);
-        this.a = (ecc) cld.a(ecc, "span");
+    dsj(defpackage.ecc ecc) {
+        super(0);
+        this.a = (defpackage.ecc) defpackage.cld.a((java.lang.Object) ecc, (java.lang.Object) "span");
     }
 
-    @Override // defpackage.dqc
     public final void a(int i, long j, long j2) {
-        dsg.b(this.a, ecb.SENT, i, j, j2);
+        defpackage.dsg.b(this.a, defpackage.ecb.SENT, i, j, j2);
     }
 
-    @Override // defpackage.dqc
     public final void a(int i, long j) {
-        dsg.b(this.a, ecb.RECV, i, j, -1);
+        defpackage.dsg.b(this.a, defpackage.ecb.RECV, i, j, -1);
     }
 }

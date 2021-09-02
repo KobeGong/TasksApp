@@ -1,26 +1,23 @@
 package defpackage;
 
-import android.accounts.Account;
-import android.content.Context;
-
-/* renamed from: aiz  reason: default package */
+/* renamed from: aiz reason: default package */
 /* compiled from: PG */
 public final class aiz {
-    public final Context a;
+    public final android.content.Context a;
 
-    public aiz(Context context) {
+    public aiz(android.content.Context context) {
         this.a = context.getApplicationContext();
     }
 
-    public static String a(Context context, Account account, String str) {
-        String str2;
+    public static java.lang.String a(android.content.Context context, android.accounts.Account account, java.lang.String str) {
+        java.lang.String str2;
         if (!str.startsWith("oauth2:")) {
-            String valueOf = String.valueOf("oauth2:");
-            String valueOf2 = String.valueOf(str);
-            str2 = valueOf2.length() != 0 ? valueOf.concat(valueOf2) : new String(valueOf);
+            java.lang.String valueOf = java.lang.String.valueOf("oauth2:");
+            java.lang.String valueOf2 = java.lang.String.valueOf(str);
+            str2 = valueOf2.length() != 0 ? valueOf.concat(valueOf2) : new java.lang.String(valueOf);
         } else {
             str2 = str;
         }
-        return avb.a(context.getApplicationContext(), account, str2);
+        return defpackage.avb.a(context.getApplicationContext(), account, str2);
     }
 }

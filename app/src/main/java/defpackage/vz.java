@@ -1,34 +1,27 @@
 package defpackage;
 
-import android.graphics.Matrix;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewParent;
-
-/* renamed from: vz  reason: default package */
+/* renamed from: vz reason: default package */
 /* compiled from: PG */
 public final class vz {
-    private static final ThreadLocal a = new ThreadLocal();
-    private static final ThreadLocal b = new ThreadLocal();
+    private static final java.lang.ThreadLocal a = new java.lang.ThreadLocal();
+    private static final java.lang.ThreadLocal b = new java.lang.ThreadLocal();
 
-    public static void a(ViewGroup viewGroup, View view, Rect rect) {
-        Matrix matrix;
+    public static void a(android.view.ViewGroup viewGroup, android.view.View view, android.graphics.Rect rect) {
+        android.graphics.Matrix matrix;
         rect.set(0, 0, view.getWidth(), view.getHeight());
-        Matrix matrix2 = (Matrix) a.get();
+        android.graphics.Matrix matrix2 = (android.graphics.Matrix) a.get();
         if (matrix2 == null) {
-            Matrix matrix3 = new Matrix();
+            android.graphics.Matrix matrix3 = new android.graphics.Matrix();
             a.set(matrix3);
             matrix = matrix3;
         } else {
             matrix2.reset();
             matrix = matrix2;
         }
-        a(viewGroup, view, matrix);
-        RectF rectF = (RectF) b.get();
+        a((android.view.ViewParent) viewGroup, view, matrix);
+        android.graphics.RectF rectF = (android.graphics.RectF) b.get();
         if (rectF == null) {
-            rectF = new RectF();
+            rectF = new android.graphics.RectF();
             b.set(rectF);
         }
         rectF.set(rect);
@@ -36,10 +29,10 @@ public final class vz {
         rect.set((int) (rectF.left + 0.5f), (int) (rectF.top + 0.5f), (int) (rectF.right + 0.5f), (int) (rectF.bottom + 0.5f));
     }
 
-    private static void a(ViewParent viewParent, View view, Matrix matrix) {
-        ViewParent parent = view.getParent();
-        if ((parent instanceof View) && parent != viewParent) {
-            View view2 = (View) parent;
+    private static void a(android.view.ViewParent viewParent, android.view.View view, android.graphics.Matrix matrix) {
+        android.view.ViewParent parent = view.getParent();
+        if ((parent instanceof android.view.View) && parent != viewParent) {
+            android.view.View view2 = (android.view.View) parent;
             a(viewParent, view2, matrix);
             matrix.preTranslate((float) (-view2.getScrollX()), (float) (-view2.getScrollY()));
         }

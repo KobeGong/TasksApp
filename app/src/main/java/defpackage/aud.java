@@ -1,18 +1,15 @@
 package defpackage;
 
-import android.view.View;
+/* renamed from: aud reason: default package */
+final /* synthetic */ class aud implements android.view.View.OnClickListener {
+    private final defpackage.atx a;
 
-/* access modifiers changed from: package-private */
-/* renamed from: aud  reason: default package */
-public final /* synthetic */ class aud implements View.OnClickListener {
-    private final atx a;
-
-    aud(atx atx) {
+    aud(defpackage.atx atx) {
         this.a = atx;
     }
 
-    public final void onClick(View view) {
-        atx atx = this.a;
+    public final void onClick(android.view.View view) {
+        defpackage.atx atx = this.a;
         if (atx.v != null) {
             atx.v.a(atx.d(), -1, true);
         }

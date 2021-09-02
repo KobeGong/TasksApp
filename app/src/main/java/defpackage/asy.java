@@ -1,10 +1,10 @@
 package defpackage;
 
-/* renamed from: asy  reason: default package */
-final /* synthetic */ class asy implements Runnable {
-    private final asi a;
+/* renamed from: asy reason: default package */
+final /* synthetic */ class asy implements java.lang.Runnable {
+    private final EditTaskFragment a;
 
-    asy(asi asi) {
+    asy(EditTaskFragment asi) {
         this.a = asi;
     }
 

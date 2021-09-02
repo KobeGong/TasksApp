@@ -1,26 +1,22 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: dpm  reason: default package */
+/* renamed from: dpm reason: default package */
 /* compiled from: PG */
-public abstract class dpm extends dnd {
+abstract class dpm extends defpackage.dnd {
     dpm() {
     }
 
     /* access modifiers changed from: protected */
-    public abstract dnd b();
+    public abstract defpackage.dnd b();
 
-    @Override // defpackage.dnd
     public void a(int i) {
         b().a(i);
     }
 
-    @Override // defpackage.dnd
-    public void a(String str, Throwable th) {
+    public void a(java.lang.String str, java.lang.Throwable th) {
         b().a(str, th);
     }
 
-    @Override // defpackage.dnd
     public void a() {
         b().a();
     }

@@ -1,18 +1,15 @@
 package defpackage;
 
-import com.google.android.gms.common.api.Status;
-
-/* renamed from: baa  reason: default package */
+/* renamed from: baa reason: default package */
 /* compiled from: PG */
-final class baa implements ays {
-    private /* synthetic */ bbn a;
+final class baa implements defpackage.ays {
+    private /* synthetic */ defpackage.bbn a;
 
-    baa(bbn bbn) {
+    baa(defpackage.bbn bbn) {
         this.a = bbn;
     }
 
-    @Override // defpackage.ays
-    public final void a(axq axq) {
-        this.a.a((ayw) new Status(8));
+    public final void a(defpackage.axq axq) {
+        this.a.a((defpackage.ayw) new com.google.android.gms.common.api.Status(8));
     }
 }

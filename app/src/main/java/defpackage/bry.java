@@ -1,52 +1,46 @@
 package defpackage;
 
-import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
-import android.os.Looper;
-import android.util.Log;
-import java.io.IOException;
-import java.security.KeyPair;
-
-/* renamed from: bry  reason: default package */
+/* renamed from: bry reason: default package */
 /* compiled from: PG */
-public final class bry extends bru {
-    private final Context a;
+public final class bry extends defpackage.bru {
+    private final android.content.Context a;
 
-    public bry(Context context) {
+    public bry(android.content.Context context) {
         this.a = context;
     }
 
-    @Override // defpackage.bru
-    public final String a(String str, String str2) {
+    public final java.lang.String a(java.lang.String str, java.lang.String str2) {
         boolean z;
-        String a2;
+        java.lang.String a2;
+        java.lang.String str3;
         boolean z2 = false;
         boolean z3 = true;
-        bhu c = bhu.c(this.a);
-        if (Looper.getMainLooper() == Looper.myLooper()) {
-            throw new IOException("MAIN_THREAD");
+        defpackage.bhu c = defpackage.bhu.c(this.a);
+        if (android.os.Looper.getMainLooper() == android.os.Looper.myLooper()) {
+            throw new java.io.IOException("MAIN_THREAD");
         }
-        String a3 = bhu.a.a("appVersion");
-        if (a3 == null || !a3.equals(bhu.f)) {
+        java.lang.String a3 = defpackage.bhu.a.a("appVersion");
+        if (a3 == null || !a3.equals(defpackage.bhu.f)) {
             z = true;
         } else {
-            String a4 = bhu.a.a("lastToken");
+            java.lang.String a4 = defpackage.bhu.a.a("lastToken");
             if (a4 == null) {
                 z = true;
-            } else if ((System.currentTimeMillis() / 1000) - Long.valueOf(Long.parseLong(a4)).longValue() > 604800) {
-                z = true;
             } else {
-                z = false;
+                if ((java.lang.System.currentTimeMillis() / 1000) - java.lang.Long.valueOf(java.lang.Long.parseLong(a4)).longValue() > 604800) {
+                    z = true;
+                } else {
+                    z = false;
+                }
             }
         }
         if (z) {
             a2 = null;
         } else {
-            a2 = bhu.a.a(c.d, str, str2);
+            a2 = defpackage.bhu.a.a(c.d, str, str2);
         }
-        if (a2 == null) {
-            Bundle bundle = new Bundle();
+        if (str3 == null) {
+            android.os.Bundle bundle = new android.os.Bundle();
             if (bundle.getString("ttl") != null) {
                 z3 = false;
             }
@@ -57,46 +51,49 @@ public final class bry extends bru {
                 bundle.putString("scope", str2);
             }
             bundle.putString("sender", str);
-            String str3 = "".equals(c.d) ? str : c.d;
+            java.lang.String str4 = "".equals(c.d) ? str : c.d;
             if (!bundle.containsKey("legacy.register")) {
                 bundle.putString("subscription", str);
-                bundle.putString("subtype", str3);
+                bundle.putString("subtype", str4);
                 bundle.putString("X-subscription", str);
-                bundle.putString("X-subtype", str3);
+                bundle.putString("X-subtype", str4);
             }
-            bhw bhw = bhu.b;
+            defpackage.bhw bhw = defpackage.bhu.b;
             if (c.c == null) {
-                c.c = bhu.a.b(c.d);
+                c.c = defpackage.bhu.a.b(c.d);
             }
             if (c.c == null) {
-                c.e = System.currentTimeMillis();
-                c.c = bhu.a.a(c.d, c.e);
+                c.e = java.lang.System.currentTimeMillis();
+                c.c = defpackage.bhu.a.a(c.d, c.e);
             }
-            KeyPair keyPair = c.c;
-            Intent a5 = bhw.a(bundle, keyPair);
-            if (a5 != null && a5.hasExtra("google.messenger") && (a5 = bhw.a(bundle, keyPair)) != null && a5.hasExtra("google.messenger")) {
-                a5 = null;
+            java.security.KeyPair keyPair = c.c;
+            android.content.Intent a5 = bhw.a(bundle, keyPair);
+            if (a5 != null && a5.hasExtra("google.messenger")) {
+                a5 = bhw.a(bundle, keyPair);
+                if (a5 != null && a5.hasExtra("google.messenger")) {
+                    a5 = null;
+                }
             }
             if (a5 == null) {
-                throw new IOException("SERVICE_NOT_AVAILABLE");
+                throw new java.io.IOException("SERVICE_NOT_AVAILABLE");
             }
-            a2 = a5.getStringExtra("registration_id");
-            if (a2 == null) {
-                a2 = a5.getStringExtra("unregistered");
+            str3 = a5.getStringExtra("registration_id");
+            if (str3 == null) {
+                str3 = a5.getStringExtra("unregistered");
             }
             a5.getLongExtra("Retry-After", 0);
-            if (a2 == null) {
-                String stringExtra = a5.getStringExtra("error");
+            if (str3 == null) {
+                java.lang.String stringExtra = a5.getStringExtra("error");
                 if (stringExtra != null) {
-                    throw new IOException(stringExtra);
+                    throw new java.io.IOException(stringExtra);
                 }
-                String valueOf = String.valueOf(a5.getExtras());
-                Log.w("InstanceID/Rpc", new StringBuilder(String.valueOf(valueOf).length() + 29).append("Unexpected response from GCM ").append(valueOf).toString(), new Throwable());
-                throw new IOException("SERVICE_NOT_AVAILABLE");
-            } else if (a2 != null && z2) {
-                bhu.a.a(c.d, str, str2, a2, bhu.f);
+                java.lang.String valueOf = java.lang.String.valueOf(a5.getExtras());
+                android.util.Log.w("InstanceID/Rpc", new java.lang.StringBuilder(java.lang.String.valueOf(valueOf).length() + 29).append("Unexpected response from GCM ").append(valueOf).toString(), new java.lang.Throwable());
+                throw new java.io.IOException("SERVICE_NOT_AVAILABLE");
+            } else if (str3 != null && z2) {
+                defpackage.bhu.a.a(c.d, str, str2, str3, defpackage.bhu.f);
             }
         }
-        return a2;
+        return str3;
     }
 }

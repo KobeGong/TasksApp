@@ -1,56 +1,45 @@
 package defpackage;
 
-import android.content.res.ColorStateList;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.GradientDrawable;
-import android.graphics.drawable.InsetDrawable;
-import android.os.Build;
-import android.support.design.button.MaterialButton;
-
-/* renamed from: el  reason: default package */
+/* renamed from: el reason: default package */
 /* compiled from: PG */
 public final class el {
-    public static final boolean a = (Build.VERSION.SDK_INT >= 21);
-    public final MaterialButton b;
+    public static final boolean a = (android.os.Build.VERSION.SDK_INT >= 21);
+    public final android.support.design.button.MaterialButton b;
     public int c;
     public int d;
     public int e;
     public int f;
     public int g;
     public int h;
-    public PorterDuff.Mode i;
-    public ColorStateList j;
-    public ColorStateList k;
-    public ColorStateList l;
-    public final Paint m = new Paint(1);
-    public final Rect n = new Rect();
-    public final RectF o = new RectF();
-    public GradientDrawable p;
-    public Drawable q;
-    public GradientDrawable r;
-    public Drawable s;
-    public GradientDrawable t;
-    public GradientDrawable u;
-    public GradientDrawable v;
+    public android.graphics.PorterDuff.Mode i;
+    public android.content.res.ColorStateList j;
+    public android.content.res.ColorStateList k;
+    public android.content.res.ColorStateList l;
+    public final android.graphics.Paint m = new android.graphics.Paint(1);
+    public final android.graphics.Rect n = new android.graphics.Rect();
+    public final android.graphics.RectF o = new android.graphics.RectF();
+    public android.graphics.drawable.GradientDrawable p;
+    public android.graphics.drawable.Drawable q;
+    public android.graphics.drawable.GradientDrawable r;
+    public android.graphics.drawable.Drawable s;
+    public android.graphics.drawable.GradientDrawable t;
+    public android.graphics.drawable.GradientDrawable u;
+    public android.graphics.drawable.GradientDrawable v;
     public boolean w = false;
 
-    public el(MaterialButton materialButton) {
+    public el(android.support.design.button.MaterialButton materialButton) {
         this.b = materialButton;
     }
 
-    public final InsetDrawable a(Drawable drawable) {
-        return new InsetDrawable(drawable, this.c, this.e, this.d, this.f);
+    public final android.graphics.drawable.InsetDrawable a(android.graphics.drawable.Drawable drawable) {
+        return new android.graphics.drawable.InsetDrawable(drawable, this.c, this.e, this.d, this.f);
     }
 
     public final void a() {
         if (this.t != null) {
-            jd.a((Drawable) this.t, this.j);
+            defpackage.jd.a((android.graphics.drawable.Drawable) this.t, this.j);
             if (this.i != null) {
-                jd.a((Drawable) this.t, this.i);
+                defpackage.jd.a((android.graphics.drawable.Drawable) this.t, this.i);
             }
         }
     }

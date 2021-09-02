@@ -1,8 +1,8 @@
 package defpackage;
 
-/* renamed from: cwr  reason: default package */
+/* renamed from: cwr reason: default package */
 /* compiled from: PG */
-public enum cwr implements din {
+public enum cwr implements defpackage.din {
     UNASSIGNED_USER_ACTION_ID(0),
     AUTOMATED(1),
     USER(2),
@@ -43,15 +43,14 @@ public enum cwr implements din {
     DROP(37),
     FORCE_TOUCH(38);
     
-    public static final dio a = new cws();
+    public static final defpackage.dio a = null;
     public final int b;
 
-    @Override // defpackage.din
     public final int a() {
         return this.b;
     }
 
-    public static cwr a(int i) {
+    public static defpackage.cwr a(int i) {
         switch (i) {
             case 0:
                 return UNASSIGNED_USER_ACTION_ID;
@@ -138,5 +137,9 @@ public enum cwr implements din {
 
     private cwr(int i) {
         this.b = i;
+    }
+
+    static {
+        a = new defpackage.cws();
     }
 }

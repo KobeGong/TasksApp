@@ -1,57 +1,58 @@
 package defpackage;
 
-/* renamed from: daw  reason: default package */
+/* renamed from: daw reason: default package */
 /* compiled from: PG */
-public final class daw extends dih implements djq {
-    public static final daw h = new daw();
-    private static volatile djx i;
+public final class daw extends defpackage.dih implements defpackage.djq {
+    public static final defpackage.daw h = new defpackage.daw();
+    private static volatile defpackage.djx i;
     public int a;
-    public String b = "";
-    public String c = "";
-    public String d = "";
+    public java.lang.String b = "";
+    public java.lang.String c = "";
+    public java.lang.String d = "";
     public int e;
-    public String f = "";
-    public djj g = djj.b;
+    public java.lang.String f = "";
+    public defpackage.djj g = defpackage.djj.b;
 
     private daw() {
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.dih
-    public final Object a(int i2) {
-        djx djx;
+    public final java.lang.Object a(int i2) {
+        defpackage.djx djx;
         switch (i2 - 1) {
             case 0:
-                return (byte) 1;
+                return java.lang.Byte.valueOf(1);
             case 1:
                 return null;
             case 2:
-                return new dkb(h, "\u0000\u0006\u0000\u0001\u0001\b\u0006\u0001\u0000\u0000\u0001Ȉ\u0004Ȉ\u0005Ȉ\u0006\u0004\u0007Ȉ\b2", new Object[]{"a", "b", "c", "d", "e", "f", "g", dax.a});
+                java.lang.Object[] objArr = {"a", "b", "c", "d", "e", "f", "g", defpackage.dax.a};
+                return new defpackage.dkb(h, "\u0000\u0006\u0000\u0001\u0001\b\u0006\u0001\u0000\u0000\u0001Ȉ\u0004Ȉ\u0005Ȉ\u0006\u0004\u0007Ȉ\b2", objArr);
             case 3:
-                return new daw();
+                return new defpackage.daw();
             case 4:
-                return new dii((int[][][][][]) null);
+                return new defpackage.dii((int[][][][][]) null);
             case 5:
                 return h;
             case 6:
-                djx djx2 = i;
+                defpackage.djx djx2 = i;
                 if (djx2 != null) {
                     return djx2;
                 }
-                synchronized (daw.class) {
+                synchronized (defpackage.daw.class) {
                     djx = i;
                     if (djx == null) {
-                        djx = new dgr(h);
+                        djx = new defpackage.dgr(h);
                         i = djx;
                     }
                 }
                 return djx;
             default:
-                throw new UnsupportedOperationException();
+                throw new java.lang.UnsupportedOperationException();
         }
     }
 
     static {
-        dih.t.put(daw.class, h);
+        defpackage.daw daw = h;
+        defpackage.dih.t.put(defpackage.daw.class, daw);
     }
 }

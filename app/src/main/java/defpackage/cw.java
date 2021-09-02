@@ -1,12 +1,10 @@
 package defpackage;
 
-import com.google.android.apps.tasks.ui.LockableAppBarLayoutBehavior;
-
-@Deprecated
-/* renamed from: cw  reason: default package */
+@java.lang.Deprecated
+/* renamed from: cw reason: default package */
 /* compiled from: PG */
 public final class cw {
-    public final /* synthetic */ LockableAppBarLayoutBehavior a;
+    public final /* synthetic */ com.google.android.apps.tasks.ui.LockableAppBarLayoutBehavior a;
 
     public cw() {
     }
@@ -15,9 +13,8 @@ public final class cw {
         this();
     }
 
-    /* JADX INFO: this call moved to the top of the method (can break code semantics) */
-    public cw(LockableAppBarLayoutBehavior lockableAppBarLayoutBehavior) {
-        this((byte) 0);
+    public cw(com.google.android.apps.tasks.ui.LockableAppBarLayoutBehavior lockableAppBarLayoutBehavior) {
         this.a = lockableAppBarLayoutBehavior;
+        this(0);
     }
 }

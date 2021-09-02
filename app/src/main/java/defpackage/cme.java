@@ -1,45 +1,42 @@
 package defpackage;
 
-/* renamed from: cme  reason: default package */
+/* renamed from: cme reason: default package */
 /* compiled from: PG */
-public final class cme extends cmh {
-    public static final cme a = new cme();
+public final class cme extends defpackage.cmh {
+    public static final defpackage.cme a = new defpackage.cme();
 
     private cme() {
-        super(edu.class);
+        super(defpackage.edu.class);
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.cmh
-    public final /* synthetic */ String a(dmf dmf) {
-        return ((edu) dmf).b.b;
+    /* access modifiers changed from: 0000 */
+    public final /* synthetic */ java.lang.String a(defpackage.dmf dmf) {
+        return ((defpackage.edu) dmf).b.b;
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.cmh
-    public final /* synthetic */ dmf a(dmf dmf, dmf dmf2) {
-        edu edu = (edu) dmf;
-        edu edu2 = (edu) dmf2;
+    /* access modifiers changed from: 0000 */
+    public final /* synthetic */ defpackage.dmf a(defpackage.dmf dmf, defpackage.dmf dmf2) {
+        defpackage.edu edu = (defpackage.edu) dmf;
+        defpackage.edu edu2 = (defpackage.edu) dmf2;
         if (edu == null || edu2 == null) {
             return edu;
         }
-        edu edu3 = new edu();
+        defpackage.edu edu3 = new defpackage.edu();
         edu3.b = edu.b;
-        edu3.a = cky.a(edu.a, edu2.a);
-        if (cky.a(edu3)) {
+        edu3.a = defpackage.cky.a(edu.a, edu2.a);
+        if (defpackage.cky.a(edu3)) {
             return null;
         }
         return edu3;
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.cmh
-    public final /* synthetic */ dmf a(String str, Object obj) {
-        int intValue = ((Long) obj).intValue();
-        edu edu = new edu();
-        edu.a = Integer.valueOf(intValue);
-        edu.b = cky.a(str);
-        if (cky.a(edu)) {
+    /* access modifiers changed from: 0000 */
+    public final /* synthetic */ defpackage.dmf a(java.lang.String str, java.lang.Object obj) {
+        int intValue = ((java.lang.Long) obj).intValue();
+        defpackage.edu edu = new defpackage.edu();
+        edu.a = java.lang.Integer.valueOf(intValue);
+        edu.b = defpackage.cky.a(str);
+        if (defpackage.cky.a(edu)) {
             return null;
         }
         return edu;

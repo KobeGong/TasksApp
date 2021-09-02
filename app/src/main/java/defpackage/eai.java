@@ -1,38 +1,38 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: eai  reason: default package */
+/* renamed from: eai reason: default package */
 /* compiled from: PG */
-public final class eai extends eaj {
+final class eai extends defpackage.eaj {
     private final long a = 0;
     private final int b = 0;
 
     eai() {
     }
 
-    @Override // defpackage.eaj
     public final long a() {
         return 0;
     }
 
-    @Override // defpackage.eaj
     public final int b() {
         return 0;
     }
 
-    public final String toString() {
-        return new StringBuilder(58).append("Timestamp{seconds=0").append(", nanos=0").append("}").toString();
+    public final java.lang.String toString() {
+        return "Timestamp{seconds=0" + ", nanos=0" + "}";
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof eaj)) {
+        if (!(obj instanceof defpackage.eaj)) {
             return false;
         }
-        eaj eaj = (eaj) obj;
-        return 0 == eaj.a() && eaj.b() == 0;
+        defpackage.eaj eaj = (defpackage.eaj) obj;
+        if (0 == eaj.a() && eaj.b() == 0) {
+            return true;
+        }
+        return false;
     }
 
     public final int hashCode() {

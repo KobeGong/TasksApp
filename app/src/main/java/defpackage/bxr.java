@@ -1,29 +1,25 @@
 package defpackage;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
-/* renamed from: bxr  reason: default package */
+/* renamed from: bxr reason: default package */
 /* compiled from: PG */
-public final class bxr implements ecz {
-    private final bxm a;
+public final class bxr implements defpackage.ecz {
+    private final defpackage.bxm a;
 
-    public bxr(bxm bxm) {
+    public bxr(defpackage.bxm bxm) {
         this.a = bxm;
     }
 
-    public static ExecutorService a(bxm bxm) {
-        ExecutorService newFixedThreadPool;
+    public static java.util.concurrent.ExecutorService a(defpackage.bxm bxm) {
+        java.util.concurrent.ExecutorService newFixedThreadPool;
         if (bxm.a.g() != null) {
             newFixedThreadPool = bxm.a.g();
         } else {
-            newFixedThreadPool = Executors.newFixedThreadPool(8);
+            newFixedThreadPool = java.util.concurrent.Executors.newFixedThreadPool(8);
         }
-        return (ExecutorService) dgv.a(newFixedThreadPool, "Cannot return null from a non-@Nullable @Provides method");
+        return (java.util.concurrent.ExecutorService) defpackage.dgv.a((java.lang.Object) newFixedThreadPool, "Cannot return null from a non-@Nullable @Provides method");
     }
 
-    @Override // defpackage.ecz
-    public final /* synthetic */ Object a() {
+    public final /* synthetic */ java.lang.Object a() {
         return a(this.a);
     }
 }

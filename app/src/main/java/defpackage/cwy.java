@@ -1,44 +1,42 @@
 package defpackage;
 
-import java.math.RoundingMode;
-
-/* renamed from: cwy  reason: default package */
+/* renamed from: cwy reason: default package */
 /* compiled from: PG */
 public final /* synthetic */ class cwy {
-    public static final /* synthetic */ int[] a = new int[RoundingMode.values().length];
+    public static final /* synthetic */ int[] a = new int[java.math.RoundingMode.values().length];
 
     static {
         try {
-            a[RoundingMode.UNNECESSARY.ordinal()] = 1;
-        } catch (NoSuchFieldError e) {
+            a[java.math.RoundingMode.UNNECESSARY.ordinal()] = 1;
+        } catch (java.lang.NoSuchFieldError e) {
         }
         try {
-            a[RoundingMode.DOWN.ordinal()] = 2;
-        } catch (NoSuchFieldError e2) {
+            a[java.math.RoundingMode.DOWN.ordinal()] = 2;
+        } catch (java.lang.NoSuchFieldError e2) {
         }
         try {
-            a[RoundingMode.FLOOR.ordinal()] = 3;
-        } catch (NoSuchFieldError e3) {
+            a[java.math.RoundingMode.FLOOR.ordinal()] = 3;
+        } catch (java.lang.NoSuchFieldError e3) {
         }
         try {
-            a[RoundingMode.UP.ordinal()] = 4;
-        } catch (NoSuchFieldError e4) {
+            a[java.math.RoundingMode.UP.ordinal()] = 4;
+        } catch (java.lang.NoSuchFieldError e4) {
         }
         try {
-            a[RoundingMode.CEILING.ordinal()] = 5;
-        } catch (NoSuchFieldError e5) {
+            a[java.math.RoundingMode.CEILING.ordinal()] = 5;
+        } catch (java.lang.NoSuchFieldError e5) {
         }
         try {
-            a[RoundingMode.HALF_DOWN.ordinal()] = 6;
-        } catch (NoSuchFieldError e6) {
+            a[java.math.RoundingMode.HALF_DOWN.ordinal()] = 6;
+        } catch (java.lang.NoSuchFieldError e6) {
         }
         try {
-            a[RoundingMode.HALF_UP.ordinal()] = 7;
-        } catch (NoSuchFieldError e7) {
+            a[java.math.RoundingMode.HALF_UP.ordinal()] = 7;
+        } catch (java.lang.NoSuchFieldError e7) {
         }
         try {
-            a[RoundingMode.HALF_EVEN.ordinal()] = 8;
-        } catch (NoSuchFieldError e8) {
+            a[java.math.RoundingMode.HALF_EVEN.ordinal()] = 8;
+        } catch (java.lang.NoSuchFieldError e8) {
         }
     }
 }

@@ -1,19 +1,17 @@
 package defpackage;
 
-import android.app.Application;
-
-/* renamed from: cha  reason: default package */
+/* renamed from: cha reason: default package */
 /* compiled from: PG */
 public class cha {
-    public static volatile cha a;
-    public final chb b = new chb();
+    public static volatile defpackage.cha a;
+    public final defpackage.chb b = new defpackage.chb();
 
-    public static cha a(Application application) {
+    public static defpackage.cha a(android.app.Application application) {
         if (a == null) {
-            synchronized (cha.class) {
+            synchronized (defpackage.cha.class) {
                 if (a == null) {
-                    cha cha = new cha();
-                    chb chb = cha.b;
+                    defpackage.cha cha = new defpackage.cha();
+                    defpackage.chb chb = cha.b;
                     application.registerActivityLifecycleCallbacks(chb.a);
                     application.registerComponentCallbacks(chb.a);
                     a = cha;
@@ -26,15 +24,15 @@ public class cha {
     private cha() {
     }
 
-    public final void a(cgp cgp) {
-        chb chb = this.b;
-        cky.a(cgp);
+    public final void a(defpackage.cgp cgp) {
+        defpackage.chb chb = this.b;
+        defpackage.cky.a((java.lang.Object) cgp);
         chb.a.a.add(cgp);
     }
 
-    public final void b(cgp cgp) {
-        chb chb = this.b;
-        cky.a(cgp);
+    public final void b(defpackage.cgp cgp) {
+        defpackage.chb chb = this.b;
+        defpackage.cky.a((java.lang.Object) cgp);
         chb.a.a.remove(cgp);
     }
 }

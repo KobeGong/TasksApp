@@ -1,26 +1,20 @@
 package defpackage;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-/* renamed from: cy  reason: default package */
+/* renamed from: cy reason: default package */
 /* compiled from: PG */
-final class cy implements Parcelable.ClassLoaderCreator {
+final class cy implements android.os.Parcelable.ClassLoaderCreator {
     cy() {
     }
 
-    @Override // android.os.Parcelable.ClassLoaderCreator
-    public final /* synthetic */ Object createFromParcel(Parcel parcel, ClassLoader classLoader) {
-        return new cx(parcel, classLoader);
+    public final /* synthetic */ java.lang.Object createFromParcel(android.os.Parcel parcel, java.lang.ClassLoader classLoader) {
+        return new defpackage.cx(parcel, classLoader);
     }
 
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object[] newArray(int i) {
-        return new cx[i];
+    public final /* synthetic */ java.lang.Object[] newArray(int i) {
+        return new defpackage.cx[i];
     }
 
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object createFromParcel(Parcel parcel) {
-        return new cx(parcel, null);
+    public final /* synthetic */ java.lang.Object createFromParcel(android.os.Parcel parcel) {
+        return new defpackage.cx(parcel, null);
     }
 }

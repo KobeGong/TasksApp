@@ -1,17 +1,17 @@
 package defpackage;
 
-/* renamed from: auq  reason: default package */
-final /* synthetic */ class auq implements Runnable {
-    private final auj a;
+/* renamed from: auq reason: default package */
+final /* synthetic */ class auq implements java.lang.Runnable {
+    private final TasksFragment a;
 
-    auq(auj auj) {
+    auq(TasksFragment auj) {
         this.a = auj;
     }
 
     public final void run() {
-        auj auj = this.a;
+        TasksFragment auj = this.a;
         if (auj.O()) {
-            auj.J.post(new aur(auj));
+            auj.J.post(new defpackage.aur(auj));
         }
     }
 }

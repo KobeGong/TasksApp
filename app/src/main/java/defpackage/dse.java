@@ -1,18 +1,16 @@
 package defpackage;
 
-/* renamed from: dse  reason: default package */
+/* renamed from: dse reason: default package */
 /* compiled from: PG */
-final class dse extends dof {
-    public final /* synthetic */ dsb b;
+final class dse extends defpackage.dof {
+    public final /* synthetic */ defpackage.dsb b;
 
-    /* JADX INFO: super call moved to the top of the method (can break code semantics) */
-    dse(dnd dnd, dsb dsb) {
-        super(dnd);
+    dse(defpackage.dnd dnd, defpackage.dsb dsb) {
         this.b = dsb;
+        super(dnd);
     }
 
-    @Override // defpackage.dof, defpackage.dnd
-    public final void a(dne dne, dor dor) {
-        this.a.a(new dsf(this, dne), dor);
+    public final void a(defpackage.dne dne, defpackage.dor dor) {
+        this.a.a((defpackage.dne) new defpackage.dsf(this, dne), dor);
     }
 }

@@ -1,23 +1,21 @@
 package defpackage;
 
-import android.content.res.Resources;
 import com.google.android.apps.tasks.R;
-import com.google.android.apps.tasks.ui.TaskListsActivity;
 
-/* renamed from: apo  reason: default package */
-public final /* synthetic */ class apo implements Runnable {
-    private final TaskListsActivity a;
+/* renamed from: apo reason: default package */
+public final /* synthetic */ class apo implements java.lang.Runnable {
+    private final com.google.android.apps.tasks.ui.TaskListsActivity a;
 
-    public apo(TaskListsActivity taskListsActivity) {
+    public apo(com.google.android.apps.tasks.ui.TaskListsActivity taskListsActivity) {
         this.a = taskListsActivity;
     }
 
     public final void run() {
-        TaskListsActivity taskListsActivity = this.a;
+        com.google.android.apps.tasks.ui.TaskListsActivity taskListsActivity = this.a;
         try {
-            taskListsActivity.runOnUiThread(new apl(taskListsActivity, jd.a(taskListsActivity, (int) R.font.google_sans)));
-        } catch (Resources.NotFoundException e) {
-            azb.b("Could not install task-list-title font. Using default.", new Object[0]);
+            taskListsActivity.runOnUiThread(new defpackage.apl(taskListsActivity, defpackage.jd.a(taskListsActivity, com.google.android.apps.tasks.R.font.google_sans)));
+        } catch (android.content.res.Resources.NotFoundException e) {
+            defpackage.azb.b("Could not install task-list-title font. Using default.", new java.lang.Object[0]);
         }
     }
 }

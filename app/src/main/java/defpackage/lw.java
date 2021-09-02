@@ -1,11 +1,11 @@
 package defpackage;
 
-/* renamed from: lw  reason: default package */
+/* renamed from: lw reason: default package */
 /* compiled from: PG */
-final class lw implements Runnable {
-    private final /* synthetic */ lv a;
+final class lw implements java.lang.Runnable {
+    private final /* synthetic */ defpackage.lv a;
 
-    lw(lv lvVar) {
+    lw(defpackage.lv lvVar) {
         this.a = lvVar;
     }
 

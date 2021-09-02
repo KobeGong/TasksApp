@@ -1,36 +1,34 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: ajj  reason: default package */
+/* renamed from: ajj reason: default package */
 /* compiled from: PG */
-public final class ajj extends ajn {
-    private final String a;
+final class ajj extends defpackage.ajn {
+    private final java.lang.String a;
 
-    ajj(String str) {
+    ajj(java.lang.String str) {
         if (str == null) {
-            throw new NullPointerException("Null taskListId");
+            throw new java.lang.NullPointerException("Null taskListId");
         }
         this.a = str;
     }
 
-    @Override // defpackage.ajn
-    public final String a() {
+    public final java.lang.String a() {
         return this.a;
     }
 
-    public final String toString() {
-        String str = this.a;
-        return new StringBuilder(String.valueOf(str).length() + 31).append("DeleteTaskListData{taskListId=").append(str).append("}").toString();
+    public final java.lang.String toString() {
+        java.lang.String str = this.a;
+        return new java.lang.StringBuilder(java.lang.String.valueOf(str).length() + 31).append("DeleteTaskListData{taskListId=").append(str).append("}").toString();
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         if (obj == this) {
             return true;
         }
-        if (obj instanceof ajn) {
-            return this.a.equals(((ajn) obj).a());
+        if (!(obj instanceof defpackage.ajn)) {
+            return false;
         }
-        return false;
+        return this.a.equals(((defpackage.ajn) obj).a());
     }
 
     public final int hashCode() {

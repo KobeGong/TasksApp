@@ -1,16 +1,15 @@
 package defpackage;
 
-/* renamed from: bvz  reason: default package */
+/* renamed from: bvz reason: default package */
 /* compiled from: PG */
-public final class bvz implements ecz {
-    private final ecz a;
+public final class bvz implements defpackage.ecz {
+    private final defpackage.ecz a;
 
-    public bvz(ecz ecz) {
+    public bvz(defpackage.ecz ecz) {
         this.a = ecz;
     }
 
-    @Override // defpackage.ecz
-    public final /* synthetic */ Object a() {
-        return new bvy((cda) this.a.a());
+    public final /* synthetic */ java.lang.Object a() {
+        return new defpackage.bvy((defpackage.cda) this.a.a());
     }
 }

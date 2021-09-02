@@ -1,7 +1,7 @@
 package defpackage;
 
-/* renamed from: cpw  reason: default package */
+/* renamed from: cpw reason: default package */
 /* compiled from: PG */
 public interface cpw {
-    void a(cpq cpq);
+    void a(defpackage.cpq cpq);
 }

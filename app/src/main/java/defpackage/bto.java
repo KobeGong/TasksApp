@@ -1,41 +1,42 @@
 package defpackage;
 
-/* renamed from: bto  reason: default package */
+/* renamed from: bto reason: default package */
 /* compiled from: PG */
-public final class bto extends bts {
-    private final btu a;
-    private final btr b;
+public final class bto extends defpackage.bts {
+    private final defpackage.btu a;
+    private final defpackage.btr b;
 
-    public bto(btu btu, btr btr) {
+    public bto(defpackage.btu btu, defpackage.btr btr) {
         this.a = btu;
         this.b = btr;
     }
 
-    @Override // defpackage.bts
-    public final btu a() {
+    public final defpackage.btu a() {
         return this.a;
     }
 
-    @Override // defpackage.bts
-    public final btr b() {
+    public final defpackage.btr b() {
         return this.b;
     }
 
-    public final String toString() {
-        String valueOf = String.valueOf(this.a);
-        String valueOf2 = String.valueOf(this.b);
-        return new StringBuilder(String.valueOf(valueOf).length() + 44 + String.valueOf(valueOf2).length()).append("PreferenceEntry{preferenceKey=").append(valueOf).append(", preference=").append(valueOf2).append("}").toString();
+    public final java.lang.String toString() {
+        java.lang.String valueOf = java.lang.String.valueOf(this.a);
+        java.lang.String valueOf2 = java.lang.String.valueOf(this.b);
+        return new java.lang.StringBuilder(java.lang.String.valueOf(valueOf).length() + 44 + java.lang.String.valueOf(valueOf2).length()).append("PreferenceEntry{preferenceKey=").append(valueOf).append(", preference=").append(valueOf2).append("}").toString();
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof bts)) {
+        if (!(obj instanceof defpackage.bts)) {
             return false;
         }
-        bts bts = (bts) obj;
-        return this.a.equals(bts.a()) && this.b.equals(bts.b());
+        defpackage.bts bts = (defpackage.bts) obj;
+        if (!this.a.equals(bts.a()) || !this.b.equals(bts.b())) {
+            return false;
+        }
+        return true;
     }
 
     public final int hashCode() {

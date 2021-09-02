@@ -1,54 +1,27 @@
 package defpackage;
 
-/* renamed from: cva  reason: default package */
+/* renamed from: cva reason: default package */
 /* compiled from: PG */
 enum cva {
-    BOOLEAN {
-        /* access modifiers changed from: package-private */
-        @Override // defpackage.cva
-        public final int a(Object obj, Object obj2) {
-            return ((Boolean) obj).compareTo((Boolean) obj2);
-        }
-    },
-    STRING {
-        /* access modifiers changed from: package-private */
-        @Override // defpackage.cva
-        public final int a(Object obj, Object obj2) {
-            return ((String) obj).compareTo((String) obj2);
-        }
-    },
-    LONG {
-        /* access modifiers changed from: package-private */
-        @Override // defpackage.cva
-        public final int a(Object obj, Object obj2) {
-            return ((Long) obj).compareTo((Long) obj2);
-        }
-    },
-    DOUBLE {
-        /* access modifiers changed from: package-private */
-        @Override // defpackage.cva
-        public final int a(Object obj, Object obj2) {
-            return ((Double) obj).compareTo((Double) obj2);
-        }
-    };
+    ;
 
-    /* access modifiers changed from: package-private */
-    public abstract int a(Object obj, Object obj2);
+    /* access modifiers changed from: 0000 */
+    public abstract int a(java.lang.Object obj, java.lang.Object obj2);
 
-    static cva a(Object obj) {
-        if (obj instanceof String) {
-            return STRING;
+    static defpackage.cva a(java.lang.Object obj) {
+        if (obj instanceof java.lang.String) {
+            return b;
         }
-        if (obj instanceof Boolean) {
-            return BOOLEAN;
+        if (obj instanceof java.lang.Boolean) {
+            return a;
         }
-        if (obj instanceof Long) {
-            return LONG;
+        if (obj instanceof java.lang.Long) {
+            return c;
         }
-        if (obj instanceof Double) {
-            return DOUBLE;
+        if (obj instanceof java.lang.Double) {
+            return d;
         }
-        String valueOf = String.valueOf(obj.getClass());
-        throw new AssertionError(new StringBuilder(String.valueOf(valueOf).length() + 18).append("invalid tag type: ").append(valueOf).toString());
+        java.lang.String valueOf = java.lang.String.valueOf(obj.getClass());
+        throw new java.lang.AssertionError(new java.lang.StringBuilder(java.lang.String.valueOf(valueOf).length() + 18).append("invalid tag type: ").append(valueOf).toString());
     }
 }

@@ -1,21 +1,17 @@
 package defpackage;
 
-import android.support.v7.widget.RecyclerView;
-
-/* access modifiers changed from: package-private */
-/* renamed from: adj  reason: default package */
+/* renamed from: adj reason: default package */
 /* compiled from: PG */
-public final class adj extends afk {
-    private final /* synthetic */ adh a;
+final class adj extends defpackage.afk {
+    private final /* synthetic */ defpackage.adh a;
 
-    adj(adh adh) {
+    adj(defpackage.adh adh) {
         this.a = adh;
     }
 
-    @Override // defpackage.afk
-    public final void a(RecyclerView recyclerView) {
+    public final void a(android.support.v7.widget.RecyclerView recyclerView) {
         boolean z;
-        adh adh = this.a;
+        defpackage.adh adh = this.a;
         int computeHorizontalScrollOffset = recyclerView.computeHorizontalScrollOffset();
         int computeVerticalScrollOffset = recyclerView.computeVerticalScrollOffset();
         int computeVerticalScrollRange = adh.j.computeVerticalScrollRange();
@@ -32,11 +28,11 @@ public final class adj extends afk {
         if (adh.k || adh.l) {
             if (adh.k) {
                 adh.e = (int) (((((float) computeVerticalScrollOffset) + (((float) i) / 2.0f)) * ((float) i)) / ((float) computeVerticalScrollRange));
-                adh.d = Math.min(i, (i * i) / computeVerticalScrollRange);
+                adh.d = java.lang.Math.min(i, (i * i) / computeVerticalScrollRange);
             }
             if (adh.l) {
                 adh.g = (int) (((((float) computeHorizontalScrollOffset) + (((float) i2) / 2.0f)) * ((float) i2)) / ((float) computeHorizontalScrollRange));
-                adh.f = Math.min(i2, (i2 * i2) / computeHorizontalScrollRange);
+                adh.f = java.lang.Math.min(i2, (i2 * i2) / computeHorizontalScrollRange);
             }
             if (adh.m == 0 || adh.m == 1) {
                 adh.a(1);

@@ -1,38 +1,34 @@
 package defpackage;
 
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.View;
-
-/* renamed from: yc  reason: default package */
+/* renamed from: yc reason: default package */
 /* compiled from: PG */
 public abstract class yc {
-    public Object a;
+    public java.lang.Object a;
     public boolean b;
 
-    public abstract MenuInflater a();
+    public abstract android.view.MenuInflater a();
 
     public abstract void a(int i);
 
-    public abstract void a(View view);
+    public abstract void a(android.view.View view);
 
-    public abstract void a(CharSequence charSequence);
+    public abstract void a(java.lang.CharSequence charSequence);
 
-    public abstract Menu b();
+    public abstract android.view.Menu b();
 
     public abstract void b(int i);
 
-    public abstract void b(CharSequence charSequence);
+    public abstract void b(java.lang.CharSequence charSequence);
 
     public abstract void c();
 
     public abstract void d();
 
-    public abstract CharSequence f();
+    public abstract java.lang.CharSequence f();
 
-    public abstract CharSequence g();
+    public abstract java.lang.CharSequence g();
 
-    public abstract View i();
+    public abstract android.view.View i();
 
     public void a(boolean z) {
         this.b = z;

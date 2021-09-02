@@ -1,39 +1,36 @@
 package defpackage;
 
-import android.app.Application;
-import java.util.concurrent.atomic.AtomicInteger;
-
-/* renamed from: cjn  reason: default package */
+/* renamed from: cjn reason: default package */
 /* compiled from: PG */
 public final class cjn {
-    public static cgk a(Application application, cjw cjw) {
-        cli cli;
-        cli a = new clk().a();
-        Application application2 = (Application) cky.a((Object) application);
-        cjo cjo = new cjo(application2);
-        cjo.c = new cmr();
-        cjo.b = new cgo();
-        cjo.c = new cms(application2);
-        cjo.f = (cjw) cky.a(cjw);
-        cjo.g = (cli) cky.a(a);
-        cky.a(cjo.b);
-        Application application3 = (Application) cky.a((Object) cjo.a);
-        cjw cjw2 = (cjw) cky.a(cjo.f);
-        clt clt = (clt) cky.a(cjo.c);
-        clt clt2 = cjo.d;
-        cjp cjp = new cjp(cjo);
+    public static defpackage.cgk a(android.app.Application application, defpackage.cjw cjw) {
+        defpackage.cli cli;
+        defpackage.cli a = new defpackage.clk().a();
+        android.app.Application application2 = (android.app.Application) defpackage.cky.a((java.lang.Object) application);
+        defpackage.cjo cjo = new defpackage.cjo(application2);
+        cjo.c = new defpackage.cmr();
+        cjo.b = new defpackage.cgo();
+        cjo.c = new defpackage.cms(application2);
+        cjo.f = (defpackage.cjw) defpackage.cky.a((java.lang.Object) cjw);
+        cjo.g = (defpackage.cli) defpackage.cky.a((java.lang.Object) a);
+        defpackage.cky.a((java.lang.Object) cjo.b);
+        android.app.Application application3 = (android.app.Application) defpackage.cky.a((java.lang.Object) cjo.a);
+        defpackage.cjw cjw2 = (defpackage.cjw) defpackage.cky.a((java.lang.Object) cjo.f);
+        defpackage.clt clt = (defpackage.clt) defpackage.cky.a((java.lang.Object) cjo.c);
+        defpackage.clt clt2 = cjo.d;
+        defpackage.cjp cjp = new defpackage.cjp(cjo);
         if (cjo.g == null) {
-            cli = new clk().a();
+            cli = new defpackage.clk().a();
         } else {
             cli = cjo.g;
         }
-        clt clt3 = cjo.e;
-        cjq cjq = new cjq();
-        cji.a();
-        return new cgm(application3, cli, cjw2, clt, cjp, cjq);
+        defpackage.clt clt3 = cjo.e;
+        defpackage.cjq cjq = new defpackage.cjq();
+        defpackage.cji.a();
+        return new defpackage.cgm(application3, cli, cjw2, clt, cjp, cjq);
     }
 
     static {
-        new AtomicInteger();
+        new java.util.concurrent.atomic.AtomicInteger();
     }
 }

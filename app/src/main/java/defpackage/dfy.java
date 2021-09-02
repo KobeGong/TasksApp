@@ -1,62 +1,63 @@
 package defpackage;
 
-/* renamed from: dfy  reason: default package */
+/* renamed from: dfy reason: default package */
 /* compiled from: PG */
-public final class dfy extends dih implements djq {
-    public static final dfy m = new dfy();
-    private static volatile djx n;
+public final class dfy extends defpackage.dih implements defpackage.djq {
+    public static final defpackage.dfy m = new defpackage.dfy();
+    private static volatile defpackage.djx n;
     public int a;
     public int b = 0;
-    public Object c;
-    public String d = "";
-    public String e = "";
-    public dgl f;
-    public diq g = dka.b;
+    public java.lang.Object c;
+    public java.lang.String d = "";
+    public java.lang.String e = "";
+    public defpackage.dgl f;
+    public defpackage.diq g = defpackage.dka.b;
     public long h;
     public long i;
-    public dgu j;
-    public String k = "";
+    public defpackage.dgu j;
+    public java.lang.String k = "";
     public long l;
 
     private dfy() {
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.dih
-    public final Object a(int i2) {
-        djx djx;
+    public final java.lang.Object a(int i2) {
+        defpackage.djx djx;
         switch (i2 - 1) {
             case 0:
-                return (byte) 1;
+                return java.lang.Byte.valueOf(1);
             case 1:
                 return null;
             case 2:
-                return new dkb(m, "\u0001\u000e\u0001\u0001\u0002\u0014\u000e\u0000\u0001\u0000\u0002\b\u0002\u0005\u001b\b\u0002\u0007\t\u0002\b\n\b\u0001\f<\u0000\r<\u0000\u000e\t\u000e\u000f\t\u0004\u0010\b\u000f\u0011<\u0000\u0012<\u0000\u0013<\u0000\u0014\u0002\u0010", new Object[]{"c", "b", "a", "e", "g", dfz.class, "h", "i", "d", dfn.class, dgc.class, "j", "f", "k", dgn.class, dgb.class, dgd.class, "l"});
+                java.lang.Object[] objArr = {"c", "b", "a", "e", "g", defpackage.dfz.class, "h", "i", "d", defpackage.dfn.class, defpackage.dgc.class, "j", "f", "k", defpackage.dgn.class, defpackage.dgb.class, defpackage.dgd.class, "l"};
+                return new defpackage.dkb(m, "\u0001\u000e\u0001\u0001\u0002\u0014\u000e\u0000\u0001\u0000\u0002\b\u0002\u0005\u001b\b\u0002\u0007\t\u0002\b\n\b\u0001\f<\u0000\r<\u0000\u000e\t\u000e\u000f\t\u0004\u0010\b\u000f\u0011<\u0000\u0012<\u0000\u0013<\u0000\u0014\u0002\u0010", objArr);
             case 3:
-                return new dfy();
+                return new defpackage.dfy();
             case 4:
-                return new dii((byte[][][][][][][][][][][][][][][][][][][][][][]) null);
+                return new defpackage.dii((byte[][][][][][][][][][][][][][][][][][][][][][]) null);
             case 5:
                 return m;
             case 6:
-                djx djx2 = n;
+                defpackage.djx djx2 = n;
                 if (djx2 != null) {
                     return djx2;
                 }
-                synchronized (dfy.class) {
+                synchronized (defpackage.dfy.class) {
                     djx = n;
                     if (djx == null) {
-                        djx = new dgr(m);
+                        djx = new defpackage.dgr(m);
                         n = djx;
                     }
                 }
                 return djx;
             default:
-                throw new UnsupportedOperationException();
+                throw new java.lang.UnsupportedOperationException();
         }
     }
 
     static {
-        dih.t.put(dfy.class, m);
+        defpackage.dfy dfy = m;
+        defpackage.dih.t.put(defpackage.dfy.class, dfy);
     }
 }

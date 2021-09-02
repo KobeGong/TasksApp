@@ -1,10 +1,9 @@
 package defpackage;
 
-/* renamed from: ckk  reason: default package */
+/* renamed from: ckk reason: default package */
 /* compiled from: PG */
-public final class ckk implements clt {
-    @Override // defpackage.clt
-    public final /* synthetic */ Object a() {
-        return cdm.h();
+public final class ckk implements defpackage.clt {
+    public final /* synthetic */ java.lang.Object a() {
+        return defpackage.cdm.h();
     }
 }

@@ -1,26 +1,20 @@
 package defpackage;
 
-import android.support.design.internal.CheckableImageButton;
-import android.view.View;
-import android.view.accessibility.AccessibilityEvent;
-
-/* renamed from: ev  reason: default package */
+/* renamed from: ev reason: default package */
 /* compiled from: PG */
-public final class ev extends rn {
-    private final /* synthetic */ CheckableImageButton b;
+public final class ev extends defpackage.rn {
+    private final /* synthetic */ android.support.design.internal.CheckableImageButton b;
 
-    public ev(CheckableImageButton checkableImageButton) {
+    public ev(android.support.design.internal.CheckableImageButton checkableImageButton) {
         this.b = checkableImageButton;
     }
 
-    @Override // defpackage.rn
-    public final void a(View view, AccessibilityEvent accessibilityEvent) {
+    public final void a(android.view.View view, android.view.accessibility.AccessibilityEvent accessibilityEvent) {
         super.a(view, accessibilityEvent);
         accessibilityEvent.setChecked(this.b.isChecked());
     }
 
-    @Override // defpackage.rn
-    public final void a(View view, tl tlVar) {
+    public final void a(android.view.View view, defpackage.tl tlVar) {
         super.a(view, tlVar);
         tlVar.a(true);
         tlVar.a.setChecked(this.b.isChecked());

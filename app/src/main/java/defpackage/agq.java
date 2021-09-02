@@ -1,62 +1,50 @@
 package defpackage;
 
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.res.Resources;
-import android.graphics.drawable.Drawable;
-import android.util.Log;
-import android.util.LongSparseArray;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.ListAdapter;
-import java.lang.reflect.Field;
-import java.util.Map;
-
-/* renamed from: agq  reason: default package */
+/* renamed from: agq reason: default package */
 /* compiled from: PG */
 public final class agq {
-    private static Field q;
+    private static java.lang.reflect.Field q;
     private static boolean r;
-    private static Class s;
+    private static java.lang.Class s;
     private static boolean t;
-    private static Field u;
+    private static java.lang.reflect.Field u;
     private static boolean v;
-    private static Field w;
+    private static java.lang.reflect.Field w;
     private static boolean x;
-    public final Context a;
-    public final LayoutInflater b;
-    public Drawable c;
-    public CharSequence d;
-    public View e;
-    public CharSequence f;
-    public CharSequence g;
-    public DialogInterface.OnClickListener h;
-    public CharSequence i;
-    public DialogInterface.OnClickListener j;
+    public final android.content.Context a;
+    public final android.view.LayoutInflater b;
+    public android.graphics.drawable.Drawable c;
+    public java.lang.CharSequence d;
+    public android.view.View e;
+    public java.lang.CharSequence f;
+    public java.lang.CharSequence g;
+    public android.content.DialogInterface.OnClickListener h;
+    public java.lang.CharSequence i;
+    public android.content.DialogInterface.OnClickListener j;
     public boolean k;
-    public DialogInterface.OnDismissListener l;
-    public DialogInterface.OnKeyListener m;
-    public ListAdapter n;
-    public DialogInterface.OnClickListener o;
+    public android.content.DialogInterface.OnDismissListener l;
+    public android.content.DialogInterface.OnKeyListener m;
+    public android.widget.ListAdapter n;
+    public android.content.DialogInterface.OnClickListener o;
     public int p = -1;
 
-    public static boolean a(Resources resources) {
-        Map map;
+    public static boolean a(android.content.res.Resources resources) {
+        java.util.Map map;
         if (!r) {
             try {
-                Field declaredField = Resources.class.getDeclaredField("mDrawableCache");
+                java.lang.reflect.Field declaredField = android.content.res.Resources.class.getDeclaredField("mDrawableCache");
                 q = declaredField;
                 declaredField.setAccessible(true);
-            } catch (NoSuchFieldException e2) {
-                Log.e("ResourcesFlusher", "Could not retrieve Resources#mDrawableCache field", e2);
+            } catch (java.lang.NoSuchFieldException e2) {
+                android.util.Log.e("ResourcesFlusher", "Could not retrieve Resources#mDrawableCache field", e2);
             }
             r = true;
         }
         if (q != null) {
             try {
-                map = (Map) q.get(resources);
-            } catch (IllegalAccessException e3) {
-                Log.e("ResourcesFlusher", "Could not retrieve value from Resources#mDrawableCache", e3);
+                map = (java.util.Map) q.get(resources);
+            } catch (java.lang.IllegalAccessException e3) {
+                android.util.Log.e("ResourcesFlusher", "Could not retrieve value from Resources#mDrawableCache", e3);
                 map = null;
             }
             if (map != null) {
@@ -67,42 +55,46 @@ public final class agq {
         return false;
     }
 
-    public static boolean b(Resources resources) {
-        Object obj;
+    public static boolean b(android.content.res.Resources resources) {
+        java.lang.Object obj;
         if (!r) {
             try {
-                Field declaredField = Resources.class.getDeclaredField("mDrawableCache");
+                java.lang.reflect.Field declaredField = android.content.res.Resources.class.getDeclaredField("mDrawableCache");
                 q = declaredField;
                 declaredField.setAccessible(true);
-            } catch (NoSuchFieldException e2) {
-                Log.e("ResourcesFlusher", "Could not retrieve Resources#mDrawableCache field", e2);
+            } catch (java.lang.NoSuchFieldException e2) {
+                android.util.Log.e("ResourcesFlusher", "Could not retrieve Resources#mDrawableCache field", e2);
             }
             r = true;
         }
         if (q != null) {
             try {
                 obj = q.get(resources);
-            } catch (IllegalAccessException e3) {
-                Log.e("ResourcesFlusher", "Could not retrieve value from Resources#mDrawableCache", e3);
+            } catch (java.lang.IllegalAccessException e3) {
+                android.util.Log.e("ResourcesFlusher", "Could not retrieve value from Resources#mDrawableCache", e3);
             }
-            return obj == null && obj != null && a(obj);
+            if (obj == null && obj != null && a(obj)) {
+                return true;
+            }
+            return false;
         }
         obj = null;
         if (obj == null) {
             return false;
         }
+        return true;
     }
 
-    public static boolean c(Resources resources) {
-        Object obj;
-        Object obj2;
+    public static boolean c(android.content.res.Resources resources) {
+        java.lang.Object obj;
+        java.lang.Object obj2;
         if (!x) {
             try {
-                Field declaredField = Resources.class.getDeclaredField("mResourcesImpl");
+                java.lang.reflect.Field declaredField = android.content.res.Resources.class.getDeclaredField("mResourcesImpl");
                 w = declaredField;
                 declaredField.setAccessible(true);
-            } catch (NoSuchFieldException e2) {
-                Log.e("ResourcesFlusher", "Could not retrieve Resources#mResourcesImpl field", e2);
+            } catch (java.lang.NoSuchFieldException e2) {
+                android.util.Log.e("ResourcesFlusher", "Could not retrieve Resources#mResourcesImpl field", e2);
             }
             x = true;
         }
@@ -111,8 +103,8 @@ public final class agq {
         }
         try {
             obj = w.get(resources);
-        } catch (IllegalAccessException e3) {
-            Log.e("ResourcesFlusher", "Could not retrieve value from Resources#mResourcesImpl", e3);
+        } catch (java.lang.IllegalAccessException e3) {
+            android.util.Log.e("ResourcesFlusher", "Could not retrieve value from Resources#mResourcesImpl", e3);
             obj = null;
         }
         if (obj == null) {
@@ -120,35 +112,35 @@ public final class agq {
         }
         if (!r) {
             try {
-                Field declaredField2 = obj.getClass().getDeclaredField("mDrawableCache");
+                java.lang.reflect.Field declaredField2 = obj.getClass().getDeclaredField("mDrawableCache");
                 q = declaredField2;
                 declaredField2.setAccessible(true);
-            } catch (NoSuchFieldException e4) {
-                Log.e("ResourcesFlusher", "Could not retrieve ResourcesImpl#mDrawableCache field", e4);
+            } catch (java.lang.NoSuchFieldException e4) {
+                android.util.Log.e("ResourcesFlusher", "Could not retrieve ResourcesImpl#mDrawableCache field", e4);
             }
             r = true;
         }
         if (q != null) {
             try {
                 obj2 = q.get(obj);
-            } catch (IllegalAccessException e5) {
-                Log.e("ResourcesFlusher", "Could not retrieve value from ResourcesImpl#mDrawableCache", e5);
+            } catch (java.lang.IllegalAccessException e5) {
+                android.util.Log.e("ResourcesFlusher", "Could not retrieve value from ResourcesImpl#mDrawableCache", e5);
             }
-            return obj2 != null && a(obj2);
+            if (obj2 == null && a(obj2)) {
+                return true;
+            }
         }
         obj2 = null;
-        if (obj2 != null) {
-            return false;
-        }
+        return obj2 == null ? false : false;
     }
 
-    private static boolean a(Object obj) {
-        LongSparseArray longSparseArray;
+    private static boolean a(java.lang.Object obj) {
+        android.util.LongSparseArray longSparseArray;
         if (!t) {
             try {
-                s = Class.forName("android.content.res.ThemedResourceCache");
-            } catch (ClassNotFoundException e2) {
-                Log.e("ResourcesFlusher", "Could not find ThemedResourceCache class", e2);
+                s = java.lang.Class.forName("android.content.res.ThemedResourceCache");
+            } catch (java.lang.ClassNotFoundException e2) {
+                android.util.Log.e("ResourcesFlusher", "Could not find ThemedResourceCache class", e2);
             }
             t = true;
         }
@@ -157,11 +149,11 @@ public final class agq {
         }
         if (!v) {
             try {
-                Field declaredField = s.getDeclaredField("mUnthemedEntries");
+                java.lang.reflect.Field declaredField = s.getDeclaredField("mUnthemedEntries");
                 u = declaredField;
                 declaredField.setAccessible(true);
-            } catch (NoSuchFieldException e3) {
-                Log.e("ResourcesFlusher", "Could not retrieve ThemedResourceCache#mUnthemedEntries field", e3);
+            } catch (java.lang.NoSuchFieldException e3) {
+                android.util.Log.e("ResourcesFlusher", "Could not retrieve ThemedResourceCache#mUnthemedEntries field", e3);
             }
             v = true;
         }
@@ -169,9 +161,9 @@ public final class agq {
             return false;
         }
         try {
-            longSparseArray = (LongSparseArray) u.get(obj);
-        } catch (IllegalAccessException e4) {
-            Log.e("ResourcesFlusher", "Could not retrieve value from ThemedResourceCache#mUnthemedEntries", e4);
+            longSparseArray = (android.util.LongSparseArray) u.get(obj);
+        } catch (java.lang.IllegalAccessException e4) {
+            android.util.Log.e("ResourcesFlusher", "Could not retrieve value from ThemedResourceCache#mUnthemedEntries", e4);
             longSparseArray = null;
         }
         if (longSparseArray == null) {
@@ -181,9 +173,9 @@ public final class agq {
         return true;
     }
 
-    public agq(Context context) {
+    public agq(android.content.Context context) {
         this.a = context;
         this.k = true;
-        this.b = (LayoutInflater) context.getSystemService("layout_inflater");
+        this.b = (android.view.LayoutInflater) context.getSystemService("layout_inflater");
     }
 }

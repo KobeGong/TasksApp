@@ -1,23 +1,19 @@
 package defpackage;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-
-/* renamed from: ajq  reason: default package */
+/* renamed from: ajq reason: default package */
 /* compiled from: PG */
 public abstract class ajq {
-    public abstract List a();
+    public abstract java.util.List a();
 
-    public abstract dce b();
+    public abstract defpackage.dce b();
 
     public abstract long c();
 
-    public static ajq a(List list, dce dce, long j) {
-        return new ajm(csp.a((Collection) list), dce, j);
+    public static defpackage.ajq a(java.util.List list, defpackage.dce dce, long j) {
+        return new defpackage.ajm(defpackage.csp.a((java.util.Collection) list), dce, j);
     }
 
-    public static ajq d() {
-        return new ajm(Collections.emptyList(), dce.b, 0);
+    public static defpackage.ajq d() {
+        return new defpackage.ajm(java.util.Collections.emptyList(), defpackage.dce.b, 0);
     }
 }

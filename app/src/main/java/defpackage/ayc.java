@@ -1,13 +1,11 @@
 package defpackage;
 
-import android.content.Intent;
-
-/* renamed from: ayc  reason: default package */
+/* renamed from: ayc reason: default package */
 /* compiled from: PG */
-public class ayc extends Exception {
-    public final Intent b;
+public class ayc extends java.lang.Exception {
+    public final android.content.Intent b;
 
-    public ayc(String str, Intent intent) {
+    public ayc(java.lang.String str, android.content.Intent intent) {
         super(str);
         this.b = intent;
     }

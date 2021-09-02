@@ -1,23 +1,19 @@
 package defpackage;
 
-import android.animation.Animator;
-import android.view.View;
-
-/* access modifiers changed from: package-private */
-/* renamed from: le  reason: default package */
+/* renamed from: le reason: default package */
 /* compiled from: PG */
-public final class le {
-    public View a;
-    public Animator b;
+final class le {
+    public android.view.View a;
+    public android.animation.Animator b;
     public int c;
     public int d;
     public int e;
     public int f;
-    public Object g = null;
-    public Object h = lc.c;
-    public Object i = null;
-    public Object j = lc.c;
-    public Object k = lc.c;
+    public java.lang.Object g = null;
+    public java.lang.Object h = Fragment.c;
+    public java.lang.Object i = null;
+    public java.lang.Object j = Fragment.c;
+    public java.lang.Object k = Fragment.c;
     public boolean l;
 
     le() {

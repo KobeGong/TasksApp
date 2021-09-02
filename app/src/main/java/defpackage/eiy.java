@@ -1,9 +1,9 @@
 package defpackage;
 
-/* renamed from: eiy  reason: default package */
+/* renamed from: eiy reason: default package */
 /* compiled from: PG */
-public abstract class eiy extends eis {
-    public eiy(String str) {
+public abstract class eiy extends defpackage.eis {
+    public eiy(java.lang.String str) {
         super(str);
     }
 

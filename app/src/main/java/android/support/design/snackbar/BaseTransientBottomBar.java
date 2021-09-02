@@ -1,56 +1,47 @@
 package android.support.design.snackbar;
 
-import android.os.Handler;
-import android.os.Looper;
-import android.support.design.behavior.SwipeDismissBehavior;
-import android.support.design.widget.CoordinatorLayout;
-import android.view.MotionEvent;
-import android.view.View;
-
 /* compiled from: PG */
 public class BaseTransientBottomBar {
-    public final gs a;
-
-    public static void a() {
-        throw new NoSuchMethodError();
-    }
-
-    public static void b() {
-        throw new NoSuchMethodError();
-    }
-
-    public static void c() {
-        throw new NoSuchMethodError();
-    }
+    public final defpackage.gs a;
 
     /* compiled from: PG */
-    public class Behavior extends SwipeDismissBehavior {
-        private final ba g = new ba(this);
+    public class Behavior extends android.support.design.behavior.SwipeDismissBehavior {
+        private final defpackage.ba g = new defpackage.ba(this);
 
-        @Override // android.support.design.behavior.SwipeDismissBehavior
-        public final boolean b(View view) {
-            return view instanceof go;
+        public final boolean b(android.view.View view) {
+            return view instanceof defpackage.go;
         }
 
-        @Override // defpackage.gx, android.support.design.behavior.SwipeDismissBehavior
-        public final boolean a(CoordinatorLayout coordinatorLayout, View view, MotionEvent motionEvent) {
+        public final boolean a(android.support.design.widget.CoordinatorLayout coordinatorLayout, android.view.View view, android.view.MotionEvent motionEvent) {
             switch (motionEvent.getActionMasked()) {
                 case 0:
                     if (coordinatorLayout.a(view, (int) motionEvent.getX(), (int) motionEvent.getY())) {
-                        gq.a().b();
+                        defpackage.gq.a().b();
                         break;
                     }
                     break;
                 case 1:
                 case 3:
-                    gq.a().c();
+                    defpackage.gq.a().c();
                     break;
             }
             return super.a(coordinatorLayout, view, motionEvent);
         }
     }
 
+    public static void a() {
+        throw new java.lang.NoSuchMethodError();
+    }
+
+    public static void b() {
+        throw new java.lang.NoSuchMethodError();
+    }
+
+    public static void c() {
+        throw new java.lang.NoSuchMethodError();
+    }
+
     static {
-        new Handler(Looper.getMainLooper(), new gj());
+        new android.os.Handler(android.os.Looper.getMainLooper(), new defpackage.gj());
     }
 }

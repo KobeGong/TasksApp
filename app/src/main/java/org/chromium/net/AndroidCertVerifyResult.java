@@ -1,47 +1,42 @@
 package org.chromium.net;
 
-import java.security.cert.CertificateEncodingException;
-import java.security.cert.X509Certificate;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import org.chromium.base.annotations.CalledByNative;
-
 /* compiled from: PG */
 public class AndroidCertVerifyResult {
     private final int a;
     private final boolean b;
-    private final List c;
+    private final java.util.List c;
 
-    public AndroidCertVerifyResult(boolean z, List list) {
+    public AndroidCertVerifyResult(boolean z, java.util.List list) {
         this.a = 0;
         this.b = z;
-        this.c = new ArrayList(list);
+        this.c = new java.util.ArrayList(list);
     }
 
     public AndroidCertVerifyResult(int i) {
         this.a = i;
         this.b = false;
-        this.c = Collections.emptyList();
+        this.c = java.util.Collections.emptyList();
     }
 
-    @CalledByNative
+    @org.chromium.base.annotations.CalledByNative
     public int getStatus() {
         return this.a;
     }
 
-    @CalledByNative
+    @org.chromium.base.annotations.CalledByNative
     public boolean isIssuedByKnownRoot() {
         return this.b;
     }
 
-    @CalledByNative
+    @org.chromium.base.annotations.CalledByNative
     public byte[][] getCertificateChainEncoded() {
         byte[][] bArr = new byte[this.c.size()][];
-        for (int i = 0; i < this.c.size(); i++) {
+        int i = 0;
+        while (i < this.c.size()) {
             try {
-                bArr[i] = ((X509Certificate) this.c.get(i)).getEncoded();
-            } catch (CertificateEncodingException e) {
+                bArr[i] = ((java.security.cert.X509Certificate) this.c.get(i)).getEncoded();
+                i++;
+            } catch (java.security.cert.CertificateEncodingException e) {
                 return new byte[0][];
             }
         }

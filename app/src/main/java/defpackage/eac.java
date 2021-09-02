@@ -1,27 +1,25 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: eac  reason: default package */
+/* renamed from: eac reason: default package */
 /* compiled from: PG */
-public final class eac implements dox {
-    private final /* synthetic */ djo a;
+final class eac implements defpackage.dox {
+    private final /* synthetic */ defpackage.djo a;
 
-    eac(djo djo) {
+    eac(defpackage.djo djo) {
         this.a = djo;
     }
 
     /* access modifiers changed from: private */
     /* renamed from: b */
-    public final djo a(byte[] bArr) {
+    public final defpackage.djo a(byte[] bArr) {
         try {
-            return (djo) this.a.d().a(bArr, eaa.a);
-        } catch (dir e) {
-            throw new IllegalArgumentException(e);
+            return (defpackage.djo) this.a.d().a(bArr, defpackage.eaa.a);
+        } catch (defpackage.dir e) {
+            throw new java.lang.IllegalArgumentException(e);
         }
     }
 
-    @Override // defpackage.dox
-    public final /* synthetic */ byte[] a(Object obj) {
-        return ((djo) obj).b();
+    public final /* synthetic */ byte[] a(java.lang.Object obj) {
+        return ((defpackage.djo) obj).b();
     }
 }

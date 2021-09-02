@@ -1,13 +1,11 @@
 package defpackage;
 
-import android.view.MotionEvent;
-
-/* renamed from: afj  reason: default package */
+/* renamed from: afj reason: default package */
 /* compiled from: PG */
 public interface afj {
     void a(boolean z);
 
-    boolean a(MotionEvent motionEvent);
+    boolean a(android.view.MotionEvent motionEvent);
 
-    void b(MotionEvent motionEvent);
+    void b(android.view.MotionEvent motionEvent);
 }

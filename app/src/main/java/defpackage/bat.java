@@ -1,30 +1,25 @@
 package defpackage;
 
-import com.google.android.gms.common.api.Status;
-
-/* renamed from: bat  reason: default package */
+/* renamed from: bat reason: default package */
 /* compiled from: PG */
-public final class bat extends aza {
-    private bca a;
+public final class bat extends defpackage.aza {
+    private defpackage.bca a;
 
-    public bat(bca bca) {
+    public bat(defpackage.bca bca) {
         this.a = bca;
     }
 
-    @Override // defpackage.aza
-    public final void a(bak bak) {
+    public final void a(defpackage.bak bak) {
         this.a.b(bak.a);
     }
 
-    @Override // defpackage.aza
-    public final void a(Status status) {
+    public final void a(com.google.android.gms.common.api.Status status) {
         this.a.c(status);
     }
 
-    @Override // defpackage.aza
-    public final void a(aze aze, boolean z) {
-        bca bca = this.a;
-        aze.a.put(bca, Boolean.valueOf(z));
-        bca.a((ayu) new azf(aze, bca));
+    public final void a(defpackage.aze aze, boolean z) {
+        defpackage.bca bca = this.a;
+        aze.a.put(bca, java.lang.Boolean.valueOf(z));
+        bca.a((defpackage.ayu) new defpackage.azf(aze, bca));
     }
 }

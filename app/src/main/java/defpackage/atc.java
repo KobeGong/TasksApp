@@ -2,20 +2,18 @@ package defpackage;
 
 import android.view.View;
 
-/* access modifiers changed from: package-private */
-/* renamed from: atc  reason: default package */
-public final /* synthetic */ class atc implements View.OnFocusChangeListener {
-    private final atb a;
+/* renamed from: atc reason: default package */
+final /* synthetic */ class atc implements android.view.View.OnFocusChangeListener {
+    private final SubTaskView taskView;
 
-    atc(atb atb) {
-        this.a = atb;
+    atc(SubTaskView atb) {
+        this.taskView = atb;
     }
 
-    public final void onFocusChange(View view, boolean z) {
-        atb atb = this.a;
-        atb.c.setVisibility(z ? 0 : 4);
-        if (atb.e != null) {
-            atb.e.onFocusChange(view, z);
+    public final void onFocusChange(android.view.View view, boolean z) {
+        this.taskView.c.setVisibility(z ? View.VISIBLE : View.GONE);
+        if (this.taskView.e != null) {
+            this.taskView.e.onFocusChange(view, z);
         }
     }
 }

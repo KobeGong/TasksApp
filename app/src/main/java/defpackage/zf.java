@@ -1,11 +1,9 @@
 package defpackage;
 
-import android.view.MenuItem;
-
-/* renamed from: zf  reason: default package */
+/* renamed from: zf reason: default package */
 /* compiled from: PG */
 public interface zf {
-    void a(MenuBuilder zeVar);
+    void a(defpackage.ze zeVar);
 
-    boolean a(MenuBuilder zeVar, MenuItem menuItem);
+    boolean a(defpackage.ze zeVar, android.view.MenuItem menuItem);
 }

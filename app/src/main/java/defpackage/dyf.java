@@ -1,16 +1,15 @@
 package defpackage;
 
-/* renamed from: dyf  reason: default package */
+/* renamed from: dyf reason: default package */
 /* compiled from: PG */
-final class dyf implements dyp {
-    private final /* synthetic */ doa a;
+final class dyf implements defpackage.dyp {
+    private final /* synthetic */ defpackage.doa a;
 
-    dyf(doa doa) {
+    dyf(defpackage.doa doa) {
         this.a = doa;
     }
 
-    @Override // defpackage.dyp
-    public final void a(dza dza) {
+    public final void a(defpackage.dza dza) {
         dza.a.a(this.a);
     }
 }

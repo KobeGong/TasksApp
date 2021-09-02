@@ -1,30 +1,26 @@
 package defpackage;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import android.view.View;
-
-/* renamed from: uz  reason: default package */
+/* renamed from: uz reason: default package */
 /* compiled from: PG */
-public final class uz extends View.BaseSavedState {
-    public static final Parcelable.Creator CREATOR = new va();
+public final class uz extends android.view.View.BaseSavedState {
+    public static final android.os.Parcelable.Creator CREATOR = new defpackage.va();
     public int a;
 
-    public uz(Parcelable parcelable) {
+    public uz(android.os.Parcelable parcelable) {
         super(parcelable);
     }
 
-    uz(Parcel parcel) {
+    uz(android.os.Parcel parcel) {
         super(parcel);
         this.a = parcel.readInt();
     }
 
-    public final void writeToParcel(Parcel parcel, int i) {
+    public final void writeToParcel(android.os.Parcel parcel, int i) {
         super.writeToParcel(parcel, i);
         parcel.writeInt(this.a);
     }
 
-    public final String toString() {
-        return "HorizontalScrollView.SavedState{" + Integer.toHexString(System.identityHashCode(this)) + " scrollPosition=" + this.a + "}";
+    public final java.lang.String toString() {
+        return "HorizontalScrollView.SavedState{" + java.lang.Integer.toHexString(java.lang.System.identityHashCode(this)) + " scrollPosition=" + this.a + "}";
     }
 }

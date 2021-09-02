@@ -1,18 +1,15 @@
 package defpackage;
 
-import java.util.ArrayList;
-
-/* access modifiers changed from: package-private */
-/* renamed from: ml  reason: default package */
+/* renamed from: ml reason: default package */
 /* compiled from: PG */
-public final class ml implements Runnable {
-    private final /* synthetic */ ArrayList a;
+final class ml implements java.lang.Runnable {
+    private final /* synthetic */ java.util.ArrayList a;
 
-    ml(ArrayList arrayList) {
+    ml(java.util.ArrayList arrayList) {
         this.a = arrayList;
     }
 
     public final void run() {
-        mk.a(this.a, 4);
+        defpackage.mk.a(this.a, 4);
     }
 }

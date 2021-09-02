@@ -1,72 +1,65 @@
 package defpackage;
 
-/* renamed from: cmw  reason: default package */
+/* renamed from: cmw reason: default package */
 /* compiled from: PG */
-public final class cmw extends cmx {
-    public final cmv a;
+public final class cmw extends defpackage.cmx {
+    public final defpackage.cmv a;
 
-    public cmw(int i, cmv cmv) {
+    public cmw(int i, defpackage.cmv cmv) {
         super(i);
-        this.a = (cmv) cky.a((Object) cmv);
+        this.a = (defpackage.cmv) defpackage.cky.a((java.lang.Object) cmv);
     }
 
-    @Override // defpackage.cmx
-    public final int a(cnc cnc) {
+    public final int a(defpackage.cnc cnc) {
         return this.a.g;
     }
 
-    @Override // defpackage.cmx
-    public final int a(cnc cnc, int i) {
-        cmv cmv = this.a;
-        cky.a(i, cmv.g);
+    public final int a(defpackage.cnc cnc, int i) {
+        defpackage.cmv cmv = this.a;
+        defpackage.cky.a(i, cmv.g);
         int i2 = this.h + cnc.b + 4 + cnc.b + 4;
         while (i >= cmv.c.length) {
-            cmv cmv2 = cmv.f;
             i2 += cmv.e;
             i -= cmv.c.length;
-            cmv = cmv2;
+            cmv = cmv.f;
         }
         return cnc.d(i2 + cmv.d[i]);
     }
 
-    @Override // defpackage.cmx
-    public final String b(cnc cnc, int i) {
-        cmv cmv = this.a;
+    public final java.lang.String b(defpackage.cnc cnc, int i) {
+        defpackage.cmv cmv = this.a;
         while (true) {
-            cky.a(i, cmv.g);
+            defpackage.cky.a(i, cmv.g);
             if (i < cmv.c.length) {
                 return cnc.a(cmv.c[i]);
             }
-            cmv cmv2 = cmv.f;
             i -= cmv.c.length;
-            cmv = cmv2;
+            cmv = cmv.f;
         }
     }
 
-    @Override // defpackage.cmx
-    public final String c(cnc cnc, int i) {
+    public final java.lang.String c(defpackage.cnc cnc, int i) {
         if (i < 0 || i >= this.a.g) {
             return this.a.b(cnc);
         }
-        cmv cmv = this.a;
+        defpackage.cmv cmv = this.a;
         int i2 = i;
         while (true) {
-            cky.a(i2, cmv.g);
+            defpackage.cky.a(i2, cmv.g);
             if (i2 < cmv.c.length) {
                 break;
             }
-            cmv cmv2 = cmv.f;
             i2 -= cmv.c.length;
-            cmv = cmv2;
+            cmv = cmv.f;
         }
         if (cmv == this.a) {
-            String b = this.a.b(cnc);
-            String b2 = b(cnc, i);
-            return new StringBuilder(String.valueOf(b).length() + 1 + String.valueOf(b2).length()).append(b).append('#').append(b2).toString();
+            java.lang.String b = this.a.b(cnc);
+            java.lang.String b2 = b(cnc, i);
+            return new java.lang.StringBuilder(java.lang.String.valueOf(b).length() + 1 + java.lang.String.valueOf(b2).length()).append(b).append('#').append(b2).toString();
         }
-        String b3 = this.a.b(cnc);
-        String b4 = cmv.b(cnc);
-        String b5 = b(cnc, i);
-        return new StringBuilder(String.valueOf(b3).length() + 2 + String.valueOf(b4).length() + String.valueOf(b5).length()).append(b3).append(':').append(b4).append('#').append(b5).toString();
+        java.lang.String b3 = this.a.b(cnc);
+        java.lang.String b4 = cmv.b(cnc);
+        java.lang.String b5 = b(cnc, i);
+        return new java.lang.StringBuilder(java.lang.String.valueOf(b3).length() + 2 + java.lang.String.valueOf(b4).length() + java.lang.String.valueOf(b5).length()).append(b3).append(':').append(b4).append('#').append(b5).toString();
     }
 }

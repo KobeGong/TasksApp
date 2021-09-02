@@ -1,27 +1,22 @@
 package defpackage;
 
-import com.google.android.gms.auth.api.signin.internal.SignInHubActivity;
-
-/* renamed from: avq  reason: default package */
+/* renamed from: avq reason: default package */
 /* compiled from: PG */
-public final class avq implements nb {
-    private /* synthetic */ SignInHubActivity a;
+public final class avq implements defpackage.nb {
+    private /* synthetic */ com.google.android.gms.auth.api.signin.internal.SignInHubActivity a;
 
-    public avq(SignInHubActivity signInHubActivity) {
+    public avq(com.google.android.gms.auth.api.signin.internal.SignInHubActivity signInHubActivity) {
         this.a = signInHubActivity;
     }
 
-    @Override // defpackage.nb
-    public final oc i_() {
-        return new avr(this.a, ayp.a());
+    public final defpackage.oc i_() {
+        return new defpackage.avr(this.a, defpackage.ayp.a());
     }
 
-    @Override // defpackage.nb
     public final void j_() {
     }
 
-    @Override // defpackage.nb
-    public final /* synthetic */ void a(Object obj) {
+    public final /* synthetic */ void a(java.lang.Object obj) {
         this.a.setResult(this.a.h, this.a.i);
         this.a.finish();
     }

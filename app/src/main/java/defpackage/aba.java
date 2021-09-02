@@ -1,35 +1,30 @@
 package defpackage;
 
-import android.content.Context;
-import android.util.AttributeSet;
-import android.view.ViewDebug;
-import android.view.ViewGroup;
-
-/* renamed from: aba  reason: default package */
+/* renamed from: aba reason: default package */
 /* compiled from: PG */
-public final class aba extends adv {
-    @ViewDebug.ExportedProperty
+public final class aba extends defpackage.adv {
+    @android.view.ViewDebug.ExportedProperty
     public boolean a;
-    @ViewDebug.ExportedProperty
+    @android.view.ViewDebug.ExportedProperty
     public int b;
-    @ViewDebug.ExportedProperty
+    @android.view.ViewDebug.ExportedProperty
     public int c;
-    @ViewDebug.ExportedProperty
+    @android.view.ViewDebug.ExportedProperty
     public boolean d;
-    @ViewDebug.ExportedProperty
+    @android.view.ViewDebug.ExportedProperty
     public boolean e;
     public boolean f;
 
-    public aba(Context context, AttributeSet attributeSet) {
+    public aba(android.content.Context context, android.util.AttributeSet attributeSet) {
         super(context, attributeSet);
     }
 
-    public aba(ViewGroup.LayoutParams layoutParams) {
+    public aba(android.view.ViewGroup.LayoutParams layoutParams) {
         super(layoutParams);
     }
 
-    public aba(aba aba) {
-        super(aba);
+    public aba(defpackage.aba aba) {
+        super((android.view.ViewGroup.LayoutParams) aba);
         this.a = aba.a;
     }
 

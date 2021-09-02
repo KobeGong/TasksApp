@@ -1,93 +1,79 @@
 package defpackage;
 
-import android.text.Html;
-import android.text.TextUtils;
-import android.view.LayoutInflater;
-import android.view.ViewGroup;
-import android.widget.TextView;
-import com.google.android.apps.tasks.R;
-import com.google.android.apps.tasks.ui.components.FancyCheckboxView;
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.List;
-
-/* renamed from: akt  reason: default package */
+/* renamed from: akt reason: default package */
 /* compiled from: PG */
-public final class akt extends Adapter {
-    public List a;
-    public aku b;
+public final class akt extends defpackage.aet {
+    public java.util.List a;
+    public defpackage.aku b;
 
     public akt() {
         c();
     }
 
-    @Override // defpackage.aet
-    public final long getItemId(int i) {
-        akz akz = (akz) this.a.get(i);
-        return (long) Arrays.hashCode(new Object[]{akz.a().b, akz.b().d});
+    public final long a(int i) {
+        defpackage.akz akz = (defpackage.akz) this.a.get(i);
+        return (long) java.util.Arrays.hashCode(new java.lang.Object[]{akz.a().b, akz.b().d});
     }
 
-    @Override // defpackage.aet
-    public final ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        akv akv = new akv(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.search_result, viewGroup, false));
-        akv.p = new aky(this);
+    public final defpackage.afv a(android.view.ViewGroup viewGroup, int i) {
+        defpackage.akv akv = new defpackage.akv(android.view.LayoutInflater.from(viewGroup.getContext()).inflate(2131034198, viewGroup, false));
+        akv.p = new defpackage.aky(this);
         return akv;
     }
 
-    @Override // defpackage.aet
-    public final void onBindViewHolder(ViewHolder afv, int i) {
-        dca dca;
-        dca dca2;
-        dca dca3;
+    public final void a(defpackage.afv afv, int i) {
+        defpackage.dca dca;
+        defpackage.dca dca2;
+        defpackage.dca dca3;
         float f;
-        dca dca4;
+        defpackage.dca dca4;
         boolean z;
-        dcd dcd;
-        dca dca5;
-        dmk dmk;
-        String string;
-        String quantityString;
-        akv akv = (akv) afv;
-        akz akz = (akz) this.a.get(i);
-        TextView textView = akv.r;
-        dby b2 = akz.b();
+        defpackage.dcd dcd;
+        defpackage.dca dca5;
+        defpackage.dmk dmk;
+        java.lang.String string;
+        java.lang.String quantityString;
+        defpackage.akv akv = (defpackage.akv) afv;
+        defpackage.akz akz = (defpackage.akz) this.a.get(i);
+        android.widget.TextView textView = akv.r;
+        defpackage.dby b2 = akz.b();
         if (b2.e == null) {
-            dca = dca.g;
+            dca = defpackage.dca.g;
         } else {
             dca = b2.e;
         }
         textView.setText(dca.b);
-        dby b3 = akz.b();
+        defpackage.dby b3 = akz.b();
         if (b3.e == null) {
-            dca2 = dca.g;
+            dca2 = defpackage.dca.g;
         } else {
             dca2 = b3.e;
         }
-        if (TextUtils.isEmpty(dca2.c)) {
+        if (android.text.TextUtils.isEmpty(dca2.c)) {
             akv.s.setText("");
             akv.s.setVisibility(8);
         } else {
-            TextView textView2 = akv.s;
-            dby b4 = akz.b();
+            android.widget.TextView textView2 = akv.s;
+            defpackage.dby b4 = akz.b();
             if (b4.e == null) {
-                dca3 = dca.g;
+                dca3 = defpackage.dca.g;
             } else {
                 dca3 = b4.e;
             }
             textView2.setText(dca3.c);
             akv.s.setVisibility(0);
         }
-        FancyCheckboxView fancyCheckboxView = akv.v;
-        if (ajd.a(akz.b())) {
+        com.google.android.apps.tasks.ui.components.FancyCheckboxView fancyCheckboxView = akv.v;
+        if (defpackage.ajd.a(akz.b())) {
             f = 1.0f;
         } else {
             f = 0.0f;
         }
         fancyCheckboxView.a(f);
         akv.u.setVisibility(8);
-        dby b5 = akz.b();
+        defpackage.dby b5 = akz.b();
         if (b5.e == null) {
-            dca4 = dca.g;
+            dca4 = defpackage.dca.g;
         } else {
             dca4 = b5.e;
         }
@@ -98,52 +84,51 @@ public final class akt extends Adapter {
         }
         if (z) {
             akv.t.setVisibility(0);
-            TextView textView3 = akv.t;
-            dby b6 = akz.b();
+            android.widget.TextView textView3 = akv.t;
+            defpackage.dby b6 = akz.b();
             if (b6.e == null) {
-                dca5 = dca.g;
+                dca5 = defpackage.dca.g;
             } else {
                 dca5 = b6.e;
             }
             if (dca5.d == null) {
-                dmk = dmk.d;
+                dmk = defpackage.dmk.d;
             } else {
                 dmk = dca5.d;
             }
-            Calendar b7 = ajd.b(dmk);
-            long a2 = (long) ajd.a(b7, akv.t());
+            java.util.Calendar b7 = defpackage.ajd.b(dmk);
+            long a2 = (long) defpackage.ajd.a(b7, defpackage.akv.t());
             if (a2 < 0) {
                 long j = -a2;
                 if (j < 7) {
-                    quantityString = akv.a.getResources().getQuantityString(R.plurals.task_overdue_days, (int) j, Integer.valueOf((int) j));
+                    quantityString = akv.a.getResources().getQuantityString(2131886087, (int) j, new java.lang.Object[]{java.lang.Integer.valueOf((int) j)});
                 } else {
                     int i2 = ((int) j) / 7;
-                    quantityString = akv.a.getResources().getQuantityString(R.plurals.task_overdue_weeks, i2, Integer.valueOf(i2));
+                    quantityString = akv.a.getResources().getQuantityString(2131886088, i2, new java.lang.Object[]{java.lang.Integer.valueOf(i2)});
                 }
-                string = akv.a(akv.a.getContext(), quantityString, "^1", R.color.task_overdue_date);
+                string = defpackage.akv.a(akv.a.getContext(), quantityString, "^1", 2131624499);
             } else if (a2 == 0) {
-                string = akv.a(akv.a.getContext(), akv.a.getContext().getString(R.string.task_due_today), "^1", R.color.task_due_today_date);
+                string = defpackage.akv.a(akv.a.getContext(), akv.a.getContext().getString(2131951819), "^1", 2131624497);
             } else if (a2 == 1) {
-                string = akv.a.getContext().getString(R.string.task_due_tomorrow);
+                string = akv.a.getContext().getString(2131951820);
             } else {
-                string = akv.a.getContext().getString(R.string.task_due_date, Long.valueOf(b7.getTimeInMillis()));
+                string = akv.a.getContext().getString(2131951818, new java.lang.Object[]{java.lang.Long.valueOf(b7.getTimeInMillis())});
             }
-            textView3.setText(Html.fromHtml(string));
+            textView3.setText(android.text.Html.fromHtml(string));
         } else {
             akv.t.setVisibility(8);
         }
-        TextView textView4 = akv.q;
-        dcb a3 = akz.a();
+        android.widget.TextView textView4 = akv.q;
+        defpackage.dcb a3 = akz.a();
         if (a3.c == null) {
-            dcd = dcd.c;
+            dcd = defpackage.dcd.c;
         } else {
             dcd = a3.c;
         }
         textView4.setText(dcd.a);
     }
 
-    @Override // defpackage.aet
-    public final int getCount() {
+    public final int a() {
         if (this.a == null) {
             return 0;
         }

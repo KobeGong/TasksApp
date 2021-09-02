@@ -1,11 +1,11 @@
 package defpackage;
 
-/* renamed from: cmp  reason: default package */
+/* renamed from: cmp reason: default package */
 /* compiled from: PG */
-final class cmp implements Runnable {
-    private final /* synthetic */ cmo a;
+final class cmp implements java.lang.Runnable {
+    private final /* synthetic */ defpackage.cmo a;
 
-    cmp(cmo cmo) {
+    cmp(defpackage.cmo cmo) {
         this.a = cmo;
     }
 

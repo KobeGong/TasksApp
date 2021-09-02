@@ -1,26 +1,25 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: cxb  reason: default package */
+/* renamed from: cxb reason: default package */
 /* compiled from: PG */
-public final class cxb {
-    public static final cxb a;
-    public static final cxb b;
+final class cxb {
+    public static final defpackage.cxb a;
+    public static final defpackage.cxb b;
     public final boolean c;
-    public final Throwable d;
+    public final java.lang.Throwable d;
 
-    cxb(boolean z, Throwable th) {
+    cxb(boolean z, java.lang.Throwable th) {
         this.c = z;
         this.d = th;
     }
 
     static {
-        if (cwz.a) {
+        if (defpackage.cwz.a) {
             b = null;
             a = null;
             return;
         }
-        b = new cxb(false, null);
-        a = new cxb(true, null);
+        b = new defpackage.cxb(false, null);
+        a = new defpackage.cxb(true, null);
     }
 }

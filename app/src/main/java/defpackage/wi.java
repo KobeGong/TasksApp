@@ -1,22 +1,17 @@
 package defpackage;
 
-import android.support.v7.app.AlertController;
-import android.view.View;
-import android.widget.AdapterView;
-
-/* renamed from: wi  reason: default package */
+/* renamed from: wi reason: default package */
 /* compiled from: PG */
-public final class wi implements AdapterView.OnItemClickListener {
-    private final /* synthetic */ AlertController a;
-    private final /* synthetic */ agq b;
+public final class wi implements android.widget.AdapterView.OnItemClickListener {
+    private final /* synthetic */ android.support.v7.app.AlertController a;
+    private final /* synthetic */ defpackage.agq b;
 
-    public wi(agq agq, AlertController alertController) {
+    public wi(defpackage.agq agq, android.support.v7.app.AlertController alertController) {
         this.b = agq;
         this.a = alertController;
     }
 
-    @Override // android.widget.AdapterView.OnItemClickListener
-    public final void onItemClick(AdapterView adapterView, View view, int i, long j) {
+    public final void onItemClick(android.widget.AdapterView adapterView, android.view.View view, int i, long j) {
         this.b.o.onClick(this.a.b, i);
         this.a.b.dismiss();
     }

@@ -1,15 +1,15 @@
 package defpackage;
 
-/* renamed from: cwc  reason: default package */
+/* renamed from: cwc reason: default package */
 /* compiled from: PG */
 public final class cwc {
-    private static final cwd a = cwd.a();
+    private static final defpackage.cwd a = defpackage.cwd.a();
 
-    public static StackTraceElement a(Class cls, Throwable th) {
-        StackTraceElement stackTraceElement;
-        cub.a(cls, "target");
-        cub.a(th, "throwable");
-        StackTraceElement[] stackTrace = a != null ? null : th.getStackTrace();
+    public static java.lang.StackTraceElement a(java.lang.Class cls, java.lang.Throwable th) {
+        java.lang.StackTraceElement stackTraceElement;
+        defpackage.cub.a((java.lang.Object) cls, "target");
+        defpackage.cub.a((java.lang.Object) th, "throwable");
+        java.lang.StackTraceElement[] stackTrace = a != null ? null : th.getStackTrace();
         boolean z = false;
         int i = 1;
         while (true) {
@@ -25,19 +25,19 @@ public final class cwc {
                     return stackTraceElement;
                 }
                 i++;
-            } catch (Exception e) {
+            } catch (java.lang.Exception e) {
                 return null;
             }
         }
     }
 
-    public static StackTraceElement[] a(Class cls, Throwable th, int i) {
-        StackTraceElement[] stackTrace;
+    public static java.lang.StackTraceElement[] a(java.lang.Class cls, java.lang.Throwable th, int i) {
+        java.lang.StackTraceElement[] stackTrace;
         int length;
-        StackTraceElement stackTraceElement;
+        java.lang.StackTraceElement stackTraceElement;
         boolean z;
-        cub.a(cls, "target");
-        cub.a(th, "throwable");
+        defpackage.cub.a((java.lang.Object) cls, "target");
+        defpackage.cub.a((java.lang.Object) th, "throwable");
         if (i > 0 || i == -1) {
             if (a != null) {
                 stackTrace = null;
@@ -49,16 +49,16 @@ public final class cwc {
             int i2 = 2;
             boolean z2 = false;
             while (i2 < length) {
-                StackTraceElement a2 = a != null ? a.a(th, i2) : stackTrace[i2];
-                if (cls.getName().equals(a2.getClassName())) {
+                java.lang.StackTraceElement stackTraceElement2 = a != null ? a.a(th, i2) : stackTrace[i2];
+                if (cls.getName().equals(stackTraceElement2.getClassName())) {
                     z = true;
                 } else if (z2) {
                     int i3 = length - i2;
                     if (i <= 0 || i >= i3) {
                         i = i3;
                     }
-                    StackTraceElement[] stackTraceElementArr = new StackTraceElement[i];
-                    stackTraceElementArr[0] = a2;
+                    java.lang.StackTraceElement[] stackTraceElementArr = new java.lang.StackTraceElement[i];
+                    stackTraceElementArr[0] = stackTraceElement2;
                     for (int i4 = 1; i4 < i; i4++) {
                         if (a != null) {
                             stackTraceElement = a.a(th, i2 + i4);
@@ -74,8 +74,8 @@ public final class cwc {
                 i2++;
                 z2 = z;
             }
-            return new StackTraceElement[0];
+            return new java.lang.StackTraceElement[0];
         }
-        throw new IllegalArgumentException(new StringBuilder(34).append("invalid maximum depth: ").append(i).toString());
+        throw new java.lang.IllegalArgumentException("invalid maximum depth: " + i);
     }
 }

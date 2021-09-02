@@ -1,23 +1,22 @@
 package defpackage;
 
-/* renamed from: dnh  reason: default package */
+/* renamed from: dnh reason: default package */
 /* compiled from: PG */
-final class dnh implements dnf {
-    public final /* synthetic */ dpd a;
-    public final /* synthetic */ dpd b;
-    private final /* synthetic */ dnf c;
+final class dnh implements defpackage.dnf {
+    public final /* synthetic */ defpackage.dpd a;
+    public final /* synthetic */ defpackage.dpd b;
+    private final /* synthetic */ defpackage.dnf c;
 
-    dnh(dpd dpd, dpd dpd2, dnf dnf) {
+    dnh(defpackage.dpd dpd, defpackage.dpd dpd2, defpackage.dnf dnf) {
         this.a = dpd;
         this.b = dpd2;
         this.c = dnf;
     }
 
-    @Override // defpackage.dnf
-    public final dnd a(dpb dpb, dna dna, dnc dnc) {
-        dpd dpd = this.a;
-        dpd dpd2 = this.b;
-        dpc dpc = new dpc();
+    public final defpackage.dnd a(defpackage.dpb dpb, defpackage.dna dna, defpackage.dnc dnc) {
+        defpackage.dpd dpd = this.a;
+        defpackage.dpd dpd2 = this.b;
+        defpackage.dpc dpc = new defpackage.dpc();
         dpc.a = null;
         dpc.b = null;
         dpc.a = dpd;
@@ -28,6 +27,6 @@ final class dnh implements dnf {
         dpc.f = dpb.g;
         dpc.h = dpb.h;
         dpc.g = dpb.e;
-        return new dni(this, this.c.a(dpc.a(), dna, dnc), dpb);
+        return new defpackage.dni(this, this.c.a(dpc.a(), dna, dnc), dpb);
     }
 }

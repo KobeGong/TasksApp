@@ -1,6 +1,6 @@
 package defpackage;
 
-/* renamed from: bnc  reason: default package */
+/* renamed from: bnc reason: default package */
 /* compiled from: PG */
 public final class bnc {
     public bnc() {

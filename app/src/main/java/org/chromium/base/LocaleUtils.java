@@ -1,27 +1,21 @@
 package org.chromium.base;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.Map;
-import org.chromium.base.annotations.CalledByNative;
-
 /* compiled from: PG */
 public class LocaleUtils {
-    private static final Map a;
+    private static final java.util.Map a;
 
     private LocaleUtils() {
     }
 
-    @CalledByNative
-    public static String getDefaultLocaleString() {
-        Locale locale = Locale.getDefault();
-        String language = locale.getLanguage();
-        String str = (String) a.get(language);
+    @org.chromium.base.annotations.CalledByNative
+    public static java.lang.String getDefaultLocaleString() {
+        java.util.Locale locale = java.util.Locale.getDefault();
+        java.lang.String language = locale.getLanguage();
+        java.lang.String str = (java.lang.String) a.get(language);
         if (str == null) {
             str = language;
         }
-        String country = locale.getCountry();
+        java.lang.String country = locale.getCountry();
         if (str.equals("no") && country.equals("NO") && locale.getVariant().equals("NY")) {
             return "nn-NO";
         }
@@ -31,25 +25,25 @@ public class LocaleUtils {
         return str;
     }
 
-    @CalledByNative
-    private static String getDefaultCountryCode() {
-        CommandLine c = CommandLine.c();
+    @org.chromium.base.annotations.CalledByNative
+    private static java.lang.String getDefaultCountryCode() {
+        org.chromium.base.CommandLine c = org.chromium.base.CommandLine.c();
         if (c.a()) {
             return c.b();
         }
-        return Locale.getDefault().getCountry();
+        return java.util.Locale.getDefault().getCountry();
     }
 
     static {
-        HashMap hashMap = new HashMap();
+        java.util.HashMap hashMap = new java.util.HashMap();
         hashMap.put("iw", "he");
         hashMap.put("ji", "yi");
         hashMap.put("in", "id");
         hashMap.put("tl", "fil");
-        a = Collections.unmodifiableMap(hashMap);
-        HashMap hashMap2 = new HashMap();
+        a = java.util.Collections.unmodifiableMap(hashMap);
+        java.util.HashMap hashMap2 = new java.util.HashMap();
         hashMap2.put("und", "");
         hashMap2.put("fil", "tl");
-        Collections.unmodifiableMap(hashMap2);
+        java.util.Collections.unmodifiableMap(hashMap2);
     }
 }

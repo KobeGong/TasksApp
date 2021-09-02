@@ -1,18 +1,16 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: yn  reason: default package */
+/* renamed from: yn reason: default package */
 /* compiled from: PG */
-public final class yn extends ti {
+final class yn extends defpackage.ti {
     private boolean a = false;
     private int b = 0;
-    private final /* synthetic */ ym c;
+    private final /* synthetic */ defpackage.ym c;
 
-    yn(ym ymVar) {
+    yn(defpackage.ym ymVar) {
         this.c = ymVar;
     }
 
-    @Override // defpackage.th, defpackage.ti
     public final void a() {
         if (!this.a) {
             this.a = true;
@@ -22,7 +20,6 @@ public final class yn extends ti {
         }
     }
 
-    @Override // defpackage.th, defpackage.ti
     public final void b() {
         int i = this.b + 1;
         this.b = i;

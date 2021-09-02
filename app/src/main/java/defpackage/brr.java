@@ -1,45 +1,37 @@
 package defpackage;
 
-/* renamed from: brr  reason: default package */
+/* renamed from: brr reason: default package */
 /* compiled from: PG */
-public final class brr extends brk {
-    @Override // defpackage.brk
-    public final /* bridge */ /* synthetic */ void b(bra bra) {
+public final class brr extends defpackage.brk {
+    public final /* bridge */ /* synthetic */ void b(defpackage.bra bra) {
         super.b(bra);
     }
 
-    @Override // defpackage.brk
-    public final /* bridge */ /* synthetic */ void b(bqz bqz) {
+    public final /* bridge */ /* synthetic */ void b(defpackage.bqz bqz) {
         super.b(bqz);
     }
 
-    @Override // defpackage.brk
-    public final /* bridge */ /* synthetic */ bqt a(axq axq) {
+    public final /* bridge */ /* synthetic */ defpackage.bqt a(defpackage.axq axq) {
         return super.a(axq);
     }
 
-    @Override // defpackage.brk
-    public final /* bridge */ /* synthetic */ ayp a(bqw bqw) {
+    public final /* bridge */ /* synthetic */ defpackage.ayp a(defpackage.bqw bqw) {
         return super.a(bqw);
     }
 
-    @Override // defpackage.brk
-    public final /* bridge */ /* synthetic */ ays a(bra bra) {
+    public final /* bridge */ /* synthetic */ defpackage.ays a(defpackage.bra bra) {
         return super.a(bra);
     }
 
-    @Override // defpackage.brk
-    public final /* bridge */ /* synthetic */ ayr a(bqz bqz) {
+    public final /* bridge */ /* synthetic */ defpackage.ayr a(defpackage.bqz bqz) {
         return super.a(bqz);
     }
 
-    @Override // defpackage.brk
-    public final /* bridge */ /* synthetic */ aye a(bqv bqv) {
+    public final /* bridge */ /* synthetic */ defpackage.aye a(defpackage.bqv bqv) {
         return super.a(bqv);
     }
 
-    @Override // defpackage.brk
-    public final /* bridge */ /* synthetic */ ayd a(bqu bqu) {
+    public final /* bridge */ /* synthetic */ defpackage.ayd a(defpackage.bqu bqu) {
         return super.a(bqu);
     }
 }

@@ -1,32 +1,28 @@
 package defpackage;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-/* renamed from: bol  reason: default package */
+/* renamed from: bol reason: default package */
 /* compiled from: PG */
-public final class bol extends biq implements Parcelable, bcs {
-    public static final Parcelable.Creator CREATOR = new bok();
-    private final Integer a;
-    private final Boolean b;
+public final class bol extends defpackage.biq implements android.os.Parcelable, defpackage.bcs {
+    public static final android.os.Parcelable.Creator CREATOR = new defpackage.bok();
+    private final java.lang.Integer a;
+    private final java.lang.Boolean b;
 
-    public bol(Integer num, Boolean bool) {
+    public bol(java.lang.Integer num, java.lang.Boolean bool) {
         this.a = num;
         this.b = bool;
     }
 
-    public final void writeToParcel(Parcel parcel, int i) {
-        int q = bjr.q(parcel, 20293);
-        bjr.a(parcel, this.a);
-        Boolean bool = this.b;
+    public final void writeToParcel(android.os.Parcel parcel, int i) {
+        int q = defpackage.bjr.q(parcel, 20293);
+        defpackage.bjr.a(parcel, this.a);
+        java.lang.Boolean bool = this.b;
         if (bool != null) {
-            bjr.b(parcel, 4, 4);
+            defpackage.bjr.b(parcel, 4, 4);
             parcel.writeInt(bool.booleanValue() ? 1 : 0);
         }
-        bjr.r(parcel, q);
+        defpackage.bjr.r(parcel, q);
     }
 
-    @Override // defpackage.bcs
     public final boolean a() {
         return true;
     }

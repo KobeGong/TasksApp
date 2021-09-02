@@ -1,12 +1,10 @@
 package defpackage;
 
-import com.google.android.apps.tasks.R;
-
-/* renamed from: co  reason: default package */
+/* renamed from: co reason: default package */
 /* compiled from: PG */
 public final class co {
-    public static final int[] a = {R.attr.keylines, R.attr.statusBarBackground};
-    public static final int[] b = {16842931, R.attr.layout_behavior, R.attr.layout_anchor, R.attr.layout_keyline, R.attr.layout_anchorGravity, R.attr.layout_insetEdge, R.attr.layout_dodgeInsetEdges};
+    public static final int[] a = {2130772326, 2130772327};
+    public static final int[] b = {16842931, 2130772328, 2130772329, 2130772330, 2130772331, 2130772332, 2130772333};
     public static final int c = 0;
     public static final int d = 2;
     public static final int e = 4;

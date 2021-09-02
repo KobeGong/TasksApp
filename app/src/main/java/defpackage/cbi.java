@@ -1,12 +1,11 @@
 package defpackage;
 
-/* renamed from: cbi  reason: default package */
+/* renamed from: cbi reason: default package */
 /* compiled from: PG */
-public final class cbi implements ecz {
-    public static final cbi a = new cbi();
+public final class cbi implements defpackage.ecz {
+    public static final defpackage.cbi a = new defpackage.cbi();
 
-    @Override // defpackage.ecz
-    public final /* synthetic */ Object a() {
-        return new cbh();
+    public final /* synthetic */ java.lang.Object a() {
+        return new defpackage.cbh();
     }
 }

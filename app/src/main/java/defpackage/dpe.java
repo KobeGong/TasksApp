@@ -1,6 +1,6 @@
 package defpackage;
 
-/* renamed from: dpe  reason: default package */
+/* renamed from: dpe reason: default package */
 /* compiled from: PG */
 public enum dpe {
     UNARY,

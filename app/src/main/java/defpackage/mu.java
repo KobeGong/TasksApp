@@ -1,18 +1,15 @@
 package defpackage;
 
-import android.graphics.Rect;
-import android.transition.Transition;
-
-/* renamed from: mu  reason: default package */
+/* renamed from: mu reason: default package */
 /* compiled from: PG */
-final class mu extends Transition.EpicenterCallback {
-    private final /* synthetic */ Rect a;
+final class mu extends android.transition.Transition.EpicenterCallback {
+    private final /* synthetic */ android.graphics.Rect a;
 
-    mu(Rect rect) {
+    mu(android.graphics.Rect rect) {
         this.a = rect;
     }
 
-    public final Rect onGetEpicenter(Transition transition) {
+    public final android.graphics.Rect onGetEpicenter(android.transition.Transition transition) {
         if (this.a == null || this.a.isEmpty()) {
             return null;
         }

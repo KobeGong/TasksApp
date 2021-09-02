@@ -1,43 +1,37 @@
 package defpackage;
 
-import android.content.Intent;
-import android.os.Build;
-import android.os.Bundle;
-import android.os.IBinder;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-
-/* renamed from: cq  reason: default package */
+/* renamed from: cq reason: default package */
 /* compiled from: PG */
 public final class cq {
-    public final Intent a;
+    public final android.content.Intent a;
     public boolean b;
 
     public cq() {
-        this((byte) 0);
+        this(0);
     }
 
     private cq(byte b2) {
-        this.a = new Intent("android.intent.action.VIEW");
+        this.a = new android.content.Intent("android.intent.action.VIEW");
         this.b = true;
-        Bundle bundle = new Bundle();
-        if (Build.VERSION.SDK_INT >= 18) {
-            bundle.putBinder("android.support.customtabs.extra.SESSION", null);
+        android.os.Bundle bundle = new android.os.Bundle();
+        java.lang.String str = "android.support.customtabs.extra.SESSION";
+        if (android.os.Build.VERSION.SDK_INT >= 18) {
+            bundle.putBinder(str, null);
         } else {
-            if (!ba.b) {
+            if (!defpackage.ba.b) {
                 try {
-                    Method method = Bundle.class.getMethod("putIBinder", String.class, IBinder.class);
-                    ba.a = method;
+                    java.lang.reflect.Method method = android.os.Bundle.class.getMethod("putIBinder", new java.lang.Class[]{java.lang.String.class, android.os.IBinder.class});
+                    defpackage.ba.a = method;
                     method.setAccessible(true);
-                } catch (NoSuchMethodException e) {
+                } catch (java.lang.NoSuchMethodException e) {
                 }
-                ba.b = true;
+                defpackage.ba.b = true;
             }
-            if (ba.a != null) {
+            if (defpackage.ba.a != null) {
                 try {
-                    ba.a.invoke(bundle, "android.support.customtabs.extra.SESSION", null);
-                } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e2) {
-                    ba.a = null;
+                    defpackage.ba.a.invoke(bundle, new java.lang.Object[]{str, null});
+                } catch (java.lang.IllegalAccessException | java.lang.IllegalArgumentException | java.lang.reflect.InvocationTargetException e2) {
+                    defpackage.ba.a = null;
                 }
             }
         }

@@ -1,16 +1,14 @@
 package defpackage;
 
-import com.google.android.apps.tasks.ui.TaskListsActivity;
+/* renamed from: apj reason: default package */
+public final /* synthetic */ class apj implements java.lang.Runnable {
+    private final com.google.android.apps.tasks.ui.TaskListsActivity a;
 
-/* renamed from: apj  reason: default package */
-public final /* synthetic */ class apj implements Runnable {
-    private final TaskListsActivity a;
-
-    public apj(TaskListsActivity taskListsActivity) {
+    public apj(com.google.android.apps.tasks.ui.TaskListsActivity taskListsActivity) {
         this.a = taskListsActivity;
     }
 
     public final void run() {
-        this.a.o();
+        this.a.removeSplash();
     }
 }

@@ -1,47 +1,39 @@
 package defpackage;
 
-import android.content.Context;
-import android.os.Build;
-import android.os.Bundle;
-import android.view.MenuInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
-
-/* renamed from: wo  reason: default package */
+/* renamed from: wo reason: default package */
 /* compiled from: PG */
 public abstract class wo {
     public static int a = -1;
 
-    static wo a(Context context, Window window, wn wnVar) {
-        if (Build.VERSION.SDK_INT >= 24) {
-            return new ws(context, window, wnVar);
+    static defpackage.wo a(android.content.Context context, android.view.Window window, defpackage.wn wnVar) {
+        if (android.os.Build.VERSION.SDK_INT >= 24) {
+            return new defpackage.ws(context, window, wnVar);
         }
-        if (Build.VERSION.SDK_INT >= 23) {
-            return new wx(context, window, wnVar);
+        if (android.os.Build.VERSION.SDK_INT >= 23) {
+            return new defpackage.wx(context, window, wnVar);
         }
-        return new wu(context, window, wnVar);
+        return new defpackage.wu(context, window, wnVar);
     }
 
-    public abstract View a(int i);
+    public abstract android.view.View a(int i);
 
-    public abstract wa a();
+    public abstract defpackage.wa a();
 
-    public abstract void a(Bundle bundle);
+    public abstract void a(android.os.Bundle bundle);
 
-    public abstract void a(View view);
+    public abstract void a(android.view.View view);
 
-    public abstract void a(View view, ViewGroup.LayoutParams layoutParams);
+    public abstract void a(android.view.View view, android.view.ViewGroup.LayoutParams layoutParams);
 
-    public abstract void a(CharSequence charSequence);
+    public abstract void a(java.lang.CharSequence charSequence);
 
-    public abstract MenuInflater b();
+    public abstract android.view.MenuInflater b();
 
     public abstract void b(int i);
 
-    public abstract void b(Bundle bundle);
+    public abstract void b(android.os.Bundle bundle);
 
-    public abstract void b(View view, ViewGroup.LayoutParams layoutParams);
+    public abstract void b(android.view.View view, android.view.ViewGroup.LayoutParams layoutParams);
 
     public abstract void c();
 

@@ -1,20 +1,19 @@
 package defpackage;
 
-import android.net.Uri;
-
-/* renamed from: boy  reason: default package */
+/* renamed from: boy reason: default package */
 /* compiled from: PG */
 public final class boy {
-    private static final ayh a = new ayh((byte) 0);
-    private static final ayf b = new bpm();
+    private static final defpackage.ayh a = new defpackage.ayh(0);
+    private static final defpackage.ayf b = new defpackage.bpm();
 
-    public static Uri a(String str) {
-        String valueOf = String.valueOf(Uri.encode(str));
-        return Uri.parse(valueOf.length() != 0 ? "content://com.google.android.gms.phenotype/".concat(valueOf) : new String("content://com.google.android.gms.phenotype/"));
+    public static android.net.Uri a(java.lang.String str) {
+        java.lang.String str2 = "content://com.google.android.gms.phenotype/";
+        java.lang.String valueOf = java.lang.String.valueOf(android.net.Uri.encode(str));
+        return android.net.Uri.parse(valueOf.length() != 0 ? str2.concat(valueOf) : new java.lang.String(str2));
     }
 
     static {
-        new ayd("Phenotype.API", b, a);
-        new bjz();
+        new defpackage.ayd("Phenotype.API", b, a);
+        new defpackage.bjz();
     }
 }

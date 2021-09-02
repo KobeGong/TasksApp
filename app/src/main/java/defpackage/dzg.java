@@ -1,14 +1,12 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: dzg  reason: default package */
+/* renamed from: dzg reason: default package */
 /* compiled from: PG */
-public final class dzg extends dze {
+final class dzg extends defpackage.dze {
     dzg() {
     }
 
-    @Override // defpackage.dze
-    public final boolean a(dzd dzd) {
+    public final boolean a(defpackage.dzd dzd) {
         boolean z;
         synchronized (dzd) {
             if (dzd.a == 0) {
@@ -21,8 +19,7 @@ public final class dzg extends dze {
         return z;
     }
 
-    @Override // defpackage.dze
-    public final void b(dzd dzd) {
+    public final void b(defpackage.dzd dzd) {
         synchronized (dzd) {
             dzd.a = 0;
         }

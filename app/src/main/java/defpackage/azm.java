@@ -1,30 +1,26 @@
 package defpackage;
 
-import android.os.Looper;
-import java.lang.ref.WeakReference;
-
-/* renamed from: azm  reason: default package */
+/* renamed from: azm reason: default package */
 /* compiled from: PG */
-final class azm implements bda {
+final class azm implements defpackage.bda {
     public final boolean a;
-    private final WeakReference b;
-    private final ayd c;
+    private final java.lang.ref.WeakReference b;
+    private final defpackage.ayd c;
 
-    public azm(azk azk, ayd ayd, boolean z) {
-        this.b = new WeakReference(azk);
+    public azm(defpackage.azk azk, defpackage.ayd ayd, boolean z) {
+        this.b = new java.lang.ref.WeakReference(azk);
         this.c = ayd;
         this.a = z;
     }
 
-    @Override // defpackage.bda
-    public final void a(axq axq) {
+    public final void a(defpackage.axq axq) {
         boolean z = false;
-        azk azk = (azk) this.b.get();
+        defpackage.azk azk = (defpackage.azk) this.b.get();
         if (azk != null) {
-            if (Looper.myLooper() == azk.a.m.c()) {
+            if (android.os.Looper.myLooper() == azk.a.m.c()) {
                 z = true;
             }
-            azb.a(z, "onReportServiceBinding must be called on the GoogleApiClient handler thread");
+            defpackage.azb.a(z, (java.lang.Object) "onReportServiceBinding must be called on the GoogleApiClient handler thread");
             azk.b.lock();
             try {
                 if (azk.b(0)) {

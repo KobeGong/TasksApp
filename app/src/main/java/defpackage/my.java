@@ -1,17 +1,12 @@
 package defpackage;
 
-import android.view.View;
-import java.util.ArrayList;
-import java.util.Map;
-
-/* access modifiers changed from: package-private */
-/* renamed from: my  reason: default package */
+/* renamed from: my reason: default package */
 /* compiled from: PG */
-public final class my implements Runnable {
-    private final /* synthetic */ ArrayList a;
-    private final /* synthetic */ Map b;
+final class my implements java.lang.Runnable {
+    private final /* synthetic */ java.util.ArrayList a;
+    private final /* synthetic */ java.util.Map b;
 
-    my(ArrayList arrayList, Map map) {
+    my(java.util.ArrayList arrayList, java.util.Map map) {
         this.a = arrayList;
         this.b = map;
     }
@@ -19,8 +14,8 @@ public final class my implements Runnable {
     public final void run() {
         int size = this.a.size();
         for (int i = 0; i < size; i++) {
-            View view = (View) this.a.get(i);
-            sn.a(view, (String) this.b.get(sn.a.t(view)));
+            android.view.View view = (android.view.View) this.a.get(i);
+            defpackage.sn.a(view, (java.lang.String) this.b.get(defpackage.sn.a.t(view)));
         }
     }
 }

@@ -1,22 +1,13 @@
 package defpackage;
 
-import android.content.SharedPreferences;
-import android.os.Build;
-import android.transition.Fade;
-import com.google.android.apps.tasks.R;
-import com.google.android.apps.tasks.ui.TaskListsActivity;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
+/* renamed from: apk reason: default package */
+final /* synthetic */ class apk implements java.lang.Runnable {
+    private final com.google.android.apps.tasks.ui.TaskListsActivity a;
+    private final defpackage.aoe b;
+    private final defpackage.cdu c;
+    private final defpackage.cyi d;
 
-/* renamed from: apk  reason: default package */
-final /* synthetic */ class apk implements Runnable {
-    private final TaskListsActivity a;
-    private final aoe b;
-    private final cdu c;
-    private final cyi d;
-
-    apk(TaskListsActivity taskListsActivity, aoe aoe, cdu cdu, cyi cyi) {
+    apk(com.google.android.apps.tasks.ui.TaskListsActivity taskListsActivity, defpackage.aoe aoe, defpackage.cdu cdu, defpackage.cyi cyi) {
         this.a = taskListsActivity;
         this.b = aoe;
         this.c = cdu;
@@ -24,111 +15,111 @@ final /* synthetic */ class apk implements Runnable {
     }
 
     public final void run() {
-        aqa d2;
+        WelcomeFragment d2;
         boolean z;
-        Fade fade = null;
-        TaskListsActivity taskListsActivity = this.a;
-        aoe aoe = this.b;
-        cdu cdu = this.c;
-        cyi cyi = this.d;
+        java.lang.Object obj = null;
+        com.google.android.apps.tasks.ui.TaskListsActivity taskListsActivity = this.a;
+        defpackage.aoe aoe = this.b;
+        defpackage.cdu cdu = this.c;
+        defpackage.cyi cyi = this.d;
         if (taskListsActivity.r()) {
             aoe.a(cdu.b());
             return;
         }
         taskListsActivity.getWindow().clearFlags(16);
         try {
-            if (((ajh) cyi.get()).a()) {
-                String b2 = cdu.b();
-                boolean z2 = !aiw.b(taskListsActivity.getBaseContext()).a();
+            if (((defpackage.ajh) cyi.get()).a()) {
+                java.lang.String b2 = cdu.b();
+                boolean z2 = !defpackage.aiw.b(taskListsActivity.getBaseContext()).a();
                 taskListsActivity.p();
-                if (!any.get().c().a()) {
-                    taskListsActivity.a((String) null);
+                if (!defpackage.any.a().c().a()) {
+                    taskListsActivity.a((java.lang.String) null);
                 }
-                any.get().c().c();
-                lc lcVar = taskListsActivity.n;
-                if ((!(lcVar instanceof aqa) || !z2) && Build.VERSION.SDK_INT >= 21) {
-                    fade = new Fade();
+                defpackage.any.a().c().c();
+                Fragment lcVar = taskListsActivity.n;
+                if ((!(lcVar instanceof WelcomeFragment) || !z2) && android.os.Build.VERSION.SDK_INT >= 21) {
+                    obj = new android.transition.Fade();
                 }
-                if (!taskListsActivity.l && (lcVar instanceof arb)) {
-                    ((arb) lcVar).O();
+                if (!taskListsActivity.l && (lcVar instanceof defpackage.arb)) {
+                    ((defpackage.arb) lcVar).O();
                 }
-                if (lcVar == null || (lcVar instanceof aqa)) {
-                    taskListsActivity.c().e();
+                if (lcVar == null || (lcVar instanceof WelcomeFragment)) {
+                    taskListsActivity.getSupportFragmentManager().e();
                     if (lcVar != null) {
-                        lcVar.b(fade);
-                        taskListsActivity.i.a_(fade);
+                        lcVar.b(obj);
+                        taskListsActivity.i.a_(obj);
                     }
-                    taskListsActivity.c().a().a(R.id.fragment_container, taskListsActivity.i, "tasksfragment").c();
-                    taskListsActivity.b(taskListsActivity.i);
+                    taskListsActivity.getSupportFragmentManager().a().a(2131755276, taskListsActivity.i, "tasksfragment").c();
+                    taskListsActivity.b((Fragment) taskListsActivity.i);
                 }
-                List<dcb> d3 = any.get().c().d();
-                HashSet hashSet = new HashSet();
-                for (dcb dcb : d3) {
+                java.util.List<defpackage.dcb> d3 = defpackage.any.a().c().d();
+                java.util.HashSet hashSet = new java.util.HashSet();
+                for (defpackage.dcb dcb : d3) {
                     hashSet.add(dcb.b);
                 }
-                ain b3 = ain.b(taskListsActivity, b2);
-                ArrayList arrayList = new ArrayList();
-                for (String str : b3.a.getAll().keySet()) {
+                defpackage.ain b3 = defpackage.ain.b(taskListsActivity, b2);
+                java.util.ArrayList arrayList = new java.util.ArrayList();
+                for (java.lang.String str : b3.a.getAll().keySet()) {
                     if (str.startsWith("task-list-order:") && !hashSet.contains(str.substring(16))) {
                         arrayList.add(str);
                     }
                 }
                 if (!arrayList.isEmpty()) {
-                    SharedPreferences.Editor edit = b3.a.edit();
-                    ArrayList arrayList2 = arrayList;
+                    android.content.SharedPreferences.Editor edit = b3.a.edit();
+                    java.util.ArrayList arrayList2 = arrayList;
                     int size = arrayList2.size();
                     int i = 0;
                     while (i < size) {
-                        Object obj = arrayList2.get(i);
+                        java.lang.Object obj2 = arrayList2.get(i);
                         i++;
-                        edit.remove((String) obj);
+                        edit.remove((java.lang.String) obj2);
                     }
                     edit.apply();
                 }
                 taskListsActivity.l = true;
-                aof a2 = aoe.a(taskListsActivity, b2);
-                String a3 = a2.a();
+                defpackage.aof a2 = aoe.a(taskListsActivity, b2);
+                java.lang.String a3 = a2.a();
                 if (a3 != null && !a3.equals(taskListsActivity.h.b)) {
-                    for (dcb dcb2 : d3) {
+                    for (defpackage.dcb dcb2 : d3) {
                         if (a3.equals(dcb2.b)) {
                             taskListsActivity.b(dcb2);
                         }
                     }
                 }
-                lc b4 = a2.b();
+                Fragment b4 = a2.b();
                 if (b4 != null) {
-                    taskListsActivity.c().e();
+                    taskListsActivity.getSupportFragmentManager().e();
                     taskListsActivity.a(b4);
                 } else if (z2) {
-                    taskListsActivity.c().e();
-                    if (lcVar instanceof aqa) {
-                        taskListsActivity.c().b();
-                        d2 = (aqa) lcVar;
-                        d2.e(bg.Q);
+                    taskListsActivity.getSupportFragmentManager().e();
+                    if (lcVar instanceof WelcomeFragment) {
+                        taskListsActivity.getSupportFragmentManager().b();
+                        d2 = (WelcomeFragment) lcVar;
+                        d2.e(defpackage.bg.Q);
                         d2.a_(null);
-                        d2.b((Object) null);
+                        d2.b((java.lang.Object) null);
                         z = true;
                     } else {
-                        d2 = aqa.d(bg.Q);
+                        d2 = WelcomeFragment.d(defpackage.bg.Q);
                         z = false;
                     }
-                    taskListsActivity.b(d2);
-                    mj a4 = taskListsActivity.c().a();
-                    a4.a(R.id.fragment_container, d2, "cannotInitializeAccount");
+                    taskListsActivity.b((Fragment) d2);
+                    defpackage.mj a4 = taskListsActivity.getSupportFragmentManager().a();
+                    a4.a(2131755276, d2, "cannotInitializeAccount");
                     a4.a();
                     a4.c();
                     if (z) {
-                        taskListsActivity.c().b();
+                        taskListsActivity.getSupportFragmentManager().b();
                     }
-                } else if (lcVar instanceof auj) {
-                    taskListsActivity.b(taskListsActivity.i);
+                } else if (lcVar instanceof TasksFragment) {
+                    taskListsActivity.b((Fragment) taskListsActivity.i);
                 }
             } else {
-                taskListsActivity.b(bg.P);
+                taskListsActivity.b(defpackage.bg.P);
                 aoe.a(cdu.b());
             }
-        } catch (Exception e) {
-            taskListsActivity.b(bg.P);
+        } catch (java.lang.Exception e) {
+            taskListsActivity.b(defpackage.bg.P);
             aoe.a(cdu.b());
         }
     }

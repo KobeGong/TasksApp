@@ -1,9 +1,8 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: cpl  reason: default package */
+/* renamed from: cpl reason: default package */
 /* compiled from: PG */
-public interface cpl {
+interface cpl {
     long a();
 
     long b();

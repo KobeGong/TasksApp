@@ -1,6 +1,6 @@
 package defpackage;
 
-/* renamed from: cyu  reason: default package */
+/* renamed from: cyu reason: default package */
 /* compiled from: PG */
-public final class cyu extends cxi {
+public final class cyu extends defpackage.cxi {
 }

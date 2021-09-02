@@ -1,55 +1,47 @@
 package defpackage;
 
-import java.net.InetAddress;
-import java.net.URI;
-import java.net.UnknownHostException;
-import java.util.Random;
-import java.util.concurrent.ExecutorService;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-/* access modifiers changed from: package-private */
-/* renamed from: dum  reason: default package */
+/* renamed from: dum reason: default package */
 /* compiled from: PG */
-public final class dum extends dpf {
-    public static final Logger a = Logger.getLogger(dum.class.getName());
+final class dum extends defpackage.dpf {
+    public static final java.util.logging.Logger a = java.util.logging.Logger.getLogger(defpackage.dum.class.getName());
     private static final boolean j = f();
-    private static boolean k = Boolean.parseBoolean(System.getProperty("io.grpc.internal.DnsNameResolverProvider.enable_jndi", "false"));
-    private static String l;
-    public final dxq b;
-    public final Random c = new Random();
-    public dup d;
-    public final String e;
+    private static boolean k = java.lang.Boolean.parseBoolean(java.lang.System.getProperty("io.grpc.internal.DnsNameResolverProvider.enable_jndi", "false"));
+    private static java.lang.String l;
+    public final defpackage.dxq b;
+    public final java.util.Random c = new java.util.Random();
+    public defpackage.dup d;
+    public final java.lang.String e;
     public final int f;
     public boolean g;
     public boolean h;
-    public dph i;
-    private final String m;
-    private final dzl n;
-    private ExecutorService o;
-    private final Runnable p;
+    public defpackage.dph i;
+    private final java.lang.String m;
+    private final defpackage.dzl n;
+    private java.util.concurrent.ExecutorService o;
+    private final java.lang.Runnable p;
 
-    dum(String str, dmv dmv, dzl dzl, dxq dxq) {
-        dup dup;
-        duq duq = new duq();
+    dum(java.lang.String str, defpackage.dmv dmv, defpackage.dzl dzl, defpackage.dxq dxq) {
+        defpackage.dup dup;
+        defpackage.dup duq = new defpackage.duq();
         if (!j || !k) {
             dup = duq;
         } else {
-            dup = new duo(duq, new dur());
+            dup = new defpackage.duo(duq, new defpackage.dur());
         }
         this.d = dup;
-        this.p = new dun(this);
+        this.p = new defpackage.dun(this);
         this.n = dzl;
-        String valueOf = String.valueOf(str);
-        URI create = URI.create(valueOf.length() != 0 ? "//".concat(valueOf) : new String("//"));
-        this.m = (String) cld.a(create.getAuthority(), "nameUri (%s) doesn't have an authority", create);
-        this.e = (String) cld.a(create.getHost(), "host");
+        java.lang.String str2 = "//";
+        java.lang.String valueOf = java.lang.String.valueOf(str);
+        java.net.URI create = java.net.URI.create(valueOf.length() != 0 ? str2.concat(valueOf) : new java.lang.String(str2));
+        this.m = (java.lang.String) defpackage.cld.a((java.lang.Object) create.getAuthority(), "nameUri (%s) doesn't have an authority", (java.lang.Object) create);
+        this.e = (java.lang.String) defpackage.cld.a((java.lang.Object) create.getHost(), (java.lang.Object) "host");
         if (create.getPort() == -1) {
-            Integer num = (Integer) dmv.a(dpg.a);
+            java.lang.Integer num = (java.lang.Integer) dmv.a(defpackage.dpg.a);
             if (num != null) {
                 this.f = num.intValue();
             } else {
-                throw new IllegalArgumentException(new StringBuilder(String.valueOf(str).length() + 69).append("name '").append(str).append("' doesn't contain a port, and default port is not set in params").toString());
+                throw new java.lang.IllegalArgumentException(new java.lang.StringBuilder(java.lang.String.valueOf(str).length() + 69).append("name '").append(str).append("' doesn't contain a port, and default port is not set in params").toString());
             }
         } else {
             this.f = create.getPort();
@@ -57,22 +49,19 @@ public final class dum extends dpf {
         this.b = dxq;
     }
 
-    @Override // defpackage.dpf
-    public final String a() {
+    public final java.lang.String a() {
         return this.m;
     }
 
-    @Override // defpackage.dpf
-    public final synchronized void a(dph dph) {
-        cld.b(this.i == null, "already started");
-        this.o = (ExecutorService) dzi.a.a(this.n);
-        this.i = (dph) cld.a(dph, "listener");
+    public final synchronized void a(defpackage.dph dph) {
+        defpackage.cld.b(this.i == null, (java.lang.Object) "already started");
+        this.o = (java.util.concurrent.ExecutorService) defpackage.dzi.a.a(this.n);
+        this.i = (defpackage.dph) defpackage.cld.a((java.lang.Object) dph, (java.lang.Object) "listener");
         e();
     }
 
-    @Override // defpackage.dpf
     public final synchronized void c() {
-        cld.b(this.i != null, "not started");
+        defpackage.cld.b(this.i != null, (java.lang.Object) "not started");
         e();
     }
 
@@ -82,34 +71,33 @@ public final class dum extends dpf {
         }
     }
 
-    @Override // defpackage.dpf
     public final synchronized void b() {
         if (!this.g) {
             this.g = true;
             if (this.o != null) {
-                this.o = (ExecutorService) dzi.a(this.n, this.o);
+                this.o = (java.util.concurrent.ExecutorService) defpackage.dzi.a(this.n, this.o);
             }
         }
     }
 
     private static boolean f() {
-        if (dvc.a) {
+        if (defpackage.dvc.a) {
             return false;
         }
         try {
-            Class.forName("javax.naming.directory.InitialDirContext");
-            Class.forName("com.sun.jndi.dns.DnsContextFactory");
+            java.lang.Class.forName("javax.naming.directory.InitialDirContext");
+            java.lang.Class.forName("com.sun.jndi.dns.DnsContextFactory");
             return true;
-        } catch (ClassNotFoundException e2) {
-            a.logp(Level.FINE, "io.grpc.internal.DnsNameResolver", "jndiAvailable", "Unable to find JNDI DNS resolver, skipping", (Throwable) e2);
+        } catch (java.lang.ClassNotFoundException e2) {
+            a.logp(java.util.logging.Level.FINE, "io.grpc.internal.DnsNameResolver", "jndiAvailable", "Unable to find JNDI DNS resolver, skipping", e2);
             return false;
         }
     }
 
-    static String a(String str) {
+    static java.lang.String a(java.lang.String str) {
         int i2;
         char c2;
-        StringBuilder sb = new StringBuilder(str.length());
+        java.lang.StringBuilder sb = new java.lang.StringBuilder(str.length());
         int i3 = 0;
         boolean z = false;
         while (i3 < str.length()) {
@@ -119,8 +107,9 @@ public final class dum extends dpf {
                     if (charAt == '\"') {
                         z = true;
                     }
+                    char c3 = charAt;
                     i2 = i3;
-                    c2 = charAt;
+                    c2 = c3;
                     sb.append(c2);
                     i3 = i2;
                 }
@@ -133,8 +122,9 @@ public final class dum extends dpf {
                     sb.append(c2);
                     i3 = i2;
                 }
+                char c32 = charAt;
                 i2 = i3;
-                c2 = charAt;
+                c2 = c32;
                 sb.append(c2);
                 i3 = i2;
             }
@@ -143,12 +133,12 @@ public final class dum extends dpf {
         return sb.toString();
     }
 
-    static String d() {
+    static java.lang.String d() {
         if (l == null) {
             try {
-                l = InetAddress.getLocalHost().getHostName();
-            } catch (UnknownHostException e2) {
-                throw new RuntimeException(e2);
+                l = java.net.InetAddress.getLocalHost().getHostName();
+            } catch (java.net.UnknownHostException e2) {
+                throw new java.lang.RuntimeException(e2);
             }
         }
         return l;

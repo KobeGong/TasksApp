@@ -1,10 +1,7 @@
 package defpackage;
 
-import java.util.concurrent.Executor;
-import java.util.concurrent.Future;
-
-/* renamed from: cyi  reason: default package */
+/* renamed from: cyi reason: default package */
 /* compiled from: PG */
-public interface cyi extends Future {
-    void a(Runnable runnable, Executor executor);
+public interface cyi extends java.util.concurrent.Future {
+    void a(java.lang.Runnable runnable, java.util.concurrent.Executor executor);
 }

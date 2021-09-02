@@ -1,12 +1,11 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: dkv  reason: default package */
+/* renamed from: dkv reason: default package */
 /* compiled from: PG */
-public final class dkv {
-    public final /* synthetic */ dha a;
+final class dkv {
+    public final /* synthetic */ defpackage.dha a;
 
-    dkv(dha dha) {
+    dkv(defpackage.dha dha) {
         this.a = dha;
     }
 }

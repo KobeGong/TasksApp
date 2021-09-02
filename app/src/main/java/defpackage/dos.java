@@ -1,18 +1,16 @@
 package defpackage;
 
-/* renamed from: dos  reason: default package */
+/* renamed from: dos reason: default package */
 /* compiled from: PG */
-final class dos implements dox {
+final class dos implements defpackage.dox {
     dos() {
     }
 
-    @Override // defpackage.dox
-    public final /* synthetic */ Object a(byte[] bArr) {
+    public final /* synthetic */ java.lang.Object a(byte[] bArr) {
         return bArr;
     }
 
-    @Override // defpackage.dox
-    public final /* synthetic */ byte[] a(Object obj) {
+    public final /* synthetic */ byte[] a(java.lang.Object obj) {
         return (byte[]) obj;
     }
 }

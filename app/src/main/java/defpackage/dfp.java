@@ -1,13 +1,12 @@
 package defpackage;
 
-/* renamed from: dfp  reason: default package */
+/* renamed from: dfp reason: default package */
 /* compiled from: PG */
-final class dfp implements dio {
+final class dfp implements defpackage.dio {
     dfp() {
     }
 
-    @Override // defpackage.dio
-    public final /* synthetic */ din a(int i) {
-        return dfo.a(i);
+    public final /* synthetic */ defpackage.din a(int i) {
+        return defpackage.dfo.a(i);
     }
 }

@@ -1,12 +1,12 @@
 package defpackage;
 
-/* renamed from: ebx  reason: default package */
+/* renamed from: ebx reason: default package */
 /* compiled from: PG */
-public abstract class ebx extends ehw {
+public abstract class ebx extends defpackage.ehw {
     ebx() {
     }
 
-    public abstract eby a();
+    public abstract defpackage.eby a();
 
     public abstract long b();
 

@@ -1,20 +1,16 @@
 package defpackage;
 
-import android.content.Context;
-import org.chromium.net.impl.CronetUrlRequestContext;
-
-/* renamed from: ekm  reason: default package */
+/* renamed from: ekm reason: default package */
 /* compiled from: PG */
-public class ekm extends ejv {
-    public ekm(Context context) {
+public class ekm extends defpackage.ejv {
+    public ekm(android.content.Context context) {
         super(context);
     }
 
-    @Override // defpackage.eie
-    public final ehy a() {
+    public final defpackage.ehy a() {
         if (this.e == null) {
-            this.e = ekr.a(this.a);
+            this.e = defpackage.ekr.a(this.a);
         }
-        return new CronetUrlRequestContext(this);
+        return new org.chromium.net.impl.CronetUrlRequestContext(this);
     }
 }

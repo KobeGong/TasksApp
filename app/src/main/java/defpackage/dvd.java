@@ -1,15 +1,12 @@
 package defpackage;
 
-import java.net.SocketAddress;
-
-/* renamed from: dvd  reason: default package */
+/* renamed from: dvd reason: default package */
 /* compiled from: PG */
-final class dvd implements dxq {
+final class dvd implements defpackage.dxq {
     dvd() {
     }
 
-    @Override // defpackage.dxq
-    public final dxu a(SocketAddress socketAddress) {
+    public final defpackage.dxu a(java.net.SocketAddress socketAddress) {
         return null;
     }
 }

@@ -1,17 +1,14 @@
 package defpackage;
 
-import java.util.Locale;
-import java.util.concurrent.Callable;
-
-/* renamed from: aqo  reason: default package */
-public final /* synthetic */ class aqo implements Callable {
-    private final aql a;
+/* renamed from: aqo reason: default package */
+public final /* synthetic */ class aqo implements java.util.concurrent.Callable {
+    private final defpackage.aql a;
     private final int b;
-    private final cyi c;
-    private final cyu d;
-    private final Locale e;
+    private final defpackage.cyi c;
+    private final defpackage.cyu d;
+    private final java.util.Locale e;
 
-    public aqo(aql aql, int i, cyi cyi, cyu cyu, Locale locale) {
+    public aqo(defpackage.aql aql, int i, defpackage.cyi cyi, defpackage.cyu cyu, java.util.Locale locale) {
         this.a = aql;
         this.b = i;
         this.c = cyi;
@@ -19,8 +16,7 @@ public final /* synthetic */ class aqo implements Callable {
         this.e = locale;
     }
 
-    @Override // java.util.concurrent.Callable
-    public final Object call() {
+    public final java.lang.Object call() {
         return this.a.a(this.b, this.c, this.d, this.e);
     }
 }

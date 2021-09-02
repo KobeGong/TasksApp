@@ -1,28 +1,25 @@
 package defpackage;
 
-/* renamed from: ebv  reason: default package */
+/* renamed from: ebv reason: default package */
 /* compiled from: PG */
-public final class ebv extends ecc {
-    public static final ebv a = new ebv();
+public final class ebv extends defpackage.ecc {
+    public static final defpackage.ebv a = new defpackage.ebv();
 
     private ebv() {
-        super(ecf.c);
+        super(defpackage.ecf.c);
     }
 
-    @Override // defpackage.ecc
-    @Deprecated
-    public final void a(ebz ebz) {
+    @java.lang.Deprecated
+    public final void a(defpackage.ebz ebz) {
     }
 
-    @Override // defpackage.ecc
-    public final void a(ebx ebx) {
+    public final void a(defpackage.ebx ebx) {
     }
 
-    @Override // defpackage.ecc
     public final void a() {
     }
 
-    public final String toString() {
+    public final java.lang.String toString() {
         return "BlankSpan";
     }
 }

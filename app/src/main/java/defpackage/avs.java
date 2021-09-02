@@ -1,28 +1,19 @@
 package defpackage;
 
-import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
-import android.os.IBinder;
-import android.os.IInterface;
-import android.os.Looper;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.auth.api.signin.internal.SignInConfiguration;
-import com.google.android.gms.auth.api.signin.internal.SignInHubActivity;
-import com.google.android.gms.common.api.Scope;
-
-/* renamed from: avs  reason: default package */
+/* renamed from: avs reason: default package */
 /* compiled from: PG */
-public final class avs extends bel {
-    public final GoogleSignInOptions a;
+public final class avs extends defpackage.bel {
+    public final com.google.android.gms.auth.api.signin.GoogleSignInOptions a;
 
-    public avs(Context context, Looper looper, bdj bdj, GoogleSignInOptions googleSignInOptions, ayr ayr, ays ays) {
+    public avs(android.content.Context context, android.os.Looper looper, defpackage.bdj bdj, com.google.android.gms.auth.api.signin.GoogleSignInOptions googleSignInOptions, defpackage.ayr ayr, defpackage.ays ays) {
         super(context, looper, 91, bdj, ayr, ays);
-        googleSignInOptions = googleSignInOptions == null ? new avp().b() : googleSignInOptions;
+        if (googleSignInOptions == null) {
+            googleSignInOptions = new defpackage.avp().b();
+        }
         if (!bdj.c.isEmpty()) {
-            avp avp = new avp(googleSignInOptions);
-            for (Scope scope : bdj.c) {
-                avp.a(scope, new Scope[0]);
+            defpackage.avp avp = new defpackage.avp(googleSignInOptions);
+            for (com.google.android.gms.common.api.Scope a2 : bdj.c) {
+                avp.a(a2, new com.google.android.gms.common.api.Scope[0]);
             }
             googleSignInOptions = avp.b();
         }
@@ -30,47 +21,42 @@ public final class avs extends bel {
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.bcx
-    public final String f_() {
+    public final java.lang.String f_() {
         return "com.google.android.gms.auth.api.signin.service.START";
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.bcx
-    public final String b() {
+    public final java.lang.String b() {
         return "com.google.android.gms.auth.api.signin.internal.ISignInService";
     }
 
-    @Override // defpackage.ayj, defpackage.bcx
     public final boolean c() {
         return true;
     }
 
-    @Override // defpackage.ayj, defpackage.bcx
-    public final Intent d() {
-        Context context = this.d;
-        GoogleSignInOptions googleSignInOptions = this.a;
-        avt.a.a("getSignInIntent()", new Object[0]);
-        SignInConfiguration signInConfiguration = new SignInConfiguration(context.getPackageName(), googleSignInOptions);
-        Intent intent = new Intent("com.google.android.gms.auth.GOOGLE_SIGN_IN");
+    public final android.content.Intent d() {
+        android.content.Context context = this.d;
+        com.google.android.gms.auth.api.signin.GoogleSignInOptions googleSignInOptions = this.a;
+        defpackage.avt.a.a("getSignInIntent()", new java.lang.Object[0]);
+        com.google.android.gms.auth.api.signin.internal.SignInConfiguration signInConfiguration = new com.google.android.gms.auth.api.signin.internal.SignInConfiguration(context.getPackageName(), googleSignInOptions);
+        android.content.Intent intent = new android.content.Intent("com.google.android.gms.auth.GOOGLE_SIGN_IN");
         intent.setPackage(context.getPackageName());
-        intent.setClass(context, SignInHubActivity.class);
-        Bundle bundle = new Bundle();
+        intent.setClass(context, com.google.android.gms.auth.api.signin.internal.SignInHubActivity.class);
+        android.os.Bundle bundle = new android.os.Bundle();
         bundle.putParcelable("config", signInConfiguration);
         intent.putExtra("config", bundle);
         return intent;
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.bcx
-    public final /* synthetic */ IInterface a(IBinder iBinder) {
+    public final /* synthetic */ android.os.IInterface a(android.os.IBinder iBinder) {
         if (iBinder == null) {
             return null;
         }
-        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.auth.api.signin.internal.ISignInService");
-        if (queryLocalInterface instanceof awd) {
-            return (awd) queryLocalInterface;
+        android.os.IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.auth.api.signin.internal.ISignInService");
+        if (queryLocalInterface instanceof defpackage.awd) {
+            return (defpackage.awd) queryLocalInterface;
         }
-        return new awe(iBinder);
+        return new defpackage.awe(iBinder);
     }
 }

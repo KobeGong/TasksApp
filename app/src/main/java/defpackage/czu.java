@@ -1,55 +1,56 @@
 package defpackage;
 
-/* renamed from: czu  reason: default package */
+/* renamed from: czu reason: default package */
 /* compiled from: PG */
-public final class czu extends dih implements djq {
-    public static final czu f = new czu();
-    private static volatile djx g;
-    public crb a;
-    public dca b;
-    public String c = "";
-    public String d = "";
+public final class czu extends defpackage.dih implements defpackage.djq {
+    public static final defpackage.czu f = new defpackage.czu();
+    private static volatile defpackage.djx g;
+    public defpackage.crb a;
+    public defpackage.dca b;
+    public java.lang.String c = "";
+    public java.lang.String d = "";
     public int e;
 
     private czu() {
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.dih
-    public final Object a(int i) {
-        djx djx;
+    public final java.lang.Object a(int i) {
+        defpackage.djx djx;
         switch (i - 1) {
             case 0:
-                return (byte) 1;
+                return java.lang.Byte.valueOf(1);
             case 1:
                 return null;
             case 2:
-                return new dkb(f, "\u0000\u0005\u0000\u0000\u0001\u0005\u0005\u0000\u0000\u0000\u0001\t\u0002\t\u0003Ȉ\u0004Ȉ\u0005\u0004", new Object[]{"a", "b", "c", "d", "e"});
+                java.lang.Object[] objArr = {"a", "b", "c", "d", "e"};
+                return new defpackage.dkb(f, "\u0000\u0005\u0000\u0000\u0001\u0005\u0005\u0000\u0000\u0000\u0001\t\u0002\t\u0003Ȉ\u0004Ȉ\u0005\u0004", objArr);
             case 3:
-                return new czu();
+                return new defpackage.czu();
             case 4:
-                return new dii((int[]) null);
+                return new defpackage.dii((int[]) null);
             case 5:
                 return f;
             case 6:
-                djx djx2 = g;
+                defpackage.djx djx2 = g;
                 if (djx2 != null) {
                     return djx2;
                 }
-                synchronized (czu.class) {
+                synchronized (defpackage.czu.class) {
                     djx = g;
                     if (djx == null) {
-                        djx = new dgr(f);
+                        djx = new defpackage.dgr(f);
                         g = djx;
                     }
                 }
                 return djx;
             default:
-                throw new UnsupportedOperationException();
+                throw new java.lang.UnsupportedOperationException();
         }
     }
 
     static {
-        dih.t.put(czu.class, f);
+        defpackage.czu czu = f;
+        defpackage.dih.t.put(defpackage.czu.class, czu);
     }
 }

@@ -1,19 +1,15 @@
 package defpackage;
 
-import android.os.Handler;
-import android.os.Message;
-
-/* access modifiers changed from: package-private */
-/* renamed from: lh  reason: default package */
+/* renamed from: lh reason: default package */
 /* compiled from: PG */
-public final class lh extends Handler {
+final class lh extends android.os.Handler {
     private final /* synthetic */ FragmentActivity a;
 
     lh(FragmentActivity lgVar) {
         this.a = lgVar;
     }
 
-    public final void handleMessage(Message message) {
+    public final void handleMessage(android.os.Message message) {
         switch (message.what) {
             case 1:
                 if (this.a.d) {
@@ -22,7 +18,7 @@ public final class lh extends Handler {
                 }
                 return;
             case 2:
-                this.a.c.a.d.q();
+                this.a.c.a.mFragmentManager.q();
                 this.a.c.b();
                 return;
             default:

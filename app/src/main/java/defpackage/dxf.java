@@ -1,20 +1,16 @@
 package defpackage;
 
-import java.io.InputStream;
-
-/* access modifiers changed from: package-private */
-/* renamed from: dxf  reason: default package */
+/* renamed from: dxf reason: default package */
 /* compiled from: PG */
-public final class dxf implements dzr {
-    private InputStream a;
+final class dxf implements defpackage.dzr {
+    private java.io.InputStream a;
 
-    dxf(InputStream inputStream) {
+    dxf(java.io.InputStream inputStream) {
         this.a = inputStream;
     }
 
-    @Override // defpackage.dzr
-    public final InputStream a() {
-        InputStream inputStream = this.a;
+    public final java.io.InputStream a() {
+        java.io.InputStream inputStream = this.a;
         this.a = null;
         return inputStream;
     }

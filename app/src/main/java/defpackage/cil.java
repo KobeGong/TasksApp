@@ -1,22 +1,16 @@
 package defpackage;
 
-import android.app.ActivityManager;
-import android.os.Build;
-import android.os.Process;
-import java.util.List;
-
-/* access modifiers changed from: package-private */
-/* renamed from: cil  reason: default package */
+/* renamed from: cil reason: default package */
 /* compiled from: PG */
-public final class cil implements Runnable {
-    private final /* synthetic */ eeo a = null;
-    private final /* synthetic */ String b = null;
+final class cil implements java.lang.Runnable {
+    private final /* synthetic */ defpackage.eeo a = null;
+    private final /* synthetic */ java.lang.String b = null;
     private final /* synthetic */ int c;
     private final /* synthetic */ boolean d;
-    private final /* synthetic */ String e;
-    private final /* synthetic */ cik f;
+    private final /* synthetic */ java.lang.String e;
+    private final /* synthetic */ defpackage.cik f;
 
-    cil(cik cik, int i, String str) {
+    cil(defpackage.cik cik, int i, java.lang.String str) {
         this.f = cik;
         this.c = i;
         this.d = false;
@@ -25,21 +19,21 @@ public final class cil implements Runnable {
 
     public final void run() {
         if (this.f.f) {
-            System.gc();
-            System.runFinalization();
-            System.gc();
+            java.lang.System.gc();
+            java.lang.System.runFinalization();
+            java.lang.System.gc();
         }
         if (this.f.d) {
-            cik cik = this.f;
+            defpackage.cik cik = this.f;
             int i = this.c;
-            String str = this.e;
-            List<ActivityManager.RunningAppProcessInfo> runningAppProcesses = cnx.a(cik.a).getRunningAppProcesses();
+            java.lang.String str = this.e;
+            java.util.List<android.app.ActivityManager.RunningAppProcessInfo> runningAppProcesses = defpackage.cnx.a((android.content.Context) cik.a).getRunningAppProcesses();
             if (runningAppProcesses != null) {
-                String packageName = cik.a.getPackageName();
-                for (ActivityManager.RunningAppProcessInfo runningAppProcessInfo : runningAppProcesses) {
-                    if (Build.VERSION.SDK_INT > 22 || runningAppProcessInfo.processName.contains(packageName)) {
-                        efx efx = new efx();
-                        efx.a = cnt.a(i, runningAppProcessInfo.pid, runningAppProcessInfo.processName, cik.a, str, cik.g);
+                java.lang.String packageName = cik.a.getPackageName();
+                for (android.app.ActivityManager.RunningAppProcessInfo runningAppProcessInfo : runningAppProcesses) {
+                    if (android.os.Build.VERSION.SDK_INT > 22 || runningAppProcessInfo.processName.contains(packageName)) {
+                        defpackage.efx efx = new defpackage.efx();
+                        efx.a = defpackage.cnt.a(i, runningAppProcessInfo.pid, runningAppProcessInfo.processName, cik.a, str, cik.g);
                         cik.a(null, false, efx, null);
                     }
                 }
@@ -47,11 +41,11 @@ public final class cil implements Runnable {
             }
             return;
         }
-        cik cik2 = this.f;
+        defpackage.cik cik2 = this.f;
         int i2 = this.c;
-        String str2 = this.e;
-        efx efx2 = new efx();
-        efx2.a = cnt.a(i2, Process.myPid(), null, cik2.a, str2, cik2.g);
+        java.lang.String str2 = this.e;
+        defpackage.efx efx2 = new defpackage.efx();
+        efx2.a = defpackage.cnt.a(i2, android.os.Process.myPid(), null, cik2.a, str2, cik2.g);
         cik2.a(null, false, efx2, null);
     }
 }

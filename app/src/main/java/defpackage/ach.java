@@ -1,21 +1,18 @@
 package defpackage;
 
-import android.view.ViewTreeObserver;
-import android.widget.PopupWindow;
-
-/* renamed from: ach  reason: default package */
+/* renamed from: ach reason: default package */
 /* compiled from: PG */
-final class ach implements PopupWindow.OnDismissListener {
-    private final /* synthetic */ ViewTreeObserver.OnGlobalLayoutListener a;
-    private final /* synthetic */ ace b;
+final class ach implements android.widget.PopupWindow.OnDismissListener {
+    private final /* synthetic */ android.view.ViewTreeObserver.OnGlobalLayoutListener a;
+    private final /* synthetic */ defpackage.ace b;
 
-    ach(ace ace, ViewTreeObserver.OnGlobalLayoutListener onGlobalLayoutListener) {
+    ach(defpackage.ace ace, android.view.ViewTreeObserver.OnGlobalLayoutListener onGlobalLayoutListener) {
         this.b = ace;
         this.a = onGlobalLayoutListener;
     }
 
     public final void onDismiss() {
-        ViewTreeObserver viewTreeObserver = this.b.d.getViewTreeObserver();
+        android.view.ViewTreeObserver viewTreeObserver = this.b.d.getViewTreeObserver();
         if (viewTreeObserver != null) {
             viewTreeObserver.removeGlobalOnLayoutListener(this.a);
         }

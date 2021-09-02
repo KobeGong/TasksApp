@@ -1,91 +1,87 @@
 package defpackage;
 
-import java.util.List;
-import java.util.Map;
-
-/* access modifiers changed from: package-private */
-/* renamed from: dkc  reason: default package */
+/* renamed from: dkc reason: default package */
 /* compiled from: PG */
-public interface dkc {
+interface dkc {
     int a();
 
-    Object a(dkh dkh, dhw dhw);
+    java.lang.Object a(defpackage.dkh dkh, defpackage.dhw dhw);
 
-    void a(List list);
+    void a(java.util.List list);
 
-    void a(List list, dkh dkh, dhw dhw);
+    void a(java.util.List list, defpackage.dkh dkh, defpackage.dhw dhw);
 
-    void a(Map map, dji dji, dhw dhw);
+    void a(java.util.Map map, defpackage.dji dji, defpackage.dhw dhw);
 
     int b();
 
-    @Deprecated
-    Object b(dkh dkh, dhw dhw);
+    @java.lang.Deprecated
+    java.lang.Object b(defpackage.dkh dkh, defpackage.dhw dhw);
 
-    void b(List list);
+    void b(java.util.List list);
 
-    @Deprecated
-    void b(List list, dkh dkh, dhw dhw);
+    @java.lang.Deprecated
+    void b(java.util.List list, defpackage.dkh dkh, defpackage.dhw dhw);
 
-    void c(List list);
+    void c(java.util.List list);
 
     boolean c();
 
     double d();
 
-    void d(List list);
+    void d(java.util.List list);
 
     float e();
 
-    void e(List list);
+    void e(java.util.List list);
 
     long f();
 
-    void f(List list);
+    void f(java.util.List list);
 
     long g();
 
-    void g(List list);
+    void g(java.util.List list);
 
     int h();
 
-    void h(List list);
+    void h(java.util.List list);
 
     long i();
 
-    void i(List list);
+    void i(java.util.List list);
 
     int j();
 
-    void j(List list);
+    void j(java.util.List list);
 
-    void k(List list);
+    void k(java.util.List list);
 
     boolean k();
 
-    String l();
+    java.lang.String l();
 
-    void l(List list);
+    void l(java.util.List list);
 
-    String m();
+    java.lang.String m();
 
-    void m(List list);
+    void m(java.util.List list);
 
-    dha n();
+    defpackage.dha n();
 
-    void n(List list);
+    void n(java.util.List list);
 
     int o();
 
-    void o(List list);
+    void o(java.util.List list);
 
     int p();
 
-    void p(List list);
+    void p(java.util.List list);
 
     int q();
 
-    void q(List list);
+    void q(java.util.List list);
 
     long r();
 

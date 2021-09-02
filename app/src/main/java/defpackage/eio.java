@@ -1,27 +1,28 @@
 package defpackage;
 
-import org.chromium.net.NetworkChangeNotifierAutoDetect;
-
-/* renamed from: eio  reason: default package */
+/* renamed from: eio reason: default package */
 /* compiled from: PG */
 public final class eio {
-    public final String a;
+    public final java.lang.String a;
     private final boolean b;
     private final int c;
     private final int d;
 
-    public eio(boolean z, int i, int i2, String str) {
+    public eio(boolean z, int i, int i2, java.lang.String str) {
         this.b = z;
         this.c = i;
         this.d = i2;
-        this.a = str == null ? "" : str;
+        if (str == null) {
+            str = "";
+        }
+        this.a = str;
     }
 
     public final int a() {
         if (!this.b) {
             return 6;
         }
-        return NetworkChangeNotifierAutoDetect.a(this.c, this.d);
+        return org.chromium.net.NetworkChangeNotifierAutoDetect.a(this.c, this.d);
     }
 
     public final int b() {
@@ -64,15 +65,6 @@ public final class eio {
                     default:
                         return 0;
                 }
-            case 1:
-            case 2:
-            case 3:
-            case 4:
-            case 5:
-            case 6:
-            case 7:
-            case 8:
-            case 9:
             default:
                 return 0;
         }

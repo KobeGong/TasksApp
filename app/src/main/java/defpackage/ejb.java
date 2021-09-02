@@ -1,29 +1,26 @@
 package defpackage;
 
-import java.util.Collection;
-import java.util.Collections;
-
-/* renamed from: ejb  reason: default package */
+/* renamed from: ejb reason: default package */
 /* compiled from: PG */
 public final class ejb {
-    public final String a;
-    public final ejd b;
+    public final java.lang.String a;
+    public final defpackage.ejd b;
     public final int c;
-    public final ejg d;
-    public final bkv e;
-    private final Collection f;
+    public final defpackage.ejg d;
+    public final defpackage.bkv e;
+    private final java.util.Collection f;
 
     public ejb() {
     }
 
-    public final Collection a() {
+    public final java.util.Collection a() {
         if (this.f == null) {
-            return Collections.emptyList();
+            return java.util.Collections.emptyList();
         }
         return this.f;
     }
 
-    public ejb(String str, Collection collection, ejd ejd, int i, ejg ejg, bkv bkv) {
+    public ejb(java.lang.String str, java.util.Collection collection, defpackage.ejd ejd, int i, defpackage.ejg ejg, defpackage.bkv bkv) {
         this();
         this.a = str;
         this.f = collection;

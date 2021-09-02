@@ -1,7 +1,7 @@
 package defpackage;
 
-/* renamed from: aoj  reason: default package */
+/* renamed from: aoj reason: default package */
 /* compiled from: PG */
 public interface aoj {
-    void a(aoe aoe);
+    void a(defpackage.aoe aoe);
 }

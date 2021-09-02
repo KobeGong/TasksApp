@@ -1,30 +1,26 @@
 package defpackage;
 
-import java.util.logging.Level;
-
-/* access modifiers changed from: package-private */
-/* renamed from: dsh  reason: default package */
+/* renamed from: dsh reason: default package */
 /* compiled from: PG */
-public final class dsh implements dox {
-    private final /* synthetic */ ecv a;
+final class dsh implements defpackage.dox {
+    private final /* synthetic */ defpackage.ecv a;
 
-    dsh(ecv ecv) {
+    dsh(defpackage.ecv ecv) {
         this.a = ecv;
     }
 
     /* access modifiers changed from: private */
     /* renamed from: b */
-    public final ecf a(byte[] bArr) {
+    public final defpackage.ecf a(byte[] bArr) {
         try {
             return this.a.a(bArr);
-        } catch (Exception e) {
-            dsg.a.logp(Level.FINE, "io.grpc.internal.CensusTracingModule$1", "parseBytes", "Failed to parse tracing header", (Throwable) e);
-            return ecf.c;
+        } catch (java.lang.Exception e) {
+            defpackage.dsg.a.logp(java.util.logging.Level.FINE, "io.grpc.internal.CensusTracingModule$1", "parseBytes", "Failed to parse tracing header", e);
+            return defpackage.ecf.c;
         }
     }
 
-    @Override // defpackage.dox
-    public final /* synthetic */ byte[] a(Object obj) {
-        return this.a.a((ecf) obj);
+    public final /* synthetic */ byte[] a(java.lang.Object obj) {
+        return this.a.a((defpackage.ecf) obj);
     }
 }

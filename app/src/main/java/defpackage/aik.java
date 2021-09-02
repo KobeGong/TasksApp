@@ -1,7 +1,7 @@
 package defpackage;
 
-/* renamed from: aik  reason: default package */
+/* renamed from: aik reason: default package */
 /* compiled from: PG */
 public interface aik {
-    Object a();
+    java.lang.Object a();
 }

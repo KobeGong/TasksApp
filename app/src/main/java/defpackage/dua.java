@@ -1,12 +1,12 @@
 package defpackage;
 
-/* renamed from: dua  reason: default package */
+/* renamed from: dua reason: default package */
 /* compiled from: PG */
-final class dua implements Runnable {
-    private final /* synthetic */ dzq a;
-    private final /* synthetic */ dtt b;
+final class dua implements java.lang.Runnable {
+    private final /* synthetic */ defpackage.dzq a;
+    private final /* synthetic */ defpackage.dtt b;
 
-    dua(dtt dtt, dzq dzq) {
+    dua(defpackage.dtt dtt, defpackage.dzq dzq) {
         this.b = dtt;
         this.a = dzq;
     }

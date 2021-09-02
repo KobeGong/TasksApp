@@ -1,23 +1,19 @@
 package com.google.android.apps.tasks.sync;
 
-import android.app.Service;
-import android.content.Intent;
-import android.os.IBinder;
-
 /* compiled from: PG */
-public class SyncService extends Service {
-    private static anb a = null;
-    private static final Object b = new Object();
+public class SyncService extends android.app.Service {
+    private static defpackage.anb a = null;
+    private static final java.lang.Object b = new java.lang.Object();
 
     public void onCreate() {
         synchronized (b) {
             if (a == null) {
-                a = new anb(getApplicationContext());
+                a = new defpackage.anb(getApplicationContext());
             }
         }
     }
 
-    public IBinder onBind(Intent intent) {
+    public android.os.IBinder onBind(android.content.Intent intent) {
         return a.getSyncAdapterBinder();
     }
 }

@@ -1,29 +1,23 @@
 package defpackage;
 
-import android.app.Application;
-import java.util.ArrayList;
-import java.util.List;
-
-/* access modifiers changed from: package-private */
-/* renamed from: cit  reason: default package */
+/* renamed from: cit reason: default package */
 /* compiled from: PG */
-public final class cit extends cgj {
-    public final Object d = new Object();
+final class cit extends defpackage.cgj {
+    public final java.lang.Object d = new java.lang.Object();
     public final int e;
     public final boolean f;
-    public final List g;
-    public final cis h;
+    public final java.util.List g;
+    public final defpackage.cis h;
 
-    cit(coe coe, Application application, clt clt, int i, int i2, boolean z, cly cly) {
+    cit(defpackage.coe coe, android.app.Application application, defpackage.clt clt, int i, int i2, boolean z, defpackage.cly cly) {
         super(coe, application, clt, i, Integer.MAX_VALUE);
         this.e = i2;
         this.f = z;
-        this.g = new ArrayList(i2);
-        this.h = new cis(cly);
+        this.g = new java.util.ArrayList(i2);
+        this.h = new defpackage.cis(cly);
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.cgj
+    /* access modifiers changed from: 0000 */
     public final void d() {
         synchronized (this.d) {
             this.g.clear();

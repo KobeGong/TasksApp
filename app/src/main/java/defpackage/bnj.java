@@ -1,37 +1,32 @@
 package defpackage;
 
-import android.os.ParcelFileDescriptor;
-import com.google.android.gms.common.api.Status;
-import java.io.IOException;
-
-/* renamed from: bnj  reason: default package */
+/* renamed from: bnj reason: default package */
 /* compiled from: PG */
-final class bnj implements blu {
-    private final Status a;
-    private final ParcelFileDescriptor b;
+final class bnj implements defpackage.blu {
+    private final com.google.android.gms.common.api.Status a;
+    private final android.os.ParcelFileDescriptor b;
 
-    public bnj(Status status, ParcelFileDescriptor parcelFileDescriptor) {
+    public bnj(com.google.android.gms.common.api.Status status, android.os.ParcelFileDescriptor parcelFileDescriptor) {
         this.a = status;
         this.b = parcelFileDescriptor;
     }
 
-    @Override // defpackage.ayw
-    public final Status b() {
+    public final com.google.android.gms.common.api.Status b() {
         return this.a;
     }
 
-    @Override // defpackage.blu
-    public final ParcelFileDescriptor c() {
+    public final android.os.ParcelFileDescriptor c() {
         return this.b;
     }
 
-    @Override // defpackage.ayv
     public final void a() {
-        ParcelFileDescriptor parcelFileDescriptor;
-        if (this.b != null && (parcelFileDescriptor = this.b) != null) {
-            try {
-                parcelFileDescriptor.close();
-            } catch (IOException e) {
+        if (this.b != null) {
+            android.os.ParcelFileDescriptor parcelFileDescriptor = this.b;
+            if (parcelFileDescriptor != null) {
+                try {
+                    parcelFileDescriptor.close();
+                } catch (java.io.IOException e) {
+                }
             }
         }
     }

@@ -1,16 +1,15 @@
 package defpackage;
 
-/* renamed from: cjb  reason: default package */
+/* renamed from: cjb reason: default package */
 /* compiled from: PG */
-final class cjb implements cjf {
-    private final /* synthetic */ Runnable a;
+final class cjb implements defpackage.cjf {
+    private final /* synthetic */ java.lang.Runnable a;
 
-    cjb(Runnable runnable) {
+    cjb(java.lang.Runnable runnable) {
         this.a = runnable;
     }
 
-    @Override // defpackage.cjf
-    public final void a(chk chk) {
+    public final void a(defpackage.chk chk) {
         this.a.run();
     }
 }

@@ -1,13 +1,13 @@
 package defpackage;
 
-/* renamed from: duk  reason: default package */
+/* renamed from: duk reason: default package */
 /* compiled from: PG */
-final class duk implements Runnable {
-    private final /* synthetic */ dpw a;
-    private final /* synthetic */ dor b;
-    private final /* synthetic */ dug c;
+final class duk implements java.lang.Runnable {
+    private final /* synthetic */ defpackage.dpw a;
+    private final /* synthetic */ defpackage.dor b;
+    private final /* synthetic */ defpackage.dug c;
 
-    duk(dug dug, dpw dpw, dor dor) {
+    duk(defpackage.dug dug, defpackage.dpw dpw, defpackage.dor dor) {
         this.c = dug;
         this.a = dpw;
         this.b = dor;

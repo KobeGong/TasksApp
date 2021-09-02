@@ -1,6 +1,6 @@
 package defpackage;
 
-/* renamed from: dik  reason: default package */
+/* renamed from: dik reason: default package */
 /* compiled from: PG */
-public final class dik extends dgv {
+public final class dik extends defpackage.dgv {
 }

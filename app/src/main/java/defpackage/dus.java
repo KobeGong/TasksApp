@@ -1,18 +1,15 @@
 package defpackage;
 
-import java.util.Collections;
-import java.util.List;
-
-/* renamed from: dus  reason: default package */
+/* renamed from: dus reason: default package */
 /* compiled from: PG */
 final class dus {
-    public final List a;
-    public final List b;
-    public final List c;
+    public final java.util.List a;
+    public final java.util.List b;
+    public final java.util.List c;
 
-    dus(List list, List list2, List list3) {
-        this.a = Collections.unmodifiableList((List) cld.a(list, "addresses"));
-        this.b = Collections.unmodifiableList((List) cld.a(list2, "txtRecords"));
-        this.c = Collections.unmodifiableList((List) cld.a(list3, "balancerAddresses"));
+    dus(java.util.List list, java.util.List list2, java.util.List list3) {
+        this.a = java.util.Collections.unmodifiableList((java.util.List) defpackage.cld.a((java.lang.Object) list, (java.lang.Object) "addresses"));
+        this.b = java.util.Collections.unmodifiableList((java.util.List) defpackage.cld.a((java.lang.Object) list2, (java.lang.Object) "txtRecords"));
+        this.c = java.util.Collections.unmodifiableList((java.util.List) defpackage.cld.a((java.lang.Object) list3, (java.lang.Object) "balancerAddresses"));
     }
 }

@@ -1,20 +1,19 @@
 package defpackage;
 
-/* renamed from: cwt  reason: default package */
+/* renamed from: cwt reason: default package */
 /* compiled from: PG */
-public enum cwt implements din {
+public enum cwt implements defpackage.din {
     UNSPECIFIED(0),
     ANDROID(1);
     
-    public static final dio b = new cwu();
+    public static final defpackage.dio b = null;
     public final int c;
 
-    @Override // defpackage.din
     public final int a() {
         return this.c;
     }
 
-    public static cwt a(int i) {
+    public static defpackage.cwt a(int i) {
         switch (i) {
             case 0:
                 return UNSPECIFIED;
@@ -27,5 +26,9 @@ public enum cwt implements din {
 
     private cwt(int i) {
         this.c = i;
+    }
+
+    static {
+        b = new defpackage.cwu();
     }
 }

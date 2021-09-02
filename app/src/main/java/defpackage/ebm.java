@@ -1,11 +1,11 @@
 package defpackage;
 
-/* renamed from: ebm  reason: default package */
+/* renamed from: ebm reason: default package */
 /* compiled from: PG */
 public abstract class ebm {
-    public abstract ebi a();
+    public abstract defpackage.ebi a();
 
-    public abstract ebj a(ebi ebi);
+    public abstract defpackage.ebj a(defpackage.ebi ebi);
 
-    public abstract ebi b();
+    public abstract defpackage.ebi b();
 }

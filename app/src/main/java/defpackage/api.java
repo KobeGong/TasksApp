@@ -1,16 +1,14 @@
 package defpackage;
 
-import android.content.DialogInterface;
+/* renamed from: api reason: default package */
+public final /* synthetic */ class api implements android.content.DialogInterface.OnDismissListener {
+    private final java.lang.Runnable a;
 
-/* renamed from: api  reason: default package */
-public final /* synthetic */ class api implements DialogInterface.OnDismissListener {
-    private final Runnable a;
-
-    public api(Runnable runnable) {
+    public api(java.lang.Runnable runnable) {
         this.a = runnable;
     }
 
-    public final void onDismiss(DialogInterface dialogInterface) {
+    public final void onDismiss(android.content.DialogInterface dialogInterface) {
         this.a.run();
     }
 }

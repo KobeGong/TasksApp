@@ -1,15 +1,12 @@
 package org.chromium.url;
 
-import java.net.IDN;
-import org.chromium.base.annotations.CalledByNative;
-
 /* compiled from: PG */
 public class IDNStringUtil {
-    @CalledByNative
-    private static String idnToASCII(String str) {
+    @org.chromium.base.annotations.CalledByNative
+    private static java.lang.String idnToASCII(java.lang.String str) {
         try {
-            return IDN.toASCII(str, 2);
-        } catch (Exception e) {
+            return java.net.IDN.toASCII(str, 2);
+        } catch (java.lang.Exception e) {
             return null;
         }
     }

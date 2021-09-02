@@ -1,17 +1,14 @@
 package defpackage;
 
-import java.util.Iterator;
-import java.util.NoSuchElementException;
-
-/* renamed from: egv  reason: default package */
+/* renamed from: egv reason: default package */
 /* compiled from: PG */
-public final class egv implements Iterator {
+public final class egv implements java.util.Iterator {
     private int a;
     private int b;
     private boolean c;
-    private final /* synthetic */ egu d;
+    private final /* synthetic */ defpackage.egu d;
 
-    egv(egu egu) {
+    egv(defpackage.egu egu) {
         this.d = egu;
         egu.b++;
         this.a = egu.a.size();
@@ -29,32 +26,32 @@ public final class egv implements Iterator {
         return false;
     }
 
-    @Override // java.util.Iterator
-    public final Object next() {
+    public final java.lang.Object next() {
         while (this.b < this.a) {
-            if (this.d.a.get(this.b) != null) {
+            defpackage.egu egu = this.d;
+            if (egu.a.get(this.b) != null) {
                 break;
             }
             this.b++;
         }
         if (this.b < this.a) {
-            egu egu = this.d;
+            defpackage.egu egu2 = this.d;
             int i = this.b;
             this.b = i + 1;
-            return egu.a.get(i);
+            return egu2.a.get(i);
         }
         a();
-        throw new NoSuchElementException();
+        throw new java.util.NoSuchElementException();
     }
 
     public final void remove() {
-        throw new UnsupportedOperationException();
+        throw new java.lang.UnsupportedOperationException();
     }
 
     private final void a() {
         if (!this.c) {
             this.c = true;
-            egu egu = this.d;
+            defpackage.egu egu = this.d;
             egu.b--;
             if (egu.b <= 0 && egu.d) {
                 egu.d = false;

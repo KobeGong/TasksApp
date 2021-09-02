@@ -1,15 +1,13 @@
 package defpackage;
 
-import java.util.List;
-
-/* renamed from: me  reason: default package */
+/* renamed from: me reason: default package */
 /* compiled from: PG */
 public final class me {
-    public final List a;
-    public final List b;
-    public final List c;
+    public final java.util.List a;
+    public final java.util.List b;
+    public final java.util.List c;
 
-    me(List list, List list2, List list3) {
+    me(java.util.List list, java.util.List list2, java.util.List list3) {
         this.a = list;
         this.b = list2;
         this.c = list3;

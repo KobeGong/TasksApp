@@ -1,6 +1,6 @@
 package defpackage;
 
-/* renamed from: jh  reason: default package */
+/* renamed from: jh reason: default package */
 /* compiled from: PG */
 public final class jh {
     public jh() {

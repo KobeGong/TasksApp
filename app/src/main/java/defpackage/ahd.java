@@ -1,26 +1,20 @@
 package defpackage;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-/* renamed from: ahd  reason: default package */
+/* renamed from: ahd reason: default package */
 /* compiled from: PG */
-final class ahd implements Parcelable.ClassLoaderCreator {
+final class ahd implements android.os.Parcelable.ClassLoaderCreator {
     ahd() {
     }
 
-    @Override // android.os.Parcelable.ClassLoaderCreator
-    public final /* synthetic */ Object createFromParcel(Parcel parcel, ClassLoader classLoader) {
-        return new ahc(parcel, classLoader);
+    public final /* synthetic */ java.lang.Object createFromParcel(android.os.Parcel parcel, java.lang.ClassLoader classLoader) {
+        return new defpackage.ahc(parcel, classLoader);
     }
 
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object[] newArray(int i) {
-        return new ahc[i];
+    public final /* synthetic */ java.lang.Object[] newArray(int i) {
+        return new defpackage.ahc[i];
     }
 
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object createFromParcel(Parcel parcel) {
-        return new ahc(parcel, null);
+    public final /* synthetic */ java.lang.Object createFromParcel(android.os.Parcel parcel) {
+        return new defpackage.ahc(parcel, null);
     }
 }

@@ -1,49 +1,44 @@
 package defpackage;
 
-import android.text.TextUtils;
-import android.view.View;
+/* renamed from: asa reason: default package */
+final /* synthetic */ class asa implements android.view.View.OnClickListener {
+    private final AddTaskFragment a;
 
-/* renamed from: asa  reason: default package */
-final /* synthetic */ class asa implements View.OnClickListener {
-    private final arx a;
-
-    asa(arx arx) {
+    asa(AddTaskFragment arx) {
         this.a = arx;
     }
 
-    public final void onClick(View view) {
-        dih dih;
-        arx arx = this.a;
-        if (!arx.n) {
-            FragmentActivity j = arx.getActivity();
-            if (j instanceof ash) {
-                dii dii = (dii) dca.g.a(bg.ao);
-                dii.f(arx.U.getText().toString().trim());
-                String trim = arx.V.getText().toString().trim();
-                if (!TextUtils.isEmpty(trim)) {
-                    dii.g(trim);
+    public final void onClick(android.view.View view) {
+        AddTaskFragment addTaskFragment = this.a;
+        if (!addTaskFragment.n) {
+            FragmentActivity activity = addTaskFragment.getActivity();
+            if (activity instanceof defpackage.ash) {
+                defpackage.dii dii = (defpackage.dii) defpackage.dca.g.a(defpackage.bg.ao);
+                dii.setTitle(addTaskFragment.taskTitleView.getText().toString().trim());
+                String trim = addTaskFragment.taskDetailView.getText().toString().trim();
+                if (!android.text.TextUtils.isEmpty(trim)) {
+                    dii.setDetail(trim);
                 }
-                if (arx.ab != null) {
-                    dii.a(arx.ab);
+                if (addTaskFragment.ab != null) {
+                    dii.a(addTaskFragment.ab);
                 }
+                defpackage.dih dih;
                 if (dii.b) {
                     dih = dii.a;
                 } else {
-                    dih dih2 = dii.a;
-                    djz.a.a(dih2).c(dih2);
+                    defpackage.djz.a.a(dii.a).c(dii.a);
                     dii.b = true;
                     dih = dii.a;
                 }
-                dih dih3 = dih;
-                if (!dih.a(dih3, Boolean.TRUE.booleanValue())) {
-                    throw new dkw();
+                if (!defpackage.dih.a(dih, true)) {
+                    throw new defpackage.dkw();
                 }
-                dca dca = (dca) dih3;
-                if (!ajd.a(dca)) {
-                    ((ash) j).a(dca);
+                defpackage.dca dca = (defpackage.dca) dih;
+                if (!defpackage.ajd.a(dca)) {
+                    ((defpackage.ash) activity).a(dca);
                 }
             }
-            arx.a(false);
+            addTaskFragment.a(false);
         }
     }
 }

@@ -1,30 +1,26 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: eaf  reason: default package */
+/* renamed from: eaf reason: default package */
 /* compiled from: PG */
-public final class eaf extends cwz {
-    private final dnd e;
+final class eaf extends defpackage.cwz {
+    private final defpackage.dnd e;
 
-    eaf(dnd dnd) {
+    eaf(defpackage.dnd dnd) {
         this.e = dnd;
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.cwz
     public final void a() {
-        this.e.a("GrpcFuture was cancelled", (Throwable) null);
+        this.e.a("GrpcFuture was cancelled", (java.lang.Throwable) null);
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.cwz
-    public final boolean a(Object obj) {
+    public final boolean a(java.lang.Object obj) {
         return super.a(obj);
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.cwz
-    public final boolean a(Throwable th) {
+    public final boolean a(java.lang.Throwable th) {
         return super.a(th);
     }
 }

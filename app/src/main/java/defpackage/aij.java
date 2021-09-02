@@ -1,18 +1,15 @@
 package defpackage;
 
-import android.content.Context;
-
-/* renamed from: aij  reason: default package */
+/* renamed from: aij reason: default package */
 /* compiled from: PG */
-public final class aij implements ecz {
-    private final aii a;
+public final class aij implements defpackage.ecz {
+    private final defpackage.aii a;
 
-    public aij(aii aii) {
+    public aij(defpackage.aii aii) {
         this.a = aii;
     }
 
-    @Override // defpackage.ecz
-    public final /* synthetic */ Object a() {
-        return (Context) dgv.a(this.a.a, "Cannot return null from a non-@Nullable @Provides method");
+    public final /* synthetic */ java.lang.Object a() {
+        return (android.content.Context) defpackage.dgv.a((java.lang.Object) this.a.a, "Cannot return null from a non-@Nullable @Provides method");
     }
 }

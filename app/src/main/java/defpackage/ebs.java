@@ -1,40 +1,38 @@
 package defpackage;
 
-/* renamed from: ebs  reason: default package */
+/* renamed from: ebs reason: default package */
 /* compiled from: PG */
-public final class ebs extends ebw {
+public final class ebs extends defpackage.ebw {
     private final boolean a;
-    private final ech b;
+    private final defpackage.ech b;
 
-    public ebs(boolean z, ech ech) {
+    public ebs(boolean z, defpackage.ech ech) {
         this.a = z;
         this.b = ech;
     }
 
-    @Override // defpackage.ebw
     public final boolean a() {
         return this.a;
     }
 
-    @Override // defpackage.ebw
-    public final ech b() {
+    public final defpackage.ech b() {
         return this.b;
     }
 
-    public final String toString() {
+    public final java.lang.String toString() {
         boolean z = this.a;
-        String valueOf = String.valueOf(this.b);
-        return new StringBuilder(String.valueOf(valueOf).length() + 53).append("EndSpanOptions{sampleToLocalSpanStore=").append(z).append(", status=").append(valueOf).append("}").toString();
+        java.lang.String valueOf = java.lang.String.valueOf(this.b);
+        return new java.lang.StringBuilder(java.lang.String.valueOf(valueOf).length() + 53).append("EndSpanOptions{sampleToLocalSpanStore=").append(z).append(", status=").append(valueOf).append("}").toString();
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof ebw)) {
+        if (!(obj instanceof defpackage.ebw)) {
             return false;
         }
-        ebw ebw = (ebw) obj;
+        defpackage.ebw ebw = (defpackage.ebw) obj;
         if (this.a == ebw.a()) {
             if (this.b == null) {
                 if (ebw.b() == null) {

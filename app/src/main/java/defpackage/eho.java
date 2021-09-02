@@ -1,96 +1,75 @@
 package defpackage;
 
-import java.io.FileDescriptor;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.InetAddress;
-import java.net.SocketAddress;
-import java.net.SocketImpl;
-
-/* renamed from: eho  reason: default package */
+/* renamed from: eho reason: default package */
 /* compiled from: PG */
-final class eho extends SocketImpl {
-    eho(FileDescriptor fileDescriptor) {
+final class eho extends java.net.SocketImpl {
+    eho(java.io.FileDescriptor fileDescriptor) {
         this.fd = fileDescriptor;
     }
 
     /* access modifiers changed from: protected */
-    @Override // java.net.SocketImpl
-    public final void accept(SocketImpl socketImpl) {
-        throw new RuntimeException("accept not implemented");
+    public final void accept(java.net.SocketImpl socketImpl) {
+        throw new java.lang.RuntimeException("accept not implemented");
     }
 
     /* access modifiers changed from: protected */
-    @Override // java.net.SocketImpl
     public final int available() {
-        throw new RuntimeException("accept not implemented");
+        throw new java.lang.RuntimeException("accept not implemented");
     }
 
     /* access modifiers changed from: protected */
-    @Override // java.net.SocketImpl
-    public final void bind(InetAddress inetAddress, int i) {
-        throw new RuntimeException("accept not implemented");
+    public final void bind(java.net.InetAddress inetAddress, int i) {
+        throw new java.lang.RuntimeException("accept not implemented");
     }
 
     /* access modifiers changed from: protected */
-    @Override // java.net.SocketImpl
     public final void close() {
     }
 
     /* access modifiers changed from: protected */
-    @Override // java.net.SocketImpl
-    public final void connect(InetAddress inetAddress, int i) {
-        throw new RuntimeException("connect not implemented");
+    public final void connect(java.net.InetAddress inetAddress, int i) {
+        throw new java.lang.RuntimeException("connect not implemented");
     }
 
     /* access modifiers changed from: protected */
-    @Override // java.net.SocketImpl
-    public final void connect(SocketAddress socketAddress, int i) {
-        throw new RuntimeException("connect not implemented");
+    public final void connect(java.net.SocketAddress socketAddress, int i) {
+        throw new java.lang.RuntimeException("connect not implemented");
     }
 
     /* access modifiers changed from: protected */
-    @Override // java.net.SocketImpl
-    public final void connect(String str, int i) {
-        throw new RuntimeException("connect not implemented");
+    public final void connect(java.lang.String str, int i) {
+        throw new java.lang.RuntimeException("connect not implemented");
     }
 
     /* access modifiers changed from: protected */
-    @Override // java.net.SocketImpl
     public final void create(boolean z) {
     }
 
     /* access modifiers changed from: protected */
-    @Override // java.net.SocketImpl
-    public final InputStream getInputStream() {
-        throw new RuntimeException("getInputStream not implemented");
+    public final java.io.InputStream getInputStream() {
+        throw new java.lang.RuntimeException("getInputStream not implemented");
     }
 
     /* access modifiers changed from: protected */
-    @Override // java.net.SocketImpl
-    public final OutputStream getOutputStream() {
-        throw new RuntimeException("getOutputStream not implemented");
+    public final java.io.OutputStream getOutputStream() {
+        throw new java.lang.RuntimeException("getOutputStream not implemented");
     }
 
     /* access modifiers changed from: protected */
-    @Override // java.net.SocketImpl
     public final void listen(int i) {
-        throw new RuntimeException("listen not implemented");
+        throw new java.lang.RuntimeException("listen not implemented");
     }
 
     /* access modifiers changed from: protected */
-    @Override // java.net.SocketImpl
     public final void sendUrgentData(int i) {
-        throw new RuntimeException("sendUrgentData not implemented");
+        throw new java.lang.RuntimeException("sendUrgentData not implemented");
     }
 
-    @Override // java.net.SocketOptions
-    public final Object getOption(int i) {
-        throw new RuntimeException("getOption not implemented");
+    public final java.lang.Object getOption(int i) {
+        throw new java.lang.RuntimeException("getOption not implemented");
     }
 
-    @Override // java.net.SocketOptions
-    public final void setOption(int i, Object obj) {
-        throw new RuntimeException("setOption not implemented");
+    public final void setOption(int i, java.lang.Object obj) {
+        throw new java.lang.RuntimeException("setOption not implemented");
     }
 }

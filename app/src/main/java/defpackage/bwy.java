@@ -1,19 +1,16 @@
 package defpackage;
 
-import com.google.android.libraries.notifications.executor.impl.basic.ChimeExecutorApiService;
-
-/* renamed from: bwy  reason: default package */
+/* renamed from: bwy reason: default package */
 /* compiled from: PG */
-final class bwy implements Runnable {
-    private final /* synthetic */ bwx a;
+final class bwy implements java.lang.Runnable {
+    private final /* synthetic */ defpackage.bwx a;
 
-    bwy(bwx bwx) {
+    bwy(defpackage.bwx bwx) {
         this.a = bwx;
     }
 
     public final void run() {
-        ChimeExecutorApiService chimeExecutorApiService = this.a.a;
-        chimeExecutorApiService.b--;
+        this.a.a.b--;
         this.a.a.a();
     }
 }

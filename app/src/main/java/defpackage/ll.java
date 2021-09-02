@@ -1,23 +1,23 @@
 package defpackage;
 
-/* renamed from: ll  reason: default package */
+/* renamed from: ll reason: default package */
 /* compiled from: PG */
 public final class ll {
-    public final lm a;
+    public final FragmentHostCallback a;
 
-    ll(lm lmVar) {
+    ll(FragmentHostCallback lmVar) {
         this.a = lmVar;
     }
 
-    public final lc a(String str) {
-        return this.a.d.b(str);
+    public final Fragment a(java.lang.String str) {
+        return this.a.mFragmentManager.b(str);
     }
 
     public final void a() {
-        this.a.d.noteStateNotSaved();
+        this.a.mFragmentManager.noteStateNotSaved();
     }
 
     public final boolean b() {
-        return this.a.d.j();
+        return this.a.mFragmentManager.j();
     }
 }

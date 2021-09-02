@@ -1,6 +1,6 @@
 package defpackage;
 
-/* renamed from: btk  reason: default package */
+/* renamed from: btk reason: default package */
 /* compiled from: PG */
 public enum btk {
     UNKNOWN_STATUS(0),
@@ -17,7 +17,7 @@ public enum btk {
         this.g = i2;
     }
 
-    public static btk a(int i2) {
+    public static defpackage.btk a(int i2) {
         switch (i2) {
             case 1:
                 return REGISTERED;

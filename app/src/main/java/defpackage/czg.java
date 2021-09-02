@@ -1,31 +1,24 @@
 package defpackage;
 
-import java.io.PrintStream;
-import java.io.PrintWriter;
-
-/* renamed from: czg  reason: default package */
+/* renamed from: czg reason: default package */
 /* compiled from: PG */
-final class czg extends czb {
+final class czg extends defpackage.czb {
     czg() {
     }
 
-    @Override // defpackage.czb
-    public final void a(Throwable th, Throwable th2) {
+    public final void a(java.lang.Throwable th, java.lang.Throwable th2) {
         th.addSuppressed(th2);
     }
 
-    @Override // defpackage.czb
-    public final void a(Throwable th) {
+    public final void a(java.lang.Throwable th) {
         th.printStackTrace();
     }
 
-    @Override // defpackage.czb
-    public final void a(Throwable th, PrintStream printStream) {
+    public final void a(java.lang.Throwable th, java.io.PrintStream printStream) {
         th.printStackTrace(printStream);
     }
 
-    @Override // defpackage.czb
-    public final void a(Throwable th, PrintWriter printWriter) {
+    public final void a(java.lang.Throwable th, java.io.PrintWriter printWriter) {
         th.printStackTrace(printWriter);
     }
 }

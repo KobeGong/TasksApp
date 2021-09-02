@@ -1,16 +1,15 @@
 package defpackage;
 
-/* renamed from: dyd  reason: default package */
+/* renamed from: dyd reason: default package */
 /* compiled from: PG */
-final class dyd implements dyp {
-    private final /* synthetic */ String a;
+final class dyd implements defpackage.dyp {
+    private final /* synthetic */ java.lang.String a;
 
-    dyd(String str) {
+    dyd(java.lang.String str) {
         this.a = str;
     }
 
-    @Override // defpackage.dyp
-    public final void a(dza dza) {
+    public final void a(defpackage.dza dza) {
         dza.a.a(this.a);
     }
 }

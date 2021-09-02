@@ -1,36 +1,32 @@
 package defpackage;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
-
-/* renamed from: dhw  reason: default package */
+/* renamed from: dhw reason: default package */
 /* compiled from: PG */
 public class dhw {
-    public static final dhw a = new dhw((byte) 0);
+    public static final defpackage.dhw a = new defpackage.dhw(0);
     private static volatile boolean b = false;
-    private static volatile dhw c;
-    private final Map d;
+    private static volatile defpackage.dhw c;
+    private final java.util.Map d;
 
-    private static Class d() {
+    private static java.lang.Class d() {
         try {
-            return Class.forName("com.google.protobuf.Extension");
-        } catch (ClassNotFoundException e) {
+            return java.lang.Class.forName("com.google.protobuf.Extension");
+        } catch (java.lang.ClassNotFoundException e) {
             return null;
         }
     }
 
-    public static dhw a() {
-        return dhv.a();
+    public static defpackage.dhw a() {
+        return defpackage.dhv.a();
     }
 
-    public static dhw b() {
-        dhw dhw = c;
+    public static defpackage.dhw b() {
+        defpackage.dhw dhw = c;
         if (dhw == null) {
-            synchronized (dhw.class) {
+            synchronized (defpackage.dhw.class) {
                 dhw = c;
                 if (dhw == null) {
-                    dhw = dhv.b();
+                    dhw = defpackage.dhv.b();
                     c = dhw;
                 }
             }
@@ -38,20 +34,20 @@ public class dhw {
         return dhw;
     }
 
-    static dhw c() {
-        return dif.a(dhw.class);
+    static defpackage.dhw c() {
+        return defpackage.dif.a(defpackage.dhw.class);
     }
 
-    public dik a(djo djo, int i) {
-        return (dik) this.d.get(new dhx(djo, i));
+    public defpackage.dik a(defpackage.djo djo, int i) {
+        return (defpackage.dik) this.d.get(new defpackage.dhx(djo, i));
     }
 
     dhw() {
-        this.d = new HashMap();
+        this.d = new java.util.HashMap();
     }
 
     dhw(byte b2) {
-        this.d = Collections.emptyMap();
+        this.d = java.util.Collections.emptyMap();
     }
 
     static {

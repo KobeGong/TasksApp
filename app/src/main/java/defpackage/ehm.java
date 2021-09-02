@@ -1,31 +1,27 @@
 package defpackage;
 
-import java.io.FileDescriptor;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-
-/* renamed from: ehm  reason: default package */
+/* renamed from: ehm reason: default package */
 /* compiled from: PG */
 public final class ehm {
-    private static final Method a;
+    private static final java.lang.reflect.Method a;
 
-    public static FileDescriptor a(int i) {
+    public static java.io.FileDescriptor a(int i) {
         try {
-            FileDescriptor fileDescriptor = new FileDescriptor();
-            a.invoke(fileDescriptor, Integer.valueOf(i));
+            java.io.FileDescriptor fileDescriptor = new java.io.FileDescriptor();
+            a.invoke(fileDescriptor, new java.lang.Object[]{java.lang.Integer.valueOf(i)});
             return fileDescriptor;
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException("FileDescriptor.setInt$() failed", e);
-        } catch (InvocationTargetException e2) {
-            throw new RuntimeException("FileDescriptor.setInt$() failed", e2);
+        } catch (java.lang.IllegalAccessException e) {
+            throw new java.lang.RuntimeException("FileDescriptor.setInt$() failed", e);
+        } catch (java.lang.reflect.InvocationTargetException e2) {
+            throw new java.lang.RuntimeException("FileDescriptor.setInt$() failed", e2);
         }
     }
 
     static {
         try {
-            a = FileDescriptor.class.getMethod("setInt$", Integer.TYPE);
-        } catch (NoSuchMethodException | SecurityException e) {
-            throw new RuntimeException("Unable to get FileDescriptor.setInt$", e);
+            a = java.io.FileDescriptor.class.getMethod("setInt$", new java.lang.Class[]{java.lang.Integer.TYPE});
+        } catch (java.lang.NoSuchMethodException | java.lang.SecurityException e) {
+            throw new java.lang.RuntimeException("Unable to get FileDescriptor.setInt$", e);
         }
     }
 }

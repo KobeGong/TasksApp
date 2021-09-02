@@ -1,26 +1,21 @@
 package defpackage;
 
-import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
-
-/* renamed from: fu  reason: default package */
+/* renamed from: fu reason: default package */
 /* compiled from: PG */
-public final class fu extends rl {
-    public static final Parcelable.Creator CREATOR = new fv();
-    public Bundle a;
+public final class fu extends defpackage.rl {
+    public static final android.os.Parcelable.Creator CREATOR = new defpackage.fv();
+    public android.os.Bundle a;
 
-    public fu(Parcel parcel, ClassLoader classLoader) {
+    public fu(android.os.Parcel parcel, java.lang.ClassLoader classLoader) {
         super(parcel, classLoader);
         this.a = parcel.readBundle(classLoader);
     }
 
-    public fu(Parcelable parcelable) {
+    public fu(android.os.Parcelable parcelable) {
         super(parcelable);
     }
 
-    @Override // defpackage.rl
-    public final void writeToParcel(Parcel parcel, int i) {
+    public final void writeToParcel(android.os.Parcel parcel, int i) {
         super.writeToParcel(parcel, i);
         parcel.writeBundle(this.a);
     }

@@ -1,16 +1,14 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: chu  reason: default package */
-public final /* synthetic */ class chu implements clt {
-    private final cjs a;
+/* renamed from: chu reason: default package */
+final /* synthetic */ class chu implements defpackage.clt {
+    private final defpackage.cjs a;
 
-    chu(cjs cjs) {
+    chu(defpackage.cjs cjs) {
         this.a = cjs;
     }
 
-    @Override // defpackage.clt
-    public final Object a() {
+    public final java.lang.Object a() {
         return this.a.a();
     }
 }

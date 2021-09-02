@@ -1,30 +1,27 @@
 package defpackage;
 
-import android.os.Build;
-import android.widget.PopupWindow;
-
-/* renamed from: vb  reason: default package */
+/* renamed from: vb reason: default package */
 /* compiled from: PG */
 public final class vb {
-    public static final vf a;
+    public static final defpackage.vf a;
 
-    public static void a(PopupWindow popupWindow, boolean z) {
+    public static void a(android.widget.PopupWindow popupWindow, boolean z) {
         a.a(popupWindow, z);
     }
 
-    public static void a(PopupWindow popupWindow, int i) {
+    public static void a(android.widget.PopupWindow popupWindow, int i) {
         a.a(popupWindow, i);
     }
 
     static {
-        if (Build.VERSION.SDK_INT >= 23) {
-            a = new ve();
-        } else if (Build.VERSION.SDK_INT >= 21) {
-            a = new vd();
-        } else if (Build.VERSION.SDK_INT >= 19) {
-            a = new vc();
+        if (android.os.Build.VERSION.SDK_INT >= 23) {
+            a = new defpackage.ve();
+        } else if (android.os.Build.VERSION.SDK_INT >= 21) {
+            a = new defpackage.vd();
+        } else if (android.os.Build.VERSION.SDK_INT >= 19) {
+            a = new defpackage.vc();
         } else {
-            a = new vf();
+            a = new defpackage.vf();
         }
     }
 }

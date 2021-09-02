@@ -1,21 +1,20 @@
 package defpackage;
 
-/* renamed from: bsp  reason: default package */
+/* renamed from: bsp reason: default package */
 /* compiled from: PG */
-public final class bsp implements brz {
-    private static final brt a = new bss();
+public final class bsp implements defpackage.brz {
+    private static final defpackage.brt a = new defpackage.bss();
 
-    @Override // defpackage.brz
-    public final brb a(bqw bqw, bsc bsc) {
-        ayp a2 = new brr().a(bqw);
-        blp blp = new blp();
+    public final defpackage.brb a(defpackage.bqw bqw, defpackage.bsc bsc) {
+        defpackage.ayp a2 = new defpackage.brr().a(bqw);
+        defpackage.blp blp = new defpackage.blp();
         blp.b = false;
         blp.c = bsc.a;
-        return new brb(a2.a((bca) new bjp(a2, blp)), a);
+        return new defpackage.brb(a2.a((defpackage.bca) new defpackage.bjp(a2, blp)), a);
     }
 
     static {
-        new bsq();
-        new bsr();
+        new defpackage.bsq();
+        new defpackage.bsr();
     }
 }

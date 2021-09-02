@@ -1,15 +1,15 @@
 package defpackage;
 
-/* renamed from: cro  reason: default package */
+/* renamed from: cro reason: default package */
 /* compiled from: PG */
-public final class cro extends crn {
-    public static final cro a = new cro();
+public final class cro extends defpackage.crn {
+    public static final defpackage.cro a = new defpackage.cro();
 
     cro() {
         super("CharMatcher.whitespace()");
     }
 
     static {
-        Integer.numberOfLeadingZeros(31);
+        java.lang.Integer.numberOfLeadingZeros(31);
     }
 }

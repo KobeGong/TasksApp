@@ -1,9 +1,9 @@
 package defpackage;
 
-/* renamed from: bqm  reason: default package */
+/* renamed from: bqm reason: default package */
 /* compiled from: PG */
 public interface bqm {
-    bql a(bqo bqo);
+    defpackage.bql a(defpackage.bqo bqo);
 
-    bql a(byte[] bArr);
+    defpackage.bql a(byte[] bArr);
 }

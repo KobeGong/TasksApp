@@ -1,31 +1,27 @@
 package defpackage;
 
-/* renamed from: dvh  reason: default package */
+/* renamed from: dvh reason: default package */
 /* compiled from: PG */
-class dvh implements dpv, dtb {
-    private final /* synthetic */ dtb a;
-    private final /* synthetic */ dnm b;
+class dvh implements defpackage.dpv, defpackage.dtb {
+    private final /* synthetic */ defpackage.dtb a;
+    private final /* synthetic */ defpackage.dnm b;
 
-    @Override // defpackage.dtb
-    public final dta a(dpb dpb, dor dor, dna dna) {
+    public final defpackage.dta a(defpackage.dpb dpb, defpackage.dor dor, defpackage.dna dna) {
         return this.a.a(dpb, dor, dna.a(this.b));
     }
 
-    @Override // defpackage.dzw
-    public final dwd b() {
+    public final defpackage.dwd b() {
         return this.a.b();
     }
 
     dvh() {
     }
 
-    @Override // defpackage.dpv
-    public /* synthetic */ int a(Object obj) {
-        return ((drp) obj).b();
+    public /* synthetic */ int a(java.lang.Object obj) {
+        return ((defpackage.drp) obj).b();
     }
 
-    @Override // defpackage.dpv
-    public /* synthetic */ boolean b(Object obj) {
-        return ((drp) obj).c();
+    public /* synthetic */ boolean b(java.lang.Object obj) {
+        return ((defpackage.drp) obj).c();
     }
 }

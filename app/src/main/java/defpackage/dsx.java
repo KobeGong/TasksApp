@@ -1,28 +1,27 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: dsx  reason: default package */
+/* renamed from: dsx reason: default package */
 /* compiled from: PG */
-public final class dsx {
-    public final /* synthetic */ dwf a;
+final class dsx {
+    public final /* synthetic */ defpackage.dwf a;
 
-    public final dtb a(doo doo) {
-        doq doq = this.a.u;
+    public final defpackage.dtb a(defpackage.doo doo) {
+        defpackage.doq doq = this.a.u;
         if (this.a.A.get()) {
             return this.a.y;
         }
         if (doq == null) {
-            this.a.k.a(new dwl(this)).a();
+            this.a.k.a((java.lang.Runnable) new defpackage.dwl(this)).a();
             return this.a.y;
         }
-        dtb a2 = dvc.a(doq.a(), doo.a().i);
+        defpackage.dtb a2 = defpackage.dvc.a(doq.a(), doo.a().i);
         if (a2 == null) {
             return this.a.y;
         }
         return a2;
     }
 
-    dsx(dwf dwf) {
+    dsx(defpackage.dwf dwf) {
         this.a = dwf;
     }
 }

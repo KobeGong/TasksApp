@@ -1,17 +1,11 @@
 package defpackage;
 
-import java.lang.reflect.Array;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
-
-/* renamed from: qz  reason: default package */
+/* renamed from: qz reason: default package */
 /* compiled from: PG */
 public abstract class qz {
-    public rb a;
-    public re b;
-    private rc c;
+    public defpackage.rb a;
+    public defpackage.re b;
+    private defpackage.rc c;
 
     qz() {
     }
@@ -20,32 +14,32 @@ public abstract class qz {
     public abstract int a();
 
     /* access modifiers changed from: protected */
-    public abstract int a(Object obj);
+    public abstract int a(java.lang.Object obj);
 
     /* access modifiers changed from: protected */
-    public abstract Object a(int i, int i2);
+    public abstract java.lang.Object a(int i, int i2);
 
     /* access modifiers changed from: protected */
-    public abstract Object a(int i, Object obj);
+    public abstract java.lang.Object a(int i, java.lang.Object obj);
 
     /* access modifiers changed from: protected */
     public abstract void a(int i);
 
     /* access modifiers changed from: protected */
-    public abstract void a(Object obj, Object obj2);
+    public abstract void a(java.lang.Object obj, java.lang.Object obj2);
 
     /* access modifiers changed from: protected */
-    public abstract int b(Object obj);
+    public abstract int b(java.lang.Object obj);
 
     /* access modifiers changed from: protected */
-    public abstract Map b();
+    public abstract java.util.Map b();
 
     /* access modifiers changed from: protected */
     public abstract void c();
 
-    public static boolean a(Map map, Collection collection) {
+    public static boolean a(java.util.Map map, java.util.Collection collection) {
         int size = map.size();
-        Iterator it = map.keySet().iterator();
+        java.util.Iterator it = map.keySet().iterator();
         while (it.hasNext()) {
             if (!collection.contains(it.next())) {
                 it.remove();
@@ -54,20 +48,20 @@ public abstract class qz {
         return size != map.size();
     }
 
-    public final Object[] b(int i) {
+    public final java.lang.Object[] b(int i) {
         int a2 = a();
-        Object[] objArr = new Object[a2];
+        java.lang.Object[] objArr = new java.lang.Object[a2];
         for (int i2 = 0; i2 < a2; i2++) {
             objArr[i2] = a(i2, i);
         }
         return objArr;
     }
 
-    public final Object[] a(Object[] objArr, int i) {
-        Object[] objArr2;
+    public final java.lang.Object[] a(java.lang.Object[] objArr, int i) {
+        java.lang.Object[] objArr2;
         int a2 = a();
         if (objArr.length < a2) {
-            objArr2 = (Object[]) Array.newInstance(objArr.getClass().getComponentType(), a2);
+            objArr2 = (java.lang.Object[]) java.lang.reflect.Array.newInstance(objArr.getClass().getComponentType(), a2);
         } else {
             objArr2 = objArr;
         }
@@ -80,26 +74,29 @@ public abstract class qz {
         return objArr2;
     }
 
-    public static boolean a(Set set, Object obj) {
+    public static boolean a(java.util.Set set, java.lang.Object obj) {
         if (set == obj) {
             return true;
         }
-        if (!(obj instanceof Set)) {
+        if (!(obj instanceof java.util.Set)) {
             return false;
         }
-        Set set2 = (Set) obj;
+        java.util.Set set2 = (java.util.Set) obj;
         try {
-            return set.size() == set2.size() && set.containsAll(set2);
-        } catch (NullPointerException e) {
+            if (set.size() != set2.size() || !set.containsAll(set2)) {
+                return false;
+            }
+            return true;
+        } catch (java.lang.NullPointerException e) {
             return false;
-        } catch (ClassCastException e2) {
+        } catch (java.lang.ClassCastException e2) {
             return false;
         }
     }
 
-    public final Set d() {
+    public final java.util.Set d() {
         if (this.c == null) {
-            this.c = new rc(this);
+            this.c = new defpackage.rc(this);
         }
         return this.c;
     }

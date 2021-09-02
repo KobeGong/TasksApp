@@ -1,87 +1,84 @@
 package defpackage;
 
-import java.util.Collections;
-import java.util.EnumSet;
-import java.util.Set;
-
-/* renamed from: ecc  reason: default package */
+/* renamed from: ecc reason: default package */
 /* compiled from: PG */
 public abstract class ecc {
-    private static final Set a = Collections.unmodifiableSet(EnumSet.noneOf(ecd.class));
-    public final ecf b;
+    private static final java.util.Set a = java.util.Collections.unmodifiableSet(java.util.EnumSet.noneOf(defpackage.ecd.class));
+    public final defpackage.ecf b;
 
-    protected ecc(ecf ecf) {
-        this.b = (ecf) cld.a(ecf, "context");
+    protected ecc(defpackage.ecf ecf) {
+        this.b = (defpackage.ecf) defpackage.cld.a((java.lang.Object) ecf, (java.lang.Object) "context");
         byte b2 = ecf.b.b;
-        cld.a(true, (Object) "Span is sampled, but does not have RECORD_EVENTS set.");
+        defpackage.cld.a(true, (java.lang.Object) "Span is sampled, but does not have RECORD_EVENTS set.");
     }
 
     public abstract void a();
 
-    @Deprecated
-    public void a(ebz ebz) {
-        eby eby;
-        ebx ebt;
-        cld.a(ebz);
-        if (ebz instanceof ebx) {
-            ebt = (ebx) ebz;
+    @java.lang.Deprecated
+    public void a(defpackage.ebz ebz) {
+        defpackage.eby eby;
+        defpackage.ebx ebt;
+        defpackage.cld.a((java.lang.Object) ebz);
+        if (ebz instanceof defpackage.ebx) {
+            ebt = (defpackage.ebx) ebz;
         } else {
-            ebz ebz2 = ebz;
-            if (ebz2.b() == ecb.RECV) {
-                eby = eby.RECEIVED;
+            defpackage.ebz ebz2 = ebz;
+            if (ebz2.b() == defpackage.ecb.RECV) {
+                eby = defpackage.eby.RECEIVED;
             } else {
-                eby = eby.SENT;
+                eby = defpackage.eby.SENT;
             }
             long c = ebz2.c();
-            ejx ejx = new ejx((byte) 0);
-            eby eby2 = (eby) cld.a(eby, "type");
+            defpackage.ejx ejx = new defpackage.ejx(0);
+            defpackage.eby eby2 = (defpackage.eby) defpackage.cld.a((java.lang.Object) eby, (java.lang.Object) "type");
             if (eby2 == null) {
-                throw new NullPointerException("Null type");
+                throw new java.lang.NullPointerException("Null type");
             }
             ejx.a = eby2;
-            ejx.b = Long.valueOf(c);
-            ejx b2 = ejx.a(0).b(0).a(ebz2.d()).b(ebz2.e());
-            String str = "";
+            ejx.b = java.lang.Long.valueOf(c);
+            defpackage.ejx b2 = ejx.a(0).b(0).a(ebz2.d()).b(ebz2.e());
+            java.lang.String str = "";
             if (b2.a == null) {
-                str = String.valueOf(str).concat(" type");
+                str = java.lang.String.valueOf(str).concat(" type");
             }
             if (b2.b == null) {
-                str = String.valueOf(str).concat(" messageId");
+                str = java.lang.String.valueOf(str).concat(" messageId");
             }
             if (b2.c == null) {
-                str = String.valueOf(str).concat(" uncompressedMessageSize");
+                str = java.lang.String.valueOf(str).concat(" uncompressedMessageSize");
             }
             if (b2.d == null) {
-                str = String.valueOf(str).concat(" compressedMessageSize");
+                str = java.lang.String.valueOf(str).concat(" compressedMessageSize");
             }
             if (!str.isEmpty()) {
-                String valueOf = String.valueOf(str);
-                throw new IllegalStateException(valueOf.length() != 0 ? "Missing required properties:".concat(valueOf) : new String("Missing required properties:"));
+                java.lang.String str2 = "Missing required properties:";
+                java.lang.String valueOf = java.lang.String.valueOf(str);
+                throw new java.lang.IllegalStateException(valueOf.length() != 0 ? str2.concat(valueOf) : new java.lang.String(str2));
             }
-            ebt = new ebt(b2.a, b2.b.longValue(), b2.c.longValue(), b2.d.longValue());
+            ebt = new defpackage.ebt(b2.a, b2.b.longValue(), b2.c.longValue(), b2.d.longValue());
         }
         a(ebt);
     }
 
-    public void a(ebx ebx) {
-        ecb ecb;
-        ebz a2;
-        cld.a(ebx);
-        if (ebx instanceof ebz) {
-            a2 = (ebz) ebx;
+    public void a(defpackage.ebx ebx) {
+        defpackage.ecb ecb;
+        defpackage.ebz a2;
+        defpackage.cld.a((java.lang.Object) ebx);
+        if (ebx instanceof defpackage.ebz) {
+            a2 = (defpackage.ebz) ebx;
         } else {
-            ebx ebx2 = ebx;
-            if (ebx2.a() == eby.RECEIVED) {
-                ecb = ecb.RECV;
+            defpackage.ebx ebx2 = ebx;
+            if (ebx2.a() == defpackage.eby.RECEIVED) {
+                ecb = defpackage.ecb.RECV;
             } else {
-                ecb = ecb.SENT;
+                ecb = defpackage.ecb.SENT;
             }
-            a2 = ebz.a(ecb, ebx2.b()).a(ebx2.c()).b(ebx2.d()).a();
+            a2 = defpackage.ebz.a(ecb, ebx2.b()).a(ebx2.c()).b(ebx2.d()).a();
         }
         a(a2);
     }
 
     static {
-        Collections.emptyMap();
+        java.util.Collections.emptyMap();
     }
 }

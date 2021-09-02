@@ -1,21 +1,15 @@
 package defpackage;
 
-import java.util.concurrent.Delayed;
-import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.TimeUnit;
-
-/* access modifiers changed from: package-private */
-/* renamed from: cyp  reason: default package */
+/* renamed from: cyp reason: default package */
 /* compiled from: PG */
-public final class cyp extends cyc implements cyk {
-    private final ScheduledFuture a;
+final class cyp extends defpackage.cyc implements defpackage.cyk {
+    private final java.util.concurrent.ScheduledFuture a;
 
-    public cyp(cyi cyi, ScheduledFuture scheduledFuture) {
+    public cyp(defpackage.cyi cyi, java.util.concurrent.ScheduledFuture scheduledFuture) {
         super(cyi);
         this.a = scheduledFuture;
     }
 
-    @Override // defpackage.cya
     public final boolean cancel(boolean z) {
         boolean cancel = super.cancel(z);
         if (cancel) {
@@ -24,12 +18,11 @@ public final class cyp extends cyc implements cyk {
         return cancel;
     }
 
-    public final long getDelay(TimeUnit timeUnit) {
+    public final long getDelay(java.util.concurrent.TimeUnit timeUnit) {
         return this.a.getDelay(timeUnit);
     }
 
-    @Override // java.lang.Comparable
-    public final /* synthetic */ int compareTo(Object obj) {
-        return this.a.compareTo((Delayed) obj);
+    public final /* synthetic */ int compareTo(java.lang.Object obj) {
+        return this.a.compareTo((java.util.concurrent.Delayed) obj);
     }
 }

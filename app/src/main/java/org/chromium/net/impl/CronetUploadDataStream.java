@@ -1,12 +1,7 @@
 package org.chromium.net.impl;
 
-import java.nio.ByteBuffer;
-import org.chromium.base.annotations.CalledByNative;
-
-import defpackage.ehw;
-
 /* compiled from: PG */
-public final class CronetUploadDataStream extends ehw {
+public final class CronetUploadDataStream extends defpackage.ehw {
     private final native long nativeAttachUploadDataToRequest(long j, long j2);
 
     private final native long nativeCreateAdapterForTesting();
@@ -19,27 +14,27 @@ public final class CronetUploadDataStream extends ehw {
 
     private final native void nativeOnRewindSucceeded(long j);
 
-    /* access modifiers changed from: package-private */
-    @CalledByNative
-    public final void readData(ByteBuffer byteBuffer) {
+    /* access modifiers changed from: 0000 */
+    @org.chromium.base.annotations.CalledByNative
+    public final void readData(java.nio.ByteBuffer byteBuffer) {
         byteBuffer.limit();
-        throw new NoSuchMethodError();
+        throw new java.lang.NoSuchMethodError();
     }
 
-    /* access modifiers changed from: package-private */
-    @CalledByNative
+    /* access modifiers changed from: 0000 */
+    @org.chromium.base.annotations.CalledByNative
     public final void rewind() {
-        new ejz(this);
-        throw new NoSuchMethodError();
+        new defpackage.ejz(this);
+        throw new java.lang.NoSuchMethodError();
     }
 
-    /* access modifiers changed from: package-private */
-    @CalledByNative
+    /* access modifiers changed from: 0000 */
+    @org.chromium.base.annotations.CalledByNative
     public final void onUploadDataStreamDestroyed() {
-        throw new NoSuchMethodError();
+        throw new java.lang.NoSuchMethodError();
     }
 
     static {
-        CronetUploadDataStream.class.getSimpleName();
+        org.chromium.net.impl.CronetUploadDataStream.class.getSimpleName();
     }
 }

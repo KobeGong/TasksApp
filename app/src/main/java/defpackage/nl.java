@@ -1,27 +1,20 @@
 package defpackage;
 
-import android.app.Notification;
-import android.os.Bundle;
-import android.util.Log;
-import android.util.SparseArray;
-import java.lang.reflect.Field;
-import java.util.List;
-
-/* renamed from: nl  reason: default package */
+/* renamed from: nl reason: default package */
 /* compiled from: PG */
 public final class nl {
-    private static final Object a = new Object();
-    private static Field b;
+    private static final java.lang.Object a = new java.lang.Object();
+    private static java.lang.reflect.Field b;
     private static boolean c;
 
-    public static SparseArray a(List list) {
-        SparseArray sparseArray = null;
+    public static android.util.SparseArray a(java.util.List list) {
+        android.util.SparseArray sparseArray = null;
         int size = list.size();
         for (int i = 0; i < size; i++) {
-            Bundle bundle = (Bundle) list.get(i);
+            android.os.Bundle bundle = (android.os.Bundle) list.get(i);
             if (bundle != null) {
                 if (sparseArray == null) {
-                    sparseArray = new SparseArray();
+                    sparseArray = new android.util.SparseArray();
                 }
                 sparseArray.put(i, bundle);
             }
@@ -29,57 +22,57 @@ public final class nl {
         return sparseArray;
     }
 
-    public static Bundle a(Notification notification) {
+    public static android.os.Bundle a(android.app.Notification notification) {
         synchronized (a) {
             if (c) {
                 return null;
             }
             try {
                 if (b == null) {
-                    Field declaredField = Notification.class.getDeclaredField("extras");
-                    if (!Bundle.class.isAssignableFrom(declaredField.getType())) {
-                        Log.e("NotificationCompat", "Notification.extras field is not of type Bundle");
+                    java.lang.reflect.Field declaredField = android.app.Notification.class.getDeclaredField("extras");
+                    if (!android.os.Bundle.class.isAssignableFrom(declaredField.getType())) {
+                        android.util.Log.e("NotificationCompat", "Notification.extras field is not of type Bundle");
                         c = true;
                         return null;
                     }
                     declaredField.setAccessible(true);
                     b = declaredField;
                 }
-                Bundle bundle = (Bundle) b.get(notification);
+                android.os.Bundle bundle = (android.os.Bundle) b.get(notification);
                 if (bundle == null) {
-                    bundle = new Bundle();
+                    bundle = new android.os.Bundle();
                     b.set(notification, bundle);
                 }
                 return bundle;
-            } catch (IllegalAccessException e) {
-                Log.e("NotificationCompat", "Unable to access notification extras", e);
+            } catch (java.lang.IllegalAccessException e) {
+                android.util.Log.e("NotificationCompat", "Unable to access notification extras", e);
                 c = true;
                 return null;
-            } catch (NoSuchFieldException e2) {
-                Log.e("NotificationCompat", "Unable to access notification extras", e2);
+            } catch (java.lang.NoSuchFieldException e2) {
+                android.util.Log.e("NotificationCompat", "Unable to access notification extras", e2);
                 c = true;
                 return null;
             }
         }
     }
 
-    public static Bundle a(Notification.Builder builder, nf nfVar) {
+    public static android.os.Bundle a(android.app.Notification.Builder builder, defpackage.nf nfVar) {
         builder.addAction(nfVar.d, nfVar.e, nfVar.f);
-        Bundle bundle = new Bundle(nfVar.a);
+        android.os.Bundle bundle = new android.os.Bundle(nfVar.a);
         bundle.putBoolean("android.support.allowGeneratedReplies", nfVar.b);
         return bundle;
     }
 
-    static Bundle a(nf nfVar) {
-        Bundle bundle;
-        Bundle bundle2 = new Bundle();
+    static android.os.Bundle a(defpackage.nf nfVar) {
+        android.os.Bundle bundle;
+        android.os.Bundle bundle2 = new android.os.Bundle();
         bundle2.putInt("icon", nfVar.d);
         bundle2.putCharSequence("title", nfVar.e);
         bundle2.putParcelable("actionIntent", nfVar.f);
         if (nfVar.a != null) {
-            bundle = new Bundle(nfVar.a);
+            bundle = new android.os.Bundle(nfVar.a);
         } else {
-            bundle = new Bundle();
+            bundle = new android.os.Bundle();
         }
         bundle.putBoolean("android.support.allowGeneratedReplies", nfVar.b);
         bundle2.putBundle("extras", bundle);
@@ -88,6 +81,6 @@ public final class nl {
     }
 
     static {
-        new Object();
+        new java.lang.Object();
     }
 }

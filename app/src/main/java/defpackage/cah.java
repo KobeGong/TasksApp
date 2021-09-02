@@ -1,24 +1,22 @@
 package defpackage;
 
-import android.content.Context;
-
-/* renamed from: cah  reason: default package */
+/* renamed from: cah reason: default package */
 /* compiled from: PG */
-public final class cah implements ecz {
-    private final ecz a;
-    private final ecz b;
-    private final ecz c;
-    private final ecz d;
-    private final ecz e;
-    private final ecz f;
-    private final ecz g;
-    private final ecz h;
-    private final ecz i;
-    private final ecz j;
-    private final ecz k;
-    private final ecz l;
+public final class cah implements defpackage.ecz {
+    private final defpackage.ecz a;
+    private final defpackage.ecz b;
+    private final defpackage.ecz c;
+    private final defpackage.ecz d;
+    private final defpackage.ecz e;
+    private final defpackage.ecz f;
+    private final defpackage.ecz g;
+    private final defpackage.ecz h;
+    private final defpackage.ecz i;
+    private final defpackage.ecz j;
+    private final defpackage.ecz k;
+    private final defpackage.ecz l;
 
-    public cah(ecz ecz, ecz ecz2, ecz ecz3, ecz ecz4, ecz ecz5, ecz ecz6, ecz ecz7, ecz ecz8, ecz ecz9, ecz ecz10, ecz ecz11, ecz ecz12) {
+    public cah(defpackage.ecz ecz, defpackage.ecz ecz2, defpackage.ecz ecz3, defpackage.ecz ecz4, defpackage.ecz ecz5, defpackage.ecz ecz6, defpackage.ecz ecz7, defpackage.ecz ecz8, defpackage.ecz ecz9, defpackage.ecz ecz10, defpackage.ecz ecz11, defpackage.ecz ecz12) {
         this.a = ecz;
         this.b = ecz2;
         this.c = ecz3;
@@ -33,21 +31,20 @@ public final class cah implements ecz {
         this.l = ecz12;
     }
 
-    @Override // defpackage.ecz
-    public final /* synthetic */ Object a() {
-        cag cag = new cag();
-        cag.a = (Context) this.a.a();
-        cag.b = (cae) this.b.a();
-        cag.c = (buu) this.c.a();
-        cag.d = dmr.b(this.d);
-        cag.e = dmr.b(this.e);
-        cag.f = dmr.b(this.f);
-        cag.g = dmr.b(this.g);
-        cag.h = dmr.b(this.h);
-        cag.i = dmr.b(this.i);
-        cag.j = dmr.b(this.j);
-        cag.k = dmr.b(this.k);
-        cag.l = dmr.b(this.l);
+    public final /* synthetic */ java.lang.Object a() {
+        defpackage.cag cag = new defpackage.cag();
+        cag.a = (android.content.Context) this.a.a();
+        cag.b = (defpackage.cae) this.b.a();
+        cag.c = (defpackage.buu) this.c.a();
+        cag.d = defpackage.dmr.b(this.d);
+        cag.e = defpackage.dmr.b(this.e);
+        cag.f = defpackage.dmr.b(this.f);
+        cag.g = defpackage.dmr.b(this.g);
+        cag.h = defpackage.dmr.b(this.h);
+        cag.i = defpackage.dmr.b(this.i);
+        cag.j = defpackage.dmr.b(this.j);
+        cag.k = defpackage.dmr.b(this.k);
+        cag.l = defpackage.dmr.b(this.l);
         return cag;
     }
 }

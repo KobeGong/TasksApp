@@ -1,28 +1,21 @@
 package defpackage;
 
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationSet;
-import android.view.animation.Transformation;
-
-/* access modifiers changed from: package-private */
-/* renamed from: ma  reason: default package */
+/* renamed from: ma reason: default package */
 /* compiled from: PG */
-public final class ma extends AnimationSet implements Runnable {
-    private final ViewGroup a;
-    private final View b;
+final class ma extends android.view.animation.AnimationSet implements java.lang.Runnable {
+    private final android.view.ViewGroup a;
+    private final android.view.View b;
     private boolean c;
     private boolean d;
 
-    ma(Animation animation, ViewGroup viewGroup, View view) {
+    ma(android.view.animation.Animation animation, android.view.ViewGroup viewGroup, android.view.View view) {
         super(false);
         this.a = viewGroup;
         this.b = view;
         addAnimation(animation);
     }
 
-    public final boolean getTransformation(long j, Transformation transformation) {
+    public final boolean getTransformation(long j, android.view.animation.Transformation transformation) {
         if (this.c) {
             if (!this.d) {
                 return true;
@@ -32,12 +25,12 @@ public final class ma extends AnimationSet implements Runnable {
             return true;
         } else {
             this.c = true;
-            nt.a(this.a, this);
+            defpackage.nt.a(this.a, this);
             return true;
         }
     }
 
-    public final boolean getTransformation(long j, Transformation transformation, float f) {
+    public final boolean getTransformation(long j, android.view.animation.Transformation transformation, float f) {
         if (this.c) {
             if (!this.d) {
                 return true;
@@ -47,7 +40,7 @@ public final class ma extends AnimationSet implements Runnable {
             return true;
         } else {
             this.c = true;
-            nt.a(this.a, this);
+            defpackage.nt.a(this.a, this);
             return true;
         }
     }

@@ -1,44 +1,35 @@
 package defpackage;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.SignInAccount;
-
-/* renamed from: awl  reason: default package */
+/* renamed from: awl reason: default package */
 /* compiled from: PG */
-public final class awl implements Parcelable.Creator {
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object[] newArray(int i) {
-        return new SignInAccount[i];
+public final class awl implements android.os.Parcelable.Creator {
+    public final /* synthetic */ java.lang.Object[] newArray(int i) {
+        return new com.google.android.gms.auth.api.signin.SignInAccount[i];
     }
 
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object createFromParcel(Parcel parcel) {
-        int a = bjr.a(parcel);
-        String str = "";
-        GoogleSignInAccount googleSignInAccount = null;
-        String str2 = "";
+    public final /* synthetic */ java.lang.Object createFromParcel(android.os.Parcel parcel) {
+        int a = defpackage.bjr.a(parcel);
+        java.lang.String str = "";
+        com.google.android.gms.auth.api.signin.GoogleSignInAccount googleSignInAccount = null;
+        java.lang.String str2 = "";
         while (parcel.dataPosition() < a) {
             int readInt = parcel.readInt();
             switch (65535 & readInt) {
                 case 4:
-                    str = bjr.h(parcel, readInt);
-                    break;
-                case 5:
-                case 6:
-                default:
-                    bjr.b(parcel, readInt);
+                    str = defpackage.bjr.h(parcel, readInt);
                     break;
                 case 7:
-                    googleSignInAccount = (GoogleSignInAccount) bjr.a(parcel, readInt, GoogleSignInAccount.CREATOR);
+                    googleSignInAccount = (com.google.android.gms.auth.api.signin.GoogleSignInAccount) defpackage.bjr.a(parcel, readInt, com.google.android.gms.auth.api.signin.GoogleSignInAccount.CREATOR);
                     break;
                 case 8:
-                    str2 = bjr.h(parcel, readInt);
+                    str2 = defpackage.bjr.h(parcel, readInt);
+                    break;
+                default:
+                    defpackage.bjr.b(parcel, readInt);
                     break;
             }
         }
-        bjr.p(parcel, a);
-        return new SignInAccount(str, googleSignInAccount, str2);
+        defpackage.bjr.p(parcel, a);
+        return new com.google.android.gms.auth.api.signin.SignInAccount(str, googleSignInAccount, str2);
     }
 }

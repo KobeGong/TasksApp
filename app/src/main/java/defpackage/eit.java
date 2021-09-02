@@ -1,12 +1,10 @@
 package defpackage;
 
-import java.util.concurrent.Executor;
-
-/* renamed from: eit  reason: default package */
+/* renamed from: eit reason: default package */
 /* compiled from: PG */
 public abstract class eit {
-    public Executor a() {
-        throw new NoSuchMethodError();
+    public java.util.concurrent.Executor a() {
+        throw new java.lang.NoSuchMethodError();
     }
 
     public abstract void b();

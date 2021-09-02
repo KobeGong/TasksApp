@@ -1,39 +1,32 @@
 package defpackage;
 
-import java.util.Queue;
-
-/* renamed from: csm  reason: default package */
+/* renamed from: csm reason: default package */
 /* compiled from: PG */
-public abstract class csm extends csk implements Queue {
+public abstract class csm extends defpackage.csk implements java.util.Queue {
     protected csm() {
     }
 
     /* access modifiers changed from: protected */
     /* renamed from: a */
-    public abstract Queue c();
+    public abstract java.util.Queue c();
 
-    @Override // java.util.Queue
-    public boolean offer(Object obj) {
+    public boolean offer(java.lang.Object obj) {
         return c().offer(obj);
     }
 
-    @Override // java.util.Queue
-    public Object poll() {
+    public java.lang.Object poll() {
         return c().poll();
     }
 
-    @Override // java.util.Queue
-    public Object remove() {
+    public java.lang.Object remove() {
         return c().remove();
     }
 
-    @Override // java.util.Queue
-    public Object peek() {
+    public java.lang.Object peek() {
         return c().peek();
     }
 
-    @Override // java.util.Queue
-    public Object element() {
+    public java.lang.Object element() {
         return c().element();
     }
 }

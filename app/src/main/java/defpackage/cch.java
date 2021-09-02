@@ -1,18 +1,17 @@
 package defpackage;
 
-/* renamed from: cch  reason: default package */
+/* renamed from: cch reason: default package */
 /* compiled from: PG */
-public final class cch implements ecz {
-    private final ecz a;
+public final class cch implements defpackage.ecz {
+    private final defpackage.ecz a;
 
-    public cch(ecz ecz) {
+    public cch(defpackage.ecz ecz) {
         this.a = ecz;
     }
 
-    @Override // defpackage.ecz
-    public final /* synthetic */ Object a() {
-        ccg ccg = new ccg();
-        ccg.a = (cbx) this.a.a();
+    public final /* synthetic */ java.lang.Object a() {
+        defpackage.ccg ccg = new defpackage.ccg();
+        ccg.a = (defpackage.cbx) this.a.a();
         return ccg;
     }
 }

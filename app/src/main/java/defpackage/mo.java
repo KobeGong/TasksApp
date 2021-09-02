@@ -1,27 +1,22 @@
 package defpackage;
 
-import android.graphics.Rect;
-import android.view.View;
-import java.util.ArrayList;
-
-/* access modifiers changed from: package-private */
-/* renamed from: mo  reason: default package */
+/* renamed from: mo reason: default package */
 /* compiled from: PG */
-public final class mo implements Runnable {
-    private final /* synthetic */ mv a;
-    private final /* synthetic */ qr b;
-    private final /* synthetic */ Object c;
-    private final /* synthetic */ mp d;
-    private final /* synthetic */ ArrayList e;
-    private final /* synthetic */ View f;
-    private final /* synthetic */ lc g;
-    private final /* synthetic */ lc h;
+final class mo implements java.lang.Runnable {
+    private final /* synthetic */ defpackage.mv a;
+    private final /* synthetic */ defpackage.qr b;
+    private final /* synthetic */ java.lang.Object c;
+    private final /* synthetic */ defpackage.mp d;
+    private final /* synthetic */ java.util.ArrayList e;
+    private final /* synthetic */ android.view.View f;
+    private final /* synthetic */ Fragment g;
+    private final /* synthetic */ Fragment h;
     private final /* synthetic */ boolean i;
-    private final /* synthetic */ ArrayList j;
-    private final /* synthetic */ Object k;
-    private final /* synthetic */ Rect l;
+    private final /* synthetic */ java.util.ArrayList j;
+    private final /* synthetic */ java.lang.Object k;
+    private final /* synthetic */ android.graphics.Rect l;
 
-    mo(mv mvVar, qr qrVar, Object obj, mp mpVar, ArrayList arrayList, View view, lc lcVar, lc lcVar2, boolean z, ArrayList arrayList2, Object obj2, Rect rect) {
+    mo(defpackage.mv mvVar, defpackage.qr qrVar, java.lang.Object obj, defpackage.mp mpVar, java.util.ArrayList arrayList, android.view.View view, Fragment lcVar, Fragment lcVar2, boolean z, java.util.ArrayList arrayList2, java.lang.Object obj2, android.graphics.Rect rect) {
         this.a = mvVar;
         this.b = qrVar;
         this.c = obj;
@@ -37,17 +32,17 @@ public final class mo implements Runnable {
     }
 
     public final void run() {
-        qr a2 = mk.a(this.a, this.b, this.c, this.d);
+        defpackage.qr a2 = defpackage.mk.a(this.a, this.b, this.c, this.d);
         if (a2 != null) {
             this.e.addAll(a2.values());
             this.e.add(this.f);
         }
-        mk.a(this.g, this.h, this.i);
+        defpackage.mk.a(this.g, this.h, this.i);
         if (this.c != null) {
             this.a.a(this.c, this.j, this.e);
-            View a3 = mk.a(a2, this.d, this.k, this.i);
+            android.view.View a3 = defpackage.mk.a(a2, this.d, this.k, this.i);
             if (a3 != null) {
-                mv.a(a3, this.l);
+                defpackage.mv.a(a3, this.l);
             }
         }
     }

@@ -1,96 +1,97 @@
 package defpackage;
 
-import android.animation.Animator;
-import android.animation.AnimatorInflater;
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.animation.TimeInterpolator;
-import android.content.Context;
-import android.content.res.TypedArray;
-import android.util.Log;
-import android.view.animation.AccelerateDecelerateInterpolator;
-import android.view.animation.AccelerateInterpolator;
-import android.view.animation.DecelerateInterpolator;
-import java.util.ArrayList;
-import java.util.List;
-
-/* renamed from: ct  reason: default package */
+/* renamed from: ct reason: default package */
 /* compiled from: PG */
 public final class ct {
-    private final ri a = new ri();
+    private final defpackage.ri a = new defpackage.ri();
 
-    public static ct a(Context context, TypedArray typedArray, int i) {
-        int resourceId;
-        if (!typedArray.hasValue(i) || (resourceId = typedArray.getResourceId(i, 0)) == 0) {
-            return null;
+    public static defpackage.ct a(android.content.Context context, android.content.res.TypedArray typedArray, int i) {
+        if (typedArray.hasValue(i)) {
+            int resourceId = typedArray.getResourceId(i, 0);
+            if (resourceId != 0) {
+                return a(context, resourceId);
+            }
         }
-        return a(context, resourceId);
+        return null;
     }
 
-    private static ct a(Context context, int i) {
+    private static defpackage.ct a(android.content.Context context, int i) {
         try {
-            Animator loadAnimator = AnimatorInflater.loadAnimator(context, i);
-            if (loadAnimator instanceof AnimatorSet) {
-                return a(((AnimatorSet) loadAnimator).getChildAnimations());
+            android.animation.Animator loadAnimator = android.animation.AnimatorInflater.loadAnimator(context, i);
+            if (loadAnimator instanceof android.animation.AnimatorSet) {
+                return a(((android.animation.AnimatorSet) loadAnimator).getChildAnimations());
             }
             if (loadAnimator == null) {
                 return null;
             }
-            ArrayList arrayList = new ArrayList();
+            java.util.ArrayList arrayList = new java.util.ArrayList();
             arrayList.add(loadAnimator);
             return a(arrayList);
-        } catch (Exception e) {
-            String valueOf = String.valueOf(Integer.toHexString(i));
-            Log.w("MotionSpec", valueOf.length() != 0 ? "Can't load animation resource ID #0x".concat(valueOf) : new String("Can't load animation resource ID #0x"), e);
+        } catch (java.lang.Exception e) {
+            java.lang.Exception exc = e;
+            java.lang.String str = "MotionSpec";
+            java.lang.String str2 = "Can't load animation resource ID #0x";
+            java.lang.String valueOf = java.lang.String.valueOf(java.lang.Integer.toHexString(i));
+            android.util.Log.w(str, valueOf.length() != 0 ? str2.concat(valueOf) : new java.lang.String(str2), exc);
             return null;
         }
     }
 
-    private static ct a(List list) {
-        ct ctVar = new ct();
+    private static defpackage.ct a(java.util.List list) {
+        defpackage.ct ctVar = new defpackage.ct();
         int size = list.size();
-        for (int i = 0; i < size; i++) {
-            Animator animator = (Animator) list.get(i);
-            if (animator instanceof ObjectAnimator) {
-                ObjectAnimator objectAnimator = (ObjectAnimator) animator;
-                String propertyName = objectAnimator.getPropertyName();
+        int i = 0;
+        while (i < size) {
+            android.animation.Animator animator = (android.animation.Animator) list.get(i);
+            if (animator instanceof android.animation.ObjectAnimator) {
+                android.animation.ObjectAnimator objectAnimator = (android.animation.ObjectAnimator) animator;
+                java.lang.String propertyName = objectAnimator.getPropertyName();
                 long startDelay = objectAnimator.getStartDelay();
                 long duration = objectAnimator.getDuration();
-                TimeInterpolator interpolator = objectAnimator.getInterpolator();
-                if ((interpolator instanceof AccelerateDecelerateInterpolator) || interpolator == null) {
-                    interpolator = cs.a;
-                } else if (interpolator instanceof AccelerateInterpolator) {
-                    interpolator = cs.b;
-                } else if (interpolator instanceof DecelerateInterpolator) {
-                    interpolator = cs.c;
+                android.animation.TimeInterpolator interpolator = objectAnimator.getInterpolator();
+                if ((interpolator instanceof android.view.animation.AccelerateDecelerateInterpolator) || interpolator == null) {
+                    interpolator = defpackage.cs.a;
+                } else if (interpolator instanceof android.view.animation.AccelerateInterpolator) {
+                    interpolator = defpackage.cs.b;
+                } else if (interpolator instanceof android.view.animation.DecelerateInterpolator) {
+                    interpolator = defpackage.cs.c;
                 }
-                cu cuVar = new cu(startDelay, duration, interpolator);
+                defpackage.cu cuVar = new defpackage.cu(startDelay, duration, interpolator);
                 cuVar.a = objectAnimator.getRepeatCount();
                 cuVar.b = objectAnimator.getRepeatMode();
                 ctVar.a.put(propertyName, cuVar);
+                i++;
             } else {
-                String valueOf = String.valueOf(animator);
-                throw new IllegalArgumentException(new StringBuilder(String.valueOf(valueOf).length() + 36).append("Animator must be an ObjectAnimator: ").append(valueOf).toString());
+                java.lang.String valueOf = java.lang.String.valueOf(animator);
+                throw new java.lang.IllegalArgumentException(new java.lang.StringBuilder(java.lang.String.valueOf(valueOf).length() + 36).append("Animator must be an ObjectAnimator: ").append(valueOf).toString());
             }
         }
         return ctVar;
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         if (this == obj) {
             return true;
         }
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        return this.a.equals(((ct) obj).a);
+        return this.a.equals(((defpackage.ct) obj).a);
     }
 
     public final int hashCode() {
         return this.a.hashCode();
     }
 
-    public final String toString() {
-        return '\n' + getClass().getName() + '{' + Integer.toHexString(System.identityHashCode(this)) + " timings: " + this.a + "}\n";
+    public final java.lang.String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append(10);
+        sb.append(getClass().getName());
+        sb.append('{');
+        sb.append(java.lang.Integer.toHexString(java.lang.System.identityHashCode(this)));
+        sb.append(" timings: ");
+        sb.append(this.a);
+        sb.append("}\n");
+        return sb.toString();
     }
 }

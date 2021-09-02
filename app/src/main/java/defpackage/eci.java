@@ -1,6 +1,6 @@
 package defpackage;
 
-/* renamed from: eci  reason: default package */
+/* renamed from: eci reason: default package */
 /* compiled from: PG */
 public enum eci {
     OK(0),
@@ -27,7 +27,7 @@ public enum eci {
         this.r = i;
     }
 
-    public final ech a() {
-        return (ech) ech.a.get(this.r);
+    public final defpackage.ech a() {
+        return (defpackage.ech) defpackage.ech.a.get(this.r);
     }
 }

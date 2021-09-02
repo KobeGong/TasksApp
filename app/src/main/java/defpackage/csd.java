@@ -1,7 +1,7 @@
 package defpackage;
 
-/* renamed from: csd  reason: default package */
+/* renamed from: csd reason: default package */
 /* compiled from: PG */
 public interface csd {
-    Object b();
+    java.lang.Object b();
 }

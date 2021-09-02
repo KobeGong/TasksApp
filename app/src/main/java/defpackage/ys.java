@@ -1,76 +1,67 @@
 package defpackage;
 
-import android.content.Context;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import com.google.android.apps.tasks.R;
-import java.util.ArrayList;
-
-/* renamed from: ys  reason: default package */
+/* renamed from: ys reason: default package */
 /* compiled from: PG */
-public abstract class ys implements MenuPresenter {
-    public Context a;
-    public Context b;
-    public MenuBuilder c;
-    public zu d;
-    public zv e;
+public abstract class ys implements defpackage.zt {
+    public android.content.Context a;
+    public android.content.Context b;
+    public defpackage.ze c;
+    public defpackage.zu d;
+    public defpackage.zv e;
     public int f;
-    private LayoutInflater g;
-    private int h = R.layout.abc_action_menu_layout;
-    private int i = R.layout.abc_action_menu_item_layout;
+    private android.view.LayoutInflater g;
+    private int h = 2131034115;
+    private int i = 2131034114;
 
-    public ys(Context context) {
+    public ys(android.content.Context context) {
         this.a = context;
-        this.g = LayoutInflater.from(context);
+        this.g = android.view.LayoutInflater.from(context);
     }
 
-    public abstract void a(MenuItemImpl ziVar, zw zwVar);
+    public abstract void a(defpackage.zi ziVar, defpackage.zw zwVar);
 
-    @Override // defpackage.zt
-    public void a(Context context, MenuBuilder zeVar) {
+    public void a(android.content.Context context, defpackage.ze zeVar) {
         this.b = context;
-        LayoutInflater.from(this.b);
+        android.view.LayoutInflater.from(this.b);
         this.c = zeVar;
     }
 
-    public zv a(ViewGroup viewGroup) {
+    public defpackage.zv a(android.view.ViewGroup viewGroup) {
         if (this.e == null) {
-            this.e = (zv) this.g.inflate(this.h, viewGroup, false);
+            this.e = (defpackage.zv) this.g.inflate(this.h, viewGroup, false);
             this.e.a(this.c);
             a(true);
         }
         return this.e;
     }
 
-    @Override // defpackage.zt
     public void a(boolean z) {
         int i2;
         int i3;
-        ViewGroup viewGroup = (ViewGroup) this.e;
+        android.view.ViewGroup viewGroup = (android.view.ViewGroup) this.e;
         if (viewGroup != null) {
             if (this.c != null) {
                 this.c.j();
-                ArrayList i4 = this.c.i();
+                java.util.ArrayList i4 = this.c.i();
                 int size = i4.size();
                 int i5 = 0;
                 i2 = 0;
                 while (i5 < size) {
-                    MenuItemImpl ziVar = (MenuItemImpl) i4.get(i5);
+                    defpackage.zi ziVar = (defpackage.zi) i4.get(i5);
                     if (c(ziVar)) {
-                        View childAt = viewGroup.getChildAt(i2);
-                        MenuItemImpl a2 = childAt instanceof zw ? ((zw) childAt).a() : null;
-                        View a3 = a(ziVar, childAt, viewGroup);
-                        if (ziVar != a2) {
-                            a3.setPressed(false);
-                            a3.jumpDrawablesToCurrentState();
+                        android.view.View childAt = viewGroup.getChildAt(i2);
+                        defpackage.zi ziVar2 = childAt instanceof defpackage.zw ? ((defpackage.zw) childAt).a() : null;
+                        android.view.View a2 = a(ziVar, childAt, viewGroup);
+                        if (ziVar != ziVar2) {
+                            a2.setPressed(false);
+                            a2.jumpDrawablesToCurrentState();
                         }
-                        if (a3 != childAt) {
-                            ViewGroup viewGroup2 = (ViewGroup) a3.getParent();
+                        if (a2 != childAt) {
+                            android.view.ViewGroup viewGroup2 = (android.view.ViewGroup) a2.getParent();
                             if (viewGroup2 != null) {
-                                viewGroup2.removeView(a3);
+                                viewGroup2.removeView(a2);
                             }
-                            ((ViewGroup) this.e).addView(a3, i2);
+                            ((android.view.ViewGroup) this.e).addView(a2, i2);
                         }
                         i3 = i2 + 1;
                     } else {
@@ -90,62 +81,55 @@ public abstract class ys implements MenuPresenter {
         }
     }
 
-    public boolean a(ViewGroup viewGroup, int i2) {
+    public boolean a(android.view.ViewGroup viewGroup, int i2) {
         viewGroup.removeViewAt(i2);
         return true;
     }
 
-    @Override // defpackage.zt
-    public final void a(zu zuVar) {
+    public final void a(defpackage.zu zuVar) {
         this.d = zuVar;
     }
 
-    public View a(MenuItemImpl ziVar, View view, ViewGroup viewGroup) {
-        zw zwVar;
-        if (view instanceof zw) {
-            zwVar = (zw) view;
+    public android.view.View a(defpackage.zi ziVar, android.view.View view, android.view.ViewGroup viewGroup) {
+        defpackage.zw zwVar;
+        if (view instanceof defpackage.zw) {
+            zwVar = (defpackage.zw) view;
         } else {
-            zwVar = (zw) this.g.inflate(this.i, viewGroup, false);
+            zwVar = (defpackage.zw) this.g.inflate(this.i, viewGroup, false);
         }
         a(ziVar, zwVar);
-        return (View) zwVar;
+        return (android.view.View) zwVar;
     }
 
-    public boolean c(MenuItemImpl ziVar) {
+    public boolean c(defpackage.zi ziVar) {
         return true;
     }
 
-    @Override // defpackage.zt
-    public void a(MenuBuilder zeVar, boolean z) {
+    public void a(defpackage.ze zeVar, boolean z) {
         if (this.d != null) {
             this.d.a(zeVar, z);
         }
     }
 
-    @Override // defpackage.zt
-    public boolean a(aad aad) {
+    public boolean a(defpackage.aad aad) {
         if (this.d != null) {
             return this.d.a(aad);
         }
         return false;
     }
 
-    @Override // defpackage.zt
     public boolean a() {
         return false;
     }
 
-    @Override // defpackage.zt
-    public final boolean a(MenuItemImpl ziVar) {
+    public final boolean a(defpackage.zi ziVar) {
         return false;
     }
 
-    @Override // defpackage.zt
-    public final boolean b(MenuItemImpl ziVar) {
+    public final boolean b(defpackage.zi ziVar) {
         return false;
     }
 
-    @Override // defpackage.zt
     public final int b() {
         return this.f;
     }

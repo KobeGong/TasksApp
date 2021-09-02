@@ -1,28 +1,19 @@
 package defpackage;
 
-import android.app.PendingIntent;
-import android.os.Handler;
-import android.os.IInterface;
-import android.os.Looper;
-import android.os.Message;
-import android.util.Log;
-
-/* access modifiers changed from: package-private */
-/* renamed from: bdd  reason: default package */
+/* renamed from: bdd reason: default package */
 /* compiled from: PG */
-public final class bdd extends Handler {
-    private /* synthetic */ bcx a;
+final class bdd extends android.os.Handler {
+    private /* synthetic */ defpackage.bcx a;
 
-    /* JADX INFO: super call moved to the top of the method (can break code semantics) */
-    public bdd(bcx bcx, Looper looper) {
-        super(looper);
+    public bdd(defpackage.bcx bcx, android.os.Looper looper) {
         this.a = bcx;
+        super(looper);
     }
 
-    public final void handleMessage(Message message) {
-        Object obj;
-        axq axq;
-        axq axq2;
+    public final void handleMessage(android.os.Message message) {
+        java.lang.Object obj;
+        defpackage.axq axq;
+        defpackage.axq axq2;
         if (this.a.g.get() != message.arg1) {
             if (b(message)) {
                 a(message);
@@ -30,54 +21,54 @@ public final class bdd extends Handler {
         } else if ((message.what == 1 || message.what == 7 || message.what == 4 || message.what == 5) && !this.a.g()) {
             a(message);
         } else if (message.what == 4) {
-            this.a.w = new axq(message.arg2);
-            if (!(this.a.s()) || (this.a.x)) {
+            this.a.w = new defpackage.axq(message.arg2);
+            if (!this.a.s() || this.a.x) {
                 if (this.a.w != null) {
                     axq2 = this.a.w;
                 } else {
-                    axq2 = new axq(8);
+                    axq2 = new defpackage.axq(8);
                 }
                 this.a.f.a(axq2);
                 this.a.a(axq2);
                 return;
             }
-            this.a.a((bcx) 3, (int) ((IInterface) null));
+            this.a.a(3, (android.os.IInterface) null);
         } else if (message.what == 5) {
             if (this.a.w != null) {
                 axq = this.a.w;
             } else {
-                axq = new axq(8);
+                axq = new defpackage.axq(8);
             }
             this.a.f.a(axq);
             this.a.a(axq);
         } else if (message.what == 3) {
-            axq axq3 = new axq(message.arg2, message.obj instanceof PendingIntent ? (PendingIntent) message.obj : null);
+            defpackage.axq axq3 = new defpackage.axq(message.arg2, message.obj instanceof android.app.PendingIntent ? (android.app.PendingIntent) message.obj : null);
             this.a.f.a(axq3);
             this.a.a(axq3);
         } else if (message.what == 6) {
-            this.a.a((bcx) 5, (int) ((IInterface) null));
+            this.a.a(5, (android.os.IInterface) null);
             if (this.a.s != null) {
                 this.a.s.a.a(message.arg2);
             }
-            bcx bcx = this.a;
+            defpackage.bcx bcx = this.a;
             bcx.b = message.arg2;
-            bcx.c = System.currentTimeMillis();
-            boolean unused = this.a.a(5, 1, null);
+            bcx.c = java.lang.System.currentTimeMillis();
+            this.a.a(5, 1, null);
         } else if (message.what == 2 && !this.a.f()) {
             a(message);
         } else if (b(message)) {
-            bde bde = (bde) message.obj;
+            defpackage.bde bde = (defpackage.bde) message.obj;
             synchronized (bde) {
                 obj = bde.a;
                 if (bde.b) {
-                    String valueOf = String.valueOf(bde);
-                    Log.w("GmsClient", new StringBuilder(String.valueOf(valueOf).length() + 47).append("Callback proxy ").append(valueOf).append(" being reused. This is not safe.").toString());
+                    java.lang.String valueOf = java.lang.String.valueOf(bde);
+                    android.util.Log.w("GmsClient", new java.lang.StringBuilder(java.lang.String.valueOf(valueOf).length() + 47).append("Callback proxy ").append(valueOf).append(" being reused. This is not safe.").toString());
                 }
             }
             if (obj != null) {
                 try {
                     bde.a(obj);
-                } catch (RuntimeException e) {
+                } catch (java.lang.RuntimeException e) {
                     bde.b();
                     throw e;
                 }
@@ -89,17 +80,17 @@ public final class bdd extends Handler {
             }
             bde.c();
         } else {
-            Log.wtf("GmsClient", new StringBuilder(45).append("Don't know how to handle message: ").append(message.what).toString(), new Exception());
+            android.util.Log.wtf("GmsClient", "Don't know how to handle message: " + message.what, new java.lang.Exception());
         }
     }
 
-    private static void a(Message message) {
-        bde bde = (bde) message.obj;
+    private static void a(android.os.Message message) {
+        defpackage.bde bde = (defpackage.bde) message.obj;
         bde.b();
         bde.c();
     }
 
-    private static boolean b(Message message) {
+    private static boolean b(android.os.Message message) {
         return message.what == 2 || message.what == 1 || message.what == 7;
     }
 }

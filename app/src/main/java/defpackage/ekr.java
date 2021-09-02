@@ -1,31 +1,26 @@
 package defpackage;
 
-import android.content.Context;
-import android.content.pm.PackageManager;
-import android.os.Build;
-import java.util.Locale;
-
-/* renamed from: ekr  reason: default package */
+/* renamed from: ekr reason: default package */
 /* compiled from: PG */
 public final class ekr {
-    private static final Object a = new Object();
+    private static final java.lang.Object a = new java.lang.Object();
     private static int b = 0;
 
-    public static String a(Context context) {
-        StringBuilder sb = new StringBuilder();
+    public static java.lang.String a(android.content.Context context) {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append(context.getPackageName());
         sb.append('/');
         sb.append(b(context));
         sb.append(" (Linux; U; Android ");
-        sb.append(Build.VERSION.RELEASE);
+        sb.append(android.os.Build.VERSION.RELEASE);
         sb.append("; ");
-        sb.append(Locale.getDefault().toString());
-        String str = Build.MODEL;
+        sb.append(java.util.Locale.getDefault().toString());
+        java.lang.String str = android.os.Build.MODEL;
         if (str.length() > 0) {
             sb.append("; ");
             sb.append(str);
         }
-        String str2 = Build.ID;
+        java.lang.String str2 = android.os.Build.ID;
         if (str2.length() > 0) {
             sb.append("; Build/");
             sb.append(str2);
@@ -37,14 +32,14 @@ public final class ekr {
         return sb.toString();
     }
 
-    private static int b(Context context) {
+    private static int b(android.content.Context context) {
         int i;
         synchronized (a) {
             if (b == 0) {
                 try {
                     b = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionCode;
-                } catch (PackageManager.NameNotFoundException e) {
-                    throw new IllegalStateException("Cannot determine package version");
+                } catch (android.content.pm.PackageManager.NameNotFoundException e) {
+                    throw new java.lang.IllegalStateException("Cannot determine package version");
                 }
             }
             i = b;

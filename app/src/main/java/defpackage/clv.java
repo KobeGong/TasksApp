@@ -1,42 +1,35 @@
 package defpackage;
 
-import android.app.Application;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.concurrent.ConcurrentHashMap;
-
-/* access modifiers changed from: package-private */
-/* renamed from: clv  reason: default package */
+/* renamed from: clv reason: default package */
 /* compiled from: PG */
-public final class clv extends cgj {
-    public final cky d;
-    private final ConcurrentHashMap e = new ConcurrentHashMap();
+final class clv extends defpackage.cgj {
+    public final defpackage.cky d;
+    private final java.util.concurrent.ConcurrentHashMap e = new java.util.concurrent.ConcurrentHashMap();
 
-    static efx a(clu clu, String str) {
-        efx efx = new efx();
-        egc egc = new egc();
-        egc.a = Long.valueOf(clu.b - clu.a);
+    static defpackage.efx a(defpackage.clu clu, java.lang.String str) {
+        defpackage.efx efx = new defpackage.efx();
+        defpackage.egc egc = new defpackage.egc();
+        egc.a = java.lang.Long.valueOf(clu.b - clu.a);
         egc.b = clu.c - 1;
         efx.d = egc;
         if (str != null) {
-            efx.u = new edd();
+            efx.u = new defpackage.edd();
             efx.u.a = str;
         }
         return efx;
     }
 
-    clv(coe coe, Application application, clt clt, int i, cky cky) {
-        super(coe, application, clt, bg.Z, i);
+    clv(defpackage.coe coe, android.app.Application application, defpackage.clt clt, int i, defpackage.cky cky) {
+        super(coe, application, clt, defpackage.bg.Z, i);
         this.d = cky;
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.cgj
+    /* access modifiers changed from: 0000 */
     public final void d() {
         this.e.clear();
     }
 
     static {
-        new HashSet(Arrays.asList("Cold startup", "Cold startup interactive", "Cold startup interactive before onDraw", "Warm startup", "Warm startup interactive", "Warm startup interactive before onDraw", "Warm startup activity onStart"));
+        new java.util.HashSet(java.util.Arrays.asList(new java.lang.String[]{"Cold startup", "Cold startup interactive", "Cold startup interactive before onDraw", "Warm startup", "Warm startup interactive", "Warm startup interactive before onDraw", "Warm startup activity onStart"}));
     }
 }

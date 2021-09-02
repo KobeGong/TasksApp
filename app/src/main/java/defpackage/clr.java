@@ -1,47 +1,44 @@
 package defpackage;
 
-import java.util.ArrayList;
-import java.util.List;
-
-/* renamed from: clr  reason: default package */
+/* renamed from: clr reason: default package */
 /* compiled from: PG */
 public final class clr {
     public volatile boolean a;
-    private final List b;
+    private final java.util.List b;
 
     public clr() {
-        this.b = new ArrayList();
+        this.b = new java.util.ArrayList();
     }
 
     public final synchronized void a() {
         if (!this.a) {
             this.a = true;
-            cdm.a(3, "PrimesShutdown", "Shutdown ...", new Object[0]);
+            defpackage.cdm.a(3, "PrimesShutdown", "Shutdown ...", new java.lang.Object[0]);
             synchronized (this.b) {
-                for (cls cls : this.b) {
+                for (defpackage.cls a2 : this.b) {
                     try {
-                        cls.a();
-                    } catch (RuntimeException e) {
-                        cdm.a("PrimesShutdown", "ShutdownListener crashed", e, new Object[0]);
+                        a2.a();
+                    } catch (java.lang.RuntimeException e) {
+                        defpackage.cdm.a("PrimesShutdown", "ShutdownListener crashed", (java.lang.Throwable) e, new java.lang.Object[0]);
                     }
                 }
                 this.b.clear();
-                cdm.a(3, "PrimesShutdown", "All ShutdownListeners notified.", new Object[0]);
+                defpackage.cdm.a(3, "PrimesShutdown", "All ShutdownListeners notified.", new java.lang.Object[0]);
             }
         }
     }
 
-    public final void a(clt clt) {
-        if (!this.a && ((Boolean) clt.a()).booleanValue()) {
+    public final void a(defpackage.clt clt) {
+        if (!this.a && ((java.lang.Boolean) clt.a()).booleanValue()) {
             a();
         }
     }
 
-    public final boolean a(cls cls) {
+    public final boolean a(defpackage.cls cls) {
         boolean z;
         synchronized (this.b) {
             if (!this.a) {
-                this.b.add((cls) cky.a(cls));
+                this.b.add((defpackage.cls) defpackage.cky.a((java.lang.Object) cls));
                 z = true;
             } else {
                 z = false;

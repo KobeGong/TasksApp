@@ -1,53 +1,46 @@
 package defpackage;
 
-import android.content.Context;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-
-/* renamed from: zx  reason: default package */
+/* renamed from: zx reason: default package */
 /* compiled from: PG */
 public final class zx {
     public int a;
     public int b;
     public int c;
     public int d;
-    public ViewGroup e;
-    public View f;
-    public View g;
-    public MenuBuilder h;
-    public zb i;
-    public Context j;
+    public android.view.ViewGroup e;
+    public android.view.View f;
+    public android.view.View g;
+    public defpackage.ze h;
+    public defpackage.zb i;
+    public android.content.Context j;
     public boolean k;
     public boolean l;
     public boolean m;
     public boolean n;
     public boolean o = false;
     public boolean p;
-    public Bundle q;
+    public android.os.Bundle q;
 
-    public static Menu a(Context context, po poVar) {
-        return new zy(context, poVar);
+    public static android.view.Menu a(android.content.Context context, defpackage.po poVar) {
+        return new defpackage.zy(context, poVar);
     }
 
-    public static MenuItem a(Context context, pp ppVar) {
-        return new zo(context, ppVar);
+    public static android.view.MenuItem a(android.content.Context context, defpackage.pp ppVar) {
+        return new defpackage.zo(context, ppVar);
     }
 
     public zx(int i2) {
         this.a = i2;
     }
 
-    public final void a(MenuBuilder zeVar) {
+    public final void a(defpackage.ze zeVar) {
         if (zeVar != this.h) {
             if (this.h != null) {
-                this.h.b(this.i);
+                this.h.b((defpackage.zt) this.i);
             }
             this.h = zeVar;
             if (zeVar != null && this.i != null) {
-                zeVar.a(this.i);
+                zeVar.a((defpackage.zt) this.i);
             }
         }
     }

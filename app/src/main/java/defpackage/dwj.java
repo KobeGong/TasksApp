@@ -1,23 +1,20 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: dwj  reason: default package */
+/* renamed from: dwj reason: default package */
 /* compiled from: PG */
-public final class dwj extends dvp {
-    private final /* synthetic */ dwf b;
+final class dwj extends defpackage.dvp {
+    private final /* synthetic */ defpackage.dwf b;
 
-    dwj(dwf dwf) {
+    dwj(defpackage.dwf dwf) {
         this.b = dwf;
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.dvp
+    /* access modifiers changed from: 0000 */
     public final void a() {
         this.b.c();
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.dvp
+    /* access modifiers changed from: 0000 */
     public final void b() {
         if (!this.b.A.get()) {
             this.b.e();

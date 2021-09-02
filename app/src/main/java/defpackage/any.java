@@ -2,88 +2,80 @@ package defpackage;
 
 import android.accounts.Account;
 import android.content.Context;
-import android.text.TextUtils;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.ScheduledExecutorService;
 
-/* renamed from: any  reason: default package */
+/* renamed from: any reason: default package */
 /* compiled from: PG */
-public final class any implements akd {
-    public static any inst;
-    public final cyl b;
-    public final ScheduledExecutorService executor;
-    public final aoa d;
-    public final Context appContext;
-    private final Map f = new HashMap();
-    private cyi g;
-    private Account h;
-    private final cyl i;
+public final class any implements defpackage.akd {
+    public static defpackage.any a;
+    public final defpackage.cyl b;
+    public final java.util.concurrent.ScheduledExecutorService executor;
+    public final defpackage.aoa d;
+    public final Context e;
+    private final java.util.Map f = new java.util.HashMap();
+    private defpackage.cyi g;
+    private Account account;
+    private final defpackage.cyl i;
 
-    public static synchronized any get() {
-        any any;
-        synchronized (any.class) {
-            cld.b(inst != null);
-            any = inst;
+    public static synchronized defpackage.any a() {
+        synchronized (defpackage.any.class) {
+            defpackage.cld.b(a != null);
         }
-        return any;
+        return a;
     }
 
-    public any(Context context, cyl cyl, cyl cyl2, ScheduledExecutorService scheduledExecutorService, aoa aoa) {
-        this.appContext = context.getApplicationContext();
+    public any(Context context, defpackage.cyl cyl, defpackage.cyl cyl2, java.util.concurrent.ScheduledExecutorService scheduledExecutorService, defpackage.aoa aoa) {
+        this.e = context.getApplicationContext();
         this.i = cyl;
         this.b = cyl2;
         this.executor = scheduledExecutorService;
         this.d = aoa;
     }
 
-    public final synchronized cyi b() {
+    public final synchronized defpackage.cyi b() {
         return this.g;
     }
 
-    public final synchronized anc c() {
-        anc anc;
+    public final synchronized defpackage.anc c() {
+        defpackage.anc anc;
         if (this.g == null) {
             anc = null;
         } else {
-            anc = (anc) cyd.c(b());
+            anc = (defpackage.anc) defpackage.cyd.c(b());
         }
         return anc;
     }
 
-    private final synchronized cyi d(Account account) {
-        cyi cyi;
-        cyi = (cyi) this.f.get(account.name);
+    private final synchronized defpackage.cyi d(Account account) {
+        defpackage.cyi cyi;
+        cyi = (defpackage.cyi) this.f.get(account.name);
         if (cyi == null) {
-            cyl cyl = this.i;
-            cyi = cyl.a(new anz(this, account, cyl));
+            cyi = this.i.a(new anz(this, account, this.i));
             this.f.put(account.name, cyi);
         }
         return cyi;
     }
 
-    public final synchronized anc b(Account account) {
-        return (anc) cyd.c(d(account));
+    public final synchronized defpackage.anc b(Account account) {
+        return (defpackage.anc) defpackage.cyd.c(d(account));
     }
 
     public final synchronized void c(Account account) {
-        if (this.g == null || !cru.d(this.h.name, account.name)) {
-            this.h = account;
+        if (this.g == null || !defpackage.cru.d(this.account.name, account.name)) {
+            this.account = account;
             this.g = d(account);
             this.d.a(account.name);
         }
     }
 
-    @Override // defpackage.akd
     public final void a(Account account) {
-        anc c2 = c();
+        defpackage.anc c2 = c();
         if (c2 == null || !account.name.equals(c2.b())) {
-            azb.b("Cannot perform incremental sync for account other than current", new Object[0]);
+            defpackage.azb.b("Cannot perform incremental sync for account other than current", new java.lang.Object[0]);
             return;
         }
-        String a2 = ain.b(this.appContext, account.name).a();
-        if (TextUtils.isEmpty(a2)) {
-            new Object[1][0] = azb.a(account.name);
+        java.lang.String a2 = defpackage.ain.b(this.e, account.name).a();
+        if (android.text.TextUtils.isEmpty(a2)) {
+            new java.lang.Object[1][0] = defpackage.azb.a(account.name);
         } else {
             c2.b(a2);
         }

@@ -1,38 +1,38 @@
 package defpackage;
 
-/* renamed from: bql  reason: default package */
+/* renamed from: bql reason: default package */
 /* compiled from: PG */
 public final class bql {
-    private final awu a;
+    private final defpackage.awu a;
 
-    public final bql a(String str) {
-        awu awu = this.a;
-        awt.b();
+    public final defpackage.bql a(java.lang.String str) {
+        defpackage.awu awu = this.a;
+        defpackage.awt.b();
         awu.a = str;
         return this;
     }
 
-    public final brb a() {
-        return new brb(this.a.a(), bqp.a);
+    public final defpackage.brb a() {
+        return new defpackage.brb(this.a.a(), defpackage.bqp.a);
     }
 
-    public final brb b() {
-        return new brb(this.a.a(), bqp.a);
+    public final defpackage.brb b() {
+        return new defpackage.brb(this.a.a(), defpackage.bqp.a);
     }
 
-    private bql(awt awt, byte[] bArr) {
-        this.a = new awu(awt, bArr);
+    private bql(defpackage.awt awt, byte[] bArr) {
+        this.a = new defpackage.awu(awt, bArr);
     }
 
-    private bql(awt awt, aww aww) {
-        this.a = new awu(awt, aww);
+    private bql(defpackage.awt awt, defpackage.aww aww) {
+        this.a = new defpackage.awu(awt, aww);
     }
 
-    public bql(awt awt, byte[] bArr, byte b) {
+    public bql(defpackage.awt awt, byte[] bArr, byte b) {
         this(awt, bArr);
     }
 
-    public bql(awt awt, aww aww, byte b) {
+    public bql(defpackage.awt awt, defpackage.aww aww, byte b) {
         this(awt, aww);
     }
 }

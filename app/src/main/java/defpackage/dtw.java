@@ -1,12 +1,12 @@
 package defpackage;
 
-/* renamed from: dtw  reason: default package */
+/* renamed from: dtw reason: default package */
 /* compiled from: PG */
-final class dtw implements Runnable {
+final class dtw implements java.lang.Runnable {
     private final /* synthetic */ boolean a;
-    private final /* synthetic */ dtt b;
+    private final /* synthetic */ defpackage.dtt b;
 
-    dtw(dtt dtt, boolean z) {
+    dtw(defpackage.dtt dtt, boolean z) {
         this.b = dtt;
         this.a = z;
     }

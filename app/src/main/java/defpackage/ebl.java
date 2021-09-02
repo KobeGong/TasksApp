@@ -1,15 +1,15 @@
 package defpackage;
 
-/* renamed from: ebl  reason: default package */
+/* renamed from: ebl reason: default package */
 /* compiled from: PG */
 public abstract class ebl {
     ebl() {
     }
 
-    public abstract String a();
+    public abstract java.lang.String a();
 
-    public static ebl a(String str) {
-        cld.a(str.length() <= 255 && dtj.a(str));
-        return new eba(str);
+    public static defpackage.ebl a(java.lang.String str) {
+        defpackage.cld.a(str.length() <= 255 && defpackage.dtj.a(str));
+        return new defpackage.eba(str);
     }
 }

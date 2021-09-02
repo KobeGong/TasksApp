@@ -1,25 +1,21 @@
 package defpackage;
 
-import android.os.Handler;
-import android.os.Message;
-
-/* access modifiers changed from: package-private */
-/* renamed from: rx  reason: default package */
+/* renamed from: rx reason: default package */
 /* compiled from: PG */
-public final class rx extends Handler {
-    private final /* synthetic */ rw a;
+final class rx extends android.os.Handler {
+    private final /* synthetic */ defpackage.rw a;
 
-    rx(rw rwVar) {
+    rx(defpackage.rw rwVar) {
         this.a = rwVar;
     }
 
-    public final void handleMessage(Message message) {
+    public final void handleMessage(android.os.Message message) {
         switch (message.what) {
             case 1:
                 this.a.b.onShowPress(this.a.g);
                 return;
             case 2:
-                rw rwVar = this.a;
+                defpackage.rw rwVar = this.a;
                 rwVar.a.removeMessages(3);
                 rwVar.e = false;
                 rwVar.f = true;
@@ -37,7 +33,7 @@ public final class rx extends Handler {
                     return;
                 }
             default:
-                throw new RuntimeException("Unknown message " + message);
+                throw new java.lang.RuntimeException("Unknown message " + message);
         }
     }
 }

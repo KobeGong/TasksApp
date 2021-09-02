@@ -1,28 +1,17 @@
 package com.google.android.libraries.social.licenses;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.MenuItem;
-import com.google.android.apps.tasks.R;
-
-import defpackage.cpq;
-import defpackage.cpu;
-import defpackage.cpw;
-import defpackage.wm;
-
 /* compiled from: PG */
-public final class LicenseMenuActivity extends wm implements cpw {
+public final class LicenseMenuActivity extends defpackage.wm implements defpackage.cpw {
     /* access modifiers changed from: protected */
-    @Override // defpackage.nv, defpackage.wm, defpackage.lg
-    public final void onCreate(Bundle bundle) {
+    public final void onCreate(android.os.Bundle bundle) {
         super.onCreate(bundle);
-        setContentView(R.layout.libraries_social_licenses_license_menu_activity);
+        setContentView(2131034179);
         if (g().a() != null) {
             g().a().a(true);
         }
-        ln c = c();
-        if (!(c.a(R.id.license_menu_fragment_container) instanceof cpu)) {
-            cpu cpu = new cpu();
+        defpackage.ln c = getSupportFragmentManager();
+        if (!(c.findFragmentById(2131755306) instanceof defpackage.cpu)) {
+            defpackage.cpu cpu = new defpackage.cpu();
             if (getIntent().hasExtra("pluginLicensePaths")) {
                 cpu.e(getIntent().getBundleExtra("pluginLicensePaths"));
             }
@@ -30,7 +19,7 @@ public final class LicenseMenuActivity extends wm implements cpw {
         }
     }
 
-    public final boolean onOptionsItemSelected(MenuItem menuItem) {
+    public final boolean onOptionsItemSelected(android.view.MenuItem menuItem) {
         if (menuItem.getItemId() != 16908332) {
             return super.onOptionsItemSelected(menuItem);
         }
@@ -38,9 +27,8 @@ public final class LicenseMenuActivity extends wm implements cpw {
         return true;
     }
 
-    @Override // defpackage.cpw
-    public final void a(cpq cpq) {
-        Intent intent = new Intent(this, LicenseActivity.class);
+    public final void a(defpackage.cpq cpq) {
+        android.content.Intent intent = new android.content.Intent(this, com.google.android.libraries.social.licenses.LicenseActivity.class);
         intent.putExtra("license", cpq);
         startActivity(intent);
     }

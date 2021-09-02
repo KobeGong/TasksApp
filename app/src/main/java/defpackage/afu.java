@@ -1,23 +1,19 @@
 package defpackage;
 
-import android.support.v7.widget.RecyclerView;
-import android.view.animation.Interpolator;
-import android.widget.OverScroller;
-
-/* renamed from: afu  reason: default package */
+/* renamed from: afu reason: default package */
 /* compiled from: PG */
-public final class afu implements Runnable {
+public final class afu implements java.lang.Runnable {
     public int a;
     public int b;
-    public OverScroller c;
-    public Interpolator d = RecyclerView.M;
-    public final /* synthetic */ RecyclerView e;
+    public android.widget.OverScroller c;
+    public android.view.animation.Interpolator d = android.support.v7.widget.RecyclerView.M;
+    public final /* synthetic */ android.support.v7.widget.RecyclerView e;
     private boolean f = false;
     private boolean g = false;
 
-    public afu(RecyclerView recyclerView) {
+    public afu(android.support.v7.widget.RecyclerView recyclerView) {
         this.e = recyclerView;
-        this.c = new OverScroller(recyclerView.getContext(), RecyclerView.M);
+        this.c = new android.widget.OverScroller(recyclerView.getContext(), android.support.v7.widget.RecyclerView.M);
     }
 
     public final void run() {
@@ -28,15 +24,15 @@ public final class afu implements Runnable {
         int i5;
         int i6;
         int i7;
-        if (this.e.layoutManager == null) {
+        if (this.e.l == null) {
             b();
             return;
         }
         this.g = false;
         this.f = true;
         this.e.c();
-        OverScroller overScroller = this.c;
-        LayoutManager afd = this.e.layoutManager;
+        android.widget.OverScroller overScroller = this.c;
+        defpackage.afd afd = this.e.l;
         if (overScroller.computeScrollOffset()) {
             int[] iArr = this.e.K;
             int currX = overScroller.getCurrX();
@@ -46,14 +42,13 @@ public final class afu implements Runnable {
             this.a = currX;
             this.b = currY;
             if (this.e.a(i8, i9, iArr, null, 1)) {
-                int i10 = i8 - iArr[0];
                 i = i9 - iArr[1];
-                i2 = i10;
+                i2 = i8 - iArr[0];
             } else {
                 i = i9;
                 i2 = i8;
             }
-            if (this.e.adapter != null) {
+            if (this.e.k != null) {
                 this.e.a(i2, i, this.e.L);
                 i6 = this.e.L[0];
                 i5 = this.e.L[1];
@@ -74,7 +69,8 @@ public final class afu implements Runnable {
             if (!this.e.a(i6, i5, i4, i3, null, 1) && !(i4 == 0 && i3 == 0)) {
                 int currVelocity = (int) overScroller.getCurrVelocity();
                 if (i4 != currX) {
-                    i7 = i4 < 0 ? -currVelocity : i4 > 0 ? currVelocity : 0;
+                    int i10 = i4 < 0 ? -currVelocity : i4 > 0 ? currVelocity : 0;
+                    i7 = i10;
                 } else {
                     i7 = 0;
                 }
@@ -86,7 +82,7 @@ public final class afu implements Runnable {
                     currVelocity = 0;
                 }
                 if (this.e.getOverScrollMode() != 2) {
-                    RecyclerView recyclerView = this.e;
+                    android.support.v7.widget.RecyclerView recyclerView = this.e;
                     if (i7 < 0) {
                         recyclerView.e();
                         recyclerView.v.onAbsorb(-i7);
@@ -102,7 +98,7 @@ public final class afu implements Runnable {
                         recyclerView.y.onAbsorb(currVelocity);
                     }
                     if (!(i7 == 0 && currVelocity == 0)) {
-                        sn.a.c(recyclerView);
+                        defpackage.sn.a.c(recyclerView);
                     }
                 }
                 if ((i7 != 0 || i4 == currX || overScroller.getFinalX() == 0) && (currVelocity != 0 || i3 == currY || overScroller.getFinalY() == 0)) {
@@ -112,13 +108,13 @@ public final class afu implements Runnable {
             if (!(i6 == 0 && i5 == 0)) {
                 this.e.m();
             }
-            if (!(this.e.awakenScrollBars())) {
+            if (!this.e.awakenScrollBars()) {
                 this.e.invalidate();
             }
-            boolean z = (i2 == 0 && i == 0) || (i2 != 0 && this.e.layoutManager.d() && i6 == i2) || (i != 0 && this.e.layoutManager.e() && i5 == i);
+            boolean z = (i2 == 0 && i == 0) || (i2 != 0 && this.e.l.d() && i6 == i2) || (i != 0 && this.e.l.e() && i5 == i);
             if (overScroller.isFinished() || (!z && !this.e.p().a(1))) {
                 this.e.b(0);
-                if (RecyclerView.d) {
+                if (android.support.v7.widget.RecyclerView.d) {
                     this.e.C.a();
                 }
                 this.e.a(1);
@@ -141,7 +137,7 @@ public final class afu implements Runnable {
             return;
         }
         this.e.removeCallbacks(this);
-        sn.a(this.e, this);
+        defpackage.sn.a((android.view.View) this.e, (java.lang.Runnable) this);
     }
 
     public final void b() {

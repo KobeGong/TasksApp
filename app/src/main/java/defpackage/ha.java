@@ -1,17 +1,9 @@
 package defpackage;
 
-import android.content.Context;
-import android.content.res.TypedArray;
-import android.graphics.Rect;
-import android.support.design.widget.CoordinatorLayout;
-import android.util.AttributeSet;
-import android.view.View;
-import android.view.ViewGroup;
-
-/* renamed from: ha  reason: default package */
+/* renamed from: ha reason: default package */
 /* compiled from: PG */
-public final class ha extends ViewGroup.MarginLayoutParams {
-    public gx a;
+public final class ha extends android.view.ViewGroup.MarginLayoutParams {
+    public defpackage.gx a;
     public boolean b = false;
     public int c = 0;
     public int d = 0;
@@ -21,11 +13,11 @@ public final class ha extends ViewGroup.MarginLayoutParams {
     public int h = 0;
     public int i;
     public int j;
-    public View k;
-    public View l;
+    public android.view.View k;
+    public android.view.View l;
     public boolean m;
     public boolean n;
-    public final Rect o = new Rect();
+    public final android.graphics.Rect o = new android.graphics.Rect();
     private boolean p;
     private boolean q;
 
@@ -33,18 +25,18 @@ public final class ha extends ViewGroup.MarginLayoutParams {
         super(i2, i3);
     }
 
-    public ha(Context context, AttributeSet attributeSet) {
+    public ha(android.content.Context context, android.util.AttributeSet attributeSet) {
         super(context, attributeSet);
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, co.b);
-        this.c = obtainStyledAttributes.getInteger(co.c, 0);
-        this.f = obtainStyledAttributes.getResourceId(co.d, -1);
-        this.d = obtainStyledAttributes.getInteger(co.e, 0);
-        this.e = obtainStyledAttributes.getInteger(co.i, -1);
-        this.g = obtainStyledAttributes.getInt(co.h, 0);
-        this.h = obtainStyledAttributes.getInt(co.g, 0);
-        this.b = obtainStyledAttributes.hasValue(co.f);
+        android.content.res.TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, defpackage.co.b);
+        this.c = obtainStyledAttributes.getInteger(defpackage.co.c, 0);
+        this.f = obtainStyledAttributes.getResourceId(defpackage.co.d, -1);
+        this.d = obtainStyledAttributes.getInteger(defpackage.co.e, 0);
+        this.e = obtainStyledAttributes.getInteger(defpackage.co.i, -1);
+        this.g = obtainStyledAttributes.getInt(defpackage.co.h, 0);
+        this.h = obtainStyledAttributes.getInt(defpackage.co.g, 0);
+        this.b = obtainStyledAttributes.hasValue(defpackage.co.f);
         if (this.b) {
-            this.a = CoordinatorLayout.a(context, attributeSet, obtainStyledAttributes.getString(co.f));
+            this.a = android.support.design.widget.CoordinatorLayout.a(context, attributeSet, obtainStyledAttributes.getString(defpackage.co.f));
         }
         obtainStyledAttributes.recycle();
         if (this.a != null) {
@@ -52,19 +44,19 @@ public final class ha extends ViewGroup.MarginLayoutParams {
         }
     }
 
-    public ha(ha haVar) {
-        super((ViewGroup.MarginLayoutParams) haVar);
+    public ha(defpackage.ha haVar) {
+        super(haVar);
     }
 
-    public ha(ViewGroup.MarginLayoutParams marginLayoutParams) {
+    public ha(android.view.ViewGroup.MarginLayoutParams marginLayoutParams) {
         super(marginLayoutParams);
     }
 
-    public ha(ViewGroup.LayoutParams layoutParams) {
+    public ha(android.view.ViewGroup.LayoutParams layoutParams) {
         super(layoutParams);
     }
 
-    public final void a(gx gxVar) {
+    public final void a(defpackage.gx gxVar) {
         if (this.a != gxVar) {
             this.a = gxVar;
             this.b = true;

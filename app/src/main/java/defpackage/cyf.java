@@ -1,8 +1,8 @@
 package defpackage;
 
-/* renamed from: cyf  reason: default package */
+/* renamed from: cyf reason: default package */
 /* compiled from: PG */
-public abstract class cyf implements cyi {
+public abstract class cyf implements defpackage.cyi {
     cyf() {
     }
 

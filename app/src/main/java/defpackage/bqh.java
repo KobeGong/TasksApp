@@ -1,52 +1,47 @@
 package defpackage;
 
-import android.content.Context;
-import java.util.concurrent.TimeUnit;
-
-/* renamed from: bqh  reason: default package */
+/* renamed from: bqh reason: default package */
 /* compiled from: PG */
-final class bqh implements bqg {
-    private final Context a;
+final class bqh implements defpackage.bqg {
+    private final android.content.Context a;
 
-    private bqh(Context context) {
+    private bqh(android.content.Context context) {
         this.a = context;
     }
 
-    @Override // defpackage.bqg
-    public final String a(String str, String str2) {
+    public final java.lang.String a(java.lang.String str, java.lang.String str2) {
         try {
-            return avb.a(this.a, str, str2);
-        } catch (ave e) {
-            String message = e.getMessage();
+            return defpackage.avb.a(this.a, str, str2);
+        } catch (defpackage.ave e) {
+            java.lang.String message = e.getMessage();
             e.a();
-            throw new ayl(message, e, (byte) 0);
-        } catch (avf e2) {
-            String message2 = e2.getMessage();
+            throw new defpackage.ayl(message, e, 0);
+        } catch (defpackage.avf e2) {
+            java.lang.String message2 = e2.getMessage();
             e2.a();
-            throw new ayl(message2, (byte) 0);
-        } catch (ava e3) {
-            throw new ayl(e3);
+            throw new defpackage.ayl(message2, 0);
+        } catch (defpackage.ava e3) {
+            throw new defpackage.ayl((java.lang.Throwable) e3);
         }
     }
 
-    @Override // defpackage.bqg
-    public final String a(String str) {
+    public final java.lang.String a(java.lang.String str) {
         try {
-            return avb.b(this.a, str);
-        } catch (avf e) {
-            String message = e.getMessage();
+            return defpackage.avb.b(this.a, str);
+        } catch (defpackage.avf e) {
+            java.lang.String message = e.getMessage();
             e.a();
-            throw new ayl(message, (Exception) e);
-        } catch (ava e2) {
-            throw new ayl(e2);
+            throw new defpackage.ayl(message, (java.lang.Exception) e);
+        } catch (defpackage.ava e2) {
+            throw new defpackage.ayl((java.lang.Throwable) e2);
         }
     }
 
     static {
-        TimeUnit.SECONDS.toMillis(2);
+        java.util.concurrent.TimeUnit.SECONDS.toMillis(2);
     }
 
-    public bqh(Context context, byte b) {
+    public bqh(android.content.Context context, byte b) {
         this(context);
     }
 }

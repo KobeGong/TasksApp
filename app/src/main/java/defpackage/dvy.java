@@ -1,30 +1,27 @@
 package defpackage;
 
-/* renamed from: dvy  reason: default package */
+/* renamed from: dvy reason: default package */
 /* compiled from: PG */
-final class dvy extends dux {
-    private final /* synthetic */ dzq a;
-    private final /* synthetic */ dvx b;
+final class dvy extends defpackage.dux {
+    private final /* synthetic */ defpackage.dzq a;
+    private final /* synthetic */ defpackage.dvx b;
 
-    dvy(dvx dvx, dzq dzq) {
+    dvy(defpackage.dvx dvx, defpackage.dzq dzq) {
         this.b = dvx;
         this.a = dzq;
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.dux
-    public final dzq b() {
+    public final defpackage.dzq b() {
         return this.a;
     }
 
-    @Override // defpackage.dux, defpackage.dzq
-    public final void b(dpw dpw, dor dor) {
+    public final void b(defpackage.dpw dpw, defpackage.dor dor) {
         this.b.a.a.a(dpw.a());
         super.b(dpw, dor);
     }
 
-    @Override // defpackage.dux, defpackage.dzq
-    public final void a(dpw dpw, int i, dor dor) {
+    public final void a(defpackage.dpw dpw, int i, defpackage.dor dor) {
         this.b.a.a.a(dpw.a());
         super.a(dpw, i, dor);
     }

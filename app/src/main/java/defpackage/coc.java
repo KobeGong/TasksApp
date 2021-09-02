@@ -1,9 +1,9 @@
 package defpackage;
 
-/* renamed from: coc  reason: default package */
+/* renamed from: coc reason: default package */
 /* compiled from: PG */
 public interface coc {
-    public static final coc a = new cod();
+    public static final defpackage.coc a = new defpackage.cod();
 
-    String a();
+    java.lang.String a();
 }

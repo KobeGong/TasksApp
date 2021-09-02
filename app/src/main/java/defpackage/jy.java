@@ -1,34 +1,25 @@
 package defpackage;
 
-import android.animation.LayoutTransition;
-import android.view.View;
-import android.view.ViewGroup;
-import com.google.android.apps.tasks.R;
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-
-/* access modifiers changed from: package-private */
-/* renamed from: jy  reason: default package */
+/* renamed from: jy reason: default package */
 /* compiled from: PG */
-public class jy {
-    private static LayoutTransition a;
-    private static Field b;
+class jy {
+    private static android.animation.LayoutTransition a;
+    private static java.lang.reflect.Field b;
     private static boolean c;
-    private static Method d;
+    private static java.lang.reflect.Method d;
     private static boolean e;
 
-    public ju a(ViewGroup viewGroup) {
-        ViewGroup viewGroup2;
-        jz jzVar;
-        ViewGroup viewGroup3 = viewGroup;
+    public defpackage.ju a(android.view.ViewGroup viewGroup) {
+        android.view.ViewGroup viewGroup2;
+        defpackage.jz jzVar;
+        android.view.ViewGroup viewGroup3 = viewGroup;
         while (true) {
             if (viewGroup3 != null) {
-                if (viewGroup3.getId() == 16908290 && (viewGroup3 instanceof ViewGroup)) {
+                if (viewGroup3.getId() == 16908290 && (viewGroup3 instanceof android.view.ViewGroup)) {
                     viewGroup2 = viewGroup3;
                     break;
-                } else if (viewGroup3.getParent() instanceof ViewGroup) {
-                    viewGroup3 = (ViewGroup) viewGroup3.getParent();
+                } else if (viewGroup3.getParent() instanceof android.view.ViewGroup) {
+                    viewGroup3 = (android.view.ViewGroup) viewGroup3.getParent();
                 }
             } else {
                 viewGroup2 = null;
@@ -40,12 +31,12 @@ public class jy {
             int i = 0;
             while (true) {
                 if (i >= childCount) {
-                    jzVar = new jz(viewGroup2.getContext(), viewGroup2, viewGroup, (byte) 0);
+                    jzVar = new defpackage.jz(viewGroup2.getContext(), viewGroup2, viewGroup, 0);
                     break;
                 }
-                View childAt = viewGroup2.getChildAt(i);
-                if (childAt instanceof ka) {
-                    jzVar = ((ka) childAt).a;
+                android.view.View childAt = viewGroup2.getChildAt(i);
+                if (childAt instanceof defpackage.ka) {
+                    jzVar = ((defpackage.ka) childAt).a;
                     break;
                 }
                 i++;
@@ -56,10 +47,10 @@ public class jy {
         return jzVar;
     }
 
-    public void a(ViewGroup viewGroup, boolean z) {
+    public void a(android.view.ViewGroup viewGroup, boolean z) {
         boolean z2 = false;
         if (a == null) {
-            jw jwVar = new jw();
+            defpackage.jw jwVar = new defpackage.jw();
             a = jwVar;
             jwVar.setAnimator(2, null);
             a.setAnimator(0, null);
@@ -68,27 +59,27 @@ public class jy {
             a.setAnimator(4, null);
         }
         if (z) {
-            LayoutTransition layoutTransition = viewGroup.getLayoutTransition();
+            android.animation.LayoutTransition layoutTransition = viewGroup.getLayoutTransition();
             if (layoutTransition != null) {
                 if (layoutTransition.isRunning()) {
                     if (!e) {
                         try {
-                            Method declaredMethod = LayoutTransition.class.getDeclaredMethod("cancel", new Class[0]);
+                            java.lang.reflect.Method declaredMethod = android.animation.LayoutTransition.class.getDeclaredMethod("cancel", new java.lang.Class[0]);
                             d = declaredMethod;
                             declaredMethod.setAccessible(true);
-                        } catch (NoSuchMethodException e2) {
+                        } catch (java.lang.NoSuchMethodException e2) {
                         }
                         e = true;
                     }
                     if (d != null) {
                         try {
-                            d.invoke(layoutTransition, new Object[0]);
-                        } catch (IllegalAccessException | InvocationTargetException e3) {
+                            d.invoke(layoutTransition, new java.lang.Object[0]);
+                        } catch (java.lang.IllegalAccessException | java.lang.reflect.InvocationTargetException e3) {
                         }
                     }
                 }
                 if (layoutTransition != a) {
-                    viewGroup.setTag(R.id.transition_layout_save, layoutTransition);
+                    viewGroup.setTag(2131755044, layoutTransition);
                 }
             }
             viewGroup.setLayoutTransition(a);
@@ -97,10 +88,10 @@ public class jy {
         viewGroup.setLayoutTransition(null);
         if (!c) {
             try {
-                Field declaredField = ViewGroup.class.getDeclaredField("mLayoutSuppressed");
+                java.lang.reflect.Field declaredField = android.view.ViewGroup.class.getDeclaredField("mLayoutSuppressed");
                 b = declaredField;
                 declaredField.setAccessible(true);
-            } catch (NoSuchFieldException e4) {
+            } catch (java.lang.NoSuchFieldException e4) {
             }
             c = true;
         }
@@ -110,15 +101,15 @@ public class jy {
                 if (z2) {
                     b.setBoolean(viewGroup, false);
                 }
-            } catch (IllegalAccessException e5) {
+            } catch (java.lang.IllegalAccessException e5) {
             }
         }
         if (z2) {
             viewGroup.requestLayout();
         }
-        LayoutTransition layoutTransition2 = (LayoutTransition) viewGroup.getTag(R.id.transition_layout_save);
+        android.animation.LayoutTransition layoutTransition2 = (android.animation.LayoutTransition) viewGroup.getTag(2131755044);
         if (layoutTransition2 != null) {
-            viewGroup.setTag(R.id.transition_layout_save, null);
+            viewGroup.setTag(2131755044, null);
             viewGroup.setLayoutTransition(layoutTransition2);
         }
     }

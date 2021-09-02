@@ -1,15 +1,14 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: dqu  reason: default package */
+/* renamed from: dqu reason: default package */
 /* compiled from: PG */
-public final class dqu implements Runnable {
-    private final /* synthetic */ dpw a;
+final class dqu implements java.lang.Runnable {
+    private final /* synthetic */ defpackage.dpw a;
     private final /* synthetic */ int b;
-    private final /* synthetic */ dor c;
-    private final /* synthetic */ dri d;
+    private final /* synthetic */ defpackage.dor c;
+    private final /* synthetic */ defpackage.dri d;
 
-    dqu(dri dri, dpw dpw, int i, dor dor) {
+    dqu(defpackage.dri dri, defpackage.dpw dpw, int i, defpackage.dor dor) {
         this.d = dri;
         this.a = dpw;
         this.b = i;

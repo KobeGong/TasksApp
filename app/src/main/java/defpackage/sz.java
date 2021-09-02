@@ -1,16 +1,13 @@
 package defpackage;
 
-import android.view.ViewGroup;
-
-/* renamed from: sz  reason: default package */
+/* renamed from: sz reason: default package */
 /* compiled from: PG */
-final class sz extends ta {
+final class sz extends defpackage.ta {
     sz() {
-        super((byte) 0);
+        super(0);
     }
 
-    @Override // defpackage.ta
-    public final boolean a(ViewGroup viewGroup) {
+    public final boolean a(android.view.ViewGroup viewGroup) {
         return viewGroup.isTransitionGroup();
     }
 }

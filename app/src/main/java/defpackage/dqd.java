@@ -1,35 +1,28 @@
 package defpackage;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-/* access modifiers changed from: package-private */
-/* renamed from: dqd  reason: default package */
+/* renamed from: dqd reason: default package */
 /* compiled from: PG */
-public final class dqd extends dnx {
-    private static final Logger a = Logger.getLogger(dqd.class.getName());
-    private static final ThreadLocal b = new ThreadLocal();
+final class dqd extends defpackage.dnx {
+    private static final java.util.logging.Logger a = java.util.logging.Logger.getLogger(defpackage.dqd.class.getName());
+    private static final java.lang.ThreadLocal b = new java.lang.ThreadLocal();
 
     dqd() {
     }
 
-    @Override // defpackage.dnx
-    public final dns a(dns dns) {
-        dns a2 = a();
+    public final defpackage.dns a(defpackage.dns dns) {
+        defpackage.dns a2 = a();
         b.set(dns);
         return a2;
     }
 
-    @Override // defpackage.dnx
-    public final void a(dns dns, dns dns2) {
+    public final void a(defpackage.dns dns, defpackage.dns dns2) {
         if (a() != dns) {
-            a.logp(Level.SEVERE, "io.grpc.ThreadLocalContextStorage", "detach", "Context was not attached when detaching", new Throwable().fillInStackTrace());
+            a.logp(java.util.logging.Level.SEVERE, "io.grpc.ThreadLocalContextStorage", "detach", "Context was not attached when detaching", new java.lang.Throwable().fillInStackTrace());
         }
         a(dns2);
     }
 
-    @Override // defpackage.dnx
-    public final dns a() {
-        return (dns) b.get();
+    public final defpackage.dns a() {
+        return (defpackage.dns) b.get();
     }
 }

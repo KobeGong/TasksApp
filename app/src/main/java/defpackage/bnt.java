@@ -1,18 +1,15 @@
 package defpackage;
 
-import android.os.Parcelable;
-import java.util.List;
-
-/* renamed from: bnt  reason: default package */
+/* renamed from: bnt reason: default package */
 /* compiled from: PG */
-public interface bnt extends Parcelable, bcs {
-    String b();
+public interface bnt extends android.os.Parcelable, defpackage.bcs {
+    java.lang.String b();
 
-    List c();
+    java.util.List c();
 
-    String d();
+    java.lang.String d();
 
-    Long e();
+    java.lang.Long e();
 
-    Long f();
+    java.lang.Long f();
 }

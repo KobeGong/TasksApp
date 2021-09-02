@@ -1,23 +1,22 @@
 package defpackage;
 
-/* renamed from: cwq  reason: default package */
+/* renamed from: cwq reason: default package */
 /* compiled from: PG */
-public enum cwq implements din {
+public enum cwq implements defpackage.din {
     UNASSIGNED_DIRECTIONAL_MOVEMENT_ID(0),
     LEFT(1),
     RIGHT(2),
     UP(3),
     DOWN(4);
     
-    public static final dio a = new cto();
+    public static final defpackage.dio a = null;
     private final int g;
 
-    @Override // defpackage.din
     public final int a() {
         return this.g;
     }
 
-    public static cwq a(int i) {
+    public static defpackage.cwq a(int i) {
         switch (i) {
             case 0:
                 return UNASSIGNED_DIRECTIONAL_MOVEMENT_ID;
@@ -36,5 +35,9 @@ public enum cwq implements din {
 
     private cwq(int i) {
         this.g = i;
+    }
+
+    static {
+        a = new defpackage.cto();
     }
 }

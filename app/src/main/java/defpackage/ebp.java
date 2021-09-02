@@ -1,9 +1,9 @@
 package defpackage;
 
-/* renamed from: ebp  reason: default package */
+/* renamed from: ebp reason: default package */
 /* compiled from: PG */
 public abstract class ebp {
-    public abstract ebi a(byte[] bArr);
+    public abstract defpackage.ebi a(byte[] bArr);
 
-    public abstract byte[] a(ebi ebi);
+    public abstract byte[] a(defpackage.ebi ebi);
 }

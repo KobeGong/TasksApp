@@ -1,40 +1,36 @@
 package defpackage;
 
-import java.util.concurrent.Executor;
-import java.util.concurrent.FutureTask;
-
-/* renamed from: cyj  reason: default package */
+/* renamed from: cyj reason: default package */
 /* compiled from: PG */
-public final class cyj extends FutureTask implements cyi {
-    private final cxy a = new cxy();
+public final class cyj extends java.util.concurrent.FutureTask implements defpackage.cyi {
+    private final defpackage.cxy a = new defpackage.cxy();
 
-    public cyj(Runnable runnable) {
+    public cyj(java.lang.Runnable runnable) {
         super(runnable, null);
     }
 
-    @Override // defpackage.cyi
-    public final void a(Runnable runnable, Executor executor) {
-        cxy cxy = this.a;
-        cld.a(runnable, "Runnable was null.");
-        cld.a(executor, "Executor was null.");
+    public final void a(java.lang.Runnable runnable, java.util.concurrent.Executor executor) {
+        defpackage.cxy cxy = this.a;
+        defpackage.cld.a((java.lang.Object) runnable, (java.lang.Object) "Runnable was null.");
+        defpackage.cld.a((java.lang.Object) executor, (java.lang.Object) "Executor was null.");
         synchronized (cxy) {
             if (!cxy.b) {
-                cxy.a = new cxz(runnable, executor, cxy.a);
+                cxy.a = new defpackage.cxz(runnable, executor, cxy.a);
             } else {
-                cxy.a(runnable, executor);
+                defpackage.cxy.a(runnable, executor);
             }
         }
     }
 
     /* access modifiers changed from: protected */
-    /* JADX WARNING: Code restructure failed: missing block: B:13:0x001f, code lost:
+    /* JADX WARNING: Code restructure failed: missing block: B:14:0x001f, code lost:
         if (r0 == null) goto L_0x0009;
      */
-    /* JADX WARNING: Code restructure failed: missing block: B:14:0x0021, code lost:
+    /* JADX WARNING: Code restructure failed: missing block: B:15:0x0021, code lost:
         defpackage.cxy.a(r0.a, r0.b);
         r0 = r0.c;
      */
-    /* JADX WARNING: Code restructure failed: missing block: B:18:?, code lost:
+    /* JADX WARNING: Code restructure failed: missing block: B:22:?, code lost:
         return;
      */
     /* JADX WARNING: Code restructure failed: missing block: B:8:0x0013, code lost:
@@ -74,7 +70,7 @@ public final class cyj extends FutureTask implements cyi {
             goto L_0x0013
         L_0x001c:
             r0 = move-exception
-            monitor-exit(r2)
+            monitor-exit(r2)     // Catch:{ all -> 0x001c }
             throw r0
         L_0x001f:
             if (r0 == 0) goto L_0x0009

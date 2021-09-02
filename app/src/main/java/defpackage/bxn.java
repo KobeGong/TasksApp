@@ -1,16 +1,15 @@
 package defpackage;
 
-/* renamed from: bxn  reason: default package */
+/* renamed from: bxn reason: default package */
 /* compiled from: PG */
-public final class bxn implements ecz {
-    private final bxm a;
+public final class bxn implements defpackage.ecz {
+    private final defpackage.bxm a;
 
-    public bxn(bxm bxm) {
+    public bxn(defpackage.bxm bxm) {
         this.a = bxm;
     }
 
-    @Override // defpackage.ecz
-    public final /* synthetic */ Object a() {
-        return (buc) dgv.a(this.a.a.b(), "Cannot return null from a non-@Nullable @Provides method");
+    public final /* synthetic */ java.lang.Object a() {
+        return (defpackage.buc) defpackage.dgv.a((java.lang.Object) this.a.a.b(), "Cannot return null from a non-@Nullable @Provides method");
     }
 }

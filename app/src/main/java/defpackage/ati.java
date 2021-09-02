@@ -1,29 +1,23 @@
 package defpackage;
 
-import android.content.res.Resources;
-import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-import com.google.android.apps.tasks.R;
-
-/* access modifiers changed from: package-private */
-/* renamed from: ati  reason: default package */
+/* renamed from: ati reason: default package */
 /* compiled from: PG */
-public final class ati extends View.AccessibilityDelegate {
-    private final /* synthetic */ SortableAdapter a;
+final class ati extends android.view.View.AccessibilityDelegate {
+    private final /* synthetic */ defpackage.atg a;
 
-    ati(SortableAdapter atg) {
+    ati(defpackage.atg atg) {
         this.a = atg;
     }
 
-    public final void onInitializeAccessibilityNodeInfo(View view, AccessibilityNodeInfo accessibilityNodeInfo) {
+    public final void onInitializeAccessibilityNodeInfo(android.view.View view, android.view.accessibility.AccessibilityNodeInfo accessibilityNodeInfo) {
         int i;
         super.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
-        Resources resources = this.a.headerLayout.getResources();
+        android.content.res.Resources resources = this.a.h.getResources();
         if (this.a.c) {
-            i = R.string.a11y_collapse_completed;
+            i = 2131951623;
         } else {
-            i = R.string.a11y_expand_completed;
+            i = 2131951629;
         }
-        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, resources.getString(i)));
+        accessibilityNodeInfo.addAction(new android.view.accessibility.AccessibilityNodeInfo.AccessibilityAction(16, resources.getString(i)));
     }
 }

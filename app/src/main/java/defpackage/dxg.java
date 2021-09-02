@@ -1,26 +1,20 @@
 package defpackage;
 
-import java.io.FilterInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-
-/* access modifiers changed from: package-private */
-/* renamed from: dxg  reason: default package */
+/* renamed from: dxg reason: default package */
 /* compiled from: PG */
-public final class dxg extends FilterInputStream {
+final class dxg extends java.io.FilterInputStream {
     private final int a;
-    private final dzo b;
+    private final defpackage.dzo b;
     private long c;
     private long d;
     private long e = -1;
 
-    dxg(InputStream inputStream, int i, dzo dzo) {
+    dxg(java.io.InputStream inputStream, int i, defpackage.dzo dzo) {
         super(inputStream);
         this.a = i;
         this.b = dzo;
     }
 
-    @Override // java.io.FilterInputStream, java.io.InputStream
     public final int read() {
         int read = this.in.read();
         if (read != -1) {
@@ -31,7 +25,6 @@ public final class dxg extends FilterInputStream {
         return read;
     }
 
-    @Override // java.io.FilterInputStream, java.io.InputStream
     public final int read(byte[] bArr, int i, int i2) {
         int read = this.in.read(bArr, i, i2);
         if (read != -1) {
@@ -42,7 +35,6 @@ public final class dxg extends FilterInputStream {
         return read;
     }
 
-    @Override // java.io.FilterInputStream, java.io.InputStream
     public final long skip(long j) {
         long skip = this.in.skip(j);
         this.d += skip;
@@ -56,12 +48,11 @@ public final class dxg extends FilterInputStream {
         this.e = this.d;
     }
 
-    @Override // java.io.FilterInputStream, java.io.InputStream
     public final synchronized void reset() {
         if (!this.in.markSupported()) {
-            throw new IOException("Mark not supported");
+            throw new java.io.IOException("Mark not supported");
         } else if (this.e == -1) {
-            throw new IOException("Mark not set");
+            throw new java.io.IOException("Mark not set");
         } else {
             this.in.reset();
             this.d = this.e;
@@ -77,7 +68,7 @@ public final class dxg extends FilterInputStream {
 
     private final void b() {
         if (this.d > ((long) this.a)) {
-            throw dpw.g.a(String.format("Compressed gRPC message exceeds maximum size %d: %d bytes read", Integer.valueOf(this.a), Long.valueOf(this.d))).b();
+            throw defpackage.dpw.g.a(java.lang.String.format("Compressed gRPC message exceeds maximum size %d: %d bytes read", new java.lang.Object[]{java.lang.Integer.valueOf(this.a), java.lang.Long.valueOf(this.d)})).b();
         }
     }
 }

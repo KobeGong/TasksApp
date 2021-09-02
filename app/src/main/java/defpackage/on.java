@@ -1,16 +1,16 @@
 package defpackage;
 
-/* renamed from: on  reason: default package */
+/* renamed from: on reason: default package */
 /* compiled from: PG */
 public final class on {
-    public final String a;
+    public final java.lang.String a;
     public int b;
     public boolean c;
-    public String d;
+    public java.lang.String d;
     public int e;
     public int f;
 
-    public on(String str, int i, boolean z, String str2, int i2, int i3) {
+    public on(java.lang.String str, int i, boolean z, java.lang.String str2, int i2, int i3) {
         this.a = str;
         this.b = i;
         this.c = z;

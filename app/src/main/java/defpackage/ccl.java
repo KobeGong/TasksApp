@@ -1,19 +1,17 @@
 package defpackage;
 
-import java.util.HashSet;
-
-/* renamed from: ccl  reason: default package */
+/* renamed from: ccl reason: default package */
 /* compiled from: PG */
 public final class ccl {
-    private final HashSet a = new HashSet();
+    private final java.util.HashSet a = new java.util.HashSet();
 
-    public final synchronized boolean a(byq byq) {
+    public final synchronized boolean a(defpackage.byq byq) {
         boolean z;
         while (this.a.contains(byq)) {
             try {
                 wait();
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
+            } catch (java.lang.InterruptedException e) {
+                java.lang.Thread.currentThread().interrupt();
                 z = false;
             }
         }
@@ -22,7 +20,7 @@ public final class ccl {
         return z;
     }
 
-    public final synchronized void b(byq byq) {
+    public final synchronized void b(defpackage.byq byq) {
         this.a.remove(byq);
         notifyAll();
     }

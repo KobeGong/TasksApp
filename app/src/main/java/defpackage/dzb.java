@@ -1,16 +1,12 @@
 package defpackage;
 
-import java.util.Arrays;
-import java.util.concurrent.atomic.AtomicInteger;
-
-/* access modifiers changed from: package-private */
-/* renamed from: dzb  reason: default package */
+/* renamed from: dzb reason: default package */
 /* compiled from: PG */
-public final class dzb {
+final class dzb {
     public final int a;
     public final int b;
     public final int c;
-    public final AtomicInteger d = new AtomicInteger();
+    public final java.util.concurrent.atomic.AtomicInteger d = new java.util.concurrent.atomic.AtomicInteger();
 
     dzb(float f, float f2) {
         this.c = (int) (f2 * 1000.0f);
@@ -19,18 +15,21 @@ public final class dzb {
         this.d.set(this.a);
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         if (this == obj) {
             return true;
         }
-        if (!(obj instanceof dzb)) {
+        if (!(obj instanceof defpackage.dzb)) {
             return false;
         }
-        dzb dzb = (dzb) obj;
-        return this.a == dzb.a && this.c == dzb.c;
+        defpackage.dzb dzb = (defpackage.dzb) obj;
+        if (this.a == dzb.a && this.c == dzb.c) {
+            return true;
+        }
+        return false;
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Integer.valueOf(this.a), Integer.valueOf(this.c)});
+        return java.util.Arrays.hashCode(new java.lang.Object[]{java.lang.Integer.valueOf(this.a), java.lang.Integer.valueOf(this.c)});
     }
 }

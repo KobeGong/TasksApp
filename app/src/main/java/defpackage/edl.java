@@ -1,33 +1,43 @@
 package defpackage;
 
-/* renamed from: edl  reason: default package */
+/* renamed from: edl reason: default package */
 /* compiled from: PG */
-public final class edl extends dlz {
-    public int a = Integer.MIN_VALUE;
-    public Long b = null;
-    public String c = null;
-    public String d = null;
-    public eeo e = null;
-    public int f = Integer.MIN_VALUE;
-    public Long g = null;
-    public egf h = null;
-    public Long i = null;
-    private egg[] l = egg.d();
-    private efw[] m = efw.d();
+public final class edl extends defpackage.dlz {
+    public int a;
+    public java.lang.Long b;
+    public java.lang.String c;
+    public java.lang.String d;
+    public defpackage.eeo e;
+    public int f;
+    public java.lang.Long g;
+    public defpackage.egf h;
+    public java.lang.Long i;
+    private defpackage.egg[] l;
+    private defpackage.efw[] m;
 
     private static int a(int i2) {
         if (i2 >= 0 && i2 <= 6) {
             return i2;
         }
-        throw new IllegalArgumentException(new StringBuilder(42).append(i2).append(" is not a valid enum SampleInfo").toString());
+        throw new java.lang.IllegalArgumentException(i2 + " is not a valid enum SampleInfo");
     }
 
     public edl() {
+        this.a = Integer.MIN_VALUE;
+        this.b = null;
+        this.c = null;
+        this.d = null;
+        this.e = null;
+        this.f = Integer.MIN_VALUE;
+        this.g = null;
+        this.l = defpackage.egg.d();
+        this.m = defpackage.efw.d();
+        this.h = null;
+        this.i = null;
         this.k = -1;
     }
 
-    @Override // defpackage.dlz, defpackage.dmf
-    public final void a(dlx dlx) {
+    public final void a(defpackage.dlx dlx) {
         if (this.a != Integer.MIN_VALUE) {
             dlx.a(1, this.a);
         }
@@ -38,23 +48,21 @@ public final class edl extends dlz {
             dlx.a(3, this.g.longValue());
         }
         if (this.l != null && this.l.length > 0) {
-            for (int i2 = 0; i2 < this.l.length; i2++) {
-                egg egg = this.l[i2];
+            for (defpackage.egg egg : this.l) {
                 if (egg != null) {
-                    dlx.a(4, egg);
+                    dlx.a(4, (defpackage.dmf) egg);
                 }
             }
         }
         if (this.m != null && this.m.length > 0) {
-            for (int i3 = 0; i3 < this.m.length; i3++) {
-                efw efw = this.m[i3];
+            for (defpackage.efw efw : this.m) {
                 if (efw != null) {
-                    dlx.a(5, efw);
+                    dlx.a(5, (defpackage.dmf) efw);
                 }
             }
         }
         if (this.h != null) {
-            dlx.a(6, this.h);
+            dlx.a(6, (defpackage.dmf) this.h);
         }
         if (this.i != null) {
             dlx.a(7, this.i.longValue());
@@ -69,67 +77,64 @@ public final class edl extends dlz {
             dlx.a(10, this.d);
         }
         if (this.e != null) {
-            dlx.a(11, this.e);
+            dlx.a(11, (defpackage.dmf) this.e);
         }
         super.a(dlx);
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.dlz, defpackage.dmf
     public final int a() {
         int a2 = super.a();
         if (this.a != Integer.MIN_VALUE) {
-            a2 += dlx.c(1, this.a);
+            a2 += defpackage.dlx.c(1, this.a);
         }
         if (this.f != Integer.MIN_VALUE) {
-            a2 += dlx.c(2, this.f);
+            a2 += defpackage.dlx.c(2, this.f);
         }
         if (this.g != null) {
-            a2 += dlx.c(3, this.g.longValue());
+            a2 += defpackage.dlx.c(3, this.g.longValue());
         }
         if (this.l != null && this.l.length > 0) {
             int i2 = a2;
-            for (int i3 = 0; i3 < this.l.length; i3++) {
-                egg egg = this.l[i3];
+            for (defpackage.egg egg : this.l) {
                 if (egg != null) {
-                    i2 += dlx.b(4, egg);
+                    i2 += defpackage.dlx.b(4, (defpackage.dmf) egg);
                 }
             }
             a2 = i2;
         }
         if (this.m != null && this.m.length > 0) {
-            for (int i4 = 0; i4 < this.m.length; i4++) {
-                efw efw = this.m[i4];
+            for (defpackage.efw efw : this.m) {
                 if (efw != null) {
-                    a2 += dlx.b(5, efw);
+                    a2 += defpackage.dlx.b(5, (defpackage.dmf) efw);
                 }
             }
         }
         if (this.h != null) {
-            a2 += dlx.b(6, this.h);
+            a2 += defpackage.dlx.b(6, (defpackage.dmf) this.h);
         }
         if (this.i != null) {
-            a2 += dlx.c(7, this.i.longValue());
+            a2 += defpackage.dlx.c(7, this.i.longValue());
         }
         if (this.b != null) {
             this.b.longValue();
-            a2 += dlx.c(64) + 8;
+            a2 += defpackage.dlx.c(64) + 8;
         }
         if (this.c != null) {
-            a2 += dlx.b(9, this.c);
+            a2 += defpackage.dlx.b(9, this.c);
         }
         if (this.d != null) {
-            a2 += dlx.b(10, this.d);
+            a2 += defpackage.dlx.b(10, this.d);
         }
         if (this.e != null) {
-            return a2 + dlx.b(11, this.e);
+            return a2 + defpackage.dlx.b(11, (defpackage.dmf) this.e);
         }
         return a2;
     }
 
     /* access modifiers changed from: private */
     /* renamed from: b */
-    public final edl a(dlw dlw) {
+    public final defpackage.edl a(defpackage.dlw dlw) {
         while (true) {
             int a2 = dlw.a();
             switch (a2) {
@@ -139,8 +144,8 @@ public final class edl extends dlz {
                     int i2 = dlw.i();
                     try {
                         this.a = a(dlw.e());
-                        break;
-                    } catch (IllegalArgumentException e2) {
+                        continue;
+                    } catch (java.lang.IllegalArgumentException e2) {
                         dlw.e(i2);
                         a(dlw, a2);
                         break;
@@ -149,78 +154,78 @@ public final class edl extends dlz {
                     int i3 = dlw.i();
                     try {
                         this.f = a(dlw.e());
-                        break;
-                    } catch (IllegalArgumentException e3) {
+                        continue;
+                    } catch (java.lang.IllegalArgumentException e3) {
                         dlw.e(i3);
                         a(dlw, a2);
                         break;
                     }
                 case 24:
-                    this.g = Long.valueOf(dlw.b());
-                    break;
+                    this.g = java.lang.Long.valueOf(dlw.b());
+                    continue;
                 case 34:
-                    int a3 = dmh.a(dlw, 34);
+                    int a3 = defpackage.dmh.a(dlw, 34);
                     int length = this.l == null ? 0 : this.l.length;
-                    egg[] eggArr = new egg[(a3 + length)];
+                    defpackage.egg[] eggArr = new defpackage.egg[(a3 + length)];
                     if (length != 0) {
-                        System.arraycopy(this.l, 0, eggArr, 0, length);
+                        java.lang.System.arraycopy(this.l, 0, eggArr, 0, length);
                     }
                     while (length < eggArr.length - 1) {
-                        eggArr[length] = new egg();
-                        dlw.a(eggArr[length]);
+                        eggArr[length] = new defpackage.egg();
+                        dlw.a((defpackage.dmf) eggArr[length]);
                         dlw.a();
                         length++;
                     }
-                    eggArr[length] = new egg();
-                    dlw.a(eggArr[length]);
+                    eggArr[length] = new defpackage.egg();
+                    dlw.a((defpackage.dmf) eggArr[length]);
                     this.l = eggArr;
-                    break;
+                    continue;
                 case 42:
-                    int a4 = dmh.a(dlw, 42);
+                    int a4 = defpackage.dmh.a(dlw, 42);
                     int length2 = this.m == null ? 0 : this.m.length;
-                    efw[] efwArr = new efw[(a4 + length2)];
+                    defpackage.efw[] efwArr = new defpackage.efw[(a4 + length2)];
                     if (length2 != 0) {
-                        System.arraycopy(this.m, 0, efwArr, 0, length2);
+                        java.lang.System.arraycopy(this.m, 0, efwArr, 0, length2);
                     }
                     while (length2 < efwArr.length - 1) {
-                        efwArr[length2] = new efw();
-                        dlw.a(efwArr[length2]);
+                        efwArr[length2] = new defpackage.efw();
+                        dlw.a((defpackage.dmf) efwArr[length2]);
                         dlw.a();
                         length2++;
                     }
-                    efwArr[length2] = new efw();
-                    dlw.a(efwArr[length2]);
+                    efwArr[length2] = new defpackage.efw();
+                    dlw.a((defpackage.dmf) efwArr[length2]);
                     this.m = efwArr;
-                    break;
-                case by.aU:
+                    continue;
+                case 50:
                     if (this.h == null) {
-                        this.h = new egf();
+                        this.h = new defpackage.egf();
                     }
-                    dlw.a(this.h);
-                    break;
-                case by.ba:
-                    this.i = Long.valueOf(dlw.b());
-                    break;
+                    dlw.a((defpackage.dmf) this.h);
+                    continue;
+                case 56:
+                    this.i = java.lang.Long.valueOf(dlw.b());
+                    continue;
                 case 65:
-                    this.b = Long.valueOf(dlw.g());
-                    break;
+                    this.b = java.lang.Long.valueOf(dlw.g());
+                    continue;
                 case 74:
                     this.c = dlw.d();
-                    break;
+                    continue;
                 case 82:
                     this.d = dlw.d();
-                    break;
+                    continue;
                 case 90:
                     if (this.e == null) {
-                        this.e = new eeo();
+                        this.e = new defpackage.eeo();
                     }
-                    dlw.a(this.e);
-                    break;
+                    dlw.a((defpackage.dmf) this.e);
+                    continue;
                 default:
-                    if (super.a(dlw, a2)) {
+                    if (!super.a(dlw, a2)) {
                         break;
                     } else {
-                        break;
+                        continue;
                     }
             }
         }

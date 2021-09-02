@@ -1,12 +1,9 @@
 package defpackage;
 
-import android.graphics.Matrix;
-import android.graphics.Path;
-
-/* renamed from: gh  reason: default package */
+/* renamed from: gh reason: default package */
 /* compiled from: PG */
 public abstract class gh {
-    public final Matrix c = new Matrix();
+    public final android.graphics.Matrix c = new android.graphics.Matrix();
 
-    public abstract void a(Matrix matrix, Path path);
+    public abstract void a(android.graphics.Matrix matrix, android.graphics.Path path);
 }

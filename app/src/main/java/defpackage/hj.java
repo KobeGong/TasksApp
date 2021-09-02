@@ -1,25 +1,19 @@
 package defpackage;
 
-import android.animation.AnimatorSet;
-import android.content.res.Resources;
-import android.graphics.drawable.Drawable;
-import java.util.ArrayList;
-
-/* access modifiers changed from: package-private */
-/* renamed from: hj  reason: default package */
+/* renamed from: hj reason: default package */
 /* compiled from: PG */
-public final class hj extends Drawable.ConstantState {
-    public hp a;
-    public AnimatorSet b;
-    public ArrayList c;
-    public qr d;
+final class hj extends android.graphics.drawable.Drawable.ConstantState {
+    public defpackage.hp a;
+    public android.animation.AnimatorSet b;
+    public java.util.ArrayList c;
+    public defpackage.qr d;
 
-    public final Drawable newDrawable() {
-        throw new IllegalStateException("No constant state support for SDK < 24.");
+    public final android.graphics.drawable.Drawable newDrawable() {
+        throw new java.lang.IllegalStateException("No constant state support for SDK < 24.");
     }
 
-    public final Drawable newDrawable(Resources resources) {
-        throw new IllegalStateException("No constant state support for SDK < 24.");
+    public final android.graphics.drawable.Drawable newDrawable(android.content.res.Resources resources) {
+        throw new java.lang.IllegalStateException("No constant state support for SDK < 24.");
     }
 
     public final int getChangingConfigurations() {

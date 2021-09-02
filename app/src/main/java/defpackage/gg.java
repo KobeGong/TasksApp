@@ -1,16 +1,12 @@
 package defpackage;
 
-import android.graphics.Matrix;
-import android.graphics.Path;
-
-/* renamed from: gg  reason: default package */
+/* renamed from: gg reason: default package */
 /* compiled from: PG */
-public final class gg extends gh {
+public final class gg extends defpackage.gh {
     public float a;
 
-    @Override // defpackage.gh
-    public final void a(Matrix matrix, Path path) {
-        Matrix matrix2 = this.c;
+    public final void a(android.graphics.Matrix matrix, android.graphics.Path path) {
+        android.graphics.Matrix matrix2 = this.c;
         matrix.invert(matrix2);
         path.transform(matrix2);
         path.lineTo(this.a, 0.0f);

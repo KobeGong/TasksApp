@@ -1,21 +1,17 @@
 package defpackage;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.View;
-
-/* renamed from: kk  reason: default package */
+/* renamed from: kk reason: default package */
 /* compiled from: PG */
-final class kk extends AnimatorListenerAdapter {
-    private final /* synthetic */ ju a;
-    private final /* synthetic */ View b;
+final class kk extends android.animation.AnimatorListenerAdapter {
+    private final /* synthetic */ defpackage.ju a;
+    private final /* synthetic */ android.view.View b;
 
-    kk(ju juVar, View view) {
+    kk(defpackage.ju juVar, android.view.View view) {
         this.a = juVar;
         this.b = view;
     }
 
-    public final void onAnimationEnd(Animator animator) {
+    public final void onAnimationEnd(android.animation.Animator animator) {
         this.a.b(this.b);
     }
 }

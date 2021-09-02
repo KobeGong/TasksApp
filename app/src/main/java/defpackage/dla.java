@@ -1,15 +1,13 @@
 package defpackage;
 
-import java.util.ListIterator;
-
-/* renamed from: dla  reason: default package */
+/* renamed from: dla reason: default package */
 /* compiled from: PG */
-final class dla implements ListIterator {
-    private ListIterator a = this.c.a.listIterator(this.b);
+final class dla implements java.util.ListIterator {
+    private java.util.ListIterator a = this.c.a.listIterator(this.b);
     private final /* synthetic */ int b;
-    private final /* synthetic */ dkz c;
+    private final /* synthetic */ defpackage.dkz c;
 
-    dla(dkz dkz, int i) {
+    dla(defpackage.dkz dkz, int i) {
         this.c = dkz;
         this.b = i;
     }
@@ -31,26 +29,22 @@ final class dla implements ListIterator {
     }
 
     public final void remove() {
-        throw new UnsupportedOperationException();
+        throw new java.lang.UnsupportedOperationException();
     }
 
-    @Override // java.util.ListIterator
-    public final /* synthetic */ void add(Object obj) {
-        throw new UnsupportedOperationException();
+    public final /* synthetic */ void add(java.lang.Object obj) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
-    @Override // java.util.ListIterator
-    public final /* synthetic */ void set(Object obj) {
-        throw new UnsupportedOperationException();
+    public final /* synthetic */ void set(java.lang.Object obj) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
-    @Override // java.util.ListIterator
-    public final /* synthetic */ Object previous() {
-        return (String) this.a.previous();
+    public final /* synthetic */ java.lang.Object previous() {
+        return (java.lang.String) this.a.previous();
     }
 
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final /* synthetic */ Object next() {
-        return (String) this.a.next();
+    public final /* synthetic */ java.lang.Object next() {
+        return (java.lang.String) this.a.next();
     }
 }

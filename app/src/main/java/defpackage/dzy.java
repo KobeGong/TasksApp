@@ -1,11 +1,9 @@
 package defpackage;
 
-import java.nio.ByteBuffer;
-
-/* renamed from: dzy  reason: default package */
+/* renamed from: dzy reason: default package */
 /* compiled from: PG */
 public final class dzy {
-    public static dzx a(int i) {
-        return new dzx(ByteBuffer.allocateDirect(Math.min(1048576, i)));
+    public static defpackage.dzx a(int i) {
+        return new defpackage.dzx(java.nio.ByteBuffer.allocateDirect(java.lang.Math.min(1048576, i)));
     }
 }

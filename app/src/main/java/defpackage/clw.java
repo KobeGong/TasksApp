@@ -1,16 +1,15 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: clw  reason: default package */
+/* renamed from: clw reason: default package */
 /* compiled from: PG */
-public final class clw implements Runnable {
-    private final /* synthetic */ String a;
+final class clw implements java.lang.Runnable {
+    private final /* synthetic */ java.lang.String a;
     private final /* synthetic */ boolean b = true;
-    private final /* synthetic */ efx c;
-    private final /* synthetic */ eeo d;
-    private final /* synthetic */ clv e;
+    private final /* synthetic */ defpackage.efx c;
+    private final /* synthetic */ defpackage.eeo d;
+    private final /* synthetic */ defpackage.clv e;
 
-    clw(clv clv, String str, efx efx) {
+    clw(defpackage.clv clv, java.lang.String str, defpackage.efx efx) {
         this.e = clv;
         this.a = str;
         this.c = efx;
@@ -18,7 +17,7 @@ public final class clw implements Runnable {
     }
 
     public final void run() {
-        cky cky = this.e.d;
+        defpackage.cky cky = this.e.d;
         this.e.a(this.a, this.b, this.c, null);
     }
 }

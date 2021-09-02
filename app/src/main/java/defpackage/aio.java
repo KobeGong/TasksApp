@@ -1,21 +1,18 @@
 package defpackage;
 
-import android.content.Context;
+/* renamed from: aio reason: default package */
+final /* synthetic */ class aio implements java.lang.Runnable {
+    private final defpackage.cyu a;
+    private final android.content.Context b;
+    private final java.lang.String c;
 
-/* access modifiers changed from: package-private */
-/* renamed from: aio  reason: default package */
-public final /* synthetic */ class aio implements Runnable {
-    private final cyu a;
-    private final Context b;
-    private final String c;
-
-    aio(cyu cyu, Context context, String str) {
+    aio(defpackage.cyu cyu, android.content.Context context, java.lang.String str) {
         this.a = cyu;
         this.b = context;
         this.c = str;
     }
 
     public final void run() {
-        this.a.a((cyu) new ain(this.b.getApplicationContext().getSharedPreferences(this.c, 0)));
+        this.a.a((java.lang.Object) new defpackage.ain(this.b.getApplicationContext().getSharedPreferences(this.c, 0)));
     }
 }

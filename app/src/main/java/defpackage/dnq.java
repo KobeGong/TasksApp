@@ -1,6 +1,6 @@
 package defpackage;
 
-/* renamed from: dnq  reason: default package */
+/* renamed from: dnq reason: default package */
 /* compiled from: PG */
 public enum dnq {
     CONNECTING,

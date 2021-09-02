@@ -1,9 +1,9 @@
 package defpackage;
 
-/* renamed from: dov  reason: default package */
+/* renamed from: dov reason: default package */
 /* compiled from: PG */
 public interface dov {
-    Object a(String str);
+    java.lang.Object a(java.lang.String str);
 
-    String a(Object obj);
+    java.lang.String a(java.lang.Object obj);
 }

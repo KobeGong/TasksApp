@@ -1,25 +1,23 @@
 package defpackage;
 
-import java.util.logging.Level;
-
-/* renamed from: cvh  reason: default package */
+/* renamed from: cvh reason: default package */
 /* compiled from: PG */
-final class cvh implements cuo {
-    private final String a;
-    private final cuo b;
+final class cvh implements defpackage.cuo {
+    private final java.lang.String a;
+    private final defpackage.cuo b;
 
-    cvh(RuntimeException runtimeException, cuo cuo) {
-        StringBuilder append = new StringBuilder("LOGGING ERROR: ").append(runtimeException.getMessage()).append("\n  original message: ");
+    cvh(java.lang.RuntimeException runtimeException, defpackage.cuo cuo) {
+        java.lang.StringBuilder append = new java.lang.StringBuilder("LOGGING ERROR: ").append(runtimeException.getMessage()).append("\n  original message: ");
         if (cuo.g() == null) {
             append.append(cuo.i());
         } else {
             append.append(cuo.g().b);
             append.append("\n  original arguments:");
-            for (Object obj : cuo.h()) {
-                append.append("\n    ").append(cuw.a(obj));
+            for (java.lang.Object a2 : cuo.h()) {
+                append.append("\n    ").append(defpackage.cuw.a(a2));
             }
         }
-        cur k = cuo.k();
+        defpackage.cur k = cuo.k();
         if (k.a() > 0) {
             append.append("\n  metadata:");
             for (int i = 0; i < k.a(); i++) {
@@ -35,43 +33,35 @@ final class cvh implements cuo {
         this.b = cuo;
     }
 
-    @Override // defpackage.cuo
-    public final Level d() {
-        return this.b.d().intValue() > Level.WARNING.intValue() ? this.b.d() : Level.WARNING;
+    public final java.util.logging.Level d() {
+        return this.b.d().intValue() > java.util.logging.Level.WARNING.intValue() ? this.b.d() : java.util.logging.Level.WARNING;
     }
 
-    @Override // defpackage.cuo
     public final long e() {
         return this.b.e();
     }
 
-    @Override // defpackage.cuo
-    public final ctt f() {
+    public final defpackage.ctt f() {
         return this.b.f();
     }
 
-    @Override // defpackage.cuo
-    public final cur k() {
-        return cur.c;
+    public final defpackage.cur k() {
+        return defpackage.cur.c;
     }
 
-    @Override // defpackage.cuo
     public final boolean j() {
         return false;
     }
 
-    @Override // defpackage.cuo
-    public final cvf g() {
+    public final defpackage.cvf g() {
         return null;
     }
 
-    @Override // defpackage.cuo
-    public final Object[] h() {
-        throw new IllegalStateException();
+    public final java.lang.Object[] h() {
+        throw new java.lang.IllegalStateException();
     }
 
-    @Override // defpackage.cuo
-    public final Object i() {
+    public final java.lang.Object i() {
         return this.a;
     }
 }

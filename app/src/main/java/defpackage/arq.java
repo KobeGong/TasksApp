@@ -1,20 +1,17 @@
 package defpackage;
 
-import android.view.View;
-import com.google.android.apps.tasks.ui.components.snackbar.Snackbar;
-
-/* renamed from: arq  reason: default package */
+/* renamed from: arq reason: default package */
 /* compiled from: PG */
-public final class arq implements View.OnClickListener {
-    private final /* synthetic */ View.OnClickListener a;
-    private final /* synthetic */ Snackbar b;
+public final class arq implements android.view.View.OnClickListener {
+    private final /* synthetic */ android.view.View.OnClickListener a;
+    private final /* synthetic */ com.google.android.apps.tasks.ui.components.snackbar.Snackbar b;
 
-    public arq(Snackbar snackbar, View.OnClickListener onClickListener) {
+    public arq(com.google.android.apps.tasks.ui.components.snackbar.Snackbar snackbar, android.view.View.OnClickListener onClickListener) {
         this.b = snackbar;
         this.a = onClickListener;
     }
 
-    public final void onClick(View view) {
+    public final void onClick(android.view.View view) {
         this.a.onClick(view);
         this.b.a(1);
     }

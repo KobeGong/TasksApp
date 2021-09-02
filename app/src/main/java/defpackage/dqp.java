@@ -1,11 +1,11 @@
 package defpackage;
 
-/* renamed from: dqp  reason: default package */
+/* renamed from: dqp reason: default package */
 /* compiled from: PG */
-final class dqp implements Runnable {
-    private final /* synthetic */ dqo a;
+final class dqp implements java.lang.Runnable {
+    private final /* synthetic */ defpackage.dqo a;
 
-    dqp(dqo dqo) {
+    dqp(defpackage.dqo dqo) {
         this.a = dqo;
     }
 

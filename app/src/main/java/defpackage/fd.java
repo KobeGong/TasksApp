@@ -1,54 +1,44 @@
 package defpackage;
 
-import android.support.design.internal.NavigationMenuItemView;
-import android.view.SubMenu;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
-import java.util.ArrayList;
-
-/* renamed from: fd  reason: default package */
+/* renamed from: fd reason: default package */
 /* compiled from: PG */
-public final class fd extends Adapter {
-    public final ArrayList a = new ArrayList();
-    public MenuItemImpl b;
+public final class fd extends defpackage.aet {
+    public final java.util.ArrayList a = new java.util.ArrayList();
+    public defpackage.zi b;
     public boolean c;
-    private final /* synthetic */ NavigationMenuPresenter f;
+    private final /* synthetic */ defpackage.fb f;
 
-    public fd(NavigationMenuPresenter fbVar) {
+    public fd(defpackage.fb fbVar) {
         this.f = fbVar;
         b();
     }
 
-    @Override // defpackage.aet
-    public final long getItemId(int i) {
+    public final long a(int i) {
         return (long) i;
     }
 
-    @Override // defpackage.aet
-    public final int getCount() {
+    public final int a() {
         return this.a.size();
     }
 
-    @Override // defpackage.aet
-    public final int getItemViewType(int i) {
-        ff ffVar = (ff) this.a.get(i);
-        if (ffVar instanceof fg) {
+    public final int b(int i) {
+        defpackage.ff ffVar = (defpackage.ff) this.a.get(i);
+        if (ffVar instanceof defpackage.fg) {
             return 2;
         }
-        if (ffVar instanceof fe) {
+        if (ffVar instanceof defpackage.fe) {
             return 3;
         }
-        if (!(ffVar instanceof fh)) {
-            throw new RuntimeException("Unknown item type.");
-        } else if (((fh) ffVar).a.hasSubMenu()) {
+        if (!(ffVar instanceof defpackage.fh)) {
+            throw new java.lang.RuntimeException("Unknown item type.");
+        } else if (((defpackage.fh) ffVar).a.hasSubMenu()) {
             return 1;
         } else {
             return 0;
         }
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public final void b() {
         boolean z;
         int i;
@@ -56,14 +46,14 @@ public final class fd extends Adapter {
         if (!this.c) {
             this.c = true;
             this.a.clear();
-            this.a.add(new fe());
+            this.a.add(new defpackage.fe());
             int i3 = -1;
             int i4 = 0;
             boolean z2 = false;
             int size = this.f.c.i().size();
             int i5 = 0;
             while (i5 < size) {
-                MenuItemImpl ziVar = (MenuItemImpl) this.f.c.i().get(i5);
+                defpackage.zi ziVar = (defpackage.zi) this.f.c.i().get(i5);
                 if (ziVar.isChecked()) {
                     a(ziVar);
                 }
@@ -71,17 +61,17 @@ public final class fd extends Adapter {
                     ziVar.a(false);
                 }
                 if (ziVar.hasSubMenu()) {
-                    SubMenu subMenu = ziVar.getSubMenu();
+                    android.view.SubMenu subMenu = ziVar.getSubMenu();
                     if (subMenu.hasVisibleItems()) {
                         if (i5 != 0) {
-                            this.a.add(new fg(this.f.o, 0));
+                            this.a.add(new defpackage.fg(this.f.o, 0));
                         }
-                        this.a.add(new fh(ziVar));
+                        this.a.add(new defpackage.fh(ziVar));
                         boolean z3 = false;
                         int size2 = this.a.size();
                         int size3 = subMenu.size();
                         for (int i6 = 0; i6 < size3; i6++) {
-                            MenuItemImpl ziVar2 = (MenuItemImpl) subMenu.getItem(i6);
+                            defpackage.zi ziVar2 = (defpackage.zi) subMenu.getItem(i6);
                             if (ziVar2.isVisible()) {
                                 if (!z3 && ziVar2.getIcon() != null) {
                                     z3 = true;
@@ -92,7 +82,7 @@ public final class fd extends Adapter {
                                 if (ziVar.isChecked()) {
                                     a(ziVar);
                                 }
-                                this.a.add(new fh(ziVar2));
+                                this.a.add(new defpackage.fh(ziVar2));
                             }
                         }
                         if (z3) {
@@ -107,7 +97,7 @@ public final class fd extends Adapter {
                         z = ziVar.getIcon() != null;
                         if (i5 != 0) {
                             i++;
-                            this.a.add(new fg(this.f.o, this.f.o));
+                            this.a.add(new defpackage.fg(this.f.o, this.f.o));
                         }
                     } else if (z2 || ziVar.getIcon() == null) {
                         z = z2;
@@ -117,7 +107,7 @@ public final class fd extends Adapter {
                         c(i4, this.a.size());
                         i = i4;
                     }
-                    fh fhVar = new fh(ziVar);
+                    defpackage.fh fhVar = new defpackage.fh(ziVar);
                     fhVar.b = z;
                     this.a.add(fhVar);
                     z2 = z;
@@ -133,12 +123,12 @@ public final class fd extends Adapter {
 
     private final void c(int i, int i2) {
         while (i < i2) {
-            ((fh) this.a.get(i)).b = true;
+            ((defpackage.fh) this.a.get(i)).b = true;
             i++;
         }
     }
 
-    public final void a(MenuItemImpl ziVar) {
+    public final void a(defpackage.zi ziVar) {
         if (this.b != ziVar && ziVar.isCheckable()) {
             if (this.b != null) {
                 this.b.setChecked(false);
@@ -148,11 +138,10 @@ public final class fd extends Adapter {
         }
     }
 
-    @Override // defpackage.aet
-    public final /* synthetic */ void a(ViewHolder afv) {
-        ViewHolder afv2 = afv;
-        if (afv2 instanceof fi) {
-            NavigationMenuItemView navigationMenuItemView = (NavigationMenuItemView) afv2.a;
+    public final /* synthetic */ void a(defpackage.afv afv) {
+        defpackage.afv afv2 = afv;
+        if (afv2 instanceof defpackage.fi) {
+            android.support.design.internal.NavigationMenuItemView navigationMenuItemView = (android.support.design.internal.NavigationMenuItemView) afv2.a;
             if (navigationMenuItemView.d != null) {
                 navigationMenuItemView.d.removeAllViews();
             }
@@ -160,25 +149,24 @@ public final class fd extends Adapter {
         }
     }
 
-    @Override // defpackage.aet
-    public final /* synthetic */ void onBindViewHolder(ViewHolder afv, int i) {
-        ViewHolder afv2 = afv;
-        switch (getItemViewType(i)) {
+    public final /* synthetic */ void a(defpackage.afv afv, int i) {
+        defpackage.afv afv2 = afv;
+        switch (b(i)) {
             case 0:
-                NavigationMenuItemView navigationMenuItemView = (NavigationMenuItemView) afv2.a;
+                android.support.design.internal.NavigationMenuItemView navigationMenuItemView = (android.support.design.internal.NavigationMenuItemView) afv2.a;
                 navigationMenuItemView.f = this.f.j;
                 navigationMenuItemView.g = navigationMenuItemView.f != null;
                 if (navigationMenuItemView.e != null) {
                     navigationMenuItemView.a(navigationMenuItemView.e.getIcon());
                 }
                 if (this.f.h) {
-                    vo.a.b(navigationMenuItemView.c, this.f.g);
+                    defpackage.vo.a.b((android.widget.TextView) navigationMenuItemView.c, this.f.g);
                 }
                 if (this.f.i != null) {
                     navigationMenuItemView.c.setTextColor(this.f.i);
                 }
-                sn.a(navigationMenuItemView, this.f.k != null ? this.f.k.getConstantState().newDrawable() : null);
-                fh fhVar = (fh) this.a.get(i);
+                defpackage.sn.a((android.view.View) navigationMenuItemView, this.f.k != null ? this.f.k.getConstantState().newDrawable() : null);
+                defpackage.fh fhVar = (defpackage.fh) this.a.get(i);
                 navigationMenuItemView.a = fhVar.b;
                 int i2 = this.f.l;
                 navigationMenuItemView.setPadding(i2, 0, i2, 0);
@@ -186,10 +174,10 @@ public final class fd extends Adapter {
                 navigationMenuItemView.a(fhVar.a);
                 return;
             case 1:
-                ((TextView) afv2.a).setText(((fh) this.a.get(i)).a.getTitle());
+                ((android.widget.TextView) afv2.a).setText(((defpackage.fh) this.a.get(i)).a.getTitle());
                 return;
             case 2:
-                fg fgVar = (fg) this.a.get(i);
+                defpackage.fg fgVar = (defpackage.fg) this.a.get(i);
                 afv2.a.setPadding(0, fgVar.a, 0, fgVar.b);
                 return;
             default:
@@ -197,17 +185,16 @@ public final class fd extends Adapter {
         }
     }
 
-    @Override // defpackage.aet
-    public final /* synthetic */ ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+    public final /* synthetic */ defpackage.afv a(android.view.ViewGroup viewGroup, int i) {
         switch (i) {
             case 0:
-                return new fi(this.f.f, viewGroup, this.f.p);
+                return new defpackage.fi(this.f.f, viewGroup, this.f.p);
             case 1:
-                return new ViewHolder(this.f.f, viewGroup, (byte) 0);
+                return new defpackage.afv(this.f.f, viewGroup, 0);
             case 2:
-                return new ViewHolder(this.f.f, viewGroup);
+                return new defpackage.afv(this.f.f, viewGroup);
             case 3:
-                return new ViewHolder((View) this.f.b, (char) 0);
+                return new defpackage.afv((android.view.View) this.f.b, 0);
             default:
                 return null;
         }

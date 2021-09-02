@@ -1,65 +1,60 @@
 package defpackage;
 
-import android.content.Context;
-import android.content.SharedPreferences;
-import java.util.HashMap;
-import java.util.Map;
-
-/* renamed from: ain  reason: default package */
+/* renamed from: ain reason: default package */
 /* compiled from: PG */
 public final class ain {
-    private static final Map b = new HashMap();
-    public final SharedPreferences a;
+    private static final java.util.Map b = new java.util.HashMap();
+    public final android.content.SharedPreferences a;
 
-    private ain(SharedPreferences sharedPreferences) {
+    private ain(android.content.SharedPreferences sharedPreferences) {
         this.a = sharedPreferences;
     }
 
-    public static synchronized cyi a(Context context, String str) {
-        cyu cyu;
-        synchronized (ain.class) {
-            String valueOf = String.valueOf(str);
-            String concat = valueOf.length() != 0 ? "prefs-".concat(valueOf) : new String("prefs-");
-            cyi cyi = (cyi) b.get(concat);
-            cyu = cyi;
-            if (cyi == null) {
-                cyu cyu2 = new cyu();
-                ajd.b(context).c().execute(new aio(cyu2, context, concat));
-                b.put(concat, cyu2);
-                cyu = cyu2;
+    public static synchronized defpackage.cyi a(android.content.Context context, java.lang.String str) {
+        defpackage.cyi cyi;
+        synchronized (defpackage.ain.class) {
+            java.lang.String str2 = "prefs-";
+            java.lang.String valueOf = java.lang.String.valueOf(str);
+            java.lang.String str3 = valueOf.length() != 0 ? str2.concat(valueOf) : new java.lang.String(str2);
+            cyi = (defpackage.cyi) b.get(str3);
+            if (cyi == 0) {
+                defpackage.cyu cyu = new defpackage.cyu();
+                defpackage.ajd.b(context).c().execute(new defpackage.aio(cyu, context, str3));
+                b.put(str3, cyu);
+                cyi = cyu;
             }
         }
-        return cyu;
+        return cyi;
     }
 
-    public static synchronized ain b(Context context, String str) {
-        ain ain;
-        synchronized (ain.class) {
-            ain = (ain) cyd.c(a(context, str));
+    public static synchronized defpackage.ain b(android.content.Context context, java.lang.String str) {
+        defpackage.ain ain;
+        synchronized (defpackage.ain.class) {
+            ain = (defpackage.ain) defpackage.cyd.c(a(context, str));
         }
         return ain;
     }
 
-    public final String a() {
+    public final java.lang.String a() {
         return this.a.getString("sel-task-list-id", null);
     }
 
-    public final void a(String str) {
-        SharedPreferences.Editor edit = this.a.edit();
+    public final void a(java.lang.String str) {
+        android.content.SharedPreferences.Editor edit = this.a.edit();
         edit.putString("sel-task-list-id", str);
         edit.apply();
     }
 
-    public final ajr b(String str) {
-        SharedPreferences sharedPreferences = this.a;
-        String valueOf = String.valueOf("task-list-order:");
-        String valueOf2 = String.valueOf(str);
-        String string = sharedPreferences.getString(valueOf2.length() != 0 ? valueOf.concat(valueOf2) : new String(valueOf), null);
+    public final defpackage.ajr b(java.lang.String str) {
+        android.content.SharedPreferences sharedPreferences = this.a;
+        java.lang.String valueOf = java.lang.String.valueOf("task-list-order:");
+        java.lang.String valueOf2 = java.lang.String.valueOf(str);
+        java.lang.String string = sharedPreferences.getString(valueOf2.length() != 0 ? valueOf.concat(valueOf2) : new java.lang.String(valueOf), null);
         if (string != null) {
             try {
-                return ajr.a(string);
-            } catch (IllegalArgumentException e) {
-                azb.b("Cannot map 'task order' name stored in preferences to enum value: %s", string);
+                return defpackage.ajr.a(string);
+            } catch (java.lang.IllegalArgumentException e) {
+                defpackage.azb.b("Cannot map 'task order' name stored in preferences to enum value: %s", string);
             }
         }
         return null;

@@ -1,25 +1,20 @@
 package defpackage;
 
-import android.content.Context;
-import android.content.res.TypedArray;
-import android.util.AttributeSet;
-import android.widget.FrameLayout;
-
-/* renamed from: arp  reason: default package */
+/* renamed from: arp reason: default package */
 /* compiled from: PG */
-public class arp extends FrameLayout {
-    public aro a;
-    public arn b;
+public class arp extends android.widget.FrameLayout {
+    public defpackage.aro a;
+    public defpackage.arn b;
 
-    public arp(Context context) {
+    public arp(android.content.Context context) {
         this(context, null);
     }
 
-    public arp(Context context, AttributeSet attributeSet) {
+    public arp(android.content.Context context, android.util.AttributeSet attributeSet) {
         super(context, attributeSet);
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, ail.c);
-        if (obtainStyledAttributes.hasValue(ail.d)) {
-            sn.a(this, (float) obtainStyledAttributes.getDimensionPixelSize(ail.d, 0));
+        android.content.res.TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, defpackage.ail.c);
+        if (obtainStyledAttributes.hasValue(defpackage.ail.d)) {
+            defpackage.sn.a((android.view.View) this, (float) obtainStyledAttributes.getDimensionPixelSize(defpackage.ail.d, 0));
         }
         obtainStyledAttributes.recycle();
         setClickable(true);
@@ -29,7 +24,7 @@ public class arp extends FrameLayout {
     public void onLayout(boolean z, int i, int i2, int i3, int i4) {
         super.onLayout(z, i, i2, i3, i4);
         if (this.a != null) {
-            aro aro = this.a;
+            defpackage.aro aro = this.a;
             aro.a.d.a = null;
             if (aro.a.e()) {
                 aro.a.c();
@@ -42,16 +37,16 @@ public class arp extends FrameLayout {
     /* access modifiers changed from: protected */
     public void onAttachedToWindow() {
         super.onAttachedToWindow();
-        sn.a.g(this);
+        defpackage.sn.a.g(this);
     }
 
     /* access modifiers changed from: protected */
     public void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         if (this.b != null) {
-            arn arn = this.b;
-            if (arr.a().d(arn.a.f)) {
-                ard.a.post(new arj(arn));
+            defpackage.arn arn = this.b;
+            if (defpackage.arr.a().d(arn.a.f)) {
+                defpackage.ard.a.post(new defpackage.arj(arn));
             }
         }
     }

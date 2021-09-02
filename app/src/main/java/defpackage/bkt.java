@@ -1,16 +1,13 @@
 package defpackage;
 
-import android.database.ContentObserver;
-
-/* access modifiers changed from: package-private */
-/* renamed from: bkt  reason: default package */
+/* renamed from: bkt reason: default package */
 /* compiled from: PG */
-public final class bkt extends ContentObserver {
+final class bkt extends android.database.ContentObserver {
     bkt() {
         super(null);
     }
 
     public final void onChange(boolean z) {
-        bks.a.set(true);
+        defpackage.bks.a.set(true);
     }
 }

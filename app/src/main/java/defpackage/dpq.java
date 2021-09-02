@@ -1,70 +1,91 @@
 package defpackage;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-
-/* renamed from: dpq  reason: default package */
+/* renamed from: dpq reason: default package */
 /* compiled from: PG */
-final class dpq extends dok {
-    private final dom a;
-    private dop b;
+final class dpq extends defpackage.dok {
+    private final defpackage.dom a;
+    private defpackage.dop b;
 
-    dpq(dom dom) {
-        this.a = (dom) cld.a(dom, "helper");
+    dpq(defpackage.dom dom) {
+        this.a = (defpackage.dom) defpackage.cld.a((java.lang.Object) dom, (java.lang.Object) "helper");
     }
 
-    @Override // defpackage.dok
-    public final void a(List list, dmv dmv) {
-        ArrayList arrayList = new ArrayList();
-        Iterator it = list.iterator();
-        while (it.hasNext()) {
-            arrayList.addAll(((doe) it.next()).a);
-        }
-        doe doe = new doe(arrayList);
-        if (this.b == null) {
-            this.b = this.a.a(doe, dmv.b);
-            this.a.a(dnq.CONNECTING, new dpr(don.a(this.b)));
-            this.b.b();
-            return;
-        }
-        this.a.a(this.b, doe);
+    /* JADX WARNING: Incorrect type for immutable var: ssa=java.util.List, code=java.util.List<doe>, for r5v0, types: [java.util.List, java.util.List<doe>] */
+    /* Code decompiled incorrectly, please refer to instructions dump. */
+    public final void a(java.util.List<defpackage.doe> r5, defpackage.dmv r6) {
+        /*
+            r4 = this;
+            java.util.ArrayList r1 = new java.util.ArrayList
+            r1.<init>()
+            java.util.Iterator r2 = r5.iterator()
+        L_0x0009:
+            boolean r0 = r2.hasNext()
+            if (r0 == 0) goto L_0x001b
+            java.lang.Object r0 = r2.next()
+            doe r0 = (defpackage.doe) r0
+            java.util.List r0 = r0.a
+            r1.addAll(r0)
+            goto L_0x0009
+        L_0x001b:
+            doe r0 = new doe
+            r0.<init>(r1)
+            dop r1 = r4.b
+            if (r1 != 0) goto L_0x0046
+            dom r1 = r4.a
+            dmv r2 = defpackage.dmv.b
+            dop r0 = r1.a(r0, r2)
+            r4.b = r0
+            dom r0 = r4.a
+            dnq r1 = defpackage.dnq.CONNECTING
+            dpr r2 = new dpr
+            dop r3 = r4.b
+            don r3 = defpackage.don.a(r3)
+            r2.<init>(r3)
+            r0.a(r1, r2)
+            dop r0 = r4.b
+            r0.b()
+        L_0x0045:
+            return
+        L_0x0046:
+            dom r1 = r4.a
+            dop r2 = r4.b
+            r1.a(r2, r0)
+            goto L_0x0045
+        */
+        throw new UnsupportedOperationException("Method not decompiled: defpackage.dpq.a(java.util.List, dmv):void");
     }
 
-    @Override // defpackage.dok
-    public final void a(dpw dpw) {
+    public final void a(defpackage.dpw dpw) {
         if (this.b != null) {
             this.b.a();
             this.b = null;
         }
-        this.a.a(dnq.TRANSIENT_FAILURE, new dpr(don.a(dpw)));
+        this.a.a(defpackage.dnq.TRANSIENT_FAILURE, (defpackage.doq) new defpackage.dpr(defpackage.don.a(dpw)));
     }
 
-    @Override // defpackage.dok
-    public final void a(dop dop, dnr dnr) {
-        don a2;
-        dnq dnq = dnr.a;
-        if (dop == this.b && dnq != dnq.SHUTDOWN) {
+    public final void a(defpackage.dop dop, defpackage.dnr dnr) {
+        defpackage.don a2;
+        defpackage.dnq dnq = dnr.a;
+        if (dop == this.b && dnq != defpackage.dnq.SHUTDOWN) {
             switch (dnq.ordinal()) {
                 case 0:
-                    a2 = don.a;
+                    a2 = defpackage.don.a;
                     break;
                 case 1:
                 case 3:
-                    a2 = don.a(dop);
+                    a2 = defpackage.don.a(dop);
                     break;
                 case 2:
-                    a2 = don.a(dnr.b);
+                    a2 = defpackage.don.a(dnr.b);
                     break;
                 default:
-                    String valueOf = String.valueOf(dnq);
-                    throw new IllegalArgumentException(new StringBuilder(String.valueOf(valueOf).length() + 18).append("Unsupported state:").append(valueOf).toString());
+                    java.lang.String valueOf = java.lang.String.valueOf(dnq);
+                    throw new java.lang.IllegalArgumentException(new java.lang.StringBuilder(java.lang.String.valueOf(valueOf).length() + 18).append("Unsupported state:").append(valueOf).toString());
             }
-            this.a.a(dnq, new dpr(a2));
+            this.a.a(dnq, (defpackage.doq) new defpackage.dpr(a2));
         }
     }
 
-    @Override // defpackage.dok
     public final void a() {
         if (this.b != null) {
             this.b.a();

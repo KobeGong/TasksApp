@@ -1,19 +1,15 @@
 package defpackage;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-
-/* access modifiers changed from: package-private */
-/* renamed from: jg  reason: default package */
+/* renamed from: jg reason: default package */
 /* compiled from: PG */
-public final class jg extends AnimatorListenerAdapter {
-    private final /* synthetic */ je a;
+final class jg extends android.animation.AnimatorListenerAdapter {
+    private final /* synthetic */ defpackage.je a;
 
-    jg(je jeVar) {
+    jg(defpackage.je jeVar) {
         this.a = jeVar;
     }
 
-    public final void onAnimationEnd(Animator animator) {
+    public final void onAnimationEnd(android.animation.Animator animator) {
         this.a.e();
         animator.removeListener(this);
     }

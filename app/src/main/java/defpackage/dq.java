@@ -1,29 +1,24 @@
 package defpackage;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.support.design.bottomappbar.BottomAppBar;
-import android.support.v7.widget.ActionMenuView;
-
-/* renamed from: dq  reason: default package */
+/* renamed from: dq reason: default package */
 /* compiled from: PG */
-final class dq extends AnimatorListenerAdapter {
+final class dq extends android.animation.AnimatorListenerAdapter {
     private boolean a;
-    private final /* synthetic */ ActionMenuView b;
+    private final /* synthetic */ android.support.v7.widget.ActionMenuView b;
     private final /* synthetic */ int c = 0;
     private final /* synthetic */ boolean d = false;
-    private final /* synthetic */ BottomAppBar e;
+    private final /* synthetic */ android.support.design.bottomappbar.BottomAppBar e;
 
-    dq(BottomAppBar bottomAppBar, ActionMenuView actionMenuView, int i, boolean z) {
+    dq(android.support.design.bottomappbar.BottomAppBar bottomAppBar, android.support.v7.widget.ActionMenuView actionMenuView, int i, boolean z) {
         this.e = bottomAppBar;
         this.b = actionMenuView;
     }
 
-    public final void onAnimationCancel(Animator animator) {
+    public final void onAnimationCancel(android.animation.Animator animator) {
         this.a = true;
     }
 
-    public final void onAnimationEnd(Animator animator) {
+    public final void onAnimationEnd(android.animation.Animator animator) {
         if (!this.a) {
             this.e.a(this.b, this.c, this.d);
         }

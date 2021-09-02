@@ -1,13 +1,12 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: bpx  reason: default package */
+/* renamed from: bpx reason: default package */
 /* compiled from: PG */
-public final class bpx implements Runnable {
-    private /* synthetic */ bpv a;
-    private /* synthetic */ bpy b;
+final class bpx implements java.lang.Runnable {
+    private /* synthetic */ defpackage.bpv a;
+    private /* synthetic */ defpackage.bpy b;
 
-    bpx(bpy bpy, bpv bpv) {
+    bpx(defpackage.bpy bpy, defpackage.bpv bpv) {
         this.b = bpy;
         this.a = bpv;
     }

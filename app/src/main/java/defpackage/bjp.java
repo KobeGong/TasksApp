@@ -1,27 +1,22 @@
 package defpackage;
 
-import com.google.android.gms.common.api.Status;
-
-/* renamed from: bjp  reason: default package */
+/* renamed from: bjp reason: default package */
 /* compiled from: PG */
-public final class bjp extends bmc {
-    private /* synthetic */ blp e;
+public final class bjp extends defpackage.bmc {
+    private /* synthetic */ defpackage.blp e;
 
-    /* JADX INFO: super call moved to the top of the method (can break code semantics) */
-    public bjp(ayp ayp, blp blp) {
-        super(ayp);
+    public bjp(defpackage.ayp ayp, defpackage.blp blp) {
         this.e = blp;
+        super(ayp);
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.bca
-    public final /* synthetic */ void a(ayg ayg) {
-        ((bnq) ayg).a(this, this.e.b, this.e.c);
+    public final /* synthetic */ void a(defpackage.ayg ayg) {
+        ((defpackage.bnq) ayg).a(this, this.e.b, this.e.c);
     }
 
     /* access modifiers changed from: protected */
-    @Override // com.google.android.gms.common.api.internal.BasePendingResult, defpackage.bmc
-    public final /* synthetic */ ayw a(Status status) {
-        return new bjq(status);
+    public final /* synthetic */ defpackage.ayw a(com.google.android.gms.common.api.Status status) {
+        return new defpackage.bjq(status);
     }
 }

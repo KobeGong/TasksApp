@@ -1,12 +1,12 @@
 package defpackage;
 
-/* renamed from: drb  reason: default package */
+/* renamed from: drb reason: default package */
 /* compiled from: PG */
-final class drb implements Runnable {
-    private final /* synthetic */ dxv a;
-    private final /* synthetic */ dqz b;
+final class drb implements java.lang.Runnable {
+    private final /* synthetic */ defpackage.dxv a;
+    private final /* synthetic */ defpackage.dqz b;
 
-    drb(dqz dqz, dxv dxv) {
+    drb(defpackage.dqz dqz, defpackage.dxv dxv) {
         this.b = dqz;
         this.a = dxv;
     }

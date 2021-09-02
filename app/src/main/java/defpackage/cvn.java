@@ -1,26 +1,19 @@
 package defpackage;
 
-import android.os.Build;
-import android.util.Log;
-import java.util.concurrent.ConcurrentLinkedQueue;
-import java.util.concurrent.atomic.AtomicLong;
-import java.util.concurrent.atomic.AtomicReference;
-import java.util.logging.Level;
-
-/* renamed from: cvn  reason: default package */
+/* renamed from: cvn reason: default package */
 /* compiled from: PG */
-final class cvn extends cvg {
-    public static final AtomicReference b = new AtomicReference();
-    private static cvj d;
-    private static final AtomicLong e = new AtomicLong();
-    private static final ConcurrentLinkedQueue f = new ConcurrentLinkedQueue();
-    private volatile cup c;
+final class cvn extends defpackage.cvg {
+    public static final java.util.concurrent.atomic.AtomicReference b = new java.util.concurrent.atomic.AtomicReference();
+    private static defpackage.cvj d;
+    private static final java.util.concurrent.atomic.AtomicLong e = new java.util.concurrent.atomic.AtomicLong();
+    private static final java.util.concurrent.ConcurrentLinkedQueue f = new java.util.concurrent.ConcurrentLinkedQueue();
+    private volatile defpackage.cup c;
 
     static void b() {
         while (true) {
-            cvn cvn = (cvn) cvo.a.poll();
+            defpackage.cvn cvn = (defpackage.cvn) defpackage.cvo.a.poll();
             if (cvn != null) {
-                cvn.c = ((cvj) b.get()).a(cvn.a());
+                cvn.c = ((defpackage.cvj) b.get()).a(cvn.a());
             } else {
                 c();
                 return;
@@ -28,18 +21,18 @@ final class cvn extends cvg {
         }
     }
 
-    cvn(String str) {
+    cvn(java.lang.String str) {
         super(str);
         this.c = d != null ? d.a(a()) : null;
     }
 
     private static void c() {
         while (true) {
-            cvp cvp = (cvp) f.poll();
+            defpackage.cvp cvp = (defpackage.cvp) f.poll();
             if (cvp != null) {
                 e.getAndDecrement();
-                cup cup = cvp.a;
-                cuo cuo = cvp.b;
+                defpackage.cup cup = cvp.a;
+                defpackage.cuo cuo = cvp.b;
                 if (cuo.j() || cup.a(cuo.d())) {
                     cup.a(cuo);
                 }
@@ -49,25 +42,23 @@ final class cvn extends cvg {
         }
     }
 
-    @Override // defpackage.cup
-    public final boolean a(Level level) {
+    public final boolean a(java.util.logging.Level level) {
         if (this.c != null) {
             return this.c.a(level);
         }
         return true;
     }
 
-    @Override // defpackage.cup
-    public final void a(cuo cuo) {
+    public final void a(defpackage.cuo cuo) {
         if (this.c != null) {
             this.c.a(cuo);
             return;
         }
         if (e.incrementAndGet() > 20) {
             f.poll();
-            Log.w("ProxyAndroidLoggerBackend", "Too many Flogger logs received before configuration. Dropping old logs.");
+            android.util.Log.w("ProxyAndroidLoggerBackend", "Too many Flogger logs received before configuration. Dropping old logs.");
         }
-        f.offer(new cvp(this, cuo));
+        f.offer(new defpackage.cvp(this, cuo));
         if (this.c != null) {
             c();
         }
@@ -75,12 +66,12 @@ final class cvn extends cvg {
 
     static {
         boolean z = false;
-        boolean z2 = Build.FINGERPRINT == null || "robolectric".equals(Build.FINGERPRINT);
-        if ("goldfish".equals(Build.HARDWARE) || "ranchu".equals(Build.HARDWARE)) {
+        boolean z2 = android.os.Build.FINGERPRINT == null || "robolectric".equals(android.os.Build.FINGERPRINT);
+        if ("goldfish".equals(android.os.Build.HARDWARE) || "ranchu".equals(android.os.Build.HARDWARE)) {
             z = true;
         }
         if (z2 || z) {
-            d = new cvj();
+            d = new defpackage.cvj();
         } else {
             d = null;
         }

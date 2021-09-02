@@ -1,35 +1,32 @@
 package defpackage;
 
-import java.net.InetSocketAddress;
-import java.util.Arrays;
-
-/* renamed from: dxu  reason: default package */
+/* renamed from: dxu reason: default package */
 /* compiled from: PG */
 public final class dxu {
-    private final InetSocketAddress a;
-    private final String b;
-    private final String c;
+    private final java.net.InetSocketAddress a;
+    private final java.lang.String b;
+    private final java.lang.String c;
 
-    public dxu(InetSocketAddress inetSocketAddress, String str, String str2) {
-        cld.a(inetSocketAddress);
-        cld.b(!inetSocketAddress.isUnresolved());
+    public dxu(java.net.InetSocketAddress inetSocketAddress, java.lang.String str, java.lang.String str2) {
+        defpackage.cld.a((java.lang.Object) inetSocketAddress);
+        defpackage.cld.b(!inetSocketAddress.isUnresolved());
         this.a = inetSocketAddress;
         this.b = str;
         this.c = str2;
     }
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof dxu)) {
+    public final boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof defpackage.dxu)) {
             return false;
         }
-        dxu dxu = (dxu) obj;
-        if (!cru.d(this.a, dxu.a) || !cru.d(this.b, dxu.b) || !cru.d(this.c, dxu.c)) {
+        defpackage.dxu dxu = (defpackage.dxu) obj;
+        if (!defpackage.cru.d(this.a, dxu.a) || !defpackage.cru.d(this.b, dxu.b) || !defpackage.cru.d(this.c, dxu.c)) {
             return false;
         }
         return true;
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a, this.b, this.c});
+        return java.util.Arrays.hashCode(new java.lang.Object[]{this.a, this.b, this.c});
     }
 }

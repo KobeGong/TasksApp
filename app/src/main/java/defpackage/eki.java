@@ -1,36 +1,27 @@
 package defpackage;
 
-import java.util.Collection;
-import java.util.List;
-import java.util.concurrent.Executor;
-import java.util.concurrent.Executors;
-
-/* renamed from: eki  reason: default package */
+/* renamed from: eki reason: default package */
 /* compiled from: PG */
-public final class eki extends ehy {
-    public eki(ejv ejv) {
-        super((byte) 0);
+public final class eki extends defpackage.ehy {
+    public eki(defpackage.ejv ejv) {
+        super(0);
         int a = ejv.a(9);
-        String str = ejv.e;
-        Executors.newCachedThreadPool(new ekj(a));
+        java.lang.String str = ejv.e;
+        java.util.concurrent.Executors.newCachedThreadPool(new defpackage.ekj(a));
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.ehy
-    public final ehp a(String str, ehr ehr, Executor executor, String str2, List list, int i, boolean z, Collection collection, boolean z2, int i2, boolean z3, int i3) {
-        throw new UnsupportedOperationException("Can't create a bidi stream - httpurlconnection doesn't have those APIs");
+    public final defpackage.ehp a(java.lang.String str, defpackage.ehr ehr, java.util.concurrent.Executor executor, java.lang.String str2, java.util.List list, int i, boolean z, java.util.Collection collection, boolean z2, int i2, boolean z3, int i3) {
+        throw new java.lang.UnsupportedOperationException("Can't create a bidi stream - httpurlconnection doesn't have those APIs");
     }
 
-    @Override // defpackage.ehy
-    public final ehq a(String str, ehr ehr, Executor executor) {
-        throw new UnsupportedOperationException("The bidirectional stream API is not supported by the Java implementation of Cronet Engine");
+    public final defpackage.ehq a(java.lang.String str, defpackage.ehr ehr, java.util.concurrent.Executor executor) {
+        throw new java.lang.UnsupportedOperationException("The bidirectional stream API is not supported by the Java implementation of Cronet Engine");
     }
 
-    @Override // defpackage.ehy
-    public final void a(ejc ejc) {
+    public final void a(defpackage.ejc ejc) {
     }
 
-    @Override // defpackage.ehy
-    public final void b(ejc ejc) {
+    public final void b(defpackage.ejc ejc) {
     }
 }

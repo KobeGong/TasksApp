@@ -1,36 +1,29 @@
 package defpackage;
 
-import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
-import java.util.List;
-
-/* renamed from: aos  reason: default package */
+/* renamed from: aos reason: default package */
 /* compiled from: PG */
-public final class aos extends aoq {
-    private final ajo b;
+public final class aos extends defpackage.aoq {
+    private final defpackage.ajo b;
 
-    public aos(Intent intent) {
-        Uri data = intent.getData();
-        List<String> pathSegments = data.getPathSegments();
+    public aos(android.content.Intent intent) {
+        android.net.Uri data = intent.getData();
+        java.util.List pathSegments = data.getPathSegments();
         if (pathSegments.size() < 4) {
-            String valueOf = String.valueOf(data);
-            throw new IllegalArgumentException(new StringBuilder(String.valueOf(valueOf).length() + 30).append("This is not a LinkToTask Uri: ").append(valueOf).toString());
+            java.lang.String valueOf = java.lang.String.valueOf(data);
+            throw new java.lang.IllegalArgumentException(new java.lang.StringBuilder(java.lang.String.valueOf(valueOf).length() + 30).append("This is not a LinkToTask Uri: ").append(valueOf).toString());
         } else {
-            this.b = new ajk(pathSegments.get(1), pathSegments.get(2), pathSegments.get(3));
+            this.b = new defpackage.ajk((java.lang.String) pathSegments.get(1), (java.lang.String) pathSegments.get(2), (java.lang.String) pathSegments.get(3));
         }
     }
 
-    @Override // defpackage.aoq, defpackage.aoe
-    public final String a(Context context) {
+    public final java.lang.String a(android.content.Context context) {
         return this.b.a();
     }
 
-    @Override // defpackage.aoq, defpackage.aoe
-    public final aof a(Context context, String str) {
+    public final defpackage.aof a(android.content.Context context, java.lang.String str) {
         if (str.equals(this.b.a())) {
-            return aof.a(this.b.b(), asi.a(this.b.b(), this.b.c(), false, -1));
+            return defpackage.aof.a(this.b.b(), EditTaskFragment.a(this.b.b(), this.b.c(), false, -1));
         }
-        return aoe.a;
+        return defpackage.aoe.a;
     }
 }

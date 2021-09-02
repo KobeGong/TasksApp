@@ -1,66 +1,49 @@
 package com.google.android.gms.googlehelp;
 
-import android.accounts.Account;
-import android.app.Activity;
-import android.app.PendingIntent;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.net.Uri;
-import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
-import android.text.TextUtils;
-import android.util.Log;
-import android.view.View;
-import com.google.android.gms.common.internal.ReflectedParcelable;
-import com.google.android.gms.feedback.ErrorReport;
-import com.google.android.gms.googlehelp.internal.common.TogglingData;
-import java.util.List;
-
 /* compiled from: PG */
-public final class GoogleHelp extends biq implements ReflectedParcelable {
-    public static final Parcelable.Creator CREATOR = new bho();
+public final class GoogleHelp extends defpackage.biq implements com.google.android.gms.common.internal.ReflectedParcelable {
+    public static final android.os.Parcelable.Creator CREATOR = new defpackage.bho();
     private boolean A;
     private boolean B;
     private int C;
-    private String D;
+    private java.lang.String D;
     private boolean E;
     private int a;
-    private String b;
-    private Account c;
-    private Bundle d;
-    private String e;
-    private String f;
-    private Bitmap g;
+    private java.lang.String b;
+    private android.accounts.Account c;
+    private android.os.Bundle d;
+    private java.lang.String e;
+    private java.lang.String f;
+    private android.graphics.Bitmap g;
     private boolean h;
     private boolean i;
-    private List j;
-    @Deprecated
-    private Bundle k;
-    @Deprecated
-    private Bitmap l;
-    @Deprecated
+    private java.util.List j;
+    @java.lang.Deprecated
+    private android.os.Bundle k;
+    @java.lang.Deprecated
+    private android.graphics.Bitmap l;
+    @java.lang.Deprecated
     private byte[] m;
-    @Deprecated
+    @java.lang.Deprecated
     private int n;
-    @Deprecated
+    @java.lang.Deprecated
     private int o;
-    private String p;
-    private Uri q;
-    private List r;
-    private bgn s;
-    private List t;
+    private java.lang.String p;
+    private android.net.Uri q;
+    private java.util.List r;
+    private defpackage.bgn s;
+    private java.util.List t;
     private boolean u;
-    private ErrorReport v = new ErrorReport();
-    private TogglingData w;
+    private com.google.android.gms.feedback.ErrorReport v = new com.google.android.gms.feedback.ErrorReport();
+    private com.google.android.gms.googlehelp.internal.common.TogglingData w;
     private int x;
-    private PendingIntent y;
+    private android.app.PendingIntent y;
     private int z;
 
-    public GoogleHelp(int i2, String str, Account account, Bundle bundle, String str2, String str3, Bitmap bitmap, boolean z2, boolean z3, List list, Bundle bundle2, Bitmap bitmap2, byte[] bArr, int i3, int i4, String str4, Uri uri, List list2, int i5, bgn bgn, List list3, boolean z4, ErrorReport errorReport, TogglingData togglingData, int i6, PendingIntent pendingIntent, int i7, boolean z5, boolean z6, int i8, String str5, boolean z7) {
-        GoogleHelp googleHelp;
-        if (TextUtils.isEmpty(str)) {
-            throw new IllegalStateException("Help requires a non-empty appContext");
+    public GoogleHelp(int i2, java.lang.String str, android.accounts.Account account, android.os.Bundle bundle, java.lang.String str2, java.lang.String str3, android.graphics.Bitmap bitmap, boolean z2, boolean z3, java.util.List list, android.os.Bundle bundle2, android.graphics.Bitmap bitmap2, byte[] bArr, int i3, int i4, java.lang.String str4, android.net.Uri uri, java.util.List list2, int i5, defpackage.bgn bgn, java.util.List list3, boolean z4, com.google.android.gms.feedback.ErrorReport errorReport, com.google.android.gms.googlehelp.internal.common.TogglingData togglingData, int i6, android.app.PendingIntent pendingIntent, int i7, boolean z5, boolean z6, int i8, java.lang.String str5, boolean z7) {
+        com.google.android.gms.googlehelp.GoogleHelp googleHelp;
+        if (android.text.TextUtils.isEmpty(str)) {
+            throw new java.lang.IllegalStateException("Help requires a non-empty appContext");
         }
         this.a = i2;
         this.z = i7;
@@ -88,11 +71,11 @@ public final class GoogleHelp extends biq implements ReflectedParcelable {
         this.q = uri;
         this.r = list2;
         if (this.a < 4) {
-            bgn = new bgn();
+            bgn = new defpackage.bgn();
             bgn.a = i5;
             googleHelp = this;
         } else if (bgn == null) {
-            bgn = new bgn();
+            bgn = new defpackage.bgn();
             googleHelp = this;
         } else {
             googleHelp = this;
@@ -108,51 +91,51 @@ public final class GoogleHelp extends biq implements ReflectedParcelable {
         this.x = i6;
     }
 
-    public final void writeToParcel(Parcel parcel, int i2) {
-        int q2 = bjr.q(parcel, 20293);
-        bjr.c(parcel, 1, this.a);
-        bjr.a(parcel, 2, this.b);
-        bjr.a(parcel, 3, this.c, i2);
-        bjr.a(parcel, 4, this.d);
-        bjr.a(parcel, 5, this.h);
-        bjr.a(parcel, 6, this.i);
-        bjr.a(parcel, 7, this.j);
-        bjr.a(parcel, 10, this.k);
-        bjr.a(parcel, 11, this.l, i2);
-        bjr.a(parcel, 14, this.p);
-        bjr.a(parcel, 15, this.q, i2);
-        bjr.b(parcel, 16, this.r);
-        bjr.c(parcel, 17, 0);
-        bjr.b(parcel, 18, this.t);
-        bjr.a(parcel, 19, this.m);
-        bjr.c(parcel, 20, this.n);
-        bjr.c(parcel, 21, this.o);
-        bjr.a(parcel, 22, this.u);
-        bjr.a(parcel, 23, this.v, i2);
-        bjr.a(parcel, 25, this.s, i2);
-        bjr.a(parcel, 28, this.e);
-        bjr.a(parcel, 31, this.w, i2);
-        bjr.c(parcel, 32, this.x);
-        bjr.a(parcel, 33, this.y, i2);
-        bjr.a(parcel, 34, this.f);
-        bjr.a(parcel, 35, this.g, i2);
-        bjr.c(parcel, 36, this.z);
-        bjr.a(parcel, 37, this.A);
-        bjr.a(parcel, 38, this.B);
-        bjr.c(parcel, 39, this.C);
-        bjr.a(parcel, 40, this.D);
-        bjr.a(parcel, 41, this.E);
-        bjr.r(parcel, q2);
+    public final void writeToParcel(android.os.Parcel parcel, int i2) {
+        int q2 = defpackage.bjr.q(parcel, 20293);
+        defpackage.bjr.c(parcel, 1, this.a);
+        defpackage.bjr.a(parcel, 2, this.b);
+        defpackage.bjr.a(parcel, 3, (android.os.Parcelable) this.c, i2);
+        defpackage.bjr.a(parcel, 4, this.d);
+        defpackage.bjr.a(parcel, 5, this.h);
+        defpackage.bjr.a(parcel, 6, this.i);
+        defpackage.bjr.a(parcel, 7, this.j);
+        defpackage.bjr.a(parcel, 10, this.k);
+        defpackage.bjr.a(parcel, 11, (android.os.Parcelable) this.l, i2);
+        defpackage.bjr.a(parcel, 14, this.p);
+        defpackage.bjr.a(parcel, 15, (android.os.Parcelable) this.q, i2);
+        defpackage.bjr.b(parcel, 16, this.r);
+        defpackage.bjr.c(parcel, 17, 0);
+        defpackage.bjr.b(parcel, 18, this.t);
+        defpackage.bjr.a(parcel, 19, this.m);
+        defpackage.bjr.c(parcel, 20, this.n);
+        defpackage.bjr.c(parcel, 21, this.o);
+        defpackage.bjr.a(parcel, 22, this.u);
+        defpackage.bjr.a(parcel, 23, (android.os.Parcelable) this.v, i2);
+        defpackage.bjr.a(parcel, 25, (android.os.Parcelable) this.s, i2);
+        defpackage.bjr.a(parcel, 28, this.e);
+        defpackage.bjr.a(parcel, 31, (android.os.Parcelable) this.w, i2);
+        defpackage.bjr.c(parcel, 32, this.x);
+        defpackage.bjr.a(parcel, 33, (android.os.Parcelable) this.y, i2);
+        defpackage.bjr.a(parcel, 34, this.f);
+        defpackage.bjr.a(parcel, 35, (android.os.Parcelable) this.g, i2);
+        defpackage.bjr.c(parcel, 36, this.z);
+        defpackage.bjr.a(parcel, 37, this.A);
+        defpackage.bjr.a(parcel, 38, this.B);
+        defpackage.bjr.c(parcel, 39, this.C);
+        defpackage.bjr.a(parcel, 40, this.D);
+        defpackage.bjr.a(parcel, 41, this.E);
+        defpackage.bjr.r(parcel, q2);
     }
 
-    public static Bitmap a(Activity activity) {
+    public static android.graphics.Bitmap a(android.app.Activity activity) {
         try {
-            View rootView = activity.getWindow().getDecorView().getRootView();
-            Bitmap createBitmap = Bitmap.createBitmap(rootView.getWidth(), rootView.getHeight(), Bitmap.Config.RGB_565);
-            rootView.draw(new Canvas(createBitmap));
+            android.view.View rootView = activity.getWindow().getDecorView().getRootView();
+            android.graphics.Bitmap createBitmap = android.graphics.Bitmap.createBitmap(rootView.getWidth(), rootView.getHeight(), android.graphics.Bitmap.Config.RGB_565);
+            rootView.draw(new android.graphics.Canvas(createBitmap));
             return createBitmap;
-        } catch (Error | Exception e2) {
-            Log.w("gH_GoogleHelp", "Get screenshot failed!", e2);
+        } catch (java.lang.Error | java.lang.Exception e2) {
+            android.util.Log.w("gH_GoogleHelp", "Get screenshot failed!", e2);
             return null;
         }
     }

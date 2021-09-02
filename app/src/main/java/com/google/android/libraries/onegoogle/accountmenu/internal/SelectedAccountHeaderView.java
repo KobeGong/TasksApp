@@ -1,81 +1,59 @@
 package com.google.android.libraries.onegoogle.accountmenu.internal;
 
-import android.content.Context;
-import android.content.res.TypedArray;
-import android.util.AttributeSet;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
-
-import com.google.android.apps.tasks.R;
-
-import java.util.Iterator;
-import java.util.LinkedHashSet;
-
-import defpackage.cdf;
-import defpackage.cdj;
-import defpackage.cdl;
-import defpackage.cei;
-import defpackage.cer;
-import defpackage.cfb;
-import defpackage.cfw;
-
 /* compiled from: PG */
-public class SelectedAccountHeaderView extends FrameLayout {
-    public final View a;
-    public final View b;
-    public final TextView c;
+public class SelectedAccountHeaderView extends android.widget.FrameLayout {
+    public final android.view.View a;
+    public final android.view.View b;
+    public final android.widget.TextView c;
     public final boolean d;
-    public final ImageView e;
-    public final ImageView f;
-    public final ImageView g;
+    public final android.widget.ImageView e;
+    public final android.widget.ImageView f;
+    public final android.widget.ImageView g;
     public boolean h;
     public boolean i;
-    public cer j;
-    public cdj k;
-    public cei l;
-    public cdf m;
-    public cdl n;
-    public cfb o;
-    private final TextView p;
-    private final TextView q;
+    public defpackage.cer j;
+    public defpackage.cdj k;
+    public defpackage.cei l;
+    public defpackage.cdf m;
+    public defpackage.cdl n;
+    public defpackage.cfb o;
+    private final android.widget.TextView p;
+    private final android.widget.TextView q;
 
-    public SelectedAccountHeaderView(Context context) {
+    public SelectedAccountHeaderView(android.content.Context context) {
         this(context, null);
     }
 
     /* JADX INFO: finally extract failed */
-    public SelectedAccountHeaderView(Context context, AttributeSet attributeSet) {
+    public SelectedAccountHeaderView(android.content.Context context, android.util.AttributeSet attributeSet) {
         super(context, attributeSet);
-        LayoutInflater.from(context).inflate(R.layout.selected_account_header, this);
-        this.a = findViewById(R.id.no_selected_account);
-        this.b = findViewById(R.id.has_selected_account);
-        this.c = (TextView) findViewById(R.id.no_selected_account_text);
-        this.e = (ImageView) findViewById(R.id.avatar_recents_one);
-        this.f = (ImageView) findViewById(R.id.avatar_recents_two);
-        this.g = (ImageView) findViewById(R.id.close_button);
-        this.p = (TextView) findViewById(R.id.account_display_name);
-        this.q = (TextView) findViewById(R.id.account_name);
-        TypedArray obtainStyledAttributes = context.getTheme().obtainStyledAttributes(attributeSet, cfw.a, 0, 0);
+        android.view.LayoutInflater.from(context).inflate(2131034203, this);
+        this.a = findViewById(2131755340);
+        this.b = findViewById(2131755344);
+        this.c = (android.widget.TextView) findViewById(2131755343);
+        this.e = (android.widget.ImageView) findViewById(2131755345);
+        this.f = (android.widget.ImageView) findViewById(2131755346);
+        this.g = (android.widget.ImageView) findViewById(2131755227);
+        this.p = (android.widget.TextView) findViewById(2131755224);
+        this.q = (android.widget.TextView) findViewById(2131755225);
+        android.content.res.TypedArray obtainStyledAttributes = context.getTheme().obtainStyledAttributes(attributeSet, defpackage.cfw.a, 0, 0);
         try {
-            this.d = obtainStyledAttributes.getBoolean(cfw.b, false);
+            this.d = obtainStyledAttributes.getBoolean(defpackage.cfw.b, false);
             obtainStyledAttributes.recycle();
-            findViewById(R.id.close_and_recents).setVisibility(this.d ? 0 : 8);
+            findViewById(2131755341).setVisibility(this.d ? 0 : 8);
         } catch (Throwable th) {
             obtainStyledAttributes.recycle();
             throw th;
         }
     }
 
-    public void setOnClickListener(View.OnClickListener onClickListener) {
-        cky.b(onClickListener == null || this.d, "Click listener should only be set if the header is expandable");
+    public void setOnClickListener(android.view.View.OnClickListener onClickListener) {
+        defpackage.cky.b(onClickListener == null || this.d, (java.lang.Object) "Click listener should only be set if the header is expandable");
         super.setOnClickListener(onClickListener);
     }
 
     public final void a(boolean z) {
-        cky.b(this.d, "Cannot change expand state on non expandable view");
+        defpackage.cky.b(this.d, (java.lang.Object) "Cannot change expand state on non expandable view");
         if (this.h != z) {
             this.h = z;
             a();
@@ -83,43 +61,41 @@ public class SelectedAccountHeaderView extends FrameLayout {
         }
     }
 
-    public final void a(View.OnClickListener onClickListener) {
+    public final void a(android.view.View.OnClickListener onClickListener) {
         this.g.setOnClickListener(onClickListener);
     }
 
     public final void a() {
         int i2;
         if (this.d && this.n != null) {
-            TextView textView = this.c;
+            android.widget.TextView textView = this.c;
             if (this.n.b()) {
                 if (this.h) {
-                    i2 = R.drawable.quantum_ic_keyboard_arrow_up_grey600_24;
+                    i2 = 2130837678;
                 } else {
-                    i2 = R.drawable.quantum_ic_keyboard_arrow_down_grey600_24;
+                    i2 = 2130837676;
                 }
                 textView = this.q.getVisibility() == 0 ? this.q : this.p;
                 if (textView == this.q) {
-                    vo.a(this.p, 0);
+                    defpackage.vo.a(this.p, 0);
                 }
-            } else if (this.n.a() > 0) {
-                i2 = this.h ? R.drawable.quantum_ic_keyboard_arrow_up_googblue_24 : R.drawable.quantum_ic_keyboard_arrow_down_googblue_24;
             } else {
-                i2 = 0;
+                i2 = this.n.a() > 0 ? this.h ? 2130837677 : 2130837675 : 0;
             }
-            vo.a(textView, i2);
+            defpackage.vo.a(textView, i2);
         }
     }
 
     public final void b() {
-        Object obj;
-        Object obj2 = null;
+        java.lang.Object obj;
+        java.lang.Object obj2 = null;
         if (this.d) {
             if (this.i || this.h) {
                 this.e.setVisibility(8);
                 this.f.setVisibility(8);
                 return;
             }
-            LinkedHashSet linkedHashSet = new LinkedHashSet();
+            java.util.LinkedHashSet linkedHashSet = new java.util.LinkedHashSet();
             if (this.n.b()) {
                 if (this.n.d()) {
                     linkedHashSet.add(this.n.e());
@@ -130,7 +106,7 @@ public class SelectedAccountHeaderView extends FrameLayout {
                 linkedHashSet.addAll(this.n.c);
                 linkedHashSet.remove(this.n.c());
             }
-            Iterator it = linkedHashSet.iterator();
+            java.util.Iterator it = linkedHashSet.iterator();
             if (it.hasNext()) {
                 obj = it.next();
             } else {
@@ -144,14 +120,14 @@ public class SelectedAccountHeaderView extends FrameLayout {
         }
     }
 
-    private final void a(ImageView imageView, Object obj) {
+    private final void a(android.widget.ImageView imageView, java.lang.Object obj) {
         if (obj == null) {
             imageView.setVisibility(8);
             return;
         }
         imageView.setVisibility(0);
         this.l.a(imageView, obj, imageView.getWidth());
-        imageView.setContentDescription(getContext().getString(R.string.og_switch_account_to_recent_a11y, ((cdu) obj).b()));
-        imageView.setOnClickListener(new cfy(this, obj));
+        imageView.setContentDescription(getContext().getString(2131951784, new java.lang.Object[]{((defpackage.cdu) obj).b()}));
+        imageView.setOnClickListener(new defpackage.cfy(this, obj));
     }
 }

@@ -1,9 +1,7 @@
 package defpackage;
 
-import java.io.InputStream;
-
-/* renamed from: dzr  reason: default package */
+/* renamed from: dzr reason: default package */
 /* compiled from: PG */
 public interface dzr {
-    InputStream a();
+    java.io.InputStream a();
 }

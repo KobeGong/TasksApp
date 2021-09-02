@@ -1,17 +1,17 @@
 package defpackage;
 
-/* renamed from: bli  reason: default package */
+/* renamed from: bli reason: default package */
 /* compiled from: PG */
-public final class bli extends bkw implements Cloneable {
-    private static volatile bli[] c;
-    private String d = "";
-    private String e = "";
+public final class bli extends defpackage.bkw implements java.lang.Cloneable {
+    private static volatile defpackage.bli[] c;
+    private java.lang.String d;
+    private java.lang.String e;
 
-    public static bli[] e() {
+    public static defpackage.bli[] e() {
         if (c == null) {
-            synchronized (bla.a) {
+            synchronized (defpackage.bla.a) {
                 if (c == null) {
-                    c = new bli[0];
+                    c = new defpackage.bli[0];
                 }
             }
         }
@@ -19,28 +19,30 @@ public final class bli extends bkw implements Cloneable {
     }
 
     public bli() {
+        this.d = "";
+        this.e = "";
         this.a = null;
         this.b = -1;
     }
 
     /* access modifiers changed from: private */
     /* renamed from: f */
-    public final bli clone() {
+    public final defpackage.bli clone() {
         try {
-            return (bli) super.clone();
-        } catch (CloneNotSupportedException e2) {
-            throw new AssertionError(e2);
+            return (defpackage.bli) super.clone();
+        } catch (java.lang.CloneNotSupportedException e2) {
+            throw new java.lang.AssertionError(e2);
         }
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof bli)) {
+        if (!(obj instanceof defpackage.bli)) {
             return false;
         }
-        bli bli = (bli) obj;
+        defpackage.bli bli = (defpackage.bli) obj;
         if (this.d == null) {
             if (bli.d != null) {
                 return false;
@@ -55,10 +57,13 @@ public final class bli extends bkw implements Cloneable {
         } else if (!this.e.equals(bli.e)) {
             return false;
         }
-        if (this.a == null || this.a.a()) {
-            return bli.a == null || bli.a.a();
+        if (this.a != null && !this.a.a()) {
+            return this.a.equals(bli.a);
         }
-        return this.a.equals(bli.a);
+        if (bli.a == null || bli.a.a()) {
+            return true;
+        }
+        return false;
     }
 
     public final int hashCode() {
@@ -70,8 +75,7 @@ public final class bli extends bkw implements Cloneable {
         return hashCode + i;
     }
 
-    @Override // defpackage.blb, defpackage.bkw
-    public final void a(bku bku) {
+    public final void a(defpackage.bku bku) {
         if (this.d != null && !this.d.equals("")) {
             bku.a(1, this.d);
         }
@@ -82,25 +86,22 @@ public final class bli extends bkw implements Cloneable {
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.blb, defpackage.bkw
     public final int a() {
         int a = super.a();
         if (this.d != null && !this.d.equals("")) {
-            a += bku.b(1, this.d);
+            a += defpackage.bku.b(1, this.d);
         }
         if (this.e == null || this.e.equals("")) {
             return a;
         }
-        return a + bku.b(2, this.e);
+        return a + defpackage.bku.b(2, this.e);
     }
 
-    @Override // defpackage.bkw
-    public final /* synthetic */ bkw b() {
-        return (bli) clone();
+    public final /* synthetic */ defpackage.bkw b() {
+        return (defpackage.bli) clone();
     }
 
-    @Override // defpackage.blb, defpackage.bkw
-    public final /* synthetic */ blb c() {
-        return (bli) clone();
+    public final /* synthetic */ defpackage.blb c() {
+        return (defpackage.bli) clone();
     }
 }

@@ -1,14 +1,12 @@
 package org.chromium.base;
 
-import org.chromium.base.annotations.CalledByNative;
-
 /* compiled from: PG */
 public class MemoryPressureListener {
     private static native void nativeOnMemoryPressure(int i);
 
-    @CalledByNative
+    @org.chromium.base.annotations.CalledByNative
     public static void registerSystemCallback() {
-        ehw.a.registerComponentCallbacks(new egt());
+        defpackage.ehw.a.registerComponentCallbacks(new defpackage.egt());
     }
 
     public static void a(int i) {

@@ -1,21 +1,15 @@
 package defpackage;
 
-import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.Executor;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.logging.Logger;
-
-/* access modifiers changed from: package-private */
-/* renamed from: eag  reason: default package */
+/* renamed from: eag reason: default package */
 /* compiled from: PG */
-public final class eag implements Executor {
-    public static final Logger a = Logger.getLogger(eag.class.getName());
-    public final BlockingQueue b = new LinkedBlockingQueue();
+final class eag implements java.util.concurrent.Executor {
+    public static final java.util.logging.Logger a = java.util.logging.Logger.getLogger(defpackage.eag.class.getName());
+    public final java.util.concurrent.BlockingQueue b = new java.util.concurrent.LinkedBlockingQueue();
 
     eag() {
     }
 
-    public final void execute(Runnable runnable) {
+    public final void execute(java.lang.Runnable runnable) {
         this.b.add(runnable);
     }
 }

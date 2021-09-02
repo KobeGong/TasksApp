@@ -1,22 +1,21 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: aup  reason: default package */
-public final /* synthetic */ class aup implements Runnable {
-    private final auj a;
-    private final cyi b;
+/* renamed from: aup reason: default package */
+final /* synthetic */ class aup implements java.lang.Runnable {
+    private final TasksFragment a;
+    private final defpackage.cyi b;
 
-    aup(auj auj, cyi cyi) {
+    aup(TasksFragment auj, defpackage.cyi cyi) {
         this.a = auj;
         this.b = cyi;
     }
 
     public final void run() {
-        auj auj = this.a;
-        cyi cyi = this.b;
-        if (auj.rootView != null) {
-            auj.rootView.post(new aus(auj));
-            if (!ajd.a(cyi)) {
+        TasksFragment auj = this.a;
+        defpackage.cyi cyi = this.b;
+        if (auj.a != null) {
+            auj.a.post(new defpackage.aus(auj));
+            if (!defpackage.ajd.a((java.util.concurrent.Future) cyi)) {
                 auj.U.animate().alpha(1.0f);
             }
         }

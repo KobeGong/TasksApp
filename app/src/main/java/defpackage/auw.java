@@ -1,19 +1,15 @@
 package defpackage;
 
-import android.support.v7.widget.RecyclerView;
-import android.view.View;
-
-/* renamed from: auw  reason: default package */
+/* renamed from: auw reason: default package */
 /* compiled from: PG */
-final class auw extends afk {
-    private final /* synthetic */ auj a;
+final class auw extends defpackage.afk {
+    private final /* synthetic */ TasksFragment a;
 
-    auw(auj auj) {
+    auw(TasksFragment auj) {
         this.a = auj;
     }
 
-    @Override // defpackage.afk
-    public final void a(RecyclerView recyclerView) {
-        this.a.b((View) recyclerView);
+    public final void a(android.support.v7.widget.RecyclerView recyclerView) {
+        this.a.b(recyclerView);
     }
 }

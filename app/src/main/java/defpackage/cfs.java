@@ -1,33 +1,30 @@
 package defpackage;
 
-import android.view.animation.Animation;
-
-/* access modifiers changed from: package-private */
-/* renamed from: cfs  reason: default package */
+/* renamed from: cfs reason: default package */
 /* compiled from: PG */
-public final class cfs implements Animation.AnimationListener {
+final class cfs implements android.view.animation.Animation.AnimationListener {
     private final /* synthetic */ boolean a;
-    private final /* synthetic */ cfr b;
+    private final /* synthetic */ defpackage.cfr b;
 
-    cfs(cfr cfr, boolean z) {
+    cfs(defpackage.cfr cfr, boolean z) {
         this.b = cfr;
         this.a = z;
     }
 
-    public final void onAnimationStart(Animation animation) {
+    public final void onAnimationStart(android.view.animation.Animation animation) {
         if (this.a) {
             this.b.a.d();
             this.b.a.b.setVisibility(0);
         }
     }
 
-    public final void onAnimationEnd(Animation animation) {
+    public final void onAnimationEnd(android.view.animation.Animation animation) {
         if (!this.a) {
             this.b.a.d();
             this.b.a.b.setVisibility(8);
         }
     }
 
-    public final void onAnimationRepeat(Animation animation) {
+    public final void onAnimationRepeat(android.view.animation.Animation animation) {
     }
 }

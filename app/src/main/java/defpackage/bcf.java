@@ -1,19 +1,16 @@
 package defpackage;
 
-import android.app.Dialog;
-
-/* renamed from: bcf  reason: default package */
+/* renamed from: bcf reason: default package */
 /* compiled from: PG */
-final class bcf extends bas {
-    private /* synthetic */ Dialog a;
-    private /* synthetic */ bce b;
+final class bcf extends defpackage.bas {
+    private /* synthetic */ android.app.Dialog a;
+    private /* synthetic */ defpackage.bce b;
 
-    bcf(bce bce, Dialog dialog) {
+    bcf(defpackage.bce bce, android.app.Dialog dialog) {
         this.b = bce;
         this.a = dialog;
     }
 
-    @Override // defpackage.bas
     public final void a() {
         this.b.a.f();
         if (this.a.isShowing()) {

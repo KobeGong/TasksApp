@@ -1,11 +1,9 @@
 package defpackage;
 
-import java.io.IOException;
-
-/* renamed from: cwi  reason: default package */
+/* renamed from: cwi reason: default package */
 /* compiled from: PG */
-public final class cwi extends IOException {
-    cwi(String str) {
+public final class cwi extends java.io.IOException {
+    cwi(java.lang.String str) {
         super(str);
     }
 }

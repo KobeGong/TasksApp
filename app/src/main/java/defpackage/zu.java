@@ -1,9 +1,9 @@
 package defpackage;
 
-/* renamed from: zu  reason: default package */
+/* renamed from: zu reason: default package */
 /* compiled from: PG */
 public interface zu {
-    void a(MenuBuilder zeVar, boolean z);
+    void a(defpackage.ze zeVar, boolean z);
 
-    boolean a(MenuBuilder zeVar);
+    boolean a(defpackage.ze zeVar);
 }

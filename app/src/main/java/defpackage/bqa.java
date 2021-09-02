@@ -1,20 +1,16 @@
 package defpackage;
 
-import java.util.ArrayDeque;
-import java.util.concurrent.Executor;
-
-/* renamed from: bqa  reason: default package */
+/* renamed from: bqa reason: default package */
 /* compiled from: PG */
-public final class bqa extends bpv {
-    public final Object a = new Object();
-    public final bpz b = new bpz();
+public final class bqa extends defpackage.bpv {
+    public final java.lang.Object a = new java.lang.Object();
+    public final defpackage.bpz b = new defpackage.bpz();
     public boolean c;
-    public Exception d;
+    public java.lang.Exception d;
 
     bqa() {
     }
 
-    @Override // defpackage.bpv
     public final boolean a() {
         boolean z;
         synchronized (this.a) {
@@ -23,22 +19,20 @@ public final class bqa extends bpv {
         return z;
     }
 
-    @Override // defpackage.bpv
-    public final Exception b() {
-        Exception exc;
+    public final java.lang.Exception b() {
+        java.lang.Exception exc;
         synchronized (this.a) {
             exc = this.d;
         }
         return exc;
     }
 
-    @Override // defpackage.bpv
-    public final bpv a(Executor executor, bpu bpu) {
-        bpz bpz = this.b;
-        bpy bpy = new bpy(executor, bpu);
+    public final defpackage.bpv a(java.util.concurrent.Executor executor, defpackage.bpu bpu) {
+        defpackage.bpz bpz = this.b;
+        defpackage.bpy bpy = new defpackage.bpy(executor, bpu);
         synchronized (bpz.a) {
             if (bpz.b == null) {
-                bpz.b = new ArrayDeque();
+                bpz.b = new java.util.ArrayDeque();
             }
             bpz.b.add(bpy);
         }
@@ -63,9 +57,9 @@ public final class bqa extends bpv {
         return z;
     }
 
-    public final boolean a(Exception exc) {
+    public final boolean a(java.lang.Exception exc) {
         boolean z = true;
-        azb.b(exc, "Exception must not be null");
+        defpackage.azb.b((java.lang.Object) exc, (java.lang.Object) "Exception must not be null");
         synchronized (this.a) {
             if (this.c) {
                 z = false;
@@ -78,8 +72,8 @@ public final class bqa extends bpv {
         return z;
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public final void d() {
-        azb.a(!this.c, "Task is already complete");
+        defpackage.azb.a(!this.c, (java.lang.Object) "Task is already complete");
     }
 }

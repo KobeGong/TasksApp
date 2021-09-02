@@ -1,17 +1,14 @@
 package defpackage;
 
-import android.content.DialogInterface;
-import com.google.android.apps.tasks.ui.TaskListsActivity;
+/* renamed from: aoz reason: default package */
+public final /* synthetic */ class aoz implements android.content.DialogInterface.OnClickListener {
+    private final com.google.android.apps.tasks.ui.TaskListsActivity a;
 
-/* renamed from: aoz  reason: default package */
-public final /* synthetic */ class aoz implements DialogInterface.OnClickListener {
-    private final TaskListsActivity a;
-
-    public aoz(TaskListsActivity taskListsActivity) {
+    public aoz(com.google.android.apps.tasks.ui.TaskListsActivity taskListsActivity) {
         this.a = taskListsActivity;
     }
 
-    public final void onClick(DialogInterface dialogInterface, int i) {
-        kq.a(this.a, new String[]{"android.permission.ACCESS_FINE_LOCATION"});
+    public final void onClick(android.content.DialogInterface dialogInterface, int i) {
+        defpackage.kq.a((android.app.Activity) this.a, new java.lang.String[]{"android.permission.ACCESS_FINE_LOCATION"});
     }
 }

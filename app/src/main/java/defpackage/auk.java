@@ -1,14 +1,13 @@
 package defpackage;
 
-/* renamed from: auk  reason: default package */
-final /* synthetic */ class auk implements vn {
-    private final auj a;
+/* renamed from: auk reason: default package */
+final /* synthetic */ class auk implements defpackage.vn {
+    private final TasksFragment a;
 
-    auk(auj auj) {
+    auk(TasksFragment auj) {
         this.a = auj;
     }
 
-    @Override // defpackage.vn
     public final void a() {
         this.a.P();
     }

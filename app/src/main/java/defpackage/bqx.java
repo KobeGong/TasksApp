@@ -1,29 +1,27 @@
 package defpackage;
 
-import android.content.Context;
-
-/* renamed from: bqx  reason: default package */
+/* renamed from: bqx reason: default package */
 /* compiled from: PG */
 public final class bqx {
-    public ayq a;
-    public brr b;
-    private final Context c;
+    public defpackage.ayq a;
+    public defpackage.brr b;
+    private final android.content.Context c;
 
-    public final bqw a() {
-        return new brs(this.a.a(), this.b, (byte) 0);
+    public final defpackage.bqw a() {
+        return new defpackage.brs(this.a.a(), this.b, 0);
     }
 
-    private bqx(Context context) {
-        this(context, new brr());
+    private bqx(android.content.Context context) {
+        this(context, new defpackage.brr());
     }
 
-    private bqx(Context context, brr brr) {
+    private bqx(android.content.Context context, defpackage.brr brr) {
         this.c = context;
-        this.a = new ayq(context);
+        this.a = new defpackage.ayq(context);
         this.b = brr;
     }
 
-    public bqx(Context context, byte b2) {
+    public bqx(android.content.Context context, byte b2) {
         this(context);
     }
 }

@@ -1,34 +1,29 @@
 package defpackage;
 
-import android.accounts.Account;
-import java.io.IOException;
-
-/* renamed from: aja  reason: default package */
+/* renamed from: aja reason: default package */
 /* compiled from: PG */
-public final class aja extends cri {
-    private String a = this.b;
-    private final /* synthetic */ String b;
-    private final /* synthetic */ Account c;
-    private final /* synthetic */ String d;
-    private final /* synthetic */ aiz e;
+public final class aja extends defpackage.cri {
+    private java.lang.String a = this.b;
+    private final /* synthetic */ java.lang.String b;
+    private final /* synthetic */ android.accounts.Account c;
+    private final /* synthetic */ java.lang.String d;
+    private final /* synthetic */ defpackage.aiz e;
 
-    /* JADX INFO: super call moved to the top of the method (can break code semantics) */
-    public aja(aiz aiz, crg crg, String str, Account account, String str2) {
-        super(crg);
+    public aja(defpackage.aiz aiz, defpackage.crg crg, java.lang.String str, android.accounts.Account account, java.lang.String str2) {
         this.e = aiz;
         this.b = str;
         this.c = account;
         this.d = str2;
+        super(crg);
     }
 
-    @Override // defpackage.crj
-    public final crg a() {
+    public final defpackage.crg a() {
         try {
-            avb.a(this.e.a.getApplicationContext(), this.a);
-            this.a = aiz.a(this.e.a, this.c, this.d);
-            return new crg(this.a);
-        } catch (ava e2) {
-            throw new IOException("Unable to refresh auth token", e2);
+            defpackage.avb.a(this.e.a.getApplicationContext(), this.a);
+            this.a = defpackage.aiz.a(this.e.a, this.c, this.d);
+            return new defpackage.crg(this.a);
+        } catch (defpackage.ava e2) {
+            throw new java.io.IOException("Unable to refresh auth token", e2);
         }
     }
 }

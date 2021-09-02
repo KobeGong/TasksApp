@@ -1,20 +1,16 @@
 package defpackage;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-
-/* renamed from: dpk  reason: default package */
+/* renamed from: dpk reason: default package */
 /* compiled from: PG */
-final class dpk implements Iterable {
+final class dpk implements java.lang.Iterable {
     dpk() {
     }
 
-    @Override // java.lang.Iterable
-    public final Iterator iterator() {
-        ArrayList arrayList = new ArrayList();
+    public final java.util.Iterator iterator() {
+        java.util.ArrayList arrayList = new java.util.ArrayList();
         try {
-            arrayList.add(Class.forName("dut"));
-        } catch (ClassNotFoundException e) {
+            arrayList.add(java.lang.Class.forName("dut"));
+        } catch (java.lang.ClassNotFoundException e) {
         }
         return arrayList.iterator();
     }

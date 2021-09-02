@@ -1,38 +1,31 @@
 package defpackage;
 
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentSender;
-import android.util.AttributeSet;
-import android.view.View;
-
-/* renamed from: kz  reason: default package */
+/* renamed from: kz reason: default package */
 /* compiled from: PG */
-abstract class kz extends nv {
+abstract class kz extends defpackage.nv {
     kz() {
     }
 
-    /* access modifiers changed from: package-private */
-    public abstract View a(View view, String str, Context context, AttributeSet attributeSet);
+    /* access modifiers changed from: 0000 */
+    public abstract android.view.View a(android.view.View view, java.lang.String str, android.content.Context context, android.util.AttributeSet attributeSet);
 
-    public View onCreateView(View view, String str, Context context, AttributeSet attributeSet) {
-        View a = a(view, str, context, attributeSet);
+    public android.view.View onCreateView(android.view.View view, java.lang.String str, android.content.Context context, android.util.AttributeSet attributeSet) {
+        android.view.View a = a(view, str, context, attributeSet);
         if (a == null) {
             return super.onCreateView(view, str, context, attributeSet);
         }
         return a;
     }
 
-    public View onCreateView(String str, Context context, AttributeSet attributeSet) {
-        View a = a(null, str, context, attributeSet);
+    public android.view.View onCreateView(java.lang.String str, android.content.Context context, android.util.AttributeSet attributeSet) {
+        android.view.View a = a(null, str, context, attributeSet);
         if (a == null) {
             return super.onCreateView(str, context, attributeSet);
         }
         return a;
     }
 
-    @Override // android.app.Activity
-    public void startIntentSenderForResult(IntentSender intentSender, int i, Intent intent, int i2, int i3, int i4) {
+    public void startIntentSenderForResult(android.content.IntentSender intentSender, int i, android.content.Intent intent, int i2, int i3, int i4) {
         if (i != -1) {
             a(i);
         }
@@ -41,7 +34,7 @@ abstract class kz extends nv {
 
     static void a(int i) {
         if ((-65536 & i) != 0) {
-            throw new IllegalArgumentException("Can only use lower 16 bits for requestCode");
+            throw new java.lang.IllegalArgumentException("Can only use lower 16 bits for requestCode");
         }
     }
 }

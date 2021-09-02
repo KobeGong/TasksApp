@@ -1,16 +1,15 @@
 package defpackage;
 
-/* renamed from: ccc  reason: default package */
+/* renamed from: ccc reason: default package */
 /* compiled from: PG */
-public final class ccc implements ecz {
-    private final ecz a;
+public final class ccc implements defpackage.ecz {
+    private final defpackage.ecz a;
 
-    public ccc(ecz ecz) {
+    public ccc(defpackage.ecz ecz) {
         this.a = ecz;
     }
 
-    @Override // defpackage.ecz
-    public final /* synthetic */ Object a() {
-        return new cbk((cbm) this.a.a());
+    public final /* synthetic */ java.lang.Object a() {
+        return new defpackage.cbk((defpackage.cbm) this.a.a());
     }
 }

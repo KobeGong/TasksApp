@@ -1,33 +1,24 @@
 package defpackage;
 
-import android.content.Context;
-import android.content.res.ColorStateList;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
-import android.util.AttributeSet;
-import android.view.inputmethod.EditorInfo;
-import android.view.inputmethod.InputConnection;
-import android.widget.TextView;
-
-/* renamed from: ack  reason: default package */
+/* renamed from: ack reason: default package */
 /* compiled from: PG */
-public class ack extends TextView implements sm, tz {
-    private final abg a;
-    private final aci c;
+public class ack extends android.widget.TextView implements defpackage.sm, defpackage.tz {
+    private final defpackage.abg a;
+    private final defpackage.aci c;
 
-    public ack(Context context) {
+    public ack(android.content.Context context) {
         this(context, null);
     }
 
-    public ack(Context context, AttributeSet attributeSet) {
+    public ack(android.content.Context context, android.util.AttributeSet attributeSet) {
         this(context, attributeSet, 16842884);
     }
 
-    public ack(Context context, AttributeSet attributeSet, int i) {
-        super(agt.a(context), attributeSet, i);
-        this.a = new abg(this);
+    public ack(android.content.Context context, android.util.AttributeSet attributeSet, int i) {
+        super(defpackage.agt.a(context), attributeSet, i);
+        this.a = new defpackage.abg(this);
         this.a.a(attributeSet, i);
-        this.c = aci.a(this);
+        this.c = defpackage.aci.a((android.widget.TextView) this);
         this.c.a(attributeSet, i);
         this.c.a();
     }
@@ -39,44 +30,40 @@ public class ack extends TextView implements sm, tz {
         }
     }
 
-    public void setBackgroundDrawable(Drawable drawable) {
+    public void setBackgroundDrawable(android.graphics.drawable.Drawable drawable) {
         super.setBackgroundDrawable(drawable);
         if (this.a != null) {
             this.a.a();
         }
     }
 
-    @Override // defpackage.sm
-    public final void a(ColorStateList colorStateList) {
+    public final void a(android.content.res.ColorStateList colorStateList) {
         if (this.a != null) {
             this.a.a(colorStateList);
         }
     }
 
-    @Override // defpackage.sm
-    public final ColorStateList d_() {
+    public final android.content.res.ColorStateList d_() {
         if (this.a != null) {
             return this.a.b();
         }
         return null;
     }
 
-    @Override // defpackage.sm
-    public final void a(PorterDuff.Mode mode) {
+    public final void a(android.graphics.PorterDuff.Mode mode) {
         if (this.a != null) {
             this.a.a(mode);
         }
     }
 
-    @Override // defpackage.sm
-    public final PorterDuff.Mode b() {
+    public final android.graphics.PorterDuff.Mode b() {
         if (this.a != null) {
             return this.a.c();
         }
         return null;
     }
 
-    public void setTextAppearance(Context context, int i) {
+    public void setTextAppearance(android.content.Context context, int i) {
         super.setTextAppearance(context, i);
         if (this.c != null) {
             this.c.a(context, i);
@@ -111,7 +98,7 @@ public class ack extends TextView implements sm, tz {
     }
 
     /* access modifiers changed from: protected */
-    public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+    public void onTextChanged(java.lang.CharSequence charSequence, int i, int i2, int i3) {
         super.onTextChanged(charSequence, i, i2, i3);
         if (this.c != null && !b && this.c.b.d()) {
             this.c.b.c();
@@ -144,12 +131,15 @@ public class ack extends TextView implements sm, tz {
 
     public int getAutoSizeTextType() {
         if (b) {
-            return super.getAutoSizeTextType() == 1 ? 1 : 0;
-        }
-        if (this.c != null) {
+            if (super.getAutoSizeTextType() == 1) {
+                return 1;
+            }
+            return 0;
+        } else if (this.c != null) {
             return this.c.b.a;
+        } else {
+            return 0;
         }
-        return 0;
     }
 
     public int getAutoSizeStepGranularity() {
@@ -157,7 +147,7 @@ public class ack extends TextView implements sm, tz {
             return super.getAutoSizeStepGranularity();
         }
         if (this.c != null) {
-            return Math.round(this.c.b.c);
+            return java.lang.Math.round(this.c.b.c);
         }
         return -1;
     }
@@ -167,7 +157,7 @@ public class ack extends TextView implements sm, tz {
             return super.getAutoSizeMinTextSize();
         }
         if (this.c != null) {
-            return Math.round(this.c.b.d);
+            return java.lang.Math.round(this.c.b.d);
         }
         return -1;
     }
@@ -177,7 +167,7 @@ public class ack extends TextView implements sm, tz {
             return super.getAutoSizeMaxTextSize();
         }
         if (this.c != null) {
-            return Math.round(this.c.b.e);
+            return java.lang.Math.round(this.c.b.e);
         }
         return -1;
     }
@@ -192,7 +182,7 @@ public class ack extends TextView implements sm, tz {
         return new int[0];
     }
 
-    public InputConnection onCreateInputConnection(EditorInfo editorInfo) {
-        return aaz.a(super.onCreateInputConnection(editorInfo), editorInfo, this);
+    public android.view.inputmethod.InputConnection onCreateInputConnection(android.view.inputmethod.EditorInfo editorInfo) {
+        return defpackage.aaz.a(super.onCreateInputConnection(editorInfo), editorInfo, (android.view.View) this);
     }
 }

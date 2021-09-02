@@ -1,27 +1,24 @@
 package defpackage;
 
-import android.view.View;
-
-/* access modifiers changed from: package-private */
-/* renamed from: aar  reason: default package */
+/* renamed from: aar reason: default package */
 /* compiled from: PG */
-public final class aar implements Runnable {
-    private aau a;
-    private final /* synthetic */ aap b;
+final class aar implements java.lang.Runnable {
+    private defpackage.aau a;
+    private final /* synthetic */ defpackage.aap b;
 
-    public aar(aap aap, aau aau) {
+    public aar(defpackage.aap aap, defpackage.aau aau) {
         this.b = aap;
         this.a = aau;
     }
 
     public final void run() {
         if (this.b.c != null) {
-            MenuBuilder zeVar = this.b.c;
+            defpackage.ze zeVar = this.b.c;
             if (zeVar.b != null) {
                 zeVar.b.a(zeVar);
             }
         }
-        View view = (View) this.b.e;
+        android.view.View view = (android.view.View) this.b.e;
         if (!(view == null || view.getWindowToken() == null || !this.a.b())) {
             this.b.j = this.a;
         }

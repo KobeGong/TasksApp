@@ -1,41 +1,64 @@
 package defpackage;
 
-/* renamed from: efx  reason: default package */
+/* renamed from: efx reason: default package */
 /* compiled from: PG */
-public final class efx extends dlz {
-    public een a = null;
-    public Long b = null;
-    public String c = null;
-    public egc d = null;
-    public edh e = null;
-    public ees f = null;
-    public edw g = null;
-    public efg h = null;
-    public eev i = null;
-    public edm l = null;
-    public eej m = null;
-    public eel n = null;
-    public eeo o = null;
-    public eek p = null;
-    public efi q = null;
-    public String r = null;
-    public edv s = null;
-    public ega[] t = ega.d();
-    public edd u = null;
-    public edy v = null;
-    public efa w = null;
-    private eea x = null;
-    private eff y = null;
-    private efc z = null;
+public final class efx extends defpackage.dlz {
+    public defpackage.een a;
+    public java.lang.Long b;
+    public java.lang.String c;
+    public defpackage.egc d;
+    public defpackage.edh e;
+    public defpackage.ees f;
+    public defpackage.edw g;
+    public defpackage.efg h;
+    public defpackage.eev i;
+    public defpackage.edm l;
+    public defpackage.eej m;
+    public defpackage.eel n;
+    public defpackage.eeo o;
+    public defpackage.eek p;
+    public defpackage.efi q;
+    public java.lang.String r;
+    public defpackage.edv s;
+    public defpackage.ega[] t;
+    public defpackage.edd u;
+    public defpackage.edy v;
+    public defpackage.efa w;
+    private defpackage.eea x;
+    private defpackage.eff y;
+    private defpackage.efc z;
 
     public efx() {
+        this.a = null;
+        this.b = null;
+        this.c = null;
+        this.d = null;
+        this.e = null;
+        this.f = null;
+        this.g = null;
+        this.h = null;
+        this.i = null;
+        this.l = null;
+        this.x = null;
+        this.m = null;
+        this.n = null;
+        this.o = null;
+        this.p = null;
+        this.q = null;
+        this.r = null;
+        this.s = null;
+        this.y = null;
+        this.t = defpackage.ega.d();
+        this.u = null;
+        this.z = null;
+        this.v = null;
+        this.w = null;
         this.k = -1;
     }
 
-    @Override // defpackage.dlz, defpackage.dmf
-    public final void a(dlx dlx) {
+    public final void a(defpackage.dlx dlx) {
         if (this.a != null) {
-            dlx.a(1, this.a);
+            dlx.a(1, (defpackage.dmf) this.a);
         }
         if (this.b != null) {
             dlx.b(2, this.b.longValue());
@@ -44,165 +67,161 @@ public final class efx extends dlz {
             dlx.a(3, this.c);
         }
         if (this.d != null) {
-            dlx.a(4, this.d);
+            dlx.a(4, (defpackage.dmf) this.d);
         }
         if (this.e != null) {
-            dlx.a(5, this.e);
+            dlx.a(5, (defpackage.dmf) this.e);
         }
         if (this.f != null) {
-            dlx.a(6, this.f);
+            dlx.a(6, (defpackage.dmf) this.f);
         }
         if (this.g != null) {
-            dlx.a(7, this.g);
+            dlx.a(7, (defpackage.dmf) this.g);
         }
         if (this.h != null) {
-            dlx.a(8, this.h);
+            dlx.a(8, (defpackage.dmf) this.h);
         }
         if (this.i != null) {
-            dlx.a(9, this.i);
+            dlx.a(9, (defpackage.dmf) this.i);
         }
         if (this.l != null) {
-            dlx.a(10, this.l);
+            dlx.a(10, (defpackage.dmf) this.l);
         }
         if (this.x != null) {
-            dlx.a(11, this.x);
+            dlx.a(11, (defpackage.dmf) this.x);
         }
         if (this.m != null) {
-            dlx.a(12, this.m);
+            dlx.a(12, (defpackage.dmf) this.m);
         }
         if (this.n != null) {
-            dlx.a(13, this.n);
+            dlx.a(13, (defpackage.dmf) this.n);
         }
         if (this.o != null) {
-            dlx.a(14, this.o);
+            dlx.a(14, (defpackage.dmf) this.o);
         }
         if (this.p != null) {
-            dlx.a(15, this.p);
+            dlx.a(15, (defpackage.dmf) this.p);
         }
         if (this.q != null) {
-            dlx.a(16, this.q);
+            dlx.a(16, (defpackage.dmf) this.q);
         }
         if (this.r != null) {
             dlx.a(17, this.r);
         }
         if (this.s != null) {
-            dlx.a(18, this.s);
+            dlx.a(18, (defpackage.dmf) this.s);
         }
         if (this.y != null) {
-            dlx.a(19, this.y);
+            dlx.a(19, (defpackage.dmf) this.y);
         }
         if (this.t != null && this.t.length > 0) {
-            for (int i2 = 0; i2 < this.t.length; i2++) {
-                ega ega = this.t[i2];
+            for (defpackage.ega ega : this.t) {
                 if (ega != null) {
-                    dlx.a(20, ega);
+                    dlx.a(20, (defpackage.dmf) ega);
                 }
             }
         }
         if (this.u != null) {
-            dlx.a(21, this.u);
+            dlx.a(21, (defpackage.dmf) this.u);
         }
         if (this.z != null) {
-            dlx.a(22, this.z);
+            dlx.a(22, (defpackage.dmf) this.z);
         }
         if (this.v != null) {
-            dlx.a(23, this.v);
+            dlx.a(23, (defpackage.dmf) this.v);
         }
         if (this.w != null) {
-            dlx.a(24, this.w);
+            dlx.a(24, (defpackage.dmf) this.w);
         }
         super.a(dlx);
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.dlz, defpackage.dmf
     public final int a() {
         int a2 = super.a();
         if (this.a != null) {
-            a2 += dlx.b(1, this.a);
+            a2 += defpackage.dlx.b(1, (defpackage.dmf) this.a);
         }
         if (this.b != null) {
             this.b.longValue();
-            a2 += dlx.c(16) + 8;
+            a2 += defpackage.dlx.c(16) + 8;
         }
         if (this.c != null) {
-            a2 += dlx.b(3, this.c);
+            a2 += defpackage.dlx.b(3, this.c);
         }
         if (this.d != null) {
-            a2 += dlx.b(4, this.d);
+            a2 += defpackage.dlx.b(4, (defpackage.dmf) this.d);
         }
         if (this.e != null) {
-            a2 += dlx.b(5, this.e);
+            a2 += defpackage.dlx.b(5, (defpackage.dmf) this.e);
         }
         if (this.f != null) {
-            a2 += dlx.b(6, this.f);
+            a2 += defpackage.dlx.b(6, (defpackage.dmf) this.f);
         }
         if (this.g != null) {
-            a2 += dlx.b(7, this.g);
+            a2 += defpackage.dlx.b(7, (defpackage.dmf) this.g);
         }
         if (this.h != null) {
-            a2 += dlx.b(8, this.h);
+            a2 += defpackage.dlx.b(8, (defpackage.dmf) this.h);
         }
         if (this.i != null) {
-            a2 += dlx.b(9, this.i);
+            a2 += defpackage.dlx.b(9, (defpackage.dmf) this.i);
         }
         if (this.l != null) {
-            a2 += dlx.b(10, this.l);
+            a2 += defpackage.dlx.b(10, (defpackage.dmf) this.l);
         }
         if (this.x != null) {
-            a2 += dlx.b(11, this.x);
+            a2 += defpackage.dlx.b(11, (defpackage.dmf) this.x);
         }
         if (this.m != null) {
-            a2 += dlx.b(12, this.m);
+            a2 += defpackage.dlx.b(12, (defpackage.dmf) this.m);
         }
         if (this.n != null) {
-            a2 += dlx.b(13, this.n);
+            a2 += defpackage.dlx.b(13, (defpackage.dmf) this.n);
         }
         if (this.o != null) {
-            a2 += dlx.b(14, this.o);
+            a2 += defpackage.dlx.b(14, (defpackage.dmf) this.o);
         }
         if (this.p != null) {
-            a2 += dlx.b(15, this.p);
+            a2 += defpackage.dlx.b(15, (defpackage.dmf) this.p);
         }
         if (this.q != null) {
-            a2 += dlx.b(16, this.q);
+            a2 += defpackage.dlx.b(16, (defpackage.dmf) this.q);
         }
         if (this.r != null) {
-            a2 += dlx.b(17, this.r);
+            a2 += defpackage.dlx.b(17, this.r);
         }
         if (this.s != null) {
-            a2 += dlx.b(18, this.s);
+            a2 += defpackage.dlx.b(18, (defpackage.dmf) this.s);
         }
         if (this.y != null) {
-            a2 += dlx.b(19, this.y);
+            a2 += defpackage.dlx.b(19, (defpackage.dmf) this.y);
         }
         if (this.t != null && this.t.length > 0) {
             int i2 = a2;
-            for (int i3 = 0; i3 < this.t.length; i3++) {
-                ega ega = this.t[i3];
+            for (defpackage.ega ega : this.t) {
                 if (ega != null) {
-                    i2 += dlx.b(20, ega);
+                    i2 += defpackage.dlx.b(20, (defpackage.dmf) ega);
                 }
             }
             a2 = i2;
         }
         if (this.u != null) {
-            a2 += dlx.b(21, this.u);
+            a2 += defpackage.dlx.b(21, (defpackage.dmf) this.u);
         }
         if (this.z != null) {
-            a2 += dlx.b(22, this.z);
+            a2 += defpackage.dlx.b(22, (defpackage.dmf) this.z);
         }
         if (this.v != null) {
-            a2 += dlx.b(23, this.v);
+            a2 += defpackage.dlx.b(23, (defpackage.dmf) this.v);
         }
         if (this.w != null) {
-            return a2 + dlx.b(24, this.w);
+            return a2 + defpackage.dlx.b(24, (defpackage.dmf) this.w);
         }
         return a2;
     }
 
-    @Override // defpackage.dmf
-    public final /* synthetic */ dmf a(dlw dlw) {
+    public final /* synthetic */ defpackage.dmf a(defpackage.dlw dlw) {
         while (true) {
             int a2 = dlw.a();
             switch (a2) {
@@ -210,155 +229,155 @@ public final class efx extends dlz {
                     break;
                 case 10:
                     if (this.a == null) {
-                        this.a = new een();
+                        this.a = new defpackage.een();
                     }
-                    dlw.a(this.a);
-                    break;
+                    dlw.a((defpackage.dmf) this.a);
+                    continue;
                 case 17:
-                    this.b = Long.valueOf(dlw.g());
-                    break;
+                    this.b = java.lang.Long.valueOf(dlw.g());
+                    continue;
                 case 26:
                     this.c = dlw.d();
-                    break;
+                    continue;
                 case 34:
                     if (this.d == null) {
-                        this.d = new egc();
+                        this.d = new defpackage.egc();
                     }
-                    dlw.a(this.d);
-                    break;
+                    dlw.a((defpackage.dmf) this.d);
+                    continue;
                 case 42:
                     if (this.e == null) {
-                        this.e = new edh();
+                        this.e = new defpackage.edh();
                     }
-                    dlw.a(this.e);
-                    break;
-                case by.aU:
+                    dlw.a((defpackage.dmf) this.e);
+                    continue;
+                case 50:
                     if (this.f == null) {
-                        this.f = new ees();
+                        this.f = new defpackage.ees();
                     }
-                    dlw.a(this.f);
-                    break;
-                case by.bc:
+                    dlw.a((defpackage.dmf) this.f);
+                    continue;
+                case 58:
                     if (this.g == null) {
-                        this.g = new edw();
+                        this.g = new defpackage.edw();
                     }
-                    dlw.a(this.g);
-                    break;
+                    dlw.a((defpackage.dmf) this.g);
+                    continue;
                 case 66:
                     if (this.h == null) {
-                        this.h = new efg();
+                        this.h = new defpackage.efg();
                     }
-                    dlw.a(this.h);
-                    break;
+                    dlw.a((defpackage.dmf) this.h);
+                    continue;
                 case 74:
                     if (this.i == null) {
-                        this.i = new eev();
+                        this.i = new defpackage.eev();
                     }
-                    dlw.a(this.i);
-                    break;
+                    dlw.a((defpackage.dmf) this.i);
+                    continue;
                 case 82:
                     if (this.l == null) {
-                        this.l = new edm();
+                        this.l = new defpackage.edm();
                     }
-                    dlw.a(this.l);
-                    break;
+                    dlw.a((defpackage.dmf) this.l);
+                    continue;
                 case 90:
                     if (this.x == null) {
-                        this.x = new eea();
+                        this.x = new defpackage.eea();
                     }
-                    dlw.a(this.x);
-                    break;
+                    dlw.a((defpackage.dmf) this.x);
+                    continue;
                 case 98:
                     if (this.m == null) {
-                        this.m = new eej();
+                        this.m = new defpackage.eej();
                     }
-                    dlw.a(this.m);
-                    break;
+                    dlw.a((defpackage.dmf) this.m);
+                    continue;
                 case 106:
                     if (this.n == null) {
-                        this.n = new eel();
+                        this.n = new defpackage.eel();
                     }
-                    dlw.a(this.n);
-                    break;
+                    dlw.a((defpackage.dmf) this.n);
+                    continue;
                 case 114:
                     if (this.o == null) {
-                        this.o = new eeo();
+                        this.o = new defpackage.eeo();
                     }
-                    dlw.a(this.o);
-                    break;
+                    dlw.a((defpackage.dmf) this.o);
+                    continue;
                 case 122:
                     if (this.p == null) {
-                        this.p = new eek();
+                        this.p = new defpackage.eek();
                     }
-                    dlw.a(this.p);
-                    break;
+                    dlw.a((defpackage.dmf) this.p);
+                    continue;
                 case 130:
                     if (this.q == null) {
-                        this.q = new efi();
+                        this.q = new defpackage.efi();
                     }
-                    dlw.a(this.q);
-                    break;
+                    dlw.a((defpackage.dmf) this.q);
+                    continue;
                 case 138:
                     this.r = dlw.d();
-                    break;
+                    continue;
                 case 146:
                     if (this.s == null) {
-                        this.s = new edv();
+                        this.s = new defpackage.edv();
                     }
-                    dlw.a(this.s);
-                    break;
+                    dlw.a((defpackage.dmf) this.s);
+                    continue;
                 case 154:
                     if (this.y == null) {
-                        this.y = new eff();
+                        this.y = new defpackage.eff();
                     }
-                    dlw.a(this.y);
-                    break;
+                    dlw.a((defpackage.dmf) this.y);
+                    continue;
                 case 162:
-                    int a3 = dmh.a(dlw, 162);
+                    int a3 = defpackage.dmh.a(dlw, 162);
                     int length = this.t == null ? 0 : this.t.length;
-                    ega[] egaArr = new ega[(a3 + length)];
+                    defpackage.ega[] egaArr = new defpackage.ega[(a3 + length)];
                     if (length != 0) {
-                        System.arraycopy(this.t, 0, egaArr, 0, length);
+                        java.lang.System.arraycopy(this.t, 0, egaArr, 0, length);
                     }
                     while (length < egaArr.length - 1) {
-                        egaArr[length] = new ega();
-                        dlw.a(egaArr[length]);
+                        egaArr[length] = new defpackage.ega();
+                        dlw.a((defpackage.dmf) egaArr[length]);
                         dlw.a();
                         length++;
                     }
-                    egaArr[length] = new ega();
-                    dlw.a(egaArr[length]);
+                    egaArr[length] = new defpackage.ega();
+                    dlw.a((defpackage.dmf) egaArr[length]);
                     this.t = egaArr;
-                    break;
+                    continue;
                 case 170:
                     if (this.u == null) {
-                        this.u = new edd();
+                        this.u = new defpackage.edd();
                     }
-                    dlw.a(this.u);
-                    break;
+                    dlw.a((defpackage.dmf) this.u);
+                    continue;
                 case 178:
                     if (this.z == null) {
-                        this.z = new efc();
+                        this.z = new defpackage.efc();
                     }
-                    dlw.a(this.z);
-                    break;
+                    dlw.a((defpackage.dmf) this.z);
+                    continue;
                 case 186:
                     if (this.v == null) {
-                        this.v = new edy();
+                        this.v = new defpackage.edy();
                     }
-                    dlw.a(this.v);
-                    break;
+                    dlw.a((defpackage.dmf) this.v);
+                    continue;
                 case 194:
                     if (this.w == null) {
-                        this.w = new efa();
+                        this.w = new defpackage.efa();
                     }
-                    dlw.a(this.w);
-                    break;
+                    dlw.a((defpackage.dmf) this.w);
+                    continue;
                 default:
-                    if (super.a(dlw, a2)) {
+                    if (!super.a(dlw, a2)) {
                         break;
                     } else {
-                        break;
+                        continue;
                     }
             }
         }

@@ -1,6 +1,6 @@
 package defpackage;
 
-/* renamed from: ckj  reason: default package */
+/* renamed from: ckj reason: default package */
 /* compiled from: PG */
 public final class ckj {
     public boolean a;
@@ -14,7 +14,7 @@ public final class ckj {
     public boolean i;
     public boolean j;
 
-    public final cki a() {
-        return new cki(this.a, this.b, this.c, this.d, this.e, this.f, this.g, this.h, this.i, this.j);
+    public final defpackage.cki a() {
+        return new defpackage.cki(this.a, this.b, this.c, this.d, this.e, this.f, this.g, this.h, this.i, this.j);
     }
 }

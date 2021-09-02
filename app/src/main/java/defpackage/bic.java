@@ -1,12 +1,12 @@
 package defpackage;
 
-/* renamed from: bic  reason: default package */
+/* renamed from: bic reason: default package */
 /* compiled from: PG */
-final class bic implements Runnable {
-    private /* synthetic */ bhz a;
-    private /* synthetic */ bib b;
+final class bic implements java.lang.Runnable {
+    private /* synthetic */ defpackage.bhz a;
+    private /* synthetic */ defpackage.bib b;
 
-    bic(bib bib, bhz bhz) {
+    bic(defpackage.bib bib, defpackage.bhz bhz) {
         this.b = bib;
         this.a = bhz;
     }

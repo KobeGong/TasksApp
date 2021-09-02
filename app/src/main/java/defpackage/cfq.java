@@ -1,10 +1,10 @@
 package defpackage;
 
-/* renamed from: cfq  reason: default package */
-final /* synthetic */ class cfq implements Runnable {
-    private final cfo a;
+/* renamed from: cfq reason: default package */
+final /* synthetic */ class cfq implements java.lang.Runnable {
+    private final defpackage.cfo a;
 
-    cfq(cfo cfo) {
+    cfq(defpackage.cfo cfo) {
         this.a = cfo;
     }
 

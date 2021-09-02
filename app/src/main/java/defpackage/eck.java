@@ -1,20 +1,17 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: eck  reason: default package */
+/* renamed from: eck reason: default package */
 /* compiled from: PG */
-public final class eck extends ecj {
-    @Override // defpackage.ecj
-    public final ecn a() {
-        return ecn.a;
+final class eck extends defpackage.ecj {
+    public final defpackage.ecn a() {
+        return defpackage.ecn.a;
     }
 
-    @Override // defpackage.ecj
-    public final ecx b() {
-        return ecx.a;
+    public final defpackage.ecx b() {
+        return defpackage.ecx.a;
     }
 
     eck() {
-        new ecr((byte) 0);
+        new defpackage.ecr(0);
     }
 }

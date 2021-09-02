@@ -1,16 +1,12 @@
 package defpackage;
 
-import android.content.Context;
-import android.os.Looper;
-
-/* renamed from: bpr  reason: default package */
+/* renamed from: bpr reason: default package */
 /* compiled from: PG */
-final class bpr extends ayf {
+final class bpr extends defpackage.ayf {
     bpr() {
     }
 
-    @Override // defpackage.ayf
-    public final /* synthetic */ ayj a(Context context, Looper looper, bdj bdj, Object obj, ayr ayr, ays ays) {
-        throw new NoSuchMethodError();
+    public final /* synthetic */ defpackage.ayj a(android.content.Context context, android.os.Looper looper, defpackage.bdj bdj, java.lang.Object obj, defpackage.ayr ayr, defpackage.ays ays) {
+        throw new java.lang.NoSuchMethodError();
     }
 }

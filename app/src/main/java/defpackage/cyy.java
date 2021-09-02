@@ -1,34 +1,28 @@
 package defpackage;
 
-import java.util.concurrent.Callable;
-
-/* access modifiers changed from: package-private */
-/* renamed from: cyy  reason: default package */
+/* renamed from: cyy reason: default package */
 /* compiled from: PG */
-public final class cyy extends cyg {
-    private final Callable a;
-    private final /* synthetic */ cyx b;
+final class cyy extends defpackage.cyg {
+    private final java.util.concurrent.Callable a;
+    private final /* synthetic */ defpackage.cyx b;
 
-    cyy(cyx cyx, Callable callable) {
+    cyy(defpackage.cyx cyx, java.util.concurrent.Callable callable) {
         this.b = cyx;
-        this.a = (Callable) cld.a(callable);
+        this.a = (java.util.concurrent.Callable) defpackage.cld.a((java.lang.Object) callable);
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.cyg
+    /* access modifiers changed from: 0000 */
     public final boolean c() {
         return this.b.isDone();
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.cyg
-    public final Object a() {
+    /* access modifiers changed from: 0000 */
+    public final java.lang.Object a() {
         return this.a.call();
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.cyg
-    public final void a(Object obj, Throwable th) {
+    /* access modifiers changed from: 0000 */
+    public final void a(java.lang.Object obj, java.lang.Throwable th) {
         if (th == null) {
             this.b.a(obj);
         } else {
@@ -36,9 +30,8 @@ public final class cyy extends cyg {
         }
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.cyg
-    public final String b() {
+    /* access modifiers changed from: 0000 */
+    public final java.lang.String b() {
         return this.a.toString();
     }
 }

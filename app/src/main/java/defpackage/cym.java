@@ -1,10 +1,7 @@
 package defpackage;
 
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
-
-/* renamed from: cym  reason: default package */
+/* renamed from: cym reason: default package */
 /* compiled from: PG */
-public interface cym extends cyl, ScheduledExecutorService {
-    cyk a(Runnable runnable, long j, TimeUnit timeUnit);
+public interface cym extends defpackage.cyl, java.util.concurrent.ScheduledExecutorService {
+    defpackage.cyk a(java.lang.Runnable runnable, long j, java.util.concurrent.TimeUnit timeUnit);
 }

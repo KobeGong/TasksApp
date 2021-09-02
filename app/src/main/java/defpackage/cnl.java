@@ -1,22 +1,19 @@
 package defpackage;
 
-import java.lang.ref.PhantomReference;
-import java.lang.ref.ReferenceQueue;
-
-/* renamed from: cnl  reason: default package */
+/* renamed from: cnl reason: default package */
 /* compiled from: PG */
-public final class cnl extends PhantomReference {
-    public final String a;
-    public cnl b;
-    public cnl c;
+public final class cnl extends java.lang.ref.PhantomReference {
+    public final java.lang.String a;
+    public defpackage.cnl b;
+    public defpackage.cnl c;
 
-    public cnl(Object obj, String str, ReferenceQueue referenceQueue) {
+    public cnl(java.lang.Object obj, java.lang.String str, java.lang.ref.ReferenceQueue referenceQueue) {
         super(obj, referenceQueue);
         this.a = str;
     }
 
-    public final void a(cnl cnl) {
-        cky.a(cnl);
+    public final void a(defpackage.cnl cnl) {
+        defpackage.cky.a((java.lang.Object) cnl);
         this.b = cnl;
         this.c = cnl.c;
         if (this.c != null) {
@@ -25,7 +22,7 @@ public final class cnl extends PhantomReference {
         cnl.c = this;
     }
 
-    public final cnl a() {
+    public final defpackage.cnl a() {
         if (this.b != null) {
             this.b.c = this.c;
         }

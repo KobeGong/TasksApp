@@ -1,55 +1,51 @@
 package defpackage;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.Arrays;
-
-/* renamed from: bot  reason: default package */
+/* renamed from: bot reason: default package */
 /* compiled from: PG */
-public final class bot extends biq implements bnv {
-    public static final Parcelable.Creator CREATOR = new bos();
-    private final String a;
-    private final Integer b;
+public final class bot extends defpackage.biq implements defpackage.bnv {
+    public static final android.os.Parcelable.Creator CREATOR = new defpackage.bos();
+    private final java.lang.String a;
+    private final java.lang.Integer b;
 
-    public bot(String str, Integer num) {
+    public bot(java.lang.String str, java.lang.Integer num) {
         this.a = str;
         this.b = num;
     }
 
-    public final void writeToParcel(Parcel parcel, int i) {
-        int q = bjr.q(parcel, 20293);
-        bjr.a(parcel, 2, this.a);
-        bjr.a(parcel, this.b);
-        bjr.r(parcel, q);
+    public final void writeToParcel(android.os.Parcel parcel, int i) {
+        int q = defpackage.bjr.q(parcel, 20293);
+        defpackage.bjr.a(parcel, 2, this.a);
+        defpackage.bjr.a(parcel, this.b);
+        defpackage.bjr.r(parcel, q);
     }
 
-    @Override // defpackage.bcs
     public final boolean a() {
         return true;
     }
 
-    @Override // defpackage.bnv
-    public final String b() {
+    public final java.lang.String b() {
         return this.a;
     }
 
-    @Override // defpackage.bnv
-    public final Integer c() {
+    public final java.lang.Integer c() {
         return this.b;
     }
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof bnv)) {
+    public final boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof defpackage.bnv)) {
             return false;
         }
         if (this == obj) {
             return true;
         }
-        bnv bnv = (bnv) obj;
-        return azb.a(b(), bnv.b()) && azb.a(c(), bnv.c());
+        defpackage.bnv bnv = (defpackage.bnv) obj;
+        if (!defpackage.azb.a((java.lang.Object) b(), (java.lang.Object) bnv.b()) || !defpackage.azb.a((java.lang.Object) c(), (java.lang.Object) bnv.c())) {
+            return false;
+        }
+        return true;
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(new Object[]{b(), c()});
+        return java.util.Arrays.hashCode(new java.lang.Object[]{b(), c()});
     }
 }

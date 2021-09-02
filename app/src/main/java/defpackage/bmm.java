@@ -1,29 +1,22 @@
 package defpackage;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-
-/* renamed from: bmm  reason: default package */
+/* renamed from: bmm reason: default package */
 /* compiled from: PG */
-public final class bmm extends biq {
-    public static final Parcelable.Creator CREATOR = new bmz();
-    private List a = new ArrayList();
-    private List b = new ArrayList();
-    private List c = new ArrayList();
-    private String d;
-    private bmp e;
+public final class bmm extends defpackage.biq {
+    public static final android.os.Parcelable.Creator CREATOR = new defpackage.bmz();
+    private java.util.List a = new java.util.ArrayList();
+    private java.util.List b = new java.util.ArrayList();
+    private java.util.List c = new java.util.ArrayList();
+    private java.lang.String d;
+    private defpackage.bmp e;
     private boolean f;
     private boolean g;
-    private String h;
-    private String i;
-    private String j;
+    private java.lang.String h;
+    private java.lang.String i;
+    private java.lang.String j;
     private int k;
 
-    bmm(List list, List list2, List list3, String str, bmp bmp, boolean z, boolean z2, String str2, String str3, String str4, int i2) {
+    bmm(java.util.List list, java.util.List list2, java.util.List list3, java.lang.String str, defpackage.bmp bmp, boolean z, boolean z2, java.lang.String str2, java.lang.String str3, java.lang.String str4, int i2) {
         this.c = list3;
         this.a = list;
         this.b = list2;
@@ -40,38 +33,41 @@ public final class bmm extends biq {
     public bmm() {
     }
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof bmm)) {
+    public final boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof defpackage.bmm)) {
             return false;
         }
         if (this == obj) {
             return true;
         }
-        bmm bmm = (bmm) obj;
-        return azb.a(this.a, bmm.a) && azb.a(null, null) && azb.a(this.b, bmm.b) && azb.a(null, null) && azb.a(this.d, bmm.d) && azb.a(this.e, bmm.e) && azb.a(this.c, bmm.c) && azb.a(Boolean.valueOf(this.f), Boolean.valueOf(bmm.f)) && azb.a(Boolean.valueOf(this.g), Boolean.valueOf(bmm.g)) && azb.a(this.h, bmm.h) && azb.a(this.i, bmm.i) && azb.a(this.j, bmm.j) && azb.a(Integer.valueOf(this.k), Integer.valueOf(bmm.k));
+        defpackage.bmm bmm = (defpackage.bmm) obj;
+        if (!defpackage.azb.a((java.lang.Object) this.a, (java.lang.Object) bmm.a) || !defpackage.azb.a((java.lang.Object) null, (java.lang.Object) null) || !defpackage.azb.a((java.lang.Object) this.b, (java.lang.Object) bmm.b) || !defpackage.azb.a((java.lang.Object) null, (java.lang.Object) null) || !defpackage.azb.a((java.lang.Object) this.d, (java.lang.Object) bmm.d) || !defpackage.azb.a((java.lang.Object) this.e, (java.lang.Object) bmm.e) || !defpackage.azb.a((java.lang.Object) this.c, (java.lang.Object) bmm.c) || !defpackage.azb.a((java.lang.Object) java.lang.Boolean.valueOf(this.f), (java.lang.Object) java.lang.Boolean.valueOf(bmm.f)) || !defpackage.azb.a((java.lang.Object) java.lang.Boolean.valueOf(this.g), (java.lang.Object) java.lang.Boolean.valueOf(bmm.g)) || !defpackage.azb.a((java.lang.Object) this.h, (java.lang.Object) bmm.h) || !defpackage.azb.a((java.lang.Object) this.i, (java.lang.Object) bmm.i) || !defpackage.azb.a((java.lang.Object) this.j, (java.lang.Object) bmm.j) || !defpackage.azb.a((java.lang.Object) java.lang.Integer.valueOf(this.k), (java.lang.Object) java.lang.Integer.valueOf(bmm.k))) {
+            return false;
+        }
+        return true;
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a, null, this.b, this.c, null, this.d, this.e, Boolean.valueOf(this.f), Boolean.valueOf(this.g), this.h, this.i, this.j, Integer.valueOf(this.k)});
+        return java.util.Arrays.hashCode(new java.lang.Object[]{this.a, null, this.b, this.c, null, this.d, this.e, java.lang.Boolean.valueOf(this.f), java.lang.Boolean.valueOf(this.g), this.h, this.i, this.j, java.lang.Integer.valueOf(this.k)});
     }
 
-    public final String toString() {
-        return azb.a(this).a("names", this.a).a("emails", null).a("photos", this.b).a("sortedContactMethods", this.c).a("phones", null).a("provenanceReference", this.d).a("metadata", this.e).a("isStarred", Boolean.valueOf(this.f)).a("sendToVoicemail", Boolean.valueOf(this.g)).a("customRingtone", this.h).a("lookupKey", this.i).a("secondaryProvenanceReference", this.j).a("pinnedPosition", Integer.valueOf(this.k)).toString();
+    public final java.lang.String toString() {
+        return defpackage.azb.a((java.lang.Object) this).a("names", this.a).a("emails", null).a("photos", this.b).a("sortedContactMethods", this.c).a("phones", null).a("provenanceReference", this.d).a("metadata", this.e).a("isStarred", java.lang.Boolean.valueOf(this.f)).a("sendToVoicemail", java.lang.Boolean.valueOf(this.g)).a("customRingtone", this.h).a("lookupKey", this.i).a("secondaryProvenanceReference", this.j).a("pinnedPosition", java.lang.Integer.valueOf(this.k)).toString();
     }
 
-    public final void writeToParcel(Parcel parcel, int i2) {
-        int q = bjr.q(parcel, 20293);
-        bjr.b(parcel, 3, Collections.unmodifiableList(this.a));
-        bjr.b(parcel, 5, Collections.unmodifiableList(this.b));
-        bjr.b(parcel, 6, this.c);
-        bjr.a(parcel, 7, this.d);
-        bjr.a(parcel, 8, this.e, i2);
-        bjr.a(parcel, 9, this.f);
-        bjr.a(parcel, 10, this.g);
-        bjr.a(parcel, 11, this.h);
-        bjr.a(parcel, 12, this.i);
-        bjr.a(parcel, 13, this.j);
-        bjr.c(parcel, 14, this.k);
-        bjr.r(parcel, q);
+    public final void writeToParcel(android.os.Parcel parcel, int i2) {
+        int q = defpackage.bjr.q(parcel, 20293);
+        defpackage.bjr.b(parcel, 3, java.util.Collections.unmodifiableList(this.a));
+        defpackage.bjr.b(parcel, 5, java.util.Collections.unmodifiableList(this.b));
+        defpackage.bjr.b(parcel, 6, this.c);
+        defpackage.bjr.a(parcel, 7, this.d);
+        defpackage.bjr.a(parcel, 8, (android.os.Parcelable) this.e, i2);
+        defpackage.bjr.a(parcel, 9, this.f);
+        defpackage.bjr.a(parcel, 10, this.g);
+        defpackage.bjr.a(parcel, 11, this.h);
+        defpackage.bjr.a(parcel, 12, this.i);
+        defpackage.bjr.a(parcel, 13, this.j);
+        defpackage.bjr.c(parcel, 14, this.k);
+        defpackage.bjr.r(parcel, q);
     }
 }

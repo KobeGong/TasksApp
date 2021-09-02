@@ -1,34 +1,31 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: aav  reason: default package */
+/* renamed from: aav reason: default package */
 /* compiled from: PG */
-public final class aav implements zu {
-    private final /* synthetic */ aap a;
+final class aav implements defpackage.zu {
+    private final /* synthetic */ defpackage.aap a;
 
-    aav(aap aap) {
+    aav(defpackage.aap aap) {
         this.a = aap;
     }
 
-    @Override // defpackage.zu
-    public final boolean a(MenuBuilder zeVar) {
+    public final boolean a(defpackage.ze zeVar) {
         if (zeVar == null) {
             return false;
         }
-        this.a.n = ((aad) zeVar).getItem().getItemId();
-        zu zuVar = this.a.d;
+        this.a.n = ((defpackage.aad) zeVar).getItem().getItemId();
+        defpackage.zu zuVar = this.a.d;
         if (zuVar != null) {
             return zuVar.a(zeVar);
         }
         return false;
     }
 
-    @Override // defpackage.zu
-    public final void a(MenuBuilder zeVar, boolean z) {
-        if (zeVar instanceof aad) {
+    public final void a(defpackage.ze zeVar, boolean z) {
+        if (zeVar instanceof defpackage.aad) {
             zeVar.l().b(false);
         }
-        zu zuVar = this.a.d;
+        defpackage.zu zuVar = this.a.d;
         if (zuVar != null) {
             zuVar.a(zeVar, z);
         }

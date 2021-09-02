@@ -1,29 +1,24 @@
 package defpackage;
 
-import java.util.concurrent.Callable;
-import java.util.concurrent.Executors;
-import java.util.concurrent.RunnableFuture;
-
-/* access modifiers changed from: package-private */
-/* renamed from: cyx  reason: default package */
+/* renamed from: cyx reason: default package */
 /* compiled from: PG */
-public final class cyx extends cxi implements RunnableFuture {
-    private volatile cyg e;
+final class cyx extends defpackage.cxi implements java.util.concurrent.RunnableFuture {
+    private volatile defpackage.cyg e;
 
-    static cyx a(Callable callable) {
-        return new cyx(callable);
+    static defpackage.cyx a(java.util.concurrent.Callable callable) {
+        return new defpackage.cyx(callable);
     }
 
-    static cyx a(Runnable runnable, Object obj) {
-        return new cyx(Executors.callable(runnable, obj));
+    static defpackage.cyx a(java.lang.Runnable runnable, java.lang.Object obj) {
+        return new defpackage.cyx(java.util.concurrent.Executors.callable(runnable, obj));
     }
 
-    private cyx(Callable callable) {
-        this.e = new cyy(this, callable);
+    private cyx(java.util.concurrent.Callable callable) {
+        this.e = new defpackage.cyy(this, callable);
     }
 
     public final void run() {
-        cyg cyg = this.e;
+        defpackage.cyg cyg = this.e;
         if (cyg != null) {
             cyg.run();
         }
@@ -31,24 +26,24 @@ public final class cyx extends cxi implements RunnableFuture {
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.cwz
     public final void c() {
-        cyg cyg;
         super.c();
-        if (b() && (cyg = this.e) != null) {
-            cyg.d();
+        if (b()) {
+            defpackage.cyg cyg = this.e;
+            if (cyg != null) {
+                cyg.d();
+            }
         }
         this.e = null;
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.cwz
-    public final String d() {
-        cyg cyg = this.e;
+    public final java.lang.String d() {
+        defpackage.cyg cyg = this.e;
         if (cyg == null) {
             return super.d();
         }
-        String valueOf = String.valueOf(cyg);
-        return new StringBuilder(String.valueOf(valueOf).length() + 7).append("task=[").append(valueOf).append("]").toString();
+        java.lang.String valueOf = java.lang.String.valueOf(cyg);
+        return new java.lang.StringBuilder(java.lang.String.valueOf(valueOf).length() + 7).append("task=[").append(valueOf).append("]").toString();
     }
 }

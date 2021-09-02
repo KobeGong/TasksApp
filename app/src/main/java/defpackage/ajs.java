@@ -1,13 +1,13 @@
 package defpackage;
 
-/* renamed from: ajs  reason: default package */
-public final /* synthetic */ class ajs implements Runnable {
-    private final coy a;
-    private final dii b;
-    private final String c;
-    private final cou d;
+/* renamed from: ajs reason: default package */
+public final /* synthetic */ class ajs implements java.lang.Runnable {
+    private final defpackage.coy a;
+    private final defpackage.dii b;
+    private final java.lang.String c;
+    private final defpackage.cou d;
 
-    public ajs(coy coy, dii dii, String str, cou cou) {
+    public ajs(defpackage.coy coy, defpackage.dii dii, java.lang.String str, defpackage.cou cou) {
         this.a = coy;
         this.b = dii;
         this.c = str;
@@ -16,16 +16,16 @@ public final /* synthetic */ class ajs implements Runnable {
 
     public final void run() {
         boolean z = false;
-        coy coy = this.a;
-        dii dii = this.b;
-        String str = this.c;
-        cou cou = this.d;
-        coy.c.a(new bqo(dii)).a(str).b().a(ajz.a);
-        Object[] objArr = new Object[2];
+        defpackage.coy coy = this.a;
+        defpackage.dii dii = this.b;
+        java.lang.String str = this.c;
+        defpackage.cou cou = this.d;
+        coy.c.a(new defpackage.bqo(dii)).a(str).b().a(defpackage.ajz.a);
+        java.lang.Object[] objArr = new java.lang.Object[2];
         objArr[0] = cou.toString();
         if (str != null) {
             z = true;
         }
-        objArr[1] = Boolean.valueOf(z);
+        objArr[1] = java.lang.Boolean.valueOf(z);
     }
 }

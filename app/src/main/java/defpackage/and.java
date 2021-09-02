@@ -1,18 +1,16 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: and  reason: default package */
-public final /* synthetic */ class and implements csd {
-    private final anc a;
+/* renamed from: and reason: default package */
+final /* synthetic */ class and implements defpackage.csd {
+    private final defpackage.anc a;
 
-    and(anc anc) {
+    and(defpackage.anc anc) {
         this.a = anc;
     }
 
-    @Override // defpackage.csd
-    public final Object b() {
-        anc anc = this.a;
-        cyu cyu = new cyu();
+    public final java.lang.Object b() {
+        defpackage.anc anc = this.a;
+        defpackage.cyu cyu = new defpackage.cyu();
         anc.a(anc.a, cyu);
         return cyu;
     }

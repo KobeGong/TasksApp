@@ -1,12 +1,11 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: bag  reason: default package */
+/* renamed from: bag reason: default package */
 /* compiled from: PG */
-public abstract class bag {
-    public final bae a;
+abstract class bag {
+    public final defpackage.bae a;
 
-    protected bag(bae bae) {
+    protected bag(defpackage.bae bae) {
         this.a = bae;
     }
 

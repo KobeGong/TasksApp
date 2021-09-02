@@ -1,15 +1,12 @@
 package defpackage;
 
-import android.view.View;
-import java.util.Comparator;
-
-/* renamed from: he  reason: default package */
+/* renamed from: he reason: default package */
 /* compiled from: PG */
-public final class he implements Comparator {
-    @Override // java.util.Comparator
-    public final /* synthetic */ int compare(Object obj, Object obj2) {
-        float A = sn.a.A((View) obj);
-        float A2 = sn.a.A((View) obj2);
+public final class he implements java.util.Comparator {
+    public final /* synthetic */ int compare(java.lang.Object obj, java.lang.Object obj2) {
+        android.view.View view = (android.view.View) obj2;
+        float A = defpackage.sn.a.A((android.view.View) obj);
+        float A2 = defpackage.sn.a.A(view);
         if (A > A2) {
             return -1;
         }

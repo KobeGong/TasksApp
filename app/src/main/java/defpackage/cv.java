@@ -1,23 +1,19 @@
 package defpackage;
 
-import android.animation.ValueAnimator;
-import android.support.design.appbar.AppBarLayout;
-import android.support.design.widget.CoordinatorLayout;
-
-/* renamed from: cv  reason: default package */
+/* renamed from: cv reason: default package */
 /* compiled from: PG */
-public final class cv implements ValueAnimator.AnimatorUpdateListener {
-    private final /* synthetic */ CoordinatorLayout a;
-    private final /* synthetic */ AppBarLayout b;
-    private final /* synthetic */ AppBarLayout.BaseBehavior c;
+public final class cv implements android.animation.ValueAnimator.AnimatorUpdateListener {
+    private final /* synthetic */ android.support.design.widget.CoordinatorLayout a;
+    private final /* synthetic */ android.support.design.appbar.AppBarLayout b;
+    private final /* synthetic */ android.support.design.appbar.AppBarLayout.BaseBehavior c;
 
-    public cv(AppBarLayout.BaseBehavior baseBehavior, CoordinatorLayout coordinatorLayout, AppBarLayout appBarLayout) {
+    public cv(android.support.design.appbar.AppBarLayout.BaseBehavior baseBehavior, android.support.design.widget.CoordinatorLayout coordinatorLayout, android.support.design.appbar.AppBarLayout appBarLayout) {
         this.c = baseBehavior;
         this.a = coordinatorLayout;
         this.b = appBarLayout;
     }
 
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        this.c.a_(this.a, this.b, ((Integer) valueAnimator.getAnimatedValue()).intValue());
+    public final void onAnimationUpdate(android.animation.ValueAnimator valueAnimator) {
+        this.c.a_(this.a, this.b, ((java.lang.Integer) valueAnimator.getAnimatedValue()).intValue());
     }
 }

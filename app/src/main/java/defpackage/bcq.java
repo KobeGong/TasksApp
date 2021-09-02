@@ -1,46 +1,39 @@
 package defpackage;
 
-import android.app.PendingIntent;
-import android.os.Parcel;
-import android.os.Parcelable;
-import com.google.android.gms.common.api.Status;
-
-/* renamed from: bcq  reason: default package */
+/* renamed from: bcq reason: default package */
 /* compiled from: PG */
-public final class bcq implements Parcelable.Creator {
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object[] newArray(int i) {
-        return new Status[i];
+public final class bcq implements android.os.Parcelable.Creator {
+    public final /* synthetic */ java.lang.Object[] newArray(int i) {
+        return new com.google.android.gms.common.api.Status[i];
     }
 
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object createFromParcel(Parcel parcel) {
-        PendingIntent pendingIntent = null;
-        int a = bjr.a(parcel);
+    public final /* synthetic */ java.lang.Object createFromParcel(android.os.Parcel parcel) {
+        android.app.PendingIntent pendingIntent = null;
+        int a = defpackage.bjr.a(parcel);
         int i = 0;
         int i2 = 0;
-        String str = null;
+        java.lang.String str = null;
         while (parcel.dataPosition() < a) {
             int readInt = parcel.readInt();
             switch (65535 & readInt) {
                 case 1:
-                    i = bjr.d(parcel, readInt);
+                    i = defpackage.bjr.d(parcel, readInt);
                     break;
                 case 2:
-                    str = bjr.h(parcel, readInt);
+                    str = defpackage.bjr.h(parcel, readInt);
                     break;
                 case 3:
-                    pendingIntent = (PendingIntent) bjr.a(parcel, readInt, PendingIntent.CREATOR);
+                    pendingIntent = (android.app.PendingIntent) defpackage.bjr.a(parcel, readInt, android.app.PendingIntent.CREATOR);
                     break;
                 case 1000:
-                    i2 = bjr.d(parcel, readInt);
+                    i2 = defpackage.bjr.d(parcel, readInt);
                     break;
                 default:
-                    bjr.b(parcel, readInt);
+                    defpackage.bjr.b(parcel, readInt);
                     break;
             }
         }
-        bjr.p(parcel, a);
-        return new Status(i2, i, str, pendingIntent);
+        defpackage.bjr.p(parcel, a);
+        return new com.google.android.gms.common.api.Status(i2, i, str, pendingIntent);
     }
 }

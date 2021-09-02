@@ -1,26 +1,24 @@
 package defpackage;
 
-import java.util.Arrays;
-
-/* renamed from: ca  reason: default package */
+/* renamed from: ca reason: default package */
 /* compiled from: PG */
 public final class ca {
-    public cf a = null;
+    public defpackage.cf a = null;
     public float b = 0.0f;
-    public final bz c;
+    public final defpackage.bz c;
     public boolean d = false;
 
-    public ca(cb cbVar) {
-        this.c = new bz(this, cbVar);
+    public ca(defpackage.cb cbVar) {
+        this.c = new defpackage.bz(this, cbVar);
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public final void a() {
-        bz bzVar = this.c;
+        defpackage.bz bzVar = this.c;
         int i = 0;
         int i2 = bzVar.f;
         while (i2 != -1 && i < bzVar.a) {
-            cf cfVar = bzVar.b.c[bzVar.c[i2]];
+            defpackage.cf cfVar = bzVar.b.c[bzVar.c[i2]];
             int i3 = 0;
             while (true) {
                 if (i3 < cfVar.h) {
@@ -30,7 +28,7 @@ public final class ca {
                     i3++;
                 } else {
                     if (cfVar.h >= cfVar.g.length) {
-                        cfVar.g = (ca[]) Arrays.copyOf(cfVar.g, cfVar.g.length << 1);
+                        cfVar.g = (defpackage.ca[]) java.util.Arrays.copyOf(cfVar.g, cfVar.g.length << 1);
                     }
                     cfVar.g[cfVar.h] = this;
                     cfVar.h++;
@@ -41,50 +39,63 @@ public final class ca {
         }
     }
 
-    public final String toString() {
-        String str;
+    public final java.lang.String toString() {
+        java.lang.String str;
+        java.lang.String str2;
         boolean z;
         float f;
-        String str2 = (this.a == null ? "" + "0" : "" + this.a) + " = ";
+        java.lang.String str3;
+        java.lang.String str4 = "";
+        if (this.a == null) {
+            str = str4 + "0";
+        } else {
+            str = str4 + this.a;
+        }
+        java.lang.String str5 = str + " = ";
         if (this.b != 0.0f) {
-            str = str2 + this.b;
+            str2 = str5 + this.b;
             z = true;
         } else {
-            str = str2;
+            str2 = str5;
             z = false;
         }
         int i = this.c.a;
-        String str3 = str;
+        java.lang.String str6 = str2;
         for (int i2 = 0; i2 < i; i2++) {
-            cf a2 = this.c.a(i2);
+            defpackage.cf a2 = this.c.a(i2);
             if (a2 != null) {
                 float b2 = this.c.b(i2);
-                String cfVar = a2.toString();
+                java.lang.String cfVar = a2.toString();
                 if (!z) {
                     if (b2 < 0.0f) {
-                        str3 = str3 + "- ";
+                        str6 = str6 + "- ";
                         f = -b2;
                     } else {
                         f = b2;
                     }
                 } else if (b2 > 0.0f) {
-                    str3 = str3 + " + ";
+                    str6 = str6 + " + ";
                     f = b2;
                 } else {
-                    str3 = str3 + " - ";
+                    str6 = str6 + " - ";
                     f = -b2;
                 }
-                str3 = f == 1.0f ? str3 + cfVar : str3 + f + " " + cfVar;
+                if (f == 1.0f) {
+                    str3 = str6 + cfVar;
+                } else {
+                    str3 = str6 + f + " " + cfVar;
+                }
+                str6 = str3;
                 z = true;
             }
         }
         if (!z) {
-            return str3 + "0.0";
+            return str6 + "0.0";
         }
-        return str3;
+        return str6;
     }
 
-    public final ca a(cf cfVar, int i) {
+    public final defpackage.ca a(defpackage.cf cfVar, int i) {
         if (i < 0) {
             this.b = (float) (i * -1);
             this.c.a(cfVar, 1.0f);
@@ -95,7 +106,7 @@ public final class ca {
         return this;
     }
 
-    public final ca a(cf cfVar, cf cfVar2, int i) {
+    public final defpackage.ca a(defpackage.cf cfVar, defpackage.cf cfVar2, int i) {
         boolean z = false;
         if (i != 0) {
             if (i < 0) {
@@ -114,7 +125,7 @@ public final class ca {
         return this;
     }
 
-    public final ca a(cf cfVar, cf cfVar2, cf cfVar3, int i) {
+    public final defpackage.ca a(defpackage.cf cfVar, defpackage.cf cfVar2, defpackage.cf cfVar3, int i) {
         boolean z = false;
         if (i != 0) {
             if (i < 0) {
@@ -135,7 +146,7 @@ public final class ca {
         return this;
     }
 
-    public final ca b(cf cfVar, cf cfVar2, cf cfVar3, int i) {
+    public final defpackage.ca b(defpackage.cf cfVar, defpackage.cf cfVar2, defpackage.cf cfVar3, int i) {
         boolean z = false;
         if (i != 0) {
             if (i < 0) {
@@ -156,7 +167,7 @@ public final class ca {
         return this;
     }
 
-    public final ca a(float f, float f2, float f3, cf cfVar, int i, cf cfVar2, int i2, cf cfVar3, int i3, cf cfVar4, int i4) {
+    public final defpackage.ca a(float f, float f2, float f3, defpackage.cf cfVar, int i, defpackage.cf cfVar2, int i2, defpackage.cf cfVar3, int i3, defpackage.cf cfVar4, int i4) {
         if (f2 == 0.0f || f == f3) {
             this.b = (float) (((-i) - i2) + i3 + i4);
             this.c.a(cfVar, 1.0f);
@@ -174,8 +185,8 @@ public final class ca {
         return this;
     }
 
-    /* access modifiers changed from: package-private */
-    public final ca a(cf cfVar, cf cfVar2, int i, float f, cf cfVar3, cf cfVar4, int i2) {
+    /* access modifiers changed from: 0000 */
+    public final defpackage.ca a(defpackage.cf cfVar, defpackage.cf cfVar2, int i, float f, defpackage.cf cfVar3, defpackage.cf cfVar4, int i2) {
         if (cfVar2 == cfVar3) {
             this.c.a(cfVar, 1.0f);
             this.c.a(cfVar4, 1.0f);
@@ -208,13 +219,13 @@ public final class ca {
         return this;
     }
 
-    public final ca a(cf cfVar, cf cfVar2) {
+    public final defpackage.ca a(defpackage.cf cfVar, defpackage.cf cfVar2) {
         this.c.a(cfVar, 1.0f);
         this.c.a(cfVar2, -1.0f);
         return this;
     }
 
-    public final ca a(cf cfVar, cf cfVar2, cf cfVar3, cf cfVar4, float f) {
+    public final defpackage.ca a(defpackage.cf cfVar, defpackage.cf cfVar2, defpackage.cf cfVar3, defpackage.cf cfVar4, float f) {
         this.c.a(cfVar, -1.0f);
         this.c.a(cfVar2, 1.0f);
         this.c.a(cfVar3, f);
@@ -222,14 +233,14 @@ public final class ca {
         return this;
     }
 
-    /* access modifiers changed from: package-private */
-    public final boolean a(ca caVar) {
+    /* access modifiers changed from: 0000 */
+    public final boolean a(defpackage.ca caVar) {
         this.c.a(this, caVar);
         return true;
     }
 
-    /* access modifiers changed from: package-private */
-    public final void a(cf cfVar) {
+    /* access modifiers changed from: 0000 */
+    public final void a(defpackage.cf cfVar) {
         if (this.a != null) {
             this.c.a(this.a, -1.0f);
             this.a = null;
@@ -238,7 +249,7 @@ public final class ca {
         this.a = cfVar;
         if (f != 1.0f) {
             this.b /= f;
-            bz bzVar = this.c;
+            defpackage.bz bzVar = this.c;
             int i = bzVar.f;
             int i2 = 0;
             while (i != -1 && i2 < bzVar.a) {

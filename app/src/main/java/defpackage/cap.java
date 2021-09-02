@@ -1,23 +1,20 @@
 package defpackage;
 
-import java.util.Map;
-
-/* renamed from: cap  reason: default package */
+/* renamed from: cap reason: default package */
 /* compiled from: PG */
-public final class cap implements ecz {
-    private final ecz a;
-    private final ecz b;
+public final class cap implements defpackage.ecz {
+    private final defpackage.ecz a;
+    private final defpackage.ecz b;
 
-    public cap(ecz ecz, ecz ecz2) {
+    public cap(defpackage.ecz ecz, defpackage.ecz ecz2) {
         this.a = ecz;
         this.b = ecz2;
     }
 
-    @Override // defpackage.ecz
-    public final /* synthetic */ Object a() {
-        cao cao = new cao();
-        cao.d = (Map) this.a.a();
-        cao.a = (bza) this.b.a();
+    public final /* synthetic */ java.lang.Object a() {
+        defpackage.cao cao = new defpackage.cao();
+        cao.d = (java.util.Map) this.a.a();
+        cao.a = (defpackage.bza) this.b.a();
         return cao;
     }
 }

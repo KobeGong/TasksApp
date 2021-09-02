@@ -1,26 +1,5 @@
 package android.support.v7.app;
 
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.res.TypedArray;
-import android.graphics.drawable.Drawable;
-import android.os.Handler;
-import android.os.Message;
-import android.support.v4.widget.NestedScrollView;
-import android.util.AttributeSet;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewParent;
-import android.view.ViewStub;
-import android.view.Window;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ListAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
-import com.google.android.apps.tasks.R;
-
 /* compiled from: PG */
 public final class AlertController {
     public int A = -1;
@@ -28,78 +7,78 @@ public final class AlertController {
     public int C;
     public int D;
     public boolean E;
-    public Handler F;
-    public final View.OnClickListener G = new wd(this);
-    public final Context a;
-    public final xg b;
-    public final Window c;
+    public android.os.Handler F;
+    public final android.view.View.OnClickListener G = new defpackage.wd(this);
+    public final android.content.Context a;
+    public final defpackage.xg b;
+    public final android.view.Window c;
     public final int d;
-    public CharSequence e;
-    public CharSequence f;
-    public ListView g;
-    public Button h;
-    public CharSequence i;
-    public Message j;
-    public Drawable k;
-    public Button l;
-    public CharSequence m;
-    public Message n;
-    public Drawable o;
-    public Button p;
-    public CharSequence q;
-    public Message r;
-    public Drawable s;
-    public NestedScrollView t;
-    public Drawable u;
-    public ImageView v;
-    public TextView w;
-    public TextView x;
-    public View y;
-    public ListAdapter z;
+    public java.lang.CharSequence e;
+    public java.lang.CharSequence f;
+    public android.widget.ListView g;
+    public android.widget.Button h;
+    public java.lang.CharSequence i;
+    public android.os.Message j;
+    public android.graphics.drawable.Drawable k;
+    public android.widget.Button l;
+    public java.lang.CharSequence m;
+    public android.os.Message n;
+    public android.graphics.drawable.Drawable o;
+    public android.widget.Button p;
+    public java.lang.CharSequence q;
+    public android.os.Message r;
+    public android.graphics.drawable.Drawable s;
+    public android.support.v4.widget.NestedScrollView t;
+    public android.graphics.drawable.Drawable u;
+    public android.widget.ImageView v;
+    public android.widget.TextView w;
+    public android.widget.TextView x;
+    public android.view.View y;
+    public android.widget.ListAdapter z;
 
-    public AlertController(Context context, xg xgVar, Window window) {
+    /* compiled from: PG */
+    public class RecycleListView extends android.widget.ListView {
+        public final int a;
+        public final int b;
+
+        public RecycleListView(android.content.Context context) {
+            this(context, null);
+        }
+
+        public RecycleListView(android.content.Context context, android.util.AttributeSet attributeSet) {
+            super(context, attributeSet);
+            android.content.res.TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, defpackage.xu.bL);
+            this.b = obtainStyledAttributes.getDimensionPixelOffset(defpackage.xu.bM, -1);
+            this.a = obtainStyledAttributes.getDimensionPixelOffset(defpackage.xu.bN, -1);
+        }
+    }
+
+    public AlertController(android.content.Context context, defpackage.xg xgVar, android.view.Window window) {
         this.a = context;
         this.b = xgVar;
         this.c = window;
-        this.F = new wj(xgVar);
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(null, xu.D, R.attr.alertDialogStyle, 0);
-        this.B = obtainStyledAttributes.getResourceId(xu.E, 0);
-        obtainStyledAttributes.getResourceId(xu.G, 0);
-        this.C = obtainStyledAttributes.getResourceId(xu.I, 0);
-        obtainStyledAttributes.getResourceId(xu.J, 0);
-        obtainStyledAttributes.getResourceId(xu.L, 0);
-        this.D = obtainStyledAttributes.getResourceId(xu.H, 0);
-        this.E = obtainStyledAttributes.getBoolean(xu.K, true);
-        this.d = obtainStyledAttributes.getDimensionPixelSize(xu.F, 0);
+        this.F = new defpackage.wj(xgVar);
+        android.content.res.TypedArray obtainStyledAttributes = context.obtainStyledAttributes(null, defpackage.xu.D, 2130772222, 0);
+        this.B = obtainStyledAttributes.getResourceId(defpackage.xu.E, 0);
+        obtainStyledAttributes.getResourceId(defpackage.xu.G, 0);
+        this.C = obtainStyledAttributes.getResourceId(defpackage.xu.I, 0);
+        obtainStyledAttributes.getResourceId(defpackage.xu.J, 0);
+        obtainStyledAttributes.getResourceId(defpackage.xu.L, 0);
+        this.D = obtainStyledAttributes.getResourceId(defpackage.xu.H, 0);
+        this.E = obtainStyledAttributes.getBoolean(defpackage.xu.K, true);
+        this.d = obtainStyledAttributes.getDimensionPixelSize(defpackage.xu.F, 0);
         obtainStyledAttributes.recycle();
         xgVar.a();
     }
 
-    /* compiled from: PG */
-    public class RecycleListView extends ListView {
-        public final int a;
-        public final int b;
-
-        public RecycleListView(Context context) {
-            this(context, null);
-        }
-
-        public RecycleListView(Context context, AttributeSet attributeSet) {
-            super(context, attributeSet);
-            TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, xu.bL);
-            this.b = obtainStyledAttributes.getDimensionPixelOffset(xu.bM, -1);
-            this.a = obtainStyledAttributes.getDimensionPixelOffset(xu.bN, -1);
-        }
-    }
-
-    public final void a(CharSequence charSequence) {
+    public final void a(java.lang.CharSequence charSequence) {
         this.e = charSequence;
         if (this.w != null) {
             this.w.setText(charSequence);
         }
     }
 
-    public final void a(int i2, CharSequence charSequence, DialogInterface.OnClickListener onClickListener, Message message) {
+    public final void a(int i2, java.lang.CharSequence charSequence, android.content.DialogInterface.OnClickListener onClickListener, android.os.Message message) {
         if (onClickListener != null) {
             message = this.F.obtainMessage(i2, onClickListener);
         }
@@ -120,36 +99,36 @@ public final class AlertController {
                 this.k = null;
                 return;
             default:
-                throw new IllegalArgumentException("Button does not exist");
+                throw new java.lang.IllegalArgumentException("Button does not exist");
         }
     }
 
-    public static ViewGroup a(View view, View view2) {
-        View view3;
-        View view4;
+    public static android.view.ViewGroup a(android.view.View view, android.view.View view2) {
+        android.view.View view3;
+        android.view.View view4;
         if (view == null) {
-            if (view2 instanceof ViewStub) {
-                view4 = ((ViewStub) view2).inflate();
+            if (view2 instanceof android.view.ViewStub) {
+                view4 = ((android.view.ViewStub) view2).inflate();
             } else {
                 view4 = view2;
             }
-            return (ViewGroup) view4;
+            return (android.view.ViewGroup) view4;
         }
         if (view2 != null) {
-            ViewParent parent = view2.getParent();
-            if (parent instanceof ViewGroup) {
-                ((ViewGroup) parent).removeView(view2);
+            android.view.ViewParent parent = view2.getParent();
+            if (parent instanceof android.view.ViewGroup) {
+                ((android.view.ViewGroup) parent).removeView(view2);
             }
         }
-        if (view instanceof ViewStub) {
-            view3 = ((ViewStub) view).inflate();
+        if (view instanceof android.view.ViewStub) {
+            view3 = ((android.view.ViewStub) view).inflate();
         } else {
             view3 = view;
         }
-        return (ViewGroup) view3;
+        return (android.view.ViewGroup) view3;
     }
 
-    public static void a(View view, View view2, View view3) {
+    public static void a(android.view.View view, android.view.View view2, android.view.View view3) {
         int i2 = 0;
         if (view2 != null) {
             view2.setVisibility(view.canScrollVertically(-1) ? 0 : 4);
@@ -162,8 +141,8 @@ public final class AlertController {
         }
     }
 
-    public static void a(Button button) {
-        LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) button.getLayoutParams();
+    public static void a(android.widget.Button button) {
+        android.widget.LinearLayout.LayoutParams layoutParams = (android.widget.LinearLayout.LayoutParams) button.getLayoutParams();
         layoutParams.gravity = 1;
         layoutParams.weight = 0.5f;
         button.setLayoutParams(layoutParams);

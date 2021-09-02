@@ -1,43 +1,32 @@
 package android.support.v7.view.menu;
 
-import android.content.Context;
-import android.content.res.Configuration;
-import android.content.res.Resources;
-import android.content.res.TypedArray;
-import android.graphics.drawable.Drawable;
-import android.os.Parcelable;
-import android.text.TextUtils;
-import android.util.AttributeSet;
-import android.view.MotionEvent;
-import android.view.View;
-
 /* compiled from: PG */
-public class ActionMenuItemView extends ack implements aay, View.OnClickListener, zw {
-    public zi a;
-    public zg c;
-    public yr d;
-    private CharSequence e;
-    private Drawable f;
-    private ado g;
+public class ActionMenuItemView extends defpackage.ack implements defpackage.aay, android.view.View.OnClickListener, defpackage.zw {
+    public defpackage.zi a;
+    public defpackage.zg c;
+    public defpackage.yr d;
+    private java.lang.CharSequence e;
+    private android.graphics.drawable.Drawable f;
+    private defpackage.ado g;
     private boolean h;
     private int i;
     private int j;
     private int k;
 
-    public ActionMenuItemView(Context context) {
+    public ActionMenuItemView(android.content.Context context) {
         this(context, null);
     }
 
-    public ActionMenuItemView(Context context, AttributeSet attributeSet) {
+    public ActionMenuItemView(android.content.Context context, android.util.AttributeSet attributeSet) {
         this(context, attributeSet, 0);
     }
 
-    public ActionMenuItemView(Context context, AttributeSet attributeSet, int i2) {
+    public ActionMenuItemView(android.content.Context context, android.util.AttributeSet attributeSet, int i2) {
         super(context, attributeSet, i2);
-        Resources resources = context.getResources();
+        android.content.res.Resources resources = context.getResources();
         this.h = f();
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, xu.v, i2, 0);
-        this.i = obtainStyledAttributes.getDimensionPixelSize(xu.w, 0);
+        android.content.res.TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, defpackage.xu.v, i2, 0);
+        this.i = obtainStyledAttributes.getDimensionPixelSize(defpackage.xu.w, 0);
         obtainStyledAttributes.recycle();
         this.k = (int) ((resources.getDisplayMetrics().density * 32.0f) + 0.5f);
         setOnClickListener(this);
@@ -45,14 +34,14 @@ public class ActionMenuItemView extends ack implements aay, View.OnClickListener
         setSaveEnabled(false);
     }
 
-    public void onConfigurationChanged(Configuration configuration) {
+    public void onConfigurationChanged(android.content.res.Configuration configuration) {
         super.onConfigurationChanged(configuration);
         this.h = f();
         g();
     }
 
     private final boolean f() {
-        Configuration configuration = getContext().getResources().getConfiguration();
+        android.content.res.Configuration configuration = getContext().getResources().getConfiguration();
         int i2 = configuration.screenWidthDp;
         return i2 >= 480 || (i2 >= 640 && configuration.screenHeightDp >= 480) || configuration.orientation == 2;
     }
@@ -62,15 +51,13 @@ public class ActionMenuItemView extends ack implements aay, View.OnClickListener
         super.setPadding(i2, i3, i4, i5);
     }
 
-    @Override // defpackage.zw
-    public final zi a() {
+    public final defpackage.zi a() {
         return this.a;
     }
 
-    @Override // defpackage.zw
-    public final void a(zi ziVar) {
+    public final void a(defpackage.zi ziVar) {
         this.a = ziVar;
-        Drawable icon = ziVar.getIcon();
+        android.graphics.drawable.Drawable icon = ziVar.getIcon();
         this.f = icon;
         if (icon != null) {
             int intrinsicWidth = icon.getIntrinsicWidth();
@@ -89,39 +76,38 @@ public class ActionMenuItemView extends ack implements aay, View.OnClickListener
         }
         setCompoundDrawables(icon, null, null, null);
         g();
-        this.e = ziVar.a(this);
+        this.e = ziVar.a((defpackage.zw) this);
         g();
         setId(ziVar.getItemId());
         setVisibility(ziVar.isVisible() ? 0 : 8);
         setEnabled(ziVar.isEnabled());
         if (ziVar.hasSubMenu() && this.g == null) {
-            this.g = new yq(this);
+            this.g = new defpackage.yq(this);
         }
     }
 
-    public boolean onTouchEvent(MotionEvent motionEvent) {
+    public boolean onTouchEvent(android.view.MotionEvent motionEvent) {
         if (!this.a.hasSubMenu() || this.g == null || !this.g.onTouch(this, motionEvent)) {
             return super.onTouchEvent(motionEvent);
         }
         return true;
     }
 
-    public void onClick(View view) {
+    public void onClick(android.view.View view) {
         if (this.c != null) {
             this.c.a(this.a);
         }
     }
 
-    @Override // defpackage.zw
     public final boolean c_() {
         return true;
     }
 
     private final void g() {
-        CharSequence charSequence;
+        java.lang.CharSequence charSequence;
         boolean z = false;
-        CharSequence charSequence2 = null;
-        boolean z2 = !TextUtils.isEmpty(this.e);
+        java.lang.CharSequence charSequence2 = null;
+        boolean z2 = !android.text.TextUtils.isEmpty(this.e);
         if (this.f == null || ((this.a.e & 4) == 4 && this.h)) {
             z = true;
         }
@@ -132,33 +118,31 @@ public class ActionMenuItemView extends ack implements aay, View.OnClickListener
             charSequence = null;
         }
         setText(charSequence);
-        CharSequence contentDescription = this.a.getContentDescription();
-        if (TextUtils.isEmpty(contentDescription)) {
+        java.lang.CharSequence contentDescription = this.a.getContentDescription();
+        if (android.text.TextUtils.isEmpty(contentDescription)) {
             setContentDescription(z3 ? null : this.a.getTitle());
         } else {
             setContentDescription(contentDescription);
         }
-        CharSequence tooltipText = this.a.getTooltipText();
-        if (TextUtils.isEmpty(tooltipText)) {
+        java.lang.CharSequence tooltipText = this.a.getTooltipText();
+        if (android.text.TextUtils.isEmpty(tooltipText)) {
             if (!z3) {
                 charSequence2 = this.a.getTitle();
             }
-            aaz.a(this, charSequence2);
+            defpackage.aaz.a((android.view.View) this, charSequence2);
             return;
         }
-        aaz.a(this, tooltipText);
+        defpackage.aaz.a((android.view.View) this, tooltipText);
     }
 
     public final boolean c() {
-        return !TextUtils.isEmpty(getText());
+        return !android.text.TextUtils.isEmpty(getText());
     }
 
-    @Override // defpackage.aay
     public final boolean e_() {
         return c() && this.a.getIcon() == null;
     }
 
-    @Override // defpackage.aay
     public final boolean e() {
         return c();
     }
@@ -170,19 +154,19 @@ public class ActionMenuItemView extends ack implements aay, View.OnClickListener
             super.setPadding(this.j, getPaddingTop(), getPaddingRight(), getPaddingBottom());
         }
         super.onMeasure(i2, i3);
-        int mode = View.MeasureSpec.getMode(i2);
-        int size = View.MeasureSpec.getSize(i2);
+        int mode = android.view.View.MeasureSpec.getMode(i2);
+        int size = android.view.View.MeasureSpec.getSize(i2);
         int measuredWidth = getMeasuredWidth();
-        int min = mode == Integer.MIN_VALUE ? Math.min(size, this.i) : this.i;
-        if (mode != 1073741824 && this.i > 0 && measuredWidth < min) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(min, 1073741824), i3);
+        int i4 = mode == Integer.MIN_VALUE ? java.lang.Math.min(size, this.i) : this.i;
+        if (mode != 1073741824 && this.i > 0 && measuredWidth < i4) {
+            super.onMeasure(android.view.View.MeasureSpec.makeMeasureSpec(i4, 1073741824), i3);
         }
         if (!c2 && this.f != null) {
             super.setPadding((getMeasuredWidth() - this.f.getBounds().width()) / 2, getPaddingTop(), getPaddingRight(), getPaddingBottom());
         }
     }
 
-    public void onRestoreInstanceState(Parcelable parcelable) {
+    public void onRestoreInstanceState(android.os.Parcelable parcelable) {
         super.onRestoreInstanceState(null);
     }
 }

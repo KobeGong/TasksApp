@@ -1,9 +1,7 @@
 package defpackage;
 
-import android.view.View;
-
-/* renamed from: sl  reason: default package */
+/* renamed from: sl reason: default package */
 /* compiled from: PG */
 public interface sl {
-    tk a(View view, tk tkVar);
+    defpackage.tk a(android.view.View view, defpackage.tk tkVar);
 }

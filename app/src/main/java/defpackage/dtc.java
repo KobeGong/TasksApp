@@ -1,16 +1,11 @@
 package defpackage;
 
-import java.io.Closeable;
-import java.net.SocketAddress;
-import java.util.concurrent.ScheduledExecutorService;
-
-/* renamed from: dtc  reason: default package */
+/* renamed from: dtc reason: default package */
 /* compiled from: PG */
-public interface dtc extends Closeable {
-    dth a(SocketAddress socketAddress, String str, String str2, dxu dxu);
+public interface dtc extends java.io.Closeable {
+    defpackage.dth a(java.net.SocketAddress socketAddress, java.lang.String str, java.lang.String str2, defpackage.dxu dxu);
 
-    ScheduledExecutorService a();
+    java.util.concurrent.ScheduledExecutorService a();
 
-    @Override // java.io.Closeable, java.lang.AutoCloseable
     void close();
 }

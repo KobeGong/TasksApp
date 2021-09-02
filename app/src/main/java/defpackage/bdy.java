@@ -1,22 +1,18 @@
 package defpackage;
 
-import android.os.IBinder;
-import android.os.Parcel;
-
-/* renamed from: bdy  reason: default package */
+/* renamed from: bdy reason: default package */
 /* compiled from: PG */
-public final class bdy extends bkm implements bdx {
-    public bdy(IBinder iBinder) {
+public final class bdy extends defpackage.bkm implements defpackage.bdx {
+    public bdy(android.os.IBinder iBinder) {
         super(iBinder, "com.google.android.gms.common.internal.IGoogleCertificatesApi");
     }
 
-    @Override // defpackage.bdx
-    public final boolean a(bfj bfj, bfl bfl) {
-        Parcel c = c();
-        bko.a(c, bfj);
-        bko.a(c, bfl);
-        Parcel a = a(5, c);
-        boolean a2 = bko.a(a);
+    public final boolean a(defpackage.bfj bfj, defpackage.bfl bfl) {
+        android.os.Parcel c = c();
+        defpackage.bko.a(c, (android.os.Parcelable) bfj);
+        defpackage.bko.a(c, (android.os.IInterface) bfl);
+        android.os.Parcel a = a(5, c);
+        boolean a2 = defpackage.bko.a(a);
         a.recycle();
         return a2;
     }

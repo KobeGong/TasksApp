@@ -1,21 +1,20 @@
 package defpackage;
 
-/* renamed from: eel  reason: default package */
+/* renamed from: eel reason: default package */
 /* compiled from: PG */
-public final class eel extends dlz {
-    public eet[] a = eet.d();
+public final class eel extends defpackage.dlz {
+    public defpackage.eet[] a;
 
     public eel() {
+        this.a = defpackage.eet.d();
         this.k = -1;
     }
 
-    @Override // defpackage.dlz, defpackage.dmf
-    public final void a(dlx dlx) {
+    public final void a(defpackage.dlx dlx) {
         if (this.a != null && this.a.length > 0) {
-            for (int i = 0; i < this.a.length; i++) {
-                eet eet = this.a[i];
+            for (defpackage.eet eet : this.a) {
                 if (eet != null) {
-                    dlx.a(1, eet);
+                    dlx.a(1, (defpackage.dmf) eet);
                 }
             }
         }
@@ -23,49 +22,46 @@ public final class eel extends dlz {
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.dlz, defpackage.dmf
     public final int a() {
         int a2 = super.a();
         if (this.a != null && this.a.length > 0) {
-            for (int i = 0; i < this.a.length; i++) {
-                eet eet = this.a[i];
+            for (defpackage.eet eet : this.a) {
                 if (eet != null) {
-                    a2 += dlx.b(1, eet);
+                    a2 += defpackage.dlx.b(1, (defpackage.dmf) eet);
                 }
             }
         }
         return a2;
     }
 
-    @Override // defpackage.dmf
-    public final /* synthetic */ dmf a(dlw dlw) {
+    public final /* synthetic */ defpackage.dmf a(defpackage.dlw dlw) {
         while (true) {
             int a2 = dlw.a();
             switch (a2) {
                 case 0:
                     break;
                 case 10:
-                    int a3 = dmh.a(dlw, 10);
+                    int a3 = defpackage.dmh.a(dlw, 10);
                     int length = this.a == null ? 0 : this.a.length;
-                    eet[] eetArr = new eet[(a3 + length)];
+                    defpackage.eet[] eetArr = new defpackage.eet[(a3 + length)];
                     if (length != 0) {
-                        System.arraycopy(this.a, 0, eetArr, 0, length);
+                        java.lang.System.arraycopy(this.a, 0, eetArr, 0, length);
                     }
                     while (length < eetArr.length - 1) {
-                        eetArr[length] = new eet();
-                        dlw.a(eetArr[length]);
+                        eetArr[length] = new defpackage.eet();
+                        dlw.a((defpackage.dmf) eetArr[length]);
                         dlw.a();
                         length++;
                     }
-                    eetArr[length] = new eet();
-                    dlw.a(eetArr[length]);
+                    eetArr[length] = new defpackage.eet();
+                    dlw.a((defpackage.dmf) eetArr[length]);
                     this.a = eetArr;
-                    break;
+                    continue;
                 default:
-                    if (super.a(dlw, a2)) {
+                    if (!super.a(dlw, a2)) {
                         break;
                     } else {
-                        break;
+                        continue;
                     }
             }
         }

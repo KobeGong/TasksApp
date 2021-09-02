@@ -1,15 +1,12 @@
 package defpackage;
 
-import java.util.Iterator;
-
-/* renamed from: dkq  reason: default package */
+/* renamed from: dkq reason: default package */
 /* compiled from: PG */
-final class dkq implements Iterable {
+final class dkq implements java.lang.Iterable {
     dkq() {
     }
 
-    @Override // java.lang.Iterable
-    public final Iterator iterator() {
-        return dko.a;
+    public final java.util.Iterator iterator() {
+        return defpackage.dko.a;
     }
 }

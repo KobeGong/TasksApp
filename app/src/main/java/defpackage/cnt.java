@@ -1,28 +1,21 @@
 package defpackage;
 
-import android.app.ActivityManager;
-import android.content.Context;
-import android.os.Build;
-import android.os.Debug;
-import java.lang.reflect.Method;
-import java.util.Map;
-
-/* renamed from: cnt  reason: default package */
+/* renamed from: cnt reason: default package */
 /* compiled from: PG */
 public final class cnt {
     private static volatile boolean a;
-    private static Method b;
+    private static java.lang.reflect.Method b;
 
-    private static Method a() {
+    private static java.lang.reflect.Method a() {
         if (!a) {
-            synchronized (cnt.class) {
+            synchronized (defpackage.cnt.class) {
                 if (!a) {
                     try {
-                        b = Debug.MemoryInfo.class.getDeclaredMethod("getOtherPss", Integer.TYPE);
-                    } catch (NoSuchMethodException e) {
-                        cdm.a("PrimesMemoryCapture", "MemoryInfo.getOtherPss(which) not found", e, new Object[0]);
-                    } catch (Error | Exception e2) {
-                        cdm.c("PrimesMemoryCapture", "MemoryInfo.getOtherPss(which) failure", e2, new Object[0]);
+                        b = android.os.Debug.MemoryInfo.class.getDeclaredMethod("getOtherPss", new java.lang.Class[]{java.lang.Integer.TYPE});
+                    } catch (java.lang.NoSuchMethodException e) {
+                        defpackage.cdm.a("PrimesMemoryCapture", "MemoryInfo.getOtherPss(which) not found", (java.lang.Throwable) e, new java.lang.Object[0]);
+                    } catch (java.lang.Error | java.lang.Exception e2) {
+                        defpackage.cdm.c("PrimesMemoryCapture", "MemoryInfo.getOtherPss(which) failure", e2, new java.lang.Object[0]);
                     }
                     a = true;
                 }
@@ -31,14 +24,14 @@ public final class cnt {
         return b;
     }
 
-    private static int a(Debug.MemoryInfo memoryInfo) {
-        Method a2 = a();
+    private static int a(android.os.Debug.MemoryInfo memoryInfo) {
+        java.lang.reflect.Method a2 = a();
         if (a2 != null) {
             try {
-                return ((Integer) a2.invoke(memoryInfo, 14)).intValue();
-            } catch (Error | Exception e) {
+                return ((java.lang.Integer) a2.invoke(memoryInfo, new java.lang.Object[]{java.lang.Integer.valueOf(14)})).intValue();
+            } catch (java.lang.Error | java.lang.Exception e) {
                 b = null;
-                cdm.c("PrimesMemoryCapture", "MemoryInfo.getOtherPss(which) invocation failure", e, new Object[0]);
+                defpackage.cdm.c("PrimesMemoryCapture", "MemoryInfo.getOtherPss(which) invocation failure", e, new java.lang.Object[0]);
             }
         }
         return -1;
@@ -47,64 +40,66 @@ public final class cnt {
     private cnt() {
     }
 
-    public static een a(int i, int i2, String str, Context context, String str2, boolean z) {
-        cky.c();
-        cky.a((Object) context);
-        een een = new een();
-        een.a = new eem();
-        Debug.MemoryInfo[] processMemoryInfo = cnx.a(context).getProcessMemoryInfo(new int[]{i2});
-        ActivityManager.MemoryInfo memoryInfo = new ActivityManager.MemoryInfo();
-        cnx.a(context).getMemoryInfo(memoryInfo);
+    public static defpackage.een a(int i, int i2, java.lang.String str, android.content.Context context, java.lang.String str2, boolean z) {
+        defpackage.cky.c();
+        defpackage.cky.a((java.lang.Object) context);
+        defpackage.een een = new defpackage.een();
+        een.a = new defpackage.eem();
+        android.os.Debug.MemoryInfo[] processMemoryInfo = defpackage.cnx.a(context).getProcessMemoryInfo(new int[]{i2});
+        android.app.ActivityManager.MemoryInfo memoryInfo = new android.app.ActivityManager.MemoryInfo();
+        defpackage.cnx.a(context).getMemoryInfo(memoryInfo);
         een.a.a = a(processMemoryInfo[0], memoryInfo, z);
-        een.b = new efl();
-        een.b.a = cky.a(str, context);
-        een.d = new edz();
-        een.d.a = Boolean.valueOf(cnx.c(context));
+        een.b = new defpackage.efl();
+        een.b.a = defpackage.cky.a(str, context);
+        een.d = new defpackage.edz();
+        een.d.a = java.lang.Boolean.valueOf(defpackage.cnx.c(context));
         een.c = i;
         een.e = str2;
         return een;
     }
 
-    private static ede a(Debug.MemoryInfo memoryInfo, ActivityManager.MemoryInfo memoryInfo2, boolean z) {
-        int a2;
-        ede ede = new ede();
-        ede.a = Integer.valueOf(memoryInfo.dalvikPss);
-        ede.b = Integer.valueOf(memoryInfo.nativePss);
-        ede.c = Integer.valueOf(memoryInfo.otherPss);
-        ede.d = Integer.valueOf(memoryInfo.dalvikPrivateDirty);
-        ede.e = Integer.valueOf(memoryInfo.nativePrivateDirty);
-        ede.f = Integer.valueOf(memoryInfo.otherPrivateDirty);
-        ede.g = Integer.valueOf(memoryInfo.getTotalPss());
-        if (Build.VERSION.SDK_INT >= 19) {
-            ede.h = Integer.valueOf(memoryInfo.getTotalPrivateClean());
-            ede.l = Integer.valueOf(memoryInfo.getTotalSwappablePss());
+    private static defpackage.ede a(android.os.Debug.MemoryInfo memoryInfo, android.app.ActivityManager.MemoryInfo memoryInfo2, boolean z) {
+        defpackage.ede ede = new defpackage.ede();
+        ede.a = java.lang.Integer.valueOf(memoryInfo.dalvikPss);
+        ede.b = java.lang.Integer.valueOf(memoryInfo.nativePss);
+        ede.c = java.lang.Integer.valueOf(memoryInfo.otherPss);
+        ede.d = java.lang.Integer.valueOf(memoryInfo.dalvikPrivateDirty);
+        ede.e = java.lang.Integer.valueOf(memoryInfo.nativePrivateDirty);
+        ede.f = java.lang.Integer.valueOf(memoryInfo.otherPrivateDirty);
+        ede.g = java.lang.Integer.valueOf(memoryInfo.getTotalPss());
+        if (android.os.Build.VERSION.SDK_INT >= 19) {
+            ede.h = java.lang.Integer.valueOf(memoryInfo.getTotalPrivateClean());
+            ede.l = java.lang.Integer.valueOf(memoryInfo.getTotalSwappablePss());
         }
-        ede.i = Integer.valueOf(memoryInfo.getTotalSharedDirty());
-        if (Build.VERSION.SDK_INT >= 19 && (a2 = a(memoryInfo)) != -1) {
-            ede.m = Integer.valueOf(a2);
-        }
-        if (Build.VERSION.SDK_INT >= 23 && !z) {
-            try {
-                Map<String, String> memoryStats = memoryInfo.getMemoryStats();
-                ede.o = a(memoryStats.get("summary.code"));
-                ede.p = a(memoryStats.get("summary.stack"));
-                ede.q = a(memoryStats.get("summary.graphics"));
-                ede.s = a(memoryStats.get("summary.system"));
-                ede.n = a(memoryStats.get("summary.java-heap"));
-                ede.r = a(memoryStats.get("summary.private-other"));
-            } catch (NumberFormatException e) {
-                cdm.a("PrimesMemoryCapture", "failed to collect memory summary stats", new Object[0]);
+        ede.i = java.lang.Integer.valueOf(memoryInfo.getTotalSharedDirty());
+        if (android.os.Build.VERSION.SDK_INT >= 19) {
+            int a2 = a(memoryInfo);
+            if (a2 != -1) {
+                ede.m = java.lang.Integer.valueOf(a2);
             }
         }
-        ede.t = Integer.valueOf((int) (memoryInfo2.availMem >> 10));
-        ede.u = Integer.valueOf((int) (memoryInfo2.totalMem >> 20));
+        if (android.os.Build.VERSION.SDK_INT >= 23 && !z) {
+            try {
+                java.util.Map memoryStats = memoryInfo.getMemoryStats();
+                ede.o = a((java.lang.String) memoryStats.get("summary.code"));
+                ede.p = a((java.lang.String) memoryStats.get("summary.stack"));
+                ede.q = a((java.lang.String) memoryStats.get("summary.graphics"));
+                ede.s = a((java.lang.String) memoryStats.get("summary.system"));
+                ede.n = a((java.lang.String) memoryStats.get("summary.java-heap"));
+                ede.r = a((java.lang.String) memoryStats.get("summary.private-other"));
+            } catch (java.lang.NumberFormatException e) {
+                defpackage.cdm.a("PrimesMemoryCapture", "failed to collect memory summary stats", new java.lang.Object[0]);
+            }
+        }
+        ede.t = java.lang.Integer.valueOf((int) (memoryInfo2.availMem >> 10));
+        ede.u = java.lang.Integer.valueOf((int) (memoryInfo2.totalMem >> 20));
         return ede;
     }
 
-    private static Integer a(String str) {
+    private static java.lang.Integer a(java.lang.String str) {
         if (str == null) {
             return null;
         }
-        return Integer.valueOf(Integer.parseInt(str));
+        return java.lang.Integer.valueOf(java.lang.Integer.parseInt(str));
     }
 }

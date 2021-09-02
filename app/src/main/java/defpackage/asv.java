@@ -1,27 +1,23 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: asv  reason: default package */
+/* renamed from: asv reason: default package */
 /* compiled from: PG */
-public final class asv extends alu {
-    private final /* synthetic */ asi a;
+final class asv extends defpackage.alu {
+    private final /* synthetic */ EditTaskFragment a;
 
-    asv(asi asi) {
+    asv(EditTaskFragment asi) {
         this.a = asi;
     }
 
-    @Override // defpackage.alu
     public final void a() {
-        this.a.a(new asw(this.a));
+        this.a.a(new defpackage.asw(this.a));
     }
 
-    @Override // defpackage.alu
     public final void b() {
-        this.a.a(new asx(this.a));
+        this.a.a(new defpackage.asx(this.a));
     }
 
-    @Override // defpackage.alu
-    public final void a(String str) {
-        this.a.a(new asy(this.a));
+    public final void a(java.lang.String str) {
+        this.a.a(new defpackage.asy(this.a));
     }
 }

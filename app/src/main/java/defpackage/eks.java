@@ -1,53 +1,43 @@
 package defpackage;
 
-import java.nio.ByteBuffer;
-
-/* renamed from: eks  reason: default package */
+/* renamed from: eks reason: default package */
 /* compiled from: PG */
-public final class eks extends ehr {
-    private final ehr a;
+public final class eks extends defpackage.ehr {
+    private final defpackage.ehr a;
 
-    public eks(ehr ehr) {
+    public eks(defpackage.ehr ehr) {
         this.a = ehr;
     }
 
-    @Override // defpackage.ehr
-    public final void a(ehp ehp) {
+    public final void a(defpackage.ehp ehp) {
         this.a.a(ehp);
     }
 
-    @Override // defpackage.ehr
-    public final void a(ehp ehp, ejg ejg) {
+    public final void a(defpackage.ehp ehp, defpackage.ejg ejg) {
         this.a.a(ehp, ejg);
     }
 
-    @Override // defpackage.ehr
-    public final void a(ehp ehp, ejg ejg, ByteBuffer byteBuffer, boolean z) {
+    public final void a(defpackage.ehp ehp, defpackage.ejg ejg, java.nio.ByteBuffer byteBuffer, boolean z) {
         this.a.a(ehp, ejg, byteBuffer, z);
     }
 
-    @Override // defpackage.ehr
-    public final void b(ehp ehp, ejg ejg, ByteBuffer byteBuffer, boolean z) {
+    public final void b(defpackage.ehp ehp, defpackage.ejg ejg, java.nio.ByteBuffer byteBuffer, boolean z) {
         this.a.b(ehp, ejg, byteBuffer, z);
     }
 
-    @Override // defpackage.ehr
-    public final void a(ehp ehp, ejg ejg, ejh ejh) {
+    public final void a(defpackage.ehp ehp, defpackage.ejg ejg, defpackage.ejh ejh) {
         this.a.a(ehp, ejg, ejh);
     }
 
-    @Override // defpackage.ehr
-    public final void b(ehp ehp, ejg ejg) {
+    public final void b(defpackage.ehp ehp, defpackage.ejg ejg) {
         this.a.b(ehp, ejg);
     }
 
-    @Override // defpackage.ehr
-    public final void a(ehp ehp, ejg ejg, bkv bkv) {
+    public final void a(defpackage.ehp ehp, defpackage.ejg ejg, defpackage.bkv bkv) {
         this.a.a(ehp, ejg, bkv);
     }
 
-    @Override // defpackage.ehr
-    public final void c(ehp ehp, ejg ejg) {
+    public final void c(defpackage.ehp ehp, defpackage.ejg ejg) {
         this.a.c(ehp, ejg);
     }
 }

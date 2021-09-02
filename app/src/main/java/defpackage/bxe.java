@@ -1,36 +1,35 @@
 package defpackage;
 
-import java.util.Map;
-
-/* renamed from: bxe  reason: default package */
+/* renamed from: bxe reason: default package */
 /* compiled from: PG */
 public final class bxe {
     public byte[] a;
-    public String b;
-    public Map c;
-    private String d;
+    public java.lang.String b;
+    public java.util.Map c;
+    private java.lang.String d;
 
-    public final bxe a(String str) {
+    public final defpackage.bxe a(java.lang.String str) {
         if (str == null) {
-            throw new NullPointerException("Null url");
+            throw new java.lang.NullPointerException("Null url");
         }
         this.d = str;
         return this;
     }
 
-    public final bxd a() {
-        String str = "";
+    public final defpackage.bxd a() {
+        java.lang.String str = "";
         if (this.d == null) {
-            str = String.valueOf(str).concat(" url");
+            str = java.lang.String.valueOf(str).concat(" url");
         }
         if (this.b == null) {
-            str = String.valueOf(str).concat(" contentType");
+            str = java.lang.String.valueOf(str).concat(" contentType");
         }
         if (str.isEmpty()) {
-            return new bxa(this.d, this.a, this.b, this.c);
+            return new defpackage.bxa(this.d, this.a, this.b, this.c);
         }
-        String valueOf = String.valueOf(str);
-        throw new IllegalStateException(valueOf.length() != 0 ? "Missing required properties:".concat(valueOf) : new String("Missing required properties:"));
+        java.lang.String str2 = "Missing required properties:";
+        java.lang.String valueOf = java.lang.String.valueOf(str);
+        throw new java.lang.IllegalStateException(valueOf.length() != 0 ? str2.concat(valueOf) : new java.lang.String(str2));
     }
 
     bxe() {

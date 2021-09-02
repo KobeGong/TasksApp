@@ -1,26 +1,22 @@
 package defpackage;
 
-import android.os.SystemClock;
-import java.util.concurrent.CountDownLatch;
-
-/* access modifiers changed from: package-private */
-/* renamed from: oa  reason: default package */
+/* renamed from: oa reason: default package */
 /* compiled from: PG */
-public final class oa extends oe implements Runnable {
+final class oa extends defpackage.oe implements java.lang.Runnable {
     public boolean a;
-    private final CountDownLatch h = new CountDownLatch(1);
-    private final /* synthetic */ nz i;
+    private final java.util.concurrent.CountDownLatch h = new java.util.concurrent.CountDownLatch(1);
+    private final /* synthetic */ defpackage.nz i;
 
-    oa(nz nzVar) {
+    oa(defpackage.nz nzVar) {
         this.i = nzVar;
     }
 
     /* access modifiers changed from: private */
     /* renamed from: d */
-    public final Object b() {
+    public final java.lang.Object b() {
         try {
             return this.i.d();
-        } catch (pr e) {
+        } catch (defpackage.pr e) {
             if (this.f.get()) {
                 return null;
             }
@@ -29,14 +25,13 @@ public final class oa extends oe implements Runnable {
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.oe
-    public final void a(Object obj) {
+    public final void a(java.lang.Object obj) {
         try {
-            nz nzVar = this.i;
+            defpackage.nz nzVar = this.i;
             if (nzVar.a != this) {
                 nzVar.a(this);
             } else if (!nzVar.g) {
-                nzVar.b = SystemClock.uptimeMillis();
+                nzVar.b = android.os.SystemClock.uptimeMillis();
                 nzVar.a = null;
                 nzVar.a(obj);
             }
@@ -46,7 +41,6 @@ public final class oa extends oe implements Runnable {
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.oe
     public final void a() {
         try {
             this.i.a(this);

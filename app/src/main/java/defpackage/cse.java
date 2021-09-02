@@ -1,74 +1,71 @@
 package defpackage;
 
-import java.io.PrintWriter;
-import java.io.StringWriter;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-
-/* renamed from: cse  reason: default package */
+/* renamed from: cse reason: default package */
 /* compiled from: PG */
 public final class cse {
-    private static final Object a;
+    private static final java.lang.Object a;
 
-    public static void a(Throwable th) {
-        cld.a((Object) th);
-        if (th instanceof RuntimeException) {
-            throw ((RuntimeException) th);
-        } else if (th instanceof Error) {
-            throw ((Error) th);
+    public static void a(java.lang.Throwable th) {
+        defpackage.cld.a((java.lang.Object) th);
+        if (th instanceof java.lang.RuntimeException) {
+            throw ((java.lang.RuntimeException) th);
+        } else if (th instanceof java.lang.Error) {
+            throw ((java.lang.Error) th);
         }
     }
 
-    @Deprecated
-    public static RuntimeException b(Throwable th) {
+    @java.lang.Deprecated
+    public static java.lang.RuntimeException b(java.lang.Throwable th) {
         a(th);
-        throw new RuntimeException(th);
+        throw new java.lang.RuntimeException(th);
     }
 
-    public static String c(Throwable th) {
-        StringWriter stringWriter = new StringWriter();
-        cza.a(th, new PrintWriter(stringWriter));
+    public static java.lang.String c(java.lang.Throwable th) {
+        java.io.StringWriter stringWriter = new java.io.StringWriter();
+        defpackage.cza.a(th, new java.io.PrintWriter(stringWriter));
         return stringWriter.toString();
     }
 
-    private static Object a() {
+    private static java.lang.Object a() {
+        boolean z = false;
         try {
-            return Class.forName("sun.misc.SharedSecrets", false, null).getMethod("getJavaLangAccess", new Class[0]).invoke(null, new Object[0]);
-        } catch (ThreadDeath e) {
+            return java.lang.Class.forName("sun.misc.SharedSecrets", false, null).getMethod("getJavaLangAccess", new java.lang.Class[0]).invoke(null, new java.lang.Object[0]);
+        } catch (java.lang.ThreadDeath e) {
             throw e;
         } catch (Throwable th) {
-            return null;
+            return z;
         }
     }
 
-    private static Method b() {
+    private static java.lang.reflect.Method b() {
         try {
-            Method a2 = a("getStackTraceDepth", Throwable.class);
+            java.lang.reflect.Method a2 = a("getStackTraceDepth", java.lang.Throwable.class);
             if (a2 == null) {
                 return null;
             }
-            a2.invoke(a(), new Throwable());
+            a2.invoke(a(), new java.lang.Object[]{new java.lang.Throwable()});
             return a2;
-        } catch (IllegalAccessException | UnsupportedOperationException | InvocationTargetException e) {
+        } catch (java.lang.IllegalAccessException | java.lang.UnsupportedOperationException | java.lang.reflect.InvocationTargetException e) {
             return null;
         }
     }
 
-    private static Method a(String str, Class... clsArr) {
+    private static java.lang.reflect.Method a(java.lang.String str, java.lang.Class... clsArr) {
+        boolean z = false;
         try {
-            return Class.forName("sun.misc.JavaLangAccess", false, null).getMethod(str, clsArr);
-        } catch (ThreadDeath e) {
+            return java.lang.Class.forName("sun.misc.JavaLangAccess", false, null).getMethod(str, clsArr);
+        } catch (java.lang.ThreadDeath e) {
             throw e;
         } catch (Throwable th) {
-            return null;
+            return z;
         }
     }
 
     static {
-        Object a2 = a();
+        java.lang.Object a2 = a();
         a = a2;
         if (a2 != null) {
-            a("getStackTraceElement", Throwable.class, Integer.TYPE);
+            a("getStackTraceElement", java.lang.Throwable.class, java.lang.Integer.TYPE);
         }
         if (a != null) {
             b();

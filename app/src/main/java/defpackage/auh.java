@@ -1,97 +1,79 @@
 package defpackage;
 
-import android.graphics.Canvas;
-import android.os.Build;
-import android.os.VibrationEffect;
-import android.os.Vibrator;
-import android.support.v7.widget.RecyclerView;
-import android.util.Pair;
-import android.view.MotionEvent;
-import android.view.View;
-import java.util.Calendar;
-import java.util.HashSet;
-import java.util.Locale;
-import java.util.Set;
-
-/* access modifiers changed from: package-private */
-/* renamed from: auh  reason: default package */
+/* renamed from: auh reason: default package */
 /* compiled from: PG */
-public final class auh extends aie implements View.OnTouchListener {
-    public final SortableAdapter a;
-    private final Vibrator b;
+final class auh extends defpackage.aie implements android.view.View.OnTouchListener {
+    public final defpackage.atg a;
+    private final android.os.Vibrator b;
     private final float c;
-    private final att d;
+    private final defpackage.att d;
     private int e = 0;
     private float f;
-    private ViewHolder g;
-    private ViewHolder h;
+    private defpackage.afv g;
+    private defpackage.afv h;
     private boolean i;
-    private Set j;
+    private java.util.Set j;
 
-    public auh(SortableAdapter atg, Vibrator vibrator, float f2, att att) {
+    public auh(defpackage.atg atg, android.os.Vibrator vibrator, float f2, defpackage.att att) {
         this.a = atg;
         this.b = vibrator;
         this.c = f2;
         this.d = att;
     }
 
-    @Override // defpackage.ahy, defpackage.aie
-    public final int a(ViewHolder afv) {
+    public final int a(defpackage.afv afv) {
         int i2;
         boolean z = true;
         int i3 = 0;
-        SortableAdapter atg = this.a;
+        defpackage.atg atg = this.a;
         if (afv.d() < atg.d() && atg.b()) {
             i2 = 3;
         } else {
             i2 = 0;
         }
-        SortableAdapter atg2 = this.a;
+        defpackage.atg atg2 = this.a;
         int d2 = afv.d();
         if (d2 >= atg2.d() || !atg2.h(d2)) {
             z = false;
         }
         if (z) {
             i3 = 32;
-            if (crk.a.a()) {
+            if (defpackage.crk.a.a()) {
                 i3 = 48;
             }
         }
-        return ahy.b(i2, i3);
+        return defpackage.ahy.b(i2, i3);
     }
 
-    @Override // defpackage.ahy
     public final boolean b() {
         return true;
     }
 
-    @Override // defpackage.ahy
     public final boolean c() {
         return true;
     }
 
-    @Override // defpackage.ahy
-    public final void a(ViewHolder afv, int i2) {
-        dca dca;
-        dmk a2;
-        dmk dmk;
-        dih dih;
-        dca dca2;
-        dih dih2;
+    public final void a(defpackage.afv afv, int i2) {
+        defpackage.dca dca;
+        defpackage.dmk a2;
+        defpackage.dmk dmk;
+        defpackage.dih dih;
+        defpackage.dca dca2;
+        defpackage.dih dih2;
         boolean z = false;
         int d2 = afv.d();
         if (i2 == 16) {
-            SortableAdapter atg = this.a;
-            cld.a(d2 < atg.d());
-            dby g2 = atg.g(d2);
+            defpackage.atg atg = this.a;
+            defpackage.cld.a(d2 < atg.d());
+            defpackage.dby g2 = atg.g(d2);
             if (g2 == null) {
-                azb.a("Failed to find task", new Object[0]);
+                defpackage.azb.a("Failed to find task", new java.lang.Object[0]);
                 return;
             }
             atg.a = g2.d;
-            dby g3 = atg.g(d2);
+            defpackage.dby g3 = atg.g(d2);
             if (g3.e == null) {
-                dca = dca.g;
+                dca = defpackage.dca.g;
             } else {
                 dca = g3.e;
             }
@@ -99,116 +81,115 @@ public final class auh extends aie implements View.OnTouchListener {
                 z = true;
             }
             if (!z) {
-                a2 = ajd.a(auz.a());
+                a2 = defpackage.ajd.a(defpackage.auz.a());
             } else if (dca.d == null) {
-                a2 = dmk.d;
+                a2 = defpackage.dmk.d;
             } else {
                 a2 = dca.d;
             }
-            Calendar a3 = bdk.a();
-            if (ajd.b(a2).before(a3)) {
-                dmk = ajd.a(a3.getTimeInMillis());
+            java.util.Calendar a3 = defpackage.bdk.a();
+            if (defpackage.ajd.b(a2).before(a3)) {
+                dmk = defpackage.ajd.a(a3.getTimeInMillis());
             } else {
                 dmk = a2;
             }
-            dii dii = (dii) dmk.a(bg.ao);
-            dii.a((dih) dmk);
-            dii g4 = dii.g(dmk.c + 1);
+            defpackage.dii dii = (defpackage.dii) dmk.a(defpackage.bg.ao);
+            dii.a((defpackage.dih) dmk);
+            defpackage.dii g4 = dii.g(dmk.c + 1);
             if (g4.b) {
                 dih = g4.a;
             } else {
-                dih dih3 = g4.a;
-                djz.a.a(dih3).c(dih3);
+                defpackage.dih dih3 = g4.a;
+                defpackage.djz.a.a((java.lang.Object) dih3).c(dih3);
                 g4.b = true;
                 dih = g4.a;
             }
-            dih dih4 = dih;
-            if (!dih.a(dih4, Boolean.TRUE.booleanValue())) {
-                throw new dkw();
+            defpackage.dih dih4 = dih;
+            if (!defpackage.dih.a(dih4, java.lang.Boolean.TRUE.booleanValue())) {
+                throw new defpackage.dkw();
             }
-            dmk dmk2 = (dmk) dih4;
+            defpackage.dmk dmk2 = (defpackage.dmk) dih4;
             if (atg.f != null) {
-                atl atl = atg.f;
-                String str = g3.d;
-                auj.N().b(atl.a.X, str, dmk2);
-                aju.a().a(str);
+                defpackage.atl atl = atg.f;
+                java.lang.String str = g3.d;
+                TasksFragment.N().b(atl.a.X, str, dmk2);
+                defpackage.aju.a().a(str);
             }
-            dii dii2 = (dii) g3.a(bg.ao);
-            dii2.a((dih) g3);
-            dii dii3 = dii2;
+            defpackage.dii dii2 = (defpackage.dii) g3.a(defpackage.bg.ao);
+            dii2.a((defpackage.dih) g3);
+            defpackage.dii dii3 = dii2;
             if (g3.e == null) {
-                dca2 = dca.g;
+                dca2 = defpackage.dca.g;
             } else {
                 dca2 = g3.e;
             }
-            dii dii4 = (dii) dca2.a(bg.ao);
-            dii4.a((dih) dca2);
-            dii g5 = dii3.g(dii4.a(dmk2));
+            defpackage.dii dii4 = (defpackage.dii) dca2.a(defpackage.bg.ao);
+            dii4.a((defpackage.dih) dca2);
+            defpackage.dii g5 = dii3.g(dii4.a(dmk2));
             if (g5.b) {
                 dih2 = g5.a;
             } else {
-                dih dih5 = g5.a;
-                djz.a.a(dih5).c(dih5);
+                defpackage.dih dih5 = g5.a;
+                defpackage.djz.a.a((java.lang.Object) dih5).c(dih5);
                 g5.b = true;
                 dih2 = g5.a;
             }
-            dih dih6 = dih2;
-            if (!dih.a(dih6, Boolean.TRUE.booleanValue())) {
-                throw new dkw();
+            defpackage.dih dih6 = dih2;
+            if (!defpackage.dih.a(dih6, java.lang.Boolean.TRUE.booleanValue())) {
+                throw new defpackage.dkw();
             }
-            atg.c((dby) dih6);
+            atg.c((defpackage.dby) dih6);
             return;
         }
-        HashSet hashSet = new HashSet();
+        java.util.HashSet hashSet = new java.util.HashSet();
         if (i2 == 32 && this.j != null) {
             hashSet.addAll(this.j);
         }
-        hashSet.add(Integer.valueOf(d2));
-        att att = this.d;
-        RecyclerView recyclerView = (RecyclerView) afv.a.getParent();
-        atu atu = new atu();
+        hashSet.add(java.lang.Integer.valueOf(d2));
+        defpackage.att att = this.d;
+        android.support.v7.widget.RecyclerView recyclerView = (android.support.v7.widget.RecyclerView) afv.a.getParent();
+        defpackage.atu atu = new defpackage.atu();
         int childCount = recyclerView.getChildCount();
         for (int i3 = 0; i3 < childCount; i3++) {
-            View childAt = recyclerView.getChildAt(i3);
-            if (hashSet.contains(Integer.valueOf(RecyclerView.d(childAt)))) {
-                RecyclerView.a(childAt, att.b);
-                atu.a.add(Pair.create(Integer.valueOf(att.b.top), Integer.valueOf(att.b.bottom)));
+            android.view.View childAt = recyclerView.getChildAt(i3);
+            if (hashSet.contains(java.lang.Integer.valueOf(android.support.v7.widget.RecyclerView.d(childAt)))) {
+                android.support.v7.widget.RecyclerView.a(childAt, att.b);
+                atu.a.add(android.util.Pair.create(java.lang.Integer.valueOf(att.b.top), java.lang.Integer.valueOf(att.b.bottom)));
             }
         }
         if (!atu.a.isEmpty()) {
-            atu.b = auz.a();
+            atu.b = defpackage.auz.a();
             att.a.add(atu);
         }
-        SortableAdapter atg2 = this.a;
+        defpackage.atg atg2 = this.a;
         if (d2 < atg2.d()) {
             z = true;
         }
-        cld.a(z);
+        defpackage.cld.a(z);
         atg2.a(d2, true);
     }
 
-    @Override // defpackage.ahy
-    public final void b(ViewHolder afv, int i2) {
+    public final void b(defpackage.afv afv, int i2) {
         int i3 = 0;
-        if (this.e == 2 && i2 != 2 && (this.a instanceof MySortAdapter)) {
-            this.g.a.post(new aui(this, this.g.d()));
+        if (this.e == 2 && i2 != 2 && (this.a instanceof defpackage.atv)) {
+            this.g.a.post(new defpackage.aui(this, this.g.d()));
         }
         if (i2 == 0) {
             this.g = null;
             this.i = false;
             this.h = null;
-        } else if (i2 == 2 && (this.a instanceof MySortAdapter)) {
+        } else if (i2 == 2 && (this.a instanceof defpackage.atv)) {
             this.f = Float.MIN_VALUE;
             this.g = afv;
-            this.i = ((MySortAdapter) this.a).k(afv.d());
-            MySortAdapter atv = (MySortAdapter) this.a;
+            this.i = ((defpackage.atv) this.a).k(afv.d());
+            defpackage.atv atv = (defpackage.atv) this.a;
             int d2 = afv.d();
-            dby g2 = atv.g(d2);
+            defpackage.dby g2 = atv.g(d2);
             if (g2 != null) {
-                atv.p = atw.a(g2.d, d2);
+                atv.p = defpackage.atw.a(g2.d, d2);
                 i3 = atv.b(d2, true);
             }
-            ((atx) afv).c(i3);
+            ((defpackage.atx) afv).c(i3);
         } else if (i2 == 1) {
             this.h = afv;
             this.j = this.a.f(afv.d());
@@ -217,12 +198,11 @@ public final class auh extends aie implements View.OnTouchListener {
         super.b(afv, i2);
     }
 
-    @Override // defpackage.ahy
-    public final boolean a(ViewHolder afv, ViewHolder afv2) {
-        if (!(this.a instanceof MySortAdapter)) {
+    public final boolean a(defpackage.afv afv, defpackage.afv afv2) {
+        if (!(this.a instanceof defpackage.atv)) {
             return false;
         }
-        boolean a2 = ((MySortAdapter) this.a).a(afv.d(), afv2.d(), this.i, (atx) this.g);
+        boolean a2 = ((defpackage.atv) this.a).a(afv.d(), afv2.d(), this.i, (defpackage.atx) this.g);
         if (!a2) {
             return a2;
         }
@@ -230,38 +210,36 @@ public final class auh extends aie implements View.OnTouchListener {
         return a2;
     }
 
-    @Override // defpackage.ahy
-    public final void b(RecyclerView recyclerView, ViewHolder afv) {
+    public final void b(android.support.v7.widget.RecyclerView recyclerView, defpackage.afv afv) {
         super.b(recyclerView, afv);
-        atx atx = (atx) afv;
+        defpackage.atx atx = (defpackage.atx) afv;
         int d2 = atx.d();
-        boolean z = (this.a instanceof MySortAdapter) && d2 >= 0 && ((MySortAdapter) this.a).k(d2);
-        sn.b(atx.a, 0.0f);
+        boolean z = (this.a instanceof defpackage.atv) && d2 >= 0 && ((defpackage.atv) this.a).k(d2);
+        defpackage.sn.b(atx.a, 0.0f);
         atx.s.animate().cancel();
         atx.s.setTranslationX(0.0f);
         atx.b(z);
-        atx.r.animate().alpha(0.0f).withEndAction(new aue(atx)).start();
+        atx.r.animate().alpha(0.0f).withEndAction(new defpackage.aue(atx)).start();
         atx.v();
         int childCount = recyclerView.getChildCount();
         int d3 = this.h == null ? -1 : this.h.d();
         for (int i2 = 0; i2 < childCount; i2++) {
-            ViewHolder a2 = recyclerView.a(recyclerView.getChildAt(i2));
-            if ((a2 instanceof atx) && (this.h == null || !(this.j == null || this.j.contains(Integer.valueOf(a2.d())) || a2.d() == d3))) {
-                ((atx) a2).v();
+            defpackage.afv a2 = recyclerView.a(recyclerView.getChildAt(i2));
+            if ((a2 instanceof defpackage.atx) && (this.h == null || !(this.j == null || this.j.contains(java.lang.Integer.valueOf(a2.d())) || a2.d() == d3))) {
+                ((defpackage.atx) a2).v();
             }
         }
     }
 
-    @Override // defpackage.ahy
-    public final void a(Canvas canvas, RecyclerView recyclerView, ViewHolder afv, float f2, float f3, int i2, boolean z) {
+    public final void a(android.graphics.Canvas canvas, android.support.v7.widget.RecyclerView recyclerView, defpackage.afv afv, float f2, float f3, int i2, boolean z) {
         if (i2 == 1) {
-            atx atx = (atx) afv;
-            sn.a(atx.a, 0.0f);
-            float max = Math.max(0.0f, Math.min(1.0f, Math.abs(f2 / (((float) atx.a.getWidth()) * 0.3f))));
+            defpackage.atx atx = (defpackage.atx) afv;
+            defpackage.sn.a(atx.a, 0.0f);
+            float max = java.lang.Math.max(0.0f, java.lang.Math.min(1.0f, java.lang.Math.abs(f2 / (((float) atx.a.getWidth()) * 0.3f))));
             atx.a(max);
             if (afv.d() >= 0) {
-                boolean z2 = sn.a.j(recyclerView) == 0;
-                if (!crk.a.a() || ((f2 >= 0.0f && z2) || (f2 < 0.0f && !z2))) {
+                boolean z2 = defpackage.sn.a.j(recyclerView) == 0;
+                if (!defpackage.crk.a.a() || ((f2 >= 0.0f && z2) || (f2 < 0.0f && !z2))) {
                     a(recyclerView, this.j, f2, max);
                 } else {
                     a(recyclerView, this.j, 0.0f, 0.0f);
@@ -271,15 +249,14 @@ public final class auh extends aie implements View.OnTouchListener {
         super.a(canvas, recyclerView, afv, f2, f3, i2, z);
     }
 
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
-        boolean z;
+    public final boolean onTouch(android.view.View view, android.view.MotionEvent motionEvent) {
         float f2;
-        if (this.e == 2 && (this.a instanceof MySortAdapter)) {
-            boolean z2 = qq.a(Locale.getDefault()) == 1;
+        if (this.e == 2 && (this.a instanceof defpackage.atv)) {
+            boolean z = defpackage.qq.a(java.util.Locale.getDefault()) == 1;
             if (this.f == Float.MIN_VALUE) {
                 this.f = motionEvent.getX();
                 if (this.i) {
-                    if (z2) {
+                    if (z) {
                         f2 = this.f + (this.c * 2.0f);
                     } else {
                         f2 = this.f - (this.c * 2.0f);
@@ -287,19 +264,15 @@ public final class auh extends aie implements View.OnTouchListener {
                     this.f = f2;
                 }
             } else {
-                if (z2) {
-                    z = motionEvent.getX() < this.f - this.c;
-                } else {
-                    z = motionEvent.getX() > this.f + this.c;
-                }
-                if (!this.i && z) {
+                boolean z2 = z ? motionEvent.getX() < this.f - this.c : motionEvent.getX() > this.f + this.c;
+                if (!this.i && z2) {
                     this.i = true;
-                    if (((MySortAdapter) this.a).a(this.g.d(), this.g.d(), this.i, (atx) this.g)) {
+                    if (((defpackage.atv) this.a).a(this.g.d(), this.g.d(), this.i, (defpackage.atx) this.g)) {
                         a(1);
                     }
-                } else if (this.i && !z) {
+                } else if (this.i && !z2) {
                     this.i = false;
-                    if (((MySortAdapter) this.a).a(this.g.d(), this.g.d(), this.i, (atx) this.g)) {
+                    if (((defpackage.atv) this.a).a(this.g.d(), this.g.d(), this.i, (defpackage.atx) this.g)) {
                         a(1);
                     }
                 }
@@ -308,14 +281,14 @@ public final class auh extends aie implements View.OnTouchListener {
         return false;
     }
 
-    private static void a(RecyclerView recyclerView, Set set, float f2, float f3) {
-        if (!(set == null || set.isEmpty())) {
+    private static void a(android.support.v7.widget.RecyclerView recyclerView, java.util.Set set, float f2, float f3) {
+        if (set != null && !set.isEmpty()) {
             int childCount = recyclerView.getChildCount();
             for (int i2 = 0; i2 < childCount; i2++) {
-                View childAt = recyclerView.getChildAt(i2);
-                ViewHolder a2 = recyclerView.a(childAt);
-                if (set.contains(Integer.valueOf(a2.d()))) {
-                    ((atx) a2).a(f3);
+                android.view.View childAt = recyclerView.getChildAt(i2);
+                defpackage.afv a2 = recyclerView.a(childAt);
+                if (set.contains(java.lang.Integer.valueOf(a2.d()))) {
+                    ((defpackage.atx) a2).a(f3);
                     childAt.setTranslationX(f2);
                 }
             }
@@ -326,8 +299,8 @@ public final class auh extends aie implements View.OnTouchListener {
         if (this.b == null) {
             return;
         }
-        if (Build.VERSION.SDK_INT >= 26) {
-            this.b.vibrate(VibrationEffect.createOneShot((long) i2, i2 * 12));
+        if (android.os.Build.VERSION.SDK_INT >= 26) {
+            this.b.vibrate(android.os.VibrationEffect.createOneShot((long) i2, i2 * 12));
         } else {
             this.b.vibrate((long) i2);
         }

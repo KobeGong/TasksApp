@@ -1,18 +1,16 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: anq  reason: default package */
-public final /* synthetic */ class anq implements anx {
-    private final String a;
-    private final String b;
+/* renamed from: anq reason: default package */
+final /* synthetic */ class anq implements defpackage.anx {
+    private final java.lang.String a;
+    private final java.lang.String b;
 
-    anq(String str, String str2) {
+    anq(java.lang.String str, java.lang.String str2) {
         this.a = str;
         this.b = str2;
     }
 
-    @Override // defpackage.anx
-    public final Object a(anu anu) {
-        return anc.a(this.a, this.b, anu);
+    public final java.lang.Object a(defpackage.anu anu) {
+        return defpackage.anc.a(this.a, this.b, anu);
     }
 }

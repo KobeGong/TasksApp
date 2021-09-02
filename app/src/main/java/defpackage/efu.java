@@ -1,16 +1,16 @@
 package defpackage;
 
-/* renamed from: efu  reason: default package */
+/* renamed from: efu reason: default package */
 /* compiled from: PG */
-public final class efu extends dlz {
-    private static volatile efu[] b;
-    public eft[] a = eft.d();
+public final class efu extends defpackage.dlz {
+    private static volatile defpackage.efu[] b;
+    public defpackage.eft[] a;
 
-    public static efu[] d() {
+    public static defpackage.efu[] d() {
         if (b == null) {
-            synchronized (dmd.b) {
+            synchronized (defpackage.dmd.b) {
                 if (b == null) {
-                    b = new efu[0];
+                    b = new defpackage.efu[0];
                 }
             }
         }
@@ -18,16 +18,15 @@ public final class efu extends dlz {
     }
 
     public efu() {
+        this.a = defpackage.eft.d();
         this.k = -1;
     }
 
-    @Override // defpackage.dlz, defpackage.dmf
-    public final void a(dlx dlx) {
+    public final void a(defpackage.dlx dlx) {
         if (this.a != null && this.a.length > 0) {
-            for (int i = 0; i < this.a.length; i++) {
-                eft eft = this.a[i];
+            for (defpackage.eft eft : this.a) {
                 if (eft != null) {
-                    dlx.a(1, eft);
+                    dlx.a(1, (defpackage.dmf) eft);
                 }
             }
         }
@@ -35,49 +34,46 @@ public final class efu extends dlz {
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.dlz, defpackage.dmf
     public final int a() {
         int a2 = super.a();
         if (this.a != null && this.a.length > 0) {
-            for (int i = 0; i < this.a.length; i++) {
-                eft eft = this.a[i];
+            for (defpackage.eft eft : this.a) {
                 if (eft != null) {
-                    a2 += dlx.b(1, eft);
+                    a2 += defpackage.dlx.b(1, (defpackage.dmf) eft);
                 }
             }
         }
         return a2;
     }
 
-    @Override // defpackage.dmf
-    public final /* synthetic */ dmf a(dlw dlw) {
+    public final /* synthetic */ defpackage.dmf a(defpackage.dlw dlw) {
         while (true) {
             int a2 = dlw.a();
             switch (a2) {
                 case 0:
                     break;
                 case 10:
-                    int a3 = dmh.a(dlw, 10);
+                    int a3 = defpackage.dmh.a(dlw, 10);
                     int length = this.a == null ? 0 : this.a.length;
-                    eft[] eftArr = new eft[(a3 + length)];
+                    defpackage.eft[] eftArr = new defpackage.eft[(a3 + length)];
                     if (length != 0) {
-                        System.arraycopy(this.a, 0, eftArr, 0, length);
+                        java.lang.System.arraycopy(this.a, 0, eftArr, 0, length);
                     }
                     while (length < eftArr.length - 1) {
-                        eftArr[length] = new eft();
-                        dlw.a(eftArr[length]);
+                        eftArr[length] = new defpackage.eft();
+                        dlw.a((defpackage.dmf) eftArr[length]);
                         dlw.a();
                         length++;
                     }
-                    eftArr[length] = new eft();
-                    dlw.a(eftArr[length]);
+                    eftArr[length] = new defpackage.eft();
+                    dlw.a((defpackage.dmf) eftArr[length]);
                     this.a = eftArr;
-                    break;
+                    continue;
                 default:
-                    if (super.a(dlw, a2)) {
+                    if (!super.a(dlw, a2)) {
                         break;
                     } else {
-                        break;
+                        continue;
                     }
             }
         }

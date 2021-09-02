@@ -1,18 +1,18 @@
 package defpackage;
 
-/* renamed from: buq  reason: default package */
+/* renamed from: buq reason: default package */
 /* compiled from: PG */
 public abstract class buq {
     buq() {
     }
 
-    public abstract String a();
+    public abstract java.lang.String a();
 
     public abstract int b();
 
-    public abstract String c();
+    public abstract java.lang.String c();
 
-    public abstract dgm d();
+    public abstract defpackage.dgm d();
 
-    public abstract dgu e();
+    public abstract defpackage.dgu e();
 }

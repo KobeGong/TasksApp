@@ -1,21 +1,26 @@
 package defpackage;
 
-/* renamed from: ege  reason: default package */
+/* renamed from: ege reason: default package */
 /* compiled from: PG */
-public final class ege extends dlz {
-    private String a = null;
-    private String b = null;
-    private Integer c = null;
-    private int d = Integer.MIN_VALUE;
-    private int e = Integer.MIN_VALUE;
-    private String f = null;
+public final class ege extends defpackage.dlz {
+    private java.lang.String a;
+    private java.lang.String b;
+    private java.lang.Integer c;
+    private int d;
+    private int e;
+    private java.lang.String f;
 
     public ege() {
+        this.a = null;
+        this.b = null;
+        this.c = null;
+        this.d = Integer.MIN_VALUE;
+        this.e = Integer.MIN_VALUE;
+        this.f = null;
         this.k = -1;
     }
 
-    @Override // defpackage.dlz, defpackage.dmf
-    public final void a(dlx dlx) {
+    public final void a(defpackage.dlx dlx) {
         if (this.a != null) {
             dlx.a(1, this.a);
         }
@@ -38,43 +43,85 @@ public final class ege extends dlz {
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.dlz, defpackage.dmf
     public final int a() {
         int a2 = super.a();
         if (this.a != null) {
-            a2 += dlx.b(1, this.a);
+            a2 += defpackage.dlx.b(1, this.a);
         }
         if (this.b != null) {
-            a2 += dlx.b(2, this.b);
+            a2 += defpackage.dlx.b(2, this.b);
         }
         if (this.c != null) {
-            a2 += dlx.c(3, this.c.intValue());
+            a2 += defpackage.dlx.c(3, this.c.intValue());
         }
         if (this.d != Integer.MIN_VALUE) {
-            a2 += dlx.c(4, this.d);
+            a2 += defpackage.dlx.c(4, this.d);
         }
         if (this.e != Integer.MIN_VALUE) {
-            a2 += dlx.c(5, this.e);
+            a2 += defpackage.dlx.c(5, this.e);
         }
         if (this.f != null) {
-            return a2 + dlx.b(6, this.f);
+            return a2 + defpackage.dlx.b(6, this.f);
         }
         return a2;
     }
 
     /* access modifiers changed from: private */
-    /* JADX WARNING: Code restructure failed: missing block: B:29:0x008c, code lost:
-        throw new java.lang.IllegalArgumentException(new java.lang.StringBuilder(38).append(r2).append(" is not a valid enum Source").toString());
-     */
-    /* JADX WARNING: Code restructure failed: missing block: B:4:0x000d, code lost:
-        return r6;
-     */
     /* renamed from: b */
-    /* Code decompiled incorrectly, please refer to instructions dump. */
-    public final defpackage.ege a(defpackage.dlw r7) {
-        /*
-        // Method dump skipped, instructions count: 180
-        */
-        throw new UnsupportedOperationException("Method not decompiled: defpackage.ege.a(dlw):ege");
+    public final defpackage.ege a(defpackage.dlw dlw) {
+        while (true) {
+            int a2 = dlw.a();
+            switch (a2) {
+                case 0:
+                    break;
+                case 10:
+                    this.a = dlw.d();
+                    continue;
+                case 18:
+                    this.b = dlw.d();
+                    continue;
+                case 24:
+                    this.c = java.lang.Integer.valueOf(dlw.e());
+                    continue;
+                case 32:
+                    int i = dlw.i();
+                    try {
+                        int e2 = dlw.e();
+                        if (e2 < 0 || e2 > 2) {
+                            throw new java.lang.IllegalArgumentException(e2 + " is not a valid enum TranslationEngine");
+                        }
+                        this.d = e2;
+                        continue;
+                    } catch (java.lang.IllegalArgumentException e3) {
+                        dlw.e(i);
+                        a(dlw, a2);
+                        break;
+                    }
+                case 40:
+                    int i2 = dlw.i();
+                    try {
+                        int e4 = dlw.e();
+                        if (e4 < 0 || e4 > 4) {
+                            throw new java.lang.IllegalArgumentException(e4 + " is not a valid enum Source");
+                        }
+                        this.e = e4;
+                        continue;
+                    } catch (java.lang.IllegalArgumentException e5) {
+                        dlw.e(i2);
+                        a(dlw, a2);
+                        break;
+                    }
+                case 50:
+                    this.f = dlw.d();
+                    continue;
+                default:
+                    if (!super.a(dlw, a2)) {
+                        break;
+                    } else {
+                        continue;
+                    }
+            }
+        }
+        return this;
     }
 }

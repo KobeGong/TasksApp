@@ -1,9 +1,7 @@
 package defpackage;
 
-import android.os.IInterface;
-
-/* renamed from: bdx  reason: default package */
+/* renamed from: bdx reason: default package */
 /* compiled from: PG */
-public interface bdx extends IInterface {
-    boolean a(bfj bfj, bfl bfl);
+public interface bdx extends android.os.IInterface {
+    boolean a(defpackage.bfj bfj, defpackage.bfl bfl);
 }

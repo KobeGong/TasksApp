@@ -1,29 +1,25 @@
 package defpackage;
 
-import android.app.Application;
-import android.content.SharedPreferences;
-
-/* access modifiers changed from: package-private */
-/* renamed from: cht  reason: default package */
+/* renamed from: cht reason: default package */
 /* compiled from: PG */
-public final class cht {
-    public final Application a;
-    public final clt b;
-    public final cjs c;
-    public final cki d;
-    public final SharedPreferences e;
-    public final clr f;
-    private volatile chx g;
-    private volatile chn h;
-    private volatile clx i;
-    private volatile cit j;
-    private volatile cik k;
-    private volatile clv l;
-    private volatile chz m;
-    private volatile che n;
-    private volatile coe o;
+final class cht {
+    public final android.app.Application a;
+    public final defpackage.clt b;
+    public final defpackage.cjs c;
+    public final defpackage.cki d;
+    public final android.content.SharedPreferences e;
+    public final defpackage.clr f;
+    private volatile defpackage.chx g;
+    private volatile defpackage.chn h;
+    private volatile defpackage.clx i;
+    private volatile defpackage.cit j;
+    private volatile defpackage.cik k;
+    private volatile defpackage.clv l;
+    private volatile defpackage.chz m;
+    private volatile defpackage.che n;
+    private volatile defpackage.coe o;
 
-    cht(Application application, clt clt, cjs cjs, cki cki, SharedPreferences sharedPreferences, clr clr) {
+    cht(android.app.Application application, defpackage.clt clt, defpackage.cjs cjs, defpackage.cki cki, android.content.SharedPreferences sharedPreferences, defpackage.clr clr) {
         this.a = application;
         this.b = clt;
         this.c = cjs;
@@ -32,24 +28,24 @@ public final class cht {
         this.f = clr;
     }
 
-    /* access modifiers changed from: package-private */
-    public final cls a(cls cls) {
+    /* access modifiers changed from: 0000 */
+    public final defpackage.cls a(defpackage.cls cls) {
         if (!this.f.a(cls)) {
             cls.a();
         }
         return cls;
     }
 
-    /* access modifiers changed from: package-private */
-    public final coe a() {
-        coe a2;
+    /* access modifiers changed from: 0000 */
+    public final defpackage.coe a() {
+        defpackage.coe a2;
         if (this.o == null) {
-            synchronized (coe.class) {
+            synchronized (defpackage.coe.class) {
                 if (this.o == null) {
                     if (this.d.i) {
-                        cjs cjs = this.c;
+                        defpackage.cjs cjs = this.c;
                         cjs.getClass();
-                        a2 = new ckq(new chu(cjs));
+                        a2 = new defpackage.ckq(new defpackage.chu(cjs));
                     } else {
                         a2 = this.c.a();
                     }
@@ -60,153 +56,154 @@ public final class cht {
         return this.o;
     }
 
-    /* access modifiers changed from: package-private */
-    public final chx b() {
+    /* access modifiers changed from: 0000 */
+    public final defpackage.chx b() {
         if (this.g == null) {
-            synchronized (chx.class) {
+            synchronized (defpackage.chx.class) {
                 if (this.g == null) {
-                    this.g = (chx) a(new chx(a(), this.a, this.b));
+                    this.g = (defpackage.chx) a(new defpackage.chx(a(), this.a, this.b));
                 }
             }
         }
         return this.g;
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public final boolean c() {
         return this.c.d().b;
     }
 
-    /* access modifiers changed from: package-private */
-    public final chn d() {
+    /* access modifiers changed from: 0000 */
+    public final defpackage.chn d() {
         if (this.h == null) {
-            synchronized (chn.class) {
+            synchronized (defpackage.chn.class) {
                 if (this.h == null) {
-                    coe a2 = a();
-                    Application application = this.a;
-                    clt clt = this.b;
-                    cjy d2 = this.c.d();
-                    this.h = (chn) a(new chn(a2, d2.f, d2.e, d2.d, clt, application, d2.c, false, this.d.f));
+                    defpackage.coe a2 = a();
+                    android.app.Application application = this.a;
+                    defpackage.clt clt = this.b;
+                    defpackage.cjy d2 = this.c.d();
+                    this.h = (defpackage.chn) a(new defpackage.chn(a2, d2.f, d2.e, d2.d, clt, application, d2.c, false, this.d.f));
                 }
             }
         }
         return this.h;
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public final boolean e() {
         return this.c.h().b;
     }
 
-    /* access modifiers changed from: package-private */
-    public final clx f() {
-        clx a2;
+    /* access modifiers changed from: 0000 */
+    public final defpackage.clx f() {
+        defpackage.clx a2;
         if (this.i == null) {
-            synchronized (clx.class) {
+            synchronized (defpackage.clx.class) {
                 if (this.i == null) {
                     if (e()) {
-                        coe a3 = a();
-                        Application application = this.a;
-                        clt clt = this.b;
+                        defpackage.coe a3 = a();
+                        android.app.Application application = this.a;
+                        defpackage.clt clt = this.b;
                         boolean z = this.c.c().c;
-                        a2 = clx.a(a3, application, clt, this.c.h());
+                        a2 = defpackage.clx.a(a3, application, clt, this.c.h());
                     } else {
-                        coe a4 = a();
-                        Application application2 = this.a;
-                        clt clt2 = this.b;
+                        defpackage.coe a4 = a();
+                        android.app.Application application2 = this.a;
+                        defpackage.clt clt2 = this.b;
                         boolean z2 = this.c.c().c;
-                        a2 = clx.a(a4, application2, clt2, this.c.i());
+                        a2 = defpackage.clx.a(a4, application2, clt2, this.c.i());
                     }
-                    this.i = (clx) a(a2);
+                    this.i = (defpackage.clx) a(a2);
                 }
             }
         }
         return this.i;
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public final boolean g() {
         return this.c.e().b;
     }
 
-    /* access modifiers changed from: package-private */
-    public final cit h() {
+    /* access modifiers changed from: 0000 */
+    public final defpackage.cit h() {
         if (this.j == null) {
-            synchronized (cit.class) {
+            synchronized (defpackage.cit.class) {
                 if (this.j == null) {
-                    coe a2 = a();
-                    Application application = this.a;
-                    clt clt = this.b;
-                    ckw e2 = this.c.e();
-                    this.j = (cit) a(new cit(a2, application, clt, bg.Z, e2.e, this.c.e().d || this.d.h, e2.c));
+                    defpackage.coe a2 = a();
+                    android.app.Application application = this.a;
+                    defpackage.clt clt = this.b;
+                    defpackage.ckw e2 = this.c.e();
+                    this.j = (defpackage.cit) a(new defpackage.cit(a2, application, clt, defpackage.bg.Z, e2.e, this.c.e().d || this.d.h, e2.c));
                 }
             }
         }
         return this.j;
     }
 
-    /* access modifiers changed from: package-private */
-    public final cik i() {
+    /* access modifiers changed from: 0000 */
+    public final defpackage.cik i() {
         if (this.k == null) {
-            synchronized (cik.class) {
+            synchronized (defpackage.cik.class) {
                 if (this.k == null) {
-                    coe a2 = a();
-                    Application application = this.a;
-                    clt clt = this.b;
-                    ckt b2 = this.c.b();
+                    defpackage.coe a2 = a();
+                    android.app.Application application = this.a;
+                    defpackage.clt clt = this.b;
+                    defpackage.ckt b2 = this.c.b();
                     boolean z = this.d.c;
-                    new cim();
-                    this.k = (cik) a(new cik(a2, application, clt, b2.c, b2.d, b2.e, b2.f, z));
+                    new defpackage.cim();
+                    this.k = (defpackage.cik) a(new defpackage.cik(a2, application, clt, b2.c, b2.d, b2.e, b2.f, z));
                 }
             }
         }
         return this.k;
     }
 
-    /* access modifiers changed from: package-private */
-    public final clv j() {
+    /* access modifiers changed from: 0000 */
+    public final defpackage.clv j() {
         if (this.l == null) {
-            synchronized (clv.class) {
+            synchronized (defpackage.clv.class) {
                 if (this.l == null) {
-                    coe a2 = a();
-                    Application application = this.a;
-                    clt clt = this.b;
-                    cln c2 = this.c.c();
-                    this.l = (clv) a(new clv(a2, application, clt, c2.d, c2.e));
+                    defpackage.coe a2 = a();
+                    android.app.Application application = this.a;
+                    defpackage.clt clt = this.b;
+                    defpackage.cln c2 = this.c.c();
+                    this.l = (defpackage.clv) a(new defpackage.clv(a2, application, clt, c2.d, c2.e));
                 }
             }
         }
         return this.l;
     }
 
-    /* access modifiers changed from: package-private */
-    public final chz k() {
+    /* access modifiers changed from: 0000 */
+    public final defpackage.chz k() {
         if (this.m == null) {
-            synchronized (chz.class) {
+            synchronized (defpackage.chz.class) {
                 if (this.m == null) {
-                    coe a2 = a();
-                    Application application = this.a;
+                    defpackage.coe a2 = a();
+                    android.app.Application application = this.a;
                     boolean z = this.d.b;
-                    clt clt = this.b;
-                    cku k2 = this.c.k();
-                    this.m = (chz) a(new chz(application, z, k2.c, cha.a(this.a), clt, new cnn(), a2));
+                    defpackage.clt clt = this.b;
+                    defpackage.cku k2 = this.c.k();
+                    this.m = (defpackage.chz) a(new defpackage.chz(application, z, k2.c, defpackage.cha.a(this.a), clt, new defpackage.cnn(), a2));
                 }
             }
         }
         return this.m;
     }
 
-    /* access modifiers changed from: package-private */
-    public final che l() {
+    /* access modifiers changed from: 0000 */
+    public final defpackage.che l() {
         if (this.n == null) {
-            synchronized (che.class) {
+            synchronized (defpackage.che.class) {
                 if (this.n == null) {
-                    coe a2 = a();
-                    Application application = this.a;
-                    clt clt = this.b;
-                    SharedPreferences sharedPreferences = this.e;
-                    cjr j2 = this.c.j();
-                    this.n = (che) a(new che(a2, application, clt, sharedPreferences, new clz(cip.b(application), new cmm(application), chf.a, chg.a, j2.d), j2.c));
+                    defpackage.coe a2 = a();
+                    android.app.Application application = this.a;
+                    defpackage.clt clt = this.b;
+                    android.content.SharedPreferences sharedPreferences = this.e;
+                    defpackage.cjr j2 = this.c.j();
+                    defpackage.clz clz = new defpackage.clz(defpackage.cip.b(application), new defpackage.cmm(application), defpackage.chf.a, defpackage.chg.a, j2.d);
+                    this.n = (defpackage.che) a(new defpackage.che(a2, application, clt, sharedPreferences, clz, j2.c));
                 }
             }
         }

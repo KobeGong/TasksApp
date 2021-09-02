@@ -1,23 +1,23 @@
 package defpackage;
 
-/* renamed from: rg  reason: default package */
+/* renamed from: rg reason: default package */
 /* compiled from: PG */
 public class rg {
-    private final Object[] a;
+    private final java.lang.Object[] a;
     private int b;
 
-    public Object a() {
+    public java.lang.Object a() {
         if (this.b <= 0) {
             return null;
         }
         int i = this.b - 1;
-        Object obj = this.a[i];
+        java.lang.Object obj = this.a[i];
         this.a[i] = null;
         this.b--;
         return obj;
     }
 
-    public boolean a(Object obj) {
+    public boolean a(java.lang.Object obj) {
         boolean z;
         int i = 0;
         while (true) {
@@ -32,7 +32,7 @@ public class rg {
             }
         }
         if (z) {
-            throw new IllegalStateException("Already in the pool!");
+            throw new java.lang.IllegalStateException("Already in the pool!");
         } else if (this.b >= this.a.length) {
             return false;
         } else {
@@ -44,8 +44,8 @@ public class rg {
 
     public rg(int i) {
         if (i <= 0) {
-            throw new IllegalArgumentException("The max pool size must be > 0");
+            throw new java.lang.IllegalArgumentException("The max pool size must be > 0");
         }
-        this.a = new Object[i];
+        this.a = new java.lang.Object[i];
     }
 }

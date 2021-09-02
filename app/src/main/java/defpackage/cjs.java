@@ -1,61 +1,61 @@
 package defpackage;
 
-/* renamed from: cjs  reason: default package */
+/* renamed from: cjs reason: default package */
 /* compiled from: PG */
 public class cjs {
-    public coe a() {
-        return coe.a;
+    public defpackage.coe a() {
+        return defpackage.coe.a;
     }
 
-    public ckt b() {
-        return ckt.a;
+    public defpackage.ckt b() {
+        return defpackage.ckt.a;
     }
 
-    public cln c() {
-        return cln.a;
+    public defpackage.cln c() {
+        return defpackage.cln.a;
     }
 
-    public cjy d() {
-        return cjy.a;
+    public defpackage.cjy d() {
+        return defpackage.cjy.a;
     }
 
-    public ckw e() {
-        return ckw.a;
+    public defpackage.ckw e() {
+        return defpackage.ckw.a;
     }
 
-    public ckx f() {
-        return ckx.a;
+    public defpackage.ckx f() {
+        return defpackage.ckx.a;
     }
 
-    public ckr g() {
-        return ckr.a;
+    public defpackage.ckr g() {
+        return defpackage.ckr.a;
     }
 
-    public clm h() {
-        return clm.a;
+    public defpackage.clm h() {
+        return defpackage.clm.a;
     }
 
-    public clp i() {
-        return clp.a;
+    public defpackage.clp i() {
+        return defpackage.clp.a;
     }
 
-    public cjr j() {
-        return cjr.a;
+    public defpackage.cjr j() {
+        return defpackage.cjr.a;
     }
 
-    public cku k() {
-        return cku.a;
+    public defpackage.cku k() {
+        return defpackage.cku.a;
     }
 
-    public cjx l() {
-        return cjx.a;
+    public defpackage.cjx l() {
+        return defpackage.cjx.a;
     }
 
-    public ckv m() {
-        return ckv.a;
+    public defpackage.ckv m() {
+        return defpackage.ckv.a;
     }
 
-    public static cjs a(cjs cjs) {
-        return cjs instanceof cjv ? cjs : new cjv(cjs);
+    public static defpackage.cjs a(defpackage.cjs cjs) {
+        return cjs instanceof defpackage.cjv ? cjs : new defpackage.cjv(cjs);
     }
 }

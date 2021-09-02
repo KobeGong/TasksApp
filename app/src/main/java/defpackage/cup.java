@@ -1,17 +1,15 @@
 package defpackage;
 
-import java.util.logging.Level;
-
-/* renamed from: cup  reason: default package */
+/* renamed from: cup reason: default package */
 /* compiled from: PG */
 public abstract class cup {
-    public abstract ctt a(Class cls, int i);
+    public abstract defpackage.ctt a(java.lang.Class cls, int i);
 
-    public abstract String a();
+    public abstract java.lang.String a();
 
-    public abstract void a(cuo cuo);
+    public abstract void a(defpackage.cuo cuo);
 
-    public abstract void a(RuntimeException runtimeException, cuo cuo);
+    public abstract void a(java.lang.RuntimeException runtimeException, defpackage.cuo cuo);
 
-    public abstract boolean a(Level level);
+    public abstract boolean a(java.util.logging.Level level);
 }

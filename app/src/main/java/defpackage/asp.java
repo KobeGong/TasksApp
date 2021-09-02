@@ -1,17 +1,15 @@
 package defpackage;
 
-import android.view.View;
+/* renamed from: asp reason: default package */
+final /* synthetic */ class asp implements android.view.View.OnClickListener {
+    private final EditTaskFragment a;
 
-/* renamed from: asp  reason: default package */
-final /* synthetic */ class asp implements View.OnClickListener {
-    private final asi a;
-
-    asp(asi asi) {
+    asp(EditTaskFragment asi) {
         this.a = asi;
     }
 
-    public final void onClick(View view) {
-        asi asi = this.a;
+    public final void onClick(android.view.View view) {
+        EditTaskFragment asi = this.a;
         asi.R();
         asi.S();
     }

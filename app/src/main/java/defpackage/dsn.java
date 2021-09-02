@@ -1,20 +1,18 @@
 package defpackage;
 
-/* renamed from: dsn  reason: default package */
+/* renamed from: dsn reason: default package */
 /* compiled from: PG */
-final class dsn extends dog {
-    private final /* synthetic */ dsm a;
+final class dsn extends defpackage.dog {
+    private final /* synthetic */ defpackage.dsm a;
 
-    /* JADX INFO: super call moved to the top of the method (can break code semantics) */
-    dsn(dsm dsm, dne dne) {
-        super(dne);
+    dsn(defpackage.dsm dsm, defpackage.dne dne) {
         this.a = dsm;
+        super(dne);
     }
 
     /* JADX WARNING: Code restructure failed: missing block: B:3:0x000f, code lost:
         if (defpackage.dsg.b.getAndSet(r0, 1) != 0) goto L_0x0011;
      */
-    @Override // defpackage.dpn, defpackage.dne, defpackage.dog
     /* Code decompiled incorrectly, please refer to instructions dump. */
     public final void a(defpackage.dpw r4, defpackage.dor r5) {
         /*

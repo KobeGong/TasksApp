@@ -1,35 +1,32 @@
 package defpackage;
 
-import android.os.Build;
-import android.view.View;
-
-/* renamed from: arb  reason: default package */
+/* renamed from: arb reason: default package */
 /* compiled from: PG */
-public class arb extends lc {
+public class arb extends Fragment {
     private boolean a;
-    private Runnable b;
+    private java.lang.Runnable b;
 
     public final void O() {
         this.a = true;
         c();
     }
 
-    public final void a(Runnable runnable) {
+    public final void a(java.lang.Runnable runnable) {
         this.b = runnable;
         c();
     }
 
-    public static anc P() {
-        return any.get().c();
+    public static defpackage.anc P() {
+        return defpackage.any.a().c();
     }
 
-    public final void b(View view) {
+    public final void b(android.view.View view) {
         FragmentActivity j = getActivity();
         if (j != null && j.hasWindowFocus()) {
             view.requestFocus();
-            bdk.a(view, true);
-        } else if (Build.VERSION.SDK_INT >= 18) {
-            view.getViewTreeObserver().addOnWindowFocusChangeListener(new arc(this, view));
+            defpackage.bdk.a(view, true);
+        } else if (android.os.Build.VERSION.SDK_INT >= 18) {
+            view.getViewTreeObserver().addOnWindowFocusChangeListener(new defpackage.arc(this, view));
         }
     }
 

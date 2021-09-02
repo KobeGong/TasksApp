@@ -1,11 +1,11 @@
 package defpackage;
 
-/* renamed from: dyz  reason: default package */
+/* renamed from: dyz reason: default package */
 /* compiled from: PG */
-final class dyz implements Runnable {
-    private final /* synthetic */ dyy a;
+final class dyz implements java.lang.Runnable {
+    private final /* synthetic */ defpackage.dyy a;
 
-    dyz(dyy dyy) {
+    dyz(defpackage.dyy dyy) {
         this.a = dyy;
     }
 

@@ -1,29 +1,30 @@
 package defpackage;
 
-/* renamed from: btm  reason: default package */
+/* renamed from: btm reason: default package */
 /* compiled from: PG */
 public final class btm {
-    public Throwable a;
-    private btn b;
+    public java.lang.Throwable a;
+    private defpackage.btn b;
 
-    public final btm a(btn btn) {
+    public final defpackage.btm a(defpackage.btn btn) {
         if (btn == null) {
-            throw new NullPointerException("Null code");
+            throw new java.lang.NullPointerException("Null code");
         }
         this.b = btn;
         return this;
     }
 
-    public final btl a() {
-        String str = "";
+    public final defpackage.btl a() {
+        java.lang.String str = "";
         if (this.b == null) {
-            str = String.valueOf(str).concat(" code");
+            str = java.lang.String.valueOf(str).concat(" code");
         }
         if (str.isEmpty()) {
-            return new bti(this.b, this.a);
+            return new defpackage.bti(this.b, this.a);
         }
-        String valueOf = String.valueOf(str);
-        throw new IllegalStateException(valueOf.length() != 0 ? "Missing required properties:".concat(valueOf) : new String("Missing required properties:"));
+        java.lang.String str2 = "Missing required properties:";
+        java.lang.String valueOf = java.lang.String.valueOf(str);
+        throw new java.lang.IllegalStateException(valueOf.length() != 0 ? str2.concat(valueOf) : new java.lang.String(str2));
     }
 
     btm() {

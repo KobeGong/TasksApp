@@ -1,17 +1,18 @@
 package defpackage;
 
-import java.util.concurrent.Executor;
-
-/* renamed from: cyn  reason: default package */
+/* renamed from: cyn reason: default package */
 /* compiled from: PG */
-public enum cyn implements Executor {
-    INSTANCE;
+public enum cyn implements java.util.concurrent.Executor {
+    ;
 
-    public final void execute(Runnable runnable) {
+    private cyn(java.lang.String str) {
+    }
+
+    public final void execute(java.lang.Runnable runnable) {
         runnable.run();
     }
 
-    public final String toString() {
+    public final java.lang.String toString() {
         return "MoreExecutors.directExecutor()";
     }
 }

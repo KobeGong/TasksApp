@@ -1,49 +1,43 @@
 package defpackage;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.ArrayList;
-
-/* renamed from: bnw  reason: default package */
+/* renamed from: bnw reason: default package */
 /* compiled from: PG */
-public final class bnw implements Parcelable.Creator {
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object[] newArray(int i) {
-        return new bnx[i];
+public final class bnw implements android.os.Parcelable.Creator {
+    public final /* synthetic */ java.lang.Object[] newArray(int i) {
+        return new defpackage.bnx[i];
     }
 
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object createFromParcel(Parcel parcel) {
-        Long l = null;
-        int a = bjr.a(parcel);
-        Long l2 = null;
-        String str = null;
-        ArrayList arrayList = null;
-        String str2 = null;
+    public final /* synthetic */ java.lang.Object createFromParcel(android.os.Parcel parcel) {
+        java.lang.Long l = null;
+        int a = defpackage.bjr.a(parcel);
+        java.lang.Long l2 = null;
+        java.lang.String str = null;
+        java.util.List list = null;
+        java.lang.String str2 = null;
         while (parcel.dataPosition() < a) {
             int readInt = parcel.readInt();
             switch (65535 & readInt) {
                 case 2:
-                    str2 = bjr.h(parcel, readInt);
+                    str2 = defpackage.bjr.h(parcel, readInt);
                     break;
                 case 3:
-                    arrayList = bjr.c(parcel, readInt, bot.CREATOR);
+                    list = defpackage.bjr.c(parcel, readInt, defpackage.bot.CREATOR);
                     break;
                 case 4:
-                    str = bjr.h(parcel, readInt);
+                    str = defpackage.bjr.h(parcel, readInt);
                     break;
                 case 5:
-                    l2 = bjr.g(parcel, readInt);
+                    l2 = defpackage.bjr.g(parcel, readInt);
                     break;
                 case 6:
-                    l = bjr.g(parcel, readInt);
+                    l = defpackage.bjr.g(parcel, readInt);
                     break;
                 default:
-                    bjr.b(parcel, readInt);
+                    defpackage.bjr.b(parcel, readInt);
                     break;
             }
         }
-        bjr.p(parcel, a);
-        return new bnx(str2, arrayList, str, l2, l);
+        defpackage.bjr.p(parcel, a);
+        return new defpackage.bnx(str2, list, str, l2, l);
     }
 }

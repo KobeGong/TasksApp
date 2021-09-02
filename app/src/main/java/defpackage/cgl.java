@@ -1,33 +1,31 @@
 package defpackage;
 
-/* renamed from: cgl  reason: default package */
+/* renamed from: cgl reason: default package */
 /* compiled from: PG */
-public final class cgl implements brd, cgk {
-    private final cds a;
-    private final cdq b;
+public final class cgl implements defpackage.brd, defpackage.cgk {
+    private final defpackage.cds a;
+    private final defpackage.cdq b;
 
     cgl() {
     }
 
-    @Override // defpackage.cgk
-    public final cjh a() {
-        return new ciw();
+    public final defpackage.cjh a() {
+        return new defpackage.ciw();
     }
 
-    public cgl(cds cds, cdq cdq) {
+    public cgl(defpackage.cds cds, defpackage.cdq cdq) {
         this.a = cds;
         this.b = cdq;
     }
 
-    @Override // defpackage.brd
-    public final void a(brc brc) {
-        cds cds = this.a;
-        cdq cdq = this.b;
-        bsb bsb = (bsb) brc;
+    public final void a(defpackage.brc brc) {
+        defpackage.cds cds = this.a;
+        defpackage.cdq cdq = this.b;
+        defpackage.bsb bsb = (defpackage.bsb) brc;
         if (!bsb.a().b() || bsb.b() == null) {
             cdq.a(null);
         } else {
-            new cdt(bsb, cdq).executeOnExecutor(cds.a, new Void[0]);
+            new defpackage.cdt(bsb, cdq).executeOnExecutor(cds.a, new java.lang.Void[0]);
         }
     }
 }

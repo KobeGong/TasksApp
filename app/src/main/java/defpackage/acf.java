@@ -1,20 +1,15 @@
 package defpackage;
 
-import android.view.View;
-import android.widget.AdapterView;
-
-/* access modifiers changed from: package-private */
-/* renamed from: acf  reason: default package */
+/* renamed from: acf reason: default package */
 /* compiled from: PG */
-public final class acf implements AdapterView.OnItemClickListener {
-    private final /* synthetic */ ace a;
+final class acf implements android.widget.AdapterView.OnItemClickListener {
+    private final /* synthetic */ defpackage.ace a;
 
-    acf(ace ace) {
+    acf(defpackage.ace ace) {
         this.a = ace;
     }
 
-    @Override // android.widget.AdapterView.OnItemClickListener
-    public final void onItemClick(AdapterView adapterView, View view, int i, long j) {
+    public final void onItemClick(android.widget.AdapterView adapterView, android.view.View view, int i, long j) {
         this.a.d.setSelection(i);
         if (this.a.d.getOnItemClickListener() != null) {
             this.a.d.performItemClick(view, i, this.a.b.getItemId(i));

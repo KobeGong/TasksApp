@@ -1,18 +1,20 @@
 package defpackage;
 
-/* renamed from: eea  reason: default package */
+/* renamed from: eea reason: default package */
 /* compiled from: PG */
-public final class eea extends dlz {
-    private Float a = null;
-    private Integer b = null;
-    private Integer c = null;
+public final class eea extends defpackage.dlz {
+    private java.lang.Float a;
+    private java.lang.Integer b;
+    private java.lang.Integer c;
 
     public eea() {
+        this.a = null;
+        this.b = null;
+        this.c = null;
         this.k = -1;
     }
 
-    @Override // defpackage.dlz, defpackage.dmf
-    public final void a(dlx dlx) {
+    public final void a(defpackage.dlx dlx) {
         if (this.a != null) {
             dlx.a(1, this.a.floatValue());
         }
@@ -26,43 +28,41 @@ public final class eea extends dlz {
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.dlz, defpackage.dmf
     public final int a() {
         int a2 = super.a();
         if (this.a != null) {
             this.a.floatValue();
-            a2 += dlx.c(8) + 4;
+            a2 += defpackage.dlx.c(8) + 4;
         }
         if (this.b != null) {
-            a2 += dlx.c(2, this.b.intValue());
+            a2 += defpackage.dlx.c(2, this.b.intValue());
         }
         if (this.c != null) {
-            return a2 + dlx.c(3, this.c.intValue());
+            return a2 + defpackage.dlx.c(3, this.c.intValue());
         }
         return a2;
     }
 
-    @Override // defpackage.dmf
-    public final /* synthetic */ dmf a(dlw dlw) {
+    public final /* synthetic */ defpackage.dmf a(defpackage.dlw dlw) {
         while (true) {
             int a2 = dlw.a();
             switch (a2) {
                 case 0:
                     break;
                 case 13:
-                    this.a = Float.valueOf(Float.intBitsToFloat(dlw.f()));
-                    break;
+                    this.a = java.lang.Float.valueOf(java.lang.Float.intBitsToFloat(dlw.f()));
+                    continue;
                 case 16:
-                    this.b = Integer.valueOf(dlw.e());
-                    break;
+                    this.b = java.lang.Integer.valueOf(dlw.e());
+                    continue;
                 case 24:
-                    this.c = Integer.valueOf(dlw.e());
-                    break;
+                    this.c = java.lang.Integer.valueOf(dlw.e());
+                    continue;
                 default:
-                    if (super.a(dlw, a2)) {
+                    if (!super.a(dlw, a2)) {
                         break;
                     } else {
-                        break;
+                        continue;
                     }
             }
         }

@@ -1,9 +1,7 @@
 package defpackage;
 
-import java.util.logging.Level;
-
-/* renamed from: cux  reason: default package */
+/* renamed from: cux reason: default package */
 /* compiled from: PG */
 public interface cux {
-    void a(Level level, String str, Throwable th);
+    void a(java.util.logging.Level level, java.lang.String str, java.lang.Throwable th);
 }

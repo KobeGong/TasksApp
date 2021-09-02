@@ -1,16 +1,13 @@
 package defpackage;
 
-import android.support.design.widget.CoordinatorLayout;
-import android.view.View;
-
-/* renamed from: df  reason: default package */
+/* renamed from: df reason: default package */
 /* compiled from: PG */
-final class df implements Runnable {
-    private final CoordinatorLayout a;
-    private final View b;
-    private final /* synthetic */ de c;
+final class df implements java.lang.Runnable {
+    private final android.support.design.widget.CoordinatorLayout a;
+    private final android.view.View b;
+    private final /* synthetic */ defpackage.de c;
 
-    df(de deVar, CoordinatorLayout coordinatorLayout, View view) {
+    df(defpackage.de deVar, android.support.design.widget.CoordinatorLayout coordinatorLayout, android.view.View view) {
         this.c = deVar;
         this.a = coordinatorLayout;
         this.b = view;
@@ -20,7 +17,7 @@ final class df implements Runnable {
         if (this.b != null && this.c.c != null) {
             if (this.c.c.computeScrollOffset()) {
                 this.c.a_(this.a, this.b, this.c.c.getCurrY());
-                sn.a(this.b, this);
+                defpackage.sn.a(this.b, (java.lang.Runnable) this);
                 return;
             }
             this.c.a(this.a, this.b);

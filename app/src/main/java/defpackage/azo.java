@@ -1,19 +1,17 @@
 package defpackage;
 
-/* renamed from: azo  reason: default package */
+/* renamed from: azo reason: default package */
 /* compiled from: PG */
-final class azo extends bag {
-    private /* synthetic */ axq b;
-    private /* synthetic */ azn c;
+final class azo extends defpackage.bag {
+    private /* synthetic */ defpackage.axq b;
+    private /* synthetic */ defpackage.azn c;
 
-    /* JADX INFO: super call moved to the top of the method (can break code semantics) */
-    azo(azn azn, bae bae, axq axq) {
-        super(bae);
+    azo(defpackage.azn azn, defpackage.bae bae, defpackage.axq axq) {
         this.c = azn;
         this.b = axq;
+        super(bae);
     }
 
-    @Override // defpackage.bag
     public final void a() {
         this.c.a.b(this.b);
     }

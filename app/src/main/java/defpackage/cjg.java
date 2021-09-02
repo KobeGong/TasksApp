@@ -1,50 +1,48 @@
 package defpackage;
 
-import android.util.Log;
-
-/* renamed from: cjg  reason: default package */
+/* renamed from: cjg reason: default package */
 /* compiled from: PG */
 public final class cjg {
-    private static final cjg b;
-    private static volatile cjg c;
-    public final cjh a;
+    private static final defpackage.cjg b;
+    private static volatile defpackage.cjg c;
+    public final defpackage.cjh a;
 
-    private cjg(cjh cjh) {
-        this.a = (cjh) cky.a(cjh);
+    private cjg(defpackage.cjh cjh) {
+        this.a = (defpackage.cjh) defpackage.cky.a((java.lang.Object) cjh);
     }
 
-    public static synchronized cjg a(cgk cgk) {
-        cjg cjg;
+    public static synchronized defpackage.cjg a(defpackage.cgk cgk) {
+        defpackage.cjg cjg;
         boolean z = false;
-        synchronized (cjg.class) {
+        synchronized (defpackage.cjg.class) {
             if (c != b) {
                 z = true;
             }
             if (z) {
-                cdm.a(3, "Primes", "Primes.initialize() is called more than once. This call will be ignored.", new Object[0]);
+                defpackage.cdm.a(3, "Primes", "Primes.initialize() is called more than once. This call will be ignored.", new java.lang.Object[0]);
                 cjg = c;
             } else {
-                cjg = new cjg(cgk.a());
+                cjg = new defpackage.cjg(cgk.a());
                 c = cjg;
             }
         }
         return cjg;
     }
 
-    public static cjg a() {
+    public static defpackage.cjg a() {
         if (c == b) {
-            Log.w("Primes", cdm.a("Primes not initialized, returning default (no-op) Primes instance which will ignore all calls. Please call Primes.initialize(...) before using any Primes API.", new Object[0]));
+            android.util.Log.w("Primes", defpackage.cdm.a("Primes not initialized, returning default (no-op) Primes instance which will ignore all calls. Please call Primes.initialize(...) before using any Primes API.", new java.lang.Object[0]));
         }
         return c;
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public final boolean b() {
         return this.a.f();
     }
 
     static {
-        cjg cjg = new cjg(new ciw());
+        defpackage.cjg cjg = new defpackage.cjg(new defpackage.ciw());
         b = cjg;
         c = cjg;
     }

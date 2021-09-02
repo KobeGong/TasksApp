@@ -1,35 +1,31 @@
 package defpackage;
 
-import android.app.Notification;
-import java.util.ArrayList;
-
-/* renamed from: nj  reason: default package */
+/* renamed from: nj reason: default package */
 /* compiled from: PG */
-public final class nj extends nk {
-    private ArrayList a = new ArrayList();
+public final class nj extends defpackage.nk {
+    private java.util.ArrayList a = new java.util.ArrayList();
 
     public nj() {
     }
 
-    public nj(ni niVar) {
+    public nj(defpackage.ni niVar) {
         a(niVar);
     }
 
-    public final nj a(CharSequence charSequence) {
-        this.a.add(ni.e(charSequence));
+    public final defpackage.nj a(java.lang.CharSequence charSequence) {
+        this.a.add(defpackage.ni.e(charSequence));
         return this;
     }
 
-    @Override // defpackage.nk
-    public final void a(ne neVar) {
-        Notification.InboxStyle bigContentTitle = new Notification.InboxStyle(neVar.a).setBigContentTitle(this.b);
-        ArrayList arrayList = this.a;
+    public final void a(defpackage.ne neVar) {
+        android.app.Notification.InboxStyle bigContentTitle = new android.app.Notification.InboxStyle(neVar.a).setBigContentTitle(this.b);
+        java.util.ArrayList arrayList = this.a;
         int size = arrayList.size();
         int i = 0;
         while (i < size) {
-            Object obj = arrayList.get(i);
+            java.lang.Object obj = arrayList.get(i);
             i++;
-            bigContentTitle.addLine((CharSequence) obj);
+            bigContentTitle.addLine((java.lang.CharSequence) obj);
         }
     }
 }

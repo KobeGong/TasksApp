@@ -1,18 +1,14 @@
 package defpackage;
 
-import android.os.Handler;
-import android.os.Looper;
-import java.util.concurrent.Executor;
-
-/* renamed from: bjc  reason: default package */
+/* renamed from: bjc reason: default package */
 /* compiled from: PG */
-public final class bjc implements Executor {
-    private final Handler a = new Handler((Looper) null);
+public final class bjc implements java.util.concurrent.Executor {
+    private final android.os.Handler a = new android.os.Handler(null);
 
-    public bjc(Looper looper) {
+    public bjc(android.os.Looper looper) {
     }
 
-    public final void execute(Runnable runnable) {
+    public final void execute(java.lang.Runnable runnable) {
         this.a.post(runnable);
     }
 }

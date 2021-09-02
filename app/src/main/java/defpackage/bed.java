@@ -1,21 +1,16 @@
 package defpackage;
 
-import android.os.IBinder;
-import android.os.IInterface;
-import android.os.Parcel;
-import android.os.Parcelable;
-
-/* renamed from: bed  reason: default package */
+/* renamed from: bed reason: default package */
 /* compiled from: PG */
-public final class bed extends biq {
-    public static final Parcelable.Creator CREATOR = new bee();
-    public axq a;
+public final class bed extends defpackage.biq {
+    public static final android.os.Parcelable.Creator CREATOR = new defpackage.bee();
+    public defpackage.axq a;
     public boolean b;
     public boolean c;
     private int d;
-    private IBinder e;
+    private android.os.IBinder e;
 
-    bed(int i, IBinder iBinder, axq axq, boolean z, boolean z2) {
+    bed(int i, android.os.IBinder iBinder, defpackage.axq axq, boolean z, boolean z2) {
         this.d = i;
         this.e = iBinder;
         this.a = axq;
@@ -23,36 +18,39 @@ public final class bed extends biq {
         this.c = z2;
     }
 
-    public final bdp a() {
-        IBinder iBinder = this.e;
+    public final defpackage.bdp a() {
+        android.os.IBinder iBinder = this.e;
         if (iBinder == null) {
             return null;
         }
-        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.common.internal.IAccountAccessor");
-        if (queryLocalInterface instanceof bdp) {
-            return (bdp) queryLocalInterface;
+        android.os.IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.common.internal.IAccountAccessor");
+        if (queryLocalInterface instanceof defpackage.bdp) {
+            return (defpackage.bdp) queryLocalInterface;
         }
-        return new bes(iBinder);
+        return new defpackage.bes(iBinder);
     }
 
-    public final void writeToParcel(Parcel parcel, int i) {
-        int q = bjr.q(parcel, 20293);
-        bjr.c(parcel, 1, this.d);
-        bjr.a(parcel, 2, this.e);
-        bjr.a(parcel, 3, this.a, i);
-        bjr.a(parcel, 4, this.b);
-        bjr.a(parcel, 5, this.c);
-        bjr.r(parcel, q);
+    public final void writeToParcel(android.os.Parcel parcel, int i) {
+        int q = defpackage.bjr.q(parcel, 20293);
+        defpackage.bjr.c(parcel, 1, this.d);
+        defpackage.bjr.a(parcel, 2, this.e);
+        defpackage.bjr.a(parcel, 3, (android.os.Parcelable) this.a, i);
+        defpackage.bjr.a(parcel, 4, this.b);
+        defpackage.bjr.a(parcel, 5, this.c);
+        defpackage.bjr.r(parcel, q);
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         if (this == obj) {
             return true;
         }
-        if (!(obj instanceof bed)) {
+        if (!(obj instanceof defpackage.bed)) {
             return false;
         }
-        bed bed = (bed) obj;
-        return this.a.equals(bed.a) && a().equals(bed.a());
+        defpackage.bed bed = (defpackage.bed) obj;
+        if (!this.a.equals(bed.a) || !a().equals(bed.a())) {
+            return false;
+        }
+        return true;
     }
 }

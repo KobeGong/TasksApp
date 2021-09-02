@@ -1,8 +1,8 @@
 package defpackage;
 
-/* renamed from: czk  reason: default package */
+/* renamed from: czk reason: default package */
 /* compiled from: PG */
-public enum czk implements din {
+public enum czk implements defpackage.din {
     SCREEN_UNSPECIFIED(0),
     MENU_MY_ACCOUNT(1),
     MENU_PRIVACY(2),
@@ -83,12 +83,11 @@ public enum czk implements din {
     
     public final int d;
 
-    @Override // defpackage.din
     public final int a() {
         return this.d;
     }
 
-    public static czk a(int i) {
+    public static defpackage.czk a(int i) {
         switch (i) {
             case 0:
                 return SCREEN_UNSPECIFIED;
@@ -254,6 +253,6 @@ public enum czk implements din {
     }
 
     static {
-        new czl();
+        new defpackage.czl();
     }
 }

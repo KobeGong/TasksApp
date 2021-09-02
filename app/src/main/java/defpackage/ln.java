@@ -1,19 +1,15 @@
 package defpackage;
 
-import java.io.FileDescriptor;
-import java.io.PrintWriter;
-import java.util.List;
-
-/* renamed from: ln  reason: default package */
+/* renamed from: ln reason: default package */
 /* compiled from: PG */
 public abstract class ln {
-    public abstract lc a(int i);
+    public abstract Fragment findFragmentById(int i);
 
-    public abstract lc a(String str);
+    public abstract Fragment a(java.lang.String str);
 
-    public abstract mj a();
+    public abstract defpackage.mj a();
 
-    public abstract void a(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr);
+    public abstract void a(java.lang.String str, java.io.FileDescriptor fileDescriptor, java.io.PrintWriter printWriter, java.lang.String[] strArr);
 
     public abstract void b(int i);
 
@@ -27,7 +23,7 @@ public abstract class ln {
 
     public abstract int f();
 
-    public abstract List g();
+    public abstract java.util.List g();
 
     public abstract boolean h();
 }

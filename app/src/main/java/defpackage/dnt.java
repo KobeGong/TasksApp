@@ -1,38 +1,30 @@
 package defpackage;
 
-import java.io.Closeable;
-
-/* renamed from: dnt  reason: default package */
+/* renamed from: dnt reason: default package */
 /* compiled from: PG */
-public final class dnt extends dns implements Closeable {
-    @Override // defpackage.dns
-    public final dns c() {
-        throw new NoSuchMethodError();
+public final class dnt extends defpackage.dns implements java.io.Closeable {
+    public final defpackage.dns c() {
+        throw new java.lang.NoSuchMethodError();
     }
 
-    @Override // defpackage.dns
-    public final void a(dns dns) {
-        throw new NoSuchMethodError();
+    public final void a(defpackage.dns dns) {
+        throw new java.lang.NoSuchMethodError();
     }
 
-    @Override // defpackage.dns
     public final boolean d() {
-        throw new NoSuchMethodError();
+        throw new java.lang.NoSuchMethodError();
     }
 
-    @Override // defpackage.dns
-    public final dny e() {
-        throw new NoSuchMethodError();
+    public final defpackage.dny e() {
+        throw new java.lang.NoSuchMethodError();
     }
 
-    /* access modifiers changed from: package-private */
-    @Override // defpackage.dns
+    /* access modifiers changed from: 0000 */
     public final boolean b() {
-        throw new NoSuchMethodError();
+        throw new java.lang.NoSuchMethodError();
     }
 
-    @Override // java.io.Closeable, java.lang.AutoCloseable
     public final void close() {
-        throw new NoSuchMethodError();
+        throw new java.lang.NoSuchMethodError();
     }
 }

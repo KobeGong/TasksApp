@@ -1,23 +1,23 @@
 package defpackage;
 
-@Deprecated
-/* renamed from: ebz  reason: default package */
+@java.lang.Deprecated
+/* renamed from: ebz reason: default package */
 /* compiled from: PG */
-public abstract class ebz extends ehw {
-    public static eca a(ecb ecb, long j) {
-        eca eca = new eca((byte) 0);
-        ecb ecb2 = (ecb) cld.a(ecb, "type");
+public abstract class ebz extends defpackage.ehw {
+    public static defpackage.eca a(defpackage.ecb ecb, long j) {
+        defpackage.eca eca = new defpackage.eca(0);
+        defpackage.ecb ecb2 = (defpackage.ecb) defpackage.cld.a((java.lang.Object) ecb, (java.lang.Object) "type");
         if (ecb2 == null) {
-            throw new NullPointerException("Null type");
+            throw new java.lang.NullPointerException("Null type");
         }
         eca.a = ecb2;
-        eca.b = Long.valueOf(j);
+        eca.b = java.lang.Long.valueOf(j);
         return eca.a(0).b(0);
     }
 
-    public abstract eaj a();
+    public abstract defpackage.eaj a();
 
-    public abstract ecb b();
+    public abstract defpackage.ecb b();
 
     public abstract long c();
 

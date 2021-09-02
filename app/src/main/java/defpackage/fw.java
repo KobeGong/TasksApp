@@ -1,11 +1,9 @@
 package defpackage;
 
-import com.google.android.apps.tasks.R;
-
-/* renamed from: fw  reason: default package */
+/* renamed from: fw reason: default package */
 /* compiled from: PG */
 public final class fw {
-    public static final int[] a = {16842964, 16842973, 16843039, R.attr.elevation, R.attr.menu, R.attr.itemIconTint, R.attr.itemTextColor, R.attr.itemBackground, R.attr.itemTextAppearance, R.attr.headerLayout, R.attr.itemHorizontalPadding, R.attr.itemIconPadding};
+    public static final int[] a = {16842964, 16842973, 16843039, 2130772099, 2130772436, 2130772437, 2130772438, 2130772439, 2130772440, 2130772441, 2130772442, 2130772443};
     public static final int b = 0;
     public static final int c = 1;
     public static final int d = 2;

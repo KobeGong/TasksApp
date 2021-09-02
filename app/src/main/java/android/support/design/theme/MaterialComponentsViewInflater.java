@@ -1,17 +1,10 @@
 package android.support.design.theme;
 
-import android.content.Context;
-import android.support.annotation.Keep;
-import android.support.design.button.MaterialButton;
-import android.support.v7.app.AppCompatViewInflater;
-import android.util.AttributeSet;
-
-@Keep
+@android.support.annotation.Keep
 /* compiled from: PG */
-public class MaterialComponentsViewInflater extends AppCompatViewInflater {
+public class MaterialComponentsViewInflater extends android.support.v7.app.AppCompatViewInflater {
     /* access modifiers changed from: protected */
-    @Override // android.support.v7.app.AppCompatViewInflater
-    public abh createButton(Context context, AttributeSet attributeSet) {
-        return new MaterialButton(context, attributeSet);
+    public defpackage.abh createButton(android.content.Context context, android.util.AttributeSet attributeSet) {
+        return new android.support.design.button.MaterialButton(context, attributeSet);
     }
 }

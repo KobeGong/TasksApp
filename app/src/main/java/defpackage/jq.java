@@ -1,15 +1,14 @@
 package defpackage;
 
-/* renamed from: jq  reason: default package */
+/* renamed from: jq reason: default package */
 /* compiled from: PG */
-final class jq extends jj {
-    private jo a;
+final class jq extends defpackage.jj {
+    private defpackage.jo a;
 
-    jq(jo joVar) {
+    jq(defpackage.jo joVar) {
         this.a = joVar;
     }
 
-    @Override // defpackage.jj, defpackage.ji
     public final void c() {
         if (!this.a.n) {
             this.a.d();
@@ -17,14 +16,12 @@ final class jq extends jj {
         }
     }
 
-    @Override // defpackage.jj, defpackage.ji
-    public final void a(je jeVar) {
-        jo joVar = this.a;
-        joVar.m--;
+    public final void a(defpackage.je jeVar) {
+        this.a.m--;
         if (this.a.m == 0) {
             this.a.n = false;
             this.a.e();
         }
-        jeVar.b(this);
+        jeVar.b((defpackage.ji) this);
     }
 }

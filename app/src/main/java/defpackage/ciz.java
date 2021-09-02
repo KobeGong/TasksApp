@@ -1,29 +1,24 @@
 package defpackage;
 
-import android.content.SharedPreferences;
-import android.content.pm.PackageStats;
-import android.os.SystemClock;
-import com.google.android.libraries.performance.primes.metriccapture.PackageStatsCapture;
-
-/* renamed from: ciz  reason: default package */
+/* renamed from: ciz reason: default package */
 /* compiled from: PG */
-final class ciz implements Runnable {
-    private final /* synthetic */ ciy a;
+final class ciz implements java.lang.Runnable {
+    private final /* synthetic */ defpackage.ciy a;
 
-    ciz(ciy ciy) {
+    ciz(defpackage.ciy ciy) {
         this.a = ciy;
     }
 
     public final void run() {
         boolean z;
         boolean z2 = true;
-        SharedPreferences sharedPreferences = this.a.d;
-        cky.c();
+        android.content.SharedPreferences sharedPreferences = this.a.d;
+        defpackage.cky.c();
         long j = sharedPreferences.getLong("primes.packageMetric.lastSendTime", -1);
-        long elapsedRealtime = SystemClock.elapsedRealtime();
+        long elapsedRealtime = android.os.SystemClock.elapsedRealtime();
         if (elapsedRealtime < j) {
             if (!sharedPreferences.edit().remove("primes.packageMetric.lastSendTime").commit()) {
-                cdm.a(3, "PackageMetricService", "Failure storing timestamp persistently", new Object[0]);
+                defpackage.cdm.a(3, "PackageMetricService", "Failure storing timestamp persistently", new java.lang.Object[0]);
             }
             j = -1;
         }
@@ -33,35 +28,35 @@ final class ciz implements Runnable {
             z = true;
         }
         if (!z) {
-            ciy ciy = this.a;
-            PackageStats packageStats = PackageStatsCapture.getPackageStats(ciy.a);
+            defpackage.ciy ciy = this.a;
+            android.content.pm.PackageStats packageStats = com.google.android.libraries.performance.primes.metriccapture.PackageStatsCapture.getPackageStats(ciy.a);
             if (packageStats != null) {
-                efx efx = new efx();
-                cky.a(packageStats);
-                eev eev = new eev();
-                eev.a = Long.valueOf(packageStats.cacheSize);
-                eev.b = Long.valueOf(packageStats.codeSize);
-                eev.c = Long.valueOf(packageStats.dataSize);
-                eev.d = Long.valueOf(packageStats.externalCacheSize);
-                eev.e = Long.valueOf(packageStats.externalCodeSize);
-                eev.f = Long.valueOf(packageStats.externalDataSize);
-                eev.g = Long.valueOf(packageStats.externalMediaSize);
-                eev.h = Long.valueOf(packageStats.externalObbSize);
+                defpackage.efx efx = new defpackage.efx();
+                defpackage.cky.a((java.lang.Object) packageStats);
+                defpackage.eev eev = new defpackage.eev();
+                eev.a = java.lang.Long.valueOf(packageStats.cacheSize);
+                eev.b = java.lang.Long.valueOf(packageStats.codeSize);
+                eev.c = java.lang.Long.valueOf(packageStats.dataSize);
+                eev.d = java.lang.Long.valueOf(packageStats.externalCacheSize);
+                eev.e = java.lang.Long.valueOf(packageStats.externalCodeSize);
+                eev.f = java.lang.Long.valueOf(packageStats.externalDataSize);
+                eev.g = java.lang.Long.valueOf(packageStats.externalMediaSize);
+                eev.h = java.lang.Long.valueOf(packageStats.externalObbSize);
                 efx.i = eev;
                 if (ciy.e) {
-                    efx.i.i = cky.a(ciy.a, ciy.f, ciy.g);
+                    efx.i.i = defpackage.cky.a((android.content.Context) ciy.a, ciy.f, ciy.g);
                 }
                 ciy.a(efx);
-                if (ciy.d.edit().putLong("primes.packageMetric.lastSendTime", SystemClock.elapsedRealtime()).commit()) {
+                if (ciy.d.edit().putLong("primes.packageMetric.lastSendTime", android.os.SystemClock.elapsedRealtime()).commit()) {
                     z2 = false;
                 }
                 if (z2) {
-                    cdm.a(3, "PackageMetricService", "Failure storing timestamp persistently", new Object[0]);
+                    defpackage.cdm.a(3, "PackageMetricService", "Failure storing timestamp persistently", new java.lang.Object[0]);
                     return;
                 }
                 return;
             }
-            cdm.a(5, "PackageMetricService", "PackageStats capture failed.", new Object[0]);
+            defpackage.cdm.a(5, "PackageMetricService", "PackageStats capture failed.", new java.lang.Object[0]);
         }
     }
 }

@@ -1,51 +1,43 @@
 package defpackage;
 
-import android.app.ApplicationErrorReport;
-import android.graphics.Bitmap;
-import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
-import com.google.android.gms.common.data.BitmapTeleporter;
-import java.util.List;
-
-/* renamed from: bgj  reason: default package */
+/* renamed from: bgj reason: default package */
 /* compiled from: PG */
-public final class bgj extends biq {
-    public static final Parcelable.Creator CREATOR = new bgr();
-    public String a;
-    public Bundle b;
-    public String c;
-    public ApplicationErrorReport d;
-    public String e;
-    public BitmapTeleporter f;
-    public String g;
-    public List h;
+public final class bgj extends defpackage.biq {
+    public static final android.os.Parcelable.Creator CREATOR = new defpackage.bgr();
+    public java.lang.String a;
+    public android.os.Bundle b;
+    public java.lang.String c;
+    public android.app.ApplicationErrorReport d;
+    public java.lang.String e;
+    public com.google.android.gms.common.data.BitmapTeleporter f;
+    public java.lang.String g;
+    public java.util.List h;
     public boolean i;
-    public bgn j;
-    public bgm k;
+    public defpackage.bgn j;
+    public defpackage.bgm k;
     public boolean l;
-    public Bitmap m;
-    public azb n;
+    public android.graphics.Bitmap m;
+    public defpackage.azb n;
 
-    public final void writeToParcel(Parcel parcel, int i2) {
-        int q = bjr.q(parcel, 20293);
-        bjr.a(parcel, 2, this.a);
-        bjr.a(parcel, 3, this.b);
-        bjr.a(parcel, 5, this.c);
-        bjr.a(parcel, 6, this.d, i2);
-        bjr.a(parcel, 7, this.e);
-        bjr.a(parcel, 8, this.f, i2);
-        bjr.a(parcel, 9, this.g);
-        bjr.b(parcel, 10, this.h);
-        bjr.a(parcel, 11, this.i);
-        bjr.a(parcel, 12, this.j, i2);
-        bjr.a(parcel, 13, this.k, i2);
-        bjr.a(parcel, 14, this.l);
-        bjr.a(parcel, 15, this.m, i2);
-        bjr.r(parcel, q);
+    public final void writeToParcel(android.os.Parcel parcel, int i2) {
+        int q = defpackage.bjr.q(parcel, 20293);
+        defpackage.bjr.a(parcel, 2, this.a);
+        defpackage.bjr.a(parcel, 3, this.b);
+        defpackage.bjr.a(parcel, 5, this.c);
+        defpackage.bjr.a(parcel, 6, (android.os.Parcelable) this.d, i2);
+        defpackage.bjr.a(parcel, 7, this.e);
+        defpackage.bjr.a(parcel, 8, (android.os.Parcelable) this.f, i2);
+        defpackage.bjr.a(parcel, 9, this.g);
+        defpackage.bjr.b(parcel, 10, this.h);
+        defpackage.bjr.a(parcel, 11, this.i);
+        defpackage.bjr.a(parcel, 12, (android.os.Parcelable) this.j, i2);
+        defpackage.bjr.a(parcel, 13, (android.os.Parcelable) this.k, i2);
+        defpackage.bjr.a(parcel, 14, this.l);
+        defpackage.bjr.a(parcel, 15, (android.os.Parcelable) this.m, i2);
+        defpackage.bjr.r(parcel, q);
     }
 
-    bgj(String str, Bundle bundle, String str2, ApplicationErrorReport applicationErrorReport, String str3, BitmapTeleporter bitmapTeleporter, String str4, List list, boolean z, bgn bgn, bgm bgm, boolean z2, Bitmap bitmap) {
+    bgj(java.lang.String str, android.os.Bundle bundle, java.lang.String str2, android.app.ApplicationErrorReport applicationErrorReport, java.lang.String str3, com.google.android.gms.common.data.BitmapTeleporter bitmapTeleporter, java.lang.String str4, java.util.List list, boolean z, defpackage.bgn bgn, defpackage.bgm bgm, boolean z2, android.graphics.Bitmap bitmap) {
         this.n = null;
         this.a = str;
         this.b = bundle;
@@ -62,7 +54,7 @@ public final class bgj extends biq {
         this.m = bitmap;
     }
 
-    public bgj(ApplicationErrorReport applicationErrorReport) {
+    public bgj(android.app.ApplicationErrorReport applicationErrorReport) {
         this(null, null, null, applicationErrorReport, null, null, null, null, true, null, null, false, null);
     }
 }

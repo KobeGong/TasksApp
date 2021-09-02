@@ -1,28 +1,24 @@
 package defpackage;
 
-import android.app.Dialog;
-
-/* renamed from: xh  reason: default package */
+/* renamed from: xh reason: default package */
 /* compiled from: PG */
-public class xh extends lb {
-    @Override // defpackage.lb
-    public Dialog c() {
-        return new xg(i(), this.a);
+public class xh extends defpackage.lb {
+    public android.app.Dialog c() {
+        return new defpackage.xg(getContext(), this.a);
     }
 
-    @Override // defpackage.lb
-    public final void a(Dialog dialog, int i) {
-        if (dialog instanceof xg) {
-            xg xgVar = (xg) dialog;
+    public final void a(android.app.Dialog dialog, int i) {
+        if (dialog instanceof defpackage.xg) {
+            defpackage.xg xgVar = (defpackage.xg) dialog;
             switch (i) {
                 case 1:
                 case 2:
                     break;
-                default:
-                    return;
                 case 3:
                     dialog.getWindow().addFlags(24);
                     break;
+                default:
+                    return;
             }
             xgVar.a();
             return;

@@ -1,39 +1,32 @@
 package defpackage;
 
-import android.view.View;
-
-/* access modifiers changed from: package-private */
-/* renamed from: aff  reason: default package */
+/* renamed from: aff reason: default package */
 /* compiled from: PG */
-public final class aff implements ahn {
-    private final /* synthetic */ LayoutManager a;
+final class aff implements defpackage.ahn {
+    private final /* synthetic */ defpackage.afd a;
 
-    aff(LayoutManager afd) {
+    aff(defpackage.afd afd) {
         this.a = afd;
     }
 
-    @Override // defpackage.ahn
-    public final View a(int i) {
+    public final android.view.View a(int i) {
         return this.a.e(i);
     }
 
-    @Override // defpackage.ahn
     public final int a() {
         return this.a.m();
     }
 
-    @Override // defpackage.ahn
     public final int b() {
         return this.a.m - this.a.o();
     }
 
-    @Override // defpackage.ahn
-    public final int a(View view) {
-        return LayoutManager.c(view) - ((afh) view.getLayoutParams()).topMargin;
+    public final int a(android.view.View view) {
+        return defpackage.afd.c(view) - ((defpackage.afh) view.getLayoutParams()).topMargin;
     }
 
-    @Override // defpackage.ahn
-    public final int b(View view) {
-        return ((afh) view.getLayoutParams()).bottomMargin + LayoutManager.e(view);
+    public final int b(android.view.View view) {
+        defpackage.afh afh = (defpackage.afh) view.getLayoutParams();
+        return afh.bottomMargin + defpackage.afd.e(view);
     }
 }

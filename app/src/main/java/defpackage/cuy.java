@@ -1,31 +1,24 @@
 package defpackage;
 
-import java.util.Collections;
-import java.util.Map;
-import java.util.Set;
-import java.util.SortedMap;
-import java.util.TreeMap;
-import java.util.TreeSet;
-
-/* renamed from: cuy  reason: default package */
+/* renamed from: cuy reason: default package */
 /* compiled from: PG */
 public final class cuy {
-    public static final cuy a = new cuy(Collections.unmodifiableSortedMap(new TreeMap()));
-    public final SortedMap b;
-    private Integer c = null;
-    private String d = null;
+    public static final defpackage.cuy a = new defpackage.cuy(java.util.Collections.unmodifiableSortedMap(new java.util.TreeMap()));
+    public final java.util.SortedMap b;
+    private java.lang.Integer c = null;
+    private java.lang.String d = null;
 
-    private cuy(SortedMap sortedMap) {
+    private cuy(java.util.SortedMap sortedMap) {
         this.b = sortedMap;
     }
 
-    public final void a(cun cun) {
-        for (Map.Entry entry : this.b.entrySet()) {
-            String str = (String) entry.getKey();
-            Set<Object> set = (Set) entry.getValue();
+    public final void a(defpackage.cun cun) {
+        for (java.util.Map.Entry entry : this.b.entrySet()) {
+            java.lang.String str = (java.lang.String) entry.getKey();
+            java.util.Set<java.lang.Object> set = (java.util.Set) entry.getValue();
             if (!set.isEmpty()) {
-                for (Object obj : set) {
-                    cun.a(str, obj);
+                for (java.lang.Object a2 : set) {
+                    cun.a(str, a2);
                 }
             } else {
                 cun.a(str, null);
@@ -33,21 +26,21 @@ public final class cuy {
         }
     }
 
-    public final boolean equals(Object obj) {
-        return (obj instanceof cuy) && ((cuy) obj).b.equals(this.b);
+    public final boolean equals(java.lang.Object obj) {
+        return (obj instanceof defpackage.cuy) && ((defpackage.cuy) obj).b.equals(this.b);
     }
 
     public final int hashCode() {
         if (this.c == null) {
-            this.c = Integer.valueOf(this.b.hashCode());
+            this.c = java.lang.Integer.valueOf(this.b.hashCode());
         }
         return this.c.intValue();
     }
 
-    public final String toString() {
+    public final java.lang.String toString() {
         if (this.d == null) {
-            StringBuilder sb = new StringBuilder();
-            cum cum = new cum("[ ", " ]", sb);
+            java.lang.StringBuilder sb = new java.lang.StringBuilder();
+            defpackage.cum cum = new defpackage.cum("[ ", " ]", sb);
             a(cum);
             cum.a();
             this.d = sb.toString();
@@ -56,7 +49,7 @@ public final class cuy {
     }
 
     static {
-        new cuz();
-        Collections.unmodifiableSortedSet(new TreeSet());
+        new defpackage.cuz();
+        java.util.Collections.unmodifiableSortedSet(new java.util.TreeSet());
     }
 }

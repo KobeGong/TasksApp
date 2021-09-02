@@ -1,44 +1,38 @@
 package defpackage;
 
-import java.util.Iterator;
-
-/* renamed from: bsj  reason: default package */
+/* renamed from: bsj reason: default package */
 /* compiled from: PG */
-public final class bsj implements bsk {
-    private final bcr a;
+public final class bsj implements defpackage.bsk {
+    private final defpackage.bcr a;
 
-    private bsj(bcr bcr) {
+    private bsj(defpackage.bcr bcr) {
         if (bcr == null) {
-            throw new IllegalArgumentException("null dataBuffer");
+            throw new java.lang.IllegalArgumentException("null dataBuffer");
         }
         this.a = bcr;
     }
 
-    @Override // defpackage.bsk
     public final void a() {
         this.a.a();
     }
 
-    public final String toString() {
+    public final java.lang.String toString() {
         return this.a.toString();
     }
 
-    @Override // defpackage.bsk
     public final int b() {
         return this.a.b();
     }
 
-    public bsj(bcr bcr, byte b) {
+    public bsj(defpackage.bcr bcr, byte b) {
         this(bcr);
     }
 
-    @Override // java.lang.Iterable
-    public final Iterator iterator() {
-        return new bsl(this);
+    public final java.util.Iterator iterator() {
+        return new defpackage.bsl(this);
     }
 
-    @Override // defpackage.bsk
-    public final /* synthetic */ Object a(int i) {
-        return new bsn((bnr) this.a.a(i));
+    public final /* synthetic */ java.lang.Object a(int i) {
+        return new defpackage.bsn((defpackage.bnr) this.a.a(i));
     }
 }

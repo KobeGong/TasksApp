@@ -1,37 +1,33 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: eah  reason: default package */
+/* renamed from: eah reason: default package */
 /* compiled from: PG */
-public final class eah extends dne {
-    private final eaf a;
-    private Object b;
+final class eah extends defpackage.dne {
+    private final defpackage.eaf a;
+    private java.lang.Object b;
 
-    eah(eaf eaf) {
+    eah(defpackage.eaf eaf) {
         this.a = eaf;
     }
 
-    @Override // defpackage.dne
-    public final void a(dor dor) {
+    public final void a(defpackage.dor dor) {
     }
 
-    @Override // defpackage.dne
-    public final void a(Object obj) {
+    public final void a(java.lang.Object obj) {
         if (this.b != null) {
-            throw dpw.h.a("More than one value received for unary call").b();
+            throw defpackage.dpw.h.a("More than one value received for unary call").b();
         }
         this.b = obj;
     }
 
-    @Override // defpackage.dne
-    public final void a(dpw dpw, dor dor) {
+    public final void a(defpackage.dpw dpw, defpackage.dor dor) {
         if (dpw.a()) {
             if (this.b == null) {
-                this.a.a((Throwable) dpw.h.a("No value received for unary call").a(dor));
+                this.a.a((java.lang.Throwable) defpackage.dpw.h.a("No value received for unary call").a(dor));
             }
             this.a.a(this.b);
             return;
         }
-        this.a.a((Throwable) dpw.a(dor));
+        this.a.a((java.lang.Throwable) dpw.a(dor));
     }
 }

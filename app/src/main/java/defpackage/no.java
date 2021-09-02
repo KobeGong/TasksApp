@@ -1,29 +1,24 @@
 package defpackage;
 
-import android.app.Notification;
-import android.os.Parcel;
-
-/* access modifiers changed from: package-private */
-/* renamed from: no  reason: default package */
+/* renamed from: no reason: default package */
 /* compiled from: PG */
-public final class no implements ns {
-    private final String a;
+final class no implements defpackage.ns {
+    private final java.lang.String a;
     private final int b = 0;
-    private final String c;
-    private final Notification d;
+    private final java.lang.String c;
+    private final android.app.Notification d;
 
-    no(String str, String str2, Notification notification) {
+    no(java.lang.String str, java.lang.String str2, android.app.Notification notification) {
         this.a = str;
         this.c = str2;
         this.d = notification;
     }
 
-    @Override // defpackage.ns
-    public final void a(mz mzVar) {
-        String str = this.a;
-        String str2 = this.c;
-        Notification notification = this.d;
-        Parcel obtain = Parcel.obtain();
+    public final void a(defpackage.mz mzVar) {
+        java.lang.String str = this.a;
+        java.lang.String str2 = this.c;
+        android.app.Notification notification = this.d;
+        android.os.Parcel obtain = android.os.Parcel.obtain();
         try {
             obtain.writeInterfaceToken("android.support.v4.app.INotificationSideChannel");
             obtain.writeString(str);
@@ -41,8 +36,8 @@ public final class no implements ns {
         }
     }
 
-    public final String toString() {
-        StringBuilder sb = new StringBuilder("NotifyTask[");
+    public final java.lang.String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder("NotifyTask[");
         sb.append("packageName:").append(this.a);
         sb.append(", id:0");
         sb.append(", tag:").append(this.c);

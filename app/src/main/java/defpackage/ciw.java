@@ -1,54 +1,43 @@
 package defpackage;
 
-import java.lang.Thread;
-
-/* renamed from: ciw  reason: default package */
+/* renamed from: ciw reason: default package */
 /* compiled from: PG */
-final class ciw implements cjh {
+final class ciw implements defpackage.cjh {
     ciw() {
     }
 
-    @Override // defpackage.cjh
-    public final void a(Runnable runnable) {
+    public final void a(java.lang.Runnable runnable) {
     }
 
-    @Override // defpackage.cjh
     public final void d() {
     }
 
-    @Override // defpackage.cjh
-    public final void a(cir cir) {
+    public final void a(defpackage.cir cir) {
     }
 
-    @Override // defpackage.cjh
     public final void e() {
     }
 
-    @Override // defpackage.cjh
-    public final Thread.UncaughtExceptionHandler a(Thread.UncaughtExceptionHandler uncaughtExceptionHandler) {
+    public final java.lang.Thread.UncaughtExceptionHandler a(java.lang.Thread.UncaughtExceptionHandler uncaughtExceptionHandler) {
         return uncaughtExceptionHandler;
     }
 
-    @Override // defpackage.cjh
     public final boolean f() {
         return false;
     }
 
-    @Override // defpackage.cjh
     public final void c() {
     }
 
-    @Override // defpackage.cjh
-    public final clt b() {
+    public final defpackage.clt b() {
         return null;
     }
 
-    @Override // defpackage.cjh
-    public final boolean a(cls cls) {
+    public final boolean a(defpackage.cls cls) {
         return false;
     }
 
     static {
-        new cix();
+        new defpackage.cix();
     }
 }

@@ -1,21 +1,16 @@
 package defpackage;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.View;
-import android.view.ViewPropertyAnimator;
-
-/* renamed from: acy  reason: default package */
+/* renamed from: acy reason: default package */
 /* compiled from: PG */
-final class acy extends AnimatorListenerAdapter {
-    private final /* synthetic */ ViewHolder a;
+final class acy extends android.animation.AnimatorListenerAdapter {
+    private final /* synthetic */ defpackage.afv a;
     private final /* synthetic */ int b;
-    private final /* synthetic */ View c;
+    private final /* synthetic */ android.view.View c;
     private final /* synthetic */ int d;
-    private final /* synthetic */ ViewPropertyAnimator e;
-    private final /* synthetic */ acs f;
+    private final /* synthetic */ android.view.ViewPropertyAnimator e;
+    private final /* synthetic */ defpackage.acs f;
 
-    acy(acs acs, ViewHolder afv, int i, View view, int i2, ViewPropertyAnimator viewPropertyAnimator) {
+    acy(defpackage.acs acs, defpackage.afv afv, int i, android.view.View view, int i2, android.view.ViewPropertyAnimator viewPropertyAnimator) {
         this.f = acs;
         this.a = afv;
         this.b = i;
@@ -24,10 +19,10 @@ final class acy extends AnimatorListenerAdapter {
         this.e = viewPropertyAnimator;
     }
 
-    public final void onAnimationStart(Animator animator) {
+    public final void onAnimationStart(android.animation.Animator animator) {
     }
 
-    public final void onAnimationCancel(Animator animator) {
+    public final void onAnimationCancel(android.animation.Animator animator) {
         if (this.b != 0) {
             this.c.setTranslationX(0.0f);
         }
@@ -36,7 +31,7 @@ final class acy extends AnimatorListenerAdapter {
         }
     }
 
-    public final void onAnimationEnd(Animator animator) {
+    public final void onAnimationEnd(android.animation.Animator animator) {
         this.e.setListener(null);
         this.f.e(this.a);
         this.f.e.remove(this.a);

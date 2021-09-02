@@ -1,9 +1,8 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: dju  reason: default package */
+/* renamed from: dju reason: default package */
 /* compiled from: PG */
-public final class dju {
+final class dju {
     dju() {
     }
 }

@@ -1,16 +1,16 @@
 package defpackage;
 
-/* renamed from: cri  reason: default package */
+/* renamed from: cri reason: default package */
 /* compiled from: PG */
-public class cri extends crj {
+public class cri extends defpackage.crj {
     public static final long serialVersionUID = -1522852442442473691L;
 
-    @Deprecated
-    public cri(crg crg) {
+    @java.lang.Deprecated
+    public cri(defpackage.crg crg) {
         super(crg);
     }
 
     static {
-        new crh();
+        new defpackage.crh();
     }
 }

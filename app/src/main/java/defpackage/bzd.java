@@ -1,47 +1,47 @@
 package defpackage;
 
-/* renamed from: bzd  reason: default package */
+/* renamed from: bzd reason: default package */
 /* compiled from: PG */
 public final class bzd {
-    public static dgm a(int i) {
-        dih dih;
-        dii dii = (dii) dgm.f.a(bg.ao);
+    public static defpackage.dgm a(int i) {
+        defpackage.dih dih;
+        defpackage.dii dii = (defpackage.dii) defpackage.dgm.f.a(defpackage.bg.ao);
         if ((i & 1) > 0) {
-            dge dge = dge.READ;
+            defpackage.dge dge = defpackage.dge.READ;
             dii.b();
-            dgm dgm = (dgm) dii.a;
+            defpackage.dgm dgm = (defpackage.dgm) dii.a;
             if (dge == null) {
-                throw new NullPointerException();
+                throw new java.lang.NullPointerException();
             }
             dgm.a |= 1;
             dgm.b = dge.d;
         }
         if ((i & 2) > 0) {
-            dfw dfw = dfw.DELETED;
+            defpackage.dfw dfw = defpackage.dfw.DELETED;
             dii.b();
-            dgm dgm2 = (dgm) dii.a;
+            defpackage.dgm dgm2 = (defpackage.dgm) dii.a;
             if (dfw == null) {
-                throw new NullPointerException();
+                throw new java.lang.NullPointerException();
             }
             dgm2.a |= 2;
             dgm2.c = dfw.d;
         }
         if ((i & 4) > 0) {
-            dfu dfu = dfu.EXCLUDE_FROM_COUNTS;
+            defpackage.dfu dfu = defpackage.dfu.EXCLUDE_FROM_COUNTS;
             dii.b();
-            dgm dgm3 = (dgm) dii.a;
+            defpackage.dgm dgm3 = (defpackage.dgm) dii.a;
             if (dfu == null) {
-                throw new NullPointerException();
+                throw new java.lang.NullPointerException();
             }
             dgm3.a |= 4;
             dgm3.d = dfu.d;
         }
         if ((i & 8) > 0) {
-            dgj dgj = dgj.REMOVE_FROM_SYSTEM_TRAY;
+            defpackage.dgj dgj = defpackage.dgj.REMOVE_FROM_SYSTEM_TRAY;
             dii.b();
-            dgm dgm4 = (dgm) dii.a;
+            defpackage.dgm dgm4 = (defpackage.dgm) dii.a;
             if (dgj == null) {
-                throw new NullPointerException();
+                throw new java.lang.NullPointerException();
             }
             dgm4.a |= 8;
             dgm4.e = dgj.d;
@@ -49,48 +49,48 @@ public final class bzd {
         if (dii.b) {
             dih = dii.a;
         } else {
-            dih dih2 = dii.a;
-            djz.a.a(dih2).c(dih2);
+            defpackage.dih dih2 = dii.a;
+            defpackage.djz.a.a((java.lang.Object) dih2).c(dih2);
             dii.b = true;
             dih = dii.a;
         }
-        dih dih3 = dih;
-        if (dih.a(dih3, Boolean.TRUE.booleanValue())) {
-            return (dgm) dih3;
+        defpackage.dih dih3 = dih;
+        if (defpackage.dih.a(dih3, java.lang.Boolean.TRUE.booleanValue())) {
+            return (defpackage.dgm) dih3;
         }
-        throw new dkw();
+        throw new defpackage.dkw();
     }
 
-    public static int a(dgm dgm) {
+    public static int a(defpackage.dgm dgm) {
         int i;
-        dge a = dge.a(dgm.b);
+        defpackage.dge a = defpackage.dge.a(dgm.b);
         if (a == null) {
-            a = dge.READ_STATE_UNKNOWN;
+            a = defpackage.dge.READ_STATE_UNKNOWN;
         }
-        if (a == dge.READ) {
+        if (a == defpackage.dge.READ) {
             i = 1;
         } else {
             i = 0;
         }
-        dfw a2 = dfw.a(dgm.c);
+        defpackage.dfw a2 = defpackage.dfw.a(dgm.c);
         if (a2 == null) {
-            a2 = dfw.DELETION_STATUS_UNKNOWN;
+            a2 = defpackage.dfw.DELETION_STATUS_UNKNOWN;
         }
-        if (a2 == dfw.DELETED) {
+        if (a2 == defpackage.dfw.DELETED) {
             i |= 2;
         }
-        dfu a3 = dfu.a(dgm.d);
+        defpackage.dfu a3 = defpackage.dfu.a(dgm.d);
         if (a3 == null) {
-            a3 = dfu.COUNT_BEHAVIOR_UNSPECIFIED;
+            a3 = defpackage.dfu.COUNT_BEHAVIOR_UNSPECIFIED;
         }
-        if (a3 == dfu.EXCLUDE_FROM_COUNTS) {
+        if (a3 == defpackage.dfu.EXCLUDE_FROM_COUNTS) {
             i |= 4;
         }
-        dgj a4 = dgj.a(dgm.e);
+        defpackage.dgj a4 = defpackage.dgj.a(dgm.e);
         if (a4 == null) {
-            a4 = dgj.SYSTEM_TRAY_BEHAVIOR_UNSPECIFIED;
+            a4 = defpackage.dgj.SYSTEM_TRAY_BEHAVIOR_UNSPECIFIED;
         }
-        if (a4 == dgj.REMOVE_FROM_SYSTEM_TRAY) {
+        if (a4 == defpackage.dgj.REMOVE_FROM_SYSTEM_TRAY) {
             return i | 8;
         }
         return i;

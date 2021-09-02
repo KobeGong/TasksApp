@@ -1,12 +1,10 @@
 package defpackage;
 
-import com.google.android.libraries.onegoogle.bottomdrawer.GoogleMaterialBottomDrawer;
+/* renamed from: cgg reason: default package */
+public final /* synthetic */ class cgg implements java.lang.Runnable {
+    private final com.google.android.libraries.onegoogle.bottomdrawer.GoogleMaterialBottomDrawer a;
 
-/* renamed from: cgg  reason: default package */
-public final /* synthetic */ class cgg implements Runnable {
-    private final GoogleMaterialBottomDrawer a;
-
-    public cgg(GoogleMaterialBottomDrawer googleMaterialBottomDrawer) {
+    public cgg(com.google.android.libraries.onegoogle.bottomdrawer.GoogleMaterialBottomDrawer googleMaterialBottomDrawer) {
         this.a = googleMaterialBottomDrawer;
     }
 

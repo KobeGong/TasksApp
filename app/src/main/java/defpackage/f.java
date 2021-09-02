@@ -1,21 +1,17 @@
 package defpackage;
 
-import java.util.HashMap;
-
-/* renamed from: f  reason: default package */
+/* renamed from: f reason: default package */
 /* compiled from: PG */
-public final class f extends g {
-    public HashMap a = new HashMap();
+public final class f extends defpackage.g {
+    public java.util.HashMap a = new java.util.HashMap();
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.g
-    public final j a(Object obj) {
-        return (j) this.a.get(obj);
+    public final defpackage.j a(java.lang.Object obj) {
+        return (defpackage.j) this.a.get(obj);
     }
 
-    @Override // defpackage.g
-    public final Object a(Object obj, Object obj2) {
-        j a2 = a(obj);
+    public final java.lang.Object a(java.lang.Object obj, java.lang.Object obj2) {
+        defpackage.j a2 = a(obj);
         if (a2 != null) {
             return a2.b;
         }
@@ -23,14 +19,13 @@ public final class f extends g {
         return null;
     }
 
-    @Override // defpackage.g
-    public final Object b(Object obj) {
-        Object b = super.b(obj);
+    public final java.lang.Object b(java.lang.Object obj) {
+        java.lang.Object b = super.b(obj);
         this.a.remove(obj);
         return b;
     }
 
-    public final boolean c(Object obj) {
+    public final boolean c(java.lang.Object obj) {
         return this.a.containsKey(obj);
     }
 }

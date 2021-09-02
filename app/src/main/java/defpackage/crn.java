@@ -1,16 +1,16 @@
 package defpackage;
 
-/* renamed from: crn  reason: default package */
+/* renamed from: crn reason: default package */
 /* compiled from: PG */
-class crn extends crl {
-    private final String a;
+class crn extends defpackage.crl {
+    private final java.lang.String a;
 
-    crn(String str) {
-        super((byte) 0);
-        this.a = (String) cld.a(str);
+    crn(java.lang.String str) {
+        super(0);
+        this.a = (java.lang.String) defpackage.cld.a((java.lang.Object) str);
     }
 
-    public final String toString() {
+    public final java.lang.String toString() {
         return this.a;
     }
 }

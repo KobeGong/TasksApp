@@ -1,19 +1,15 @@
 package defpackage;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import com.google.android.apps.tasks.ui.TaskListsActivity;
-
-/* renamed from: apy  reason: default package */
+/* renamed from: apy reason: default package */
 /* compiled from: PG */
-public final class apy extends AnimatorListenerAdapter {
-    private final /* synthetic */ TaskListsActivity a;
+public final class apy extends android.animation.AnimatorListenerAdapter {
+    private final /* synthetic */ com.google.android.apps.tasks.ui.TaskListsActivity a;
 
-    public apy(TaskListsActivity taskListsActivity) {
+    public apy(com.google.android.apps.tasks.ui.TaskListsActivity taskListsActivity) {
         this.a = taskListsActivity;
     }
 
-    public final void onAnimationEnd(Animator animator) {
+    public final void onAnimationEnd(android.animation.Animator animator) {
         this.a.fab.setVisibility(8);
     }
 }

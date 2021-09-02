@@ -1,49 +1,46 @@
 package defpackage;
 
-import android.content.Context;
 import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.TimeUnit;
 
-/* renamed from: aoa  reason: default package */
+/* renamed from: aoa reason: default package */
 /* compiled from: PG */
 public final class aoa {
-    private String a;
-    private aoc b;
-    private aod c;
-    private final ScheduledExecutorService executor;
-    private ScheduledFuture e;
-    private final Context appContext;
+    private java.lang.String a;
+    private defpackage.aoc b;
+    private defpackage.aod c;
+    private final ScheduledExecutorService d;
+    private java.util.concurrent.ScheduledFuture e;
+    private final android.content.Context context;
 
-    public aoa(Context context, ScheduledExecutorService scheduledExecutorService) {
-        this.executor = scheduledExecutorService;
-        this.appContext = context.getApplicationContext();
+    public aoa(android.content.Context context, ScheduledExecutorService scheduledExecutorService) {
+        this.d = scheduledExecutorService;
+        this.context = context.getApplicationContext();
     }
 
-    public final synchronized void a(String str) {
+    public final synchronized void a(java.lang.String str) {
         b();
         this.a = str;
     }
 
-    public final synchronized void a(aoc aoc) {
+    public final synchronized void a(defpackage.aoc aoc) {
         this.b = aoc;
     }
 
-    public final synchronized void a(String str, aod aod) {
+    public final synchronized void a(java.lang.String str, defpackage.aod aod) {
         if (str.equals(this.a)) {
             b();
             this.c = aod;
             if (this.b != null) {
-                aoc aoc = this.b;
-                aoc.a.runOnUiThread(new aqv(aoc, this.c.a.a(this.appContext)));
+                defpackage.aoc aoc = this.b;
+                aoc.a.runOnUiThread(new defpackage.aqv(aoc, this.c.a.a(this.context)));
             }
-            this.e = this.executor.schedule(new aob(this), bdk.b(this.appContext) ? 10000 : 3500, TimeUnit.MILLISECONDS);
+            this.e = this.d.schedule(new defpackage.aob(this), defpackage.bdk.b(this.context) ? 10000 : 3500, java.util.concurrent.TimeUnit.MILLISECONDS);
         } else {
             aod.a();
         }
     }
 
-    public final synchronized void b(String str) {
+    public final synchronized void b(java.lang.String str) {
         if (str.equals(this.a)) {
             b();
         }
@@ -52,25 +49,25 @@ public final class aoa {
     public final synchronized void a() {
         c();
         if (this.c != null) {
-            aod aod = this.c;
+            defpackage.aod aod = this.c;
             aod.a.a(aod.c.a.a);
             aod.c.a.a.b(aod.a);
             if (this.b != null) {
-                aoc aoc = this.b;
-                aoc.a.runOnUiThread(new aqx(aoc, this.c.b));
+                defpackage.aoc aoc = this.b;
+                aoc.a.runOnUiThread(new defpackage.aqx(aoc, this.c.b));
             }
             this.c = null;
         }
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public final synchronized void b() {
         if (this.c != null) {
             c();
             this.c.a();
             if (this.b != null) {
-                aoc aoc = this.b;
-                aoc.a.runOnUiThread(new aqw(aoc));
+                defpackage.aoc aoc = this.b;
+                aoc.a.runOnUiThread(new defpackage.aqw(aoc));
             }
             this.c = null;
         }

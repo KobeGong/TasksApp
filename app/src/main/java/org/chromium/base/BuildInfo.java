@@ -1,68 +1,61 @@
 package org.chromium.base;
 
-import android.content.Context;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.os.Build;
-import android.text.TextUtils;
-import org.chromium.base.annotations.CalledByNative;
-
 /* compiled from: PG */
 public class BuildInfo {
-    private final String a;
+    private final java.lang.String a;
     private final int b;
-    private final String c;
+    private final java.lang.String c;
     private final int d;
-    private final String e;
-    private final String f;
-    private final String g;
-    private final String h;
-    private final String i;
-    private final String j;
+    private final java.lang.String e;
+    private final java.lang.String f;
+    private final java.lang.String g;
+    private final java.lang.String h;
+    private final java.lang.String i;
+    private final java.lang.String j;
 
-    @CalledByNative
-    private static String[] getAll() {
-        BuildInfo buildInfo = egm.a;
-        return new String[]{Build.BRAND, Build.DEVICE, Build.ID, Build.MANUFACTURER, Build.MODEL, String.valueOf(Build.VERSION.SDK_INT), Build.TYPE, Build.BOARD, ehw.a.getPackageName(), String.valueOf(buildInfo.b), buildInfo.a, buildInfo.c, String.valueOf(buildInfo.d), buildInfo.e, buildInfo.i, buildInfo.g, buildInfo.f, buildInfo.h, egl.a, buildInfo.j};
+    @org.chromium.base.annotations.CalledByNative
+    private static java.lang.String[] getAll() {
+        org.chromium.base.BuildInfo buildInfo = defpackage.egm.a;
+        return new java.lang.String[]{android.os.Build.BRAND, android.os.Build.DEVICE, android.os.Build.ID, android.os.Build.MANUFACTURER, android.os.Build.MODEL, java.lang.String.valueOf(android.os.Build.VERSION.SDK_INT), android.os.Build.TYPE, android.os.Build.BOARD, defpackage.ehw.a.getPackageName(), java.lang.String.valueOf(buildInfo.b), buildInfo.a, buildInfo.c, java.lang.String.valueOf(buildInfo.d), buildInfo.e, buildInfo.i, buildInfo.g, buildInfo.f, buildInfo.h, defpackage.egl.a, buildInfo.j};
     }
 
-    private static String a(CharSequence charSequence) {
+    private static java.lang.String a(java.lang.CharSequence charSequence) {
         return charSequence == null ? "" : charSequence.toString();
     }
 
     public BuildInfo() {
-        String str;
+        java.lang.String str;
         try {
-            Context context = ehw.a;
-            String packageName = context.getPackageName();
-            PackageManager packageManager = context.getPackageManager();
-            PackageInfo packageInfo = packageManager.getPackageInfo(packageName, 0);
+            android.content.Context context = defpackage.ehw.a;
+            java.lang.String packageName = context.getPackageName();
+            android.content.pm.PackageManager packageManager = context.getPackageManager();
+            android.content.pm.PackageInfo packageInfo = packageManager.getPackageInfo(packageName, 0);
             this.b = packageInfo.versionCode;
             this.c = packageName;
             this.d = this.b;
             this.e = a(packageInfo.versionName);
             this.a = a(packageManager.getApplicationLabel(packageInfo.applicationInfo));
             this.f = a(packageManager.getInstallerPackageName(this.c));
-            PackageInfo packageInfo2 = null;
+            android.content.pm.PackageInfo packageInfo2 = null;
             try {
                 packageInfo2 = packageManager.getPackageInfo("com.google.android.gms", 0);
-            } catch (PackageManager.NameNotFoundException e2) {
+            } catch (android.content.pm.PackageManager.NameNotFoundException e2) {
             }
             if (packageInfo2 != null) {
-                str = String.valueOf(packageInfo2.versionCode);
+                str = java.lang.String.valueOf(packageInfo2.versionCode);
             } else {
                 str = "gms versionCode not available.";
             }
             this.g = str;
-            if (Build.VERSION.SDK_INT >= 21) {
-                this.h = TextUtils.join(", ", Build.SUPPORTED_ABIS);
+            if (android.os.Build.VERSION.SDK_INT >= 21) {
+                this.h = android.text.TextUtils.join(", ", android.os.Build.SUPPORTED_ABIS);
             } else {
-                this.h = String.format("ABI1: %s, ABI2: %s", Build.CPU_ABI, Build.CPU_ABI2);
+                this.h = java.lang.String.format("ABI1: %s, ABI2: %s", new java.lang.Object[]{android.os.Build.CPU_ABI, android.os.Build.CPU_ABI2});
             }
-            this.j = String.format("@%x", Long.valueOf(this.d > 10 ? (long) this.d : packageInfo.lastUpdateTime));
-            this.i = Build.FINGERPRINT.substring(0, Math.min(Build.FINGERPRINT.length(), 128));
-        } catch (PackageManager.NameNotFoundException e3) {
-            throw new RuntimeException(e3);
+            this.j = java.lang.String.format("@%x", new java.lang.Object[]{java.lang.Long.valueOf(this.d > 10 ? (long) this.d : packageInfo.lastUpdateTime)});
+            this.i = android.os.Build.FINGERPRINT.substring(0, java.lang.Math.min(android.os.Build.FINGERPRINT.length(), 128));
+        } catch (android.content.pm.PackageManager.NameNotFoundException e3) {
+            throw new java.lang.RuntimeException(e3);
         }
     }
 }

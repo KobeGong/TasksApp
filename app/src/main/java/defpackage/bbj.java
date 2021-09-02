@@ -1,16 +1,15 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: bbj  reason: default package */
+/* renamed from: bbj reason: default package */
 /* compiled from: PG */
-public final class bbj implements Runnable {
-    private /* synthetic */ bbi a;
+final class bbj implements java.lang.Runnable {
+    private /* synthetic */ defpackage.bbi a;
 
-    bbj(bbi bbi) {
+    bbj(defpackage.bbi bbi) {
         this.a = bbi;
     }
 
     public final void run() {
-        this.a.g.b(new axq(4));
+        this.a.g.b(new defpackage.axq(4));
     }
 }

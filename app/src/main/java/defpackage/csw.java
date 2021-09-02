@@ -1,19 +1,17 @@
 package defpackage;
 
-import java.io.Serializable;
-
-/* renamed from: csw  reason: default package */
+/* renamed from: csw reason: default package */
 /* compiled from: PG */
-final class csw implements Serializable {
+final class csw implements java.io.Serializable {
     public static final long serialVersionUID = 0;
-    private final Object[] a;
+    private final java.lang.Object[] a;
 
-    csw(Object[] objArr) {
+    csw(java.lang.Object[] objArr) {
         this.a = objArr;
     }
 
-    /* access modifiers changed from: package-private */
-    public final Object readResolve() {
-        return csv.a(this.a);
+    /* access modifiers changed from: 0000 */
+    public final java.lang.Object readResolve() {
+        return defpackage.csv.a(this.a);
     }
 }

@@ -1,28 +1,24 @@
 package defpackage;
 
-import java.util.Iterator;
-import java.util.Map;
-import java.util.WeakHashMap;
-
-/* renamed from: g  reason: default package */
+/* renamed from: g reason: default package */
 /* compiled from: PG */
-public class g implements Iterable {
-    public j b;
-    public j c;
-    public WeakHashMap d = new WeakHashMap();
+public class g implements java.lang.Iterable {
+    public defpackage.j b;
+    public defpackage.j c;
+    public java.util.WeakHashMap d = new java.util.WeakHashMap();
     public int e = 0;
 
     /* access modifiers changed from: protected */
-    public j a(Object obj) {
-        j jVar = this.b;
+    public defpackage.j a(java.lang.Object obj) {
+        defpackage.j jVar = this.b;
         while (jVar != null && !jVar.a.equals(obj)) {
             jVar = jVar.c;
         }
         return jVar;
     }
 
-    public Object a(Object obj, Object obj2) {
-        j a = a(obj);
+    public java.lang.Object a(java.lang.Object obj, java.lang.Object obj2) {
+        defpackage.j a = a(obj);
         if (a != null) {
             return a.b;
         }
@@ -31,8 +27,8 @@ public class g implements Iterable {
     }
 
     /* access modifiers changed from: protected */
-    public final j b(Object obj, Object obj2) {
-        j jVar = new j(obj, obj2);
+    public final defpackage.j b(java.lang.Object obj, java.lang.Object obj2) {
+        defpackage.j jVar = new defpackage.j(obj, obj2);
         this.e++;
         if (this.c == null) {
             this.b = jVar;
@@ -45,15 +41,15 @@ public class g implements Iterable {
         return jVar;
     }
 
-    public Object b(Object obj) {
-        j a = a(obj);
+    public java.lang.Object b(java.lang.Object obj) {
+        defpackage.j a = a(obj);
         if (a == null) {
             return null;
         }
         this.e--;
         if (!this.d.isEmpty()) {
-            for (m mVar : this.d.keySet()) {
-                mVar.a_(a);
+            for (defpackage.m a_ : this.d.keySet()) {
+                a_.a_(a);
             }
         }
         if (a.d != null) {
@@ -71,35 +67,34 @@ public class g implements Iterable {
         return a.b;
     }
 
-    @Override // java.lang.Iterable
-    public Iterator iterator() {
-        h hVar = new h(this.b, this.c);
-        this.d.put(hVar, false);
+    public java.util.Iterator iterator() {
+        defpackage.h hVar = new defpackage.h(this.b, this.c);
+        this.d.put(hVar, java.lang.Boolean.valueOf(false));
         return hVar;
     }
 
-    public final k a() {
-        k kVar = new k(this);
-        this.d.put(kVar, false);
+    public final defpackage.k a() {
+        defpackage.k kVar = new defpackage.k(this);
+        this.d.put(kVar, java.lang.Boolean.valueOf(false));
         return kVar;
     }
 
-    public boolean equals(Object obj) {
+    public boolean equals(java.lang.Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof g)) {
+        if (!(obj instanceof defpackage.g)) {
             return false;
         }
-        g gVar = (g) obj;
+        defpackage.g gVar = (defpackage.g) obj;
         if (this.e != gVar.e) {
             return false;
         }
-        Iterator it = iterator();
-        Iterator it2 = gVar.iterator();
+        java.util.Iterator it = iterator();
+        java.util.Iterator it2 = gVar.iterator();
         while (it.hasNext() && it2.hasNext()) {
-            Map.Entry entry = (Map.Entry) it.next();
-            Object next = it2.next();
+            java.util.Map.Entry entry = (java.util.Map.Entry) it.next();
+            java.lang.Object next = it2.next();
             if ((entry == null && next != null) || (entry != null && !entry.equals(next))) {
                 return false;
             }
@@ -107,12 +102,12 @@ public class g implements Iterable {
         return !it.hasNext() && !it2.hasNext();
     }
 
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
+    public java.lang.String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("[");
-        Iterator it = iterator();
+        java.util.Iterator it = iterator();
         while (it.hasNext()) {
-            sb.append(((Map.Entry) it.next()).toString());
+            sb.append(((java.util.Map.Entry) it.next()).toString());
             if (it.hasNext()) {
                 sb.append(", ");
             }

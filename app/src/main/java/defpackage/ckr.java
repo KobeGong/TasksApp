@@ -1,9 +1,9 @@
 package defpackage;
 
-/* renamed from: ckr  reason: default package */
+/* renamed from: ckr reason: default package */
 /* compiled from: PG */
 public final class ckr {
-    public static final ckr a;
+    public static final defpackage.ckr a;
     public final boolean b = false;
     public final boolean c = false;
     public final boolean d;
@@ -17,7 +17,7 @@ public final class ckr {
     }
 
     static {
-        cks cks = new cks();
-        a = new ckr(cks.a, cks.b);
+        defpackage.cks cks = new defpackage.cks();
+        a = new defpackage.ckr(cks.a, cks.b);
     }
 }

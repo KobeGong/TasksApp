@@ -1,17 +1,15 @@
 package defpackage;
 
-import android.os.IInterface;
-
-/* renamed from: bjk  reason: default package */
+/* renamed from: bjk reason: default package */
 /* compiled from: PG */
-public interface bjk extends IInterface {
-    boolean getBooleanFlagValue(String str, boolean z, int i);
+public interface bjk extends android.os.IInterface {
+    boolean getBooleanFlagValue(java.lang.String str, boolean z, int i);
 
-    int getIntFlagValue(String str, int i, int i2);
+    int getIntFlagValue(java.lang.String str, int i, int i2);
 
-    long getLongFlagValue(String str, long j, int i);
+    long getLongFlagValue(java.lang.String str, long j, int i);
 
-    String getStringFlagValue(String str, String str2, int i);
+    java.lang.String getStringFlagValue(java.lang.String str, java.lang.String str2, int i);
 
-    void init(bfl bfl);
+    void init(defpackage.bfl bfl);
 }

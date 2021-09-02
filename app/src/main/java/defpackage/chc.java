@@ -1,140 +1,131 @@
 package defpackage;
 
-import android.app.Activity;
-import android.app.Application;
-import android.content.ComponentCallbacks2;
-import android.content.res.Configuration;
-import android.os.Bundle;
-import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
-
-/* access modifiers changed from: package-private */
-/* renamed from: chc  reason: default package */
+/* renamed from: chc reason: default package */
 /* compiled from: PG */
-public final class chc implements Application.ActivityLifecycleCallbacks, ComponentCallbacks2 {
-    public final List a = new CopyOnWriteArrayList();
-    private Boolean b;
-    private volatile Activity c;
+final class chc implements android.app.Application.ActivityLifecycleCallbacks, android.content.ComponentCallbacks2 {
+    public final java.util.List a = new java.util.concurrent.CopyOnWriteArrayList();
+    private java.lang.Boolean b;
+    private volatile android.app.Activity c;
 
     chc() {
     }
 
-    public final void onActivityCreated(Activity activity, Bundle bundle) {
+    public final void onActivityCreated(android.app.Activity activity, android.os.Bundle bundle) {
         activity.getApplicationContext();
         this.c = null;
-        for (cgp cgp : this.a) {
-            if (cgp instanceof cgq) {
-                cgq cgq = (cgq) cgp;
+        for (defpackage.cgp cgp : this.a) {
+            if (cgp instanceof defpackage.cgq) {
+                defpackage.cgq cgq = (defpackage.cgq) cgp;
                 synchronized (cgq) {
                     cgq.c = true;
                 }
                 cgq.a.b(cgq);
-                for (cle cle : cgq.b) {
-                    cle.f();
+                for (defpackage.cle f : cgq.b) {
+                    f.f();
                 }
             }
         }
     }
 
-    public final void onActivityStarted(Activity activity) {
+    public final void onActivityStarted(android.app.Activity activity) {
         activity.getApplicationContext();
         this.c = null;
         a(activity);
-        for (cgp cgp : this.a) {
-            if (cgp instanceof cgv) {
-                ((cgv) cgp).a(activity);
+        for (defpackage.cgp cgp : this.a) {
+            if (cgp instanceof defpackage.cgv) {
+                ((defpackage.cgv) cgp).a(activity);
             }
         }
     }
 
-    public final void onActivityResumed(Activity activity) {
+    public final void onActivityResumed(android.app.Activity activity) {
         activity.getApplicationContext();
         this.c = null;
         activity.getClass().getSimpleName();
-        for (cgp cgp : this.a) {
-            if (cgp instanceof cgt) {
-                ((cgt) cgp).a(activity);
+        for (defpackage.cgp cgp : this.a) {
+            if (cgp instanceof defpackage.cgt) {
+                ((defpackage.cgt) cgp).a(activity);
             }
         }
     }
 
-    public final void onActivityPaused(Activity activity) {
+    public final void onActivityPaused(android.app.Activity activity) {
         activity.getApplicationContext();
-        for (cgp cgp : this.a) {
-            if (cgp instanceof cgs) {
-                ((cgs) cgp).a(activity);
+        for (defpackage.cgp cgp : this.a) {
+            if (cgp instanceof defpackage.cgs) {
+                ((defpackage.cgs) cgp).a(activity);
             }
         }
     }
 
-    public final void onActivityStopped(Activity activity) {
+    public final void onActivityStopped(android.app.Activity activity) {
         activity.getApplicationContext();
         this.c = activity;
-        for (cgp cgp : this.a) {
-            if (cgp instanceof cgw) {
-                ((cgw) cgp).a();
+        for (defpackage.cgp cgp : this.a) {
+            if (cgp instanceof defpackage.cgw) {
+                ((defpackage.cgw) cgp).a();
             }
         }
         a(activity);
     }
 
-    public final void onActivitySaveInstanceState(Activity activity, Bundle bundle) {
+    public final void onActivitySaveInstanceState(android.app.Activity activity, android.os.Bundle bundle) {
         activity.getApplicationContext();
-        for (cgp cgp : this.a) {
-            if (cgp instanceof cgu) {
-                ((cgu) cgp).a();
+        for (defpackage.cgp cgp : this.a) {
+            if (cgp instanceof defpackage.cgu) {
+                ((defpackage.cgu) cgp).a();
             }
         }
     }
 
-    public final void onActivityDestroyed(Activity activity) {
+    public final void onActivityDestroyed(android.app.Activity activity) {
         activity.getApplicationContext();
         this.c = null;
-        for (cgp cgp : this.a) {
-            if (cgp instanceof cgr) {
-                ((cgr) cgp).a(activity);
+        for (defpackage.cgp cgp : this.a) {
+            if (cgp instanceof defpackage.cgr) {
+                ((defpackage.cgr) cgp).a(activity);
             }
         }
     }
 
     public final void onTrimMemory(int i) {
-        for (cgp cgp : this.a) {
-            if (cgp instanceof cgz) {
-                ((cgz) cgp).a(i);
+        for (defpackage.cgp cgp : this.a) {
+            if (cgp instanceof defpackage.cgz) {
+                ((defpackage.cgz) cgp).a(i);
             }
         }
         if (i >= 20 && this.c != null) {
-            a(false, this.c);
+            a(java.lang.Boolean.valueOf(false), this.c);
         }
         this.c = null;
     }
 
-    public final void onConfigurationChanged(Configuration configuration) {
+    public final void onConfigurationChanged(android.content.res.Configuration configuration) {
     }
 
     public final void onLowMemory() {
     }
 
-    private final void a(Activity activity) {
-        a(Boolean.valueOf(cnx.b(activity.getApplicationContext())), activity);
+    private final void a(android.app.Activity activity) {
+        a(java.lang.Boolean.valueOf(defpackage.cnx.b(activity.getApplicationContext())), activity);
     }
 
-    private final void a(Boolean bool, Activity activity) {
+    private final void a(java.lang.Boolean bool, android.app.Activity activity) {
         if (!bool.equals(this.b)) {
             this.b = bool;
             if (bool.booleanValue()) {
-                cdm.a(3, "AppLifecycleTracker", "App transition to foreground", new Object[0]);
-                for (cgp cgp : this.a) {
-                    if (cgp instanceof cgy) {
-                        ((cgy) cgp).a(activity);
+                defpackage.cdm.a(3, "AppLifecycleTracker", "App transition to foreground", new java.lang.Object[0]);
+                for (defpackage.cgp cgp : this.a) {
+                    if (cgp instanceof defpackage.cgy) {
+                        ((defpackage.cgy) cgp).a(activity);
                     }
                 }
                 return;
             }
-            cdm.a(3, "AppLifecycleTracker", "App transition to background", new Object[0]);
-            for (cgp cgp2 : this.a) {
-                if (cgp2 instanceof cgx) {
-                    ((cgx) cgp2).b(activity);
+            defpackage.cdm.a(3, "AppLifecycleTracker", "App transition to background", new java.lang.Object[0]);
+            for (defpackage.cgp cgp2 : this.a) {
+                if (cgp2 instanceof defpackage.cgx) {
+                    ((defpackage.cgx) cgp2).b(activity);
                 }
             }
         }

@@ -1,80 +1,55 @@
 package defpackage;
 
-import android.util.Log;
-import java.util.Locale;
-
-/* renamed from: bjb  reason: default package */
+/* renamed from: bjb reason: default package */
 /* compiled from: PG */
 public final class bjb {
-    private final String a;
-    private final String b;
+    private final java.lang.String a;
+    private final java.lang.String b;
     private final int c;
 
-    /* JADX WARNING: Illegal instructions before constructor call */
-    /* Code decompiled incorrectly, please refer to instructions dump. */
-    public bjb(java.lang.String r7, java.lang.String... r8) {
-        /*
-            r6 = this;
-            int r0 = r8.length
-            if (r0 != 0) goto L_0x0009
-            java.lang.String r0 = ""
-        L_0x0005:
-            r6.<init>(r7, r0)
-            return
-        L_0x0009:
-            java.lang.StringBuilder r1 = new java.lang.StringBuilder
-            r1.<init>()
-            r0 = 91
-            r1.append(r0)
-            int r2 = r8.length
-            r0 = 0
-        L_0x0015:
-            if (r0 >= r2) goto L_0x002b
-            r3 = r8[r0]
-            int r4 = r1.length()
-            r5 = 1
-            if (r4 <= r5) goto L_0x0025
-            java.lang.String r4 = ","
-            r1.append(r4)
-        L_0x0025:
-            r1.append(r3)
-            int r0 = r0 + 1
-            goto L_0x0015
-        L_0x002b:
-            r0 = 93
-            java.lang.StringBuilder r0 = r1.append(r0)
-            r2 = 32
-            r0.append(r2)
-            java.lang.String r0 = r1.toString()
-            goto L_0x0005
-        */
-        throw new UnsupportedOperationException("Method not decompiled: defpackage.bjb.<init>(java.lang.String, java.lang.String[]):void");
+    public bjb(java.lang.String str, java.lang.String... strArr) {
+        java.lang.String sb;
+        if (strArr.length == 0) {
+            sb = "";
+        } else {
+            java.lang.StringBuilder sb2 = new java.lang.StringBuilder();
+            sb2.append('[');
+            for (java.lang.String str2 : strArr) {
+                if (sb2.length() > 1) {
+                    sb2.append(",");
+                }
+                sb2.append(str2);
+            }
+            sb2.append(']').append(' ');
+            sb = sb2.toString();
+        }
+        this(str, sb);
     }
 
-    private bjb(String str, String str2) {
+    private bjb(java.lang.String str, java.lang.String str2) {
         this.b = str2;
         this.a = str;
-        new avi(str, (byte) 0);
+        new defpackage.avi(str, 0);
         int i = 2;
-        while (7 >= i && !Log.isLoggable(this.a, i)) {
+        while (7 >= i && !android.util.Log.isLoggable(this.a, i)) {
             i++;
         }
         this.c = i;
     }
 
-    public final void a(String str, Object... objArr) {
+    public final void a(java.lang.String str, java.lang.Object... objArr) {
         if (this.c <= 3) {
             c(str, objArr);
         }
     }
 
-    public final void b(String str, Object... objArr) {
-        Log.w(this.a, c(str, objArr));
+    public final void b(java.lang.String str, java.lang.Object... objArr) {
+        android.util.Log.w(this.a, c(str, objArr));
     }
 
-    public final String c(String str, Object... objArr) {
+    public final java.lang.String c(java.lang.String str, java.lang.Object... objArr) {
         if (objArr != null && objArr.length > 0) {
-            str = String.format(Locale.US, str, objArr);
+            str = java.lang.String.format(java.util.Locale.US, str, objArr);
         }
         return this.b.concat(str);
     }

@@ -1,8 +1,8 @@
 package defpackage;
 
-/* renamed from: daq  reason: default package */
+/* renamed from: daq reason: default package */
 /* compiled from: PG */
-public enum daq implements din {
+public enum daq implements defpackage.din {
     UNKNOWN(0),
     GMAIL_THREAD(1),
     GMAIL_PERMALINK(2),
@@ -10,15 +10,14 @@ public enum daq implements din {
     
     private final int e;
 
-    @Override // defpackage.din
     public final int a() {
         if (this != UNRECOGNIZED) {
             return this.e;
         }
-        throw new IllegalArgumentException("Can't get the number of an unknown enum value.");
+        throw new java.lang.IllegalArgumentException("Can't get the number of an unknown enum value.");
     }
 
-    public static daq a(int i) {
+    public static defpackage.daq a(int i) {
         switch (i) {
             case 0:
                 return UNKNOWN;
@@ -36,6 +35,6 @@ public enum daq implements din {
     }
 
     static {
-        new dar();
+        new defpackage.dar();
     }
 }

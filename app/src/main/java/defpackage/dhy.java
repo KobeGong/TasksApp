@@ -1,35 +1,33 @@
 package defpackage;
 
-import java.util.Map;
-
-/* renamed from: dhy  reason: default package */
+/* renamed from: dhy reason: default package */
 /* compiled from: PG */
 final class dhy {
     dhy() {
     }
 
-    static dia a(Object obj) {
-        dia dia = ((dij) obj).a;
+    static defpackage.dia a(java.lang.Object obj) {
+        defpackage.dia dia = ((defpackage.dij) obj).a;
         if (!dia.b) {
             return dia;
         }
-        dia dia2 = (dia) dia.clone();
-        ((dij) obj).a = dia2;
+        defpackage.dia dia2 = (defpackage.dia) dia.clone();
+        ((defpackage.dij) obj).a = dia2;
         return dia2;
     }
 
-    static void b(Object obj) {
-        ((dij) obj).a.a();
+    static void b(java.lang.Object obj) {
+        ((defpackage.dij) obj).a.a();
     }
 
-    static int a(Map.Entry entry) {
+    static int a(java.util.Map.Entry entry) {
         entry.getKey();
-        throw new NoSuchMethodError();
+        throw new java.lang.NoSuchMethodError();
     }
 
-    static void b(Map.Entry entry) {
+    static void b(java.util.Map.Entry entry) {
         entry.getKey();
-        throw new NoSuchMethodError();
+        throw new java.lang.NoSuchMethodError();
     }
 
     dhy(byte b) {

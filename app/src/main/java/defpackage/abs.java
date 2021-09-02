@@ -1,40 +1,37 @@
 package defpackage;
 
-import android.content.res.ColorStateList;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.RippleDrawable;
-import android.os.Build;
-import android.util.AttributeSet;
-import android.widget.ImageView;
-
-/* renamed from: abs  reason: default package */
+/* renamed from: abs reason: default package */
 /* compiled from: PG */
 public final class abs {
-    private final ImageView a;
-    private agu b;
-    private agu c;
+    private final android.widget.ImageView a;
+    private defpackage.agu b;
+    private defpackage.agu c;
 
-    public abs(ImageView imageView) {
+    public abs(android.widget.ImageView imageView) {
         this.a = imageView;
     }
 
-    public final void a(AttributeSet attributeSet, int i) {
-        int g;
-        agw a2 = agw.a(this.a.getContext(), attributeSet, xu.M, i, 0);
+    public final void a(android.util.AttributeSet attributeSet, int i) {
+        defpackage.agw a2 = defpackage.agw.a(this.a.getContext(), attributeSet, defpackage.xu.M, i, 0);
         try {
-            Drawable drawable = this.a.getDrawable();
-            if (!(drawable != null || (g = a2.g(xu.N, -1)) == -1 || (drawable = xw.b(this.a.getContext(), g)) == null)) {
-                this.a.setImageDrawable(drawable);
+            android.graphics.drawable.Drawable drawable = this.a.getDrawable();
+            if (drawable == null) {
+                int g = a2.g(defpackage.xu.N, -1);
+                if (g != -1) {
+                    drawable = defpackage.xw.b(this.a.getContext(), g);
+                    if (drawable != null) {
+                        this.a.setImageDrawable(drawable);
+                    }
+                }
             }
             if (drawable != null) {
-                add.a(drawable);
+                defpackage.add.a(drawable);
             }
-            if (a2.f(xu.O)) {
-                ut.a.a(this.a, a2.e(xu.O));
+            if (a2.f(defpackage.xu.O)) {
+                defpackage.ut.a.a(this.a, a2.e(defpackage.xu.O));
             }
-            if (a2.f(xu.P)) {
-                ut.a.a(this.a, add.a(a2.a(xu.P, -1), null));
+            if (a2.f(defpackage.xu.P)) {
+                defpackage.ut.a.a(this.a, defpackage.add.a(a2.a(defpackage.xu.P, -1), null));
             }
         } finally {
             a2.b.recycle();
@@ -43,9 +40,9 @@ public final class abs {
 
     public final void a(int i) {
         if (i != 0) {
-            Drawable b2 = xw.b(this.a.getContext(), i);
+            android.graphics.drawable.Drawable b2 = defpackage.xw.b(this.a.getContext(), i);
             if (b2 != null) {
-                add.a(b2);
+                defpackage.add.a(b2);
             }
             this.a.setImageDrawable(b2);
         } else {
@@ -54,61 +51,61 @@ public final class abs {
         d();
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public final boolean a() {
-        Drawable background = this.a.getBackground();
-        if (Build.VERSION.SDK_INT < 21 || !(background instanceof RippleDrawable)) {
+        android.graphics.drawable.Drawable background = this.a.getBackground();
+        if (android.os.Build.VERSION.SDK_INT < 21 || !(background instanceof android.graphics.drawable.RippleDrawable)) {
             return true;
         }
         return false;
     }
 
-    /* access modifiers changed from: package-private */
-    public final void a(ColorStateList colorStateList) {
+    /* access modifiers changed from: 0000 */
+    public final void a(android.content.res.ColorStateList colorStateList) {
         if (this.b == null) {
-            this.b = new agu();
+            this.b = new defpackage.agu();
         }
         this.b.a = colorStateList;
         this.b.d = true;
         d();
     }
 
-    /* access modifiers changed from: package-private */
-    public final ColorStateList b() {
+    /* access modifiers changed from: 0000 */
+    public final android.content.res.ColorStateList b() {
         if (this.b != null) {
             return this.b.a;
         }
         return null;
     }
 
-    /* access modifiers changed from: package-private */
-    public final void a(PorterDuff.Mode mode) {
+    /* access modifiers changed from: 0000 */
+    public final void a(android.graphics.PorterDuff.Mode mode) {
         if (this.b == null) {
-            this.b = new agu();
+            this.b = new defpackage.agu();
         }
         this.b.b = mode;
         this.b.c = true;
         d();
     }
 
-    /* access modifiers changed from: package-private */
-    public final PorterDuff.Mode c() {
+    /* access modifiers changed from: 0000 */
+    public final android.graphics.PorterDuff.Mode c() {
         if (this.b != null) {
             return this.b.b;
         }
         return null;
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public final void d() {
         boolean z;
         boolean z2 = false;
-        Drawable drawable = this.a.getDrawable();
+        android.graphics.drawable.Drawable drawable = this.a.getDrawable();
         if (drawable != null) {
-            add.a(drawable);
+            defpackage.add.a(drawable);
         }
         if (drawable != null) {
-            int i = Build.VERSION.SDK_INT;
+            int i = android.os.Build.VERSION.SDK_INT;
             if (i > 21 || i != 21) {
                 z = false;
             } else {
@@ -116,22 +113,22 @@ public final class abs {
             }
             if (z) {
                 if (this.c == null) {
-                    this.c = new agu();
+                    this.c = new defpackage.agu();
                 }
-                agu agu = this.c;
+                defpackage.agu agu = this.c;
                 agu.a();
-                ColorStateList a2 = ut.a.a(this.a);
+                android.content.res.ColorStateList a2 = defpackage.ut.a.a(this.a);
                 if (a2 != null) {
                     agu.d = true;
                     agu.a = a2;
                 }
-                PorterDuff.Mode b2 = ut.a.b(this.a);
+                android.graphics.PorterDuff.Mode b2 = defpackage.ut.a.b(this.a);
                 if (b2 != null) {
                     agu.c = true;
                     agu.b = b2;
                 }
                 if (agu.d || agu.c) {
-                    abl.a(drawable, agu, this.a.getDrawableState());
+                    defpackage.abl.a(drawable, agu, this.a.getDrawableState());
                     z2 = true;
                 }
                 if (z2) {
@@ -139,7 +136,7 @@ public final class abs {
                 }
             }
             if (this.b != null) {
-                abl.a(drawable, this.b, this.a.getDrawableState());
+                defpackage.abl.a(drawable, this.b, this.a.getDrawableState());
             }
         }
     }

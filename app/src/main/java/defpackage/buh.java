@@ -1,19 +1,18 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: buh  reason: default package */
+/* renamed from: buh reason: default package */
 /* compiled from: PG */
-public final class buh extends bul {
-    private final Long a;
-    private final String b;
-    private final String c;
-    private final Long d;
-    private final Long e;
-    private final btk f;
-    private final Long g;
+final class buh extends defpackage.bul {
+    private final java.lang.Long a;
+    private final java.lang.String b;
+    private final java.lang.String c;
+    private final java.lang.Long d;
+    private final java.lang.Long e;
+    private final defpackage.btk f;
+    private final java.lang.Long g;
     private final int h;
 
-    buh(Long l, String str, String str2, Long l2, Long l3, btk btk, Long l4, int i) {
+    buh(java.lang.Long l, java.lang.String str, java.lang.String str2, java.lang.Long l2, java.lang.Long l3, defpackage.btk btk, java.lang.Long l4, int i) {
         this.a = l;
         this.b = str;
         this.c = str2;
@@ -24,65 +23,57 @@ public final class buh extends bul {
         this.h = i;
     }
 
-    @Override // defpackage.bul
-    public final Long a() {
+    public final java.lang.Long a() {
         return this.a;
     }
 
-    @Override // defpackage.bul
-    public final String b() {
+    public final java.lang.String b() {
         return this.b;
     }
 
-    @Override // defpackage.bul
-    public final String c() {
+    public final java.lang.String c() {
         return this.c;
     }
 
-    @Override // defpackage.bul
-    public final Long d() {
+    public final java.lang.Long d() {
         return this.d;
     }
 
-    @Override // defpackage.bul
-    public final Long e() {
+    public final java.lang.Long e() {
         return this.e;
     }
 
-    @Override // defpackage.bul
-    public final btk f() {
+    public final defpackage.btk f() {
         return this.f;
     }
 
-    @Override // defpackage.bul
-    public final Long g() {
+    public final java.lang.Long g() {
         return this.g;
     }
 
-    @Override // defpackage.bul
     public final int h() {
         return this.h;
     }
 
-    public final String toString() {
-        String valueOf = String.valueOf(this.a);
-        String str = this.b;
-        String str2 = this.c;
-        String valueOf2 = String.valueOf(this.d);
-        String valueOf3 = String.valueOf(this.e);
-        String valueOf4 = String.valueOf(this.f);
-        String valueOf5 = String.valueOf(this.g);
-        return new StringBuilder(String.valueOf(valueOf).length() + 165 + String.valueOf(str).length() + String.valueOf(str2).length() + String.valueOf(valueOf2).length() + String.valueOf(valueOf3).length() + String.valueOf(valueOf4).length() + String.valueOf(valueOf5).length()).append("ChimeAccount{id=").append(valueOf).append(", accountName=").append(str).append(", obfuscatedGaiaId=").append(str2).append(", syncVersion=").append(valueOf2).append(", pageVersion=").append(valueOf3).append(", registrationStatus=").append(valueOf4).append(", lastRegistrationTimeMs=").append(valueOf5).append(", lastRegistrationRequestHash=").append(this.h).append("}").toString();
+    public final java.lang.String toString() {
+        java.lang.String valueOf = java.lang.String.valueOf(this.a);
+        java.lang.String str = this.b;
+        java.lang.String str2 = this.c;
+        java.lang.String valueOf2 = java.lang.String.valueOf(this.d);
+        java.lang.String valueOf3 = java.lang.String.valueOf(this.e);
+        java.lang.String valueOf4 = java.lang.String.valueOf(this.f);
+        java.lang.String valueOf5 = java.lang.String.valueOf(this.g);
+        return new java.lang.StringBuilder(java.lang.String.valueOf(valueOf).length() + 165 + java.lang.String.valueOf(str).length() + java.lang.String.valueOf(str2).length() + java.lang.String.valueOf(valueOf2).length() + java.lang.String.valueOf(valueOf3).length() + java.lang.String.valueOf(valueOf4).length() + java.lang.String.valueOf(valueOf5).length()).append("ChimeAccount{id=").append(valueOf).append(", accountName=").append(str).append(", obfuscatedGaiaId=").append(str2).append(", syncVersion=").append(valueOf2).append(", pageVersion=").append(valueOf3).append(", registrationStatus=").append(valueOf4).append(", lastRegistrationTimeMs=").append(valueOf5).append(", lastRegistrationRequestHash=").append(this.h).append("}").toString();
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof bul)) {
+        if (!(obj instanceof defpackage.bul)) {
             return false;
         }
-        bul bul = (bul) obj;
+        defpackage.bul bul = (defpackage.bul) obj;
         if (this.a != null ? this.a.equals(bul.a()) : bul.a() == null) {
             if (this.b.equals(bul.b()) && (this.c != null ? this.c.equals(bul.c()) : bul.c() == null) && this.d.equals(bul.d()) && this.e.equals(bul.e()) && this.f.equals(bul.f()) && this.g.equals(bul.g()) && this.h == bul.h()) {
                 return true;
@@ -100,8 +91,7 @@ public final class buh extends bul {
         return ((((((((((hashCode ^ i) * 1000003) ^ this.d.hashCode()) * 1000003) ^ this.e.hashCode()) * 1000003) ^ this.f.hashCode()) * 1000003) ^ this.g.hashCode()) * 1000003) ^ this.h;
     }
 
-    @Override // defpackage.bul
-    public final bum i() {
-        return new bum(this);
+    public final defpackage.bum i() {
+        return new defpackage.bum(this);
     }
 }

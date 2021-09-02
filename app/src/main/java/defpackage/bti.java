@@ -1,41 +1,38 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: bti  reason: default package */
+/* renamed from: bti reason: default package */
 /* compiled from: PG */
-public final class bti extends btl {
-    private final btn b;
-    private final Throwable c;
+final class bti extends defpackage.btl {
+    private final defpackage.btn b;
+    private final java.lang.Throwable c;
 
-    bti(btn btn, Throwable th) {
+    bti(defpackage.btn btn, java.lang.Throwable th) {
         this.b = btn;
         this.c = th;
     }
 
-    @Override // defpackage.btl
-    public final btn a() {
+    public final defpackage.btn a() {
         return this.b;
     }
 
-    @Override // defpackage.btl
-    public final Throwable b() {
+    public final java.lang.Throwable b() {
         return this.c;
     }
 
-    public final String toString() {
-        String valueOf = String.valueOf(this.b);
-        String valueOf2 = String.valueOf(this.c);
-        return new StringBuilder(String.valueOf(valueOf).length() + 21 + String.valueOf(valueOf2).length()).append("Result{code=").append(valueOf).append(", error=").append(valueOf2).append("}").toString();
+    public final java.lang.String toString() {
+        java.lang.String valueOf = java.lang.String.valueOf(this.b);
+        java.lang.String valueOf2 = java.lang.String.valueOf(this.c);
+        return new java.lang.StringBuilder(java.lang.String.valueOf(valueOf).length() + 21 + java.lang.String.valueOf(valueOf2).length()).append("Result{code=").append(valueOf).append(", error=").append(valueOf2).append("}").toString();
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof btl)) {
+        if (!(obj instanceof defpackage.btl)) {
             return false;
         }
-        btl btl = (btl) obj;
+        defpackage.btl btl = (defpackage.btl) obj;
         if (this.b.equals(btl.a())) {
             if (this.c == null) {
                 if (btl.b() == null) {

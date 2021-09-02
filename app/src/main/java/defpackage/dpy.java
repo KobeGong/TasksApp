@@ -1,18 +1,16 @@
 package defpackage;
 
-/* renamed from: dpy  reason: default package */
+/* renamed from: dpy reason: default package */
 /* compiled from: PG */
-final class dpy implements dpa {
+final class dpy implements defpackage.dpa {
     dpy() {
     }
 
-    @Override // defpackage.dpa
-    public final /* synthetic */ Object a(byte[] bArr) {
-        return dpw.a(bArr);
+    public final /* synthetic */ java.lang.Object a(byte[] bArr) {
+        return defpackage.dpw.a(bArr);
     }
 
-    @Override // defpackage.dpa
-    public final /* synthetic */ byte[] a(Object obj) {
-        return ((dpw) obj).l.s;
+    public final /* synthetic */ byte[] a(java.lang.Object obj) {
+        return ((defpackage.dpw) obj).l.s;
     }
 }

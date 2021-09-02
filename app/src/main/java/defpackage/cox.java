@@ -1,16 +1,15 @@
 package defpackage;
 
-/* renamed from: cox  reason: default package */
+/* renamed from: cox reason: default package */
 /* compiled from: PG */
-public final class cox implements ecz {
-    private final ecz a;
+public final class cox implements defpackage.ecz {
+    private final defpackage.ecz a;
 
-    public cox(ecz ecz) {
+    public cox(defpackage.ecz ecz) {
         this.a = ecz;
     }
 
-    @Override // defpackage.ecz
-    public final /* synthetic */ Object a() {
-        return new cow(this.a);
+    public final /* synthetic */ java.lang.Object a() {
+        return new defpackage.cow(this.a);
     }
 }

@@ -1,26 +1,20 @@
 package defpackage;
 
-import java.util.Collections;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Set;
-
-/* renamed from: djj  reason: default package */
+/* renamed from: djj reason: default package */
 /* compiled from: PG */
-public final class djj extends LinkedHashMap {
-    public static final djj b;
+public final class djj extends java.util.LinkedHashMap {
+    public static final defpackage.djj b;
     public boolean a = true;
 
     private djj() {
     }
 
-    private djj(Map map) {
+    private djj(java.util.Map map) {
         super(map);
     }
 
-    @Override // java.util.LinkedHashMap, java.util.AbstractMap, java.util.Map, java.util.HashMap
-    public final Set entrySet() {
-        return isEmpty() ? Collections.emptySet() : super.entrySet();
+    public final java.util.Set entrySet() {
+        return isEmpty() ? java.util.Collections.emptySet() : super.entrySet();
     }
 
     public final void clear() {
@@ -28,26 +22,23 @@ public final class djj extends LinkedHashMap {
         super.clear();
     }
 
-    @Override // java.util.AbstractMap, java.util.Map, java.util.HashMap
-    public final Object put(Object obj, Object obj2) {
+    public final java.lang.Object put(java.lang.Object obj, java.lang.Object obj2) {
         b();
-        dim.a(obj);
-        dim.a(obj2);
+        defpackage.dim.a(obj);
+        defpackage.dim.a(obj2);
         return super.put(obj, obj2);
     }
 
-    @Override // java.util.AbstractMap, java.util.Map, java.util.HashMap
-    public final void putAll(Map map) {
+    public final void putAll(java.util.Map map) {
         b();
-        for (Object obj : map.keySet()) {
-            dim.a(obj);
-            dim.a(map.get(obj));
+        for (java.lang.Object next : map.keySet()) {
+            defpackage.dim.a(next);
+            defpackage.dim.a(map.get(next));
         }
         super.putAll(map);
     }
 
-    @Override // java.util.AbstractMap, java.util.Map, java.util.HashMap
-    public final Object remove(Object obj) {
+    public final java.lang.Object remove(java.lang.Object obj) {
         b();
         return super.remove(obj);
     }
@@ -115,37 +106,42 @@ public final class djj extends LinkedHashMap {
         throw new UnsupportedOperationException("Method not decompiled: defpackage.djj.equals(java.lang.Object):boolean");
     }
 
-    private static int a(Object obj) {
+    private static int a(java.lang.Object obj) {
         if (obj instanceof byte[]) {
-            return dim.c((byte[]) obj);
+            return defpackage.dim.c((byte[]) obj);
         }
-        if (!(obj instanceof din)) {
+        if (!(obj instanceof defpackage.din)) {
             return obj.hashCode();
         }
-        throw new UnsupportedOperationException();
+        throw new java.lang.UnsupportedOperationException();
     }
 
     public final int hashCode() {
         int i = 0;
-        for (Map.Entry entry : entrySet()) {
-            i = (a(entry.getValue()) ^ a(entry.getKey())) + i;
+        java.util.Iterator it = entrySet().iterator();
+        while (true) {
+            int i2 = i;
+            if (!it.hasNext()) {
+                return i2;
+            }
+            java.util.Map.Entry entry = (java.util.Map.Entry) it.next();
+            i = (a(entry.getValue()) ^ a(entry.getKey())) + i2;
         }
-        return i;
     }
 
-    public final djj a() {
-        return isEmpty() ? new djj() : new djj(this);
+    public final defpackage.djj a() {
+        return isEmpty() ? new defpackage.djj() : new defpackage.djj(this);
     }
 
-    /* access modifiers changed from: package-private */
+    /* access modifiers changed from: 0000 */
     public final void b() {
         if (!this.a) {
-            throw new UnsupportedOperationException();
+            throw new java.lang.UnsupportedOperationException();
         }
     }
 
     static {
-        djj djj = new djj();
+        defpackage.djj djj = new defpackage.djj();
         b = djj;
         djj.a = false;
     }

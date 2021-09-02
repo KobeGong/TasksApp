@@ -1,58 +1,51 @@
 package defpackage;
 
-import android.content.res.ColorStateList;
-import android.graphics.PorterDuff;
-import android.view.MenuItem;
-import android.view.View;
-
-/* renamed from: pp  reason: default package */
+/* renamed from: pp reason: default package */
 /* compiled from: PG */
-public interface pp extends MenuItem {
-    pp a(CharSequence charSequence);
+public interface pp extends android.view.MenuItem {
+    defpackage.pp a(java.lang.CharSequence charSequence);
 
-    pp a(rs rsVar);
+    defpackage.pp a(defpackage.rs rsVar);
 
-    rs a();
+    defpackage.rs a();
 
-    pp b(CharSequence charSequence);
+    defpackage.pp b(java.lang.CharSequence charSequence);
 
     boolean collapseActionView();
 
     boolean expandActionView();
 
-    View getActionView();
+    android.view.View getActionView();
 
     int getAlphabeticModifiers();
 
-    CharSequence getContentDescription();
+    java.lang.CharSequence getContentDescription();
 
-    ColorStateList getIconTintList();
+    android.content.res.ColorStateList getIconTintList();
 
-    PorterDuff.Mode getIconTintMode();
+    android.graphics.PorterDuff.Mode getIconTintMode();
 
     int getNumericModifiers();
 
-    CharSequence getTooltipText();
+    java.lang.CharSequence getTooltipText();
 
     boolean isActionViewExpanded();
 
-    @Override // android.view.MenuItem
-    MenuItem setActionView(int i);
+    android.view.MenuItem setActionView(int i);
 
-    @Override // android.view.MenuItem
-    MenuItem setActionView(View view);
+    android.view.MenuItem setActionView(android.view.View view);
 
-    MenuItem setAlphabeticShortcut(char c, int i);
+    android.view.MenuItem setAlphabeticShortcut(char c, int i);
 
-    MenuItem setIconTintList(ColorStateList colorStateList);
+    android.view.MenuItem setIconTintList(android.content.res.ColorStateList colorStateList);
 
-    MenuItem setIconTintMode(PorterDuff.Mode mode);
+    android.view.MenuItem setIconTintMode(android.graphics.PorterDuff.Mode mode);
 
-    MenuItem setNumericShortcut(char c, int i);
+    android.view.MenuItem setNumericShortcut(char c, int i);
 
-    MenuItem setShortcut(char c, char c2, int i, int i2);
+    android.view.MenuItem setShortcut(char c, char c2, int i, int i2);
 
     void setShowAsAction(int i);
 
-    MenuItem setShowAsActionFlags(int i);
+    android.view.MenuItem setShowAsActionFlags(int i);
 }

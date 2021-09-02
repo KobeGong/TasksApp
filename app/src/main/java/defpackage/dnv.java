@@ -1,24 +1,24 @@
 package defpackage;
 
-/* renamed from: dnv  reason: default package */
+/* renamed from: dnv reason: default package */
 /* compiled from: PG */
 public final class dnv {
-    private final String a;
+    private final java.lang.String a;
 
-    dnv(String str) {
-        this(str, (byte) 0);
+    dnv(java.lang.String str) {
+        this(str, 0);
     }
 
-    private dnv(String str, byte b) {
-        this.a = (String) dns.a(str, "name");
+    private dnv(java.lang.String str, byte b) {
+        this.a = (java.lang.String) defpackage.dns.a(str, "name");
     }
 
-    public static Object a() {
-        dpo dpo = dns.a().c;
+    public static java.lang.Object a() {
+        defpackage.dpo dpo = defpackage.dns.a().c;
         return null;
     }
 
-    public final String toString() {
+    public final java.lang.String toString() {
         return this.a;
     }
 }

@@ -1,20 +1,18 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: dts  reason: default package */
+/* renamed from: dts reason: default package */
 /* compiled from: PG */
-public final class dts extends dtt {
-    public final doo a;
-    public final dns b = dns.a();
-    private final /* synthetic */ dtm d;
+final class dts extends defpackage.dtt {
+    public final defpackage.doo a;
+    public final defpackage.dns b = defpackage.dns.a();
+    private final /* synthetic */ defpackage.dtm d;
 
-    dts(dtm dtm, doo doo) {
+    dts(defpackage.dtm dtm, defpackage.doo doo) {
         this.d = dtm;
         this.a = doo;
     }
 
-    @Override // defpackage.dta, defpackage.dtt
-    public final void b(dpw dpw) {
+    public final void b(defpackage.dpw dpw) {
         super.b(dpw);
         synchronized (this.d.a) {
             if (this.d.d != null) {

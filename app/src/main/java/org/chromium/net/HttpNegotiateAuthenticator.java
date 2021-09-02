@@ -1,41 +1,31 @@
 package org.chromium.net;
 
-import android.accounts.AccountManager;
-import android.content.Context;
-import android.os.Build;
-import android.os.Bundle;
-import android.os.Handler;
-import android.os.Process;
-import org.chromium.base.ApplicationStatus;
-import org.chromium.base.ThreadUtils;
-import org.chromium.base.annotations.CalledByNative;
-
 /* compiled from: PG */
 public class HttpNegotiateAuthenticator {
-    public Bundle a;
-    private final String b;
+    public android.os.Bundle a;
+    private final java.lang.String b;
 
-    private HttpNegotiateAuthenticator(String str) {
+    private HttpNegotiateAuthenticator(java.lang.String str) {
         this.b = str;
     }
 
-    public native void nativeSetResult(long j, int i, String str);
+    public native void nativeSetResult(long j, int i, java.lang.String str);
 
-    @CalledByNative
-    static HttpNegotiateAuthenticator create(String str) {
-        return new HttpNegotiateAuthenticator(str);
+    @org.chromium.base.annotations.CalledByNative
+    static org.chromium.net.HttpNegotiateAuthenticator create(java.lang.String str) {
+        return new org.chromium.net.HttpNegotiateAuthenticator(str);
     }
 
-    /* access modifiers changed from: package-private */
-    @CalledByNative
-    public void getNextAuthToken(long j, String str, String str2, boolean z) {
-        Context context = ehw.a;
-        eid eid = new eid();
+    /* access modifiers changed from: 0000 */
+    @org.chromium.base.annotations.CalledByNative
+    public void getNextAuthToken(long j, java.lang.String str, java.lang.String str2, boolean z) {
+        android.content.Context context = defpackage.ehw.a;
+        defpackage.eid eid = new defpackage.eid();
         eid.d = "SPNEGO:HOSTBASED:" + str;
-        eid.b = AccountManager.get(context);
+        eid.b = android.accounts.AccountManager.get(context);
         eid.a = j;
-        String[] strArr = {"SPNEGO"};
-        eid.c = new Bundle();
+        java.lang.String[] strArr = {"SPNEGO"};
+        eid.c = new android.os.Bundle();
         if (str2 != null) {
             eid.c.putString("incomingAuthToken", str2);
         }
@@ -43,17 +33,17 @@ public class HttpNegotiateAuthenticator {
             eid.c.putBundle("spnegoContext", this.a);
         }
         eid.c.putBoolean("canDelegate", z);
-        ApplicationStatus.a();
+        org.chromium.base.ApplicationStatus.a();
         if (a(context, "android.permission.GET_ACCOUNTS", true)) {
-            dpt.c("net_auth", "ERR_MISCONFIGURED_AUTH_ENVIRONMENT: GET_ACCOUNTS permission not granted. Aborting authentication.", new Object[0]);
+            defpackage.dpt.c("net_auth", "ERR_MISCONFIGURED_AUTH_ENVIRONMENT: GET_ACCOUNTS permission not granted. Aborting authentication.", new java.lang.Object[0]);
             nativeSetResult(eid.a, -343, null);
             return;
         }
-        eid.b.getAccountsByTypeAndFeatures(this.b, strArr, new eia(this, eid), new Handler(ThreadUtils.a().getLooper()));
+        eid.b.getAccountsByTypeAndFeatures(this.b, strArr, new defpackage.eia(this, eid), new android.os.Handler(org.chromium.base.ThreadUtils.a().getLooper()));
     }
 
-    public static boolean a(Context context, String str, boolean z) {
-        if (Build.VERSION.SDK_INT < 23 && context.checkPermission(str, Process.myPid(), Process.myUid()) != 0) {
+    public static boolean a(android.content.Context context, java.lang.String str, boolean z) {
+        if (android.os.Build.VERSION.SDK_INT < 23 && context.checkPermission(str, android.os.Process.myPid(), android.os.Process.myUid()) != 0) {
             return true;
         }
         return false;

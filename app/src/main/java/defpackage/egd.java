@@ -1,34 +1,32 @@
 package defpackage;
 
-/* renamed from: egd  reason: default package */
+/* renamed from: egd reason: default package */
 /* compiled from: PG */
-public final class egd extends dlz {
-    private ege a = null;
+public final class egd extends defpackage.dlz {
+    private defpackage.ege a;
 
     public egd() {
+        this.a = null;
         this.k = -1;
     }
 
-    @Override // defpackage.dlz, defpackage.dmf
-    public final void a(dlx dlx) {
+    public final void a(defpackage.dlx dlx) {
         if (this.a != null) {
-            dlx.a(1, this.a);
+            dlx.a(1, (defpackage.dmf) this.a);
         }
         super.a(dlx);
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.dlz, defpackage.dmf
     public final int a() {
         int a2 = super.a();
         if (this.a != null) {
-            return a2 + dlx.b(1, this.a);
+            return a2 + defpackage.dlx.b(1, (defpackage.dmf) this.a);
         }
         return a2;
     }
 
-    @Override // defpackage.dmf
-    public final /* synthetic */ dmf a(dlw dlw) {
+    public final /* synthetic */ defpackage.dmf a(defpackage.dlw dlw) {
         while (true) {
             int a2 = dlw.a();
             switch (a2) {
@@ -36,15 +34,15 @@ public final class egd extends dlz {
                     break;
                 case 10:
                     if (this.a == null) {
-                        this.a = new ege();
+                        this.a = new defpackage.ege();
                     }
-                    dlw.a(this.a);
-                    break;
+                    dlw.a((defpackage.dmf) this.a);
+                    continue;
                 default:
-                    if (super.a(dlw, a2)) {
+                    if (!super.a(dlw, a2)) {
                         break;
                     } else {
-                        break;
+                        continue;
                     }
             }
         }

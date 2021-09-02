@@ -1,15 +1,15 @@
 package defpackage;
 
-/* renamed from: djl  reason: default package */
+/* renamed from: djl reason: default package */
 /* compiled from: PG */
 final class djl {
-    public static final djk a = a();
-    public static final djk b = new djk();
+    public static final defpackage.djk a = a();
+    public static final defpackage.djk b = new defpackage.djk();
 
-    private static djk a() {
+    private static defpackage.djk a() {
         try {
-            return (djk) Class.forName("com.google.protobuf.MapFieldSchemaFull").getDeclaredConstructor(new Class[0]).newInstance(new Object[0]);
-        } catch (Exception e) {
+            return (defpackage.djk) java.lang.Class.forName("com.google.protobuf.MapFieldSchemaFull").getDeclaredConstructor(new java.lang.Class[0]).newInstance(new java.lang.Object[0]);
+        } catch (java.lang.Exception e) {
             return null;
         }
     }

@@ -1,17 +1,13 @@
 package defpackage;
 
-import android.app.Activity;
-import android.content.Intent;
-import com.google.android.gms.common.api.internal.LifecycleCallback;
-
-/* renamed from: bax  reason: default package */
+/* renamed from: bax reason: default package */
 /* compiled from: PG */
 public interface bax {
-    LifecycleCallback a(String str, Class cls);
+    com.google.android.gms.common.api.internal.LifecycleCallback a(java.lang.String str, java.lang.Class cls);
 
-    void a(String str, LifecycleCallback lifecycleCallback);
+    void a(java.lang.String str, com.google.android.gms.common.api.internal.LifecycleCallback lifecycleCallback);
 
-    Activity g_();
+    android.app.Activity g_();
 
-    void startActivityForResult(Intent intent, int i);
+    void startActivityForResult(android.content.Intent intent, int i);
 }

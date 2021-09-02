@@ -1,13 +1,12 @@
 package defpackage;
 
-/* renamed from: dyh  reason: default package */
+/* renamed from: dyh reason: default package */
 /* compiled from: PG */
-final class dyh implements dyp {
+final class dyh implements defpackage.dyp {
     dyh() {
     }
 
-    @Override // defpackage.dyp
-    public final void a(dza dza) {
+    public final void a(defpackage.dza dza) {
         dza.a.f();
     }
 }

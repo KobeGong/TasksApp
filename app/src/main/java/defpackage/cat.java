@@ -1,23 +1,20 @@
 package defpackage;
 
-import java.util.Map;
-
-/* renamed from: cat  reason: default package */
+/* renamed from: cat reason: default package */
 /* compiled from: PG */
-public final class cat implements ecz {
-    private final ecz a;
-    private final ecz b;
+public final class cat implements defpackage.ecz {
+    private final defpackage.ecz a;
+    private final defpackage.ecz b;
 
-    public cat(ecz ecz, ecz ecz2) {
+    public cat(defpackage.ecz ecz, defpackage.ecz ecz2) {
         this.a = ecz;
         this.b = ecz2;
     }
 
-    @Override // defpackage.ecz
-    public final /* synthetic */ Object a() {
-        cas cas = new cas();
-        cas.d = (Map) this.a.a();
-        cas.a = (bza) this.b.a();
+    public final /* synthetic */ java.lang.Object a() {
+        defpackage.cas cas = new defpackage.cas();
+        cas.d = (java.util.Map) this.a.a();
+        cas.a = (defpackage.bza) this.b.a();
         return cas;
     }
 }

@@ -1,8 +1,6 @@
 package defpackage;
 
-import android.view.Menu;
-
-/* renamed from: po  reason: default package */
+/* renamed from: po reason: default package */
 /* compiled from: PG */
-public interface po extends Menu {
+public interface po extends android.view.Menu {
 }

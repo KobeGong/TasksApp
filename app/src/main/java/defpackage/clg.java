@@ -1,44 +1,43 @@
 package defpackage;
 
-import java.util.ArrayList;
-
-/* access modifiers changed from: package-private */
-/* renamed from: clg  reason: default package */
+/* renamed from: clg reason: default package */
 /* compiled from: PG */
-public final class clg {
-    public volatile String a;
+final class clg {
+    public volatile java.lang.String a;
     public volatile long b;
-    public final ArrayList c;
+    public final java.util.ArrayList c;
     private long d;
 
     clg() {
     }
 
-    clg(String str, long j) {
-        this.c = new ArrayList();
+    clg(java.lang.String str, long j) {
+        this.c = new java.util.ArrayList();
         this.d = 1;
         a(str, this.d, 0, j, j);
     }
 
-    /* access modifiers changed from: package-private */
-    public final long a(String str, long j, long j2) {
+    /* access modifiers changed from: 0000 */
+    public final long a(java.lang.String str, long j, long j2) {
         long j3 = this.d + 1;
         this.d = j3;
         return a(str, j3, 1, j, j2);
     }
 
-    private final long a(String str, long j, long j2, long j3, long j4) {
+    private final long a(java.lang.String str, long j, long j2, long j3, long j4) {
         if (j4 < j3) {
-            String valueOf = String.valueOf(str);
-            cdm.a(5, "PrimesStartupTracer", valueOf.length() != 0 ? "endTime < startTime. Dropping span: ".concat(valueOf) : new String("endTime < startTime. Dropping span: "), new Object[0]);
+            java.lang.String str2 = "PrimesStartupTracer";
+            java.lang.String str3 = "endTime < startTime. Dropping span: ";
+            java.lang.String valueOf = java.lang.String.valueOf(str);
+            defpackage.cdm.a(5, str2, valueOf.length() != 0 ? str3.concat(valueOf) : new java.lang.String(str3), new java.lang.Object[0]);
             return -1;
         }
-        efs efs = new efs();
-        efs.b = Long.valueOf(j);
+        defpackage.efs efs = new defpackage.efs();
+        efs.b = java.lang.Long.valueOf(j);
         efs.a = str;
-        efs.d = Long.valueOf(j3);
-        efs.e = Long.valueOf(j4 - j3);
-        efs.c = Long.valueOf(j2);
+        efs.d = java.lang.Long.valueOf(j3);
+        efs.e = java.lang.Long.valueOf(j4 - j3);
+        efs.c = java.lang.Long.valueOf(j2);
         this.c.add(efs);
         return j;
     }

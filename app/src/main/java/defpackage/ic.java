@@ -1,42 +1,35 @@
 package defpackage;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import java.util.ArrayList;
-
-/* renamed from: ic  reason: default package */
+/* renamed from: ic reason: default package */
 /* compiled from: PG */
-final class ic implements AbstractC0000if {
+final class ic implements defpackage.C0000if {
     ic() {
     }
 
-    @Override // defpackage.AbstractC0000if
-    public final void a(Animator animator, AnimatorListenerAdapter animatorListenerAdapter) {
+    public final void a(android.animation.Animator animator, android.animation.AnimatorListenerAdapter animatorListenerAdapter) {
     }
 
-    @Override // defpackage.AbstractC0000if
-    public final void a(Animator animator) {
-        ArrayList<Animator.AnimatorListener> listeners = animator.getListeners();
+    public final void a(android.animation.Animator animator) {
+        java.util.ArrayList listeners = animator.getListeners();
         if (listeners != null) {
             int size = listeners.size();
             for (int i = 0; i < size; i++) {
-                Animator.AnimatorListener animatorListener = listeners.get(i);
-                if (animatorListener instanceof id) {
-                    ((id) animatorListener).onAnimationPause(animator);
+                android.animation.Animator.AnimatorListener animatorListener = (android.animation.Animator.AnimatorListener) listeners.get(i);
+                if (animatorListener instanceof defpackage.id) {
+                    ((defpackage.id) animatorListener).onAnimationPause(animator);
                 }
             }
         }
     }
 
-    @Override // defpackage.AbstractC0000if
-    public final void b(Animator animator) {
-        ArrayList<Animator.AnimatorListener> listeners = animator.getListeners();
+    public final void b(android.animation.Animator animator) {
+        java.util.ArrayList listeners = animator.getListeners();
         if (listeners != null) {
             int size = listeners.size();
             for (int i = 0; i < size; i++) {
-                Animator.AnimatorListener animatorListener = listeners.get(i);
-                if (animatorListener instanceof id) {
-                    ((id) animatorListener).onAnimationResume(animator);
+                android.animation.Animator.AnimatorListener animatorListener = (android.animation.Animator.AnimatorListener) listeners.get(i);
+                if (animatorListener instanceof defpackage.id) {
+                    ((defpackage.id) animatorListener).onAnimationResume(animator);
                 }
             }
         }

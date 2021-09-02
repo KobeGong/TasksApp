@@ -1,18 +1,15 @@
 package defpackage;
 
-import java.util.List;
-import java.util.Map;
-
-/* renamed from: ejh  reason: default package */
+/* renamed from: ejh reason: default package */
 /* compiled from: PG */
 public final class ejh {
-    public final List a;
-    public Map b;
+    public final java.util.List a;
+    public java.util.Map b;
 
     public ejh() {
     }
 
-    public ejh(List list) {
+    public ejh(java.util.List list) {
         this();
         this.a = list;
     }

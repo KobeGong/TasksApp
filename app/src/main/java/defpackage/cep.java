@@ -1,19 +1,17 @@
 package defpackage;
 
-import android.view.View;
+/* renamed from: cep reason: default package */
+final /* synthetic */ class cep implements android.view.View.OnClickListener {
+    private final defpackage.ceo a;
+    private final java.lang.Object b;
 
-/* renamed from: cep  reason: default package */
-final /* synthetic */ class cep implements View.OnClickListener {
-    private final ceo a;
-    private final Object b;
-
-    cep(ceo ceo, Object obj) {
+    cep(defpackage.ceo ceo, java.lang.Object obj) {
         this.a = ceo;
         this.b = obj;
     }
 
-    public final void onClick(View view) {
-        ceo ceo = this.a;
+    public final void onClick(android.view.View view) {
+        defpackage.ceo ceo = this.a;
         ceo.a.a(this.b);
         if (ceo.b != null) {
             ceo.b.a();

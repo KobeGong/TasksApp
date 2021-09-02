@@ -1,12 +1,9 @@
 package defpackage;
 
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
-
-/* renamed from: cyl  reason: default package */
+/* renamed from: cyl reason: default package */
 /* compiled from: PG */
-public interface cyl extends ExecutorService {
-    cyi a(Runnable runnable);
+public interface cyl extends java.util.concurrent.ExecutorService {
+    defpackage.cyi a(java.lang.Runnable runnable);
 
-    cyi a(Callable callable);
+    defpackage.cyi a(java.util.concurrent.Callable callable);
 }

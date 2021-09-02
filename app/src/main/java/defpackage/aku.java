@@ -1,11 +1,11 @@
 package defpackage;
 
-/* renamed from: aku  reason: default package */
+/* renamed from: aku reason: default package */
 /* compiled from: PG */
 public final class aku {
-    public final /* synthetic */ ala a;
+    public final /* synthetic */ defpackage.ala a;
 
-    aku(ala ala) {
+    aku(defpackage.ala ala) {
         this.a = ala;
     }
 }

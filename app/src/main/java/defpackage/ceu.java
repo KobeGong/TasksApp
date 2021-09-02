@@ -1,18 +1,16 @@
 package defpackage;
 
-import android.view.View;
+/* renamed from: ceu reason: default package */
+public final /* synthetic */ class ceu implements android.view.View.OnClickListener {
+    private final defpackage.cdg a;
+    private final defpackage.cdj b;
 
-/* renamed from: ceu  reason: default package */
-public final /* synthetic */ class ceu implements View.OnClickListener {
-    private final cdg a;
-    private final cdj b;
-
-    public ceu(cdg cdg, cdj cdj) {
+    public ceu(defpackage.cdg cdg, defpackage.cdj cdj) {
         this.a = cdg;
         this.b = cdj;
     }
 
-    public final void onClick(View view) {
+    public final void onClick(android.view.View view) {
         this.a.a(view, this.b.a().c());
     }
 }

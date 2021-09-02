@@ -1,35 +1,34 @@
 package defpackage;
 
-/* renamed from: dri  reason: default package */
+/* renamed from: dri reason: default package */
 /* compiled from: PG */
-public abstract class dri implements dxe {
-    private final dzt a;
+public abstract class dri implements defpackage.dxe {
+    private final defpackage.dzt a;
     private boolean b;
-    private final dzo c;
+    private final defpackage.dzo c;
     private boolean d;
     private boolean e;
-    private Runnable f;
-    public dtl i;
-    public final Object j;
+    private java.lang.Runnable f;
+    public defpackage.dtl i;
+    public final java.lang.Object j;
     public int k;
     public boolean l;
-    public dzq m;
+    public defpackage.dzq m;
     public boolean n;
-    public dob o;
+    public defpackage.dob o;
     public volatile boolean p;
     public boolean q;
 
-    private dri(int i2, dzo dzo, dzt dzt) {
-        this.j = new Object();
-        cld.a(dzo, "statsTraceCtx");
-        this.a = (dzt) cld.a(dzt, "transportTracer");
-        this.i = new dxd(this, dno.a, i2, dzo, dzt);
+    private dri(int i2, defpackage.dzo dzo, defpackage.dzt dzt) {
+        this.j = new java.lang.Object();
+        defpackage.cld.a((java.lang.Object) dzo, (java.lang.Object) "statsTraceCtx");
+        this.a = (defpackage.dzt) defpackage.cld.a((java.lang.Object) dzt, (java.lang.Object) "transportTracer");
+        this.i = new defpackage.dxd(this, defpackage.dno.a, i2, dzo, dzt);
     }
 
-    public abstract void a(Runnable runnable);
+    public abstract void a(java.lang.Runnable runnable);
 
-    @Override // defpackage.dxe
-    public final void a(dzr dzr) {
+    public final void a(defpackage.dzr dzr) {
         this.m.a(dzr);
     }
 
@@ -51,14 +50,13 @@ public abstract class dri implements dxe {
         }
     }
 
-    protected dri(int i2, dzo dzo, dzt dzt, byte b2) {
+    protected dri(int i2, defpackage.dzo dzo, defpackage.dzt dzt, byte b2) {
         this(i2, dzo, dzt);
-        this.o = dob.a;
+        this.o = defpackage.dob.a;
         this.e = false;
-        this.c = (dzo) cld.a(dzo, "statsTraceCtx");
+        this.c = (defpackage.dzo) defpackage.cld.a((java.lang.Object) dzo, (java.lang.Object) "statsTraceCtx");
     }
 
-    @Override // defpackage.dxe
     public final void a(boolean z) {
         this.e = true;
         if (this.f != null) {
@@ -67,10 +65,10 @@ public abstract class dri implements dxe {
         }
     }
 
-    public final void b(dpw dpw, boolean z, dor dor) {
-        int i2 = bg.av;
-        cld.a(dpw, "status");
-        cld.a(dor, "trailers");
+    public final void b(defpackage.dpw dpw, boolean z, defpackage.dor dor) {
+        int i2 = defpackage.bg.av;
+        defpackage.cld.a((java.lang.Object) dpw, (java.lang.Object) "status");
+        defpackage.cld.a((java.lang.Object) dor, (java.lang.Object) "trailers");
         if (!this.q || z) {
             this.q = true;
             synchronized (this.j) {
@@ -81,7 +79,7 @@ public abstract class dri implements dxe {
                 a(dpw, i2, dor);
                 return;
             }
-            this.f = new dqu(this, dpw, i2, dor);
+            this.f = new defpackage.dqu(this, dpw, i2, dor);
             if (z) {
                 this.i.close();
             } else {
@@ -90,19 +88,19 @@ public abstract class dri implements dxe {
         }
     }
 
-    /* access modifiers changed from: package-private */
-    public final void a(dpw dpw, int i2, dor dor) {
+    /* access modifiers changed from: 0000 */
+    public final void a(defpackage.dpw dpw, int i2, defpackage.dor dor) {
         if (!this.d) {
             this.d = true;
-            dzo dzo = this.c;
+            defpackage.dzo dzo = this.c;
             if (dzo.b.compareAndSet(false, true)) {
-                for (dqc dqc : dzo.a) {
-                    dqc.a();
+                for (defpackage.dqc a2 : dzo.a) {
+                    a2.a();
                 }
             }
             this.m.a(dpw, i2, dor);
             if (this.a != null) {
-                dzt dzt = this.a;
+                defpackage.dzt dzt = this.a;
                 if (dpw.a()) {
                     dzt.c++;
                 } else {

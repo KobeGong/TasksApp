@@ -5,5 +5,5 @@ public final class StatisticsRecorderAndroid {
     private StatisticsRecorderAndroid() {
     }
 
-    private static native String nativeToJson(int i);
+    private static native java.lang.String nativeToJson(int i);
 }

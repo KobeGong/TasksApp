@@ -1,18 +1,15 @@
 package defpackage;
 
-import java.util.Iterator;
-import java.util.NoSuchElementException;
-
-/* renamed from: ra  reason: default package */
+/* renamed from: ra reason: default package */
 /* compiled from: PG */
-final class ra implements Iterator {
+final class ra implements java.util.Iterator {
     private final int a;
     private int b;
     private int c;
     private boolean d = false;
-    private final /* synthetic */ qz e;
+    private final /* synthetic */ defpackage.qz e;
 
-    ra(qz qzVar, int i) {
+    ra(defpackage.qz qzVar, int i) {
         this.e = qzVar;
         this.a = i;
         this.b = qzVar.a();
@@ -22,12 +19,11 @@ final class ra implements Iterator {
         return this.c < this.b;
     }
 
-    @Override // java.util.Iterator
-    public final Object next() {
+    public final java.lang.Object next() {
         if (!hasNext()) {
-            throw new NoSuchElementException();
+            throw new java.util.NoSuchElementException();
         }
-        Object a2 = this.e.a(this.c, this.a);
+        java.lang.Object a2 = this.e.a(this.c, this.a);
         this.c++;
         this.d = true;
         return a2;
@@ -35,7 +31,7 @@ final class ra implements Iterator {
 
     public final void remove() {
         if (!this.d) {
-            throw new IllegalStateException();
+            throw new java.lang.IllegalStateException();
         }
         this.c--;
         this.b--;

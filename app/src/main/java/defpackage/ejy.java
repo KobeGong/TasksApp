@@ -1,11 +1,9 @@
 package defpackage;
 
-import org.chromium.net.impl.CronetLibraryLoader;
-
-/* renamed from: ejy  reason: default package */
+/* renamed from: ejy reason: default package */
 /* compiled from: PG */
-public final class ejy implements Runnable {
+public final class ejy implements java.lang.Runnable {
     public final void run() {
-        CronetLibraryLoader.a();
+        org.chromium.net.impl.CronetLibraryLoader.a();
     }
 }

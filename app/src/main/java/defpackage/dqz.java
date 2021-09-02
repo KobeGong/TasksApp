@@ -1,69 +1,56 @@
 package defpackage;
 
-import java.io.InputStream;
-import java.util.ArrayDeque;
-import java.util.Queue;
-
-/* renamed from: dqz  reason: default package */
+/* renamed from: dqz reason: default package */
 /* compiled from: PG */
-public final class dqz implements dtl, dxe {
-    public final dxe a;
-    public final dxd b;
-    public final Queue c = new ArrayDeque();
-    private final dri d;
+public final class dqz implements defpackage.dtl, defpackage.dxe {
+    public final defpackage.dxe a;
+    public final defpackage.dxd b;
+    public final java.util.Queue c = new java.util.ArrayDeque();
+    private final defpackage.dri d;
 
-    public dqz(dxe dxe, dri dri, dxd dxd) {
-        this.a = (dxe) cld.a(dxe, "listener");
-        this.d = (dri) cld.a(dri, "transportExecutor");
+    public dqz(defpackage.dxe dxe, defpackage.dri dri, defpackage.dxd dxd) {
+        this.a = (defpackage.dxe) defpackage.cld.a((java.lang.Object) dxe, (java.lang.Object) "listener");
+        this.d = (defpackage.dri) defpackage.cld.a((java.lang.Object) dri, (java.lang.Object) "transportExecutor");
         dxd.a = this;
         this.b = dxd;
     }
 
-    @Override // defpackage.dtl
     public final void b(int i) {
         this.b.b = i;
     }
 
-    @Override // defpackage.dtl
-    public final void a(doa doa) {
+    public final void a(defpackage.doa doa) {
         this.b.a(doa);
     }
 
-    @Override // defpackage.dtl
-    public final void a(dvk dvk) {
+    public final void a(defpackage.dvk dvk) {
         this.b.a(dvk);
     }
 
-    @Override // defpackage.dtl
     public final void c(int i) {
-        this.a.a(new drh(this, new dra(this, i)));
+        this.a.a((defpackage.dzr) new defpackage.drh(this, new defpackage.dra(this, i)));
     }
 
-    @Override // defpackage.dtl
-    public final void a(dxv dxv) {
-        this.a.a(new drh(this, new drb(this, dxv)));
+    public final void a(defpackage.dxv dxv) {
+        this.a.a((defpackage.dzr) new defpackage.drh(this, new defpackage.drb(this, dxv)));
     }
 
-    @Override // defpackage.dtl
     public final void a() {
-        this.a.a(new drh(this, new drc(this)));
+        this.a.a((defpackage.dzr) new defpackage.drh(this, new defpackage.drc(this)));
     }
 
-    @Override // defpackage.dtl
     public final void close() {
         this.b.c = true;
-        this.a.a(new drh(this, new drd(this)));
+        this.a.a((defpackage.dzr) new defpackage.drh(this, new defpackage.drd(this)));
     }
 
-    @Override // defpackage.dxe
     public final void a(int i) {
-        this.d.a(new dre(this, i));
+        this.d.a((java.lang.Runnable) new defpackage.dre(this, i));
     }
 
-    @Override // defpackage.dxe
-    public final void a(dzr dzr) {
+    public final void a(defpackage.dzr dzr) {
         while (true) {
-            InputStream a2 = dzr.a();
+            java.io.InputStream a2 = dzr.a();
             if (a2 != null) {
                 this.c.add(a2);
             } else {
@@ -72,13 +59,11 @@ public final class dqz implements dtl, dxe {
         }
     }
 
-    @Override // defpackage.dxe
     public final void a(boolean z) {
-        this.d.a(new drf(this, z));
+        this.d.a((java.lang.Runnable) new defpackage.drf(this, z));
     }
 
-    @Override // defpackage.dxe
-    public final void a(Throwable th) {
-        this.d.a(new drg(this, th));
+    public final void a(java.lang.Throwable th) {
+        this.d.a((java.lang.Runnable) new defpackage.drg(this, th));
     }
 }

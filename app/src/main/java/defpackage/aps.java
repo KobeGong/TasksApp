@@ -1,27 +1,23 @@
 package defpackage;
 
-import com.google.android.apps.tasks.ui.TaskListsActivity;
-
-/* renamed from: aps  reason: default package */
+/* renamed from: aps reason: default package */
 /* compiled from: PG */
-public final class aps extends alu {
-    private final /* synthetic */ TaskListsActivity a;
+public final class aps extends defpackage.alu {
+    private final /* synthetic */ com.google.android.apps.tasks.ui.TaskListsActivity activity;
 
-    public aps(TaskListsActivity taskListsActivity) {
-        this.a = taskListsActivity;
+    public aps(com.google.android.apps.tasks.ui.TaskListsActivity taskListsActivity) {
+        this.activity = taskListsActivity;
     }
 
-    @Override // defpackage.alu
     public final void b() {
-        if (!this.a.r()) {
-            this.a.a((String) null);
+        if (!this.activity.r()) {
+            this.activity.a((java.lang.String) null);
         }
     }
 
-    @Override // defpackage.alu
     public final void a() {
-        if (!this.a.r()) {
-            this.a.a((String) null);
+        if (!this.activity.r()) {
+            this.activity.a((java.lang.String) null);
         }
     }
 }

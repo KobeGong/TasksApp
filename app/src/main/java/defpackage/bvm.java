@@ -1,14 +1,11 @@
 package defpackage;
 
-import android.content.Intent;
-import android.os.SystemClock;
+/* renamed from: bvm reason: default package */
+final /* synthetic */ class bvm implements java.lang.Runnable {
+    private final defpackage.bvn a;
+    private final android.content.Intent b;
 
-/* renamed from: bvm  reason: default package */
-final /* synthetic */ class bvm implements Runnable {
-    private final bvn a;
-    private final Intent b;
-
-    bvm(bvn bvn, Intent intent) {
+    bvm(defpackage.bvn bvn, android.content.Intent intent) {
         this.a = bvn;
         this.b = intent;
     }
@@ -17,9 +14,9 @@ final /* synthetic */ class bvm implements Runnable {
         boolean z;
         long j;
         boolean z2 = true;
-        bvn bvn = this.a;
-        Intent intent = this.b;
-        cld.a(intent != null);
+        defpackage.bvn bvn = this.a;
+        android.content.Intent intent = this.b;
+        defpackage.cld.a(intent != null);
         if ((intent.getFlags() & 268435456) > 0) {
             z = true;
         } else {
@@ -33,9 +30,9 @@ final /* synthetic */ class bvm implements Runnable {
         if (j < 0) {
             z2 = false;
         }
-        cld.a(z2);
-        bvp bvp = new bvp();
-        bvp.a = Long.valueOf(j);
-        bvn.a(intent, bvp.a(SystemClock.uptimeMillis()).a());
+        defpackage.cld.a(z2);
+        defpackage.bvp bvp = new defpackage.bvp();
+        bvp.a = java.lang.Long.valueOf(j);
+        bvn.a(intent, bvp.a(android.os.SystemClock.uptimeMillis()).a());
     }
 }

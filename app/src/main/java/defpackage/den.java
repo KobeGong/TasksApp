@@ -1,53 +1,54 @@
 package defpackage;
 
-/* renamed from: den  reason: default package */
+/* renamed from: den reason: default package */
 /* compiled from: PG */
-public final class den extends dih implements djq {
-    public static final den d = new den();
-    private static volatile djx e;
+public final class den extends defpackage.dih implements defpackage.djq {
+    public static final defpackage.den d = new defpackage.den();
+    private static volatile defpackage.djx e;
     public int a;
-    public diq b = dka.b;
+    public defpackage.diq b = defpackage.dka.b;
     public long c;
 
     private den() {
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.dih
-    public final Object a(int i) {
-        djx djx;
+    public final java.lang.Object a(int i) {
+        defpackage.djx djx;
         switch (i - 1) {
             case 0:
-                return (byte) 1;
+                return java.lang.Byte.valueOf(1);
             case 1:
                 return null;
             case 2:
-                return new dkb(d, "\u0001\u0002\u0000\u0001\u0004\u0005\u0002\u0000\u0001\u0000\u0004\u0002\u0000\u0005\u001b", new Object[]{"a", "c", "b", dfy.class});
+                java.lang.Object[] objArr = {"a", "c", "b", defpackage.dfy.class};
+                return new defpackage.dkb(d, "\u0001\u0002\u0000\u0001\u0004\u0005\u0002\u0000\u0001\u0000\u0004\u0002\u0000\u0005\u001b", objArr);
             case 3:
-                return new den();
+                return new defpackage.den();
             case 4:
-                return new dii((char[][][][][][][][][][][][][][][][][]) null);
+                return new defpackage.dii((char[][][][][][][][][][][][][][][][][]) null);
             case 5:
                 return d;
             case 6:
-                djx djx2 = e;
+                defpackage.djx djx2 = e;
                 if (djx2 != null) {
                     return djx2;
                 }
-                synchronized (den.class) {
+                synchronized (defpackage.den.class) {
                     djx = e;
                     if (djx == null) {
-                        djx = new dgr(d);
+                        djx = new defpackage.dgr(d);
                         e = djx;
                     }
                 }
                 return djx;
             default:
-                throw new UnsupportedOperationException();
+                throw new java.lang.UnsupportedOperationException();
         }
     }
 
     static {
-        dih.t.put(den.class, d);
+        defpackage.den den = d;
+        defpackage.dih.t.put(defpackage.den.class, den);
     }
 }

@@ -1,36 +1,32 @@
 package defpackage;
 
-import android.os.Build;
-import android.view.View;
-import java.lang.ref.WeakReference;
-
-/* renamed from: te  reason: default package */
+/* renamed from: te reason: default package */
 /* compiled from: PG */
 public final class te {
-    public WeakReference a;
+    public java.lang.ref.WeakReference a;
 
-    te(View view) {
-        this.a = new WeakReference(view);
+    te(android.view.View view) {
+        this.a = new java.lang.ref.WeakReference(view);
     }
 
-    public final te a(long j) {
-        View view = (View) this.a.get();
+    public final defpackage.te a(long j) {
+        android.view.View view = (android.view.View) this.a.get();
         if (view != null) {
             view.animate().setDuration(j);
         }
         return this;
     }
 
-    public final te a(float f) {
-        View view = (View) this.a.get();
+    public final defpackage.te a(float f) {
+        android.view.View view = (android.view.View) this.a.get();
         if (view != null) {
             view.animate().alpha(f);
         }
         return this;
     }
 
-    public final te b(float f) {
-        View view = (View) this.a.get();
+    public final defpackage.te b(float f) {
+        android.view.View view = (android.view.View) this.a.get();
         if (view != null) {
             view.animate().translationY(f);
         }
@@ -38,17 +34,17 @@ public final class te {
     }
 
     public final void a() {
-        View view = (View) this.a.get();
+        android.view.View view = (android.view.View) this.a.get();
         if (view != null) {
             view.animate().cancel();
         }
     }
 
-    public final te a(th thVar) {
-        View view = (View) this.a.get();
+    public final defpackage.te a(defpackage.th thVar) {
+        android.view.View view = (android.view.View) this.a.get();
         if (view != null) {
             if (thVar != null) {
-                view.animate().setListener(new tf(thVar, view));
+                view.animate().setListener(new defpackage.tf(thVar, view));
             } else {
                 view.animate().setListener(null);
             }
@@ -56,12 +52,12 @@ public final class te {
         return this;
     }
 
-    public final te a(tj tjVar) {
-        View view = (View) this.a.get();
-        if (view != null && Build.VERSION.SDK_INT >= 19) {
-            tg tgVar = null;
+    public final defpackage.te a(defpackage.tj tjVar) {
+        android.view.View view = (android.view.View) this.a.get();
+        if (view != null && android.os.Build.VERSION.SDK_INT >= 19) {
+            defpackage.tg tgVar = null;
             if (tjVar != null) {
-                tgVar = new tg(tjVar);
+                tgVar = new defpackage.tg(tjVar);
             }
             view.animate().setUpdateListener(tgVar);
         }

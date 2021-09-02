@@ -1,11 +1,11 @@
 package defpackage;
 
-/* renamed from: due  reason: default package */
+/* renamed from: due reason: default package */
 /* compiled from: PG */
-final class due implements Runnable {
-    private final /* synthetic */ dtt a;
+final class due implements java.lang.Runnable {
+    private final /* synthetic */ defpackage.dtt a;
 
-    due(dtt dtt) {
+    due(defpackage.dtt dtt) {
         this.a = dtt;
     }
 

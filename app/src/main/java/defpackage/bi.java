@@ -1,45 +1,44 @@
 package defpackage;
 
-import java.io.Serializable;
-
-/* access modifiers changed from: package-private */
-/* renamed from: bi  reason: default package */
+/* renamed from: bi reason: default package */
 /* compiled from: PG */
-public final class bi implements Serializable {
+final class bi implements java.io.Serializable {
     public static final long serialVersionUID = 1;
-    public final String a;
-    public final az b;
-    public final bd c;
-    public final bd d;
+    public final java.lang.String a;
+    public final defpackage.az b;
+    public final defpackage.bd c;
+    public final defpackage.bd d;
 
-    public bi(String str, az azVar, bd bdVar, bd bdVar2) {
+    public bi(java.lang.String str, defpackage.az azVar, defpackage.bd bdVar, defpackage.bd bdVar2) {
         this.a = str;
         this.b = azVar;
         this.c = bdVar;
         this.d = bdVar2;
     }
 
-    public final String toString() {
-        String concat;
-        String concat2;
-        String str = this.a;
-        String obj = this.b.toString();
+    public final java.lang.String toString() {
+        java.lang.String str;
+        java.lang.String str2;
+        java.lang.String str3 = this.a;
+        java.lang.String obj = this.b.toString();
         if (this.c == null) {
-            concat = "";
+            str = "";
         } else {
-            String valueOf = String.valueOf(this.c.toString());
-            concat = valueOf.length() != 0 ? " ".concat(valueOf) : new String(" ");
+            java.lang.String str4 = " ";
+            java.lang.String valueOf = java.lang.String.valueOf(this.c.toString());
+            str = valueOf.length() != 0 ? str4.concat(valueOf) : new java.lang.String(str4);
         }
         if (this.d == null) {
-            concat2 = "";
+            str2 = "";
         } else {
-            String valueOf2 = String.valueOf(this.d.toString());
-            concat2 = valueOf2.length() != 0 ? " ".concat(valueOf2) : new String(" ");
+            java.lang.String str5 = " ";
+            java.lang.String valueOf2 = java.lang.String.valueOf(this.d.toString());
+            str2 = valueOf2.length() != 0 ? str5.concat(valueOf2) : new java.lang.String(str5);
         }
-        return new StringBuilder(String.valueOf(str).length() + 2 + String.valueOf(obj).length() + String.valueOf(concat).length() + String.valueOf(concat2).length()).append(str).append(": ").append(obj).append(concat).append(concat2).toString();
+        return new java.lang.StringBuilder(java.lang.String.valueOf(str3).length() + 2 + java.lang.String.valueOf(obj).length() + java.lang.String.valueOf(str).length() + java.lang.String.valueOf(str2).length()).append(str3).append(": ").append(obj).append(str).append(str2).toString();
     }
 
-    @Deprecated
+    @java.lang.Deprecated
     public final int hashCode() {
         return this.a.hashCode() ^ this.b.hashCode();
     }

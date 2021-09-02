@@ -1,168 +1,147 @@
 package defpackage;
 
-import android.graphics.Rect;
-import android.transition.Transition;
-import android.transition.TransitionManager;
-import android.transition.TransitionSet;
-import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import java.util.List;
-
-/* renamed from: mq  reason: default package */
+/* renamed from: mq reason: default package */
 /* compiled from: PG */
-final class mq extends mv {
+final class mq extends defpackage.mv {
     mq() {
     }
 
-    @Override // defpackage.mv
-    public final boolean a(Object obj) {
-        return obj instanceof Transition;
+    public final boolean a(java.lang.Object obj) {
+        return obj instanceof android.transition.Transition;
     }
 
-    @Override // defpackage.mv
-    public final Object b(Object obj) {
+    public final java.lang.Object b(java.lang.Object obj) {
         if (obj != null) {
-            return ((Transition) obj).clone();
+            return ((android.transition.Transition) obj).clone();
         }
         return null;
     }
 
-    @Override // defpackage.mv
-    public final Object c(Object obj) {
+    public final java.lang.Object c(java.lang.Object obj) {
         if (obj == null) {
             return null;
         }
-        TransitionSet transitionSet = new TransitionSet();
-        transitionSet.addTransition((Transition) obj);
+        android.transition.TransitionSet transitionSet = new android.transition.TransitionSet();
+        transitionSet.addTransition((android.transition.Transition) obj);
         return transitionSet;
     }
 
-    @Override // defpackage.mv
-    public final void a(Object obj, View view, ArrayList arrayList) {
-        TransitionSet transitionSet = (TransitionSet) obj;
-        List<View> targets = transitionSet.getTargets();
+    public final void a(java.lang.Object obj, android.view.View view, java.util.ArrayList arrayList) {
+        android.transition.TransitionSet transitionSet = (android.transition.TransitionSet) obj;
+        java.util.List targets = transitionSet.getTargets();
         targets.clear();
         int size = arrayList.size();
         for (int i = 0; i < size; i++) {
-            a((List) targets, (View) arrayList.get(i));
+            a(targets, (android.view.View) arrayList.get(i));
         }
         targets.add(view);
         arrayList.add(view);
-        a(transitionSet, arrayList);
+        a((java.lang.Object) transitionSet, arrayList);
     }
 
-    @Override // defpackage.mv
-    public final void a(Object obj, View view) {
+    public final void a(java.lang.Object obj, android.view.View view) {
         if (view != null) {
-            Rect rect = new Rect();
+            android.transition.Transition transition = (android.transition.Transition) obj;
+            android.graphics.Rect rect = new android.graphics.Rect();
             a(view, rect);
-            ((Transition) obj).setEpicenterCallback(new mr(rect));
+            transition.setEpicenterCallback(new defpackage.mr(rect));
         }
     }
 
-    @Override // defpackage.mv
-    public final void a(Object obj, ArrayList arrayList) {
-        Transition transition = (Transition) obj;
+    public final void a(java.lang.Object obj, java.util.ArrayList arrayList) {
+        android.transition.Transition transition = (android.transition.Transition) obj;
         if (transition != null) {
-            if (transition instanceof TransitionSet) {
-                TransitionSet transitionSet = (TransitionSet) transition;
+            if (transition instanceof android.transition.TransitionSet) {
+                android.transition.TransitionSet transitionSet = (android.transition.TransitionSet) transition;
                 int transitionCount = transitionSet.getTransitionCount();
                 for (int i = 0; i < transitionCount; i++) {
-                    a(transitionSet.getTransitionAt(i), arrayList);
+                    a((java.lang.Object) transitionSet.getTransitionAt(i), arrayList);
                 }
-            } else if (!a(transition) && a((List) transition.getTargets())) {
+            } else if (!a(transition) && a(transition.getTargets())) {
                 int size = arrayList.size();
                 for (int i2 = 0; i2 < size; i2++) {
-                    transition.addTarget((View) arrayList.get(i2));
+                    transition.addTarget((android.view.View) arrayList.get(i2));
                 }
             }
         }
     }
 
-    private static boolean a(Transition transition) {
+    private static boolean a(android.transition.Transition transition) {
         return !a(transition.getTargetIds()) || !a(transition.getTargetNames()) || !a(transition.getTargetTypes());
     }
 
-    @Override // defpackage.mv
-    public final Object a(Object obj, Object obj2, Object obj3) {
-        TransitionSet transitionSet = new TransitionSet();
+    public final java.lang.Object a(java.lang.Object obj, java.lang.Object obj2, java.lang.Object obj3) {
+        android.transition.TransitionSet transitionSet = new android.transition.TransitionSet();
         if (obj != null) {
-            transitionSet.addTransition((Transition) obj);
+            transitionSet.addTransition((android.transition.Transition) obj);
         }
         if (obj2 != null) {
-            transitionSet.addTransition((Transition) obj2);
+            transitionSet.addTransition((android.transition.Transition) obj2);
         }
         if (obj3 != null) {
-            transitionSet.addTransition((Transition) obj3);
+            transitionSet.addTransition((android.transition.Transition) obj3);
         }
         return transitionSet;
     }
 
-    @Override // defpackage.mv
-    public final void b(Object obj, View view, ArrayList arrayList) {
-        ((Transition) obj).addListener(new ms(view, arrayList));
+    public final void b(java.lang.Object obj, android.view.View view, java.util.ArrayList arrayList) {
+        ((android.transition.Transition) obj).addListener(new defpackage.ms(view, arrayList));
     }
 
-    @Override // defpackage.mv
-    public final void a(ViewGroup viewGroup, Object obj) {
-        TransitionManager.beginDelayedTransition(viewGroup, (Transition) obj);
+    public final void a(android.view.ViewGroup viewGroup, java.lang.Object obj) {
+        android.transition.TransitionManager.beginDelayedTransition(viewGroup, (android.transition.Transition) obj);
     }
 
-    @Override // defpackage.mv
-    public final void a(Object obj, Object obj2, ArrayList arrayList, Object obj3, ArrayList arrayList2, Object obj4, ArrayList arrayList3) {
-        ((Transition) obj).addListener(new mt(this, obj2, arrayList, obj3, arrayList2, obj4, arrayList3));
+    public final void a(java.lang.Object obj, java.lang.Object obj2, java.util.ArrayList arrayList, java.lang.Object obj3, java.util.ArrayList arrayList2, java.lang.Object obj4, java.util.ArrayList arrayList3) {
+        ((android.transition.Transition) obj).addListener(new defpackage.mt(this, obj2, arrayList, obj3, arrayList2, obj4, arrayList3));
     }
 
-    @Override // defpackage.mv
-    public final void a(Object obj, ArrayList arrayList, ArrayList arrayList2) {
-        TransitionSet transitionSet = (TransitionSet) obj;
+    public final void a(java.lang.Object obj, java.util.ArrayList arrayList, java.util.ArrayList arrayList2) {
+        android.transition.TransitionSet transitionSet = (android.transition.TransitionSet) obj;
         if (transitionSet != null) {
             transitionSet.getTargets().clear();
             transitionSet.getTargets().addAll(arrayList2);
-            b(transitionSet, arrayList, arrayList2);
+            b((java.lang.Object) transitionSet, arrayList, arrayList2);
         }
     }
 
-    @Override // defpackage.mv
-    public final void b(Object obj, ArrayList arrayList, ArrayList arrayList2) {
-        List<View> targets;
-        Transition transition = (Transition) obj;
-        if (transition instanceof TransitionSet) {
-            TransitionSet transitionSet = (TransitionSet) transition;
+    public final void b(java.lang.Object obj, java.util.ArrayList arrayList, java.util.ArrayList arrayList2) {
+        android.transition.Transition transition = (android.transition.Transition) obj;
+        if (transition instanceof android.transition.TransitionSet) {
+            android.transition.TransitionSet transitionSet = (android.transition.TransitionSet) transition;
             int transitionCount = transitionSet.getTransitionCount();
             for (int i = 0; i < transitionCount; i++) {
-                b(transitionSet.getTransitionAt(i), arrayList, arrayList2);
+                b((java.lang.Object) transitionSet.getTransitionAt(i), arrayList, arrayList2);
             }
-        } else if (!a(transition) && (targets = transition.getTargets()) != null && targets.size() == arrayList.size() && targets.containsAll(arrayList)) {
-            int size = arrayList2 == null ? 0 : arrayList2.size();
-            for (int i2 = 0; i2 < size; i2++) {
-                transition.addTarget((View) arrayList2.get(i2));
-            }
-            for (int size2 = arrayList.size() - 1; size2 >= 0; size2--) {
-                transition.removeTarget((View) arrayList.get(size2));
+        } else if (!a(transition)) {
+            java.util.List targets = transition.getTargets();
+            if (targets != null && targets.size() == arrayList.size() && targets.containsAll(arrayList)) {
+                int size = arrayList2 == null ? 0 : arrayList2.size();
+                for (int i2 = 0; i2 < size; i2++) {
+                    transition.addTarget((android.view.View) arrayList2.get(i2));
+                }
+                for (int size2 = arrayList.size() - 1; size2 >= 0; size2--) {
+                    transition.removeTarget((android.view.View) arrayList.get(size2));
+                }
             }
         }
     }
 
-    @Override // defpackage.mv
-    public final void b(Object obj, View view) {
+    public final void b(java.lang.Object obj, android.view.View view) {
         if (obj != null) {
-            ((Transition) obj).addTarget(view);
+            ((android.transition.Transition) obj).addTarget(view);
         }
     }
 
-    @Override // defpackage.mv
-    public final void c(Object obj, View view) {
+    public final void c(java.lang.Object obj, android.view.View view) {
         if (obj != null) {
-            ((Transition) obj).removeTarget(view);
+            ((android.transition.Transition) obj).removeTarget(view);
         }
     }
 
-    @Override // defpackage.mv
-    public final void a(Object obj, Rect rect) {
+    public final void a(java.lang.Object obj, android.graphics.Rect rect) {
         if (obj != null) {
-            ((Transition) obj).setEpicenterCallback(new mu(rect));
+            ((android.transition.Transition) obj).setEpicenterCallback(new defpackage.mu(rect));
         }
     }
 }

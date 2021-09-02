@@ -1,90 +1,79 @@
 package defpackage;
 
-import java.net.InetAddress;
-import java.net.InetSocketAddress;
-import java.net.PasswordAuthentication;
-import java.net.Proxy;
-import java.net.ProxySelector;
-import java.net.SocketAddress;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-/* access modifiers changed from: package-private */
-/* renamed from: dxr  reason: default package */
+/* renamed from: dxr reason: default package */
 /* compiled from: PG */
-public class dxr implements dxq {
-    public static final Logger b = Logger.getLogger(dxr.class.getName());
-    private static final dxt c = new dxt();
-    private static final csd d = new dxs();
-    private final csd e;
-    private final dxu f;
+class dxr implements defpackage.dxq {
+    public static final java.util.logging.Logger b = java.util.logging.Logger.getLogger(defpackage.dxr.class.getName());
+    private static final defpackage.dxt c = new defpackage.dxt();
+    private static final defpackage.csd d = new defpackage.dxs();
+    private final defpackage.csd e;
+    private final defpackage.dxu f;
 
     public dxr() {
-        this(d, c, System.getenv("GRPC_PROXY_EXP"));
+        this(d, c, java.lang.System.getenv("GRPC_PROXY_EXP"));
     }
 
-    private dxr(csd csd, dxt dxt, String str) {
-        InetSocketAddress inetSocketAddress;
-        this.e = (csd) cld.a(csd);
-        cld.a(dxt);
+    private dxr(defpackage.csd csd, defpackage.dxt dxt, java.lang.String str) {
+        java.net.InetSocketAddress inetSocketAddress;
+        this.e = (defpackage.csd) defpackage.cld.a((java.lang.Object) csd);
+        defpackage.cld.a((java.lang.Object) dxt);
         if (str != null) {
             if (str == null) {
                 inetSocketAddress = null;
             } else {
-                String[] split = str.split(":", 2);
-                int i = split.length > 1 ? Integer.parseInt(split[1]) : 80;
-                b.logp(Level.WARNING, "io.grpc.internal.ProxyDetectorImpl", "overrideProxy", "Detected GRPC_PROXY_EXP and will honor it, but this feature will be removed in a future release. Use the JVM flags \"-Dhttps.proxyHost=HOST -Dhttps.proxyPort=PORT\" to set the https proxy for this JVM.");
-                inetSocketAddress = new InetSocketAddress(split[0], i);
+                java.lang.String[] split = str.split(":", 2);
+                int i = 80;
+                if (split.length > 1) {
+                    i = java.lang.Integer.parseInt(split[1]);
+                }
+                b.logp(java.util.logging.Level.WARNING, "io.grpc.internal.ProxyDetectorImpl", "overrideProxy", "Detected GRPC_PROXY_EXP and will honor it, but this feature will be removed in a future release. Use the JVM flags \"-Dhttps.proxyHost=HOST -Dhttps.proxyPort=PORT\" to set the https proxy for this JVM.");
+                inetSocketAddress = new java.net.InetSocketAddress(split[0], i);
             }
-            this.f = new dxu(inetSocketAddress, null, null);
+            this.f = new defpackage.dxu(inetSocketAddress, null, null);
             return;
         }
         this.f = null;
     }
 
-    @Override // defpackage.dxq
-    public final dxu a(SocketAddress socketAddress) {
+    public final defpackage.dxu a(java.net.SocketAddress socketAddress) {
         if (this.f != null) {
             return this.f;
         }
-        if (!(socketAddress instanceof InetSocketAddress)) {
+        if (!(socketAddress instanceof java.net.InetSocketAddress)) {
             return null;
         }
-        return a((InetSocketAddress) socketAddress);
+        return a((java.net.InetSocketAddress) socketAddress);
     }
 
-    private final dxu a(InetSocketAddress inetSocketAddress) {
-        InetSocketAddress inetSocketAddress2;
+    private final defpackage.dxu a(java.net.InetSocketAddress inetSocketAddress) {
+        java.net.InetSocketAddress inetSocketAddress2;
         try {
             try {
-                List<Proxy> select = ((ProxySelector) this.e.b()).select(new URI("https", null, dvc.a(inetSocketAddress), inetSocketAddress.getPort(), null, null, null));
+                java.util.List select = ((java.net.ProxySelector) this.e.b()).select(new java.net.URI("https", null, defpackage.dvc.a(inetSocketAddress), inetSocketAddress.getPort(), null, null, null));
                 if (select.size() > 1) {
-                    b.logp(Level.WARNING, "io.grpc.internal.ProxyDetectorImpl", "detectProxy", "More than 1 proxy detected, gRPC will select the first one");
+                    b.logp(java.util.logging.Level.WARNING, "io.grpc.internal.ProxyDetectorImpl", "detectProxy", "More than 1 proxy detected, gRPC will select the first one");
                 }
-                Proxy proxy = select.get(0);
-                if (proxy.type() == Proxy.Type.DIRECT) {
+                java.net.Proxy proxy = (java.net.Proxy) select.get(0);
+                if (proxy.type() == java.net.Proxy.Type.DIRECT) {
                     return null;
                 }
-                InetSocketAddress inetSocketAddress3 = (InetSocketAddress) proxy.address();
-                PasswordAuthentication a = dxt.a(dvc.a(inetSocketAddress3), inetSocketAddress3.getAddress(), inetSocketAddress3.getPort(), "https", "");
+                java.net.InetSocketAddress inetSocketAddress3 = (java.net.InetSocketAddress) proxy.address();
+                java.net.PasswordAuthentication a = defpackage.dxt.a(defpackage.dvc.a(inetSocketAddress3), inetSocketAddress3.getAddress(), inetSocketAddress3.getPort(), "https", "");
                 if (inetSocketAddress3.isUnresolved()) {
-                    inetSocketAddress2 = new InetSocketAddress(InetAddress.getByName(inetSocketAddress3.getHostName()), inetSocketAddress3.getPort());
+                    inetSocketAddress2 = new java.net.InetSocketAddress(java.net.InetAddress.getByName(inetSocketAddress3.getHostName()), inetSocketAddress3.getPort());
                 } else {
                     inetSocketAddress2 = inetSocketAddress3;
                 }
                 if (a == null) {
-                    return new dxu(inetSocketAddress2, null, null);
+                    return new defpackage.dxu(inetSocketAddress2, null, null);
                 }
-                return new dxu(inetSocketAddress2, a.getUserName(), new String(a.getPassword()));
-            } catch (URISyntaxException e2) {
-                b.logp(Level.WARNING, "io.grpc.internal.ProxyDetectorImpl", "detectProxy", "Failed to construct URI for proxy lookup, proceeding without proxy", (Throwable) e2);
+                return new defpackage.dxu(inetSocketAddress2, a.getUserName(), new java.lang.String(a.getPassword()));
+            } catch (java.net.URISyntaxException e2) {
+                b.logp(java.util.logging.Level.WARNING, "io.grpc.internal.ProxyDetectorImpl", "detectProxy", "Failed to construct URI for proxy lookup, proceeding without proxy", e2);
                 return null;
             }
         } catch (Throwable th) {
-            b.logp(Level.WARNING, "io.grpc.internal.ProxyDetectorImpl", "detectProxy", "Failed to get host for proxy lookup, proceeding without proxy", th);
+            b.logp(java.util.logging.Level.WARNING, "io.grpc.internal.ProxyDetectorImpl", "detectProxy", "Failed to get host for proxy lookup, proceeding without proxy", th);
             return null;
         }
     }

@@ -1,25 +1,18 @@
 package defpackage;
 
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.common.api.internal.BasePendingResult;
-import java.util.Collections;
-import java.util.Map;
-import java.util.Set;
-import java.util.WeakHashMap;
-
-/* renamed from: bbr  reason: default package */
+/* renamed from: bbr reason: default package */
 /* compiled from: PG */
 public final class bbr {
-    public static final Status a = new Status(8, "The connection to Google Play services was lost");
-    public static final BasePendingResult[] b = new BasePendingResult[0];
-    public final Set c = Collections.synchronizedSet(Collections.newSetFromMap(new WeakHashMap()));
-    private final bbs d = new bbs(this);
+    public static final com.google.android.gms.common.api.Status a = new com.google.android.gms.common.api.Status(8, "The connection to Google Play services was lost");
+    public static final com.google.android.gms.common.api.internal.BasePendingResult[] b = new com.google.android.gms.common.api.internal.BasePendingResult[0];
+    public final java.util.Set c = java.util.Collections.synchronizedSet(java.util.Collections.newSetFromMap(new java.util.WeakHashMap()));
+    private final defpackage.bbs d = new defpackage.bbs(this);
 
-    public bbr(Map map) {
+    public bbr(java.util.Map map) {
     }
 
-    /* access modifiers changed from: package-private */
-    public final void a(BasePendingResult basePendingResult) {
+    /* access modifiers changed from: 0000 */
+    public final void a(com.google.android.gms.common.api.internal.BasePendingResult basePendingResult) {
         this.c.add(basePendingResult);
         basePendingResult.a(this.d);
     }

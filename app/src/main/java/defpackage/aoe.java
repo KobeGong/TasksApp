@@ -1,15 +1,13 @@
 package defpackage;
 
-import android.content.Context;
-
-/* renamed from: aoe  reason: default package */
+/* renamed from: aoe reason: default package */
 /* compiled from: PG */
 public interface aoe {
-    public static final aof a = aof.a(null, null);
+    public static final defpackage.aof a = defpackage.aof.a(null, null);
 
-    aof a(Context context, String str);
+    defpackage.aof a(android.content.Context context, java.lang.String str);
 
-    String a(Context context);
+    java.lang.String a(android.content.Context context);
 
-    void a(String str);
+    void a(java.lang.String str);
 }

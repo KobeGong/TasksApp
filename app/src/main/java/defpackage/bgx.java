@@ -1,23 +1,19 @@
 package defpackage;
 
-import android.content.SharedPreferences;
-import java.util.concurrent.Callable;
-
-/* renamed from: bgx  reason: default package */
+/* renamed from: bgx reason: default package */
 /* compiled from: PG */
-final class bgx implements Callable {
-    private /* synthetic */ SharedPreferences a;
-    private /* synthetic */ String b;
-    private /* synthetic */ Integer c;
+final class bgx implements java.util.concurrent.Callable {
+    private /* synthetic */ android.content.SharedPreferences a;
+    private /* synthetic */ java.lang.String b;
+    private /* synthetic */ java.lang.Integer c;
 
-    bgx(SharedPreferences sharedPreferences, String str, Integer num) {
+    bgx(android.content.SharedPreferences sharedPreferences, java.lang.String str, java.lang.Integer num) {
         this.a = sharedPreferences;
         this.b = str;
         this.c = num;
     }
 
-    @Override // java.util.concurrent.Callable
-    public final /* synthetic */ Object call() {
-        return Integer.valueOf(this.a.getInt(this.b, this.c.intValue()));
+    public final /* synthetic */ java.lang.Object call() {
+        return java.lang.Integer.valueOf(this.a.getInt(this.b, this.c.intValue()));
     }
 }

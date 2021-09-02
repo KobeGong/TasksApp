@@ -1,27 +1,33 @@
 package defpackage;
 
-/* renamed from: edw  reason: default package */
+/* renamed from: edw reason: default package */
 /* compiled from: PG */
-public final class edw extends dlz {
-    public Boolean a = null;
-    public efl b = null;
-    public String c = null;
-    public String d = null;
-    public int e = Integer.MIN_VALUE;
-    public Long f = null;
-    public String g = null;
+public final class edw extends defpackage.dlz {
+    public java.lang.Boolean a;
+    public defpackage.efl b;
+    public java.lang.String c;
+    public java.lang.String d;
+    public int e;
+    public java.lang.Long f;
+    public java.lang.String g;
 
     public edw() {
+        this.a = null;
+        this.b = null;
+        this.c = null;
+        this.d = null;
+        this.e = Integer.MIN_VALUE;
+        this.f = null;
+        this.g = null;
         this.k = -1;
     }
 
-    @Override // defpackage.dlz, defpackage.dmf
-    public final void a(dlx dlx) {
+    public final void a(defpackage.dlx dlx) {
         if (this.a != null) {
             dlx.a(1, this.a.booleanValue());
         }
         if (this.b != null) {
-            dlx.a(2, this.b);
+            dlx.a(2, (defpackage.dmf) this.b);
         }
         if (this.c != null) {
             dlx.a(3, this.c);
@@ -42,45 +48,86 @@ public final class edw extends dlz {
     }
 
     /* access modifiers changed from: protected */
-    @Override // defpackage.dlz, defpackage.dmf
     public final int a() {
         int a2 = super.a();
         if (this.a != null) {
             this.a.booleanValue();
-            a2 += dlx.c(8) + 1;
+            a2 += defpackage.dlx.c(8) + 1;
         }
         if (this.b != null) {
-            a2 += dlx.b(2, this.b);
+            a2 += defpackage.dlx.b(2, (defpackage.dmf) this.b);
         }
         if (this.c != null) {
-            a2 += dlx.b(3, this.c);
+            a2 += defpackage.dlx.b(3, this.c);
         }
         if (this.d != null) {
-            a2 += dlx.b(4, this.d);
+            a2 += defpackage.dlx.b(4, this.d);
         }
         if (this.e != Integer.MIN_VALUE) {
-            a2 += dlx.c(5, this.e);
+            a2 += defpackage.dlx.c(5, this.e);
         }
         if (this.f != null) {
             this.f.longValue();
-            a2 += dlx.c(48) + 8;
+            a2 += defpackage.dlx.c(48) + 8;
         }
         if (this.g != null) {
-            return a2 + dlx.b(7, this.g);
+            return a2 + defpackage.dlx.b(7, this.g);
         }
         return a2;
     }
 
     /* access modifiers changed from: private */
-    /* JADX WARNING: Code restructure failed: missing block: B:22:0x006a, code lost:
-        throw new java.lang.IllegalArgumentException(new java.lang.StringBuilder(41).append(r2).append(" is not a valid enum CrashType").toString());
-     */
     /* renamed from: b */
-    /* Code decompiled incorrectly, please refer to instructions dump. */
-    public final defpackage.edw a(defpackage.dlw r7) {
-        /*
-        // Method dump skipped, instructions count: 160
-        */
-        throw new UnsupportedOperationException("Method not decompiled: defpackage.edw.a(dlw):edw");
+    public final defpackage.edw a(defpackage.dlw dlw) {
+        while (true) {
+            int a2 = dlw.a();
+            switch (a2) {
+                case 0:
+                    break;
+                case 8:
+                    this.a = java.lang.Boolean.valueOf(dlw.c());
+                    continue;
+                case 18:
+                    if (this.b == null) {
+                        this.b = new defpackage.efl();
+                    }
+                    dlw.a((defpackage.dmf) this.b);
+                    continue;
+                case 26:
+                    this.c = dlw.d();
+                    continue;
+                case 34:
+                    this.d = dlw.d();
+                    continue;
+                case 40:
+                    int i = dlw.i();
+                    try {
+                        int e2 = dlw.e();
+                        if (e2 < 0 || e2 > 4) {
+                            throw new java.lang.IllegalArgumentException(e2 + " is not a valid enum CrashType");
+                        }
+                        this.e = e2;
+                        continue;
+                    } catch (java.lang.IllegalArgumentException e3) {
+                        dlw.e(i);
+                        a(dlw, a2);
+                        break;
+                    }
+                    break;
+                case 49:
+                    this.f = java.lang.Long.valueOf(dlw.g());
+                    continue;
+                case 58:
+                    this.g = dlw.d();
+                    continue;
+                default:
+                    if (!super.a(dlw, a2)) {
+                        break;
+                    } else {
+                        continue;
+                    }
+            }
+        }
+        return this;
     }
 }

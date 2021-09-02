@@ -1,8 +1,7 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: qp  reason: default package */
+/* renamed from: qp reason: default package */
 /* compiled from: PG */
-public interface qp {
-    int a(CharSequence charSequence, int i, int i2);
+interface qp {
+    int a(java.lang.CharSequence charSequence, int i, int i2);
 }

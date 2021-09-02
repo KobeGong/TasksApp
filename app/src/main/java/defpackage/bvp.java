@@ -1,27 +1,27 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: bvp  reason: default package */
+/* renamed from: bvp reason: default package */
 /* compiled from: PG */
-public final class bvp {
-    public Long a;
-    private Long b;
+final class bvp {
+    public java.lang.Long a;
+    private java.lang.Long b;
 
-    public final bvp a(long j) {
-        this.b = Long.valueOf(j);
+    public final defpackage.bvp a(long j) {
+        this.b = java.lang.Long.valueOf(j);
         return this;
     }
 
-    public final bvo a() {
-        String str = "";
+    public final defpackage.bvo a() {
+        java.lang.String str = "";
         if (this.b == null) {
-            str = String.valueOf(str).concat(" startTime");
+            str = java.lang.String.valueOf(str).concat(" startTime");
         }
         if (str.isEmpty()) {
-            return new bvj(this.a, this.b.longValue());
+            return new defpackage.bvj(this.a, this.b.longValue());
         }
-        String valueOf = String.valueOf(str);
-        throw new IllegalStateException(valueOf.length() != 0 ? "Missing required properties:".concat(valueOf) : new String("Missing required properties:"));
+        java.lang.String str2 = "Missing required properties:";
+        java.lang.String valueOf = java.lang.String.valueOf(str);
+        throw new java.lang.IllegalStateException(valueOf.length() != 0 ? str2.concat(valueOf) : new java.lang.String(str2));
     }
 
     bvp() {

@@ -1,12 +1,11 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: azu  reason: default package */
+/* renamed from: azu reason: default package */
 /* compiled from: PG */
-public abstract class azu implements Runnable {
-    private /* synthetic */ azk a;
+abstract class azu implements java.lang.Runnable {
+    private /* synthetic */ defpackage.azk a;
 
-    azu(azk azk) {
+    azu(defpackage.azk azk) {
         this.a = azk;
     }
 
@@ -16,12 +15,12 @@ public abstract class azu implements Runnable {
     public void run() {
         this.a.b.lock();
         try {
-            if (!Thread.interrupted()) {
+            if (!java.lang.Thread.interrupted()) {
                 a();
                 this.a.b.unlock();
             }
-        } catch (RuntimeException e) {
-            baf baf = this.a.a;
+        } catch (java.lang.RuntimeException e) {
+            defpackage.baf baf = this.a.a;
             baf.e.sendMessage(baf.e.obtainMessage(2, e));
         } finally {
             this.a.b.unlock();

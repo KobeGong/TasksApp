@@ -1,17 +1,16 @@
 package defpackage;
 
-/* renamed from: btc  reason: default package */
+/* renamed from: btc reason: default package */
 /* compiled from: PG */
-public final class btc implements ecz {
-    private final ecz a;
+public final class btc implements defpackage.ecz {
+    private final defpackage.ecz a;
 
-    public btc(bwj bwj, ecz ecz) {
+    public btc(defpackage.bwj bwj, defpackage.ecz ecz) {
         this.a = ecz;
     }
 
-    @Override // defpackage.ecz
-    public final /* synthetic */ Object a() {
+    public final /* synthetic */ java.lang.Object a() {
         this.a.a();
-        return (brz) dgv.a(new bsp(), "Cannot return null from a non-@Nullable @Provides method");
+        return (defpackage.brz) defpackage.dgv.a((java.lang.Object) new defpackage.bsp(), "Cannot return null from a non-@Nullable @Provides method");
     }
 }

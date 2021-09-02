@@ -1,20 +1,16 @@
 package defpackage;
 
-import android.app.Application;
-import java.util.concurrent.Executors;
-
-/* access modifiers changed from: package-private */
-/* renamed from: cgm  reason: default package */
+/* renamed from: cgm reason: default package */
 /* compiled from: PG */
-public final class cgm implements cgk {
-    public final /* synthetic */ Application a;
-    private final /* synthetic */ cli b;
-    private final /* synthetic */ cjw c;
-    private final /* synthetic */ clt d;
-    private final /* synthetic */ clt e;
-    private final /* synthetic */ clt f;
+final class cgm implements defpackage.cgk {
+    public final /* synthetic */ android.app.Application a;
+    private final /* synthetic */ defpackage.cli b;
+    private final /* synthetic */ defpackage.cjw c;
+    private final /* synthetic */ defpackage.clt d;
+    private final /* synthetic */ defpackage.clt e;
+    private final /* synthetic */ defpackage.clt f;
 
-    cgm(Application application, cli cli, cjw cjw, clt clt, clt clt2, clt clt3) {
+    cgm(android.app.Application application, defpackage.cli cli, defpackage.cjw cjw, defpackage.clt clt, defpackage.clt clt2, defpackage.clt clt3) {
         this.a = application;
         this.b = cli;
         this.c = cjw;
@@ -23,12 +19,11 @@ public final class cgm implements cgk {
         this.f = clt3;
     }
 
-    @Override // defpackage.cgk
-    public final cjh a() {
-        cji cji = new cji(this.a, new cke(null, 0, this.b.d));
-        cjj cjj = new cjj(cji, Executors.newSingleThreadExecutor(new ckg("Primes-init", 0)), this.c, this.d, this.e, this.f, new cgq(cha.a(cji.a)), new cjm(cha.a(cji.a), cji.b), true);
-        cha.a(this.a);
-        new cgn(this);
+    public final defpackage.cjh a() {
+        defpackage.cji cji = new defpackage.cji(this.a, new defpackage.cke(null, 0, this.b.d));
+        defpackage.cjj cjj = new defpackage.cjj(cji, java.util.concurrent.Executors.newSingleThreadExecutor(new defpackage.ckg("Primes-init", 0)), this.c, this.d, this.e, this.f, new defpackage.cgq(defpackage.cha.a(cji.a)), new defpackage.cjm(defpackage.cha.a(cji.a), cji.b), true);
+        defpackage.cha.a(this.a);
+        new defpackage.cgn(this);
         cjj.run();
         return cji;
     }

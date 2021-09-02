@@ -1,37 +1,31 @@
 package defpackage;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.ArrayList;
-
-/* renamed from: bmw  reason: default package */
+/* renamed from: bmw reason: default package */
 /* compiled from: PG */
-public final class bmw implements Parcelable.Creator {
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object[] newArray(int i) {
-        return new bmj[i];
+public final class bmw implements android.os.Parcelable.Creator {
+    public final /* synthetic */ java.lang.Object[] newArray(int i) {
+        return new defpackage.bmj[i];
     }
 
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object createFromParcel(Parcel parcel) {
-        String str = null;
-        int a = bjr.a(parcel);
-        ArrayList arrayList = null;
+    public final /* synthetic */ java.lang.Object createFromParcel(android.os.Parcel parcel) {
+        java.lang.String str = null;
+        int a = defpackage.bjr.a(parcel);
+        java.util.List list = null;
         while (parcel.dataPosition() < a) {
             int readInt = parcel.readInt();
             switch (65535 & readInt) {
                 case 2:
-                    arrayList = bjr.c(parcel, readInt, bmk.CREATOR);
+                    list = defpackage.bjr.c(parcel, readInt, defpackage.bmk.CREATOR);
                     break;
                 case 3:
-                    str = bjr.h(parcel, readInt);
+                    str = defpackage.bjr.h(parcel, readInt);
                     break;
                 default:
-                    bjr.b(parcel, readInt);
+                    defpackage.bjr.b(parcel, readInt);
                     break;
             }
         }
-        bjr.p(parcel, a);
-        return new bmj(arrayList, str);
+        defpackage.bjr.p(parcel, a);
+        return new defpackage.bmj(list, str);
     }
 }

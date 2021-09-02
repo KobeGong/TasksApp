@@ -1,27 +1,28 @@
 package defpackage;
 
-/* renamed from: ccs  reason: default package */
+/* renamed from: ccs reason: default package */
 /* compiled from: PG */
 public final class ccs {
-    public djo a;
-    public Throwable b;
-    private Boolean c;
+    public defpackage.djo a;
+    public java.lang.Throwable b;
+    private java.lang.Boolean c;
 
-    public final ccs a(boolean z) {
-        this.c = Boolean.valueOf(z);
+    public final defpackage.ccs a(boolean z) {
+        this.c = java.lang.Boolean.valueOf(z);
         return this;
     }
 
-    public final ccr a() {
-        String str = "";
+    public final defpackage.ccr a() {
+        java.lang.String str = "";
         if (this.c == null) {
-            str = String.valueOf(str).concat(" isRetryableError");
+            str = java.lang.String.valueOf(str).concat(" isRetryableError");
         }
         if (str.isEmpty()) {
-            return new ccp(this.a, this.b, this.c.booleanValue());
+            return new defpackage.ccp(this.a, this.b, this.c.booleanValue());
         }
-        String valueOf = String.valueOf(str);
-        throw new IllegalStateException(valueOf.length() != 0 ? "Missing required properties:".concat(valueOf) : new String("Missing required properties:"));
+        java.lang.String str2 = "Missing required properties:";
+        java.lang.String valueOf = java.lang.String.valueOf(str);
+        throw new java.lang.IllegalStateException(valueOf.length() != 0 ? str2.concat(valueOf) : new java.lang.String(str2));
     }
 
     ccs() {

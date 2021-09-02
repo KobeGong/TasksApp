@@ -1,28 +1,22 @@
 package defpackage;
 
-import android.os.ParcelFileDescriptor;
-import com.google.android.gms.common.api.Status;
-
-/* renamed from: bjt  reason: default package */
+/* renamed from: bjt reason: default package */
 /* compiled from: PG */
-final class bjt implements blu {
-    private /* synthetic */ Status a;
+final class bjt implements defpackage.blu {
+    private /* synthetic */ com.google.android.gms.common.api.Status a;
 
-    bjt(Status status) {
+    bjt(com.google.android.gms.common.api.Status status) {
         this.a = status;
     }
 
-    @Override // defpackage.blu
-    public final ParcelFileDescriptor c() {
+    public final android.os.ParcelFileDescriptor c() {
         return null;
     }
 
-    @Override // defpackage.ayw
-    public final Status b() {
+    public final com.google.android.gms.common.api.Status b() {
         return this.a;
     }
 
-    @Override // defpackage.ayv
     public final void a() {
     }
 }

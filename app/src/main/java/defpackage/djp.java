@@ -1,15 +1,15 @@
 package defpackage;
 
-/* renamed from: djp  reason: default package */
+/* renamed from: djp reason: default package */
 /* compiled from: PG */
-public interface djp extends djq, Cloneable {
-    djp a(dha dha);
+public interface djp extends defpackage.djq, java.lang.Cloneable {
+    defpackage.djp a(defpackage.dha dha);
 
-    djp a(djo djo);
+    defpackage.djp a(defpackage.djo djo);
 
-    djp a(byte[] bArr);
+    defpackage.djp a(byte[] bArr);
 
-    djo c();
+    defpackage.djo c();
 
-    djo d();
+    defpackage.djo d();
 }

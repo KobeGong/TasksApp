@@ -1,108 +1,100 @@
 package defpackage;
 
-import android.arch.lifecycle.OnLifecycleEvent;
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-/* renamed from: ab  reason: default package */
+/* renamed from: ab reason: default package */
 /* compiled from: PG */
 public final class ab {
-    private static Map a = new HashMap();
-    private static Map b = new HashMap();
+    private static java.util.Map a = new java.util.HashMap();
+    private static java.util.Map b = new java.util.HashMap();
 
-    public static t a(Object obj) {
-        if (obj instanceof q) {
-            return new r((q) obj);
+    public static defpackage.t a(java.lang.Object obj) {
+        int i = 0;
+        if (obj instanceof defpackage.q) {
+            return new defpackage.r((defpackage.q) obj);
         }
-        if (obj instanceof t) {
-            return (t) obj;
+        if (obj instanceof defpackage.t) {
+            return (defpackage.t) obj;
         }
-        Class<?> cls = obj.getClass();
+        java.lang.Class cls = obj.getClass();
         if (b(cls) != 2) {
-            return new ah(obj);
+            return new defpackage.ah(obj);
         }
-        List list = (List) b.get(cls);
+        java.util.List list = (java.util.List) b.get(cls);
         if (list.size() == 1) {
-            return new aj(a((Constructor) list.get(0), obj));
+            return new defpackage.aj(a((java.lang.reflect.Constructor) list.get(0), obj));
         }
-        s[] sVarArr = new s[list.size()];
-        for (int i = 0; i < list.size(); i++) {
-            sVarArr[i] = a((Constructor) list.get(i), obj);
-        }
-        return new p(sVarArr);
-    }
-
-    private static s a(Constructor constructor, Object obj) {
-        try {
-            return (s) constructor.newInstance(obj);
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException(e);
-        } catch (InstantiationException e2) {
-            throw new RuntimeException(e2);
-        } catch (InvocationTargetException e3) {
-            throw new RuntimeException(e3);
+        defpackage.s[] sVarArr = new defpackage.s[list.size()];
+        while (true) {
+            int i2 = i;
+            if (i2 >= list.size()) {
+                return new defpackage.p(sVarArr);
+            }
+            sVarArr[i2] = a((java.lang.reflect.Constructor) list.get(i2), obj);
+            i = i2 + 1;
         }
     }
 
-    /* JADX DEBUG: Multi-variable search result rejected for r0v13, resolved type: java.lang.Class<?> */
-    /* JADX WARN: Multi-variable type inference failed */
-    private static Constructor a(Class cls) {
+    private static defpackage.s a(java.lang.reflect.Constructor constructor, java.lang.Object obj) {
         try {
-            Package r1 = cls.getPackage();
-            String canonicalName = cls.getCanonicalName();
-            String name = r1 != null ? r1.getName() : "";
-            if (!name.isEmpty()) {
-                canonicalName = canonicalName.substring(name.length() + 1);
+            return (defpackage.s) constructor.newInstance(new java.lang.Object[]{obj});
+        } catch (java.lang.IllegalAccessException e) {
+            throw new java.lang.RuntimeException(e);
+        } catch (java.lang.InstantiationException e2) {
+            throw new java.lang.RuntimeException(e2);
+        } catch (java.lang.reflect.InvocationTargetException e3) {
+            throw new java.lang.RuntimeException(e3);
+        }
+    }
+
+    private static java.lang.reflect.Constructor a(java.lang.Class cls) {
+        try {
+            java.lang.Package packageR = cls.getPackage();
+            java.lang.String canonicalName = cls.getCanonicalName();
+            java.lang.String str = packageR != null ? packageR.getName() : "";
+            if (!str.isEmpty()) {
+                canonicalName = canonicalName.substring(str.length() + 1);
             }
-            String str = canonicalName.replace(".", "_") + "_LifecycleAdapter";
-            if (!name.isEmpty()) {
-                str = name + "." + str;
+            java.lang.String str2 = canonicalName.replace(".", "_") + "_LifecycleAdapter";
+            if (!str.isEmpty()) {
+                str2 = str + "." + str2;
             }
-            Constructor declaredConstructor = Class.forName(str).getDeclaredConstructor(cls);
+            java.lang.reflect.Constructor declaredConstructor = java.lang.Class.forName(str2).getDeclaredConstructor(new java.lang.Class[]{cls});
             if (declaredConstructor.isAccessible()) {
                 return declaredConstructor;
             }
             declaredConstructor.setAccessible(true);
             return declaredConstructor;
-        } catch (ClassNotFoundException e) {
+        } catch (java.lang.ClassNotFoundException e) {
             return null;
-        } catch (NoSuchMethodException e2) {
-            throw new RuntimeException(e2);
+        } catch (java.lang.NoSuchMethodException e2) {
+            throw new java.lang.RuntimeException(e2);
         }
     }
 
-    private static int b(Class cls) {
+    private static int b(java.lang.Class cls) {
         int i;
         boolean z;
-        ArrayList arrayList;
+        java.util.List list;
         int i2 = 0;
         if (a.containsKey(cls)) {
-            return ((Integer) a.get(cls)).intValue();
+            return ((java.lang.Integer) a.get(cls)).intValue();
         }
         if (cls.getCanonicalName() != null) {
-            Constructor a2 = a(cls);
+            java.lang.reflect.Constructor a2 = a(cls);
             if (a2 != null) {
-                b.put(cls, Collections.singletonList(a2));
+                b.put(cls, java.util.Collections.singletonList(a2));
                 i = 2;
             } else {
-                n nVar = n.a;
+                defpackage.n nVar = defpackage.n.a;
                 if (!nVar.b.containsKey(cls)) {
-                    Method[] a3 = n.a(cls);
+                    java.lang.reflect.Method[] a3 = defpackage.n.a(cls);
                     int length = a3.length;
                     int i3 = 0;
                     while (true) {
                         if (i3 >= length) {
-                            nVar.b.put(cls, false);
+                            nVar.b.put(cls, java.lang.Boolean.valueOf(false));
                             z = false;
                             break;
-                        } else if (((OnLifecycleEvent) a3[i3].getAnnotation(OnLifecycleEvent.class)) != null) {
+                        } else if (((android.arch.lifecycle.OnLifecycleEvent) a3[i3].getAnnotation(android.arch.lifecycle.OnLifecycleEvent.class)) != null) {
                             nVar.a(cls, a3);
                             z = true;
                             break;
@@ -111,52 +103,52 @@ public final class ab {
                         }
                     }
                 } else {
-                    z = ((Boolean) nVar.b.get(cls)).booleanValue();
+                    z = ((java.lang.Boolean) nVar.b.get(cls)).booleanValue();
                 }
                 if (!z) {
-                    Class superclass = cls.getSuperclass();
-                    ArrayList arrayList2 = null;
+                    java.lang.Class superclass = cls.getSuperclass();
+                    java.util.List list2 = null;
                     if (c(superclass)) {
                         if (b(superclass) != 1) {
-                            arrayList2 = new ArrayList((Collection) b.get(superclass));
+                            list2 = new java.util.ArrayList((java.util.Collection) b.get(superclass));
                         }
                     }
-                    Class<?>[] interfaces = cls.getInterfaces();
+                    java.lang.Class[] interfaces = cls.getInterfaces();
                     int length2 = interfaces.length;
                     while (true) {
                         if (i2 < length2) {
-                            Class<?> cls2 = interfaces[i2];
+                            java.lang.Class cls2 = interfaces[i2];
                             if (c(cls2)) {
                                 if (b(cls2) == 1) {
                                     break;
                                 }
-                                if (arrayList2 == null) {
-                                    arrayList = new ArrayList();
+                                if (list2 == null) {
+                                    list = new java.util.ArrayList();
                                 } else {
-                                    arrayList = arrayList2;
+                                    list = list2;
                                 }
-                                arrayList.addAll((Collection) b.get(cls2));
+                                list.addAll((java.util.Collection) b.get(cls2));
                             } else {
-                                arrayList = arrayList2;
+                                list = list2;
                             }
                             i2++;
-                            arrayList2 = arrayList;
-                        } else if (arrayList2 != null) {
-                            b.put(cls, arrayList2);
+                            list2 = list;
+                        } else if (list2 != null) {
+                            b.put(cls, list2);
                             i = 2;
                         }
                     }
                 }
             }
-            a.put(cls, Integer.valueOf(i));
+            a.put(cls, java.lang.Integer.valueOf(i));
             return i;
         }
         i = 1;
-        a.put(cls, Integer.valueOf(i));
+        a.put(cls, java.lang.Integer.valueOf(i));
         return i;
     }
 
-    private static boolean c(Class cls) {
-        return cls != null && x.class.isAssignableFrom(cls);
+    private static boolean c(java.lang.Class cls) {
+        return cls != null && LifecycleObserver.class.isAssignableFrom(cls);
     }
 }

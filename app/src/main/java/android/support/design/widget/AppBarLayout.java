@@ -1,70 +1,61 @@
 package android.support.design.widget;
 
-import android.content.Context;
-import android.os.Build;
-import android.support.design.appbar.AppBarLayout;
-import android.util.AttributeSet;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
-
-@gy(a = Behavior.class)
-@Deprecated
+@defpackage.gy(a = android.support.design.widget.AppBarLayout.Behavior.class)
+@java.lang.Deprecated
 /* compiled from: PG */
 public class AppBarLayout extends android.support.design.appbar.AppBarLayout {
-    public AppBarLayout(Context context) {
-        super(context);
-    }
 
-    @Deprecated
+    @java.lang.Deprecated
     /* compiled from: PG */
-    public class Behavior extends AppBarLayout.BaseBehavior {
+    public class Behavior extends android.support.design.appbar.AppBarLayout.BaseBehavior {
         public Behavior() {
         }
 
-        public Behavior(Context context, AttributeSet attributeSet) {
+        public Behavior(android.content.Context context, android.util.AttributeSet attributeSet) {
             super(context, attributeSet);
         }
     }
 
-    @Deprecated
+    @java.lang.Deprecated
     /* compiled from: PG */
-    public class ScrollingViewBehavior extends AppBarLayout.ScrollingViewBehavior {
+    public class ScrollingViewBehavior extends android.support.design.appbar.AppBarLayout.ScrollingViewBehavior {
         public ScrollingViewBehavior() {
         }
 
-        public ScrollingViewBehavior(Context context, AttributeSet attributeSet) {
+        public ScrollingViewBehavior(android.content.Context context, android.util.AttributeSet attributeSet) {
             super(context, attributeSet);
         }
     }
 
-    public AppBarLayout(Context context, AttributeSet attributeSet) {
+    public AppBarLayout(android.content.Context context) {
+        super(context);
+    }
+
+    public AppBarLayout(android.content.Context context, android.util.AttributeSet attributeSet) {
         super(context, attributeSet);
     }
 
-    private static da b(ViewGroup.LayoutParams layoutParams) {
-        if (Build.VERSION.SDK_INT >= 19 && (layoutParams instanceof LinearLayout.LayoutParams)) {
-            return new da((LinearLayout.LayoutParams) layoutParams, (byte) 0);
+    private static defpackage.da b(android.view.ViewGroup.LayoutParams layoutParams) {
+        if (android.os.Build.VERSION.SDK_INT >= 19 && (layoutParams instanceof android.widget.LinearLayout.LayoutParams)) {
+            return new defpackage.da((android.widget.LinearLayout.LayoutParams) layoutParams, 0);
         }
-        if (layoutParams instanceof ViewGroup.MarginLayoutParams) {
-            return new da((ViewGroup.MarginLayoutParams) layoutParams, (byte) 0);
+        if (layoutParams instanceof android.view.ViewGroup.MarginLayoutParams) {
+            return new defpackage.da((android.view.ViewGroup.MarginLayoutParams) layoutParams, 0);
         }
-        return new da(layoutParams, (byte) 0);
+        return new defpackage.da(layoutParams, 0);
     }
 
     /* access modifiers changed from: protected */
-    @Override // android.support.design.appbar.AppBarLayout
-    public final /* synthetic */ da a(ViewGroup.LayoutParams layoutParams) {
+    public final /* synthetic */ defpackage.da a(android.view.ViewGroup.LayoutParams layoutParams) {
         return b(layoutParams);
     }
 
-    @Override // android.support.design.appbar.AppBarLayout
-    public final /* synthetic */ da a(AttributeSet attributeSet) {
-        return (da) generateLayoutParams(attributeSet);
+    public final /* synthetic */ defpackage.da a(android.util.AttributeSet attributeSet) {
+        return (defpackage.da) generateLayoutParams(attributeSet);
     }
 
     /* access modifiers changed from: protected */
-    @Override // android.support.design.appbar.AppBarLayout
-    public final /* synthetic */ da b() {
-        return new da((byte) 0);
+    public final /* synthetic */ defpackage.da b() {
+        return new defpackage.da(0);
     }
 }

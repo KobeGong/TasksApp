@@ -1,23 +1,19 @@
 package defpackage;
 
-import android.content.Intent;
-import android.net.Uri;
-import android.text.TextUtils;
-
-/* renamed from: beq  reason: default package */
+/* renamed from: beq reason: default package */
 /* compiled from: PG */
 public final class beq {
-    public static Intent a(String str) {
-        Uri fromParts = Uri.fromParts("package", str, null);
-        Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+    public static android.content.Intent a(java.lang.String str) {
+        android.net.Uri fromParts = android.net.Uri.fromParts("package", str, null);
+        android.content.Intent intent = new android.content.Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
         intent.setData(fromParts);
         return intent;
     }
 
-    public static Intent a(String str, String str2) {
-        Intent intent = new Intent("android.intent.action.VIEW");
-        Uri.Builder appendQueryParameter = Uri.parse("market://details").buildUpon().appendQueryParameter("id", str);
-        if (!TextUtils.isEmpty(str2)) {
+    public static android.content.Intent a(java.lang.String str, java.lang.String str2) {
+        android.content.Intent intent = new android.content.Intent("android.intent.action.VIEW");
+        android.net.Uri.Builder appendQueryParameter = android.net.Uri.parse("market://details").buildUpon().appendQueryParameter("id", str);
+        if (!android.text.TextUtils.isEmpty(str2)) {
             appendQueryParameter.appendQueryParameter("pcampaignid", str2);
         }
         intent.setData(appendQueryParameter.build());
@@ -26,13 +22,13 @@ public final class beq {
         return intent;
     }
 
-    public static Intent a() {
-        Intent intent = new Intent("com.google.android.clockwork.home.UPDATE_ANDROID_WEAR_ACTION");
+    public static android.content.Intent a() {
+        android.content.Intent intent = new android.content.Intent("com.google.android.clockwork.home.UPDATE_ANDROID_WEAR_ACTION");
         intent.setPackage("com.google.android.wearable.app");
         return intent;
     }
 
     static {
-        Uri.parse("https://plus.google.com/").buildUpon().appendPath("circles").appendPath("find").build();
+        android.net.Uri.parse("https://plus.google.com/").buildUpon().appendPath("circles").appendPath("find").build();
     }
 }

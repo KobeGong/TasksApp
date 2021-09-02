@@ -1,21 +1,20 @@
 package defpackage;
 
-/* renamed from: dfw  reason: default package */
+/* renamed from: dfw reason: default package */
 /* compiled from: PG */
-public enum dfw implements din {
+public enum dfw implements defpackage.din {
     DELETION_STATUS_UNKNOWN(0),
     ACTIVE(1),
     DELETED(2);
     
-    public static final dio c = new dfx();
+    public static final defpackage.dio c = null;
     public final int d;
 
-    @Override // defpackage.din
     public final int a() {
         return this.d;
     }
 
-    public static dfw a(int i) {
+    public static defpackage.dfw a(int i) {
         switch (i) {
             case 0:
                 return DELETION_STATUS_UNKNOWN;
@@ -30,5 +29,9 @@ public enum dfw implements din {
 
     private dfw(int i) {
         this.d = i;
+    }
+
+    static {
+        c = new defpackage.dfx();
     }
 }

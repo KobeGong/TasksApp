@@ -1,14 +1,13 @@
 package defpackage;
 
-/* renamed from: chf  reason: default package */
-final /* synthetic */ class chf implements cmb {
-    public static final cmb a = new chf();
+/* renamed from: chf reason: default package */
+final /* synthetic */ class chf implements defpackage.cmb {
+    public static final defpackage.cmb a = new defpackage.chf();
 
     private chf() {
     }
 
-    @Override // defpackage.cmb
     public final long a() {
-        return System.currentTimeMillis();
+        return java.lang.System.currentTimeMillis();
     }
 }

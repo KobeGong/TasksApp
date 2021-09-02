@@ -1,15 +1,13 @@
 package defpackage;
 
-import java.util.List;
-
-/* renamed from: dok  reason: default package */
+/* renamed from: dok reason: default package */
 /* compiled from: PG */
 public abstract class dok {
     public abstract void a();
 
-    public abstract void a(dop dop, dnr dnr);
+    public abstract void a(defpackage.dop dop, defpackage.dnr dnr);
 
-    public abstract void a(dpw dpw);
+    public abstract void a(defpackage.dpw dpw);
 
-    public abstract void a(List list, dmv dmv);
+    public abstract void a(java.util.List list, defpackage.dmv dmv);
 }

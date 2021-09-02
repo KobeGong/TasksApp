@@ -1,44 +1,41 @@
 package defpackage;
 
-import java.util.concurrent.ExecutionException;
-
-/* renamed from: cxp  reason: default package */
+/* renamed from: cxp reason: default package */
 /* compiled from: PG */
-final class cxp implements Runnable {
-    private final /* synthetic */ cyi a;
-    private final /* synthetic */ cxo b;
+final class cxp implements java.lang.Runnable {
+    private final /* synthetic */ defpackage.cyi a;
+    private final /* synthetic */ defpackage.cxo b;
 
-    cxp(cxo cxo, int i, cyi cyi) {
+    cxp(defpackage.cxo cxo, int i, defpackage.cyi cyi) {
         this.b = cxo;
         this.a = cyi;
     }
 
     public final void run() {
+        defpackage.cxo cxo;
         boolean z = false;
         try {
-            cxo cxo = this.b;
-            cyi cyi = this.a;
+            cxo = this.b;
+            defpackage.cyi cyi = this.a;
             if (cxo.b || !cxo.c.isDone() || cxo.c.isCancelled()) {
                 z = true;
             }
-            cld.b(z, "Future was done before all dependencies completed");
-            try {
-                cld.b(cyi.isDone(), "Tried to set value from future which is not done");
-                if (cxo.b) {
-                    if (cyi.isCancelled()) {
-                        cxo.c.f = null;
-                        cxo.c.cancel(false);
-                    } else {
-                        cyd.b(cyi);
-                    }
+            defpackage.cld.b(z, (java.lang.Object) "Future was done before all dependencies completed");
+            defpackage.cld.b(cyi.isDone(), (java.lang.Object) "Tried to set value from future which is not done");
+            if (cxo.b) {
+                if (cyi.isCancelled()) {
+                    cxo.c.f = null;
+                    cxo.c.cancel(false);
+                } else {
+                    defpackage.cyd.b(cyi);
                 }
-            } catch (ExecutionException e) {
-                cxo.a(e.getCause());
-            } catch (Throwable th) {
-                cxo.a(th);
             }
-        } finally {
+        } catch (java.util.concurrent.ExecutionException e) {
+            cxo.a(e.getCause());
+        } catch (Throwable th) {
             this.b.a();
+            throw th;
         }
+        this.b.a();
     }
 }

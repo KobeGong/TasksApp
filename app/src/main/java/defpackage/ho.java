@@ -1,23 +1,14 @@
 package defpackage;
 
-import android.content.res.Resources;
-import android.graphics.ColorFilter;
-import android.graphics.PorterDuff;
-import android.graphics.Rect;
-import android.graphics.Region;
-import android.graphics.drawable.Drawable;
-import android.os.Build;
-
-/* access modifiers changed from: package-private */
-/* renamed from: ho  reason: default package */
+/* renamed from: ho reason: default package */
 /* compiled from: PG */
-public abstract class ho extends Drawable implements pf {
-    public Drawable b;
+abstract class ho extends android.graphics.drawable.Drawable implements defpackage.pf {
+    public android.graphics.drawable.Drawable b;
 
     ho() {
     }
 
-    public void setColorFilter(int i, PorterDuff.Mode mode) {
+    public void setColorFilter(int i, android.graphics.PorterDuff.Mode mode) {
         if (this.b != null) {
             this.b.setColorFilter(i, mode);
         } else {
@@ -25,12 +16,12 @@ public abstract class ho extends Drawable implements pf {
         }
     }
 
-    public ColorFilter getColorFilter() {
+    public android.graphics.ColorFilter getColorFilter() {
         if (this.b == null) {
             return null;
         }
-        Drawable drawable = this.b;
-        if (Build.VERSION.SDK_INT >= 21) {
+        android.graphics.drawable.Drawable drawable = this.b;
+        if (android.os.Build.VERSION.SDK_INT >= 21) {
             return drawable.getColorFilter();
         }
         return null;
@@ -45,7 +36,7 @@ public abstract class ho extends Drawable implements pf {
     }
 
     /* access modifiers changed from: protected */
-    public void onBoundsChange(Rect rect) {
+    public void onBoundsChange(android.graphics.Rect rect) {
         if (this.b != null) {
             this.b.setBounds(rect);
         } else {
@@ -55,13 +46,13 @@ public abstract class ho extends Drawable implements pf {
 
     public void setHotspot(float f, float f2) {
         if (this.b != null) {
-            jd.a(this.b, f, f2);
+            defpackage.jd.a(this.b, f, f2);
         }
     }
 
     public void setHotspotBounds(int i, int i2, int i3, int i4) {
         if (this.b != null) {
-            jd.a(this.b, i, i2, i3, i4);
+            defpackage.jd.a(this.b, i, i2, i3, i4);
         }
     }
 
@@ -77,9 +68,9 @@ public abstract class ho extends Drawable implements pf {
         }
     }
 
-    public void applyTheme(Resources.Theme theme) {
+    public void applyTheme(android.content.res.Resources.Theme theme) {
         if (this.b != null) {
-            jd.a(this.b, theme);
+            defpackage.jd.a(this.b, theme);
         }
     }
 
@@ -91,7 +82,7 @@ public abstract class ho extends Drawable implements pf {
         }
     }
 
-    public Drawable getCurrent() {
+    public android.graphics.drawable.Drawable getCurrent() {
         if (this.b != null) {
             return this.b.getCurrent();
         }
@@ -112,7 +103,7 @@ public abstract class ho extends Drawable implements pf {
         return super.getMinimumHeight();
     }
 
-    public boolean getPadding(Rect rect) {
+    public boolean getPadding(android.graphics.Rect rect) {
         if (this.b != null) {
             return this.b.getPadding(rect);
         }
@@ -126,7 +117,7 @@ public abstract class ho extends Drawable implements pf {
         return super.getState();
     }
 
-    public Region getTransparentRegion() {
+    public android.graphics.Region getTransparentRegion() {
         if (this.b != null) {
             return this.b.getTransparentRegion();
         }

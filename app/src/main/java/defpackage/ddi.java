@@ -1,8 +1,8 @@
 package defpackage;
 
-/* renamed from: ddi  reason: default package */
+/* renamed from: ddi reason: default package */
 /* compiled from: PG */
-public enum ddi implements din {
+public enum ddi implements defpackage.din {
     NOTIFICATION_FAILURE_UNSPECIFIED(0),
     BAD_CHANNEL(1),
     USER_BLOCKED(6),
@@ -27,15 +27,14 @@ public enum ddi implements din {
     FAILED_TO_UPDATE_PREFS(21),
     FAILED_TO_ACKNOWLEDGE(22);
     
-    public static final dio i = new ddj();
+    public static final defpackage.dio i = null;
     public final int j;
 
-    @Override // defpackage.din
     public final int a() {
         return this.j;
     }
 
-    public static ddi a(int i2) {
+    public static defpackage.ddi a(int i2) {
         switch (i2) {
             case 0:
                 return NOTIFICATION_FAILURE_UNSPECIFIED;
@@ -90,5 +89,9 @@ public enum ddi implements din {
 
     private ddi(int i2) {
         this.j = i2;
+    }
+
+    static {
+        i = new defpackage.ddj();
     }
 }

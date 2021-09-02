@@ -1,18 +1,15 @@
 package defpackage;
 
-import android.support.v7.widget.SearchView;
-import android.view.View;
-
-/* renamed from: agf  reason: default package */
+/* renamed from: agf reason: default package */
 /* compiled from: PG */
-public final class agf implements View.OnClickListener {
-    private final /* synthetic */ SearchView a;
+public final class agf implements android.view.View.OnClickListener {
+    private final /* synthetic */ android.support.v7.widget.SearchView a;
 
-    public agf(SearchView searchView) {
+    public agf(android.support.v7.widget.SearchView searchView) {
         this.a = searchView;
     }
 
-    public final void onClick(View view) {
+    public final void onClick(android.view.View view) {
         if (view == this.a.c) {
             this.a.g();
         } else if (view == this.a.e) {

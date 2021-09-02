@@ -1,23 +1,18 @@
 package defpackage;
 
-import java.util.concurrent.Callable;
+/* renamed from: auo reason: default package */
+final /* synthetic */ class auo implements java.util.concurrent.Callable {
+    private final TasksFragment a;
 
-/* access modifiers changed from: package-private */
-/* renamed from: auo  reason: default package */
-public final /* synthetic */ class auo implements Callable {
-    private final auj a;
-
-    auo(auj auj) {
+    auo(TasksFragment auj) {
         this.a = auj;
     }
 
-    @Override // java.util.concurrent.Callable
-    public final Object call() {
-        auj auj = this.a;
-        if (auj.rootView == null) {
-            return null;
+    public final java.lang.Object call() {
+        TasksFragment auj = this.a;
+        if (auj.a != null) {
+            auj.a.post(new defpackage.aut(auj));
         }
-        auj.rootView.post(new aut(auj));
         return null;
     }
 }

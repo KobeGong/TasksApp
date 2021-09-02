@@ -1,19 +1,15 @@
 package defpackage;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.support.design.bottomappbar.BottomAppBar;
-
-/* renamed from: dp  reason: default package */
+/* renamed from: dp reason: default package */
 /* compiled from: PG */
-final class dp extends AnimatorListenerAdapter {
-    private final /* synthetic */ BottomAppBar a;
+final class dp extends android.animation.AnimatorListenerAdapter {
+    private final /* synthetic */ android.support.design.bottomappbar.BottomAppBar a;
 
-    dp(BottomAppBar bottomAppBar) {
+    dp(android.support.design.bottomappbar.BottomAppBar bottomAppBar) {
         this.a = bottomAppBar;
     }
 
-    public final void onAnimationEnd(Animator animator) {
+    public final void onAnimationEnd(android.animation.Animator animator) {
         this.a.c = null;
     }
 }

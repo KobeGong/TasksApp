@@ -1,6 +1,6 @@
 package defpackage;
 
-/* renamed from: aft  reason: default package */
+/* renamed from: aft reason: default package */
 /* compiled from: PG */
 public final class aft {
     public int a = -1;
@@ -20,7 +20,7 @@ public final class aft {
 
     public final void a(int i2) {
         if ((this.d & i2) == 0) {
-            throw new IllegalStateException("Layout state should be one of " + Integer.toBinaryString(i2) + " but it is " + Integer.toBinaryString(this.d));
+            throw new java.lang.IllegalStateException("Layout state should be one of " + java.lang.Integer.toBinaryString(i2) + " but it is " + java.lang.Integer.toBinaryString(this.d));
         }
     }
 
@@ -28,7 +28,7 @@ public final class aft {
         return this.g ? this.b - this.c : this.e;
     }
 
-    public final String toString() {
-        return "State{mTargetPosition=" + this.a + ", mData=" + ((Object) null) + ", mItemCount=" + this.e + ", mIsMeasuring=" + this.i + ", mPreviousLayoutItemCount=" + this.b + ", mDeletedInvisibleItemCountSincePreviousLayout=" + this.c + ", mStructureChanged=" + this.f + ", mInPreLayout=" + this.g + ", mRunSimpleAnimations=" + this.j + ", mRunPredictiveAnimations=" + this.k + '}';
+    public final java.lang.String toString() {
+        return "State{mTargetPosition=" + this.a + ", mData=" + null + ", mItemCount=" + this.e + ", mIsMeasuring=" + this.i + ", mPreviousLayoutItemCount=" + this.b + ", mDeletedInvisibleItemCountSincePreviousLayout=" + this.c + ", mStructureChanged=" + this.f + ", mInPreLayout=" + this.g + ", mRunSimpleAnimations=" + this.j + ", mRunPredictiveAnimations=" + this.k + '}';
     }
 }

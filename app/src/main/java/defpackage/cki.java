@@ -1,6 +1,6 @@
 package defpackage;
 
-/* renamed from: cki  reason: default package */
+/* renamed from: cki reason: default package */
 /* compiled from: PG */
 public final class cki {
     public final boolean a;

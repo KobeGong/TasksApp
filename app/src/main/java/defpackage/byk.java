@@ -1,32 +1,28 @@
 package defpackage;
 
-import android.content.Context;
-import android.text.TextUtils;
-import java.io.IOException;
-
-/* renamed from: byk  reason: default package */
+/* renamed from: byk reason: default package */
 /* compiled from: PG */
 public final class byk {
-    public Context a;
-    public buc b;
-    public bru c;
-    public avi d;
+    public android.content.Context a;
+    public defpackage.buc b;
+    public defpackage.bru c;
+    public defpackage.avi d;
 
-    public final String a() {
-        cky.c();
+    public final java.lang.String a() {
+        defpackage.cky.c();
         try {
-            String a2 = this.c.a(this.b.d(), this.d.a());
-            if (TextUtils.isEmpty(a2)) {
-                throw new byl();
+            java.lang.String a2 = this.c.a(this.b.d(), this.d.a());
+            if (android.text.TextUtils.isEmpty(a2)) {
+                throw new defpackage.byl();
             }
             if (!a2.equals(this.a.getSharedPreferences("com.google.android.libraries.notifications.GCM", 0).getString("reg_id", null))) {
-                bty.a("GcmManagerImpl", "New registration ID doesn't match the previously stored one.", new Object[0]);
+                defpackage.bty.a("GcmManagerImpl", "New registration ID doesn't match the previously stored one.", new java.lang.Object[0]);
                 this.a.getSharedPreferences("com.google.android.libraries.notifications.GCM", 0).edit().putString("reg_id", a2).commit();
             }
             return a2;
-        } catch (IOException e) {
-            bty.b("GcmManagerImpl", "Exception during register with IID.", new Object[0]);
-            throw new byl(e);
+        } catch (java.io.IOException e) {
+            defpackage.bty.b("GcmManagerImpl", "Exception during register with IID.", new java.lang.Object[0]);
+            throw new defpackage.byl(e);
         }
     }
 }

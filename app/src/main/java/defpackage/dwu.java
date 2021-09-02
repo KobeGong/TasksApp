@@ -1,13 +1,12 @@
 package defpackage;
 
-/* access modifiers changed from: package-private */
-/* renamed from: dwu  reason: default package */
+/* renamed from: dwu reason: default package */
 /* compiled from: PG */
-public final class dwu implements Runnable {
+final class dwu implements java.lang.Runnable {
     public boolean a;
-    private final /* synthetic */ dwf b;
+    private final /* synthetic */ defpackage.dwf b;
 
-    dwu(dwf dwf) {
+    dwu(defpackage.dwf dwf) {
         this.b = dwf;
     }
 

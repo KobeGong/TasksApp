@@ -1,62 +1,54 @@
 package defpackage;
 
-import android.os.Build;
-import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
-import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-
-/* renamed from: afx  reason: default package */
+/* renamed from: afx reason: default package */
 /* compiled from: PG */
-public final class afx extends rn {
-    private final afw b;
+public final class afx extends defpackage.rn {
+    private final defpackage.afw b;
 
-    public afx(afw afw) {
+    public afx(defpackage.afw afw) {
         this.b = afw;
     }
 
-    @Override // defpackage.rn
-    public final void a(View view, tl tlVar) {
+    public final void a(android.view.View view, defpackage.tl tlVar) {
         int i;
-        to toVar;
+        defpackage.to toVar;
         super.a(view, tlVar);
-        if (!this.b.b.n() && this.b.b.layoutManager != null) {
-            LayoutManager afd = this.b.b.layoutManager;
-            ViewHolder c = RecyclerView.c(view);
+        if (!this.b.b.n() && this.b.b.l != null) {
+            defpackage.afd afd = this.b.b.l;
+            defpackage.afv c = android.support.v7.widget.RecyclerView.c(view);
             if (c != null && !c.m() && !afd.a.d(c.a)) {
-                afn afn = afd.b.e;
-                aft aft = afd.b.D;
-                int a = afd.e() ? afd.a(view) : 0;
+                defpackage.afn afn = afd.b.e;
+                defpackage.aft aft = afd.b.D;
+                int i2 = afd.e() ? defpackage.afd.a(view) : 0;
                 if (afd.d()) {
-                    i = afd.a(view);
+                    i = defpackage.afd.a(view);
                 } else {
                     i = 0;
                 }
-                if (Build.VERSION.SDK_INT >= 21) {
-                    toVar = new to(AccessibilityNodeInfo.CollectionItemInfo.obtain(a, 1, i, 1, false, false));
-                } else if (Build.VERSION.SDK_INT >= 19) {
-                    toVar = new to(AccessibilityNodeInfo.CollectionItemInfo.obtain(a, 1, i, 1, false));
+                if (android.os.Build.VERSION.SDK_INT >= 21) {
+                    toVar = new defpackage.to(android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.obtain(i2, 1, i, 1, false, false));
+                } else if (android.os.Build.VERSION.SDK_INT >= 19) {
+                    toVar = new defpackage.to(android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo.obtain(i2, 1, i, 1, false));
                 } else {
-                    toVar = new to(null);
+                    toVar = new defpackage.to(null);
                 }
-                if (Build.VERSION.SDK_INT >= 19) {
-                    tlVar.a.setCollectionItemInfo((AccessibilityNodeInfo.CollectionItemInfo) toVar.a);
+                if (android.os.Build.VERSION.SDK_INT >= 19) {
+                    tlVar.a.setCollectionItemInfo((android.view.accessibility.AccessibilityNodeInfo.CollectionItemInfo) toVar.a);
                 }
             }
         }
     }
 
-    @Override // defpackage.rn
-    public final boolean a(View view, int i, Bundle bundle) {
+    public final boolean a(android.view.View view, int i, android.os.Bundle bundle) {
         if (super.a(view, i, bundle)) {
             return true;
         }
-        if (this.b.b.n() || this.b.b.layoutManager == null) {
+        if (this.b.b.n() || this.b.b.l == null) {
             return false;
         }
-        LayoutManager afd = this.b.b.layoutManager;
-        afn afn = afd.b.e;
-        aft aft = afd.b.D;
+        defpackage.afd afd = this.b.b.l;
+        defpackage.afn afn = afd.b.e;
+        defpackage.aft aft = afd.b.D;
         return false;
     }
 }

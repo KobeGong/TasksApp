@@ -1,41 +1,37 @@
 package defpackage;
 
-import java.util.Arrays;
-
-/* renamed from: ecg  reason: default package */
+/* renamed from: ecg reason: default package */
 /* compiled from: PG */
-public final class ecg implements Comparable {
-    public static final ecg a = new ecg(new byte[8]);
+public final class ecg implements java.lang.Comparable {
+    public static final defpackage.ecg a = new defpackage.ecg(new byte[8]);
     public final byte[] b;
 
     private ecg(byte[] bArr) {
         this.b = bArr;
     }
 
-    public final boolean equals(Object obj) {
+    public final boolean equals(java.lang.Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof ecg)) {
+        if (!(obj instanceof defpackage.ecg)) {
             return false;
         }
-        return Arrays.equals(this.b, ((ecg) obj).b);
+        return java.util.Arrays.equals(this.b, ((defpackage.ecg) obj).b);
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(this.b);
+        return java.util.Arrays.hashCode(this.b);
     }
 
-    public final String toString() {
-        crs b2 = cky.b(this);
-        cwe a2 = cwe.b.a();
+    public final java.lang.String toString() {
+        defpackage.cwe a2 = defpackage.cwe.b.a();
         byte[] bArr = this.b;
-        return b2.a("spanId", a2.a(bArr, bArr.length)).toString();
+        return defpackage.cky.b((java.lang.Object) this).a("spanId", (java.lang.Object) a2.a(bArr, bArr.length)).toString();
     }
 
-    @Override // java.lang.Comparable
-    public final /* synthetic */ int compareTo(Object obj) {
-        ecg ecg = (ecg) obj;
+    public final /* synthetic */ int compareTo(java.lang.Object obj) {
+        defpackage.ecg ecg = (defpackage.ecg) obj;
         for (int i = 0; i < 8; i++) {
             if (this.b[i] != ecg.b[i]) {
                 return this.b[i] < ecg.b[i] ? -1 : 1;

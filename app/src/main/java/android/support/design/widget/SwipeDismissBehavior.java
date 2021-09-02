@@ -1,6 +1,6 @@
 package android.support.design.widget;
 
-@Deprecated
+@java.lang.Deprecated
 /* compiled from: PG */
 public class SwipeDismissBehavior extends android.support.design.behavior.SwipeDismissBehavior {
 }
