@@ -43,7 +43,11 @@ import defpackage.aoh;
 import defpackage.aou;
 import defpackage.aov;
 import defpackage.aow;
+import defpackage.apd;
+import defpackage.ape;
+import defpackage.apg;
 import defpackage.aph;
+import defpackage.api;
 import defpackage.apj;
 import defpackage.apm;
 import defpackage.apn;
@@ -56,6 +60,7 @@ import defpackage.apy;
 import defpackage.apz;
 import defpackage.aqa;
 import defpackage.aql;
+import defpackage.arb;
 import defpackage.arv;
 import defpackage.asi;
 import defpackage.atf;
@@ -72,6 +77,7 @@ import defpackage.cdl;
 import defpackage.cdm;
 import defpackage.cdu;
 import defpackage.cub;
+import defpackage.cyu;
 import defpackage.dby;
 import defpackage.dca;
 import defpackage.dcb;
@@ -84,6 +90,7 @@ import defpackage.ha;
 import defpackage.lc;
 import defpackage.sn;
 import defpackage.wl;
+import defpackage.xk;
 
 /* compiled from: PG */
 public class TaskListsActivity extends aql implements defpackage.alh, DatePickerDialog.OnDateSetListener, defpackage.aop, defpackage.aqi, defpackage.ash, defpackage.atf, defpackage.aux, defpackage.ays {
@@ -137,7 +144,7 @@ public class TaskListsActivity extends aql implements defpackage.alh, DatePicker
         this.toolbar.A = new aow(this);
         ayq ayqInst = new ayq(this);
         baw baw = new baw(this);
-        azb.b(true, (Object) "clientId must be non-negative");
+        azb.b(true, "clientId must be non-negative");
         ayqInst.b = 0;
         ayqInst.c = this;
         ayqInst.a = baw;
@@ -206,28 +213,28 @@ public class TaskListsActivity extends aql implements defpackage.alh, DatePicker
         Integer num;
         Integer num2 = null;
         boolean z2 = false;
-        NavigationView navigationView = (NavigationView) getLayoutInflater().inflate(R.layout.navigation_view_tasks_lists, (ViewGroup) null);
-        navigationView.d.a(new View(this));
+        NavigationView navigationView = (NavigationView) getLayoutInflater().inflate(R.layout.navigation_view_tasks_lists, null);
+        navigationView.menuPresenter.a(new View(this));
         this.p = new aou();
         navigationView.e = new ft(this, navigationView);
         aou aou = this.p;
-        NavigationMenu ezVar = navigationView.menu;
+        NavigationMenu navMenu = navigationView.menu;
         boolean z3 = this.C;
         aou.a.clear();
         if (taskEntities != null) {
             aou.a.addAll(taskEntities);
         }
-        ezVar.clear();
+        navMenu.clear();
         int i2 = 0;
         while (i2 < aou.a.size()) {
             dcb dcb = (dcb) aou.a.get(i2);
             int i3 = i2 + 3;
             if (dcb.c == null) {
-                dcd = dcd.c;
+                dcd = defpackage.dcd.c;
             } else {
                 dcd = dcb.c;
             }
-            ezVar.add(0, i3, i2, dcd.a).setCheckable(true).setChecked(false);
+            navMenu.add(0, i3, i2, dcd.a).setCheckable(true).setChecked(false);
             if (num2 != null || str == null || !dcb.b.equals(str)) {
                 num = num2;
             } else {
@@ -236,13 +243,13 @@ public class TaskListsActivity extends aql implements defpackage.alh, DatePicker
             i2++;
             num2 = num;
         }
-        MenuItem icon = ezVar.add(1, 0, aou.a.size(), R.string.navigation_drawer_create_list).setIcon(R.drawable.quantum_ic_add_grey600_18);
+        MenuItem icon = navMenu.add(1, 0, aou.a.size(), R.string.navigation_drawer_create_list).setIcon(R.drawable.quantum_ic_add_grey600_18);
         if (!z3) {
             z2 = true;
         }
         icon.setEnabled(z2);
-        ezVar.add(2, 1, aou.a.size() + 1, R.string.navigation_drawer_send_feedback).setIcon(R.drawable.quantum_ic_feedback_grey600_18);
-        ezVar.add(3, 2, aou.a.size() + 2, R.string.navigation_drawer_licences);
+        navMenu.add(2, 1, aou.a.size() + 1, R.string.navigation_drawer_send_feedback).setIcon(R.drawable.quantum_ic_feedback_grey600_18);
+        navMenu.add(3, 2, aou.a.size() + 2, R.string.navigation_drawer_licences);
         if (num2 != null) {
             navigationView.a(num2.intValue());
         }
@@ -303,9 +310,9 @@ public class TaskListsActivity extends aql implements defpackage.alh, DatePicker
         boolean z2 = false;
         auj auj = this.i;
         if (auj.O()) {
-            dby dby = dby.g;
+            dby dby = defpackage.dby.g;
             if (dca != null) {
-                dii dii = (dii) dby.g.a(bg.ao);
+                dii dii = (dii) defpackage.dby.g.a(bg.ao);
                 dii.b();
                 dby dby2 = (dby) dii.a;
                 if (dca == null) {
@@ -321,12 +328,12 @@ public class TaskListsActivity extends aql implements defpackage.alh, DatePicker
                     dih = dii.a;
                 }
                 dih dih3 = dih;
-                if (!dih.a(dih3, Boolean.TRUE.booleanValue())) {
+                if (!defpackage.dih.a(dih3, Boolean.TRUE.booleanValue())) {
                     throw new dkw();
                 }
                 dby = (dby) dih3;
             }
-            dby a = auj.N().a(auj.X, dby, 0, (String) null);
+            dby a = defpackage.auj.N().a(auj.X, dby, 0, null);
             boolean z3 = auj.taskAdapter.getCount() == 0;
             atg atg = auj.taskAdapter;
             if (!ajd.a(a)) {
@@ -392,7 +399,7 @@ public class TaskListsActivity extends aql implements defpackage.alh, DatePicker
     }
 
     private final boolean b(cdu cdu) {
-        return (cdu == null || ajd.a(this, cdu.b()) == null) ? false : true;
+        return cdu != null && ajd.a(this, cdu.b()) != null;
     }
 
     public final void a(cdu cdu, boolean z2, aoe aoe) {
@@ -428,17 +435,13 @@ public class TaskListsActivity extends aql implements defpackage.alh, DatePicker
             return;
         }
         lc a = c().a(R.id.fragment_container);
-        if (any.get().c() == null || !cdu.b().equals(any.get().c().b())) {
-            z3 = false;
-        } else {
-            z3 = true;
-        }
+        z3 = any.get().c() != null && cdu.b().equals(any.get().c().b());
         if (!z3 || !(a instanceof aqa) || z2) {
             if (!z3) {
-                this.i.a((String) null, (ajr) null, true);
+                this.i.a(null, null, true);
                 this.h = null;
                 this.collapsingToolbarLayout.a("");
-                a((List) null, (String) null);
+                a((List) null, null);
                 h(false);
                 this.C = true;
                 g(false);
@@ -469,7 +472,7 @@ public class TaskListsActivity extends aql implements defpackage.alh, DatePicker
                 try {
                     i2 = getPackageManager().getPackageInfo(getPackageName(), 0).versionCode;
                 } catch (PackageManager.NameNotFoundException e) {
-                    azb.a("Package info not found for given package name. Cannot get version code", (Throwable) e, new String[0]);
+                    azb.a("Package info not found for given package name. Cannot get version code", e, new String[0]);
                     i2 = 0;
                 }
                 new cye(csp.a((Object[]) new cyi[]{b2, a3})).a(new aqo(this, i2, a3, cyu, locale), cyl);
@@ -569,17 +572,9 @@ public class TaskListsActivity extends aql implements defpackage.alh, DatePicker
         if (lcVar == null || (lcVar instanceof auj)) {
             c(this.h);
             g(lcVar != null);
-            if (lcVar == null) {
-                z2 = true;
-            } else {
-                z2 = false;
-            }
+            z2 = lcVar == null;
             f(z2);
-            if (lcVar == null || !((auj) lcVar).c()) {
-                z3 = false;
-            } else {
-                z3 = true;
-            }
+            z3 = lcVar != null && ((auj) lcVar).c();
             h(z3);
             e(false);
             haVar.height = (int) getResources().getDimension(R.dimen.app_bar_expanded_height);
@@ -599,14 +594,14 @@ public class TaskListsActivity extends aql implements defpackage.alh, DatePicker
             this.collapsingToolbarLayout.a("");
             h(false);
             e(false);
-            a((List) null, (String) null);
+            a((List) null, null);
         } else {
             f(false);
             g(false);
             this.collapsingToolbarLayout.a("");
             if (lcVar instanceof arv) {
                 Toolbar toolbar = this.toolbar;
-                Bundle bundle = ((arv) lcVar).i;
+                Bundle bundle = lcVar.i;
                 toolbar.a(toolbar.getContext().getText(bundle == null || TextUtils.isEmpty(bundle.getString("list_id")) ? R.string.list_add_title : R.string.list_edit_title));
                 ((da) this.collapsingToolbarLayout.getLayoutParams()).a = 19;
                 this.appBarLayout.getLayoutParams().height = this.collapsingToolbarLayout.getMinimumHeight() + 1;
@@ -636,7 +631,7 @@ public class TaskListsActivity extends aql implements defpackage.alh, DatePicker
         }
         dcb dcb2 = this.h;
         if (dcb2.c == null) {
-            dcd = dcd.c;
+            dcd = defpackage.dcd.c;
         } else {
             dcd = dcb2.c;
         }
@@ -668,7 +663,7 @@ public class TaskListsActivity extends aql implements defpackage.alh, DatePicker
     public final void a(String str) {
         dcb dcb;
         List<dcb> d = any.get().c().d();
-        String str2 = ((dcb) d.get(0)).b;
+        String str2 = d.get(0).b;
         if (TextUtils.isEmpty(str)) {
             str = this.i.X;
         }
@@ -686,7 +681,7 @@ public class TaskListsActivity extends aql implements defpackage.alh, DatePicker
             dcb2 = dcb3;
         }
         if (dcb2 == null) {
-            dcb = (dcb) d.get(0);
+            dcb = d.get(0);
         } else {
             dcb = dcb2;
         }
@@ -814,11 +809,7 @@ public class TaskListsActivity extends aql implements defpackage.alh, DatePicker
         boolean z2;
         ln c = c();
         lc a = c().a(R.id.fragment_container);
-        if (!(a instanceof aqa) || ((aqa) a).V != bg.Q || aiw.b(this).a()) {
-            z2 = false;
-        } else {
-            z2 = true;
-        }
+        z2 = a instanceof aqa && ((aqa) a).V == bg.Q && !aiw.b(this).a();
         if (z2) {
             finish();
             return;
@@ -938,9 +929,9 @@ public class TaskListsActivity extends aql implements defpackage.alh, DatePicker
             ain b = ain.b(this, any.get().c().b());
             String str = this.h.b;
             SharedPreferences.Editor edit = b.a.edit();
-            String valueOf = String.valueOf("task-list-order:");
+            String valueOf = "task-list-order:";
             String valueOf2 = String.valueOf(str);
-            edit.putString(valueOf2.length() != 0 ? valueOf.concat(valueOf2) : new String(valueOf), ajr.name());
+            edit.putString(valueOf2.length() != 0 ? valueOf.concat(valueOf2) : valueOf, ajr.name());
             edit.apply();
         }
     }
@@ -987,15 +978,15 @@ public class TaskListsActivity extends aql implements defpackage.alh, DatePicker
                 String trim = arv.a.getText().toString().trim();
                 dcb dcb = arv.b;
                 if (dcb.c == null) {
-                    dcd = dcd.c;
+                    dcd = defpackage.dcd.c;
                 } else {
                     dcd = dcb.c;
                 }
                 if (trim.equals(dcd.a) || TextUtils.isEmpty(trim)) {
                     str = null;
                 } else if (TextUtils.isEmpty(arv.b.b)) {
-                    anc P = arv.P();
-                    dii i3 = ((dii) dcb.g.a(bg.ao)).i(((dii) dcd.c.a(bg.ao)).h(trim));
+                    anc P = arb.P();
+                    dii i3 = ((dii) defpackage.dcb.g.a(bg.ao)).i(((dii) defpackage.dcd.c.a(bg.ao)).h(trim));
                     if (i3.b) {
                         dih = i3.a;
                     } else {
@@ -1005,12 +996,12 @@ public class TaskListsActivity extends aql implements defpackage.alh, DatePicker
                         dih = i3.a;
                     }
                     dih dih3 = dih;
-                    if (!dih.a(dih3, Boolean.TRUE.booleanValue())) {
+                    if (!defpackage.dih.a(dih3, Boolean.TRUE.booleanValue())) {
                         throw new dkw();
                     }
                     str = P.a((dcb) dih3).b;
                 } else {
-                    arv.P().d(arv.b.b, trim);
+                    arb.P().d(arv.b.b, trim);
                     str = arv.b.b;
                 }
                 a(str);

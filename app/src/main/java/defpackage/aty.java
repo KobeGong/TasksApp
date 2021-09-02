@@ -28,7 +28,7 @@ public final /* synthetic */ class aty implements View.OnClickListener {
             if (z2) {
                 z = false;
             }
-            aug.a.a(d, z);
+            aug.adapter.a(d, z);
         }
     }
 }

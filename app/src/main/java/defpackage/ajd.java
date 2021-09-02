@@ -27,13 +27,13 @@ public final class ajd {
     private static final doy a = doy.a("google.internal.tasks.v1.errorinfo-bin", eaa.b(czy.f));
 
     public static boolean a(dby dby) {
-        dca dca;
+        dca dcaInst;
         if (dby.e == null) {
-            dca = dca.g;
+            dcaInst = dca.g;
         } else {
-            dca = dby.e;
+            dcaInst = dby.e;
         }
-        return dca.a;
+        return dcaInst.a;
     }
 
     public static boolean a(String str) {
@@ -136,13 +136,13 @@ public final class ajd {
     }
 
     public static boolean b(dby dby) {
-        dca dca;
+        dca dcaInst;
         if (dby.e == null) {
-            dca = dca.g;
+            dcaInst = dca.g;
         } else {
-            dca = dby.e;
+            dcaInst = dby.e;
         }
-        return a(dca);
+        return a(dcaInst);
     }
 
     public static boolean a(dca dca) {

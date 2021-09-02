@@ -6,8 +6,8 @@ public final class dca extends dih implements djq {
     public static final dca g = new dca();
     private static volatile djx h;
     public boolean a;
-    public String b = "";
-    public String c = "";
+    public String b = "";//task_name
+    public String c = "";//task_detail
     public dmk d;
     public boolean e;
     public dan f;

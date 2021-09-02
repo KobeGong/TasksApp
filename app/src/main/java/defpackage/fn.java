@@ -10,6 +10,7 @@ import android.widget.FrameLayout;
 
 /* renamed from: fn  reason: default package */
 /* compiled from: PG */
+/* compiled from: ScrimInsetsFrameLayout */
 public class fn extends FrameLayout {
     public Drawable a;
     public Rect b;

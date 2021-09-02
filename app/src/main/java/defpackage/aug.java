@@ -3,16 +3,16 @@ package defpackage;
 /* renamed from: aug  reason: default package */
 /* compiled from: PG */
 public final class aug {
-    public final /* synthetic */ SortableAdapter a;
+    public final /* synthetic */ SortableAdapter adapter;
 
     public final void a(int i, int i2, boolean z) {
         dby g;
         dca dca;
         dmk dmk;
-        if (this.a.f != null && (g = this.a.g(i)) != null) {
-            atl atl = this.a.f;
+        if (this.adapter.f != null && (g = this.adapter.g(i)) != null) {
+            atl atl = this.adapter.f;
             String str = g.d;
-            FragmentActivity j = atl.a.getActivity();
+            FragmentActivity activity = atl.a.getActivity();
             if (z) {
                 dby a2 = auj.N().a(atl.a.X, str);
                 if (a2 != null) {
@@ -29,13 +29,13 @@ public final class aug {
                     }
                     aqj.a(dmk).a(atl.a.t, "datePicker - tasks fragment");
                 }
-            } else if (j instanceof aux) {
-                ((aux) j).a(atl.a.X, str, i2);
+            } else if (activity instanceof aux) {
+                ((aux) activity).a(atl.a.X, str, i2);
             }
         }
     }
 
     aug(SortableAdapter atg) {
-        this.a = atg;
+        this.adapter = atg;
     }
 }

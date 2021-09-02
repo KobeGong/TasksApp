@@ -327,10 +327,10 @@ public final class MySortAdapter extends SortableAdapter {
     @Override // defpackage.atg
     public final void b(ViewHolder afv, int i) {
         dby g = g(i);
-        atx atx = (atx) afv;
-        atx.a(g, f(i).size(), this.o.containsKey(g.d), true);
+        atx viewHolder = (atx) afv;
+        viewHolder.a(g, f(i).size(), this.o.containsKey(g.d), true);
         if (this.n.containsKey(g.d)) {
-            atx.c(((List) this.n.get(g.d)).size());
+            viewHolder.c(((List) this.n.get(g.d)).size());
         }
     }
 

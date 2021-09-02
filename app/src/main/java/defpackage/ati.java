@@ -18,7 +18,7 @@ public final class ati extends View.AccessibilityDelegate {
     public final void onInitializeAccessibilityNodeInfo(View view, AccessibilityNodeInfo accessibilityNodeInfo) {
         int i;
         super.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
-        Resources resources = this.a.h.getResources();
+        Resources resources = this.a.headerLayout.getResources();
         if (this.a.c) {
             i = R.string.a11y_collapse_completed;
         } else {

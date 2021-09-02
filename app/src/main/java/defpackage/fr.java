@@ -24,7 +24,7 @@ public class fr extends fn {
     private static final int[] f = {16842912};
     private static final int[] g = {-16842910};
     public final NavigationMenu menu;
-    public final NavigationMenuPresenter d;
+    public final NavigationMenuPresenter menuPresenter;//d
     public ft e;
     private final int h;
     private MenuInflater i;
@@ -42,7 +42,7 @@ public class fr extends fn {
         ColorStateList b;
         int i3;
         boolean z;
-        this.d = new NavigationMenuPresenter();
+        this.menuPresenter = new NavigationMenuPresenter();
         this.menu = new NavigationMenu(context);
         agw a = fp.a(context, attributeSet, fw.a, i2);
         sn.a(this, a.a(fw.b));
@@ -69,21 +69,21 @@ public class fr extends fn {
         }
         Drawable a2 = a.a(fw.g);
         if (a.f(fw.h)) {
-            this.d.b(a.e(fw.h, 0));
+            this.menuPresenter.b(a.e(fw.h, 0));
         }
         int e2 = a.e(fw.i, 0);
         this.menu.a(new fs(this));
-        this.d.d = 1;
-        this.d.a(context, this.menu);
-        this.d.a(b);
+        this.menuPresenter.d = 1;
+        this.menuPresenter.a(context, this.menu);
+        this.menuPresenter.a(b);
         if (z) {
-            this.d.a(i3);
+            this.menuPresenter.a(i3);
         }
-        this.d.b(colorStateList);
-        this.d.a(a2);
-        this.d.c(e2);
-        this.menu.a(this.d);
-        NavigationMenuPresenter fbVar = this.d;
+        this.menuPresenter.b(colorStateList);
+        this.menuPresenter.a(a2);
+        this.menuPresenter.c(e2);
+        this.menu.a(this.menuPresenter);
+        NavigationMenuPresenter fbVar = this.menuPresenter;
         if (fbVar.a == null) {
             fbVar.a = (NavigationMenuView) fbVar.f.inflate(R.layout.design_navigation_menu, (ViewGroup) this, false);
             if (fbVar.e == null) {
@@ -95,17 +95,17 @@ public class fr extends fn {
         addView(fbVar.a);
         if (a.f(fw.m)) {
             int g2 = a.g(fw.m, 0);
-            this.d.b(true);
+            this.menuPresenter.b(true);
             if (this.i == null) {
                 this.i = new yj(getContext());
             }
             this.i.inflate(g2, this.menu);
-            this.d.b(false);
-            this.d.a(false);
+            this.menuPresenter.b(false);
+            this.menuPresenter.a(false);
         }
         if (a.f(fw.f)) {
             int g3 = a.g(fw.f, 0);
-            NavigationMenuPresenter fbVar2 = this.d;
+            NavigationMenuPresenter fbVar2 = this.menuPresenter;
             fbVar2.a(fbVar2.f.inflate(g3, (ViewGroup) fbVar2.b, false));
         }
         a.b.recycle();
@@ -182,7 +182,7 @@ public class fr extends fn {
     /* access modifiers changed from: protected */
     @Override // defpackage.fn
     public final void a(tk tkVar) {
-        NavigationMenuPresenter fbVar = this.d;
+        NavigationMenuPresenter fbVar = this.menuPresenter;
         int b = tkVar.b();
         if (fbVar.n != b) {
             fbVar.n = b;
@@ -196,7 +196,7 @@ public class fr extends fn {
     public final void a(int i2) {
         MenuItem findItem = this.menu.findItem(i2);
         if (findItem != null) {
-            this.d.e.a((MenuItemImpl) findItem);
+            this.menuPresenter.e.a((MenuItemImpl) findItem);
         }
     }
 

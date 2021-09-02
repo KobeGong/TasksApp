@@ -1,6 +1,5 @@
 package defpackage;
 
-import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.content.Context;
 import android.os.Bundle;
@@ -16,7 +15,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.apps.tasks.common.TaskApplication;
@@ -52,10 +50,10 @@ public final class auj extends lc implements DatePickerDialog.OnDateSetListener 
     @Override // defpackage.lc
     public final View a(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         Boolean bool;
-        this.rootView = layoutInflater.inflate(com.google.android.apps.tasks.R.layout.tasks_fragment, (ViewGroup) null);
-        this.tasksRefresh = (SwipeRefreshLayout) this.rootView.findViewById(com.google.android.apps.tasks.R.id.tasks_refresh);
-        this.tasksRefreshEmpty = (SwipeRefreshLayout) this.rootView.findViewById(com.google.android.apps.tasks.R.id.tasks_refresh_empty);
-        this.tasksListView = (RecyclerView) this.rootView.findViewById(com.google.android.apps.tasks.R.id.tasks_list);
+        this.rootView = layoutInflater.inflate(com.google.android.apps.tasks.R.layout.tasks_fragment, null);
+        this.tasksRefresh = this.rootView.findViewById(com.google.android.apps.tasks.R.id.tasks_refresh);
+        this.tasksRefreshEmpty = this.rootView.findViewById(com.google.android.apps.tasks.R.id.tasks_refresh_empty);
+        this.tasksListView = this.rootView.findViewById(com.google.android.apps.tasks.R.id.tasks_list);
         if (this.taskAdapter != null) {
             bool = this.taskAdapter.c;
         } else {
@@ -65,7 +63,7 @@ public final class auj extends lc implements DatePickerDialog.OnDateSetListener 
         this.ag = this.rootView.findViewById(com.google.android.apps.tasks.R.id.empty_view);
         this.U = this.rootView.findViewById(com.google.android.apps.tasks.R.id.tasks_not_synced);
         this.ah = this.rootView.findViewById(com.google.android.apps.tasks.R.id.too_many_subtask_levels);
-        this.V = (Button) this.rootView.findViewById(com.google.android.apps.tasks.R.id.flatten_subtasks);
+        this.V = this.rootView.findViewById(com.google.android.apps.tasks.R.id.flatten_subtasks);
         this.tasksRefresh.a = new auk(this);
         this.tasksRefreshEmpty.a = new aul(this);
         this.tasksListView.setLayoutManager(new LinearLayoutManager());
@@ -87,7 +85,7 @@ public final class auj extends lc implements DatePickerDialog.OnDateSetListener 
         this.am = new att(ob.c(i(), com.google.android.apps.tasks.R.color.task_complete_swipe_background), ob.c(i(), com.google.android.apps.tasks.R.color.task_snooze_swipe_background), this.tasksListView.z.j);
         this.tasksListView.a(this.am);
         this.tasksListView.a(new ats(i()));
-        this.af = (NestedScrollView) this.rootView.findViewById(com.google.android.apps.tasks.R.id.tasks_refresh_empty_scrollable);
+        this.af = this.rootView.findViewById(com.google.android.apps.tasks.R.id.tasks_refresh_empty_scrollable);
         this.al = new auv(this);
         a(this.X, this.Y, false);
         this.tasksListView.a(new auy(this.tasksListView));
@@ -118,7 +116,7 @@ public final class auj extends lc implements DatePickerDialog.OnDateSetListener 
     @Override // defpackage.lc
     public final void a(Context context) {
         super.a(context);
-        cky.a((Activity) getActivity(), dck.e);
+        cky.a(getActivity(), dck.e);
     }
 
     @Override // defpackage.lc
@@ -149,30 +147,28 @@ public final class auj extends lc implements DatePickerDialog.OnDateSetListener 
                 if (this.taskAdapter != null) {
                     this.taskAdapter.f = null;
                 }
-                if (this.Y == ajr.BY_DUE_DATE) {
+                if (this.Y == defpackage.ajr.BY_DUE_DATE) {
                     this.taskAdapter = new DateSortAdapter();
                 } else {
                     this.taskAdapter = new MySortAdapter();
                 }
-                SortableAdapter atg = this.taskAdapter;
                 RecyclerView recyclerView = this.tasksListView;
-                LayoutInflater from = LayoutInflater.from(this.rootView.getContext());
-                if (atg.h == null) {
-                    atg.h = from.inflate(com.google.android.apps.tasks.R.layout.completed_header, (ViewGroup) recyclerView, false);
-                    atg.j = (TextView) atg.h.findViewById(com.google.android.apps.tasks.R.id.completed_count);
-                    atg.k = (ImageView) atg.h.findViewById(com.google.android.apps.tasks.R.id.expand);
-                    atg.k.setImageResource(com.google.android.apps.tasks.R.drawable.quantum_ic_stat_minus_1_grey600_24);
-                    atg.i = atg.h.findViewById(com.google.android.apps.tasks.R.id.completed_header);
-                    atg.i.setOnClickListener(new ath(atg));
-                    if (atg.g == null) {
-                        atg.g = new atj(atg);
+                LayoutInflater inflater = LayoutInflater.from(this.rootView.getContext());
+                if (this.taskAdapter.headerLayout == null) {
+                    this.taskAdapter.headerLayout = inflater.inflate(com.google.android.apps.tasks.R.layout.completed_header, recyclerView, false);
+                    this.taskAdapter.countVIEW = this.taskAdapter.headerLayout.findViewById(com.google.android.apps.tasks.R.id.completed_count);
+                    this.taskAdapter.expandView = this.taskAdapter.headerLayout.findViewById(com.google.android.apps.tasks.R.id.expand);
+                    this.taskAdapter.expandView.setImageResource(com.google.android.apps.tasks.R.drawable.quantum_ic_stat_minus_1_grey600_24);
+                    this.taskAdapter.headerView = this.taskAdapter.headerLayout.findViewById(com.google.android.apps.tasks.R.id.completed_header);
+                    this.taskAdapter.headerView.setOnClickListener(new ath(this.taskAdapter));
+                    if (this.taskAdapter.g == null) {
+                        this.taskAdapter.g = new atj(this.taskAdapter);
                     }
-                    atg.f();
-                    atg.l = (TextView) from.inflate(com.google.android.apps.tasks.R.layout.task_drag_num_subtasks, (ViewGroup) recyclerView, false);
+                    this.taskAdapter.f();
+                    this.taskAdapter.subtasksLayout = (TextView) inflater.inflate(com.google.android.apps.tasks.R.layout.task_drag_num_subtasks, recyclerView, false);
                 }
                 if (this.ai != null) {
                     RecyclerView recyclerView2 = new RecyclerView(this.rootView.getContext());
-                    this.rootView.getContext();
                     recyclerView2.setLayoutManager(new LinearLayoutManager());
                     this.ai.a(recyclerView2);
                 }
@@ -210,7 +206,7 @@ public final class auj extends lc implements DatePickerDialog.OnDateSetListener 
             LinkedHashMap linkedHashMap = new LinkedHashMap();
             for (dby dby : d.a()) {
                 if (dby.e == null) {
-                    dca = dca.g;
+                    dca = defpackage.dca.g;
                 } else {
                     dca = dby.e;
                 }
@@ -287,7 +283,7 @@ public final class auj extends lc implements DatePickerDialog.OnDateSetListener 
                 dih = g.a;
             }
             dih dih4 = dih;
-            if (!dih.a(dih4, Boolean.TRUE.booleanValue())) {
+            if (!defpackage.dih.a(dih4, Boolean.TRUE.booleanValue())) {
                 throw new dkw();
             }
             dmk dmk = (dmk) dih4;
@@ -296,15 +292,15 @@ public final class auj extends lc implements DatePickerDialog.OnDateSetListener 
                 any.get().c().a(this.X, this.Z, dmk);
                 SortableAdapter atg = this.taskAdapter;
                 dii dii = (dii) a2.a(bg.ao);
-                dii.a((dih) a2);
+                dii.a(a2);
                 dii dii2 = dii;
                 if (a2.e == null) {
-                    dca = dca.g;
+                    dca = defpackage.dca.g;
                 } else {
                     dca = a2.e;
                 }
                 dii dii3 = (dii) dca.a(bg.ao);
-                dii3.a((dih) dca);
+                dii3.a(dca);
                 dii g2 = dii2.g(dii3.a(dmk));
                 if (g2.b) {
                     dih2 = g2.a;
@@ -315,17 +311,17 @@ public final class auj extends lc implements DatePickerDialog.OnDateSetListener 
                     dih2 = g2.a;
                 }
                 dih dih6 = dih2;
-                if (!dih.a(dih6, Boolean.TRUE.booleanValue())) {
+                if (!defpackage.dih.a(dih6, Boolean.TRUE.booleanValue())) {
                     throw new dkw();
                 }
                 dby dby = (dby) dih6;
                 if (dby.e == null) {
-                    dca2 = dca.g;
+                    dca2 = defpackage.dca.g;
                 } else {
                     dca2 = dby.e;
                 }
                 if (dca2.a) {
-                    int a3 = atg.a(atg.b, dby.d);
+                    int a3 = SortableAdapter.a(atg.b, dby.d);
                     if (a3 >= 0) {
                         atg.b.set(a3, dby);
                         if (atg.c) {
@@ -349,22 +345,10 @@ public final class auj extends lc implements DatePickerDialog.OnDateSetListener 
         int i3 = 0;
         boolean isEmpty = TextUtils.isEmpty(this.X);
         boolean z5 = this.taskAdapter.getCount() == 0;
-        if (this.aj == 0) {
-            z2 = true;
-        } else {
-            z2 = false;
-        }
-        if (isEmpty || z5 || this.ak) {
-            z3 = true;
-        } else {
-            z3 = false;
-        }
+        z2 = this.aj == 0;
+        z3 = isEmpty || z5 || this.ak;
         SwipeRefreshLayout swipeRefreshLayout = this.tasksRefresh;
-        if (!z3) {
-            z4 = true;
-        } else {
-            z4 = false;
-        }
+        z4 = !z3;
         a(swipeRefreshLayout, z4, z);
         a(this.tasksRefreshEmpty, z3, z);
         if (z3) {
@@ -385,10 +369,10 @@ public final class auj extends lc implements DatePickerDialog.OnDateSetListener 
             this.U.setVisibility(i2);
             this.ah.setVisibility(i3);
             this.V.setEnabled(true);
-            b((View) this.af);
+            b(this.af);
             return;
         }
-        b((View) this.tasksListView);
+        b(this.tasksListView);
     }
 
     private static void a(View view, boolean z, boolean z2) {

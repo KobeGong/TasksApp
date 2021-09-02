@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 /* compiled from: PG */
 public final class bvd extends SQLiteOpenHelper {
     public bvd(Context context, long j) {
-        super(context, new StringBuilder(43).append(j).append("_tasks.notifications.db").toString(), (SQLiteDatabase.CursorFactory) null, 3);
+        super(context, j + "_tasks.notifications.db", null, 3);
     }
 
     public final void onCreate(SQLiteDatabase sQLiteDatabase) {

@@ -6,7 +6,7 @@ import android.widget.FrameLayout;
 
 /* compiled from: PG */
 public class TaskItemFrameLayout extends FrameLayout {
-    public Runnable a;
+    public Runnable action;
 
     public TaskItemFrameLayout(Context context) {
         super(context);
@@ -20,10 +20,10 @@ public class TaskItemFrameLayout extends FrameLayout {
         super(context, attributeSet, i);
     }
 
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        super.onLayout(z, i, i2, i3, i4);
-        if (this.a != null) {
-            this.a.run();
+    public void onLayout(boolean changed, int left, int top, int right, int bottom) {
+        super.onLayout(changed, left, top, right, bottom);
+        if (this.action != null) {
+            this.action.run();
         }
     }
 }

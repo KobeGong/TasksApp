@@ -9,8 +9,12 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PathMeasure;
 import android.graphics.RectF;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
+
+import androidx.annotation.RequiresApi;
+
 import com.google.android.apps.tasks.R;
 
 import defpackage.cld;
@@ -52,6 +56,7 @@ public class FancyCheckboxView extends View {
         b();
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public FancyCheckboxView(Context context, AttributeSet attributeSet, int i2, int i3) {
         super(context, attributeSet, i2, i3);
         b();
@@ -65,6 +70,7 @@ public class FancyCheckboxView extends View {
     }
 
     /* access modifiers changed from: protected */
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
     public void onSizeChanged(int i2, int i3, int i4, int i5) {
         int paddingStart = getPaddingStart();
         int paddingEnd = getPaddingEnd();
@@ -108,7 +114,7 @@ public class FancyCheckboxView extends View {
                 f2 = f4 - f3;
             }
             this.g.getSegment(f2, f4, this.i, true);
-            this.j.setColor(((Integer) new ArgbEvaluator().evaluate(this.a, Integer.valueOf(this.l), Integer.valueOf(this.k))).intValue());
+            this.j.setColor((Integer) new ArgbEvaluator().evaluate(this.a, this.l, this.k));
         }
     }
 

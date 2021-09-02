@@ -13,7 +13,6 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import com.google.android.apps.tasks.R;
 
 /* renamed from: arx  reason: default package */
 /* compiled from: PG */
@@ -31,17 +30,17 @@ public final class arx extends gu implements DatePickerDialog.OnDateSetListener 
 
     @Override // defpackage.lc
     public final View a(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        View inflate = layoutInflater.inflate(R.layout.add_task_fragment, viewGroup, false);
-        this.U = (EditText) inflate.findViewById(R.id.add_task_title);
-        this.V = (EditText) inflate.findViewById(R.id.add_task_details);
-        this.W = (ImageButton) inflate.findViewById(R.id.add_task_more);
-        this.ad = (Chip) inflate.findViewById(R.id.add_task_due_date_chip);
+        View inflate = layoutInflater.inflate(com.google.android.apps.tasks.R.layout.add_task_fragment, viewGroup, false);
+        this.U = (EditText) inflate.findViewById(com.google.android.apps.tasks.R.id.add_task_title);
+        this.V = (EditText) inflate.findViewById(com.google.android.apps.tasks.R.id.add_task_details);
+        this.W = (ImageButton) inflate.findViewById(com.google.android.apps.tasks.R.id.add_task_more);
+        this.ad = (Chip) inflate.findViewById(com.google.android.apps.tasks.R.id.add_task_due_date_chip);
         this.Z = jd.b(k(), (int) R.color.blueText);
-        this.X = inflate.findViewById(R.id.add_task_change_details);
+        this.X = inflate.findViewById(com.google.android.apps.tasks.R.id.add_task_change_details);
         this.X.setOnClickListener(new ary(this));
-        this.Y = inflate.findViewById(R.id.add_task_pick_due_date);
+        this.Y = inflate.findViewById(com.google.android.apps.tasks.R.id.add_task_pick_due_date);
         this.Y.setOnClickListener(new arz(this));
-        ((Button) inflate.findViewById(R.id.add_task_done)).setOnClickListener(new asa(this));
+        ((Button) inflate.findViewById(com.google.android.apps.tasks.R.id.add_task_done)).setOnClickListener(new asa(this));
         this.W.setOnClickListener(new asb(this));
         this.ad.setOnClickListener(new asc(this));
         this.ad.c = new asd(this);

@@ -24,11 +24,11 @@ public abstract class SortableAdapter extends Adapter {
     public boolean c;
     public atl f;
     public atj g;
-    public View h;
-    public View i;
-    public TextView j;
-    public ImageView k;
-    public TextView l;
+    public View headerLayout;
+    public View headerView;
+    public TextView countVIEW;
+    public ImageView expandView;
+    public TextView subtasksLayout;
     private boolean o;
 
     SortableAdapter() {
@@ -159,10 +159,10 @@ public abstract class SortableAdapter extends Adapter {
     }
 
     @Override // defpackage.aet
-    public final void onBindViewHolder(ViewHolder afv, int i2) {
-        int d = d();
-        if (d == i2) {
-            atx viewHolder = (atx) afv;
+    public final void onBindViewHolder(ViewHolder holder, int position) {
+        int count = d();
+        if (count == position) {
+            atx viewHolder = (atx) holder;
             viewHolder.v();
             sn.a(viewHolder.a, "");
             if (viewHolder.q.getParent() != null) {
@@ -172,13 +172,13 @@ public abstract class SortableAdapter extends Adapter {
             viewHolder.p.addView(viewHolder.q);
             viewHolder.t();
             viewHolder.p.setBackground(viewHolder.q.getBackground());
-        } else if (i2 > d) {
-            dby g2 = g(i2);
+        } else if (position > count) {
+            dby g2 = g(position);
             if (g2 != null) {
-                ((atx) afv).a(g2, f(i2).size(), false, true);
+                ((atx) holder).a(g2, f(position).size(), false, true);
             }
         } else {
-            b(afv, i2);
+            b(holder, position);
         }
     }
 
@@ -207,14 +207,14 @@ public abstract class SortableAdapter extends Adapter {
     }
 
     /* access modifiers changed from: package-private */
-    public final ViewHolder c(ViewGroup viewGroup, int i2) {
+    public final ViewHolder c(ViewGroup viewGroup, int position) {
         LayoutInflater from = LayoutInflater.from(viewGroup.getContext());
-        if (i2 == 0) {
+        if (position == 0) {
             return new atk(from.inflate(R.layout.tasks_all_completed, viewGroup, false));
         }
-        atx atx = new atx((TaskItemFrameLayout) from.inflate(R.layout.task, viewGroup, false), this.h, this.l);
-        atx.v = new aug(this);
-        return atx;
+        atx viewHolder = new atx((TaskItemFrameLayout) from.inflate(R.layout.task, viewGroup, false), this.headerLayout, this.subtasksLayout);
+        viewHolder.v = new aug(this);
+        return viewHolder;
     }
 
     private final int h() {
@@ -357,9 +357,9 @@ public abstract class SortableAdapter extends Adapter {
         if (this.g != null) {
             atj atj = this.g;
             this.b.size();
-            atj.a.j.setText(atj.a.h.getResources().getString(R.string.completed_task_header, atj.a.b.size()));
-            SortableAdapter atg = atj.a;
-            atg.j.setAccessibilityDelegate(new ati(atg));
+            atj.adapter.countVIEW.setText(atj.adapter.headerLayout.getResources().getString(R.string.completed_task_header, atj.adapter.b.size()));
+            SortableAdapter atg = atj.adapter;
+            atg.countVIEW.setAccessibilityDelegate(new ati(atg));
         }
     }
 
