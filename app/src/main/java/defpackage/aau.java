@@ -5,10 +5,10 @@ package defpackage;
 final class aau extends defpackage.zr {
     private final /* synthetic */ defpackage.aap d;
 
-    public aau(defpackage.aap aap, android.content.Context context, defpackage.ze zeVar, android.view.View view) {
+    public aau(defpackage.aap aap, android.content.Context context, MenuBuilder zeVar, android.view.View view) {
         this.d = aap;
         super(context, zeVar, view, true);
-        a((defpackage.zu) aap.m);
+        a((MenuPresenter_Callback) aap.m);
     }
 
     /* access modifiers changed from: protected */

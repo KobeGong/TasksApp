@@ -858,7 +858,7 @@ public final class adw extends defpackage.afd implements defpackage.aif {
     }
 
     private final boolean x() {
-        if (defpackage.sn.a.j(this.b) == 1) {
+        if (ViewCompat.a.j(this.b) == 1) {
             return true;
         }
         return false;

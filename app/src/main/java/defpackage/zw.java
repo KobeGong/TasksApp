@@ -3,9 +3,9 @@ package defpackage;
 /* renamed from: zw reason: default package */
 /* compiled from: PG */
 public interface zw {
-    defpackage.zi a();
+    MenuItemImpl a();
 
-    void a(defpackage.zi ziVar);
+    void a(MenuItemImpl ziVar);
 
     boolean c_();
 }

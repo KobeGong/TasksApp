@@ -5,10 +5,10 @@ package defpackage;
 final class yz implements java.lang.Runnable {
     private final /* synthetic */ defpackage.za a;
     private final /* synthetic */ android.view.MenuItem b;
-    private final /* synthetic */ defpackage.ze c;
+    private final /* synthetic */ MenuBuilder c;
     private final /* synthetic */ defpackage.yy d;
 
-    yz(defpackage.yy yyVar, defpackage.za zaVar, android.view.MenuItem menuItem, defpackage.ze zeVar) {
+    yz(defpackage.yy yyVar, defpackage.za zaVar, android.view.MenuItem menuItem, MenuBuilder zeVar) {
         this.d = yyVar;
         this.a = zaVar;
         this.b = menuItem;
@@ -22,7 +22,7 @@ final class yz implements java.lang.Runnable {
             this.d.a.f = false;
         }
         if (this.b.isEnabled() && this.b.hasSubMenu()) {
-            this.c.a(this.b, (defpackage.zt) null, 4);
+            this.c.a(this.b, (MenuPresenter) null, 4);
         }
     }
 }

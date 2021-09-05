@@ -1,5 +1,7 @@
 package com.google.android.apps.tasks.ui.components.snackbar;
 
+import defpackage.ViewCompat;
+
 /* compiled from: PG */
 public class SnackbarContentLayout extends android.widget.LinearLayout {
     public android.widget.TextView a;
@@ -66,8 +68,8 @@ public class SnackbarContentLayout extends android.widget.LinearLayout {
             return z;
         }
         android.widget.TextView textView = this.a;
-        if (defpackage.sn.a.n(textView)) {
-            defpackage.sn.a(textView, defpackage.sn.a.k(textView), i2, defpackage.sn.a.l(textView), i3);
+        if (ViewCompat.a.n(textView)) {
+            ViewCompat.a(textView, ViewCompat.a.k(textView), i2, ViewCompat.a.l(textView), i3);
         } else {
             textView.setPadding(textView.getPaddingLeft(), i2, textView.getPaddingRight(), i3);
         }

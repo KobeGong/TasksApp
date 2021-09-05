@@ -27,17 +27,17 @@ public final class zc extends android.widget.BaseAdapter {
         } else {
             view2 = view;
         }
-        ((defpackage.zw) view2).a((defpackage.zi) getItem(i));
+        ((defpackage.zw) view2).a((MenuItemImpl) getItem(i));
         return view2;
     }
 
     private final void a() {
-        defpackage.zi ziVar = this.b.b.j;
+        MenuItemImpl ziVar = this.b.b.j;
         if (ziVar != null) {
             java.util.ArrayList k = this.b.b.k();
             int size = k.size();
             for (int i = 0; i < size; i++) {
-                if (((defpackage.zi) k.get(i)) == ziVar) {
+                if (((MenuItemImpl) k.get(i)) == ziVar) {
                     this.a = i;
                     return;
                 }
@@ -56,6 +56,6 @@ public final class zc extends android.widget.BaseAdapter {
         if (this.a >= 0 && i >= this.a) {
             i++;
         }
-        return (defpackage.zi) k.get(i);
+        return (MenuItemImpl) k.get(i);
     }
 }

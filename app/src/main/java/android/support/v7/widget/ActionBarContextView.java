@@ -1,5 +1,9 @@
 package android.support.v7.widget;
 
+import defpackage.MenuBuilder;
+import defpackage.MenuPresenter;
+import defpackage.ViewCompat;
+
 /* compiled from: PG */
 public class ActionBarContextView extends defpackage.aaf {
     public java.lang.CharSequence f;
@@ -25,7 +29,7 @@ public class ActionBarContextView extends defpackage.aaf {
     public ActionBarContextView(android.content.Context context, android.util.AttributeSet attributeSet, int i2) {
         super(context, attributeSet, i2);
         defpackage.agw a = defpackage.agw.a(context, attributeSet, defpackage.xu.x, i2, 0);
-        defpackage.sn.a((android.view.View) this, a.a(defpackage.xu.y));
+        ViewCompat.a((android.view.View) this, a.a(defpackage.xu.y));
         this.n = a.g(defpackage.xu.C, 0);
         this.o = a.g(defpackage.xu.B, 0);
         this.d = a.f(defpackage.xu.A, 0);
@@ -117,16 +121,16 @@ public class ActionBarContextView extends defpackage.aaf {
             addView(this.h);
         }
         this.h.findViewById(2131755173).setOnClickListener(new defpackage.aaj(ycVar));
-        defpackage.ze zeVar = (defpackage.ze) ycVar.b();
+        MenuBuilder zeVar = (MenuBuilder) ycVar.b();
         if (this.c != null) {
             this.c.g();
         }
         this.c = new defpackage.aap(getContext());
         this.c.d();
         android.view.ViewGroup.LayoutParams layoutParams = new android.view.ViewGroup.LayoutParams(-2, -1);
-        zeVar.a((defpackage.zt) this.c, this.a);
+        zeVar.addMenuPresenter((MenuPresenter) this.c, this.a);
         this.b = (android.support.v7.widget.ActionMenuView) this.c.a((android.view.ViewGroup) this);
-        defpackage.sn.a((android.view.View) this.b, (android.graphics.drawable.Drawable) null);
+        ViewCompat.a((android.view.View) this.b, (android.graphics.drawable.Drawable) null);
         addView(this.b, layoutParams);
     }
 

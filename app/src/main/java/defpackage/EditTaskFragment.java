@@ -88,7 +88,7 @@ public final class EditTaskFragment extends defpackage.arb implements android.ap
             this.W = bundle.getString("task id");
             this.af = bundle.getBoolean("start_in_edit_mode");
         }
-        defpackage.sn.a(this.X, "taskTitleTransition");
+        ViewCompat.a(this.X, "taskTitleTransition");
         a(new defpackage.ass(this));
         return inflate;
     }

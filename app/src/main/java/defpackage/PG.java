@@ -14,7 +14,7 @@ public final class PG implements java.lang.Runnable {
 
     public final void run() {
         if (this.c.a != null && this.c.a.a()) {
-            defpackage.sn.a(this.a, (java.lang.Runnable) this);
+            ViewCompat.a(this.a, (java.lang.Runnable) this);
         } else if (this.b && this.c.b != null) {
             this.c.b.a(this.a);
         }

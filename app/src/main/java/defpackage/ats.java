@@ -45,7 +45,7 @@ public final class ats extends defpackage.afc {
         boolean z;
         int i;
         defpackage.atg atg = (defpackage.atg) recyclerView.k;
-        if (defpackage.sn.a.j(recyclerView) == 1) {
+        if (ViewCompat.a.j(recyclerView) == 1) {
             z = true;
         } else {
             z = false;

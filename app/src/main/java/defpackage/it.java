@@ -86,7 +86,7 @@ public class it extends defpackage.mv {
 
     public final void a(android.view.ViewGroup viewGroup, java.lang.Object obj) {
         defpackage.je jeVar = (defpackage.je) obj;
-        if (!defpackage.jk.b.contains(viewGroup) && defpackage.sn.a.r(viewGroup)) {
+        if (!defpackage.jk.b.contains(viewGroup) && ViewCompat.a.r(viewGroup)) {
             defpackage.jk.b.add(viewGroup);
             if (jeVar == null) {
                 jeVar = defpackage.jk.a;

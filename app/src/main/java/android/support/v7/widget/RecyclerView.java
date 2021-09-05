@@ -1,5 +1,7 @@
 package android.support.v7.widget;
 
+import defpackage.ViewCompat;
+
 /* compiled from: PG */
 public class RecyclerView extends android.view.ViewGroup implements defpackage.sg {
     public static final android.view.animation.Interpolator M = new defpackage.aes();
@@ -150,8 +152,8 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
         this.z.h = this.H;
         this.f = new defpackage.aeo(new defpackage.abd(this));
         this.g = new defpackage.acm(new defpackage.aco(this));
-        if (defpackage.sn.a.d(this) == 0) {
-            defpackage.sn.a((android.view.View) this, 1);
+        if (ViewCompat.a.d(this) == 0) {
+            ViewCompat.a((android.view.View) this, 1);
         }
         this.ad = (android.view.accessibility.AccessibilityManager) getContext().getSystemService("accessibility");
         a(new defpackage.afw(this));
@@ -235,7 +237,7 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
 
     public final void a(defpackage.afw afw) {
         this.J = afw;
-        defpackage.sn.a((android.view.View) this, (defpackage.rn) this.J);
+        ViewCompat.a((android.view.View) this, (defpackage.rn) this.J);
     }
 
     public void setClipToPadding(boolean z2) {
@@ -635,7 +637,7 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
                         z2 = true;
                     }
                     if (!(!z2 && f2 == 0.0f && f3 == 0.0f)) {
-                        defpackage.sn.a.c(this);
+                        ViewCompat.a.c(this);
                     }
                 }
             }
@@ -798,7 +800,7 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
             z2 |= this.y.isFinished();
         }
         if (z2) {
-            defpackage.sn.a.c(this);
+            ViewCompat.a.c(this);
         }
     }
 
@@ -885,7 +887,7 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
                 z2 = false;
             }
             if (!z2 && this.l.d()) {
-                if (defpackage.sn.a.j(this.l.b) == 1) {
+                if (ViewCompat.a.j(this.l.b) == 1) {
                     z3 = true;
                 } else {
                     z3 = false;
@@ -923,7 +925,7 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
                     this.T.set(0, 0, findNextFocus.getWidth(), findNextFocus.getHeight());
                     offsetDescendantRectToMyCoords(view, this.i);
                     offsetDescendantRectToMyCoords(findNextFocus, this.T);
-                    int i4 = defpackage.sn.a.j(this.l.b) == 1 ? -1 : 1;
+                    int i4 = ViewCompat.a.j(this.l.b) == 1 ? -1 : 1;
                     if ((this.i.left < this.T.left || this.i.right <= this.T.left) && this.i.right < this.T.right) {
                         i3 = 1;
                     } else if ((this.i.right > this.T.right || this.i.left >= this.T.right) && this.i.left > this.T.left) {
@@ -1761,7 +1763,7 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
             z2 |= this.y.isFinished();
         }
         if (z2) {
-            defpackage.sn.a.c(this);
+            ViewCompat.a.c(this);
         }
     }
 
@@ -1882,7 +1884,7 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
     }
 
     public final void c(int i2, int i3) {
-        setMeasuredDimension(defpackage.afd.a(i2, getPaddingLeft() + getPaddingRight(), defpackage.sn.a.e(this)), defpackage.afd.a(i3, getPaddingTop() + getPaddingBottom(), defpackage.sn.a.f(this)));
+        setMeasuredDimension(defpackage.afd.a(i2, getPaddingLeft() + getPaddingRight(), ViewCompat.a.e(this)), defpackage.afd.a(i3, getPaddingTop() + getPaddingBottom(), ViewCompat.a.f(this)));
     }
 
     /* access modifiers changed from: protected */
@@ -1917,7 +1919,7 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
                     if (afv.a.getParent() == this && !afv.b()) {
                         int i3 = afv.n;
                         if (i3 != -1) {
-                            defpackage.sn.a(afv.a, i3);
+                            ViewCompat.a(afv.a, i3);
                             afv.n = -1;
                         }
                     }
@@ -1959,7 +1961,7 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
 
     public final void k() {
         if (!this.I && this.o) {
-            defpackage.sn.a((android.view.View) this, this.aA);
+            ViewCompat.a((android.view.View) this, this.aA);
             this.I = true;
         }
     }
@@ -2880,7 +2882,7 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
             z5 = z2;
         }
         if (z5) {
-            defpackage.sn.a.c(this);
+            ViewCompat.a.c(this);
         }
     }
 
@@ -3181,7 +3183,7 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
             this.az.add(afv);
             return false;
         }
-        defpackage.sn.a(afv.a, i2);
+        ViewCompat.a(afv.a, i2);
         return true;
     }
 

@@ -1,5 +1,8 @@
 package android.support.design.widget;
 
+import defpackage.ViewCompat;
+import defpackage.WindowInsetsCompat;
+
 /* compiled from: PG */
 public class CoordinatorLayout extends android.view.ViewGroup implements defpackage.sj {
     private static final java.lang.String e;
@@ -8,7 +11,7 @@ public class CoordinatorLayout extends android.view.ViewGroup implements defpack
     private static final java.util.Comparator h;
     private static final defpackage.rg i = new defpackage.rh();
     public final defpackage.ul a;
-    public defpackage.tk b;
+    public WindowInsetsCompat b;
     public boolean c;
     public android.view.ViewGroup.OnHierarchyChangeListener d;
     private final java.util.List j;
@@ -23,7 +26,7 @@ public class CoordinatorLayout extends android.view.ViewGroup implements defpack
     private defpackage.hb s;
     private boolean t;
     private android.graphics.drawable.Drawable u;
-    private defpackage.sl v;
+    private defpackage.OnApplyWindowInsetsListener v;
     private final defpackage.sk w;
 
     private static android.graphics.Rect a() {
@@ -90,8 +93,8 @@ public class CoordinatorLayout extends android.view.ViewGroup implements defpack
             }
             getViewTreeObserver().addOnPreDrawListener(this.s);
         }
-        if (this.b == null && defpackage.sn.a.h(this)) {
-            defpackage.sn.a.g(this);
+        if (this.b == null && ViewCompat.a.h(this)) {
+            ViewCompat.a.g(this);
         }
         this.o = true;
     }
@@ -1048,7 +1051,7 @@ public class CoordinatorLayout extends android.view.ViewGroup implements defpack
             defpackage.ha haVar4 = (defpackage.ha) view.getLayoutParams();
             android.graphics.Rect a5 = a();
             a5.set(getPaddingLeft() + haVar4.leftMargin, getPaddingTop() + haVar4.topMargin, (getWidth() - getPaddingRight()) - haVar4.rightMargin, (getHeight() - getPaddingBottom()) - haVar4.bottomMargin);
-            if (this.b != null && defpackage.sn.a.h(this) && !defpackage.sn.a.h(view)) {
+            if (this.b != null && ViewCompat.a.h(this) && !ViewCompat.a.h(view)) {
                 a5.left += this.b.a();
                 a5.top += this.b.b();
                 a5.right -= this.b.c();
@@ -1064,7 +1067,7 @@ public class CoordinatorLayout extends android.view.ViewGroup implements defpack
 
     /* access modifiers changed from: protected */
     public void onLayout(boolean z, int i2, int i3, int i4, int i5) {
-        int j2 = defpackage.sn.a.j(this);
+        int j2 = ViewCompat.a.j(this);
         int size = this.j.size();
         for (int i6 = 0; i6 < size; i6++) {
             android.view.View view = (android.view.View) this.j.get(i6);
@@ -1559,7 +1562,7 @@ public class CoordinatorLayout extends android.view.ViewGroup implements defpack
     private static void d(android.view.View view, int i2) {
         defpackage.ha haVar = (defpackage.ha) view.getLayoutParams();
         if (haVar.i != i2) {
-            defpackage.sn.c(view, i2 - haVar.i);
+            ViewCompat.c(view, i2 - haVar.i);
             haVar.i = i2;
         }
     }
@@ -1567,7 +1570,7 @@ public class CoordinatorLayout extends android.view.ViewGroup implements defpack
     private static void e(android.view.View view, int i2) {
         defpackage.ha haVar = (defpackage.ha) view.getLayoutParams();
         if (haVar.j != i2) {
-            defpackage.sn.b(view, i2 - haVar.j);
+            ViewCompat.b(view, i2 - haVar.j);
             haVar.j = i2;
         }
     }
@@ -1870,15 +1873,15 @@ public class CoordinatorLayout extends android.view.ViewGroup implements defpack
 
     private final void b() {
         if (android.os.Build.VERSION.SDK_INT >= 21) {
-            if (defpackage.sn.a.h(this)) {
+            if (ViewCompat.a.h(this)) {
                 if (this.v == null) {
                     this.v = new defpackage.gv(this);
                 }
-                defpackage.sn.a((android.view.View) this, this.v);
+                ViewCompat.setOnApplyWindowInsetsListener((android.view.View) this, this.v);
                 setSystemUiVisibility(1280);
                 return;
             }
-            defpackage.sn.a((android.view.View) this, (defpackage.sl) null);
+            ViewCompat.setOnApplyWindowInsetsListener((android.view.View) this, (defpackage.OnApplyWindowInsetsListener) null);
         }
     }
 

@@ -1,5 +1,7 @@
 package android.support.v4.widget;
 
+import defpackage.ViewCompat;
+
 /* compiled from: PG */
 public class SwipeRefreshLayout extends android.view.ViewGroup implements defpackage.sf, defpackage.si {
     private static final int[] B = {16842766};
@@ -306,7 +308,7 @@ public class SwipeRefreshLayout extends android.view.ViewGroup implements defpac
     public void requestDisallowInterceptTouchEvent(boolean z2) {
         if (android.os.Build.VERSION.SDK_INT >= 21 || !(this.m instanceof android.widget.AbsListView)) {
             if (this.m != null) {
-                if (!defpackage.sn.a.w(this.m)) {
+                if (!ViewCompat.a.w(this.m)) {
                     return;
                 }
             }
@@ -534,7 +536,7 @@ public class SwipeRefreshLayout extends android.view.ViewGroup implements defpac
 
     public final void a(int i2) {
         this.e.bringToFront();
-        defpackage.sn.b((android.view.View) this.e, i2);
+        ViewCompat.b((android.view.View) this.e, i2);
         this.c = this.e.getTop();
     }
 

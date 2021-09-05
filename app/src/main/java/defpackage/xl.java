@@ -9,11 +9,11 @@ final class xl implements defpackage.zf {
     public android.content.IntentFilter d;
     public final /* synthetic */ defpackage.wu e;
 
-    public final boolean a(defpackage.ze zeVar, android.view.MenuItem menuItem) {
+    public final boolean a(MenuBuilder zeVar, android.view.MenuItem menuItem) {
         return false;
     }
 
-    public final void a(defpackage.ze zeVar) {
+    public final void a(MenuBuilder zeVar) {
     }
 
     xl(defpackage.wu wuVar, defpackage.xn xnVar) {

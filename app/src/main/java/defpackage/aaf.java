@@ -93,12 +93,12 @@ public class aaf extends android.view.ViewGroup {
             if (getVisibility() != 0) {
                 setAlpha(0.0f);
             }
-            defpackage.te a2 = defpackage.sn.b(this).a(1.0f);
+            defpackage.te a2 = ViewCompat.b(this).a(1.0f);
             a2.a(j);
             a2.a((defpackage.th) this.f.a(a2, i));
             return a2;
         }
-        defpackage.te a3 = defpackage.sn.b(this).a(0.0f);
+        defpackage.te a3 = ViewCompat.b(this).a(0.0f);
         a3.a(j);
         a3.a((defpackage.th) this.f.a(a3, i));
         return a3;

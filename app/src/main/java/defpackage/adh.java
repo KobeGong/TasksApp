@@ -100,7 +100,7 @@ public final class adh extends defpackage.afc implements defpackage.afj {
     }
 
     private final boolean a() {
-        if (defpackage.sn.a.j(this.j) == 1) {
+        if (ViewCompat.a.j(this.j) == 1) {
             return true;
         }
         return false;

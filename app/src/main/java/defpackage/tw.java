@@ -86,7 +86,7 @@ public abstract class tw implements android.view.View.OnTouchListener {
                 if (this.o || this.k <= 0) {
                     this.g.run();
                 } else {
-                    defpackage.sn.a(this.b, this.g, (long) this.k);
+                    ViewCompat.a(this.b, this.g, (long) this.k);
                 }
                 this.o = true;
             }

@@ -1,5 +1,7 @@
 package android.support.design.internal;
 
+import defpackage.MenuBuilder;
+
 /* compiled from: PG */
 public class NavigationMenuView extends android.support.v7.widget.RecyclerView implements defpackage.zv {
     public NavigationMenuView(android.content.Context context) {
@@ -15,6 +17,6 @@ public class NavigationMenuView extends android.support.v7.widget.RecyclerView i
         a((defpackage.afd) new defpackage.adw(0));
     }
 
-    public final void a(defpackage.ze zeVar) {
+    public final void a(MenuBuilder zeVar) {
     }
 }

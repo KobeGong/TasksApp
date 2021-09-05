@@ -1,11 +1,16 @@
 package android.support.design.appbar;
 
+import defpackage.ClsToolbarLP;
+import defpackage.ThemeEnforcement;
+import defpackage.ViewCompat;
+import defpackage.WindowInsetsCompat;
+
 @defpackage.gy(a = android.support.design.appbar.AppBarLayout.Behavior.class)
 /* compiled from: PG */
 public class AppBarLayout extends android.widget.LinearLayout {
     public boolean a;
     public int b;
-    public defpackage.tk c;
+    public WindowInsetsCompat c;
     public java.util.List d;
     public boolean e;
     private int f;
@@ -78,7 +83,7 @@ public class AppBarLayout extends android.widget.LinearLayout {
             if (i3 == 1) {
                 int a2 = a();
                 if ((i2 < 0 && a2 == 0) || (i2 > 0 && a2 == (-appBarLayout.e()))) {
-                    defpackage.sn.c(view);
+                    ViewCompat.c(view);
                 }
             }
         }
@@ -126,7 +131,7 @@ public class AppBarLayout extends android.widget.LinearLayout {
                 android.view.View childAt = appBarLayout.getChildAt(i6);
                 int top = childAt.getTop();
                 int bottom = childAt.getBottom();
-                defpackage.da daVar = (defpackage.da) childAt.getLayoutParams();
+                ClsToolbarLP daVar = (ClsToolbarLP) childAt.getLayoutParams();
                 if (a(daVar.a, 32)) {
                     int i7 = top - daVar.topMargin;
                     i4 = daVar.bottomMargin + bottom;
@@ -143,7 +148,7 @@ public class AppBarLayout extends android.widget.LinearLayout {
             }
             if (i2 >= 0) {
                 android.view.View childAt2 = appBarLayout.getChildAt(i2);
-                defpackage.da daVar2 = (defpackage.da) childAt2.getLayoutParams();
+                ClsToolbarLP daVar2 = (ClsToolbarLP) childAt2.getLayoutParams();
                 int i8 = daVar2.a;
                 if ((i8 & 17) == 17) {
                     int i9 = -childAt2.getTop();
@@ -152,10 +157,10 @@ public class AppBarLayout extends android.widget.LinearLayout {
                         i10 += appBarLayout.f();
                     }
                     if (a(i8, 2)) {
-                        i10 += defpackage.sn.a.f(childAt2);
+                        i10 += ViewCompat.a.f(childAt2);
                         i3 = i9;
                     } else if (a(i8, 5)) {
-                        i3 = defpackage.sn.a.f(childAt2) + i10;
+                        i3 = ViewCompat.a.f(childAt2) + i10;
                         if (a2 >= i3) {
                             i10 = i3;
                             i3 = i9;
@@ -342,7 +347,7 @@ public class AppBarLayout extends android.widget.LinearLayout {
                         break;
                     }
                     android.view.View childAt = appBarLayout.getChildAt(i7);
-                    defpackage.da daVar = (defpackage.da) childAt.getLayoutParams();
+                    ClsToolbarLP daVar = (ClsToolbarLP) childAt.getLayoutParams();
                     android.view.animation.Interpolator interpolator = daVar.b;
                     if (abs < childAt.getTop() || abs > childAt.getBottom()) {
                         i7++;
@@ -351,12 +356,12 @@ public class AppBarLayout extends android.widget.LinearLayout {
                         if ((i8 & 1) != 0) {
                             i6 = daVar.bottomMargin + childAt.getHeight() + daVar.topMargin + 0;
                             if ((i8 & 2) != 0) {
-                                i6 -= defpackage.sn.a.f(childAt);
+                                i6 -= ViewCompat.a.f(childAt);
                             }
                         } else {
                             i6 = 0;
                         }
-                        if (defpackage.sn.a.h(childAt)) {
+                        if (ViewCompat.a.h(childAt)) {
                             i6 -= appBarLayout.f();
                         }
                         if (i6 > 0) {
@@ -397,7 +402,7 @@ public class AppBarLayout extends android.widget.LinearLayout {
                 android.view.View childAt = appBarLayout.getChildAt(this.f);
                 int i4 = -childAt.getBottom();
                 if (this.g) {
-                    round = defpackage.sn.a.f(childAt) + appBarLayout.f() + i4;
+                    round = ViewCompat.a.f(childAt) + appBarLayout.f() + i4;
                 } else {
                     round = java.lang.Math.round(((float) childAt.getHeight()) * this.h) + i4;
                 }
@@ -442,7 +447,7 @@ public class AppBarLayout extends android.widget.LinearLayout {
                 } else {
                     defpackage.cx cxVar = new defpackage.cx(b2);
                     cxVar.a = i2;
-                    if (bottom == defpackage.sn.a.f(childAt) + appBarLayout.f()) {
+                    if (bottom == ViewCompat.a.f(childAt) + appBarLayout.f()) {
                         z = true;
                     }
                     cxVar.c = z;
@@ -542,7 +547,7 @@ public class AppBarLayout extends android.widget.LinearLayout {
             defpackage.gx gxVar = ((defpackage.ha) view2.getLayoutParams()).a;
             if (gxVar instanceof android.support.design.appbar.AppBarLayout.BaseBehavior) {
                 int bottom = view2.getBottom() - view.getTop();
-                defpackage.sn.b(view, ((((android.support.design.appbar.AppBarLayout.BaseBehavior) gxVar).a + bottom) + this.b) - d(view2));
+                ViewCompat.b(view, ((((android.support.design.appbar.AppBarLayout.BaseBehavior) gxVar).a + bottom) + this.b) - d(view2));
             }
             return false;
         }
@@ -635,8 +640,8 @@ public class AppBarLayout extends android.widget.LinearLayout {
             defpackage.dk.a(this);
             defpackage.dk.a((android.view.View) this, attributeSet);
         }
-        android.content.res.TypedArray a2 = defpackage.fp.a(context, attributeSet, defpackage.dh.a, 0, 2132017714);
-        defpackage.sn.a((android.view.View) this, a2.getDrawable(defpackage.dh.e));
+        android.content.res.TypedArray a2 = ThemeEnforcement.obtainStyledAttributes(context, attributeSet, defpackage.dh.a, 0, 2132017714);
+        ViewCompat.a((android.view.View) this, a2.getDrawable(defpackage.dh.e));
         if (a2.hasValue(defpackage.dh.i)) {
             a(a2.getBoolean(defpackage.dh.i, false), false, false);
         }
@@ -652,7 +657,7 @@ public class AppBarLayout extends android.widget.LinearLayout {
             }
         }
         a2.recycle();
-        defpackage.sn.a((android.view.View) this, (defpackage.sl) new defpackage.es(this));
+        ViewCompat.setOnApplyWindowInsetsListener((android.view.View) this, (defpackage.OnApplyWindowInsetsListener) new defpackage.es(this));
     }
 
     /* access modifiers changed from: protected */
@@ -672,7 +677,7 @@ public class AppBarLayout extends android.widget.LinearLayout {
         while (true) {
             if (i6 >= childCount) {
                 break;
-            } else if (((defpackage.da) getChildAt(i6).getLayoutParams()).b != null) {
+            } else if (((ClsToolbarLP) getChildAt(i6).getLayoutParams()).b != null) {
                 this.a = true;
                 break;
             } else {
@@ -686,7 +691,7 @@ public class AppBarLayout extends android.widget.LinearLayout {
                 z2 = false;
                 break;
             }
-            defpackage.da daVar = (defpackage.da) getChildAt(i7).getLayoutParams();
+            ClsToolbarLP daVar = (ClsToolbarLP) getChildAt(i7).getLayoutParams();
             if ((daVar.a & 1) != 1 || (daVar.a & 10) == 0) {
                 z3 = false;
             } else {
@@ -736,28 +741,28 @@ public class AppBarLayout extends android.widget.LinearLayout {
 
     /* access modifiers changed from: protected */
     public boolean checkLayoutParams(android.view.ViewGroup.LayoutParams layoutParams) {
-        return layoutParams instanceof defpackage.da;
+        return layoutParams instanceof ClsToolbarLP;
     }
 
     /* renamed from: b */
-    public defpackage.da generateDefaultLayoutParams() {
-        return new defpackage.da();
+    public ClsToolbarLP generateDefaultLayoutParams() {
+        return new ClsToolbarLP();
     }
 
     /* renamed from: a */
-    public defpackage.da generateLayoutParams(android.util.AttributeSet attributeSet) {
-        return new defpackage.da(getContext(), attributeSet);
+    public ClsToolbarLP generateLayoutParams(android.util.AttributeSet attributeSet) {
+        return new ClsToolbarLP(getContext(), attributeSet);
     }
 
     /* renamed from: a */
-    public defpackage.da generateLayoutParams(android.view.ViewGroup.LayoutParams layoutParams) {
+    public ClsToolbarLP generateLayoutParams(android.view.ViewGroup.LayoutParams layoutParams) {
         if (android.os.Build.VERSION.SDK_INT >= 19 && (layoutParams instanceof android.widget.LinearLayout.LayoutParams)) {
-            return new defpackage.da((android.widget.LinearLayout.LayoutParams) layoutParams);
+            return new ClsToolbarLP((android.widget.LinearLayout.LayoutParams) layoutParams);
         }
         if (layoutParams instanceof android.view.ViewGroup.MarginLayoutParams) {
-            return new defpackage.da((android.view.ViewGroup.MarginLayoutParams) layoutParams);
+            return new ClsToolbarLP((android.view.ViewGroup.MarginLayoutParams) layoutParams);
         }
-        return new defpackage.da(layoutParams);
+        return new ClsToolbarLP(layoutParams);
     }
 
     public final int c() {
@@ -773,7 +778,7 @@ public class AppBarLayout extends android.widget.LinearLayout {
                 break;
             }
             android.view.View childAt = getChildAt(i3);
-            defpackage.da daVar = (defpackage.da) childAt.getLayoutParams();
+            ClsToolbarLP daVar = (ClsToolbarLP) childAt.getLayoutParams();
             int measuredHeight = childAt.getMeasuredHeight();
             int i5 = daVar.a;
             if ((i5 & 1) == 0) {
@@ -781,7 +786,7 @@ public class AppBarLayout extends android.widget.LinearLayout {
             }
             i4 += daVar.bottomMargin + measuredHeight + daVar.topMargin;
             if ((i5 & 2) != 0) {
-                i2 = i4 - defpackage.sn.a.f(childAt);
+                i2 = i4 - ViewCompat.a.f(childAt);
                 break;
             }
             i3++;
@@ -802,7 +807,7 @@ public class AppBarLayout extends android.widget.LinearLayout {
         int i3 = 0;
         while (childCount >= 0) {
             android.view.View childAt = getChildAt(childCount);
-            defpackage.da daVar = (defpackage.da) childAt.getLayoutParams();
+            ClsToolbarLP daVar = (ClsToolbarLP) childAt.getLayoutParams();
             int measuredHeight = childAt.getMeasuredHeight();
             int i4 = daVar.a;
             if ((i4 & 5) != 5) {
@@ -813,9 +818,9 @@ public class AppBarLayout extends android.widget.LinearLayout {
             } else {
                 int i5 = daVar.bottomMargin + daVar.topMargin + i3;
                 if ((i4 & 8) != 0) {
-                    i2 = i5 + defpackage.sn.a.f(childAt);
+                    i2 = i5 + ViewCompat.a.f(childAt);
                 } else if ((i4 & 2) != 0) {
-                    i2 = i5 + (measuredHeight - defpackage.sn.a.f(childAt));
+                    i2 = i5 + (measuredHeight - ViewCompat.a.f(childAt));
                 } else {
                     i2 = i5 + (measuredHeight - f());
                 }
@@ -842,7 +847,7 @@ public class AppBarLayout extends android.widget.LinearLayout {
                 break;
             }
             android.view.View childAt = getChildAt(i3);
-            defpackage.da daVar = (defpackage.da) childAt.getLayoutParams();
+            ClsToolbarLP daVar = (ClsToolbarLP) childAt.getLayoutParams();
             int measuredHeight = childAt.getMeasuredHeight() + daVar.topMargin + daVar.bottomMargin;
             int i5 = daVar.a;
             if ((i5 & 1) == 0) {
@@ -850,7 +855,7 @@ public class AppBarLayout extends android.widget.LinearLayout {
             }
             i4 += measuredHeight;
             if ((i5 & 2) != 0) {
-                i2 = i4 - (defpackage.sn.a.f(childAt) + f());
+                i2 = i4 - (ViewCompat.a.f(childAt) + f());
                 break;
             }
             i3++;
@@ -886,9 +891,9 @@ public class AppBarLayout extends android.widget.LinearLayout {
                     }
                     czVar.a.b();
                     if (czVar.a.d != null && i4 > 0) {
-                        defpackage.sn.a.c(czVar.a);
+                        ViewCompat.a.c(czVar.a);
                     }
-                    int height = (czVar.a.getHeight() - defpackage.sn.a.f(czVar.a)) - i4;
+                    int height = (czVar.a.getHeight() - ViewCompat.a.f(czVar.a)) - i4;
                     defpackage.ew ewVar = czVar.a.c;
                     float abs = ((float) java.lang.Math.abs(i2)) / ((float) height);
                     if (abs < 0.0f) {

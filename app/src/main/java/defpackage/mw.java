@@ -22,8 +22,8 @@ final class mw implements java.lang.Runnable {
         while (true) {
             int i2 = i;
             if (i2 < this.a) {
-                defpackage.sn.a((android.view.View) this.b.get(i2), (java.lang.String) this.c.get(i2));
-                defpackage.sn.a((android.view.View) this.d.get(i2), (java.lang.String) this.e.get(i2));
+                ViewCompat.a((android.view.View) this.b.get(i2), (java.lang.String) this.c.get(i2));
+                ViewCompat.a((android.view.View) this.d.get(i2), (java.lang.String) this.e.get(i2));
                 i = i2 + 1;
             } else {
                 return;

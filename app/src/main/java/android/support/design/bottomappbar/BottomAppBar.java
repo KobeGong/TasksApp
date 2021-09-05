@@ -1,5 +1,9 @@
 package android.support.design.bottomappbar;
 
+import defpackage.ThemeEnforcement;
+import defpackage.ToolbarLayoutParams;
+import defpackage.ViewCompat;
+
 @defpackage.gy(a = android.support.design.bottomappbar.BottomAppBar.Behavior.class)
 /* compiled from: PG */
 public class BottomAppBar extends android.support.v7.widget.Toolbar {
@@ -73,7 +77,7 @@ public class BottomAppBar extends android.support.v7.widget.Toolbar {
     public BottomAppBar(android.content.Context context, android.util.AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         new defpackage.dt(this);
-        android.content.res.TypedArray a2 = defpackage.fp.a(context, attributeSet, defpackage.dx.a, i, 2132017751);
+        android.content.res.TypedArray a2 = ThemeEnforcement.obtainStyledAttributes(context, attributeSet, defpackage.dx.a, i, 2132017751);
         android.content.res.ColorStateList a3 = defpackage.gm.a(context, a2, defpackage.dx.b);
         float dimensionPixelOffset = (float) a2.getDimensionPixelOffset(defpackage.dx.e, 0);
         float dimensionPixelOffset2 = (float) a2.getDimensionPixelOffset(defpackage.dx.f, 0);
@@ -97,7 +101,7 @@ public class BottomAppBar extends android.support.v7.widget.Toolbar {
         gdVar3.d = android.graphics.Paint.Style.FILL;
         gdVar3.invalidateSelf();
         defpackage.jd.a((android.graphics.drawable.Drawable) this.a, a3);
-        defpackage.sn.a((android.view.View) this, (android.graphics.drawable.Drawable) this.a);
+        ViewCompat.a((android.view.View) this, (android.graphics.drawable.Drawable) this.a);
     }
 
     public final android.support.design.floatingactionbutton.FloatingActionButton a() {
@@ -132,7 +136,7 @@ public class BottomAppBar extends android.support.v7.widget.Toolbar {
         int i;
         int i2 = 1;
         int i3 = this.d;
-        if (defpackage.sn.a.j(this) == 1) {
+        if (ViewCompat.a.j(this) == 1) {
             z = true;
         } else {
             z = false;
@@ -166,11 +170,11 @@ public class BottomAppBar extends android.support.v7.widget.Toolbar {
 
     public final void a(android.support.v7.widget.ActionMenuView actionMenuView, int i, boolean z) {
         boolean z2;
-        boolean z3 = defpackage.sn.a.j(this) == 1;
+        boolean z3 = ViewCompat.a.j(this) == 1;
         int i2 = 0;
         for (int i3 = 0; i3 < getChildCount(); i3++) {
             android.view.View childAt = getChildAt(i3);
-            if (!(childAt.getLayoutParams() instanceof defpackage.aha) || (((defpackage.aha) childAt.getLayoutParams()).a & 8388615) != 8388611) {
+            if (!(childAt.getLayoutParams() instanceof ToolbarLayoutParams) || (((ToolbarLayoutParams) childAt.getLayoutParams()).gravity & 8388615) != 8388611) {
                 z2 = false;
             } else {
                 z2 = true;
@@ -215,10 +219,10 @@ public class BottomAppBar extends android.support.v7.widget.Toolbar {
         }
     }
 
-    public final void a(java.lang.CharSequence charSequence) {
+    public final void setSubtitle(java.lang.CharSequence charSequence) {
     }
 
-    public final void b(java.lang.CharSequence charSequence) {
+    public final void setTitle(java.lang.CharSequence charSequence) {
     }
 
     /* access modifiers changed from: protected */

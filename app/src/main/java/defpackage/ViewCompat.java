@@ -2,7 +2,7 @@ package defpackage;
 
 /* renamed from: sn reason: default package */
 /* compiled from: PG */
-public final class sn {
+public final class ViewCompat {
     public static final defpackage.sw a;
 
     public static void a(android.view.View view, defpackage.tl tlVar) {
@@ -68,7 +68,7 @@ public final class sn {
         view.setFitsSystemWindows(z);
     }
 
-    public static void a(android.view.View view, defpackage.sl slVar) {
+    public static void setOnApplyWindowInsetsListener(android.view.View view, OnApplyWindowInsetsListener slVar) {
         a.a(view, slVar);
     }
 

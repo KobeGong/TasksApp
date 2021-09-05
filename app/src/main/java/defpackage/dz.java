@@ -79,7 +79,7 @@ public final class dz extends defpackage.vy {
         }
         if (this.a.g.a(view.getLeft(), i)) {
             this.a.c(2);
-            defpackage.sn.a(view, (java.lang.Runnable) new defpackage.ed(this.a, view, i2));
+            ViewCompat.a(view, (java.lang.Runnable) new defpackage.ed(this.a, view, i2));
             return;
         }
         this.a.c(i2);

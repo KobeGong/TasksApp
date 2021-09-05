@@ -30,7 +30,7 @@ final class cey extends defpackage.xg {
         android.support.design.widget.CoordinatorLayout coordinatorLayout = (android.support.design.widget.CoordinatorLayout) android.view.View.inflate(getContext(), 2131034142, null);
         this.a = (com.google.android.libraries.onegoogle.bottomdrawer.GoogleMaterialBottomDrawer) coordinatorLayout.findViewById(2131755237);
         this.a.addView(view);
-        defpackage.sn.a((android.view.View) this.a, this.c);
+        ViewCompat.a((android.view.View) this.a, this.c);
         this.a.a(this.b);
         super.setContentView((android.view.View) coordinatorLayout);
     }

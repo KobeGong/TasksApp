@@ -39,7 +39,7 @@ public class cfm extends defpackage.cff {
 
     public final void a(defpackage.cdj cdj) {
         super.a(cdj);
-        if (defpackage.sn.a.s(this)) {
+        if (ViewCompat.a.s(this)) {
             f();
         }
     }

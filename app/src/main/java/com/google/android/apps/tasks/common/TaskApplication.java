@@ -7,7 +7,7 @@ public class TaskApplication extends defpackage.dmo implements defpackage.ajg {
     private static com.google.android.apps.tasks.common.TaskApplication g;
     public defpackage.cyl a = defpackage.cub.a(Executors.newFixedThreadPool(5, defpackage.ajd.c("shared-pool-%d")));
     public defpackage.czq b;
-    public boolean c;
+    public boolean c = false;
     public defpackage.cdj d;
     public defpackage.cdw e;
     private defpackage.akp h;
@@ -23,7 +23,6 @@ public class TaskApplication extends defpackage.dmo implements defpackage.ajg {
             cyo = new defpackage.cyo(newSingleThreadScheduledExecutor);
         }
         this.i = cyo;
-        this.c = false;
     }
 
     /* access modifiers changed from: protected */

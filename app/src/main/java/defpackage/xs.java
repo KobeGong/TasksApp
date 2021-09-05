@@ -4,7 +4,7 @@ package defpackage;
 /* compiled from: PG */
 public final class xs extends defpackage.yc implements defpackage.zf {
     private final android.content.Context c;
-    private final defpackage.ze d;
+    private final MenuBuilder d;
     private defpackage.yd e;
     private java.lang.ref.WeakReference f;
     private final /* synthetic */ defpackage.xp g;
@@ -13,13 +13,13 @@ public final class xs extends defpackage.yc implements defpackage.zf {
         this.g = xpVar;
         this.c = context;
         this.e = ydVar;
-        defpackage.ze zeVar = new defpackage.ze(context);
+        MenuBuilder zeVar = new MenuBuilder(context);
         this.d = zeVar;
         this.d.a((defpackage.zf) this);
     }
 
     public final android.view.MenuInflater a() {
-        return new defpackage.yj(this.c);
+        return new SupportMenuInflater(this.c);
     }
 
     public final android.view.Menu b() {
@@ -111,14 +111,14 @@ public final class xs extends defpackage.yc implements defpackage.zf {
         return null;
     }
 
-    public final boolean a(defpackage.ze zeVar, android.view.MenuItem menuItem) {
+    public final boolean a(MenuBuilder zeVar, android.view.MenuItem menuItem) {
         if (this.e != null) {
             return this.e.a((defpackage.yc) this, menuItem);
         }
         return false;
     }
 
-    public final void a(defpackage.ze zeVar) {
+    public final void a(MenuBuilder zeVar) {
         if (this.e != null) {
             d();
             this.g.e.a();

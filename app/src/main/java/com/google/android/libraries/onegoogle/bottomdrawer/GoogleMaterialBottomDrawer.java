@@ -1,5 +1,7 @@
 package com.google.android.libraries.onegoogle.bottomdrawer;
 
+import defpackage.ViewCompat;
+
 @defpackage.gy(a = com.google.android.libraries.onegoogle.bottomdrawer.BottomDrawerBehavior.class)
 /* compiled from: PG */
 public class GoogleMaterialBottomDrawer extends android.widget.FrameLayout {
@@ -30,7 +32,7 @@ public class GoogleMaterialBottomDrawer extends android.widget.FrameLayout {
         setFitsSystemWindows(true);
         android.content.res.Resources resources = context.getResources();
         this.n = resources.getColor(2131623951);
-        defpackage.sn.a((android.view.View) this, resources.getDimension(2131689842));
+        ViewCompat.a((android.view.View) this, resources.getDimension(2131689842));
         setClickable(true);
         setPadding(0, 0, 0, 0);
         int identifier = context.getResources().getIdentifier("status_bar_height", "dimen", "android");
@@ -80,10 +82,10 @@ public class GoogleMaterialBottomDrawer extends android.widget.FrameLayout {
         if (this.e == null) {
             this.e = new android.view.View(getContext());
             this.e.setContentDescription(null);
-            defpackage.sn.a(this.e, 2);
+            ViewCompat.a(this.e, 2);
             this.e.setBackgroundColor(this.n);
             this.e.setFitsSystemWindows(true);
-            defpackage.sn.a(this.e, defpackage.sn.a.u(this));
+            ViewCompat.a(this.e, ViewCompat.a.u(this));
             viewGroup.addView(this.e, ((android.view.ViewGroup) getParent()).indexOfChild(this), new defpackage.ha(-1, -1));
         }
         a(5);
@@ -153,6 +155,6 @@ public class GoogleMaterialBottomDrawer extends android.widget.FrameLayout {
         fArr[0] = f2;
         this.m.setCornerRadii(this.l);
         this.m.setColor(android.graphics.Color.argb(i2, android.graphics.Color.red(this.k), android.graphics.Color.green(this.k), android.graphics.Color.blue(this.k)));
-        defpackage.sn.a((android.view.View) this, (android.graphics.drawable.Drawable) this.m);
+        ViewCompat.a((android.view.View) this, (android.graphics.drawable.Drawable) this.m);
     }
 }

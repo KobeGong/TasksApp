@@ -2,15 +2,15 @@ package defpackage;
 
 /* renamed from: arw reason: default package */
 final /* synthetic */ class arw implements java.lang.Runnable {
-    private final defpackage.arv a;
+    private final EditListFragment a;
 
-    arw(defpackage.arv arv) {
+    arw(EditListFragment arv) {
         this.a = arv;
     }
 
     public final void run() {
         defpackage.dcd dcd;
-        defpackage.arv arv = this.a;
+        EditListFragment arv = this.a;
         if (arv.i != null) {
             java.lang.String string = arv.i.getString("list_id");
             if (!android.text.TextUtils.isEmpty(string)) {

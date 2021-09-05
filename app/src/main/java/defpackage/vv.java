@@ -169,10 +169,10 @@ public final class vv {
             int left = currX - this.r.getLeft();
             int top = currY - this.r.getTop();
             if (left != 0) {
-                defpackage.sn.c(this.r, left);
+                ViewCompat.c(this.r, left);
             }
             if (top != 0) {
-                defpackage.sn.b(this.r, top);
+                ViewCompat.b(this.r, top);
             }
             if (!(left == 0 && top == 0)) {
                 this.q.a(this.r, currX, currY);
@@ -519,11 +519,11 @@ public final class vv {
                     int top2 = this.r.getTop();
                     if (i4 != 0) {
                         left = this.q.c(this.r, left);
-                        defpackage.sn.c(this.r, left - left2);
+                        ViewCompat.c(this.r, left - left2);
                     }
                     if (y3 != 0) {
                         top = this.q.d(this.r, top);
-                        defpackage.sn.b(this.r, top - top2);
+                        ViewCompat.b(this.r, top - top2);
                     }
                     if (!(i4 == 0 && y3 == 0)) {
                         this.q.a(this.r, left, top);

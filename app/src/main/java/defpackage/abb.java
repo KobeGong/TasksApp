@@ -9,7 +9,7 @@ public final class abb implements defpackage.zf {
         this.a = actionMenuView;
     }
 
-    public final boolean a(defpackage.ze zeVar, android.view.MenuItem menuItem) {
+    public final boolean a(MenuBuilder zeVar, android.view.MenuItem menuItem) {
         boolean z;
         if (this.a.f == null) {
             return false;
@@ -26,6 +26,6 @@ public final class abb implements defpackage.zf {
         return false;
     }
 
-    public final void a(defpackage.ze zeVar) {
+    public final void a(MenuBuilder zeVar) {
     }
 }

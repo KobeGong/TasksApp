@@ -1,5 +1,8 @@
 package android.support.design.internal;
 
+import defpackage.MenuItemImpl;
+import defpackage.ViewCompat;
+
 /* compiled from: PG */
 public class NavigationMenuItemView extends defpackage.ey implements defpackage.zw {
     private static final int[] l = {16842912};
@@ -7,7 +10,7 @@ public class NavigationMenuItemView extends defpackage.ey implements defpackage.
     public boolean b;
     public final android.widget.CheckedTextView c;
     public android.widget.FrameLayout d;
-    public defpackage.zi e;
+    public MenuItemImpl e;
     public android.content.res.ColorStateList f;
     public boolean g;
     private final int m;
@@ -30,10 +33,10 @@ public class NavigationMenuItemView extends defpackage.ey implements defpackage.
         this.m = context.getResources().getDimensionPixelSize(2131689639);
         this.c = (android.widget.CheckedTextView) findViewById(2131755285);
         this.c.setDuplicateParentStateEnabled(true);
-        defpackage.sn.a((android.view.View) this.c, this.o);
+        ViewCompat.a((android.view.View) this.c, this.o);
     }
 
-    public final void a(defpackage.zi ziVar) {
+    public final void a(MenuItemImpl ziVar) {
         android.graphics.drawable.StateListDrawable stateListDrawable;
         this.e = ziVar;
         setVisibility(ziVar.isVisible() ? 0 : 8);
@@ -46,7 +49,7 @@ public class NavigationMenuItemView extends defpackage.ey implements defpackage.
             } else {
                 stateListDrawable = null;
             }
-            defpackage.sn.a((android.view.View) this, (android.graphics.drawable.Drawable) stateListDrawable);
+            ViewCompat.a((android.view.View) this, (android.graphics.drawable.Drawable) stateListDrawable);
         }
         boolean isCheckable = ziVar.isCheckable();
         refreshDrawableState();
@@ -88,7 +91,7 @@ public class NavigationMenuItemView extends defpackage.ey implements defpackage.
         }
     }
 
-    public final defpackage.zi a() {
+    public final MenuItemImpl a() {
         return this.e;
     }
 

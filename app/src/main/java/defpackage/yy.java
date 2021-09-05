@@ -9,11 +9,11 @@ final class yy implements defpackage.aek {
         this.a = yvVar;
     }
 
-    public final void a(defpackage.ze zeVar, android.view.MenuItem menuItem) {
+    public final void a(MenuBuilder zeVar, android.view.MenuItem menuItem) {
         this.a.a.removeCallbacksAndMessages(zeVar);
     }
 
-    public final void b(defpackage.ze zeVar, android.view.MenuItem menuItem) {
+    public final void b(MenuBuilder zeVar, android.view.MenuItem menuItem) {
         int i;
         defpackage.za zaVar;
         this.a.a.removeCallbacksAndMessages(null);

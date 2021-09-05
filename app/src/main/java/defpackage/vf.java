@@ -10,7 +10,7 @@ public class vf {
     }
 
     public void a(android.widget.PopupWindow popupWindow, android.view.View view, int i, int i2, int i3) {
-        if ((defpackage.jd.a(i3, defpackage.sn.a.j(view)) & 7) == 5) {
+        if ((defpackage.jd.a(i3, ViewCompat.a.j(view)) & 7) == 5) {
             i -= popupWindow.getWidth() - view.getWidth();
         }
         popupWindow.showAsDropDown(view, i, i2);

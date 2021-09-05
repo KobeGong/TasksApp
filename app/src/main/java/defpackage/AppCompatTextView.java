@@ -2,19 +2,19 @@ package defpackage;
 
 /* renamed from: ack reason: default package */
 /* compiled from: PG */
-public class ack extends android.widget.TextView implements defpackage.sm, defpackage.tz {
+public class AppCompatTextView extends android.widget.TextView implements defpackage.sm, defpackage.tz {
     private final defpackage.abg a;
     private final defpackage.aci c;
 
-    public ack(android.content.Context context) {
+    public AppCompatTextView(android.content.Context context) {
         this(context, null);
     }
 
-    public ack(android.content.Context context, android.util.AttributeSet attributeSet) {
+    public AppCompatTextView(android.content.Context context, android.util.AttributeSet attributeSet) {
         this(context, attributeSet, 16842884);
     }
 
-    public ack(android.content.Context context, android.util.AttributeSet attributeSet, int i) {
+    public AppCompatTextView(android.content.Context context, android.util.AttributeSet attributeSet, int i) {
         super(defpackage.agt.a(context), attributeSet, i);
         this.a = new defpackage.abg(this);
         this.a.a(attributeSet, i);

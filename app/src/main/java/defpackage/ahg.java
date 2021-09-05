@@ -78,7 +78,7 @@ final class ahg implements android.view.View.OnAttachStateChangeListener, androi
         int i2;
         int i3;
         long longPressTimeout;
-        if (defpackage.sn.a.s(this.a)) {
+        if (ViewCompat.a.s(this.a)) {
             a((defpackage.ahg) null);
             if (c != null) {
                 c.a();
@@ -172,7 +172,7 @@ final class ahg implements android.view.View.OnAttachStateChangeListener, androi
             if (this.k) {
                 longPressTimeout = 2500;
             } else {
-                if ((defpackage.sn.a.m(this.a) & 1) == 1) {
+                if ((ViewCompat.a.m(this.a) & 1) == 1) {
                     longPressTimeout = 3000 - ((long) android.view.ViewConfiguration.getLongPressTimeout());
                 } else {
                     longPressTimeout = 15000 - ((long) android.view.ViewConfiguration.getLongPressTimeout());

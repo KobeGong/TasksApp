@@ -15,7 +15,7 @@ public final class ua extends android.widget.ImageView {
         this.b = (int) (3.5f * f);
         if (a()) {
             shapeDrawable = new android.graphics.drawable.ShapeDrawable(new android.graphics.drawable.shapes.OvalShape());
-            defpackage.sn.a((android.view.View) this, f * 4.0f);
+            ViewCompat.a((android.view.View) this, f * 4.0f);
         } else {
             shapeDrawable = new android.graphics.drawable.ShapeDrawable(new defpackage.ub(this, this.b));
             setLayerType(1, shapeDrawable.getPaint());
@@ -24,7 +24,7 @@ public final class ua extends android.widget.ImageView {
             setPadding(i3, i3, i3, i3);
         }
         shapeDrawable.getPaint().setColor(-328966);
-        defpackage.sn.a((android.view.View) this, (android.graphics.drawable.Drawable) shapeDrawable);
+        ViewCompat.a((android.view.View) this, (android.graphics.drawable.Drawable) shapeDrawable);
     }
 
     private static boolean a() {

@@ -2,7 +2,7 @@ package defpackage;
 
 /* renamed from: zq reason: default package */
 /* compiled from: PG */
-abstract class zq implements android.widget.AdapterView.OnItemClickListener, defpackage.zt, defpackage.zz {
+abstract class zq implements android.widget.AdapterView.OnItemClickListener, MenuPresenter, defpackage.zz {
     public android.graphics.Rect g;
 
     zq() {
@@ -14,7 +14,7 @@ abstract class zq implements android.widget.AdapterView.OnItemClickListener, def
 
     public abstract void a(android.widget.PopupWindow.OnDismissListener onDismissListener);
 
-    public abstract void a(defpackage.ze zeVar);
+    public abstract void a(MenuBuilder zeVar);
 
     public abstract void b(int i);
 
@@ -24,24 +24,24 @@ abstract class zq implements android.widget.AdapterView.OnItemClickListener, def
 
     public abstract void c(boolean z);
 
-    public final void a(android.content.Context context, defpackage.ze zeVar) {
+    public final void a(android.content.Context context, MenuBuilder zeVar) {
     }
 
-    public final boolean a(defpackage.zi ziVar) {
+    public final boolean a(MenuItemImpl ziVar) {
         return false;
     }
 
-    public final boolean b(defpackage.zi ziVar) {
+    public final boolean b(MenuItemImpl ziVar) {
         return false;
     }
 
-    public final int b() {
+    public final int getId() {
         return 0;
     }
 
     public void onItemClick(android.widget.AdapterView adapterView, android.view.View view, int i, long j) {
         android.widget.ListAdapter listAdapter = (android.widget.ListAdapter) adapterView.getAdapter();
-        a(listAdapter).a.a((android.view.MenuItem) listAdapter.getItem(i), (defpackage.zt) this, h() ? 0 : 4);
+        a(listAdapter).a.a((android.view.MenuItem) listAdapter.getItem(i), (MenuPresenter) this, h() ? 0 : 4);
     }
 
     protected static int a(android.widget.ListAdapter listAdapter, android.view.ViewGroup viewGroup, android.content.Context context, int i) {
@@ -88,7 +88,7 @@ abstract class zq implements android.widget.AdapterView.OnItemClickListener, def
         return (defpackage.zd) listAdapter;
     }
 
-    protected static boolean b(defpackage.ze zeVar) {
+    protected static boolean b(MenuBuilder zeVar) {
         int size = zeVar.size();
         for (int i = 0; i < size; i++) {
             android.view.MenuItem item = zeVar.getItem(i);

@@ -3,6 +3,7 @@ package com.google.android.apps.tasks.ui;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.design.bottomappbar.BottomAppBar;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.NestedScrollView;
@@ -16,9 +17,13 @@ import com.google.android.apps.tasks.common.TaskApplication;
 import java.util.concurrent.Executor;
 
 import defpackage.BottomSheetMenuDialogFragment;
+import defpackage.ClsToolbarLP;
+import defpackage.EditListFragment;
 import defpackage.EditTaskFragment;
 import defpackage.Fragment;
+import defpackage.NavigationMenu;
 import defpackage.TasksFragment;
+import defpackage.ViewCompat;
 import defpackage.WelcomeFragment;
 
 /* compiled from: PG */
@@ -33,8 +38,8 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
     private defpackage.cdm H;
     private defpackage.cdm I;
     public defpackage.dcb h;
-    public TasksFragment i;
-    public android.support.design.widget.CollapsingToolbarLayout collapsingToolbarLayout;
+    public TasksFragment tasksFragment;
+    public CollapsingToolbarLayout collapsingToolbarLayout;
     public android.view.View fab;
     public boolean l;
     public defpackage.ayp m;
@@ -43,8 +48,8 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
     public defpackage.aou p;
     public defpackage.cdl q;
     private defpackage.alu t;
-    private CoordinatorLayout u;
-    private NestedScrollView v;
+    private CoordinatorLayout coordinatorLayout;
+    private NestedScrollView nestedScrollView;
     private Toolbar toolbar;
     private BottomAppBar bottomAppBar;
     private android.view.View bottomAppBarShadow;
@@ -58,15 +63,15 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
             android.os.StrictMode.setThreadPolicy(((defpackage.all) crk.b()).a());
         }
         setContentView(R.layout.app_bar_task_lists);
-        this.u = (CoordinatorLayout) findViewById(R.id.app_bar_coordinator);
+        this.coordinatorLayout = (CoordinatorLayout) findViewById(R.id.app_bar_coordinator);
         this.toolbar = (Toolbar) findViewById(R.id.toolbar);
         e(false);
-        this.collapsingToolbarLayout = (android.support.design.widget.CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
+        this.collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
         this.collapsingToolbarLayout.a("");
-        android.support.design.widget.CollapsingToolbarLayout collapsingToolbarLayout = this.collapsingToolbarLayout;
+        CollapsingToolbarLayout collapsingToolbarLayout = this.collapsingToolbarLayout;
         collapsingToolbarLayout.b = (int) getResources().getDimension(R.dimen.app_bar_expanded_bottom_margin);
         collapsingToolbarLayout.requestLayout();
-        android.support.design.widget.CollapsingToolbarLayout collapsingToolbarLayout2 = this.collapsingToolbarLayout;
+        CollapsingToolbarLayout collapsingToolbarLayout2 = this.collapsingToolbarLayout;
         collapsingToolbarLayout2.a = (int) getResources().getDimension(R.dimen.app_bar_expanded_top_margin);
         collapsingToolbarLayout2.requestLayout();
         TaskApplication.getApplication().a.a(new defpackage.apo(this));
@@ -88,11 +93,11 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
         this.q = cdj.a();
         this.o = new defpackage.cde(this, cdj, this.F);
         this.m = a.a();
-        this.i = (TasksFragment) getSupportFragmentManager().a("tasksfragment");
-        if (this.i == null) {
-            this.i = new TasksFragment();
+        this.tasksFragment = (TasksFragment) getSupportFragmentManager().a("tasksfragment");
+        if (this.tasksFragment == null) {
+            this.tasksFragment = new TasksFragment();
         }
-        this.v = (NestedScrollView) findViewById(R.id.scrollable_content);
+        this.nestedScrollView = (NestedScrollView) findViewById(R.id.scrollable_content);
         this.t = new defpackage.aps(this);
         this.fab = findViewById(R.id.fab);
         this.fab.setOnClickListener(new defpackage.aph(this));
@@ -108,20 +113,20 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
         this.bottomAppBar.c(R.drawable.quantum_ic_menu_grey600_24);
         this.bottomAppBar.c(getString(R.string.a11y_hamburger));
         this.bottomAppBar.setNavigationOnClickListener(new defpackage.apm(this));
-        this.bottomAppBar.k().clear();
-        this.bottomAppBar.d(R.menu.bottom_bar_menu);
+        this.bottomAppBar.getMenu().clear();
+        this.bottomAppBar.inflateMenu(R.menu.bottom_bar_menu);
         this.bottomAppBar.mOnMenuItemClickListener = new defpackage.apn(this);
-        g(false);
+        setBottomAppbarShown(false);
         f(true);
         this.E = defpackage.cub.a((Executor) TaskApplication.getApplication().a);
-        this.v.a = new defpackage.apt(this);
+        this.nestedScrollView.a = new defpackage.apt(this);
     }
 
     public final void b(boolean z2) {
         TasksAppBarLayout tasksAppBarLayout = this.appBarLayout;
         if (tasksAppBarLayout.f != z2) {
             tasksAppBarLayout.f = z2;
-            defpackage.sn.a(tasksAppBarLayout, (float) (tasksAppBarLayout.f ? tasksAppBarLayout.getResources().getDimensionPixelOffset(R.dimen.app_bar_elevation) : 0));
+            ViewCompat.a(tasksAppBarLayout, (float) (tasksAppBarLayout.f ? tasksAppBarLayout.getResources().getDimensionPixelOffset(R.dimen.app_bar_elevation) : 0));
         }
     }
 
@@ -142,11 +147,11 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
         java.lang.Integer num2 = null;
         boolean z2 = false;
         NavigationView navigationView = (NavigationView) getLayoutInflater().inflate(R.layout.navigation_view_tasks_lists, null);
-        navigationView.d.a(new android.view.View(this));
+        navigationView.presenter.addHeaderView(new android.view.View(this));
         this.p = new defpackage.aou();
         navigationView.e = new defpackage.ft(this, navigationView);
         defpackage.aou aou = this.p;
-        defpackage.ez ezVar = navigationView.c;
+        NavigationMenu ezVar = navigationView.menu;
         boolean z3 = this.C;
         aou.a.clear();
         if (list != null) {
@@ -230,7 +235,7 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
     public final void a(defpackage.dca dca) {
         defpackage.dih dih;
         boolean z2 = false;
-        TasksFragment auj = this.i;
+        TasksFragment auj = this.tasksFragment;
         if (auj.O()) {
             defpackage.dby dby = defpackage.dby.g;
             if (dca != null) {
@@ -281,7 +286,7 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
             this.toolbar.b(R.string.a11y_back_to_list);
             return;
         }
-        this.toolbar.b((android.graphics.drawable.Drawable) null);
+        this.toolbar.setNavigationIcon(null);
     }
 
     /* access modifiers changed from: protected */
@@ -358,13 +363,13 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
         z3 = defpackage.any.a().c() != null && cdu.b().equals(defpackage.any.a().c().b());
         if (!z3 || !(a instanceof WelcomeFragment) || z2) {
             if (!z3) {
-                this.i.a(null, null, true);
+                this.tasksFragment.a(null, null, true);
                 this.h = null;
                 this.collapsingToolbarLayout.a("");
                 a((java.util.List) null, null);
                 h(false);
                 this.C = true;
-                g(false);
+                setBottomAppbarShown(false);
             }
             getWindow().addFlags(16);
             this.q.b(this.H);
@@ -450,14 +455,14 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
 
     /* access modifiers changed from: protected */
     public final android.view.View m() {
-        return this.u;
+        return this.coordinatorLayout;
     }
 
     public final void a(Fragment lcVar) {
         b(lcVar);
         if (android.os.Build.VERSION.SDK_INT >= 21) {
             lcVar.a_(new android.transition.Fade());
-            this.i.b(new android.transition.Fade());
+            this.tasksFragment.b(new android.transition.Fade());
         }
         defpackage.mj a = getSupportFragmentManager().a();
         a.b(lcVar);
@@ -468,72 +473,72 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
         }
     }
 
-    public final void b(Fragment lcVar) {
+    public final void b(Fragment fragment) {
         boolean z2;
         boolean z3;
         boolean z4 = true;
-        this.n = lcVar;
+        this.n = fragment;
         b(false);
-        this.toolbar.k().clear();
-        if (lcVar instanceof EditTaskFragment) {
-            this.toolbar.d(2132082690);
-        } else if (lcVar instanceof defpackage.arv) {
-            this.toolbar.d(2132082689);
+        this.toolbar.getMenu().clear();
+        if (fragment instanceof EditTaskFragment) {
+            this.toolbar.inflateMenu(R.menu.task_lists_edit_task);
+        } else if (fragment instanceof EditListFragment) {
+            this.toolbar.inflateMenu(R.menu.task_list_edit);
         }
-        this.toolbar.b((android.graphics.drawable.Drawable) null);
-        this.toolbar.a("");
-        defpackage.ha haVar = (defpackage.ha) this.appBarLayout.getLayoutParams();
-        com.google.android.apps.tasks.ui.LockableAppBarLayoutBehavior lockableAppBarLayoutBehavior = (com.google.android.apps.tasks.ui.LockableAppBarLayoutBehavior) haVar.a;
+        this.toolbar.setNavigationIcon(null);
+        this.toolbar.setSubtitle("");
+        defpackage.ha appbarLayoutLp = (defpackage.ha) this.appBarLayout.getLayoutParams();
+        LockableAppBarLayoutBehavior lockableAppBarLayoutBehavior = (LockableAppBarLayoutBehavior) appbarLayoutLp.a;
         lockableAppBarLayoutBehavior.d = false;
-        if (lcVar == null || (lcVar instanceof TasksFragment)) {
+        if (fragment == null || (fragment instanceof TasksFragment)) {
             c(this.h);
-            g(lcVar != null);
-            z2 = lcVar == null;
+            setBottomAppbarShown(fragment != null);
+            z2 = fragment == null;
             f(z2);
-            z3 = lcVar != null && ((TasksFragment) lcVar).c();
+            z3 = fragment != null && ((TasksFragment) fragment).c();
             h(z3);
             e(false);
-            haVar.height = (int) getResources().getDimension(R.dimen.app_bar_expanded_height);
-            defpackage.da daVar = (defpackage.da) this.collapsingToolbarLayout.getLayoutParams();
-            if (daVar.a != 29) {
-                daVar.a = 29;
-                lockableAppBarLayoutBehavior.a_((this.collapsingToolbarLayout.getMinimumHeight() + 1) - haVar.height);
-                this.v.c(1);
+            appbarLayoutLp.height = (int) getResources().getDimension(R.dimen.app_bar_expanded_height);
+            ClsToolbarLP clsToolbarLP = (ClsToolbarLP) this.collapsingToolbarLayout.getLayoutParams();
+            if (clsToolbarLP.a != 29) {
+                clsToolbarLP.a = 29;
+                lockableAppBarLayoutBehavior.a_((this.collapsingToolbarLayout.getMinimumHeight() + 1) - appbarLayoutLp.height);
+                this.nestedScrollView.c(1);
             }
-        } else if (lcVar instanceof WelcomeFragment) {
+        } else if (fragment instanceof WelcomeFragment) {
             f(true);
             this.appBarLayout.getLayoutParams().height = 0;
-            if (((WelcomeFragment) lcVar).V != defpackage.bg.P) {
+            if (((WelcomeFragment) fragment).V != defpackage.bg.P) {
                 z4 = false;
             }
-            g(z4);
+            setBottomAppbarShown(z4);
             this.collapsingToolbarLayout.a("");
             h(false);
             e(false);
             a((java.util.List) null, null);
         } else {
             f(false);
-            g(false);
+            setBottomAppbarShown(false);
             this.collapsingToolbarLayout.a("");
-            if (lcVar instanceof defpackage.arv) {
-                defpackage.arv arv = (defpackage.arv) lcVar;
+            if (fragment instanceof EditListFragment) {
+                EditListFragment arv = (EditListFragment) fragment;
                 Toolbar toolbar = this.toolbar;
                 android.os.Bundle bundle = arv.i;
-                toolbar.a(toolbar.getContext().getText(bundle == null || android.text.TextUtils.isEmpty(bundle.getString("list_id")) ? 2131951745 : 2131951748));
-                ((defpackage.da) this.collapsingToolbarLayout.getLayoutParams()).a = 19;
+                toolbar.setSubtitle(toolbar.getContext().getText(bundle == null || android.text.TextUtils.isEmpty(bundle.getString("list_id")) ? 2131951745 : 2131951748));
+                ((ClsToolbarLP) this.collapsingToolbarLayout.getLayoutParams()).a = 19;
                 this.appBarLayout.getLayoutParams().height = this.collapsingToolbarLayout.getMinimumHeight() + 1;
                 lockableAppBarLayoutBehavior.d = true;
                 this.appBarLayout.a(false, false, true);
             } else {
-                ((defpackage.da) this.collapsingToolbarLayout.getLayoutParams()).a = 19;
+                ((ClsToolbarLP) this.collapsingToolbarLayout.getLayoutParams()).a = 19;
                 this.appBarLayout.getLayoutParams().height = this.collapsingToolbarLayout.getMinimumHeight() + 1;
                 this.appBarLayout.a(true, false, true);
             }
             h(false);
             e(true);
-            if (lcVar instanceof defpackage.arv) {
+            if (fragment instanceof EditListFragment) {
                 this.toolbar.c(2130837665);
-            } else if (lcVar instanceof EditTaskFragment) {
+            } else if (fragment instanceof EditTaskFragment) {
                 this.toolbar.c(2130837662);
             }
         }
@@ -546,11 +551,10 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
             this.collapsingToolbarLayout.setContentDescription(null);
             return;
         }
-        defpackage.dcb dcb2 = this.h;
-        if (dcb2.c == null) {
+        if (this.h.c == null) {
             dcd = defpackage.dcd.c;
         } else {
-            dcd = dcb2.c;
+            dcd = this.h.c;
         }
         java.lang.String str = dcd.a;
         this.collapsingToolbarLayout.a(str);
@@ -558,23 +562,19 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
     }
 
     private final void f(boolean z2) {
-        boolean z3 = false;
         this.C = z2;
-        MenuItem item = this.bottomAppBar.k().getItem(0);
-        if (!z2) {
-            z3 = true;
-        }
-        item.setEnabled(z3);
+        MenuItem item = this.bottomAppBar.getMenu().getItem(0);
+        item.setEnabled(!z2);
     }
 
-    private final void g(boolean z2) {
+    private final void setBottomAppbarShown(boolean z2) {
         if (z2) {
-            this.bottomAppBar.setVisibility(0);
-            this.bottomAppBarShadow.setVisibility(0);
-            return;
+            this.bottomAppBar.setVisibility(View.VISIBLE);
+            this.bottomAppBarShadow.setVisibility(View.VISIBLE);
+        } else {
+            this.bottomAppBar.setVisibility(View.GONE);
+            this.bottomAppBarShadow.setVisibility(View.GONE);
         }
-        this.bottomAppBar.setVisibility(8);
-        this.bottomAppBarShadow.setVisibility(8);
     }
 
     public final void a(java.lang.String str) {
@@ -582,7 +582,7 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
         java.util.List<defpackage.dcb> d = defpackage.any.a().c().d();
         java.lang.String str2 = d.get(0).b;
         if (android.text.TextUtils.isEmpty(str)) {
-            str = this.i.X;
+            str = this.tasksFragment.X;
         }
         if (android.text.TextUtils.isEmpty(str)) {
             str = defpackage.ain.b(this, defpackage.any.a().c().b()).a();
@@ -613,7 +613,7 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
         this.h = dcb;
         if (z2) {
             defpackage.any.a().c().a(dcb.b);
-            this.i.a(dcb.b, defpackage.ain.b(this, defpackage.any.a().c().b()).b(dcb.b), true);
+            this.tasksFragment.a(dcb.b, defpackage.ain.b(this, defpackage.any.a().c().b()).b(dcb.b), true);
         }
         Fragment a = getSupportFragmentManager().findFragmentById(2131755276);
         if (a == null || (a instanceof TasksFragment)) {
@@ -730,7 +730,7 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
             }
             c.c();
             if (f == 1) {
-                b(this.i);
+                b(this.tasksFragment);
                 return;
             }
             return;
@@ -753,9 +753,9 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
                     a(defpackage.ajr.BY_DUE_DATE);
                     return;
                 case 2:
-                    java.lang.String str = this.i.X;
+                    java.lang.String str = this.tasksFragment.X;
                     if (!android.text.TextUtils.isEmpty(str)) {
-                        defpackage.arv arv = new defpackage.arv();
+                        EditListFragment arv = new EditListFragment();
                         android.os.Bundle bundle = new android.os.Bundle();
                         bundle.putString("list_id", str);
                         arv.e(bundle);
@@ -764,7 +764,7 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
                     }
                     return;
                 case 3:
-                    java.lang.String str2 = this.i.X;
+                    java.lang.String str2 = this.tasksFragment.X;
                     if (!android.text.TextUtils.isEmpty(str2)) {
                         int size = defpackage.any.a().c().d(str2).a().size();
                         if (size == 0) {
@@ -833,7 +833,7 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
 
     private final void a(defpackage.ajr orderType) {
         if (!r()) {
-            this.i.a(this.h.b, orderType, true);
+            this.tasksFragment.a(this.h.b, orderType, true);
             defpackage.ain b = defpackage.ain.b(this, defpackage.any.a().c().b());
             java.lang.String str = this.h.b;
             android.content.SharedPreferences.Editor edit = b.a.edit();
@@ -854,7 +854,12 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
 
     public final void p() {
         if (this.splashView != null && this.splashView.getVisibility() == View.VISIBLE) {
-            this.splashView.animate().alpha(0.0f).setStartDelay(250).withEndAction(new defpackage.apj(this)).start();
+            this.splashView.animate().alpha(0.0f).setStartDelay(250).withEndAction(new Runnable() {
+                @Override
+                public void run() {
+                    removeSplash();
+                }
+            }).start();
         }
     }
 
@@ -881,8 +886,8 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
         int itemId = menuItem.getItemId();
         if (itemId == R.id.action_done) {
             Fragment a = getSupportFragmentManager().findFragmentById(R.id.fragment_container);
-            if (a instanceof defpackage.arv) {
-                defpackage.arv arv = (defpackage.arv) a;
+            if (a instanceof EditListFragment) {
+                EditListFragment arv = (EditListFragment) a;
                 java.lang.String trim = arv.a.getText().toString().trim();
                 defpackage.dcb dcb = arv.b;
                 if (dcb.c == null) {
@@ -893,7 +898,7 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
                 if (trim.equals(dcd.a) || android.text.TextUtils.isEmpty(trim)) {
                     str = null;
                 } else if (android.text.TextUtils.isEmpty(arv.b.b)) {
-                    defpackage.anc P = defpackage.arv.P();
+                    defpackage.anc P = EditListFragment.P();
                     defpackage.dii i3 = ((defpackage.dii) defpackage.dcb.g.a(defpackage.bg.ao)).i(((defpackage.dii) defpackage.dcd.c.a(defpackage.bg.ao)).h(trim));
                     if (i3.b) {
                         dih = i3.a;
@@ -909,7 +914,7 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
                     }
                     str = P.a((defpackage.dcb) dih3).b;
                 } else {
-                    defpackage.arv.P().d(arv.b.b, trim);
+                    EditListFragment.P().d(arv.b.b, trim);
                     str = arv.b.b;
                 }
                 a(str);
@@ -941,13 +946,13 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
                 ajl = new defpackage.ajl(defpackage.any.a().c().c(str4), i2 + 1);
             }
             defpackage.any.a().c().a(str4, str5, ajl);
-            if (this.i != null) {
-                TasksFragment auj = this.i;
+            if (this.tasksFragment != null) {
+                TasksFragment auj = this.tasksFragment;
                 if (auj.l() && !auj.C && auj.J != null && auj.J.getWindowToken() != null && auj.J.getVisibility() == 0) {
                     z2 = true;
                 }
                 if (z2) {
-                    TasksFragment auj2 = this.i;
+                    TasksFragment auj2 = this.tasksFragment;
                     if (auj2.O()) {
                         auj2.W.b(str5);
                         auj2.c(true);

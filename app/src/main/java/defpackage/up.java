@@ -22,8 +22,8 @@ public abstract class up extends defpackage.rn {
         this.c = view;
         this.b = (android.view.accessibility.AccessibilityManager) view.getContext().getSystemService("accessibility");
         view.setFocusable(true);
-        if (defpackage.sn.a.d(view) == 0) {
-            defpackage.sn.a(view, 1);
+        if (ViewCompat.a.d(view) == 0) {
+            ViewCompat.a(view, 1);
         }
     }
 
@@ -93,7 +93,7 @@ public abstract class up extends defpackage.rn {
         boolean z2;
         if (i2 == -1) {
             defpackage.tl a = defpackage.tl.a(android.view.accessibility.AccessibilityNodeInfo.obtain(this.c));
-            defpackage.sn.a(this.c, a);
+            ViewCompat.a(this.c, a);
             java.util.ArrayList arrayList = new java.util.ArrayList();
             a((java.util.List) arrayList);
             if (a.a.getChildCount() <= 0 || arrayList.size() <= 0) {

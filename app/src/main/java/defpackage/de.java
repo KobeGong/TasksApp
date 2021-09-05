@@ -102,7 +102,7 @@ public class de extends defpackage.di {
                         break;
                     } else {
                         this.a = new defpackage.df(this, coordinatorLayout, view);
-                        defpackage.sn.a(view, this.a);
+                        ViewCompat.a(view, this.a);
                         break;
                     }
                 }

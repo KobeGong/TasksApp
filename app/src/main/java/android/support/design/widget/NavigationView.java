@@ -1,8 +1,10 @@
 package android.support.design.widget;
 
+import defpackage.BaseNavigationView;
+
 @java.lang.Deprecated
 /* compiled from: PG */
-public class NavigationView extends defpackage.fr {
+public class NavigationView extends BaseNavigationView {
     public NavigationView(android.content.Context context) {
         super(context);
     }

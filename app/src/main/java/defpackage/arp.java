@@ -14,7 +14,7 @@ public class arp extends android.widget.FrameLayout {
         super(context, attributeSet);
         android.content.res.TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, defpackage.ail.c);
         if (obtainStyledAttributes.hasValue(defpackage.ail.d)) {
-            defpackage.sn.a((android.view.View) this, (float) obtainStyledAttributes.getDimensionPixelSize(defpackage.ail.d, 0));
+            ViewCompat.a((android.view.View) this, (float) obtainStyledAttributes.getDimensionPixelSize(defpackage.ail.d, 0));
         }
         obtainStyledAttributes.recycle();
         setClickable(true);
@@ -37,7 +37,7 @@ public class arp extends android.widget.FrameLayout {
     /* access modifiers changed from: protected */
     public void onAttachedToWindow() {
         super.onAttachedToWindow();
-        defpackage.sn.a.g(this);
+        ViewCompat.a.g(this);
     }
 
     /* access modifiers changed from: protected */

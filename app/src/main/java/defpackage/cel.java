@@ -23,7 +23,7 @@ final class cel {
         android.widget.ImageView imageView = (android.widget.ImageView) this.d.get();
         defpackage.cen cen = new defpackage.cen(this, imageView, bitmap);
         imageView.addOnAttachStateChangeListener(cen);
-        if (defpackage.sn.a.s(imageView)) {
+        if (ViewCompat.a.s(imageView)) {
             imageView.removeOnAttachStateChangeListener(cen);
             imageView.post(new defpackage.cem(this, bitmap));
         }

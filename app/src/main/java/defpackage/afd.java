@@ -81,7 +81,7 @@ public abstract class afd {
         android.graphics.Rect rect2 = this.b.i;
         int width = rect2.width() + l() + n();
         int height = rect2.height() + m() + o();
-        this.b.setMeasuredDimension(a(i2, width, defpackage.sn.a.e(this.b)), a(i3, height, defpackage.sn.a.f(this.b)));
+        this.b.setMeasuredDimension(a(i2, width, ViewCompat.a.e(this.b)), a(i3, height, ViewCompat.a.f(this.b)));
     }
 
     public final void h() {

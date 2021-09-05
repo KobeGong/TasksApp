@@ -1,19 +1,28 @@
 package android.support.v7.widget;
 
+import android.graphics.drawable.Drawable;
+import android.view.Menu;
 import android.view.View;
 
 import com.google.android.apps.tasks.R;
 
+import defpackage.AppCompatTextView;
+import defpackage.ExpandedActionViewMenuPresenter;
+import defpackage.MenuBuilder;
+import defpackage.MenuItemImpl;
 import defpackage.OnMenuItemClickListener;
+import defpackage.SupportMenuInflater;
+import defpackage.ToolbarLayoutParams;
+import defpackage.ViewCompat;
 
 /* compiled from: PG */
 public class Toolbar extends android.view.ViewGroup {
     public OnMenuItemClickListener mOnMenuItemClickListener;
     public defpackage.aap B;
-    public defpackage.agz C;
+    public ExpandedActionViewMenuPresenter mExpandedMenuPresenter;
     public boolean D;
-    private int E;
-    private int F;
+    private int mSubtitleTextColor;
+    private int mTitleTextColor;
     private boolean G;
     private boolean H;
     private final java.util.ArrayList I;
@@ -23,30 +32,30 @@ public class Toolbar extends android.view.ViewGroup {
     private final java.lang.Runnable M;
     private android.widget.ImageButton mNavButtonView;
     private android.widget.ImageView b;
-    private int c;
-    private int d;
-    private int e;
+    private final int c;
+    private final int d;
+    private final int e;
     private int f;
-    public android.support.v7.widget.ActionMenuView g;
-    public android.widget.TextView h;
-    public android.widget.TextView i;
-    public android.graphics.drawable.Drawable j;
+    public ActionMenuView mMenuView;
+    public android.widget.TextView mSubtitleTextView;
+    public android.widget.TextView mTitleTextView;
+    public Drawable j;
     public java.lang.CharSequence k;
     public android.widget.ImageButton l;
     public View m;
     public android.content.Context n;
-    public int o;
-    public int p;
-    public int q;
+    public int mPopupTheme;
+    public int mSubtitleTextAppearance;
+    public int mTitleTextAppearance;
     public int r;
     public int s;
     public int t;
     public int u;
     public int v;
     public defpackage.afz w;
-    public java.lang.CharSequence x;
-    public java.lang.CharSequence y;
-    public final java.util.ArrayList z;
+    public java.lang.CharSequence mSubtitleText;
+    public java.lang.CharSequence mTitleText;
+    public final java.util.ArrayList mHiddenViews;
 
     public Toolbar(android.content.Context context) {
         this(context, null);
@@ -60,13 +69,13 @@ public class Toolbar extends android.view.ViewGroup {
         super(context, attributeSet, i2);
         this.f = 8388627;
         this.I = new java.util.ArrayList();
-        this.z = new java.util.ArrayList();
+        this.mHiddenViews = new java.util.ArrayList();
         this.J = new int[2];
         this.K = new defpackage.abc(this);
         this.M = new defpackage.agx(this);
         defpackage.agw a2 = defpackage.agw.a(getContext(), attributeSet, defpackage.xu.cz, i2, 0);
-        this.p = a2.g(defpackage.xu.da, 0);
-        this.q = a2.g(defpackage.xu.cR, 0);
+        this.mSubtitleTextAppearance = a2.g(defpackage.xu.da, 0);
+        this.mTitleTextAppearance = a2.g(defpackage.xu.cR, 0);
         this.f = a2.c(defpackage.xu.cA, this.f);
         this.r = a2.c(defpackage.xu.cB, 48);
         int d2 = a2.d(defpackage.xu.cU, 0);
@@ -118,23 +127,23 @@ public class Toolbar extends android.view.ViewGroup {
         this.k = a2.c(defpackage.xu.cC);
         java.lang.CharSequence c2 = a2.c(defpackage.xu.cT);
         if (!android.text.TextUtils.isEmpty(c2)) {
-            a(c2);
+            setSubtitle(c2);
         }
         java.lang.CharSequence c3 = a2.c(defpackage.xu.cQ);
         if (!android.text.TextUtils.isEmpty(c3)) {
-            b(c3);
+            setTitle(c3);
         }
         this.n = getContext();
         a(a2.g(defpackage.xu.cP, 0));
-        android.graphics.drawable.Drawable a3 = a2.a(defpackage.xu.cO);
+        Drawable a3 = a2.a(defpackage.xu.cO);
         if (a3 != null) {
-            b(a3);
+            setNavigationIcon(a3);
         }
         java.lang.CharSequence c4 = a2.c(defpackage.xu.cN);
         if (!android.text.TextUtils.isEmpty(c4)) {
             c(c4);
         }
-        android.graphics.drawable.Drawable a4 = a2.a(defpackage.xu.cK);
+        Drawable a4 = a2.a(defpackage.xu.cK);
         if (a4 != null) {
             a(a4);
         }
@@ -149,24 +158,24 @@ public class Toolbar extends android.view.ViewGroup {
         }
         if (a2.f(defpackage.xu.db)) {
             int b2 = a2.b(defpackage.xu.db, -1);
-            this.E = b2;
-            if (this.h != null) {
-                this.h.setTextColor(b2);
+            this.mSubtitleTextColor = b2;
+            if (this.mSubtitleTextView != null) {
+                this.mSubtitleTextView.setTextColor(b2);
             }
         }
         if (a2.f(defpackage.xu.cS)) {
             int b3 = a2.b(defpackage.xu.cS, -1);
-            this.F = b3;
-            if (this.i != null) {
-                this.i.setTextColor(b3);
+            this.mTitleTextColor = b3;
+            if (this.mTitleTextView != null) {
+                this.mTitleTextView.setTextColor(b3);
             }
         }
         a2.b.recycle();
     }
 
     public final void a(int i2) {
-        if (this.o != i2) {
-            this.o = i2;
+        if (this.mPopupTheme != i2) {
+            this.mPopupTheme = i2;
             if (i2 == 0) {
                 this.n = getContext();
             } else {
@@ -202,45 +211,33 @@ public class Toolbar extends android.view.ViewGroup {
 
     public final boolean f() {
         boolean z2;
-        if (this.g != null) {
-            android.support.v7.widget.ActionMenuView actionMenuView = this.g;
-            if (actionMenuView.c == null || !actionMenuView.c.i()) {
-                z2 = false;
-            } else {
-                z2 = true;
-            }
-            if (z2) {
-                return true;
-            }
+        if (this.mMenuView != null) {
+            ActionMenuView actionMenuView = this.mMenuView;
+            z2 = actionMenuView.presenter != null && actionMenuView.presenter.i();
+            return z2;
         }
         return false;
     }
 
     public final boolean g() {
         boolean z2;
-        if (this.g != null) {
-            android.support.v7.widget.ActionMenuView actionMenuView = this.g;
-            if (actionMenuView.c == null || !actionMenuView.c.e()) {
-                z2 = false;
-            } else {
-                z2 = true;
-            }
-            if (z2) {
-                return true;
-            }
+        if (this.mMenuView != null) {
+            ActionMenuView actionMenuView = this.mMenuView;
+            z2 = actionMenuView.presenter != null && actionMenuView.presenter.e();
+            return z2;
         }
         return false;
     }
 
-    public final void a(android.graphics.drawable.Drawable drawable) {
+    public final void a(Drawable drawable) {
         if (drawable != null) {
             a();
-            if (!d((View) this.b)) {
-                a((View) this.b, true);
+            if (!isChildOrHidden(this.b)) {
+                addSystemView(this.b, true);
             }
-        } else if (this.b != null && d((View) this.b)) {
+        } else if (this.b != null && isChildOrHidden(this.b)) {
             removeView(this.b);
-            this.z.remove(this.b);
+            this.mHiddenViews.remove(this.b);
         }
         if (this.b != null) {
             this.b.setImageDrawable(drawable);
@@ -254,64 +251,64 @@ public class Toolbar extends android.view.ViewGroup {
     }
 
     public final void h() {
-        defpackage.zi ziVar = this.C == null ? null : this.C.a;
+        MenuItemImpl ziVar = this.mExpandedMenuPresenter == null ? null : this.mExpandedMenuPresenter.a;
         if (ziVar != null) {
             ziVar.collapseActionView();
         }
     }
 
-    public void a(java.lang.CharSequence charSequence) {
+    public void setSubtitle(java.lang.CharSequence charSequence) {
         if (!android.text.TextUtils.isEmpty(charSequence)) {
-            if (this.h == null) {
+            if (this.mSubtitleTextView == null) {
                 android.content.Context context = getContext();
-                this.h = new defpackage.ack(context);
-                this.h.setSingleLine();
-                this.h.setEllipsize(android.text.TextUtils.TruncateAt.END);
-                if (this.p != 0) {
-                    this.h.setTextAppearance(context, this.p);
+                this.mSubtitleTextView = new AppCompatTextView(context);
+                this.mSubtitleTextView.setSingleLine();
+                this.mSubtitleTextView.setEllipsize(android.text.TextUtils.TruncateAt.END);
+                if (this.mSubtitleTextAppearance != 0) {
+                    this.mSubtitleTextView.setTextAppearance(context, this.mSubtitleTextAppearance);
                 }
-                if (this.E != 0) {
-                    this.h.setTextColor(this.E);
+                if (this.mSubtitleTextColor != 0) {
+                    this.mSubtitleTextView.setTextColor(this.mSubtitleTextColor);
                 }
             }
-            if (!d((View) this.h)) {
-                a((View) this.h, true);
+            if (!isChildOrHidden(this.mSubtitleTextView)) {
+                addSystemView(this.mSubtitleTextView, true);
             }
-        } else if (this.h != null && d((View) this.h)) {
-            removeView(this.h);
-            this.z.remove(this.h);
+        } else if (this.mSubtitleTextView != null && isChildOrHidden(this.mSubtitleTextView)) {
+            removeView(this.mSubtitleTextView);
+            this.mHiddenViews.remove(this.mSubtitleTextView);
         }
-        if (this.h != null) {
-            this.h.setText(charSequence);
+        if (this.mSubtitleTextView != null) {
+            this.mSubtitleTextView.setText(charSequence);
         }
-        this.x = charSequence;
+        this.mSubtitleText = charSequence;
     }
 
-    public void b(java.lang.CharSequence charSequence) {
+    public void setTitle(java.lang.CharSequence charSequence) {
         if (!android.text.TextUtils.isEmpty(charSequence)) {
-            if (this.i == null) {
+            if (this.mTitleTextView == null) {
                 android.content.Context context = getContext();
-                this.i = new defpackage.ack(context);
-                this.i.setSingleLine();
-                this.i.setEllipsize(android.text.TextUtils.TruncateAt.END);
-                if (this.q != 0) {
-                    this.i.setTextAppearance(context, this.q);
+                this.mTitleTextView = new AppCompatTextView(context);
+                this.mTitleTextView.setSingleLine();
+                this.mTitleTextView.setEllipsize(android.text.TextUtils.TruncateAt.END);
+                if (this.mTitleTextAppearance != 0) {
+                    this.mTitleTextView.setTextAppearance(context, this.mTitleTextAppearance);
                 }
-                if (this.F != 0) {
-                    this.i.setTextColor(this.F);
+                if (this.mTitleTextColor != 0) {
+                    this.mTitleTextView.setTextColor(this.mTitleTextColor);
                 }
             }
-            if (!d((View) this.i)) {
-                a((View) this.i, true);
+            if (!isChildOrHidden(this.mTitleTextView)) {
+                addSystemView(this.mTitleTextView, true);
             }
-        } else if (this.i != null && d((View) this.i)) {
-            removeView(this.i);
-            this.z.remove(this.i);
+        } else if (this.mTitleTextView != null && isChildOrHidden(this.mTitleTextView)) {
+            removeView(this.mTitleTextView);
+            this.mHiddenViews.remove(this.mTitleTextView);
         }
-        if (this.i != null) {
-            this.i.setText(charSequence);
+        if (this.mTitleTextView != null) {
+            this.mTitleTextView.setText(charSequence);
         }
-        this.y = charSequence;
+        this.mTitleText = charSequence;
     }
 
     public final java.lang.CharSequence i() {
@@ -335,25 +332,25 @@ public class Toolbar extends android.view.ViewGroup {
     }
 
     public final void c(int i2) {
-        b(defpackage.xw.b(getContext(), i2));
+        setNavigationIcon(defpackage.xw.b(getContext(), i2));
     }
 
-    public final void b(android.graphics.drawable.Drawable drawable) {
+    public final void setNavigationIcon(Drawable drawable) {
         if (drawable != null) {
             ensureNavButtonView();
-            if (!d((View) this.mNavButtonView)) {
-                a((View) this.mNavButtonView, true);
+            if (!isChildOrHidden(this.mNavButtonView)) {
+                addSystemView(this.mNavButtonView, true);
             }
-        } else if (this.mNavButtonView != null && d((View) this.mNavButtonView)) {
+        } else if (this.mNavButtonView != null && isChildOrHidden(this.mNavButtonView)) {
             removeView(this.mNavButtonView);
-            this.z.remove(this.mNavButtonView);
+            this.mHiddenViews.remove(this.mNavButtonView);
         }
         if (this.mNavButtonView != null) {
             this.mNavButtonView.setImageDrawable(drawable);
         }
     }
 
-    public final android.graphics.drawable.Drawable j() {
+    public final Drawable getNavigationIcon() {
         if (this.mNavButtonView != null) {
             return this.mNavButtonView.getDrawable();
         }
@@ -365,37 +362,36 @@ public class Toolbar extends android.view.ViewGroup {
         this.mNavButtonView.setOnClickListener(onClickListener);
     }
 
-    public final android.view.Menu k() {
-        l();
-        if (this.g.a == null) {
-            defpackage.ze zeVar = (defpackage.ze) this.g.b();
-            if (this.C == null) {
-                this.C = new defpackage.agz(this);
+    public final Menu getMenu() {
+        ensureMenuView();
+        if (this.mMenuView.peekMenu == null) {
+            MenuBuilder menu = (MenuBuilder) this.mMenuView.getMenu();
+            if (this.mExpandedMenuPresenter == null) {
+                this.mExpandedMenuPresenter = new ExpandedActionViewMenuPresenter(this);
             }
-            this.g.c.i = true;
-            zeVar.a((defpackage.zt) this.C, this.n);
+            this.mMenuView.presenter.mExpandedActionViewsExclusive = true;
+            menu.addMenuPresenter(this.mExpandedMenuPresenter, this.n);
         }
-        return this.g.b();
+        return this.mMenuView.getMenu();
     }
 
     /* access modifiers changed from: 0000 */
-    public final void l() {
-        if (this.g == null) {
-            this.g = new android.support.v7.widget.ActionMenuView(getContext());
-            this.g.a(this.o);
-            this.g.f = this.K;
-            android.support.v7.widget.ActionMenuView actionMenuView = this.g;
-            actionMenuView.d = null;
-            actionMenuView.e = null;
-            defpackage.aha aha = new defpackage.aha();
-            aha.a = 8388613 | (this.r & 112);
-            this.g.setLayoutParams(aha);
-            a((View) this.g, false);
+    public final void ensureMenuView() {
+        if (this.mMenuView == null) {
+            this.mMenuView = new ActionMenuView(getContext());
+            this.mMenuView.setPopupTheme(this.mPopupTheme);
+            this.mMenuView.f = this.K;
+            mMenuView.mActionMenuPresenterCallback = null;
+            mMenuView.mMenuBuilderCallback = null;
+            ToolbarLayoutParams lp = new ToolbarLayoutParams();
+            lp.gravity = 8388613 | (this.r & 112);
+            this.mMenuView.setLayoutParams(lp);
+            addSystemView(this.mMenuView, false);
         }
     }
 
-    public final void d(int i2) {
-        new defpackage.yj(getContext()).inflate(i2, k());
+    public final void inflateMenu(int i2) {
+        new SupportMenuInflater(getContext()).inflate(i2, getMenu());
     }
 
     private final int b() {
@@ -415,7 +411,7 @@ public class Toolbar extends android.view.ViewGroup {
     }
 
     private final int d() {
-        if (j() != null) {
+        if (getNavigationIcon() != null) {
             return java.lang.Math.max(b(), java.lang.Math.max(this.d, 0));
         }
         return b();
@@ -423,8 +419,8 @@ public class Toolbar extends android.view.ViewGroup {
 
     private final int e() {
         boolean z2;
-        if (this.g != null) {
-            defpackage.ze zeVar = this.g.a;
+        if (this.mMenuView != null) {
+            MenuBuilder zeVar = this.mMenuView.peekMenu;
             z2 = zeVar != null && zeVar.hasVisibleItems();
         } else {
             z2 = false;
@@ -438,54 +434,54 @@ public class Toolbar extends android.view.ViewGroup {
     private final void ensureNavButtonView() {
         if (this.mNavButtonView == null) {
             this.mNavButtonView = new defpackage.abr(getContext(), null, R.attr.toolbarNavigationButtonStyle);
-            defpackage.aha aha = new defpackage.aha();
-            aha.a = 8388611 | (this.r & 112);
+            ToolbarLayoutParams aha = new ToolbarLayoutParams();
+            aha.gravity = 8388611 | (this.r & 112);
             this.mNavButtonView.setLayoutParams(aha);
         }
     }
 
-    private final void a(View view, boolean z2) {
-        defpackage.aha aha;
+    private final void addSystemView(View view, boolean allowHide) {
+        ToolbarLayoutParams aha;
         android.view.ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
         if (layoutParams == null) {
-            aha = new defpackage.aha();
+            aha = new ToolbarLayoutParams();
         } else if (!checkLayoutParams(layoutParams)) {
             aha = a(layoutParams);
         } else {
-            aha = (defpackage.aha) layoutParams;
+            aha = (ToolbarLayoutParams) layoutParams;
         }
         aha.b = 1;
-        if (!z2 || this.m == null) {
+        if (!allowHide || this.m == null) {
             addView(view, aha);
             return;
         }
         view.setLayoutParams(aha);
-        this.z.add(view);
+        this.mHiddenViews.add(view);
     }
 
     public android.os.Parcelable onSaveInstanceState() {
         defpackage.ahc ahc = new defpackage.ahc(super.onSaveInstanceState());
-        if (!(this.C == null || this.C.a == null)) {
-            ahc.a = this.C.a.getItemId();
+        if (!(this.mExpandedMenuPresenter == null || this.mExpandedMenuPresenter.a == null)) {
+            ahc.a = this.mExpandedMenuPresenter.a.getItemId();
         }
         ahc.b = f();
         return ahc;
     }
 
     public void onRestoreInstanceState(android.os.Parcelable parcelable) {
-        defpackage.ze zeVar;
+        MenuBuilder zeVar;
         if (!(parcelable instanceof defpackage.ahc)) {
             super.onRestoreInstanceState(parcelable);
             return;
         }
         defpackage.ahc ahc = (defpackage.ahc) parcelable;
         super.onRestoreInstanceState(ahc.e);
-        if (this.g != null) {
-            zeVar = this.g.a;
+        if (this.mMenuView != null) {
+            zeVar = this.mMenuView.peekMenu;
         } else {
             zeVar = null;
         }
-        if (!(ahc.a == 0 || this.C == null || zeVar == null)) {
+        if (!(ahc.a == 0 || this.mExpandedMenuPresenter == null || zeVar == null)) {
             android.view.MenuItem findItem = zeVar.findItem(ahc.a);
             if (findItem != null) {
                 findItem.expandActionView();
@@ -579,31 +575,31 @@ public class Toolbar extends android.view.ViewGroup {
             c3 = 0;
         }
         int i8 = 0;
-        if (a((View) this.mNavButtonView)) {
+        if (a(this.mNavButtonView)) {
             a(this.mNavButtonView, i2, 0, i3, this.c);
-            i8 = this.mNavButtonView.getMeasuredWidth() + b((View) this.mNavButtonView);
-            int max = java.lang.Math.max(0, this.mNavButtonView.getMeasuredHeight() + c((View) this.mNavButtonView));
+            i8 = this.mNavButtonView.getMeasuredWidth() + b(this.mNavButtonView);
+            int max = java.lang.Math.max(0, this.mNavButtonView.getMeasuredHeight() + c(this.mNavButtonView));
             i4 = View.combineMeasuredStates(0, this.mNavButtonView.getMeasuredState());
             i5 = max;
         } else {
             i4 = 0;
             i5 = 0;
         }
-        if (a((View) this.l)) {
+        if (a(this.l)) {
             a(this.l, i2, 0, i3, this.c);
-            i8 = this.l.getMeasuredWidth() + b((View) this.l);
-            i5 = java.lang.Math.max(i5, this.l.getMeasuredHeight() + c((View) this.l));
+            i8 = this.l.getMeasuredWidth() + b(this.l);
+            i5 = java.lang.Math.max(i5, this.l.getMeasuredHeight() + c(this.l));
             i4 = View.combineMeasuredStates(i4, this.l.getMeasuredState());
         }
         int d2 = d();
         int max2 = java.lang.Math.max(d2, i8) + 0;
         iArr[c3] = java.lang.Math.max(0, d2 - i8);
         int i9 = 0;
-        if (a((View) this.g)) {
-            a(this.g, i2, max2, i3, this.c);
-            i9 = this.g.getMeasuredWidth() + b((View) this.g);
-            i5 = java.lang.Math.max(i5, this.g.getMeasuredHeight() + c((View) this.g));
-            i4 = View.combineMeasuredStates(i4, this.g.getMeasuredState());
+        if (a(this.mMenuView)) {
+            a(this.mMenuView, i2, max2, i3, this.c);
+            i9 = this.mMenuView.getMeasuredWidth() + b(this.mMenuView);
+            i5 = java.lang.Math.max(i5, this.mMenuView.getMeasuredHeight() + c(this.mMenuView));
+            i4 = View.combineMeasuredStates(i4, this.mMenuView.getMeasuredState());
         }
         int e2 = e();
         int max3 = max2 + java.lang.Math.max(e2, i9);
@@ -613,9 +609,9 @@ public class Toolbar extends android.view.ViewGroup {
             i5 = java.lang.Math.max(i5, this.m.getMeasuredHeight() + c(this.m));
             i4 = View.combineMeasuredStates(i4, this.m.getMeasuredState());
         }
-        if (a((View) this.b)) {
+        if (a(this.b)) {
             max3 += a(this.b, i2, max3, i3, 0, iArr);
-            i5 = java.lang.Math.max(i5, this.b.getMeasuredHeight() + c((View) this.b));
+            i5 = java.lang.Math.max(i5, this.b.getMeasuredHeight() + c(this.b));
             i4 = View.combineMeasuredStates(i4, this.b.getMeasuredState());
         }
         int childCount = getChildCount();
@@ -624,7 +620,7 @@ public class Toolbar extends android.view.ViewGroup {
         int i12 = i5;
         while (i10 < childCount) {
             View childAt = getChildAt(i10);
-            if (((defpackage.aha) childAt.getLayoutParams()).b != 0 || !a(childAt)) {
+            if (((ToolbarLayoutParams) childAt.getLayoutParams()).b != 0 || !a(childAt)) {
                 i6 = i11;
                 i7 = i12;
             } else {
@@ -641,16 +637,16 @@ public class Toolbar extends android.view.ViewGroup {
         int i14 = 0;
         int i15 = this.u + this.v;
         int i16 = this.s + this.t;
-        if (a((View) this.h)) {
-            a(this.h, i2, max3 + i16, i3, i15, iArr);
-            i13 = b((View) this.h) + this.h.getMeasuredWidth();
-            i14 = this.h.getMeasuredHeight() + c((View) this.h);
-            i11 = View.combineMeasuredStates(i11, this.h.getMeasuredState());
+        if (a(this.mSubtitleTextView)) {
+            a(this.mSubtitleTextView, i2, max3 + i16, i3, i15, iArr);
+            i13 = b(this.mSubtitleTextView) + this.mSubtitleTextView.getMeasuredWidth();
+            i14 = this.mSubtitleTextView.getMeasuredHeight() + c(this.mSubtitleTextView);
+            i11 = View.combineMeasuredStates(i11, this.mSubtitleTextView.getMeasuredState());
         }
-        if (a((View) this.i)) {
-            i13 = java.lang.Math.max(i13, a(this.i, i2, max3 + i16, i3, i15 + i14, iArr));
-            i14 += this.i.getMeasuredHeight() + c((View) this.i);
-            i11 = View.combineMeasuredStates(i11, this.i.getMeasuredState());
+        if (a(this.mTitleTextView)) {
+            i13 = java.lang.Math.max(i13, a(this.mTitleTextView, i2, max3 + i16, i3, i15 + i14, iArr));
+            i14 += this.mTitleTextView.getMeasuredHeight() + c(this.mTitleTextView);
+            i11 = View.combineMeasuredStates(i11, this.mTitleTextView.getMeasuredState());
         }
         int i17 = i13 + max3;
         int max5 = java.lang.Math.max(i12, i14) + getPaddingTop() + getPaddingBottom();
@@ -675,11 +671,7 @@ public class Toolbar extends android.view.ViewGroup {
         int i16;
         int i17;
         int i18;
-        if (defpackage.sn.a.j(this) == 1) {
-            z3 = true;
-        } else {
-            z3 = false;
-        }
+        z3 = ViewCompat.a.j(this) == 1;
         int width = getWidth();
         int height = getHeight();
         int paddingLeft = getPaddingLeft();
@@ -690,9 +682,9 @@ public class Toolbar extends android.view.ViewGroup {
         int[] iArr = this.J;
         iArr[1] = 0;
         iArr[0] = 0;
-        int f2 = defpackage.sn.a.f(this);
+        int f2 = ViewCompat.a.f(this);
         int i20 = f2 >= 0 ? java.lang.Math.min(f2, i5 - i3) : 0;
-        if (!a((View) this.mNavButtonView)) {
+        if (!a(this.mNavButtonView)) {
             i6 = i19;
             i7 = paddingLeft;
         } else if (z3) {
@@ -703,26 +695,26 @@ public class Toolbar extends android.view.ViewGroup {
             i7 = a(this.mNavButtonView, paddingLeft, iArr, i20);
             i6 = i21;
         }
-        if (a((View) this.l)) {
+        if (a(this.l)) {
             if (z3) {
                 i6 = b(this.l, i6, iArr, i20);
             } else {
                 i7 = a(this.l, i7, iArr, i20);
             }
         }
-        if (a((View) this.g)) {
+        if (a(this.mMenuView)) {
             if (z3) {
-                i7 = a(this.g, i7, iArr, i20);
+                i7 = a(this.mMenuView, i7, iArr, i20);
             } else {
-                i6 = b(this.g, i6, iArr, i20);
+                i6 = b(this.mMenuView, i6, iArr, i20);
             }
         }
-        if (defpackage.sn.a.j(this) == 1) {
+        if (ViewCompat.a.j(this) == 1) {
             d2 = e();
         } else {
             d2 = d();
         }
-        if (defpackage.sn.a.j(this) == 1) {
+        if (ViewCompat.a.j(this) == 1) {
             e2 = d();
         } else {
             e2 = e();
@@ -738,7 +730,7 @@ public class Toolbar extends android.view.ViewGroup {
                 max = a(this.m, max, iArr, i20);
             }
         }
-        if (!a((View) this.b)) {
+        if (!a(this.b)) {
             i8 = min;
             i9 = max;
         } else if (z3) {
@@ -748,23 +740,23 @@ public class Toolbar extends android.view.ViewGroup {
             i8 = min;
             i9 = a(this.b, max, iArr, i20);
         }
-        boolean a2 = a((View) this.h);
-        boolean a3 = a((View) this.i);
+        boolean a2 = a(this.mSubtitleTextView);
+        boolean a3 = a(this.mTitleTextView);
         int i22 = 0;
         if (a2) {
-            defpackage.aha aha = (defpackage.aha) this.h.getLayoutParams();
-            i22 = aha.bottomMargin + aha.topMargin + this.h.getMeasuredHeight() + 0;
+            ToolbarLayoutParams aha = (ToolbarLayoutParams) this.mSubtitleTextView.getLayoutParams();
+            i22 = aha.bottomMargin + aha.topMargin + this.mSubtitleTextView.getMeasuredHeight() + 0;
         }
         if (a3) {
-            defpackage.aha aha2 = (defpackage.aha) this.i.getLayoutParams();
-            i10 = aha2.bottomMargin + aha2.topMargin + this.i.getMeasuredHeight() + i22;
+            ToolbarLayoutParams aha2 = (ToolbarLayoutParams) this.mTitleTextView.getLayoutParams();
+            i10 = aha2.bottomMargin + aha2.topMargin + this.mTitleTextView.getMeasuredHeight() + i22;
         } else {
             i10 = i22;
         }
         if (a2 || a3) {
-            defpackage.aha aha3 = (defpackage.aha) (a2 ? this.h : this.i).getLayoutParams();
-            defpackage.aha aha4 = (defpackage.aha) (a3 ? this.i : this.h).getLayoutParams();
-            boolean z4 = (a2 && this.h.getMeasuredWidth() > 0) || (a3 && this.i.getMeasuredWidth() > 0);
+            ToolbarLayoutParams aha3 = (ToolbarLayoutParams) (a2 ? this.mSubtitleTextView : this.mTitleTextView).getLayoutParams();
+            ToolbarLayoutParams aha4 = (ToolbarLayoutParams) (a3 ? this.mTitleTextView : this.mSubtitleTextView).getLayoutParams();
+            boolean z4 = (a2 && this.mSubtitleTextView.getMeasuredWidth() > 0) || (a3 && this.mTitleTextView.getMeasuredWidth() > 0);
             switch (this.f & 112) {
                 case 48:
                     i11 = aha3.topMargin + getPaddingTop() + this.u;
@@ -792,19 +784,19 @@ public class Toolbar extends android.view.ViewGroup {
                 int max2 = i8 - java.lang.Math.max(0, i25);
                 iArr[1] = java.lang.Math.max(0, -i25);
                 if (a2) {
-                    defpackage.aha aha5 = (defpackage.aha) this.h.getLayoutParams();
-                    int measuredWidth = max2 - this.h.getMeasuredWidth();
-                    int measuredHeight = this.h.getMeasuredHeight() + i11;
-                    this.h.layout(measuredWidth, i11, max2, measuredHeight);
+                    ToolbarLayoutParams aha5 = (ToolbarLayoutParams) this.mSubtitleTextView.getLayoutParams();
+                    int measuredWidth = max2 - this.mSubtitleTextView.getMeasuredWidth();
+                    int measuredHeight = this.mSubtitleTextView.getMeasuredHeight() + i11;
+                    this.mSubtitleTextView.layout(measuredWidth, i11, max2, measuredHeight);
                     i11 = measuredHeight + aha5.bottomMargin;
                     i15 = measuredWidth - this.t;
                 } else {
                     i15 = max2;
                 }
                 if (a3) {
-                    defpackage.aha aha6 = (defpackage.aha) this.i.getLayoutParams();
+                    ToolbarLayoutParams aha6 = (ToolbarLayoutParams) this.mTitleTextView.getLayoutParams();
                     int i26 = aha6.topMargin + i11;
-                    this.i.layout(max2 - this.i.getMeasuredWidth(), i26, max2, this.i.getMeasuredHeight() + i26);
+                    this.mTitleTextView.layout(max2 - this.mTitleTextView.getMeasuredWidth(), i26, max2, this.mTitleTextView.getMeasuredHeight() + i26);
                     int i27 = max2 - this.t;
                     int i28 = aha6.bottomMargin;
                     i16 = i27;
@@ -822,10 +814,10 @@ public class Toolbar extends android.view.ViewGroup {
                 i9 += java.lang.Math.max(0, i29);
                 iArr[0] = java.lang.Math.max(0, -i29);
                 if (a2) {
-                    defpackage.aha aha7 = (defpackage.aha) this.h.getLayoutParams();
-                    int measuredWidth2 = this.h.getMeasuredWidth() + i9;
-                    int measuredHeight2 = this.h.getMeasuredHeight() + i11;
-                    this.h.layout(i9, i11, measuredWidth2, measuredHeight2);
+                    ToolbarLayoutParams aha7 = (ToolbarLayoutParams) this.mSubtitleTextView.getLayoutParams();
+                    int measuredWidth2 = this.mSubtitleTextView.getMeasuredWidth() + i9;
+                    int measuredHeight2 = this.mSubtitleTextView.getMeasuredHeight() + i11;
+                    this.mSubtitleTextView.layout(i9, i11, measuredWidth2, measuredHeight2);
                     int i30 = aha7.bottomMargin + measuredHeight2;
                     i12 = measuredWidth2 + this.t;
                     i13 = i30;
@@ -834,10 +826,10 @@ public class Toolbar extends android.view.ViewGroup {
                     i13 = i11;
                 }
                 if (a3) {
-                    defpackage.aha aha8 = (defpackage.aha) this.i.getLayoutParams();
+                    ToolbarLayoutParams aha8 = (ToolbarLayoutParams) this.mTitleTextView.getLayoutParams();
                     int i31 = i13 + aha8.topMargin;
-                    int measuredWidth3 = this.i.getMeasuredWidth() + i9;
-                    this.i.layout(i9, i31, measuredWidth3, this.i.getMeasuredHeight() + i31);
+                    int measuredWidth3 = this.mTitleTextView.getMeasuredWidth() + i9;
+                    this.mTitleTextView.layout(i9, i31, measuredWidth3, this.mTitleTextView.getMeasuredHeight() + i31);
                     int i32 = this.t + measuredWidth3;
                     int i33 = aha8.bottomMargin;
                     i14 = i32;
@@ -849,13 +841,13 @@ public class Toolbar extends android.view.ViewGroup {
                 }
             }
         }
-        a((java.util.List) this.I, 3);
+        a(this.I, 3);
         int size = this.I.size();
         int i34 = i9;
         for (int i35 = 0; i35 < size; i35++) {
             i34 = a((View) this.I.get(i35), i34, iArr, i20);
         }
-        a((java.util.List) this.I, 5);
+        a(this.I, 5);
         int size2 = this.I.size();
         int i36 = 0;
         int i37 = i8;
@@ -864,7 +856,7 @@ public class Toolbar extends android.view.ViewGroup {
             i36++;
             i37 = b2;
         }
-        a((java.util.List) this.I, 1);
+        a(this.I, 1);
         java.util.ArrayList arrayList = this.I;
         int i38 = iArr[0];
         int i39 = iArr[1];
@@ -875,7 +867,7 @@ public class Toolbar extends android.view.ViewGroup {
         int i43 = 0;
         while (i42 < size3) {
             View view = (View) arrayList.get(i42);
-            defpackage.aha aha9 = (defpackage.aha) view.getLayoutParams();
+            ToolbarLayoutParams aha9 = (ToolbarLayoutParams) view.getLayoutParams();
             int i44 = aha9.leftMargin - i41;
             int i45 = aha9.rightMargin - i40;
             int max3 = java.lang.Math.max(0, i44);
@@ -901,7 +893,7 @@ public class Toolbar extends android.view.ViewGroup {
     }
 
     private final int a(View view, int i2, int[] iArr, int i3) {
-        defpackage.aha aha = (defpackage.aha) view.getLayoutParams();
+        ToolbarLayoutParams aha = (ToolbarLayoutParams) view.getLayoutParams();
         int i4 = aha.leftMargin - iArr[0];
         int max = java.lang.Math.max(0, i4) + i2;
         iArr[0] = java.lang.Math.max(0, -i4);
@@ -912,7 +904,7 @@ public class Toolbar extends android.view.ViewGroup {
     }
 
     private final int b(View view, int i2, int[] iArr, int i3) {
-        defpackage.aha aha = (defpackage.aha) view.getLayoutParams();
+        ToolbarLayoutParams aha = (ToolbarLayoutParams) view.getLayoutParams();
         int i4 = aha.rightMargin - iArr[1];
         int max = i2 - java.lang.Math.max(0, i4);
         iArr[1] = java.lang.Math.max(0, -i4);
@@ -924,10 +916,10 @@ public class Toolbar extends android.view.ViewGroup {
 
     private final int a(View view, int i2) {
         int i3;
-        defpackage.aha aha = (defpackage.aha) view.getLayoutParams();
+        ToolbarLayoutParams aha = (ToolbarLayoutParams) view.getLayoutParams();
         int measuredHeight = view.getMeasuredHeight();
         int i4 = i2 > 0 ? (measuredHeight - i2) / 2 : 0;
-        int i5 = aha.a & 112;
+        int i5 = aha.gravity & 112;
         switch (i5) {
             case 16:
             case 48:
@@ -959,17 +951,17 @@ public class Toolbar extends android.view.ViewGroup {
 
     private final void a(java.util.List list, int i2) {
         boolean z2 = true;
-        if (defpackage.sn.a.j(this) != 1) {
+        if (ViewCompat.a.j(this) != 1) {
             z2 = false;
         }
         int childCount = getChildCount();
-        int a2 = defpackage.jd.a(i2, defpackage.sn.a.j(this));
+        int a2 = defpackage.jd.a(i2, ViewCompat.a.j(this));
         list.clear();
         if (z2) {
             for (int i3 = childCount - 1; i3 >= 0; i3--) {
                 View childAt = getChildAt(i3);
-                defpackage.aha aha = (defpackage.aha) childAt.getLayoutParams();
-                if (aha.b == 0 && a(childAt) && e(aha.a) == a2) {
+                ToolbarLayoutParams aha = (ToolbarLayoutParams) childAt.getLayoutParams();
+                if (aha.b == 0 && a(childAt) && e(aha.gravity) == a2) {
                     list.add(childAt);
                 }
             }
@@ -977,15 +969,15 @@ public class Toolbar extends android.view.ViewGroup {
         }
         for (int i4 = 0; i4 < childCount; i4++) {
             View childAt2 = getChildAt(i4);
-            defpackage.aha aha2 = (defpackage.aha) childAt2.getLayoutParams();
-            if (aha2.b == 0 && a(childAt2) && e(aha2.a) == a2) {
+            ToolbarLayoutParams aha2 = (ToolbarLayoutParams) childAt2.getLayoutParams();
+            if (aha2.b == 0 && a(childAt2) && e(aha2.gravity) == a2) {
                 list.add(childAt2);
             }
         }
     }
 
     private final int e(int i2) {
-        int j2 = defpackage.sn.a.j(this);
+        int j2 = ViewCompat.a.j(this);
         int a2 = defpackage.jd.a(i2, j2) & 7;
         switch (a2) {
             case 1:
@@ -998,7 +990,7 @@ public class Toolbar extends android.view.ViewGroup {
     }
 
     private final boolean a(View view) {
-        return (view == null || view.getParent() != this || view.getVisibility() == 8) ? false : true;
+        return view != null && view.getParent() == this && view.getVisibility() != 8;
     }
 
     private static int b(View view) {
@@ -1023,22 +1015,22 @@ public class Toolbar extends android.view.ViewGroup {
         return marginLayoutParams.bottomMargin + marginLayoutParams.topMargin;
     }
 
-    private static defpackage.aha a(android.view.ViewGroup.LayoutParams layoutParams) {
-        if (layoutParams instanceof defpackage.aha) {
-            return new defpackage.aha((defpackage.aha) layoutParams);
+    private static ToolbarLayoutParams a(android.view.ViewGroup.LayoutParams layoutParams) {
+        if (layoutParams instanceof ToolbarLayoutParams) {
+            return new ToolbarLayoutParams((ToolbarLayoutParams) layoutParams);
         }
         if (layoutParams instanceof defpackage.wb) {
-            return new defpackage.aha((defpackage.wb) layoutParams);
+            return new ToolbarLayoutParams((defpackage.wb) layoutParams);
         }
         if (layoutParams instanceof android.view.ViewGroup.MarginLayoutParams) {
-            return new defpackage.aha((android.view.ViewGroup.MarginLayoutParams) layoutParams);
+            return new ToolbarLayoutParams((android.view.ViewGroup.MarginLayoutParams) layoutParams);
         }
-        return new defpackage.aha(layoutParams);
+        return new ToolbarLayoutParams(layoutParams);
     }
 
     /* access modifiers changed from: protected */
     public boolean checkLayoutParams(android.view.ViewGroup.LayoutParams layoutParams) {
-        return super.checkLayoutParams(layoutParams) && (layoutParams instanceof defpackage.aha);
+        return super.checkLayoutParams(layoutParams) && (layoutParams instanceof ToolbarLayoutParams);
     }
 
     public final defpackage.acr m() {
@@ -1048,8 +1040,8 @@ public class Toolbar extends android.view.ViewGroup {
         return this.L;
     }
 
-    private final boolean d(View view) {
-        return view.getParent() == this || this.z.contains(view);
+    private final boolean isChildOrHidden(View view) {
+        return view.getParent() == this || this.mHiddenViews.contains(view);
     }
 
     public final void n() {
@@ -1060,7 +1052,7 @@ public class Toolbar extends android.view.ViewGroup {
 
     /* access modifiers changed from: protected */
     public /* synthetic */ android.view.ViewGroup.LayoutParams generateDefaultLayoutParams() {
-        return new defpackage.aha();
+        return new ToolbarLayoutParams();
     }
 
     /* access modifiers changed from: protected */
@@ -1069,6 +1061,6 @@ public class Toolbar extends android.view.ViewGroup {
     }
 
     public /* synthetic */ android.view.ViewGroup.LayoutParams generateLayoutParams(android.util.AttributeSet attributeSet) {
-        return new defpackage.aha(getContext(), attributeSet);
+        return new ToolbarLayoutParams(getContext(), attributeSet);
     }
 }

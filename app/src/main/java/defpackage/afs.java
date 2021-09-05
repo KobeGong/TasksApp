@@ -2,15 +2,15 @@ package defpackage;
 
 /* renamed from: afs reason: default package */
 /* compiled from: PG */
-public final class afs implements defpackage.zu {
+public final class afs implements MenuPresenter_Callback {
     private final /* synthetic */ defpackage.wz a;
 
     public afs(defpackage.wz wzVar) {
         this.a = wzVar;
     }
 
-    public final void a(defpackage.ze zeVar, boolean z) {
-        defpackage.ze l = zeVar.l();
+    public final void onCloseMenu(MenuBuilder zeVar, boolean z) {
+        MenuBuilder l = zeVar.l();
         boolean z2 = l != zeVar;
         defpackage.wz wzVar = this.a;
         if (z2) {
@@ -28,7 +28,7 @@ public final class afs implements defpackage.zu {
         this.a.a(a2, z);
     }
 
-    public final boolean a(defpackage.ze zeVar) {
+    public final boolean a(MenuBuilder zeVar) {
         if (zeVar == null && this.a.g) {
             android.view.Window.Callback callback = this.a.c.getCallback();
             if (callback != null && !this.a.m) {

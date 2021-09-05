@@ -10,7 +10,7 @@ public final class zx {
     public android.view.ViewGroup e;
     public android.view.View f;
     public android.view.View g;
-    public defpackage.ze h;
+    public MenuBuilder h;
     public defpackage.zb i;
     public android.content.Context j;
     public boolean k;
@@ -33,14 +33,14 @@ public final class zx {
         this.a = i2;
     }
 
-    public final void a(defpackage.ze zeVar) {
+    public final void a(MenuBuilder zeVar) {
         if (zeVar != this.h) {
             if (this.h != null) {
-                this.h.b((defpackage.zt) this.i);
+                this.h.b((MenuPresenter) this.i);
             }
             this.h = zeVar;
             if (zeVar != null && this.i != null) {
-                zeVar.a((defpackage.zt) this.i);
+                zeVar.a((MenuPresenter) this.i);
             }
         }
     }

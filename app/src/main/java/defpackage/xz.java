@@ -30,7 +30,7 @@ public final class xz implements defpackage.yd {
         }
         if (this.a.p != null) {
             this.a.p();
-            this.a.s = defpackage.sn.b(this.a.p).a(0.0f);
+            this.a.s = ViewCompat.b(this.a.p).a(0.0f);
             this.a.s.a((defpackage.th) new defpackage.xe(this));
         }
         if (this.a.e != null) {

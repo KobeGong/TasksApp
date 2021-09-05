@@ -19,7 +19,7 @@ public final class cgc {
         this.b.a(f2, (int) (250.0f + (5.0f * f)));
         if (android.os.Build.VERSION.SDK_INT >= 21) {
             com.google.android.libraries.onegoogle.bottomdrawer.GoogleMaterialBottomDrawer googleMaterialBottomDrawer = this.b;
-            defpackage.sn.a(googleMaterialBottomDrawer, defpackage.sn.a.k(googleMaterialBottomDrawer), (int) (((float) this.b.b) * f), defpackage.sn.a.l(googleMaterialBottomDrawer), this.b.getPaddingBottom());
+            ViewCompat.a(googleMaterialBottomDrawer, ViewCompat.a.k(googleMaterialBottomDrawer), (int) (((float) this.b.b) * f), ViewCompat.a.l(googleMaterialBottomDrawer), this.b.getPaddingBottom());
         }
     }
 

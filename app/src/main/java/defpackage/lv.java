@@ -11,7 +11,7 @@ final class lv extends defpackage.lx {
     }
 
     public final void onAnimationEnd(android.view.animation.Animation animation) {
-        if (defpackage.sn.a.s(this.a) || android.os.Build.VERSION.SDK_INT >= 24) {
+        if (ViewCompat.a.s(this.a) || android.os.Build.VERSION.SDK_INT >= 24) {
             this.a.post(new defpackage.lw(this));
         } else {
             this.a.setLayerType(0, null);

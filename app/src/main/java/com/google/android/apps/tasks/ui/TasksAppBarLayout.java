@@ -1,5 +1,7 @@
 package com.google.android.apps.tasks.ui;
 
+import defpackage.ViewCompat;
+
 /* compiled from: PG */
 public class TasksAppBarLayout extends android.support.design.widget.AppBarLayout {
     public boolean f = false;
@@ -25,6 +27,6 @@ public class TasksAppBarLayout extends android.support.design.widget.AppBarLayou
     /* access modifiers changed from: protected */
     public void onLayout(boolean z, int i, int i2, int i3, int i4) {
         super.onLayout(z, i, i2, i3, i4);
-        defpackage.sn.b((android.view.View) this, 1);
+        ViewCompat.b((android.view.View) this, 1);
     }
 }

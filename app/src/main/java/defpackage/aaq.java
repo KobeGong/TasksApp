@@ -5,13 +5,13 @@ package defpackage;
 final class aaq extends defpackage.zr {
     private final /* synthetic */ defpackage.aap d;
 
-    public aaq(defpackage.aap aap, android.content.Context context, defpackage.aad aad, android.view.View view) {
+    public aaq(defpackage.aap aap, android.content.Context context, SubMenuBuilder aad, android.view.View view) {
         this.d = aap;
         super(context, aad, view, false);
-        if (!((defpackage.zi) aad.getItem()).f()) {
+        if (!((MenuItemImpl) aad.getItem()).f()) {
             this.a = aap.g == null ? (android.view.View) aap.e : aap.g;
         }
-        a((defpackage.zu) aap.m);
+        a((MenuPresenter_Callback) aap.m);
     }
 
     /* access modifiers changed from: protected */

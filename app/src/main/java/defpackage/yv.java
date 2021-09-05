@@ -2,7 +2,7 @@ package defpackage;
 
 /* renamed from: yv reason: default package */
 /* compiled from: PG */
-final class yv extends defpackage.zq implements android.view.View.OnKeyListener, android.widget.PopupWindow.OnDismissListener, defpackage.zt {
+final class yv extends defpackage.zq implements android.view.View.OnKeyListener, android.widget.PopupWindow.OnDismissListener, MenuPresenter {
     private android.widget.PopupWindow.OnDismissListener A;
     public final android.os.Handler a;
     public final java.util.List b = new java.util.ArrayList();
@@ -28,7 +28,7 @@ final class yv extends defpackage.zq implements android.view.View.OnKeyListener,
     private int w;
     private boolean x;
     private boolean y;
-    private defpackage.zu z;
+    private MenuPresenter_Callback z;
 
     public yv(android.content.Context context, android.view.View view, int i2, int i3, boolean z2) {
         this.h = context;
@@ -49,7 +49,7 @@ final class yv extends defpackage.zq implements android.view.View.OnKeyListener,
 
     public final void d() {
         if (!f()) {
-            for (defpackage.ze c2 : this.m) {
+            for (MenuBuilder c2 : this.m) {
                 c(c2);
             }
             this.m.clear();
@@ -87,14 +87,14 @@ final class yv extends defpackage.zq implements android.view.View.OnKeyListener,
     }
 
     private final int i() {
-        if (defpackage.sn.a.j(this.r) == 1) {
+        if (ViewCompat.a.j(this.r) == 1) {
             return 0;
         }
         return 1;
     }
 
-    public final void a(defpackage.ze zeVar) {
-        zeVar.a((defpackage.zt) this, this.h);
+    public final void a(MenuBuilder zeVar) {
+        zeVar.addMenuPresenter((MenuPresenter) this, this.h);
         if (f()) {
             c(zeVar);
         } else {
@@ -105,7 +105,7 @@ final class yv extends defpackage.zq implements android.view.View.OnKeyListener,
     /* JADX WARNING: type inference failed for: r6v15 */
     /* JADX WARNING: Multi-variable type inference failed */
     /* Code decompiled incorrectly, please refer to instructions dump. */
-    private final void c(defpackage.ze r13) {
+    private final void c(MenuBuilder r13) {
         /*
             r12 = this;
             android.content.Context r0 = r12.h
@@ -460,11 +460,11 @@ final class yv extends defpackage.zq implements android.view.View.OnKeyListener,
         }
     }
 
-    public final void a(defpackage.zu zuVar) {
+    public final void setCallback(MenuPresenter_Callback zuVar) {
         this.z = zuVar;
     }
 
-    public final boolean a(defpackage.aad aad) {
+    public final boolean onSubMenuSelected(SubMenuBuilder aad) {
         for (defpackage.za zaVar : this.b) {
             if (aad == zaVar.b) {
                 zaVar.a.e.requestFocus();
@@ -474,14 +474,14 @@ final class yv extends defpackage.zq implements android.view.View.OnKeyListener,
         if (!aad.hasVisibleItems()) {
             return false;
         }
-        a((defpackage.ze) aad);
+        a((MenuBuilder) aad);
         if (this.z != null) {
             this.z.a(aad);
         }
         return true;
     }
 
-    public final void a(defpackage.ze zeVar, boolean z2) {
+    public final void onCloseMenu(MenuBuilder zeVar, boolean z2) {
         int size = this.b.size();
         int i2 = 0;
         while (true) {
@@ -500,7 +500,7 @@ final class yv extends defpackage.zq implements android.view.View.OnKeyListener,
                 ((defpackage.za) this.b.get(i3)).b.b(false);
             }
             defpackage.za zaVar = (defpackage.za) this.b.remove(i2);
-            zaVar.b.b((defpackage.zt) this);
+            zaVar.b.b((MenuPresenter) this);
             if (this.f) {
                 defpackage.ael ael = zaVar.a;
                 if (android.os.Build.VERSION.SDK_INT >= 23) {
@@ -518,7 +518,7 @@ final class yv extends defpackage.zq implements android.view.View.OnKeyListener,
             if (size2 == 0) {
                 e();
                 if (this.z != null) {
-                    this.z.a(zeVar, true);
+                    this.z.onCloseMenu(zeVar, true);
                 }
                 if (this.e != null) {
                     if (this.e.isAlive()) {
@@ -534,7 +534,7 @@ final class yv extends defpackage.zq implements android.view.View.OnKeyListener,
         }
     }
 
-    public final boolean a() {
+    public final boolean flagActionItems() {
         return false;
     }
 
@@ -548,14 +548,14 @@ final class yv extends defpackage.zq implements android.view.View.OnKeyListener,
     public final void a(int i2) {
         if (this.p != i2) {
             this.p = i2;
-            this.q = defpackage.jd.a(i2, defpackage.sn.a.j(this.r));
+            this.q = defpackage.jd.a(i2, ViewCompat.a.j(this.r));
         }
     }
 
     public final void a(android.view.View view) {
         if (this.r != view) {
             this.r = view;
-            this.q = defpackage.jd.a(this.p, defpackage.sn.a.j(this.r));
+            this.q = defpackage.jd.a(this.p, ViewCompat.a.j(this.r));
         }
     }
 

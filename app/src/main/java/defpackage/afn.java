@@ -952,7 +952,7 @@ public final class afn {
         android.support.v7.widget.RecyclerView.b(afv);
         if (afv.a(16384)) {
             afv.a(0, 16384);
-            defpackage.sn.a(afv.a, (defpackage.rn) null);
+            ViewCompat.a(afv.a, (defpackage.rn) null);
         }
         if (z) {
             defpackage.afo afo = this.e.m;

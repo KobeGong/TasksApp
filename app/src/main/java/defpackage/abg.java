@@ -27,10 +27,10 @@ final class abg {
                 }
             }
             if (a2.f(defpackage.xu.df)) {
-                defpackage.sn.a.a(this.a, a2.e(defpackage.xu.df));
+                ViewCompat.a.a(this.a, a2.e(defpackage.xu.df));
             }
             if (a2.f(defpackage.xu.dg)) {
-                defpackage.sn.a.a(this.a, defpackage.add.a(a2.a(defpackage.xu.dg, -1), null));
+                ViewCompat.a.a(this.a, defpackage.add.a(a2.a(defpackage.xu.dg, -1), null));
             }
         } finally {
             a2.b.recycle();
@@ -100,12 +100,12 @@ final class abg {
                 }
                 defpackage.agu agu = this.f;
                 agu.a();
-                android.content.res.ColorStateList y = defpackage.sn.a.y(this.a);
+                android.content.res.ColorStateList y = ViewCompat.a.y(this.a);
                 if (y != null) {
                     agu.d = true;
                     agu.a = y;
                 }
-                android.graphics.PorterDuff.Mode z3 = defpackage.sn.a.z(this.a);
+                android.graphics.PorterDuff.Mode z3 = ViewCompat.a.z(this.a);
                 if (z3 != null) {
                     agu.c = true;
                     agu.b = z3;

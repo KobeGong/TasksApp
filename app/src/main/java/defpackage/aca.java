@@ -30,7 +30,7 @@ final class aca extends defpackage.abw {
         this.c = a2;
         if (a2 != null) {
             a2.setCallback(this.b);
-            defpackage.jd.b(a2, defpackage.sn.a.j(this.b));
+            defpackage.jd.b(a2, ViewCompat.a.j(this.b));
             if (a2.isStateful()) {
                 a2.setState(this.b.getDrawableState());
             }

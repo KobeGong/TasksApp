@@ -2,15 +2,15 @@ package defpackage;
 
 /* renamed from: gv reason: default package */
 /* compiled from: PG */
-public final class gv implements defpackage.sl {
+public final class gv implements OnApplyWindowInsetsListener {
     private final /* synthetic */ android.support.design.widget.CoordinatorLayout a;
 
     public gv(android.support.design.widget.CoordinatorLayout coordinatorLayout) {
         this.a = coordinatorLayout;
     }
 
-    public final defpackage.tk a(android.view.View view, defpackage.tk tkVar) {
-        defpackage.tk tkVar2;
+    public final WindowInsetsCompat onApplyWindowInsets(android.view.View view, WindowInsetsCompat tkVar) {
+        WindowInsetsCompat tkVar2;
         boolean z = true;
         int i = 0;
         android.support.design.widget.CoordinatorLayout coordinatorLayout = this.a;
@@ -28,7 +28,7 @@ public final class gv implements defpackage.sl {
             tkVar2 = tkVar;
             while (i < childCount) {
                 android.view.View childAt = coordinatorLayout.getChildAt(i);
-                if (defpackage.sn.a.h(childAt) && ((defpackage.ha) childAt.getLayoutParams()).a != null && tkVar2.e()) {
+                if (ViewCompat.a.h(childAt) && ((defpackage.ha) childAt.getLayoutParams()).a != null && tkVar2.e()) {
                     break;
                 }
                 i++;

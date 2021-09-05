@@ -6,7 +6,7 @@ public final class ahr {
     private static java.lang.reflect.Method a;
 
     public static boolean a(android.view.View view) {
-        if (defpackage.sn.a.j(view) == 1) {
+        if (ViewCompat.a.j(view) == 1) {
             return true;
         }
         return false;

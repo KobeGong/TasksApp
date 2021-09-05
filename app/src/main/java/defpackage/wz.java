@@ -173,7 +173,7 @@ public class wz extends defpackage.wp implements android.view.LayoutInflater.Fac
                     viewGroup = (android.view.ViewGroup) from.inflate(2131034132, null);
                 }
                 if (android.os.Build.VERSION.SDK_INT >= 21) {
-                    defpackage.sn.a((android.view.View) viewGroup, (defpackage.sl) new defpackage.xt(this));
+                    ViewCompat.setOnApplyWindowInsetsListener((android.view.View) viewGroup, (OnApplyWindowInsetsListener) new defpackage.xt(this));
                     viewGroup2 = viewGroup;
                 } else {
                     ((defpackage.adm) viewGroup).a(new defpackage.adn(this));
@@ -243,7 +243,7 @@ public class wz extends defpackage.wp implements android.view.LayoutInflater.Fac
             android.support.v7.widget.ContentFrameLayout contentFrameLayout2 = (android.support.v7.widget.ContentFrameLayout) this.z.findViewById(16908290);
             android.view.View decorView = this.c.getDecorView();
             contentFrameLayout2.g.set(decorView.getPaddingLeft(), decorView.getPaddingTop(), decorView.getPaddingRight(), decorView.getPaddingBottom());
-            if (defpackage.sn.a.r(contentFrameLayout2)) {
+            if (ViewCompat.a.r(contentFrameLayout2)) {
                 contentFrameLayout2.requestLayout();
             }
             android.content.res.TypedArray obtainStyledAttributes2 = this.b.obtainStyledAttributes(defpackage.xu.aj);
@@ -379,7 +379,7 @@ public class wz extends defpackage.wp implements android.view.LayoutInflater.Fac
         return true;
     }
 
-    public final boolean a(defpackage.ze zeVar, android.view.MenuItem menuItem) {
+    public final boolean a(MenuBuilder zeVar, android.view.MenuItem menuItem) {
         android.view.Window.Callback callback = this.c.getCallback();
         if (callback != null && !this.m) {
             defpackage.zx a = a((android.view.Menu) zeVar.l());
@@ -390,7 +390,7 @@ public class wz extends defpackage.wp implements android.view.LayoutInflater.Fac
         return false;
     }
 
-    public final void a(defpackage.ze zeVar) {
+    public final void a(MenuBuilder zeVar) {
         if (this.n == null || !this.n.c() || (android.view.ViewConfiguration.get(this.b).hasPermanentMenuKey() && !this.n.e())) {
             defpackage.zx g = g(0);
             g.o = true;
@@ -479,14 +479,14 @@ public class wz extends defpackage.wp implements android.view.LayoutInflater.Fac
                 this.o = ygVar;
                 if (o()) {
                     this.p.setAlpha(0.0f);
-                    this.s = defpackage.sn.b(this.p).a(1.0f);
+                    this.s = ViewCompat.b(this.p).a(1.0f);
                     this.s.a((defpackage.th) new defpackage.xd(this));
                 } else {
                     this.p.setAlpha(1.0f);
                     this.p.setVisibility(0);
                     this.p.sendAccessibilityEvent(32);
                     if (this.p.getParent() instanceof android.view.View) {
-                        defpackage.sn.a.g((android.view.View) this.p.getParent());
+                        ViewCompat.a.g((android.view.View) this.p.getParent());
                     }
                 }
                 if (this.q != null) {
@@ -505,7 +505,7 @@ public class wz extends defpackage.wp implements android.view.LayoutInflater.Fac
     /* access modifiers changed from: 0000 */
     public final boolean o() {
         if (this.y && this.z != null) {
-            if (defpackage.sn.a.r(this.z)) {
+            if (ViewCompat.a.r(this.z)) {
                 return true;
             }
         }
@@ -672,7 +672,7 @@ public class wz extends defpackage.wp implements android.view.LayoutInflater.Fac
                             if (viewParent2 == decorView || !(viewParent2 instanceof android.view.View)) {
                                 break;
                             }
-                            if (defpackage.sn.a.s((android.view.View) viewParent2)) {
+                            if (ViewCompat.a.s((android.view.View) viewParent2)) {
                                 break;
                             }
                             viewParent2 = viewParent2.getParent();
@@ -1184,7 +1184,7 @@ public class wz extends defpackage.wp implements android.view.LayoutInflater.Fac
         throw new UnsupportedOperationException("Method not decompiled: defpackage.wz.b(zx, android.view.KeyEvent):boolean");
     }
 
-    public final void b(defpackage.ze zeVar) {
+    public final void b(MenuBuilder zeVar) {
         if (!this.E) {
             this.E = true;
             this.n.i();
@@ -1277,7 +1277,7 @@ public class wz extends defpackage.wp implements android.view.LayoutInflater.Fac
     private final void f(int i) {
         this.u |= 1 << i;
         if (!this.t) {
-            defpackage.sn.a(this.c.getDecorView(), this.I);
+            ViewCompat.a(this.c.getDecorView(), this.I);
             this.t = true;
         }
     }

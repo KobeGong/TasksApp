@@ -38,8 +38,8 @@ public final class acr {
 
     public final void a() {
         android.support.v7.widget.Toolbar toolbar = this.a;
-        if (toolbar.g != null) {
-            toolbar.g.c();
+        if (toolbar.mMenuView != null) {
+            toolbar.mMenuView.c();
         }
     }
 
@@ -58,11 +58,11 @@ public final class acr {
             }
             if ((i3 & 8) != 0) {
                 if ((i2 & 8) != 0) {
-                    this.a.a(this.d);
-                    this.a.b(this.m);
+                    this.a.setSubtitle(this.d);
+                    this.a.setTitle(this.m);
                 } else {
-                    this.a.a((java.lang.CharSequence) null);
-                    this.a.b((java.lang.CharSequence) null);
+                    this.a.setSubtitle((java.lang.CharSequence) null);
+                    this.a.setTitle((java.lang.CharSequence) null);
                 }
             }
             if ((i3 & 16) != 0 && this.h != null) {
@@ -76,7 +76,7 @@ public final class acr {
     }
 
     public final defpackage.te a(int i2, long j2) {
-        return defpackage.sn.b(this.a).a(i2 == 0 ? 1.0f : 0.0f).a(j2).a((defpackage.th) new defpackage.ahf(this, i2));
+        return ViewCompat.b(this.a).a(i2 == 0 ? 1.0f : 0.0f).a(j2).a((defpackage.th) new defpackage.ahf(this, i2));
     }
 
     public final void b(int i2) {
@@ -91,10 +91,10 @@ public final class acr {
         java.lang.String string;
         this.o = 0;
         this.a = toolbar;
-        this.d = toolbar.x;
-        this.m = toolbar.y;
+        this.d = toolbar.mSubtitleText;
+        this.m = toolbar.mTitleText;
         this.l = this.d != null;
-        this.k = toolbar.j();
+        this.k = toolbar.getNavigationIcon();
         defpackage.agw a2 = defpackage.agw.a(toolbar.getContext(), null, defpackage.xu.a, 2130772145, 0);
         this.p = a2.a(defpackage.xu.n);
         java.lang.CharSequence c2 = a2.c(defpackage.xu.t);
@@ -105,7 +105,7 @@ public final class acr {
         if (!android.text.TextUtils.isEmpty(c3)) {
             this.m = c3;
             if ((this.b & 8) != 0) {
-                this.a.b(c3);
+                this.a.setTitle(c3);
             }
         }
         android.graphics.drawable.Drawable a3 = a2.a(defpackage.xu.p);
@@ -153,18 +153,18 @@ public final class acr {
         if (g3 != 0) {
             android.support.v7.widget.Toolbar toolbar3 = this.a;
             android.content.Context context = this.a.getContext();
-            toolbar3.p = g3;
-            if (toolbar3.h != null) {
-                toolbar3.h.setTextAppearance(context, g3);
+            toolbar3.mSubtitleTextAppearance = g3;
+            if (toolbar3.mSubtitleTextView != null) {
+                toolbar3.mSubtitleTextView.setTextAppearance(context, g3);
             }
         }
         int g4 = a2.g(defpackage.xu.s, 0);
         if (g4 != 0) {
             android.support.v7.widget.Toolbar toolbar4 = this.a;
             android.content.Context context2 = this.a.getContext();
-            toolbar4.q = g4;
-            if (toolbar4.i != null) {
-                toolbar4.i.setTextAppearance(context2, g4);
+            toolbar4.mTitleTextAppearance = g4;
+            if (toolbar4.mTitleTextView != null) {
+                toolbar4.mTitleTextView.setTextAppearance(context2, g4);
             }
         }
         int g5 = a2.g(defpackage.xu.q, 0);
@@ -192,7 +192,7 @@ public final class acr {
     private final void c(java.lang.CharSequence charSequence) {
         this.d = charSequence;
         if ((this.b & 8) != 0) {
-            this.a.a(charSequence);
+            this.a.setSubtitle(charSequence);
         }
     }
 
@@ -206,9 +206,9 @@ public final class acr {
 
     private final void c() {
         if ((this.b & 4) != 0) {
-            this.a.b(this.k != null ? this.k : this.p);
+            this.a.setNavigationIcon(this.k != null ? this.k : this.p);
         } else {
-            this.a.b((android.graphics.drawable.Drawable) null);
+            this.a.setNavigationIcon((android.graphics.drawable.Drawable) null);
         }
     }
 

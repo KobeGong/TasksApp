@@ -2,32 +2,32 @@ package defpackage;
 
 /* renamed from: aav reason: default package */
 /* compiled from: PG */
-final class aav implements defpackage.zu {
+final class aav implements MenuPresenter_Callback {
     private final /* synthetic */ defpackage.aap a;
 
     aav(defpackage.aap aap) {
         this.a = aap;
     }
 
-    public final boolean a(defpackage.ze zeVar) {
+    public final boolean a(MenuBuilder zeVar) {
         if (zeVar == null) {
             return false;
         }
-        this.a.n = ((defpackage.aad) zeVar).getItem().getItemId();
-        defpackage.zu zuVar = this.a.d;
+        this.a.n = ((SubMenuBuilder) zeVar).getItem().getItemId();
+        MenuPresenter_Callback zuVar = this.a.d;
         if (zuVar != null) {
             return zuVar.a(zeVar);
         }
         return false;
     }
 
-    public final void a(defpackage.ze zeVar, boolean z) {
-        if (zeVar instanceof defpackage.aad) {
+    public final void onCloseMenu(MenuBuilder zeVar, boolean z) {
+        if (zeVar instanceof SubMenuBuilder) {
             zeVar.l().b(false);
         }
-        defpackage.zu zuVar = this.a.d;
+        MenuPresenter_Callback zuVar = this.a.d;
         if (zuVar != null) {
-            zuVar.a(zeVar, z);
+            zuVar.onCloseMenu(zeVar, z);
         }
     }
 }

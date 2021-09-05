@@ -585,7 +585,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
         boolean a2;
         boolean z2 = false;
         if (view != null && lyVar != null) {
-            if (view != null && lyVar != null && android.os.Build.VERSION.SDK_INT >= 19 && view.getLayerType() == 0 && defpackage.sn.a.i(view)) {
+            if (view != null && lyVar != null && android.os.Build.VERSION.SDK_INT >= 19 && view.getLayerType() == 0 && ViewCompat.a.i(view)) {
                 if (lyVar.a instanceof android.view.animation.AlphaAnimation) {
                     a2 = true;
                 } else if (lyVar.a instanceof android.view.animation.AnimationSet) {

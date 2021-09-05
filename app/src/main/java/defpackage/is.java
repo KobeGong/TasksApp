@@ -11,7 +11,7 @@ final class is extends android.animation.AnimatorListenerAdapter {
     }
 
     public final void onAnimationStart(android.animation.Animator animator) {
-        if (defpackage.sn.a.i(this.a) && this.a.getLayerType() == 0) {
+        if (ViewCompat.a.i(this.a) && this.a.getLayerType() == 0) {
             this.b = true;
             this.a.setLayerType(2, null);
         }

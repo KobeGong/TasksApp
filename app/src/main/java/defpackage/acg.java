@@ -12,7 +12,7 @@ final class acg implements android.view.ViewTreeObserver.OnGlobalLayoutListener 
     public final void onGlobalLayout() {
         defpackage.ace ace = this.a;
         defpackage.acb acb = this.a.d;
-        if (!(defpackage.sn.a.s(acb) && acb.getGlobalVisibleRect(ace.c))) {
+        if (!(ViewCompat.a.s(acb) && acb.getGlobalVisibleRect(ace.c))) {
             this.a.e();
             return;
         }

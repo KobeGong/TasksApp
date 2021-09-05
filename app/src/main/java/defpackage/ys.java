@@ -2,11 +2,11 @@ package defpackage;
 
 /* renamed from: ys reason: default package */
 /* compiled from: PG */
-public abstract class ys implements defpackage.zt {
+public abstract class ys implements MenuPresenter {
     public android.content.Context a;
     public android.content.Context b;
-    public defpackage.ze c;
-    public defpackage.zu d;
+    public MenuBuilder c;
+    public MenuPresenter_Callback d;
     public defpackage.zv e;
     public int f;
     private android.view.LayoutInflater g;
@@ -18,9 +18,9 @@ public abstract class ys implements defpackage.zt {
         this.g = android.view.LayoutInflater.from(context);
     }
 
-    public abstract void a(defpackage.zi ziVar, defpackage.zw zwVar);
+    public abstract void a(MenuItemImpl ziVar, defpackage.zw zwVar);
 
-    public void a(android.content.Context context, defpackage.ze zeVar) {
+    public void a(android.content.Context context, MenuBuilder zeVar) {
         this.b = context;
         android.view.LayoutInflater.from(this.b);
         this.c = zeVar;
@@ -47,10 +47,10 @@ public abstract class ys implements defpackage.zt {
                 int i5 = 0;
                 i2 = 0;
                 while (i5 < size) {
-                    defpackage.zi ziVar = (defpackage.zi) i4.get(i5);
+                    MenuItemImpl ziVar = (MenuItemImpl) i4.get(i5);
                     if (c(ziVar)) {
                         android.view.View childAt = viewGroup.getChildAt(i2);
-                        defpackage.zi ziVar2 = childAt instanceof defpackage.zw ? ((defpackage.zw) childAt).a() : null;
+                        MenuItemImpl ziVar2 = childAt instanceof defpackage.zw ? ((defpackage.zw) childAt).a() : null;
                         android.view.View a2 = a(ziVar, childAt, viewGroup);
                         if (ziVar != ziVar2) {
                             a2.setPressed(false);
@@ -86,11 +86,11 @@ public abstract class ys implements defpackage.zt {
         return true;
     }
 
-    public final void a(defpackage.zu zuVar) {
+    public final void setCallback(MenuPresenter_Callback zuVar) {
         this.d = zuVar;
     }
 
-    public android.view.View a(defpackage.zi ziVar, android.view.View view, android.view.ViewGroup viewGroup) {
+    public android.view.View a(MenuItemImpl ziVar, android.view.View view, android.view.ViewGroup viewGroup) {
         defpackage.zw zwVar;
         if (view instanceof defpackage.zw) {
             zwVar = (defpackage.zw) view;
@@ -101,36 +101,36 @@ public abstract class ys implements defpackage.zt {
         return (android.view.View) zwVar;
     }
 
-    public boolean c(defpackage.zi ziVar) {
+    public boolean c(MenuItemImpl ziVar) {
         return true;
     }
 
-    public void a(defpackage.ze zeVar, boolean z) {
+    public void onCloseMenu(MenuBuilder zeVar, boolean z) {
         if (this.d != null) {
-            this.d.a(zeVar, z);
+            this.d.onCloseMenu(zeVar, z);
         }
     }
 
-    public boolean a(defpackage.aad aad) {
+    public boolean onSubMenuSelected(SubMenuBuilder aad) {
         if (this.d != null) {
             return this.d.a(aad);
         }
         return false;
     }
 
-    public boolean a() {
+    public boolean flagActionItems() {
         return false;
     }
 
-    public final boolean a(defpackage.zi ziVar) {
+    public final boolean a(MenuItemImpl ziVar) {
         return false;
     }
 
-    public final boolean b(defpackage.zi ziVar) {
+    public final boolean b(MenuItemImpl ziVar) {
         return false;
     }
 
-    public final int b() {
+    public final int getId() {
         return this.f;
     }
 }

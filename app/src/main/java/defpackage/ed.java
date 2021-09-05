@@ -17,7 +17,7 @@ public final class ed implements java.lang.Runnable {
         if (this.c.g == null || !this.c.g.a()) {
             this.c.c(this.b);
         } else {
-            defpackage.sn.a(this.a, (java.lang.Runnable) this);
+            ViewCompat.a(this.a, (java.lang.Runnable) this);
         }
     }
 }

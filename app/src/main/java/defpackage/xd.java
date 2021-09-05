@@ -13,7 +13,7 @@ final class xd extends defpackage.ti {
         this.a.p.setVisibility(0);
         this.a.p.sendAccessibilityEvent(32);
         if (this.a.p.getParent() instanceof android.view.View) {
-            defpackage.sn.a.g((android.view.View) this.a.p.getParent());
+            ViewCompat.a.g((android.view.View) this.a.p.getParent());
         }
     }
 

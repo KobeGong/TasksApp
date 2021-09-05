@@ -16,7 +16,7 @@ public final /* synthetic */ class apn implements OnMenuItemClickListener {
             r2 = 1
             r3 = 0
             com.google.android.apps.tasks.ui.TaskListsActivity r4 = this.a;
-            TasksFragment r0 = r4.i
+            TasksFragment r0 = r4.tasksFragment
             ajr r5 = r0.Y
             dcb r0 = r4.h
             if (r0 == 0) goto L_0x007c
@@ -24,7 +24,7 @@ public final /* synthetic */ class apn implements OnMenuItemClickListener {
             java.lang.String r0 = r0.b
             r1 = r0
         L_0x0011:
-            TasksFragment r0 = r4.i
+            TasksFragment r0 = r4.tasksFragment
             boolean r6 = r0.c()
             dcb r0 = r4.h
             if (r0 == 0) goto L_0x0081

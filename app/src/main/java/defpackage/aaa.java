@@ -2,13 +2,13 @@ package defpackage;
 
 /* renamed from: aaa reason: default package */
 /* compiled from: PG */
-final class aaa extends defpackage.zq implements android.view.View.OnKeyListener, android.widget.AdapterView.OnItemClickListener, android.widget.PopupWindow.OnDismissListener, defpackage.zt {
+final class aaa extends defpackage.zq implements android.view.View.OnKeyListener, android.widget.AdapterView.OnItemClickListener, android.widget.PopupWindow.OnDismissListener, MenuPresenter {
     public final defpackage.ael a;
     public final android.view.ViewTreeObserver.OnGlobalLayoutListener b = new defpackage.aab(this);
     public android.view.View c;
     public android.view.ViewTreeObserver d;
     private final android.content.Context e;
-    private final defpackage.ze f;
+    private final MenuBuilder f;
     private final defpackage.zd h;
     private final boolean i;
     private final int j;
@@ -17,14 +17,14 @@ final class aaa extends defpackage.zq implements android.view.View.OnKeyListener
     private final android.view.View.OnAttachStateChangeListener m = new defpackage.aac(this);
     private android.widget.PopupWindow.OnDismissListener n;
     private android.view.View o;
-    private defpackage.zu p;
+    private MenuPresenter_Callback p;
     private boolean q;
     private boolean r;
     private int s;
     private int t = 0;
     private boolean u;
 
-    public aaa(android.content.Context context, defpackage.ze zeVar, android.view.View view, int i2, int i3, boolean z) {
+    public aaa(android.content.Context context, MenuBuilder zeVar, android.view.View view, int i2, int i3, boolean z) {
         this.e = context;
         this.f = zeVar;
         this.i = z;
@@ -35,7 +35,7 @@ final class aaa extends defpackage.zq implements android.view.View.OnKeyListener
         this.j = java.lang.Math.max(resources.getDisplayMetrics().widthPixels / 2, resources.getDimensionPixelSize(2131689495));
         this.o = view;
         this.a = new defpackage.ael(this.e, this.k, this.l);
-        zeVar.a((defpackage.zt) this, context);
+        zeVar.addMenuPresenter((MenuPresenter) this, context);
     }
 
     public final void b(boolean z) {
@@ -99,7 +99,7 @@ final class aaa extends defpackage.zq implements android.view.View.OnKeyListener
         }
     }
 
-    public final void a(defpackage.ze zeVar) {
+    public final void a(MenuBuilder zeVar) {
     }
 
     public final boolean f() {
@@ -129,22 +129,22 @@ final class aaa extends defpackage.zq implements android.view.View.OnKeyListener
         }
     }
 
-    public final void a(defpackage.zu zuVar) {
+    public final void setCallback(MenuPresenter_Callback zuVar) {
         this.p = zuVar;
     }
 
-    public final boolean a(defpackage.aad aad) {
+    public final boolean onSubMenuSelected(SubMenuBuilder aad) {
         boolean z;
         if (aad.hasVisibleItems()) {
             defpackage.zr zrVar = new defpackage.zr(this.e, aad, this.c, this.i, this.k, this.l);
             zrVar.a(this.p);
-            zrVar.a(defpackage.zq.b((defpackage.ze) aad));
+            zrVar.a(defpackage.zq.b((MenuBuilder) aad));
             zrVar.c = this.n;
             this.n = null;
             this.f.b(false);
             int i2 = this.a.g;
             int c2 = this.a.c();
-            if ((android.view.Gravity.getAbsoluteGravity(this.t, defpackage.sn.a.j(this.o)) & 7) == 5) {
+            if ((android.view.Gravity.getAbsoluteGravity(this.t, ViewCompat.a.j(this.o)) & 7) == 5) {
                 i2 += this.o.getWidth();
             }
             if (zrVar.e()) {
@@ -165,16 +165,16 @@ final class aaa extends defpackage.zq implements android.view.View.OnKeyListener
         return false;
     }
 
-    public final void a(defpackage.ze zeVar, boolean z) {
+    public final void onCloseMenu(MenuBuilder zeVar, boolean z) {
         if (zeVar == this.f) {
             e();
             if (this.p != null) {
-                this.p.a(zeVar, z);
+                this.p.onCloseMenu(zeVar, z);
             }
         }
     }
 
-    public final boolean a() {
+    public final boolean flagActionItems() {
         return false;
     }
 

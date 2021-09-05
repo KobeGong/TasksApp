@@ -71,7 +71,7 @@ public abstract class wp extends defpackage.wo {
     public final android.view.MenuInflater b() {
         if (this.q == null) {
             l();
-            this.q = new defpackage.yj(this.f != null ? this.f.d() : this.b);
+            this.q = new SupportMenuInflater(this.f != null ? this.f.d() : this.b);
         }
         return this.q;
     }

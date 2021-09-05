@@ -17,13 +17,13 @@ public final class ael extends defpackage.aec implements defpackage.aek {
         return aem;
     }
 
-    public final void b(defpackage.ze zeVar, android.view.MenuItem menuItem) {
+    public final void b(MenuBuilder zeVar, android.view.MenuItem menuItem) {
         if (this.b != null) {
             this.b.b(zeVar, menuItem);
         }
     }
 
-    public final void a(defpackage.ze zeVar, android.view.MenuItem menuItem) {
+    public final void a(MenuBuilder zeVar, android.view.MenuItem menuItem) {
         if (this.b != null) {
             this.b.a(zeVar, menuItem);
         }

@@ -11,7 +11,7 @@ public final class dk {
 
     public static void a(android.view.View view, android.util.AttributeSet attributeSet) {
         android.content.Context context = view.getContext();
-        android.content.res.TypedArray a2 = defpackage.fp.a(context, attributeSet, a, 0, 2132017714);
+        android.content.res.TypedArray a2 = ThemeEnforcement.obtainStyledAttributes(context, attributeSet, a, 0, 2132017714);
         try {
             if (a2.hasValue(0)) {
                 view.setStateListAnimator(android.animation.AnimatorInflater.loadStateListAnimator(context, a2.getResourceId(0, 0)));

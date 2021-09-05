@@ -14,7 +14,7 @@ final class xb implements java.lang.Runnable {
         this.a.p();
         if (this.a.o()) {
             this.a.p.setAlpha(0.0f);
-            this.a.s = defpackage.sn.b(this.a.p).a(1.0f);
+            this.a.s = ViewCompat.b(this.a.p).a(1.0f);
             this.a.s.a((defpackage.th) new defpackage.xc(this));
             return;
         }

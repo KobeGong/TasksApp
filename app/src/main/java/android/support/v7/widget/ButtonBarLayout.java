@@ -1,5 +1,7 @@
 package android.support.v7.widget;
 
+import defpackage.ViewCompat;
+
 /* compiled from: PG */
 public class ButtonBarLayout extends android.widget.LinearLayout {
     private boolean a;
@@ -55,7 +57,7 @@ public class ButtonBarLayout extends android.widget.LinearLayout {
         } else {
             i4 = 0;
         }
-        if (defpackage.sn.a.f(this) != i4) {
+        if (ViewCompat.a.f(this) != i4) {
             setMinimumHeight(i4);
         }
     }

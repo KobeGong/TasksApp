@@ -8,10 +8,10 @@ final class kd extends android.util.Property {
     }
 
     public final /* synthetic */ java.lang.Object get(java.lang.Object obj) {
-        return defpackage.sn.a.p((android.view.View) obj);
+        return ViewCompat.a.p((android.view.View) obj);
     }
 
     public final /* synthetic */ void set(java.lang.Object obj, java.lang.Object obj2) {
-        defpackage.sn.a.a((android.view.View) obj, (android.graphics.Rect) obj2);
+        ViewCompat.a.a((android.view.View) obj, (android.graphics.Rect) obj2);
     }
 }

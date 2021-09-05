@@ -7,20 +7,20 @@ public class zr {
     public int b = 8388613;
     public android.widget.PopupWindow.OnDismissListener c;
     private final android.content.Context d;
-    private final defpackage.ze e;
+    private final MenuBuilder e;
     private final boolean f;
     private final int g;
     private final int h;
     private boolean i;
-    private defpackage.zu j;
+    private MenuPresenter_Callback j;
     private defpackage.zq k;
     private final android.widget.PopupWindow.OnDismissListener l;
 
-    public zr(android.content.Context context, defpackage.ze zeVar, android.view.View view, boolean z) {
+    public zr(android.content.Context context, MenuBuilder zeVar, android.view.View view, boolean z) {
         this(context, zeVar, view, z, 2130772143, 0);
     }
 
-    public zr(android.content.Context context, defpackage.ze zeVar, android.view.View view, boolean z, int i2, int i3) {
+    public zr(android.content.Context context, MenuBuilder zeVar, android.view.View view, boolean z, int i2, int i3) {
         this.b = 8388611;
         this.l = new defpackage.zs(this);
         this.d = context;
@@ -56,7 +56,7 @@ public class zr {
             aaa.a(this.e);
             aaa.a(this.l);
             aaa.a(this.a);
-            aaa.a(this.j);
+            aaa.setCallback(this.j);
             aaa.b(this.i);
             aaa.a(this.b);
             this.k = aaa;
@@ -80,7 +80,7 @@ public class zr {
         defpackage.zq a2 = a();
         a2.c(z2);
         if (z) {
-            if ((defpackage.jd.a(this.b, defpackage.sn.a.j(this.a)) & 7) == 5) {
+            if ((defpackage.jd.a(this.b, ViewCompat.a.j(this.a)) & 7) == 5) {
                 i2 -= this.a.getWidth();
             }
             a2.b(i2);
@@ -108,10 +108,10 @@ public class zr {
         return this.k != null && this.k.f();
     }
 
-    public final void a(defpackage.zu zuVar) {
+    public final void a(MenuPresenter_Callback zuVar) {
         this.j = zuVar;
         if (this.k != null) {
-            this.k.a(zuVar);
+            this.k.setCallback(zuVar);
         }
     }
 }

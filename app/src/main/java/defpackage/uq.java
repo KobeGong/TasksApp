@@ -17,7 +17,7 @@ final class uq extends defpackage.tp {
         defpackage.up upVar = this.b;
         switch (i) {
             case -1:
-                return defpackage.sn.a.a(upVar.c, i2, bundle);
+                return ViewCompat.a.a(upVar.c, i2, bundle);
             default:
                 switch (i2) {
                     case 1:

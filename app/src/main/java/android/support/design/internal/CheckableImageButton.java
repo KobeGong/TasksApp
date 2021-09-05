@@ -1,5 +1,7 @@
 package android.support.design.internal;
 
+import defpackage.ViewCompat;
+
 /* compiled from: PG */
 public class CheckableImageButton extends defpackage.abr implements android.widget.Checkable {
     private static final int[] a = {16842912};
@@ -15,7 +17,7 @@ public class CheckableImageButton extends defpackage.abr implements android.widg
 
     public CheckableImageButton(android.content.Context context, android.util.AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        defpackage.sn.a((android.view.View) this, (defpackage.rn) new defpackage.ev(this));
+        ViewCompat.a((android.view.View) this, (defpackage.rn) new defpackage.ev(this));
     }
 
     public void setChecked(boolean z) {

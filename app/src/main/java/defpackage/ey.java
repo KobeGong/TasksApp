@@ -25,7 +25,7 @@ public class ey extends defpackage.adu {
         this.d = 119;
         this.e = true;
         this.f = false;
-        android.content.res.TypedArray a2 = defpackage.fp.a(context, attributeSet, defpackage.fm.a, i, 0);
+        android.content.res.TypedArray a2 = ThemeEnforcement.obtainStyledAttributes(context, attributeSet, defpackage.fm.a, i, 0);
         this.d = a2.getInt(defpackage.fm.c, this.d);
         android.graphics.drawable.Drawable drawable = a2.getDrawable(defpackage.fm.b);
         if (drawable != null) {

@@ -1,5 +1,8 @@
 package android.support.design.button;
 
+import defpackage.ThemeEnforcement;
+import defpackage.ViewCompat;
+
 /* compiled from: PG */
 public class MaterialButton extends defpackage.abh {
     public android.graphics.drawable.Drawable a;
@@ -30,7 +33,7 @@ public class MaterialButton extends defpackage.abh {
         int i3;
         android.graphics.drawable.Drawable a2;
         super(context, attributeSet, i2);
-        android.content.res.TypedArray a3 = defpackage.fp.a(context, attributeSet, defpackage.em.a, i2, 2132017756);
+        android.content.res.TypedArray a3 = ThemeEnforcement.obtainStyledAttributes(context, attributeSet, defpackage.em.a, i2, 2132017756);
         int dimensionPixelOffset = a3.getDimensionPixelOffset(defpackage.em.h, 0);
         int dimensionPixelOffset2 = a3.getDimensionPixelOffset(defpackage.em.k, dimensionPixelOffset);
         if (android.os.Build.VERSION.SDK_INT >= 17) {
@@ -265,7 +268,7 @@ public class MaterialButton extends defpackage.abh {
         if (this.a != null) {
             i3 = this.m;
         }
-        defpackage.sn.a(this, i5, i6, i3 + i7 + this.i, this.g + this.k);
+        ViewCompat.a(this, i5, i6, i3 + i7 + this.i, this.g + this.k);
     }
 
     private final boolean d() {

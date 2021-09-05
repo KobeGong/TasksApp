@@ -24,7 +24,7 @@ final class xq extends defpackage.ti {
             xpVar.i = null;
         }
         if (this.a.b != null) {
-            defpackage.sn.a.g(this.a.b);
+            ViewCompat.a.g(this.a.b);
         }
     }
 }

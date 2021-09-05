@@ -44,7 +44,7 @@ public final class att extends defpackage.afc {
         int childCount = recyclerView.getChildCount();
         defpackage.ali ali = (defpackage.ali) defpackage.crk.a.c();
         android.content.Context context = recyclerView.getContext();
-        boolean z = defpackage.sn.a.j(recyclerView) == 0;
+        boolean z = ViewCompat.a.j(recyclerView) == 0;
         android.graphics.Bitmap bitmap = null;
         for (int i = 0; i < childCount; i++) {
             android.view.View childAt = recyclerView.getChildAt(i);

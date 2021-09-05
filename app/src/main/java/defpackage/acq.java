@@ -5,7 +5,7 @@ package defpackage;
 public interface acq {
     void a(int i);
 
-    void a(android.view.Menu menu, defpackage.zu zuVar);
+    void a(android.view.Menu menu, MenuPresenter_Callback zuVar);
 
     void a(android.view.Window.Callback callback);
 

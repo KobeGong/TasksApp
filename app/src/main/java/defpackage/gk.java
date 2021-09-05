@@ -2,7 +2,7 @@ package defpackage;
 
 /* renamed from: gk reason: default package */
 /* compiled from: PG */
-public final class gk implements defpackage.dn, defpackage.sl {
+public final class gk implements defpackage.dn, OnApplyWindowInsetsListener {
     private final /* synthetic */ defpackage.db a;
 
     public final void a(android.view.View view) {
@@ -32,10 +32,10 @@ public final class gk implements defpackage.dn, defpackage.sl {
         this.a = dbVar;
     }
 
-    public final defpackage.tk a(android.view.View view, defpackage.tk tkVar) {
+    public final WindowInsetsCompat onApplyWindowInsets(android.view.View view, WindowInsetsCompat tkVar) {
         defpackage.db dbVar = this.a;
-        defpackage.tk tkVar2 = null;
-        if (defpackage.sn.a.h(dbVar)) {
+        WindowInsetsCompat tkVar2 = null;
+        if (ViewCompat.a.h(dbVar)) {
             tkVar2 = tkVar;
         }
         if (!defpackage.jd.a((java.lang.Object) dbVar.f, (java.lang.Object) tkVar2)) {

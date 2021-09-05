@@ -16,7 +16,7 @@ public final class ig extends defpackage.je {
 
     private static void d(defpackage.jr jrVar) {
         android.view.View view = jrVar.b;
-        if (defpackage.sn.a.r(view) || view.getWidth() != 0 || view.getHeight() != 0) {
+        if (ViewCompat.a.r(view) || view.getWidth() != 0 || view.getHeight() != 0) {
             jrVar.a.put("android:changeBounds:bounds", new android.graphics.Rect(view.getLeft(), view.getTop(), view.getRight(), view.getBottom()));
             jrVar.a.put("android:changeBounds:parent", jrVar.b.getParent());
         }

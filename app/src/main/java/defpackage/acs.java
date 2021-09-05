@@ -45,7 +45,7 @@ public class acs extends defpackage.agp {
                 this.p.clear();
                 defpackage.act act = new defpackage.act(this, arrayList2);
                 if (z) {
-                    defpackage.sn.a(((defpackage.adc) arrayList2.get(0)).a.a, act, this.j);
+                    ViewCompat.a(((defpackage.adc) arrayList2.get(0)).a.a, act, this.j);
                 } else {
                     act.run();
                 }
@@ -57,7 +57,7 @@ public class acs extends defpackage.agp {
                 this.q.clear();
                 defpackage.acu acu = new defpackage.acu(this, arrayList3);
                 if (z) {
-                    defpackage.sn.a(((defpackage.adb) arrayList3.get(0)).a.a, acu, this.j);
+                    ViewCompat.a(((defpackage.adb) arrayList3.get(0)).a.a, acu, this.j);
                 } else {
                     acu.run();
                 }
@@ -84,7 +84,7 @@ public class acs extends defpackage.agp {
                     } else {
                         j3 = 0;
                     }
-                    defpackage.sn.a(((defpackage.afv) arrayList4.get(0)).a, acv, j + java.lang.Math.max(j2, j3));
+                    ViewCompat.a(((defpackage.afv) arrayList4.get(0)).a, acv, j + java.lang.Math.max(j2, j3));
                     return;
                 }
                 acv.run();

@@ -1,5 +1,11 @@
 package android.support.v7.widget;
 
+import defpackage.ExpandedActionViewMenuPresenter;
+import defpackage.MenuBuilder;
+import defpackage.MenuPresenter;
+import defpackage.MenuPresenter_Callback;
+import defpackage.ViewCompat;
+
 /* compiled from: PG */
 public class ActionBarOverlayLayout extends android.view.ViewGroup implements defpackage.acq, defpackage.si {
     private static final int[] A = {2130772149, 16842841};
@@ -85,7 +91,7 @@ public class ActionBarOverlayLayout extends android.view.ViewGroup implements de
     public void onConfigurationChanged(android.content.res.Configuration configuration) {
         super.onConfigurationChanged(configuration);
         a(getContext());
-        defpackage.sn.a.g(this);
+        ViewCompat.a.g(this);
     }
 
     public void onWindowSystemUiVisibilityChanged(int i2) {
@@ -114,7 +120,7 @@ public class ActionBarOverlayLayout extends android.view.ViewGroup implements de
             }
         }
         if ((i3 & 256) != 0 && this.g != null) {
-            defpackage.sn.a.g(this);
+            ViewCompat.a.g(this);
         }
     }
 
@@ -152,7 +158,7 @@ public class ActionBarOverlayLayout extends android.view.ViewGroup implements de
     /* access modifiers changed from: protected */
     public boolean fitSystemWindows(android.graphics.Rect rect) {
         j();
-        defpackage.sn.a.m(this);
+        ViewCompat.a.m(this);
         boolean a2 = a(this.b, rect, false);
         this.t.set(rect);
         defpackage.ahr.a(this, this.t, this.q);
@@ -189,7 +195,7 @@ public class ActionBarOverlayLayout extends android.view.ViewGroup implements de
         int max = java.lang.Math.max(0, this.b.getMeasuredWidth() + aao.leftMargin + aao.rightMargin);
         int max2 = java.lang.Math.max(0, aao.bottomMargin + this.b.getMeasuredHeight() + aao.topMargin);
         int combineMeasuredStates = android.view.View.combineMeasuredStates(0, this.b.getMeasuredState());
-        boolean z2 = (defpackage.sn.a.m(this) & 256) != 0;
+        boolean z2 = (ViewCompat.a.m(this) & 256) != 0;
         if (z2) {
             i4 = this.j;
         } else if (this.b.getVisibility() != 8) {
@@ -383,7 +389,7 @@ public class ActionBarOverlayLayout extends android.view.ViewGroup implements de
     public final boolean c() {
         j();
         android.support.v7.widget.Toolbar toolbar = this.l.a;
-        return toolbar.getVisibility() == 0 && toolbar.g != null && toolbar.g.b;
+        return toolbar.getVisibility() == 0 && toolbar.mMenuView != null && toolbar.mMenuView.b;
     }
 
     public final boolean d() {
@@ -442,9 +448,9 @@ public class ActionBarOverlayLayout extends android.view.ViewGroup implements de
         boolean z2;
         j();
         android.support.v7.widget.Toolbar toolbar = this.l.a;
-        if (toolbar.g != null) {
-            android.support.v7.widget.ActionMenuView actionMenuView = toolbar.g;
-            if (actionMenuView.c == null || !actionMenuView.c.f()) {
+        if (toolbar.mMenuView != null) {
+            android.support.v7.widget.ActionMenuView actionMenuView = toolbar.mMenuView;
+            if (actionMenuView.presenter == null || !actionMenuView.presenter.f()) {
                 z2 = false;
             } else {
                 z2 = true;
@@ -461,7 +467,7 @@ public class ActionBarOverlayLayout extends android.view.ViewGroup implements de
         this.l.f = true;
     }
 
-    public final void a(android.view.Menu menu, defpackage.zu zuVar) {
+    public final void a(android.view.Menu menu, MenuPresenter_Callback zuVar) {
         j();
         defpackage.acr acr = this.l;
         if (acr.g == null) {
@@ -470,31 +476,31 @@ public class ActionBarOverlayLayout extends android.view.ViewGroup implements de
         }
         acr.g.d = zuVar;
         android.support.v7.widget.Toolbar toolbar = acr.a;
-        defpackage.ze zeVar = (defpackage.ze) menu;
+        MenuBuilder zeVar = (MenuBuilder) menu;
         defpackage.aap aap = acr.g;
-        if (zeVar != null || toolbar.g != null) {
-            toolbar.l();
-            defpackage.ze zeVar2 = toolbar.g.a;
+        if (zeVar != null || toolbar.mMenuView != null) {
+            toolbar.ensureMenuView();
+            MenuBuilder zeVar2 = toolbar.mMenuView.peekMenu;
             if (zeVar2 != zeVar) {
                 if (zeVar2 != null) {
-                    zeVar2.b((defpackage.zt) toolbar.B);
-                    zeVar2.b((defpackage.zt) toolbar.C);
+                    zeVar2.b((MenuPresenter) toolbar.B);
+                    zeVar2.b((MenuPresenter) toolbar.mExpandedMenuPresenter);
                 }
-                if (toolbar.C == null) {
-                    toolbar.C = new defpackage.agz(toolbar);
+                if (toolbar.mExpandedMenuPresenter == null) {
+                    toolbar.mExpandedMenuPresenter = new ExpandedActionViewMenuPresenter(toolbar);
                 }
-                aap.i = true;
+                aap.mExpandedActionViewsExclusive = true;
                 if (zeVar != null) {
-                    zeVar.a((defpackage.zt) aap, toolbar.n);
-                    zeVar.a((defpackage.zt) toolbar.C, toolbar.n);
+                    zeVar.addMenuPresenter((MenuPresenter) aap, toolbar.n);
+                    zeVar.addMenuPresenter((MenuPresenter) toolbar.mExpandedMenuPresenter, toolbar.n);
                 } else {
-                    aap.a(toolbar.n, (defpackage.ze) null);
-                    toolbar.C.a(toolbar.n, (defpackage.ze) null);
+                    aap.a(toolbar.n, (MenuBuilder) null);
+                    toolbar.mExpandedMenuPresenter.a(toolbar.n, (MenuBuilder) null);
                     aap.a(true);
-                    toolbar.C.a(true);
+                    toolbar.mExpandedMenuPresenter.a(true);
                 }
-                toolbar.g.a(toolbar.o);
-                toolbar.g.a(aap);
+                toolbar.mMenuView.setPopupTheme(toolbar.mPopupTheme);
+                toolbar.mMenuView.a(aap);
                 toolbar.B = aap;
             }
         }

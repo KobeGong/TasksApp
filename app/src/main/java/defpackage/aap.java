@@ -5,7 +5,7 @@ package defpackage;
 public final class aap extends defpackage.ys {
     public defpackage.aas g;
     public int h;
-    public boolean i;
+    public boolean mExpandedActionViewsExclusive;
     public defpackage.aau j;
     public defpackage.aaq k;
     public defpackage.aar l;
@@ -23,7 +23,7 @@ public final class aap extends defpackage.ys {
         super(context);
     }
 
-    public final void a(android.content.Context context, defpackage.ze zeVar) {
+    public final void a(android.content.Context context, MenuBuilder zeVar) {
         boolean z = true;
         super.a(context, zeVar);
         android.content.res.Resources resources = context.getResources();
@@ -66,7 +66,7 @@ public final class aap extends defpackage.ys {
         return a;
     }
 
-    public final android.view.View a(defpackage.zi ziVar, android.view.View view, android.view.ViewGroup viewGroup) {
+    public final android.view.View a(MenuItemImpl ziVar, android.view.View view, android.view.ViewGroup viewGroup) {
         android.view.View actionView = ziVar.getActionView();
         if (actionView == null || ziVar.i()) {
             actionView = super.a(ziVar, view, viewGroup);
@@ -80,7 +80,7 @@ public final class aap extends defpackage.ys {
         return actionView;
     }
 
-    public final void a(defpackage.zi ziVar, defpackage.zw zwVar) {
+    public final void a(MenuItemImpl ziVar, defpackage.zw zwVar) {
         zwVar.a(ziVar);
         android.support.v7.view.menu.ActionMenuItemView actionMenuItemView = (android.support.v7.view.menu.ActionMenuItemView) zwVar;
         actionMenuItemView.c = (android.support.v7.widget.ActionMenuView) this.e;
@@ -90,7 +90,7 @@ public final class aap extends defpackage.ys {
         actionMenuItemView.d = this.u;
     }
 
-    public final boolean c(defpackage.zi ziVar) {
+    public final boolean c(MenuItemImpl ziVar) {
         return ziVar.f();
     }
 
@@ -100,7 +100,7 @@ public final class aap extends defpackage.ys {
         super.a(z);
         ((android.view.View) this.e).requestLayout();
         if (this.c != null) {
-            defpackage.ze zeVar = this.c;
+            MenuBuilder zeVar = this.c;
             zeVar.j();
             java.util.ArrayList arrayList = zeVar.d;
             int size = arrayList.size();
@@ -112,7 +112,7 @@ public final class aap extends defpackage.ys {
         if (this.o && arrayList2 != null) {
             int size2 = arrayList2.size();
             if (size2 == 1) {
-                if (!((defpackage.zi) arrayList2.get(0)).isActionViewExpanded()) {
+                if (!((MenuItemImpl) arrayList2.get(0)).isActionViewExpanded()) {
                     z2 = true;
                 } else {
                     z2 = false;
@@ -153,7 +153,7 @@ public final class aap extends defpackage.ys {
     /* JADX WARNING: Removed duplicated region for block: B:15:0x0039  */
     /* JADX WARNING: Removed duplicated region for block: B:41:? A[RETURN, SYNTHETIC] */
     /* Code decompiled incorrectly, please refer to instructions dump. */
-    public final boolean a(defpackage.aad r9) {
+    public final boolean onSubMenuSelected(SubMenuBuilder r9) {
         /*
             r8 = this;
             r3 = 1
@@ -243,7 +243,7 @@ public final class aap extends defpackage.ys {
         }
         this.l = new defpackage.aar(this, new defpackage.aau(this, this.b, this.c, this.g));
         ((android.view.View) this.e).post(this.l);
-        super.a((defpackage.aad) null);
+        super.onSubMenuSelected((SubMenuBuilder) null);
         return true;
     }
 
@@ -277,7 +277,7 @@ public final class aap extends defpackage.ys {
         return this.j != null && this.j.e();
     }
 
-    public final boolean a() {
+    public final boolean flagActionItems() {
         int i2;
         java.util.ArrayList arrayList;
         int i3;
@@ -305,7 +305,7 @@ public final class aap extends defpackage.ys {
         boolean z2 = false;
         int i15 = 0;
         while (i15 < i2) {
-            defpackage.zi ziVar = (defpackage.zi) arrayList.get(i15);
+            MenuItemImpl ziVar = (MenuItemImpl) arrayList.get(i15);
             if (ziVar.h()) {
                 i13++;
             } else if (ziVar.g()) {
@@ -313,7 +313,7 @@ public final class aap extends defpackage.ys {
             } else {
                 z2 = true;
             }
-            if (!this.i || !ziVar.isActionViewExpanded()) {
+            if (!this.mExpandedActionViewsExclusive || !ziVar.isActionViewExpanded()) {
                 i9 = i11;
             } else {
                 i9 = 0;
@@ -332,7 +332,7 @@ public final class aap extends defpackage.ys {
         int i19 = i16;
         int i20 = 0;
         while (i17 < i2) {
-            defpackage.zi ziVar2 = (defpackage.zi) arrayList.get(i17);
+            MenuItemImpl ziVar2 = (MenuItemImpl) arrayList.get(i17);
             if (ziVar2.h()) {
                 android.view.View a = a(ziVar2, this.t, viewGroup);
                 if (this.t == null) {
@@ -383,7 +383,7 @@ public final class aap extends defpackage.ys {
                     sparseBooleanArray.put(groupId2, false);
                     int i23 = i19;
                     for (int i24 = 0; i24 < i17; i24++) {
-                        defpackage.zi ziVar3 = (defpackage.zi) arrayList.get(i24);
+                        MenuItemImpl ziVar3 = (MenuItemImpl) arrayList.get(i24);
                         if (ziVar3.getGroupId() == groupId2) {
                             if (ziVar3.f()) {
                                 i23++;
@@ -416,9 +416,9 @@ public final class aap extends defpackage.ys {
         return true;
     }
 
-    public final void a(defpackage.ze zeVar, boolean z) {
+    public final void onCloseMenu(MenuBuilder zeVar, boolean z) {
         g();
-        super.a(zeVar, z);
+        super.onCloseMenu(zeVar, z);
     }
 
     public final android.os.Parcelable c() {
@@ -433,7 +433,7 @@ public final class aap extends defpackage.ys {
             if (aaw.a > 0) {
                 android.view.MenuItem findItem = this.c.findItem(aaw.a);
                 if (findItem != null) {
-                    a((defpackage.aad) findItem.getSubMenu());
+                    this.onSubMenuSelected((SubMenuBuilder) findItem.getSubMenu());
                 }
             }
         }
@@ -441,6 +441,6 @@ public final class aap extends defpackage.ys {
 
     public final void a(android.support.v7.widget.ActionMenuView actionMenuView) {
         this.e = actionMenuView;
-        actionMenuView.a = this.c;
+        actionMenuView.peekMenu = this.c;
     }
 }

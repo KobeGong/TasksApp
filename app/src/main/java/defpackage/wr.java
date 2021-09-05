@@ -19,7 +19,7 @@ class wr extends defpackage.yo {
     }
 
     public boolean onCreatePanelMenu(int i, android.view.Menu menu) {
-        if (i != 0 || (menu instanceof defpackage.ze)) {
+        if (i != 0 || (menu instanceof MenuBuilder)) {
             return super.onCreatePanelMenu(i, menu);
         }
         return false;
@@ -29,7 +29,7 @@ class wr extends defpackage.yo {
     }
 
     public boolean onPreparePanel(int i, android.view.View view, android.view.Menu menu) {
-        defpackage.ze zeVar = menu instanceof defpackage.ze ? (defpackage.ze) menu : null;
+        MenuBuilder zeVar = menu instanceof MenuBuilder ? (MenuBuilder) menu : null;
         if (i == 0 && zeVar == null) {
             return false;
         }

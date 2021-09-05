@@ -1,5 +1,9 @@
 package defpackage;
 
+import android.text.TextUtils;
+import android.util.Patterns;
+import android.view.View;
+
 /* renamed from: ajd reason: default package */
 /* compiled from: PG */
 public final class ajd {
@@ -106,12 +110,12 @@ public final class ajd {
         return new java.text.SimpleDateFormat(str, java.util.Locale.getDefault()).format(calendar.getTime());
     }
 
-    public static void a(android.view.View view) {
+    public static void a(View view) {
         defpackage.cos.a(view.getContext()).a.a(4, view);
     }
 
     public static boolean b(java.lang.String str) {
-        return android.util.Patterns.WEB_URL.matcher(str).matches();
+        return Patterns.WEB_URL.matcher(str).matches();
     }
 
     public static boolean b(defpackage.dby dby) {
@@ -126,7 +130,7 @@ public final class ajd {
 
     public static boolean a(defpackage.dca dca) {
         boolean z;
-        if (!(dca.d != null) && android.text.TextUtils.isEmpty(dca.b) && android.text.TextUtils.isEmpty(dca.c)) {
+        if (!(dca.d != null) && TextUtils.isEmpty(dca.b) && TextUtils.isEmpty(dca.c)) {
             if (dca.f != null) {
                 z = true;
             } else {
@@ -141,7 +145,7 @@ public final class ajd {
 
     public static void a(defpackage.wl wlVar) {
         wlVar.show();
-        android.view.View findViewById = wlVar.findViewById(16908299);
+        View findViewById = wlVar.findViewById(16908299);
         if (findViewById instanceof android.widget.TextView) {
             ((android.widget.TextView) findViewById).setTextSize(0, findViewById.getResources().getDimension(2131689849));
         }

@@ -101,7 +101,7 @@ public class ee extends defpackage.xg {
             frameLayout2.addView(view, layoutParams);
         }
         coordinatorLayout.findViewById(2131755281).setOnClickListener(new defpackage.ef(this));
-        defpackage.sn.a((android.view.View) frameLayout2, (defpackage.rn) new defpackage.eg(this));
+        ViewCompat.a((android.view.View) frameLayout2, (defpackage.rn) new defpackage.eg(this));
         frameLayout2.setOnTouchListener(new defpackage.eh());
         return frameLayout;
     }

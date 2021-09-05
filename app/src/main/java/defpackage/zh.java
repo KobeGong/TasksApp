@@ -2,12 +2,12 @@ package defpackage;
 
 /* renamed from: zh reason: default package */
 /* compiled from: PG */
-final class zh implements android.content.DialogInterface.OnClickListener, android.content.DialogInterface.OnDismissListener, android.content.DialogInterface.OnKeyListener, defpackage.zu {
-    public defpackage.ze a;
+final class zh implements android.content.DialogInterface.OnClickListener, android.content.DialogInterface.OnDismissListener, android.content.DialogInterface.OnKeyListener, MenuPresenter_Callback {
+    public MenuBuilder a;
     public defpackage.wl b;
     public defpackage.zb c;
 
-    public zh(defpackage.ze zeVar) {
+    public zh(MenuBuilder zeVar) {
         this.a = zeVar;
     }
 
@@ -44,20 +44,20 @@ final class zh implements android.content.DialogInterface.OnClickListener, andro
     }
 
     public final void onDismiss(android.content.DialogInterface dialogInterface) {
-        this.c.a(this.a, true);
+        this.c.onCloseMenu(this.a, true);
     }
 
-    public final void a(defpackage.ze zeVar, boolean z) {
+    public final void onCloseMenu(MenuBuilder zeVar, boolean z) {
         if ((z || zeVar == this.a) && this.b != null) {
             this.b.dismiss();
         }
     }
 
-    public final boolean a(defpackage.ze zeVar) {
+    public final boolean a(MenuBuilder zeVar) {
         return false;
     }
 
     public final void onClick(android.content.DialogInterface dialogInterface, int i) {
-        this.a.a((android.view.MenuItem) (defpackage.zi) this.c.d().getItem(i), (defpackage.zt) null, 0);
+        this.a.a((android.view.MenuItem) (MenuItemImpl) this.c.d().getItem(i), (MenuPresenter) null, 0);
     }
 }

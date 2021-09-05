@@ -24,7 +24,7 @@ final /* synthetic */ class cfg implements defpackage.uy {
                 color = cff.getResources().getColor(2131624091);
             }
             a2.setBackgroundColor(color);
-            defpackage.sn.a(a2, z ? f : 0.0f);
+            ViewCompat.a(a2, z ? f : 0.0f);
             return;
         }
         android.view.View findViewById = cff.findViewById(2131755230);

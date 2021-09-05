@@ -13,7 +13,7 @@ final class aar implements java.lang.Runnable {
 
     public final void run() {
         if (this.b.c != null) {
-            defpackage.ze zeVar = this.b.c;
+            MenuBuilder zeVar = this.b.c;
             if (zeVar.b != null) {
                 zeVar.b.a(zeVar);
             }

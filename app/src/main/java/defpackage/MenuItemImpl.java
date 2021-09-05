@@ -2,14 +2,14 @@ package defpackage;
 
 /* renamed from: zi reason: default package */
 /* compiled from: PG */
-public final class zi implements defpackage.pp {
+public final class MenuItemImpl implements defpackage.pp {
     private android.view.View A;
     private android.view.MenuItem.OnActionExpandListener B;
     private boolean C = false;
     public final int a;
     public int b = 4096;
     public int c = 4096;
-    public defpackage.ze d;
+    public MenuBuilder d;
     public int e = 0;
     public defpackage.rs f;
     private final int g;
@@ -22,7 +22,7 @@ public final class zi implements defpackage.pp {
     private char n;
     private android.graphics.drawable.Drawable o;
     private int p = 0;
-    private defpackage.aad q;
+    private SubMenuBuilder q;
     private android.view.MenuItem.OnMenuItemClickListener r;
     private java.lang.CharSequence s;
     private java.lang.CharSequence t;
@@ -33,7 +33,7 @@ public final class zi implements defpackage.pp {
     private boolean y = false;
     private int z = 16;
 
-    zi(defpackage.ze zeVar, int i2, int i3, int i4, int i5, java.lang.CharSequence charSequence, int i6) {
+    MenuItemImpl(MenuBuilder zeVar, int i2, int i3, int i4, int i5, java.lang.CharSequence charSequence, int i6) {
         this.d = zeVar;
         this.g = i3;
         this.h = i2;
@@ -185,7 +185,7 @@ public final class zi implements defpackage.pp {
         return this.q != null;
     }
 
-    public final void a(defpackage.aad aad) {
+    public final void setSubMenu(SubMenuBuilder aad) {
         this.q = aad;
         aad.setHeaderTitle(getTitle());
     }
@@ -331,12 +331,12 @@ public final class zi implements defpackage.pp {
     public final android.view.MenuItem setChecked(boolean z2) {
         boolean z3;
         if ((this.z & 4) != 0) {
-            defpackage.ze zeVar = this.d;
+            MenuBuilder zeVar = this.d;
             int groupId = getGroupId();
             int size = zeVar.c.size();
             zeVar.e();
             for (int i2 = 0; i2 < size; i2++) {
-                defpackage.zi ziVar = (defpackage.zi) zeVar.c.get(i2);
+                MenuItemImpl ziVar = (MenuItemImpl) zeVar.c.get(i2);
                 if (ziVar.getGroupId() == groupId && ziVar.e() && ziVar.isCheckable()) {
                     if (ziVar == this) {
                         z3 = true;

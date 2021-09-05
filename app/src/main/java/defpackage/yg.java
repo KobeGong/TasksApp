@@ -8,13 +8,13 @@ public final class yg extends defpackage.yc implements defpackage.zf {
     private defpackage.yd e;
     private java.lang.ref.WeakReference f;
     private boolean g;
-    private defpackage.ze h;
+    private MenuBuilder h;
 
     public yg(android.content.Context context, android.support.v7.widget.ActionBarContextView actionBarContextView, defpackage.yd ydVar) {
         this.c = context;
         this.d = actionBarContextView;
         this.e = ydVar;
-        defpackage.ze zeVar = new defpackage.ze(actionBarContextView.getContext());
+        MenuBuilder zeVar = new MenuBuilder(actionBarContextView.getContext());
         this.h = zeVar;
         this.h.a((defpackage.zf) this);
     }
@@ -81,14 +81,14 @@ public final class yg extends defpackage.yc implements defpackage.zf {
     }
 
     public final android.view.MenuInflater a() {
-        return new defpackage.yj(this.d.getContext());
+        return new SupportMenuInflater(this.d.getContext());
     }
 
-    public final boolean a(defpackage.ze zeVar, android.view.MenuItem menuItem) {
+    public final boolean a(MenuBuilder zeVar, android.view.MenuItem menuItem) {
         return this.e.a((defpackage.yc) this, menuItem);
     }
 
-    public final void a(defpackage.ze zeVar) {
+    public final void a(MenuBuilder zeVar) {
         d();
         this.d.a();
     }

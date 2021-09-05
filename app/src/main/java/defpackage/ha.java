@@ -1,5 +1,7 @@
 package defpackage;
 
+import android.support.design.widget.CoordinatorLayout;
+
 /* renamed from: ha reason: default package */
 /* compiled from: PG */
 public final class ha extends android.view.ViewGroup.MarginLayoutParams {
@@ -36,7 +38,7 @@ public final class ha extends android.view.ViewGroup.MarginLayoutParams {
         this.h = obtainStyledAttributes.getInt(defpackage.co.g, 0);
         this.b = obtainStyledAttributes.hasValue(defpackage.co.f);
         if (this.b) {
-            this.a = android.support.design.widget.CoordinatorLayout.a(context, attributeSet, obtainStyledAttributes.getString(defpackage.co.f));
+            this.a = CoordinatorLayout.a(context, attributeSet, obtainStyledAttributes.getString(defpackage.co.f));
         }
         obtainStyledAttributes.recycle();
         if (this.a != null) {

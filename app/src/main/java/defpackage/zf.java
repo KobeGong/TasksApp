@@ -3,7 +3,7 @@ package defpackage;
 /* renamed from: zf reason: default package */
 /* compiled from: PG */
 public interface zf {
-    void a(defpackage.ze zeVar);
+    void a(MenuBuilder zeVar);
 
-    boolean a(defpackage.ze zeVar, android.view.MenuItem menuItem);
+    boolean a(MenuBuilder zeVar, android.view.MenuItem menuItem);
 }

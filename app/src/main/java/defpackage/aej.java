@@ -11,7 +11,7 @@ final class aej implements java.lang.Runnable {
 
     public final void run() {
         if (this.a.e != null) {
-            if (defpackage.sn.a.s(this.a.e) && this.a.e.getCount() > this.a.e.getChildCount() && this.a.e.getChildCount() <= this.a.k) {
+            if (ViewCompat.a.s(this.a.e) && this.a.e.getCount() > this.a.e.getChildCount() && this.a.e.getChildCount() <= this.a.k) {
                 this.a.r.setInputMethodMode(2);
                 this.a.d();
             }

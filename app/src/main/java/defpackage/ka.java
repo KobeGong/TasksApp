@@ -29,13 +29,13 @@ final class ka extends android.view.ViewGroup {
     public final void a(android.view.View view) {
         if (view.getParent() instanceof android.view.ViewGroup) {
             android.view.ViewGroup viewGroup = (android.view.ViewGroup) view.getParent();
-            if (!(viewGroup == this.b || viewGroup.getParent() == null || !defpackage.sn.a.s(viewGroup))) {
+            if (!(viewGroup == this.b || viewGroup.getParent() == null || !ViewCompat.a.s(viewGroup))) {
                 int[] iArr = new int[2];
                 int[] iArr2 = new int[2];
                 viewGroup.getLocationOnScreen(iArr);
                 this.b.getLocationOnScreen(iArr2);
-                defpackage.sn.c(view, iArr[0] - iArr2[0]);
-                defpackage.sn.b(view, iArr[1] - iArr2[1]);
+                ViewCompat.c(view, iArr[0] - iArr2[0]);
+                ViewCompat.b(view, iArr[1] - iArr2[1]);
             }
             viewGroup.removeView(view);
             if (view.getParent() != null) {

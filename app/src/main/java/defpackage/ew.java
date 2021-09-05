@@ -134,7 +134,7 @@ public final class ew {
             this.v.setColor(d());
         }
         this.v.setShadowLayer(a(this.O, this.K, f2, null), a(this.P, this.L, f2, null), a(this.Q, this.M, f2, null), a(this.R, this.N, f2));
-        defpackage.sn.a.c(this.y);
+        ViewCompat.a.c(this.y);
     }
 
     private final int d() {
@@ -161,7 +161,7 @@ public final class ew {
                 }
             }
         }
-        defpackage.sn.a.c(this.y);
+        ViewCompat.a.c(this.y);
     }
 
     private final void c(float f2) {
@@ -219,7 +219,7 @@ public final class ew {
                 if (!android.text.TextUtils.equals(ellipsize, this.n)) {
                     this.n = ellipsize;
                     java.lang.CharSequence charSequence = this.n;
-                    if (defpackage.sn.a.j(this.y) == 1) {
+                    if (ViewCompat.a.j(this.y) == 1) {
                         qlVar = defpackage.qm.d;
                     } else {
                         qlVar = defpackage.qm.c;

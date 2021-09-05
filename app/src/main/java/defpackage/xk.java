@@ -2,16 +2,16 @@ package defpackage;
 
 /* renamed from: xk reason: default package */
 /* compiled from: PG */
-public final class xk implements defpackage.zu {
+public final class xk implements MenuPresenter_Callback {
     public final defpackage.agq a;
     private boolean b;
     private final int c;
 
-    public final boolean a(defpackage.ze zeVar) {
+    public final boolean a(MenuBuilder zeVar) {
         return false;
     }
 
-    public final void a(defpackage.ze zeVar, boolean z) {
+    public final void onCloseMenu(MenuBuilder zeVar, boolean z) {
         if (!this.b) {
             this.b = true;
             defpackage.acr acr = null;

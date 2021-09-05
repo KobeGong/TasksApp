@@ -2,7 +2,7 @@ package defpackage;
 
 /* renamed from: yj reason: default package */
 /* compiled from: PG */
-public final class yj extends android.view.MenuInflater {
+public final class SupportMenuInflater extends android.view.MenuInflater {
     public static final java.lang.Class[] a;
     private static final java.lang.Class[] e;
     public final java.lang.Object[] b;
@@ -10,7 +10,7 @@ public final class yj extends android.view.MenuInflater {
     public java.lang.Object d;
     private final java.lang.Object[] f = this.b;
 
-    public yj(android.content.Context context) {
+    public SupportMenuInflater(android.content.Context context) {
         super(context);
         this.c = context;
         this.b = new java.lang.Object[]{context};

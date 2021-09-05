@@ -22,10 +22,10 @@ public class ard {
             this.c = viewGroup.getContext();
             this.d = (defpackage.arp) android.view.LayoutInflater.from(this.c).inflate(2131034153, this.b, false);
             this.d.addView(view);
-            defpackage.sn.a.q(this.d);
-            defpackage.sn.a((android.view.View) this.d, 1);
-            defpackage.sn.b((android.view.View) this.d, true);
-            defpackage.sn.a((android.view.View) this.d, (defpackage.sl) new defpackage.arh());
+            ViewCompat.a.q(this.d);
+            ViewCompat.a((android.view.View) this.d, 1);
+            ViewCompat.b((android.view.View) this.d, true);
+            ViewCompat.setOnApplyWindowInsetsListener((android.view.View) this.d, (OnApplyWindowInsetsListener) new defpackage.arh());
             this.h = (android.view.accessibility.AccessibilityManager) this.c.getSystemService("accessibility");
         }
     }

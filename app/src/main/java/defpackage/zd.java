@@ -4,13 +4,13 @@ package defpackage;
 /* compiled from: PG */
 public final class zd extends android.widget.BaseAdapter {
     private static final int c = 2131034130;
-    public defpackage.ze a;
+    public MenuBuilder a;
     public boolean b;
     private int d = -1;
     private final boolean e;
     private final android.view.LayoutInflater f;
 
-    public zd(defpackage.ze zeVar, android.view.LayoutInflater layoutInflater, boolean z) {
+    public zd(MenuBuilder zeVar, android.view.LayoutInflater layoutInflater, boolean z) {
         this.e = z;
         this.f = layoutInflater;
         this.a = zeVar;
@@ -38,8 +38,8 @@ public final class zd extends android.widget.BaseAdapter {
         } else {
             view2 = view;
         }
-        int groupId = ((defpackage.zi) getItem(i)).getGroupId();
-        int i3 = i + -1 >= 0 ? ((defpackage.zi) getItem(i - 1)).getGroupId() : groupId;
+        int groupId = ((MenuItemImpl) getItem(i)).getGroupId();
+        int i3 = i + -1 >= 0 ? ((MenuItemImpl) getItem(i - 1)).getGroupId() : groupId;
         android.support.v7.view.menu.ListMenuItemView listMenuItemView = (android.support.v7.view.menu.ListMenuItemView) view2;
         if (!this.a.b() || groupId == i3) {
             z = false;
@@ -59,17 +59,17 @@ public final class zd extends android.widget.BaseAdapter {
             listMenuItemView2.e = true;
             listMenuItemView2.c = true;
         }
-        zwVar.a((defpackage.zi) getItem(i));
+        zwVar.a((MenuItemImpl) getItem(i));
         return view2;
     }
 
     private final void a() {
-        defpackage.zi ziVar = this.a.j;
+        MenuItemImpl ziVar = this.a.j;
         if (ziVar != null) {
             java.util.ArrayList k = this.a.k();
             int size = k.size();
             for (int i = 0; i < size; i++) {
-                if (((defpackage.zi) k.get(i)) == ziVar) {
+                if (((MenuItemImpl) k.get(i)) == ziVar) {
                     this.d = i;
                     return;
                 }
@@ -88,6 +88,6 @@ public final class zd extends android.widget.BaseAdapter {
         if (this.d >= 0 && i >= this.d) {
             i++;
         }
-        return (defpackage.zi) i2.get(i);
+        return (MenuItemImpl) i2.get(i);
     }
 }

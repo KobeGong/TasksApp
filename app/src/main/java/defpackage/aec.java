@@ -177,7 +177,7 @@ public class aec implements defpackage.zz {
         boolean j2 = j();
         defpackage.vb.a(this.r, this.v);
         if (this.r.isShowing()) {
-            if (defpackage.sn.a.s(this.l)) {
+            if (ViewCompat.a.s(this.l)) {
                 if (this.f == -1) {
                     i6 = -1;
                 } else if (this.f == -2) {

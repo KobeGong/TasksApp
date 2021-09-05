@@ -180,7 +180,7 @@ public final class wl extends defpackage.xg implements android.content.DialogInt
                 android.view.View findViewById10 = alertController.c.findViewById(2131755184);
                 android.view.View findViewById11 = alertController.c.findViewById(2131755188);
                 if (android.os.Build.VERSION.SDK_INT >= 23) {
-                    defpackage.sn.a.d(view2, i3);
+                    ViewCompat.a.d(view2, i3);
                     if (findViewById10 != null) {
                         a3.removeView(findViewById10);
                     }

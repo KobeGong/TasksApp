@@ -15,7 +15,7 @@ public final class sh {
 
     public final void a(boolean z) {
         if (this.a) {
-            defpackage.sn.a.x(this.d);
+            ViewCompat.a.x(this.d);
         }
         this.a = z;
     }

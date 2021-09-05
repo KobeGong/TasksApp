@@ -16,7 +16,7 @@ final class mx implements java.lang.Runnable {
         int size = this.a.size();
         for (int i = 0; i < size; i++) {
             android.view.View view = (android.view.View) this.a.get(i);
-            java.lang.String t = defpackage.sn.a.t(view);
+            java.lang.String t = ViewCompat.a.t(view);
             if (t != null) {
                 java.util.Iterator it = this.b.entrySet().iterator();
                 while (true) {
@@ -30,7 +30,7 @@ final class mx implements java.lang.Runnable {
                         break;
                     }
                 }
-                defpackage.sn.a(view, str);
+                ViewCompat.a(view, str);
             }
         }
     }

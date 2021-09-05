@@ -23,7 +23,7 @@ public class Fragment implements ViewModelStoreOwner, android.content.ComponentC
     public boolean O;
     public boolean P;
     public float Q;
-    public android.view.LayoutInflater R;
+    public android.view.LayoutInflater layoutInflater;
     public boolean S;
     public defpackage.z T = new defpackage.z(this);
     private boolean b = true;
@@ -226,8 +226,8 @@ public class Fragment implements ViewModelStoreOwner, android.content.ComponentC
 
     /* access modifiers changed from: 0000 */
     public final android.view.LayoutInflater f(android.os.Bundle bundle) {
-        this.R = b(bundle);
-        return this.R;
+        this.layoutInflater = b(bundle);
+        return this.layoutInflater;
     }
 
     public final void o() {

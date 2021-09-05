@@ -1,9 +1,13 @@
 package android.support.v7.view.menu;
 
+import defpackage.MenuBuilder;
+import defpackage.MenuItemImpl;
+import defpackage.MenuPresenter;
+
 /* compiled from: PG */
 public final class ExpandedMenuView extends android.widget.ListView implements android.widget.AdapterView.OnItemClickListener, defpackage.zg, defpackage.zv {
     private static final int[] a = {16842964, 16843049};
-    private defpackage.ze b;
+    private MenuBuilder b;
 
     public ExpandedMenuView(android.content.Context context, android.util.AttributeSet attributeSet) {
         this(context, attributeSet, 16842868);
@@ -22,7 +26,7 @@ public final class ExpandedMenuView extends android.widget.ListView implements a
         a2.b.recycle();
     }
 
-    public final void a(defpackage.ze zeVar) {
+    public final void a(MenuBuilder zeVar) {
         this.b = zeVar;
     }
 
@@ -32,11 +36,11 @@ public final class ExpandedMenuView extends android.widget.ListView implements a
         setChildrenDrawingCacheEnabled(false);
     }
 
-    public final boolean a(defpackage.zi ziVar) {
-        return this.b.a((android.view.MenuItem) ziVar, (defpackage.zt) null, 0);
+    public final boolean a(MenuItemImpl ziVar) {
+        return this.b.a((android.view.MenuItem) ziVar, (MenuPresenter) null, 0);
     }
 
     public final void onItemClick(android.widget.AdapterView adapterView, android.view.View view, int i, long j) {
-        a((defpackage.zi) getAdapter().getItem(i));
+        a((MenuItemImpl) getAdapter().getItem(i));
     }
 }

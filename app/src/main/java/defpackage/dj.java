@@ -19,8 +19,8 @@ public final class dj {
     }
 
     private final void b() {
-        defpackage.sn.b(this.c, this.b - (this.c.getTop() - this.a));
-        defpackage.sn.c(this.c, 0 - (this.c.getLeft() - this.d));
+        ViewCompat.b(this.c, this.b - (this.c.getTop() - this.a));
+        ViewCompat.c(this.c, 0 - (this.c.getLeft() - this.d));
     }
 
     public final boolean a(int i) {

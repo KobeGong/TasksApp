@@ -2,36 +2,36 @@ package defpackage;
 
 /* renamed from: fr reason: default package */
 /* compiled from: PG */
-public class fr extends defpackage.fn {
+public class BaseNavigationView extends ScrimInsetsFrameLayout {
     private static final int[] f = {16842912};
     private static final int[] g = {-16842910};
-    public final defpackage.ez c;
-    public final defpackage.fb d;
+    public final NavigationMenu menu;
+    public final NavigationMenuPresenter presenter;
     public defpackage.ft e;
     private final int h;
-    private android.view.MenuInflater i;
+    private android.view.MenuInflater menuInflater;
 
-    public fr(android.content.Context context) {
+    public BaseNavigationView(android.content.Context context) {
         this(context, null);
     }
 
-    public fr(android.content.Context context, android.util.AttributeSet attributeSet) {
+    public BaseNavigationView(android.content.Context context, android.util.AttributeSet attributeSet) {
         this(context, attributeSet, 2130772053);
     }
 
-    public fr(android.content.Context context, android.util.AttributeSet attributeSet, int i2) {
+    public BaseNavigationView(android.content.Context context, android.util.AttributeSet attributeSet, int i2) {
+        super(context, attributeSet, i2);
         android.content.res.ColorStateList b;
         int i3;
         boolean z;
-        super(context, attributeSet, i2);
-        this.d = new defpackage.fb();
-        this.c = new defpackage.ez(context);
-        defpackage.agw a = defpackage.fp.a(context, attributeSet, defpackage.fw.a, i2);
-        defpackage.sn.a((android.view.View) this, a.a(defpackage.fw.b));
+        this.presenter = new NavigationMenuPresenter();
+        this.menu = new NavigationMenu(context);
+        defpackage.agw a = ThemeEnforcement.a(context, attributeSet, defpackage.fw.a, i2);
+        ViewCompat.a((android.view.View) this, a.a(defpackage.fw.b));
         if (a.f(defpackage.fw.e)) {
-            defpackage.sn.a((android.view.View) this, (float) a.e(defpackage.fw.e, 0));
+            ViewCompat.a((android.view.View) this, (float) a.e(defpackage.fw.e, 0));
         }
-        defpackage.sn.b((android.view.View) this, a.a(defpackage.fw.c, false));
+        ViewCompat.b((android.view.View) this, a.a(defpackage.fw.c, false));
         this.h = a.e(defpackage.fw.d, 0);
         if (a.f(defpackage.fw.j)) {
             b = a.e(defpackage.fw.j);
@@ -54,44 +54,44 @@ public class fr extends defpackage.fn {
         }
         android.graphics.drawable.Drawable a2 = a.a(defpackage.fw.g);
         if (a.f(defpackage.fw.h)) {
-            this.d.b(a.e(defpackage.fw.h, 0));
+            this.presenter.b(a.e(defpackage.fw.h, 0));
         }
         int e2 = a.e(defpackage.fw.i, 0);
-        this.c.a((defpackage.zf) new defpackage.fs(this));
-        this.d.d = 1;
-        this.d.a(context, (defpackage.ze) this.c);
-        this.d.a(b);
+        this.menu.a((defpackage.zf) new defpackage.fs(this));
+        this.presenter.d = 1;
+        this.presenter.a(context, (MenuBuilder) this.menu);
+        this.presenter.a(b);
         if (z) {
-            this.d.a(i3);
+            this.presenter.a(i3);
         }
-        this.d.b(colorStateList);
-        this.d.a(a2);
-        this.d.c(e2);
-        this.c.a((defpackage.zt) this.d);
-        defpackage.fb fbVar = this.d;
-        if (fbVar.a == null) {
-            fbVar.a = (android.support.design.internal.NavigationMenuView) fbVar.f.inflate(2131034168, this, false);
-            if (fbVar.e == null) {
-                fbVar.e = new defpackage.fd(fbVar);
+        this.presenter.b(colorStateList);
+        this.presenter.a(a2);
+        this.presenter.c(e2);
+        this.menu.a((MenuPresenter) this.presenter);
+        NavigationMenuPresenter fbVar = this.presenter;
+        if (fbVar.menuView == null) {
+            fbVar.menuView = (android.support.design.internal.NavigationMenuView) fbVar.layoutInflater.inflate(2131034168, this, false);
+            if (fbVar.menuAdapter == null) {
+                fbVar.menuAdapter = new NavigationMenuAdapter(fbVar);
             }
-            fbVar.b = (android.widget.LinearLayout) fbVar.f.inflate(2131034165, fbVar.a, false);
-            fbVar.a.a((defpackage.aet) fbVar.e);
+            fbVar.headerLayout = (android.widget.LinearLayout) fbVar.layoutInflater.inflate(2131034165, fbVar.menuView, false);
+            fbVar.menuView.a((defpackage.aet) fbVar.menuAdapter);
         }
-        addView(fbVar.a);
+        addView(fbVar.menuView);
         if (a.f(defpackage.fw.m)) {
             int g2 = a.g(defpackage.fw.m, 0);
-            this.d.b(true);
-            if (this.i == null) {
-                this.i = new defpackage.yj(getContext());
+            this.presenter.b(true);
+            if (this.menuInflater == null) {
+                this.menuInflater = new SupportMenuInflater(getContext());
             }
-            this.i.inflate(g2, this.c);
-            this.d.b(false);
-            this.d.a(false);
+            this.menuInflater.inflate(g2, this.menu);
+            this.presenter.b(false);
+            this.presenter.a(false);
         }
         if (a.f(defpackage.fw.f)) {
             int g3 = a.g(defpackage.fw.f, 0);
-            defpackage.fb fbVar2 = this.d;
-            fbVar2.a(fbVar2.f.inflate(g3, fbVar2.b, false));
+            NavigationMenuPresenter fbVar2 = this.presenter;
+            fbVar2.addHeaderView(fbVar2.layoutInflater.inflate(g3, fbVar2.headerLayout, false));
         }
         a.b.recycle();
     }
@@ -100,18 +100,18 @@ public class fr extends defpackage.fn {
     public android.os.Parcelable onSaveInstanceState() {
         defpackage.fu fuVar = new defpackage.fu(super.onSaveInstanceState());
         fuVar.a = new android.os.Bundle();
-        defpackage.ez ezVar = this.c;
+        NavigationMenu ezVar = this.menu;
         android.os.Bundle bundle = fuVar.a;
         if (!ezVar.i.isEmpty()) {
             android.util.SparseArray sparseArray = new android.util.SparseArray();
             java.util.Iterator it = ezVar.i.iterator();
             while (it.hasNext()) {
                 java.lang.ref.WeakReference weakReference = (java.lang.ref.WeakReference) it.next();
-                defpackage.zt ztVar = (defpackage.zt) weakReference.get();
+                MenuPresenter ztVar = (MenuPresenter) weakReference.get();
                 if (ztVar == null) {
                     ezVar.i.remove(weakReference);
                 } else {
-                    int b = ztVar.b();
+                    int b = ztVar.getId();
                     if (b > 0) {
                         android.os.Parcelable c2 = ztVar.c();
                         if (c2 != null) {
@@ -133,17 +133,17 @@ public class fr extends defpackage.fn {
         }
         defpackage.fu fuVar = (defpackage.fu) parcelable;
         super.onRestoreInstanceState(fuVar.e);
-        defpackage.ez ezVar = this.c;
+        NavigationMenu ezVar = this.menu;
         android.util.SparseArray sparseParcelableArray = fuVar.a.getSparseParcelableArray("android:menu:presenters");
         if (sparseParcelableArray != null && !ezVar.i.isEmpty()) {
             java.util.Iterator it = ezVar.i.iterator();
             while (it.hasNext()) {
                 java.lang.ref.WeakReference weakReference = (java.lang.ref.WeakReference) it.next();
-                defpackage.zt ztVar = (defpackage.zt) weakReference.get();
+                MenuPresenter ztVar = (MenuPresenter) weakReference.get();
                 if (ztVar == null) {
                     ezVar.i.remove(weakReference);
                 } else {
-                    int b = ztVar.b();
+                    int b = ztVar.getId();
                     if (b > 0) {
                         android.os.Parcelable parcelable2 = (android.os.Parcelable) sparseParcelableArray.get(b);
                         if (parcelable2 != null) {
@@ -169,22 +169,22 @@ public class fr extends defpackage.fn {
     }
 
     /* access modifiers changed from: protected */
-    public final void a(defpackage.tk tkVar) {
-        defpackage.fb fbVar = this.d;
+    public final void a(WindowInsetsCompat tkVar) {
+        NavigationMenuPresenter fbVar = this.presenter;
         int b = tkVar.b();
         if (fbVar.n != b) {
             fbVar.n = b;
-            if (fbVar.b.getChildCount() == 0) {
-                fbVar.a.setPadding(0, fbVar.n, 0, fbVar.a.getPaddingBottom());
+            if (fbVar.headerLayout.getChildCount() == 0) {
+                fbVar.menuView.setPadding(0, fbVar.n, 0, fbVar.menuView.getPaddingBottom());
             }
         }
-        defpackage.sn.a.b((android.view.View) fbVar.b, tkVar);
+        ViewCompat.a.b((android.view.View) fbVar.headerLayout, tkVar);
     }
 
     public final void a(int i2) {
-        android.view.MenuItem findItem = this.c.findItem(i2);
+        android.view.MenuItem findItem = this.menu.findItem(i2);
         if (findItem != null) {
-            this.d.e.a((defpackage.zi) findItem);
+            this.presenter.menuAdapter.a((MenuItemImpl) findItem);
         }
     }
 

@@ -1,8 +1,11 @@
 package android.support.v7.view.menu;
 
+import defpackage.MenuItemImpl;
+import defpackage.ViewCompat;
+
 /* compiled from: PG */
 public class ListMenuItemView extends android.widget.LinearLayout implements android.widget.AbsListView.SelectionBoundsAdjuster, defpackage.zw {
-    public defpackage.zi a;
+    public MenuItemImpl a;
     public android.widget.ImageView b;
     public boolean c;
     public boolean d;
@@ -41,7 +44,7 @@ public class ListMenuItemView extends android.widget.LinearLayout implements and
     /* access modifiers changed from: protected */
     public void onFinishInflate() {
         super.onFinishInflate();
-        defpackage.sn.a((android.view.View) this, this.m);
+        ViewCompat.a((android.view.View) this, this.m);
         this.h = (android.widget.TextView) findViewById(2131755042);
         if (this.n != -1) {
             this.h.setTextAppearance(this.o, this.n);
@@ -55,7 +58,7 @@ public class ListMenuItemView extends android.widget.LinearLayout implements and
         this.l = (android.widget.LinearLayout) findViewById(2131755200);
     }
 
-    public final void a(defpackage.zi ziVar) {
+    public final void a(MenuItemImpl ziVar) {
         int i2;
         java.lang.String sb;
         android.widget.CompoundButton compoundButton;
@@ -116,7 +119,7 @@ public class ListMenuItemView extends android.widget.LinearLayout implements and
         }
         if (i2 == 0) {
             android.widget.TextView textView = this.j;
-            defpackage.zi ziVar2 = this.a;
+            MenuItemImpl ziVar2 = this.a;
             char c2 = ziVar2.c();
             if (c2 == 0) {
                 sb = "";
@@ -127,12 +130,12 @@ public class ListMenuItemView extends android.widget.LinearLayout implements and
                     sb2.append(resources.getString(2131951670));
                 }
                 int i4 = ziVar2.d.c() ? ziVar2.c : ziVar2.b;
-                defpackage.zi.a(sb2, i4, 65536, resources.getString(2131951666));
-                defpackage.zi.a(sb2, i4, 4096, resources.getString(2131951662));
-                defpackage.zi.a(sb2, i4, 2, resources.getString(2131951661));
-                defpackage.zi.a(sb2, i4, 1, resources.getString(2131951667));
-                defpackage.zi.a(sb2, i4, 4, resources.getString(2131951669));
-                defpackage.zi.a(sb2, i4, 8, resources.getString(2131951665));
+                MenuItemImpl.a(sb2, i4, 65536, resources.getString(2131951666));
+                MenuItemImpl.a(sb2, i4, 4096, resources.getString(2131951662));
+                MenuItemImpl.a(sb2, i4, 2, resources.getString(2131951661));
+                MenuItemImpl.a(sb2, i4, 1, resources.getString(2131951667));
+                MenuItemImpl.a(sb2, i4, 4, resources.getString(2131951669));
+                MenuItemImpl.a(sb2, i4, 8, resources.getString(2131951665));
                 switch (c2) {
                     case 8:
                         sb2.append(resources.getString(2131951663));
@@ -192,7 +195,7 @@ public class ListMenuItemView extends android.widget.LinearLayout implements and
         }
     }
 
-    public final defpackage.zi a() {
+    public final MenuItemImpl a() {
         return this.a;
     }
 

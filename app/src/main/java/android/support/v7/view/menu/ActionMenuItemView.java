@@ -1,8 +1,11 @@
 package android.support.v7.view.menu;
 
+import defpackage.AppCompatTextView;
+import defpackage.MenuItemImpl;
+
 /* compiled from: PG */
-public class ActionMenuItemView extends defpackage.ack implements defpackage.aay, android.view.View.OnClickListener, defpackage.zw {
-    public defpackage.zi a;
+public class ActionMenuItemView extends AppCompatTextView implements defpackage.aay, android.view.View.OnClickListener, defpackage.zw {
+    public MenuItemImpl a;
     public defpackage.zg c;
     public defpackage.yr d;
     private java.lang.CharSequence e;
@@ -51,11 +54,11 @@ public class ActionMenuItemView extends defpackage.ack implements defpackage.aay
         super.setPadding(i2, i3, i4, i5);
     }
 
-    public final defpackage.zi a() {
+    public final MenuItemImpl a() {
         return this.a;
     }
 
-    public final void a(defpackage.zi ziVar) {
+    public final void a(MenuItemImpl ziVar) {
         this.a = ziVar;
         android.graphics.drawable.Drawable icon = ziVar.getIcon();
         this.f = icon;

@@ -25,7 +25,7 @@ final class arg implements android.os.Handler.Callback {
                     ard.b.addView(ard.d);
                 }
                 ard.d.b = new defpackage.arn(ard);
-                if (!defpackage.sn.a.r(ard.d)) {
+                if (!ViewCompat.a.r(ard.d)) {
                     ard.d.a = new defpackage.aro(ard);
                 } else if (ard.e()) {
                     ard.c();

@@ -14,7 +14,7 @@ public final class xe extends defpackage.ti {
         if (this.a.a.q != null) {
             this.a.a.q.dismiss();
         } else if (this.a.a.p.getParent() instanceof android.view.View) {
-            defpackage.sn.a.g((android.view.View) this.a.a.p.getParent());
+            ViewCompat.a.g((android.view.View) this.a.a.p.getParent());
         }
         this.a.a.p.removeAllViews();
         this.a.a.s.a((defpackage.th) null);

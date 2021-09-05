@@ -2,11 +2,11 @@ package defpackage;
 
 /* renamed from: aad reason: default package */
 /* compiled from: PG */
-public class aad extends defpackage.ze implements android.view.SubMenu {
-    public defpackage.ze l;
-    private defpackage.zi m;
+public class SubMenuBuilder extends MenuBuilder implements android.view.SubMenu {
+    public MenuBuilder l;
+    private MenuItemImpl m;
 
-    public aad(android.content.Context context, defpackage.ze zeVar, defpackage.zi ziVar) {
+    public SubMenuBuilder(android.content.Context context, MenuBuilder zeVar, MenuItemImpl ziVar) {
         super(context);
         this.l = zeVar;
         this.m = ziVar;
@@ -32,12 +32,12 @@ public class aad extends defpackage.ze implements android.view.SubMenu {
         this.l.a(zfVar);
     }
 
-    public final defpackage.ze l() {
+    public final MenuBuilder l() {
         return this.l.l();
     }
 
     /* access modifiers changed from: 0000 */
-    public final boolean a(defpackage.ze zeVar, android.view.MenuItem menuItem) {
+    public final boolean a(MenuBuilder zeVar, android.view.MenuItem menuItem) {
         return super.a(zeVar, menuItem) || this.l.a(zeVar, menuItem);
     }
 
@@ -76,11 +76,11 @@ public class aad extends defpackage.ze implements android.view.SubMenu {
         return this;
     }
 
-    public final boolean a(defpackage.zi ziVar) {
+    public final boolean a(MenuItemImpl ziVar) {
         return this.l.a(ziVar);
     }
 
-    public final boolean b(defpackage.zi ziVar) {
+    public final boolean b(MenuItemImpl ziVar) {
         return this.l.b(ziVar);
     }
 

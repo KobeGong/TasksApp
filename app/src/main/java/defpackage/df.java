@@ -17,7 +17,7 @@ final class df implements java.lang.Runnable {
         if (this.b != null && this.c.c != null) {
             if (this.c.c.computeScrollOffset()) {
                 this.c.a_(this.a, this.b, this.c.c.getCurrY());
-                defpackage.sn.a(this.b, (java.lang.Runnable) this);
+                ViewCompat.a(this.b, (java.lang.Runnable) this);
                 return;
             }
             this.c.a(this.a, this.b);

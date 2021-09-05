@@ -1,5 +1,7 @@
 package defpackage;
 
+import com.google.android.apps.tasks.R;
+
 /* renamed from: ceo reason: default package */
 /* compiled from: PG */
 public final class ceo extends defpackage.aet {
@@ -80,7 +82,7 @@ public final class ceo extends defpackage.aet {
         if (ces != null) {
             return new defpackage.afv(this.g, viewGroup, ces);
         }
-        return new defpackage.cew(android.view.LayoutInflater.from(viewGroup.getContext()).inflate(2131034139, viewGroup, false), this.i, this.h);
+        return new defpackage.cew(android.view.LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.account_list_item, viewGroup, false), this.i, this.h);
     }
 
     public final void a(defpackage.afv afv, int i2) {
@@ -93,7 +95,7 @@ public final class ceo extends defpackage.aet {
                 obj = this.a.a(i2 + 1);
             }
             cew.q.a(obj);
-            cew.a.setContentDescription(cew.a.getContext().getString(2131951786, new java.lang.Object[]{defpackage.cdm.a(obj, cew.p)}));
+            cew.a.setContentDescription(cew.a.getContext().getString(R.string.og_use_account_a11y, cdm.a(obj, cew.p)));
             cew.a.setOnClickListener(new defpackage.cep(this, obj));
         }
     }

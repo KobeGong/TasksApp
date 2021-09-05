@@ -148,7 +148,7 @@ public abstract class atg extends defpackage.aet {
         if (d == i2) {
             defpackage.atx atx = (defpackage.atx) afv;
             atx.v();
-            defpackage.sn.a(atx.a, "");
+            ViewCompat.a(atx.a, "");
             if (atx.q.getParent() != null) {
                 ((android.widget.FrameLayout) atx.q.getParent()).removeView(atx.q);
             }

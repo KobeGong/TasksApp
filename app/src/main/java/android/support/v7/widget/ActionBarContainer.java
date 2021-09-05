@@ -1,5 +1,7 @@
 package android.support.v7.widget;
 
+import defpackage.ViewCompat;
+
 /* compiled from: PG */
 public class ActionBarContainer extends android.widget.FrameLayout {
     public android.view.View a;
@@ -19,7 +21,7 @@ public class ActionBarContainer extends android.widget.FrameLayout {
 
     public ActionBarContainer(android.content.Context context, android.util.AttributeSet attributeSet) {
         super(context, attributeSet);
-        defpackage.sn.a((android.view.View) this, android.os.Build.VERSION.SDK_INT >= 21 ? new defpackage.aai(this) : new defpackage.aah(this));
+        ViewCompat.a((android.view.View) this, android.os.Build.VERSION.SDK_INT >= 21 ? new defpackage.aai(this) : new defpackage.aah(this));
         android.content.res.TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, defpackage.xu.a);
         this.b = obtainStyledAttributes.getDrawable(defpackage.xu.d);
         this.c = obtainStyledAttributes.getDrawable(defpackage.xu.f);

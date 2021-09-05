@@ -8,7 +8,7 @@ final class yl {
     public java.lang.CharSequence C;
     public android.content.res.ColorStateList D = null;
     public android.graphics.PorterDuff.Mode E = null;
-    public final /* synthetic */ defpackage.yj F;
+    public final /* synthetic */ SupportMenuInflater F;
     public android.view.Menu a;
     public int b;
     public int c;
@@ -36,7 +36,7 @@ final class yl {
     public java.lang.String y;
     public java.lang.String z;
 
-    public yl(defpackage.yj yjVar, android.view.Menu menu) {
+    public yl(SupportMenuInflater yjVar, android.view.Menu menu) {
         this.F = yjVar;
         this.a = menu;
         a();
@@ -69,7 +69,7 @@ final class yl {
             if (this.F.c.isRestricted()) {
                 throw new java.lang.IllegalStateException("The android:onClick attribute cannot be used within a restricted context");
             }
-            defpackage.yj yjVar = this.F;
+            SupportMenuInflater yjVar = this.F;
             if (yjVar.d == null) {
                 android.content.Context context = yjVar.c;
                 while (!(context instanceof android.app.Activity) && (context instanceof android.content.ContextWrapper)) {
@@ -80,8 +80,8 @@ final class yl {
             menuItem.setOnMenuItemClickListener(new defpackage.yk(yjVar.d, this.z));
         }
         if (this.r >= 2) {
-            if (menuItem instanceof defpackage.zi) {
-                ((defpackage.zi) menuItem).a(true);
+            if (menuItem instanceof MenuItemImpl) {
+                ((MenuItemImpl) menuItem).a(true);
             } else if (menuItem instanceof defpackage.zj) {
                 defpackage.zj zjVar = (defpackage.zj) menuItem;
                 try {
@@ -95,7 +95,7 @@ final class yl {
             }
         }
         if (this.x != null) {
-            menuItem.setActionView((android.view.View) a(this.x, defpackage.yj.a, this.F.b));
+            menuItem.setActionView((android.view.View) a(this.x, SupportMenuInflater.a, this.F.b));
         } else {
             z2 = false;
         }

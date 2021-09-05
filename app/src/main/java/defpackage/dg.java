@@ -23,9 +23,9 @@ public abstract class dg extends defpackage.di {
         if (i6 == -1 || i6 == -2) {
             android.view.View a2 = a(coordinatorLayout.a(view));
             if (a2 != null) {
-                if (defpackage.sn.a.h(a2) && !defpackage.sn.a.h(view)) {
-                    defpackage.sn.b(view, true);
-                    if (defpackage.sn.a.h(view)) {
+                if (ViewCompat.a.h(a2) && !ViewCompat.a.h(view)) {
+                    ViewCompat.b(view, true);
+                    if (ViewCompat.a.h(view)) {
                         view.requestLayout();
                         return true;
                     }
@@ -54,8 +54,8 @@ public abstract class dg extends defpackage.di {
             defpackage.ha haVar = (defpackage.ha) view.getLayoutParams();
             android.graphics.Rect rect = this.a;
             rect.set(coordinatorLayout.getPaddingLeft() + haVar.leftMargin, a2.getBottom() + haVar.topMargin, (coordinatorLayout.getWidth() - coordinatorLayout.getPaddingRight()) - haVar.rightMargin, ((coordinatorLayout.getHeight() + a2.getBottom()) - coordinatorLayout.getPaddingBottom()) - haVar.bottomMargin);
-            defpackage.tk tkVar = coordinatorLayout.b;
-            if (tkVar != null && defpackage.sn.a.h(coordinatorLayout) && !defpackage.sn.a.h(view)) {
+            WindowInsetsCompat tkVar = coordinatorLayout.b;
+            if (tkVar != null && ViewCompat.a.h(coordinatorLayout) && !ViewCompat.a.h(view)) {
                 rect.left += tkVar.a();
                 rect.right -= tkVar.c();
             }

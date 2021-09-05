@@ -2,12 +2,12 @@ package defpackage;
 
 /* renamed from: zb reason: default package */
 /* compiled from: PG */
-public final class zb implements android.widget.AdapterView.OnItemClickListener, defpackage.zt {
+public final class zb implements android.widget.AdapterView.OnItemClickListener, MenuPresenter {
     public android.view.LayoutInflater a;
-    public defpackage.ze b;
+    public MenuBuilder b;
     public android.support.v7.view.menu.ExpandedMenuView c;
     public int d;
-    public defpackage.zu e;
+    public MenuPresenter_Callback e;
     public defpackage.zc f;
     private android.content.Context g;
 
@@ -21,7 +21,7 @@ public final class zb implements android.widget.AdapterView.OnItemClickListener,
         this.d = 2131034127;
     }
 
-    public final void a(android.content.Context context, defpackage.ze zeVar) {
+    public final void a(android.content.Context context, MenuBuilder zeVar) {
         if (this.g != null) {
             this.g = context;
             if (this.a == null) {
@@ -47,20 +47,20 @@ public final class zb implements android.widget.AdapterView.OnItemClickListener,
         }
     }
 
-    public final void a(defpackage.zu zuVar) {
+    public final void setCallback(MenuPresenter_Callback zuVar) {
         this.e = zuVar;
     }
 
-    public final boolean a(defpackage.aad aad) {
+    public final boolean onSubMenuSelected(SubMenuBuilder aad) {
         if (!aad.hasVisibleItems()) {
             return false;
         }
         defpackage.zh zhVar = new defpackage.zh(aad);
-        defpackage.ze zeVar = zhVar.a;
+        MenuBuilder zeVar = zhVar.a;
         defpackage.xk xkVar = new defpackage.xk(zeVar.a);
         zhVar.c = new defpackage.zb(xkVar.a.a);
         zhVar.c.e = zhVar;
-        zhVar.a.a((defpackage.zt) zhVar.c);
+        zhVar.a.a((MenuPresenter) zhVar.c);
         xkVar.a.n = zhVar.c.d();
         xkVar.a.o = zhVar;
         android.view.View view = zeVar.h;
@@ -83,29 +83,29 @@ public final class zb implements android.widget.AdapterView.OnItemClickListener,
         return true;
     }
 
-    public final void a(defpackage.ze zeVar, boolean z) {
+    public final void onCloseMenu(MenuBuilder zeVar, boolean z) {
         if (this.e != null) {
-            this.e.a(zeVar, z);
+            this.e.onCloseMenu(zeVar, z);
         }
     }
 
     public final void onItemClick(android.widget.AdapterView adapterView, android.view.View view, int i, long j) {
-        this.b.a((android.view.MenuItem) (defpackage.zi) this.f.getItem(i), (defpackage.zt) this, 0);
+        this.b.a((android.view.MenuItem) (MenuItemImpl) this.f.getItem(i), (MenuPresenter) this, 0);
     }
 
-    public final boolean a() {
+    public final boolean flagActionItems() {
         return false;
     }
 
-    public final boolean a(defpackage.zi ziVar) {
+    public final boolean a(MenuItemImpl ziVar) {
         return false;
     }
 
-    public final boolean b(defpackage.zi ziVar) {
+    public final boolean b(MenuItemImpl ziVar) {
         return false;
     }
 
-    public final int b() {
+    public final int getId() {
         return 0;
     }
 

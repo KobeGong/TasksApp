@@ -1,5 +1,7 @@
 package android.support.design.bottomsheet;
 
+import defpackage.ViewCompat;
+
 /* compiled from: PG */
 public class BottomSheetBehavior extends defpackage.gx {
     public boolean a = true;
@@ -69,7 +71,7 @@ public class BottomSheetBehavior extends defpackage.gx {
     }
 
     public final boolean a(android.support.design.widget.CoordinatorLayout coordinatorLayout, android.view.View view, int i2) {
-        if (defpackage.sn.a.h(coordinatorLayout) && !defpackage.sn.a.h(view)) {
+        if (ViewCompat.a.h(coordinatorLayout) && !ViewCompat.a.h(view)) {
             view.setFitsSystemWindows(true);
         }
         int top = view.getTop();
@@ -87,15 +89,15 @@ public class BottomSheetBehavior extends defpackage.gx {
         this.c = this.h / 2;
         c();
         if (this.f == 3) {
-            defpackage.sn.b(view, a());
+            ViewCompat.b(view, a());
         } else if (this.f == 6) {
-            defpackage.sn.b(view, this.c);
+            ViewCompat.b(view, this.c);
         } else if (this.e && this.f == 5) {
-            defpackage.sn.b(view, this.h);
+            ViewCompat.b(view, this.h);
         } else if (this.f == 4) {
-            defpackage.sn.b(view, this.d);
+            ViewCompat.b(view, this.d);
         } else if (this.f == 1 || this.f == 2) {
-            defpackage.sn.b(view, top - view.getTop());
+            ViewCompat.b(view, top - view.getTop());
         }
         if (this.g == null) {
             this.g = defpackage.vv.a((android.view.ViewGroup) coordinatorLayout, this.y);
@@ -192,21 +194,21 @@ public class BottomSheetBehavior extends defpackage.gx {
             if (i2 > 0) {
                 if (i4 < a()) {
                     iArr[1] = top - a();
-                    defpackage.sn.b(view, -iArr[1]);
+                    ViewCompat.b(view, -iArr[1]);
                     c(3);
                 } else {
                     iArr[1] = i2;
-                    defpackage.sn.b(view, -i2);
+                    ViewCompat.b(view, -i2);
                     c(1);
                 }
             } else if (i2 < 0 && !view2.canScrollVertically(-1)) {
                 if (i4 <= this.d || this.e) {
                     iArr[1] = i2;
-                    defpackage.sn.b(view, -i2);
+                    ViewCompat.b(view, -i2);
                     c(1);
                 } else {
                     iArr[1] = top - this.d;
-                    defpackage.sn.b(view, -iArr[1]);
+                    ViewCompat.b(view, -iArr[1]);
                     c(4);
                 }
             }
@@ -272,7 +274,7 @@ public class BottomSheetBehavior extends defpackage.gx {
             }
             if (this.g.a(view, view.getLeft(), i3)) {
                 c(2);
-                defpackage.sn.a(view, (java.lang.Runnable) new defpackage.ed(this, view, i4));
+                ViewCompat.a(view, (java.lang.Runnable) new defpackage.ed(this, view, i4));
             } else {
                 c(i4);
             }
@@ -313,7 +315,7 @@ public class BottomSheetBehavior extends defpackage.gx {
                 android.view.View view = (android.view.View) this.i.get();
                 if (view != null) {
                     android.view.ViewParent parent = view.getParent();
-                    if (parent == null || !parent.isLayoutRequested() || !defpackage.sn.a.s(view)) {
+                    if (parent == null || !parent.isLayoutRequested() || !ViewCompat.a.s(view)) {
                         b(view, i2);
                     } else {
                         view.post(new defpackage.dy(this, view, i2));
@@ -367,7 +369,7 @@ public class BottomSheetBehavior extends defpackage.gx {
     }
 
     private final android.view.View b(android.view.View view) {
-        if (defpackage.sn.a.w(view)) {
+        if (ViewCompat.a.w(view)) {
             return view;
         }
         if (view instanceof android.view.ViewGroup) {
@@ -409,7 +411,7 @@ public class BottomSheetBehavior extends defpackage.gx {
         }
         if (this.g.a(view, view.getLeft(), i3)) {
             c(2);
-            defpackage.sn.a(view, (java.lang.Runnable) new defpackage.ed(this, view, i2));
+            ViewCompat.a(view, (java.lang.Runnable) new defpackage.ed(this, view, i2));
             return;
         }
         c(i2);

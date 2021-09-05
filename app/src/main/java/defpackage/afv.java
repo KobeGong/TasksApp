@@ -1,5 +1,7 @@
 package defpackage;
 
+import com.google.android.apps.tasks.R;
+
 /* renamed from: afv reason: default package */
 /* compiled from: PG */
 public class afv {
@@ -239,7 +241,7 @@ public class afv {
 
     public final boolean r() {
         if ((this.j & 16) == 0) {
-            if (!defpackage.sn.a.b(this.a)) {
+            if (!ViewCompat.a.b(this.a)) {
                 return true;
             }
         }
@@ -259,17 +261,17 @@ public class afv {
     }
 
     public afv(android.view.LayoutInflater layoutInflater, android.view.ViewGroup viewGroup) {
-        this(layoutInflater.inflate(2131034166, viewGroup, false), 0);
+        this(layoutInflater.inflate(R.layout.design_navigation_item_separator, viewGroup, false), (byte)0);
     }
 
     public afv(android.view.LayoutInflater layoutInflater, android.view.ViewGroup viewGroup, byte b2) {
-        this(layoutInflater.inflate(2131034167, viewGroup, false), 0);
+        this(layoutInflater.inflate(R.layout.design_navigation_item_subheader, viewGroup, false), (byte)0);
     }
 
     public afv(android.content.Context context, android.view.ViewGroup viewGroup, defpackage.ces ces) {
-        this(android.view.LayoutInflater.from(context).inflate(2131034144, viewGroup, false));
-        ((android.widget.ImageView) this.a.findViewById(2131755240)).setImageDrawable(ces.b);
-        ((android.widget.TextView) this.a.findViewById(2131755241)).setText(ces.c);
+        this(android.view.LayoutInflater.from(context).inflate(R.layout.action_list_item, viewGroup, false));
+        ((android.widget.ImageView) this.a.findViewById(R.id.Icon)).setImageDrawable(ces.b);
+        ((android.widget.TextView) this.a.findViewById(R.id.Text)).setText(ces.c);
         this.a.setOnClickListener(ces.d);
     }
 }

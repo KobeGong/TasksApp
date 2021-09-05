@@ -17,7 +17,7 @@ public final class cgd implements java.lang.Runnable {
         if (this.c.d == null || !this.c.d.a()) {
             this.c.c(this.b);
         } else {
-            defpackage.sn.a(this.a, (java.lang.Runnable) this);
+            ViewCompat.a(this.a, (java.lang.Runnable) this);
         }
     }
 }

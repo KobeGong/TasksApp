@@ -62,7 +62,7 @@ public abstract class mv {
     /* access modifiers changed from: 0000 */
     public final void a(java.util.Map map, android.view.View view) {
         if (view.getVisibility() == 0) {
-            java.lang.String t = defpackage.sn.a.t(view);
+            java.lang.String t = ViewCompat.a.t(view);
             if (t != null) {
                 map.put(t, view);
             }

@@ -2,11 +2,11 @@ package defpackage;
 
 /* renamed from: fp reason: default package */
 /* compiled from: PG */
-public final class fp {
+public final class ThemeEnforcement {
     private static final int[] a = {2130772212};
     private static final int[] b = {2130771999};
 
-    public static android.content.res.TypedArray a(android.content.Context context, android.util.AttributeSet attributeSet, int[] iArr, int i, int i2) {
+    public static android.content.res.TypedArray obtainStyledAttributes(android.content.Context context, android.util.AttributeSet attributeSet, int[] iArr, int i, int i2) {
         a(context, attributeSet, i, i2);
         return context.obtainStyledAttributes(attributeSet, iArr, i, i2);
     }

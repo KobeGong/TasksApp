@@ -1,5 +1,7 @@
 package android.support.v4.widget;
 
+import defpackage.ViewCompat;
+
 /* compiled from: PG */
 public class NestedScrollView extends android.widget.FrameLayout implements defpackage.sg, defpackage.si {
     private static final defpackage.ux x = new defpackage.ux();
@@ -68,7 +70,7 @@ public class NestedScrollView extends android.widget.FrameLayout implements defp
         this.z = new defpackage.sk();
         this.A = new defpackage.sh(this);
         setNestedScrollingEnabled(true);
-        defpackage.sn.a((android.view.View) this, (defpackage.rn) x);
+        ViewCompat.a((android.view.View) this, (defpackage.rn) x);
     }
 
     public void setNestedScrollingEnabled(boolean z2) {
@@ -385,7 +387,7 @@ public class NestedScrollView extends android.widget.FrameLayout implements defp
                 this.r = -1;
                 c();
                 if (this.d.springBack(getScrollX(), getScrollY(), 0, 0, 0, a())) {
-                    defpackage.sn.a.c(this);
+                    ViewCompat.a.c(this);
                 }
                 a(0);
                 break;
@@ -457,7 +459,7 @@ public class NestedScrollView extends android.widget.FrameLayout implements defp
                 if (java.lang.Math.abs(yVelocity) > this.p) {
                     i(-yVelocity);
                 } else if (this.d.springBack(getScrollX(), getScrollY(), 0, 0, 0, a())) {
-                    defpackage.sn.a.c(this);
+                    ViewCompat.a.c(this);
                 }
                 this.r = -1;
                 d();
@@ -514,7 +516,7 @@ public class NestedScrollView extends android.widget.FrameLayout implements defp
                                     }
                                 }
                                 if (this.e != null && (!this.e.isFinished() || !this.f.isFinished())) {
-                                    defpackage.sn.a.c(this);
+                                    ViewCompat.a.c(this);
                                     break;
                                 }
                             }
@@ -532,7 +534,7 @@ public class NestedScrollView extends android.widget.FrameLayout implements defp
                 break;
             case 3:
                 if (this.k && getChildCount() > 0 && this.d.springBack(getScrollX(), getScrollY(), 0, 0, 0, a())) {
-                    defpackage.sn.a.c(this);
+                    ViewCompat.a.c(this);
                 }
                 this.r = -1;
                 d();
@@ -863,7 +865,7 @@ public class NestedScrollView extends android.widget.FrameLayout implements defp
                 int max = java.lang.Math.max(0, getChildAt(0).getHeight() - ((getHeight() - getPaddingBottom()) - getPaddingTop()));
                 int scrollY = getScrollY();
                 this.d.startScroll(getScrollX(), scrollY, 0, java.lang.Math.max(0, java.lang.Math.min(scrollY + i3, max)) - scrollY);
-                defpackage.sn.a.c(this);
+                ViewCompat.a.c(this);
             } else {
                 if (!this.d.isFinished()) {
                     this.d.abortAnimation();
@@ -940,7 +942,7 @@ public class NestedScrollView extends android.widget.FrameLayout implements defp
                 }
             }
             this.v = currY;
-            defpackage.sn.a.c(this);
+            ViewCompat.a.c(this);
             return;
         }
         if (e(1)) {
@@ -1095,7 +1097,7 @@ public class NestedScrollView extends android.widget.FrameLayout implements defp
             d(1);
             this.d.fling(getScrollX(), getScrollY(), 0, i2, 0, 0, Integer.MIN_VALUE, Integer.MAX_VALUE, 0, 0);
             this.v = getScrollY();
-            defpackage.sn.a.c(this);
+            ViewCompat.a.c(this);
         }
     }
 
@@ -1166,7 +1168,7 @@ public class NestedScrollView extends android.widget.FrameLayout implements defp
                 canvas.translate((float) i3, (float) min);
                 this.e.setSize(i2, height);
                 if (this.e.draw(canvas)) {
-                    defpackage.sn.a.c(this);
+                    ViewCompat.a.c(this);
                 }
                 canvas.restoreToCount(save);
             }
@@ -1187,7 +1189,7 @@ public class NestedScrollView extends android.widget.FrameLayout implements defp
                 canvas.rotate(180.0f, (float) width2, 0.0f);
                 this.f.setSize(width2, height2);
                 if (this.f.draw(canvas)) {
-                    defpackage.sn.a.c(this);
+                    ViewCompat.a.c(this);
                 }
                 canvas.restoreToCount(save2);
             }

@@ -1,12 +1,17 @@
 package android.support.v7.widget;
 
+import defpackage.MenuBuilder;
+import defpackage.MenuItemImpl;
+import defpackage.MenuPresenter;
+import defpackage.MenuPresenter_Callback;
+
 /* compiled from: PG */
 public class ActionMenuView extends defpackage.adu implements defpackage.zg, defpackage.zv {
-    public defpackage.ze a;
+    public MenuBuilder peekMenu;
     public boolean b;
-    public defpackage.aap c;
-    public defpackage.zu d;
-    public defpackage.zf e;
+    public defpackage.aap presenter;
+    public MenuPresenter_Callback mActionMenuPresenterCallback;
+    public defpackage.zf mMenuBuilderCallback;
     public defpackage.abc f;
     private android.content.Context g;
     private int l;
@@ -29,7 +34,7 @@ public class ActionMenuView extends defpackage.adu implements defpackage.zg, def
         this.l = 0;
     }
 
-    public final void a(int i) {
+    public final void setPopupTheme(int i) {
         if (this.l != i) {
             this.l = i;
             if (i == 0) {
@@ -41,17 +46,17 @@ public class ActionMenuView extends defpackage.adu implements defpackage.zg, def
     }
 
     public final void a(defpackage.aap aap) {
-        this.c = aap;
-        this.c.a(this);
+        this.presenter = aap;
+        this.presenter.a(this);
     }
 
     public void onConfigurationChanged(android.content.res.Configuration configuration) {
         super.onConfigurationChanged(configuration);
-        if (this.c != null) {
-            this.c.a(false);
-            if (this.c.i()) {
-                this.c.f();
-                this.c.e();
+        if (this.presenter != null) {
+            this.presenter.a(false);
+            if (this.presenter.i()) {
+                this.presenter.f();
+                this.presenter.e();
             }
         }
     }
@@ -802,31 +807,31 @@ public class ActionMenuView extends defpackage.adu implements defpackage.zg, def
         return layoutParams != null && (layoutParams instanceof defpackage.aba);
     }
 
-    public final boolean a(defpackage.zi ziVar) {
-        return this.a.a((android.view.MenuItem) ziVar, (defpackage.zt) null, 0);
+    public final boolean a(MenuItemImpl ziVar) {
+        return this.peekMenu.a((android.view.MenuItem) ziVar, (MenuPresenter) null, 0);
     }
 
-    public final void a(defpackage.ze zeVar) {
-        this.a = zeVar;
+    public final void a(MenuBuilder zeVar) {
+        this.peekMenu = zeVar;
     }
 
-    public final android.view.Menu b() {
-        if (this.a == null) {
+    public final android.view.Menu getMenu() {
+        if (this.peekMenu == null) {
             android.content.Context context = getContext();
-            this.a = new defpackage.ze(context);
-            this.a.a((defpackage.zf) new defpackage.abb(this));
-            this.c = new defpackage.aap(context);
-            this.c.d();
-            this.c.d = new defpackage.aaz();
-            this.a.a((defpackage.zt) this.c, this.g);
-            this.c.a(this);
+            this.peekMenu = new MenuBuilder(context);
+            this.peekMenu.a((defpackage.zf) new defpackage.abb(this));
+            this.presenter = new defpackage.aap(context);
+            this.presenter.d();
+            this.presenter.d = new defpackage.aaz();
+            this.peekMenu.addMenuPresenter((MenuPresenter) this.presenter, this.g);
+            this.presenter.a(this);
         }
-        return this.a;
+        return this.peekMenu;
     }
 
     public final void c() {
-        if (this.c != null) {
-            this.c.g();
+        if (this.presenter != null) {
+            this.presenter.g();
         }
     }
 

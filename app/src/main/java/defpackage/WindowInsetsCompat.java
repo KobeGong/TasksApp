@@ -2,10 +2,10 @@ package defpackage;
 
 /* renamed from: tk reason: default package */
 /* compiled from: PG */
-public final class tk {
+public final class WindowInsetsCompat {
     public final java.lang.Object a;
 
-    public tk(java.lang.Object obj) {
+    public WindowInsetsCompat(java.lang.Object obj) {
         this.a = obj;
     }
 
@@ -44,9 +44,9 @@ public final class tk {
         return false;
     }
 
-    public final defpackage.tk f() {
+    public final WindowInsetsCompat f() {
         if (android.os.Build.VERSION.SDK_INT >= 20) {
-            return new defpackage.tk(((android.view.WindowInsets) this.a).consumeSystemWindowInsets());
+            return new WindowInsetsCompat(((android.view.WindowInsets) this.a).consumeSystemWindowInsets());
         }
         return null;
     }
@@ -58,7 +58,7 @@ public final class tk {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        defpackage.tk tkVar = (defpackage.tk) obj;
+        WindowInsetsCompat tkVar = (WindowInsetsCompat) obj;
         if (this.a != null) {
             return this.a.equals(tkVar.a);
         }
@@ -75,14 +75,14 @@ public final class tk {
         return this.a.hashCode();
     }
 
-    static defpackage.tk a(java.lang.Object obj) {
+    static WindowInsetsCompat a(java.lang.Object obj) {
         if (obj == null) {
             return null;
         }
-        return new defpackage.tk(obj);
+        return new WindowInsetsCompat(obj);
     }
 
-    static java.lang.Object a(defpackage.tk tkVar) {
+    static java.lang.Object a(WindowInsetsCompat tkVar) {
         if (tkVar == null) {
             return null;
         }

@@ -1,5 +1,9 @@
 package defpackage;
 
+import android.transition.Fade;
+
+import com.google.android.apps.tasks.R;
+
 /* renamed from: apk reason: default package */
 final /* synthetic */ class apk implements java.lang.Runnable {
     private final com.google.android.apps.tasks.ui.TaskListsActivity a;
@@ -38,7 +42,7 @@ final /* synthetic */ class apk implements java.lang.Runnable {
                 defpackage.any.a().c().c();
                 Fragment lcVar = taskListsActivity.n;
                 if ((!(lcVar instanceof WelcomeFragment) || !z2) && android.os.Build.VERSION.SDK_INT >= 21) {
-                    obj = new android.transition.Fade();
+                    obj = new Fade();
                 }
                 if (!taskListsActivity.l && (lcVar instanceof defpackage.arb)) {
                     ((defpackage.arb) lcVar).O();
@@ -47,10 +51,11 @@ final /* synthetic */ class apk implements java.lang.Runnable {
                     taskListsActivity.getSupportFragmentManager().e();
                     if (lcVar != null) {
                         lcVar.b(obj);
-                        taskListsActivity.i.a_(obj);
+                        taskListsActivity.tasksFragment.a_(obj);
                     }
-                    taskListsActivity.getSupportFragmentManager().a().a(2131755276, taskListsActivity.i, "tasksfragment").c();
-                    taskListsActivity.b((Fragment) taskListsActivity.i);
+                    taskListsActivity.getSupportFragmentManager()
+                            .a().a(R.id.fragment_container, taskListsActivity.tasksFragment, "tasksfragment").c();
+                    taskListsActivity.b(taskListsActivity.tasksFragment);
                 }
                 java.util.List<defpackage.dcb> d3 = defpackage.any.a().c().d();
                 java.util.HashSet hashSet = new java.util.HashSet();
@@ -112,7 +117,7 @@ final /* synthetic */ class apk implements java.lang.Runnable {
                         taskListsActivity.getSupportFragmentManager().b();
                     }
                 } else if (lcVar instanceof TasksFragment) {
-                    taskListsActivity.b((Fragment) taskListsActivity.i);
+                    taskListsActivity.b((Fragment) taskListsActivity.tasksFragment);
                 }
             } else {
                 taskListsActivity.b(defpackage.bg.P);

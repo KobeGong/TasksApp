@@ -15,7 +15,7 @@ final class my implements java.lang.Runnable {
         int size = this.a.size();
         for (int i = 0; i < size; i++) {
             android.view.View view = (android.view.View) this.a.get(i);
-            defpackage.sn.a(view, (java.lang.String) this.b.get(defpackage.sn.a.t(view)));
+            ViewCompat.a(view, (java.lang.String) this.b.get(ViewCompat.a.t(view)));
         }
     }
 }

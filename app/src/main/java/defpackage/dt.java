@@ -12,7 +12,7 @@ public final class dt extends android.animation.AnimatorListenerAdapter {
     public final void onAnimationStart(android.animation.Animator animator) {
         android.support.design.bottomappbar.BottomAppBar bottomAppBar = this.a;
         boolean z = this.a.f;
-        if (defpackage.sn.a.r(bottomAppBar)) {
+        if (ViewCompat.a.r(bottomAppBar)) {
             if (bottomAppBar.b != null) {
                 bottomAppBar.b.cancel();
             }
@@ -37,7 +37,7 @@ public final class dt extends android.animation.AnimatorListenerAdapter {
             bottomAppBar.b.start();
         }
         android.support.design.bottomappbar.BottomAppBar bottomAppBar2 = this.a;
-        if (defpackage.sn.a.r(bottomAppBar2)) {
+        if (ViewCompat.a.r(bottomAppBar2)) {
             if (bottomAppBar2.c != null) {
                 bottomAppBar2.c.cancel();
             }

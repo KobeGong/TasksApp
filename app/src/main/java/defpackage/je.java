@@ -507,13 +507,13 @@ public abstract class je implements java.lang.Cloneable {
             for (int i3 = 0; i3 < this.e.c.b(); i3++) {
                 android.view.View view = (android.view.View) this.e.c.b(i3);
                 if (view != null) {
-                    defpackage.sn.a(view, false);
+                    ViewCompat.a(view, false);
                 }
             }
             for (int i4 = 0; i4 < this.f.c.b(); i4++) {
                 android.view.View view2 = (android.view.View) this.f.c.b(i4);
                 if (view2 != null) {
-                    defpackage.sn.a(view2, false);
+                    ViewCompat.a(view2, false);
                 }
             }
             this.r = true;

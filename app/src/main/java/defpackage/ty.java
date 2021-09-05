@@ -49,7 +49,7 @@ final class ty implements java.lang.Runnable {
             txVar2.f = currentAnimationTimeMillis;
             txVar2.g = (int) (((float) j) * f * txVar2.d);
             this.a.a(txVar2.g);
-            defpackage.sn.a(this.a.b, (java.lang.Runnable) this);
+            ViewCompat.a(this.a.b, (java.lang.Runnable) this);
         }
     }
 }

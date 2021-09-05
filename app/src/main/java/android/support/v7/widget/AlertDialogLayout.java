@@ -1,5 +1,7 @@
 package android.support.v7.widget;
 
+import defpackage.ViewCompat;
+
 /* compiled from: PG */
 public class AlertDialogLayout extends defpackage.adu {
     public AlertDialogLayout(android.content.Context context) {
@@ -82,7 +84,7 @@ public class AlertDialogLayout extends defpackage.adu {
                     view4.measure(i, 0);
                     android.view.View view8 = view4;
                     while (true) {
-                        int f = defpackage.sn.a.f(view8);
+                        int f = ViewCompat.a.f(view8);
                         if (f <= 0) {
                             if (!(view8 instanceof android.view.ViewGroup)) {
                                 break;
@@ -219,7 +221,7 @@ public class AlertDialogLayout extends defpackage.adu {
                 if (i11 < 0) {
                     i11 = i8;
                 }
-                switch (defpackage.jd.a(i11, defpackage.sn.a.j(this)) & 7) {
+                switch (defpackage.jd.a(i11, ViewCompat.a.j(this)) & 7) {
                     case 1:
                         i5 = ((((paddingRight2 - measuredWidth) / 2) + paddingLeft) + adv.leftMargin) - adv.rightMargin;
                         break;

@@ -1,5 +1,7 @@
 package android.support.v7.widget;
 
+import defpackage.ViewCompat;
+
 /* compiled from: PG */
 public class SearchView extends defpackage.adu implements defpackage.ye {
     public static final defpackage.agk p = new defpackage.agk();
@@ -203,8 +205,8 @@ public class SearchView extends defpackage.adu implements defpackage.ye {
         this.e = (android.widget.ImageView) findViewById(2131755217);
         this.f = (android.widget.ImageView) findViewById(2131755220);
         this.x = (android.widget.ImageView) findViewById(2131755214);
-        defpackage.sn.a(this.b, a2.a(defpackage.xu.bZ));
-        defpackage.sn.a(this.r, a2.a(defpackage.xu.cd));
+        ViewCompat.a(this.b, a2.a(defpackage.xu.bZ));
+        ViewCompat.a(this.r, a2.a(defpackage.xu.cd));
         this.c.setImageDrawable(a2.a(defpackage.xu.cc));
         this.d.setImageDrawable(a2.a(defpackage.xu.bW));
         this.e.setImageDrawable(a2.a(defpackage.xu.bT));

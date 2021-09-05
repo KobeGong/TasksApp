@@ -502,7 +502,7 @@ final class atx extends defpackage.afv {
     }
 
     public final void c(int i) {
-        defpackage.sn.b(this.a, this.a.getResources().getDimension(2131689872));
+        ViewCompat.b(this.a, this.a.getResources().getDimension(2131689872));
         if (i > 0) {
             if (this.r.getParent() != null) {
                 ((android.view.ViewGroup) this.r.getParent()).removeView(this.r);

@@ -98,7 +98,7 @@ public final class afu implements java.lang.Runnable {
                         recyclerView.y.onAbsorb(currVelocity);
                     }
                     if (!(i7 == 0 && currVelocity == 0)) {
-                        defpackage.sn.a.c(recyclerView);
+                        ViewCompat.a.c(recyclerView);
                     }
                 }
                 if ((i7 != 0 || i4 == currX || overScroller.getFinalX() == 0) && (currVelocity != 0 || i3 == currY || overScroller.getFinalY() == 0)) {
@@ -137,7 +137,7 @@ public final class afu implements java.lang.Runnable {
             return;
         }
         this.e.removeCallbacks(this);
-        defpackage.sn.a((android.view.View) this.e, (java.lang.Runnable) this);
+        ViewCompat.a((android.view.View) this.e, (java.lang.Runnable) this);
     }
 
     public final void b() {

@@ -2,19 +2,19 @@ package defpackage;
 
 /* renamed from: fd reason: default package */
 /* compiled from: PG */
-public final class fd extends defpackage.aet {
+public final class NavigationMenuAdapter extends defpackage.aet {
     public final java.util.ArrayList a = new java.util.ArrayList();
-    public defpackage.zi b;
+    public MenuItemImpl b;
     public boolean c;
-    private final /* synthetic */ defpackage.fb f;
+    private final /* synthetic */ NavigationMenuPresenter f;
 
-    public fd(defpackage.fb fbVar) {
+    public NavigationMenuAdapter(NavigationMenuPresenter fbVar) {
         this.f = fbVar;
         b();
     }
 
     public final long a(int i) {
-        return (long) i;
+        return i;
     }
 
     public final int a() {
@@ -50,10 +50,10 @@ public final class fd extends defpackage.aet {
             int i3 = -1;
             int i4 = 0;
             boolean z2 = false;
-            int size = this.f.c.i().size();
+            int size = this.f.menu.i().size();
             int i5 = 0;
             while (i5 < size) {
-                defpackage.zi ziVar = (defpackage.zi) this.f.c.i().get(i5);
+                MenuItemImpl ziVar = (MenuItemImpl) this.f.menu.i().get(i5);
                 if (ziVar.isChecked()) {
                     a(ziVar);
                 }
@@ -64,14 +64,14 @@ public final class fd extends defpackage.aet {
                     android.view.SubMenu subMenu = ziVar.getSubMenu();
                     if (subMenu.hasVisibleItems()) {
                         if (i5 != 0) {
-                            this.a.add(new defpackage.fg(this.f.o, 0));
+                            this.a.add(new defpackage.fg(this.f.paddingSeparator, 0));
                         }
                         this.a.add(new defpackage.fh(ziVar));
                         boolean z3 = false;
                         int size2 = this.a.size();
                         int size3 = subMenu.size();
                         for (int i6 = 0; i6 < size3; i6++) {
-                            defpackage.zi ziVar2 = (defpackage.zi) subMenu.getItem(i6);
+                            MenuItemImpl ziVar2 = (MenuItemImpl) subMenu.getItem(i6);
                             if (ziVar2.isVisible()) {
                                 if (!z3 && ziVar2.getIcon() != null) {
                                     z3 = true;
@@ -97,7 +97,7 @@ public final class fd extends defpackage.aet {
                         z = ziVar.getIcon() != null;
                         if (i5 != 0) {
                             i++;
-                            this.a.add(new defpackage.fg(this.f.o, this.f.o));
+                            this.a.add(new defpackage.fg(this.f.paddingSeparator, this.f.paddingSeparator));
                         }
                     } else if (z2 || ziVar.getIcon() == null) {
                         z = z2;
@@ -128,7 +128,7 @@ public final class fd extends defpackage.aet {
         }
     }
 
-    public final void a(defpackage.zi ziVar) {
+    public final void a(MenuItemImpl ziVar) {
         if (this.b != ziVar && ziVar.isCheckable()) {
             if (this.b != null) {
                 this.b.setChecked(false);
@@ -160,12 +160,12 @@ public final class fd extends defpackage.aet {
                     navigationMenuItemView.a(navigationMenuItemView.e.getIcon());
                 }
                 if (this.f.h) {
-                    defpackage.vo.a.b((android.widget.TextView) navigationMenuItemView.c, this.f.g);
+                    defpackage.vo.a.b(navigationMenuItemView.c, this.f.g);
                 }
                 if (this.f.i != null) {
                     navigationMenuItemView.c.setTextColor(this.f.i);
                 }
-                defpackage.sn.a((android.view.View) navigationMenuItemView, this.f.k != null ? this.f.k.getConstantState().newDrawable() : null);
+                ViewCompat.a(navigationMenuItemView, this.f.k != null ? this.f.k.getConstantState().newDrawable() : null);
                 defpackage.fh fhVar = (defpackage.fh) this.a.get(i);
                 navigationMenuItemView.a = fhVar.b;
                 int i2 = this.f.l;
@@ -188,13 +188,13 @@ public final class fd extends defpackage.aet {
     public final /* synthetic */ defpackage.afv a(android.view.ViewGroup viewGroup, int i) {
         switch (i) {
             case 0:
-                return new defpackage.fi(this.f.f, viewGroup, this.f.p);
+                return new defpackage.fi(this.f.layoutInflater, viewGroup, this.f.p);
             case 1:
-                return new defpackage.afv(this.f.f, viewGroup, 0);
+                return new defpackage.afv(this.f.layoutInflater, viewGroup, (byte)0);
             case 2:
-                return new defpackage.afv(this.f.f, viewGroup);
+                return new defpackage.afv(this.f.layoutInflater, viewGroup);
             case 3:
-                return new defpackage.afv((android.view.View) this.f.b, 0);
+                return new defpackage.afv(this.f.headerLayout, (byte)0);
             default:
                 return null;
         }

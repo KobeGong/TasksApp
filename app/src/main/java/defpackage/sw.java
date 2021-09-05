@@ -191,14 +191,14 @@ public class sw {
         return false;
     }
 
-    public void a(android.view.View view, defpackage.sl slVar) {
+    public void a(android.view.View view, OnApplyWindowInsetsListener slVar) {
     }
 
-    public defpackage.tk a(android.view.View view, defpackage.tk tkVar) {
+    public WindowInsetsCompat a(android.view.View view, WindowInsetsCompat tkVar) {
         return tkVar;
     }
 
-    public defpackage.tk b(android.view.View view, defpackage.tk tkVar) {
+    public WindowInsetsCompat b(android.view.View view, WindowInsetsCompat tkVar) {
         return tkVar;
     }
 

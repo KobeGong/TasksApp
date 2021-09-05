@@ -36,7 +36,7 @@ class st extends defpackage.ss {
         return view.getTranslationZ();
     }
 
-    public final void a(android.view.View view, defpackage.sl slVar) {
+    public final void a(android.view.View view, OnApplyWindowInsetsListener slVar) {
         if (slVar == null) {
             view.setOnApplyWindowInsetsListener(null);
         } else {
@@ -88,22 +88,22 @@ class st extends defpackage.ss {
         return view.getBackgroundTintMode();
     }
 
-    public final defpackage.tk a(android.view.View view, defpackage.tk tkVar) {
-        android.view.WindowInsets windowInsets = (android.view.WindowInsets) defpackage.tk.a(tkVar);
+    public final WindowInsetsCompat a(android.view.View view, WindowInsetsCompat tkVar) {
+        android.view.WindowInsets windowInsets = (android.view.WindowInsets) WindowInsetsCompat.a(tkVar);
         android.view.WindowInsets onApplyWindowInsets = view.onApplyWindowInsets(windowInsets);
         if (onApplyWindowInsets != windowInsets) {
             windowInsets = new android.view.WindowInsets(onApplyWindowInsets);
         }
-        return defpackage.tk.a((java.lang.Object) windowInsets);
+        return WindowInsetsCompat.a((java.lang.Object) windowInsets);
     }
 
-    public final defpackage.tk b(android.view.View view, defpackage.tk tkVar) {
-        android.view.WindowInsets windowInsets = (android.view.WindowInsets) defpackage.tk.a(tkVar);
+    public final WindowInsetsCompat b(android.view.View view, WindowInsetsCompat tkVar) {
+        android.view.WindowInsets windowInsets = (android.view.WindowInsets) WindowInsetsCompat.a(tkVar);
         android.view.WindowInsets dispatchApplyWindowInsets = view.dispatchApplyWindowInsets(windowInsets);
         if (dispatchApplyWindowInsets != windowInsets) {
             windowInsets = new android.view.WindowInsets(dispatchApplyWindowInsets);
         }
-        return defpackage.tk.a((java.lang.Object) windowInsets);
+        return WindowInsetsCompat.a((java.lang.Object) windowInsets);
     }
 
     public final float A(android.view.View view) {

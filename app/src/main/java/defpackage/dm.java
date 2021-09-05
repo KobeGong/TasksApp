@@ -37,7 +37,7 @@ public final class dm extends defpackage.vy {
         this.b = -1;
         int width = view.getWidth();
         if (f != 0.0f) {
-            boolean z3 = defpackage.sn.a.j(view) == 1;
+            boolean z3 = ViewCompat.a.j(view) == 1;
             z = this.c.c == 2 ? true : this.c.c == 0 ? z3 ? f < 0.0f : f > 0.0f : this.c.c == 1 ? z3 ? f > 0.0f : f < 0.0f : false;
         } else {
             z = java.lang.Math.abs(view.getLeft() - this.a) >= java.lang.Math.round(((float) view.getWidth()) * this.c.d);
@@ -51,7 +51,7 @@ public final class dm extends defpackage.vy {
             i = this.a + width;
         }
         if (this.c.a.a(i, view.getTop())) {
-            defpackage.sn.a(view, (java.lang.Runnable) new defpackage.PG(this.c, view, z2));
+            ViewCompat.a(view, (java.lang.Runnable) new defpackage.PG(this.c, view, z2));
         } else if (z2 && this.c.b != null) {
             this.c.b.a(view);
         }
@@ -64,7 +64,7 @@ public final class dm extends defpackage.vy {
     public final int c(android.view.View view, int i) {
         int width;
         int width2;
-        boolean z = defpackage.sn.a.j(view) == 1;
+        boolean z = ViewCompat.a.j(view) == 1;
         if (this.c.c == 0) {
             if (z) {
                 width = this.a - view.getWidth();

@@ -56,7 +56,7 @@ public final class xp extends defpackage.wa implements defpackage.aan {
                 actionBarOverlayLayout.g.a(actionBarOverlayLayout.a);
                 if (actionBarOverlayLayout.f != 0) {
                     actionBarOverlayLayout.onWindowSystemUiVisibilityChanged(actionBarOverlayLayout.f);
-                    defpackage.sn.a.g(actionBarOverlayLayout);
+                    ViewCompat.a.g(actionBarOverlayLayout);
                 }
             }
         }
@@ -93,7 +93,7 @@ public final class xp extends defpackage.wa implements defpackage.aan {
     }
 
     public final void a(float f2) {
-        defpackage.sn.a((android.view.View) this.c, f2);
+        ViewCompat.a((android.view.View) this.c, f2);
     }
 
     public final void f() {
@@ -243,12 +243,12 @@ public final class xp extends defpackage.wa implements defpackage.aan {
                     }
                     this.c.setTranslationY(f2);
                     defpackage.ym ymVar = new defpackage.ym();
-                    defpackage.te b2 = defpackage.sn.b(this.c).b(0.0f);
+                    defpackage.te b2 = ViewCompat.b(this.c).b(0.0f);
                     b2.a(this.B);
                     ymVar.a(b2);
                     if (this.j && this.f != null) {
                         this.f.setTranslationY(f2);
-                        ymVar.a(defpackage.sn.b(this.f).b(0.0f));
+                        ymVar.a(ViewCompat.b(this.f).b(0.0f));
                     }
                     ymVar.a(p);
                     ymVar.c();
@@ -257,7 +257,7 @@ public final class xp extends defpackage.wa implements defpackage.aan {
                     ymVar.a();
                 }
                 if (this.b != null) {
-                    defpackage.sn.a.g(this.b);
+                    ViewCompat.a.g(this.b);
                 }
             }
         } else if (this.x) {
@@ -278,11 +278,11 @@ public final class xp extends defpackage.wa implements defpackage.aan {
                 this.c.getLocationInWindow(iArr2);
                 f3 -= (float) iArr2[1];
             }
-            defpackage.te b3 = defpackage.sn.b(this.c).b(f3);
+            defpackage.te b3 = ViewCompat.b(this.c).b(f3);
             b3.a(this.B);
             ymVar2.a(b3);
             if (this.j && this.f != null) {
-                ymVar2.a(defpackage.sn.b(this.f).b(f3));
+                ymVar2.a(ViewCompat.b(this.f).b(f3));
             }
             ymVar2.a(o);
             ymVar2.c();
@@ -311,7 +311,7 @@ public final class xp extends defpackage.wa implements defpackage.aan {
             }
             h(false);
         }
-        if (defpackage.sn.a.r(this.c)) {
+        if (ViewCompat.a.r(this.c)) {
             if (z2) {
                 a3 = this.d.a(4, 100);
                 a2 = this.e.a(0, 200);
@@ -366,7 +366,7 @@ public final class xp extends defpackage.wa implements defpackage.aan {
     public final boolean k() {
         if (this.d != null) {
             android.support.v7.widget.Toolbar toolbar = this.d.a;
-            if ((toolbar.C == null || toolbar.C.a == null) ? false : true) {
+            if ((toolbar.mExpandedMenuPresenter == null || toolbar.mExpandedMenuPresenter.a == null) ? false : true) {
                 this.d.a.h();
                 return true;
             }

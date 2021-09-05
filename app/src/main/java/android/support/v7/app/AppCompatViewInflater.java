@@ -1,5 +1,8 @@
 package android.support.v7.app;
 
+import defpackage.AppCompatTextView;
+import defpackage.ViewCompat;
+
 /* compiled from: PG */
 public class AppCompatViewInflater {
     public static final java.lang.String LOG_TAG = "AppCompatViewInflater";
@@ -174,8 +177,8 @@ public class AppCompatViewInflater {
     }
 
     /* access modifiers changed from: protected */
-    public defpackage.ack createTextView(android.content.Context context, android.util.AttributeSet attributeSet) {
-        return new defpackage.ack(context, attributeSet);
+    public AppCompatTextView createTextView(android.content.Context context, android.util.AttributeSet attributeSet) {
+        return new AppCompatTextView(context, attributeSet);
     }
 
     /* access modifiers changed from: protected */
@@ -286,7 +289,7 @@ public class AppCompatViewInflater {
 
     private void checkOnClickListener(android.view.View view, android.util.AttributeSet attributeSet) {
         android.content.Context context = view.getContext();
-        if ((context instanceof android.content.ContextWrapper) && defpackage.sn.a.a(view)) {
+        if ((context instanceof android.content.ContextWrapper) && ViewCompat.a.a(view)) {
             android.content.res.TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, sOnClickAttrs);
             java.lang.String string = obtainStyledAttributes.getString(0);
             if (string != null) {

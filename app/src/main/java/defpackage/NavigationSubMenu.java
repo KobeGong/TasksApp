@@ -2,8 +2,8 @@ package defpackage;
 
 /* renamed from: fj reason: default package */
 /* compiled from: PG */
-public final class fj extends defpackage.aad {
-    public fj(android.content.Context context, defpackage.ez ezVar, defpackage.zi ziVar) {
+public final class NavigationSubMenu extends SubMenuBuilder {
+    public NavigationSubMenu(android.content.Context context, NavigationMenu ezVar, MenuItemImpl ziVar) {
         super(context, ezVar, ziVar);
     }
 

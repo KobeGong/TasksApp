@@ -83,7 +83,7 @@ public abstract class cff extends android.widget.LinearLayout {
         }
         defpackage.ceo ceo = new defpackage.ceo(context, cei2, cdj, arrayList, cer);
         recyclerView.a((defpackage.aet) ceo);
-        if (defpackage.sn.a.s(recyclerView)) {
+        if (ViewCompat.a.s(recyclerView)) {
             defpackage.cdm.a(recyclerView, ceo);
         }
         recyclerView.addOnAttachStateChangeListener(new defpackage.cev(recyclerView, ceo));

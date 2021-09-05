@@ -5,7 +5,7 @@ import com.google.android.apps.tasks.R;
 /* renamed from: arv reason: default package */
 /* compiled from: PG */
 /* compiled from: EditListFragment */
-public final class arv extends defpackage.arb {
+public final class EditListFragment extends defpackage.arb {
     public android.widget.EditText a;
     public defpackage.dcb b;
 

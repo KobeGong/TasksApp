@@ -167,8 +167,8 @@ final class mk {
                                             int size5 = arrayList6.size();
                                             for (int i10 = 0; i10 < size5; i10++) {
                                                 android.view.View view3 = (android.view.View) arrayList6.get(i10);
-                                                arrayList8.add(defpackage.sn.a.t(view3));
-                                                defpackage.sn.a(view3, (java.lang.String) null);
+                                                arrayList8.add(ViewCompat.a.t(view3));
+                                                ViewCompat.a(view3, (java.lang.String) null);
                                             }
                                             a4.a(a9, a5, a8, b2, a7, obj3, arrayList6);
                                             a4.a(viewGroup2, a9);
@@ -176,17 +176,17 @@ final class mk {
                                             java.util.ArrayList arrayList9 = new java.util.ArrayList();
                                             for (int i11 = 0; i11 < size6; i11++) {
                                                 android.view.View view4 = (android.view.View) arrayList7.get(i11);
-                                                java.lang.String t = defpackage.sn.a.t(view4);
+                                                java.lang.String t = ViewCompat.a.t(view4);
                                                 arrayList9.add(t);
                                                 if (t != null) {
-                                                    defpackage.sn.a(view4, (java.lang.String) null);
+                                                    ViewCompat.a(view4, (java.lang.String) null);
                                                     java.lang.String str4 = (java.lang.String) qrVar.get(t);
                                                     int i12 = 0;
                                                     while (true) {
                                                         if (i12 >= size6) {
                                                             break;
                                                         } else if (str4.equals(arrayList8.get(i12))) {
-                                                            defpackage.sn.a((android.view.View) arrayList6.get(i12), t);
+                                                            ViewCompat.a((android.view.View) arrayList6.get(i12), t);
                                                             break;
                                                         } else {
                                                             i12++;
@@ -377,7 +377,7 @@ final class mk {
     private static void a(java.util.ArrayList arrayList, defpackage.qr qrVar, java.util.Collection collection) {
         for (int size = qrVar.size() - 1; size >= 0; size--) {
             android.view.View view = (android.view.View) qrVar.c(size);
-            if (collection.contains(defpackage.sn.a.t(view))) {
+            if (collection.contains(ViewCompat.a.t(view))) {
                 arrayList.add(view);
             }
         }

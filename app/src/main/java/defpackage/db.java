@@ -8,7 +8,7 @@ public class db extends android.widget.FrameLayout {
     public final defpackage.ew c;
     public android.graphics.drawable.Drawable d;
     public int e;
-    public defpackage.tk f;
+    public WindowInsetsCompat f;
     private boolean g;
     private int h;
     private android.support.v7.widget.Toolbar i;
@@ -45,7 +45,7 @@ public class db extends android.widget.FrameLayout {
         defpackage.ew ewVar = this.c;
         ewVar.w = defpackage.cs.d;
         ewVar.c();
-        android.content.res.TypedArray a2 = defpackage.fp.a(context, attributeSet, defpackage.dh.j, i2, 2132017717);
+        android.content.res.TypedArray a2 = ThemeEnforcement.obtainStyledAttributes(context, attributeSet, defpackage.dh.j, i2, 2132017717);
         defpackage.ew ewVar2 = this.c;
         int i3 = a2.getInt(defpackage.dh.q, 8388691);
         if (ewVar2.e != i3) {
@@ -98,7 +98,7 @@ public class db extends android.widget.FrameLayout {
                 this.q.setCallback(this);
                 this.q.setAlpha(this.r);
             }
-            defpackage.sn.a.c(this);
+            ViewCompat.a.c(this);
         }
         android.graphics.drawable.Drawable drawable3 = a2.getDrawable(defpackage.dh.z);
         if (this.d != drawable3) {
@@ -113,17 +113,17 @@ public class db extends android.widget.FrameLayout {
                 if (this.d.isStateful()) {
                     this.d.setState(getDrawableState());
                 }
-                defpackage.jd.b(this.d, defpackage.sn.a.j(this));
+                defpackage.jd.b(this.d, ViewCompat.a.j(this));
                 this.d.setVisible(getVisibility() == 0, false);
                 this.d.setCallback(this);
                 this.d.setAlpha(this.r);
             }
-            defpackage.sn.a.c(this);
+            ViewCompat.a.c(this);
         }
         this.h = a2.getResourceId(defpackage.dh.C, -1);
         a2.recycle();
         setWillNotDraw(false);
-        defpackage.sn.a((android.view.View) this, (defpackage.sl) new defpackage.gk(this));
+        ViewCompat.setOnApplyWindowInsetsListener((android.view.View) this, (defpackage.OnApplyWindowInsetsListener) new defpackage.gk(this));
     }
 
     /* access modifiers changed from: protected */
@@ -131,7 +131,7 @@ public class db extends android.widget.FrameLayout {
         super.onAttachedToWindow();
         android.view.ViewParent parent = getParent();
         if (parent instanceof android.support.design.appbar.AppBarLayout) {
-            defpackage.sn.b((android.view.View) this, defpackage.sn.a.h((android.view.View) parent));
+            ViewCompat.b((android.view.View) this, ViewCompat.a.h((android.view.View) parent));
             if (this.w == null) {
                 this.w = new defpackage.cz(this);
             }
@@ -143,7 +143,7 @@ public class db extends android.widget.FrameLayout {
             if (czVar != null && !appBarLayout.d.contains(czVar)) {
                 appBarLayout.d.add(czVar);
             }
-            defpackage.sn.a.g(this);
+            ViewCompat.a.g(this);
         }
     }
 
@@ -316,15 +316,15 @@ public class db extends android.widget.FrameLayout {
             int childCount = getChildCount();
             for (int i8 = 0; i8 < childCount; i8++) {
                 android.view.View childAt = getChildAt(i8);
-                if (!defpackage.sn.a.h(childAt) && childAt.getTop() < b2) {
-                    defpackage.sn.b(childAt, b2);
+                if (!ViewCompat.a.h(childAt) && childAt.getTop() < b2) {
+                    ViewCompat.b(childAt, b2);
                 }
             }
         }
         if (this.o && this.k != null) {
-            this.p = defpackage.sn.a.s(this.k) && this.k.getVisibility() == 0;
+            this.p = ViewCompat.a.s(this.k) && this.k.getVisibility() == 0;
             if (this.p) {
-                if (defpackage.sn.a.j(this) == 1) {
+                if (ViewCompat.a.j(this) == 1) {
                     z2 = true;
                 } else {
                     z2 = false;
@@ -372,7 +372,7 @@ public class db extends android.widget.FrameLayout {
         }
         if (this.i != null) {
             if (this.o && android.text.TextUtils.isEmpty(this.c.m)) {
-                this.c.a(this.i.x);
+                this.c.a(this.i.mSubtitleText);
             }
             if (this.j == null || this.j == this) {
                 setMinimumHeight(c(this.i));
@@ -410,10 +410,10 @@ public class db extends android.widget.FrameLayout {
     public final void a(int i2) {
         if (i2 != this.r) {
             if (!(this.q == null || this.i == null)) {
-                defpackage.sn.a.c(this.i);
+                ViewCompat.a.c(this.i);
             }
             this.r = i2;
-            defpackage.sn.a.c(this);
+            ViewCompat.a.c(this);
         }
     }
 
@@ -495,7 +495,7 @@ public class db extends android.widget.FrameLayout {
                 height = this.v;
             } else {
                 int i4 = this.f != null ? this.f.b() : 0;
-                int f2 = defpackage.sn.a.f(this);
+                int f2 = ViewCompat.a.f(this);
                 if (f2 > 0) {
                     height = java.lang.Math.min(i4 + (f2 << 1), getHeight());
                 } else {
@@ -507,7 +507,7 @@ public class db extends android.widget.FrameLayout {
             } else {
                 z = false;
             }
-            if (!defpackage.sn.a.r(this) || isInEditMode()) {
+            if (!ViewCompat.a.r(this) || isInEditMode()) {
                 z2 = false;
             } else {
                 z2 = true;

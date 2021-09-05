@@ -20,7 +20,7 @@ public final class acm {
             if (c2.n != -1) {
                 c2.m = c2.n;
             } else {
-                c2.m = defpackage.sn.a.d(c2.a);
+                c2.m = ViewCompat.a.d(c2.a);
             }
             recyclerView.a(c2, 4);
         }

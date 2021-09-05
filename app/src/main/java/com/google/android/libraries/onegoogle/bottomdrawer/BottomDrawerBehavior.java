@@ -1,5 +1,7 @@
 package com.google.android.libraries.onegoogle.bottomdrawer;
 
+import defpackage.ViewCompat;
+
 /* compiled from: PG */
 public class BottomDrawerBehavior extends defpackage.gx {
     public int a;
@@ -30,15 +32,15 @@ public class BottomDrawerBehavior extends defpackage.gx {
         this.a = java.lang.Math.max(0, this.e - googleMaterialBottomDrawer.getHeight());
         this.b = this.e / 2;
         if ((this.l || this.k) && (this.c == 3 || this.c == 6)) {
-            defpackage.sn.b((android.view.View) googleMaterialBottomDrawer, 0);
+            ViewCompat.b((android.view.View) googleMaterialBottomDrawer, 0);
         } else if (this.c == 3) {
-            defpackage.sn.b((android.view.View) googleMaterialBottomDrawer, java.lang.Math.max(top, this.a));
+            ViewCompat.b((android.view.View) googleMaterialBottomDrawer, java.lang.Math.max(top, this.a));
         } else if (this.c == 6) {
-            defpackage.sn.b((android.view.View) googleMaterialBottomDrawer, java.lang.Math.max(this.b, this.a));
+            ViewCompat.b((android.view.View) googleMaterialBottomDrawer, java.lang.Math.max(this.b, this.a));
         } else if (this.c == 5) {
-            defpackage.sn.b((android.view.View) googleMaterialBottomDrawer, this.e);
+            ViewCompat.b((android.view.View) googleMaterialBottomDrawer, this.e);
         } else if (this.c == 1 || this.c == 2) {
-            defpackage.sn.b((android.view.View) googleMaterialBottomDrawer, top - googleMaterialBottomDrawer.getTop());
+            ViewCompat.b((android.view.View) googleMaterialBottomDrawer, top - googleMaterialBottomDrawer.getTop());
         }
         if (this.d == null) {
             this.d = defpackage.vv.a((android.view.ViewGroup) coordinatorLayout, this.s);
@@ -54,7 +56,7 @@ public class BottomDrawerBehavior extends defpackage.gx {
                 com.google.android.libraries.onegoogle.bottomdrawer.GoogleMaterialBottomDrawer googleMaterialBottomDrawer = (com.google.android.libraries.onegoogle.bottomdrawer.GoogleMaterialBottomDrawer) this.f.get();
                 if (googleMaterialBottomDrawer != null) {
                     android.view.ViewParent parent = googleMaterialBottomDrawer.getParent();
-                    if (parent == null || !parent.isLayoutRequested() || !defpackage.sn.a.s(googleMaterialBottomDrawer)) {
+                    if (parent == null || !parent.isLayoutRequested() || !ViewCompat.a.s(googleMaterialBottomDrawer)) {
                         b(googleMaterialBottomDrawer, i2);
                     } else {
                         googleMaterialBottomDrawer.post(new defpackage.cga(this, googleMaterialBottomDrawer, i2));
@@ -109,7 +111,7 @@ public class BottomDrawerBehavior extends defpackage.gx {
     }
 
     private final android.support.v4.widget.NestedScrollView b(android.view.View view) {
-        if (defpackage.sn.a.w(view) && (view instanceof android.support.v4.widget.NestedScrollView)) {
+        if (ViewCompat.a.w(view) && (view instanceof android.support.v4.widget.NestedScrollView)) {
             return (android.support.v4.widget.NestedScrollView) view;
         }
         if (view instanceof android.view.ViewGroup) {
@@ -153,7 +155,7 @@ public class BottomDrawerBehavior extends defpackage.gx {
         }
         if (this.d.a(view, view.getLeft(), i3)) {
             c(2);
-            defpackage.sn.a(view, (java.lang.Runnable) new defpackage.cgd(this, view, i2));
+            ViewCompat.a(view, (java.lang.Runnable) new defpackage.cgd(this, view, i2));
             return;
         }
         c(i2);
@@ -216,16 +218,16 @@ public class BottomDrawerBehavior extends defpackage.gx {
             if (i2 > 0) {
                 if (i4 < this.a) {
                     iArr[1] = top - this.a;
-                    defpackage.sn.b((android.view.View) googleMaterialBottomDrawer, -iArr[1]);
+                    ViewCompat.b((android.view.View) googleMaterialBottomDrawer, -iArr[1]);
                     c(3);
                 } else {
                     iArr[1] = i2;
-                    defpackage.sn.b((android.view.View) googleMaterialBottomDrawer, -i2);
+                    ViewCompat.b((android.view.View) googleMaterialBottomDrawer, -i2);
                     c(1);
                 }
             } else if (i2 < 0 && !view2.canScrollVertically(-1)) {
                 iArr[1] = i2;
-                defpackage.sn.b((android.view.View) googleMaterialBottomDrawer, -i2);
+                ViewCompat.b((android.view.View) googleMaterialBottomDrawer, -i2);
                 c(1);
             }
             d(googleMaterialBottomDrawer.getTop());
@@ -256,7 +258,7 @@ public class BottomDrawerBehavior extends defpackage.gx {
                 }
                 if (this.d.a((android.view.View) googleMaterialBottomDrawer, googleMaterialBottomDrawer.getLeft(), i3)) {
                     c(2);
-                    defpackage.sn.a((android.view.View) googleMaterialBottomDrawer, (java.lang.Runnable) new defpackage.cgd(this, googleMaterialBottomDrawer, i4));
+                    ViewCompat.a((android.view.View) googleMaterialBottomDrawer, (java.lang.Runnable) new defpackage.cgd(this, googleMaterialBottomDrawer, i4));
                 } else {
                     c(i4);
                 }

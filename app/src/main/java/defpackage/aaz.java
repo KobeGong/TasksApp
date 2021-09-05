@@ -2,11 +2,11 @@ package defpackage;
 
 /* renamed from: aaz reason: default package */
 /* compiled from: PG */
-public final class aaz implements defpackage.zu {
-    public final void a(defpackage.ze zeVar, boolean z) {
+public final class aaz implements MenuPresenter_Callback {
+    public final void onCloseMenu(MenuBuilder zeVar, boolean z) {
     }
 
-    public final boolean a(defpackage.ze zeVar) {
+    public final boolean a(MenuBuilder zeVar) {
         return false;
     }
 

@@ -44,7 +44,7 @@ public abstract class ahy {
 
     /* access modifiers changed from: 0000 */
     public final int a(android.support.v7.widget.RecyclerView recyclerView, defpackage.afv afv) {
-        return c(a(afv), defpackage.sn.a.j(recyclerView));
+        return c(a(afv), ViewCompat.a.j(recyclerView));
     }
 
     public static boolean a() {

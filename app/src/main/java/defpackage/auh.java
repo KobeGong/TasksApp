@@ -215,7 +215,7 @@ final class auh extends defpackage.aie implements android.view.View.OnTouchListe
         defpackage.atx atx = (defpackage.atx) afv;
         int d2 = atx.d();
         boolean z = (this.a instanceof defpackage.atv) && d2 >= 0 && ((defpackage.atv) this.a).k(d2);
-        defpackage.sn.b(atx.a, 0.0f);
+        ViewCompat.b(atx.a, 0.0f);
         atx.s.animate().cancel();
         atx.s.setTranslationX(0.0f);
         atx.b(z);
@@ -234,11 +234,11 @@ final class auh extends defpackage.aie implements android.view.View.OnTouchListe
     public final void a(android.graphics.Canvas canvas, android.support.v7.widget.RecyclerView recyclerView, defpackage.afv afv, float f2, float f3, int i2, boolean z) {
         if (i2 == 1) {
             defpackage.atx atx = (defpackage.atx) afv;
-            defpackage.sn.a(atx.a, 0.0f);
+            ViewCompat.a(atx.a, 0.0f);
             float max = java.lang.Math.max(0.0f, java.lang.Math.min(1.0f, java.lang.Math.abs(f2 / (((float) atx.a.getWidth()) * 0.3f))));
             atx.a(max);
             if (afv.d() >= 0) {
-                boolean z2 = defpackage.sn.a.j(recyclerView) == 0;
+                boolean z2 = ViewCompat.a.j(recyclerView) == 0;
                 if (!defpackage.crk.a.a() || ((f2 >= 0.0f && z2) || (f2 < 0.0f && !z2))) {
                     a(recyclerView, this.j, f2, max);
                 } else {
