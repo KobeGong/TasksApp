@@ -19,12 +19,12 @@ final class act implements java.lang.Runnable {
             int i2 = i + 1;
             defpackage.adc adc = (defpackage.adc) arrayList.get(i);
             defpackage.acs acs = this.b;
-            defpackage.afv afv = adc.a;
+            RecyclerViewHolder afv = adc.a;
             int i3 = adc.b;
             int i4 = adc.c;
             int i5 = adc.d;
             int i6 = adc.e;
-            android.view.View view = afv.a;
+            android.view.View view = afv.itemView;
             int i7 = i5 - i3;
             int i8 = i6 - i4;
             if (i7 != 0) {

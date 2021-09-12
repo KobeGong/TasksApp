@@ -3,14 +3,14 @@ package defpackage;
 /* renamed from: acy reason: default package */
 /* compiled from: PG */
 final class acy extends android.animation.AnimatorListenerAdapter {
-    private final /* synthetic */ defpackage.afv a;
+    private final /* synthetic */ RecyclerViewHolder a;
     private final /* synthetic */ int b;
     private final /* synthetic */ android.view.View c;
     private final /* synthetic */ int d;
     private final /* synthetic */ android.view.ViewPropertyAnimator e;
     private final /* synthetic */ defpackage.acs f;
 
-    acy(defpackage.acs acs, defpackage.afv afv, int i, android.view.View view, int i2, android.view.ViewPropertyAnimator viewPropertyAnimator) {
+    acy(defpackage.acs acs, RecyclerViewHolder afv, int i, android.view.View view, int i2, android.view.ViewPropertyAnimator viewPropertyAnimator) {
         this.f = acs;
         this.a = afv;
         this.b = i;

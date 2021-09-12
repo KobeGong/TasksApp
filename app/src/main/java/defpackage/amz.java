@@ -7,7 +7,7 @@ public final class amz implements defpackage.amn {
     private final java.lang.String a;
     private final java.lang.String[] b;
     private final boolean c;
-    private transient defpackage.ajq d;
+    private transient AbsTaskListStructure d;
     private transient int e;
 
     public amz(java.lang.String str, boolean z, java.lang.String... strArr) {

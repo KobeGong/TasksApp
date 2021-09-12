@@ -14,13 +14,13 @@ public final class acm {
     public final void a(android.view.View view) {
         this.c.add(view);
         defpackage.aco aco = this.a;
-        defpackage.afv c2 = android.support.v7.widget.RecyclerView.c(view);
+        RecyclerViewHolder c2 = android.support.v7.widget.RecyclerView.getChildViewHolderInt(view);
         if (c2 != null) {
             android.support.v7.widget.RecyclerView recyclerView = aco.a;
             if (c2.n != -1) {
                 c2.m = c2.n;
             } else {
-                c2.m = ViewCompat.a.d(c2.a);
+                c2.m = ViewCompat.a.d(c2.itemView);
             }
             recyclerView.a(c2, 4);
         }
@@ -49,7 +49,7 @@ public final class acm {
         defpackage.aco aco = this.a;
         aco.a.addView(view, a2);
         android.support.v7.widget.RecyclerView recyclerView = aco.a;
-        android.support.v7.widget.RecyclerView.c(view);
+        android.support.v7.widget.RecyclerView.getChildViewHolderInt(view);
         if (recyclerView.t != null) {
             for (int size = recyclerView.t.size() - 1; size >= 0; size--) {
                 ((defpackage.afi) recyclerView.t.get(size)).a();
@@ -93,12 +93,12 @@ public final class acm {
             a(view);
         }
         defpackage.aco aco = this.a;
-        defpackage.afv c2 = android.support.v7.widget.RecyclerView.c(view);
+        RecyclerViewHolder c2 = android.support.v7.widget.RecyclerView.getChildViewHolderInt(view);
         if (c2 != null) {
-            if (c2.n() || c2.b()) {
+            if (c2.isTmpDetached() || c2.shouldIgnore()) {
                 c2.i();
             } else {
-                throw new java.lang.IllegalArgumentException("Called attach on a child which is not detached: " + c2 + aco.a.a());
+                throw new java.lang.IllegalArgumentException("Called attach on a child which is not detached: " + c2 + aco.a.exceptionLabel());
             }
         }
         aco.a.attachViewToParent(view, a2, layoutParams);
@@ -123,12 +123,12 @@ public final class acm {
         defpackage.aco aco = this.a;
         android.view.View b2 = aco.b(a2);
         if (b2 != null) {
-            defpackage.afv c2 = android.support.v7.widget.RecyclerView.c(b2);
+            RecyclerViewHolder c2 = android.support.v7.widget.RecyclerView.getChildViewHolderInt(b2);
             if (c2 != null) {
-                if (!c2.n() || c2.b()) {
+                if (!c2.isTmpDetached() || c2.shouldIgnore()) {
                     c2.b(256);
                 } else {
-                    throw new java.lang.IllegalArgumentException("called detach on an already detached child " + c2 + aco.a.a());
+                    throw new java.lang.IllegalArgumentException("called detach on an already detached child " + c2 + aco.a.exceptionLabel());
                 }
             }
         }

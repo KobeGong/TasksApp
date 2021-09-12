@@ -10,7 +10,7 @@ final class ahv implements defpackage.afj {
     }
 
     public final boolean a(android.view.MotionEvent motionEvent) {
-        defpackage.afv a2;
+        RecyclerViewHolder a2;
         defpackage.aic aic;
         this.a.v.a(motionEvent);
         int actionMasked = motionEvent.getActionMasked();
@@ -33,7 +33,7 @@ final class ahv implements defpackage.afj {
                             break;
                         }
                         aic = (defpackage.aic) aht2.m.get(size);
-                        if (aic.e.a == a3) {
+                        if (aic.e.itemView == a3) {
                             break;
                         }
                         size--;
@@ -44,7 +44,7 @@ final class ahv implements defpackage.afj {
                     this.a.c -= aic.i;
                     this.a.d -= aic.j;
                     this.a.a(aic.e, true);
-                    if (this.a.a.remove(aic.e.a)) {
+                    if (this.a.a.remove(aic.e.itemView)) {
                         this.a.j.b(this.a.o, aic.e);
                     }
                     this.a.a(aic.e, aic.f);
@@ -70,7 +70,7 @@ final class ahv implements defpackage.afj {
             }
         } else if (actionMasked == 3 || actionMasked == 1) {
             this.a.i = -1;
-            this.a.a((defpackage.afv) null, 0);
+            this.a.a((RecyclerViewHolder) null, 0);
         } else if (this.a.i != -1) {
             int findPointerIndex = motionEvent.findPointerIndex(this.a.i);
             if (findPointerIndex >= 0) {
@@ -78,7 +78,7 @@ final class ahv implements defpackage.afj {
                 if (aht4.b == null && actionMasked == 2 && aht4.k != 2) {
                     aht4.j.c();
                     if (aht4.o.A != 1) {
-                        defpackage.afd afd = aht4.o.l;
+                        LayoutManager afd = aht4.o.mLayout;
                         if (aht4.i == -1) {
                             a2 = null;
                         } else {
@@ -132,7 +132,7 @@ final class ahv implements defpackage.afj {
     }
 
     public final void b(android.view.MotionEvent motionEvent) {
-        defpackage.afv a2;
+        RecyclerViewHolder a2;
         this.a.v.a(motionEvent);
         if (this.a.q != null) {
             this.a.q.addMovement(motionEvent);
@@ -145,7 +145,7 @@ final class ahv implements defpackage.afj {
                 if (aht.b == null && actionMasked == 2 && aht.k != 2) {
                     aht.j.c();
                     if (aht.o.A != 1) {
-                        defpackage.afd afd = aht.o.l;
+                        LayoutManager afd = aht.o.mLayout;
                         if (aht.i == -1) {
                             a2 = null;
                         } else {
@@ -187,7 +187,7 @@ final class ahv implements defpackage.afj {
                     }
                 }
             }
-            defpackage.afv afv = this.a.b;
+            RecyclerViewHolder afv = this.a.b;
             if (afv != null) {
                 switch (actionMasked) {
                     case 1:
@@ -217,7 +217,7 @@ final class ahv implements defpackage.afj {
                                 defpackage.ahy.f();
                                 int i2 = (int) (aht3.g + aht3.e);
                                 int i3 = (int) (aht3.h + aht3.f);
-                                if (((float) java.lang.Math.abs(i3 - afv.a.getTop())) >= ((float) afv.a.getHeight()) * 0.5f || ((float) java.lang.Math.abs(i2 - afv.a.getLeft())) >= ((float) afv.a.getWidth()) * 0.5f) {
+                                if (((float) java.lang.Math.abs(i3 - afv.itemView.getTop())) >= ((float) afv.itemView.getHeight()) * 0.5f || ((float) java.lang.Math.abs(i2 - afv.itemView.getLeft())) >= ((float) afv.itemView.getWidth()) * 0.5f) {
                                     if (aht3.r == null) {
                                         aht3.r = new java.util.ArrayList();
                                         aht3.s = new java.util.ArrayList();
@@ -228,19 +228,19 @@ final class ahv implements defpackage.afj {
                                     defpackage.ahy.d();
                                     int round = java.lang.Math.round(aht3.g + aht3.e);
                                     int round2 = java.lang.Math.round(aht3.h + aht3.f);
-                                    int width = round + afv.a.getWidth();
-                                    int height = round2 + afv.a.getHeight();
+                                    int width = round + afv.itemView.getWidth();
+                                    int height = round2 + afv.itemView.getHeight();
                                     int i4 = (round + width) / 2;
                                     int i5 = (round2 + height) / 2;
-                                    defpackage.afd afd2 = aht3.o.l;
+                                    LayoutManager afd2 = aht3.o.mLayout;
                                     int k = afd2.k();
                                     int i6 = 0;
                                     while (true) {
                                         int i7 = i6;
                                         if (i7 < k) {
                                             android.view.View e = afd2.e(i7);
-                                            if (e != afv.a && e.getBottom() >= round2 && e.getTop() <= height && e.getRight() >= round && e.getLeft() <= width) {
-                                                defpackage.afv a5 = aht3.o.a(e);
+                                            if (e != afv.itemView && e.getBottom() >= round2 && e.getTop() <= height && e.getRight() >= round && e.getLeft() <= width) {
+                                                RecyclerViewHolder a5 = aht3.o.a(e);
                                                 defpackage.ahy.a();
                                                 int abs5 = java.lang.Math.abs(i4 - ((e.getLeft() + e.getRight()) / 2));
                                                 int abs6 = java.lang.Math.abs(i5 - ((e.getBottom() + e.getTop()) / 2));
@@ -265,7 +265,7 @@ final class ahv implements defpackage.afj {
                                         } else {
                                             java.util.List list = aht3.r;
                                             if (list.size() != 0) {
-                                                defpackage.afv a6 = defpackage.ahy.a(afv, list, i2, i3);
+                                                RecyclerViewHolder a6 = defpackage.ahy.a(afv, list, i2, i3);
                                                 if (a6 == null) {
                                                     aht3.r.clear();
                                                     aht3.s.clear();
@@ -322,7 +322,7 @@ final class ahv implements defpackage.afj {
                     default:
                         return;
                 }
-                this.a.a((defpackage.afv) null, 0);
+                this.a.a((RecyclerViewHolder) null, 0);
                 this.a.i = -1;
             }
         }
@@ -330,7 +330,7 @@ final class ahv implements defpackage.afj {
 
     public final void a(boolean z) {
         if (z) {
-            this.a.a((defpackage.afv) null, 0);
+            this.a.a((RecyclerViewHolder) null, 0);
         }
     }
 }

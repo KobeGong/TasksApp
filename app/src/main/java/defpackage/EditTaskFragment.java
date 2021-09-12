@@ -4,25 +4,25 @@ package defpackage;
 /* compiled from: PG */
 /* compiled from: EditTaskFragment */
 public final class EditTaskFragment extends defpackage.arb implements android.app.DatePickerDialog.OnDateSetListener, defpackage.atf {
-    public String U;
+    public String listId;
     public defpackage.dcb V;
-    public String W;
-    private android.widget.EditText X;
-    private android.widget.TextView Y;
-    private android.support.design.chip.Chip Z;
+    public String taskId;
+    private android.widget.EditText editTitleView;
+    private android.widget.TextView editDueDateEmptyView;
+    private android.support.design.chip.Chip editDueDateChip;
     public android.widget.Button addSubTask;
     private defpackage.dmk aa;
-    private android.view.View ab;
-    private android.widget.EditText ac;
-    private android.widget.TextView ad;
-    private android.view.View ae;
-    private boolean af;
+    private android.view.View editDueDateContainerView;
+    private android.widget.EditText editDetailsView;
+    private android.widget.TextView editList;
+    private android.view.View editSubTasksContainer;
+    private boolean startInEditMode;
     private defpackage.dby ag;
     private defpackage.dcb ah;
     private final defpackage.alu ai = new defpackage.asv(this);
     public android.widget.LinearLayout subTaskList;
 
-    public static EditTaskFragment a(String str, String str2, boolean z, int i) {
+    public static EditTaskFragment newInstance(String str, String str2, boolean z, int i) {
         EditTaskFragment asi = new EditTaskFragment();
         android.os.Bundle bundle = new android.os.Bundle();
         bundle.putString("list id", str);
@@ -50,10 +50,10 @@ public final class EditTaskFragment extends defpackage.arb implements android.ap
                 }
                 if (dcb != null) {
                     String str = dcb.b;
-                    if (!this.U.equals(str)) {
-                        this.W = defpackage.any.a().c().a(this.U, this.W, str, z);
-                        this.U = str;
-                        this.ag = defpackage.any.a().c().a(this.U, this.W);
+                    if (!this.listId.equals(str)) {
+                        this.taskId = defpackage.any.a().c().a(this.listId, this.taskId, str, z);
+                        this.listId = str;
+                        this.ag = defpackage.any.a().c().a(this.listId, this.taskId);
                     }
                 }
             }
@@ -62,35 +62,35 @@ public final class EditTaskFragment extends defpackage.arb implements android.ap
     }
 
     public final android.view.View onCreateView(android.view.LayoutInflater layoutInflater, android.view.ViewGroup viewGroup, android.os.Bundle bundle) {
-        android.view.View inflate = layoutInflater.inflate(com.google.android.apps.tasks.R.layout.edit_task_fragment, null);
-        this.X = inflate.findViewById(com.google.android.apps.tasks.R.id.edit_title);
-        this.ab = inflate.findViewById(com.google.android.apps.tasks.R.id.edit_due_date_container);
-        this.Y = inflate.findViewById(com.google.android.apps.tasks.R.id.edit_due_date_empty);
-        this.ac = inflate.findViewById(com.google.android.apps.tasks.R.id.edit_details);
-        this.Y = inflate.findViewById(com.google.android.apps.tasks.R.id.edit_due_date_empty);
-        this.Z = inflate.findViewById(com.google.android.apps.tasks.R.id.edit_due_date_chip);
-        this.ad = inflate.findViewById(com.google.android.apps.tasks.R.id.edit_list);
-        this.addSubTask = inflate.findViewById(com.google.android.apps.tasks.R.id.edit_subtasks_add);
-        this.ae = inflate.findViewById(com.google.android.apps.tasks.R.id.edit_subtasks_container);
-        this.subTaskList = inflate.findViewById(com.google.android.apps.tasks.R.id.edit_subtasks_list);
-        this.X.setOnFocusChangeListener(new defpackage.asj(this));
-        this.ac.setOnFocusChangeListener(new defpackage.ask(this));
-        this.ab.setOnClickListener(new defpackage.asn(this));
-        this.Z.setOnClickListener(new defpackage.aso(this));
-        this.Z.c = new defpackage.asp(this);
-        this.ad.setOnClickListener(new defpackage.asq(this));
+        android.view.View rootView = layoutInflater.inflate(com.google.android.apps.tasks.R.layout.edit_task_fragment, null);
+        this.editTitleView = rootView.findViewById(com.google.android.apps.tasks.R.id.edit_title);
+        this.editDueDateContainerView = rootView.findViewById(com.google.android.apps.tasks.R.id.edit_due_date_container);
+        this.editDueDateEmptyView = rootView.findViewById(com.google.android.apps.tasks.R.id.edit_due_date_empty);
+        this.editDetailsView = rootView.findViewById(com.google.android.apps.tasks.R.id.edit_details);
+        this.editDueDateEmptyView = rootView.findViewById(com.google.android.apps.tasks.R.id.edit_due_date_empty);
+        this.editDueDateChip = rootView.findViewById(com.google.android.apps.tasks.R.id.edit_due_date_chip);
+        this.editList = rootView.findViewById(com.google.android.apps.tasks.R.id.edit_list);
+        this.addSubTask = rootView.findViewById(com.google.android.apps.tasks.R.id.edit_subtasks_add);
+        this.editSubTasksContainer = rootView.findViewById(com.google.android.apps.tasks.R.id.edit_subtasks_container);
+        this.subTaskList = rootView.findViewById(com.google.android.apps.tasks.R.id.edit_subtasks_list);
+        this.editTitleView.setOnFocusChangeListener(new defpackage.asj(this));
+        this.editDetailsView.setOnFocusChangeListener(new defpackage.ask(this));
+        this.editDueDateContainerView.setOnClickListener(new defpackage.asn(this));
+        this.editDueDateChip.setOnClickListener(new defpackage.aso(this));
+        this.editDueDateChip.c = new defpackage.asp(this);
+        this.editList.setOnClickListener(new defpackage.asq(this));
         this.addSubTask.setOnClickListener(new defpackage.asr(this));
         if (bundle == null) {
             bundle = this.i;
         }
-        if (bundle != null && android.text.TextUtils.isEmpty(this.W)) {
-            this.U = bundle.getString("list id");
-            this.W = bundle.getString("task id");
-            this.af = bundle.getBoolean("start_in_edit_mode");
+        if (bundle != null && android.text.TextUtils.isEmpty(this.taskId)) {
+            this.listId = bundle.getString("list id");
+            this.taskId = bundle.getString("task id");
+            this.startInEditMode = bundle.getBoolean("start_in_edit_mode");
         }
-        ViewCompat.a(this.X, "taskTitleTransition");
+        ViewCompat.a(this.editTitleView, "taskTitleTransition");
         a(new defpackage.ass(this));
-        return inflate;
+        return rootView;
     }
 
     public final void a(android.content.Context context) {
@@ -98,27 +98,27 @@ public final class EditTaskFragment extends defpackage.arb implements android.ap
         defpackage.cky.a(getActivity(), defpackage.dck.a);
     }
 
-    public final void s() {
-        super.s();
+    public final void onResume() {
+        super.onResume();
         if (getActivity() != null) {
             defpackage.cos.a(getActivity()).b.a(getActivity().findViewById(16908290));
         }
     }
 
-    public final void e() {
-        super.e();
-        defpackage.aju.a().b(this.W);
-        if (this.af && this.ag != null && !defpackage.ajd.a(this.ag)) {
-            b(this.X);
+    public final void onStart() {
+        super.onStart();
+        defpackage.aju.a().b(this.taskId);
+        if (this.startInEditMode && this.ag != null && !defpackage.ajd.a(this.ag)) {
+            b(this.editTitleView);
         }
         defpackage.alq.a().b(this.ai);
         defpackage.alq.a().a(this.ai);
     }
 
-    public final void d(android.os.Bundle bundle) {
-        super.d(bundle);
-        bundle.putString("task id", this.W);
-        bundle.putString("list id", this.U);
+    public final void onSaveInstanceState(android.os.Bundle bundle) {
+        super.onSaveInstanceState(bundle);
+        bundle.putString("task id", this.taskId);
+        bundle.putString("list id", this.listId);
     }
 
     public final void onDateSet(android.widget.DatePicker datePicker, int i, int i2, int i3) {
@@ -144,20 +144,20 @@ public final class EditTaskFragment extends defpackage.arb implements android.ap
     public final void a(defpackage.dcb dcb) {
         defpackage.dcd dcd;
         this.V = dcb;
-        android.widget.TextView textView = this.ad;
+        android.widget.TextView textView = this.editList;
         if (dcb.c == null) {
             dcd = defpackage.dcd.c;
         } else {
             dcd = dcb.c;
         }
         textView.setText(dcd.a);
-        this.ad.setContentDescription(V());
+        this.editList.setContentDescription(V());
     }
 
-    public final void f() {
-        defpackage.bdk.a(this.X, false);
+    public final void onStop() {
+        defpackage.bdk.a(this.editTitleView, false);
         defpackage.alq.a().b(this.ai);
-        super.f();
+        super.onStop();
     }
 
     /* access modifiers changed from: 0000 */
@@ -589,22 +589,22 @@ public final class EditTaskFragment extends defpackage.arb implements android.ap
     }
 
     private final void W() {
-        this.Z.a(a(com.google.android.apps.tasks.R.string.task_selected_due_date, ajd.b(this.aa).getTime()));
-        this.Z.setVisibility(0);
-        this.Y.setVisibility(4);
+        this.editDueDateChip.a(a(com.google.android.apps.tasks.R.string.task_selected_due_date, ajd.b(this.aa).getTime()));
+        this.editDueDateChip.setVisibility(0);
+        this.editDueDateEmptyView.setVisibility(4);
     }
 
     /* access modifiers changed from: protected */
     public final void Q() {
-        defpackage.aqj.a(this.aa).a(this.t, "datePicker");
+        defpackage.aqj.a(this.aa).a(this.fragmentManager, "datePicker");
     }
 
     /* access modifiers changed from: 0000 */
     public final void R() {
         this.aa = null;
-        this.Z.setVisibility(4);
-        this.Y.setVisibility(0);
-        this.Z.a("");
+        this.editDueDateChip.setVisibility(4);
+        this.editDueDateEmptyView.setVisibility(0);
+        this.editDueDateChip.a("");
     }
 
     /* access modifiers changed from: 0000 */
@@ -688,14 +688,14 @@ public final class EditTaskFragment extends defpackage.arb implements android.ap
                 }
                 this.ag = (defpackage.dby) dih6;
             }
-            defpackage.any.a().c().a(this.U, this.W, this.aa);
-            defpackage.aju.a().a(this.W);
+            defpackage.any.a().c().a(this.listId, this.taskId, this.aa);
+            defpackage.aju.a().a(this.taskId);
         }
     }
 
     /* access modifiers changed from: 0000 */
     public final void T() {
-        this.ag = a(this.X.getText().toString(), this.ag);
+        this.ag = a(this.editTitleView.getText().toString(), this.ag);
     }
 
     /* access modifiers changed from: 0000 */
@@ -750,7 +750,7 @@ public final class EditTaskFragment extends defpackage.arb implements android.ap
             throw new defpackage.dkw();
         }
         defpackage.dby dby2 = (defpackage.dby) dih3;
-        defpackage.any.a().c().a(this.U, dby.d, trim2);
+        defpackage.any.a().c().a(this.listId, dby.d, trim2);
         defpackage.aju.a().a(dby.d);
         return dby2;
     }
@@ -774,7 +774,7 @@ public final class EditTaskFragment extends defpackage.arb implements android.ap
             } else {
                 trim = str.trim();
             }
-            String trim2 = this.ac.getText().toString().trim();
+            String trim2 = this.editDetailsView.getText().toString().trim();
             if (!trim.equals(trim2)) {
                 defpackage.dby dby2 = this.ag;
                 defpackage.dii dii = (defpackage.dii) dby2.a(defpackage.bg.ao);
@@ -802,8 +802,8 @@ public final class EditTaskFragment extends defpackage.arb implements android.ap
                     throw new defpackage.dkw();
                 }
                 this.ag = (defpackage.dby) dih3;
-                defpackage.any.a().c().b(this.U, this.W, trim2);
-                defpackage.aju.a().a(this.W);
+                defpackage.any.a().c().b(this.listId, this.taskId, trim2);
+                defpackage.aju.a().a(this.taskId);
             }
         }
     }

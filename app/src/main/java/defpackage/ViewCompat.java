@@ -51,8 +51,8 @@ public final class ViewCompat {
         return teVar2;
     }
 
-    public static void a(android.view.View view, float f) {
-        a.a(view, f);
+    public static void setElevation(android.view.View view, float f) {
+        a.setElevation(view, f);
     }
 
     public static void b(android.view.View view, float f) {

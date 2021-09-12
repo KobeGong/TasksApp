@@ -39,7 +39,7 @@ public final class NavigationMenuPresenter implements MenuPresenter {
     public final void a(boolean z) {
         if (this.menuAdapter != null) {
             this.menuAdapter.b();
-            this.menuAdapter.d.b();
+            this.menuAdapter.mObservable.b();
         }
     }
 

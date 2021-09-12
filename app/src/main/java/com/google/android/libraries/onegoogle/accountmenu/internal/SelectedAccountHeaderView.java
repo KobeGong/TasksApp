@@ -1,14 +1,20 @@
 package com.google.android.libraries.onegoogle.accountmenu.internal;
 
+import android.content.res.TypedArray;
+
+import com.google.android.apps.tasks.R;
+
+import defpackage.AbsDeviceOwner;
+
 /* compiled from: PG */
 public class SelectedAccountHeaderView extends android.widget.FrameLayout {
     public final android.view.View a;
     public final android.view.View b;
     public final android.widget.TextView c;
-    public final boolean d;
+    public final boolean expandable;
     public final android.widget.ImageView e;
     public final android.widget.ImageView f;
-    public final android.widget.ImageView g;
+    public final android.widget.ImageView closeButton;
     public boolean h;
     public boolean i;
     public defpackage.cer j;
@@ -27,20 +33,20 @@ public class SelectedAccountHeaderView extends android.widget.FrameLayout {
     /* JADX INFO: finally extract failed */
     public SelectedAccountHeaderView(android.content.Context context, android.util.AttributeSet attributeSet) {
         super(context, attributeSet);
-        android.view.LayoutInflater.from(context).inflate(2131034203, this);
-        this.a = findViewById(2131755340);
-        this.b = findViewById(2131755344);
-        this.c = (android.widget.TextView) findViewById(2131755343);
-        this.e = (android.widget.ImageView) findViewById(2131755345);
-        this.f = (android.widget.ImageView) findViewById(2131755346);
-        this.g = (android.widget.ImageView) findViewById(2131755227);
-        this.p = (android.widget.TextView) findViewById(2131755224);
-        this.q = (android.widget.TextView) findViewById(2131755225);
-        android.content.res.TypedArray obtainStyledAttributes = context.getTheme().obtainStyledAttributes(attributeSet, defpackage.cfw.a, 0, 0);
+        android.view.LayoutInflater.from(context).inflate(R.layout.selected_account_header, this);
+        this.a = findViewById(R.id.no_selected_account);
+        this.b = findViewById(R.id.has_selected_account);
+        this.c = findViewById(R.id.no_selected_account_text);
+        this.e = findViewById(R.id.avatar_recents_one);
+        this.f = findViewById(R.id.avatar_recents_two);
+        this.closeButton = findViewById(R.id.close_button);
+        this.p = findViewById(R.id.account_display_name);
+        this.q = findViewById(R.id.account_name);
+        TypedArray obtainStyledAttributes = context.getTheme().obtainStyledAttributes(attributeSet, defpackage.cfw.a, 0, 0);
         try {
-            this.d = obtainStyledAttributes.getBoolean(defpackage.cfw.b, false);
+            this.expandable = obtainStyledAttributes.getBoolean(defpackage.cfw.b, false);
             obtainStyledAttributes.recycle();
-            findViewById(2131755341).setVisibility(this.d ? 0 : 8);
+            findViewById(R.id.close_and_recents).setVisibility(this.expandable ? 0 : 8);
         } catch (Throwable th) {
             obtainStyledAttributes.recycle();
             throw th;
@@ -48,12 +54,12 @@ public class SelectedAccountHeaderView extends android.widget.FrameLayout {
     }
 
     public void setOnClickListener(android.view.View.OnClickListener onClickListener) {
-        defpackage.cky.b(onClickListener == null || this.d, (java.lang.Object) "Click listener should only be set if the header is expandable");
+        defpackage.cky.b(onClickListener == null || this.expandable, "Click listener should only be set if the header is expandable");
         super.setOnClickListener(onClickListener);
     }
 
     public final void a(boolean z) {
-        defpackage.cky.b(this.d, (java.lang.Object) "Cannot change expand state on non expandable view");
+        defpackage.cky.b(this.expandable, "Cannot change expand state on non expandable view");
         if (this.h != z) {
             this.h = z;
             a();
@@ -62,25 +68,25 @@ public class SelectedAccountHeaderView extends android.widget.FrameLayout {
     }
 
     public final void a(android.view.View.OnClickListener onClickListener) {
-        this.g.setOnClickListener(onClickListener);
+        this.closeButton.setOnClickListener(onClickListener);
     }
 
     public final void a() {
         int i2;
-        if (this.d && this.n != null) {
+        if (this.expandable && this.n != null) {
             android.widget.TextView textView = this.c;
             if (this.n.b()) {
                 if (this.h) {
-                    i2 = 2130837678;
+                    i2 = R.drawable.quantum_ic_keyboard_arrow_up_grey600_24;
                 } else {
-                    i2 = 2130837676;
+                    i2 = R.drawable.quantum_ic_keyboard_arrow_down_grey600_24;
                 }
                 textView = this.q.getVisibility() == 0 ? this.q : this.p;
                 if (textView == this.q) {
                     defpackage.vo.a(this.p, 0);
                 }
             } else {
-                i2 = this.n.a() > 0 ? this.h ? 2130837677 : 2130837675 : 0;
+                i2 = this.n.getSize() > 0 ? this.h ? R.drawable.quantum_ic_keyboard_arrow_up_googblue_24 : R.drawable.quantum_ic_keyboard_arrow_down_googblue_24 : 0;
             }
             defpackage.vo.a(textView, i2);
         }
@@ -89,7 +95,7 @@ public class SelectedAccountHeaderView extends android.widget.FrameLayout {
     public final void b() {
         java.lang.Object obj;
         java.lang.Object obj2 = null;
-        if (this.d) {
+        if (this.expandable) {
             if (this.i || this.h) {
                 this.e.setVisibility(8);
                 this.f.setVisibility(8);
@@ -103,7 +109,7 @@ public class SelectedAccountHeaderView extends android.widget.FrameLayout {
                 if (this.n.f()) {
                     linkedHashSet.add(this.n.g());
                 }
-                linkedHashSet.addAll(this.n.c);
+                linkedHashSet.addAll(this.n.availableAccounts);
                 linkedHashSet.remove(this.n.c());
             }
             java.util.Iterator it = linkedHashSet.iterator();
@@ -127,7 +133,7 @@ public class SelectedAccountHeaderView extends android.widget.FrameLayout {
         }
         imageView.setVisibility(0);
         this.l.a(imageView, obj, imageView.getWidth());
-        imageView.setContentDescription(getContext().getString(2131951784, new java.lang.Object[]{((defpackage.cdu) obj).b()}));
+        imageView.setContentDescription(getContext().getString(R.string.og_switch_account_to_recent_a11y, ((AbsDeviceOwner) obj).accountName()));
         imageView.setOnClickListener(new defpackage.cfy(this, obj));
     }
 }

@@ -1,5 +1,9 @@
 package android.support.v7.widget;
 
+import defpackage.ChildDrawingOrderCallback;
+import defpackage.LayoutManager;
+import defpackage.RecyclerViewAdapter;
+import defpackage.RecyclerViewHolder;
 import defpackage.ViewCompat;
 
 /* compiled from: PG */
@@ -53,7 +57,7 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
     private float ar;
     private boolean as;
     private final defpackage.afu at;
-    private defpackage.aew au;
+    private ChildDrawingOrderCallback mChildDrawingOrderCallback;
     private final int[] av;
     private defpackage.sh aw;
     private final int[] ax;
@@ -65,10 +69,10 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
     public final defpackage.aho h;
     public final android.graphics.Rect i;
     public final android.graphics.RectF j;
-    public defpackage.aet k;
-    public defpackage.afd l;
+    public RecyclerViewAdapter adapter;
+    public LayoutManager mLayout;
     public defpackage.afo m;
-    public final java.util.ArrayList n;
+    public final java.util.ArrayList mItemDecorations;
     public boolean o;
     public boolean p;
     public boolean q;
@@ -104,7 +108,7 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
         this.i = new android.graphics.Rect();
         this.T = new android.graphics.Rect();
         this.j = new android.graphics.RectF();
-        this.n = new java.util.ArrayList();
+        this.mItemDecorations = new java.util.ArrayList();
         this.U = new java.util.ArrayList();
         this.aa = 0;
         this.u = false;
@@ -170,7 +174,7 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
                 android.graphics.drawable.StateListDrawable stateListDrawable2 = (android.graphics.drawable.StateListDrawable) obtainStyledAttributes2.getDrawable(defpackage.ya.d);
                 android.graphics.drawable.Drawable drawable2 = obtainStyledAttributes2.getDrawable(defpackage.ya.e);
                 if (stateListDrawable == null || drawable == null || stateListDrawable2 == null || drawable2 == null) {
-                    throw new java.lang.IllegalArgumentException("Trying to set fast scroller without both required drawables." + a());
+                    throw new java.lang.IllegalArgumentException("Trying to set fast scroller without both required drawables." + exceptionLabel());
                 }
                 android.content.res.Resources resources = getContext().getResources();
                 new defpackage.adh(this, stateListDrawable, drawable, stateListDrawable2, drawable2, resources.getDimensionPixelSize(2131689714), resources.getDimensionPixelSize(2131689716), resources.getDimensionPixelOffset(2131689715));
@@ -192,7 +196,7 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
                         } else {
                             classLoader = context.getClassLoader();
                         }
-                        java.lang.Class asSubclass = classLoader.loadClass(str).asSubclass(defpackage.afd.class);
+                        java.lang.Class asSubclass = classLoader.loadClass(str).asSubclass(LayoutManager.class);
                         try {
                             objArr = new java.lang.Object[]{context, attributeSet, java.lang.Integer.valueOf(i2), java.lang.Integer.valueOf(0)};
                             constructor = asSubclass.getConstructor(P);
@@ -201,20 +205,20 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
                             objArr = null;
                         }
                         constructor.setAccessible(true);
-                        a((defpackage.afd) constructor.newInstance(objArr));
+                        a((LayoutManager) constructor.newInstance(objArr));
                     } catch (java.lang.NoSuchMethodException e3) {
                         e3.initCause(e2);
-                        throw new java.lang.IllegalStateException(attributeSet.getPositionDescription() + ": Error creating LayoutManager " + str, e3);
+                        throw new IllegalStateException(attributeSet.getPositionDescription() + ": Error creating LayoutManager " + str, e3);
                     } catch (java.lang.ClassNotFoundException e4) {
-                        throw new java.lang.IllegalStateException(attributeSet.getPositionDescription() + ": Unable to find LayoutManager " + str, e4);
+                        throw new IllegalStateException(attributeSet.getPositionDescription() + ": Unable to find LayoutManager " + str, e4);
                     } catch (java.lang.reflect.InvocationTargetException e5) {
-                        throw new java.lang.IllegalStateException(attributeSet.getPositionDescription() + ": Could not instantiate the LayoutManager: " + str, e5);
+                        throw new IllegalStateException(attributeSet.getPositionDescription() + ": Could not instantiate the LayoutManager: " + str, e5);
                     } catch (java.lang.InstantiationException e6) {
-                        throw new java.lang.IllegalStateException(attributeSet.getPositionDescription() + ": Could not instantiate the LayoutManager: " + str, e6);
+                        throw new IllegalStateException(attributeSet.getPositionDescription() + ": Could not instantiate the LayoutManager: " + str, e6);
                     } catch (java.lang.IllegalAccessException e7) {
-                        throw new java.lang.IllegalStateException(attributeSet.getPositionDescription() + ": Cannot access non-public constructor " + str, e7);
+                        throw new IllegalStateException(attributeSet.getPositionDescription() + ": Cannot access non-public constructor " + str, e7);
                     } catch (java.lang.ClassCastException e8) {
-                        throw new java.lang.IllegalStateException(attributeSet.getPositionDescription() + ": Class is not a LayoutManager " + str, e8);
+                        throw new IllegalStateException(attributeSet.getPositionDescription() + ": Class is not a LayoutManager " + str, e8);
                     }
                 }
             }
@@ -231,8 +235,8 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
         setNestedScrollingEnabled(z2);
     }
 
-    public final java.lang.String a() {
-        return " " + super.toString() + ", adapter:" + this.k + ", layout:" + this.l + ", context:" + getContext();
+    public final java.lang.String exceptionLabel() {
+        return " " + super.toString() + ", adapter:" + this.adapter + ", layout:" + this.mLayout + ", context:" + getContext();
     }
 
     public final void a(defpackage.afw afw) {
@@ -255,23 +259,23 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
         return this.S;
     }
 
-    public final void a(defpackage.aet aet) {
-        if (this.k != null) {
-            defpackage.aet aet2 = this.k;
-            aet2.d.unregisterObserver(this.Q);
+    public final void setAdapter(RecyclerViewAdapter aet) {
+        if (this.adapter != null) {
+            RecyclerViewAdapter aet2 = this.adapter;
+            aet2.mObservable.unregisterObserver(this.Q);
         }
         b();
         this.f.a();
-        defpackage.aet aet3 = this.k;
-        this.k = aet;
+        RecyclerViewAdapter aet3 = this.adapter;
+        this.adapter = aet;
         if (aet != null) {
-            aet.d.registerObserver(this.Q);
+            aet.mObservable.registerObserver(this.Q);
         }
-        if (this.l != null) {
-            this.l.q();
+        if (this.mLayout != null) {
+            this.mLayout.q();
         }
         defpackage.afn afn = this.e;
-        defpackage.aet aet4 = this.k;
+        RecyclerViewAdapter aet4 = this.adapter;
         afn.a();
         defpackage.afl d2 = afn.d();
         if (aet3 != null) {
@@ -294,35 +298,35 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
         if (this.z != null) {
             this.z.d();
         }
-        if (this.l != null) {
-            this.l.b(this.e);
-            this.l.a(this.e);
+        if (this.mLayout != null) {
+            this.mLayout.b(this.e);
+            this.mLayout.a(this.e);
         }
         this.e.a();
     }
 
     public int getBaseline() {
-        if (this.l != null) {
+        if (this.mLayout != null) {
             return -1;
         }
         return super.getBaseline();
     }
 
-    public final void a(defpackage.afd afd) {
-        if (afd != this.l) {
+    public final void a(LayoutManager afd) {
+        if (afd != this.mLayout) {
             q();
-            if (this.l != null) {
+            if (this.mLayout != null) {
                 if (this.z != null) {
                     this.z.d();
                 }
-                this.l.b(this.e);
-                this.l.a(this.e);
+                this.mLayout.b(this.e);
+                this.mLayout.a(this.e);
                 this.e.a();
                 if (this.o) {
-                    this.l.j();
+                    this.mLayout.j();
                 }
-                this.l.a((android.support.v7.widget.RecyclerView) null);
-                this.l = null;
+                this.mLayout.a((android.support.v7.widget.RecyclerView) null);
+                this.mLayout = null;
             } else {
                 this.e.a();
             }
@@ -347,14 +351,14 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
                 b2.clearAnimation();
             }
             aco.a.removeAllViews();
-            this.l = afd;
+            this.mLayout = afd;
             if (afd != null) {
                 if (afd.b != null) {
-                    throw new java.lang.IllegalArgumentException("LayoutManager " + afd + " is already attached to a RecyclerView:" + afd.b.a());
+                    throw new java.lang.IllegalArgumentException("LayoutManager " + afd + " is already attached to a RecyclerView:" + afd.b.exceptionLabel());
                 }
-                this.l.a(this);
+                this.mLayout.a(this);
                 if (this.o) {
-                    this.l.i();
+                    this.mLayout.i();
                 }
             }
             this.e.b();
@@ -367,8 +371,8 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
         defpackage.afq afq = new defpackage.afq(super.onSaveInstanceState());
         if (this.R != null) {
             afq.a = this.R.a;
-        } else if (this.l != null) {
-            afq.a = this.l.c();
+        } else if (this.mLayout != null) {
+            afq.a = this.mLayout.c();
         } else {
             afq.a = null;
         }
@@ -383,8 +387,8 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
         }
         this.R = (defpackage.afq) parcelable;
         super.onRestoreInstanceState(this.R.e);
-        if (this.l != null && this.R.a != null) {
-            this.l.a(this.R.a);
+        if (this.mLayout != null && this.R.a != null) {
+            this.mLayout.a(this.R.a);
         }
     }
 
@@ -398,11 +402,11 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
         dispatchThawSelfOnly(sparseArray);
     }
 
-    public final void a(defpackage.afv afv) {
-        android.view.View view = afv.a;
+    public final void a(RecyclerViewHolder afv) {
+        android.view.View view = afv.itemView;
         boolean z2 = view.getParent() == this;
         this.e.b(a(view));
-        if (afv.n()) {
+        if (afv.isTmpDetached()) {
             this.g.a(view, -1, view.getLayoutParams(), true);
         } else if (!z2) {
             this.g.a(view, -1, true);
@@ -431,34 +435,34 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
         }
     }
 
-    public final void a(defpackage.afc afc) {
-        if (this.l != null) {
-            this.l.a("Cannot add item decoration during a scroll  or layout");
+    public final void addItemDecoration(defpackage.afc afc) {
+        if (this.mLayout != null) {
+            this.mLayout.a("Cannot add item decoration during a scroll  or layout");
         }
-        if (this.n.isEmpty()) {
+        if (this.mItemDecorations.isEmpty()) {
             setWillNotDraw(false);
         }
-        this.n.add(afc);
-        l();
+        this.mItemDecorations.add(afc);
+        markItemDecorInsetsDirty();
         requestLayout();
     }
 
-    public final void b(defpackage.afc afc) {
-        if (this.l != null) {
-            this.l.a("Cannot remove item decoration during a scroll  or layout");
+    public final void removeItemDecoration(defpackage.afc afc) {
+        if (this.mLayout != null) {
+            this.mLayout.a("Cannot remove item decoration during a scroll  or layout");
         }
-        this.n.remove(afc);
-        if (this.n.isEmpty()) {
+        this.mItemDecorations.remove(afc);
+        if (this.mItemDecorations.isEmpty()) {
             setWillNotDraw(getOverScrollMode() == 2);
         }
-        l();
+        markItemDecorInsetsDirty();
         requestLayout();
     }
 
-    public final void a(defpackage.aew aew) {
-        if (aew != this.au) {
-            this.au = aew;
-            setChildrenDrawingOrderEnabled(this.au != null);
+    public final void setChildDrawingOrderCallback(ChildDrawingOrderCallback aew) {
+        if (aew != this.mChildDrawingOrderCallback) {
+            this.mChildDrawingOrderCallback = aew;
+            setChildrenDrawingOrderEnabled(this.mChildDrawingOrderCallback != null);
         }
     }
 
@@ -471,11 +475,11 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
 
     public final void c(int i2) {
         q();
-        if (this.l == null) {
+        if (this.mLayout == null) {
             android.util.Log.e("RecyclerView", "Cannot scroll to position a LayoutManager set. Call setLayoutManager with a non-null argument.");
             return;
         }
-        this.l.b(i2);
+        this.mLayout.b(i2);
         awakenScrollBars();
     }
 
@@ -484,12 +488,12 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
     }
 
     public void scrollBy(int i2, int i3) {
-        if (this.l == null) {
+        if (this.mLayout == null) {
             android.util.Log.e("RecyclerView", "Cannot scroll without a LayoutManager set. Call setLayoutManager with a non-null argument.");
             return;
         }
-        boolean d2 = this.l.d();
-        boolean e2 = this.l.e();
+        boolean d2 = this.mLayout.d();
+        boolean e2 = this.mLayout.e();
         if (d2 || e2) {
             if (!d2) {
                 i2 = 0;
@@ -509,12 +513,12 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
         defpackage.jd.c("RV Scroll");
         z();
         if (i2 != 0) {
-            i4 = this.l.a(i2, this.e, this.D);
+            i4 = this.mLayout.a(i2, this.e, this.D);
         } else {
             i4 = 0;
         }
         if (i3 != 0) {
-            i5 = this.l.b(i3, this.e, this.D);
+            i5 = this.mLayout.b(i3, this.e, this.D);
         } else {
             i5 = 0;
         }
@@ -522,9 +526,9 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
         int a2 = this.g.a();
         for (int i6 = 0; i6 < a2; i6++) {
             android.view.View b2 = this.g.b(i6);
-            defpackage.afv a3 = a(b2);
-            if (!(a3 == null || a3.i == null)) {
-                android.view.View view = a3.i.a;
+            RecyclerViewHolder a3 = a(b2);
+            if (!(a3 == null || a3.mShadowingHolder == null)) {
+                android.view.View view = a3.mShadowingHolder.itemView;
                 int left = b2.getLeft();
                 int top = b2.getTop();
                 if (left != view.getLeft() || top != view.getTop()) {
@@ -560,8 +564,8 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
                         if (i2 >= a2) {
                             break;
                         }
-                        defpackage.afv c2 = c(this.g.b(i2));
-                        if (c2 != null && !c2.b() && c2.s()) {
+                        RecyclerViewHolder c2 = getChildViewHolderInt(this.g.b(i2));
+                        if (c2 != null && !c2.shouldIgnore() && c2.s()) {
                             z2 = true;
                             break;
                         }
@@ -590,14 +594,14 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
         int i6 = 0;
         int i7 = 0;
         c();
-        if (this.k != null) {
+        if (this.adapter != null) {
             a(i2, i3, this.L);
             i6 = this.L[0];
             i7 = this.L[1];
             i4 = i2 - i6;
             i5 = i3 - i7;
         }
-        if (!this.n.isEmpty()) {
+        if (!this.mItemDecorations.isEmpty()) {
             invalidate();
         }
         if (a(i6, i7, i4, i5, this.ax, 0)) {
@@ -656,43 +660,43 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
     }
 
     public int computeHorizontalScrollOffset() {
-        if (this.l != null && this.l.d()) {
-            return this.l.b(this.D);
+        if (this.mLayout != null && this.mLayout.d()) {
+            return this.mLayout.b(this.D);
         }
         return 0;
     }
 
     public int computeHorizontalScrollExtent() {
-        if (this.l != null && this.l.d()) {
-            return this.l.d(this.D);
+        if (this.mLayout != null && this.mLayout.d()) {
+            return this.mLayout.d(this.D);
         }
         return 0;
     }
 
     public int computeHorizontalScrollRange() {
-        if (this.l != null && this.l.d()) {
-            return this.l.f(this.D);
+        if (this.mLayout != null && this.mLayout.d()) {
+            return this.mLayout.f(this.D);
         }
         return 0;
     }
 
     public int computeVerticalScrollOffset() {
-        if (this.l != null && this.l.e()) {
-            return this.l.c(this.D);
+        if (this.mLayout != null && this.mLayout.e()) {
+            return this.mLayout.c(this.D);
         }
         return 0;
     }
 
     public int computeVerticalScrollExtent() {
-        if (this.l != null && this.l.e()) {
-            return this.l.e(this.D);
+        if (this.mLayout != null && this.mLayout.e()) {
+            return this.mLayout.e(this.D);
         }
         return 0;
     }
 
     public int computeVerticalScrollRange() {
-        if (this.l != null && this.l.e()) {
-            return this.l.g(this.D);
+        if (this.mLayout != null && this.mLayout.e()) {
+            return this.mLayout.g(this.D);
         }
         return 0;
     }
@@ -712,7 +716,7 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
             this.ab = false;
         }
         if (this.aa == 1) {
-            if (z2 && this.ab && this.l != null && this.k != null) {
+            if (z2 && this.ab && this.mLayout != null && this.adapter != null) {
                 x();
             }
             this.ab = false;
@@ -725,16 +729,16 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
         int i5;
         int i6;
         int i7;
-        if (this.l == null) {
+        if (this.mLayout == null) {
             android.util.Log.e("RecyclerView", "Cannot smooth scroll without a LayoutManager set. Call setLayoutManager with a non-null argument.");
             return;
         }
-        if (!this.l.d()) {
+        if (!this.mLayout.d()) {
             i4 = 0;
         } else {
             i4 = i2;
         }
-        if (!this.l.e()) {
+        if (!this.mLayout.e()) {
             i5 = 0;
         } else {
             i5 = i3;
@@ -863,7 +867,7 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
         boolean z4;
         char c2 = 65535;
         boolean z5 = false;
-        boolean z6 = (this.k == null || this.l == null || u()) ? false : true;
+        boolean z6 = (this.adapter == null || this.mLayout == null || u()) ? false : true;
         android.view.FocusFinder instance = android.view.FocusFinder.getInstance();
         if (!z6 || !(i2 == 2 || i2 == 1)) {
             findNextFocus = instance.findNextFocus(this, view, i2);
@@ -873,11 +877,11 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
                     return null;
                 }
                 d();
-                findNextFocus = this.l.c(i2, this.e, this.D);
+                findNextFocus = this.mLayout.c(i2, this.e, this.D);
                 a(false);
             }
         } else {
-            if (this.l.e()) {
+            if (this.mLayout.e()) {
                 if (instance.findNextFocus(this, view, i2 == 2 ? 130 : 33) == null) {
                     z2 = true;
                 } else {
@@ -886,8 +890,8 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
             } else {
                 z2 = false;
             }
-            if (!z2 && this.l.d()) {
-                if (ViewCompat.a.j(this.l.b) == 1) {
+            if (!z2 && this.mLayout.d()) {
+                if (ViewCompat.a.j(this.mLayout.b) == 1) {
                     z3 = true;
                 } else {
                     z3 = false;
@@ -909,7 +913,7 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
                     return null;
                 }
                 d();
-                this.l.c(i2, this.e, this.D);
+                this.mLayout.c(i2, this.e, this.D);
                 a(false);
             }
             findNextFocus = instance.findNextFocus(this, view, i2);
@@ -925,7 +929,7 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
                     this.T.set(0, 0, findNextFocus.getWidth(), findNextFocus.getHeight());
                     offsetDescendantRectToMyCoords(view, this.i);
                     offsetDescendantRectToMyCoords(findNextFocus, this.T);
-                    int i4 = ViewCompat.a.j(this.l.b) == 1 ? -1 : 1;
+                    int i4 = ViewCompat.a.j(this.mLayout.b) == 1 ? -1 : 1;
                     if ((this.i.left < this.T.left || this.i.right <= this.T.left) && this.i.right < this.T.right) {
                         i3 = 1;
                     } else if ((this.i.right > this.T.right || this.i.left >= this.T.right) && this.i.left > this.T.left) {
@@ -974,7 +978,7 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
                             }
                             break;
                         default:
-                            throw new java.lang.IllegalArgumentException("Invalid direction: " + i2 + a());
+                            throw new java.lang.IllegalArgumentException("Invalid direction: " + i2 + exceptionLabel());
                     }
                 }
             }
@@ -1017,7 +1021,7 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
             offsetDescendantRectToMyCoords(view2, this.i);
             offsetRectIntoDescendantCoords(view, this.i);
         }
-        defpackage.afd afd = this.l;
+        LayoutManager afd = this.mLayout;
         android.graphics.Rect rect3 = this.i;
         boolean z3 = !this.q;
         if (view2 != null) {
@@ -1027,7 +1031,7 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
     }
 
     public boolean requestChildRectangleOnScreen(android.view.View view, android.graphics.Rect rect, boolean z2) {
-        return this.l.a(this, view, rect, z2, false);
+        return this.mLayout.a(this, view, rect, z2, false);
     }
 
     /* access modifiers changed from: protected */
@@ -1117,8 +1121,8 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
         }
         q();
         this.o = false;
-        if (this.l != null) {
-            this.l.j();
+        if (this.mLayout != null) {
+            this.mLayout.j();
         }
         this.az.clear();
         removeCallbacks(this.aA);
@@ -1137,11 +1141,11 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
     public final void a(java.lang.String str) {
         if (u()) {
             if (str == null) {
-                throw new java.lang.IllegalStateException("Cannot call this method while RecyclerView is computing a layout or scrolling" + a());
+                throw new IllegalStateException("Cannot call this method while RecyclerView is computing a layout or scrolling" + exceptionLabel());
             }
-            throw new java.lang.IllegalStateException(str);
+            throw new IllegalStateException(str);
         } else if (this.ag > 0) {
-            android.util.Log.w("RecyclerView", "Cannot call this method in a scroll callback. Scroll callbacks mightbe run during a measure & layout pass where you cannot change theRecyclerView data. Any method call that might change the structureof the RecyclerView or the adapter contents should be postponed tothe next frame.", new java.lang.IllegalStateException(a()));
+            android.util.Log.w("RecyclerView", "Cannot call this method in a scroll callback. Scroll callbacks mightbe run during a measure & layout pass where you cannot change theRecyclerView data. Any method call that might change the structureof the RecyclerView or the adapter contents should be postponed tothe next frame.", new IllegalStateException(exceptionLabel()));
         }
     }
 
@@ -1182,11 +1186,11 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
         if (z2) {
             t();
             return true;
-        } else if (this.l == null) {
+        } else if (this.mLayout == null) {
             return false;
         } else {
-            boolean d2 = this.l.d();
-            boolean e2 = this.l.e();
+            boolean d2 = this.mLayout.d();
+            boolean e2 = this.mLayout.e();
             if (this.ai == null) {
                 this.ai = android.view.VelocityTracker.obtain();
             }
@@ -1790,14 +1794,14 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
         float f2;
         float f3;
         float f4;
-        if (this.l != null && motionEvent.getAction() == 8) {
+        if (this.mLayout != null && motionEvent.getAction() == 8) {
             if ((motionEvent.getSource() & 2) != 0) {
-                if (this.l.e()) {
+                if (this.mLayout.e()) {
                     f4 = -motionEvent.getAxisValue(9);
                 } else {
                     f4 = 0.0f;
                 }
-                if (this.l.d()) {
+                if (this.mLayout.d()) {
                     f3 = f4;
                     f2 = motionEvent.getAxisValue(10);
                 } else {
@@ -1806,10 +1810,10 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
                 }
             } else if ((motionEvent.getSource() & 4194304) != 0) {
                 f2 = motionEvent.getAxisValue(26);
-                if (this.l.e()) {
+                if (this.mLayout.e()) {
                     f3 = -f2;
                     f2 = 0.0f;
-                } else if (this.l.d()) {
+                } else if (this.mLayout.d()) {
                     f3 = 0.0f;
                 } else {
                     f2 = 0.0f;
@@ -1829,28 +1833,28 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
     /* access modifiers changed from: protected */
     public void onMeasure(int i2, int i3) {
         boolean z2 = false;
-        if (this.l == null) {
+        if (this.mLayout == null) {
             c(i2, i3);
-        } else if (this.l.a()) {
+        } else if (this.mLayout.a()) {
             int mode = android.view.View.MeasureSpec.getMode(i2);
             int mode2 = android.view.View.MeasureSpec.getMode(i3);
-            this.l.c(i2, i3);
+            this.mLayout.c(i2, i3);
             if (mode == 1073741824 && mode2 == 1073741824) {
                 z2 = true;
             }
-            if (!z2 && this.k != null) {
+            if (!z2 && this.adapter != null) {
                 if (this.D.d == 1) {
                     A();
                 }
-                this.l.a(i2, i3);
+                this.mLayout.a(i2, i3);
                 this.D.i = true;
                 B();
-                this.l.b(i2, i3);
-                if (this.l.f()) {
-                    this.l.a(android.view.View.MeasureSpec.makeMeasureSpec(getMeasuredWidth(), 1073741824), android.view.View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), 1073741824));
+                this.mLayout.b(i2, i3);
+                if (this.mLayout.f()) {
+                    this.mLayout.a(android.view.View.MeasureSpec.makeMeasureSpec(getMeasuredWidth(), 1073741824), android.view.View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), 1073741824));
                     this.D.i = true;
                     B();
-                    this.l.b(i2, i3);
+                    this.mLayout.b(i2, i3);
                 }
             }
         } else {
@@ -1871,20 +1875,20 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
                 setMeasuredDimension(getMeasuredWidth(), getMeasuredHeight());
                 return;
             }
-            if (this.k != null) {
-                this.D.e = this.k.a();
+            if (this.adapter != null) {
+                this.D.e = this.adapter.getItemCount();
             } else {
                 this.D.e = 0;
             }
             d();
-            this.l.c(i2, i3);
+            this.mLayout.c(i2, i3);
             a(false);
             this.D.g = false;
         }
     }
 
     public final void c(int i2, int i3) {
-        setMeasuredDimension(defpackage.afd.a(i2, getPaddingLeft() + getPaddingRight(), ViewCompat.a.e(this)), defpackage.afd.a(i3, getPaddingTop() + getPaddingBottom(), ViewCompat.a.f(this)));
+        setMeasuredDimension(LayoutManager.a(i2, getPaddingLeft() + getPaddingRight(), ViewCompat.a.e(this)), LayoutManager.a(i3, getPaddingTop() + getPaddingBottom(), ViewCompat.a.f(this)));
     }
 
     /* access modifiers changed from: protected */
@@ -1915,11 +1919,11 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
                     sendAccessibilityEventUnchecked(obtain);
                 }
                 for (int size = this.az.size() - 1; size >= 0; size--) {
-                    defpackage.afv afv = (defpackage.afv) this.az.get(size);
-                    if (afv.a.getParent() == this && !afv.b()) {
+                    RecyclerViewHolder afv = (RecyclerViewHolder) this.az.get(size);
+                    if (afv.itemView.getParent() == this && !afv.shouldIgnore()) {
                         int i3 = afv.n;
                         if (i3 != -1) {
-                            ViewCompat.a(afv.a, i3);
+                            ViewCompat.a(afv.itemView, i3);
                             afv.n = -1;
                         }
                     }
@@ -1967,7 +1971,7 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
     }
 
     private final boolean v() {
-        return this.z != null && this.l.g();
+        return this.z != null && this.mLayout.g();
     }
 
     private final void w() {
@@ -1988,7 +1992,7 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
             z2 = false;
         }
         defpackage.aft aft = this.D;
-        if (!this.q || this.z == null || ((!this.u && !z2 && !this.l.e) || (this.u && !this.k.e))) {
+        if (!this.q || this.z == null || ((!this.u && !z2 && !this.mLayout.e) || (this.u && !this.adapter.mHasStableIds))) {
             z3 = false;
         } else {
             z3 = true;
@@ -2574,18 +2578,18 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
         this.h.a();
         i();
         w();
-        if (!this.as || !hasFocus() || this.k == null) {
+        if (!this.as || !hasFocus() || this.adapter == null) {
             view = null;
         } else {
             view = getFocusedChild();
         }
-        defpackage.afv b2 = view == null ? null : b(view);
+        RecyclerViewHolder b2 = view == null ? null : b(view);
         if (b2 == null) {
             y();
         } else {
             defpackage.aft aft = this.D;
-            if (this.k.e) {
-                j2 = b2.e;
+            if (this.adapter.mHasStableIds) {
+                j2 = b2.id;
             } else {
                 j2 = -1;
             }
@@ -2593,14 +2597,14 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
             defpackage.aft aft2 = this.D;
             if (this.u) {
                 d2 = -1;
-            } else if (b2.m()) {
-                d2 = b2.d;
+            } else if (b2.isRemoved()) {
+                d2 = b2.oldPos;
             } else {
                 d2 = b2.d();
             }
             aft2.l = d2;
             defpackage.aft aft3 = this.D;
-            android.view.View view2 = b2.a;
+            android.view.View view2 = b2.itemView;
             android.view.View view3 = view2;
             int id = view2.getId();
             while (!view3.isFocused() && (view3 instanceof android.view.ViewGroup) && view3.hasFocus()) {
@@ -2625,23 +2629,23 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
         this.G = false;
         this.F = false;
         this.D.g = this.D.k;
-        this.D.e = this.k.a();
+        this.D.e = this.adapter.getItemCount();
         a(this.av);
         if (this.D.j) {
             int a2 = this.g.a();
             for (int i3 = 0; i3 < a2; i3++) {
-                defpackage.afv c2 = c(this.g.b(i3));
-                if (!c2.b() && (!c2.j() || this.k.e)) {
+                RecyclerViewHolder c2 = getChildViewHolderInt(this.g.b(i3));
+                if (!c2.shouldIgnore() && (!c2.isInvalid() || this.adapter.mHasStableIds)) {
                     defpackage.aey.d(c2);
                     c2.p();
                     defpackage.afb afb = new defpackage.afb();
-                    android.view.View view4 = c2.a;
+                    android.view.View view4 = c2.itemView;
                     afb.a = view4.getLeft();
                     afb.b = view4.getTop();
                     view4.getRight();
                     view4.getBottom();
                     this.h.a(c2, afb);
-                    if (this.D.h && c2.s() && !c2.m() && !c2.b() && !c2.j()) {
+                    if (this.D.h && c2.s() && !c2.isRemoved() && !c2.shouldIgnore() && !c2.isInvalid()) {
                         this.h.a(d(c2), c2);
                     }
                 }
@@ -2650,25 +2654,25 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
         if (this.D.k) {
             int b3 = this.g.b();
             for (int i4 = 0; i4 < b3; i4++) {
-                defpackage.afv c3 = c(this.g.c(i4));
-                if (!c3.b() && c3.d == -1) {
-                    c3.d = c3.c;
+                RecyclerViewHolder c3 = getChildViewHolderInt(this.g.c(i4));
+                if (!c3.shouldIgnore() && c3.oldPos == -1) {
+                    c3.oldPos = c3.position;
                 }
             }
             boolean z3 = this.D.f;
             this.D.f = false;
-            this.l.a(this.e, this.D);
+            this.mLayout.a(this.e, this.D);
             this.D.f = z3;
             for (int i5 = 0; i5 < this.g.a(); i5++) {
-                defpackage.afv c4 = c(this.g.b(i5));
-                if (!c4.b()) {
+                RecyclerViewHolder c4 = getChildViewHolderInt(this.g.b(i5));
+                if (!c4.shouldIgnore()) {
                     defpackage.ahp ahp = (defpackage.ahp) this.h.a.get(c4);
                     if (!((ahp == null || (ahp.a & 4) == 0) ? false : true)) {
                         defpackage.aey.d(c4);
-                        boolean a3 = c4.a(8192);
+                        boolean a3 = c4.hasAnyOfTheFlags(8192);
                         c4.p();
                         defpackage.afb afb2 = new defpackage.afb();
-                        android.view.View view5 = c4.a;
+                        android.view.View view5 = c4.itemView;
                         afb2.a = view5.getLeft();
                         afb2.b = view5.getTop();
                         view5.getRight();
@@ -2702,10 +2706,10 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
         i();
         this.D.a(6);
         this.f.e();
-        this.D.e = this.k.a();
+        this.D.e = this.adapter.getItemCount();
         this.D.c = 0;
         this.D.g = false;
-        this.l.a(this.e, this.D);
+        this.mLayout.a(this.e, this.D);
         this.D.f = false;
         this.R = null;
         this.D.j = this.D.j && this.z != null;
@@ -2714,9 +2718,9 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
         a(false);
     }
 
-    public final void a(defpackage.afv afv, defpackage.afb afb) {
+    public final void a(RecyclerViewHolder afv, defpackage.afb afb) {
         afv.a(0, 8192);
-        if (this.D.h && afv.s() && !afv.m() && !afv.b()) {
+        if (this.D.h && afv.s() && !afv.isRemoved() && !afv.shouldIgnore()) {
             this.h.a(d(afv), afv);
         }
         this.h.a(afv, afb);
@@ -2734,8 +2738,8 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
         int i4 = Integer.MIN_VALUE;
         int i5 = 0;
         while (i5 < a2) {
-            defpackage.afv c2 = c(this.g.b(i5));
-            if (!c2.b()) {
+            RecyclerViewHolder c2 = getChildViewHolderInt(this.g.b(i5));
+            if (!c2.shouldIgnore()) {
                 i2 = c2.c();
                 if (i2 < i3) {
                     i3 = i2;
@@ -2756,12 +2760,12 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
     }
 
     public void removeDetachedView(android.view.View view, boolean z2) {
-        defpackage.afv c2 = c(view);
+        RecyclerViewHolder c2 = getChildViewHolderInt(view);
         if (c2 != null) {
-            if (c2.n()) {
+            if (c2.isTmpDetached()) {
                 c2.i();
-            } else if (!c2.b()) {
-                throw new java.lang.IllegalArgumentException("Called removeDetachedView with a view which is not flagged as tmp detached." + c2 + a());
+            } else if (!c2.shouldIgnore()) {
+                throw new java.lang.IllegalArgumentException("Called removeDetachedView with a view which is not flagged as tmp detached." + c2 + exceptionLabel());
             }
         }
         view.clearAnimation();
@@ -2769,11 +2773,11 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
         super.removeDetachedView(view, z2);
     }
 
-    private final long d(defpackage.afv afv) {
-        if (this.k.e) {
-            return afv.e;
+    private final long d(RecyclerViewHolder afv) {
+        if (this.adapter.mHasStableIds) {
+            return afv.id;
         }
-        return (long) afv.c;
+        return (long) afv.position;
     }
 
     /* access modifiers changed from: protected */
@@ -2792,7 +2796,7 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
         }
     }
 
-    public final void l() {
+    public final void markItemDecorInsetsDirty() {
         int b2 = this.g.b();
         for (int i2 = 0; i2 < b2; i2++) {
             ((defpackage.afh) this.g.c(i2).getLayoutParams()).c = true;
@@ -2800,7 +2804,7 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
         defpackage.afn afn = this.e;
         int size = afn.c.size();
         for (int i3 = 0; i3 < size; i3++) {
-            defpackage.afh afh = (defpackage.afh) ((defpackage.afv) afn.c.get(i3)).a.getLayoutParams();
+            defpackage.afh afh = (defpackage.afh) ((RecyclerViewHolder) afn.c.get(i3)).itemView.getLayoutParams();
             if (afh != null) {
                 afh.c = true;
             }
@@ -2815,9 +2819,9 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
         boolean z5 = true;
         boolean z6 = false;
         super.draw(canvas);
-        int size = this.n.size();
+        int size = this.mItemDecorations.size();
         for (int i3 = 0; i3 < size; i3++) {
-            ((defpackage.afc) this.n.get(i3)).a(canvas, this);
+            ((defpackage.afc) this.mItemDecorations.get(i3)).a(canvas, this);
         }
         if (this.v == null || this.v.isFinished()) {
             z2 = false;
@@ -2878,7 +2882,7 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
             z2 |= z6;
             canvas.restoreToCount(save4);
         }
-        if (z2 || this.z == null || this.n.size() <= 0 || !this.z.b()) {
+        if (z2 || this.z == null || this.mItemDecorations.size() <= 0 || !this.z.b()) {
             z5 = z2;
         }
         if (z5) {
@@ -2888,33 +2892,33 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
 
     public void onDraw(android.graphics.Canvas canvas) {
         super.onDraw(canvas);
-        int size = this.n.size();
+        int size = this.mItemDecorations.size();
         for (int i2 = 0; i2 < size; i2++) {
-            ((defpackage.afc) this.n.get(i2)).b(canvas, this);
+            ((defpackage.afc) this.mItemDecorations.get(i2)).b(canvas, this);
         }
     }
 
     public boolean checkLayoutParams(android.view.ViewGroup.LayoutParams layoutParams) {
-        return (layoutParams instanceof defpackage.afh) && this.l.a((defpackage.afh) layoutParams);
+        return (layoutParams instanceof defpackage.afh) && this.mLayout.a((defpackage.afh) layoutParams);
     }
 
     public android.view.ViewGroup.LayoutParams generateDefaultLayoutParams() {
-        if (this.l != null) {
-            return this.l.b();
+        if (this.mLayout != null) {
+            return this.mLayout.b();
         }
-        throw new java.lang.IllegalStateException("RecyclerView has no LayoutManager" + a());
+        throw new IllegalStateException("RecyclerView has no LayoutManager" + exceptionLabel());
     }
 
     public android.view.ViewGroup.LayoutParams generateLayoutParams(android.util.AttributeSet attributeSet) {
-        if (this.l != null) {
-            return this.l.a(getContext(), attributeSet);
+        if (this.mLayout != null) {
+            return this.mLayout.a(getContext(), attributeSet);
         }
-        throw new java.lang.IllegalStateException("RecyclerView has no LayoutManager" + a());
+        throw new IllegalStateException("RecyclerView has no LayoutManager" + exceptionLabel());
     }
 
     public android.view.ViewGroup.LayoutParams generateLayoutParams(android.view.ViewGroup.LayoutParams layoutParams) {
-        if (this.l == null) {
-            throw new java.lang.IllegalStateException("RecyclerView has no LayoutManager" + a());
+        if (this.mLayout == null) {
+            throw new IllegalStateException("RecyclerView has no LayoutManager" + exceptionLabel());
         } else if (layoutParams instanceof defpackage.afh) {
             return new defpackage.afh((defpackage.afh) layoutParams);
         } else {
@@ -2928,24 +2932,24 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
     private final void C() {
         int b2 = this.g.b();
         for (int i2 = 0; i2 < b2; i2++) {
-            defpackage.afv c2 = c(this.g.c(i2));
-            if (!c2.b()) {
+            RecyclerViewHolder c2 = getChildViewHolderInt(this.g.c(i2));
+            if (!c2.shouldIgnore()) {
                 c2.a();
             }
         }
         defpackage.afn afn = this.e;
         int size = afn.c.size();
         for (int i3 = 0; i3 < size; i3++) {
-            ((defpackage.afv) afn.c.get(i3)).a();
+            ((RecyclerViewHolder) afn.c.get(i3)).a();
         }
         int size2 = afn.a.size();
         for (int i4 = 0; i4 < size2; i4++) {
-            ((defpackage.afv) afn.a.get(i4)).a();
+            ((RecyclerViewHolder) afn.a.get(i4)).a();
         }
-        if (afn.b != null) {
-            int size3 = afn.b.size();
+        if (afn.mChangedScrap != null) {
+            int size3 = afn.mChangedScrap.size();
             for (int i5 = 0; i5 < size3; i5++) {
-                ((defpackage.afv) afn.b.get(i5)).a();
+                ((RecyclerViewHolder) afn.mChangedScrap.get(i5)).a();
             }
         }
     }
@@ -2954,17 +2958,17 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
         int i4 = i2 + i3;
         int b2 = this.g.b();
         for (int i5 = 0; i5 < b2; i5++) {
-            defpackage.afv c2 = c(this.g.c(i5));
-            if (c2 != null && !c2.b()) {
-                if (c2.c >= i4) {
+            RecyclerViewHolder c2 = getChildViewHolderInt(this.g.c(i5));
+            if (c2 != null && !c2.shouldIgnore()) {
+                if (c2.position >= i4) {
                     c2.a(-i3, z2);
                     this.D.f = true;
-                } else if (c2.c >= i2) {
+                } else if (c2.position >= i2) {
                     int i6 = i2 - 1;
                     int i7 = -i3;
                     c2.b(8);
                     c2.a(i7, z2);
-                    c2.c = i6;
+                    c2.position = i6;
                     this.D.f = true;
                 }
             }
@@ -2972,11 +2976,11 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
         defpackage.afn afn = this.e;
         int i8 = i2 + i3;
         for (int size = afn.c.size() - 1; size >= 0; size--) {
-            defpackage.afv afv = (defpackage.afv) afn.c.get(size);
+            RecyclerViewHolder afv = (RecyclerViewHolder) afn.c.get(size);
             if (afv != null) {
-                if (afv.c >= i8) {
+                if (afv.position >= i8) {
                     afv.a(-i3, z2);
-                } else if (afv.c >= i2) {
+                } else if (afv.position >= i2) {
                     afv.b(8);
                     afn.a(size);
                 }
@@ -2990,30 +2994,30 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
         this.u = true;
         int b2 = this.g.b();
         for (int i2 = 0; i2 < b2; i2++) {
-            defpackage.afv c2 = c(this.g.c(i2));
-            if (c2 != null && !c2.b()) {
+            RecyclerViewHolder c2 = getChildViewHolderInt(this.g.c(i2));
+            if (c2 != null && !c2.shouldIgnore()) {
                 c2.b(6);
             }
         }
-        l();
+        markItemDecorInsetsDirty();
         defpackage.afn afn = this.e;
         int size = afn.c.size();
         for (int i3 = 0; i3 < size; i3++) {
-            defpackage.afv afv = (defpackage.afv) afn.c.get(i3);
+            RecyclerViewHolder afv = (RecyclerViewHolder) afn.c.get(i3);
             if (afv != null) {
                 afv.b(6);
                 afv.a((java.lang.Object) null);
             }
         }
-        if (afn.e.k == null || !afn.e.k.e) {
+        if (afn.recyclerView.adapter == null || !afn.recyclerView.adapter.mHasStableIds) {
             afn.c();
         }
     }
 
-    public final defpackage.afv a(android.view.View view) {
+    public final RecyclerViewHolder a(android.view.View view) {
         android.view.ViewParent parent = view.getParent();
         if (parent == null || parent == this) {
-            return c(view);
+            return getChildViewHolderInt(view);
         }
         throw new java.lang.IllegalArgumentException("View " + view + " is not a direct child of " + this);
     }
@@ -3032,7 +3036,7 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
         return null;
     }
 
-    public final defpackage.afv b(android.view.View view) {
+    public final RecyclerViewHolder b(android.view.View view) {
         android.view.View h2 = h(view);
         if (h2 == null) {
             return null;
@@ -3040,7 +3044,7 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
         return a(h2);
     }
 
-    public static defpackage.afv c(android.view.View view) {
+    public static RecyclerViewHolder getChildViewHolderInt(android.view.View view) {
         if (view == null) {
             return null;
         }
@@ -3048,25 +3052,25 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
     }
 
     public static int d(android.view.View view) {
-        defpackage.afv c2 = c(view);
+        RecyclerViewHolder c2 = getChildViewHolderInt(view);
         if (c2 != null) {
             return c2.d();
         }
         return -1;
     }
 
-    private final defpackage.afv d(int i2) {
+    private final RecyclerViewHolder d(int i2) {
         if (this.u) {
             return null;
         }
         int b2 = this.g.b();
         int i3 = 0;
-        defpackage.afv afv = null;
+        RecyclerViewHolder afv = null;
         while (i3 < b2) {
-            defpackage.afv c2 = c(this.g.c(i3));
-            if (c2 == null || c2.m() || c(c2) != i2) {
+            RecyclerViewHolder c2 = getChildViewHolderInt(this.g.c(i3));
+            if (c2 == null || c2.isRemoved() || c(c2) != i2) {
                 c2 = afv;
-            } else if (!this.g.d(c2.a)) {
+            } else if (!this.g.d(c2.itemView)) {
                 return c2;
             }
             i3++;
@@ -3090,15 +3094,15 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
         if (!afh.c) {
             return afh.b;
         }
-        if (this.D.g && (afh.a.s() || afh.a.j())) {
+        if (this.D.g && (afh.a.s() || afh.a.isInvalid())) {
             return afh.b;
         }
         android.graphics.Rect rect = afh.b;
         rect.set(0, 0, 0, 0);
-        int size = this.n.size();
+        int size = this.mItemDecorations.size();
         for (int i2 = 0; i2 < size; i2++) {
             this.i.set(0, 0, 0, 0);
-            ((defpackage.afc) this.n.get(i2)).a(this.i, view, this);
+            ((defpackage.afc) this.mItemDecorations.get(i2)).a(this.i, view, this);
             rect.left += this.i.left;
             rect.top += this.i.top;
             rect.right += this.i.right;
@@ -3143,18 +3147,18 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
         return null;
     }
 
-    public static void b(defpackage.afv afv) {
-        if (afv.b != null) {
-            android.view.View view = (android.view.View) afv.b.get();
+    public static void b(RecyclerViewHolder afv) {
+        if (afv.mNestedRecyclerView != null) {
+            android.view.View view = (android.view.View) afv.mNestedRecyclerView.get();
             while (view != null) {
-                if (view != afv.a) {
+                if (view != afv.itemView) {
                     android.view.ViewParent parent = view.getParent();
                     view = parent instanceof android.view.View ? (android.view.View) parent : null;
                 } else {
                     return;
                 }
             }
-            afv.b = null;
+            afv.mNestedRecyclerView = null;
         }
     }
 
@@ -3166,9 +3170,9 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
     }
 
     public final void g(android.view.View view) {
-        defpackage.afv c2 = c(view);
-        if (!(this.k == null || c2 == null)) {
-            this.k.b(c2);
+        RecyclerViewHolder c2 = getChildViewHolderInt(view);
+        if (!(this.adapter == null || c2 == null)) {
+            this.adapter.b(c2);
         }
         if (this.t != null) {
             for (int size = this.t.size() - 1; size >= 0; size--) {
@@ -3177,22 +3181,22 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
         }
     }
 
-    public final boolean a(defpackage.afv afv, int i2) {
+    public final boolean a(RecyclerViewHolder afv, int i2) {
         if (u()) {
             afv.n = i2;
             this.az.add(afv);
             return false;
         }
-        ViewCompat.a(afv.a, i2);
+        ViewCompat.a(afv.itemView, i2);
         return true;
     }
 
-    public final int c(defpackage.afv afv) {
-        if (afv.a(524) || !afv.l()) {
+    public final int c(RecyclerViewHolder afv) {
+        if (afv.hasAnyOfTheFlags(524) || !afv.isBound()) {
             return -1;
         }
         defpackage.aeo aeo = this.f;
-        int i2 = afv.c;
+        int i2 = afv.position;
         int size = aeo.a.size();
         for (int i3 = 0; i3 < size; i3++) {
             defpackage.abe abe = (defpackage.abe) aeo.a.get(i3);
@@ -3289,10 +3293,10 @@ public class RecyclerView extends android.view.ViewGroup implements defpackage.s
 
     /* access modifiers changed from: protected */
     public int getChildDrawingOrder(int i2, int i3) {
-        if (this.au == null) {
+        if (this.mChildDrawingOrderCallback == null) {
             return super.getChildDrawingOrder(i2, i3);
         }
-        defpackage.aew aew = this.au;
+        ChildDrawingOrderCallback aew = this.mChildDrawingOrderCallback;
         if (aew.a.t == null) {
             return i3;
         }

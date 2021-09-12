@@ -16,9 +16,9 @@ public class lb extends Fragment implements android.content.DialogInterface.OnCa
     public final void a(defpackage.ln lnVar, java.lang.String str) {
         this.Z = false;
         this.aa = true;
-        defpackage.mj a2 = lnVar.a();
-        a2.a(this, str);
-        a2.b();
+        FragmentTransaction a2 = lnVar.beginTransaction();
+        a2.add(this, str);
+        a2.commit();
     }
 
     public final void a(boolean z) {
@@ -30,16 +30,16 @@ public class lb extends Fragment implements android.content.DialogInterface.OnCa
             }
             this.Y = true;
             if (this.W >= 0) {
-                this.t.b(this.W);
+                this.fragmentManager.b(this.W);
                 this.W = -1;
                 return;
             }
-            defpackage.mj a2 = this.t.a();
-            a2.c(this);
+            FragmentTransaction a2 = this.fragmentManager.beginTransaction();
+            a2.remove(this);
             if (z) {
-                a2.c();
+                a2.commitAllowingStateLoss();
             } else {
-                a2.b();
+                a2.commit();
             }
         }
     }
@@ -51,8 +51,8 @@ public class lb extends Fragment implements android.content.DialogInterface.OnCa
         }
     }
 
-    public final void d() {
-        super.d();
+    public final void onDetach() {
+        super.onDetach();
         if (!this.aa && !this.Z) {
             this.Z = true;
         }
@@ -60,7 +60,7 @@ public class lb extends Fragment implements android.content.DialogInterface.OnCa
 
     public final void a(android.os.Bundle bundle) {
         super.a(bundle);
-        this.b = this.A == 0;
+        this.b = this.mFragmentId == 0;
         if (bundle != null) {
             this.U = bundle.getInt("android:style", 0);
             this.a = bundle.getInt("android:theme", 0);
@@ -109,10 +109,10 @@ public class lb extends Fragment implements android.content.DialogInterface.OnCa
         }
     }
 
-    public void c(android.os.Bundle bundle) {
-        super.c(bundle);
+    public void onActivityCreated(android.os.Bundle bundle) {
+        super.onActivityCreated(bundle);
         if (this.b) {
-            android.view.View view = this.J;
+            android.view.View view = this.mView;
             if (view != null) {
                 if (view.getParent() != null) {
                     throw new java.lang.IllegalStateException("DialogFragment can not be attached to a container view");
@@ -135,16 +135,16 @@ public class lb extends Fragment implements android.content.DialogInterface.OnCa
         }
     }
 
-    public final void e() {
-        super.e();
+    public final void onStart() {
+        super.onStart();
         if (this.X != null) {
             this.Y = false;
             this.X.show();
         }
     }
 
-    public void d(android.os.Bundle bundle) {
-        super.d(bundle);
+    public void onSaveInstanceState(android.os.Bundle bundle) {
+        super.onSaveInstanceState(bundle);
         if (this.X != null) {
             android.os.Bundle onSaveInstanceState = this.X.onSaveInstanceState();
             if (onSaveInstanceState != null) {
@@ -168,15 +168,15 @@ public class lb extends Fragment implements android.content.DialogInterface.OnCa
         }
     }
 
-    public final void f() {
-        super.f();
+    public final void onStop() {
+        super.onStop();
         if (this.X != null) {
             this.X.hide();
         }
     }
 
-    public final void g() {
-        super.g();
+    public final void onDestroyView() {
+        super.onDestroyView();
         if (this.X != null) {
             this.Y = true;
             this.X.dismiss();

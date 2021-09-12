@@ -31,9 +31,9 @@ final class adz {
                 view2 = view4;
                 break;
             }
-            view2 = ((defpackage.afv) this.j.get(i4)).a;
+            view2 = ((RecyclerViewHolder) this.j.get(i4)).itemView;
             defpackage.afh afh = (defpackage.afh) view2.getLayoutParams();
-            if (view2 != view && !afh.a.m()) {
+            if (view2 != view && !afh.a.isRemoved()) {
                 i2 = (afh.a.c() - this.d) * this.e;
                 if (i2 >= 0 && i2 < i3) {
                     if (i2 == 0) {

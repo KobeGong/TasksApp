@@ -2,13 +2,13 @@ package defpackage;
 
 /* renamed from: dj reason: default package */
 /* compiled from: PG */
-public final class dj {
+public final class ViewOffsetHelper {
     public int a;
     public int b;
     private final android.view.View c;
     private int d;
 
-    public dj(android.view.View view) {
+    public ViewOffsetHelper(android.view.View view) {
         this.c = view;
     }
 
@@ -23,7 +23,7 @@ public final class dj {
         ViewCompat.c(this.c, 0 - (this.c.getLeft() - this.d));
     }
 
-    public final boolean a(int i) {
+    public final boolean setTopAndBottomOffset(int i) {
         if (this.b == i) {
             return false;
         }

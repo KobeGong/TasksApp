@@ -29,7 +29,7 @@ public class BaseNavigationView extends ScrimInsetsFrameLayout {
         defpackage.agw a = ThemeEnforcement.a(context, attributeSet, defpackage.fw.a, i2);
         ViewCompat.a((android.view.View) this, a.a(defpackage.fw.b));
         if (a.f(defpackage.fw.e)) {
-            ViewCompat.a((android.view.View) this, (float) a.e(defpackage.fw.e, 0));
+            ViewCompat.setElevation((android.view.View) this, (float) a.e(defpackage.fw.e, 0));
         }
         ViewCompat.b((android.view.View) this, a.a(defpackage.fw.c, false));
         this.h = a.e(defpackage.fw.d, 0);
@@ -75,7 +75,7 @@ public class BaseNavigationView extends ScrimInsetsFrameLayout {
                 fbVar.menuAdapter = new NavigationMenuAdapter(fbVar);
             }
             fbVar.headerLayout = (android.widget.LinearLayout) fbVar.layoutInflater.inflate(2131034165, fbVar.menuView, false);
-            fbVar.menuView.a((defpackage.aet) fbVar.menuAdapter);
+            fbVar.menuView.setAdapter((RecyclerViewAdapter) fbVar.menuAdapter);
         }
         addView(fbVar.menuView);
         if (a.f(defpackage.fw.m)) {

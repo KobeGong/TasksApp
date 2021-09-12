@@ -37,7 +37,7 @@ final /* synthetic */ class aom implements android.view.View.OnClickListener {
             } else if (id == R.id.trigger_notifications_option) {
                 aol.d(defpackage.bg.M);
             }
-            aol.J.postDelayed(new defpackage.aon(aol), 150);
+            aol.mView.postDelayed(new defpackage.aon(aol), 150);
         }
     }
 }

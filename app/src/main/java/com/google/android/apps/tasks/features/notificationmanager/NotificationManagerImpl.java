@@ -1,11 +1,19 @@
 package com.google.android.apps.tasks.features.notificationmanager;
 
+import android.accounts.Account;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Intent;
+import android.content.IntentFilter;
+
+import defpackage.LinkToTask;
+
 /* compiled from: PG */
 public class NotificationManagerImpl extends android.content.BroadcastReceiver implements defpackage.akm {
     private static final java.util.Map a;
     private android.content.Context b;
 
-    public void onReceive(android.content.Context context, android.content.Intent intent) {
+    public void onReceive(android.content.Context context, Intent intent) {
         this.b = context.getApplicationContext();
         java.lang.String action = intent.getAction();
         char c = 65535;
@@ -42,10 +50,10 @@ public class NotificationManagerImpl extends android.content.BroadcastReceiver i
         }
     }
 
-    public final void a(android.content.Context context, java.util.List list) {
+    public final void a(android.content.Context context, java.util.List<Account> list) {
         this.b = context;
-        android.content.Intent intent = new android.content.Intent("com.google.android.apps.tasks.NOTIFICATIONS");
-        if (!(android.app.PendingIntent.getBroadcast(context, 0, intent, 536870912) != null)) {
+        Intent intent = new Intent("com.google.android.apps.tasks.NOTIFICATIONS");
+        if (!(PendingIntent.getBroadcast(context, 0, intent, 536870912) != null)) {
             java.util.Calendar instance = java.util.Calendar.getInstance();
             instance.set(11, 9);
             instance.set(12, 0);
@@ -54,13 +62,13 @@ public class NotificationManagerImpl extends android.content.BroadcastReceiver i
             if (instance.getTimeInMillis() < defpackage.auz.a()) {
                 instance.add(5, 1);
             }
-            ((android.app.AlarmManager) com.google.android.apps.tasks.common.TaskApplication.getApplication().getApplicationContext().getSystemService("alarm")).setRepeating(0, instance.getTimeInMillis(), 86400000, android.app.PendingIntent.getBroadcast(context, 0, intent, 0));
+            ((AlarmManager) com.google.android.apps.tasks.common.TaskApplication.getApplication().getApplicationContext().getSystemService("alarm")).setRepeating(0, instance.getTimeInMillis(), 86400000, PendingIntent.getBroadcast(context, 0, intent, 0));
         }
         if (!list.isEmpty()) {
             android.os.AsyncTask.execute(new defpackage.akk(list));
         }
         if (android.os.Build.VERSION.SDK_INT >= 26) {
-            context.registerReceiver(this, new android.content.IntentFilter("com.google.android.apps.tasks.NOTIFICATIONS"));
+            context.registerReceiver(this, new IntentFilter("com.google.android.apps.tasks.NOTIFICATIONS"));
         }
     }
 
@@ -251,14 +259,14 @@ public class NotificationManagerImpl extends android.content.BroadcastReceiver i
                     android.content.Context context = this.b;
                     int hashCode2 = dby.d.hashCode();
                     java.lang.String str4 = dby.d;
-                    android.content.Intent intent = new android.content.Intent("android.intent.action.VIEW");
-                    defpackage.ajk ajk = new defpackage.ajk(str2, str3, str4);
-                    intent.setData(new android.net.Uri.Builder().scheme("https").authority("tasks.google.com").appendPath("task").appendPath(ajk.a()).appendPath(ajk.b()).appendPath(ajk.c()).build());
-                    android.app.PendingIntent activity = android.app.PendingIntent.getActivity(context, hashCode2, intent, 0);
-                    android.content.Intent intent2 = new android.content.Intent(this.b, com.google.android.apps.tasks.features.notificationmanager.NotificationManagerImpl.class);
+                    Intent intent = new Intent("android.intent.action.VIEW");
+                    LinkToTask ajk = new LinkToTask(str2, str3, str4);
+                    intent.setData(new android.net.Uri.Builder().scheme("https").authority("tasks.google.com").appendPath("task").appendPath(ajk.getAccount()).appendPath(ajk.getTaskListId()).appendPath(ajk.getTaskId()).build());
+                    PendingIntent activity = PendingIntent.getActivity(context, hashCode2, intent, 0);
+                    Intent intent2 = new Intent(this.b, com.google.android.apps.tasks.features.notificationmanager.NotificationManagerImpl.class);
                     intent2.setAction("com.google.android.apps.tasks.NOTIFICATION_DISMISSED");
                     intent2.putExtra("task_id", dby.d);
-                    android.app.PendingIntent broadcast = android.app.PendingIntent.getBroadcast(this.b.getApplicationContext(), dby.d.hashCode(), intent2, 0);
+                    PendingIntent broadcast = PendingIntent.getBroadcast(this.b.getApplicationContext(), dby.d.hashCode(), intent2, 0);
                     if (dby.e == null) {
                         dca2 = defpackage.dca.g;
                     } else {
@@ -310,7 +318,7 @@ public class NotificationManagerImpl extends android.content.BroadcastReceiver i
         }
     }
 
-    private final defpackage.ni a(defpackage.akl akl, java.util.Map map, android.app.PendingIntent pendingIntent) {
+    private final defpackage.ni a(defpackage.akl akl, java.util.Map map, PendingIntent pendingIntent) {
         defpackage.dca dca;
         defpackage.dca dca2;
         java.lang.String quantityString = this.b.getResources().getQuantityString(akl.f, map.size(), new java.lang.Object[]{java.lang.Integer.valueOf(map.size())});
@@ -366,34 +374,30 @@ public class NotificationManagerImpl extends android.content.BroadcastReceiver i
         return d;
     }
 
-    private final android.app.PendingIntent b(int i) {
-        return android.app.PendingIntent.getActivity(this.b, i, this.b.getPackageManager().getLaunchIntentForPackage("com.google.android.apps.tasks"), 0);
+    private final PendingIntent b(int i) {
+        return PendingIntent.getActivity(this.b, i, this.b.getPackageManager().getLaunchIntentForPackage("com.google.android.apps.tasks"), 0);
     }
 
     /* JADX WARNING: Incorrect type for immutable var: ssa=java.util.List, code=java.util.List<android.accounts.Account>, for r8v0, types: [java.util.List, java.util.List<android.accounts.Account>] */
     /* Code decompiled incorrectly, please refer to instructions dump. */
     public static final /* synthetic */ void a(java.util.List<android.accounts.Account> r8) {
-        /*
             r7 = 1
             r6 = 0
             java.util.Iterator r1 = r8.iterator()
         L_0x0006:
             boolean r0 = r1.hasNext()
             if (r0 == 0) goto L_0x0038
-            java.lang.Object r0 = r1.next()
-            android.accounts.Account r0 = (android.accounts.Account) r0
-            java.lang.String r2 = "com.google.android.apps.tasks.sync.provider"
-            java.util.List r2 = android.content.ContentResolver.getPeriodicSyncs(r0, r2)
-            java.lang.String r3 = r0.name
-            java.lang.String r3 = defpackage.azb.a(r3)
+            android.accounts.Account r0 = (android.accounts.Account)r1.next()
+            java.util.List r2 = android.content.ContentResolver.getPeriodicSyncs(r0, "com.google.android.apps.tasks.sync.provider")
+            java.lang.String r3 = defpackage.azb.a(r0.name)
             boolean r2 = r2.isEmpty()
             if (r2 == 0) goto L_0x0033
-            java.lang.Object[] r2 = new java.lang.Object[r7]
-            r2[r6] = r3
+            java.lang.Object[] r2 = new java.lang.Object[1]
+            r2[0] = r3
             java.lang.String r2 = "com.google.android.apps.tasks.sync.provider"
             android.os.Bundle r3 = android.os.Bundle.EMPTY
             r4 = 43200(0xa8c0, double:2.13436E-319)
-            android.content.ContentResolver.addPeriodicSync(r0, r2, r3, r4)
+            android.content.ContentResolver.addPeriodicSync(r0, "com.google.android.apps.tasks.sync.provider", android.os.Bundle.EMPTY, 43200)
             goto L_0x0006
         L_0x0033:
             java.lang.Object[] r0 = new java.lang.Object[r7]
@@ -401,8 +405,6 @@ public class NotificationManagerImpl extends android.content.BroadcastReceiver i
             goto L_0x0006
         L_0x0038:
             return
-        */
-        throw new UnsupportedOperationException("Method not decompiled: com.google.android.apps.tasks.features.notificationmanager.NotificationManagerImpl.a(java.util.List):void");
     }
 
     static {

@@ -2,21 +2,21 @@ package defpackage;
 
 /* renamed from: mf reason: default package */
 /* compiled from: PG */
-final class mf implements android.os.Parcelable {
+final class FragmentManagerState implements android.os.Parcelable {
     public static final android.os.Parcelable.Creator CREATOR = new defpackage.mg();
-    public defpackage.mh[] a;
+    public FragmentState[] a;
     public int[] b;
-    public defpackage.kx[] c;
+    public BackStackState[] c;
     public int d = -1;
     public int e;
 
-    public mf() {
+    public FragmentManagerState() {
     }
 
-    public mf(android.os.Parcel parcel) {
-        this.a = (defpackage.mh[]) parcel.createTypedArray(defpackage.mh.CREATOR);
+    public FragmentManagerState(android.os.Parcel parcel) {
+        this.a = (FragmentState[]) parcel.createTypedArray(FragmentState.CREATOR);
         this.b = parcel.createIntArray();
-        this.c = (defpackage.kx[]) parcel.createTypedArray(defpackage.kx.CREATOR);
+        this.c = (BackStackState[]) parcel.createTypedArray(BackStackState.CREATOR);
         this.d = parcel.readInt();
         this.e = parcel.readInt();
     }

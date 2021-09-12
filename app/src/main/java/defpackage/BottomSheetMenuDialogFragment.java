@@ -83,8 +83,8 @@ public final class BottomSheetMenuDialogFragment extends defpackage.gu {
         }
     }
 
-    public final void d(android.os.Bundle bundle) {
-        super.d(bundle);
+    public final void onSaveInstanceState(android.os.Bundle bundle) {
+        super.onSaveInstanceState(bundle);
         bundle.putBoolean("contentVisible", this.dateOptionView.isEnabled());
     }
 

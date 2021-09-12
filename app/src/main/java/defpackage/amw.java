@@ -8,7 +8,7 @@ public final class amw implements defpackage.amn {
     private final java.lang.String b;
     private transient defpackage.dmk c;
     private defpackage.amx d;
-    private transient defpackage.ajq e;
+    private transient AbsTaskListStructure e;
     private transient int f;
 
     public amw(java.lang.String str, java.lang.String str2, defpackage.dmk dmk, defpackage.amx amx) {

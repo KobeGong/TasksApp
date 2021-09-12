@@ -1,39 +1,47 @@
 package com.google.android.apps.tasks.ui;
 
+import android.accounts.Account;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.support.design.bottomappbar.BottomAppBar;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
 
 import com.google.android.apps.tasks.R;
 import com.google.android.apps.tasks.common.TaskApplication;
 
+import java.util.Iterator;
 import java.util.concurrent.Executor;
 
+import defpackage.AbsDeviceOwner;
+import defpackage.AddTaskFragment;
+import defpackage.BaseTaskAdapter;
 import defpackage.BottomSheetMenuDialogFragment;
 import defpackage.ClsToolbarLP;
 import defpackage.EditListFragment;
 import defpackage.EditTaskFragment;
 import defpackage.Fragment;
-import defpackage.NavigationMenu;
+import defpackage.FragmentTransaction;
 import defpackage.TasksFragment;
 import defpackage.ViewCompat;
 import defpackage.WelcomeFragment;
+import defpackage.dcb;
 
 /* compiled from: PG */
 public class TaskListsActivity extends defpackage.aql implements defpackage.alh, android.app.DatePickerDialog.OnDateSetListener, defpackage.aop, defpackage.aqi, defpackage.ash, defpackage.atf, defpackage.aux, defpackage.ays {
-    private defpackage.wl A;
+    private defpackage.wl permissionTipDialog;
     private TasksAppBarLayout appBarLayout;
     private boolean C;
     private android.view.View splashView;
-    private Executor E;
-    private android.widget.FrameLayout F;
+    private Executor executor;
+    private android.widget.FrameLayout navViewContainer;
     private NavigationView G;
     private defpackage.cdm H;
     private defpackage.cdm I;
@@ -43,7 +51,7 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
     public android.view.View fab;
     public boolean l;
     public defpackage.ayp m;
-    public Fragment n;
+    public Fragment selectedFragment;
     public defpackage.cde o;
     public defpackage.aou p;
     public defpackage.cdl q;
@@ -53,7 +61,7 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
     private Toolbar toolbar;
     private BottomAppBar bottomAppBar;
     private android.view.View bottomAppBarShadow;
-    private boolean z;
+    private boolean fabHide;
 
     /* access modifiers changed from: protected */
     public void onCreate(android.os.Bundle bundle) {
@@ -65,15 +73,13 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
         setContentView(R.layout.app_bar_task_lists);
         this.coordinatorLayout = (CoordinatorLayout) findViewById(R.id.app_bar_coordinator);
         this.toolbar = (Toolbar) findViewById(R.id.toolbar);
-        e(false);
+        setToolbarNavigationUp(false);
         this.collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
         this.collapsingToolbarLayout.a("");
-        CollapsingToolbarLayout collapsingToolbarLayout = this.collapsingToolbarLayout;
-        collapsingToolbarLayout.b = (int) getResources().getDimension(R.dimen.app_bar_expanded_bottom_margin);
-        collapsingToolbarLayout.requestLayout();
-        CollapsingToolbarLayout collapsingToolbarLayout2 = this.collapsingToolbarLayout;
-        collapsingToolbarLayout2.a = (int) getResources().getDimension(R.dimen.app_bar_expanded_top_margin);
-        collapsingToolbarLayout2.requestLayout();
+        this.collapsingToolbarLayout.expandedTitleMarginBottom = (int) getResources().getDimension(R.dimen.app_bar_expanded_bottom_margin);
+        this.collapsingToolbarLayout.requestLayout();
+        this.collapsingToolbarLayout.a = (int) getResources().getDimension(R.dimen.app_bar_expanded_top_margin);
+        this.collapsingToolbarLayout.requestLayout();
         TaskApplication.getApplication().a.a(new defpackage.apo(this));
         this.toolbar.setNavigationOnClickListener(new defpackage.aov(this));
         this.toolbar.mOnMenuItemClickListener = new defpackage.aow(this);
@@ -84,23 +90,28 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
         ayq.c = this;
         ayq.a = baw;
         defpackage.ayq a = ayq.a(defpackage.bgh.b);
-        this.F = new android.widget.FrameLayout(this);
-        this.F.setLayoutParams(new android.widget.FrameLayout.LayoutParams(-1, -2));
+        this.navViewContainer = new android.widget.FrameLayout(this);
+        this.navViewContainer.setLayoutParams(new android.widget.FrameLayout.LayoutParams(-1, -2));
         defpackage.cdj cdj = TaskApplication.getApplication().d;
         this.g.addObserver(new defpackage.cdc(this, cdj));
         this.g.addObserver(TaskApplication.getApplication().e);
         this.H = new defpackage.apu(this);
         this.q = cdj.a();
-        this.o = new defpackage.cde(this, cdj, this.F);
+        this.o = new defpackage.cde(this, cdj, this.navViewContainer);
         this.m = a.a();
-        this.tasksFragment = (TasksFragment) getSupportFragmentManager().a("tasksfragment");
+        this.tasksFragment = (TasksFragment) getSupportFragmentManager().findFragmentByTag("tasksfragment");
         if (this.tasksFragment == null) {
             this.tasksFragment = new TasksFragment();
         }
         this.nestedScrollView = (NestedScrollView) findViewById(R.id.scrollable_content);
         this.t = new defpackage.aps(this);
         this.fab = findViewById(R.id.fab);
-        this.fab.setOnClickListener(new defpackage.aph(this));
+        this.fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new AddTaskFragment().a(getSupportFragmentManager(), "AddTaskBottomSheetDialogFragment");
+            }
+        });
         this.splashView = findViewById(R.id.splash_view);
         if (TaskApplication.getApplication().c) {
             removeSplash();
@@ -118,30 +129,29 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
         this.bottomAppBar.mOnMenuItemClickListener = new defpackage.apn(this);
         setBottomAppbarShown(false);
         f(true);
-        this.E = defpackage.cub.a((Executor) TaskApplication.getApplication().a);
+        this.executor = defpackage.cub.a((Executor) TaskApplication.getApplication().a);
         this.nestedScrollView.a = new defpackage.apt(this);
     }
 
     public final void b(boolean z2) {
-        TasksAppBarLayout tasksAppBarLayout = this.appBarLayout;
-        if (tasksAppBarLayout.f != z2) {
-            tasksAppBarLayout.f = z2;
-            ViewCompat.a(tasksAppBarLayout, (float) (tasksAppBarLayout.f ? tasksAppBarLayout.getResources().getDimensionPixelOffset(R.dimen.app_bar_elevation) : 0));
+        if (this.appBarLayout.f != z2) {
+            this.appBarLayout.f = z2;
+            ViewCompat.setElevation(this.appBarLayout, (float) (this.appBarLayout.f ? this.appBarLayout.getResources().getDimensionPixelOffset(R.dimen.app_bar_elevation) : 0));
         }
     }
 
     public final void c(boolean z2) {
-        if (this.n instanceof TasksFragment) {
+        if (this.selectedFragment instanceof TasksFragment) {
             b(z2);
         }
     }
 
     /* access modifiers changed from: protected */
     public final void h() {
-        a((defpackage.cdu) this.q.c());
+        a((AbsDeviceOwner) this.q.c());
     }
 
-    public final void a(java.util.List list, java.lang.String str) {
+    public final void a(java.util.List<dcb> list, java.lang.String str) {
         defpackage.dcd dcd;
         java.lang.Integer num;
         java.lang.Integer num2 = null;
@@ -151,23 +161,22 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
         this.p = new defpackage.aou();
         navigationView.e = new defpackage.ft(this, navigationView);
         defpackage.aou aou = this.p;
-        NavigationMenu ezVar = navigationView.menu;
         boolean z3 = this.C;
         aou.a.clear();
         if (list != null) {
             aou.a.addAll(list);
         }
-        ezVar.clear();
+        navigationView.menu.clear();
         int i2 = 0;
         while (i2 < aou.a.size()) {
-            defpackage.dcb dcb = (defpackage.dcb) aou.a.get(i2);
+            defpackage.dcb dcb = aou.a.get(i2);
             int i3 = i2 + 3;
             if (dcb.c == null) {
                 dcd = defpackage.dcd.c;
             } else {
                 dcd = dcb.c;
             }
-            ezVar.add(0, i3, i2, dcd.a).setCheckable(true).setChecked(false);
+            navigationView.menu.add(0, i3, i2, dcd.a).setCheckable(true).setChecked(false);
             if (num2 != null || str == null || !dcb.b.equals(str)) {
                 num = num2;
             } else {
@@ -176,18 +185,18 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
             i2++;
             num2 = num;
         }
-        MenuItem icon = ezVar.add(1, 0, aou.a.size(), R.string.navigation_drawer_create_list).setIcon(R.drawable.quantum_ic_add_grey600_18);
+        MenuItem icon = navigationView.menu.add(1, 0, aou.a.size(), R.string.navigation_drawer_create_list).setIcon(R.drawable.quantum_ic_add_grey600_18);
         if (!z3) {
             z2 = true;
         }
         icon.setEnabled(z2);
-        ezVar.add(2, 1, aou.a.size() + 1, R.string.navigation_drawer_send_feedback).setIcon(R.drawable.quantum_ic_feedback_grey600_18);
-        ezVar.add(3, 2, aou.a.size() + 2, R.string.navigation_drawer_licences);
+        navigationView.menu.add(2, 1, aou.a.size() + 1, R.string.navigation_drawer_send_feedback).setIcon(R.drawable.quantum_ic_feedback_grey600_18);
+        navigationView.menu.add(3, 2, aou.a.size() + 2, R.string.navigation_drawer_licences);
         if (num2 != null) {
-            navigationView.a(num2.intValue());
+            navigationView.a(num2);
         }
-        this.F.removeAllViews();
-        this.F.addView(navigationView);
+        this.navViewContainer.removeAllViews();
+        this.navViewContainer.addView(navigationView);
         this.G = navigationView;
     }
 
@@ -198,27 +207,27 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
     }
 
     public final void a(java.lang.String str, java.lang.String str2, int i2) {
-        a(EditTaskFragment.a(str, str2, true, i2));
+        a(EditTaskFragment.newInstance(str, str2, true, i2));
     }
 
     public final void a(java.lang.String str, java.lang.String str2) {
-        a(EditTaskFragment.a(str, str2, false, -1));
+        a(EditTaskFragment.newInstance(str, str2, false, -1));
     }
 
     public final void d(boolean z2) {
-        if (this.n instanceof TasksFragment) {
-            h(z2);
-            Fragment a = getSupportFragmentManager().a("BottomSheetMenuDialogFragment");
-            if (a instanceof BottomSheetMenuDialogFragment) {
-                ((BottomSheetMenuDialogFragment) a).c(z2);
+        if (this.selectedFragment instanceof TasksFragment) {
+            hideFAB(z2);
+            Fragment fragment = getSupportFragmentManager().findFragmentByTag("BottomSheetMenuDialogFragment");
+            if (fragment instanceof BottomSheetMenuDialogFragment) {
+                ((BottomSheetMenuDialogFragment) fragment).c(z2);
             }
         }
     }
 
     public void onDateSet(android.widget.DatePicker datePicker, int i2, int i3, int i4) {
-        Fragment a = getSupportFragmentManager().a("AddTaskBottomSheetDialogFragment");
+        Fragment a = getSupportFragmentManager().findFragmentByTag("AddTaskBottomSheetDialogFragment");
         if (a == null) {
-            a = getSupportFragmentManager().findFragmentById(2131755276);
+            a = getSupportFragmentManager().findFragmentById(R.id.fragment_container);
         }
         if (a instanceof android.app.DatePickerDialog.OnDateSetListener) {
             ((android.app.DatePickerDialog.OnDateSetListener) a).onDateSet(datePicker, i2, i3, i4);
@@ -226,7 +235,7 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
     }
 
     public final void a(defpackage.dcb dcb) {
-        Fragment a = getSupportFragmentManager().findFragmentById(2131755276);
+        Fragment a = getSupportFragmentManager().findFragmentById(R.id.fragment_container);
         if (a instanceof defpackage.atf) {
             ((defpackage.atf) a).a(dcb);
         }
@@ -235,8 +244,7 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
     public final void a(defpackage.dca dca) {
         defpackage.dih dih;
         boolean z2 = false;
-        TasksFragment auj = this.tasksFragment;
-        if (auj.O()) {
+        if (tasksFragment.O()) {
             defpackage.dby dby = defpackage.dby.g;
             if (dca != null) {
                 defpackage.dii dii = (defpackage.dii) defpackage.dby.g.a(defpackage.bg.ao);
@@ -260,9 +268,9 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
                 }
                 dby = (defpackage.dby) dih3;
             }
-            defpackage.dby a = TasksFragment.N().a(auj.X, dby, 0, null);
-            boolean z3 = auj.W.a() == 0;
-            defpackage.atg atg = auj.W;
+            defpackage.dby a = TasksFragment.N().a(tasksFragment.X, dby, 0, null);
+            boolean z3 = tasksFragment.taskAdapter.getItemCount() == 0;
+            BaseTaskAdapter atg = tasksFragment.taskAdapter;
             if (!defpackage.ajd.a(a)) {
                 z2 = true;
             }
@@ -270,39 +278,39 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
             atg.b(a);
             atg.g();
             if (z3) {
-                auj.c(true);
+                tasksFragment.c(true);
             }
-            auj.recyclerView.c(auj.W.a(a));
+            tasksFragment.recyclerView.c(tasksFragment.taskAdapter.a(a));
         }
     }
 
     public final void i() {
-        a((defpackage.cdu) this.q.c());
+        a((AbsDeviceOwner) this.q.c());
     }
 
-    private final void e(boolean z2) {
+    private void setToolbarNavigationUp(boolean z2) {
         if (z2) {
             this.toolbar.c(R.drawable.quantum_ic_arrow_back_grey600_24);
             this.toolbar.b(R.string.a11y_back_to_list);
-            return;
+        } else {
+            this.toolbar.setNavigationIcon(null);
         }
-        this.toolbar.setNavigationIcon(null);
     }
 
     /* access modifiers changed from: protected */
     public void onNewIntent(Intent intent) {
         if (q()) {
-            this.E.execute(new defpackage.aoh(defpackage.aju.a(this, intent), new defpackage.apr(this)));
+            this.executor.execute(new defpackage.aoh(defpackage.aju.a(this, intent), new defpackage.apr(this)));
         }
     }
 
-    public final void a(defpackage.cdu cdu) {
-        this.E.execute(new defpackage.aoh(new defpackage.aox(this, cdu, true)));
+    public final void a(AbsDeviceOwner cdu) {
+        this.executor.execute(new defpackage.aoh(new defpackage.aox(this, cdu, true)));
     }
 
-    private final defpackage.cdu b(java.lang.String str) {
-        for (defpackage.cdu cdu : this.q.c) {
-            if (cdu.b().equals(str)) {
+    private final AbsDeviceOwner getDeviceOwnerByName(java.lang.String str) {
+        for (AbsDeviceOwner cdu : this.q.availableAccounts) {
+            if (cdu.accountName().equals(str)) {
                 return cdu;
             }
         }
@@ -310,75 +318,75 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
     }
 
     public final void a(defpackage.aoe aoe) {
-        defpackage.cdu b = b(aoe.a(this));
+        AbsDeviceOwner b = getDeviceOwnerByName(aoe.a(this));
         if (b == null) {
-            b = (defpackage.cdu) this.q.c();
+            b = (AbsDeviceOwner) this.q.c();
         }
         if (b == null) {
-            java.util.List list = this.q.c;
+            java.util.List list = this.q.availableAccounts;
             if (!list.isEmpty()) {
-                b = (defpackage.cdu) list.get(0);
+                b = (AbsDeviceOwner) list.get(0);
             }
         }
         a(b, true, aoe);
     }
 
-    private final boolean b(defpackage.cdu cdu) {
-        return cdu != null && defpackage.ajd.a(this, cdu.b()) != null;
+    private final boolean b(AbsDeviceOwner cdu) {
+        return cdu != null && defpackage.ajd.getAccountByName(this, cdu.accountName()) != null;
     }
 
-    public final void a(defpackage.cdu cdu, boolean z2, defpackage.aoe aoe) {
+    public final void a(AbsDeviceOwner deviceOwner, boolean z2, defpackage.aoe aoe) {
         boolean z3;
         int i2;
-        if (!b(cdu)) {
-            defpackage.cdu cdu2 = (defpackage.cdu) this.q.e();
+        if (!b(deviceOwner)) {
+            AbsDeviceOwner cdu2 = (AbsDeviceOwner) this.q.e();
             if (!b(cdu2)) {
-                cdu2 = (defpackage.cdu) this.q.g();
+                cdu2 = (AbsDeviceOwner) this.q.g();
                 if (!b(cdu2)) {
-                    java.util.Iterator it = defpackage.ajd.a(this).iterator();
+                    Iterator<Account> it = defpackage.ajd.a(this).iterator();
                     while (true) {
                         if (!it.hasNext()) {
                             break;
                         }
-                        cdu = b(((android.accounts.Account) it.next()).name);
-                        if (cdu != null) {
+                        deviceOwner = getDeviceOwnerByName(it.next().name);
+                        if (deviceOwner != null) {
                             break;
                         }
                     }
                 }
             }
-            cdu = cdu2;
+            deviceOwner = cdu2;
         }
-        if (cdu == null) {
+        if (deviceOwner == null) {
             f(true);
             s();
             this.I = new defpackage.apw(this);
             this.q.a(this.I);
-            b(defpackage.bg.N);
+            showWelcomeFragment(defpackage.bg.N);
             aoe.a((java.lang.String) null);
-            p();
+            hideSplashView();
             return;
         }
         Fragment a = getSupportFragmentManager().findFragmentById(R.id.fragment_container);
-        z3 = defpackage.any.a().c() != null && cdu.b().equals(defpackage.any.a().c().b());
+        z3 = defpackage.any.a().c() != null && deviceOwner.accountName().equals(defpackage.any.a().c().b());
         if (!z3 || !(a instanceof WelcomeFragment) || z2) {
             if (!z3) {
                 this.tasksFragment.a(null, null, true);
                 this.h = null;
                 this.collapsingToolbarLayout.a("");
                 a((java.util.List) null, null);
-                h(false);
+                hideFAB(false);
                 this.C = true;
                 setBottomAppbarShown(false);
             }
             getWindow().addFlags(16);
             this.q.b(this.H);
-            this.q.a(cdu);
+            this.q.a(deviceOwner);
             this.q.a(this.H);
-            java.lang.String b = cdu.b();
+            java.lang.String b = deviceOwner.accountName();
             defpackage.cyu cyu = new defpackage.cyu();
             defpackage.any.a().d.b(b);
-            android.accounts.Account a2 = defpackage.ajd.a(this, b);
+            android.accounts.Account a2 = defpackage.ajd.getAccountByName(this, b);
             if (a2 == null) {
                 cyu.a(defpackage.ajh.c());
             } else {
@@ -402,11 +410,11 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
                 }
                 new defpackage.cye(defpackage.csp.a(new defpackage.cyi[]{b2, a3})).a(new defpackage.aqo(this, i2, a3, cyu, locale), cyl);
             }
-            cyu.a(new defpackage.aoy(this, aoe, cdu, cyu), TaskApplication.getApplication().a);
+            cyu.a(new defpackage.aoy(this, aoe, deviceOwner, cyu), TaskApplication.getApplication().a);
             return;
         }
-        aoe.a(cdu.b());
-        p();
+        aoe.a(deviceOwner.accountName());
+        hideSplashView();
     }
 
     private final void s() {
@@ -420,37 +428,37 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
         defpackage.anc c = defpackage.any.a().c();
         if (c != null && !c.a()) {
             c.a.a.c();
-            a((defpackage.cdu) this.q.c());
+            a((AbsDeviceOwner) this.q.c());
         }
     }
 
     /* access modifiers changed from: protected */
     public final void k() {
-        b(defpackage.bg.R);
+        showWelcomeFragment(defpackage.bg.R);
     }
 
     /* access modifiers changed from: protected */
     public final void l() {
-        b(defpackage.bg.O);
+        showWelcomeFragment(defpackage.bg.O);
     }
 
-    public final void b(int i2) {
-        WelcomeFragment d;
-        p();
-        if (this.n instanceof WelcomeFragment) {
-            d = (WelcomeFragment) this.n;
-            d.e(i2);
+    public final void showWelcomeFragment(int state) {
+        WelcomeFragment welcomeFragment;
+        hideSplashView();
+        if (this.selectedFragment instanceof WelcomeFragment) {
+            welcomeFragment = (WelcomeFragment) this.selectedFragment;
+            welcomeFragment.setState(state);
         } else {
-            d = WelcomeFragment.d(i2);
-            if (android.os.Build.VERSION.SDK_INT >= 21 && this.n != null && !(this.n instanceof WelcomeFragment)) {
-                this.n.b(new android.transition.Fade());
-                d.a_(new android.transition.Fade());
+            welcomeFragment = WelcomeFragment.newInstance(state);
+            if (Build.VERSION.SDK_INT >= 21 && this.selectedFragment != null && !(this.selectedFragment instanceof WelcomeFragment)) {
+                this.selectedFragment.b(new android.transition.Fade());
+                welcomeFragment.a_(new android.transition.Fade());
             }
         }
-        b(d);
-        defpackage.mj a = getSupportFragmentManager().a();
-        a.a(2131755276, d, "cannotInitializeAccount");
-        a.c();
+        setFragmentSelected(welcomeFragment);
+        FragmentTransaction a = getSupportFragmentManager().beginTransaction();
+        a.replace(R.id.fragment_container, welcomeFragment, "cannotInitializeAccount");
+        a.commitAllowingStateLoss();
     }
 
     /* access modifiers changed from: protected */
@@ -458,26 +466,23 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
         return this.coordinatorLayout;
     }
 
-    public final void a(Fragment lcVar) {
-        b(lcVar);
-        if (android.os.Build.VERSION.SDK_INT >= 21) {
-            lcVar.a_(new android.transition.Fade());
+    public final void a(Fragment fragment) {
+        setFragmentSelected(fragment);
+        if (Build.VERSION.SDK_INT >= 21) {
+            fragment.a_(new android.transition.Fade());
             this.tasksFragment.b(new android.transition.Fade());
         }
-        defpackage.mj a = getSupportFragmentManager().a();
-        a.b(lcVar);
-        a.a();
-        a.b();
-        if (lcVar instanceof defpackage.arb) {
-            ((defpackage.arb) lcVar).O();
+        getSupportFragmentManager().beginTransaction()
+                .replace(fragment)
+                .addToBackStack()
+                .commit();
+        if (fragment instanceof defpackage.arb) {
+            ((defpackage.arb) fragment).O();
         }
     }
 
-    public final void b(Fragment fragment) {
-        boolean z2;
-        boolean z3;
-        boolean z4 = true;
-        this.n = fragment;
+    public final void setFragmentSelected(Fragment fragment) {
+        this.selectedFragment = fragment;
         b(false);
         this.toolbar.getMenu().clear();
         if (fragment instanceof EditTaskFragment) {
@@ -493,28 +498,29 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
         if (fragment == null || (fragment instanceof TasksFragment)) {
             c(this.h);
             setBottomAppbarShown(fragment != null);
-            z2 = fragment == null;
+            boolean z2 = fragment == null;
             f(z2);
-            z3 = fragment != null && ((TasksFragment) fragment).c();
-            h(z3);
-            e(false);
+            boolean z3 = fragment != null && ((TasksFragment) fragment).c();
+            hideFAB(z3);
+            setToolbarNavigationUp(false);
             appbarLayoutLp.height = (int) getResources().getDimension(R.dimen.app_bar_expanded_height);
             ClsToolbarLP clsToolbarLP = (ClsToolbarLP) this.collapsingToolbarLayout.getLayoutParams();
-            if (clsToolbarLP.a != 29) {
-                clsToolbarLP.a = 29;
-                lockableAppBarLayoutBehavior.a_((this.collapsingToolbarLayout.getMinimumHeight() + 1) - appbarLayoutLp.height);
+            if (clsToolbarLP.scrollFlags != 29) {
+                clsToolbarLP.scrollFlags = 29;
+                lockableAppBarLayoutBehavior.setTopAndBottomOffset((this.collapsingToolbarLayout.getMinimumHeight() + 1) - appbarLayoutLp.height);
                 this.nestedScrollView.c(1);
             }
         } else if (fragment instanceof WelcomeFragment) {
             f(true);
             this.appBarLayout.getLayoutParams().height = 0;
-            if (((WelcomeFragment) fragment).V != defpackage.bg.P) {
+            boolean z4 = true;
+            if (((WelcomeFragment) fragment).state != defpackage.bg.P) {
                 z4 = false;
             }
             setBottomAppbarShown(z4);
             this.collapsingToolbarLayout.a("");
-            h(false);
-            e(false);
+            hideFAB(false);
+            setToolbarNavigationUp(false);
             a((java.util.List) null, null);
         } else {
             f(false);
@@ -524,22 +530,22 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
                 EditListFragment arv = (EditListFragment) fragment;
                 Toolbar toolbar = this.toolbar;
                 android.os.Bundle bundle = arv.i;
-                toolbar.setSubtitle(toolbar.getContext().getText(bundle == null || android.text.TextUtils.isEmpty(bundle.getString("list_id")) ? 2131951745 : 2131951748));
-                ((ClsToolbarLP) this.collapsingToolbarLayout.getLayoutParams()).a = 19;
+                toolbar.setSubtitle(toolbar.getContext().getText(bundle == null || TextUtils.isEmpty(bundle.getString("list_id")) ? R.string.list_add_title : R.string.list_edit_title));
+                ((ClsToolbarLP) this.collapsingToolbarLayout.getLayoutParams()).scrollFlags = 19;
                 this.appBarLayout.getLayoutParams().height = this.collapsingToolbarLayout.getMinimumHeight() + 1;
                 lockableAppBarLayoutBehavior.d = true;
                 this.appBarLayout.a(false, false, true);
             } else {
-                ((ClsToolbarLP) this.collapsingToolbarLayout.getLayoutParams()).a = 19;
+                ((ClsToolbarLP) this.collapsingToolbarLayout.getLayoutParams()).scrollFlags = 19;
                 this.appBarLayout.getLayoutParams().height = this.collapsingToolbarLayout.getMinimumHeight() + 1;
                 this.appBarLayout.a(true, false, true);
             }
-            h(false);
-            e(true);
+            hideFAB(false);
+            setToolbarNavigationUp(true);
             if (fragment instanceof EditListFragment) {
-                this.toolbar.c(2130837665);
+                this.toolbar.c(R.drawable.quantum_ic_clear_grey600_24);
             } else if (fragment instanceof EditTaskFragment) {
-                this.toolbar.c(2130837662);
+                this.toolbar.c(R.drawable.quantum_ic_arrow_back_grey600_24);
             }
         }
     }
@@ -581,13 +587,13 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
         defpackage.dcb dcb;
         java.util.List<defpackage.dcb> d = defpackage.any.a().c().d();
         java.lang.String str2 = d.get(0).b;
-        if (android.text.TextUtils.isEmpty(str)) {
+        if (TextUtils.isEmpty(str)) {
             str = this.tasksFragment.X;
         }
-        if (android.text.TextUtils.isEmpty(str)) {
+        if (TextUtils.isEmpty(str)) {
             str = defpackage.ain.b(this, defpackage.any.a().c().b()).a();
         }
-        if (android.text.TextUtils.isEmpty(str)) {
+        if (TextUtils.isEmpty(str)) {
             str = str2;
         }
         defpackage.dcb dcb2 = null;
@@ -615,7 +621,7 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
             defpackage.any.a().c().a(dcb.b);
             this.tasksFragment.a(dcb.b, defpackage.ain.b(this, defpackage.any.a().c().b()).b(dcb.b), true);
         }
-        Fragment a = getSupportFragmentManager().findFragmentById(2131755276);
+        Fragment a = getSupportFragmentManager().findFragmentById(R.id.fragment_container);
         if (a == null || (a instanceof TasksFragment)) {
             c(this.h);
         }
@@ -654,14 +660,14 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
 
     private final java.lang.Runnable t() {
         defpackage.cyu cyu = new defpackage.cyu();
-        this.E.execute(new defpackage.apd(cyu));
+        this.executor.execute(new defpackage.apd(cyu));
         return new defpackage.ape(cyu);
     }
 
     /* access modifiers changed from: protected */
     public void onStart() {
         super.onStart();
-        b(getSupportFragmentManager().findFragmentById(R.id.fragment_container));
+        setFragmentSelected(getSupportFragmentManager().findFragmentById(R.id.fragment_container));
         n();
     }
 
@@ -678,16 +684,16 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
     public final void n() {
         s();
         if (q()) {
-            if (defpackage.crk.a.a() && defpackage.ob.a(this, "android.permission.ACCESS_FINE_LOCATION") != 0) {
+            if (defpackage.crk.a.a() && defpackage.ob.a(this, "android.permission.ACCESS_FINE_LOCATION") != PackageManager.PERMISSION_GRANTED) {
                 if (defpackage.kq.a(this, "android.permission.ACCESS_FINE_LOCATION")) {
-                    if (this.A != null) {
-                        this.A.dismiss();
+                    if (this.permissionTipDialog != null) {
+                        this.permissionTipDialog.dismiss();
                     }
                     defpackage.xk xkVar = new defpackage.xk(this);
-                    xkVar.b(2131951750);
-                    xkVar.a(17039370, new defpackage.aoz(this));
-                    this.A = xkVar.a();
-                    defpackage.ajd.a(this.A);
+                    xkVar.b(R.string.location_permission_rationale);
+                    xkVar.a(android.R.string.ok, new defpackage.aoz(this));
+                    this.permissionTipDialog = xkVar.a();
+                    defpackage.ajd.a(this.permissionTipDialog);
                 } else {
                     defpackage.kq.a(this, new java.lang.String[]{"android.permission.ACCESS_FINE_LOCATION"});
                 }
@@ -696,7 +702,7 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
             defpackage.aju.a().a(applicationContext, defpackage.ajd.a(applicationContext));
             Intent intent = getIntent();
             setIntent(new Intent());
-            this.E.execute(new defpackage.aoh(defpackage.aju.a(this, intent), new defpackage.apq(this)));
+            this.executor.execute(new defpackage.aoh(defpackage.aju.a(this, intent), new defpackage.apq(this)));
             this.q.b(this.H);
             this.q.a(this.H);
         }
@@ -718,7 +724,7 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
     public void onBackPressed() {
         defpackage.ln c = getSupportFragmentManager();
         Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.fragment_container);
-        boolean z2 = fragment instanceof WelcomeFragment && ((WelcomeFragment) fragment).V == defpackage.bg.Q && !defpackage.aiw.b(this).a();
+        boolean z2 = fragment instanceof WelcomeFragment && ((WelcomeFragment) fragment).state == defpackage.bg.Q && !defpackage.aiw.b(this).a();
         if (z2) {
             finish();
             return;
@@ -730,7 +736,7 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
             }
             c.c();
             if (f == 1) {
-                b(this.tasksFragment);
+                setFragmentSelected(this.tasksFragment);
                 return;
             }
             return;
@@ -754,7 +760,7 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
                     return;
                 case 2:
                     java.lang.String str = this.tasksFragment.X;
-                    if (!android.text.TextUtils.isEmpty(str)) {
+                    if (!TextUtils.isEmpty(str)) {
                         EditListFragment arv = new EditListFragment();
                         android.os.Bundle bundle = new android.os.Bundle();
                         bundle.putString("list_id", str);
@@ -765,8 +771,8 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
                     return;
                 case 3:
                     java.lang.String str2 = this.tasksFragment.X;
-                    if (!android.text.TextUtils.isEmpty(str2)) {
-                        int size = defpackage.any.a().c().d(str2).a().size();
+                    if (!TextUtils.isEmpty(str2)) {
+                        int size = defpackage.any.a().c().d(str2).getTasks().size();
                         if (size == 0) {
                             defpackage.any.a().c().a(str2, size, defpackage.ajn.a(str2));
                             a((java.lang.String) null);
@@ -789,7 +795,7 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
                     TasksFragment auj = (TasksFragment) a;
                     java.lang.String str3 = auj.X;
                     int i4 = 0;
-                    for (defpackage.dby a2 : defpackage.any.a().c().d(this.h.b).a()) {
+                    for (defpackage.dby a2 : defpackage.any.a().c().d(this.h.b).getTasks()) {
                         if (defpackage.ajd.a(a2)) {
                             i3 = i4 + 1;
                         } else {
@@ -852,7 +858,7 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
         }
     }
 
-    public final void p() {
+    public final void hideSplashView() {
         if (this.splashView != null && this.splashView.getVisibility() == View.VISIBLE) {
             this.splashView.animate().alpha(0.0f).setStartDelay(250).withEndAction(new Runnable() {
                 @Override
@@ -863,16 +869,16 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
         }
     }
 
-    private final void h(boolean z2) {
-        if (this.z != z2) {
-            if (this.z) {
+    private final void hideFAB(boolean z2) {
+        if (this.fabHide != z2) {
+            if (this.fabHide) {
                 this.fab.setClickable(false);
                 this.fab.animate().alpha(0.0f).setListener(new defpackage.apy(this));
             } else {
                 this.fab.setClickable(true);
                 this.fab.animate().alpha(1.0f).setListener(new defpackage.apz(this));
             }
-            this.z = z2;
+            this.fabHide = z2;
         }
     }
 
@@ -895,9 +901,9 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
                 } else {
                     dcd = dcb.c;
                 }
-                if (trim.equals(dcd.a) || android.text.TextUtils.isEmpty(trim)) {
+                if (trim.equals(dcd.a) || TextUtils.isEmpty(trim)) {
                     str = null;
-                } else if (android.text.TextUtils.isEmpty(arv.b.b)) {
+                } else if (TextUtils.isEmpty(arv.b.b)) {
                     defpackage.anc P = EditListFragment.P();
                     defpackage.dii i3 = ((defpackage.dii) defpackage.dcb.g.a(defpackage.bg.ao)).i(((defpackage.dii) defpackage.dcd.c.a(defpackage.bg.ao)).h(trim));
                     if (i3.b) {
@@ -924,14 +930,14 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
             Fragment a2 = getSupportFragmentManager().findFragmentById(R.id.fragment_container);
             defpackage.cld.b(a2 instanceof EditTaskFragment);
             EditTaskFragment asi = (EditTaskFragment) a2;
-            java.lang.String str2 = asi.W;
-            java.lang.String str3 = asi.U;
+            java.lang.String str2 = asi.taskId;
+            java.lang.String str3 = asi.listId;
             asi.a(false);
             onBackPressed();
-            java.lang.String str4 = asi.U;
-            java.lang.String str5 = asi.W;
+            java.lang.String str4 = asi.listId;
+            java.lang.String str5 = asi.taskId;
             if (!defpackage.cru.d(str3, str4)) {
-                java.util.Iterator it = defpackage.any.a().c().d(str4).b().a.iterator();
+                java.util.Iterator it = defpackage.any.a().c().d(str4).getStructure().a.iterator();
                 while (true) {
                     if (!it.hasNext()) {
                         i2 = 0;
@@ -948,13 +954,13 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
             defpackage.any.a().c().a(str4, str5, ajl);
             if (this.tasksFragment != null) {
                 TasksFragment auj = this.tasksFragment;
-                if (auj.l() && !auj.C && auj.J != null && auj.J.getWindowToken() != null && auj.J.getVisibility() == 0) {
+                if (auj.l() && !auj.mHidden && auj.mView != null && auj.mView.getWindowToken() != null && auj.mView.getVisibility() == 0) {
                     z2 = true;
                 }
                 if (z2) {
                     TasksFragment auj2 = this.tasksFragment;
                     if (auj2.O()) {
-                        auj2.W.b(str5);
+                        auj2.taskAdapter.b(str5);
                         auj2.c(true);
                     }
                 }

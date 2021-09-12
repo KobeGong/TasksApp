@@ -10,7 +10,7 @@ public class aoq implements defpackage.aoe {
         return null;
     }
 
-    public defpackage.aof a(android.content.Context context, java.lang.String str) {
+    public AbsActivityConfig a(android.content.Context context, java.lang.String str) {
         return defpackage.aoe.a;
     }
 

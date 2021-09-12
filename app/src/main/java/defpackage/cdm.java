@@ -1,5 +1,7 @@
 package defpackage;
 
+import android.support.v7.widget.RecyclerView;
+
 /* renamed from: cdm reason: default package */
 /* compiled from: PG */
 public class cdm {
@@ -13,10 +15,10 @@ public class cdm {
     }
 
     public static java.lang.String a(java.lang.Object obj, defpackage.cdf cdf) {
-        java.lang.String a = a((java.lang.CharSequence) ((defpackage.cdu) obj).a());
-        java.lang.String a2 = a((java.lang.CharSequence) ((defpackage.cdu) obj).b());
+        java.lang.String a = a(((AbsDeviceOwner) obj).getDisplayName());
+        java.lang.String a2 = a(((AbsDeviceOwner) obj).accountName());
         if (a.isEmpty() && a2.isEmpty()) {
-            return ((defpackage.cdu) obj).b();
+            return ((AbsDeviceOwner) obj).accountName();
         }
         if (a.isEmpty()) {
             return a2;
@@ -27,16 +29,16 @@ public class cdm {
         if (a.equals(a2)) {
             return a;
         }
-        return new java.lang.StringBuilder(java.lang.String.valueOf(a).length() + 1 + java.lang.String.valueOf(a2).length()).append(a).append(" ").append(a2).toString();
+        return a + " " + a2;
     }
 
     private static java.lang.String a(java.lang.CharSequence charSequence) {
         return charSequence == null ? "" : charSequence.toString();
     }
 
-    public static android.app.Activity a(android.content.Context context) {
+    public static android.app.Activity retrieveActivity(android.content.Context context) {
         java.lang.Object obj;
-        defpackage.cky.b((java.lang.Object) context, (java.lang.Object) "context cannot be null");
+        defpackage.cky.b(context, "context cannot be null");
         if (!(context instanceof android.app.Service) && !(context instanceof android.app.Application)) {
             int i = 0;
             while (true) {
@@ -51,7 +53,7 @@ public class cdm {
                         context = ((android.content.ContextWrapper) context2).getBaseContext();
                         i = i2 + 1;
                     } else {
-                        obj = (android.app.Activity) context2;
+                        obj = context2;
                         break;
                     }
                 } else {
@@ -62,15 +64,15 @@ public class cdm {
         } else {
             obj = null;
         }
-        return (android.app.Activity) defpackage.cky.b(obj, (java.lang.Object) "Could not extract activity from context");
+        return (android.app.Activity) defpackage.cky.b(obj, "Could not extract activity from context");
     }
 
-    public static void a(android.support.v7.widget.RecyclerView recyclerView, defpackage.ceo ceo) {
+    public static void a(RecyclerView recyclerView, defpackage.ceo ceo) {
         if (!java.lang.Boolean.TRUE.equals(recyclerView.getTag(2131755034))) {
             ceo.a.a(ceo.f);
             ceo.b();
-            ceo.d.b();
-            recyclerView.setTag(2131755034, java.lang.Boolean.valueOf(true));
+            ceo.mObservable.b();
+            recyclerView.setTag(2131755034, Boolean.TRUE);
         }
     }
 
@@ -93,7 +95,7 @@ public class cdm {
             efa.a = efbArr;
             return efa;
         } catch (java.lang.RuntimeException e) {
-            b("PrimesForPrimes", "Exception getting Primes Init timers", e, new java.lang.Object[0]);
+            b("PrimesForPrimes", "Exception getting Primes Init timers", e);
             return null;
         }
     }
@@ -102,7 +104,7 @@ public class cdm {
         defpackage.cky.a((java.lang.Object) context);
         java.io.File cacheDir = context.getCacheDir();
         java.lang.String e = e(context);
-        return new java.io.File(cacheDir, new java.lang.StringBuilder(java.lang.String.valueOf(e).length() + 12).append(e).append("_primeshprof").toString());
+        return new java.io.File(cacheDir, new java.lang.StringBuilder(e.length() + 12).append(e).append("_primeshprof").toString());
     }
 
     public static void c(android.content.Context context) {
@@ -116,7 +118,7 @@ public class cdm {
         defpackage.cky.a((java.lang.Object) context);
         java.io.File cacheDir = context.getCacheDir();
         java.lang.String e = e(context);
-        java.io.File file = new java.io.File(cacheDir, new java.lang.StringBuilder(java.lang.String.valueOf(e).length() + 17).append(e).append("_primes_mhd.hprof").toString());
+        java.io.File file = new java.io.File(cacheDir, e + "_primes_mhd.hprof");
         if (file.exists()) {
             file.delete();
         }

@@ -1,27 +1,32 @@
 package defpackage;
 
+import android.view.LayoutInflater;
+import android.view.ViewGroup;
+
+import com.google.android.apps.tasks.R;
+
 /* renamed from: akt reason: default package */
 /* compiled from: PG */
-public final class akt extends defpackage.aet {
+public final class akt extends RecyclerViewAdapter {
     public java.util.List a;
     public defpackage.aku b;
 
     public akt() {
-        c();
+        setHasStableIds();
     }
 
-    public final long a(int i) {
+    public final long getItemId(int i) {
         defpackage.akz akz = (defpackage.akz) this.a.get(i);
         return (long) java.util.Arrays.hashCode(new java.lang.Object[]{akz.a().b, akz.b().d});
     }
 
-    public final defpackage.afv a(android.view.ViewGroup viewGroup, int i) {
-        defpackage.akv akv = new defpackage.akv(android.view.LayoutInflater.from(viewGroup.getContext()).inflate(2131034198, viewGroup, false));
+    public final RecyclerViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+        defpackage.akv akv = new defpackage.akv(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.search_result, viewGroup, false));
         akv.p = new defpackage.aky(this);
         return akv;
     }
 
-    public final void a(defpackage.afv afv, int i) {
+    public final void onBindViewHolder(RecyclerViewHolder afv, int i) {
         defpackage.dca dca;
         defpackage.dca dca2;
         defpackage.dca dca3;
@@ -101,18 +106,18 @@ public final class akt extends defpackage.aet {
             if (a2 < 0) {
                 long j = -a2;
                 if (j < 7) {
-                    quantityString = akv.a.getResources().getQuantityString(2131886087, (int) j, new java.lang.Object[]{java.lang.Integer.valueOf((int) j)});
+                    quantityString = akv.itemView.getResources().getQuantityString(2131886087, (int) j, new java.lang.Object[]{java.lang.Integer.valueOf((int) j)});
                 } else {
                     int i2 = ((int) j) / 7;
-                    quantityString = akv.a.getResources().getQuantityString(2131886088, i2, new java.lang.Object[]{java.lang.Integer.valueOf(i2)});
+                    quantityString = akv.itemView.getResources().getQuantityString(2131886088, i2, new java.lang.Object[]{java.lang.Integer.valueOf(i2)});
                 }
-                string = defpackage.akv.a(akv.a.getContext(), quantityString, "^1", 2131624499);
+                string = defpackage.akv.a(akv.itemView.getContext(), quantityString, "^1", 2131624499);
             } else if (a2 == 0) {
-                string = defpackage.akv.a(akv.a.getContext(), akv.a.getContext().getString(2131951819), "^1", 2131624497);
+                string = defpackage.akv.a(akv.itemView.getContext(), akv.itemView.getContext().getString(2131951819), "^1", 2131624497);
             } else if (a2 == 1) {
-                string = akv.a.getContext().getString(2131951820);
+                string = akv.itemView.getContext().getString(2131951820);
             } else {
-                string = akv.a.getContext().getString(2131951818, new java.lang.Object[]{java.lang.Long.valueOf(b7.getTimeInMillis())});
+                string = akv.itemView.getContext().getString(2131951818, new java.lang.Object[]{java.lang.Long.valueOf(b7.getTimeInMillis())});
             }
             textView3.setText(android.text.Html.fromHtml(string));
         } else {
@@ -128,7 +133,7 @@ public final class akt extends defpackage.aet {
         textView4.setText(dcd.a);
     }
 
-    public final int a() {
+    public final int getItemCount() {
         if (this.a == null) {
             return 0;
         }

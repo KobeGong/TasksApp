@@ -3,6 +3,7 @@ package android.support.design.appbar;
 import defpackage.ClsToolbarLP;
 import defpackage.ThemeEnforcement;
 import defpackage.ViewCompat;
+import defpackage.ViewOffsetHelper;
 import defpackage.WindowInsetsCompat;
 
 @defpackage.gy(a = android.support.design.appbar.AppBarLayout.Behavior.class)
@@ -132,7 +133,7 @@ public class AppBarLayout extends android.widget.LinearLayout {
                 int top = childAt.getTop();
                 int bottom = childAt.getBottom();
                 ClsToolbarLP daVar = (ClsToolbarLP) childAt.getLayoutParams();
-                if (a(daVar.a, 32)) {
+                if (a(daVar.scrollFlags, 32)) {
                     int i7 = top - daVar.topMargin;
                     i4 = daVar.bottomMargin + bottom;
                     i5 = i7;
@@ -149,7 +150,7 @@ public class AppBarLayout extends android.widget.LinearLayout {
             if (i2 >= 0) {
                 android.view.View childAt2 = appBarLayout.getChildAt(i2);
                 ClsToolbarLP daVar2 = (ClsToolbarLP) childAt2.getLayoutParams();
-                int i8 = daVar2.a;
+                int i8 = daVar2.scrollFlags;
                 if ((i8 & 17) == 17) {
                     int i9 = -childAt2.getTop();
                     int i10 = -childAt2.getBottom();
@@ -352,7 +353,7 @@ public class AppBarLayout extends android.widget.LinearLayout {
                     if (abs < childAt.getTop() || abs > childAt.getBottom()) {
                         i7++;
                     } else if (interpolator != null) {
-                        int i8 = daVar.a;
+                        int i8 = daVar.scrollFlags;
                         if ((i8 & 1) != 0) {
                             i6 = daVar.bottomMargin + childAt.getHeight() + daVar.topMargin + 0;
                             if ((i8 & 2) != 0) {
@@ -373,7 +374,7 @@ public class AppBarLayout extends android.widget.LinearLayout {
             } else {
                 i5 = a3;
             }
-            boolean a_ = a_(i5);
+            boolean a_ = setTopAndBottomOffset(i5);
             int i9 = a2 - a3;
             this.a = a3 - i5;
             if (!a_ && appBarLayout.a) {
@@ -426,7 +427,7 @@ public class AppBarLayout extends android.widget.LinearLayout {
             }
             appBarLayout.b = 0;
             this.f = -1;
-            a_(defpackage.gm.a(c(), -appBarLayout.c(), 0));
+            setTopAndBottomOffset(defpackage.gm.a(c(), -appBarLayout.c(), 0));
             a(coordinatorLayout, appBarLayout, c(), 0, true);
             appBarLayout.a(c());
             return a2;
@@ -692,7 +693,7 @@ public class AppBarLayout extends android.widget.LinearLayout {
                 break;
             }
             ClsToolbarLP daVar = (ClsToolbarLP) getChildAt(i7).getLayoutParams();
-            if ((daVar.a & 1) != 1 || (daVar.a & 10) == 0) {
+            if ((daVar.scrollFlags & 1) != 1 || (daVar.scrollFlags & 10) == 0) {
                 z3 = false;
             } else {
                 z3 = true;
@@ -780,7 +781,7 @@ public class AppBarLayout extends android.widget.LinearLayout {
             android.view.View childAt = getChildAt(i3);
             ClsToolbarLP daVar = (ClsToolbarLP) childAt.getLayoutParams();
             int measuredHeight = childAt.getMeasuredHeight();
-            int i5 = daVar.a;
+            int i5 = daVar.scrollFlags;
             if ((i5 & 1) == 0) {
                 break;
             }
@@ -809,7 +810,7 @@ public class AppBarLayout extends android.widget.LinearLayout {
             android.view.View childAt = getChildAt(childCount);
             ClsToolbarLP daVar = (ClsToolbarLP) childAt.getLayoutParams();
             int measuredHeight = childAt.getMeasuredHeight();
-            int i4 = daVar.a;
+            int i4 = daVar.scrollFlags;
             if ((i4 & 5) != 5) {
                 if (i3 > 0) {
                     break;
@@ -849,7 +850,7 @@ public class AppBarLayout extends android.widget.LinearLayout {
             android.view.View childAt = getChildAt(i3);
             ClsToolbarLP daVar = (ClsToolbarLP) childAt.getLayoutParams();
             int measuredHeight = childAt.getMeasuredHeight() + daVar.topMargin + daVar.bottomMargin;
-            int i5 = daVar.a;
+            int i5 = daVar.scrollFlags;
             if ((i5 & 1) == 0) {
                 break;
             }
@@ -879,13 +880,13 @@ public class AppBarLayout extends android.widget.LinearLayout {
                     for (int i5 = 0; i5 < childCount; i5++) {
                         android.view.View childAt = czVar.a.getChildAt(i5);
                         defpackage.dd ddVar = (defpackage.dd) childAt.getLayoutParams();
-                        defpackage.dj a2 = defpackage.db.a(childAt);
+                        ViewOffsetHelper a2 = defpackage.db.a(childAt);
                         switch (ddVar.a) {
                             case 1:
-                                a2.a(defpackage.gm.a(-i2, 0, czVar.a.b(childAt)));
+                                a2.setTopAndBottomOffset(defpackage.gm.a(-i2, 0, czVar.a.b(childAt)));
                                 break;
                             case 2:
-                                a2.a(java.lang.Math.round(ddVar.b * ((float) (-i2))));
+                                a2.setTopAndBottomOffset(java.lang.Math.round(ddVar.b * ((float) (-i2))));
                                 break;
                         }
                     }

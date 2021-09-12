@@ -12,17 +12,17 @@ public final class aos extends defpackage.aoq {
             java.lang.String valueOf = java.lang.String.valueOf(data);
             throw new java.lang.IllegalArgumentException(new java.lang.StringBuilder(java.lang.String.valueOf(valueOf).length() + 30).append("This is not a LinkToTask Uri: ").append(valueOf).toString());
         } else {
-            this.b = new defpackage.ajk((java.lang.String) pathSegments.get(1), (java.lang.String) pathSegments.get(2), (java.lang.String) pathSegments.get(3));
+            this.b = new LinkToTask((java.lang.String) pathSegments.get(1), (java.lang.String) pathSegments.get(2), (java.lang.String) pathSegments.get(3));
         }
     }
 
     public final java.lang.String a(android.content.Context context) {
-        return this.b.a();
+        return this.b.getAccount();
     }
 
-    public final defpackage.aof a(android.content.Context context, java.lang.String str) {
-        if (str.equals(this.b.a())) {
-            return defpackage.aof.a(this.b.b(), EditTaskFragment.a(this.b.b(), this.b.c(), false, -1));
+    public final AbsActivityConfig a(android.content.Context context, java.lang.String str) {
+        if (str.equals(this.b.getAccount())) {
+            return AbsActivityConfig.a(this.b.getTaskListId(), EditTaskFragment.newInstance(this.b.getTaskListId(), this.b.getTaskId(), false, -1));
         }
         return defpackage.aoe.a;
     }

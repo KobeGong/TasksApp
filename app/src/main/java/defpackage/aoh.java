@@ -31,8 +31,8 @@ public final class aoh implements defpackage.aoe, java.lang.Runnable {
         this.c.a((java.lang.Object) null);
     }
 
-    public final defpackage.aof a(android.content.Context context, java.lang.String str) {
-        defpackage.aof a = this.d.a(context, str);
+    public final AbsActivityConfig a(android.content.Context context, java.lang.String str) {
+        AbsActivityConfig a = this.d.a(context, str);
         this.c.a((java.lang.Object) null);
         return a;
     }

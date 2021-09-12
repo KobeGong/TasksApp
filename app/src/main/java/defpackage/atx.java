@@ -2,7 +2,7 @@ package defpackage;
 
 /* renamed from: atx reason: default package */
 /* compiled from: PG */
-final class atx extends defpackage.afv {
+final class atx extends RecyclerViewHolder {
     private static android.graphics.drawable.Drawable D;
     public boolean A;
     public float B;
@@ -11,7 +11,7 @@ final class atx extends defpackage.afv {
     private final android.support.design.chip.Chip F;
     private final android.support.design.chip.Chip G;
     private final android.widget.TextView H;
-    public final android.widget.FrameLayout p = ((android.widget.FrameLayout) this.a);
+    public final android.widget.FrameLayout p = ((android.widget.FrameLayout) this.itemView);
     public final android.view.View q;
     public final android.widget.TextView r;
     public final com.google.android.apps.tasks.ui.taskslist.TaskItemFrameLayout s;
@@ -502,7 +502,7 @@ final class atx extends defpackage.afv {
     }
 
     public final void c(int i) {
-        ViewCompat.b(this.a, this.a.getResources().getDimension(2131689872));
+        ViewCompat.b(this.itemView, this.itemView.getResources().getDimension(2131689872));
         if (i > 0) {
             if (this.r.getParent() != null) {
                 ((android.view.ViewGroup) this.r.getParent()).removeView(this.r);
@@ -536,7 +536,7 @@ final class atx extends defpackage.afv {
     }
 
     public final void v() {
-        this.a.setTranslationX(0.0f);
+        this.itemView.setTranslationX(0.0f);
         this.t.a(this.z);
     }
 }

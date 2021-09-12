@@ -3,9 +3,9 @@ package defpackage;
 /* renamed from: aff reason: default package */
 /* compiled from: PG */
 final class aff implements defpackage.ahn {
-    private final /* synthetic */ defpackage.afd a;
+    private final /* synthetic */ LayoutManager a;
 
-    aff(defpackage.afd afd) {
+    aff(LayoutManager afd) {
         this.a = afd;
     }
 
@@ -22,11 +22,11 @@ final class aff implements defpackage.ahn {
     }
 
     public final int a(android.view.View view) {
-        return defpackage.afd.c(view) - ((defpackage.afh) view.getLayoutParams()).topMargin;
+        return LayoutManager.c(view) - ((defpackage.afh) view.getLayoutParams()).topMargin;
     }
 
     public final int b(android.view.View view) {
         defpackage.afh afh = (defpackage.afh) view.getLayoutParams();
-        return afh.bottomMargin + defpackage.afd.e(view);
+        return afh.bottomMargin + LayoutManager.e(view);
     }
 }

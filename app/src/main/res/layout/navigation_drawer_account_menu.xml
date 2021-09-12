@@ -1,14 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merge xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt">
-    <com.google.android.libraries.onegoogle.accountmenu.internal.SelectedAccountHeaderView android:id="@+id/selected_account_header" android:layout_width="match_parent" android:layout_height="wrap_content" app:expandable="true"/>
-    <View android:id="@+id/selected_account_header_shadow" android:background="@drawable/selected_account_header_shadow" android:visibility="gone" android:layout_width="match_parent" android:layout_height="@dimen/app_menu_header_elevation"/>
-    <android.support.v4.widget.NestedScrollView android:id="@+id/scroll_view" android:layout_width="match_parent" android:layout_height="0dp" android:fillViewport="true" android:layout_weight="1">
-        <LinearLayout android:orientation="vertical" android:descendantFocusability="blocksDescendants" android:layout_width="match_parent" android:layout_height="wrap_content">
-            <View android:id="@+id/header_expanded_bottom_divider" style="@style/LeftMarginDividerStyle"/>
-            <com.google.android.libraries.onegoogle.accountmenu.internal.AccountMenuBodyView android:id="@+id/account_menu_body" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content"/>
-            <View style="@style/DividerStyle"/>
-            <FrameLayout android:id="@+id/container" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"/>
-            <include layout="@layout/account_menu_footer"/>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.libraries.onegoogle.accountmenu.internal.SelectedAccountHeaderView
+        android:id="@+id/selected_account_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:expandable="true" />
+
+    <View
+        android:id="@+id/selected_account_header_shadow"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_menu_header_elevation"
+        android:background="@drawable/selected_account_header_shadow"
+        android:visibility="gone" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:descendantFocusability="blocksDescendants"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/header_expanded_bottom_divider"
+                style="@style/LeftMarginDividerStyle" />
+
+            <com.google.android.libraries.onegoogle.accountmenu.internal.AccountMenuBodyView
+                android:id="@+id/account_menu_body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <View style="@style/DividerStyle" />
+
+            <FrameLayout
+                android:id="@+id/container"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <include layout="@layout/account_menu_footer" />
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 </merge>

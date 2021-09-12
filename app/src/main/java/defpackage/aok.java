@@ -13,7 +13,7 @@ final class aok implements defpackage.aoe {
     public final void a(java.lang.String str) {
     }
 
-    public final defpackage.aof a(android.content.Context context, java.lang.String str) {
+    public final AbsActivityConfig a(android.content.Context context, java.lang.String str) {
         return defpackage.aoe.a;
     }
 }

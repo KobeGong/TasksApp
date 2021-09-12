@@ -9,6 +9,6 @@ final /* synthetic */ class aqb implements android.view.View.OnClickListener {
     }
 
     public final void onClick(android.view.View view) {
-        this.a.c();
+        this.a.onRetryClick();
     }
 }

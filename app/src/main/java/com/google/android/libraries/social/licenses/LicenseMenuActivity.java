@@ -15,7 +15,7 @@ public final class LicenseMenuActivity extends defpackage.wm implements defpacka
             if (getIntent().hasExtra("pluginLicensePaths")) {
                 cpu.e(getIntent().getBundleExtra("pluginLicensePaths"));
             }
-            c.a().a(cpu).d();
+            c.beginTransaction().add(cpu).d();
         }
     }
 

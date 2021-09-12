@@ -2,7 +2,7 @@ package defpackage;
 
 /* renamed from: atp reason: default package */
 /* compiled from: PG */
-final class atp extends defpackage.afv {
+final class atp extends RecyclerViewHolder {
     public final android.widget.TextView p;
 
     public atp(android.view.View view) {

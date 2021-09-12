@@ -9,13 +9,13 @@ final class auu extends defpackage.acs {
         this.m = auj;
     }
 
-    public final boolean b(defpackage.afv afv, defpackage.afb afb, defpackage.afb afb2) {
-        defpackage.dby g = this.m.W.g(afv.d());
-        if (g == null || !g.d.equals(this.m.W.a)) {
+    public final boolean b(RecyclerViewHolder afv, defpackage.afb afb, defpackage.afb afb2) {
+        defpackage.dby g = this.m.taskAdapter.g(afv.d());
+        if (g == null || !g.d.equals(this.m.taskAdapter.a)) {
             return super.b(afv, afb, afb2);
         }
-        this.m.W.a = null;
-        android.view.View view = afv.a;
+        this.m.taskAdapter.a = null;
+        android.view.View view = afv.itemView;
         return a(afv, -view.getWidth(), view.getTop(), 0, view.getTop());
     }
 }

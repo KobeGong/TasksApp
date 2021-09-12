@@ -2,7 +2,7 @@ package defpackage;
 
 /* renamed from: cew reason: default package */
 /* compiled from: PG */
-public final class cew extends defpackage.afv {
+public final class cew extends RecyclerViewHolder {
     public final defpackage.cdf p;
     public final defpackage.cfb q;
 

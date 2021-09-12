@@ -1,30 +1,35 @@
 package defpackage;
 
+import android.view.LayoutInflater;
+
+import com.google.android.apps.tasks.R;
+import com.google.android.apps.tasks.ui.taskslist.TaskItemFrameLayout;
+
 /* renamed from: atg reason: default package */
 /* compiled from: PG */
-public abstract class atg extends defpackage.aet {
+public abstract class BaseTaskAdapter extends RecyclerViewAdapter {
     private static final long m = ((long) "#jkl;sdf;ksdafhksd#".hashCode());
     private static final long n = ((long) "#jkl;sdf;ksdafhksf#".hashCode());
     public java.lang.String a;
-    public final java.util.List b = new java.util.ArrayList();
+    public final java.util.List<dby> tasks = new java.util.ArrayList<>();
     public boolean c;
     public defpackage.atl f;
     public defpackage.atj g;
-    public android.view.View h;
-    public android.view.View i;
-    public android.widget.TextView j;
-    public android.widget.ImageView k;
+    public android.view.View rootView;
+    public android.view.View completeHeaderView;
+    public android.widget.TextView completeCountView;
+    public android.widget.ImageView expandView;
     public android.widget.TextView l;
     private boolean o;
 
-    atg() {
+    BaseTaskAdapter() {
     }
 
     /* access modifiers changed from: protected */
-    public abstract void a(defpackage.ajq ajq);
+    public abstract void a(AbsTaskListStructure ajq);
 
     /* access modifiers changed from: protected */
-    public abstract void b(defpackage.afv afv, int i2);
+    public abstract void b(RecyclerViewHolder afv, int i2);
 
     public abstract void b(defpackage.dby dby);
 
@@ -38,7 +43,7 @@ public abstract class atg extends defpackage.aet {
     public abstract void c(java.lang.String str);
 
     /* access modifiers changed from: protected */
-    public abstract int d();
+    public abstract int getCount();
 
     /* access modifiers changed from: protected */
     public abstract int d(java.lang.String str);
@@ -60,7 +65,7 @@ public abstract class atg extends defpackage.aet {
     /* access modifiers changed from: protected */
     public abstract void j(int i2);
 
-    public long a(int i2) {
+    public long getItemId(int i2) {
         defpackage.dca dca;
         java.lang.Object valueOf;
         boolean z = true;
@@ -73,12 +78,12 @@ public abstract class atg extends defpackage.aet {
             }
             java.lang.Object[] objArr = new java.lang.Object[3];
             objArr[0] = g2.d;
-            objArr[1] = java.lang.Boolean.valueOf(dca.a);
+            objArr[1] = dca.a;
             if (dca.d == null) {
                 z = false;
             }
             if (!z) {
-                valueOf = java.lang.Boolean.valueOf(false);
+                valueOf = false;
             } else if (dca.d == null) {
                 valueOf = defpackage.dmk.d;
             } else {
@@ -86,15 +91,15 @@ public abstract class atg extends defpackage.aet {
             }
             objArr[2] = valueOf;
             return (long) java.util.Arrays.hashCode(objArr);
-        } else if (!this.o || i2 != a() - 1) {
+        } else if (!this.o || i2 != getItemCount() - 1) {
             return m;
         } else {
             return n;
         }
     }
 
-    public final int a() {
-        return (this.o ? 1 : 0) + h() + d();
+    public final int getItemCount() {
+        return (this.o ? 1 : 0) + h() + getCount();
     }
 
     public final int a(defpackage.dby dby) {
@@ -107,16 +112,16 @@ public abstract class atg extends defpackage.aet {
             return d;
         }
         if (this.c) {
-            int a2 = a(this.b, str);
+            int a2 = a(this.tasks, str);
             if (a2 >= 0) {
-                return a2 + d() + 1;
+                return a2 + getCount() + 1;
             }
         }
         return -1;
     }
 
-    public int b(int i2) {
-        if (!this.o || i2 != a() - 1) {
+    public int getItemViewType(int i2) {
+        if (!this.o || i2 != getItemCount() - 1) {
             return -1;
         }
         return 0;
@@ -124,16 +129,16 @@ public abstract class atg extends defpackage.aet {
 
     public final void b(java.lang.String str) {
         int a2 = a(str);
-        if (a2 < 0 || a2 >= d()) {
-            int a3 = a(this.b, str);
+        if (a2 < 0 || a2 >= getCount()) {
+            int a3 = a(this.tasks, str);
             if (a3 >= 0) {
-                this.b.remove(a3);
-                if (this.c && !this.b.isEmpty()) {
-                    e(a3 + d() + 1);
-                } else if (this.c && this.b.isEmpty()) {
-                    b(d(), 2);
-                } else if (!this.c && this.b.isEmpty()) {
-                    e(d());
+                this.tasks.remove(a3);
+                if (this.c && !this.tasks.isEmpty()) {
+                    e(a3 + getCount() + 1);
+                } else if (this.c && this.tasks.isEmpty()) {
+                    b(getCount(), 2);
+                } else if (!this.c && this.tasks.isEmpty()) {
+                    e(getCount());
                 }
             }
             f();
@@ -143,12 +148,12 @@ public abstract class atg extends defpackage.aet {
         g();
     }
 
-    public final void a(defpackage.afv afv, int i2) {
-        int d = d();
-        if (d == i2) {
-            defpackage.atx atx = (defpackage.atx) afv;
+    public final void onBindViewHolder(RecyclerViewHolder viewHolder, int position) {
+        int d = getCount();
+        if (d == position) {
+            defpackage.atx atx = (defpackage.atx) viewHolder;
             atx.v();
-            ViewCompat.a(atx.a, "");
+            ViewCompat.a(atx.itemView, "");
             if (atx.q.getParent() != null) {
                 ((android.widget.FrameLayout) atx.q.getParent()).removeView(atx.q);
             }
@@ -156,17 +161,17 @@ public abstract class atg extends defpackage.aet {
             atx.p.addView(atx.q);
             atx.t();
             atx.p.setBackground(atx.q.getBackground());
-        } else if (i2 > d) {
-            defpackage.dby g2 = g(i2);
+        } else if (position > d) {
+            defpackage.dby g2 = g(position);
             if (g2 != null) {
-                ((defpackage.atx) afv).a(g2, f(i2).size(), false, true);
+                ((defpackage.atx) viewHolder).a(g2, f(position).size(), false, true);
             }
         } else {
-            b(afv, i2);
+            b(viewHolder, position);
         }
     }
 
-    public final void b(defpackage.afv afv) {
+    public final void b(RecyclerViewHolder afv) {
         super.b(afv);
         if (afv instanceof defpackage.atx) {
             ((defpackage.atx) afv).v();
@@ -178,7 +183,7 @@ public abstract class atg extends defpackage.aet {
         if (i2 < 0) {
             return null;
         }
-        int d = d();
+        int d = getCount();
         if (d == i2) {
             return null;
         }
@@ -189,30 +194,30 @@ public abstract class atg extends defpackage.aet {
             return null;
         }
         int i3 = (i2 - d) - 1;
-        if (i3 < this.b.size()) {
-            return (defpackage.dby) this.b.get(i3);
+        if (i3 < this.tasks.size()) {
+            return (defpackage.dby) this.tasks.get(i3);
         }
         return null;
     }
 
     /* access modifiers changed from: 0000 */
-    public final defpackage.afv c(android.view.ViewGroup viewGroup, int i2) {
-        android.view.LayoutInflater from = android.view.LayoutInflater.from(viewGroup.getContext());
-        if (i2 == 0) {
-            return new defpackage.atk(from.inflate(2131034213, viewGroup, false));
+    public final RecyclerViewHolder c(android.view.ViewGroup viewGroup, int position) {
+        LayoutInflater from = LayoutInflater.from(viewGroup.getContext());
+        if (position == 0) {
+            return new defpackage.atk(from.inflate(R.layout.tasks_all_completed, viewGroup, false));
         }
-        defpackage.atx atx = new defpackage.atx((com.google.android.apps.tasks.ui.taskslist.TaskItemFrameLayout) from.inflate(2131034209, viewGroup, false), this.h, this.l);
+        defpackage.atx atx = new defpackage.atx((TaskItemFrameLayout) from.inflate(R.layout.task, viewGroup, false), this.rootView, this.l);
         atx.v = new defpackage.aug(this);
         return atx;
     }
 
     private final int h() {
         int i2 = 0;
-        if (!this.b.isEmpty()) {
+        if (!this.tasks.isEmpty()) {
             i2 = 1;
         }
         if (this.c) {
-            return i2 + this.b.size();
+            return i2 + this.tasks.size();
         }
         return i2;
     }
@@ -236,9 +241,9 @@ public abstract class atg extends defpackage.aet {
     public final void a(java.util.List list) {
         int i2 = 0;
         if (!list.isEmpty()) {
-            boolean isEmpty = this.b.isEmpty();
-            this.b.addAll(0, list);
-            int d = d();
+            boolean isEmpty = this.tasks.isEmpty();
+            this.tasks.addAll(0, list);
+            int d = getCount();
             if (isEmpty) {
                 i2 = 1;
             } else {
@@ -270,8 +275,8 @@ public abstract class atg extends defpackage.aet {
                     z2 = false;
                 }
             } else {
-                this.b.remove(g2);
-                if (this.b.isEmpty()) {
+                this.tasks.remove(g2);
+                if (this.tasks.isEmpty()) {
                     b(i2 - 1, 2);
                 } else {
                     e(i2);
@@ -327,18 +332,18 @@ public abstract class atg extends defpackage.aet {
 
     /* access modifiers changed from: 0000 */
     public final void e() {
-        if (!this.b.isEmpty()) {
+        if (!this.tasks.isEmpty()) {
             this.c = !this.c;
-            int d = d();
+            int d = getCount();
             if (this.c) {
                 this.g.a(true);
-                a(d + 1, this.b.size());
+                a(d + 1, this.tasks.size());
                 if (this.f != null) {
                     this.f.a.recyclerView.c(d + 1);
                 }
             } else {
                 this.g.a(false);
-                b(d + 1, this.b.size());
+                b(d + 1, this.tasks.size());
             }
             g();
         }
@@ -348,22 +353,22 @@ public abstract class atg extends defpackage.aet {
     public final void f() {
         if (this.g != null) {
             defpackage.atj atj = this.g;
-            this.b.size();
-            atj.a.j.setText(atj.a.h.getResources().getString(2131951713, new java.lang.Object[]{java.lang.Integer.valueOf(atj.a.b.size())}));
-            defpackage.atg atg = atj.a;
-            atg.j.setAccessibilityDelegate(new defpackage.ati(atg));
+            this.tasks.size();
+            atj.a.completeCountView.setText(atj.a.rootView.getResources().getString(R.string.completed_task_header, atj.a.tasks.size()));
+            BaseTaskAdapter atg = atj.a;
+            atg.completeCountView.setAccessibilityDelegate(new defpackage.ati(atg));
         }
     }
 
     public final void g() {
         boolean z = this.o;
-        boolean z2 = d() == 0 && h() > 0 && !this.c;
+        boolean z2 = getCount() == 0 && h() > 0 && !this.c;
         if (z != z2) {
             this.o = z2;
             if (this.o) {
-                d(a() - 1);
+                d(getItemCount() - 1);
             } else {
-                e(a());
+                e(getItemCount());
             }
         }
     }

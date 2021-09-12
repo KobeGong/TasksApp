@@ -57,11 +57,11 @@ public final class anc {
         return this.a.a.a(str);
     }
 
-    public final synchronized defpackage.ajq d(java.lang.String str) {
-        defpackage.ajq b2;
+    public final synchronized AbsTaskListStructure d(java.lang.String str) {
+        AbsTaskListStructure b2;
         b2 = this.a.a.b(str);
         if (b2 == null) {
-            b2 = defpackage.ajq.d();
+            b2 = AbsTaskListStructure.d();
         }
         return b2;
     }
@@ -80,7 +80,7 @@ public final class anc {
         for (defpackage.dcb dcb : d()) {
             java.lang.String str = dcb.b;
             new java.lang.Object[1][0] = str;
-            for (defpackage.dby dby : d(str).a()) {
+            for (defpackage.dby dby : d(str).getTasks()) {
                 if (!(dby.e != null)) {
                     defpackage.azb.a("Task %s has no properties!", dby.d);
                 } else {
@@ -132,9 +132,9 @@ public final class anc {
         java.util.ArrayList arrayList = new java.util.ArrayList();
         arrayList.add(str2);
         if (z) {
-            defpackage.ajq b2 = this.a.a.b(str);
+            AbsTaskListStructure b2 = this.a.a.b(str);
             if (b2 != null) {
-                java.util.Iterator it = b2.b().a.iterator();
+                java.util.Iterator it = b2.getStructure().a.iterator();
                 while (true) {
                     if (it.hasNext()) {
                         defpackage.dcf dcf = (defpackage.dcf) it.next();
@@ -171,9 +171,9 @@ public final class anc {
         defpackage.dcb a3 = this.a.a.a(str3);
         a2 = this.f.a(a3);
         java.util.HashMap hashMap = new java.util.HashMap();
-        defpackage.ajq b2 = this.a.a.b(str);
+        AbsTaskListStructure b2 = this.a.a.b(str);
         if (b2 != null) {
-            java.util.Iterator it = b2.b().a.iterator();
+            java.util.Iterator it = b2.getStructure().a.iterator();
             while (true) {
                 if (it.hasNext()) {
                     defpackage.dcf dcf = (defpackage.dcf) it.next();
@@ -332,7 +332,7 @@ public final class anc {
 
     static defpackage.anw a(defpackage.anu anu) {
         defpackage.anw anw;
-        java.util.List a2 = anu.b.a();
+        java.util.List<dcb> a2 = anu.b.a();
         synchronized (anu.a) {
             if (!anu.a.b().isEmpty()) {
                 anw = defpackage.anw.LOCAL_CHANGES;
@@ -348,13 +348,13 @@ public final class anc {
 
     static defpackage.anw a(java.lang.String str, defpackage.anu anu) {
         defpackage.anw anw;
-        defpackage.ajq a2 = anu.b.a(str);
+        AbsTaskListStructure a2 = anu.b.a(str);
         synchronized (anu.a) {
             if (!anu.a.b().isEmpty()) {
                 anw = defpackage.anw.LOCAL_CHANGES;
             } else {
-                defpackage.ajq b2 = anu.a.b(str);
-                if (b2 == null || !defpackage.csv.a(b2.a()).equals(defpackage.csv.a(a2.a())) || !b2.b().equals(a2.b())) {
+                AbsTaskListStructure b2 = anu.a.b(str);
+                if (b2 == null || !defpackage.csv.a(b2.getTasks()).equals(defpackage.csv.a(a2.getTasks())) || !b2.getStructure().equals(a2.getStructure())) {
                     anu.a.a(str, a2);
                     anw = defpackage.anw.SERVER_CHANGES;
                 } else {
@@ -382,7 +382,7 @@ public final class anc {
                 anu.a.a(a2);
             }
             for (defpackage.dcb dcb : a2) {
-                defpackage.ajq ajq = (defpackage.ajq) concurrentHashMap.remove(dcb.b);
+                AbsTaskListStructure ajq = (AbsTaskListStructure) concurrentHashMap.remove(dcb.b);
                 if (ajq != null) {
                     anu.a.a(dcb.b, ajq);
                 }

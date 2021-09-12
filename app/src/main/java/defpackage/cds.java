@@ -22,14 +22,14 @@ public class cds implements defpackage.cdp {
 
     public final /* synthetic */ void a(java.lang.Object obj, int i, defpackage.cdq cdq) {
         int i2 = 2;
-        defpackage.cdu cdu = (defpackage.cdu) obj;
+        AbsDeviceOwner cdu = (AbsDeviceOwner) obj;
         if (!this.e.a() && !this.e.b()) {
             android.util.Log.w(b, "Client is not connected, no image could be loaded");
             cdq.a(null);
         }
         defpackage.bsa bsa = this.d;
         defpackage.cql cql = this.e;
-        java.lang.String b2 = cdu.b();
+        java.lang.String b2 = cdu.accountName();
         if (i > 0) {
             float f = ((float) i) / this.c.getResources().getDisplayMetrics().density;
             if (f > 64.0f) {

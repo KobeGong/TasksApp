@@ -1,5 +1,7 @@
 package defpackage;
 
+import com.google.android.apps.tasks.R;
+
 /* renamed from: aor reason: default package */
 /* compiled from: PG */
 public final class aor extends defpackage.aoq {
@@ -31,16 +33,16 @@ public final class aor extends defpackage.aoq {
         return null;
     }
 
-    public final defpackage.aof a(android.content.Context context, java.lang.String str) {
+    public final AbsActivityConfig a(android.content.Context context, java.lang.String str) {
         defpackage.dan dan;
         java.lang.String str2;
         defpackage.dih dih;
         defpackage.dih dih2;
         if (this.b != null && !this.b.a.equals(str)) {
-            str2 = context.getResources().getString(2131951740);
+            str2 = context.getResources().getString(R.string.invalid_account);
             dan = null;
         } else if (android.text.TextUtils.isEmpty(this.c)) {
-            str2 = context.getResources().getString(2131951742);
+            str2 = context.getResources().getString(R.string.invalid_title);
             dan = null;
         } else if (this.d == null || !defpackage.ajd.b(this.d)) {
             dan = null;
@@ -51,12 +53,12 @@ public final class aor extends defpackage.aoq {
                 dih = a.a;
             } else {
                 defpackage.dih dih3 = a.a;
-                defpackage.djz.a.a((java.lang.Object) dih3).c(dih3);
+                defpackage.djz.a.a(dih3).c(dih3);
                 a.b = true;
                 dih = a.a;
             }
             defpackage.dih dih4 = dih;
-            if (!defpackage.dih.a(dih4, java.lang.Boolean.TRUE.booleanValue())) {
+            if (!defpackage.dih.a(dih4, true)) {
                 throw new defpackage.dkw();
             }
             dan = (defpackage.dan) dih4;
@@ -68,7 +70,7 @@ public final class aor extends defpackage.aoq {
             if (dan != null) {
                 defpackage.dca f = g.f();
                 defpackage.dii dii = (defpackage.dii) f.a(defpackage.bg.ao);
-                dii.a((defpackage.dih) f);
+                dii.a(f);
                 defpackage.dii dii2 = dii;
                 dii2.b();
                 defpackage.dca dca = (defpackage.dca) dii2.a;
@@ -83,15 +85,15 @@ public final class aor extends defpackage.aoq {
                 dih2 = g.a;
             } else {
                 defpackage.dih dih5 = g.a;
-                defpackage.djz.a.a((java.lang.Object) dih5).c(dih5);
+                defpackage.djz.a.a(dih5).c(dih5);
                 g.b = true;
                 dih2 = g.a;
             }
             defpackage.dih dih6 = dih2;
-            if (!defpackage.dih.a(dih6, java.lang.Boolean.TRUE.booleanValue())) {
+            if (!defpackage.dih.a(dih6, true)) {
                 throw new defpackage.dkw();
             }
-            c2.a(a2, (defpackage.dby) dih6, 0, (java.lang.String) null);
+            c2.a(a2, (defpackage.dby) dih6, 0, null);
         } else {
             android.widget.Toast.makeText(context, str2, 0).show();
         }

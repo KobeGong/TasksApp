@@ -19,8 +19,8 @@ public final class cpu extends Fragment implements defpackage.nb {
         }
     }
 
-    public final void d() {
-        super.d();
+    public final void onDetach() {
+        super.onDetach();
         this.a = null;
     }
 
@@ -28,8 +28,8 @@ public final class cpu extends Fragment implements defpackage.nb {
         return layoutInflater.inflate(2131034180, viewGroup, false);
     }
 
-    public final void a(android.view.View view, android.os.Bundle bundle) {
-        super.a(view, bundle);
+    public final void onViewCreated(android.view.View view, android.os.Bundle bundle) {
+        super.onViewCreated(view, bundle);
         FragmentActivity j = getActivity();
         this.b = new android.widget.ArrayAdapter(j, 2131034177, 2131755303, new java.util.ArrayList());
         defpackage.na.a(j).a(54321, this);
@@ -38,8 +38,8 @@ public final class cpu extends Fragment implements defpackage.nb {
         listView.setOnItemClickListener(new defpackage.cpv(this));
     }
 
-    public final void u() {
-        super.u();
+    public final void onDestroy() {
+        super.onDestroy();
         defpackage.na.a(getActivity()).a();
     }
 

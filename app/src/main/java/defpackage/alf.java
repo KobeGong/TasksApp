@@ -16,6 +16,6 @@ final /* synthetic */ class alf implements java.lang.Runnable {
         ala.V.a(false);
         defpackage.akt akt = ala.U;
         akt.a = defpackage.cky.a((java.lang.Iterable) (java.util.List) defpackage.cyd.c(cyi));
-        akt.d.b();
+        akt.mObservable.b();
     }
 }

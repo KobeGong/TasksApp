@@ -1,10 +1,12 @@
 package defpackage;
 
+import android.view.LayoutInflater;
+
 import com.google.android.apps.tasks.R;
 
 /* renamed from: ceo reason: default package */
 /* compiled from: PG */
-public final class ceo extends defpackage.aet {
+public final class ceo extends RecyclerViewAdapter {
     public final defpackage.cdl a;
     public final defpackage.cer b;
     public int c;
@@ -64,12 +66,12 @@ public final class ceo extends defpackage.aet {
 
     private final int d() {
         if (this.a.b()) {
-            return this.a.a() - 1;
+            return this.a.getSize() - 1;
         }
-        return this.a.a();
+        return this.a.getSize();
     }
 
-    public final int b(int i2) {
+    public final int getItemViewType(int i2) {
         int d = d();
         if (i2 < d) {
             return 2131755050;
@@ -77,15 +79,15 @@ public final class ceo extends defpackage.aet {
         return this.j.keyAt(i2 - d);
     }
 
-    public final defpackage.afv a(android.view.ViewGroup viewGroup, int i2) {
+    public final RecyclerViewHolder onCreateViewHolder(android.view.ViewGroup viewGroup, int i2) {
         defpackage.ces ces = (defpackage.ces) this.j.get(i2);
         if (ces != null) {
-            return new defpackage.afv(this.g, viewGroup, ces);
+            return new RecyclerViewHolder(this.g, viewGroup, ces);
         }
-        return new defpackage.cew(android.view.LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.account_list_item, viewGroup, false), this.i, this.h);
+        return new defpackage.cew(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.account_list_item, viewGroup, false), this.i, this.h);
     }
 
-    public final void a(defpackage.afv afv, int i2) {
+    public final void onBindViewHolder(RecyclerViewHolder afv, int i2) {
         java.lang.Object obj;
         if (i2 < d()) {
             defpackage.cew cew = (defpackage.cew) afv;
@@ -95,17 +97,17 @@ public final class ceo extends defpackage.aet {
                 obj = this.a.a(i2 + 1);
             }
             cew.q.a(obj);
-            cew.a.setContentDescription(cew.a.getContext().getString(R.string.og_use_account_a11y, cdm.a(obj, cew.p)));
-            cew.a.setOnClickListener(new defpackage.cep(this, obj));
+            cew.itemView.setContentDescription(cew.itemView.getContext().getString(R.string.og_use_account_a11y, cdm.a(obj, cew.p)));
+            cew.itemView.setOnClickListener(new defpackage.cep(this, obj));
         }
     }
 
-    public final int a() {
+    public final int getItemCount() {
         return d() + this.j.size();
     }
 
     public final void b() {
         defpackage.cdl cdl = this.a;
-        this.c = cdl.b() ? cdl.c.indexOf(cdl.c()) : -1;
+        this.c = cdl.b() ? cdl.availableAccounts.indexOf(cdl.c()) : -1;
     }
 }

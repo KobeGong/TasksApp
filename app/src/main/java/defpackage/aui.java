@@ -61,7 +61,7 @@ final /* synthetic */ class aui implements java.lang.Runnable {
                 TasksFragment.N().a(atv.f.a.X, dby.d, i, str);
             }
             if (defpackage.bdk.b(com.google.android.apps.tasks.common.TaskApplication.getApplication().getApplicationContext())) {
-                atv.d.b();
+                atv.mObservable.b();
             }
         }
     }

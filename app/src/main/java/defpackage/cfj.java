@@ -9,6 +9,6 @@ final /* synthetic */ class cfj implements android.view.View.OnClickListener {
     }
 
     public final void onClick(android.view.View view) {
-        this.a.e.c();
+        this.a.materialBottomDrawer.c();
     }
 }

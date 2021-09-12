@@ -31,8 +31,8 @@ public class acs extends defpackage.agp {
             while (i < size) {
                 java.lang.Object obj = arrayList.get(i);
                 i++;
-                defpackage.afv afv = (defpackage.afv) obj;
-                android.view.View view = afv.a;
+                RecyclerViewHolder afv = (RecyclerViewHolder) obj;
+                android.view.View view = afv.itemView;
                 android.view.ViewPropertyAnimator animate = view.animate();
                 this.f.add(afv);
                 animate.setDuration(this.j).alpha(0.0f).setListener(new defpackage.acw(this, afv, animate, view)).start();
@@ -45,7 +45,7 @@ public class acs extends defpackage.agp {
                 this.p.clear();
                 defpackage.act act = new defpackage.act(this, arrayList2);
                 if (z) {
-                    ViewCompat.a(((defpackage.adc) arrayList2.get(0)).a.a, act, this.j);
+                    ViewCompat.a(((defpackage.adc) arrayList2.get(0)).a.itemView, act, this.j);
                 } else {
                     act.run();
                 }
@@ -57,7 +57,7 @@ public class acs extends defpackage.agp {
                 this.q.clear();
                 defpackage.acu acu = new defpackage.acu(this, arrayList3);
                 if (z) {
-                    ViewCompat.a(((defpackage.adb) arrayList3.get(0)).a.a, acu, this.j);
+                    ViewCompat.a(((defpackage.adb) arrayList3.get(0)).a.itemView, acu, this.j);
                 } else {
                     acu.run();
                 }
@@ -84,7 +84,7 @@ public class acs extends defpackage.agp {
                     } else {
                         j3 = 0;
                     }
-                    ViewCompat.a(((defpackage.afv) arrayList4.get(0)).a, acv, j + java.lang.Math.max(j2, j3));
+                    ViewCompat.a(((RecyclerViewHolder) arrayList4.get(0)).itemView, acv, j + java.lang.Math.max(j2, j3));
                     return;
                 }
                 acv.run();
@@ -92,23 +92,23 @@ public class acs extends defpackage.agp {
         }
     }
 
-    public final boolean a(defpackage.afv afv) {
+    public final boolean a(RecyclerViewHolder afv) {
         g(afv);
         this.n.add(afv);
         return true;
     }
 
-    public final boolean b(defpackage.afv afv) {
+    public final boolean b(RecyclerViewHolder afv) {
         g(afv);
-        afv.a.setAlpha(0.0f);
+        afv.itemView.setAlpha(0.0f);
         this.o.add(afv);
         return true;
     }
 
-    public final boolean a(defpackage.afv afv, int i, int i2, int i3, int i4) {
-        android.view.View view = afv.a;
-        int translationX = i + ((int) afv.a.getTranslationX());
-        int translationY = i2 + ((int) afv.a.getTranslationY());
+    public final boolean a(RecyclerViewHolder afv, int i, int i2, int i3, int i4) {
+        android.view.View view = afv.itemView;
+        int translationX = i + ((int) afv.itemView.getTranslationX());
+        int translationY = i2 + ((int) afv.itemView.getTranslationY());
         g(afv);
         int i5 = i3 - translationX;
         int i6 = i4 - translationY;
@@ -126,30 +126,30 @@ public class acs extends defpackage.agp {
         return true;
     }
 
-    public final boolean a(defpackage.afv afv, defpackage.afv afv2, int i, int i2, int i3, int i4) {
+    public final boolean a(RecyclerViewHolder afv, RecyclerViewHolder afv2, int i, int i2, int i3, int i4) {
         if (afv == afv2) {
             return a(afv, i, i2, i3, i4);
         }
-        float translationX = afv.a.getTranslationX();
-        float translationY = afv.a.getTranslationY();
-        float alpha = afv.a.getAlpha();
+        float translationX = afv.itemView.getTranslationX();
+        float translationY = afv.itemView.getTranslationY();
+        float alpha = afv.itemView.getAlpha();
         g(afv);
         int i5 = (int) (((float) (i3 - i)) - translationX);
         int i6 = (int) (((float) (i4 - i2)) - translationY);
-        afv.a.setTranslationX(translationX);
-        afv.a.setTranslationY(translationY);
-        afv.a.setAlpha(alpha);
+        afv.itemView.setTranslationX(translationX);
+        afv.itemView.setTranslationY(translationY);
+        afv.itemView.setAlpha(alpha);
         if (afv2 != null) {
             g(afv2);
-            afv2.a.setTranslationX((float) (-i5));
-            afv2.a.setTranslationY((float) (-i6));
-            afv2.a.setAlpha(0.0f);
+            afv2.itemView.setTranslationX((float) (-i5));
+            afv2.itemView.setTranslationY((float) (-i6));
+            afv2.itemView.setAlpha(0.0f);
         }
         this.q.add(new defpackage.adb(afv, afv2, i, i2, i3, i4));
         return true;
     }
 
-    private final void a(java.util.List list, defpackage.afv afv) {
+    private final void a(java.util.List list, RecyclerViewHolder afv) {
         for (int size = list.size() - 1; size >= 0; size--) {
             defpackage.adb adb = (defpackage.adb) list.get(size);
             if (a(adb, afv) && adb.a == null && adb.b == null) {
@@ -167,7 +167,7 @@ public class acs extends defpackage.agp {
         }
     }
 
-    private final boolean a(defpackage.adb adb, defpackage.afv afv) {
+    private final boolean a(defpackage.adb adb, RecyclerViewHolder afv) {
         if (adb.b == afv) {
             adb.b = null;
         } else if (adb.a != afv) {
@@ -175,15 +175,15 @@ public class acs extends defpackage.agp {
         } else {
             adb.a = null;
         }
-        afv.a.setAlpha(1.0f);
-        afv.a.setTranslationX(0.0f);
-        afv.a.setTranslationY(0.0f);
+        afv.itemView.setAlpha(1.0f);
+        afv.itemView.setTranslationX(0.0f);
+        afv.itemView.setTranslationY(0.0f);
         e(afv);
         return true;
     }
 
-    public final void c(defpackage.afv afv) {
-        android.view.View view = afv.a;
+    public final void c(RecyclerViewHolder afv) {
+        android.view.View view = afv.itemView;
         view.animate().cancel();
         for (int size = this.p.size() - 1; size >= 0; size--) {
             if (((defpackage.adc) this.p.get(size)).a == afv) {
@@ -245,11 +245,11 @@ public class acs extends defpackage.agp {
         c();
     }
 
-    private final void g(defpackage.afv afv) {
+    private final void g(RecyclerViewHolder afv) {
         if (m == null) {
             m = new android.animation.ValueAnimator().getInterpolator();
         }
-        afv.a.animate().setInterpolator(m);
+        afv.itemView.animate().setInterpolator(m);
         c(afv);
     }
 
@@ -267,19 +267,19 @@ public class acs extends defpackage.agp {
     public final void d() {
         for (int size = this.p.size() - 1; size >= 0; size--) {
             defpackage.adc adc = (defpackage.adc) this.p.get(size);
-            android.view.View view = adc.a.a;
+            android.view.View view = adc.a.itemView;
             view.setTranslationY(0.0f);
             view.setTranslationX(0.0f);
             e(adc.a);
             this.p.remove(size);
         }
         for (int size2 = this.n.size() - 1; size2 >= 0; size2--) {
-            e((defpackage.afv) this.n.get(size2));
+            e((RecyclerViewHolder) this.n.get(size2));
             this.n.remove(size2);
         }
         for (int size3 = this.o.size() - 1; size3 >= 0; size3--) {
-            defpackage.afv afv = (defpackage.afv) this.o.get(size3);
-            afv.a.setAlpha(1.0f);
+            RecyclerViewHolder afv = (RecyclerViewHolder) this.o.get(size3);
+            afv.itemView.setAlpha(1.0f);
             e(afv);
             this.o.remove(size3);
         }
@@ -292,7 +292,7 @@ public class acs extends defpackage.agp {
                 java.util.ArrayList arrayList = (java.util.ArrayList) this.b.get(size5);
                 for (int size6 = arrayList.size() - 1; size6 >= 0; size6--) {
                     defpackage.adc adc2 = (defpackage.adc) arrayList.get(size6);
-                    android.view.View view2 = adc2.a.a;
+                    android.view.View view2 = adc2.a.itemView;
                     view2.setTranslationY(0.0f);
                     view2.setTranslationX(0.0f);
                     e(adc2.a);
@@ -305,8 +305,8 @@ public class acs extends defpackage.agp {
             for (int size7 = this.a.size() - 1; size7 >= 0; size7--) {
                 java.util.ArrayList arrayList2 = (java.util.ArrayList) this.a.get(size7);
                 for (int size8 = arrayList2.size() - 1; size8 >= 0; size8--) {
-                    defpackage.afv afv2 = (defpackage.afv) arrayList2.get(size8);
-                    afv2.a.setAlpha(1.0f);
+                    RecyclerViewHolder afv2 = (RecyclerViewHolder) arrayList2.get(size8);
+                    afv2.itemView.setAlpha(1.0f);
                     e(afv2);
                     arrayList2.remove(size8);
                     if (arrayList2.isEmpty()) {
@@ -333,11 +333,11 @@ public class acs extends defpackage.agp {
 
     private static void a(java.util.List list) {
         for (int size = list.size() - 1; size >= 0; size--) {
-            ((defpackage.afv) list.get(size)).a.animate().cancel();
+            ((RecyclerViewHolder) list.get(size)).itemView.animate().cancel();
         }
     }
 
-    public final boolean a(defpackage.afv afv, java.util.List list) {
+    public final boolean a(RecyclerViewHolder afv, java.util.List list) {
         return !list.isEmpty() || super.a(afv, list);
     }
 }

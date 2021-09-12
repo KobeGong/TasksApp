@@ -1,9 +1,11 @@
 package defpackage;
 
+import java.util.ArrayList;
+
 /* renamed from: cdw reason: default package */
 /* compiled from: PG */
 public class cdw implements defpackage.q {
-    private static final java.lang.String b = defpackage.cdw.class.getSimpleName();
+    private static final java.lang.String TAG = defpackage.cdw.class.getSimpleName();
     public final defpackage.cdl a;
     private final defpackage.bqw c;
     private final defpackage.cql d;
@@ -52,14 +54,13 @@ public class cdw implements defpackage.q {
     }
 
     /* JADX INFO: finally extract failed */
-    static java.util.List a(defpackage.bsd bsd) {
+    static java.util.List<DeviceOwner> a(defpackage.bsd bsd) {
         java.lang.String str;
         int i;
-        java.util.ArrayList arrayList = new java.util.ArrayList();
+        ArrayList<DeviceOwner> arrayList = new ArrayList<>();
         if (!bsd.a().b()) {
-            java.lang.String str2 = b;
             java.lang.String valueOf = java.lang.String.valueOf(bsd.a());
-            android.util.Log.e(str2, new java.lang.StringBuilder(valueOf.length() + 23).append("Failed to load owners: ").append(valueOf).toString());
+            android.util.Log.e(TAG, "Failed to load owners: " + valueOf);
             return arrayList;
         }
         defpackage.bsk b2 = bsd.b();
@@ -79,7 +80,7 @@ public class cdw implements defpackage.q {
                     } else {
                         i = 0;
                     }
-                    arrayList.add(new defpackage.cdr(str3, str, i));
+                    arrayList.add(new DeviceOwner(str3, str, i));
                 }
                 i2++;
             } catch (Throwable th) {

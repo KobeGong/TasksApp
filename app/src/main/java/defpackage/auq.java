@@ -11,7 +11,7 @@ final /* synthetic */ class auq implements java.lang.Runnable {
     public final void run() {
         TasksFragment auj = this.a;
         if (auj.O()) {
-            auj.J.post(new defpackage.aur(auj));
+            auj.mView.post(new defpackage.aur(auj));
         }
     }
 }

@@ -10,8 +10,8 @@ final /* synthetic */ class auo implements java.util.concurrent.Callable {
 
     public final java.lang.Object call() {
         TasksFragment auj = this.a;
-        if (auj.a != null) {
-            auj.a.post(new defpackage.aut(auj));
+        if (auj.rootView != null) {
+            auj.rootView.post(new defpackage.aut(auj));
         }
         return null;
     }

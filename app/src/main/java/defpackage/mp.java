@@ -5,10 +5,10 @@ package defpackage;
 final class mp {
     public Fragment a;
     public boolean b;
-    public defpackage.kv c;
+    public BackStackRecord c;
     public Fragment d;
     public boolean e;
-    public defpackage.kv f;
+    public BackStackRecord f;
 
     mp() {
     }

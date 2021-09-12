@@ -1,8 +1,12 @@
 package defpackage;
 
+import android.accounts.Account;
 import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.View;
+import android.widget.TextView;
+
+import com.google.android.apps.tasks.R;
 
 /* renamed from: ajd reason: default package */
 /* compiled from: PG */
@@ -59,7 +63,7 @@ public final class ajd {
         return instance;
     }
 
-    public static android.accounts.Account a(android.content.Context context, java.lang.String str) {
+    public static android.accounts.Account getAccountByName(android.content.Context context, java.lang.String str) {
         for (android.accounts.Account account : a(context)) {
             if (account.name.equals(str)) {
                 return account;
@@ -82,7 +86,7 @@ public final class ajd {
         return null;
     }
 
-    public static java.util.List a(android.content.Context context) {
+    public static java.util.List<Account> a(android.content.Context context) {
         java.util.ArrayList arrayList = new java.util.ArrayList();
         try {
             java.util.Collections.addAll(arrayList, defpackage.avb.c(context, "com.google"));
@@ -145,9 +149,9 @@ public final class ajd {
 
     public static void a(defpackage.wl wlVar) {
         wlVar.show();
-        View findViewById = wlVar.findViewById(16908299);
-        if (findViewById instanceof android.widget.TextView) {
-            ((android.widget.TextView) findViewById).setTextSize(0, findViewById.getResources().getDimension(2131689849));
+        View findViewById = wlVar.findViewById(android.R.id.message);
+        if (findViewById instanceof TextView) {
+            ((TextView) findViewById).setTextSize(0, findViewById.getResources().getDimension(R.dimen.small_font_size));
         }
     }
 

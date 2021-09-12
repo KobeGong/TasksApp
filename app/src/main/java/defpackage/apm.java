@@ -20,11 +20,10 @@ public final /* synthetic */ class apm implements android.view.View.OnClickListe
                 str = taskListsActivity.h.b;
             }
             taskListsActivity.a(d, str);
-            defpackage.cde cde = taskListsActivity.o;
-            cde.g();
-            cde.d.b(cde.c);
-            if (!cde.d.l()) {
-                cde.d.a(cde.b.getSupportFragmentManager(), defpackage.cde.a);
+            taskListsActivity.o.g();
+            taskListsActivity.o.d.b(taskListsActivity.o.view);
+            if (!taskListsActivity.o.d.l()) {
+                taskListsActivity.o.d.a(taskListsActivity.o.fragmentActivity.getSupportFragmentManager(), defpackage.cde.TAG);
             }
         }
     }

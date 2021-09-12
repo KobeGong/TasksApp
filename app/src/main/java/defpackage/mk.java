@@ -31,20 +31,20 @@ final class mk {
         if (lpVar.d > 0) {
             android.util.SparseArray sparseArray = new android.util.SparseArray();
             for (int i3 = i; i3 < i2; i3++) {
-                defpackage.kv kvVar = (defpackage.kv) arrayList.get(i3);
+                BackStackRecord kvVar = (BackStackRecord) arrayList.get(i3);
                 if (!((java.lang.Boolean) arrayList2.get(i3)).booleanValue()) {
-                    int size = kvVar.b.size();
+                    int size = kvVar.ops.size();
                     for (int i4 = 0; i4 < size; i4++) {
-                        a(kvVar, (defpackage.kw) kvVar.b.get(i4), sparseArray, false, z);
+                        a(kvVar, (FragmentTransactionOP) kvVar.ops.get(i4), sparseArray, false, z);
                     }
-                } else if (kvVar.a.f.onHasView()) {
-                    for (int size2 = kvVar.b.size() - 1; size2 >= 0; size2--) {
-                        a(kvVar, (defpackage.kw) kvVar.b.get(size2), sparseArray, true, z);
+                } else if (kvVar.mManager.f.onHasView()) {
+                    for (int size2 = kvVar.ops.size() - 1; size2 >= 0; size2--) {
+                        a(kvVar, (FragmentTransactionOP) kvVar.ops.get(size2), sparseArray, true, z);
                     }
                 }
             }
             if (sparseArray.size() != 0) {
-                android.view.View view2 = new android.view.View(lpVar.e.mContext);
+                android.view.View view2 = new android.view.View(lpVar.mHost.mContext);
                 int size3 = sparseArray.size();
                 int i5 = 0;
                 while (true) {
@@ -58,7 +58,7 @@ final class mk {
                             if (i8 < i) {
                                 break;
                             }
-                            defpackage.kv kvVar2 = (defpackage.kv) arrayList.get(i8);
+                            BackStackRecord kvVar2 = (BackStackRecord) arrayList.get(i8);
                             if (kvVar2.b(keyAt)) {
                                 boolean booleanValue = ((java.lang.Boolean) arrayList2.get(i8)).booleanValue();
                                 if (kvVar2.q != null) {
@@ -106,7 +106,7 @@ final class mk {
                                     Fragment lcVar3 = mpVar.a;
                                     Fragment lcVar4 = mpVar.d;
                                     if (lcVar3 != null) {
-                                        lcVar3.J.setVisibility(0);
+                                        lcVar3.mView.setVisibility(0);
                                     }
                                     if (lcVar3 == null || lcVar4 == null) {
                                         obj3 = null;
@@ -158,9 +158,9 @@ final class mk {
                                         a(a8, 4);
                                         java.lang.Object a9 = a(a4, a5, b2, obj3, lcVar, z2);
                                         if (a9 != null) {
-                                            if (lcVar2 != null && b2 != null && lcVar2.m && lcVar2.C && lcVar2.P) {
+                                            if (lcVar2 != null && b2 != null && lcVar2.m && lcVar2.mHidden && lcVar2.mHiddenChanged) {
                                                 lcVar2.b(true);
-                                                a4.b(b2, lcVar2.J, a7);
+                                                a4.b(b2, lcVar2.mView, a7);
                                                 defpackage.nt.a(lcVar2.I, new defpackage.ml(a7));
                                             }
                                             java.util.ArrayList arrayList8 = new java.util.ArrayList();
@@ -391,8 +391,8 @@ final class mk {
         }
         Fragment lcVar = mpVar.d;
         defpackage.qr qrVar2 = new defpackage.qr();
-        mvVar.a((java.util.Map) qrVar2, lcVar.J);
-        defpackage.kv kvVar = mpVar.f;
+        mvVar.a((java.util.Map) qrVar2, lcVar.mView);
+        BackStackRecord kvVar = mpVar.f;
         if (mpVar.e) {
             lcVar.G();
             arrayList = kvVar.r;
@@ -408,14 +408,14 @@ final class mk {
     static defpackage.qr a(defpackage.mv mvVar, defpackage.qr qrVar, java.lang.Object obj, defpackage.mp mpVar) {
         java.util.ArrayList arrayList;
         Fragment lcVar = mpVar.a;
-        android.view.View view = lcVar.J;
+        android.view.View view = lcVar.mView;
         if (qrVar.isEmpty() || obj == null || view == null) {
             qrVar.clear();
             return null;
         }
         defpackage.qr qrVar2 = new defpackage.qr();
         mvVar.a((java.util.Map) qrVar2, view);
-        defpackage.kv kvVar = mpVar.c;
+        BackStackRecord kvVar = mpVar.c;
         if (mpVar.b) {
             lcVar.H();
             arrayList = kvVar.q;
@@ -437,7 +437,7 @@ final class mk {
 
     static android.view.View a(defpackage.qr qrVar, defpackage.mp mpVar, java.lang.Object obj, boolean z) {
         java.lang.String str;
-        defpackage.kv kvVar = mpVar.c;
+        BackStackRecord kvVar = mpVar.c;
         if (obj == null || qrVar == null || kvVar.q == null || kvVar.q.isEmpty()) {
             return null;
         }
@@ -449,7 +449,7 @@ final class mk {
         return (android.view.View) qrVar.get(str);
     }
 
-    private static void a(defpackage.mv mvVar, java.lang.Object obj, java.lang.Object obj2, defpackage.qr qrVar, boolean z, defpackage.kv kvVar) {
+    private static void a(defpackage.mv mvVar, java.lang.Object obj, java.lang.Object obj2, defpackage.qr qrVar, boolean z, BackStackRecord kvVar) {
         java.lang.String str;
         if (kvVar.q != null && !kvVar.q.isEmpty()) {
             if (z) {
@@ -478,7 +478,7 @@ final class mk {
         java.util.ArrayList arrayList2 = null;
         if (obj != null) {
             arrayList2 = new java.util.ArrayList();
-            android.view.View view2 = lcVar.J;
+            android.view.View view2 = lcVar.mView;
             if (view2 != null) {
                 mvVar.a(arrayList2, view2);
             }
@@ -514,7 +514,7 @@ final class mk {
         return mvVar.a(obj2, obj, obj3);
     }
 
-    private static void a(defpackage.kv kvVar, defpackage.kw kwVar, android.util.SparseArray sparseArray, boolean z, boolean z2) {
+    private static void a(BackStackRecord kvVar, FragmentTransactionOP kwVar, android.util.SparseArray sparseArray, boolean z, boolean z2) {
         boolean z3;
         boolean z4;
         boolean z5;
@@ -524,12 +524,12 @@ final class mk {
         defpackage.mp mpVar2;
         Fragment lcVar = kwVar.b;
         if (lcVar != null) {
-            int i = lcVar.A;
+            int i = lcVar.mFragmentId;
             if (i != 0) {
-                switch (z ? a[kwVar.a] : kwVar.a) {
+                switch (z ? a[kwVar.mCmd] : kwVar.mCmd) {
                     case 1:
                     case 7:
-                        boolean z8 = z2 ? lcVar.O : !lcVar.m && !lcVar.C;
+                        boolean z8 = z2 ? lcVar.O : !lcVar.m && !lcVar.mHidden;
                         z3 = true;
                         z4 = false;
                         z5 = false;
@@ -537,14 +537,14 @@ final class mk {
                         break;
                     case 3:
                     case 6:
-                        boolean z9 = z2 ? !lcVar.m && lcVar.J != null && lcVar.J.getVisibility() == 0 && lcVar.Q >= 0.0f : lcVar.m && !lcVar.C;
+                        boolean z9 = z2 ? !lcVar.m && lcVar.mView != null && lcVar.mView.getVisibility() == 0 && lcVar.Q >= 0.0f : lcVar.m && !lcVar.mHidden;
                         z3 = false;
                         z4 = z9;
                         z5 = true;
                         z6 = false;
                         break;
                     case 4:
-                        boolean z10 = z2 ? lcVar.P && lcVar.m && lcVar.C : lcVar.m && !lcVar.C;
+                        boolean z10 = z2 ? lcVar.mHiddenChanged && lcVar.m && lcVar.mHidden : lcVar.m && !lcVar.mHidden;
                         z3 = false;
                         z4 = z10;
                         z5 = true;
@@ -552,8 +552,8 @@ final class mk {
                         break;
                     case 5:
                         if (!z2) {
-                            z7 = lcVar.C;
-                        } else if (!lcVar.P || lcVar.C || !lcVar.m) {
+                            z7 = lcVar.mHidden;
+                        } else if (!lcVar.mHiddenChanged || lcVar.mHidden || !lcVar.m) {
                             z7 = false;
                         } else {
                             z7 = true;
@@ -583,8 +583,8 @@ final class mk {
                     if (mpVar != null && mpVar.d == lcVar) {
                         mpVar.d = null;
                     }
-                    FragmentManagerImpl lpVar = kvVar.a;
-                    if (lcVar.d <= 0 && lpVar.d > 0 && !kvVar.s) {
+                    FragmentManagerImpl lpVar = kvVar.mManager;
+                    if (lcVar.d <= 0 && lpVar.d > 0 && !kvVar.mReorderingAllowed) {
                         lpVar.b(lcVar);
                         lpVar.a(lcVar, 1, 0, 0, false);
                     }

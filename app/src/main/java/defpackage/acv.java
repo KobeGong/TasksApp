@@ -18,9 +18,9 @@ final class acv implements java.lang.Runnable {
         while (i < size) {
             java.lang.Object obj = arrayList.get(i);
             i++;
-            defpackage.afv afv = (defpackage.afv) obj;
+            RecyclerViewHolder afv = (RecyclerViewHolder) obj;
             defpackage.acs acs = this.b;
-            android.view.View view = afv.a;
+            android.view.View view = afv.itemView;
             android.view.ViewPropertyAnimator animate = view.animate();
             acs.d.add(afv);
             animate.alpha(1.0f).setDuration(acs.i).setListener(new defpackage.acx(acs, afv, view, animate)).start();

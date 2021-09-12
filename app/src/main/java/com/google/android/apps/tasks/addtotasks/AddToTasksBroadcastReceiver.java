@@ -24,7 +24,7 @@ public class AddToTasksBroadcastReceiver extends android.content.BroadcastReceiv
                 str = b.a;
                 anc = null;
             }
-            android.accounts.Account a = defpackage.ajd.a(context, str);
+            android.accounts.Account a = defpackage.ajd.getAccountByName(context, str);
             if (a == null) {
                 defpackage.azb.a("Specified account was not found: %s", defpackage.azb.a(str));
                 a(context);

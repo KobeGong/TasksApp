@@ -2,7 +2,7 @@ package defpackage;
 
 /* renamed from: akv reason: default package */
 /* compiled from: PG */
-final class akv extends defpackage.afv {
+final class akv extends RecyclerViewHolder {
     public defpackage.aky p;
     public final android.widget.TextView q;
     public final android.widget.TextView r;
@@ -20,7 +20,7 @@ final class akv extends defpackage.afv {
         this.u = (android.widget.TextView) view.findViewById(2131755331);
         this.v = (com.google.android.apps.tasks.ui.components.FancyCheckboxView) view.findViewById(2131755335);
         this.v.setOnClickListener(new defpackage.akw(this));
-        this.a.setOnClickListener(new defpackage.akx(this));
+        this.itemView.setOnClickListener(new defpackage.akx(this));
     }
 
     static java.lang.String a(android.content.Context context, java.lang.String str, java.lang.String str2, int i) {

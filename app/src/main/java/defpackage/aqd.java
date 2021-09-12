@@ -1,5 +1,7 @@
 package defpackage;
 
+import com.google.android.apps.tasks.ui.components.snackbar.Snackbar;
+
 /* renamed from: aqd reason: default package */
 final /* synthetic */ class aqd implements android.view.View.OnClickListener {
     private final WelcomeFragment a;
@@ -9,15 +11,12 @@ final /* synthetic */ class aqd implements android.view.View.OnClickListener {
     }
 
     public final void onClick(android.view.View view) {
-        WelcomeFragment aqa = this.a;
-        defpackage.axt axt = defpackage.axt.a;
-        int a2 = defpackage.axv.a(aqa.getContext());
+        int a2 = defpackage.axv.a(this.a.getContext());
         if (a2 == 0) {
-            aqa.c();
+            this.a.onRetryClick();
         } else if (defpackage.axv.a(a2)) {
-            axt.a((android.app.Activity) aqa.getActivity(), a2).show();
-        } else {
-            com.google.android.apps.tasks.ui.components.snackbar.Snackbar.a(aqa.J, (java.lang.CharSequence) defpackage.axv.b(a2), 0).a();
-        }
+            defpackage.axt.a.a(this.a.getActivity(), a2).show();
+        } else
+            Snackbar.a(this.a.mView, axv.b(a2), 0).a();
     }
 }

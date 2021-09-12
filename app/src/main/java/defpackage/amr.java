@@ -6,7 +6,7 @@ public final class amr implements defpackage.amn {
     public static final long serialVersionUID = 2;
     private final java.lang.String a;
     private final java.lang.String b;
-    private transient defpackage.ajq c;
+    private transient AbsTaskListStructure c;
     private transient int d;
 
     public amr(java.lang.String str, java.lang.String str2) {
@@ -18,7 +18,7 @@ public final class amr implements defpackage.amn {
         this.c = alv.b(this.a);
         this.d = 1;
         if (this.c != null) {
-            java.util.Iterator it = this.c.b().a.iterator();
+            java.util.Iterator it = this.c.getStructure().a.iterator();
             while (true) {
                 if (!it.hasNext()) {
                     break;

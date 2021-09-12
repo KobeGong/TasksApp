@@ -87,7 +87,7 @@ public final class AddTaskFragment extends defpackage.gu implements android.app.
 
     /* access modifiers changed from: 0000 */
     public final /* synthetic */ void O() {
-        defpackage.aqj.a(this.ab).a(this.t, "datePicker_add");
-        defpackage.bdk.a(this.J, false);
+        defpackage.aqj.a(this.ab).a(this.fragmentManager, "datePicker_add");
+        defpackage.bdk.a(this.mView, false);
     }
 }

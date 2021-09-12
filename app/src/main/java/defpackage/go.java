@@ -12,7 +12,7 @@ public class go extends android.widget.FrameLayout {
         super(context, attributeSet);
         android.content.res.TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, defpackage.gp.a);
         if (obtainStyledAttributes.hasValue(defpackage.gp.c)) {
-            ViewCompat.a((android.view.View) this, (float) obtainStyledAttributes.getDimensionPixelSize(defpackage.gp.c, 0));
+            ViewCompat.setElevation((android.view.View) this, (float) obtainStyledAttributes.getDimensionPixelSize(defpackage.gp.c, 0));
         }
         obtainStyledAttributes.recycle();
         setClickable(true);

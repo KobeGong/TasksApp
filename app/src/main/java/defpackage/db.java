@@ -4,7 +4,7 @@ package defpackage;
 /* compiled from: PG */
 public class db extends android.widget.FrameLayout {
     public int a;
-    public int b;
+    public int expandedTitleMarginBottom;
     public final defpackage.ew c;
     public android.graphics.drawable.Drawable d;
     public int e;
@@ -59,7 +59,7 @@ public class db extends android.widget.FrameLayout {
             ewVar3.c();
         }
         int dimensionPixelSize = a2.getDimensionPixelSize(defpackage.dh.r, 0);
-        this.b = dimensionPixelSize;
+        this.expandedTitleMarginBottom = dimensionPixelSize;
         this.m = dimensionPixelSize;
         this.a = dimensionPixelSize;
         this.l = dimensionPixelSize;
@@ -73,7 +73,7 @@ public class db extends android.widget.FrameLayout {
             this.a = a2.getDimensionPixelSize(defpackage.dh.v, 0);
         }
         if (a2.hasValue(defpackage.dh.s)) {
-            this.b = a2.getDimensionPixelSize(defpackage.dh.s, 0);
+            this.expandedTitleMarginBottom = a2.getDimensionPixelSize(defpackage.dh.s, 0);
         }
         this.o = a2.getBoolean(defpackage.dh.B, true);
         a(a2.getText(defpackage.dh.A));
@@ -306,11 +306,11 @@ public class db extends android.widget.FrameLayout {
     }
 
     /* access modifiers changed from: protected */
-    public void onLayout(boolean z, int i2, int i3, int i4, int i5) {
+    public void onLayout(boolean changed, int left, int top, int right, int bottom) {
         boolean z2;
         int i6;
         int i7;
-        super.onLayout(z, i2, i3, i4, i5);
+        super.onLayout(changed, left, top, right, bottom);
         if (this.f != null) {
             int b2 = this.f.b();
             int childCount = getChildCount();
@@ -356,8 +356,8 @@ public class db extends android.widget.FrameLayout {
                 defpackage.ew ewVar2 = this.c;
                 int i15 = z2 ? this.m : this.l;
                 int i16 = this.n.top + this.a;
-                int i17 = (i4 - i2) - (z2 ? this.l : this.m);
-                int i18 = (i5 - i3) - this.b;
+                int i17 = (right - left) - (z2 ? this.l : this.m);
+                int i18 = (bottom - top) - this.expandedTitleMarginBottom;
                 if (!defpackage.ew.a(ewVar2.c, i15, i16, i17, i18)) {
                     ewVar2.c.set(i15, i16, i17, i18);
                     ewVar2.u = true;
@@ -392,12 +392,12 @@ public class db extends android.widget.FrameLayout {
         return marginLayoutParams.bottomMargin + view.getHeight() + marginLayoutParams.topMargin;
     }
 
-    public static defpackage.dj a(android.view.View view) {
-        defpackage.dj djVar = (defpackage.dj) view.getTag(2131755049);
+    public static ViewOffsetHelper a(android.view.View view) {
+        ViewOffsetHelper djVar = (ViewOffsetHelper) view.getTag(2131755049);
         if (djVar != null) {
             return djVar;
         }
-        defpackage.dj djVar2 = new defpackage.dj(view);
+        ViewOffsetHelper djVar2 = new ViewOffsetHelper(view);
         view.setTag(2131755049, djVar2);
         return djVar2;
     }

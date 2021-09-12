@@ -9,7 +9,7 @@ public final class amu implements defpackage.amn {
     private final java.lang.String c;
     private final java.lang.String d;
     private final java.util.Map e;
-    private transient defpackage.ajq f;
+    private transient AbsTaskListStructure f;
     private transient int g;
     private final transient boolean h;
 

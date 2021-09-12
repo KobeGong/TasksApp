@@ -9,11 +9,10 @@ final /* synthetic */ class aqe implements android.view.View.OnClickListener {
     }
 
     public final void onClick(android.view.View view) {
-        WelcomeFragment aqa = this.a;
-        android.content.SharedPreferences.Editor edit = defpackage.aiw.b(aqa.getContext()).a.edit();
-        edit.putBoolean("onboarding_dismissed", true);
-        edit.apply();
-        FragmentActivity j = aqa.getActivity();
+        defpackage.aiw.b(this.a.getContext()).a.edit()
+                .putBoolean("onboarding_dismissed", true)
+                .apply();
+        FragmentActivity j = this.a.getActivity();
         if (j != null) {
             j.onBackPressed();
         }

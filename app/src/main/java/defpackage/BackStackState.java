@@ -2,7 +2,7 @@ package defpackage;
 
 /* renamed from: kx reason: default package */
 /* compiled from: PG */
-final class kx implements android.os.Parcelable {
+final class BackStackState implements android.os.Parcelable {
     public static final android.os.Parcelable.Creator CREATOR = new defpackage.ky();
     public final int[] a;
     public final int b;
@@ -17,27 +17,27 @@ final class kx implements android.os.Parcelable {
     public final java.util.ArrayList k;
     public final boolean l;
 
-    public kx(defpackage.kv kvVar) {
-        int size = kvVar.b.size();
+    public BackStackState(BackStackRecord kvVar) {
+        int size = kvVar.ops.size();
         this.a = new int[(size * 6)];
         if (!kvVar.i) {
             throw new java.lang.IllegalStateException("Not on back stack");
         }
         int i2 = 0;
         for (int i3 = 0; i3 < size; i3++) {
-            defpackage.kw kwVar = (defpackage.kw) kvVar.b.get(i3);
+            FragmentTransactionOP kwVar = (FragmentTransactionOP) kvVar.ops.get(i3);
             int i4 = i2 + 1;
-            this.a[i2] = kwVar.a;
+            this.a[i2] = kwVar.mCmd;
             int i5 = i4 + 1;
             this.a[i4] = kwVar.b != null ? kwVar.b.g : -1;
             int i6 = i5 + 1;
-            this.a[i5] = kwVar.c;
+            this.a[i5] = kwVar.mEnterAnim;
             int i7 = i6 + 1;
-            this.a[i6] = kwVar.d;
+            this.a[i6] = kwVar.mExitAnim;
             int i8 = i7 + 1;
-            this.a[i7] = kwVar.e;
+            this.a[i7] = kwVar.mPopEnterAnim;
             i2 = i8 + 1;
-            this.a[i8] = kwVar.f;
+            this.a[i8] = kwVar.mPopExitAnim;
         }
         this.b = kvVar.g;
         this.c = kvVar.h;
@@ -49,10 +49,10 @@ final class kx implements android.os.Parcelable {
         this.i = kvVar.p;
         this.j = kvVar.q;
         this.k = kvVar.r;
-        this.l = kvVar.s;
+        this.l = kvVar.mReorderingAllowed;
     }
 
-    public kx(android.os.Parcel parcel) {
+    public BackStackState(android.os.Parcel parcel) {
         this.a = parcel.createIntArray();
         this.b = parcel.readInt();
         this.c = parcel.readInt();

@@ -10,9 +10,9 @@ final /* synthetic */ class cec implements defpackage.cdg {
 
     public final void a(android.view.View view, java.lang.Object obj) {
         defpackage.cdv cdv = this.a;
-        defpackage.cdu cdu = (defpackage.cdu) obj;
+        AbsDeviceOwner cdu = (AbsDeviceOwner) obj;
         if (cdu != null) {
-            cdv.a(defpackage.czk.MENU_MY_ACCOUNT, cdu, defpackage.cdm.a(view.getContext()));
+            cdv.a(defpackage.czk.MENU_MY_ACCOUNT, cdu, defpackage.cdm.retrieveActivity(view.getContext()));
         }
     }
 }

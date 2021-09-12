@@ -22,9 +22,9 @@ public final class cfb {
         boolean z;
         int i = 0;
         this.e.a(this.a, obj, this.a.getWidth());
-        java.lang.String b2 = ((defpackage.cdu) obj).b();
+        java.lang.String b2 = ((AbsDeviceOwner) obj).accountName();
         java.lang.String a2 = b2 == null ? null : a((java.lang.CharSequence) b2);
-        java.lang.String a3 = ((defpackage.cdu) obj).a();
+        java.lang.String a3 = ((AbsDeviceOwner) obj).getDisplayName();
         java.lang.String a4 = a3 == null ? a2 : a((java.lang.CharSequence) a3);
         this.b.setText(a4);
         if (a2 == null || a2.equals(a4)) {

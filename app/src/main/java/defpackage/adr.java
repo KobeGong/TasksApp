@@ -20,7 +20,7 @@ public final class adr implements java.lang.Runnable {
         afg.b = i2;
     }
 
-    private static defpackage.afv a(android.support.v7.widget.RecyclerView recyclerView, int i, long j) {
+    private static RecyclerViewHolder a(android.support.v7.widget.RecyclerView recyclerView, int i, long j) {
         boolean z;
         int b2 = recyclerView.g.b();
         int i2 = 0;
@@ -29,8 +29,8 @@ public final class adr implements java.lang.Runnable {
                 z = false;
                 break;
             }
-            defpackage.afv c2 = android.support.v7.widget.RecyclerView.c(recyclerView.g.c(i2));
-            if (c2.c == i && !c2.j()) {
+            RecyclerViewHolder c2 = android.support.v7.widget.RecyclerView.getChildViewHolderInt(recyclerView.g.c(i2));
+            if (c2.position == i && !c2.isInvalid()) {
                 z = true;
                 break;
             }
@@ -42,12 +42,12 @@ public final class adr implements java.lang.Runnable {
         defpackage.afn afn = recyclerView.e;
         try {
             recyclerView.i();
-            defpackage.afv a2 = afn.a(i, j);
+            RecyclerViewHolder a2 = afn.a(i, j);
             if (a2 != null) {
-                if (!a2.l() || a2.j()) {
+                if (!a2.isBound() || a2.isInvalid()) {
                     afn.a(a2, false);
                 } else {
-                    afn.a(a2.a);
+                    afn.a(a2.itemView);
                 }
             }
             return a2;
@@ -138,9 +138,9 @@ public final class adr implements java.lang.Runnable {
                 if (adt3.d == null) {
                     break;
                 }
-                defpackage.afv a2 = a(adt3.d, adt3.e, adt3.a ? Long.MAX_VALUE : nanos);
-                if (a2 != null && a2.b != null && a2.l() && !a2.j()) {
-                    android.support.v7.widget.RecyclerView recyclerView4 = (android.support.v7.widget.RecyclerView) a2.b.get();
+                RecyclerViewHolder a2 = a(adt3.d, adt3.e, adt3.a ? Long.MAX_VALUE : nanos);
+                if (a2 != null && a2.mNestedRecyclerView != null && a2.isBound() && !a2.isInvalid()) {
+                    android.support.v7.widget.RecyclerView recyclerView4 = (android.support.v7.widget.RecyclerView) a2.mNestedRecyclerView.get();
                     if (recyclerView4 != null) {
                         if (recyclerView4.u && recyclerView4.g.b() != 0) {
                             recyclerView4.b();
@@ -150,9 +150,9 @@ public final class adr implements java.lang.Runnable {
                         if (afg2.d != 0) {
                             defpackage.jd.c("RV Nested Prefetch");
                             defpackage.aft aft = recyclerView4.D;
-                            defpackage.aet aet = recyclerView4.k;
+                            RecyclerViewAdapter aet = recyclerView4.adapter;
                             aft.d = 1;
-                            aft.e = aet.a();
+                            aft.e = aet.getItemCount();
                             aft.g = false;
                             aft.h = false;
                             aft.i = false;

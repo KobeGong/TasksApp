@@ -4,14 +4,14 @@ package defpackage;
 /* compiled from: PG */
 public final class cdl {
     public boolean a;
-    public final java.util.concurrent.CopyOnWriteArrayList b = new java.util.concurrent.CopyOnWriteArrayList();
-    public final java.util.List c = new java.util.ArrayList();
+    public final java.util.concurrent.CopyOnWriteArrayList<defpackage.cdm> b = new java.util.concurrent.CopyOnWriteArrayList<>();
+    public final java.util.List<DeviceOwner> availableAccounts = new java.util.ArrayList<>();
     public final java.util.List d = new java.util.ArrayList();
 
     public final void a(java.lang.Object obj) {
         defpackage.cky.a(obj);
         if (!defpackage.cky.a(c(), obj)) {
-            defpackage.cky.a(this.c.contains(obj), (java.lang.Object) "Selected account must be an available account");
+            defpackage.cky.a(this.availableAccounts.contains(obj), "Selected account must be an available account");
             if (this.d.contains(obj)) {
                 this.d.set(this.d.indexOf(obj), c());
                 this.d.set(0, obj);
@@ -25,13 +25,13 @@ public final class cdl {
         }
     }
 
-    public final int a() {
-        return this.c.size();
+    public final int getSize() {
+        return this.availableAccounts.size();
     }
 
     public final java.lang.Object a(int i) {
-        defpackage.cky.a(i, this.c.size());
-        return this.c.get(i);
+        defpackage.cky.a(i, this.availableAccounts.size());
+        return this.availableAccounts.get(i);
     }
 
     public final boolean b() {
@@ -79,9 +79,8 @@ public final class cdl {
         java.lang.Object c2 = c();
         java.lang.Object e = e();
         java.lang.Object g = g();
-        java.util.Iterator it = this.b.iterator();
-        while (it.hasNext()) {
-            ((defpackage.cdm) it.next()).a(c2, e, g);
+        for (defpackage.cdm cdm : this.b) {
+            cdm.a(c2, e, g);
         }
     }
 

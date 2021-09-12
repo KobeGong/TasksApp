@@ -122,8 +122,8 @@ public class afw extends defpackage.rn {
         int i = 1;
         super.a(view, tlVar);
         tlVar.a((java.lang.CharSequence) android.support.v7.widget.RecyclerView.class.getName());
-        if (!this.b.n() && this.b.l != null) {
-            defpackage.afd afd = this.b.l;
+        if (!this.b.n() && this.b.mLayout != null) {
+            LayoutManager afd = this.b.mLayout;
             defpackage.afn afn = afd.b.e;
             defpackage.aft aft = afd.b.D;
             if (afd.b.canScrollVertically(-1) || afd.b.canScrollHorizontally(-1)) {
@@ -134,9 +134,9 @@ public class afw extends defpackage.rn {
                 tlVar.a(4096);
                 tlVar.a();
             }
-            int i2 = (afd.b == null || afd.b.k == null) ? 1 : afd.e() ? afd.b.k.a() : 1;
-            if (!(afd.b == null || afd.b.k == null || !afd.d())) {
-                i = afd.b.k.a();
+            int i2 = (afd.b == null || afd.b.adapter == null) ? 1 : afd.e() ? afd.b.adapter.getItemCount() : 1;
+            if (!(afd.b == null || afd.b.adapter == null || !afd.d())) {
+                i = afd.b.adapter.getItemCount();
             }
             if (android.os.Build.VERSION.SDK_INT >= 21) {
                 tnVar = new defpackage.tn(android.view.accessibility.AccessibilityNodeInfo.CollectionInfo.obtain(i2, i, false, 0));
@@ -156,8 +156,8 @@ public class afw extends defpackage.rn {
         accessibilityEvent.setClassName(android.support.v7.widget.RecyclerView.class.getName());
         if ((view instanceof android.support.v7.widget.RecyclerView) && !this.b.n()) {
             android.support.v7.widget.RecyclerView recyclerView = (android.support.v7.widget.RecyclerView) view;
-            if (recyclerView.l != null) {
-                recyclerView.l.a(accessibilityEvent);
+            if (recyclerView.mLayout != null) {
+                recyclerView.mLayout.a(accessibilityEvent);
             }
         }
     }

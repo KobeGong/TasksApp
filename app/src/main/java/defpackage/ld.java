@@ -10,14 +10,14 @@ final class ld extends FragmentContainer {
     }
 
     public final android.view.View onFindViewById(int i) {
-        if (this.a.J != null) {
-            return this.a.J.findViewById(i);
+        if (this.a.mView != null) {
+            return this.a.mView.findViewById(i);
         }
         throw new java.lang.IllegalStateException("Fragment does not have a view");
     }
 
     public final boolean onHasView() {
-        return this.a.J != null;
+        return this.a.mView != null;
     }
 
     public final Fragment instantiate(android.content.Context context, java.lang.String str, android.os.Bundle bundle) {

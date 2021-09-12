@@ -16,9 +16,9 @@ final /* synthetic */ class asu implements android.view.View.OnClickListener {
         asi.b(atb);
         asi.a(atb);
         if (defpackage.ajd.b(atb.d)) {
-            defpackage.any.a().c().a(asi.U, atb.d.d, (java.lang.Object) null);
+            defpackage.any.a().c().a(asi.listId, atb.d.d, (java.lang.Object) null);
         } else {
-            defpackage.any.a().c().a(asi.U, atb.d.d, true);
+            defpackage.any.a().c().a(asi.listId, atb.d.d, true);
         }
     }
 }

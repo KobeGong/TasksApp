@@ -23,7 +23,7 @@ public class axz {
     @java.lang.Deprecated
     /* Code decompiled incorrectly, please refer to instructions dump. */
     public static int b(android.content.Context r8) {
-        /*
+
             r3 = 9
             r2 = 1
             r1 = 0
@@ -200,8 +200,6 @@ public class axz {
         L_0x0167:
             r2 = r1
             goto L_0x00dc
-        */
-        throw new UnsupportedOperationException("Method not decompiled: defpackage.axz.b(android.content.Context):int");
     }
 
     @java.lang.Deprecated
@@ -281,7 +279,6 @@ public class axz {
     @android.annotation.TargetApi(21)
     /* Code decompiled incorrectly, please refer to instructions dump. */
     static boolean a(android.content.Context r5, java.lang.String r6) {
-        /*
             r1 = 1
             r2 = 0
             java.lang.String r0 = "com.google.android.gms"
@@ -297,8 +294,7 @@ public class axz {
             if (r0 == 0) goto L_0x0039
             java.lang.Object r0 = r4.next()
             android.content.pm.PackageInstaller$SessionInfo r0 = (android.content.pm.PackageInstaller.SessionInfo) r0
-            java.lang.String r0 = r0.getAppPackageName()
-            boolean r0 = r6.equals(r0)
+            boolean r0 = r6.equals(r0.getAppPackageName())
             if (r0 == 0) goto L_0x001e
             r0 = r1
         L_0x0035:
@@ -346,7 +342,5 @@ public class axz {
             r0 = move-exception
             r0 = r2
             goto L_0x0035
-        */
-        throw new UnsupportedOperationException("Method not decompiled: defpackage.axz.a(android.content.Context, java.lang.String):boolean");
     }
 }

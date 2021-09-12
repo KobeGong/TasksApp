@@ -166,10 +166,10 @@ public class sw {
     public void g(android.view.View view) {
     }
 
-    public void a(android.view.View view, float f2) {
+    public void setElevation(android.view.View view, float f2) {
     }
 
-    public float u(android.view.View view) {
+    public float getElevation(android.view.View view) {
         return 0.0f;
     }
 
@@ -254,7 +254,7 @@ public class sw {
     }
 
     public float A(android.view.View view) {
-        return v(view) + u(view);
+        return v(view) + getElevation(view);
     }
 
     public boolean s(android.view.View view) {

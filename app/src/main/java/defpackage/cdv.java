@@ -23,16 +23,16 @@ class cdv {
     }
 
     /* access modifiers changed from: 0000 */
-    public final void a(defpackage.czk czk, defpackage.cdu cdu, android.app.Activity activity) {
+    public final void a(defpackage.czk czk, AbsDeviceOwner cdu, android.app.Activity activity) {
         android.content.Intent putExtra = new android.content.Intent("com.google.android.gms.accountsettings.action.VIEW_SETTINGS").setPackage("com.google.android.gms").putExtra("extra.screenId", czk.d);
-        java.lang.String b = cdu.b();
+        java.lang.String b = cdu.accountName();
         putExtra.putExtra("extra.accountName", b);
         java.lang.String.format("startSettingstActivity(). screenId: %s, accountName: %s", new java.lang.Object[]{czk, b});
         activity.startActivityForResult(putExtra, 0);
     }
 
     /* access modifiers changed from: 0000 */
-    public final void a(defpackage.czk czk, defpackage.cdu cdu, android.app.Activity activity, java.lang.String str) {
+    public final void a(defpackage.czk czk, AbsDeviceOwner cdu, android.app.Activity activity, java.lang.String str) {
         if (cdu != null) {
             a(czk, cdu, activity);
             return;

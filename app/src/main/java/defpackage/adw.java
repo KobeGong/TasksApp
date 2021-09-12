@@ -2,7 +2,7 @@ package defpackage;
 
 /* renamed from: adw reason: default package */
 /* compiled from: PG */
-public final class adw extends defpackage.afd implements defpackage.aif {
+public final class adw extends LayoutManager implements defpackage.aif {
     private int n;
     private defpackage.adz o;
     private defpackage.aep p;
@@ -133,7 +133,6 @@ public final class adw extends defpackage.afd implements defpackage.aif {
     /* JADX WARNING: Removed duplicated region for block: B:38:0x0097  */
     /* Code decompiled incorrectly, please refer to instructions dump. */
     public final void a(defpackage.afn r13, defpackage.aft r14) {
-        /*
             r12 = this;
             aea r0 = r12.u
             if (r0 != 0) goto L_0x0009
@@ -259,7 +258,7 @@ public final class adw extends defpackage.afd implements defpackage.aif {
         L_0x00f0:
             if (r2 < 0) goto L_0x02ee
             android.view.View r3 = r12.e(r2)
-            afv r4 = android.support.v7.widget.RecyclerView.c(r3)
+            afv r4 = android.support.v7.widget.RecyclerView.getChildViewHolderInt(r3)
             boolean r5 = r4.b()
             if (r5 != 0) goto L_0x011a
             boolean r5 = r4.j()
@@ -519,7 +518,7 @@ public final class adw extends defpackage.afd implements defpackage.aif {
             goto L_0x00ea
         L_0x02df:
             r12.d(r2)
-            r13.c(r3)
+            r13.scrapView(r3)
             android.support.v7.widget.RecyclerView r3 = r12.b
             aho r3 = r3.h
             r3.c(r4)
@@ -944,8 +943,8 @@ public final class adw extends defpackage.afd implements defpackage.aif {
         if (k() == 0 || aft.a() == 0 || a == null || b == null) {
             return 0;
         }
-        int min = java.lang.Math.min(defpackage.afd.a(a), defpackage.afd.a(b));
-        int max2 = java.lang.Math.max(defpackage.afd.a(a), defpackage.afd.a(b));
+        int min = java.lang.Math.min(LayoutManager.a(a), LayoutManager.a(b));
+        int max2 = java.lang.Math.max(LayoutManager.a(a), LayoutManager.a(b));
         if (z3) {
             max = java.lang.Math.max(0, (aft.a() - max2) - 1);
         } else {
@@ -954,7 +953,7 @@ public final class adw extends defpackage.afd implements defpackage.aif {
         if (!z2) {
             return max;
         }
-        return java.lang.Math.round(((float) (aep.b() - aep.a(a))) + ((((float) java.lang.Math.abs(aep.b(b) - aep.a(a))) / ((float) (java.lang.Math.abs(defpackage.afd.a(a) - defpackage.afd.a(b)) + 1))) * ((float) max)));
+        return java.lang.Math.round(((float) (aep.b() - aep.a(a))) + ((((float) java.lang.Math.abs(aep.b(b) - aep.a(a))) / ((float) (java.lang.Math.abs(LayoutManager.a(a) - LayoutManager.a(b)) + 1))) * ((float) max)));
     }
 
     private final int j(defpackage.aft aft) {
@@ -974,7 +973,7 @@ public final class adw extends defpackage.afd implements defpackage.aif {
             return 0;
         }
         if (!z2) {
-            return java.lang.Math.abs(defpackage.afd.a(a) - defpackage.afd.a(b)) + 1;
+            return java.lang.Math.abs(LayoutManager.a(a) - LayoutManager.a(b)) + 1;
         }
         return java.lang.Math.min(aep.e(), aep.b(b) - aep.a(a));
     }
@@ -998,7 +997,7 @@ public final class adw extends defpackage.afd implements defpackage.aif {
         if (!z2) {
             return aft.a();
         }
-        return (int) ((((float) (aep.b(b) - aep.a(a))) / ((float) (java.lang.Math.abs(defpackage.afd.a(a) - defpackage.afd.a(b)) + 1))) * ((float) aft.a()));
+        return (int) ((((float) (aep.b(b) - aep.a(a))) / ((float) (java.lang.Math.abs(LayoutManager.a(a) - LayoutManager.a(b)) + 1))) * ((float) aft.a()));
     }
 
     private final void a(int i, int i2, boolean z, defpackage.aft aft) {
@@ -1212,9 +1211,9 @@ public final class adw extends defpackage.afd implements defpackage.aif {
                         view = null;
                         break;
                     }
-                    android.view.View view2 = ((defpackage.afv) adz.j.get(i8)).a;
+                    android.view.View view2 = ((RecyclerViewHolder) adz.j.get(i8)).itemView;
                     defpackage.afh afh = (defpackage.afh) view2.getLayoutParams();
-                    if (!afh.a.m() && adz.d == afh.a.c()) {
+                    if (!afh.a.isRemoved() && adz.d == afh.a.c()) {
                         adz.a(view2);
                         view = view2;
                         break;
@@ -1222,7 +1221,7 @@ public final class adw extends defpackage.afd implements defpackage.aif {
                     i8++;
                 }
             } else {
-                android.view.View view3 = afn.a(adz.d, Long.MAX_VALUE).a;
+                android.view.View view3 = afn.a(adz.d, Long.MAX_VALUE).itemView;
                 adz.d += adz.e;
                 view = view3;
             }
@@ -1247,9 +1246,9 @@ public final class adw extends defpackage.afd implements defpackage.aif {
                 android.graphics.Rect e = this.b.e(view);
                 int i9 = e.left + e.right + 0;
                 int i10 = e.bottom + e.top + 0;
-                int a = defpackage.afd.a(this.l, this.j, i9 + l() + n() + afh3.leftMargin + afh3.rightMargin, afh3.width, d());
-                int a2 = defpackage.afd.a(this.m, this.k, i10 + m() + o() + afh3.topMargin + afh3.bottomMargin, afh3.height, e());
-                if (view.isLayoutRequested() || !this.f || !defpackage.afd.b(view.getWidth(), a, afh3.width) || !defpackage.afd.b(view.getHeight(), a2, afh3.height)) {
+                int a = LayoutManager.a(this.l, this.j, i9 + l() + n() + afh3.leftMargin + afh3.rightMargin, afh3.width, d());
+                int a2 = LayoutManager.a(this.m, this.k, i10 + m() + o() + afh3.topMargin + afh3.bottomMargin, afh3.height, e());
+                if (view.isLayoutRequested() || !this.f || !LayoutManager.b(view.getWidth(), a, afh3.width) || !LayoutManager.b(view.getHeight(), a2, afh3.height)) {
                     view.measure(a, a2);
                 }
                 ady.a = this.p.e(view);
@@ -1290,7 +1289,7 @@ public final class adw extends defpackage.afd implements defpackage.aif {
                 defpackage.afh afh4 = (defpackage.afh) view.getLayoutParams();
                 android.graphics.Rect rect = afh4.b;
                 view.layout(i + rect.left + afh4.leftMargin, i2 + rect.top + afh4.topMargin, (i3 - rect.right) - afh4.rightMargin, (i4 - rect.bottom) - afh4.bottomMargin);
-                if (afh2.a.m() || afh2.a.s()) {
+                if (afh2.a.isRemoved() || afh2.a.s()) {
                     ady.c = true;
                 }
                 ady.d = view.hasFocusable();
@@ -1382,7 +1381,7 @@ public final class adw extends defpackage.afd implements defpackage.aif {
             android.view.View e = e(i);
             int a = a(e);
             if (a >= 0 && a < i3) {
-                if (((defpackage.afh) e.getLayoutParams()).a.m()) {
+                if (((defpackage.afh) e.getLayoutParams()).a.isRemoved()) {
                     if (view3 == null) {
                         view = view2;
                         i += i4;

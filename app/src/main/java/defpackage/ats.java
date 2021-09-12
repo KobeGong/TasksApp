@@ -18,7 +18,7 @@ public final class ats extends defpackage.afc {
     }
 
     public final void a(android.graphics.Rect rect, android.view.View view, android.support.v7.widget.RecyclerView recyclerView) {
-        defpackage.afv b2 = recyclerView.b(view);
+        RecyclerViewHolder b2 = recyclerView.b(view);
         if (a(b2)) {
             if (a(recyclerView, b2.d())) {
                 rect.bottom = this.b;
@@ -30,12 +30,12 @@ public final class ats extends defpackage.afc {
 
     private static boolean a(android.support.v7.widget.RecyclerView recyclerView, int i) {
         boolean z;
-        if (i == recyclerView.k.a() - 1) {
+        if (i == recyclerView.adapter.getItemCount() - 1) {
             z = true;
         } else {
             z = false;
         }
-        if (z || recyclerView.k.b(i + 1) == 0) {
+        if (z || recyclerView.adapter.getItemViewType(i + 1) == 0) {
             return true;
         }
         return false;
@@ -44,7 +44,7 @@ public final class ats extends defpackage.afc {
     public final void b(android.graphics.Canvas canvas, android.support.v7.widget.RecyclerView recyclerView) {
         boolean z;
         int i;
-        defpackage.atg atg = (defpackage.atg) recyclerView.k;
+        BaseTaskAdapter atg = (BaseTaskAdapter) recyclerView.adapter;
         if (ViewCompat.a.j(recyclerView) == 1) {
             z = true;
         } else {
@@ -54,7 +54,7 @@ public final class ats extends defpackage.afc {
         int childCount = recyclerView.getChildCount();
         for (int i2 = 0; i2 < childCount; i2++) {
             android.view.View childAt = recyclerView.getChildAt(i2);
-            defpackage.afv b2 = recyclerView.b(childAt);
+            RecyclerViewHolder b2 = recyclerView.b(childAt);
             if (!(b2 instanceof defpackage.atp) && !(b2 instanceof defpackage.atk)) {
                 if (!a(b2)) {
                     int bottom = childAt.getBottom() + ((int) childAt.getTranslationY());
@@ -84,7 +84,7 @@ public final class ats extends defpackage.afc {
         this.a.draw(canvas);
     }
 
-    private static boolean a(defpackage.afv afv) {
+    private static boolean a(RecyclerViewHolder afv) {
         boolean z;
         if (afv instanceof defpackage.atx) {
             defpackage.atx atx = (defpackage.atx) afv;

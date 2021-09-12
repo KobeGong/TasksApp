@@ -12,7 +12,7 @@ public final class amp extends defpackage.alp {
 
     public final void b(defpackage.alv alv) {
         alv.a(this.a);
-        alv.a(this.a.b, defpackage.ajq.a(defpackage.csp.d(), defpackage.dce.b, defpackage.auz.a()));
+        alv.a(this.a.b, AbsTaskListStructure.a(defpackage.csp.d(), defpackage.dce.b, defpackage.auz.a()));
     }
 
     public final void a(defpackage.amb amb) {

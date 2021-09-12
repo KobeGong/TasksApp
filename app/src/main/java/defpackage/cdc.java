@@ -63,7 +63,7 @@ public final class cdc extends defpackage.cdm implements defpackage.q {
         if (obj == null) {
             return null;
         }
-        return ((defpackage.cdu) obj).b();
+        return ((AbsDeviceOwner) obj).accountName();
     }
 
     /* access modifiers changed from: 0000 */
@@ -110,15 +110,15 @@ public final class cdc extends defpackage.cdm implements defpackage.q {
                     if (z3) {
                         cdl.d.clear();
                         if (a2 != null) {
-                            defpackage.cky.a(cdl.c.contains(a2), (java.lang.Object) "Selected account must be an available account");
+                            defpackage.cky.a(cdl.availableAccounts.contains(a2), (java.lang.Object) "Selected account must be an available account");
                             cdl.d.add(a2);
                         }
                         if (a4 != null) {
-                            defpackage.cky.a(cdl.c.contains(a4), (java.lang.Object) "First recent account must be an available account");
+                            defpackage.cky.a(cdl.availableAccounts.contains(a4), (java.lang.Object) "First recent account must be an available account");
                             cdl.d.add(a4);
                         }
                         if (obj != null) {
-                            defpackage.cky.a(cdl.c.contains(obj), (java.lang.Object) "Second recent account must be an available account");
+                            defpackage.cky.a(cdl.availableAccounts.contains(obj), (java.lang.Object) "Second recent account must be an available account");
                             cdl.d.add(obj);
                         }
                         cdl.h();
@@ -131,8 +131,8 @@ public final class cdc extends defpackage.cdm implements defpackage.q {
     }
 
     private final java.lang.Object a(java.lang.String str) {
-        for (java.lang.Object next : this.e.c) {
-            if (((defpackage.cdu) next).b().equals(str)) {
+        for (java.lang.Object next : this.e.availableAccounts) {
+            if (((AbsDeviceOwner) next).accountName().equals(str)) {
                 return next;
             }
         }

@@ -5,7 +5,7 @@ package defpackage;
 public final class ahq {
     public final /* synthetic */ android.support.v7.widget.RecyclerView a;
 
-    public final void a(defpackage.afv afv, defpackage.afb afb, defpackage.afb afb2) {
+    public final void a(RecyclerViewHolder afv, defpackage.afb afb, defpackage.afb afb2) {
         this.a.e.b(afv);
         android.support.v7.widget.RecyclerView recyclerView = this.a;
         recyclerView.a(afv);
@@ -15,7 +15,7 @@ public final class ahq {
         }
     }
 
-    public final void b(defpackage.afv afv, defpackage.afb afb, defpackage.afb afb2) {
+    public final void b(RecyclerViewHolder afv, defpackage.afb afb, defpackage.afb afb2) {
         android.support.v7.widget.RecyclerView recyclerView = this.a;
         afv.a(false);
         if (recyclerView.z.b(afv, afb, afb2)) {
@@ -23,9 +23,9 @@ public final class ahq {
         }
     }
 
-    public final void a(defpackage.afv afv) {
-        defpackage.afd afd = this.a.l;
-        android.view.View view = afv.a;
+    public final void a(RecyclerViewHolder afv) {
+        LayoutManager afd = this.a.mLayout;
+        android.view.View view = afv.itemView;
         defpackage.afn afn = this.a.e;
         defpackage.acm acm = afd.a;
         int a2 = acm.a.a(view);

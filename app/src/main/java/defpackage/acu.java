@@ -20,11 +20,11 @@ final class acu implements java.lang.Runnable {
             int i2 = i + 1;
             defpackage.adb adb = (defpackage.adb) arrayList.get(i);
             defpackage.acs acs = this.b;
-            defpackage.afv afv = adb.a;
-            android.view.View view2 = afv == null ? null : afv.a;
-            defpackage.afv afv2 = adb.b;
+            RecyclerViewHolder afv = adb.a;
+            android.view.View view2 = afv == null ? null : afv.itemView;
+            RecyclerViewHolder afv2 = adb.b;
             if (afv2 != null) {
-                view = afv2.a;
+                view = afv2.itemView;
             } else {
                 view = null;
             }

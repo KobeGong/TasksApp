@@ -2,7 +2,7 @@ package defpackage;
 
 /* renamed from: fd reason: default package */
 /* compiled from: PG */
-public final class NavigationMenuAdapter extends defpackage.aet {
+public final class NavigationMenuAdapter extends RecyclerViewAdapter {
     public final java.util.ArrayList a = new java.util.ArrayList();
     public MenuItemImpl b;
     public boolean c;
@@ -13,15 +13,15 @@ public final class NavigationMenuAdapter extends defpackage.aet {
         b();
     }
 
-    public final long a(int i) {
+    public final long getItemId(int i) {
         return i;
     }
 
-    public final int a() {
+    public final int getItemCount() {
         return this.a.size();
     }
 
-    public final int b(int i) {
+    public final int getItemViewType(int i) {
         defpackage.ff ffVar = (defpackage.ff) this.a.get(i);
         if (ffVar instanceof defpackage.fg) {
             return 2;
@@ -138,10 +138,10 @@ public final class NavigationMenuAdapter extends defpackage.aet {
         }
     }
 
-    public final /* synthetic */ void a(defpackage.afv afv) {
-        defpackage.afv afv2 = afv;
+    public final /* synthetic */ void a(RecyclerViewHolder afv) {
+        RecyclerViewHolder afv2 = afv;
         if (afv2 instanceof defpackage.fi) {
-            android.support.design.internal.NavigationMenuItemView navigationMenuItemView = (android.support.design.internal.NavigationMenuItemView) afv2.a;
+            android.support.design.internal.NavigationMenuItemView navigationMenuItemView = (android.support.design.internal.NavigationMenuItemView) afv2.itemView;
             if (navigationMenuItemView.d != null) {
                 navigationMenuItemView.d.removeAllViews();
             }
@@ -149,11 +149,11 @@ public final class NavigationMenuAdapter extends defpackage.aet {
         }
     }
 
-    public final /* synthetic */ void a(defpackage.afv afv, int i) {
-        defpackage.afv afv2 = afv;
-        switch (b(i)) {
+    public final /* synthetic */ void onBindViewHolder(RecyclerViewHolder afv, int i) {
+        RecyclerViewHolder afv2 = afv;
+        switch (getItemViewType(i)) {
             case 0:
-                android.support.design.internal.NavigationMenuItemView navigationMenuItemView = (android.support.design.internal.NavigationMenuItemView) afv2.a;
+                android.support.design.internal.NavigationMenuItemView navigationMenuItemView = (android.support.design.internal.NavigationMenuItemView) afv2.itemView;
                 navigationMenuItemView.f = this.f.j;
                 navigationMenuItemView.g = navigationMenuItemView.f != null;
                 if (navigationMenuItemView.e != null) {
@@ -174,27 +174,27 @@ public final class NavigationMenuAdapter extends defpackage.aet {
                 navigationMenuItemView.a(fhVar.a);
                 return;
             case 1:
-                ((android.widget.TextView) afv2.a).setText(((defpackage.fh) this.a.get(i)).a.getTitle());
+                ((android.widget.TextView) afv2.itemView).setText(((defpackage.fh) this.a.get(i)).a.getTitle());
                 return;
             case 2:
                 defpackage.fg fgVar = (defpackage.fg) this.a.get(i);
-                afv2.a.setPadding(0, fgVar.a, 0, fgVar.b);
+                afv2.itemView.setPadding(0, fgVar.a, 0, fgVar.b);
                 return;
             default:
                 return;
         }
     }
 
-    public final /* synthetic */ defpackage.afv a(android.view.ViewGroup viewGroup, int i) {
+    public final /* synthetic */ RecyclerViewHolder onCreateViewHolder(android.view.ViewGroup viewGroup, int i) {
         switch (i) {
             case 0:
                 return new defpackage.fi(this.f.layoutInflater, viewGroup, this.f.p);
             case 1:
-                return new defpackage.afv(this.f.layoutInflater, viewGroup, (byte)0);
+                return new RecyclerViewHolder(this.f.layoutInflater, viewGroup, (byte)0);
             case 2:
-                return new defpackage.afv(this.f.layoutInflater, viewGroup);
+                return new RecyclerViewHolder(this.f.layoutInflater, viewGroup);
             case 3:
-                return new defpackage.afv(this.f.headerLayout, (byte)0);
+                return new RecyclerViewHolder(this.f.headerLayout, (byte)0);
             default:
                 return null;
         }

@@ -11,7 +11,7 @@ public final class aho {
         this.b.c();
     }
 
-    public final void a(defpackage.afv afv, defpackage.afb afb) {
+    public final void a(RecyclerViewHolder afv, defpackage.afb afb) {
         defpackage.ahp ahp = (defpackage.ahp) this.a.get(afv);
         if (ahp == null) {
             ahp = defpackage.ahp.a();
@@ -21,12 +21,12 @@ public final class aho {
         ahp.a |= 4;
     }
 
-    public final boolean a(defpackage.afv afv) {
+    public final boolean a(RecyclerViewHolder afv) {
         defpackage.ahp ahp = (defpackage.ahp) this.a.get(afv);
         return (ahp == null || (ahp.a & 1) == 0) ? false : true;
     }
 
-    public final defpackage.afb a(defpackage.afv afv, int i) {
+    public final defpackage.afb a(RecyclerViewHolder afv, int i) {
         defpackage.afb afb = null;
         int a2 = this.a.a((java.lang.Object) afv);
         if (a2 >= 0) {
@@ -49,11 +49,11 @@ public final class aho {
         return afb;
     }
 
-    public final void a(long j, defpackage.afv afv) {
+    public final void a(long j, RecyclerViewHolder afv) {
         this.b.a(j, afv);
     }
 
-    public final void b(defpackage.afv afv, defpackage.afb afb) {
+    public final void b(RecyclerViewHolder afv, defpackage.afb afb) {
         defpackage.ahp ahp = (defpackage.ahp) this.a.get(afv);
         if (ahp == null) {
             ahp = defpackage.ahp.a();
@@ -64,7 +64,7 @@ public final class aho {
     }
 
     /* access modifiers changed from: 0000 */
-    public final void b(defpackage.afv afv) {
+    public final void b(RecyclerViewHolder afv) {
         defpackage.ahp ahp = (defpackage.ahp) this.a.get(afv);
         if (ahp == null) {
             ahp = defpackage.ahp.a();
@@ -74,7 +74,7 @@ public final class aho {
     }
 
     /* access modifiers changed from: 0000 */
-    public final void c(defpackage.afv afv) {
+    public final void c(RecyclerViewHolder afv) {
         defpackage.ahp ahp = (defpackage.ahp) this.a.get(afv);
         if (ahp != null) {
             ahp.a &= -2;
@@ -82,7 +82,7 @@ public final class aho {
     }
 
     /* access modifiers changed from: 0000 */
-    public final void d(defpackage.afv afv) {
+    public final void d(RecyclerViewHolder afv) {
         int b2 = this.b.b() - 1;
         while (true) {
             if (b2 < 0) {

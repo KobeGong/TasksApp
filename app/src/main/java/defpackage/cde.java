@@ -1,19 +1,21 @@
 package defpackage;
 
+import android.view.View;
+
 /* renamed from: cde reason: default package */
 /* compiled from: PG */
 public class cde implements defpackage.q {
-    public static final java.lang.String a = java.lang.String.valueOf(defpackage.cde.class.getName()).concat(".navigationDrawerAccountMenuDialogFragment");
-    public final FragmentActivity b;
-    public final android.view.View c;
+    public static final java.lang.String TAG = cde.class.getName().concat(".navigationDrawerAccountMenuDialogFragment");
+    public final FragmentActivity fragmentActivity;
+    public final View view;
     public defpackage.cft d;
     private final defpackage.cdj e;
 
-    public cde(FragmentActivity lgVar, defpackage.cdj cdj, android.view.View view) {
-        this.e = (defpackage.cdj) defpackage.cky.a((java.lang.Object) cdj);
-        this.b = (FragmentActivity) defpackage.cky.a((java.lang.Object) lgVar);
-        this.c = (android.view.View) defpackage.cky.a((java.lang.Object) view);
-        lgVar.g.addObserver(this);
+    public cde(FragmentActivity fragmentActivity, defpackage.cdj cdj, View view) {
+        this.e = (defpackage.cdj) defpackage.cky.a(cdj);
+        this.fragmentActivity = (FragmentActivity) defpackage.cky.a((java.lang.Object) fragmentActivity);
+        this.view = (View) defpackage.cky.a((java.lang.Object) view);
+        fragmentActivity.g.addObserver(this);
     }
 
     public final void b() {
@@ -41,16 +43,14 @@ public class cde implements defpackage.q {
             if (this.d == null) {
                 this.d = new defpackage.cft();
             }
-            defpackage.cft cft = this.d;
-            defpackage.cdj cdj = this.e;
-            defpackage.cky.b(cft.U == null, (java.lang.Object) "Initialize may only be called once");
-            cft.U = cdj;
-            this.d.b(this.c);
+            defpackage.cky.b(this.d.U == null, "Initialize may only be called once");
+            this.d.U = this.e;
+            this.d.b(this.view);
         }
     }
 
     public final defpackage.cft h() {
-        return (defpackage.cft) this.b.getSupportFragmentManager().a(a);
+        return (defpackage.cft) this.fragmentActivity.getSupportFragmentManager().findFragmentByTag(TAG);
     }
 
     static {

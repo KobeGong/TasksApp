@@ -4,16 +4,16 @@ package defpackage;
 /* compiled from: PG */
 public final class afn {
     public final java.util.ArrayList a = new java.util.ArrayList();
-    public java.util.ArrayList b = null;
+    public java.util.ArrayList<RecyclerViewHolder> mChangedScrap = null;
     public final java.util.ArrayList c = new java.util.ArrayList();
     public final java.util.List d = java.util.Collections.unmodifiableList(this.a);
-    public final /* synthetic */ android.support.v7.widget.RecyclerView e;
+    public final /* synthetic */ android.support.v7.widget.RecyclerView recyclerView;
     private int f = 2;
     private int g = 2;
     private defpackage.afl h;
 
     public afn(android.support.v7.widget.RecyclerView recyclerView) {
-        this.e = recyclerView;
+        this.recyclerView = recyclerView;
     }
 
     public final void a() {
@@ -22,7 +22,7 @@ public final class afn {
     }
 
     public final void b() {
-        this.g = (this.e.l != null ? this.e.l.h : 0) + this.f;
+        this.g = (this.recyclerView.mLayout != null ? this.recyclerView.mLayout.h : 0) + this.f;
         for (int size = this.c.size() - 1; size >= 0 && this.c.size() > this.g; size--) {
             a(size);
         }
@@ -32,8 +32,7 @@ public final class afn {
     /* JADX WARNING: Removed duplicated region for block: B:13:0x0061  */
     /* JADX WARNING: Removed duplicated region for block: B:68:0x0189  */
     /* Code decompiled incorrectly, please refer to instructions dump. */
-    public final defpackage.afv a(int r11, long r12) {
-        /*
+    public final RecyclerViewHolder a(int r11, long r12) {
             r10 = this;
             if (r11 < 0) goto L_0x000c
             android.support.v7.widget.RecyclerView r0 = r10.e
@@ -241,7 +240,7 @@ public final class afn {
             java.util.List r0 = r3.c
             java.lang.Object r0 = r0.get(r2)
             android.view.View r0 = (android.view.View) r0
-            afv r5 = android.support.v7.widget.RecyclerView.c(r0)
+            afv r5 = android.support.v7.widget.RecyclerView.getChildViewHolderInt(r0)
             int r6 = r5.c()
             if (r6 != r11) goto L_0x01e5
             boolean r6 = r5.j()
@@ -742,8 +741,6 @@ public final class afn {
         L_0x0594:
             r1 = r0
             goto L_0x048a
-        */
-        throw new UnsupportedOperationException("Method not decompiled: defpackage.afn.a(int, long):afv");
     }
 
     private final void a(android.view.ViewGroup viewGroup, boolean z) {
@@ -766,11 +763,11 @@ public final class afn {
     }
 
     public final void a(android.view.View view) {
-        defpackage.afv c2 = android.support.v7.widget.RecyclerView.c(view);
-        if (c2.n()) {
-            this.e.removeDetachedView(view, false);
+        RecyclerViewHolder c2 = android.support.v7.widget.RecyclerView.getChildViewHolderInt(view);
+        if (c2.isTmpDetached()) {
+            this.recyclerView.removeDetachedView(view, false);
         }
-        if (c2.e()) {
+        if (c2.isScrap()) {
             c2.f();
         } else if (c2.g()) {
             c2.h();
@@ -784,12 +781,12 @@ public final class afn {
         }
         this.c.clear();
         if (android.support.v7.widget.RecyclerView.d) {
-            this.e.C.a();
+            this.recyclerView.C.a();
         }
     }
 
     public final void a(int i) {
-        a((defpackage.afv) this.c.get(i), true);
+        a((RecyclerViewHolder) this.c.get(i), true);
         this.c.remove(i);
     }
 
@@ -797,8 +794,7 @@ public final class afn {
     /* JADX WARNING: Removed duplicated region for block: B:29:0x00b1  */
     /* JADX WARNING: Removed duplicated region for block: B:58:0x0120  */
     /* Code decompiled incorrectly, please refer to instructions dump. */
-    public final void a(defpackage.afv r7) {
-        /*
+    public final void a(RecyclerViewHolder r7) {
             r6 = this;
             r1 = 1
             r2 = 0
@@ -943,24 +939,22 @@ public final class afn {
         L_0x0120:
             r0 = r2
             goto L_0x010d
-        */
-        throw new UnsupportedOperationException("Method not decompiled: defpackage.afn.a(afv):void");
     }
 
     /* access modifiers changed from: 0000 */
-    public final void a(defpackage.afv afv, boolean z) {
+    public final void a(RecyclerViewHolder afv, boolean z) {
         android.support.v7.widget.RecyclerView.b(afv);
-        if (afv.a(16384)) {
+        if (afv.hasAnyOfTheFlags(16384)) {
             afv.a(0, 16384);
-            ViewCompat.a(afv.a, (defpackage.rn) null);
+            ViewCompat.a(afv.itemView, (defpackage.rn) null);
         }
         if (z) {
-            defpackage.afo afo = this.e.m;
-            if (this.e.k != null) {
-                this.e.k.a(afv);
+            defpackage.afo afo = this.recyclerView.m;
+            if (this.recyclerView.adapter != null) {
+                this.recyclerView.adapter.a(afv);
             }
-            if (this.e.D != null) {
-                this.e.h.d(afv);
+            if (this.recyclerView.D != null) {
+                this.recyclerView.h.d(afv);
             }
         }
         afv.o = null;
@@ -975,7 +969,7 @@ public final class afn {
 
     /* access modifiers changed from: 0000 */
     public final void b(android.view.View view) {
-        defpackage.afv c2 = android.support.v7.widget.RecyclerView.c(view);
+        RecyclerViewHolder c2 = android.support.v7.widget.RecyclerView.getChildViewHolderInt(view);
         c2.k = null;
         c2.l = false;
         c2.h();
@@ -983,30 +977,30 @@ public final class afn {
     }
 
     /* access modifiers changed from: 0000 */
-    public final void c(android.view.View view) {
-        defpackage.afv c2 = android.support.v7.widget.RecyclerView.c(view);
-        if (!c2.a(12) && c2.s()) {
-            android.support.v7.widget.RecyclerView recyclerView = this.e;
+    public final void scrapView(android.view.View view) {
+        RecyclerViewHolder c2 = android.support.v7.widget.RecyclerView.getChildViewHolderInt(view);
+        if (!c2.hasAnyOfTheFlags(12) && c2.s()) {
+            android.support.v7.widget.RecyclerView recyclerView = this.recyclerView;
             if (!(recyclerView.z == null || recyclerView.z.a(c2, c2.p()))) {
-                if (this.b == null) {
-                    this.b = new java.util.ArrayList();
+                if (this.mChangedScrap == null) {
+                    this.mChangedScrap = new java.util.ArrayList<>();
                 }
                 c2.a(this, true);
-                this.b.add(c2);
+                this.mChangedScrap.add(c2);
                 return;
             }
         }
-        if (!c2.j() || c2.m() || this.e.k.e) {
+        if (!c2.isInvalid() || c2.isRemoved() || this.recyclerView.adapter.mHasStableIds) {
             c2.a(this, false);
             this.a.add(c2);
             return;
         }
-        throw new java.lang.IllegalArgumentException("Called scrap view with an invalid view. Invalid views cannot be reused from scrap, they should rebound from recycler pool." + this.e.a());
+        throw new java.lang.IllegalArgumentException("Called scrap view with an invalid view. Invalid views cannot be reused from scrap, they should rebound from recycler pool." + this.recyclerView.exceptionLabel());
     }
 
-    public final void b(defpackage.afv afv) {
+    public final void b(RecyclerViewHolder afv) {
         if (afv.l) {
-            this.b.remove(afv);
+            this.mChangedScrap.remove(afv);
         } else {
             this.a.remove(afv);
         }

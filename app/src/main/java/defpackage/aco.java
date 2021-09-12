@@ -23,7 +23,7 @@ public final class aco {
     }
 
     public final void b(android.view.View view) {
-        defpackage.afv c = android.support.v7.widget.RecyclerView.c(view);
+        RecyclerViewHolder c = android.support.v7.widget.RecyclerView.getChildViewHolderInt(view);
         if (c != null) {
             this.a.a(c, c.m);
             c.m = 0;

@@ -4,7 +4,7 @@ import java.util.concurrent.Executors;
 
 /* compiled from: PG */
 public class TaskApplication extends defpackage.dmo implements defpackage.ajg {
-    private static com.google.android.apps.tasks.common.TaskApplication g;
+    private static TaskApplication g;
     public defpackage.cyl a = defpackage.cub.a(Executors.newFixedThreadPool(5, defpackage.ajd.c("shared-pool-%d")));
     public defpackage.czq b;
     public boolean c = false;
@@ -28,10 +28,10 @@ public class TaskApplication extends defpackage.dmo implements defpackage.ajg {
     /* access modifiers changed from: protected */
     public final defpackage.dmm a() {
         defpackage.aiv aiv = new defpackage.aiv();
-        aiv.a = (defpackage.aii) defpackage.dgv.a((java.lang.Object) new defpackage.aii(this));
-        aiv.d = (defpackage.cdz) defpackage.dgv.a((java.lang.Object) new defpackage.cdz());
+        aiv.a = (defpackage.aii) defpackage.dgv.a(new defpackage.aii(this));
+        aiv.d = (defpackage.cdz) defpackage.dgv.a(new defpackage.cdz());
         if (aiv.a == null) {
-            throw new java.lang.IllegalStateException(java.lang.String.valueOf(defpackage.aii.class.getCanonicalName()).concat(" must be set"));
+            throw new java.lang.IllegalStateException(defpackage.aii.class.getCanonicalName().concat(" must be set"));
         }
         if (aiv.b == null) {
             aiv.b = new defpackage.brf();
@@ -42,10 +42,10 @@ public class TaskApplication extends defpackage.dmo implements defpackage.ajg {
         if (aiv.d != null) {
             return new defpackage.ait(aiv);
         }
-        throw new java.lang.IllegalStateException(java.lang.String.valueOf(defpackage.cdz.class.getCanonicalName()).concat(" must be set"));
+        throw new java.lang.IllegalStateException(defpackage.cdz.class.getCanonicalName().concat(" must be set"));
     }
 
-    public static com.google.android.apps.tasks.common.TaskApplication getApplication() {
+    public static TaskApplication getApplication() {
         if (g != null) {
             return g;
         }
@@ -69,11 +69,7 @@ public class TaskApplication extends defpackage.dmo implements defpackage.ajg {
             ((defpackage.ajy) a4.b()).a(this, this.a);
         }
         if (!(defpackage.any.a != null)) {
-            if (defpackage.any.a == null) {
-                z = true;
-            } else {
-                z = false;
-            }
+            z = defpackage.any.a == null;
             defpackage.cld.b(z);
             defpackage.any.a = new defpackage.any(getApplicationContext(), c(), defpackage.cub.a(Executors.newFixedThreadPool(5, defpackage.ajd.c("slow-pool-%d"))), d(), new defpackage.aoa(getApplicationContext(), d()));
         } else {
@@ -136,67 +132,67 @@ public class TaskApplication extends defpackage.dmo implements defpackage.ajg {
         bug.h = getString(2131951763);
         java.lang.String str4 = "";
         if (bug.a == null) {
-            str4 = java.lang.String.valueOf(str4).concat(" iconResourceId");
+            str4 = str4.concat(" iconResourceId");
         }
         if (bug.b == null) {
-            str4 = java.lang.String.valueOf(str4).concat(" appNameResourceId");
+            str4 = str4.concat(" appNameResourceId");
         }
         if (bug.c == null) {
-            str4 = java.lang.String.valueOf(str4).concat(" soundEnabled");
+            str4 = str4.concat(" soundEnabled");
         }
         if (bug.d == null) {
-            str4 = java.lang.String.valueOf(str4).concat(" vibrationEnabled");
+            str4 = str4.concat(" vibrationEnabled");
         }
         if (bug.e == null) {
-            str4 = java.lang.String.valueOf(str4).concat(" lightsEnabled");
+            str4 = str4.concat(" lightsEnabled");
         }
         if (!str4.isEmpty()) {
             java.lang.String str5 = "Missing required properties:";
-            java.lang.String valueOf4 = java.lang.String.valueOf(str4);
-            throw new java.lang.IllegalStateException(valueOf4.length() != 0 ? str5.concat(valueOf4) : new java.lang.String(str5));
+            java.lang.String valueOf4 = str4;
+            throw new java.lang.IllegalStateException(valueOf4.length() != 0 ? str5.concat(valueOf4) : str5);
         }
         bud.d = new defpackage.bub(bug.a, bug.b, bug.c.booleanValue(), bug.d.booleanValue(), bug.e.booleanValue(), bug.f, bug.g, bug.h);
         java.lang.String str6 = "";
         if (bud.a == null) {
-            str6 = java.lang.String.valueOf(str6).concat(" clientId");
+            str6 = str6.concat(" clientId");
         }
         if (bud.b == null) {
-            str6 = java.lang.String.valueOf(str6).concat(" gcmSenderProjectId");
+            str6 = str6.concat(" gcmSenderProjectId");
         }
         if (bud.c == null) {
-            str6 = java.lang.String.valueOf(str6).concat(" environment");
+            str6 = str6.concat(" environment");
         }
         if (bud.e == null) {
-            str6 = java.lang.String.valueOf(str6).concat(" deviceName");
+            str6 = str6.concat(" deviceName");
         }
         if (bud.f == null) {
-            str6 = java.lang.String.valueOf(str6).concat(" registrationStalenessTimeMs");
+            str6 = str6.concat(" registrationStalenessTimeMs");
         }
         if (bud.h == null) {
-            str6 = java.lang.String.valueOf(str6).concat(" tracingEnabled");
+            str6 = str6.concat(" tracingEnabled");
         }
         if (bud.i == null) {
-            str6 = java.lang.String.valueOf(str6).concat(" jobSchedulerAllowedIDsRange");
+            str6 = str6.concat(" jobSchedulerAllowedIDsRange");
         }
         if (!str6.isEmpty()) {
             java.lang.String str7 = "Missing required properties:";
-            java.lang.String valueOf5 = java.lang.String.valueOf(str6);
-            throw new java.lang.IllegalStateException(valueOf5.length() != 0 ? str7.concat(valueOf5) : new java.lang.String(str7));
+            java.lang.String valueOf5 = str6;
+            throw new java.lang.IllegalStateException(valueOf5.length() != 0 ? str7.concat(valueOf5) : str7);
         }
         bxy.b = new defpackage.bua(bud.a, bud.b, bud.c, bud.d, bud.e, bud.f, bud.g, bud.h.booleanValue(), bud.i);
         java.lang.String str8 = "";
         if (bxy.a == null) {
-            str8 = java.lang.String.valueOf(str8).concat(" context");
+            str8 = str8.concat(" context");
         }
         if (bxy.b == null) {
-            str8 = java.lang.String.valueOf(str8).concat(" chimeConfig");
+            str8 = str8.concat(" chimeConfig");
         }
         if (!str8.isEmpty()) {
             java.lang.String str9 = "Missing required properties:";
-            java.lang.String valueOf6 = java.lang.String.valueOf(str8);
-            throw new java.lang.IllegalStateException(valueOf6.length() != 0 ? str9.concat(valueOf6) : new java.lang.String(str9));
+            java.lang.String valueOf6 = str8;
+            throw new java.lang.IllegalStateException(valueOf6.length() != 0 ? str9.concat(valueOf6) : str9);
         }
-        defpackage.bwj.a((defpackage.bxx) new defpackage.bxw(bxy.a, bxy.b));
+        defpackage.bwj.a(new defpackage.bxw(bxy.a, bxy.b));
         defpackage.akf a6 = defpackage.akf.a();
         a6.a = cym;
         a6.b = a5;

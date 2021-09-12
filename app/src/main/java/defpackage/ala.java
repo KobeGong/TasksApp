@@ -1,5 +1,7 @@
 package defpackage;
 
+import com.google.android.apps.tasks.R;
+
 /* renamed from: ala reason: default package */
 /* compiled from: PG */
 public final class ala extends defpackage.arb {
@@ -10,13 +12,13 @@ public final class ala extends defpackage.arb {
     public java.util.List b;
 
     public final android.view.View onCreateView(android.view.LayoutInflater layoutInflater, android.view.ViewGroup viewGroup, android.os.Bundle bundle) {
-        android.view.View inflate = layoutInflater.inflate(2131034199, null);
-        android.support.v7.widget.RecyclerView recyclerView = (android.support.v7.widget.RecyclerView) inflate.findViewById(2131755339);
+        android.view.View inflate = layoutInflater.inflate(R.layout.search_results_fragment, null);
+        android.support.v7.widget.RecyclerView recyclerView = inflate.findViewById(R.id.search_results_list);
         viewGroup.getContext();
-        recyclerView.a((defpackage.afd) new defpackage.adw());
+        recyclerView.a(new adw());
         this.U = new defpackage.akt();
-        recyclerView.a((defpackage.aet) this.U);
-        this.V = (android.support.v4.widget.SwipeRefreshLayout) inflate.findViewById(2131755338);
+        recyclerView.setAdapter(this.U);
+        this.V = inflate.findViewById(R.id.search_results_refresh);
         this.a = this.i.getString("query");
         this.U.b = new defpackage.aku(this);
         this.W = new defpackage.alg(this);
@@ -24,16 +26,16 @@ public final class ala extends defpackage.arb {
         return inflate;
     }
 
-    public final void e() {
-        super.e();
+    public final void onStart() {
+        super.onStart();
         defpackage.alq.a().b(this.W);
         defpackage.alq.a().a(this.W);
         c();
     }
 
-    public final void f() {
+    public final void onStop() {
         defpackage.alq.a().b(this.W);
-        super.f();
+        super.onStop();
     }
 
     /* access modifiers changed from: 0000 */

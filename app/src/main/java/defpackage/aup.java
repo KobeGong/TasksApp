@@ -13,10 +13,10 @@ final /* synthetic */ class aup implements java.lang.Runnable {
     public final void run() {
         TasksFragment auj = this.a;
         defpackage.cyi cyi = this.b;
-        if (auj.a != null) {
-            auj.a.post(new defpackage.aus(auj));
+        if (auj.rootView != null) {
+            auj.rootView.post(new defpackage.aus(auj));
             if (!defpackage.ajd.a((java.util.concurrent.Future) cyi)) {
-                auj.U.animate().alpha(1.0f);
+                auj.taskNotSyncView.animate().alpha(1.0f);
             }
         }
     }

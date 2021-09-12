@@ -7,10 +7,10 @@ final class ky implements android.os.Parcelable.Creator {
     }
 
     public final /* synthetic */ java.lang.Object[] newArray(int i) {
-        return new defpackage.kx[i];
+        return new BackStackState[i];
     }
 
     public final /* synthetic */ java.lang.Object createFromParcel(android.os.Parcel parcel) {
-        return new defpackage.kx(parcel);
+        return new BackStackState(parcel);
     }
 }

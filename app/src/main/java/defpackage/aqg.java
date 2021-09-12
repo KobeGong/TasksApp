@@ -12,6 +12,6 @@ final /* synthetic */ class aqg implements java.lang.Runnable {
 
     public final void run() {
         WelcomeFragment aqa = this.a;
-        aqa.b.removeView(this.b);
+        aqa.buttonBar.removeView(this.b);
     }
 }

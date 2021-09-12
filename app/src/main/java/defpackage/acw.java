@@ -3,12 +3,12 @@ package defpackage;
 /* renamed from: acw reason: default package */
 /* compiled from: PG */
 final class acw extends android.animation.AnimatorListenerAdapter {
-    private final /* synthetic */ defpackage.afv a;
+    private final /* synthetic */ RecyclerViewHolder a;
     private final /* synthetic */ android.view.ViewPropertyAnimator b;
     private final /* synthetic */ android.view.View c;
     private final /* synthetic */ defpackage.acs d;
 
-    acw(defpackage.acs acs, defpackage.afv afv, android.view.ViewPropertyAnimator viewPropertyAnimator, android.view.View view) {
+    acw(defpackage.acs acs, RecyclerViewHolder afv, android.view.ViewPropertyAnimator viewPropertyAnimator, android.view.View view) {
         this.d = acs;
         this.a = afv;
         this.b = viewPropertyAnimator;

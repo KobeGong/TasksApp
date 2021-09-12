@@ -4,11 +4,11 @@ package defpackage;
 /* compiled from: PG */
 public final class aht extends defpackage.afc implements defpackage.afi {
     private float A;
-    private defpackage.aew B = null;
+    private ChildDrawingOrderCallback B = null;
     private defpackage.aib C;
     private final defpackage.afj D = new defpackage.ahv(this);
     public final java.util.List a = new java.util.ArrayList();
-    public defpackage.afv b = null;
+    public RecyclerViewHolder b = null;
     public float c;
     public float d;
     public float e;
@@ -45,7 +45,7 @@ public final class aht extends defpackage.afc implements defpackage.afi {
     public final void a(android.support.v7.widget.RecyclerView recyclerView) {
         if (this.o != recyclerView) {
             if (this.o != null) {
-                this.o.b((defpackage.afc) this);
+                this.o.removeItemDecoration((defpackage.afc) this);
                 this.o.b(this.D);
                 android.support.v7.widget.RecyclerView recyclerView2 = this.o;
                 if (recyclerView2.t != null) {
@@ -72,7 +72,7 @@ public final class aht extends defpackage.afc implements defpackage.afi {
                 this.z = resources.getDimension(2131689766);
                 this.A = resources.getDimension(2131689765);
                 this.n = android.view.ViewConfiguration.get(this.o.getContext()).getScaledTouchSlop();
-                this.o.a((defpackage.afc) this);
+                this.o.addItemDecoration((defpackage.afc) this);
                 this.o.a(this.D);
                 android.support.v7.widget.RecyclerView recyclerView3 = this.o;
                 if (recyclerView3.t == null) {
@@ -87,14 +87,14 @@ public final class aht extends defpackage.afc implements defpackage.afi {
 
     private final void a(float[] fArr) {
         if ((this.l & 12) != 0) {
-            fArr[0] = (this.g + this.e) - ((float) this.b.a.getLeft());
+            fArr[0] = (this.g + this.e) - ((float) this.b.itemView.getLeft());
         } else {
-            fArr[0] = this.b.a.getTranslationX();
+            fArr[0] = this.b.itemView.getTranslationX();
         }
         if ((this.l & 3) != 0) {
-            fArr[1] = (this.h + this.f) - ((float) this.b.a.getTop());
+            fArr[1] = (this.h + this.f) - ((float) this.b.itemView.getTop());
         } else {
-            fArr[1] = this.b.a.getTranslationY();
+            fArr[1] = this.b.itemView.getTranslationY();
         }
     }
 
@@ -104,7 +104,7 @@ public final class aht extends defpackage.afc implements defpackage.afi {
         if (this.b != null) {
             a(this.y);
         }
-        defpackage.afv afv = this.b;
+        RecyclerViewHolder afv = this.b;
         java.util.List list = this.m;
         int size = list.size();
         for (int i2 = 0; i2 < size; i2++) {
@@ -151,7 +151,7 @@ public final class aht extends defpackage.afc implements defpackage.afi {
             f3 = 0.0f;
         }
         defpackage.ahy ahy = this.j;
-        defpackage.afv afv = this.b;
+        RecyclerViewHolder afv = this.b;
         java.util.List list = this.m;
         int i2 = this.k;
         int size = list.size();
@@ -163,12 +163,12 @@ public final class aht extends defpackage.afc implements defpackage.afi {
             }
             defpackage.aic aic = (defpackage.aic) list.get(i4);
             if (aic.a == aic.c) {
-                aic.i = aic.e.a.getTranslationX();
+                aic.i = aic.e.itemView.getTranslationX();
             } else {
                 aic.i = aic.a + (aic.m * (aic.c - aic.a));
             }
             if (aic.b == aic.d) {
-                aic.j = aic.e.a.getTranslationY();
+                aic.j = aic.e.itemView.getTranslationY();
             } else {
                 aic.j = aic.b + (aic.m * (aic.d - aic.b));
             }
@@ -194,7 +194,7 @@ public final class aht extends defpackage.afc implements defpackage.afi {
     /* JADX WARNING: Removed duplicated region for block: B:65:0x0174  */
     /* JADX WARNING: Removed duplicated region for block: B:66:0x0186  */
     /* Code decompiled incorrectly, please refer to instructions dump. */
-    public final void a(defpackage.afv r13, int r14) {
+    public final void a(RecyclerViewHolder r13, int r14) {
         /*
             r12 = this;
             afv r0 = r12.b
@@ -435,22 +435,22 @@ public final class aht extends defpackage.afc implements defpackage.afi {
 
     public final void a(android.view.View view) {
         b(view);
-        defpackage.afv a2 = this.o.a(view);
+        RecyclerViewHolder a2 = this.o.a(view);
         if (a2 != null) {
             if (this.b == null || a2 != this.b) {
                 a(a2, false);
-                if (this.a.remove(a2.a)) {
+                if (this.a.remove(a2.itemView)) {
                     this.j.b(this.o, a2);
                     return;
                 }
                 return;
             }
-            a((defpackage.afv) null, 0);
+            a((RecyclerViewHolder) null, 0);
         }
     }
 
     /* access modifiers changed from: 0000 */
-    public final void a(defpackage.afv afv, boolean z2) {
+    public final void a(RecyclerViewHolder afv, boolean z2) {
         for (int size = this.m.size() - 1; size >= 0; size--) {
             defpackage.aic aic = (defpackage.aic) this.m.get(size);
             if (aic.e == afv) {
@@ -480,14 +480,14 @@ public final class aht extends defpackage.afc implements defpackage.afi {
         float x2 = motionEvent.getX();
         float y2 = motionEvent.getY();
         if (this.b != null) {
-            android.view.View view = this.b.a;
+            android.view.View view = this.b.itemView;
             if (a(view, x2, y2, this.g + this.e, this.h + this.f)) {
                 return view;
             }
         }
         for (int size = this.m.size() - 1; size >= 0; size--) {
             defpackage.aic aic = (defpackage.aic) this.m.get(size);
-            android.view.View view2 = aic.e.a;
+            android.view.View view2 = aic.e.itemView;
             if (a(view2, x2, y2, aic.i, aic.j)) {
                 return view2;
             }
@@ -557,7 +557,7 @@ public final class aht extends defpackage.afc implements defpackage.afi {
         if (view == this.t) {
             this.t = null;
             if (this.B != null) {
-                this.o.a((defpackage.aew) null);
+                this.o.setChildDrawingOrderCallback((ChildDrawingOrderCallback) null);
             }
         }
     }

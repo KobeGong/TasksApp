@@ -24,7 +24,7 @@ public final class afu implements java.lang.Runnable {
         int i5;
         int i6;
         int i7;
-        if (this.e.l == null) {
+        if (this.e.mLayout == null) {
             b();
             return;
         }
@@ -32,7 +32,7 @@ public final class afu implements java.lang.Runnable {
         this.f = true;
         this.e.c();
         android.widget.OverScroller overScroller = this.c;
-        defpackage.afd afd = this.e.l;
+        LayoutManager afd = this.e.mLayout;
         if (overScroller.computeScrollOffset()) {
             int[] iArr = this.e.K;
             int currX = overScroller.getCurrX();
@@ -48,7 +48,7 @@ public final class afu implements java.lang.Runnable {
                 i = i9;
                 i2 = i8;
             }
-            if (this.e.k != null) {
+            if (this.e.adapter != null) {
                 this.e.a(i2, i, this.e.L);
                 i6 = this.e.L[0];
                 i5 = this.e.L[1];
@@ -60,7 +60,7 @@ public final class afu implements java.lang.Runnable {
                 i5 = 0;
                 i6 = 0;
             }
-            if (!this.e.n.isEmpty()) {
+            if (!this.e.mItemDecorations.isEmpty()) {
                 this.e.invalidate();
             }
             if (this.e.getOverScrollMode() != 2) {
@@ -111,7 +111,7 @@ public final class afu implements java.lang.Runnable {
             if (!this.e.awakenScrollBars()) {
                 this.e.invalidate();
             }
-            boolean z = (i2 == 0 && i == 0) || (i2 != 0 && this.e.l.d() && i6 == i2) || (i != 0 && this.e.l.e() && i5 == i);
+            boolean z = (i2 == 0 && i == 0) || (i2 != 0 && this.e.mLayout.d() && i6 == i2) || (i != 0 && this.e.mLayout.e() && i5 == i);
             if (overScroller.isFinished() || (!z && !this.e.p().a(1))) {
                 this.e.b(0);
                 if (android.support.v7.widget.RecyclerView.d) {

@@ -1,7 +1,9 @@
 package com.google.android.flexbox;
 
+import defpackage.LayoutManager;
+
 /* compiled from: PG */
-public class FlexboxLayoutManager extends defpackage.afd {
+public class FlexboxLayoutManager extends LayoutManager {
     public final defpackage.afh b() {
         throw new java.lang.NoSuchMethodError();
     }

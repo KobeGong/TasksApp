@@ -4,7 +4,7 @@ package defpackage;
 /* compiled from: PG */
 public class lf {
     public final boolean a;
-    public final defpackage.kv b;
+    public final BackStackRecord b;
     public int c;
     public java.text.AttributedCharacterIterator.Attribute d;
     public java.lang.Object e;
@@ -14,7 +14,7 @@ public class lf {
     public final void a() {
         boolean z = false;
         boolean z2 = this.c > 0;
-        FragmentManagerImpl lpVar = this.b.a;
+        FragmentManagerImpl lpVar = this.b.mManager;
         int size = lpVar.b.size();
         for (int i = 0; i < size; i++) {
             Fragment lcVar = (Fragment) lpVar.b.get(i);
@@ -26,8 +26,8 @@ public class lf {
                 lcVar.L();
             }
         }
-        FragmentManagerImpl lpVar2 = this.b.a;
-        defpackage.kv kvVar = this.b;
+        FragmentManagerImpl lpVar2 = this.b.mManager;
+        BackStackRecord kvVar = this.b;
         boolean z3 = this.a;
         if (!z2) {
             z = true;
@@ -36,7 +36,7 @@ public class lf {
     }
 
     public final void b() {
-        this.b.a.a(this.b, this.a, false, false);
+        this.b.mManager.a(this.b, this.a, false, false);
     }
 
     public lf(java.lang.Object obj, int i, int i2) {

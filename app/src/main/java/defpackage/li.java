@@ -22,7 +22,7 @@ final class li extends FragmentHostCallback {
         return this.e.getLayoutInflater().cloneInContext(this.e);
     }
 
-    public final void a(Fragment lcVar, android.content.Intent intent, int i) {
+    public final void startActivityForResult(Fragment lcVar, android.content.Intent intent, int i) {
         FragmentActivity lgVar = this.e;
         lgVar.a = true;
         if (i == -1) {

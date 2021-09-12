@@ -3,16 +3,16 @@ package defpackage;
 /* renamed from: ati reason: default package */
 /* compiled from: PG */
 final class ati extends android.view.View.AccessibilityDelegate {
-    private final /* synthetic */ defpackage.atg a;
+    private final /* synthetic */ BaseTaskAdapter a;
 
-    ati(defpackage.atg atg) {
+    ati(BaseTaskAdapter atg) {
         this.a = atg;
     }
 
     public final void onInitializeAccessibilityNodeInfo(android.view.View view, android.view.accessibility.AccessibilityNodeInfo accessibilityNodeInfo) {
         int i;
         super.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
-        android.content.res.Resources resources = this.a.h.getResources();
+        android.content.res.Resources resources = this.a.rootView.getResources();
         if (this.a.c) {
             i = 2131951623;
         } else {

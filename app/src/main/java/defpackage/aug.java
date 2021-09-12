@@ -3,7 +3,7 @@ package defpackage;
 /* renamed from: aug reason: default package */
 /* compiled from: PG */
 public final class aug {
-    public final /* synthetic */ defpackage.atg a;
+    public final /* synthetic */ BaseTaskAdapter a;
 
     public final void a(int i, int i2, boolean z) {
         defpackage.dca dca;
@@ -28,7 +28,7 @@ public final class aug {
                         } else {
                             dmk = dca.d;
                         }
-                        defpackage.aqj.a(dmk).a((defpackage.ln) atl.a.t, "datePicker - tasks fragment");
+                        defpackage.aqj.a(dmk).a((defpackage.ln) atl.a.fragmentManager, "datePicker - tasks fragment");
                     }
                 } else if (j instanceof defpackage.aux) {
                     ((defpackage.aux) j).a(atl.a.X, str, i2);
@@ -37,7 +37,7 @@ public final class aug {
         }
     }
 
-    aug(defpackage.atg atg) {
+    aug(BaseTaskAdapter atg) {
         this.a = atg;
     }
 }

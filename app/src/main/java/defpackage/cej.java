@@ -21,7 +21,7 @@ final /* synthetic */ class cej implements java.lang.Runnable {
             }
             int i = cel.b;
             defpackage.cdf cdf = cei.b;
-            java.lang.String b2 = ((defpackage.cdu) obj).b();
+            java.lang.String b2 = ((AbsDeviceOwner) obj).accountName();
             java.lang.String sb = new java.lang.StringBuilder(java.lang.String.valueOf(b2).length() + 12).append(b2).append("|").append(i).toString();
             android.graphics.Bitmap bitmap = (android.graphics.Bitmap) defpackage.cei.a.get(sb);
             if (bitmap != null) {

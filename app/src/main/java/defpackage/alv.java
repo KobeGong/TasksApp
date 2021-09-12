@@ -47,7 +47,6 @@ public final class alv {
     /* JADX WARNING: Incorrect type for immutable var: ssa=java.util.List, code=java.util.List<dcb>, for r4v0, types: [java.util.List, java.util.List<dcb>, java.lang.Iterable] */
     /* Code decompiled incorrectly, please refer to instructions dump. */
     public final synchronized void a(java.util.List<defpackage.dcb> r4) {
-        /*
             r3 = this;
             monitor-enter(r3)
             java.util.Map r0 = r3.d     // Catch:{ all -> 0x0028 }
@@ -98,13 +97,11 @@ public final class alv {
             r3.e()     // Catch:{ all -> 0x0028 }
             monitor-exit(r3)
             return
-        */
-        throw new UnsupportedOperationException("Method not decompiled: defpackage.alv.a(java.util.List):void");
     }
 
-    public final synchronized defpackage.ajq b(java.lang.String str) {
-        defpackage.ajq ajq;
-        ajq = (defpackage.ajq) this.d.get(str);
+    public final synchronized AbsTaskListStructure b(java.lang.String str) {
+        AbsTaskListStructure ajq;
+        ajq = (AbsTaskListStructure) this.d.get(str);
         if (ajq == null) {
             ajq = null;
         }
@@ -114,11 +111,11 @@ public final class alv {
     public final synchronized defpackage.dby a(java.lang.String str, java.lang.String str2) {
         defpackage.dby dby = null;
         synchronized (this) {
-            defpackage.ajq b2 = b(str);
+            AbsTaskListStructure b2 = b(str);
             if (b2 != null) {
-                int a2 = a(b2.a(), str2);
+                int a2 = a(b2.getTasks(), str2);
                 if (a2 >= 0) {
-                    dby = (defpackage.dby) b2.a().get(a2);
+                    dby = (defpackage.dby) b2.getTasks().get(a2);
                 }
             }
         }
@@ -127,9 +124,9 @@ public final class alv {
 
     public final synchronized boolean b(java.lang.String str, java.lang.String str2) {
         boolean z;
-        defpackage.ajq b2 = b(str);
+        AbsTaskListStructure b2 = b(str);
         if (b2 != null) {
-            java.util.Iterator it = b2.b().a.iterator();
+            java.util.Iterator it = b2.getStructure().a.iterator();
             while (true) {
                 if (it.hasNext()) {
                     if (((defpackage.dcf) it.next()).b.equals(str2)) {
@@ -148,14 +145,14 @@ public final class alv {
     public final synchronized java.util.List c(java.lang.String str, java.lang.String str2) {
         java.util.ArrayList arrayList;
         arrayList = new java.util.ArrayList();
-        defpackage.ajq b2 = b(str);
+        AbsTaskListStructure b2 = b(str);
         if (b2 != null) {
-            for (defpackage.dcf dcf : b2.b().a) {
+            for (defpackage.dcf dcf : b2.getStructure().a) {
                 if (dcf.b.equals(str2)) {
                     for (defpackage.dcf dcf2 : dcf.c) {
-                        int a2 = a(b2.a(), dcf2.b);
+                        int a2 = a(b2.getTasks(), dcf2.b);
                         if (a2 >= 0) {
-                            arrayList.add((defpackage.dby) b2.a().get(a2));
+                            arrayList.add((defpackage.dby) b2.getTasks().get(a2));
                         }
                     }
                 }
@@ -164,25 +161,25 @@ public final class alv {
         return arrayList;
     }
 
-    public final synchronized void a(java.lang.String str, defpackage.ajq ajq) {
+    public final synchronized void a(java.lang.String str, AbsTaskListStructure ajq) {
         if (e(str) >= 0) {
-            defpackage.ajq ajq2 = (defpackage.ajq) this.d.get(str);
+            AbsTaskListStructure ajq2 = (AbsTaskListStructure) this.d.get(str);
             this.d.put(str, ajq);
             e();
             java.util.HashSet hashSet = new java.util.HashSet();
             if (ajq2 != null) {
-                for (defpackage.dby dby : ajq2.a()) {
+                for (defpackage.dby dby : ajq2.getTasks()) {
                     hashSet.add(dby.d);
                 }
                 if (ajq != null) {
-                    for (defpackage.dby dby2 : ajq.a()) {
+                    for (defpackage.dby dby2 : ajq.getTasks()) {
                         hashSet.remove(dby2.d);
                     }
                 }
                 defpackage.aju.c();
             }
             if (ajq != null) {
-                ajq.a();
+                ajq.getTasks();
                 defpackage.aju.b();
             }
         }
@@ -191,11 +188,11 @@ public final class alv {
     public final synchronized void a(java.lang.String str, java.lang.String str2, boolean z) {
         defpackage.dih dih;
         defpackage.dih dih2;
-        defpackage.ajq ajq = (defpackage.ajq) this.d.get(str);
+        AbsTaskListStructure ajq = (AbsTaskListStructure) this.d.get(str);
         if (ajq != null) {
-            int a2 = a(ajq.a(), str2);
+            int a2 = a(ajq.getTasks(), str2);
             if (a2 >= 0) {
-                defpackage.dby dby = (defpackage.dby) ajq.a().get(a2);
+                defpackage.dby dby = (defpackage.dby) ajq.getTasks().get(a2);
                 defpackage.dii dii = (defpackage.dii) dby.a(defpackage.bg.ao);
                 dii.a((defpackage.dih) dby);
                 defpackage.dii dii2 = dii;
@@ -216,10 +213,10 @@ public final class alv {
                     throw new defpackage.dkw();
                 }
                 defpackage.dby dby2 = (defpackage.dby) dih4;
-                java.util.ArrayList a3 = defpackage.cky.a((java.lang.Iterable) ajq.a());
+                java.util.ArrayList a3 = defpackage.cky.a((java.lang.Iterable) ajq.getTasks());
                 a3.remove(a2);
                 a3.add(0, dby2);
-                defpackage.dce b2 = ajq.b();
+                defpackage.dce b2 = ajq.getStructure();
                 defpackage.dii dii4 = (defpackage.dii) b2.a(defpackage.bg.ao);
                 dii4.a((defpackage.dih) b2);
                 defpackage.dii dii5 = dii4;
@@ -241,7 +238,7 @@ public final class alv {
                 if (!defpackage.dih.a(dih6, java.lang.Boolean.TRUE.booleanValue())) {
                     throw new defpackage.dkw();
                 }
-                map.put(str, defpackage.ajq.a(a3, (defpackage.dce) dih6, ajq.c()));
+                map.put(str, AbsTaskListStructure.a(a3, (defpackage.dce) dih6, ajq.getLastSyncedMs()));
                 e();
                 defpackage.csp.a((java.lang.Object) dby2);
                 defpackage.aju.b();
@@ -265,19 +262,19 @@ public final class alv {
         defpackage.dca dca;
         defpackage.dce dce;
         defpackage.dcf dcf;
-        defpackage.ajq ajq;
+        AbsTaskListStructure ajq;
         defpackage.dce dce2;
         defpackage.dih dih;
         defpackage.dih dih2;
         defpackage.dih dih3;
         defpackage.dih dih4;
-        defpackage.ajq ajq2 = (defpackage.ajq) this.d.get(str);
+        AbsTaskListStructure ajq2 = (AbsTaskListStructure) this.d.get(str);
         if (ajq2 != null) {
-            int a2 = a(ajq2.a(), str2);
+            int a2 = a(ajq2.getTasks(), str2);
             if (a2 >= 0) {
-                java.util.ArrayList a3 = defpackage.cky.a((java.lang.Iterable) ajq2.a());
+                java.util.ArrayList a3 = defpackage.cky.a((java.lang.Iterable) ajq2.getTasks());
                 defpackage.dby dby = (defpackage.dby) a3.remove(a2);
-                defpackage.dce b2 = ajq2.b();
+                defpackage.dce b2 = ajq2.getStructure();
                 if (dby.e == null) {
                     dca = defpackage.dca.g;
                 } else {
@@ -306,14 +303,14 @@ public final class alv {
                     dcf = null;
                 }
                 defpackage.aju.a((java.util.Collection) defpackage.csp.a((java.lang.Object) dby));
-                defpackage.ajq ajq3 = (defpackage.ajq) this.d.get(str3);
+                AbsTaskListStructure ajq3 = (AbsTaskListStructure) this.d.get(str3);
                 if (ajq3 == null) {
-                    ajq = defpackage.ajq.d();
+                    ajq = AbsTaskListStructure.d();
                 } else {
                     ajq = ajq3;
                 }
-                java.util.ArrayList a4 = defpackage.cky.a((java.lang.Iterable) ajq.a());
-                defpackage.dce b3 = ajq.b();
+                java.util.ArrayList a4 = defpackage.cky.a((java.lang.Iterable) ajq.getTasks());
+                defpackage.dce b3 = ajq.getStructure();
                 if (dcf != null) {
                     defpackage.dii i = ((defpackage.dii) defpackage.dcf.d.a(defpackage.bg.ao)).i(str4);
                     for (defpackage.dcf dcf2 : dcf.c) {
@@ -346,7 +343,7 @@ public final class alv {
                             }
                         }
                     }
-                    defpackage.dce b4 = ajq.b();
+                    defpackage.dce b4 = ajq.getStructure();
                     defpackage.dii dii4 = (defpackage.dii) b4.a(defpackage.bg.ao);
                     dii4.a((defpackage.dih) b4);
                     defpackage.dii dii5 = dii4;
@@ -386,29 +383,29 @@ public final class alv {
                 a4.add(dby3);
                 defpackage.csp.a((java.lang.Object) dby3);
                 defpackage.aju.b();
-                this.d.put(str, defpackage.ajq.a(a3, dce, ajq2.c()));
-                this.d.put(str3, defpackage.ajq.a(a4, dce2, ajq.c()));
+                this.d.put(str, AbsTaskListStructure.a(a3, dce, ajq2.getLastSyncedMs()));
+                this.d.put(str3, AbsTaskListStructure.a(a4, dce2, ajq.getLastSyncedMs()));
                 e();
             }
         }
     }
 
     public final synchronized void a(java.lang.String str, defpackage.dby dby, int i, java.lang.String str2) {
-        defpackage.ajq ajq;
+        AbsTaskListStructure ajq;
         defpackage.dih dih;
         defpackage.dih dih2;
-        defpackage.ajq ajq2 = (defpackage.ajq) this.d.get(str);
+        AbsTaskListStructure ajq2 = (AbsTaskListStructure) this.d.get(str);
         if (ajq2 == null) {
-            ajq = defpackage.ajq.d();
+            ajq = AbsTaskListStructure.d();
         } else {
             ajq = ajq2;
         }
-        if (a(ajq.a(), dby.d) < 0) {
+        if (a(ajq.getTasks(), dby.d) < 0) {
             if (android.text.TextUtils.isEmpty(str2)) {
-                java.util.ArrayList a2 = defpackage.cky.a((java.lang.Iterable) ajq.a());
+                java.util.ArrayList a2 = defpackage.cky.a((java.lang.Iterable) ajq.getTasks());
                 a2.add(0, dby);
                 java.util.Map map = this.d;
-                defpackage.dce b2 = ajq.b();
+                defpackage.dce b2 = ajq.getStructure();
                 defpackage.dii dii = (defpackage.dii) b2.a(defpackage.bg.ao);
                 dii.a((defpackage.dih) b2);
                 defpackage.dii b3 = dii.b(i, ((defpackage.dii) defpackage.dcf.d.a(defpackage.bg.ao)).i(dby.d));
@@ -424,22 +421,22 @@ public final class alv {
                 if (!defpackage.dih.a(dih4, java.lang.Boolean.TRUE.booleanValue())) {
                     throw new defpackage.dkw();
                 }
-                map.put(str, defpackage.ajq.a(a2, (defpackage.dce) dih4, ajq.c()));
+                map.put(str, AbsTaskListStructure.a(a2, (defpackage.dce) dih4, ajq.getLastSyncedMs()));
                 defpackage.csp.a((java.lang.Object) dby);
                 defpackage.aju.b();
                 e();
             } else {
                 int i2 = 0;
-                for (defpackage.dcf dcf : ajq.b().a) {
+                for (defpackage.dcf dcf : ajq.getStructure().a) {
                     if (dcf.b.equals(str2)) {
-                        java.util.ArrayList a3 = defpackage.cky.a((java.lang.Iterable) ajq.a());
+                        java.util.ArrayList a3 = defpackage.cky.a((java.lang.Iterable) ajq.getTasks());
                         a3.add(0, dby);
                         java.util.Map map2 = this.d;
-                        defpackage.dce b4 = ajq.b();
+                        defpackage.dce b4 = ajq.getStructure();
                         defpackage.dii dii2 = (defpackage.dii) b4.a(defpackage.bg.ao);
                         dii2.a((defpackage.dih) b4);
                         defpackage.dii dii3 = dii2;
-                        defpackage.dcf dcf2 = (defpackage.dcf) ajq.b().a.get(i2);
+                        defpackage.dcf dcf2 = (defpackage.dcf) ajq.getStructure().a.get(i2);
                         defpackage.dii dii4 = (defpackage.dii) dcf2.a(defpackage.bg.ao);
                         dii4.a((defpackage.dih) dcf2);
                         defpackage.dii dii5 = dii4;
@@ -459,7 +456,7 @@ public final class alv {
                         if (!defpackage.dih.a(dih6, java.lang.Boolean.TRUE.booleanValue())) {
                             throw new defpackage.dkw();
                         }
-                        map2.put(str, defpackage.ajq.a(a3, (defpackage.dce) dih6, ajq.c()));
+                        map2.put(str, AbsTaskListStructure.a(a3, (defpackage.dce) dih6, ajq.getLastSyncedMs()));
                         defpackage.csp.a((java.lang.Object) dby);
                         defpackage.aju.b();
                         e();
@@ -474,9 +471,9 @@ public final class alv {
         defpackage.dih dih;
         int i2 = 10;
         synchronized (this) {
-            defpackage.ajq ajq = (defpackage.ajq) this.d.get(str);
+            AbsTaskListStructure ajq = (AbsTaskListStructure) this.d.get(str);
             if (ajq != null) {
-                defpackage.dce b2 = ajq.b();
+                defpackage.dce b2 = ajq.getStructure();
                 defpackage.dii dii = (defpackage.dii) b2.a(defpackage.bg.ao);
                 dii.a((defpackage.dih) b2);
                 defpackage.dii dii2 = dii;
@@ -531,7 +528,7 @@ public final class alv {
                 }
                 if (a2 != null) {
                     java.util.Map map = this.d;
-                    java.util.List a3 = ajq.a();
+                    java.util.List a3 = ajq.getTasks();
                     if (dii2.b) {
                         dih = dii2.a;
                     } else {
@@ -544,7 +541,7 @@ public final class alv {
                     if (!defpackage.dih.a(dih3, java.lang.Boolean.TRUE.booleanValue())) {
                         throw new defpackage.dkw();
                     }
-                    map.put(str, defpackage.ajq.a(a3, (defpackage.dce) dih3, ajq.c()));
+                    map.put(str, AbsTaskListStructure.a(a3, (defpackage.dce) dih3, ajq.getLastSyncedMs()));
                     e();
                 }
             }
@@ -552,14 +549,14 @@ public final class alv {
     }
 
     private final void a(java.lang.String str, java.lang.String str2, defpackage.crq crq) {
-        defpackage.ajq ajq = (defpackage.ajq) this.d.get(str);
+        AbsTaskListStructure ajq = (AbsTaskListStructure) this.d.get(str);
         if (ajq != null) {
-            int a2 = a(ajq.a(), str2);
+            int a2 = a(ajq.getTasks(), str2);
             if (a2 >= 0) {
-                defpackage.dby dby = (defpackage.dby) crq.a((defpackage.dby) ajq.a().get(a2));
-                java.util.ArrayList a3 = defpackage.cky.a((java.lang.Iterable) ajq.a());
+                defpackage.dby dby = (defpackage.dby) crq.a((defpackage.dby) ajq.getTasks().get(a2));
+                java.util.ArrayList a3 = defpackage.cky.a((java.lang.Iterable) ajq.getTasks());
                 a3.set(a2, dby);
-                this.d.put(str, defpackage.ajq.a(a3, ajq.b(), ajq.c()));
+                this.d.put(str, AbsTaskListStructure.a(a3, ajq.getStructure(), ajq.getLastSyncedMs()));
                 e();
                 defpackage.csp.a((java.lang.Object) dby);
                 defpackage.aju.b();
@@ -598,10 +595,10 @@ public final class alv {
         defpackage.dce dce;
         defpackage.dih dih;
         defpackage.dih dih2;
-        defpackage.ajq ajq = (defpackage.ajq) this.d.get(str);
+        AbsTaskListStructure ajq = (AbsTaskListStructure) this.d.get(str);
         if (ajq != null) {
-            defpackage.dce b2 = ajq.b();
-            java.util.ArrayList a2 = defpackage.cky.a((java.lang.Iterable) ajq.a());
+            defpackage.dce b2 = ajq.getStructure();
+            java.util.ArrayList a2 = defpackage.cky.a((java.lang.Iterable) ajq.getTasks());
             int a3 = a((java.util.List) a2, str2);
             if (a3 >= 0) {
                 defpackage.aju.a((java.util.Collection) defpackage.csp.a((java.lang.Object) (defpackage.dby) a2.remove(a3)));
@@ -612,7 +609,7 @@ public final class alv {
             while (!z2 && i < diq.size()) {
                 defpackage.dcf dcf = (defpackage.dcf) diq.get(i);
                 if (defpackage.cru.d(str2, dcf.b)) {
-                    defpackage.dce b3 = ajq.b();
+                    defpackage.dce b3 = ajq.getStructure();
                     defpackage.dii dii = (defpackage.dii) b3.a(defpackage.bg.ao);
                     dii.a((defpackage.dih) b3);
                     defpackage.dii dii2 = dii;
@@ -641,7 +638,7 @@ public final class alv {
                     int i2 = 0;
                     while (!z2 && i2 < dcf.c.size()) {
                         if (defpackage.cru.d(str2, ((defpackage.dcf) dcf.c.get(i2)).b)) {
-                            defpackage.dce b4 = ajq.b();
+                            defpackage.dce b4 = ajq.getStructure();
                             defpackage.dii dii3 = (defpackage.dii) b4.a(defpackage.bg.ao);
                             dii3.a((defpackage.dih) b4);
                             defpackage.dii dii4 = dii3;
@@ -673,17 +670,17 @@ public final class alv {
                 }
                 i++;
             }
-            this.d.put(str, defpackage.ajq.a(a2, b2, ajq.c()));
+            this.d.put(str, AbsTaskListStructure.a(a2, b2, ajq.getLastSyncedMs()));
             e();
         }
     }
 
     public final synchronized void c(java.lang.String str) {
         defpackage.dca dca;
-        defpackage.ajq ajq = (defpackage.ajq) this.d.get(str);
+        AbsTaskListStructure ajq = (AbsTaskListStructure) this.d.get(str);
         if (ajq != null) {
-            defpackage.dce b2 = ajq.b();
-            java.util.List<defpackage.dby> a2 = ajq.a();
+            defpackage.dce b2 = ajq.getStructure();
+            java.util.List<defpackage.dby> a2 = ajq.getTasks();
             java.util.ArrayList b3 = defpackage.cky.b(a2.size());
             for (defpackage.dby dby : a2) {
                 if (dby.e == null) {
@@ -695,7 +692,7 @@ public final class alv {
                     b3.add(dby);
                 }
             }
-            this.d.put(str, defpackage.ajq.a(b3, b2, ajq.c()));
+            this.d.put(str, AbsTaskListStructure.a(b3, b2, ajq.getLastSyncedMs()));
             e();
         }
     }
@@ -744,14 +741,14 @@ public final class alv {
     }
 
     public final synchronized void d(java.lang.String str) {
-        defpackage.ajq ajq = (defpackage.ajq) this.d.remove(str);
+        AbsTaskListStructure ajq = (AbsTaskListStructure) this.d.remove(str);
         int e2 = e(str);
         if (e2 >= 0) {
             this.b.remove(e2);
             e();
         }
         if (ajq != null) {
-            defpackage.aju.a((java.util.Collection) ajq.a());
+            defpackage.aju.a((java.util.Collection) ajq.getTasks());
         }
     }
 
@@ -795,9 +792,9 @@ public final class alv {
                 java.util.HashMap hashMap = new java.util.HashMap();
                 for (java.util.Map.Entry entry : map.entrySet()) {
                     java.lang.String str = (java.lang.String) entry.getKey();
-                    java.util.List b2 = b(((defpackage.ajq) entry.getValue()).a());
-                    byte[] a2 = defpackage.bdk.a((defpackage.dih) ((defpackage.ajq) entry.getValue()).b());
-                    long c2 = ((defpackage.ajq) entry.getValue()).c();
+                    java.util.List b2 = b(((AbsTaskListStructure) entry.getValue()).getTasks());
+                    byte[] a2 = defpackage.bdk.a((defpackage.dih) ((AbsTaskListStructure) entry.getValue()).getStructure());
+                    long c2 = ((AbsTaskListStructure) entry.getValue()).getLastSyncedMs();
                     defpackage.ama ama = new defpackage.ama();
                     ama.a = b2;
                     ama.b = a2;
@@ -877,7 +874,7 @@ public final class alv {
                 for (java.util.Map.Entry entry : map.entrySet()) {
                     java.lang.String str = (java.lang.String) entry.getKey();
                     defpackage.ama ama = (defpackage.ama) entry.getValue();
-                    hashMap.put(str, defpackage.ajq.a(a(ama.a, (defpackage.dih) defpackage.dby.g), (defpackage.dce) defpackage.bdk.a(ama.b, (defpackage.dih) defpackage.dce.b), ama.c));
+                    hashMap.put(str, AbsTaskListStructure.a(a(ama.a, (defpackage.dih) defpackage.dby.g), (defpackage.dce) defpackage.bdk.a(ama.b, (defpackage.dih) defpackage.dce.b), ama.c));
                 }
                 this.d = hashMap;
                 this.e = (java.util.List) objectInputStream.readObject();

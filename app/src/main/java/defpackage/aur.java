@@ -11,6 +11,6 @@ final /* synthetic */ class aur implements java.lang.Runnable {
     public final void run() {
         TasksFragment auj = this.a;
         auj.a(false);
-        auj.V.setEnabled(true);
+        auj.flattenSubtasksView.setEnabled(true);
     }
 }

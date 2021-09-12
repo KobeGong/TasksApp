@@ -6,7 +6,7 @@ public final class cer {
     private final defpackage.cff a;
 
     public final void a() {
-        this.a.e.c();
+        this.a.materialBottomDrawer.c();
     }
 
     cer(defpackage.cff cff) {

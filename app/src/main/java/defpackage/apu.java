@@ -10,6 +10,6 @@ public final class apu extends defpackage.cdm {
     }
 
     public final /* synthetic */ void a(java.lang.Object obj, java.lang.Object obj2, java.lang.Object obj3) {
-        this.a.a((defpackage.cdu) obj);
+        this.a.a((AbsDeviceOwner) obj);
     }
 }

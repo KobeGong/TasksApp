@@ -2,7 +2,7 @@ package defpackage;
 
 /* renamed from: mh reason: default package */
 /* compiled from: PG */
-final class mh implements android.os.Parcelable {
+final class FragmentState implements android.os.Parcelable {
     public static final android.os.Parcelable.Creator CREATOR = new defpackage.mi();
     public final java.lang.String a;
     public final int b;
@@ -17,20 +17,20 @@ final class mh implements android.os.Parcelable {
     public android.os.Bundle k;
     public Fragment l;
 
-    mh(Fragment lcVar) {
+    FragmentState(Fragment lcVar) {
         this.a = lcVar.getClass().getName();
         this.b = lcVar.g;
         this.c = lcVar.o;
-        this.d = lcVar.z;
-        this.e = lcVar.A;
-        this.f = lcVar.B;
+        this.d = lcVar.mContainerId;
+        this.e = lcVar.mFragmentId;
+        this.f = lcVar.tag;
         this.g = lcVar.E;
         this.h = lcVar.D;
         this.i = lcVar.i;
-        this.j = lcVar.C;
+        this.j = lcVar.mHidden;
     }
 
-    mh(android.os.Parcel parcel) {
+    FragmentState(android.os.Parcel parcel) {
         boolean z;
         boolean z2;
         boolean z3 = true;

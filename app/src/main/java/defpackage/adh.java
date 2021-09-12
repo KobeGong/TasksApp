@@ -52,7 +52,7 @@ public final class adh extends defpackage.afc implements defpackage.afj {
         this.n.addUpdateListener(new defpackage.adl(this));
         if (this.j != recyclerView) {
             if (this.j != null) {
-                this.j.b((defpackage.afc) this);
+                this.j.removeItemDecoration((defpackage.afc) this);
                 this.j.b((defpackage.afj) this);
                 android.support.v7.widget.RecyclerView recyclerView2 = this.j;
                 defpackage.afk afk = this.E;
@@ -64,14 +64,14 @@ public final class adh extends defpackage.afc implements defpackage.afj {
             this.j = recyclerView;
             if (this.j != null) {
                 android.support.v7.widget.RecyclerView recyclerView3 = this.j;
-                if (recyclerView3.l != null) {
-                    recyclerView3.l.a("Cannot add item decoration during a scroll  or layout");
+                if (recyclerView3.mLayout != null) {
+                    recyclerView3.mLayout.a("Cannot add item decoration during a scroll  or layout");
                 }
-                if (recyclerView3.n.isEmpty()) {
+                if (recyclerView3.mItemDecorations.isEmpty()) {
                     recyclerView3.setWillNotDraw(false);
                 }
-                recyclerView3.n.add(this);
-                recyclerView3.l();
+                recyclerView3.mItemDecorations.add(this);
+                recyclerView3.markItemDecorInsetsDirty();
                 recyclerView3.requestLayout();
                 this.j.a((defpackage.afj) this);
                 this.j.a(this.E);

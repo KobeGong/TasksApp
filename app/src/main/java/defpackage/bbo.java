@@ -82,16 +82,16 @@ public final class bbo extends Fragment implements defpackage.bax {
         }
     }
 
-    public final void e() {
-        super.e();
+    public final void onStart() {
+        super.onStart();
         this.U = 2;
         for (com.google.android.gms.common.api.internal.LifecycleCallback b2 : this.b.values()) {
             b2.b();
         }
     }
 
-    public final void s() {
-        super.s();
+    public final void onResume() {
+        super.onResume();
         this.U = 3;
         for (com.google.android.gms.common.api.internal.LifecycleCallback c : this.b.values()) {
             c.c();
@@ -105,8 +105,8 @@ public final class bbo extends Fragment implements defpackage.bax {
         }
     }
 
-    public final void d(android.os.Bundle bundle) {
-        super.d(bundle);
+    public final void onSaveInstanceState(android.os.Bundle bundle) {
+        super.onSaveInstanceState(bundle);
         if (bundle != null) {
             for (java.util.Map.Entry entry : this.b.entrySet()) {
                 android.os.Bundle bundle2 = new android.os.Bundle();
@@ -116,16 +116,16 @@ public final class bbo extends Fragment implements defpackage.bax {
         }
     }
 
-    public final void f() {
-        super.f();
+    public final void onStop() {
+        super.onStop();
         this.U = 4;
         for (com.google.android.gms.common.api.internal.LifecycleCallback d : this.b.values()) {
             d.d();
         }
     }
 
-    public final void u() {
-        super.u();
+    public final void onDestroy() {
+        super.onDestroy();
         this.U = 5;
         java.util.Iterator it = this.b.values().iterator();
         while (it.hasNext()) {

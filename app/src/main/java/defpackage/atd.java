@@ -11,9 +11,9 @@ public final class atd extends defpackage.gu {
         return inflate;
     }
 
-    public final void c(android.os.Bundle bundle) {
+    public final void onActivityCreated(android.os.Bundle bundle) {
         defpackage.dcd dcd;
-        super.c(bundle);
+        super.onActivityCreated(bundle);
         defpackage.anc c = defpackage.any.a().c();
         if (c == null) {
             a(true);

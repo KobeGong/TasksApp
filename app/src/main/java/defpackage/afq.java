@@ -9,7 +9,7 @@ public final class afq extends defpackage.rl {
     afq(android.os.Parcel parcel, java.lang.ClassLoader classLoader) {
         super(parcel, classLoader);
         if (classLoader == null) {
-            classLoader = defpackage.afd.class.getClassLoader();
+            classLoader = LayoutManager.class.getClassLoader();
         }
         this.a = parcel.readParcelable(classLoader);
     }

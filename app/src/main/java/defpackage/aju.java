@@ -73,7 +73,6 @@ public final class aju implements defpackage.ajy {
     /* JADX WARNING: Removed duplicated region for block: B:17:0x0047  */
     /* Code decompiled incorrectly, please refer to instructions dump. */
     public static defpackage.aoe a(android.content.Context r4, android.content.Intent r5) {
-        /*
             r1 = 0
             java.lang.String r0 = r5.getAction()
             java.lang.String r2 = "android.intent.action.SEARCH"
@@ -127,7 +126,5 @@ public final class aju implements defpackage.ajy {
             aoq r0 = new aoq
             r0.<init>(r1)
             goto L_0x0012
-        */
-        throw new UnsupportedOperationException("Method not decompiled: defpackage.aju.a(android.content.Context, android.content.Intent):aoe");
     }
 }

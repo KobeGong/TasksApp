@@ -2,9 +2,9 @@ package defpackage;
 
 /* renamed from: ath reason: default package */
 final /* synthetic */ class ath implements android.view.View.OnClickListener {
-    private final defpackage.atg a;
+    private final BaseTaskAdapter a;
 
-    ath(defpackage.atg atg) {
+    ath(BaseTaskAdapter atg) {
         this.a = atg;
     }
 

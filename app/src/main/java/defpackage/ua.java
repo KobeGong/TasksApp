@@ -15,7 +15,7 @@ public final class ua extends android.widget.ImageView {
         this.b = (int) (3.5f * f);
         if (a()) {
             shapeDrawable = new android.graphics.drawable.ShapeDrawable(new android.graphics.drawable.shapes.OvalShape());
-            ViewCompat.a((android.view.View) this, f * 4.0f);
+            ViewCompat.setElevation((android.view.View) this, f * 4.0f);
         } else {
             shapeDrawable = new android.graphics.drawable.ShapeDrawable(new defpackage.ub(this, this.b));
             setLayerType(1, shapeDrawable.getPaint());

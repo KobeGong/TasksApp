@@ -14,14 +14,14 @@ final class cfs implements android.view.animation.Animation.AnimationListener {
     public final void onAnimationStart(android.view.animation.Animation animation) {
         if (this.a) {
             this.b.a.d();
-            this.b.a.b.setVisibility(0);
+            this.b.a.accountMenuBodyView.setVisibility(0);
         }
     }
 
     public final void onAnimationEnd(android.view.animation.Animation animation) {
         if (!this.a) {
             this.b.a.d();
-            this.b.a.b.setVisibility(8);
+            this.b.a.accountMenuBodyView.setVisibility(8);
         }
     }
 

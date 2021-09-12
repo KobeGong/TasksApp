@@ -30,7 +30,7 @@ public class FragmentHostCallback extends FragmentContainer {
         return android.view.LayoutInflater.from(this.mContext);
     }
 
-    public void a(Fragment lcVar, android.content.Intent intent, int requestCode) {
+    public void startActivityForResult(Fragment lcVar, android.content.Intent intent, int requestCode) {
         if (requestCode != -1) {
             throw new java.lang.IllegalStateException("Starting activity with a requestCode requires a FragmentActivity host");
         }

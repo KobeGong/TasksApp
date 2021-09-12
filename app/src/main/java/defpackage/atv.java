@@ -2,17 +2,17 @@ package defpackage;
 
 /* renamed from: atv reason: default package */
 /* compiled from: PG */
-public final class atv extends defpackage.atg {
+public final class atv extends BaseTaskAdapter {
     public final java.util.List m = new java.util.ArrayList();
     public final java.util.Map n = new java.util.HashMap();
     public final java.util.Map o = new java.util.HashMap();
     public defpackage.atw p;
 
     public atv() {
-        c();
+        setHasStableIds();
     }
 
-    public final defpackage.afv a(android.view.ViewGroup viewGroup, int i) {
+    public final RecyclerViewHolder onCreateViewHolder(android.view.ViewGroup viewGroup, int i) {
         return super.c(viewGroup, i);
     }
 
@@ -86,7 +86,7 @@ public final class atv extends defpackage.atg {
                 atx.s.animate().translationX(f).setDuration(195).start();
             }
             if (z2) {
-                this.d.d(i, i2);
+                this.mObservable.d(i, i2);
             }
             this.p = defpackage.atw.a(dby.d, i2);
             return true;
@@ -143,13 +143,13 @@ public final class atv extends defpackage.atg {
     }
 
     /* access modifiers changed from: protected */
-    public final void a(defpackage.ajq ajq) {
+    public final void a(AbsTaskListStructure ajq) {
         defpackage.dca dca;
         this.m.clear();
         this.o.clear();
         this.n.clear();
         java.util.LinkedHashMap linkedHashMap = new java.util.LinkedHashMap();
-        for (defpackage.dby dby : ajq.a()) {
+        for (defpackage.dby dby : ajq.getTasks()) {
             if (dby.e == null) {
                 dca = defpackage.dca.g;
             } else {
@@ -159,7 +159,7 @@ public final class atv extends defpackage.atg {
                 linkedHashMap.put(dby.d, dby);
             }
         }
-        for (defpackage.dcf dcf : ajq.b().a) {
+        for (defpackage.dcf dcf : ajq.getStructure().a) {
             defpackage.dby dby2 = (defpackage.dby) linkedHashMap.get(dcf.b);
             if (dby2 != null) {
                 this.m.add(dby2);
@@ -182,7 +182,7 @@ public final class atv extends defpackage.atg {
     }
 
     /* access modifiers changed from: protected */
-    public final int d() {
+    public final int getCount() {
         return this.m.size();
     }
 
@@ -302,7 +302,7 @@ public final class atv extends defpackage.atg {
     }
 
     /* access modifiers changed from: protected */
-    public final void b(defpackage.afv afv, int i) {
+    public final void b(RecyclerViewHolder afv, int i) {
         defpackage.dby g = g(i);
         defpackage.atx atx = (defpackage.atx) afv;
         atx.a(g, f(i).size(), this.o.containsKey(g.d), true);

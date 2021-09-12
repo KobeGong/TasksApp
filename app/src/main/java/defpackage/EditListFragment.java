@@ -1,7 +1,5 @@
 package defpackage;
 
-import com.google.android.apps.tasks.R;
-
 /* renamed from: arv reason: default package */
 /* compiled from: PG */
 /* compiled from: EditListFragment */
@@ -16,13 +14,13 @@ public final class EditListFragment extends defpackage.arb {
         return inflate;
     }
 
-    public final void e() {
-        super.e();
+    public final void onStart() {
+        super.onStart();
         b(this.a);
     }
 
-    public final void f() {
+    public final void onStop() {
         defpackage.bdk.a((android.view.View) this.a, false);
-        super.f();
+        super.onStop();
     }
 }

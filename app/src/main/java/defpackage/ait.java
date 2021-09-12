@@ -3,17 +3,17 @@ package defpackage;
 /* renamed from: ait reason: default package */
 /* compiled from: PG */
 public final class ait implements defpackage.dmm {
-    private defpackage.aij a;
-    private defpackage.brg b;
-    private defpackage.bth c;
-    private defpackage.ecz d;
-    private defpackage.btd e;
-    private defpackage.bte f;
-    private defpackage.btg g;
-    private defpackage.ecz h;
-    private defpackage.btc i;
-    private defpackage.btf j;
-    private defpackage.ecz k;
+    private final defpackage.aij a;
+    private final defpackage.brg b;
+    private final defpackage.bth c;
+    private final defpackage.ecz d;
+    private final defpackage.btd e;
+    private final defpackage.bte f;
+    private final defpackage.btg g;
+    private final defpackage.ecz h;
+    private final defpackage.btc i;
+    private final defpackage.btf j;
+    private final defpackage.ecz k;
 
     public ait(defpackage.aiv aiv) {
         this.a = new defpackage.aij(aiv.a);
@@ -31,13 +31,13 @@ public final class ait implements defpackage.dmm {
 
     public final /* synthetic */ void a(java.lang.Object obj) {
         com.google.android.apps.tasks.common.TaskApplication taskApplication = (com.google.android.apps.tasks.common.TaskApplication) obj;
-        defpackage.dmq.a((java.util.Map) defpackage.cta.a);
-        defpackage.dmq.a((java.util.Map) defpackage.cta.a);
-        defpackage.dmq.a((java.util.Map) defpackage.cta.a);
-        defpackage.dmq.a((java.util.Map) defpackage.cta.a);
-        defpackage.dmq.a((java.util.Map) defpackage.cta.a);
+        defpackage.dmq.a(cta.a);
+        defpackage.dmq.a(cta.a);
+        defpackage.dmq.a(cta.a);
+        defpackage.dmq.a(cta.a);
+        defpackage.dmq.a(cta.a);
         taskApplication.f = false;
-        defpackage.dmq.a((java.util.Map) defpackage.cta.a);
+        defpackage.dmq.a(cta.a);
         taskApplication.d = (defpackage.cdj) this.h.a();
         taskApplication.e = (defpackage.cdw) this.k.a();
     }

@@ -15,6 +15,6 @@ final /* synthetic */ class ast implements android.view.View.OnClickListener {
         SubTaskView atb = this.b;
         asi.b(atb);
         asi.a(atb);
-        defpackage.any.a().c().a(asi.U, atb.d.d, (java.lang.Object) null);
+        defpackage.any.a().c().a(asi.listId, atb.d.d, (java.lang.Object) null);
     }
 }

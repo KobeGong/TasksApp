@@ -153,7 +153,7 @@ public class de extends defpackage.di {
         if (c2 == a2) {
             return 0;
         }
-        a_(a2);
+        setTopAndBottomOffset(a2);
         return c2 - a2;
     }
 

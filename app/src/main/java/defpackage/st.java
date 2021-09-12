@@ -20,11 +20,11 @@ class st extends defpackage.ss {
         view.requestApplyInsets();
     }
 
-    public final void a(android.view.View view, float f) {
+    public final void setElevation(android.view.View view, float f) {
         view.setElevation(f);
     }
 
-    public final float u(android.view.View view) {
+    public final float getElevation(android.view.View view) {
         return view.getElevation();
     }
 

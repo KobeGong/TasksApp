@@ -32,7 +32,7 @@ public final /* synthetic */ class apn implements OnMenuItemClickListener {
             anc r0 = r0.c()
             dcb r7 = r4.h
             java.lang.String r7 = r7.b
-            ajq r0 = r0.d(r7)
+            AbsTaskListStructure r0 = r0.d(r7)
             java.util.List r0 = r0.a()
             java.util.Iterator r7 = r0.iterator()
         L_0x0033:

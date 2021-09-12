@@ -93,7 +93,7 @@ public final class xp extends defpackage.wa implements defpackage.aan {
     }
 
     public final void a(float f2) {
-        ViewCompat.a((android.view.View) this.c, f2);
+        ViewCompat.setElevation((android.view.View) this.c, f2);
     }
 
     public final void f() {

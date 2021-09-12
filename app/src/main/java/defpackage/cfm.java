@@ -1,14 +1,16 @@
 package defpackage;
 
+import com.google.android.apps.tasks.R;
+
 /* renamed from: cfm reason: default package */
 /* compiled from: PG */
 public class cfm extends defpackage.cff {
-    private static final java.lang.String g = java.lang.String.valueOf(defpackage.cfm.class.getName()).concat(".superState");
-    private static final java.lang.String h = java.lang.String.valueOf(defpackage.cfm.class.getName()).concat(".expanded");
-    public final android.view.ViewGroup f;
-    private final android.view.View i;
+    private static final java.lang.String g = cfm.class.getName().concat(".superState");
+    private static final java.lang.String h = cfm.class.getName().concat(".expanded");
+    public  android.view.ViewGroup f;
+    private  android.view.View i;
     private boolean j;
-    private final defpackage.cdm k;
+    private  defpackage.cdm k;
 
     public cfm(android.content.Context context) {
         this(context, 0);
@@ -21,14 +23,14 @@ public class cfm extends defpackage.cff {
     private cfm(android.content.Context context, char c) {
         super(context, null);
         this.k = new defpackage.cfo(this);
-        this.f = (android.view.ViewGroup) findViewById(2131755279);
-        this.i = findViewById(2131755308);
-        this.a.setOnClickListener(new defpackage.cfn(this));
+        this.f = findViewById(R.id.container);
+        this.i = findViewById(R.id.header_expanded_bottom_divider);
+        this.selectedAccountHeaderView.setOnClickListener(new defpackage.cfn(this));
     }
 
     /* access modifiers changed from: protected */
     public final android.view.View a() {
-        return this.a;
+        return this.selectedAccountHeaderView;
     }
 
     /* access modifiers changed from: 0000 */
@@ -66,7 +68,7 @@ public class cfm extends defpackage.cff {
             this.d.b(this.k);
             this.j = false;
         }
-        this.a.a((android.view.View.OnClickListener) null);
+        this.selectedAccountHeaderView.a(null);
         super.onDetachedFromWindow();
     }
 
@@ -74,7 +76,7 @@ public class cfm extends defpackage.cff {
     public android.os.Parcelable onSaveInstanceState() {
         android.os.Bundle bundle = new android.os.Bundle();
         bundle.putParcelable(g, super.onSaveInstanceState());
-        bundle.putBoolean(h, this.a.h);
+        bundle.putBoolean(h, this.selectedAccountHeaderView.h);
         return bundle;
     }
 
@@ -83,7 +85,7 @@ public class cfm extends defpackage.cff {
         if (parcelable instanceof android.os.Bundle) {
             android.os.Bundle bundle = (android.os.Bundle) parcelable;
             android.os.Parcelable parcelable2 = bundle.getParcelable(g);
-            this.a.a(bundle.getBoolean(h));
+            this.selectedAccountHeaderView.a(bundle.getBoolean(h));
             b();
             parcelable = parcelable2;
         }
@@ -95,61 +97,57 @@ public class cfm extends defpackage.cff {
         int i2;
         super.b();
         d();
-        com.google.android.libraries.onegoogle.accountmenu.internal.AccountMenuBodyView accountMenuBodyView = this.b;
-        if (!this.a.h || this.d.a() == 0) {
+        if (!this.selectedAccountHeaderView.h || this.d.getSize() == 0) {
             i2 = 8;
         } else {
             i2 = 0;
         }
-        accountMenuBodyView.setVisibility(i2);
+        this.accountMenuBodyView.setVisibility(i2);
     }
 
     /* access modifiers changed from: 0000 */
     public final void d() {
-        this.i.setVisibility((!this.a.h || this.d.b()) ? 8 : 0);
+        this.i.setVisibility((!this.selectedAccountHeaderView.h || this.d.b()) ? 8 : 0);
     }
 
     /* access modifiers changed from: protected */
     public final void a(float f2) {
         int i2 = 0;
-        com.google.android.libraries.onegoogle.accountmenu.internal.SelectedAccountHeaderView selectedAccountHeaderView = this.a;
-        if (selectedAccountHeaderView.d) {
-            defpackage.cky.a(f2 >= 0.0f && f2 <= 1.0f, (java.lang.Object) "ratio must be in the rabe [0, 1].");
-            selectedAccountHeaderView.g.setAlpha(f2);
-            android.widget.ImageView imageView = selectedAccountHeaderView.g;
+        if (this.selectedAccountHeaderView.expandable) {
+            defpackage.cky.a(f2 >= 0.0f && f2 <= 1.0f, "ratio must be in the rabe [0, 1].");
+            this.selectedAccountHeaderView.closeButton.setAlpha(f2);
+            android.widget.ImageView imageView = this.selectedAccountHeaderView.closeButton;
             if (f2 == 0.0f) {
                 i2 = 8;
             }
             imageView.setVisibility(i2);
             float f3 = 1.0f - f2;
-            selectedAccountHeaderView.e.setAlpha(f3);
-            selectedAccountHeaderView.f.setAlpha(f3);
-            selectedAccountHeaderView.b();
+            this.selectedAccountHeaderView.e.setAlpha(f3);
+            this.selectedAccountHeaderView.f.setAlpha(f3);
+            this.selectedAccountHeaderView.b();
         }
     }
 
     /* access modifiers changed from: protected */
     public final void a(boolean z) {
-        com.google.android.libraries.onegoogle.accountmenu.internal.SelectedAccountHeaderView selectedAccountHeaderView = this.a;
-        if (selectedAccountHeaderView.d && selectedAccountHeaderView.i != z) {
+        if (selectedAccountHeaderView.expandable && selectedAccountHeaderView.i != z) {
             selectedAccountHeaderView.i = z;
-            selectedAccountHeaderView.g.setAlpha(1.0f);
-            selectedAccountHeaderView.g.setVisibility(z ? 0 : 8);
+            selectedAccountHeaderView.closeButton.setAlpha(1.0f);
+            selectedAccountHeaderView.closeButton.setVisibility(z ? 0 : 8);
             selectedAccountHeaderView.b();
         }
     }
 
     /* access modifiers changed from: protected */
     public final void c() {
-        this.a.a(false);
+        this.selectedAccountHeaderView.a(false);
     }
 
     /* access modifiers changed from: 0000 */
     public final /* synthetic */ void e() {
-        com.google.android.libraries.onegoogle.accountmenu.internal.SelectedAccountHeaderView selectedAccountHeaderView = this.a;
         selectedAccountHeaderView.a(!selectedAccountHeaderView.h);
-        this.c.scrollTo(0, 0);
+        this.nestedScrollView.scrollTo(0, 0);
         super.b();
-        startAnimation(new defpackage.cfr(this, this.b, this.a.h));
+        startAnimation(new defpackage.cfr(this, this.accountMenuBodyView, this.selectedAccountHeaderView.h));
     }
 }

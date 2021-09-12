@@ -4,18 +4,18 @@ import com.google.android.apps.tasks.R;
 
 /* renamed from: afv reason: default package */
 /* compiled from: PG */
-public class afv {
+public class RecyclerViewHolder {
     private static final java.util.List p = java.util.Collections.EMPTY_LIST;
-    public final android.view.View a;
-    public java.lang.ref.WeakReference b;
-    public int c;
-    public int d;
-    public long e;
+    public android.view.View itemView;
+    public java.lang.ref.WeakReference mNestedRecyclerView;
+    public int position;
+    public int oldPos;
+    public long id;
     public int f;
-    public int g;
-    public defpackage.afv h;
-    public defpackage.afv i;
-    public int j;
+    public int mPreLayoutPosition;
+    public RecyclerViewHolder mShadowedHolder;
+    public RecyclerViewHolder mShadowingHolder;
+    public int mFlags;
     public defpackage.afn k;
     public boolean l;
     public int m;
@@ -25,14 +25,14 @@ public class afv {
     private java.util.List r;
     private int s;
 
-    public afv(android.view.View view) {
-        this.c = -1;
-        this.d = -1;
-        this.e = -1;
+    public RecyclerViewHolder(android.view.View view) {
+        this.position = -1;
+        this.oldPos = -1;
+        this.id = -1;
         this.f = -1;
-        this.g = -1;
-        this.h = null;
-        this.i = null;
+        this.mPreLayoutPosition = -1;
+        this.mShadowedHolder = null;
+        this.mShadowingHolder = null;
         this.q = null;
         this.r = null;
         this.s = 0;
@@ -43,36 +43,36 @@ public class afv {
         if (view == null) {
             throw new java.lang.IllegalArgumentException("itemView may not be null");
         }
-        this.a = view;
+        this.itemView = view;
     }
 
     public final void a(int i2, boolean z) {
-        if (this.d == -1) {
-            this.d = this.c;
+        if (this.oldPos == -1) {
+            this.oldPos = this.position;
         }
-        if (this.g == -1) {
-            this.g = this.c;
+        if (this.mPreLayoutPosition == -1) {
+            this.mPreLayoutPosition = this.position;
         }
         if (z) {
-            this.g += i2;
+            this.mPreLayoutPosition += i2;
         }
-        this.c += i2;
-        if (this.a.getLayoutParams() != null) {
-            ((defpackage.afh) this.a.getLayoutParams()).c = true;
+        this.position += i2;
+        if (this.itemView.getLayoutParams() != null) {
+            ((defpackage.afh) this.itemView.getLayoutParams()).c = true;
         }
     }
 
     public final void a() {
-        this.d = -1;
-        this.g = -1;
+        this.oldPos = -1;
+        this.mPreLayoutPosition = -1;
     }
 
-    public final boolean b() {
-        return (this.j & 128) != 0;
+    public final boolean shouldIgnore() {
+        return (this.mFlags & 128) != 0;
     }
 
     public final int c() {
-        return this.g == -1 ? this.c : this.g;
+        return this.mPreLayoutPosition == -1 ? this.position : this.mPreLayoutPosition;
     }
 
     public final int d() {
@@ -83,7 +83,7 @@ public class afv {
     }
 
     /* access modifiers changed from: 0000 */
-    public final boolean e() {
+    public final boolean isScrap() {
         return this.k != null;
     }
 
@@ -94,16 +94,16 @@ public class afv {
 
     /* access modifiers changed from: 0000 */
     public final boolean g() {
-        return (this.j & 32) != 0;
+        return (this.mFlags & 32) != 0;
     }
 
     /* access modifiers changed from: 0000 */
     public final void h() {
-        this.j &= -33;
+        this.mFlags &= -33;
     }
 
     public final void i() {
-        this.j &= -257;
+        this.mFlags &= -257;
     }
 
     /* access modifiers changed from: 0000 */
@@ -112,43 +112,43 @@ public class afv {
         this.l = z;
     }
 
-    public final boolean j() {
-        return (this.j & 4) != 0;
+    public final boolean isInvalid() {
+        return (this.mFlags & 4) != 0;
     }
 
     /* access modifiers changed from: 0000 */
-    public final boolean k() {
-        return (this.j & 2) != 0;
+    public final boolean needsUpdate() {
+        return (this.mFlags & 2) != 0;
     }
 
-    public final boolean l() {
-        return (this.j & 1) != 0;
+    public final boolean isBound() {
+        return (this.mFlags & 1) != 0;
     }
 
-    public final boolean m() {
-        return (this.j & 8) != 0;
+    public final boolean isRemoved() {
+        return (this.mFlags & 8) != 0;
     }
 
-    public final boolean a(int i2) {
-        return (this.j & i2) != 0;
+    public final boolean hasAnyOfTheFlags(int i2) {
+        return (this.mFlags & i2) != 0;
     }
 
-    public final boolean n() {
-        return (this.j & 256) != 0;
+    public final boolean isTmpDetached() {
+        return (this.mFlags & 256) != 0;
     }
 
     public final void a(int i2, int i3) {
-        this.j = (this.j & (i3 ^ -1)) | (i2 & i3);
+        this.mFlags = (this.mFlags & (i3 ^ -1)) | (i2 & i3);
     }
 
     public final void b(int i2) {
-        this.j |= i2;
+        this.mFlags |= i2;
     }
 
     public final void a(java.lang.Object obj) {
         if (obj == null) {
             b(1024);
-        } else if ((this.j & 1024) == 0) {
+        } else if ((this.mFlags & 1024) == 0) {
             if (this.q == null) {
                 this.q = new java.util.ArrayList();
                 this.r = java.util.Collections.unmodifiableList(this.q);
@@ -162,11 +162,11 @@ public class afv {
         if (this.q != null) {
             this.q.clear();
         }
-        this.j &= -1025;
+        this.mFlags &= -1025;
     }
 
     public final java.util.List p() {
-        if ((this.j & 1024) != 0) {
+        if ((this.mFlags & 1024) != 0) {
             return p;
         }
         if (this.q == null || this.q.size() == 0) {
@@ -177,14 +177,14 @@ public class afv {
 
     /* access modifiers changed from: 0000 */
     public final void q() {
-        this.j = 0;
-        this.c = -1;
-        this.d = -1;
-        this.e = -1;
-        this.g = -1;
+        this.mFlags = 0;
+        this.position = -1;
+        this.oldPos = -1;
+        this.id = -1;
+        this.mPreLayoutPosition = -1;
         this.s = 0;
-        this.h = null;
-        this.i = null;
+        this.mShadowedHolder = null;
+        this.mShadowingHolder = null;
         o();
         this.m = 0;
         this.n = -1;
@@ -192,35 +192,35 @@ public class afv {
     }
 
     public java.lang.String toString() {
-        java.lang.StringBuilder sb = new java.lang.StringBuilder("ViewHolder{" + java.lang.Integer.toHexString(hashCode()) + " position=" + this.c + " id=" + this.e + ", oldPos=" + this.d + ", pLpos:" + this.g);
-        if (e()) {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder("ViewHolder{" + java.lang.Integer.toHexString(hashCode()) + " position=" + this.position + " id=" + this.id + ", oldPos=" + this.oldPos + ", pLpos:" + this.mPreLayoutPosition);
+        if (isScrap()) {
             sb.append(" scrap ").append(this.l ? "[changeScrap]" : "[attachedScrap]");
         }
-        if (j()) {
+        if (isInvalid()) {
             sb.append(" invalid");
         }
-        if (!l()) {
+        if (!isBound()) {
             sb.append(" unbound");
         }
-        if (k()) {
+        if (needsUpdate()) {
             sb.append(" update");
         }
-        if (m()) {
+        if (isRemoved()) {
             sb.append(" removed");
         }
-        if (b()) {
+        if (shouldIgnore()) {
             sb.append(" ignored");
         }
-        if (n()) {
+        if (isTmpDetached()) {
             sb.append(" tmpDetached");
         }
-        if (!r()) {
+        if (!isRecyclable()) {
             sb.append(" not recyclable(" + this.s + ")");
         }
-        if ((this.j & 512) != 0 || j()) {
+        if ((this.mFlags & 512) != 0 || isInvalid()) {
             sb.append(" undefined adapter position");
         }
-        if (this.a.getParent() == null) {
+        if (this.itemView.getParent() == null) {
             sb.append(" no parent");
         }
         sb.append("}");
@@ -233,15 +233,15 @@ public class afv {
             this.s = 0;
             android.util.Log.e("View", "isRecyclable decremented below 0: unmatched pair of setIsRecyable() calls for " + this);
         } else if (!z && this.s == 1) {
-            this.j |= 16;
+            this.mFlags |= 16;
         } else if (z && this.s == 0) {
-            this.j &= -17;
+            this.mFlags &= -17;
         }
     }
 
-    public final boolean r() {
-        if ((this.j & 16) == 0) {
-            if (!ViewCompat.a.b(this.a)) {
+    public final boolean isRecyclable() {
+        if ((this.mFlags & 16) == 0) {
+            if (!ViewCompat.a.b(this.itemView)) {
                 return true;
             }
         }
@@ -249,29 +249,29 @@ public class afv {
     }
 
     public final boolean s() {
-        return (this.j & 2) != 0;
+        return (this.mFlags & 2) != 0;
     }
 
-    public afv(android.view.View view, byte b2) {
+    public RecyclerViewHolder(android.view.View view, byte b2) {
         this(view);
     }
 
-    public afv(android.view.View view, char c2) {
+    public RecyclerViewHolder(android.view.View view, char c2) {
         this(view, 0);
     }
 
-    public afv(android.view.LayoutInflater layoutInflater, android.view.ViewGroup viewGroup) {
+    public RecyclerViewHolder(android.view.LayoutInflater layoutInflater, android.view.ViewGroup viewGroup) {
         this(layoutInflater.inflate(R.layout.design_navigation_item_separator, viewGroup, false), (byte)0);
     }
 
-    public afv(android.view.LayoutInflater layoutInflater, android.view.ViewGroup viewGroup, byte b2) {
+    public RecyclerViewHolder(android.view.LayoutInflater layoutInflater, android.view.ViewGroup viewGroup, byte b2) {
         this(layoutInflater.inflate(R.layout.design_navigation_item_subheader, viewGroup, false), (byte)0);
     }
 
-    public afv(android.content.Context context, android.view.ViewGroup viewGroup, defpackage.ces ces) {
+    public RecyclerViewHolder(android.content.Context context, android.view.ViewGroup viewGroup, defpackage.ces ces) {
         this(android.view.LayoutInflater.from(context).inflate(R.layout.action_list_item, viewGroup, false));
-        ((android.widget.ImageView) this.a.findViewById(R.id.Icon)).setImageDrawable(ces.b);
-        ((android.widget.TextView) this.a.findViewById(R.id.Text)).setText(ces.c);
-        this.a.setOnClickListener(ces.d);
+        ((android.widget.ImageView) this.itemView.findViewById(R.id.Icon)).setImageDrawable(ces.b);
+        ((android.widget.TextView) this.itemView.findViewById(R.id.Text)).setText(ces.c);
+        this.itemView.setOnClickListener(ces.d);
     }
 }

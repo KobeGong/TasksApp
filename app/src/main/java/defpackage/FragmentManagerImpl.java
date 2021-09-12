@@ -8,16 +8,16 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
     private static java.lang.reflect.Field t = null;
     private java.util.ArrayList A;
     private java.lang.Runnable B = new defpackage.lq(this);
-    public boolean a;
+    public boolean mExecutingActions;
     public final java.util.ArrayList b = new java.util.ArrayList();
     public java.util.ArrayList c;
     public int d = 0;
-    public FragmentHostCallback e;
+    public FragmentHostCallback mHost;
     public FragmentContainer f;
     public Fragment g;
     public boolean h;
-    public java.util.ArrayList i;
-    public java.util.ArrayList j;
+    public java.util.ArrayList mTmpRecords;
+    public java.util.ArrayList mTmpIsPop;
     public defpackage.me k;
     private java.util.ArrayList l;
     private int m = 0;
@@ -66,9 +66,9 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
         android.util.Log.e("FragmentManager", runtimeException.getMessage());
         android.util.Log.e("FragmentManager", "Activity state:");
         java.io.PrintWriter printWriter = new java.io.PrintWriter(new defpackage.qw());
-        if (this.e != null) {
+        if (this.mHost != null) {
             try {
-                this.e.a("  ", printWriter, new java.lang.String[0]);
+                this.mHost.a("  ", printWriter, new java.lang.String[0]);
             } catch (java.lang.Exception e2) {
                 android.util.Log.e("FragmentManager", "Failed dumping state", e2);
             }
@@ -82,8 +82,8 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
         throw runtimeException;
     }
 
-    public final defpackage.mj a() {
-        return new defpackage.kv(this);
+    public final FragmentTransaction beginTransaction() {
+        return new BackStackRecord(this);
     }
 
     public final boolean b() {
@@ -97,7 +97,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
     }
 
     public final boolean d() {
-        w();
+        checkStateLoss();
         return u();
     }
 
@@ -114,18 +114,18 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
 
     private final boolean u() {
         j();
-        a(true);
+        ensureExecReady(true);
         if (this.g != null) {
             FragmentManagerImpl lpVar = this.g.v;
             if (lpVar != null && lpVar.d()) {
                 return true;
             }
         }
-        boolean a2 = a(this.i, this.j, (java.lang.String) null, -1, 0);
+        boolean a2 = a(this.mTmpRecords, this.mTmpIsPop, (java.lang.String) null, -1, 0);
         if (a2) {
-            this.a = true;
+            this.mExecutingActions = true;
             try {
-                a(this.i, this.j);
+                a(this.mTmpRecords, this.mTmpIsPop);
             } finally {
                 i();
             }
@@ -174,7 +174,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
         if (this.s != null) {
             defpackage.jd.a((java.lang.Object) this.s, sb);
         } else {
-            defpackage.jd.a((java.lang.Object) this.e, sb);
+            defpackage.jd.a((java.lang.Object) this.mHost, sb);
         }
         sb.append("}}");
         return sb.toString();
@@ -237,7 +237,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
                 printWriter.print(str);
                 printWriter.println("Back Stack:");
                 for (int i5 = 0; i5 < size4; i5++) {
-                    defpackage.kv kvVar = (defpackage.kv) this.c.get(i5);
+                    BackStackRecord kvVar = (BackStackRecord) this.c.get(i5);
                     printWriter.print(str);
                     printWriter.print("  #");
                     printWriter.print(i5);
@@ -257,19 +257,19 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
                         printWriter.print(" mTransitionStyle=#");
                         printWriter.println(java.lang.Integer.toHexString(kvVar.h));
                     }
-                    if (!(kvVar.c == 0 && kvVar.d == 0)) {
+                    if (!(kvVar.mEnterAnim == 0 && kvVar.mExitAnim == 0)) {
                         printWriter.print(str3);
                         printWriter.print("mEnterAnim=#");
-                        printWriter.print(java.lang.Integer.toHexString(kvVar.c));
+                        printWriter.print(java.lang.Integer.toHexString(kvVar.mEnterAnim));
                         printWriter.print(" mExitAnim=#");
-                        printWriter.println(java.lang.Integer.toHexString(kvVar.d));
+                        printWriter.println(java.lang.Integer.toHexString(kvVar.mExitAnim));
                     }
-                    if (!(kvVar.e == 0 && kvVar.f == 0)) {
+                    if (!(kvVar.mPopEnterAnim == 0 && kvVar.mPopExitAnim == 0)) {
                         printWriter.print(str3);
                         printWriter.print("mPopEnterAnim=#");
-                        printWriter.print(java.lang.Integer.toHexString(kvVar.e));
+                        printWriter.print(java.lang.Integer.toHexString(kvVar.mPopEnterAnim));
                         printWriter.print(" mPopExitAnim=#");
-                        printWriter.println(java.lang.Integer.toHexString(kvVar.f));
+                        printWriter.println(java.lang.Integer.toHexString(kvVar.mPopExitAnim));
                     }
                     if (!(kvVar.m == 0 && kvVar.n == null)) {
                         printWriter.print(str3);
@@ -285,14 +285,14 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
                         printWriter.print(" mBreadCrumbShortTitleText=");
                         printWriter.println(kvVar.p);
                     }
-                    if (!kvVar.b.isEmpty()) {
+                    if (!kvVar.ops.isEmpty()) {
                         printWriter.print(str3);
                         printWriter.println("Operations:");
                         new java.lang.StringBuilder().append(str3).append("    ");
-                        int size5 = kvVar.b.size();
+                        int size5 = kvVar.ops.size();
                         for (int i6 = 0; i6 < size5; i6++) {
-                            defpackage.kw kwVar = (defpackage.kw) kvVar.b.get(i6);
-                            switch (kwVar.a) {
+                            FragmentTransactionOP kwVar = (FragmentTransactionOP) kvVar.ops.get(i6);
+                            switch (kwVar.mCmd) {
                                 case 0:
                                     str2 = "NULL";
                                     break;
@@ -324,7 +324,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
                                     str2 = "UNSET_PRIMARY_NAV";
                                     break;
                                 default:
-                                    str2 = "cmd=" + kwVar.a;
+                                    str2 = "cmd=" + kwVar.mCmd;
                                     break;
                             }
                             printWriter.print(str3);
@@ -334,19 +334,19 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
                             printWriter.print(str2);
                             printWriter.print(" ");
                             printWriter.println(kwVar.b);
-                            if (!(kwVar.c == 0 && kwVar.d == 0)) {
+                            if (!(kwVar.mEnterAnim == 0 && kwVar.mExitAnim == 0)) {
                                 printWriter.print(str3);
                                 printWriter.print("enterAnim=#");
-                                printWriter.print(java.lang.Integer.toHexString(kwVar.c));
+                                printWriter.print(java.lang.Integer.toHexString(kwVar.mEnterAnim));
                                 printWriter.print(" exitAnim=#");
-                                printWriter.println(java.lang.Integer.toHexString(kwVar.d));
+                                printWriter.println(java.lang.Integer.toHexString(kwVar.mExitAnim));
                             }
-                            if (kwVar.e != 0 || kwVar.f != 0) {
+                            if (kwVar.mPopEnterAnim != 0 || kwVar.mPopExitAnim != 0) {
                                 printWriter.print(str3);
                                 printWriter.print("popEnterAnim=#");
-                                printWriter.print(java.lang.Integer.toHexString(kwVar.e));
+                                printWriter.print(java.lang.Integer.toHexString(kwVar.mPopEnterAnim));
                                 printWriter.print(" popExitAnim=#");
-                                printWriter.println(java.lang.Integer.toHexString(kwVar.f));
+                                printWriter.println(java.lang.Integer.toHexString(kwVar.mPopExitAnim));
                             }
                         }
                     }
@@ -360,7 +360,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
                     printWriter.print(str);
                     printWriter.println("Back Stack Indices:");
                     for (int i7 = 0; i7 < size6; i7++) {
-                        defpackage.kv kvVar2 = (defpackage.kv) this.p.get(i7);
+                        BackStackRecord kvVar2 = (BackStackRecord) this.p.get(i7);
                         printWriter.print(str);
                         printWriter.print("  #");
                         printWriter.print(i7);
@@ -394,7 +394,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
         printWriter.println("FragmentManager misc state:");
         printWriter.print(str);
         printWriter.print("  mHost=");
-        printWriter.println(this.e);
+        printWriter.println(this.mHost);
         printWriter.print(str);
         printWriter.print("  mContainer=");
         printWriter.println(this.f);
@@ -972,7 +972,6 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
     /* JADX WARNING: Removed duplicated region for block: B:37:0x0063  */
     /* Code decompiled incorrectly, please refer to instructions dump. */
     public final void a(Fragment r11, int r12, int r13, int r14, boolean r15) {
-        /*
             r10 = this;
             r9 = 4
             r6 = 3
@@ -1223,7 +1222,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
         L_0x01ed:
             android.view.View r0 = r11.J
             android.os.Bundle r1 = r11.e
-            r11.a(r0, r1)
+            r11.onViewCreated(r0, r1)
             android.view.View r0 = r11.J
             android.os.Bundle r1 = r11.e
             r10.a(r11, r0, r1, r3)
@@ -1299,7 +1298,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
         L_0x02a1:
             android.view.View r0 = r11.J
             android.os.Bundle r1 = r11.e
-            r11.a(r0, r1)
+            r11.onViewCreated(r0, r1)
             android.view.View r0 = r11.J
             android.os.Bundle r1 = r11.e
             r10.a(r11, r0, r1, r3)
@@ -1321,7 +1320,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
             r1 = 2
             r11.d = r1
             r11.H = r3
-            r11.c(r0)
+            r11.onActivityCreated(r0)
             boolean r0 = r11.H
             if (r0 != 0) goto L_0x0307
             nu r0 = new nu
@@ -1401,7 +1400,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
         L_0x0362:
             r11.d = r9
             r11.H = r3
-            r11.e()
+            r11.onStart()
             boolean r0 = r11.H
             if (r0 != 0) goto L_0x0388
             nu r0 = new nu
@@ -1436,7 +1435,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
             r0 = 5
             r11.d = r0
             r11.H = r3
-            r11.s()
+            r11.onResume()
             boolean r0 = r11.H
             if (r0 != 0) goto L_0x03d2
             nu r0 = new nu
@@ -1509,7 +1508,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
         L_0x0436:
             r11.d = r9
             r11.H = r3
-            r11.t()
+            r11.onPause()
             boolean r0 = r11.H
             if (r0 != 0) goto L_0x045c
             nu r0 = new nu
@@ -1536,7 +1535,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
         L_0x0471:
             r11.d = r6
             r11.H = r3
-            r11.f()
+            r11.onStop()
             boolean r0 = r11.H
             if (r0 != 0) goto L_0x0497
             nu r0 = new nu
@@ -1580,7 +1579,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
         L_0x04c8:
             r11.d = r5
             r11.H = r3
-            r11.g()
+            r11.onDestroyView()
             boolean r0 = r11.H
             if (r0 != 0) goto L_0x04ee
             nu r0 = new nu
@@ -1685,7 +1684,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
             r11.d = r3
             r11.H = r3
             r11.S = r3
-            r11.u()
+            r11.onDestroy()
             boolean r0 = r11.H
             if (r0 != 0) goto L_0x05d8
             nu r0 = new nu
@@ -1703,7 +1702,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
             r10.g(r11, r3)
         L_0x05dd:
             r11.H = r3
-            r11.d()
+            r11.onDetach()
             r11.R = r7
             boolean r0 = r11.H
             if (r0 != 0) goto L_0x0606
@@ -1779,8 +1778,6 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
         L_0x0674:
             r0 = r7
             goto L_0x0272
-        */
-        throw new UnsupportedOperationException("Method not decompiled: defpackage.lp.a(lc, int, int, int, boolean):void");
     }
 
     private final void i(Fragment lcVar) {
@@ -1788,7 +1785,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
     }
 
     /* access modifiers changed from: 0000 */
-    public final void a(Fragment lcVar) {
+    public final void moveFragmentToExpectedState(Fragment lcVar) {
         boolean z2;
         int i2;
         Fragment lcVar2;
@@ -1802,9 +1799,9 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
                 }
             }
             a(lcVar, i3, lcVar.E(), lcVar.F(), false);
-            if (lcVar.J != null) {
+            if (lcVar.mView != null) {
                 android.view.ViewGroup viewGroup = lcVar.I;
-                android.view.View view = lcVar.J;
+                android.view.View view = lcVar.mView;
                 if (viewGroup != null && view != null) {
                     int indexOf = this.b.indexOf(lcVar) - 1;
                     while (true) {
@@ -1813,7 +1810,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
                             break;
                         }
                         lcVar2 = (Fragment) this.b.get(indexOf);
-                        if (lcVar2.I == viewGroup && lcVar2.J != null) {
+                        if (lcVar2.I == viewGroup && lcVar2.mView != null) {
                             break;
                         }
                         indexOf--;
@@ -1822,37 +1819,37 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
                     lcVar2 = null;
                 }
                 if (lcVar2 != null) {
-                    android.view.View view2 = lcVar2.J;
+                    android.view.View view2 = lcVar2.mView;
                     android.view.ViewGroup viewGroup2 = lcVar.I;
                     int indexOfChild = viewGroup2.indexOfChild(view2);
-                    int indexOfChild2 = viewGroup2.indexOfChild(lcVar.J);
+                    int indexOfChild2 = viewGroup2.indexOfChild(lcVar.mView);
                     if (indexOfChild2 < indexOfChild) {
                         viewGroup2.removeViewAt(indexOfChild2);
-                        viewGroup2.addView(lcVar.J, indexOfChild);
+                        viewGroup2.addView(lcVar.mView, indexOfChild);
                     }
                 }
                 if (lcVar.O && lcVar.I != null) {
                     if (lcVar.Q > 0.0f) {
-                        lcVar.J.setAlpha(lcVar.Q);
+                        lcVar.mView.setAlpha(lcVar.Q);
                     }
                     lcVar.Q = 0.0f;
                     lcVar.O = false;
                     defpackage.ly a2 = a(lcVar, lcVar.E(), true, lcVar.F());
                     if (a2 != null) {
-                        a(lcVar.J, a2);
+                        a(lcVar.mView, a2);
                         if (a2.a != null) {
-                            lcVar.J.startAnimation(a2.a);
+                            lcVar.mView.startAnimation(a2.a);
                         } else {
-                            a2.b.setTarget(lcVar.J);
+                            a2.b.setTarget(lcVar.mView);
                             a2.b.start();
                         }
                     }
                 }
             }
-            if (lcVar.P) {
-                if (lcVar.J != null) {
+            if (lcVar.mHiddenChanged) {
+                if (lcVar.mView != null) {
                     int E = lcVar.E();
-                    if (!lcVar.C) {
+                    if (!lcVar.mHidden) {
                         z2 = true;
                     } else {
                         z2 = false;
@@ -1860,61 +1857,61 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
                     defpackage.ly a3 = a(lcVar, E, z2, lcVar.F());
                     if (a3 == null || a3.b == null) {
                         if (a3 != null) {
-                            a(lcVar.J, a3);
-                            lcVar.J.startAnimation(a3.a);
+                            a(lcVar.mView, a3);
+                            lcVar.mView.startAnimation(a3.a);
                             a3.a.start();
                         }
-                        if (!lcVar.C || lcVar.M()) {
+                        if (!lcVar.mHidden || lcVar.M()) {
                             i2 = 0;
                         } else {
                             i2 = 8;
                         }
-                        lcVar.J.setVisibility(i2);
+                        lcVar.mView.setVisibility(i2);
                         if (lcVar.M()) {
                             lcVar.b(false);
                         }
                     } else {
-                        a3.b.setTarget(lcVar.J);
-                        if (!lcVar.C) {
-                            lcVar.J.setVisibility(0);
+                        a3.b.setTarget(lcVar.mView);
+                        if (!lcVar.mHidden) {
+                            lcVar.mView.setVisibility(0);
                         } else if (lcVar.M()) {
                             lcVar.b(false);
                         } else {
                             android.view.ViewGroup viewGroup3 = lcVar.I;
-                            android.view.View view3 = lcVar.J;
+                            android.view.View view3 = lcVar.mView;
                             viewGroup3.startViewTransition(view3);
                             a3.b.addListener(new defpackage.lu(viewGroup3, view3, lcVar));
                         }
-                        a(lcVar.J, a3);
+                        a(lcVar.mView, a3);
                         a3.b.start();
                     }
                 }
                 if (lcVar.m) {
                     boolean z3 = lcVar.G;
                 }
-                lcVar.P = false;
-                boolean z4 = lcVar.C;
+                lcVar.mHiddenChanged = false;
+                boolean z4 = lcVar.mHidden;
                 Fragment.m();
             }
         }
     }
 
     /* access modifiers changed from: 0000 */
-    public final void a(int i2, boolean z2) {
-        if (this.e == null && i2 != 0) {
+    public final void moveToState(int i2, boolean z2) {
+        if (this.mHost == null && i2 != 0) {
             throw new java.lang.IllegalStateException("No activity");
         } else if (z2 || i2 != this.d) {
             this.d = i2;
             if (this.n != null) {
                 int size = this.b.size();
                 for (int i3 = 0; i3 < size; i3++) {
-                    a((Fragment) this.b.get(i3));
+                    moveFragmentToExpectedState((Fragment) this.b.get(i3));
                 }
                 int size2 = this.n.size();
                 for (int i4 = 0; i4 < size2; i4++) {
                     Fragment lcVar = (Fragment) this.n.valueAt(i4);
                     if (lcVar != null && ((lcVar.n || lcVar.D) && !lcVar.O)) {
-                        a(lcVar);
+                        moveFragmentToExpectedState(lcVar);
                     }
                 }
                 v();
@@ -1927,7 +1924,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
             for (int i2 = 0; i2 < this.n.size(); i2++) {
                 Fragment lcVar = (Fragment) this.n.valueAt(i2);
                 if (lcVar != null && lcVar.L) {
-                    if (this.a) {
+                    if (this.mExecutingActions) {
                         this.w = true;
                     } else {
                         lcVar.L = false;
@@ -1964,8 +1961,8 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
         }
         lcVar.m = true;
         lcVar.n = false;
-        if (lcVar.J == null) {
-            lcVar.P = false;
+        if (lcVar.mView == null) {
+            lcVar.mHiddenChanged = false;
         }
         boolean z3 = lcVar.G;
         if (z2) {
@@ -1985,25 +1982,25 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
         }
     }
 
-    public static void d(Fragment lcVar) {
+    public static void hideFragment(Fragment lcVar) {
         boolean z2 = true;
-        if (!lcVar.C) {
-            lcVar.C = true;
-            if (lcVar.P) {
+        if (!lcVar.mHidden) {
+            lcVar.mHidden = true;
+            if (lcVar.mHiddenChanged) {
                 z2 = false;
             }
-            lcVar.P = z2;
+            lcVar.mHiddenChanged = z2;
         }
     }
 
-    public static void e(Fragment lcVar) {
+    public static void showFragment(Fragment lcVar) {
         boolean z2 = false;
-        if (lcVar.C) {
-            lcVar.C = false;
-            if (!lcVar.P) {
+        if (lcVar.mHidden) {
+            lcVar.mHidden = false;
+            if (!lcVar.mHiddenChanged) {
                 z2 = true;
             }
-            lcVar.P = z2;
+            lcVar.mHiddenChanged = z2;
         }
     }
 
@@ -2040,14 +2037,14 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
     public final Fragment findFragmentById(int i2) {
         for (int size = this.b.size() - 1; size >= 0; size--) {
             Fragment lcVar = (Fragment) this.b.get(size);
-            if (lcVar != null && lcVar.z == i2) {
+            if (lcVar != null && lcVar.mContainerId == i2) {
                 return lcVar;
             }
         }
         if (this.n != null) {
             for (int size2 = this.n.size() - 1; size2 >= 0; size2--) {
                 Fragment lcVar2 = (Fragment) this.n.valueAt(size2);
-                if (lcVar2 != null && lcVar2.z == i2) {
+                if (lcVar2 != null && lcVar2.mContainerId == i2) {
                     return lcVar2;
                 }
             }
@@ -2055,21 +2052,22 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
         return null;
     }
 
-    public final Fragment a(java.lang.String str) {
+    public final Fragment findFragmentByTag(java.lang.String str) {
         if (str != null) {
             for (int size = this.b.size() - 1; size >= 0; size--) {
-                Fragment lcVar = (Fragment) this.b.get(size);
-                if (lcVar != null && str.equals(lcVar.B)) {
-                    return lcVar;
+                Fragment fragment = (Fragment) this.b.get(size);
+                if (fragment != null && str.equals(fragment.tag)) {
+                    return fragment;
                 }
             }
         }
-        if (!(this.n == null || str == null)) {
-            for (int size2 = this.n.size() - 1; size2 >= 0; size2--) {
-                Fragment lcVar2 = (Fragment) this.n.valueAt(size2);
-                if (lcVar2 != null && str.equals(lcVar2.B)) {
-                    return lcVar2;
-                }
+        if (this.n == null || str == null) {
+            return null;
+        }
+        for (int size2 = this.n.size() - 1; size2 >= 0; size2--) {
+            Fragment lcVar2 = (Fragment) this.n.valueAt(size2);
+            if (lcVar2 != null && str.equals(lcVar2.tag)) {
+                return lcVar2;
             }
         }
         return null;
@@ -2092,7 +2090,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
         return null;
     }
 
-    private final void w() {
+    private final void checkStateLoss() {
         if (h()) {
             throw new java.lang.IllegalStateException("Can not perform this action after onSaveInstanceState");
         }
@@ -2183,7 +2181,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
         throw new UnsupportedOperationException("Method not decompiled: defpackage.lp.a(mc, boolean):void");
     }
 
-    public final int a(defpackage.kv kvVar) {
+    public final int a(BackStackRecord kvVar) {
         int i2;
         synchronized (this) {
             if (this.q == null || this.q.size() <= 0) {
@@ -2201,45 +2199,45 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
     }
 
     /* access modifiers changed from: 0000 */
-    public final void a(boolean z2) {
-        if (this.a) {
+    public final void ensureExecReady(boolean allowStateLoss) {
+        if (this.mExecutingActions) {
             throw new java.lang.IllegalStateException("FragmentManager is already executing transactions");
-        } else if (this.e == null) {
+        } else if (this.mHost == null) {
             throw new java.lang.IllegalStateException("Fragment host has been destroyed");
-        } else if (android.os.Looper.myLooper() != this.e.mHandler.getLooper()) {
+        } else if (android.os.Looper.myLooper() != this.mHost.mHandler.getLooper()) {
             throw new java.lang.IllegalStateException("Must be called from main thread of fragment host");
         } else {
-            if (!z2) {
-                w();
+            if (!allowStateLoss) {
+                checkStateLoss();
             }
-            if (this.i == null) {
-                this.i = new java.util.ArrayList();
-                this.j = new java.util.ArrayList();
+            if (this.mTmpRecords == null) {
+                this.mTmpRecords = new java.util.ArrayList();
+                this.mTmpIsPop = new java.util.ArrayList();
             }
-            this.a = true;
+            this.mExecutingActions = true;
             try {
-                b((java.util.ArrayList) null, (java.util.ArrayList) null);
+                executePostponedTransaction((java.util.ArrayList) null, (java.util.ArrayList) null);
             } finally {
-                this.a = false;
+                this.mExecutingActions = false;
             }
         }
     }
 
     /* access modifiers changed from: 0000 */
     public final void i() {
-        this.a = false;
-        this.j.clear();
-        this.i.clear();
+        this.mExecutingActions = false;
+        this.mTmpIsPop.clear();
+        this.mTmpRecords.clear();
     }
 
     /* JADX INFO: finally extract failed */
     public final boolean j() {
-        a(true);
+        ensureExecReady(true);
         boolean z2 = false;
-        while (c(this.i, this.j)) {
-            this.a = true;
+        while (c(this.mTmpRecords, this.mTmpIsPop)) {
+            this.mExecutingActions = true;
             try {
-                a(this.i, this.j);
+                a(this.mTmpRecords, this.mTmpIsPop);
                 i();
                 z2 = true;
             } catch (Throwable th) {
@@ -2256,7 +2254,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
         if (r2 != false) goto L_0x00a1;
      */
     /* Code decompiled incorrectly, please refer to instructions dump. */
-    private final void b(java.util.ArrayList r17, java.util.ArrayList r18) {
+    private final void executePostponedTransaction(java.util.ArrayList r17, java.util.ArrayList r18) {
         /*
             r16 = this;
             r0 = r16
@@ -2425,17 +2423,17 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
             if (arrayList2 == null || arrayList.size() != arrayList2.size()) {
                 throw new java.lang.IllegalStateException("Internal error with the back stack records");
             }
-            b(arrayList, arrayList2);
+            executePostponedTransaction(arrayList, arrayList2);
             int size = arrayList.size();
             int i4 = 0;
             while (i3 < size) {
-                if (!((defpackage.kv) arrayList.get(i3)).s) {
+                if (!((BackStackRecord) arrayList.get(i3)).mReorderingAllowed) {
                     if (i4 != i3) {
                         a(arrayList, arrayList2, i4, i3);
                     }
                     int i5 = i3 + 1;
                     if (((java.lang.Boolean) arrayList2.get(i3)).booleanValue()) {
-                        while (i5 < size && ((java.lang.Boolean) arrayList2.get(i5)).booleanValue() && !((defpackage.kv) arrayList.get(i5)).s) {
+                        while (i5 < size && ((java.lang.Boolean) arrayList2.get(i5)).booleanValue() && !((BackStackRecord) arrayList.get(i5)).mReorderingAllowed) {
                             i5++;
                         }
                     }
@@ -2890,7 +2888,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
     }
 
     /* access modifiers changed from: private */
-    public final void a(defpackage.kv kvVar, boolean z2, boolean z3, boolean z4) {
+    public final void a(BackStackRecord kvVar, boolean z2, boolean z3, boolean z4) {
         if (z2) {
             kvVar.a(z4);
         } else {
@@ -2904,15 +2902,15 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
             defpackage.mk.a(this, arrayList, arrayList2, 0, 1, true);
         }
         if (z4) {
-            a(this.d, true);
+            moveToState(this.d, true);
         }
         if (this.n != null) {
             int size = this.n.size();
             for (int i2 = 0; i2 < size; i2++) {
                 Fragment lcVar = (Fragment) this.n.valueAt(i2);
-                if (lcVar != null && lcVar.J != null && lcVar.O && kvVar.b(lcVar.A)) {
+                if (lcVar != null && lcVar.mView != null && lcVar.O && kvVar.b(lcVar.mFragmentId)) {
                     if (lcVar.Q > 0.0f) {
-                        lcVar.J.setAlpha(lcVar.Q);
+                        lcVar.mView.setAlpha(lcVar.Q);
                     }
                     if (z4) {
                         lcVar.Q = 0.0f;
@@ -3010,7 +3008,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
             if (str != null || i2 >= 0) {
                 int size2 = this.c.size() - 1;
                 while (i4 >= 0) {
-                    defpackage.kv kvVar = (defpackage.kv) this.c.get(i4);
+                    BackStackRecord kvVar = (BackStackRecord) this.c.get(i4);
                     if ((str != null && str.equals(kvVar.j)) || (i2 >= 0 && i2 == kvVar.l)) {
                         break;
                     }
@@ -3022,7 +3020,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
                 if ((i3 & 1) != 0) {
                     i4--;
                     while (i4 >= 0) {
-                        defpackage.kv kvVar2 = (defpackage.kv) this.c.get(i4);
+                        BackStackRecord kvVar2 = (BackStackRecord) this.c.get(i4);
                         if ((str == null || !str.equals(kvVar2.j)) && (i2 < 0 || i2 != kvVar2.l)) {
                             break;
                         }
@@ -3123,13 +3121,13 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
     }
 
     private final void j(Fragment lcVar) {
-        if (lcVar.K != null) {
+        if (lcVar.mInnerView != null) {
             if (this.z == null) {
                 this.z = new android.util.SparseArray();
             } else {
                 this.z.clear();
             }
-            lcVar.K.saveHierarchyState(this.z);
+            lcVar.mInnerView.saveHierarchyState(this.z);
             if (this.z.size() > 0) {
                 lcVar.f = this.z;
                 this.z = null;
@@ -3138,12 +3136,12 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
     }
 
     /* access modifiers changed from: 0000 */
-    public final android.os.Parcelable l() {
+    public final android.os.Parcelable saveAllState() {
         int size;
         int[] iArr;
         boolean z2;
         android.os.Bundle bundle;
-        defpackage.kx[] kxVarArr = null;
+        BackStackState[] kxVarArr = null;
         x();
         if (this.n == null) {
             size = 0;
@@ -3175,7 +3173,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
             return null;
         }
         int size2 = this.n.size();
-        defpackage.mh[] mhVarArr = new defpackage.mh[size2];
+        FragmentState[] mhVarArr = new FragmentState[size2];
         int i3 = 0;
         boolean z3 = false;
         while (i3 < size2) {
@@ -3184,7 +3182,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
                 if (lcVar2.g < 0) {
                     a((java.lang.RuntimeException) new java.lang.IllegalStateException("Failure saving state: active " + lcVar2 + " has cleared index: " + lcVar2.g));
                 }
-                defpackage.mh mhVar = new defpackage.mh(lcVar2);
+                FragmentState mhVar = new FragmentState(lcVar2);
                 mhVarArr[i3] = mhVar;
                 if (lcVar2.d <= 0 || mhVar.k != null) {
                     mhVar.k = lcVar2.e;
@@ -3193,9 +3191,9 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
                         this.y = new android.os.Bundle();
                     }
                     android.os.Bundle bundle2 = this.y;
-                    lcVar2.d(bundle2);
+                    lcVar2.onSaveInstanceState(bundle2);
                     if (lcVar2.v != null) {
-                        android.os.Parcelable l2 = lcVar2.v.l();
+                        android.os.Parcelable l2 = lcVar2.v.saveAllState();
                         if (l2 != null) {
                             bundle2.putParcelable("android:support:fragments", l2);
                         }
@@ -3207,7 +3205,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
                     } else {
                         bundle = null;
                     }
-                    if (lcVar2.J != null) {
+                    if (lcVar2.mView != null) {
                         j(lcVar2);
                     }
                     if (lcVar2.f != null) {
@@ -3268,13 +3266,13 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
         if (this.c != null) {
             int size4 = this.c.size();
             if (size4 > 0) {
-                kxVarArr = new defpackage.kx[size4];
+                kxVarArr = new BackStackState[size4];
                 for (int i5 = 0; i5 < size4; i5++) {
-                    kxVarArr[i5] = new defpackage.kx((defpackage.kv) this.c.get(i5));
+                    kxVarArr[i5] = new BackStackState((BackStackRecord) this.c.get(i5));
                 }
             }
         }
-        defpackage.mf mfVar = new defpackage.mf();
+        FragmentManagerState mfVar = new FragmentManagerState();
         mfVar.a = mhVarArr;
         mfVar.b = iArr;
         mfVar.c = kxVarArr;
@@ -3292,7 +3290,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
         java.util.List list2;
         defpackage.me meVar2;
         if (parcelable != null) {
-            defpackage.mf mfVar = (defpackage.mf) parcelable;
+            FragmentManagerState mfVar = (FragmentManagerState) parcelable;
             if (mfVar.a != null) {
                 if (meVar != null) {
                     java.util.List list3 = meVar.a;
@@ -3308,7 +3306,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
                         if (i4 == mfVar.a.length) {
                             a((java.lang.RuntimeException) new java.lang.IllegalStateException("Could not find active fragment with index " + lcVar.g));
                         }
-                        defpackage.mh mhVar = mfVar.a[i4];
+                        FragmentState mhVar = mfVar.a[i4];
                         mhVar.l = lcVar;
                         lcVar.f = null;
                         lcVar.s = 0;
@@ -3316,7 +3314,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
                         lcVar.m = false;
                         lcVar.j = null;
                         if (mhVar.k != null) {
-                            mhVar.k.setClassLoader(this.e.mContext.getClassLoader());
+                            mhVar.k.setClassLoader(this.mHost.mContext.getClassLoader());
                             lcVar.f = mhVar.k.getSparseParcelableArray("android:view_state");
                             lcVar.e = mhVar.k;
                         }
@@ -3334,7 +3332,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
                     if (i6 >= mfVar.a.length) {
                         break;
                     }
-                    defpackage.mh mhVar2 = mfVar.a[i6];
+                    FragmentState mhVar2 = mfVar.a[i6];
                     if (mhVar2 != null) {
                         if (list == null || i6 >= list.size()) {
                             meVar2 = null;
@@ -3345,7 +3343,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
                         if (list2 != null && i6 < list2.size()) {
                             gtVar = (ViewModelStore) list2.get(i6);
                         }
-                        FragmentHostCallback lmVar = this.e;
+                        FragmentHostCallback lmVar = this.mHost;
                         FragmentContainer lkVar = this.f;
                         Fragment lcVar2 = this.s;
                         if (mhVar2.l == null) {
@@ -3365,13 +3363,13 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
                             mhVar2.l.a(mhVar2.b, lcVar2);
                             mhVar2.l.o = mhVar2.c;
                             mhVar2.l.q = true;
-                            mhVar2.l.z = mhVar2.d;
-                            mhVar2.l.A = mhVar2.e;
-                            mhVar2.l.B = mhVar2.f;
+                            mhVar2.l.mContainerId = mhVar2.d;
+                            mhVar2.l.mFragmentId = mhVar2.e;
+                            mhVar2.l.tag = mhVar2.f;
                             mhVar2.l.E = mhVar2.g;
                             mhVar2.l.D = mhVar2.h;
-                            mhVar2.l.C = mhVar2.j;
-                            mhVar2.l.t = lmVar.mFragmentManager;
+                            mhVar2.l.mHidden = mhVar2.j;
+                            mhVar2.l.fragmentManager = lmVar.mFragmentManager;
                         }
                         mhVar2.l.w = meVar2;
                         mhVar2.l.x = gtVar;
@@ -3412,13 +3410,13 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
                 }
                 if (mfVar.c != null) {
                     this.c = new java.util.ArrayList(mfVar.c.length);
-                    for (defpackage.kx kxVar : mfVar.c) {
-                        defpackage.kv kvVar = new defpackage.kv(this);
+                    for (BackStackState kxVar : mfVar.c) {
+                        BackStackRecord kvVar = new BackStackRecord(this);
                         int i10 = 0;
                         while (i10 < kxVar.a.length) {
-                            defpackage.kw kwVar = new defpackage.kw();
+                            FragmentTransactionOP kwVar = new FragmentTransactionOP();
                             int i11 = i10 + 1;
-                            kwVar.a = kxVar.a[i10];
+                            kwVar.mCmd = kxVar.a[i10];
                             int i12 = i11 + 1;
                             int i13 = kxVar.a[i11];
                             if (i13 >= 0) {
@@ -3427,17 +3425,17 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
                                 kwVar.b = null;
                             }
                             int i14 = i12 + 1;
-                            kwVar.c = kxVar.a[i12];
+                            kwVar.mEnterAnim = kxVar.a[i12];
                             int i15 = i14 + 1;
-                            kwVar.d = kxVar.a[i14];
+                            kwVar.mExitAnim = kxVar.a[i14];
                             int i16 = i15 + 1;
-                            kwVar.e = kxVar.a[i15];
+                            kwVar.mPopEnterAnim = kxVar.a[i15];
                             i10 = i16 + 1;
-                            kwVar.f = kxVar.a[i16];
-                            kvVar.c = kwVar.c;
-                            kvVar.d = kwVar.d;
-                            kvVar.e = kwVar.e;
-                            kvVar.f = kwVar.f;
+                            kwVar.mPopExitAnim = kxVar.a[i16];
+                            kvVar.mEnterAnim = kwVar.mEnterAnim;
+                            kvVar.mExitAnim = kwVar.mExitAnim;
+                            kvVar.mPopEnterAnim = kwVar.mPopEnterAnim;
+                            kvVar.mPopExitAnim = kwVar.mPopExitAnim;
                             kvVar.a(kwVar);
                         }
                         kvVar.g = kxVar.b;
@@ -3451,7 +3449,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
                         kvVar.p = kxVar.i;
                         kvVar.q = kxVar.j;
                         kvVar.r = kxVar.k;
-                        kvVar.s = kxVar.l;
+                        kvVar.mReorderingAllowed = kxVar.l;
                         kvVar.a(1);
                         this.c.add(kvVar);
                         if (kvVar.l >= 0) {
@@ -3500,10 +3498,10 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
     }
 
     public final void a(FragmentHostCallback lmVar, FragmentContainer lkVar, Fragment lcVar) {
-        if (this.e != null) {
+        if (this.mHost != null) {
             throw new java.lang.IllegalStateException("Already attached");
         }
-        this.e = lmVar;
+        this.mHost = lmVar;
         this.f = lkVar;
         this.s = lcVar;
     }
@@ -3554,7 +3552,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
         this.v = true;
         j();
         c(0);
-        this.e = null;
+        this.mHost = null;
         this.f = null;
         this.s = null;
     }
@@ -3563,12 +3561,12 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
     /* access modifiers changed from: 0000 */
     public final void c(int i2) {
         try {
-            this.a = true;
-            a(i2, false);
-            this.a = false;
+            this.mExecutingActions = true;
+            moveToState(i2, false);
+            this.mExecutingActions = false;
             j();
         } catch (Throwable th) {
-            this.a = false;
+            this.mExecutingActions = false;
             throw th;
         }
     }
@@ -3640,7 +3638,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
         while (i2 < this.b.size()) {
             Fragment lcVar = (Fragment) this.b.get(i2);
             if (lcVar != null) {
-                if (lcVar.C || lcVar.v == null) {
+                if (lcVar.mHidden || lcVar.v == null) {
                     z2 = false;
                 } else {
                     z2 = lcVar.v.a(menu, menuInflater) | false;
@@ -3677,7 +3675,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
         for (int i2 = 0; i2 < this.b.size(); i2++) {
             Fragment lcVar = (Fragment) this.b.get(i2);
             if (lcVar != null) {
-                if (lcVar.C || lcVar.v == null) {
+                if (lcVar.mHidden || lcVar.v == null) {
                     z2 = false;
                 } else {
                     z2 = lcVar.v.a(menu) | false;
@@ -3698,7 +3696,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
         for (int i2 = 0; i2 < this.b.size(); i2++) {
             Fragment lcVar = (Fragment) this.b.get(i2);
             if (lcVar != null) {
-                if (lcVar.C || lcVar.v == null || !lcVar.v.a(menuItem)) {
+                if (lcVar.mHidden || lcVar.v == null || !lcVar.v.a(menuItem)) {
                     z2 = false;
                 } else {
                     z2 = true;
@@ -3719,7 +3717,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
         for (int i2 = 0; i2 < this.b.size(); i2++) {
             Fragment lcVar = (Fragment) this.b.get(i2);
             if (lcVar != null) {
-                if (lcVar.C || lcVar.v == null || !lcVar.v.b(menuItem)) {
+                if (lcVar.mHidden || lcVar.v == null || !lcVar.v.b(menuItem)) {
                     z2 = false;
                 } else {
                     z2 = true;
@@ -3739,7 +3737,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
                 int i3 = i2;
                 if (i3 < this.b.size()) {
                     Fragment lcVar = (Fragment) this.b.get(i3);
-                    if (!(lcVar == null || lcVar.C || lcVar.v == null)) {
+                    if (!(lcVar == null || lcVar.mHidden || lcVar.v == null)) {
                         lcVar.v.b(menu);
                     }
                     i2 = i3 + 1;
@@ -3750,8 +3748,8 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
         }
     }
 
-    public final void h(Fragment lcVar) {
-        if (lcVar == null || (this.n.get(lcVar.g) == lcVar && (lcVar.u == null || lcVar.t == this))) {
+    public final void setPrimaryNavigationFragment(Fragment lcVar) {
+        if (lcVar == null || (this.n.get(lcVar.g) == lcVar && (lcVar.u == null || lcVar.fragmentManager == this))) {
             this.g = lcVar;
             return;
         }
@@ -3760,7 +3758,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
 
     private final void a(Fragment lcVar, android.content.Context context, boolean z2) {
         if (this.s != null) {
-            FragmentManagerImpl lpVar = this.s.t;
+            FragmentManagerImpl lpVar = this.s.fragmentManager;
             if (lpVar instanceof FragmentManagerImpl) {
                 lpVar.a(lcVar, context, true);
             }
@@ -3776,7 +3774,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
 
     private final void b(Fragment lcVar, android.content.Context context, boolean z2) {
         if (this.s != null) {
-            FragmentManagerImpl lpVar = this.s.t;
+            FragmentManagerImpl lpVar = this.s.fragmentManager;
             if (lpVar instanceof FragmentManagerImpl) {
                 lpVar.b(lcVar, context, true);
             }
@@ -3792,7 +3790,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
 
     private final void a(Fragment lcVar, android.os.Bundle bundle, boolean z2) {
         if (this.s != null) {
-            FragmentManagerImpl lpVar = this.s.t;
+            FragmentManagerImpl lpVar = this.s.fragmentManager;
             if (lpVar instanceof FragmentManagerImpl) {
                 lpVar.a(lcVar, bundle, true);
             }
@@ -3808,7 +3806,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
 
     private final void b(Fragment lcVar, android.os.Bundle bundle, boolean z2) {
         if (this.s != null) {
-            FragmentManagerImpl lpVar = this.s.t;
+            FragmentManagerImpl lpVar = this.s.fragmentManager;
             if (lpVar instanceof FragmentManagerImpl) {
                 lpVar.b(lcVar, bundle, true);
             }
@@ -3824,7 +3822,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
 
     private final void c(Fragment lcVar, android.os.Bundle bundle, boolean z2) {
         if (this.s != null) {
-            FragmentManagerImpl lpVar = this.s.t;
+            FragmentManagerImpl lpVar = this.s.fragmentManager;
             if (lpVar instanceof FragmentManagerImpl) {
                 lpVar.c(lcVar, bundle, true);
             }
@@ -3840,7 +3838,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
 
     private final void a(Fragment lcVar, android.view.View view, android.os.Bundle bundle, boolean z2) {
         if (this.s != null) {
-            FragmentManagerImpl lpVar = this.s.t;
+            FragmentManagerImpl lpVar = this.s.fragmentManager;
             if (lpVar instanceof FragmentManagerImpl) {
                 lpVar.a(lcVar, view, bundle, true);
             }
@@ -3856,7 +3854,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
 
     private final void b(Fragment lcVar, boolean z2) {
         if (this.s != null) {
-            FragmentManagerImpl lpVar = this.s.t;
+            FragmentManagerImpl lpVar = this.s.fragmentManager;
             if (lpVar instanceof FragmentManagerImpl) {
                 lpVar.b(lcVar, true);
             }
@@ -3872,7 +3870,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
 
     private final void c(Fragment lcVar, boolean z2) {
         if (this.s != null) {
-            FragmentManagerImpl lpVar = this.s.t;
+            FragmentManagerImpl lpVar = this.s.fragmentManager;
             if (lpVar instanceof FragmentManagerImpl) {
                 lpVar.c(lcVar, true);
             }
@@ -3888,7 +3886,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
 
     private final void d(Fragment lcVar, boolean z2) {
         if (this.s != null) {
-            FragmentManagerImpl lpVar = this.s.t;
+            FragmentManagerImpl lpVar = this.s.fragmentManager;
             if (lpVar instanceof FragmentManagerImpl) {
                 lpVar.d(lcVar, true);
             }
@@ -3904,7 +3902,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
 
     private final void e(Fragment lcVar, boolean z2) {
         if (this.s != null) {
-            FragmentManagerImpl lpVar = this.s.t;
+            FragmentManagerImpl lpVar = this.s.fragmentManager;
             if (lpVar instanceof FragmentManagerImpl) {
                 lpVar.e(lcVar, true);
             }
@@ -3920,7 +3918,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
 
     private final void d(Fragment lcVar, android.os.Bundle bundle, boolean z2) {
         if (this.s != null) {
-            FragmentManagerImpl lpVar = this.s.t;
+            FragmentManagerImpl lpVar = this.s.fragmentManager;
             if (lpVar instanceof FragmentManagerImpl) {
                 lpVar.d(lcVar, bundle, true);
             }
@@ -3936,7 +3934,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
 
     private final void f(Fragment lcVar, boolean z2) {
         if (this.s != null) {
-            FragmentManagerImpl lpVar = this.s.t;
+            FragmentManagerImpl lpVar = this.s.fragmentManager;
             if (lpVar instanceof FragmentManagerImpl) {
                 lpVar.f(lcVar, true);
             }
@@ -3952,7 +3950,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
 
     private final void g(Fragment lcVar, boolean z2) {
         if (this.s != null) {
-            FragmentManagerImpl lpVar = this.s.t;
+            FragmentManagerImpl lpVar = this.s.fragmentManager;
             if (lpVar instanceof FragmentManagerImpl) {
                 lpVar.g(lcVar, true);
             }
@@ -3968,7 +3966,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
 
     private final void h(Fragment lcVar, boolean z2) {
         if (this.s != null) {
-            FragmentManagerImpl lpVar = this.s.t;
+            FragmentManagerImpl lpVar = this.s.fragmentManager;
             if (lpVar instanceof FragmentManagerImpl) {
                 lpVar.h(lcVar, true);
             }
@@ -4013,7 +4011,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
         int resourceId = obtainStyledAttributes.getResourceId(1, -1);
         java.lang.String string = obtainStyledAttributes.getString(2);
         obtainStyledAttributes.recycle();
-        if (!Fragment.a(this.e.mContext, str2)) {
+        if (!Fragment.a(this.mHost.mContext, str2)) {
             return null;
         }
         if (view != null) {
@@ -4026,7 +4024,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
         }
         Fragment lcVar2 = resourceId != -1 ? findFragmentById(resourceId) : null;
         if (lcVar2 == null && string != null) {
-            lcVar2 = a(string);
+            lcVar2 = findFragmentByTag(string);
         }
         if (lcVar2 == null && i2 != -1) {
             lcVar2 = findFragmentById(i2);
@@ -4039,12 +4037,12 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
             } else {
                 i3 = i2;
             }
-            a2.z = i3;
-            a2.A = i2;
-            a2.B = string;
+            a2.mContainerId = i3;
+            a2.mFragmentId = i2;
+            a2.tag = string;
             a2.p = true;
-            a2.t = this;
-            a2.u = this.e;
+            a2.fragmentManager = this;
+            a2.u = this.mHost;
             android.os.Bundle bundle = a2.e;
             a2.o();
             a(a2, true);
@@ -4053,7 +4051,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
             throw new java.lang.IllegalArgumentException(attributeSet.getPositionDescription() + ": Duplicate id 0x" + java.lang.Integer.toHexString(resourceId) + ", tag " + string + ", or parent id 0x" + java.lang.Integer.toHexString(i2) + " with another fragment for " + str2);
         } else {
             lcVar2.p = true;
-            lcVar2.u = this.e;
+            lcVar2.u = this.mHost;
             if (!lcVar2.F) {
                 android.os.Bundle bundle2 = lcVar2.e;
                 lcVar2.o();
@@ -4065,16 +4063,16 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
         } else {
             a(lcVar, 1, 0, 0, false);
         }
-        if (lcVar.J == null) {
+        if (lcVar.mView == null) {
             throw new java.lang.IllegalStateException("Fragment " + str2 + " did not create a view.");
         }
         if (resourceId != 0) {
-            lcVar.J.setId(resourceId);
+            lcVar.mView.setId(resourceId);
         }
-        if (lcVar.J.getTag() == null) {
-            lcVar.J.setTag(string);
+        if (lcVar.mView.getTag() == null) {
+            lcVar.mView.setTag(string);
         }
-        return lcVar.J;
+        return lcVar.mView;
     }
 
     public final android.view.View onCreateView(java.lang.String str, android.content.Context context, android.util.AttributeSet attributeSet) {

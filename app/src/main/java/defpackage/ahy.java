@@ -8,11 +8,11 @@ public abstract class ahy {
     private static final android.view.animation.Interpolator c = new defpackage.aia();
     private int d = -1;
 
-    public abstract int a(defpackage.afv afv);
+    public abstract int a(RecyclerViewHolder afv);
 
-    public abstract void a(defpackage.afv afv, int i);
+    public abstract void a(RecyclerViewHolder afv, int i);
 
-    public abstract boolean a(defpackage.afv afv, defpackage.afv afv2);
+    public abstract boolean a(RecyclerViewHolder afv, RecyclerViewHolder afv2);
 
     public static int a(int i, int i2) {
         int i3 = i & 789516;
@@ -43,7 +43,7 @@ public abstract class ahy {
     }
 
     /* access modifiers changed from: 0000 */
-    public final int a(android.support.v7.widget.RecyclerView recyclerView, defpackage.afv afv) {
+    public final int a(android.support.v7.widget.RecyclerView recyclerView, RecyclerViewHolder afv) {
         return c(a(afv), ViewCompat.a.j(recyclerView));
     }
 
@@ -83,7 +83,7 @@ public abstract class ahy {
     /* JADX WARNING: Removed duplicated region for block: B:20:0x0073  */
     /* JADX WARNING: Removed duplicated region for block: B:28:0x0094  */
     /* Code decompiled incorrectly, please refer to instructions dump. */
-    public static defpackage.afv a(defpackage.afv r13, java.util.List r14, int r15, int r16) {
+    public static RecyclerViewHolder a(RecyclerViewHolder r13, java.util.List r14, int r15, int r16) {
         /*
             android.view.View r0 = r13.a
             int r0 = r0.getWidth()
@@ -190,46 +190,46 @@ public abstract class ahy {
         throw new UnsupportedOperationException("Method not decompiled: defpackage.ahy.a(afv, java.util.List, int, int):afv");
     }
 
-    public void b(defpackage.afv afv, int i) {
+    public void b(RecyclerViewHolder afv, int i) {
         if (afv != null) {
-            android.view.View view = afv.a;
+            android.view.View view = afv.itemView;
         }
     }
 
-    public static void a(android.support.v7.widget.RecyclerView recyclerView, defpackage.afv afv, defpackage.afv afv2, int i) {
-        defpackage.afd afd = recyclerView.l;
+    public static void a(android.support.v7.widget.RecyclerView recyclerView, RecyclerViewHolder afv, RecyclerViewHolder afv2, int i) {
+        LayoutManager afd = recyclerView.mLayout;
         if (afd instanceof defpackage.aif) {
-            ((defpackage.aif) afd).a(afv.a, afv2.a);
+            ((defpackage.aif) afd).a(afv.itemView, afv2.itemView);
             return;
         }
         if (afd.d()) {
-            if (defpackage.afd.b(afv2.a) <= recyclerView.getPaddingLeft()) {
+            if (LayoutManager.b(afv2.itemView) <= recyclerView.getPaddingLeft()) {
                 recyclerView.c(i);
             }
-            if (defpackage.afd.d(afv2.a) >= recyclerView.getWidth() - recyclerView.getPaddingRight()) {
+            if (LayoutManager.d(afv2.itemView) >= recyclerView.getWidth() - recyclerView.getPaddingRight()) {
                 recyclerView.c(i);
             }
         }
         if (afd.e()) {
-            if (defpackage.afd.c(afv2.a) <= recyclerView.getPaddingTop()) {
+            if (LayoutManager.c(afv2.itemView) <= recyclerView.getPaddingTop()) {
                 recyclerView.c(i);
             }
-            if (defpackage.afd.e(afv2.a) >= recyclerView.getHeight() - recyclerView.getPaddingBottom()) {
+            if (LayoutManager.e(afv2.itemView) >= recyclerView.getHeight() - recyclerView.getPaddingBottom()) {
                 recyclerView.c(i);
             }
         }
     }
 
-    public void b(android.support.v7.widget.RecyclerView recyclerView, defpackage.afv afv) {
-        a.a(afv.a);
+    public void b(android.support.v7.widget.RecyclerView recyclerView, RecyclerViewHolder afv) {
+        a.a(afv.itemView);
     }
 
-    public void a(android.graphics.Canvas canvas, android.support.v7.widget.RecyclerView recyclerView, defpackage.afv afv, float f, float f2, int i, boolean z) {
-        a.a(canvas, recyclerView, afv.a, f, f2, i, z);
+    public void a(android.graphics.Canvas canvas, android.support.v7.widget.RecyclerView recyclerView, RecyclerViewHolder afv, float f, float f2, int i, boolean z) {
+        a.a(canvas, recyclerView, afv.itemView, f, f2, i, z);
     }
 
-    public static void b(defpackage.afv afv) {
-        android.view.View view = afv.a;
+    public static void b(RecyclerViewHolder afv) {
+        android.view.View view = afv.itemView;
     }
 
     public static long a(android.support.v7.widget.RecyclerView recyclerView, int i) {

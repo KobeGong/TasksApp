@@ -12,29 +12,29 @@ public abstract class aey {
 
     public abstract void a();
 
-    public abstract boolean a(defpackage.afv afv, defpackage.afb afb, defpackage.afb afb2);
+    public abstract boolean a(RecyclerViewHolder afv, defpackage.afb afb, defpackage.afb afb2);
 
-    public abstract boolean a(defpackage.afv afv, defpackage.afv afv2, defpackage.afb afb, defpackage.afb afb2);
+    public abstract boolean a(RecyclerViewHolder afv, RecyclerViewHolder afv2, defpackage.afb afb, defpackage.afb afb2);
 
     public abstract boolean b();
 
-    public abstract boolean b(defpackage.afv afv, defpackage.afb afb, defpackage.afb afb2);
+    public abstract boolean b(RecyclerViewHolder afv, defpackage.afb afb, defpackage.afb afb2);
 
-    public abstract void c(defpackage.afv afv);
+    public abstract void c(RecyclerViewHolder afv);
 
-    public abstract boolean c(defpackage.afv afv, defpackage.afb afb, defpackage.afb afb2);
+    public abstract boolean c(RecyclerViewHolder afv, defpackage.afb afb, defpackage.afb afb2);
 
     public abstract void d();
 
-    public static int d(defpackage.afv afv) {
-        int i2 = afv.j & 14;
-        if (afv.j()) {
+    public static int d(RecyclerViewHolder afv) {
+        int i2 = afv.mFlags & 14;
+        if (afv.isInvalid()) {
             return 4;
         }
         if ((i2 & 4) != 0) {
             return i2;
         }
-        int i3 = afv.d;
+        int i3 = afv.oldPos;
         int d = afv.d();
         if (i3 == -1 || d == -1 || i3 == d) {
             return i2;
@@ -42,19 +42,19 @@ public abstract class aey {
         return i2 | 2048;
     }
 
-    public final void e(defpackage.afv afv) {
+    public final void e(RecyclerViewHolder afv) {
         boolean z;
         boolean z2 = true;
         if (this.h != null) {
             defpackage.afa afa = this.h;
             afv.a(true);
-            if (afv.h != null && afv.i == null) {
-                afv.h = null;
+            if (afv.mShadowedHolder != null && afv.mShadowingHolder == null) {
+                afv.mShadowedHolder = null;
             }
-            afv.i = null;
-            if (!((afv.j & 16) != 0)) {
+            afv.mShadowingHolder = null;
+            if (!((afv.mFlags & 16) != 0)) {
                 android.support.v7.widget.RecyclerView recyclerView = afa.a;
-                android.view.View view = afv.a;
+                android.view.View view = afv.itemView;
                 recyclerView.d();
                 defpackage.acm acm = recyclerView.g;
                 int a2 = acm.a.a(view);
@@ -70,7 +70,7 @@ public abstract class aey {
                     z = false;
                 }
                 if (z) {
-                    defpackage.afv c = android.support.v7.widget.RecyclerView.c(view);
+                    RecyclerViewHolder c = android.support.v7.widget.RecyclerView.getChildViewHolderInt(view);
                     recyclerView.e.b(c);
                     recyclerView.e.a(c);
                 }
@@ -78,18 +78,18 @@ public abstract class aey {
                     z2 = false;
                 }
                 recyclerView.a(z2);
-                if (!z && afv.n()) {
-                    afa.a.removeDetachedView(afv.a, false);
+                if (!z && afv.isTmpDetached()) {
+                    afa.a.removeDetachedView(afv.itemView, false);
                 }
             }
         }
     }
 
-    public boolean f(defpackage.afv afv) {
+    public boolean f(RecyclerViewHolder afv) {
         return true;
     }
 
-    public boolean a(defpackage.afv afv, java.util.List list) {
+    public boolean a(RecyclerViewHolder afv, java.util.List list) {
         return f(afv);
     }
 

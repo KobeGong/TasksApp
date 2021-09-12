@@ -32,7 +32,7 @@ public class GoogleMaterialBottomDrawer extends android.widget.FrameLayout {
         setFitsSystemWindows(true);
         android.content.res.Resources resources = context.getResources();
         this.n = resources.getColor(2131623951);
-        ViewCompat.a((android.view.View) this, resources.getDimension(2131689842));
+        ViewCompat.setElevation((android.view.View) this, resources.getDimension(2131689842));
         setClickable(true);
         setPadding(0, 0, 0, 0);
         int identifier = context.getResources().getIdentifier("status_bar_height", "dimen", "android");
@@ -85,7 +85,7 @@ public class GoogleMaterialBottomDrawer extends android.widget.FrameLayout {
             ViewCompat.a(this.e, 2);
             this.e.setBackgroundColor(this.n);
             this.e.setFitsSystemWindows(true);
-            ViewCompat.a(this.e, ViewCompat.a.u(this));
+            ViewCompat.setElevation(this.e, ViewCompat.a.getElevation(this));
             viewGroup.addView(this.e, ((android.view.ViewGroup) getParent()).indexOfChild(this), new defpackage.ha(-1, -1));
         }
         a(5);

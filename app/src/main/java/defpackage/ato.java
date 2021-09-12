@@ -8,6 +8,6 @@ final /* synthetic */ class ato implements java.util.Comparator {
     }
 
     public final int compare(java.lang.Object obj, java.lang.Object obj2) {
-        return defpackage.atn.a((defpackage.dby) obj, (defpackage.dby) obj2);
+        return DueDateTaskAdapter.a((defpackage.dby) obj, (defpackage.dby) obj2);
     }
 }

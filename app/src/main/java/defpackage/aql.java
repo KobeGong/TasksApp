@@ -1,11 +1,17 @@
 package defpackage;
 
+import android.content.Intent;
+import android.view.View;
+
+import com.google.android.apps.tasks.R;
+import com.google.android.apps.tasks.ui.components.snackbar.Snackbar;
+
 /* renamed from: aql reason: default package */
 /* compiled from: PG */
 public abstract class aql extends defpackage.wm {
     private defpackage.cyi h;
     public defpackage.wl r;
-    public com.google.android.apps.tasks.ui.components.snackbar.Snackbar s;
+    public Snackbar s;
 
     public abstract void a(defpackage.ajn ajn);
 
@@ -34,7 +40,7 @@ public abstract class aql extends defpackage.wm {
     }
 
     public final boolean q() {
-        if (!(defpackage.axv.a((android.content.Context) this) == 0)) {
+        if (!(defpackage.axv.a(this) == 0)) {
             k();
             return false;
         }
@@ -49,7 +55,13 @@ public abstract class aql extends defpackage.wm {
         while (!(th2 instanceof defpackage.axx)) {
             if (th2 instanceof defpackage.avf) {
                 if (defpackage.any.a().c().a()) {
-                    this.s = (com.google.android.apps.tasks.ui.components.snackbar.Snackbar) com.google.android.apps.tasks.ui.components.snackbar.Snackbar.a(m(), 2131951741, -2).a(2131951810, (android.view.View.OnClickListener) new defpackage.aqm(this, th2)).a((defpackage.arl) new defpackage.aqz());
+                    final Throwable a = th2;
+                    this.s = (Snackbar) Snackbar.a(m(), R.string.invalid_credentials, -2).a(R.string.sign_in, new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            startActivityForResult(((defpackage.avf) a).a(), 1001);
+                        }
+                    }).a(new aqz());
                     this.s.a();
                 } else {
                     j();
@@ -61,12 +73,12 @@ public abstract class aql extends defpackage.wm {
                 th2 = th2.getCause();
             }
         }
-        defpackage.axt.a.a((android.app.Activity) this, ((defpackage.axx) th2).a).show();
+        defpackage.axt.a.a(this, ((defpackage.axx) th2).a).show();
         return true;
     }
 
     /* access modifiers changed from: protected */
-    public void onActivityResult(int i, int i2, android.content.Intent intent) {
+    public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
         switch (i) {
             case 1001:
@@ -105,9 +117,9 @@ public abstract class aql extends defpackage.wm {
     }
 
     /* access modifiers changed from: 0000 */
-    public final void a(int i, android.content.Intent intent) {
-        com.google.android.apps.tasks.ui.components.snackbar.Snackbar a = com.google.android.apps.tasks.ui.components.snackbar.Snackbar.a(m(), i, 0);
-        a.a(2131951847, (android.view.View.OnClickListener) new defpackage.aqr(this, intent));
+    public final void a(int i, Intent intent) {
+        Snackbar a = Snackbar.a(m(), i, 0);
+        a.a(2131951847, new aqr(this, intent));
         a.a();
     }
 
@@ -137,11 +149,11 @@ public abstract class aql extends defpackage.wm {
                     edit.putBoolean("setup-called", true);
                     edit.apply();
                 } catch (java.lang.InterruptedException | java.util.concurrent.ExecutionException e) {
-                    cyu.a((java.lang.Object) defpackage.ajh.c());
+                    cyu.a(ajh.c());
                 }
             }
             if (!defpackage.any.a().c().a()) {
-                cyu.a((java.lang.Object) defpackage.ajh.a(false));
+                cyu.a(ajh.a(false));
             } else {
                 try {
                     defpackage.any.a().c().c().get();
@@ -149,13 +161,13 @@ public abstract class aql extends defpackage.wm {
                         defpackage.any.a().c().a("~default").get();
                     } catch (java.lang.InterruptedException | java.util.concurrent.ExecutionException e2) {
                     }
-                    cyu.a((java.lang.Object) defpackage.ajh.a(true));
+                    cyu.a(ajh.a(true));
                 } catch (java.lang.InterruptedException | java.util.concurrent.ExecutionException e3) {
-                    cyu.a((java.lang.Object) defpackage.ajh.c());
+                    cyu.a(ajh.c());
                 }
             }
         } catch (java.lang.InterruptedException | java.util.concurrent.ExecutionException e4) {
-            cyu.a((java.lang.Object) defpackage.ajh.c());
+            cyu.a(ajh.c());
         }
         return null;
     }

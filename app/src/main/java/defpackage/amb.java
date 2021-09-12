@@ -18,7 +18,7 @@ public final class amb {
         this.g = ake;
     }
 
-    public final java.util.List a() {
+    public final java.util.List<dcb> a() {
         defpackage.dat dat;
         defpackage.dbu dbu = (defpackage.dbu) a(d).a.get(0);
         if (dbu.a == 13) {
@@ -26,14 +26,14 @@ public final class amb {
         } else {
             dat = defpackage.dat.b;
         }
-        java.util.ArrayList a2 = defpackage.cky.a((java.lang.Iterable) dat.a);
+        java.util.ArrayList a2 = defpackage.cky.a(dat.a);
         if (a2 == null) {
             return java.util.Collections.emptyList();
         }
         return java.util.Collections.unmodifiableList(a2);
     }
 
-    public final defpackage.ajq a(java.lang.String str) {
+    public final AbsTaskListStructure a(java.lang.String str) {
         defpackage.dih dih;
         defpackage.dih dih2;
         defpackage.dav dav;
@@ -64,7 +64,7 @@ public final class amb {
             dih = dii.a;
         } else {
             defpackage.dih dih3 = dii.a;
-            defpackage.djz.a.a((java.lang.Object) dih3).c(dih3);
+            defpackage.djz.a.a(dih3).c(dih3);
             dii.b = true;
             dih = dii.a;
         }
@@ -94,7 +94,7 @@ public final class amb {
             dih2 = dii3.a;
         } else {
             defpackage.dih dih5 = dii3.a;
-            defpackage.djz.a.a((java.lang.Object) dih5).c(dih5);
+            defpackage.djz.a.a(dih5).c(dih5);
             dii3.b = true;
             dih2 = dii3.a;
         }
@@ -112,7 +112,7 @@ public final class amb {
         }
         defpackage.diq diq = dav.b;
         if (diq == null) {
-            return defpackage.ajq.d();
+            return AbsTaskListStructure.d();
         }
         defpackage.dbu dbu2 = (defpackage.dbu) a2.a.get(1);
         if (dbu2.a == 12) {
@@ -130,7 +130,7 @@ public final class amb {
         } else {
             dce = dcb.d;
         }
-        return defpackage.ajq.a(diq, dce, defpackage.auz.a());
+        return AbsTaskListStructure.a(diq, dce, defpackage.auz.a());
     }
 
     /* access modifiers changed from: 0000 */
@@ -168,7 +168,7 @@ public final class amb {
             dbs.a = diq.a(size == 0 ? 10 : size << 1);
         }
         defpackage.diq diq2 = dbs.a;
-        defpackage.dim.a((java.lang.Object) asList);
+        defpackage.dim.a(asList);
         if (asList instanceof defpackage.diz) {
             java.util.List d2 = ((defpackage.diz) asList).d();
             defpackage.diz diz = (defpackage.diz) diq2;
@@ -183,7 +183,7 @@ public final class amb {
                 } else if (next instanceof defpackage.dha) {
                     diz.a((defpackage.dha) next);
                 } else {
-                    diz.add((java.lang.String) next);
+                    diz.add(next);
                 }
             }
         } else if (asList instanceof defpackage.djy) {
@@ -208,7 +208,7 @@ public final class amb {
             dih = dii.a;
         } else {
             defpackage.dih dih2 = dii.a;
-            defpackage.djz.a.a((java.lang.Object) dih2).c(dih2);
+            defpackage.djz.a.a(dih2).c(dih2);
             dii.b = true;
             dih = dii.a;
         }
@@ -235,7 +235,7 @@ public final class amb {
             daz.a = diq.a(size == 0 ? 10 : size << 1);
         }
         defpackage.diq diq2 = daz.a;
-        defpackage.dim.a((java.lang.Object) asList);
+        defpackage.dim.a(asList);
         if (asList instanceof defpackage.diz) {
             java.util.List d2 = ((defpackage.diz) asList).d();
             defpackage.diz diz = (defpackage.diz) diq2;
@@ -250,7 +250,7 @@ public final class amb {
                 } else if (next instanceof defpackage.dha) {
                     diz.a((defpackage.dha) next);
                 } else {
-                    diz.add((java.lang.String) next);
+                    diz.add(next);
                 }
             }
         } else if (asList instanceof defpackage.djy) {
@@ -275,7 +275,7 @@ public final class amb {
             dih = dii.a;
         } else {
             defpackage.dih dih2 = dii.a;
-            defpackage.djz.a.a((java.lang.Object) dih2).c(dih2);
+            defpackage.djz.a.a(dih2).c(dih2);
             dii.b = true;
             dih = dii.a;
         }
@@ -319,7 +319,7 @@ public final class amb {
             dih = f2.a;
         } else {
             defpackage.dih dih2 = f2.a;
-            defpackage.djz.a.a((java.lang.Object) dih2).c(dih2);
+            defpackage.djz.a.a(dih2).c(dih2);
             f2.b = true;
             dih = f2.a;
         }
@@ -400,7 +400,7 @@ public final class amb {
             dih = dii.a;
         } else {
             defpackage.dih dih2 = dii.a;
-            defpackage.djz.a.a((java.lang.Object) dih2).c(dih2);
+            defpackage.djz.a.a(dih2).c(dih2);
             dii.b = true;
             dih = dii.a;
         }

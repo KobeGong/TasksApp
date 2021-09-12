@@ -3,37 +3,37 @@ package defpackage;
 /* renamed from: auh reason: default package */
 /* compiled from: PG */
 final class auh extends defpackage.aie implements android.view.View.OnTouchListener {
-    public final defpackage.atg a;
+    public final BaseTaskAdapter a;
     private final android.os.Vibrator b;
     private final float c;
     private final defpackage.att d;
     private int e = 0;
     private float f;
-    private defpackage.afv g;
-    private defpackage.afv h;
+    private RecyclerViewHolder g;
+    private RecyclerViewHolder h;
     private boolean i;
     private java.util.Set j;
 
-    public auh(defpackage.atg atg, android.os.Vibrator vibrator, float f2, defpackage.att att) {
+    public auh(BaseTaskAdapter atg, android.os.Vibrator vibrator, float f2, defpackage.att att) {
         this.a = atg;
         this.b = vibrator;
         this.c = f2;
         this.d = att;
     }
 
-    public final int a(defpackage.afv afv) {
+    public final int a(RecyclerViewHolder afv) {
         int i2;
         boolean z = true;
         int i3 = 0;
-        defpackage.atg atg = this.a;
-        if (afv.d() < atg.d() && atg.b()) {
+        BaseTaskAdapter atg = this.a;
+        if (afv.d() < atg.getCount() && atg.b()) {
             i2 = 3;
         } else {
             i2 = 0;
         }
-        defpackage.atg atg2 = this.a;
+        BaseTaskAdapter atg2 = this.a;
         int d2 = afv.d();
-        if (d2 >= atg2.d() || !atg2.h(d2)) {
+        if (d2 >= atg2.getCount() || !atg2.h(d2)) {
             z = false;
         }
         if (z) {
@@ -53,7 +53,7 @@ final class auh extends defpackage.aie implements android.view.View.OnTouchListe
         return true;
     }
 
-    public final void a(defpackage.afv afv, int i2) {
+    public final void a(RecyclerViewHolder afv, int i2) {
         defpackage.dca dca;
         defpackage.dmk a2;
         defpackage.dmk dmk;
@@ -63,8 +63,8 @@ final class auh extends defpackage.aie implements android.view.View.OnTouchListe
         boolean z = false;
         int d2 = afv.d();
         if (i2 == 16) {
-            defpackage.atg atg = this.a;
-            defpackage.cld.a(d2 < atg.d());
+            BaseTaskAdapter atg = this.a;
+            defpackage.cld.a(d2 < atg.getCount());
             defpackage.dby g2 = atg.g(d2);
             if (g2 == null) {
                 defpackage.azb.a("Failed to find task", new java.lang.Object[0]);
@@ -147,7 +147,7 @@ final class auh extends defpackage.aie implements android.view.View.OnTouchListe
         }
         hashSet.add(java.lang.Integer.valueOf(d2));
         defpackage.att att = this.d;
-        android.support.v7.widget.RecyclerView recyclerView = (android.support.v7.widget.RecyclerView) afv.a.getParent();
+        android.support.v7.widget.RecyclerView recyclerView = (android.support.v7.widget.RecyclerView) afv.itemView.getParent();
         defpackage.atu atu = new defpackage.atu();
         int childCount = recyclerView.getChildCount();
         for (int i3 = 0; i3 < childCount; i3++) {
@@ -161,18 +161,18 @@ final class auh extends defpackage.aie implements android.view.View.OnTouchListe
             atu.b = defpackage.auz.a();
             att.a.add(atu);
         }
-        defpackage.atg atg2 = this.a;
-        if (d2 < atg2.d()) {
+        BaseTaskAdapter atg2 = this.a;
+        if (d2 < atg2.getCount()) {
             z = true;
         }
         defpackage.cld.a(z);
         atg2.a(d2, true);
     }
 
-    public final void b(defpackage.afv afv, int i2) {
+    public final void b(RecyclerViewHolder afv, int i2) {
         int i3 = 0;
         if (this.e == 2 && i2 != 2 && (this.a instanceof defpackage.atv)) {
-            this.g.a.post(new defpackage.aui(this, this.g.d()));
+            this.g.itemView.post(new defpackage.aui(this, this.g.d()));
         }
         if (i2 == 0) {
             this.g = null;
@@ -198,7 +198,7 @@ final class auh extends defpackage.aie implements android.view.View.OnTouchListe
         super.b(afv, i2);
     }
 
-    public final boolean a(defpackage.afv afv, defpackage.afv afv2) {
+    public final boolean a(RecyclerViewHolder afv, RecyclerViewHolder afv2) {
         if (!(this.a instanceof defpackage.atv)) {
             return false;
         }
@@ -210,12 +210,12 @@ final class auh extends defpackage.aie implements android.view.View.OnTouchListe
         return a2;
     }
 
-    public final void b(android.support.v7.widget.RecyclerView recyclerView, defpackage.afv afv) {
+    public final void b(android.support.v7.widget.RecyclerView recyclerView, RecyclerViewHolder afv) {
         super.b(recyclerView, afv);
         defpackage.atx atx = (defpackage.atx) afv;
         int d2 = atx.d();
         boolean z = (this.a instanceof defpackage.atv) && d2 >= 0 && ((defpackage.atv) this.a).k(d2);
-        ViewCompat.b(atx.a, 0.0f);
+        ViewCompat.b(atx.itemView, 0.0f);
         atx.s.animate().cancel();
         atx.s.setTranslationX(0.0f);
         atx.b(z);
@@ -224,18 +224,18 @@ final class auh extends defpackage.aie implements android.view.View.OnTouchListe
         int childCount = recyclerView.getChildCount();
         int d3 = this.h == null ? -1 : this.h.d();
         for (int i2 = 0; i2 < childCount; i2++) {
-            defpackage.afv a2 = recyclerView.a(recyclerView.getChildAt(i2));
+            RecyclerViewHolder a2 = recyclerView.a(recyclerView.getChildAt(i2));
             if ((a2 instanceof defpackage.atx) && (this.h == null || !(this.j == null || this.j.contains(java.lang.Integer.valueOf(a2.d())) || a2.d() == d3))) {
                 ((defpackage.atx) a2).v();
             }
         }
     }
 
-    public final void a(android.graphics.Canvas canvas, android.support.v7.widget.RecyclerView recyclerView, defpackage.afv afv, float f2, float f3, int i2, boolean z) {
+    public final void a(android.graphics.Canvas canvas, android.support.v7.widget.RecyclerView recyclerView, RecyclerViewHolder afv, float f2, float f3, int i2, boolean z) {
         if (i2 == 1) {
             defpackage.atx atx = (defpackage.atx) afv;
-            ViewCompat.a(atx.a, 0.0f);
-            float max = java.lang.Math.max(0.0f, java.lang.Math.min(1.0f, java.lang.Math.abs(f2 / (((float) atx.a.getWidth()) * 0.3f))));
+            ViewCompat.setElevation(atx.itemView, 0.0f);
+            float max = java.lang.Math.max(0.0f, java.lang.Math.min(1.0f, java.lang.Math.abs(f2 / (((float) atx.itemView.getWidth()) * 0.3f))));
             atx.a(max);
             if (afv.d() >= 0) {
                 boolean z2 = ViewCompat.a.j(recyclerView) == 0;
@@ -286,7 +286,7 @@ final class auh extends defpackage.aie implements android.view.View.OnTouchListe
             int childCount = recyclerView.getChildCount();
             for (int i2 = 0; i2 < childCount; i2++) {
                 android.view.View childAt = recyclerView.getChildAt(i2);
-                defpackage.afv a2 = recyclerView.a(childAt);
+                RecyclerViewHolder a2 = recyclerView.a(childAt);
                 if (set.contains(java.lang.Integer.valueOf(a2.d()))) {
                     ((defpackage.atx) a2).a(f3);
                     childAt.setTranslationX(f2);

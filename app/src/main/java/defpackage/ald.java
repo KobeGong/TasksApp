@@ -13,7 +13,7 @@ final /* synthetic */ class ald implements java.lang.Runnable {
     public final void run() {
         defpackage.ala ala = this.a;
         defpackage.cyi cyi = this.b;
-        android.view.View view = ala.J;
+        android.view.View view = ala.mView;
         if (view != null) {
             view.post(new defpackage.alf(ala, cyi));
         }

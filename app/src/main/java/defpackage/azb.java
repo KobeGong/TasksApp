@@ -653,7 +653,6 @@ public class azb implements defpackage.bau {
     @android.annotation.TargetApi(24)
     /* Code decompiled incorrectly, please refer to instructions dump. */
     public static boolean a(android.content.Context r4) {
-        /*
             r1 = 1
             r2 = 0
             int r0 = android.os.Build.VERSION.SDK_INT
@@ -703,8 +702,6 @@ public class azb implements defpackage.bau {
         L_0x0057:
             r1 = r2
             goto L_0x0052
-        */
-        throw new UnsupportedOperationException("Method not decompiled: defpackage.azb.a(android.content.Context):boolean");
     }
 
     public static boolean g() {

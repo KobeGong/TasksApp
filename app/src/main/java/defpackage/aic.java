@@ -7,7 +7,7 @@ class aic implements android.animation.Animator.AnimatorListener {
     public final float b;
     public final float c;
     public final float d;
-    public final defpackage.afv e;
+    public final RecyclerViewHolder e;
     public final int f;
     public final android.animation.ValueAnimator g;
     public boolean h;
@@ -17,7 +17,7 @@ class aic implements android.animation.Animator.AnimatorListener {
     public boolean l = false;
     public float m;
 
-    aic(defpackage.afv afv, int i2, float f2, float f3, float f4, float f5) {
+    aic(RecyclerViewHolder afv, int i2, float f2, float f3, float f4, float f5) {
         this.f = i2;
         this.e = afv;
         this.a = f2;
@@ -26,7 +26,7 @@ class aic implements android.animation.Animator.AnimatorListener {
         this.d = f5;
         this.g = android.animation.ValueAnimator.ofFloat(new float[]{0.0f, 1.0f});
         this.g.addUpdateListener(new defpackage.aid(this));
-        this.g.setTarget(afv.a);
+        this.g.setTarget(afv.itemView);
         this.g.addListener(this);
         this.m = 0.0f;
     }

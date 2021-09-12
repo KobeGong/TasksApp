@@ -6,7 +6,7 @@ public final class ams implements defpackage.amn {
     public static final long serialVersionUID = 1;
     private final java.lang.String a;
     private final boolean b;
-    private transient defpackage.ajq c;
+    private transient AbsTaskListStructure c;
     private transient defpackage.dcb d;
 
     ams(java.lang.String str, boolean z) {

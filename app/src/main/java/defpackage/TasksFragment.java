@@ -1,5 +1,11 @@
 package defpackage;
 
+import android.support.v7.widget.RecyclerView;
+
+import com.google.android.apps.tasks.R;
+
+import java.util.LinkedHashMap;
+
 /* renamed from: auj reason: default package */
 /* compiled from: PG */
 /* compiled from: TasksFragment */
@@ -7,45 +13,44 @@ public final class TasksFragment extends Fragment implements android.app.DatePic
     private static final defpackage.ajr aa = defpackage.ajr.MY_ORDER;
     private static android.os.Vibrator ab;
     private static java.lang.Boolean ac;
-    public android.view.View U;
-    public android.widget.Button V;
-    public defpackage.atg W;
+    public android.view.View taskNotSyncView;
+    public android.widget.Button flattenSubtasksView;
+    public BaseTaskAdapter taskAdapter;
     public java.lang.String X;
     public defpackage.ajr Y = aa;
     public java.lang.String Z;
-    public android.view.View a;
-    private android.support.v4.widget.SwipeRefreshLayout ad;
-    private android.support.v4.widget.SwipeRefreshLayout ae;
+    public android.view.View rootView;
+    private android.support.v4.widget.SwipeRefreshLayout taskRefreshView;
+    private android.support.v4.widget.SwipeRefreshLayout taskRefreshEmpty;
     private android.support.v4.widget.NestedScrollView af;
-    private android.view.View ag;
-    private android.view.View ah;
+    private android.view.View emptyView;
+    private android.view.View tooManySubtaskLevelView;
     private defpackage.aht ai;
     private long aj = 0;
     private boolean ak = false;
     private defpackage.alu al;
     private defpackage.att am;
-    public android.support.v7.widget.RecyclerView recyclerView;
+    public RecyclerView recyclerView;
 
     public final android.view.View onCreateView(android.view.LayoutInflater layoutInflater, android.view.ViewGroup viewGroup, android.os.Bundle bundle) {
         java.lang.Boolean bool;
-        this.a = layoutInflater.inflate(com.google.android.apps.tasks.R.layout.tasks_fragment, null);
-        this.ad = this.a.findViewById(com.google.android.apps.tasks.R.id.tasks_refresh);
-        this.ae = this.a.findViewById(com.google.android.apps.tasks.R.id.tasks_refresh_empty);
-        this.recyclerView = this.a.findViewById(com.google.android.apps.tasks.R.id.tasks_list);
-        if (this.W != null) {
-            bool = this.W.c;
+        this.rootView = layoutInflater.inflate(com.google.android.apps.tasks.R.layout.tasks_fragment, null);
+        this.taskRefreshView = this.rootView.findViewById(com.google.android.apps.tasks.R.id.tasks_refresh);
+        this.taskRefreshEmpty = this.rootView.findViewById(com.google.android.apps.tasks.R.id.tasks_refresh_empty);
+        this.recyclerView = this.rootView.findViewById(com.google.android.apps.tasks.R.id.tasks_list);
+        if (this.taskAdapter != null) {
+            bool = this.taskAdapter.c;
         } else {
             bool = null;
         }
-        this.W = null;
-        this.ag = this.a.findViewById(com.google.android.apps.tasks.R.id.empty_view);
-        this.U = this.a.findViewById(com.google.android.apps.tasks.R.id.tasks_not_synced);
-        this.ah = this.a.findViewById(com.google.android.apps.tasks.R.id.too_many_subtask_levels);
-        this.V = this.a.findViewById(com.google.android.apps.tasks.R.id.flatten_subtasks);
-        this.ad.a = new defpackage.auk(this);
-        this.ae.a = new defpackage.aul(this);
+        this.taskAdapter = null;
+        this.emptyView = this.rootView.findViewById(com.google.android.apps.tasks.R.id.empty_view);
+        this.taskNotSyncView = this.rootView.findViewById(com.google.android.apps.tasks.R.id.tasks_not_synced);
+        this.tooManySubtaskLevelView = this.rootView.findViewById(com.google.android.apps.tasks.R.id.too_many_subtask_levels);
+        this.flattenSubtasksView = this.rootView.findViewById(com.google.android.apps.tasks.R.id.flatten_subtasks);
+        this.taskRefreshView.a = new defpackage.auk(this);
+        this.taskRefreshEmpty.a = new defpackage.aul(this);
         this.recyclerView.a(new adw());
-        android.support.v7.widget.RecyclerView recyclerView = this.recyclerView;
         defpackage.auu auu = new defpackage.auu(this);
         if (recyclerView.z != null) {
             recyclerView.z.d();
@@ -55,33 +60,33 @@ public final class TasksFragment extends Fragment implements android.app.DatePic
         if (recyclerView.z != null) {
             recyclerView.z.h = recyclerView.H;
         }
-        this.V.setOnClickListener(new defpackage.aum(this));
+        this.flattenSubtasksView.setOnClickListener(new defpackage.aum(this));
         if (ac == null) {
             ac = android.provider.Settings.System.getInt(getContext().getContentResolver(), "haptic_feedback_enabled", 1) != 0;
             ab = (android.os.Vibrator) getContext().getSystemService("vibrator");
         }
-        this.am = new defpackage.att(defpackage.ob.c(getContext(), 2131624494), defpackage.ob.c(getContext(), com.google.android.apps.tasks.R.color.task_snooze_swipe_background), this.recyclerView.z.j);
-        this.recyclerView.a(this.am);
-        this.recyclerView.a(new ats(getContext()));
-        this.af = this.a.findViewById(com.google.android.apps.tasks.R.id.tasks_refresh_empty_scrollable);
+        this.am = new defpackage.att(defpackage.ob.c(getContext(), R.color.task_complete_swipe_background), defpackage.ob.c(getContext(), R.color.task_snooze_swipe_background), this.recyclerView.z.j);
+        this.recyclerView.addItemDecoration(this.am);
+        this.recyclerView.addItemDecoration(new ats(getContext()));
+        this.af = this.rootView.findViewById(com.google.android.apps.tasks.R.id.tasks_refresh_empty_scrollable);
         this.al = new defpackage.auv(this);
         a(this.X, this.Y, false);
         this.recyclerView.a(new auy(this.recyclerView));
-        if (!(bool == null || this.W == null)) {
-            this.W.a(bool);
+        if (!(bool == null || this.taskAdapter == null)) {
+            this.taskAdapter.a(bool);
         }
         if (bundle != null) {
             android.os.Parcelable parcelable = bundle.getParcelable("taskListsLayout");
             if (parcelable != null) {
-                this.recyclerView.l.a(parcelable);
+                this.recyclerView.mLayout.a(parcelable);
             }
-            if (this.W != null) {
-                this.W.a(bundle.getBoolean("completedExpanded", this.W.c));
+            if (this.taskAdapter != null) {
+                this.taskAdapter.a(bundle.getBoolean("completedExpanded", this.taskAdapter.c));
             }
         }
         this.recyclerView.a(new auw(this));
         this.af.a = new defpackage.bdk(this);
-        return this.a;
+        return this.rootView;
     }
 
     public final void b(android.view.View view) {
@@ -96,8 +101,8 @@ public final class TasksFragment extends Fragment implements android.app.DatePic
         defpackage.cky.a(getActivity(), defpackage.dck.e);
     }
 
-    public final void s() {
-        super.s();
+    public final void onResume() {
+        super.onResume();
         if (getActivity() != null) {
             defpackage.cos.a(getActivity()).b.a(getActivity().findViewById(16908290));
         }
@@ -109,7 +114,7 @@ public final class TasksFragment extends Fragment implements android.app.DatePic
 
     public final void a(java.lang.String str, defpackage.ajr ajr, boolean z) {
         boolean z2;
-        defpackage.ajq d;
+        AbsTaskListStructure d;
         defpackage.dca dca;
         boolean z3 = false;
         if (ajr == null) {
@@ -120,50 +125,48 @@ public final class TasksFragment extends Fragment implements android.app.DatePic
         this.X = str;
         this.Y = ajr;
         if (O()) {
-            if (z2 || this.W == null) {
-                if (this.W != null) {
-                    this.W.f = null;
+            if (z2 || this.taskAdapter == null) {
+                if (this.taskAdapter != null) {
+                    this.taskAdapter.f = null;
                 }
                 if (this.Y == defpackage.ajr.BY_DUE_DATE) {
-                    this.W = new defpackage.atn();
+                    this.taskAdapter = new DueDateTaskAdapter();
                 } else {
-                    this.W = new defpackage.atv();
+                    this.taskAdapter = new defpackage.atv();
                 }
-                defpackage.atg atg = this.W;
-                android.support.v7.widget.RecyclerView recyclerView = this.recyclerView;
-                android.view.LayoutInflater from = android.view.LayoutInflater.from(this.a.getContext());
-                if (atg.h == null) {
-                    atg.h = from.inflate(com.google.android.apps.tasks.R.layout.completed_header, recyclerView, false);
-                    atg.j = atg.h.findViewById(com.google.android.apps.tasks.R.id.completed_count);
-                    atg.k = atg.h.findViewById(com.google.android.apps.tasks.R.id.expand);
-                    atg.k.setImageResource(com.google.android.apps.tasks.R.drawable.quantum_ic_stat_minus_1_grey600_24);
-                    atg.i = atg.h.findViewById(com.google.android.apps.tasks.R.id.completed_header);
-                    atg.i.setOnClickListener(new defpackage.ath(atg));
-                    if (atg.g == null) {
-                        atg.g = new defpackage.atj(atg);
+                android.view.LayoutInflater inflater = android.view.LayoutInflater.from(this.rootView.getContext());
+                if (this.taskAdapter.rootView == null) {
+                    this.taskAdapter.rootView = inflater.inflate(com.google.android.apps.tasks.R.layout.completed_header, recyclerView, false);
+                    this.taskAdapter.completeCountView = this.taskAdapter.rootView.findViewById(com.google.android.apps.tasks.R.id.completed_count);
+                    this.taskAdapter.expandView = this.taskAdapter.rootView.findViewById(com.google.android.apps.tasks.R.id.expand);
+                    this.taskAdapter.expandView.setImageResource(com.google.android.apps.tasks.R.drawable.quantum_ic_stat_minus_1_grey600_24);
+                    this.taskAdapter.completeHeaderView = this.taskAdapter.rootView.findViewById(com.google.android.apps.tasks.R.id.completed_header);
+                    this.taskAdapter.completeHeaderView.setOnClickListener(new defpackage.ath(this.taskAdapter));
+                    if (this.taskAdapter.g == null) {
+                        this.taskAdapter.g = new defpackage.atj(this.taskAdapter);
                     }
-                    atg.f();
-                    atg.l = (android.widget.TextView) from.inflate(com.google.android.apps.tasks.R.layout.task_drag_num_subtasks, recyclerView, false);
+                    this.taskAdapter.f();
+                    this.taskAdapter.l = (android.widget.TextView) inflater.inflate(com.google.android.apps.tasks.R.layout.task_drag_num_subtasks, recyclerView, false);
                 }
                 if (this.ai != null) {
-                    android.support.v7.widget.RecyclerView recyclerView2 = new android.support.v7.widget.RecyclerView(this.a.getContext());
-                    this.a.getContext();
+                    RecyclerView recyclerView2 = new RecyclerView(this.rootView.getContext());
+                    this.rootView.getContext();
                     recyclerView2.a(new adw());
                     this.ai.a(recyclerView2);
                 }
-                this.recyclerView.a(this.W);
-                defpackage.auh auh = new defpackage.auh(this.W, ac ? ab : null, this.a.getResources().getDimension(com.google.android.apps.tasks.R.dimen.task_item_subtask_start_spacing), this.am);
+                this.recyclerView.setAdapter(this.taskAdapter);
+                defpackage.auh auh = new defpackage.auh(this.taskAdapter, ac ? ab : null, this.rootView.getResources().getDimension(com.google.android.apps.tasks.R.dimen.task_item_subtask_start_spacing), this.am);
                 this.ai = new defpackage.aht(auh);
                 this.ai.a(this.recyclerView);
                 this.recyclerView.setOnTouchListener(auh);
-                this.W.f = new defpackage.atl(this);
+                this.taskAdapter.f = new defpackage.atl(this);
             }
             if (android.text.TextUtils.isEmpty(this.X)) {
-                d = defpackage.ajq.d();
+                d = AbsTaskListStructure.d();
             } else {
                 d = defpackage.any.a().c().d(this.X);
             }
-            java.util.Iterator it = d.b().a.iterator();
+            java.util.Iterator it = d.getStructure().a.iterator();
             loop0:
             while (true) {
                 if (!it.hasNext()) {
@@ -180,29 +183,29 @@ public final class TasksFragment extends Fragment implements android.app.DatePic
                 }
             }
             this.ak = z3;
-            defpackage.atg atg2 = this.W;
-            atg2.b.clear();
-            java.util.LinkedHashMap linkedHashMap = new java.util.LinkedHashMap();
-            for (defpackage.dby dby : d.a()) {
+            BaseTaskAdapter atg2 = this.taskAdapter;
+            atg2.tasks.clear();
+            LinkedHashMap<String, dby> linkedHashMap = new LinkedHashMap<>();
+            for (defpackage.dby dby : d.getTasks()) {
                 if (dby.e == null) {
                     dca = defpackage.dca.g;
                 } else {
                     dca = dby.e;
                 }
                 if (dca.a) {
-                    atg2.b.add(dby);
+                    atg2.tasks.add(dby);
                 } else {
                     linkedHashMap.put(dby.d, dby);
                 }
             }
             atg2.f();
             atg2.a(d);
-            atg2.d.b();
+            atg2.mObservable.b();
             atg2.g();
-            this.aj = d.c();
+            this.aj = d.getLastSyncedMs();
             if (z4 && !android.text.TextUtils.isEmpty(this.X) && this.aj == 0) {
-                this.U.animate().cancel();
-                this.U.setAlpha(0.0f);
+                this.taskNotSyncView.animate().cancel();
+                this.taskNotSyncView.setAlpha(0.0f);
                 a(true);
                 defpackage.cyi a2 = defpackage.any.a().c().a(this.X);
                 a2.a(new defpackage.aup(this, a2), com.google.android.apps.tasks.common.TaskApplication.getApplication().a);
@@ -215,31 +218,31 @@ public final class TasksFragment extends Fragment implements android.app.DatePic
         }
     }
 
-    public final void e() {
-        super.e();
+    public final void onStart() {
+        super.onStart();
         defpackage.alq.a().b(this.al);
         defpackage.alq.a().a(this.al);
         a(this.X, this.Y, false);
     }
 
-    public final void f() {
+    public final void onStop() {
         defpackage.alq.a().b(this.al);
-        super.f();
+        super.onStop();
     }
 
-    public final void d(android.os.Bundle bundle) {
-        super.d(bundle);
-        bundle.putParcelable("taskListsLayout", this.recyclerView.l.c());
-        if (this.W != null) {
-            bundle.putBoolean("completedExpanded", this.W.c);
+    public final void onSaveInstanceState(android.os.Bundle bundle) {
+        super.onSaveInstanceState(bundle);
+        bundle.putParcelable("taskListsLayout", this.recyclerView.mLayout.c());
+        if (this.taskAdapter != null) {
+            bundle.putBoolean("completedExpanded", this.taskAdapter.c);
         }
     }
 
     /* access modifiers changed from: 0000 */
     public final void a(boolean z) {
         if (O()) {
-            this.ad.a(z);
-            this.ae.a(z);
+            this.taskRefreshView.a(z);
+            this.taskRefreshEmpty.a(z);
         }
     }
 
@@ -266,7 +269,7 @@ public final class TasksFragment extends Fragment implements android.app.DatePic
             defpackage.dby a2 = defpackage.any.a().c().a(this.X, this.Z);
             if (a2 != null) {
                 defpackage.any.a().c().a(this.X, this.Z, dmk);
-                defpackage.atg atg = this.W;
+                BaseTaskAdapter atg = this.taskAdapter;
                 defpackage.dii dii = (defpackage.dii) a2.a(defpackage.bg.ao);
                 dii.a(a2);
                 defpackage.dii dii2 = dii;
@@ -297,11 +300,11 @@ public final class TasksFragment extends Fragment implements android.app.DatePic
                     dca2 = dby.e;
                 }
                 if (dca2.a) {
-                    int a3 = defpackage.atg.a(atg.b, dby.d);
+                    int a3 = BaseTaskAdapter.a(atg.tasks, dby.d);
                     if (a3 >= 0) {
-                        atg.b.set(a3, dby);
+                        atg.tasks.set(a3, dby);
                         if (atg.c) {
-                            atg.c(atg.d() + 1 + a3);
+                            atg.c(atg.getCount() + 1 + a3);
                         }
                     }
                 } else {
@@ -320,13 +323,13 @@ public final class TasksFragment extends Fragment implements android.app.DatePic
         int i2 = 8;
         int i3 = 0;
         boolean isEmpty = android.text.TextUtils.isEmpty(this.X);
-        boolean z5 = this.W.a() == 0;
+        boolean z5 = this.taskAdapter.getItemCount() == 0;
         z2 = this.aj == 0;
         z3 = isEmpty || z5 || this.ak;
-        android.support.v4.widget.SwipeRefreshLayout swipeRefreshLayout = this.ad;
+        android.support.v4.widget.SwipeRefreshLayout swipeRefreshLayout = this.taskRefreshView;
         z4 = !z3;
         a(swipeRefreshLayout, z4, z);
-        a(this.ae, z3, z);
+        a(this.taskRefreshEmpty, z3, z);
         if (z3) {
             if (isEmpty) {
                 i3 = 8;
@@ -341,10 +344,10 @@ public final class TasksFragment extends Fragment implements android.app.DatePic
             } else {
                 i = 8;
             }
-            this.ag.setVisibility(i);
-            this.U.setVisibility(i2);
-            this.ah.setVisibility(i3);
-            this.V.setEnabled(true);
+            this.emptyView.setVisibility(i);
+            this.taskNotSyncView.setVisibility(i2);
+            this.tooManySubtaskLevelView.setVisibility(i3);
+            this.flattenSubtasksView.setEnabled(true);
             b(this.af);
             return;
         }
@@ -381,7 +384,7 @@ public final class TasksFragment extends Fragment implements android.app.DatePic
     }
 
     public final boolean O() {
-        return this.a != null;
+        return this.rootView != null;
     }
 
     /* access modifiers changed from: 0000 */

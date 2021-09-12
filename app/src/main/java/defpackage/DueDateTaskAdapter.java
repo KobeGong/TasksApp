@@ -1,39 +1,43 @@
 package defpackage;
 
+import android.view.LayoutInflater;
+
+import com.google.android.apps.tasks.R;
+
 /* renamed from: atn reason: default package */
 /* compiled from: PG */
-public final class atn extends defpackage.atg {
-    private final java.util.List m = new java.util.ArrayList();
+public final class DueDateTaskAdapter extends BaseTaskAdapter {
+    private final java.util.List<dby> m = new java.util.ArrayList<>();
     private final java.util.List n = new java.util.ArrayList();
     private final java.util.Map o = new java.util.HashMap();
 
-    public atn() {
-        c();
+    public DueDateTaskAdapter() {
+        setHasStableIds();
     }
 
-    public final long a(int i) {
+    public final long getItemId(int i) {
         if (i >= this.n.size()) {
-            return super.a(i);
+            return super.getItemId(i);
         }
         defpackage.atr atr = (defpackage.atr) this.n.get(i);
         if (atr.a()) {
-            return super.a(i);
+            return super.getItemId(i);
         }
         return (long) java.util.Arrays.hashCode(new java.lang.Object[]{java.lang.Integer.valueOf(2), atr.b.name()});
     }
 
-    public final int b(int i) {
+    public final int getItemViewType(int i) {
         if (this.n.size() <= i || ((defpackage.atr) this.n.get(i)).a()) {
-            return super.b(i);
+            return super.getItemViewType(i);
         }
         return 2;
     }
 
-    public final defpackage.afv a(android.view.ViewGroup viewGroup, int i) {
+    public final RecyclerViewHolder onCreateViewHolder(android.view.ViewGroup viewGroup, int i) {
         if (i <= 0) {
             return super.c(viewGroup, i);
         }
-        return new defpackage.atp(android.view.LayoutInflater.from(viewGroup.getContext()).inflate(2131034211, viewGroup, false));
+        return new defpackage.atp(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.task_due_date_header, viewGroup, false));
     }
 
     public final java.util.Set f(int i) {
@@ -53,12 +57,12 @@ public final class atn extends defpackage.atg {
     }
 
     /* access modifiers changed from: protected */
-    public final void a(defpackage.ajq ajq) {
+    public final void a(AbsTaskListStructure ajq) {
         defpackage.dca dca;
         this.o.clear();
         this.m.clear();
         java.util.LinkedHashMap linkedHashMap = new java.util.LinkedHashMap();
-        for (defpackage.dby dby : ajq.a()) {
+        for (defpackage.dby dby : ajq.getTasks()) {
             if (dby.e == null) {
                 dca = defpackage.dca.g;
             } else {
@@ -68,7 +72,7 @@ public final class atn extends defpackage.atg {
                 linkedHashMap.put(dby.d, dby);
             }
         }
-        for (defpackage.dcf dcf : ajq.b().a) {
+        for (defpackage.dcf dcf : ajq.getStructure().a) {
             defpackage.dby dby2 = (defpackage.dby) linkedHashMap.get(dcf.b);
             if (dby2 != null) {
                 this.m.add(dby2);
@@ -88,12 +92,12 @@ public final class atn extends defpackage.atg {
     }
 
     /* access modifiers changed from: protected */
-    public final int d() {
+    public final int getCount() {
         return this.n.size();
     }
 
     /* access modifiers changed from: protected */
-    public final void b(defpackage.afv afv, int i) {
+    public final void b(RecyclerViewHolder afv, int i) {
         defpackage.dca dca;
         boolean z;
         defpackage.dmk dmk;
@@ -312,7 +316,7 @@ public final class atn extends defpackage.atg {
     public final void b(defpackage.dby dby) {
         this.m.add(0, dby);
         h();
-        this.d.b();
+        this.mObservable.b();
     }
 
     /* access modifiers changed from: protected */
@@ -362,7 +366,7 @@ public final class atn extends defpackage.atg {
         }
         if (!defpackage.cru.d(dmk, dmk2)) {
             h();
-            this.d.b();
+            this.mObservable.b();
             return;
         }
         this.n.set(d, defpackage.atr.a(dby));

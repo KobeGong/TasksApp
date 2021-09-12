@@ -16,8 +16,8 @@ final class lu extends android.animation.AnimatorListenerAdapter {
     public final void onAnimationEnd(android.animation.Animator animator) {
         this.a.endViewTransition(this.b);
         animator.removeListener(this);
-        if (this.c.J != null) {
-            this.c.J.setVisibility(8);
+        if (this.c.mView != null) {
+            this.c.mView.setVisibility(8);
         }
     }
 }

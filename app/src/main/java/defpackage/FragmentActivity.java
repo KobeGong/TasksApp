@@ -262,7 +262,7 @@ public class FragmentActivity extends defpackage.la implements ViewModelStoreOwn
     public void onSaveInstanceState(android.os.Bundle bundle) {
         super.onSaveInstanceState(bundle);
         g();
-        android.os.Parcelable l2 = this.c.a.mFragmentManager.l();
+        android.os.Parcelable l2 = this.c.a.mFragmentManager.saveAllState();
         if (l2 != null) {
             bundle.putParcelable("android:support:fragments", l2);
         }

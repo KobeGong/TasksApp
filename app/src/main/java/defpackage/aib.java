@@ -18,7 +18,7 @@ final class aib extends android.view.GestureDetector.SimpleOnGestureListener {
         if (this.a) {
             android.view.View a2 = this.b.a(motionEvent);
             if (a2 != null) {
-                defpackage.afv a3 = this.b.o.a(a2);
+                RecyclerViewHolder a3 = this.b.o.a(a2);
                 if (a3 != null) {
                     if (((this.b.j.a(this.b.o, a3) & 16711680) != 0) && motionEvent.getPointerId(0) == this.b.i) {
                         int findPointerIndex = motionEvent.findPointerIndex(this.b.i);

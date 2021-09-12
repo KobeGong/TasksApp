@@ -6,22 +6,22 @@ package defpackage;
 public class Fragment implements ViewModelStoreOwner, android.content.ComponentCallbacks, android.view.View.OnCreateContextMenuListener, LifecycleOwner {
     private static final defpackage.ri a = new defpackage.ri();
     public static final java.lang.Object c = new java.lang.Object();
-    public int A;
-    public java.lang.String B;
-    public boolean C;
+    public int mFragmentId;
+    public java.lang.String tag;
+    public boolean mHidden;
     public boolean D;
     public boolean E;
     public boolean F;
     public boolean G;
     public boolean H;
     public android.view.ViewGroup I;
-    public android.view.View J;
-    public android.view.View K;
+    public android.view.View mView;
+    public android.view.View mInnerView;
     public boolean L;
     public boolean M = true;
     public defpackage.le N;
     public boolean O;
-    public boolean P;
+    public boolean mHiddenChanged;
     public float Q;
     public android.view.LayoutInflater layoutInflater;
     public boolean S;
@@ -43,13 +43,13 @@ public class Fragment implements ViewModelStoreOwner, android.content.ComponentC
     public boolean q;
     public boolean r;
     public int s;
-    public FragmentManagerImpl t;
-    public FragmentHostCallback u;
+    public FragmentManagerImpl fragmentManager;
+    public FragmentHostCallback mHost;
     public FragmentManagerImpl v;
     public defpackage.me w;
     public ViewModelStore x;
     public Fragment y;
-    public int z;
+    public int mContainerId;
 
     public final Lifecycle getLifecycle() {
         return this.T;
@@ -126,13 +126,13 @@ public class Fragment implements ViewModelStoreOwner, android.content.ComponentC
             sb.append(" #");
             sb.append(this.g);
         }
-        if (this.z != 0) {
+        if (this.mContainerId != 0) {
             sb.append(" id=0x");
-            sb.append(java.lang.Integer.toHexString(this.z));
+            sb.append(java.lang.Integer.toHexString(this.mContainerId));
         }
-        if (this.B != null) {
+        if (this.tag != null) {
             sb.append(" ");
-            sb.append(this.B);
+            sb.append(this.tag);
         }
         sb.append('}');
         return sb.toString();
@@ -141,10 +141,10 @@ public class Fragment implements ViewModelStoreOwner, android.content.ComponentC
     public final void e(android.os.Bundle bundle) {
         boolean h2;
         if (this.g >= 0) {
-            if (this.t == null) {
+            if (this.fragmentManager == null) {
                 h2 = false;
             } else {
-                h2 = this.t.h();
+                h2 = this.fragmentManager.h();
             }
             if (h2) {
                 throw new java.lang.IllegalStateException("Fragment already active and state has been saved");
@@ -154,17 +154,17 @@ public class Fragment implements ViewModelStoreOwner, android.content.ComponentC
     }
 
     public final android.content.Context getContext() {
-        if (this.u == null) {
+        if (this.mHost == null) {
             return null;
         }
-        return this.u.mContext;
+        return this.mHost.mContext;
     }
 
     public final FragmentActivity getActivity() {
-        if (this.u == null) {
+        if (this.mHost == null) {
             return null;
         }
-        return (FragmentActivity) this.u.mActivity;
+        return (FragmentActivity) this.mHost.mActivity;
     }
 
     public final android.content.res.Resources getResource() {
@@ -184,17 +184,17 @@ public class Fragment implements ViewModelStoreOwner, android.content.ComponentC
     }
 
     public final boolean l() {
-        return this.u != null && this.m;
+        return this.mHost != null && this.m;
     }
 
     public static void m() {
     }
 
     public void startActivityForResult(android.content.Intent intent, int i2) {
-        if (this.u == null) {
+        if (this.mHost == null) {
             throw new java.lang.IllegalStateException("Fragment " + this + " not attached to Activity");
         }
-        this.u.a(this, intent, i2);
+        this.mHost.startActivityForResult(this, intent, i2);
     }
 
     public void a(int i2, int i3, android.content.Intent intent) {
@@ -204,10 +204,10 @@ public class Fragment implements ViewModelStoreOwner, android.content.ComponentC
     }
 
     public android.view.LayoutInflater b(android.os.Bundle bundle) {
-        if (this.u == null) {
+        if (this.mHost == null) {
             throw new java.lang.IllegalStateException("onGetLayoutInflater() cannot be executed until the Fragment is attached to the FragmentManager.");
         }
-        android.view.LayoutInflater c2 = this.u.onGetLayoutInflater();
+        android.view.LayoutInflater c2 = this.mHost.onGetLayoutInflater();
         if (this.v == null) {
             c();
             if (this.d >= 5) {
@@ -233,10 +233,10 @@ public class Fragment implements ViewModelStoreOwner, android.content.ComponentC
     public final void o() {
         android.app.Activity activity;
         this.H = true;
-        if (this.u == null) {
+        if (this.mHost == null) {
             activity = null;
         } else {
-            activity = this.u.mActivity;
+            activity = this.mHost.mActivity;
         }
         if (activity != null) {
             this.H = false;
@@ -250,10 +250,10 @@ public class Fragment implements ViewModelStoreOwner, android.content.ComponentC
     public void a(android.content.Context context) {
         android.app.Activity activity;
         this.H = true;
-        if (this.u == null) {
+        if (this.mHost == null) {
             activity = null;
         } else {
-            activity = this.u.mActivity;
+            activity = this.mHost.mActivity;
         }
         if (activity != null) {
             this.H = false;
@@ -302,33 +302,33 @@ public class Fragment implements ViewModelStoreOwner, android.content.ComponentC
         return null;
     }
 
-    public void a(android.view.View view, android.os.Bundle bundle) {
+    public void onViewCreated(android.view.View view, android.os.Bundle bundle) {
     }
 
-    public void c(android.os.Bundle bundle) {
+    public void onActivityCreated(android.os.Bundle bundle) {
         this.H = true;
     }
 
-    public void e() {
+    public void onStart() {
         this.H = true;
     }
 
-    public void s() {
+    public void onResume() {
         this.H = true;
     }
 
-    public void d(android.os.Bundle bundle) {
+    public void onSaveInstanceState(android.os.Bundle bundle) {
     }
 
     public void onConfigurationChanged(android.content.res.Configuration configuration) {
         this.H = true;
     }
 
-    public void t() {
+    public void onPause() {
         this.H = true;
     }
 
-    public void f() {
+    public void onStop() {
         this.H = true;
     }
 
@@ -336,18 +336,18 @@ public class Fragment implements ViewModelStoreOwner, android.content.ComponentC
         this.H = true;
     }
 
-    public void g() {
+    public void onDestroyView() {
         this.H = true;
     }
 
-    public void u() {
+    public void onDestroy() {
         this.H = true;
-        if (this.x != null && !this.u.mFragmentManager.h) {
+        if (this.x != null && !this.mHost.mFragmentManager.h) {
             this.x.a();
         }
     }
 
-    public void d() {
+    public void onDetach() {
         this.H = true;
     }
 
@@ -416,11 +416,11 @@ public class Fragment implements ViewModelStoreOwner, android.content.ComponentC
     public void a(java.lang.String str, java.io.FileDescriptor fileDescriptor, java.io.PrintWriter printWriter, java.lang.String[] strArr) {
         printWriter.print(str);
         printWriter.print("mFragmentId=#");
-        printWriter.print(java.lang.Integer.toHexString(this.z));
+        printWriter.print(java.lang.Integer.toHexString(this.mContainerId));
         printWriter.print(" mContainerId=#");
-        printWriter.print(java.lang.Integer.toHexString(this.A));
+        printWriter.print(java.lang.Integer.toHexString(this.mFragmentId));
         printWriter.print(" mTag=");
-        printWriter.println(this.B);
+        printWriter.println(this.tag);
         printWriter.print(str);
         printWriter.print("mState=");
         printWriter.print(this.d);
@@ -441,7 +441,7 @@ public class Fragment implements ViewModelStoreOwner, android.content.ComponentC
         printWriter.println(this.p);
         printWriter.print(str);
         printWriter.print("mHidden=");
-        printWriter.print(this.C);
+        printWriter.print(this.mHidden);
         printWriter.print(" mDetached=");
         printWriter.print(this.D);
         printWriter.print(" mMenuVisible=");
@@ -455,15 +455,15 @@ public class Fragment implements ViewModelStoreOwner, android.content.ComponentC
         printWriter.print(this.F);
         printWriter.print(" mUserVisibleHint=");
         printWriter.println(this.M);
-        if (this.t != null) {
+        if (this.fragmentManager != null) {
             printWriter.print(str);
             printWriter.print("mFragmentManager=");
-            printWriter.println(this.t);
+            printWriter.println(this.fragmentManager);
         }
-        if (this.u != null) {
+        if (this.mHost != null) {
             printWriter.print(str);
             printWriter.print("mHost=");
-            printWriter.println(this.u);
+            printWriter.println(this.mHost);
         }
         if (this.y != null) {
             printWriter.print(str);
@@ -502,15 +502,15 @@ public class Fragment implements ViewModelStoreOwner, android.content.ComponentC
             printWriter.print("mContainer=");
             printWriter.println(this.I);
         }
-        if (this.J != null) {
+        if (this.mView != null) {
             printWriter.print(str);
             printWriter.print("mView=");
-            printWriter.println(this.J);
+            printWriter.println(this.mView);
         }
-        if (this.K != null) {
+        if (this.mInnerView != null) {
             printWriter.print(str);
             printWriter.print("mInnerView=");
-            printWriter.println(this.J);
+            printWriter.println(this.mView);
         }
         if (I() != null) {
             printWriter.print(str);
@@ -529,11 +529,11 @@ public class Fragment implements ViewModelStoreOwner, android.content.ComponentC
     }
 
     private final void c() {
-        if (this.u == null) {
+        if (this.mHost == null) {
             throw new java.lang.IllegalStateException("Fragment has not been attached yet.");
         }
         this.v = new FragmentManagerImpl();
-        this.v.a(this.u, (FragmentContainer) new defpackage.ld(this), this);
+        this.v.a(this.mHost, (FragmentContainer) new defpackage.ld(this), this);
     }
 
     /* access modifiers changed from: 0000 */
@@ -562,7 +562,7 @@ public class Fragment implements ViewModelStoreOwner, android.content.ComponentC
     }
 
     /* access modifiers changed from: 0000 */
-    public final void b(int i2) {
+    public final void setNextAnim(int i2) {
         if (this.N != null || i2 != 0) {
             C().d = i2;
         }

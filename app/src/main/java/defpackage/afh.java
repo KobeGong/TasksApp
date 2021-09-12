@@ -3,7 +3,7 @@ package defpackage;
 /* renamed from: afh reason: default package */
 /* compiled from: PG */
 public final class afh extends android.view.ViewGroup.MarginLayoutParams {
-    public defpackage.afv a;
+    public RecyclerViewHolder a;
     public final android.graphics.Rect b = new android.graphics.Rect();
     public boolean c = true;
     public boolean d = false;

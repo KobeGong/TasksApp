@@ -3,12 +3,12 @@ package defpackage;
 /* renamed from: acx reason: default package */
 /* compiled from: PG */
 final class acx extends android.animation.AnimatorListenerAdapter {
-    private final /* synthetic */ defpackage.afv a;
+    private final /* synthetic */ RecyclerViewHolder a;
     private final /* synthetic */ android.view.View b;
     private final /* synthetic */ android.view.ViewPropertyAnimator c;
     private final /* synthetic */ defpackage.acs d;
 
-    acx(defpackage.acs acs, defpackage.afv afv, android.view.View view, android.view.ViewPropertyAnimator viewPropertyAnimator) {
+    acx(defpackage.acs acs, RecyclerViewHolder afv, android.view.View view, android.view.ViewPropertyAnimator viewPropertyAnimator) {
         this.d = acs;
         this.a = afv;
         this.b = view;

@@ -26,8 +26,8 @@ public final class cfu implements defpackage.cdp {
     public final android.graphics.Bitmap a(java.lang.Object obj) {
         if (obj != null) {
             defpackage.cfl cfl = this.c;
-            java.lang.String a2 = ((defpackage.cdu) obj).a();
-            java.lang.String b2 = ((defpackage.cdu) obj).b();
+            java.lang.String a2 = ((AbsDeviceOwner) obj).getDisplayName();
+            java.lang.String b2 = ((AbsDeviceOwner) obj).accountName();
             java.util.ArrayList arrayList = new java.util.ArrayList();
             if (a2 != null) {
                 arrayList.add(a2.toString());
@@ -38,7 +38,7 @@ public final class cfu implements defpackage.cdp {
             java.lang.String[] strArr = new java.lang.String[arrayList.size()];
             arrayList.toArray(strArr);
             android.graphics.Bitmap createBitmap = android.graphics.Bitmap.createBitmap(100, 100, android.graphics.Bitmap.Config.ARGB_8888);
-            cfl.a.a(((defpackage.cdu) obj).b()).a(new defpackage.cqp(strArr)).a(createBitmap);
+            cfl.a.a(((AbsDeviceOwner) obj).accountName()).a(new defpackage.cqp(strArr)).a(createBitmap);
             return createBitmap;
         }
         if (this.d == null) {

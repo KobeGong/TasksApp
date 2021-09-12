@@ -13,15 +13,15 @@ public final class afx extends defpackage.rn {
         int i;
         defpackage.to toVar;
         super.a(view, tlVar);
-        if (!this.b.b.n() && this.b.b.l != null) {
-            defpackage.afd afd = this.b.b.l;
-            defpackage.afv c = android.support.v7.widget.RecyclerView.c(view);
-            if (c != null && !c.m() && !afd.a.d(c.a)) {
+        if (!this.b.b.n() && this.b.b.mLayout != null) {
+            LayoutManager afd = this.b.b.mLayout;
+            RecyclerViewHolder c = android.support.v7.widget.RecyclerView.getChildViewHolderInt(view);
+            if (c != null && !c.isRemoved() && !afd.a.d(c.itemView)) {
                 defpackage.afn afn = afd.b.e;
                 defpackage.aft aft = afd.b.D;
-                int i2 = afd.e() ? defpackage.afd.a(view) : 0;
+                int i2 = afd.e() ? LayoutManager.a(view) : 0;
                 if (afd.d()) {
-                    i = defpackage.afd.a(view);
+                    i = LayoutManager.a(view);
                 } else {
                     i = 0;
                 }
@@ -43,10 +43,10 @@ public final class afx extends defpackage.rn {
         if (super.a(view, i, bundle)) {
             return true;
         }
-        if (this.b.b.n() || this.b.b.l == null) {
+        if (this.b.b.n() || this.b.b.mLayout == null) {
             return false;
         }
-        defpackage.afd afd = this.b.b.l;
+        LayoutManager afd = this.b.b.mLayout;
         defpackage.afn afn = afd.b.e;
         defpackage.aft aft = afd.b.D;
         return false;

@@ -3,9 +3,9 @@ package defpackage;
 /* renamed from: aoe reason: default package */
 /* compiled from: PG */
 public interface aoe {
-    public static final defpackage.aof a = defpackage.aof.a(null, null);
+    public static final AbsActivityConfig a = AbsActivityConfig.a(null, null);
 
-    defpackage.aof a(android.content.Context context, java.lang.String str);
+    AbsActivityConfig a(android.content.Context context, java.lang.String str);
 
     java.lang.String a(android.content.Context context);
 

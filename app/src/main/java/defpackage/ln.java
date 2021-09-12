@@ -5,9 +5,9 @@ package defpackage;
 public abstract class ln {
     public abstract Fragment findFragmentById(int i);
 
-    public abstract Fragment a(java.lang.String str);
+    public abstract Fragment findFragmentByTag(java.lang.String str);
 
-    public abstract defpackage.mj a();
+    public abstract FragmentTransaction beginTransaction();
 
     public abstract void a(java.lang.String str, java.io.FileDescriptor fileDescriptor, java.io.PrintWriter printWriter, java.lang.String[] strArr);
 

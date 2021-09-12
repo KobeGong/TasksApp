@@ -1,5 +1,7 @@
 package defpackage;
 
+import java.util.concurrent.Executors;
+
 /* renamed from: cef reason: default package */
 /* compiled from: PG */
 public final class cef implements defpackage.ecz {
@@ -30,7 +32,7 @@ public final class cef implements defpackage.ecz {
         defpackage.cql a2 = defpackage.bsh.a(bqw);
         defpackage.cdv cdv = new defpackage.cdv(cdf);
         defpackage.cdk cdk = new defpackage.cdk(0);
-        cdk.e = new defpackage.cqq(new defpackage.cqu(new defpackage.cqs(new defpackage.cqv(context, defpackage.cub.a(java.util.concurrent.Executors.newSingleThreadExecutor()))), new defpackage.cqt()));
+        cdk.e = new defpackage.cqq(new defpackage.cqu(new defpackage.cqs(new defpackage.cqv(context, defpackage.cub.a(Executors.newSingleThreadExecutor()))), new defpackage.cqt()));
         defpackage.cdi cdi = new defpackage.cdi(0);
         cdi.e = new defpackage.cea(cdv);
         cdi.d = new defpackage.ceb(cdv);
@@ -42,24 +44,24 @@ public final class cef implements defpackage.ecz {
         cdi.c = new defpackage.cee(cdv);
         java.lang.String str = "";
         if (cdi.a == null) {
-            str = java.lang.String.valueOf(str).concat(" myAccountClickListener");
+            str = str.concat(" myAccountClickListener");
         }
         if (cdi.b == null) {
-            str = java.lang.String.valueOf(str).concat(" privacyPolicyClickListener");
+            str = str.concat(" privacyPolicyClickListener");
         }
         if (cdi.c == null) {
-            str = java.lang.String.valueOf(str).concat(" termsOfServiceClickListener");
+            str = str.concat(" termsOfServiceClickListener");
         }
         if (cdi.d == null) {
-            str = java.lang.String.valueOf(str).concat(" useAnotherAccountClickListener");
+            str = str.concat(" useAnotherAccountClickListener");
         }
         if (cdi.e == null) {
-            str = java.lang.String.valueOf(str).concat(" manageAccountsClickListener");
+            str = str.concat(" manageAccountsClickListener");
         }
         if (!str.isEmpty()) {
             java.lang.String str2 = "Missing required properties:";
-            java.lang.String valueOf = java.lang.String.valueOf(str);
-            throw new java.lang.IllegalStateException(valueOf.length() != 0 ? str2.concat(valueOf) : new java.lang.String(str2));
+            java.lang.String valueOf = str;
+            throw new java.lang.IllegalStateException(valueOf.length() != 0 ? str2.concat(valueOf) : str2);
         }
         cdk.c = new defpackage.cdn(cdi.a, cdi.b, cdi.c, cdi.d, cdi.e);
         cdk.b = cdf;
@@ -71,25 +73,25 @@ public final class cef implements defpackage.ecz {
         cdk.d = new defpackage.cds(context, bsa, a2);
         java.lang.String str3 = "";
         if (cdk.a == null) {
-            str3 = java.lang.String.valueOf(str3).concat(" accountsModel");
+            str3 = str3.concat(" accountsModel");
         }
         if (cdk.b == null) {
-            str3 = java.lang.String.valueOf(str3).concat(" accountConverter");
+            str3 = str3.concat(" accountConverter");
         }
         if (cdk.c == null) {
-            str3 = java.lang.String.valueOf(str3).concat(" clickListeners");
+            str3 = str3.concat(" clickListeners");
         }
         if (cdk.d == null) {
-            str3 = java.lang.String.valueOf(str3).concat(" avatarRetriever");
+            str3 = str3.concat(" avatarRetriever");
         }
         if (cdk.e == null) {
-            str3 = java.lang.String.valueOf(str3).concat(" monogramRenderer");
+            str3 = str3.concat(" monogramRenderer");
         }
         if (str3.isEmpty()) {
-            return (defpackage.cdj) defpackage.dgv.a((java.lang.Object) new defpackage.cdo(cdk.a, cdk.b, cdk.c, cdk.d, cdk.e), "Cannot return null from a non-@Nullable @Provides method");
+            return dgv.a(new cdo(cdk.a, cdk.b, cdk.c, cdk.d, cdk.e), "Cannot return null from a non-@Nullable @Provides method");
         }
         java.lang.String str4 = "Missing required properties:";
-        java.lang.String valueOf2 = java.lang.String.valueOf(str3);
-        throw new java.lang.IllegalStateException(valueOf2.length() != 0 ? str4.concat(valueOf2) : new java.lang.String(str4));
+        java.lang.String valueOf2 = str3;
+        throw new java.lang.IllegalStateException(valueOf2.length() != 0 ? str4.concat(valueOf2) : str4);
     }
 }

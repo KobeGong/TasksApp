@@ -2,7 +2,7 @@ package defpackage;
 
 /* renamed from: afd reason: default package */
 /* compiled from: PG */
-public abstract class afd {
+public abstract class LayoutManager {
     public defpackage.acm a;
     public android.support.v7.widget.RecyclerView b;
     public defpackage.ahl c = new defpackage.ahl(this.n);
@@ -165,15 +165,15 @@ public abstract class afd {
 
     /* access modifiers changed from: 0000 */
     public final void a(android.view.View view, int i2, boolean z) {
-        defpackage.afv c2 = android.support.v7.widget.RecyclerView.c(view);
-        if (z || c2.m()) {
+        RecyclerViewHolder c2 = android.support.v7.widget.RecyclerView.getChildViewHolderInt(view);
+        if (z || c2.isRemoved()) {
             this.b.h.b(c2);
         } else {
             this.b.h.c(c2);
         }
         defpackage.afh afh = (defpackage.afh) view.getLayoutParams();
-        if (c2.g() || c2.e()) {
-            if (c2.e()) {
+        if (c2.g() || c2.isScrap()) {
+            if (c2.isScrap()) {
                 c2.f();
             } else {
                 c2.h();
@@ -185,29 +185,29 @@ public abstract class afd {
                 i2 = this.a.a();
             }
             if (c3 == -1) {
-                throw new java.lang.IllegalStateException("Added View has RecyclerView as parent but view is not a real child. Unfiltered index:" + this.b.indexOfChild(view) + this.b.a());
+                throw new java.lang.IllegalStateException("Added View has RecyclerView as parent but view is not a real child. Unfiltered index:" + this.b.indexOfChild(view) + this.b.exceptionLabel());
             } else if (c3 != i2) {
-                defpackage.afd afd = this.b.l;
+                LayoutManager afd = this.b.mLayout;
                 android.view.View e2 = afd.e(c3);
                 if (e2 == null) {
                     throw new java.lang.IllegalArgumentException("Cannot move a child from non-existing index:" + c3 + afd.b.toString());
                 }
                 afd.d(c3);
                 defpackage.afh afh2 = (defpackage.afh) e2.getLayoutParams();
-                defpackage.afv c4 = android.support.v7.widget.RecyclerView.c(e2);
-                if (c4.m()) {
+                RecyclerViewHolder c4 = android.support.v7.widget.RecyclerView.getChildViewHolderInt(e2);
+                if (c4.isRemoved()) {
                     afd.b.h.b(c4);
                 } else {
                     afd.b.h.c(c4);
                 }
-                afd.a.a(e2, i2, afh2, c4.m());
+                afd.a.a(e2, i2, afh2, c4.isRemoved());
             }
         } else {
             this.a.a(view, i2, false);
             afh.c = true;
         }
         if (afh.d) {
-            c2.a.invalidate();
+            c2.itemView.invalidate();
             afh.d = false;
         }
     }
@@ -234,8 +234,8 @@ public abstract class afd {
         int k2 = k();
         for (int i3 = 0; i3 < k2; i3++) {
             android.view.View e2 = e(i3);
-            defpackage.afv c2 = android.support.v7.widget.RecyclerView.c(e2);
-            if (c2 != null && c2.c() == i2 && !c2.b() && (this.b.D.g || !c2.m())) {
+            RecyclerViewHolder c2 = android.support.v7.widget.RecyclerView.getChildViewHolderInt(e2);
+            if (c2 != null && c2.c() == i2 && !c2.shouldIgnore() && (this.b.D.g || !c2.isRemoved())) {
                 return e2;
             }
         }
@@ -309,11 +309,11 @@ public abstract class afd {
     public final void a(defpackage.afn afn) {
         int size = afn.a.size();
         for (int i2 = size - 1; i2 >= 0; i2--) {
-            android.view.View view = ((defpackage.afv) afn.a.get(i2)).a;
-            defpackage.afv c2 = android.support.v7.widget.RecyclerView.c(view);
-            if (!c2.b()) {
+            android.view.View view = ((RecyclerViewHolder) afn.a.get(i2)).itemView;
+            RecyclerViewHolder c2 = android.support.v7.widget.RecyclerView.getChildViewHolderInt(view);
+            if (!c2.shouldIgnore()) {
                 c2.a(false);
-                if (c2.n()) {
+                if (c2.isTmpDetached()) {
                     this.b.removeDetachedView(view, false);
                 }
                 if (this.b.z != null) {
@@ -324,8 +324,8 @@ public abstract class afd {
             }
         }
         afn.a.clear();
-        if (afn.b != null) {
-            afn.b.clear();
+        if (afn.mChangedScrap != null) {
+            afn.mChangedScrap.clear();
         }
         if (size > 0) {
             this.b.invalidate();
@@ -625,7 +625,7 @@ public abstract class afd {
 
     public final void b(defpackage.afn afn) {
         for (int k2 = k() - 1; k2 >= 0; k2--) {
-            if (!android.support.v7.widget.RecyclerView.c(e(k2)).b()) {
+            if (!android.support.v7.widget.RecyclerView.getChildViewHolderInt(e(k2)).shouldIgnore()) {
                 a(k2, afn);
             }
         }
@@ -640,8 +640,8 @@ public abstract class afd {
                 z = false;
             }
             accessibilityEvent.setScrollable(z);
-            if (this.b.k != null) {
-                accessibilityEvent.setItemCount(this.b.k.a());
+            if (this.b.adapter != null) {
+                accessibilityEvent.setItemCount(this.b.adapter.getItemCount());
             }
         }
     }
