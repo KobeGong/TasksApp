@@ -31,7 +31,7 @@ final /* synthetic */ class ang implements java.lang.Runnable {
                 } else {
                     cyu.a((java.lang.Object) null);
                     if (anw == defpackage.anw.SERVER_CHANGES) {
-                        defpackage.alq.a().a(anu.a.a);
+                        defpackage.alq.get().a(anu.a.a);
                     }
                 }
                 return;

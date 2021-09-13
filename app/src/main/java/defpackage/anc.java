@@ -293,7 +293,7 @@ public final class anc {
         defpackage.aka.a().b();
         defpackage.amb amb = new defpackage.amb(aiz, a2, defpackage.akf.a());
         amb.c = account;
-        defpackage.amj amj = new defpackage.amj(defpackage.aiq.a().b(account.name), this.e, this.c);
+        defpackage.amj amj = new defpackage.amj(defpackage.aiq.get().b(account.name), this.e, this.c);
         amj.a();
         defpackage.anu anu = new defpackage.anu(alv, amb, amj);
         java.util.ArrayList a3 = defpackage.cky.a(anu.a.b());

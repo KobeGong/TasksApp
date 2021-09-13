@@ -73,7 +73,7 @@ public final class amw implements defpackage.amn {
             return false;
         }
         defpackage.amw amw = (defpackage.amw) obj;
-        if (!defpackage.cru.d(this.a, amw.a) || !defpackage.cru.d(this.b, amw.b) || !defpackage.cru.d(this.c, amw.c) || !defpackage.cru.d(this.d, amw.d)) {
+        if (!defpackage.cru.equals(this.a, amw.a) || !defpackage.cru.equals(this.b, amw.b) || !defpackage.cru.equals(this.c, amw.c) || !defpackage.cru.equals(this.d, amw.d)) {
             return false;
         }
         return true;
@@ -98,7 +98,7 @@ public final class amw implements defpackage.amn {
         alv.a(this.a, this.e);
         this.e = null;
         this.f = 0;
-        defpackage.alq.a().a(alv.a, this.a);
+        defpackage.alq.get().a(alv.a, this.a);
     }
 
     public final java.lang.String a(android.content.Context context) {

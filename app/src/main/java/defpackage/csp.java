@@ -89,7 +89,7 @@ public abstract class csp extends defpackage.csn implements java.util.List, java
         }
         java.util.ListIterator listIterator = listIterator();
         while (listIterator.hasNext()) {
-            if (defpackage.cru.d(obj, listIterator.next())) {
+            if (defpackage.cru.equals(obj, listIterator.next())) {
                 return listIterator.previousIndex();
             }
         }
@@ -103,7 +103,7 @@ public abstract class csp extends defpackage.csn implements java.util.List, java
         if (!(this instanceof java.util.RandomAccess)) {
             java.util.ListIterator listIterator = listIterator(size());
             while (listIterator.hasPrevious()) {
-                if (defpackage.cru.d(obj, listIterator.previous())) {
+                if (defpackage.cru.equals(obj, listIterator.previous())) {
                     return listIterator.nextIndex();
                 }
             }
@@ -195,7 +195,7 @@ public abstract class csp extends defpackage.csn implements java.util.List, java
                             }
                             java.lang.Object obj2 = csp.get(i);
                             i++;
-                            if (!defpackage.cru.d(obj2, it.next())) {
+                            if (!defpackage.cru.equals(obj2, it.next())) {
                                 break;
                             }
                         } else if (!it.hasNext()) {
@@ -205,7 +205,7 @@ public abstract class csp extends defpackage.csn implements java.util.List, java
                 } else {
                     int i2 = 0;
                     while (i2 < size) {
-                        if (defpackage.cru.d(get(i2), list.get(i2))) {
+                        if (defpackage.cru.equals(get(i2), list.get(i2))) {
                             i2++;
                         }
                     }

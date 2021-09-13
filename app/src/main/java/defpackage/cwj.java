@@ -234,7 +234,7 @@ class cwj extends defpackage.cwe {
             return false;
         }
         defpackage.cwj cwj = (defpackage.cwj) obj;
-        if (!this.c.equals(cwj.c) || !defpackage.cru.d(this.d, cwj.d)) {
+        if (!this.c.equals(cwj.c) || !defpackage.cru.equals(this.d, cwj.d)) {
             return false;
         }
         return true;

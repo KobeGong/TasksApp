@@ -20,6 +20,7 @@ import com.google.android.apps.tasks.common.TaskApplication;
 import java.util.Iterator;
 import java.util.concurrent.Executor;
 
+import defpackage.AbsAccountSetupResult;
 import defpackage.AbsDeviceOwner;
 import defpackage.AddTaskFragment;
 import defpackage.BaseTaskAdapter;
@@ -207,11 +208,11 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
     }
 
     public final void a(java.lang.String str, java.lang.String str2, int i2) {
-        a(EditTaskFragment.newInstance(str, str2, true, i2));
+        showFragment(EditTaskFragment.newInstance(str, str2, true, i2));
     }
 
     public final void a(java.lang.String str, java.lang.String str2) {
-        a(EditTaskFragment.newInstance(str, str2, false, -1));
+        showFragment(EditTaskFragment.newInstance(str, str2, false, -1));
     }
 
     public final void d(boolean z2) {
@@ -337,7 +338,7 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
 
     public final void a(AbsDeviceOwner deviceOwner, boolean z2, defpackage.aoe aoe) {
         boolean z3;
-        int i2;
+        int versionCode;
         if (!b(deviceOwner)) {
             AbsDeviceOwner cdu2 = (AbsDeviceOwner) this.q.e();
             if (!b(cdu2)) {
@@ -367,9 +368,9 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
             hideSplashView();
             return;
         }
-        Fragment a = getSupportFragmentManager().findFragmentById(R.id.fragment_container);
-        z3 = defpackage.any.a().c() != null && deviceOwner.accountName().equals(defpackage.any.a().c().b());
-        if (!z3 || !(a instanceof WelcomeFragment) || z2) {
+        Fragment mainFragment = getSupportFragmentManager().findFragmentById(R.id.fragment_container);
+        z3 = defpackage.any.get().c() != null && deviceOwner.accountName().equals(defpackage.any.get().c().b());
+        if (!z3 || !(mainFragment instanceof WelcomeFragment) || z2) {
             if (!z3) {
                 this.tasksFragment.a(null, null, true);
                 this.h = null;
@@ -383,32 +384,30 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
             this.q.b(this.H);
             this.q.a(deviceOwner);
             this.q.a(this.H);
-            java.lang.String b = deviceOwner.accountName();
             defpackage.cyu cyu = new defpackage.cyu();
-            defpackage.any.a().d.b(b);
-            android.accounts.Account a2 = defpackage.ajd.getAccountByName(this, b);
-            if (a2 == null) {
-                cyu.a(defpackage.ajh.c());
+            defpackage.any.get().d.b(deviceOwner.accountName());
+            Account account = defpackage.ajd.getAccountByName(this, deviceOwner.accountName());
+            if (account == null) {
+                cyu.a(AbsAccountSetupResult.failure());
             } else {
                 if (this.s != null && this.s.b()) {
                     this.s.a(3);
                 }
-                defpackage.aiq.a().a(a2.name);
+                defpackage.aiq.get().a(account.name);
                 defpackage.alm.a();
-                defpackage.alq.a().c = a2.name;
-                defpackage.any.a().c(a2);
-                ((defpackage.ajy) defpackage.ajt.a().b()).a(a2.name);
-                defpackage.cyi b2 = defpackage.any.a().b();
-                defpackage.cyi a3 = defpackage.ain.a(this, a2.name);
+                defpackage.alq.get().accountName = account.name;
+                defpackage.any.get().c(account);
+                ((defpackage.ajy) defpackage.ajt.a().b()).a(account.name);
+                defpackage.cyi b2 = defpackage.any.get().b();
+                defpackage.cyi a3 = defpackage.ain.a(this, account.name);
                 defpackage.cyl cyl = TaskApplication.getApplication().a;
-                java.util.Locale locale = getResources().getConfiguration().locale;
                 try {
-                    i2 = getPackageManager().getPackageInfo(getPackageName(), 0).versionCode;
+                    versionCode = getPackageManager().getPackageInfo(getPackageName(), 0).versionCode;
                 } catch (PackageManager.NameNotFoundException e) {
                     defpackage.azb.a("Package info not found for given package name. Cannot get version code", e, new java.lang.String[0]);
-                    i2 = 0;
+                    versionCode = 0;
                 }
-                new defpackage.cye(defpackage.csp.a(new defpackage.cyi[]{b2, a3})).a(new defpackage.aqo(this, i2, a3, cyu, locale), cyl);
+                new defpackage.cye(defpackage.csp.a(new defpackage.cyi[]{b2, a3})).a(new defpackage.aqo(this, versionCode, a3, cyu, getResources().getConfiguration().locale), cyl);
             }
             cyu.a(new defpackage.aoy(this, aoe, deviceOwner, cyu), TaskApplication.getApplication().a);
             return;
@@ -425,7 +424,7 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
 
     /* access modifiers changed from: protected */
     public final void j() {
-        defpackage.anc c = defpackage.any.a().c();
+        defpackage.anc c = defpackage.any.get().c();
         if (c != null && !c.a()) {
             c.a.a.c();
             a((AbsDeviceOwner) this.q.c());
@@ -451,8 +450,8 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
         } else {
             welcomeFragment = WelcomeFragment.newInstance(state);
             if (Build.VERSION.SDK_INT >= 21 && this.selectedFragment != null && !(this.selectedFragment instanceof WelcomeFragment)) {
-                this.selectedFragment.b(new android.transition.Fade());
-                welcomeFragment.a_(new android.transition.Fade());
+                this.selectedFragment.setExitTransition(new android.transition.Fade());
+                welcomeFragment.setEnterTranstion(new android.transition.Fade());
             }
         }
         setFragmentSelected(welcomeFragment);
@@ -466,11 +465,11 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
         return this.coordinatorLayout;
     }
 
-    public final void a(Fragment fragment) {
+    public final void showFragment(Fragment fragment) {
         setFragmentSelected(fragment);
         if (Build.VERSION.SDK_INT >= 21) {
-            fragment.a_(new android.transition.Fade());
-            this.tasksFragment.b(new android.transition.Fade());
+            fragment.setEnterTranstion(new android.transition.Fade());
+            this.tasksFragment.setExitTransition(new android.transition.Fade());
         }
         getSupportFragmentManager().beginTransaction()
                 .replace(fragment)
@@ -585,13 +584,13 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
 
     public final void a(java.lang.String str) {
         defpackage.dcb dcb;
-        java.util.List<defpackage.dcb> d = defpackage.any.a().c().d();
+        java.util.List<defpackage.dcb> d = defpackage.any.get().c().d();
         java.lang.String str2 = d.get(0).b;
         if (TextUtils.isEmpty(str)) {
             str = this.tasksFragment.X;
         }
         if (TextUtils.isEmpty(str)) {
-            str = defpackage.ain.b(this, defpackage.any.a().c().b()).a();
+            str = defpackage.ain.b(this, defpackage.any.get().c().b()).a();
         }
         if (TextUtils.isEmpty(str)) {
             str = str2;
@@ -618,14 +617,14 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
         boolean z2 = this.h == null || !this.h.b.equals(dcb.b);
         this.h = dcb;
         if (z2) {
-            defpackage.any.a().c().a(dcb.b);
-            this.tasksFragment.a(dcb.b, defpackage.ain.b(this, defpackage.any.a().c().b()).b(dcb.b), true);
+            defpackage.any.get().c().a(dcb.b);
+            this.tasksFragment.a(dcb.b, defpackage.ain.b(this, defpackage.any.get().c().b()).b(dcb.b), true);
         }
         Fragment a = getSupportFragmentManager().findFragmentById(R.id.fragment_container);
         if (a == null || (a instanceof TasksFragment)) {
             c(this.h);
         }
-        defpackage.ain.b(this, defpackage.any.a().c().b()).a(dcb.b);
+        defpackage.ain.b(this, defpackage.any.get().c().b()).a(dcb.b);
         if (z2) {
             this.appBarLayout.a(true, true, true);
         }
@@ -652,7 +651,7 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
 
     /* access modifiers changed from: protected */
     public final void a(defpackage.ajn ajn) {
-        defpackage.dcb c = defpackage.any.a().c().c(ajn.a());
+        defpackage.dcb c = defpackage.any.get().c().c(ajn.a());
         if (c != null) {
             b(c);
         }
@@ -711,20 +710,20 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
     /* access modifiers changed from: protected */
     public void onResume() {
         super.onResume();
-        defpackage.alq.a().b(this.t);
-        defpackage.alq.a().a(this.t);
+        defpackage.alq.get().b(this.t);
+        defpackage.alq.get().a(this.t);
     }
 
     /* access modifiers changed from: protected */
     public void onPause() {
-        defpackage.alq.a().b(this.t);
+        defpackage.alq.get().b(this.t);
         super.onPause();
     }
 
     public void onBackPressed() {
         defpackage.ln c = getSupportFragmentManager();
         Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.fragment_container);
-        boolean z2 = fragment instanceof WelcomeFragment && ((WelcomeFragment) fragment).state == defpackage.bg.Q && !defpackage.aiw.b(this).a();
+        boolean z2 = fragment instanceof WelcomeFragment && ((WelcomeFragment) fragment).state == defpackage.bg.Q && !defpackage.aiw.getInstance(this).isOnboardingDismiss();
         if (z2) {
             finish();
             return;
@@ -765,16 +764,16 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
                         android.os.Bundle bundle = new android.os.Bundle();
                         bundle.putString("list_id", str);
                         arv.e(bundle);
-                        a(arv);
+                        showFragment(arv);
                         return;
                     }
                     return;
                 case 3:
                     java.lang.String str2 = this.tasksFragment.X;
                     if (!TextUtils.isEmpty(str2)) {
-                        int size = defpackage.any.a().c().d(str2).getTasks().size();
+                        int size = defpackage.any.get().c().d(str2).getTasks().size();
                         if (size == 0) {
-                            defpackage.any.a().c().a(str2, size, defpackage.ajn.a(str2));
+                            defpackage.any.get().c().a(str2, size, defpackage.ajn.a(str2));
                             a((java.lang.String) null);
                             return;
                         }
@@ -795,7 +794,7 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
                     TasksFragment auj = (TasksFragment) a;
                     java.lang.String str3 = auj.X;
                     int i4 = 0;
-                    for (defpackage.dby a2 : defpackage.any.a().c().d(this.h.b).getTasks()) {
+                    for (defpackage.dby a2 : defpackage.any.get().c().d(this.h.b).getTasks()) {
                         if (defpackage.ajd.a(a2)) {
                             i3 = i4 + 1;
                         } else {
@@ -840,9 +839,9 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
     private final void a(defpackage.ajr orderType) {
         if (!r()) {
             this.tasksFragment.a(this.h.b, orderType, true);
-            defpackage.ain b = defpackage.ain.b(this, defpackage.any.a().c().b());
+            defpackage.ain b = defpackage.ain.b(this, defpackage.any.get().c().b());
             java.lang.String str = this.h.b;
-            android.content.SharedPreferences.Editor edit = b.a.edit();
+            android.content.SharedPreferences.Editor edit = b.preferences.edit();
             java.lang.String valueOf = "task-list-order:";
             java.lang.String valueOf2 = java.lang.String.valueOf(str);
             edit.putString(valueOf2.length() != 0 ? valueOf.concat(valueOf2) : valueOf, orderType.name());
@@ -936,8 +935,8 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
             onBackPressed();
             java.lang.String str4 = asi.listId;
             java.lang.String str5 = asi.taskId;
-            if (!defpackage.cru.d(str3, str4)) {
-                java.util.Iterator it = defpackage.any.a().c().d(str4).getStructure().a.iterator();
+            if (!defpackage.cru.equals(str3, str4)) {
+                java.util.Iterator it = defpackage.any.get().c().d(str4).getStructure().a.iterator();
                 while (true) {
                     if (!it.hasNext()) {
                         i2 = 0;
@@ -949,9 +948,9 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
                         break;
                     }
                 }
-                ajl = new defpackage.ajl(defpackage.any.a().c().c(str4), i2 + 1);
+                ajl = new defpackage.ajl(defpackage.any.get().c().c(str4), i2 + 1);
             }
-            defpackage.any.a().c().a(str4, str5, ajl);
+            defpackage.any.get().c().a(str4, str5, ajl);
             if (this.tasksFragment != null) {
                 TasksFragment auj = this.tasksFragment;
                 if (auj.l() && !auj.mHidden && auj.mView != null && auj.mView.getWindowToken() != null && auj.mView.getVisibility() == 0) {

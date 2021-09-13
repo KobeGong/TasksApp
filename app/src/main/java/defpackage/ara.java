@@ -7,6 +7,6 @@ final class ara extends defpackage.arl {
     }
 
     public final /* synthetic */ void a(int i) {
-        defpackage.aiq.a().b();
+        defpackage.aiq.get().b();
     }
 }

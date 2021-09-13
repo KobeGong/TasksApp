@@ -12,7 +12,7 @@ final /* synthetic */ class alr implements java.lang.Runnable {
 
     public final void run() {
         defpackage.alq alq = this.a;
-        if (defpackage.cru.d(this.b, alq.c)) {
+        if (defpackage.cru.equals(this.b, alq.accountName)) {
             java.util.ArrayList a2 = defpackage.cky.a((java.lang.Iterable) alq.a);
             int size = a2.size();
             int i = 0;

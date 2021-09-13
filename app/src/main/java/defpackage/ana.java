@@ -59,7 +59,7 @@ public final class ana extends defpackage.alp {
             return false;
         }
         defpackage.ana ana = (defpackage.ana) obj;
-        if (!defpackage.cru.d(this.a, ana.a) || !defpackage.cru.d(this.b, ana.b) || !defpackage.cru.d(this.c, ana.c)) {
+        if (!defpackage.cru.equals(this.a, ana.a) || !defpackage.cru.equals(this.b, ana.b) || !defpackage.cru.equals(this.c, ana.c)) {
             return false;
         }
         return true;

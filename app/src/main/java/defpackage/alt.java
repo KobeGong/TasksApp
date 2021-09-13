@@ -16,7 +16,7 @@ final /* synthetic */ class alt implements java.lang.Runnable {
         defpackage.alq alq = this.a;
         java.lang.String str = this.b;
         java.lang.String str2 = this.c;
-        if (defpackage.cru.d(str, alq.c)) {
+        if (defpackage.cru.equals(str, alq.accountName)) {
             java.util.ArrayList a2 = defpackage.cky.a((java.lang.Iterable) alq.a);
             int size = a2.size();
             int i = 0;

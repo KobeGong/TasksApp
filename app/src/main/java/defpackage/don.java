@@ -48,7 +48,7 @@ public final class don {
             return false;
         }
         defpackage.don don = (defpackage.don) obj;
-        if (!defpackage.cru.d(this.b, don.b) || !defpackage.cru.d(this.d, don.d) || !defpackage.cru.d(null, null) || this.e != don.e) {
+        if (!defpackage.cru.equals(this.b, don.b) || !defpackage.cru.equals(this.d, don.d) || !defpackage.cru.equals(null, null) || this.e != don.e) {
             return false;
         }
         return true;

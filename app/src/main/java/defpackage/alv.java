@@ -608,7 +608,7 @@ public final class alv {
             boolean z2 = false;
             while (!z2 && i < diq.size()) {
                 defpackage.dcf dcf = (defpackage.dcf) diq.get(i);
-                if (defpackage.cru.d(str2, dcf.b)) {
+                if (defpackage.cru.equals(str2, dcf.b)) {
                     defpackage.dce b3 = ajq.getStructure();
                     defpackage.dii dii = (defpackage.dii) b3.a(defpackage.bg.ao);
                     dii.a((defpackage.dih) b3);
@@ -637,7 +637,7 @@ public final class alv {
                 } else {
                     int i2 = 0;
                     while (!z2 && i2 < dcf.c.size()) {
-                        if (defpackage.cru.d(str2, ((defpackage.dcf) dcf.c.get(i2)).b)) {
+                        if (defpackage.cru.equals(str2, ((defpackage.dcf) dcf.c.get(i2)).b)) {
                             defpackage.dce b4 = ajq.getStructure();
                             defpackage.dii dii3 = (defpackage.dii) b4.a(defpackage.bg.ao);
                             dii3.a((defpackage.dih) b4);
@@ -918,7 +918,7 @@ public final class alv {
             if (i2 >= list.size()) {
                 return -1;
             }
-            if (defpackage.cru.d(str, ((defpackage.dby) list.get(i2)).d)) {
+            if (defpackage.cru.equals(str, ((defpackage.dby) list.get(i2)).d)) {
                 return i2;
             }
             i = i2 + 1;
@@ -935,7 +935,7 @@ public final class alv {
             if (i2 >= this.b.size()) {
                 return -1;
             }
-            if (defpackage.cru.d(str, ((defpackage.dcb) this.b.get(i2)).b)) {
+            if (defpackage.cru.equals(str, ((defpackage.dcb) this.b.get(i2)).b)) {
                 return i2;
             }
             i = i2 + 1;

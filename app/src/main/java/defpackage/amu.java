@@ -91,8 +91,8 @@ public final class amu implements defpackage.amn {
         }
         alv.d(this.c, this.d);
         alv.a(this.a, this.f);
-        defpackage.alq.a().a(alv.a, this.c);
-        defpackage.alq.a().a(alv.a, this.a);
+        defpackage.alq.get().a(alv.a, this.c);
+        defpackage.alq.get().a(alv.a, this.a);
     }
 
     public final java.lang.String a(android.content.Context context) {

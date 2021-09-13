@@ -54,7 +54,7 @@ public final class cqz {
             return false;
         }
         defpackage.cqz cqz = (defpackage.cqz) obj;
-        if (!defpackage.cru.d(this.c, cqz.c) || !defpackage.cru.d(java.lang.Boolean.valueOf(this.d), java.lang.Boolean.valueOf(cqz.d))) {
+        if (!defpackage.cru.equals(this.c, cqz.c) || !defpackage.cru.equals(java.lang.Boolean.valueOf(this.d), java.lang.Boolean.valueOf(cqz.d))) {
             return false;
         }
         return true;

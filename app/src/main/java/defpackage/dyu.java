@@ -46,7 +46,7 @@ final class dyu {
             return false;
         }
         defpackage.dyu dyu = (defpackage.dyu) obj;
-        if (this.a == dyu.a && java.lang.Double.compare(this.d, dyu.d) == 0 && java.lang.Double.compare(this.b, dyu.b) == 0 && java.lang.Double.compare(this.c, dyu.c) == 0 && defpackage.cru.d(this.e, dyu.e)) {
+        if (this.a == dyu.a && java.lang.Double.compare(this.d, dyu.d) == 0 && java.lang.Double.compare(this.b, dyu.b) == 0 && java.lang.Double.compare(this.c, dyu.c) == 0 && defpackage.cru.equals(this.e, dyu.e)) {
             return true;
         }
         return false;

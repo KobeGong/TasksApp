@@ -80,7 +80,7 @@ public class TaskApplication extends defpackage.dmo implements defpackage.ajg {
         java.lang.String str = "1000131241323";
         defpackage.cyl cyl = this.a;
         defpackage.cym cym = this.i;
-        defpackage.any a5 = defpackage.any.a();
+        defpackage.any a5 = defpackage.any.get();
         defpackage.bxy bxy = new defpackage.bxy();
         if (this == null) {
             throw new java.lang.NullPointerException("Null context");

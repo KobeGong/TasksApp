@@ -80,6 +80,6 @@ public final class amr implements defpackage.amn {
         alv.a(this.a, this.c);
         this.c = null;
         this.d = 0;
-        defpackage.alq.a().a(alv.a, this.a);
+        defpackage.alq.get().a(alv.a, this.a);
     }
 }

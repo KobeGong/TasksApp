@@ -42,7 +42,7 @@ final class fs implements defpackage.zf {
                 z = false;
             }
             if (z) {
-                taskListsActivity.a((Fragment) new EditListFragment());
+                taskListsActivity.showFragment((Fragment) new EditListFragment());
             } else if (itemId == 2) {
                 taskListsActivity.startActivity(new android.content.Intent(taskListsActivity, com.google.android.libraries.social.licenses.LicenseMenuActivity.class));
             } else {

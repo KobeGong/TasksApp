@@ -59,7 +59,7 @@ public final class amv extends defpackage.alp {
             return false;
         }
         defpackage.amv amv = (defpackage.amv) obj;
-        if (!defpackage.cru.d(this.a, amv.a) || !defpackage.cru.d(this.b, amv.b) || !defpackage.cru.d(this.c, amv.c)) {
+        if (!defpackage.cru.equals(this.a, amv.a) || !defpackage.cru.equals(this.b, amv.b) || !defpackage.cru.equals(this.c, amv.c)) {
             return false;
         }
         return true;

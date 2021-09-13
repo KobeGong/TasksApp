@@ -364,7 +364,7 @@ public final class DueDateTaskAdapter extends BaseTaskAdapter {
         } else {
             dmk2 = dca2.d;
         }
-        if (!defpackage.cru.d(dmk, dmk2)) {
+        if (!defpackage.cru.equals(dmk, dmk2)) {
             h();
             this.mObservable.b();
             return;

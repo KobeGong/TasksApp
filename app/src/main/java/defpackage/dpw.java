@@ -120,11 +120,11 @@ public final class dpw {
     }
 
     public final defpackage.dpw b(java.lang.Throwable th) {
-        return defpackage.cru.d(this.n, th) ? this : new defpackage.dpw(this.l, this.m, th);
+        return defpackage.cru.equals(this.n, th) ? this : new defpackage.dpw(this.l, this.m, th);
     }
 
     public final defpackage.dpw a(java.lang.String str) {
-        return defpackage.cru.d(this.m, str) ? this : new defpackage.dpw(this.l, str, this.n);
+        return defpackage.cru.equals(this.m, str) ? this : new defpackage.dpw(this.l, str, this.n);
     }
 
     public final defpackage.dpw b(java.lang.String str) {

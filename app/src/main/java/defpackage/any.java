@@ -16,7 +16,7 @@ public final class any implements defpackage.akd {
     private Account account;
     private final defpackage.cyl i;
 
-    public static synchronized defpackage.any a() {
+    public static synchronized defpackage.any get() {
         synchronized (defpackage.any.class) {
             defpackage.cld.b(a != null);
         }
@@ -60,7 +60,7 @@ public final class any implements defpackage.akd {
     }
 
     public final synchronized void c(Account account) {
-        if (this.g == null || !defpackage.cru.d(this.account.name, account.name)) {
+        if (this.g == null || !defpackage.cru.equals(this.account.name, account.name)) {
             this.account = account;
             this.g = d(account);
             this.d.a(account.name);

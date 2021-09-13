@@ -28,7 +28,7 @@ public final /* synthetic */ class apn implements OnMenuItemClickListener {
             boolean r6 = r0.c()
             dcb r0 = r4.h
             if (r0 == 0) goto L_0x0081
-            any r0 = defpackage.any.a()
+            any r0 = defpackage.any.get()
             anc r0 = r0.c()
             dcb r7 = r4.h
             java.lang.String r7 = r7.b

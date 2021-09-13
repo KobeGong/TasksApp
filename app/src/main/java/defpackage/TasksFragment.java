@@ -120,8 +120,8 @@ public final class TasksFragment extends Fragment implements android.app.DatePic
         if (ajr == null) {
             ajr = aa;
         }
-        boolean z4 = !defpackage.cru.d(this.X, str);
-        z2 = z4 || !cru.d(this.Y, ajr);
+        boolean z4 = !defpackage.cru.equals(this.X, str);
+        z2 = z4 || !cru.equals(this.Y, ajr);
         this.X = str;
         this.Y = ajr;
         if (O()) {
@@ -164,7 +164,7 @@ public final class TasksFragment extends Fragment implements android.app.DatePic
             if (android.text.TextUtils.isEmpty(this.X)) {
                 d = AbsTaskListStructure.d();
             } else {
-                d = defpackage.any.a().c().d(this.X);
+                d = defpackage.any.get().c().d(this.X);
             }
             java.util.Iterator it = d.getStructure().a.iterator();
             loop0:
@@ -207,7 +207,7 @@ public final class TasksFragment extends Fragment implements android.app.DatePic
                 this.taskNotSyncView.animate().cancel();
                 this.taskNotSyncView.setAlpha(0.0f);
                 a(true);
-                defpackage.cyi a2 = defpackage.any.a().c().a(this.X);
+                defpackage.cyi a2 = defpackage.any.get().c().a(this.X);
                 a2.a(new defpackage.aup(this, a2), com.google.android.apps.tasks.common.TaskApplication.getApplication().a);
             }
             c(z);
@@ -220,13 +220,13 @@ public final class TasksFragment extends Fragment implements android.app.DatePic
 
     public final void onStart() {
         super.onStart();
-        defpackage.alq.a().b(this.al);
-        defpackage.alq.a().a(this.al);
+        defpackage.alq.get().b(this.al);
+        defpackage.alq.get().a(this.al);
         a(this.X, this.Y, false);
     }
 
     public final void onStop() {
-        defpackage.alq.a().b(this.al);
+        defpackage.alq.get().b(this.al);
         super.onStop();
     }
 
@@ -266,9 +266,9 @@ public final class TasksFragment extends Fragment implements android.app.DatePic
                 throw new defpackage.dkw();
             }
             defpackage.dmk dmk = (defpackage.dmk) dih4;
-            defpackage.dby a2 = defpackage.any.a().c().a(this.X, this.Z);
+            defpackage.dby a2 = defpackage.any.get().c().a(this.X, this.Z);
             if (a2 != null) {
-                defpackage.any.a().c().a(this.X, this.Z, dmk);
+                defpackage.any.get().c().a(this.X, this.Z, dmk);
                 BaseTaskAdapter atg = this.taskAdapter;
                 defpackage.dii dii = (defpackage.dii) a2.a(defpackage.bg.ao);
                 dii.a(a2);
@@ -380,7 +380,7 @@ public final class TasksFragment extends Fragment implements android.app.DatePic
     }
 
     public static defpackage.anc N() {
-        return defpackage.any.a().c();
+        return defpackage.any.get().c();
     }
 
     public final boolean O() {
@@ -390,9 +390,9 @@ public final class TasksFragment extends Fragment implements android.app.DatePic
     /* access modifiers changed from: 0000 */
     public final /* synthetic */ void P() {
         java.util.ArrayList arrayList = new java.util.ArrayList();
-        arrayList.add(defpackage.any.a().c().c());
+        arrayList.add(defpackage.any.get().c().c());
         if (!android.text.TextUtils.isEmpty(this.X)) {
-            arrayList.add(defpackage.any.a().c().a(this.X));
+            arrayList.add(defpackage.any.get().c().a(this.X));
         }
         new defpackage.cye(defpackage.csp.a((java.lang.Iterable) arrayList)).a(new defpackage.auo(this), com.google.android.apps.tasks.common.TaskApplication.getApplication().a);
     }

@@ -13,7 +13,7 @@ public final /* synthetic */ class apg implements android.content.DialogInterfac
     public final void onClick(android.content.DialogInterface dialogInterface, int i) {
         java.lang.String str = this.a;
         TasksFragment auj = this.b;
-        defpackage.any.a().c().e(str);
+        defpackage.any.get().c().e(str);
         auj.a(str, auj.Y, true);
     }
 }

@@ -6,7 +6,7 @@ public final class alq {
     private static defpackage.alq d;
     public java.util.List a = new java.util.ArrayList();
     public android.os.Handler b = new android.os.Handler(android.os.Looper.getMainLooper());
-    public java.lang.String c;
+    public java.lang.String accountName;
 
     private alq() {
     }
@@ -27,7 +27,7 @@ public final class alq {
         this.b.post(new defpackage.alt(this, str, str2));
     }
 
-    public static synchronized defpackage.alq a() {
+    public static synchronized defpackage.alq get() {
         defpackage.alq alq;
         synchronized (defpackage.alq.class) {
             if (d == null) {

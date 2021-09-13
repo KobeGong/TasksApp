@@ -17,7 +17,7 @@ public class arb extends Fragment {
     }
 
     public static defpackage.anc P() {
-        return defpackage.any.a().c();
+        return defpackage.any.get().c();
     }
 
     public final void b(android.view.View view) {

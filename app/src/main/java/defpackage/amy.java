@@ -57,7 +57,7 @@ public final class amy extends defpackage.alp {
             return false;
         }
         defpackage.amy amy = (defpackage.amy) obj;
-        if (!defpackage.cru.d(this.a, amy.a) || !defpackage.cru.d(this.b, amy.b)) {
+        if (!defpackage.cru.equals(this.a, amy.a) || !defpackage.cru.equals(this.b, amy.b)) {
             return false;
         }
         return true;

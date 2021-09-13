@@ -37,7 +37,7 @@ public final class ech {
             return false;
         }
         defpackage.ech ech = (defpackage.ech) obj;
-        if (this.s != ech.s || !defpackage.cru.d(this.t, ech.t)) {
+        if (this.s != ech.s || !defpackage.cru.equals(this.t, ech.t)) {
             return false;
         }
         return true;

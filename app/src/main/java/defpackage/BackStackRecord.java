@@ -4,7 +4,7 @@ import com.google.android.apps.tasks.R;
 
 /* renamed from: kv reason: default package */
 /* compiled from: PG */
-final class BackStackRecord extends FragmentTransaction implements defpackage.mc {
+final class BackStackRecord extends FragmentTransaction implements OpGenerator {
     public final FragmentManagerImpl mManager;
     public java.util.ArrayList ops = new java.util.ArrayList();
     public int mEnterAnim;
@@ -165,7 +165,7 @@ final class BackStackRecord extends FragmentTransaction implements defpackage.mc
         } else {
             this.l = -1;
         }
-        this.mManager.a((defpackage.mc) this, allowStateLoss);
+        this.mManager.enqueueAction((OpGenerator) this, allowStateLoss);
         return this.l;
     }
 

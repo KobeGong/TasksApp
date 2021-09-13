@@ -28,13 +28,13 @@ public final class ala extends defpackage.arb {
 
     public final void onStart() {
         super.onStart();
-        defpackage.alq.a().b(this.W);
-        defpackage.alq.a().a(this.W);
+        defpackage.alq.get().b(this.W);
+        defpackage.alq.get().a(this.W);
         c();
     }
 
     public final void onStop() {
-        defpackage.alq.a().b(this.W);
+        defpackage.alq.get().b(this.W);
         super.onStop();
     }
 
@@ -49,7 +49,7 @@ public final class ala extends defpackage.arb {
             return java.util.Collections.emptyList();
         }
         defpackage.akr akr = (defpackage.akr) crk.b();
-        defpackage.any.a().c().b();
+        defpackage.any.get().c().b();
         try {
             return (java.util.List) akr.c().get();
         } catch (java.lang.InterruptedException | java.util.concurrent.ExecutionException e) {

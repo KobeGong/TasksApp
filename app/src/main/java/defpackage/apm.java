@@ -11,7 +11,7 @@ public final /* synthetic */ class apm implements android.view.View.OnClickListe
     public final void onClick(android.view.View view) {
         java.lang.String str;
         com.google.android.apps.tasks.ui.TaskListsActivity taskListsActivity = this.a;
-        defpackage.anc c = defpackage.any.a().c();
+        defpackage.anc c = defpackage.any.get().c();
         if (c != null) {
             java.util.List d = c.d();
             if (taskListsActivity.h == null) {

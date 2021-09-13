@@ -1,25 +1,32 @@
 package defpackage;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+
 /* renamed from: ain reason: default package */
 /* compiled from: PG */
 public final class ain {
     private static final java.util.Map b = new java.util.HashMap();
-    public final android.content.SharedPreferences a;
+    public final SharedPreferences preferences;
 
-    private ain(android.content.SharedPreferences sharedPreferences) {
-        this.a = sharedPreferences;
+    private ain(SharedPreferences sharedPreferences) {
+        this.preferences = sharedPreferences;
     }
 
-    public static synchronized defpackage.cyi a(android.content.Context context, java.lang.String str) {
+    public static synchronized defpackage.cyi a(Context context, String accountName) {
         defpackage.cyi cyi;
         synchronized (defpackage.ain.class) {
-            java.lang.String str2 = "prefs-";
-            java.lang.String valueOf = java.lang.String.valueOf(str);
-            java.lang.String str3 = valueOf.length() != 0 ? str2.concat(valueOf) : new java.lang.String(str2);
+            String valueOf = String.valueOf(accountName);
+            String str3 = valueOf.length() != 0 ? "prefs-".concat(valueOf) : "prefs-";
             cyi = (defpackage.cyi) b.get(str3);
             if (cyi == 0) {
                 defpackage.cyu cyu = new defpackage.cyu();
-                defpackage.ajd.b(context).c().execute(new defpackage.aio(cyu, context, str3));
+                defpackage.ajd.b(context).c().execute(new Runnable() {
+                    @Override
+                    public void run() {
+                        cyu.a(new defpackage.ain(context.getApplicationContext().getSharedPreferences(str3, 0)));
+                    }
+                });
                 b.put(str3, cyu);
                 cyi = cyu;
             }
@@ -27,29 +34,28 @@ public final class ain {
         return cyi;
     }
 
-    public static synchronized defpackage.ain b(android.content.Context context, java.lang.String str) {
+    public static synchronized defpackage.ain b(Context context, String accountName) {
         defpackage.ain ain;
         synchronized (defpackage.ain.class) {
-            ain = (defpackage.ain) defpackage.cyd.c(a(context, str));
+            ain = (defpackage.ain) defpackage.cyd.c(a(context, accountName));
         }
         return ain;
     }
 
-    public final java.lang.String a() {
-        return this.a.getString("sel-task-list-id", null);
+    public final String a() {
+        return this.preferences.getString("sel-task-list-id", null);
     }
 
-    public final void a(java.lang.String str) {
-        android.content.SharedPreferences.Editor edit = this.a.edit();
+    public final void a(String str) {
+        SharedPreferences.Editor edit = this.preferences.edit();
         edit.putString("sel-task-list-id", str);
         edit.apply();
     }
 
-    public final defpackage.ajr b(java.lang.String str) {
-        android.content.SharedPreferences sharedPreferences = this.a;
-        java.lang.String valueOf = java.lang.String.valueOf("task-list-order:");
-        java.lang.String valueOf2 = java.lang.String.valueOf(str);
-        java.lang.String string = sharedPreferences.getString(valueOf2.length() != 0 ? valueOf.concat(valueOf2) : new java.lang.String(valueOf), null);
+    public final defpackage.ajr b(String str) {
+        String valueOf = "task-list-order:";
+        String valueOf2 = String.valueOf(str);
+        String string = this.preferences.getString(valueOf2.length() != 0 ? valueOf.concat(valueOf2) : valueOf, null);
         if (string != null) {
             try {
                 return defpackage.ajr.a(string);

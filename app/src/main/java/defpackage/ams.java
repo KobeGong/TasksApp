@@ -64,7 +64,7 @@ public final class ams implements defpackage.amn {
         alv.a(this.a, this.c);
         this.d = null;
         this.c = null;
-        defpackage.alq.a().a(alv.a);
+        defpackage.alq.get().a(alv.a);
     }
 
     public final java.lang.String a(android.content.Context context) {

@@ -80,7 +80,7 @@ public final class aor extends defpackage.aoq {
                 dca.f = dan;
                 g.g(dii2);
             }
-            defpackage.anc c2 = defpackage.any.a().c();
+            defpackage.anc c2 = defpackage.any.get().c();
             if (g.b) {
                 dih2 = g.a;
             } else {

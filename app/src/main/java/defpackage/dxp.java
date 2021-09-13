@@ -33,7 +33,7 @@ final class dxp extends defpackage.doo {
             return false;
         }
         defpackage.dxp dxp = (defpackage.dxp) obj;
-        if (!defpackage.cru.d(this.a, dxp.a) || !defpackage.cru.d(this.b, dxp.b) || !defpackage.cru.d(this.c, dxp.c)) {
+        if (!defpackage.cru.equals(this.a, dxp.a) || !defpackage.cru.equals(this.b, dxp.b) || !defpackage.cru.equals(this.c, dxp.c)) {
             return false;
         }
         return true;

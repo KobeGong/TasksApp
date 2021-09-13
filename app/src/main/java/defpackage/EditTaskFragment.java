@@ -51,9 +51,9 @@ public final class EditTaskFragment extends defpackage.arb implements android.ap
                 if (dcb != null) {
                     String str = dcb.b;
                     if (!this.listId.equals(str)) {
-                        this.taskId = defpackage.any.a().c().a(this.listId, this.taskId, str, z);
+                        this.taskId = defpackage.any.get().c().a(this.listId, this.taskId, str, z);
                         this.listId = str;
-                        this.ag = defpackage.any.a().c().a(this.listId, this.taskId);
+                        this.ag = defpackage.any.get().c().a(this.listId, this.taskId);
                     }
                 }
             }
@@ -111,8 +111,8 @@ public final class EditTaskFragment extends defpackage.arb implements android.ap
         if (this.startInEditMode && this.ag != null && !defpackage.ajd.a(this.ag)) {
             b(this.editTitleView);
         }
-        defpackage.alq.a().b(this.ai);
-        defpackage.alq.a().a(this.ai);
+        defpackage.alq.get().b(this.ai);
+        defpackage.alq.get().a(this.ai);
     }
 
     public final void onSaveInstanceState(android.os.Bundle bundle) {
@@ -156,7 +156,7 @@ public final class EditTaskFragment extends defpackage.arb implements android.ap
 
     public final void onStop() {
         defpackage.bdk.a(this.editTitleView, false);
-        defpackage.alq.a().b(this.ai);
+        defpackage.alq.get().b(this.ai);
         super.onStop();
     }
 
@@ -529,7 +529,7 @@ public final class EditTaskFragment extends defpackage.arb implements android.ap
 
     private final String V() {
         defpackage.dcd dcd;
-        int size = defpackage.any.a().c().d().size();
+        int size = defpackage.any.get().c().d().size();
         defpackage.dcb dcb = this.ah;
         if (dcb.c == null) {
             dcd = defpackage.dcd.c;
@@ -688,7 +688,7 @@ public final class EditTaskFragment extends defpackage.arb implements android.ap
                 }
                 this.ag = (defpackage.dby) dih6;
             }
-            defpackage.any.a().c().a(this.listId, this.taskId, this.aa);
+            defpackage.any.get().c().a(this.listId, this.taskId, this.aa);
             defpackage.aju.a().a(this.taskId);
         }
     }
@@ -750,7 +750,7 @@ public final class EditTaskFragment extends defpackage.arb implements android.ap
             throw new defpackage.dkw();
         }
         defpackage.dby dby2 = (defpackage.dby) dih3;
-        defpackage.any.a().c().a(this.listId, dby.d, trim2);
+        defpackage.any.get().c().a(this.listId, dby.d, trim2);
         defpackage.aju.a().a(dby.d);
         return dby2;
     }
@@ -802,7 +802,7 @@ public final class EditTaskFragment extends defpackage.arb implements android.ap
                     throw new defpackage.dkw();
                 }
                 this.ag = (defpackage.dby) dih3;
-                defpackage.any.a().c().b(this.listId, this.taskId, trim2);
+                defpackage.any.get().c().b(this.listId, this.taskId, trim2);
                 defpackage.aju.a().a(this.taskId);
             }
         }

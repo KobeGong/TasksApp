@@ -8,7 +8,7 @@ public final class aiq {
     private final java.util.Map c = new java.util.HashMap();
     private java.lang.String d;
 
-    public static synchronized defpackage.aiq a() {
+    public static synchronized defpackage.aiq get() {
         defpackage.aiq aiq;
         synchronized (defpackage.aiq.class) {
             if (a == null) {

@@ -11,7 +11,7 @@ public abstract class ln {
 
     public abstract void a(java.lang.String str, java.io.FileDescriptor fileDescriptor, java.io.PrintWriter printWriter, java.lang.String[] strArr);
 
-    public abstract void b(int i);
+    public abstract void popBackStack(int i);
 
     public abstract boolean b();
 
@@ -19,7 +19,7 @@ public abstract class ln {
 
     public abstract boolean d();
 
-    public abstract void e();
+    public abstract void popBackStack();
 
     public abstract int f();
 

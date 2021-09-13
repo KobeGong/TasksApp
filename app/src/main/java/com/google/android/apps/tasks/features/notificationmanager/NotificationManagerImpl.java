@@ -34,8 +34,8 @@ public class NotificationManagerImpl extends android.content.BroadcastReceiver i
         switch (c) {
             case 0:
                 java.util.List a2 = defpackage.ajd.a(context);
-                a(defpackage.akl.DUE, a(defpackage.akl.DUE, a2, defpackage.any.a()));
-                a(defpackage.akl.OVERDUE, a(defpackage.akl.OVERDUE, a2, defpackage.any.a()));
+                a(defpackage.akl.DUE, a(defpackage.akl.DUE, a2, defpackage.any.get()));
+                a(defpackage.akl.OVERDUE, a(defpackage.akl.OVERDUE, a2, defpackage.any.get()));
                 return;
             case 1:
                 java.lang.String stringExtra = intent.getStringExtra("task_id");
@@ -80,7 +80,7 @@ public class NotificationManagerImpl extends android.content.BroadcastReceiver i
         b(str);
         for (java.util.Map.Entry key : a.entrySet()) {
             defpackage.akl akl = (defpackage.akl) key.getKey();
-            java.util.Map a2 = a(akl, defpackage.ajd.a(this.b), defpackage.any.a());
+            java.util.Map a2 = a(akl, defpackage.ajd.a(this.b), defpackage.any.get());
             java.util.Iterator it = a2.keySet().iterator();
             boolean z = false;
             while (it.hasNext()) {
@@ -118,7 +118,7 @@ public class NotificationManagerImpl extends android.content.BroadcastReceiver i
                 set.remove(java.lang.Integer.valueOf(hashCode));
             }
             if (set.size() > 1) {
-                java.util.Map a2 = a(akl, defpackage.ajd.a(this.b), defpackage.any.a());
+                java.util.Map a2 = a(akl, defpackage.ajd.a(this.b), defpackage.any.get());
                 if (a2 != null && !a2.isEmpty()) {
                     int i = akl.e;
                     defpackage.ni a3 = a(akl, a2, b(i));

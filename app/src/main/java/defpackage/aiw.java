@@ -23,7 +23,7 @@ public final class aiw {
         return cyi;
     }
 
-    public static synchronized defpackage.aiw b(android.content.Context context) {
+    public static synchronized defpackage.aiw getInstance(android.content.Context context) {
         defpackage.aiw aiw;
         synchronized (defpackage.aiw.class) {
             aiw = (defpackage.aiw) defpackage.cyd.c(a(context));
@@ -31,7 +31,7 @@ public final class aiw {
         return aiw;
     }
 
-    public final boolean a() {
+    public final boolean isOnboardingDismiss() {
         return this.a.getBoolean("onboarding_dismissed", false);
     }
 }

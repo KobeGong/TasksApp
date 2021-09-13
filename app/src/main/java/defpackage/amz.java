@@ -73,7 +73,7 @@ public final class amz implements defpackage.amn {
             return false;
         }
         defpackage.amz amz = (defpackage.amz) obj;
-        if (!defpackage.cru.d(this.a, amz.a) || !java.util.Arrays.equals(this.b, amz.b) || !defpackage.cru.d(java.lang.Boolean.valueOf(this.c), java.lang.Boolean.valueOf(amz.c))) {
+        if (!defpackage.cru.equals(this.a, amz.a) || !java.util.Arrays.equals(this.b, amz.b) || !defpackage.cru.equals(java.lang.Boolean.valueOf(this.c), java.lang.Boolean.valueOf(amz.c))) {
             return false;
         }
         return true;
@@ -97,7 +97,7 @@ public final class amz implements defpackage.amn {
         alv.a(this.a, this.d);
         this.d = null;
         this.e = 0;
-        defpackage.alq.a().a(alv.a, this.a);
+        defpackage.alq.get().a(alv.a, this.a);
     }
 
     public final java.lang.String a(android.content.Context context) {

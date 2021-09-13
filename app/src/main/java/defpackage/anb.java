@@ -11,7 +11,7 @@ public final class anb extends android.content.AbstractThreadedSyncAdapter {
         defpackage.cyi a;
         java.lang.String a2 = defpackage.azb.a(account.name);
         new java.lang.Object[1][0] = a2;
-        defpackage.anc b = defpackage.any.a().b(account);
+        defpackage.anc b = defpackage.any.get().b(account);
         synchronized (b) {
             a = b.a("sync", (defpackage.csd) new defpackage.ano(b));
         }

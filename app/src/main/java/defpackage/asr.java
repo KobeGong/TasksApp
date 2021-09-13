@@ -9,7 +9,7 @@ final /* synthetic */ class asr implements android.view.View.OnClickListener {
     }
 
     public final void onClick(android.view.View view) {
-        editTaskFragment.a(defpackage.any.a().c().a(editTaskFragment.listId, defpackage.dby.g, editTaskFragment.subTaskList.getChildCount(), editTaskFragment.taskId)).a();
+        editTaskFragment.a(defpackage.any.get().c().a(editTaskFragment.listId, defpackage.dby.g, editTaskFragment.subTaskList.getChildCount(), editTaskFragment.taskId)).a();
         editTaskFragment.addSubTask.post(new defpackage.asm(editTaskFragment));
         editTaskFragment.N();
     }

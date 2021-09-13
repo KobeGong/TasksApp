@@ -14,7 +14,7 @@ public final class atd extends defpackage.gu {
     public final void onActivityCreated(android.os.Bundle bundle) {
         defpackage.dcd dcd;
         super.onActivityCreated(bundle);
-        defpackage.anc c = defpackage.any.a().c();
+        defpackage.anc c = defpackage.any.get().c();
         if (c == null) {
             a(true);
             defpackage.azb.a("SyncEngine not yet initialized", new java.lang.Object[0]);

@@ -358,8 +358,8 @@ public class Fragment implements ViewModelStoreOwner, android.content.ComponentC
         getActivity().onCreateContextMenu(contextMenu, view, contextMenuInfo);
     }
 
-    public final void a_(java.lang.Object obj) {
-        C().g = obj;
+    public final void setEnterTranstion(java.lang.Object obj) {
+        ensureAnimationInfo().g = obj;
     }
 
     public final java.lang.Object w() {
@@ -379,8 +379,8 @@ public class Fragment implements ViewModelStoreOwner, android.content.ComponentC
         return this.N.h;
     }
 
-    public final void b(java.lang.Object obj) {
-        C().i = obj;
+    public final void setExitTransition(java.lang.Object obj) {
+        ensureAnimationInfo().i = obj;
     }
 
     public final java.lang.Object y() {
@@ -546,7 +546,7 @@ public class Fragment implements ViewModelStoreOwner, android.content.ComponentC
     }
 
     /* access modifiers changed from: 0000 */
-    public final defpackage.le C() {
+    public final defpackage.le ensureAnimationInfo() {
         if (this.N == null) {
             this.N = new defpackage.le();
         }
@@ -564,7 +564,7 @@ public class Fragment implements ViewModelStoreOwner, android.content.ComponentC
     /* access modifiers changed from: 0000 */
     public final void setNextAnim(int i2) {
         if (this.N != null || i2 != 0) {
-            C().d = i2;
+            ensureAnimationInfo().d = i2;
         }
     }
 
@@ -579,7 +579,7 @@ public class Fragment implements ViewModelStoreOwner, android.content.ComponentC
     /* access modifiers changed from: 0000 */
     public final void a(int i2, int i3) {
         if (this.N != null || i2 != 0 || i3 != 0) {
-            C();
+            ensureAnimationInfo();
             this.N.e = i2;
             this.N.f = i3;
         }
@@ -617,12 +617,12 @@ public class Fragment implements ViewModelStoreOwner, android.content.ComponentC
 
     /* access modifiers changed from: 0000 */
     public final void a(android.view.View view) {
-        C().a = view;
+        ensureAnimationInfo().a = view;
     }
 
     /* access modifiers changed from: 0000 */
     public final void a(android.animation.Animator animator) {
-        C().b = animator;
+        ensureAnimationInfo().b = animator;
     }
 
     /* access modifiers changed from: 0000 */
@@ -643,7 +643,7 @@ public class Fragment implements ViewModelStoreOwner, android.content.ComponentC
 
     /* access modifiers changed from: 0000 */
     public final void c(int i2) {
-        C().c = i2;
+        ensureAnimationInfo().c = i2;
     }
 
     /* access modifiers changed from: 0000 */
@@ -663,6 +663,6 @@ public class Fragment implements ViewModelStoreOwner, android.content.ComponentC
 
     /* access modifiers changed from: 0000 */
     public final void b(boolean z2) {
-        C().l = z2;
+        ensureAnimationInfo().l = z2;
     }
 }

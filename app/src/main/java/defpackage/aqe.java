@@ -9,7 +9,7 @@ final /* synthetic */ class aqe implements android.view.View.OnClickListener {
     }
 
     public final void onClick(android.view.View view) {
-        defpackage.aiw.b(this.a.getContext()).a.edit()
+        defpackage.aiw.getInstance(this.a.getContext()).a.edit()
                 .putBoolean("onboarding_dismissed", true)
                 .apply();
         FragmentActivity j = this.a.getActivity();

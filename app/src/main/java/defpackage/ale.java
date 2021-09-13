@@ -18,14 +18,14 @@ final /* synthetic */ class ale implements java.util.concurrent.Callable {
         java.util.ArrayList arrayList = new java.util.ArrayList();
         for (defpackage.ajo ajo : list) {
             defpackage.dby dby = null;
-            defpackage.dcb c = defpackage.any.a().c().c(ajo.getTaskListId());
+            defpackage.dcb c = defpackage.any.get().c().c(ajo.getTaskListId());
             if (c != null) {
-                dby = defpackage.any.a().c().a(ajo.getTaskListId(), ajo.getTaskId());
+                dby = defpackage.any.get().c().a(ajo.getTaskListId(), ajo.getTaskId());
             }
             if (dby != null) {
                 arrayList.add(defpackage.akz.a(c, dby));
             } else {
-                defpackage.azb.b("Result not found in local database: %s, %s, %s", defpackage.any.a().c().b(), ajo.getTaskListId(), ajo.getTaskId());
+                defpackage.azb.b("Result not found in local database: %s, %s, %s", defpackage.any.get().c().b(), ajo.getTaskListId(), ajo.getTaskId());
             }
         }
         return arrayList;

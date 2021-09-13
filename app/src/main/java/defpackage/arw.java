@@ -14,7 +14,7 @@ final /* synthetic */ class arw implements java.lang.Runnable {
         if (arv.i != null) {
             java.lang.String string = arv.i.getString("list_id");
             if (!android.text.TextUtils.isEmpty(string)) {
-                arv.b = defpackage.any.a().c().c(string);
+                arv.b = defpackage.any.get().c().c(string);
             } else {
                 arv.b = defpackage.dcb.g;
             }

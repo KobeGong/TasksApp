@@ -13,7 +13,7 @@ public class AddToTasksBroadcastReceiver extends android.content.BroadcastReceiv
             android.os.Messenger messenger = (android.os.Messenger) extras.getParcelable("messenger");
             defpackage.bhq b = defpackage.bhr.b(context, intent);
             if (b == null) {
-                anc = defpackage.any.a().c();
+                anc = defpackage.any.get().c();
                 if (anc == null) {
                     defpackage.azb.b("No default SyncEngine", new java.lang.Object[0]);
                     a(context);
@@ -30,7 +30,7 @@ public class AddToTasksBroadcastReceiver extends android.content.BroadcastReceiv
                 a(context);
                 anc2 = anc;
             } else if (anc == null) {
-                anc2 = defpackage.any.a().b(a);
+                anc2 = defpackage.any.get().b(a);
             } else {
                 anc2 = anc;
             }
@@ -159,7 +159,7 @@ public class AddToTasksBroadcastReceiver extends android.content.BroadcastReceiv
         if (android.text.TextUtils.isEmpty(str4)) {
             return str4;
         }
-        defpackage.alq.a().a(anc.b(), str);
+        defpackage.alq.get().a(anc.b(), str);
         return str4;
     }
 }

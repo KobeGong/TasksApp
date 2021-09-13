@@ -37,7 +37,7 @@ public final class dmv {
             if (!dmv.a.containsKey(entry.getKey())) {
                 return false;
             }
-            if (!defpackage.cru.d(entry.getValue(), dmv.a.get(entry.getKey()))) {
+            if (!defpackage.cru.equals(entry.getValue(), dmv.a.get(entry.getKey()))) {
                 return false;
             }
         }

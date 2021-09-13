@@ -18,7 +18,7 @@ public class lf {
         int size = lpVar.b.size();
         for (int i = 0; i < size; i++) {
             Fragment lcVar = (Fragment) lpVar.b.get(i);
-            lcVar.C();
+            lcVar.ensureAnimationInfo();
             if (!(0 == 0 || 0 == 0)) {
                 null.c++;
             }

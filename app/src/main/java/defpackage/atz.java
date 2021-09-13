@@ -12,7 +12,7 @@ final /* synthetic */ class atz implements android.view.View.OnClickListener {
         java.lang.String str;
         defpackage.atx atx = this.a;
         if (atx.y == defpackage.daq.GMAIL_THREAD) {
-            java.lang.String b = defpackage.any.a().c().b();
+            java.lang.String b = defpackage.any.get().c().b();
             android.app.Activity activity = (android.app.Activity) atx.s.getContext();
             java.lang.String str2 = atx.x;
             if (android.os.Build.VERSION.SDK_INT >= 21) {

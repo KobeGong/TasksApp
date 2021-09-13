@@ -8,7 +8,7 @@ final class aqz extends defpackage.arl {
 
     public final /* synthetic */ void a(int i) {
         if (i != 1) {
-            defpackage.aiq.a().b();
+            defpackage.aiq.get().b();
         }
     }
 }

@@ -20,7 +20,7 @@ public final class dxu {
             return false;
         }
         defpackage.dxu dxu = (defpackage.dxu) obj;
-        if (!defpackage.cru.d(this.a, dxu.a) || !defpackage.cru.d(this.b, dxu.b) || !defpackage.cru.d(this.c, dxu.c)) {
+        if (!defpackage.cru.equals(this.a, dxu.a) || !defpackage.cru.equals(this.b, dxu.b) || !defpackage.cru.equals(this.c, dxu.c)) {
             return false;
         }
         return true;

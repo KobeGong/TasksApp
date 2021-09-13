@@ -30,7 +30,7 @@ public class lb extends Fragment implements android.content.DialogInterface.OnCa
             }
             this.Y = true;
             if (this.W >= 0) {
-                this.fragmentManager.b(this.W);
+                this.fragmentManager.popBackStack(this.W);
                 this.W = -1;
                 return;
             }

@@ -8,6 +8,6 @@ final /* synthetic */ class aqy implements android.view.View.OnClickListener {
     }
 
     public final void onClick(android.view.View view) {
-        defpackage.any.a().d.a();
+        defpackage.any.get().d.a();
     }
 }

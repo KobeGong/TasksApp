@@ -77,7 +77,7 @@ public final class dsg {
         }
         if (dpw.m != null) {
             java.lang.String str = dpw.m;
-            if (!defpackage.cru.d(ech.t, str)) {
+            if (!defpackage.cru.equals(ech.t, str)) {
                 ech = new defpackage.ech(ech.s, str);
             }
         }

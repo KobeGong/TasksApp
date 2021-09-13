@@ -35,8 +35,8 @@ public abstract class aql extends defpackage.wm {
 
     public void onStop() {
         super.onStop();
-        defpackage.aiq.a().a((defpackage.ajc) null);
-        defpackage.any.a().d.a((defpackage.aoc) null);
+        defpackage.aiq.get().a((defpackage.ajc) null);
+        defpackage.any.get().d.a((defpackage.aoc) null);
     }
 
     public final boolean q() {
@@ -44,8 +44,8 @@ public abstract class aql extends defpackage.wm {
             k();
             return false;
         }
-        defpackage.aiq.a().a(new defpackage.ajc(this));
-        defpackage.any.a().d.a(new defpackage.aoc(this));
+        defpackage.aiq.get().a(new defpackage.ajc(this));
+        defpackage.any.get().d.a(new defpackage.aoc(this));
         return true;
     }
 
@@ -54,7 +54,7 @@ public abstract class aql extends defpackage.wm {
         java.lang.Throwable th2 = th;
         while (!(th2 instanceof defpackage.axx)) {
             if (th2 instanceof defpackage.avf) {
-                if (defpackage.any.a().c().a()) {
+                if (defpackage.any.get().c().a()) {
                     final Throwable a = th2;
                     this.s = (Snackbar) Snackbar.a(m(), R.string.invalid_credentials, -2).a(R.string.sign_in, new View.OnClickListener() {
                         @Override
@@ -83,7 +83,7 @@ public abstract class aql extends defpackage.wm {
         switch (i) {
             case 1001:
                 if (i2 == -1) {
-                    defpackage.aiq.a().b();
+                    defpackage.aiq.get().b();
                     h();
                     return;
                 }
@@ -95,7 +95,7 @@ public abstract class aql extends defpackage.wm {
                     defpackage.azb.b(str, new java.lang.Object[0]);
                     return;
                 }
-                defpackage.aiq.a().b();
+                defpackage.aiq.get().b();
                 n();
                 return;
             default:
@@ -130,44 +130,44 @@ public abstract class aql extends defpackage.wm {
         if (czq != null) {
             a(czq);
         } else if (this.h == null) {
-            defpackage.cyi a = defpackage.any.a().c().a(i);
+            defpackage.cyi a = defpackage.any.get().c().a(i);
             this.h = a;
             a.a(new defpackage.aqp(this, a), com.google.android.apps.tasks.common.TaskApplication.getApplication().a);
         }
         try {
             defpackage.ain ain = (defpackage.ain) cyi.get();
-            if (ain.a.getBoolean("setup-called", false)) {
+            if (ain.preferences.getBoolean("setup-called", false)) {
                 z = false;
             }
-            if (defpackage.any.a().c().a() || z) {
+            if (defpackage.any.get().c().a() || z) {
                 runOnUiThread(new defpackage.aqu(this));
             }
             if (z) {
                 try {
-                    defpackage.any.a().c().e(locale.getCountry(), locale.getLanguage()).get();
-                    android.content.SharedPreferences.Editor edit = ain.a.edit();
+                    defpackage.any.get().c().e(locale.getCountry(), locale.getLanguage()).get();
+                    android.content.SharedPreferences.Editor edit = ain.preferences.edit();
                     edit.putBoolean("setup-called", true);
                     edit.apply();
                 } catch (java.lang.InterruptedException | java.util.concurrent.ExecutionException e) {
-                    cyu.a(ajh.c());
+                    cyu.a(AbsAccountSetupResult.failure());
                 }
             }
-            if (!defpackage.any.a().c().a()) {
-                cyu.a(ajh.a(false));
+            if (!defpackage.any.get().c().a()) {
+                cyu.a(AbsAccountSetupResult.success(false));
             } else {
                 try {
-                    defpackage.any.a().c().c().get();
+                    defpackage.any.get().c().c().get();
                     try {
-                        defpackage.any.a().c().a("~default").get();
+                        defpackage.any.get().c().a("~default").get();
                     } catch (java.lang.InterruptedException | java.util.concurrent.ExecutionException e2) {
                     }
-                    cyu.a(ajh.a(true));
+                    cyu.a(AbsAccountSetupResult.success(true));
                 } catch (java.lang.InterruptedException | java.util.concurrent.ExecutionException e3) {
-                    cyu.a(ajh.c());
+                    cyu.a(AbsAccountSetupResult.failure());
                 }
             }
         } catch (java.lang.InterruptedException | java.util.concurrent.ExecutionException e4) {
-            cyu.a(ajh.c());
+            cyu.a(AbsAccountSetupResult.failure());
         }
         return null;
     }

@@ -93,7 +93,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
     }
 
     public final void c() {
-        a((defpackage.mc) new defpackage.md(this, -1, 0), false);
+        enqueueAction((OpGenerator) new defpackage.md(this, -1, 0), false);
     }
 
     public final boolean d() {
@@ -101,15 +101,15 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
         return u();
     }
 
-    public final void e() {
-        a((defpackage.mc) new defpackage.md(this, -1, 1), false);
+    public final void popBackStack() {
+        enqueueAction((OpGenerator) new defpackage.md(this, -1, 1), false);
     }
 
-    public final void b(int i2) {
+    public final void popBackStack(int i2) {
         if (i2 < 0) {
             throw new java.lang.IllegalArgumentException("Bad id: " + i2);
         }
-        a((defpackage.mc) new defpackage.md(this, i2, 1), false);
+        enqueueAction((OpGenerator) new defpackage.md(this, i2, 1), false);
     }
 
     private final boolean u() {
@@ -381,7 +381,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
                 printWriter.print(str);
                 printWriter.println("Pending Actions:");
                 for (int i8 = 0; i8 < size7; i8++) {
-                    defpackage.mc mcVar = (defpackage.mc) this.l.get(i8);
+                    OpGenerator mcVar = (OpGenerator) this.l.get(i8);
                     printWriter.print(str);
                     printWriter.print("  #");
                     printWriter.print(i8);
@@ -2102,8 +2102,7 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
 
     /* JADX WARNING: No exception handlers in catch block: Catch:{  } */
     /* Code decompiled incorrectly, please refer to instructions dump. */
-    public final void a(defpackage.mc r5, boolean r6) {
-        /*
+    public final void enqueueAction(OpGenerator r5, boolean r6) {
             r4 = this;
             r1 = 0
             r0 = 1
@@ -2177,8 +2176,6 @@ final class FragmentManagerImpl extends defpackage.ln implements android.view.La
             r0 = move-exception
             monitor-exit(r4)     // Catch:{ all -> 0x0066 }
             throw r0     // Catch:{ all -> 0x001c }
-        */
-        throw new UnsupportedOperationException("Method not decompiled: defpackage.lp.a(mc, boolean):void");
     }
 
     public final int a(BackStackRecord kvVar) {

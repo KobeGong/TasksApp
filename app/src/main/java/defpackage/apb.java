@@ -15,7 +15,7 @@ public final /* synthetic */ class apb implements android.content.DialogInterfac
     public final void onClick(android.content.DialogInterface dialogInterface, int i) {
         com.google.android.apps.tasks.ui.TaskListsActivity taskListsActivity = this.a;
         java.lang.String str = this.b;
-        defpackage.any.a().c().a(str, this.c, (java.lang.Object) defpackage.ajn.a(str));
+        defpackage.any.get().c().a(str, this.c, (java.lang.Object) defpackage.ajn.a(str));
         taskListsActivity.a((java.lang.String) null);
     }
 }
