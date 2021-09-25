@@ -60,10 +60,8 @@ public final /* synthetic */ class apn implements OnMenuItemClickListener {
             java.lang.String r5 = "selectedTaskList"
             r7.putString(r5, r1)
         L_0x0065:
-            java.lang.String r1 = "contentVisible"
-            r7.putBoolean(r1, r6)
-            java.lang.String r1 = "hasCompletedTasks"
-            r7.putBoolean(r1, r0)
+            r7.putBoolean("contentVisible", r6)
+            r7.putBoolean("hasCompletedTasks", r0)
             r2.e(r7)
             ln r0 = r4.getSupportFragmentManager()
             java.lang.String r1 = "BottomSheetMenuDialogFragment"

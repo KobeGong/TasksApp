@@ -5,7 +5,7 @@ import java.util.concurrent.Executors;
 /* compiled from: PG */
 public class TaskApplication extends defpackage.dmo implements defpackage.ajg {
     private static TaskApplication g;
-    public defpackage.cyl a = defpackage.cub.a(Executors.newFixedThreadPool(5, defpackage.ajd.c("shared-pool-%d")));
+    public defpackage.cyl executor = defpackage.cub.a(Executors.newFixedThreadPool(5, defpackage.ajd.c("shared-pool-%d")));
     public defpackage.czq b;
     public boolean c = false;
     public defpackage.cdj d;
@@ -66,7 +66,7 @@ public class TaskApplication extends defpackage.dmo implements defpackage.ajg {
         }
         defpackage.crv a4 = defpackage.ajt.a();
         if (a4.a()) {
-            ((defpackage.ajy) a4.b()).a(this, this.a);
+            ((defpackage.ajy) a4.b()).a(this, this.executor);
         }
         if (!(defpackage.any.a != null)) {
             z = defpackage.any.a == null;
@@ -78,7 +78,7 @@ public class TaskApplication extends defpackage.dmo implements defpackage.ajg {
         defpackage.aka.a().b();
         defpackage.alj.a().b();
         java.lang.String str = "1000131241323";
-        defpackage.cyl cyl = this.a;
+        defpackage.cyl cyl = this.executor;
         defpackage.cym cym = this.i;
         defpackage.any a5 = defpackage.any.get();
         defpackage.bxy bxy = new defpackage.bxy();
@@ -200,7 +200,7 @@ public class TaskApplication extends defpackage.dmo implements defpackage.ajg {
     }
 
     public final defpackage.cyl c() {
-        return this.a;
+        return this.executor;
     }
 
     public final defpackage.cym d() {

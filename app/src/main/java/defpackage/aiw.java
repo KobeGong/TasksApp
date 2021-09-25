@@ -15,7 +15,7 @@ public final class aiw {
         synchronized (defpackage.aiw.class) {
             if (b == null) {
                 defpackage.cyu cyu = new defpackage.cyu();
-                com.google.android.apps.tasks.common.TaskApplication.getApplication().a.execute(new defpackage.aix(cyu, context));
+                com.google.android.apps.tasks.common.TaskApplication.getApplication().executor.execute(new defpackage.aix(cyu, context));
                 b = cyu;
             }
             cyi = b;

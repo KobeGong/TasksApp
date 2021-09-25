@@ -208,7 +208,7 @@ public final class TasksFragment extends Fragment implements android.app.DatePic
                 this.taskNotSyncView.setAlpha(0.0f);
                 a(true);
                 defpackage.cyi a2 = defpackage.any.get().c().a(this.X);
-                a2.a(new defpackage.aup(this, a2), com.google.android.apps.tasks.common.TaskApplication.getApplication().a);
+                a2.a(new defpackage.aup(this, a2), com.google.android.apps.tasks.common.TaskApplication.getApplication().executor);
             }
             c(z);
             FragmentActivity j = getActivity();
@@ -394,6 +394,6 @@ public final class TasksFragment extends Fragment implements android.app.DatePic
         if (!android.text.TextUtils.isEmpty(this.X)) {
             arrayList.add(defpackage.any.get().c().a(this.X));
         }
-        new defpackage.cye(defpackage.csp.a((java.lang.Iterable) arrayList)).a(new defpackage.auo(this), com.google.android.apps.tasks.common.TaskApplication.getApplication().a);
+        new defpackage.cye(defpackage.csp.a((java.lang.Iterable) arrayList)).a(new defpackage.auo(this), com.google.android.apps.tasks.common.TaskApplication.getApplication().executor);
     }
 }

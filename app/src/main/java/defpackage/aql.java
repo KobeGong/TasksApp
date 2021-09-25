@@ -78,18 +78,18 @@ public abstract class aql extends defpackage.wm {
     }
 
     /* access modifiers changed from: protected */
-    public void onActivityResult(int i, int i2, Intent intent) {
-        super.onActivityResult(i, i2, intent);
-        switch (i) {
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode) {
             case 1001:
-                if (i2 == -1) {
+                if (resultCode == -1) {
                     defpackage.aiq.get().b();
                     h();
                     return;
                 }
                 return;
             case 1002:
-                if (i2 != -1) {
+                if (resultCode != -1) {
                     java.lang.String str = "This app requires Google Play Services. Please install Google Play Services on your device and relaunch this app.";
                     android.widget.Toast.makeText(getApplicationContext(), str, 1).show();
                     defpackage.azb.b(str, new java.lang.Object[0]);
@@ -104,7 +104,7 @@ public abstract class aql extends defpackage.wm {
     }
 
     public android.view.View m() {
-        return findViewById(16908290);
+        return findViewById(android.R.id.content);
     }
 
     public final boolean r() {
@@ -132,7 +132,7 @@ public abstract class aql extends defpackage.wm {
         } else if (this.h == null) {
             defpackage.cyi a = defpackage.any.get().c().a(i);
             this.h = a;
-            a.a(new defpackage.aqp(this, a), com.google.android.apps.tasks.common.TaskApplication.getApplication().a);
+            a.a(new defpackage.aqp(this, a), com.google.android.apps.tasks.common.TaskApplication.getApplication().executor);
         }
         try {
             defpackage.ain ain = (defpackage.ain) cyi.get();

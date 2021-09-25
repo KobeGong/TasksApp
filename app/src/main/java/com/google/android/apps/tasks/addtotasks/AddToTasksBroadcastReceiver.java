@@ -43,7 +43,7 @@ public class AddToTasksBroadcastReceiver extends android.content.BroadcastReceiv
                     str3 = a(context, anc2, str3, extras);
                 } else {
                     defpackage.azb.a("Failed to find task list", new java.lang.Object[0]);
-                    anc2.c().a(new defpackage.aim(this, context, anc2, a, extras, messenger), com.google.android.apps.tasks.common.TaskApplication.getApplication().a);
+                    anc2.c().a(new defpackage.aim(this, context, anc2, a, extras, messenger), com.google.android.apps.tasks.common.TaskApplication.getApplication().executor);
                     return;
                 }
             } else {

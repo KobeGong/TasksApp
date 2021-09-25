@@ -1,5 +1,8 @@
 package defpackage;
 
+import android.os.Handler;
+import android.os.Looper;
+
 /* renamed from: aoh reason: default package */
 /* compiled from: PG */
 public final class aoh implements defpackage.aoe, java.lang.Runnable {
@@ -18,7 +21,12 @@ public final class aoh implements defpackage.aoe, java.lang.Runnable {
     }
 
     public final void run() {
-        new android.os.Handler(android.os.Looper.getMainLooper()).post(new defpackage.aoi(this));
+        new Handler(Looper.getMainLooper()).post(new Runnable() {
+            @Override
+            public void run() {
+                b.a(aoh.this);
+            }
+        });
         defpackage.cyd.c(this.c);
     }
 

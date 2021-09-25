@@ -11,6 +11,7 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.transition.Fade;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -21,6 +22,7 @@ import java.util.Iterator;
 import java.util.concurrent.Executor;
 
 import defpackage.AbsAccountSetupResult;
+import defpackage.AbsActivityConfig;
 import defpackage.AbsDeviceOwner;
 import defpackage.AddTaskFragment;
 import defpackage.BaseTaskAdapter;
@@ -33,6 +35,7 @@ import defpackage.FragmentTransaction;
 import defpackage.TasksFragment;
 import defpackage.ViewCompat;
 import defpackage.WelcomeFragment;
+import defpackage.aoe;
 import defpackage.dcb;
 
 /* compiled from: PG */
@@ -81,7 +84,7 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
         this.collapsingToolbarLayout.requestLayout();
         this.collapsingToolbarLayout.a = (int) getResources().getDimension(R.dimen.app_bar_expanded_top_margin);
         this.collapsingToolbarLayout.requestLayout();
-        TaskApplication.getApplication().a.a(new defpackage.apo(this));
+        TaskApplication.getApplication().executor.a(new defpackage.apo(this));
         this.toolbar.setNavigationOnClickListener(new defpackage.aov(this));
         this.toolbar.mOnMenuItemClickListener = new defpackage.aow(this);
         defpackage.ayq ayq = new defpackage.ayq(this);
@@ -96,7 +99,11 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
         defpackage.cdj cdj = TaskApplication.getApplication().d;
         this.g.addObserver(new defpackage.cdc(this, cdj));
         this.g.addObserver(TaskApplication.getApplication().e);
-        this.H = new defpackage.apu(this);
+        this.H = new defpackage.cdm(){
+            public void a(Object obj, Object obj2, Object obj3) {
+                TaskListsActivity.this.a((AbsDeviceOwner) obj);
+            }
+        };
         this.q = cdj.a();
         this.o = new defpackage.cde(this, cdj, this.navViewContainer);
         this.m = a.a();
@@ -130,7 +137,7 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
         this.bottomAppBar.mOnMenuItemClickListener = new defpackage.apn(this);
         setBottomAppbarShown(false);
         f(true);
-        this.executor = defpackage.cub.a((Executor) TaskApplication.getApplication().a);
+        this.executor = defpackage.cub.a((Executor) TaskApplication.getApplication().executor);
         this.nestedScrollView.a = new defpackage.apt(this);
     }
 
@@ -305,8 +312,14 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
         }
     }
 
-    public final void a(AbsDeviceOwner cdu) {
-        this.executor.execute(new defpackage.aoh(new defpackage.aox(this, cdu, true)));
+    public final void a(final AbsDeviceOwner cdu) {
+        this.executor.execute(new defpackage.aoh(new defpackage.aoj() {
+
+            @Override
+            public void a(aoe aoe) {
+                TaskListsActivity.this.a(cdu, true, aoe);
+            }
+        }));
     }
 
     private final AbsDeviceOwner getDeviceOwnerByName(java.lang.String str) {
@@ -400,7 +413,7 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
                 ((defpackage.ajy) defpackage.ajt.a().b()).a(account.name);
                 defpackage.cyi b2 = defpackage.any.get().b();
                 defpackage.cyi a3 = defpackage.ain.a(this, account.name);
-                defpackage.cyl cyl = TaskApplication.getApplication().a;
+                defpackage.cyl cyl = TaskApplication.getApplication().executor;
                 try {
                     versionCode = getPackageManager().getPackageInfo(getPackageName(), 0).versionCode;
                 } catch (PackageManager.NameNotFoundException e) {
@@ -409,7 +422,119 @@ public class TaskListsActivity extends defpackage.aql implements defpackage.alh,
                 }
                 new defpackage.cye(defpackage.csp.a(new defpackage.cyi[]{b2, a3})).a(new defpackage.aqo(this, versionCode, a3, cyu, getResources().getConfiguration().locale), cyl);
             }
-            cyu.a(new defpackage.aoy(this, aoe, deviceOwner, cyu), TaskApplication.getApplication().a);
+//            cyu.a(new defpackage.aoy(this, aoe, deviceOwner, cyu), TaskApplication.getApplication().a);
+            final AbsDeviceOwner deviceOwner0 = deviceOwner;
+            cyu.a(new Runnable() {
+                @Override
+                public void run() {
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (r()) {
+                                aoe.a(deviceOwner0.accountName());
+                                return;
+                            }
+                            getWindow().clearFlags(16);
+                            try {
+                                if (((AbsAccountSetupResult) cyu.get()).isSuccess()) {
+                                    boolean onboardingDismiss = !defpackage.aiw.getInstance(getBaseContext()).isOnboardingDismiss();
+                                    hideSplashView();
+                                    if (!defpackage.any.get().c().a()) {
+                                        a((String) null);
+                                    }
+                                    defpackage.any.get().c().c();
+                                    Object transition = null;
+                                    if ((!(selectedFragment instanceof WelcomeFragment) || !onboardingDismiss) && android.os.Build.VERSION.SDK_INT >= 21) {
+                                        transition = new Fade();
+                                    }
+                                    if (!l && (selectedFragment instanceof defpackage.arb)) {
+                                        ((defpackage.arb) selectedFragment).O();
+                                    }
+                                    if (selectedFragment == null || (selectedFragment instanceof WelcomeFragment)) {
+                                        getSupportFragmentManager().popBackStack();
+                                        if (selectedFragment != null) {
+                                            selectedFragment.setExitTransition(transition);
+                                            tasksFragment.setEnterTranstion(transition);
+                                        }
+                                        getSupportFragmentManager()
+                                                .beginTransaction().replace(R.id.fragment_container, tasksFragment, "tasksfragment").commitAllowingStateLoss();
+                                        setFragmentSelected(tasksFragment);
+                                    }
+                                    java.util.List<defpackage.dcb> d3 = defpackage.any.get().c().d();
+                                    java.util.HashSet<String> hashSet = new java.util.HashSet<>();
+                                    for (defpackage.dcb dcb : d3) {
+                                        hashSet.add(dcb.b);
+                                    }
+                                    defpackage.ain b3 = defpackage.ain.b(TaskListsActivity.this, deviceOwner0.accountName());
+                                    java.util.ArrayList<String> arrayList = new java.util.ArrayList<>();
+                                    for (String key : b3.preferences.getAll().keySet()) {
+                                        if (key.startsWith("task-list-order:") && !hashSet.contains(key.substring(16))) {
+                                            arrayList.add(key);
+                                        }
+                                    }
+                                    if (!arrayList.isEmpty()) {
+                                        android.content.SharedPreferences.Editor edit = b3.preferences.edit();
+                                        int size = arrayList.size();
+                                        int i = 0;
+                                        while (i < size) {
+                                            String obj2 = arrayList.get(i);
+                                            i++;
+                                            edit.remove(obj2);
+                                        }
+                                        edit.apply();
+                                    }
+                                    l = true;
+                                    AbsActivityConfig activityConfig = aoe.a(TaskListsActivity.this, deviceOwner0.accountName());
+                                    String selectedListId = activityConfig.getSelectedListId();
+                                    if (selectedListId != null && !selectedListId.equals(h.b)) {
+                                        for (defpackage.dcb dcb2 : d3) {
+                                            if (selectedListId.equals(dcb2.b)) {
+                                                b(dcb2);
+                                            }
+                                        }
+                                    }
+                                    Fragment activityConfigFragment = activityConfig.getFragment();
+                                    if (activityConfigFragment != null) {
+                                        getSupportFragmentManager().popBackStack();
+                                        showFragment(activityConfigFragment);
+                                    } else if (onboardingDismiss) {
+                                        getSupportFragmentManager().popBackStack();
+                                        WelcomeFragment welcomeFragment;
+                                        boolean z;
+                                        if (selectedFragment instanceof WelcomeFragment) {
+                                            getSupportFragmentManager().b();
+                                            welcomeFragment = (WelcomeFragment) selectedFragment;
+                                            welcomeFragment.setState(defpackage.bg.Q);
+                                            welcomeFragment.setEnterTranstion(null);
+                                            welcomeFragment.setExitTransition((Object) null);
+                                            z = true;
+                                        } else {
+                                            welcomeFragment = WelcomeFragment.newInstance(defpackage.bg.Q);
+                                            z = false;
+                                        }
+                                        setFragmentSelected((Fragment) welcomeFragment);
+                                        FragmentTransaction a4 = getSupportFragmentManager().beginTransaction();
+                                        a4.replace(R.id.fragment_container, welcomeFragment, "cannotInitializeAccount");
+                                        a4.addToBackStack();
+                                        a4.commitAllowingStateLoss();
+                                        if (z) {
+                                            getSupportFragmentManager().b();
+                                        }
+                                    } else if (selectedFragment instanceof TasksFragment) {
+                                        setFragmentSelected((Fragment) tasksFragment);
+                                    }
+                                } else {
+                                    showWelcomeFragment(defpackage.bg.P);
+                                    aoe.a(deviceOwner0.accountName());
+                                }
+                            } catch (java.lang.Exception e) {
+                                showWelcomeFragment(defpackage.bg.P);
+                                aoe.a(deviceOwner0.accountName());
+                            }
+                        }
+                    });
+                }
+            }, TaskApplication.getApplication().executor);
             return;
         }
         aoe.a(deviceOwner.accountName());

@@ -1,10 +1,12 @@
 package defpackage;
 
+import java.util.concurrent.CopyOnWriteArrayList;
+
 /* renamed from: cdl reason: default package */
 /* compiled from: PG */
 public final class cdl {
     public boolean a;
-    public final java.util.concurrent.CopyOnWriteArrayList<defpackage.cdm> b = new java.util.concurrent.CopyOnWriteArrayList<>();
+    public final CopyOnWriteArrayList<defpackage.cdm> b = new java.util.concurrent.CopyOnWriteArrayList<>();
     public final java.util.List<DeviceOwner> availableAccounts = new java.util.ArrayList<>();
     public final java.util.List d = new java.util.ArrayList();
 

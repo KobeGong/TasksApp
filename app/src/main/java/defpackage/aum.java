@@ -13,6 +13,6 @@ final /* synthetic */ class aum implements android.view.View.OnClickListener {
         auj.flattenSubtasksView.setEnabled(false);
         auj.a(true);
         defpackage.any.get().c().f(auj.X);
-        defpackage.any.get().c().a(auj.X).a(new defpackage.auq(auj), com.google.android.apps.tasks.common.TaskApplication.getApplication().a);
+        defpackage.any.get().c().a(auj.X).a(new defpackage.auq(auj), com.google.android.apps.tasks.common.TaskApplication.getApplication().executor);
     }
 }

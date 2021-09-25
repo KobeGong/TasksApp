@@ -34,8 +34,8 @@ final class cxh extends defpackage.cxa {
     public final boolean a(defpackage.cwz cwz, defpackage.cxe cxe, defpackage.cxe cxe2) {
         boolean z;
         synchronized (cwz) {
-            if (cwz.listeners == cxe) {
-                cwz.listeners = cxe2;
+            if (cwz.taskNode == cxe) {
+                cwz.taskNode = cxe2;
                 z = true;
             } else {
                 z = false;

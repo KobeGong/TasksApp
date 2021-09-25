@@ -52,7 +52,7 @@ final class cxj extends defpackage.cxa {
         java.lang.Class<defpackage.cwz> cls = defpackage.cwz.class;
         try {
             c = unsafe.objectFieldOffset(cls.getDeclaredField("waiters"));
-            b = unsafe.objectFieldOffset(cls.getDeclaredField("listeners"));
+            b = unsafe.objectFieldOffset(cls.getDeclaredField("taskNode"));
             d = unsafe.objectFieldOffset(cls.getDeclaredField("value"));
             e = unsafe.objectFieldOffset(defpackage.cxl.class.getDeclaredField("thread"));
             f = unsafe.objectFieldOffset(defpackage.cxl.class.getDeclaredField("next"));

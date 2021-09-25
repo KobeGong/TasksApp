@@ -1,5 +1,7 @@
 package defpackage;
 
+import java.util.concurrent.Executor;
+
 /* renamed from: cwz reason: default package */
 /* compiled from: PG */
 public class cwz extends defpackage.cyf {
@@ -7,7 +9,7 @@ public class cwz extends defpackage.cyf {
     public static final java.util.logging.Logger b = java.util.logging.Logger.getLogger(defpackage.cwz.class.getName());
     public static final defpackage.cxa c;
     public static final java.lang.Object d = new java.lang.Object();
-    public volatile defpackage.cxe listeners;
+    public volatile defpackage.cxe taskNode;
     public volatile java.lang.Object value;
     public volatile defpackage.cxl waiters;
 
@@ -99,10 +101,10 @@ public class cwz extends defpackage.cyf {
         java.lang.String cwz = toString();
         if (isDone()) {
             java.lang.String b2 = defpackage.cky.b(timeUnit.toString());
-            throw new java.util.concurrent.TimeoutException(new java.lang.StringBuilder(java.lang.String.valueOf(b2).length() + 68).append("Waited ").append(j).append(" ").append(b2).append(" but future completed as timeout expired").toString());
+            throw new java.util.concurrent.TimeoutException(new java.lang.StringBuilder(b2.length() + 68).append("Waited ").append(j).append(" ").append(b2).append(" but future completed as timeout expired").toString());
         }
         java.lang.String b3 = defpackage.cky.b(timeUnit.toString());
-        throw new java.util.concurrent.TimeoutException(new java.lang.StringBuilder(java.lang.String.valueOf(b3).length() + 33 + java.lang.String.valueOf(cwz).length()).append("Waited ").append(j).append(" ").append(b3).append(" for ").append(cwz).toString());
+        throw new java.util.concurrent.TimeoutException(new java.lang.StringBuilder(b3.length() + 33 + cwz.length()).append("Waited ").append(j).append(" ").append(b3).append(" for ").append(cwz).toString());
     }
 
     public java.lang.Object get() {
@@ -128,11 +130,7 @@ public class cwz extends defpackage.cyf {
                             throw new java.lang.InterruptedException();
                         }
                         obj = this.value;
-                        if (obj != null) {
-                            z = true;
-                        } else {
-                            z = false;
-                        }
+                        z = obj != null;
                     } while (!(z & (!(obj instanceof defpackage.cxg))));
                     return b(obj);
                 }
@@ -187,7 +185,7 @@ public class cwz extends defpackage.cyf {
         java.lang.Object obj2 = obj;
         boolean z2 = false;
         while (true) {
-            if (c.a(this, obj2, (java.lang.Object) cxb)) {
+            if (c.a(this, obj2, cxb)) {
                 if (z) {
                     this.a();
                 }
@@ -227,16 +225,16 @@ public class cwz extends defpackage.cyf {
         return (obj instanceof defpackage.cxb) && ((defpackage.cxb) obj).c;
     }
 
-    public final void a(java.lang.Runnable runnable, java.util.concurrent.Executor executor) {
-        defpackage.cld.a((java.lang.Object) runnable, (java.lang.Object) "Runnable was null.");
-        defpackage.cld.a((java.lang.Object) executor, (java.lang.Object) "Executor was null.");
-        defpackage.cxe cxe = this.listeners;
+    public final void a(java.lang.Runnable runnable, Executor executor) {
+        defpackage.cld.a(runnable, "Runnable was null.");
+        defpackage.cld.a(executor, "Executor was null.");
+        defpackage.cxe cxe = this.taskNode;
         if (cxe != defpackage.cxe.a) {
-            defpackage.cxe cxe2 = new defpackage.cxe(runnable, executor);
+            defpackage.cxe taskNode = new defpackage.cxe(runnable, executor);
             do {
-                cxe2.next = cxe;
-                if (!c.a(this, cxe, cxe2)) {
-                    cxe = this.listeners;
+                taskNode.next = cxe;
+                if (!c.a(this, cxe, taskNode)) {
+                    cxe = this.taskNode;
                 } else {
                     return;
                 }
@@ -249,7 +247,7 @@ public class cwz extends defpackage.cyf {
         if (obj == null) {
             obj = d;
         }
-        if (!c.a(this, (java.lang.Object) null, obj)) {
+        if (!c.a(this, null, obj)) {
             return false;
         }
         a(this);
@@ -257,7 +255,7 @@ public class cwz extends defpackage.cyf {
     }
 
     public boolean a(java.lang.Throwable th) {
-        if (!c.a(this, (java.lang.Object) null, (java.lang.Object) new defpackage.cxc((java.lang.Throwable) defpackage.cld.a((java.lang.Object) th)))) {
+        if (!c.a(this, null, new cxc((Throwable) cld.a((Object) th)))) {
             return false;
         }
         a(this);
@@ -314,7 +312,7 @@ public class cwz extends defpackage.cyf {
                 }
                 cwz.c();
                 do {
-                    cxe = cwz.listeners;
+                    cxe = cwz.taskNode;
                 } while (!c.a(cwz, cxe, defpackage.cxe.a));
                 defpackage.cxe cxe3 = cxe2;
                 defpackage.cxe cxe4 = cxe;
@@ -333,7 +331,7 @@ public class cwz extends defpackage.cyf {
                         defpackage.cxg cxg = (defpackage.cxg) runnable;
                         cwz = cxg.a;
                         if (cwz.value == cxg) {
-                            if (c.a(cwz, (java.lang.Object) cxg, a(cxg.b))) {
+                            if (c.a(cwz, cxg, a(cxg.b))) {
                                 cxe2 = cxe8;
                             }
                         }
@@ -364,7 +362,7 @@ public class cwz extends defpackage.cyf {
                 sb = d();
             } catch (java.lang.RuntimeException e) {
                 java.lang.String valueOf = java.lang.String.valueOf(e.getClass());
-                sb = new java.lang.StringBuilder(java.lang.String.valueOf(valueOf).length() + 38).append("Exception thrown from implementation: ").append(valueOf).toString();
+                sb = new java.lang.StringBuilder(valueOf.length() + 38).append("Exception thrown from implementation: ").append(valueOf).toString();
             }
             if (!defpackage.crx.a(sb)) {
                 append.append("PENDING, info=[").append(sb).append("]");
@@ -382,7 +380,7 @@ public class cwz extends defpackage.cyf {
         java.lang.Object obj = this.value;
         if (obj instanceof defpackage.cxg) {
             java.lang.String c2 = c(((defpackage.cxg) obj).b);
-            return new java.lang.StringBuilder(java.lang.String.valueOf(c2).length() + 12).append("setFuture=[").append(c2).append("]").toString();
+            return new java.lang.StringBuilder(c2.length() + 12).append("setFuture=[").append(c2).append("]").toString();
         } else if (!(this instanceof java.util.concurrent.ScheduledFuture)) {
             return null;
         } else {
@@ -409,13 +407,13 @@ public class cwz extends defpackage.cyf {
         return java.lang.String.valueOf(obj);
     }
 
-    private static void b(java.lang.Runnable runnable, java.util.concurrent.Executor executor) {
+    private static void b(java.lang.Runnable runnable, Executor executor) {
         try {
             executor.execute(runnable);
         } catch (java.lang.RuntimeException e) {
             java.lang.String valueOf = java.lang.String.valueOf(runnable);
             java.lang.String valueOf2 = java.lang.String.valueOf(executor);
-            b.logp(java.util.logging.Level.SEVERE, "com.google.common.util.concurrent.AbstractFuture", "executeListener", new java.lang.StringBuilder(java.lang.String.valueOf(valueOf).length() + 57 + java.lang.String.valueOf(valueOf2).length()).append("RuntimeException while executing runnable ").append(valueOf).append(" with executor ").append(valueOf2).toString(), e);
+            b.logp(java.util.logging.Level.SEVERE, "com.google.common.util.concurrent.AbstractFuture", "executeListener", new java.lang.StringBuilder(valueOf.length() + 57 + valueOf2.length()).append("RuntimeException while executing runnable ").append(valueOf).append(" with executor ").append(valueOf2).toString(), e);
         }
     }
 
